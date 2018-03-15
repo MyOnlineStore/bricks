@@ -1,13 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots HelloWorld with emoji 1`] = `
-<div>
-  👋 🌍!
+exports[`Storyshots Spacer Using margin 1`] = `
+.c1 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
+}
+
+.c0 {
+  display: inline-block;
+  margin: 12px 12px 12px 12px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    This has a margin.
+  </div>
 </div>
 `;
 
-exports[`Storyshots HelloWorld with text 1`] = `
-<div>
-  Hello World!
+exports[`Storyshots Spacer Using padding 1`] = `
+.c0 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
+}
+
+.c1 {
+  display: inline-block;
+  padding: 12px 12px 12px 12px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    This has padding.
+  </div>
 </div>
 `;

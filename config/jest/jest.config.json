@@ -25,5 +25,14 @@
             "lines": 100,
             "statements": 100
         }
-    }
+    },
+    "collectCoverageFrom": [
+        "src/**/*.{ts,tsx}",
+        "!<rootDir>/node_modules/",
+        "!src/**/*.story.{ts,tsx}",
+        "!src/**/*.test.{ts,tsx}",
+        "!src/**/*.d.ts",
+        "!src/**/index.ts"
+    ],
+    "setupTestFrameworkScriptFile": "./config/jest/setup.ts"
 }
