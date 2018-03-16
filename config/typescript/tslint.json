@@ -54,7 +54,6 @@
     
     "new-parens": true,
     "newline-before-return": true,
-    "newline-per-chained-call": true,
     "no-angle-bracket-type-assertion": true,
     "no-any": true,
     "no-arg": true,
@@ -96,7 +95,6 @@
     "no-submodule-imports": true,
     "no-switch-case-fall-through": true,
     "no-this-assignment": true,
-    "no-unbound-method": true,
     "no-unnecessary-class": true,
     "no-unnecessary-type-assertion": true,
     "no-unsafe-any": true,
