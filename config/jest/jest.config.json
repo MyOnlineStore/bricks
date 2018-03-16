@@ -32,7 +32,7 @@
         "!src/**/*.story.{ts,tsx}",
         "!src/**/*.test.{ts,tsx}",
         "!src/**/*.d.ts",
-        "!src/**/index.ts"
+        "!src/**/index.{ts,tsx}"
     ],
     "setupTestFrameworkScriptFile": "./config/jest/setup.ts"
 }

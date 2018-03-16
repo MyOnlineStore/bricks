@@ -1,4 +1,7 @@
-import { configure } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
+import themeDecorator from './decorators/themeDecorator';
+
+addDecorator(themeDecorator);
 
 function requireAll(requireContext) {
     return requireContext.keys().map(requireContext);
@@ -9,3 +12,4 @@ function loadStories() {
 }
 
 configure(loadStories, module);
+

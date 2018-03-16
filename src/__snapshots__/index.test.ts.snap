@@ -1,5 +1,350 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Destructive 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #ED2157;
+  border-radius: 0;
+  border: solid 1px #ED2157;
+  color: #fff;
+}
+
+.c0:hover {
+  color: #fff;
+}
+
+.c0:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c0:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+<button
+  className="c0"
+  href={undefined}
+  onClick={[Function]}
+  target={undefined}
+  title="Click me!"
+  type="destructive"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #5BD16A;
+  border-radius: 0;
+  border: solid 1px #5BD16A;
+  color: #fff;
+}
+
+.c0:hover {
+  color: #fff;
+}
+
+.c0:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c0:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+<button
+  className="c0"
+  href={undefined}
+  onClick={[Function]}
+  target={undefined}
+  title="Click me!"
+  type="primary"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #EDEFF2;
+  border-radius: 0;
+  border: solid 1px #d2d7e0;
+  color: #333740;
+}
+
+.c0:hover {
+  color: #333740;
+}
+
+.c0:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c0:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+<button
+  className="c0"
+  href={undefined}
+  onClick={[Function]}
+  target={undefined}
+  title="Click me!"
+  type="secondary"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Warning 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #FCC200;
+  border-radius: 0;
+  border: solid 1px #FCC200;
+  color: #fff;
+}
+
+.c0:hover {
+  color: #fff;
+}
+
+.c0:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c0:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+<button
+  className="c0"
+  href={undefined}
+  onClick={[Function]}
+  target={undefined}
+  title="Click me!"
+  type="warning"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button With a link 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #5BD16A;
+  border-radius: 0;
+  border: solid 1px #5BD16A;
+  color: #fff;
+}
+
+.c0:hover {
+  color: #fff;
+}
+
+.c0:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c0:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+<a
+  className="c0"
+  href="http://www.google.nl"
+  onClick={[Function]}
+  target="_blank"
+  title="Click me!"
+  type="primary"
+>
+  Click me
+</a>
+`;
+
 exports[`Storyshots Spacer Using margin 1`] = `
 .c1 {
   border: solid 3px rgba(255,36,94,0.3);

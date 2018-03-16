@@ -1,1 +1,2 @@
-export { default as Spacer } from './components/Spacer/Spacer';
+export { default as Spacer } from './components/Spacer';
+export { default as Button } from './components/Button';
