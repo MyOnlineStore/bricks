@@ -80,7 +80,6 @@
     "no-floating-promises": true,
     "no-for-in-array": true,
     "no-implicit-dependencies": [true, "dev"],
-    "no-import-side-effect": true,
     "no-increment-decrement": false,
     "no-inferred-empty-object-type": true,
     "no-internal-module": true,
@@ -108,7 +107,6 @@
 
     "object-literal-key-quotes": [true, "consistent-as-needed"],
     "object-literal-shorthand": true,
-    "object-literal-sort-keys": true,
     "one-line": true,
     "only-arrow-functions": true,
     "one-variable-per-declaration": true,
@@ -174,7 +172,12 @@
     "use-default-type-parameter": true,
     "use-isnan": true,
 
-    "variable-name": [true, "check-format", "ban-keywords"],
+    "variable-name": [
+        true,
+        "check-format",
+        "ban-keywords",
+        "allow-pascal-case"
+    ],
     
     "whitespace": [
         true,
