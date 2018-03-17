@@ -5,7 +5,6 @@ type PropsType = {
 };
 
 type StateType = {
-    clicked:boolean;
     clicking:boolean;
     focussing:boolean;
     hovering:boolean;
@@ -19,17 +18,13 @@ class DomBehavior extends Component<PropsType, StateType> {
         this.state = {
             hovering: false,
             clicking: false,
-            clicked: false,
             focussing: false,
             keypress: '',
         };
     }
 
     public handleMouseDown = ():void => {
-        this.setState({
-            clicking: true,
-            clicked: true,
-        });
+        this.setState({ clicking: true });
     }
 
     public handleMouseUp = ():void => {
@@ -44,10 +39,7 @@ class DomBehavior extends Component<PropsType, StateType> {
     }
 
     public handleMouseEnter = ():void => {
-        this.setState({
-            hovering: true,
-            clicked: false,
-        });
+        this.setState({ hovering: true });
     }
 
     public handleFocus = ():void => {

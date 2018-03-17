@@ -2,7 +2,7 @@
 
 exports[`Storyshots DomBehavior With a callback 1`] = `
 .c0 {
-  border: solid 3px red;
+  border: solid 3px rgba(255,36,94,0.3);
   border-radius: 5px;
   padding: 12px 24px;
 }
@@ -21,16 +21,16 @@ exports[`Storyshots DomBehavior With a callback 1`] = `
     className="c0"
   >
     <div>
-      mouse: 
-      
-       
-      
-       
-      
+      hovering: 
+      false
+    </div>
+    <div>
+      clicking: 
+      false
     </div>
     <div>
       focussing: 
-      
+      false
     </div>
     <div>
       pressing key: 
