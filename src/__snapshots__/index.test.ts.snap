@@ -63,7 +63,7 @@ exports[`Storyshots Button Destructive 1`] = `
   onClick={[Function]}
   target={undefined}
   title="Click me!"
-  type="destructive"
+  type="button"
 >
   Click me
 </button>
@@ -132,7 +132,7 @@ exports[`Storyshots Button Primary 1`] = `
   onClick={[Function]}
   target={undefined}
   title="Click me!"
-  type="primary"
+  type="button"
 >
   Click me
 </button>
@@ -201,7 +201,7 @@ exports[`Storyshots Button Secondary 1`] = `
   onClick={[Function]}
   target={undefined}
   title="Click me!"
-  type="secondary"
+  type="button"
 >
   Click me
 </button>
@@ -270,7 +270,7 @@ exports[`Storyshots Button Warning 1`] = `
   onClick={[Function]}
   target={undefined}
   title="Click me!"
-  type="warning"
+  type="button"
 >
   Click me
 </button>
@@ -339,21 +339,21 @@ exports[`Storyshots Button With a link 1`] = `
   onClick={[Function]}
   target="_blank"
   title="Click me!"
-  type="primary"
+  type={undefined}
 >
   Click me
 </a>
 `;
 
-exports[`Storyshots Spacer Using margin 1`] = `
-.c1 {
-  border: solid 3px rgba(255,36,94,0.3);
-  border-radius: 5px;
-}
-
+exports[`Storyshots Spacer With margin 1`] = `
 .c0 {
   display: inline-block;
   margin: 12px 12px 12px 12px;
+}
+
+.c1 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
 }
 
 <div
@@ -367,15 +367,15 @@ exports[`Storyshots Spacer Using margin 1`] = `
 </div>
 `;
 
-exports[`Storyshots Spacer Using padding 1`] = `
-.c0 {
-  border: solid 3px rgba(255,36,94,0.3);
-  border-radius: 5px;
-}
-
+exports[`Storyshots Spacer With padding 1`] = `
 .c1 {
   display: inline-block;
   padding: 12px 12px 12px 12px;
+}
+
+.c0 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
 }
 
 <div
@@ -385,6 +385,28 @@ exports[`Storyshots Spacer Using padding 1`] = `
     className="c1"
   >
     This has padding.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Spacer Without props 1`] = `
+.c0 {
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+}
+
+.c1 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    This has no spacing.
   </div>
 </div>
 `;

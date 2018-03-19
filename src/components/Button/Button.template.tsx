@@ -1,18 +1,18 @@
 import React, { StatelessComponent } from 'react';
-import { ThemeType } from '../../themes';
-import styled from '../../utility/styled/styled';
 
 type PropsType = {
     className?:string;
     title:string;
-    type:'primary' | 'secondary' | 'destructive' | 'warning';
+    variant:'primary' | 'secondary' | 'destructive' | 'warning';
     target?:HTMLAnchorElement['target'];
     href?:string;
     action?():void;
 };
 
 const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const Element = props.href !== undefined
+    const isLink = props.href !== undefined;
+
+    const Element = isLink
         ? 'a'
         : 'button';
 
@@ -24,12 +24,12 @@ const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
 
     return (
         <Element
-            type={props.type}
             title={props.title}
             className={props.className}
             href={props.href}
             target={props.target}
             onClick={clickAction}
+            type={!isLink ? 'button' : undefined}
         >
             {props.children}
         </Element>

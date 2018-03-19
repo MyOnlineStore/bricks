@@ -1,7 +1,5 @@
-import { ComponentType } from 'react';
-import { InterpolationValue } from 'styled-components';
-import styled, { css } from '../../utility/styled/styled';
-import Button from './Button';
+import styled from '../../utility/styled/styled';
+import ButtonTemplate from './Button.template';
 
 const applyTheme = (
     backgroundColor:string,
@@ -22,7 +20,7 @@ const applyTheme = (
     `;
 };
 
-const StyledButton = styled(Button)`
+const Button = styled(ButtonTemplate)`
     appearance: none;
     border: none;
     line-height: 1;
@@ -38,8 +36,8 @@ const StyledButton = styled(Button)`
     font-family: ${({ theme }):string => theme.fontFamily}
     font-size: ${({ theme }):string => theme.fontSize}
 
-    ${({ type, theme }):string => {
-        switch (type) {
+    ${({ variant, theme }):string => {
+        switch (variant) {
             case 'secondary': return applyTheme(
                 theme.buttonSecondaryBackgroundColor,
                 theme.buttonSecondaryBorderRadius,
@@ -87,4 +85,4 @@ const StyledButton = styled(Button)`
     }
 `;
 
-export default StyledButton;
+export default Button;

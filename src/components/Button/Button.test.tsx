@@ -1,14 +1,15 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Button from './Button';
+import Button from './Button.template';
 
 describe('Button component', () => {
     it('should call the passed action on click', () => {
         const clickMock = jest.fn();
+
         const component = shallow(
             <Button
                 title=""
-                type="primary"
+                variant="primary"
                 action={clickMock}
             >
                 Click me
@@ -22,10 +23,10 @@ describe('Button component', () => {
 
     it('should no-op on click without an action', () => {
         const fn = ():void => {
-                const component = shallow(
-                    <Button
+            const component = shallow(
+                <Button
                     title=""
-                    type="primary"
+                    variant="primary"
                     action={undefined}
                     >
                     Click me
