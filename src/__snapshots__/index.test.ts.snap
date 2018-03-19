@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots DomBehavior With a callback 1`] = `
+.c0 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
+  padding: 12px 24px;
+}
+
+<div
+  onBlurCapture={[Function]}
+  onFocusCapture={[Function]}
+  onKeyDownCapture={[Function]}
+  onKeyUpCapture={[Function]}
+  onMouseDownCapture={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUpCapture={[Function]}
+>
+  <div
+    className="c0"
+  >
+    <div>
+      hovering: 
+      false
+    </div>
+    <div>
+      clicking: 
+      false
+    </div>
+    <div>
+      focussing: 
+      false
+    </div>
+    <div>
+      pressing key: 
+      
+    </div>
+    <input
+      type="text"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Spacer Using margin 1`] = `
 .c1 {
   border: solid 3px rgba(255,36,94,0.3);
