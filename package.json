@@ -8,7 +8,8 @@
   "name": "@myonlinestore/bricks",
   "version": "0.0.1",
   "description": "bricks",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
+  "types": "src/declarations/index.d.ts",
   "keywords": [
     "MyOnlineStore",
     "react",
