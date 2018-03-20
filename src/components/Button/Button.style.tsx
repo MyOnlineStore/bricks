@@ -1,5 +1,7 @@
+import { StyledComponentClass } from 'styled-components';
+import { ThemeType } from '../../themes';
 import styled from '../../utility/styled/styled';
-import ButtonTemplate from './Button.template';
+import ButtonTemplate, { PropsType } from './Button.template';
 
 const applyTheme = (
     backgroundColor:string,
@@ -20,7 +22,7 @@ const applyTheme = (
     `;
 };
 
-const Button = styled(ButtonTemplate)`
+const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)`
     appearance: none;
     border: none;
     line-height: 1;

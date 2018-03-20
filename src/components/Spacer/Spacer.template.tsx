@@ -1,6 +1,6 @@
 import React, { StatelessComponent } from 'react';
 
-export type OffsetType = 0 | 6 | 9 | 12 | 24 | 36 | 48;
+type OffsetType = 0 | 6 | 9 | 12 | 24 | 36 | 48;
 
 type PropsType = {
     className?:string;
@@ -15,4 +15,5 @@ const Spacer:StatelessComponent<PropsType> = (props):JSX.Element => {
     return <div className={props.className}>{props.children}</div>;
 };
 
+export { OffsetType, PropsType };
 export default Spacer;

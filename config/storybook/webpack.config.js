@@ -21,10 +21,9 @@ module.exports = (baseConfig, env) => {
             rules: [
                 {
                     test: /\.tsx?$/,
-                    loader: "awesome-typescript-loader",
+                    loader: "ts-loader",
                     options: {
-                        silent: true,
-                        configFileName: './config/typescript/tsconfig.json'
+                        configFile: __dirname + "/../typescript/tsconfig.json",
                     }
                 },
                 {

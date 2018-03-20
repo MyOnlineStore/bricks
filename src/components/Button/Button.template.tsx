@@ -37,3 +37,4 @@ const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
 };
 
 export default Button;
+export { PropsType };

@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import SpacerTemplate, { OffsetType } from './Spacer.template';
+import styled, { StyledComponentClass } from 'styled-components';
+import { ThemeType } from '../../themes';
+import SpacerTemplate, { OffsetType, PropsType } from './Spacer.template';
 
-const Spacer = styled(SpacerTemplate)`
+const Spacer:StyledComponentClass<PropsType, ThemeType> = styled(SpacerTemplate)`
     display: inline-block;
     ${({ offsetType }):string => offsetType === 'inner' ? 'padding' : 'margin'}:
         ${({ top }):OffsetType => top !== undefined ? top : 0}px

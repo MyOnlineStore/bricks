@@ -9,7 +9,7 @@
   "version": "0.0.2",
   "description": "bricks",
   "main": "dist/index.js",
-  "types": "src/declarations/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "keywords": [
     "MyOnlineStore",
     "react",
@@ -29,7 +29,6 @@
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
     "@types/storybook__react": "^3.0.7",
-    "awesome-typescript-loader": "^3.4.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-styled-components": "^1.5.1",
@@ -45,6 +44,7 @@
     "react-test-renderer": "^16.2.0",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^22.4.1",
+    "ts-loader": "3.5.0",
     "tslint": "^5.9.1",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0",
@@ -58,6 +58,9 @@
     "codestyle-check": "tslint --force --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -c ./config/storybook"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MyOnlineStore/bricks"

@@ -1,3 +1,4 @@
+import Component from 'react';
 import * as styledComponents from 'styled-components';
 import { ThemeType } from '../../themes';
 

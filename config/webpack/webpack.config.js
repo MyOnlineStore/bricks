@@ -7,8 +7,8 @@ module.exports = {
     },
     output: {
         filename: "index.js",
-        path: __dirname + "../../../dist",
-        library: 'util',
+        path: __dirname + "/../../dist",
+        library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
     },
@@ -20,10 +20,9 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "awesome-typescript-loader",
+                loader: "ts-loader",
                 options: {
-                    silent: true,
-                    configFileName: './config/typescript/tsconfig.json'
+                    configFile: __dirname + "/../typescript/tsconfig.json",
                 }
             },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
