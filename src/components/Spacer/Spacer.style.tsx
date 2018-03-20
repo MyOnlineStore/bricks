@@ -3,7 +3,6 @@ import { ThemeType } from '../../themes';
 import SpacerTemplate, { OffsetType, PropsType } from './Spacer.template';
 
 const Spacer:StyledComponentClass<PropsType, ThemeType> = styled(SpacerTemplate)`
-    display: inline-block;
     ${({ offsetType }):string => offsetType === 'inner' ? 'padding' : 'margin'}:
         ${({ top }):OffsetType => top !== undefined ? top : 0}px
         ${({ right }):OffsetType => right !== undefined ? right : 0}px

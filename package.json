@@ -52,10 +52,10 @@
   },
   "scripts": {
     "test": "jest --config=./config/jest/jest.config.json --coverage",
-    "prepare": "npm run codestyle-check && npm run test && npm run build",
+    "prepare": "npm run cs-check && npm run test && npm run build",
     "build": "webpack --config ./config/webpack/webpack.config.js",
-    "codestyle-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
-    "codestyle-check": "tslint --force --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
+    "cs-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
+    "cs-check": "tslint --force --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -c ./config/storybook"
   },
   "files": [
