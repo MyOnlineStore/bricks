@@ -27,7 +27,7 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
     border: none;
     line-height: 1;
     padding: 11px 35px;
-    box-shadow: 0 6px 3px -5px rgba(51, 55, 64 ,.3);
+    box-shadow: 0 9px 3px -5px rgba(51, 55, 64 ,.3);
     cursor: pointer;
     display: inline-block;
     outline: none;
