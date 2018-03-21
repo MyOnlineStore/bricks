@@ -41,6 +41,7 @@
     "jest": "^22.4.0",
     "jest-styled-components": "^5.0.0",
     "progress-bar-webpack-plugin": "^1.10.0",
+    "react-chromatic": "^0.7.11",
     "react-test-renderer": "^16.2.0",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^22.4.1",
@@ -56,7 +57,9 @@
     "build": "webpack --config ./config/webpack/webpack.config.js",
     "cs-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "cs-check": "tslint --force --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
-    "watch": "start-storybook -p 9001 -c ./config/storybook"
+    "storybook": "start-storybook -p 9001 -c ./config/storybook",
+    "watch": "npm run storybook",
+    "chromatic": "CHROMATIC_APP_CODE=eh40hqp4f5p chromatic test --storybook-addon "
   },
   "files": [
     "dist"

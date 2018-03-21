@@ -5,3 +5,4 @@ script:
 - npm run cs-check
 - npm run build
 - npm run test
+- npm run chromatic
