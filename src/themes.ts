@@ -21,31 +21,7 @@ type ThemeType = {
     buttonWarningColor:string;
     fontFamily:string;
     fontSize:string;
-};
-
-const shopTheme:ThemeType = {
-    buttonDestructiveBackgroundColor: '#ED2157',
-    buttonDestructiveBorderColor: '#ED2157',
-    buttonDestructiveBorderRadius: '100px',
-    buttonDestructiveBorderWidth: '1px',
-    buttonDestructiveColor: '#fff',
-    buttonPrimaryBackgroundColor: 'LightSeaGreen',
-    buttonPrimaryBorderColor: 'CadetBlue',
-    buttonPrimaryBorderRadius: '100px',
-    buttonPrimaryBorderWidth: '2px',
-    buttonPrimaryColor: 'white',
-    buttonSecondaryBackgroundColor: 'CadetBlue',
-    buttonSecondaryBorderColor: 'LightSeaGreen',
-    buttonSecondaryBorderRadius: '100px',
-    buttonSecondaryBorderWidth: '2px',
-    buttonSecondaryColor: 'white',
-    buttonWarningBackgroundColor: '#FCC200',
-    buttonWarningBorderColor: 'FCC200',
-    buttonWarningBorderRadius: '100px',
-    buttonWarningBorderWidth: '1px',
-    buttonWarningColor: '#fff',
-    fontFamily: 'Helvetica',
-    fontSize: '16px',
+    iconFill:string;
 };
 
 const adminTheme:ThemeType = {
@@ -71,6 +47,7 @@ const adminTheme:ThemeType = {
     buttonWarningColor: '#fff',
     fontFamily: 'Arial',
     fontSize: '16px',
+    iconFill: '#5BD16A',
 };
 
-export { ThemeType, shopTheme, adminTheme };
+export { ThemeType, adminTheme };

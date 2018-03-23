@@ -27,6 +27,10 @@ module.exports = (baseConfig, env) => {
                     }
                 },
                 {
+                    test: /\.svg$/,
+                    loader: 'svg-inline-loader'
+                },
+                {
                     enforce: "pre",
                     test: /\.js$/,
                     loader: "source-map-loader"

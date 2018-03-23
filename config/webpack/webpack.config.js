@@ -25,6 +25,10 @@ module.exports = {
                     configFile: __dirname + "/../typescript/tsconfig.json",
                 }
             },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
