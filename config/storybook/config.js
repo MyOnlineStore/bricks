@@ -1,7 +1,9 @@
 import { configure, addDecorator } from '@storybook/react';
 import themeDecorator from './decorators/themeDecorator';
+import { withKnobs } from "@storybook/addon-knobs/react";
 
 addDecorator(themeDecorator);
+addDecorator(withKnobs);
 
 function requireAll(requireContext) {
     return requireContext.keys().map(requireContext);

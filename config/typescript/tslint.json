@@ -34,20 +34,20 @@
     "member-ordering": [true, {
         "order": [
             "public-static-field",
-            "private-static-field",
             "protected-static-field",
-            "public-instance-field",
-            "private-instance-field",
+            "private-static-field",
             "protected-instance-field",
-            "public-constructor",
-            "private-constructor",
+            "private-instance-field",
+            "public-instance-field",
             "protected-constructor",
-            "public-static-method",
-            "private-static-method",
+            "private-constructor",
+            "public-constructor",
             "protected-static-method",
-            "public-instance-method",
+            "private-static-method",
+            "public-static-method",
+            "protected-instance-method",
             "private-instance-method",
-            "protected-instance-method"
+            "public-instance-method"
         ]
     }],
     
@@ -185,7 +185,6 @@
         "check-module",
         "check-separator",
         "check-rest-spread",
-        "check-type-operator",
         "check-preblock"
     ]
   }
