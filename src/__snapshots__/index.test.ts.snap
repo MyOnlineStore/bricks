@@ -363,6 +363,205 @@ exports[`Storyshots Button With a link 1`] = `
 </a>
 `;
 
+exports[`Storyshots FoldOut Closed 1`] = `
+.c0 {
+  -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  overflow: hidden;
+  height: 0px;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    
+    Now this is the story all about how
+    My life got flipped, turned upside down
+    And I'd like to take a minute just sit right there
+    I'll tell you how I became the prince of a town called Bel-air
+
+    In west Philadelphia born and raised
+    On the playground where I spent most of my days
+    Chilling out, maxing, relaxing all cool
+    And all shooting some b-ball outside of the school
+    When a couple of guys, they were up to no good
+    Started making trouble in my neighbourhood
+    I got in one little fight and my mom got scared
+    And said "You're moving with your auntie and uncle in Bel-air"
+
+    I whistled for a cab and when it came near the
+    License plate said "fresh" and had a dice in the mirror
+    If anything I could say that this cab was rare
+    But I thought nah, forget it, yo homes to Bel-air!
+
+    I pulled up to a house about seven or eight
+    And I yelled to the cabby "Yo, homes smell you later!"
+    Looked at my kingdom I was finally there
+    To sit on my throne as the prince of Bel-air
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots FoldOut Open 1`] = `
+.c0 {
+  -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  overflow: hidden;
+  height: 900px;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    
+    Now this is the story all about how
+    My life got flipped, turned upside down
+    And I'd like to take a minute just sit right there
+    I'll tell you how I became the prince of a town called Bel-air
+
+    In west Philadelphia born and raised
+    On the playground where I spent most of my days
+    Chilling out, maxing, relaxing all cool
+    And all shooting some b-ball outside of the school
+    When a couple of guys, they were up to no good
+    Started making trouble in my neighbourhood
+    I got in one little fight and my mom got scared
+    And said "You're moving with your auntie and uncle in Bel-air"
+
+    I whistled for a cab and when it came near the
+    License plate said "fresh" and had a dice in the mirror
+    If anything I could say that this cab was rare
+    But I thought nah, forget it, yo homes to Bel-air!
+
+    I pulled up to a house about seven or eight
+    And I yelled to the cabby "Yo, homes smell you later!"
+    Looked at my kingdom I was finally there
+    To sit on my throne as the prince of Bel-air
+
+  </div>
+</div>
+`;
+
+exports[`Storyshots FoldOut With a toggle 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #EDEFF2;
+  border-radius: 0;
+  border: solid 1px #d2d7e0;
+  color: #333740;
+}
+
+.c1:hover {
+  color: #333740;
+}
+
+.c1:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c1:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c1:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c2 {
+  -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  overflow: hidden;
+  height: 0px;
+}
+
+.c0 {
+  margin: 0px 0px 24px 0px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <button
+      className="c1"
+      href={undefined}
+      onClick={[Function]}
+      target={undefined}
+      title="open FoldOut"
+      type="button"
+    >
+      Toggle
+    </button>
+  </div>
+  <div
+    className="c2"
+  >
+    <div>
+      
+    Now this is the story all about how
+    My life got flipped, turned upside down
+    And I'd like to take a minute just sit right there
+    I'll tell you how I became the prince of a town called Bel-air
+
+    In west Philadelphia born and raised
+    On the playground where I spent most of my days
+    Chilling out, maxing, relaxing all cool
+    And all shooting some b-ball outside of the school
+    When a couple of guys, they were up to no good
+    Started making trouble in my neighbourhood
+    I got in one little fight and my mom got scared
+    And said "You're moving with your auntie and uncle in Bel-air"
+
+    I whistled for a cab and when it came near the
+    License plate said "fresh" and had a dice in the mirror
+    If anything I could say that this cab was rare
+    But I thought nah, forget it, yo homes to Bel-air!
+
+    I pulled up to a house about seven or eight
+    And I yelled to the cabby "Yo, homes smell you later!"
+    Looked at my kingdom I was finally there
+    To sit on my throne as the prince of Bel-air
+
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Icon Large icon 1`] = `
 .c0 {
   display: inline-block;
@@ -442,6 +641,10 @@ exports[`Storyshots Icon With overwritten fill 1`] = `
 `;
 
 exports[`Storyshots Icon With some text 1`] = `
+.c1 {
+  margin: 12px 0px 0px 0px;
+}
+
 .c0 {
   display: inline-block;
   vertical-align: middle;
@@ -466,10 +669,6 @@ exports[`Storyshots Icon With some text 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 0px 0px 0px;
 }
 
 <div>

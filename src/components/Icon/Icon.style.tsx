@@ -1,5 +1,5 @@
 import { StyledComponentClass as _S } from 'styled-components';
-import styled from '../../utility/styled/styled';
+import styled from '../../utility/styled';
 import Icon from './Icon.template';
 
 const StyledIcon = styled(Icon)`

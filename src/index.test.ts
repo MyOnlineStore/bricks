@@ -8,6 +8,7 @@ initStoryshots({
     test: snapshotWithOptions({
         createNodeMock: (element:ReactElement<HTMLDivElement>):Object => ({
             offsetWidth: 900,
+            offsetHeight: 900,
         }),
     }),
 });

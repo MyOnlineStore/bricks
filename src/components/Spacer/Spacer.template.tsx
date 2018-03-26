@@ -1,9 +1,9 @@
 import React, { StatelessComponent } from 'react';
+import { StyledType } from '../../utility/styled';
 
 type OffsetType = 0 | 6 | 9 | 12 | 24 | 36 | 48;
 
-type PropsType = {
-    className?:string;
+type PropsType = StyledType & {
     top?:OffsetType;
     right?:OffsetType;
     bottom?:OffsetType;

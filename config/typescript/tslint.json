@@ -119,7 +119,6 @@
     "prefer-conditional-expression": true,
     "prefer-const": true,
     "prefer-object-spread": true,
-    "prefer-readonly": true,
     "prefer-method-signature": true,
     "prefer-switch": true,
     "prefer-template": true,
