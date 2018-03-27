@@ -55,7 +55,7 @@
     "prepare": "npm run cs-check && npm run test && npm run build",
     "build": "webpack --config ./config/webpack/webpack.config.js",
     "cs-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
-    "cs-check": "tslint --force --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
+    "cs-check": "tslint --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -c ./config/storybook"
   },
   "files": [
