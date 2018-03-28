@@ -5,10 +5,13 @@ import Icon from './Icon.template';
 const StyledIcon = styled(Icon)`
     display: inline-block;
     vertical-align: middle;
+    height: ${({ size }):string => size === 'large' ? '60px' : '18px'};
     width: ${({ size }):string => size === 'large' ? '60px' : '18px'};
 
     svg {
-        fill: ${({ theme, color }):string => color !== undefined ? color : theme.iconFill};
+        max-height: 100%;
+        max-width: 100%;
+        fill: ${({ theme, color }):string => color !== undefined ? color : 'currentColor'};
     }
 `;
 
