@@ -349,11 +349,14 @@ exports[`Storyshots Icon Large icon 1`] = `
 .c0 {
   display: inline-block;
   vertical-align: middle;
+  height: 60px;
   width: 60px;
 }
 
 .c0 svg {
-  fill: #5BD16A;
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
 }
 
 <span
@@ -372,11 +375,14 @@ exports[`Storyshots Icon Small icon 1`] = `
 .c0 {
   display: inline-block;
   vertical-align: middle;
+  height: 18px;
   width: 18px;
 }
 
 .c0 svg {
-  fill: #5BD16A;
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
 }
 
 <span
@@ -395,10 +401,13 @@ exports[`Storyshots Icon With overwritten fill 1`] = `
 .c0 {
   display: inline-block;
   vertical-align: middle;
+  height: 60px;
   width: 60px;
 }
 
 .c0 svg {
+  max-height: 100%;
+  max-width: 100%;
   fill: BlueViolet;
 }
 
@@ -418,21 +427,27 @@ exports[`Storyshots Icon With some text 1`] = `
 .c0 {
   display: inline-block;
   vertical-align: middle;
+  height: 18px;
   width: 18px;
 }
 
 .c0 svg {
-  fill: #5BD16A;
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
 }
 
 .c2 {
   display: inline-block;
   vertical-align: middle;
+  height: 60px;
   width: 60px;
 }
 
 .c2 svg {
-  fill: #5BD16A;
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
 }
 
 .c1 {
