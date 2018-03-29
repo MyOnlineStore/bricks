@@ -5,7 +5,7 @@
 # Bricks
 
 ## Use it:
-Install it using: `npm install --save @myonlinestore/bricks`.
+Install it using: `npm install @myonlinestore/bricks`.
 
 All components are named exports. For instance:
 ```typescript
