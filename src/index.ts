@@ -1,4 +1,5 @@
 export { default as BreakpointProvider } from './components/BreakpointProvider';
+export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
 export { default as FlatButton } from './components/FlatButton';
 export { default as FoldOut } from './components/FoldOut';
