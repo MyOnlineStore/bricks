@@ -6,7 +6,7 @@ import SubHeading from '../SubHeading';
 storiesOf('SubHeading', module)
     .add('default', () => (
         <SubHeading>
-            This is a span element.
+            This is a div element.
         </SubHeading>
     ))
     .add('With a hierarchy', () => {

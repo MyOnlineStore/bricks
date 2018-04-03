@@ -592,12 +592,12 @@ exports[`Storyshots Heading default 1`] = `
   margin: 0;
 }
 
-<span
+<div
   className="c0"
   role="heading"
 >
-  This is a span element.
-</span>
+  This is a div element.
+</div>
 `;
 
 exports[`Storyshots Icon Large icon 1`] = `
@@ -836,12 +836,12 @@ exports[`Storyshots SubHeading default 1`] = `
   margin: 0;
 }
 
-<span
+<div
   className="c0"
   role="heading"
 >
-  This is a span element.
-</span>
+  This is a div element.
+</div>
 `;
 
 exports[`Storyshots Text default 1`] = `

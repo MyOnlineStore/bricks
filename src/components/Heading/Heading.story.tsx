@@ -6,7 +6,7 @@ import Heading from '../Heading';
 storiesOf('Heading', module)
     .add('default', () => (
         <Heading>
-            This is a span element.
+            This is a div element.
         </Heading>
     ))
     .add('With a hierarchy', () => {

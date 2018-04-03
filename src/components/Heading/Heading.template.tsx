@@ -14,7 +14,7 @@ type PropsType = StyledType & {
 const Heading:StatelessComponent<PropsType> = (props):JSX.Element => {
     const Element = props.hierarchy !== undefined
         ? `h${props.hierarchy}`
-        : 'span';
+        : 'div';
 
     return (
         <Element role="heading" className={props.className}>
