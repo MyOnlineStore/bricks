@@ -1,5 +1,285 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Box Default 1`] = `
+.c2 {
+  margin: 6px 6px 6px 6px;
+}
+
+.c4 {
+  padding: 48px 48px 48px 48px;
+}
+
+.c5 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  margin: -0px;
+}
+
+.c1 > * {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+
+.c0 {
+  border: 1px dashed #aaa;
+  height: 90vh;
+  padding: 6px;
+}
+
+.c3 {
+  background: #eee;
+  border: 1px dashed #aaa;
+  height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <p
+            className="c5"
+          >
+            Item
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots BreakpointProvider default 1`] = `
 .c1 {
   color: #333740;
@@ -820,6 +1100,10 @@ exports[`Storyshots FlatButton default 1`] = `
 `;
 
 exports[`Storyshots FoldOut With a toggle 1`] = `
+.c1 {
+  padding: 0px 0px 12px 0px;
+}
+
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -929,10 +1213,6 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 
 .c3:disabled::before {
   opacity: 1;
-}
-
-.c1 {
-  padding: 0px 0px 12px 0px;
 }
 
 .c0 {
@@ -1113,6 +1393,10 @@ exports[`Storyshots Icon With overwritten fill 1`] = `
 `;
 
 exports[`Storyshots Icon With some text 1`] = `
+.c1 {
+  margin: 12px 0px 0px 0px;
+}
+
 .c0 {
   display: inline-block;
   vertical-align: middle;
@@ -1137,10 +1421,6 @@ exports[`Storyshots Icon With some text 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 0px 0px 0px;
 }
 
 <div>
@@ -1178,6 +1458,10 @@ exports[`Storyshots Icon With some text 1`] = `
 `;
 
 exports[`Storyshots Notification Error 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1189,10 +1473,6 @@ exports[`Storyshots Notification Error 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1228,6 +1508,10 @@ exports[`Storyshots Notification Error 1`] = `
 `;
 
 exports[`Storyshots Notification Info 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1239,10 +1523,6 @@ exports[`Storyshots Notification Info 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1278,6 +1558,10 @@ exports[`Storyshots Notification Info 1`] = `
 `;
 
 exports[`Storyshots Notification Success 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1289,10 +1573,6 @@ exports[`Storyshots Notification Success 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1328,6 +1608,10 @@ exports[`Storyshots Notification Success 1`] = `
 `;
 
 exports[`Storyshots Notification Warning 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1339,10 +1623,6 @@ exports[`Storyshots Notification Warning 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1378,6 +1658,10 @@ exports[`Storyshots Notification Warning 1`] = `
 `;
 
 exports[`Storyshots Notification With a custom icon 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1389,10 +1673,6 @@ exports[`Storyshots Notification With a custom icon 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1452,6 +1732,10 @@ exports[`Storyshots PriceTag default 1`] = `
 `;
 
 exports[`Storyshots Spacer With margin 1`] = `
+.c0 {
+  margin: 12px 12px 12px 12px;
+}
+
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -1459,10 +1743,6 @@ exports[`Storyshots Spacer With margin 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-.c0 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c1 {
@@ -1486,6 +1766,10 @@ exports[`Storyshots Spacer With margin 1`] = `
 `;
 
 exports[`Storyshots Spacer With padding 1`] = `
+.c1 {
+  padding: 12px 12px 12px 12px;
+}
+
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -1493,10 +1777,6 @@ exports[`Storyshots Spacer With padding 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-.c1 {
-  padding: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1520,6 +1800,10 @@ exports[`Storyshots Spacer With padding 1`] = `
 `;
 
 exports[`Storyshots Spacer Without props 1`] = `
+.c0 {
+  margin: 0px 0px 0px 0px;
+}
+
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -1527,10 +1811,6 @@ exports[`Storyshots Spacer Without props 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-.c0 {
-  margin: 0px 0px 0px 0px;
 }
 
 .c1 {
