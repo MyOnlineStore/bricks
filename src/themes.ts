@@ -19,9 +19,16 @@ type ThemeType = {
     buttonWarningBorderRadius:string;
     buttonWarningBorderWidth:string;
     buttonWarningColor:string;
+    color:string;
     fontFamily:string;
     fontSize:string;
+    headingColor:string;
+    headingFontFamily:string;
+    headingFontSize:string;
     iconFill:string;
+    subHeadingColor:string;
+    subHeadingFontFamily:string;
+    subHeadingFontSize:string;
 };
 
 const adminTheme:ThemeType = {
@@ -45,9 +52,16 @@ const adminTheme:ThemeType = {
     buttonWarningBorderRadius: '0',
     buttonWarningBorderWidth: '1px',
     buttonWarningColor: '#fff',
+    color: '#55656D',
     fontFamily: 'Arial',
     fontSize: '16px',
+    headingColor: '#21252B',
+    headingFontFamily: 'Arial',
+    headingFontSize: '28px',
     iconFill: '#5BD16A',
+    subHeadingColor: '#21252B',
+    subHeadingFontFamily: 'Arial',
+    subHeadingFontSize: '20px',
 };
 
 export { ThemeType, adminTheme };

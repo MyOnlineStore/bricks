@@ -1,6 +1,13 @@
 import { configure, addDecorator } from '@storybook/react';
 import themeDecorator from './decorators/themeDecorator';
-import { withKnobs } from "@storybook/addon-knobs/react";
+import { withKnobs } from '@storybook/addon-knobs/react';
+import { setOptions } from '@storybook/addon-options';
+
+setOptions({
+    name: 'Bricks',
+    url: '#',
+    addonPanelInRight: true,
+});
 
 addDecorator(themeDecorator);
 addDecorator(withKnobs);

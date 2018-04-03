@@ -562,6 +562,44 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 </div>
 `;
 
+exports[`Storyshots Heading With a hierarchy 1`] = `
+.c0 {
+  color: #21252B;
+  font-family: Arial;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<h1
+  className="c0"
+  role="heading"
+>
+  This is an h
+  1
+   element.
+</h1>
+`;
+
+exports[`Storyshots Heading default 1`] = `
+.c0 {
+  color: #21252B;
+  font-family: Arial;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<span
+  className="c0"
+  role="heading"
+>
+  This is a span element.
+</span>
+`;
+
 exports[`Storyshots Icon Large icon 1`] = `
 .c0 {
   display: inline-block;
@@ -766,4 +804,83 @@ exports[`Storyshots Spacer Without props 1`] = `
     This has no spacing.
   </div>
 </div>
+`;
+
+exports[`Storyshots SubHeading With a hierarchy 1`] = `
+.c0 {
+  color: #21252B;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<h2
+  className="c0"
+  role="heading"
+>
+  This is an h
+  2
+   element.
+</h2>
+`;
+
+exports[`Storyshots SubHeading default 1`] = `
+.c0 {
+  color: #21252B;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<span
+  className="c0"
+  role="heading"
+>
+  This is a span element.
+</span>
+`;
+
+exports[`Storyshots Text default 1`] = `
+.c0 {
+  color: #55656D;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<p
+  className="c0"
+>
+  
+    Now this is the story all about how
+    My life got flipped, turned upside down
+    And I'd like to take a minute just sit right there
+    I'll tell you how I became the prince of a town called Bel-air
+
+    In west Philadelphia born and raised
+    On the playground where I spent most of my days
+    Chilling out, maxing, relaxing all cool
+    And all shooting some b-ball outside of the school
+    When a couple of guys, they were up to no good
+    Started making trouble in my neighbourhood
+    I got in one little fight and my mom got scared
+    And said "You're moving with your auntie and uncle in Bel-air"
+
+    I whistled for a cab and when it came near the
+    License plate said "fresh" and had a dice in the mirror
+    If anything I could say that this cab was rare
+    But I thought nah, forget it, yo homes to Bel-air!
+
+    I pulled up to a house about seven or eight
+    And I yelled to the cabby "Yo, homes smell you later!"
+    Looked at my kingdom I was finally there
+    To sit on my throne as the prince of Bel-air
+
+</p>
 `;
