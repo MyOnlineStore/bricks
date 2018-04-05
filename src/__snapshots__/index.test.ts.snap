@@ -51,6 +51,20 @@ exports[`Storyshots Button Destructive 1`] = `
 }
 
 .c0:hover {
+  background-color: #ED2157;
+  border-color: #ED2157;
+  color: #fff;
+}
+
+.c0:focus {
+  background-color: #ED2157;
+  border-color: #ED2157;
+  color: #fff;
+}
+
+.c0:active {
+  background-color: #ED2157;
+  border-color: #ED2157;
   color: #fff;
 }
 
@@ -120,6 +134,20 @@ exports[`Storyshots Button Primary 1`] = `
 }
 
 .c0:hover {
+  background-color: #5BD16A;
+  border-color: #5BD16A;
+  color: #fff;
+}
+
+.c0:focus {
+  background-color: #5BD16A;
+  border-color: #5BD16A;
+  color: #fff;
+}
+
+.c0:active {
+  background-color: #5BD16A;
+  border-color: #5BD16A;
   color: #fff;
 }
 
@@ -189,6 +217,20 @@ exports[`Storyshots Button Secondary 1`] = `
 }
 
 .c0:hover {
+  background-color: #EDEFF2;
+  border-color: #d2d7e0;
+  color: #333740;
+}
+
+.c0:focus {
+  background-color: #EDEFF2;
+  border-color: #d2d7e0;
+  color: #333740;
+}
+
+.c0:active {
+  background-color: #EDEFF2;
+  border-color: #d2d7e0;
   color: #333740;
 }
 
@@ -258,6 +300,20 @@ exports[`Storyshots Button Warning 1`] = `
 }
 
 .c0:hover {
+  background-color: #FCC200;
+  border-color: #FCC200;
+  color: #fff;
+}
+
+.c0:focus {
+  background-color: #FCC200;
+  border-color: #FCC200;
+  color: #fff;
+}
+
+.c0:active {
+  background-color: #FCC200;
+  border-color: #FCC200;
   color: #fff;
 }
 
@@ -327,6 +383,20 @@ exports[`Storyshots Button With a link 1`] = `
 }
 
 .c0:hover {
+  background-color: #5BD16A;
+  border-color: #5BD16A;
+  color: #fff;
+}
+
+.c0:focus {
+  background-color: #5BD16A;
+  border-color: #5BD16A;
+  color: #fff;
+}
+
+.c0:active {
+  background-color: #5BD16A;
+  border-color: #5BD16A;
   color: #fff;
 }
 
@@ -361,6 +431,80 @@ exports[`Storyshots Button With a link 1`] = `
 >
   Click me
 </a>
+`;
+
+exports[`Storyshots FlatButton default 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-family: Arial;
+  font-size: 16px;
+  background: transparent;
+  border-radius: 0;
+  border: solid 1px transparent;
+  color: #21252B;
+}
+
+.c0:hover {
+  background-color: transparent;
+  border-color: #d2d7e0;
+  color: #21252B;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:focus {
+  background-color: transparent;
+  border-color: #d2d7e0;
+  color: #21252B;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c0:active {
+  background-color: transparent;
+  border-color: #d2d7e0;
+  color: #21252B;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+<button
+  className="c0"
+  href={undefined}
+  onClick={[Function]}
+  target={undefined}
+  title="Click me!"
+  type="button"
+>
+  Click me
+</button>
 `;
 
 exports[`Storyshots FoldOut Closed 1`] = `
@@ -478,6 +622,20 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 }
 
 .c1:hover {
+  background-color: #EDEFF2;
+  border-color: #d2d7e0;
+  color: #333740;
+}
+
+.c1:focus {
+  background-color: #EDEFF2;
+  border-color: #d2d7e0;
+  color: #333740;
+}
+
+.c1:active {
+  background-color: #EDEFF2;
+  border-color: #d2d7e0;
   color: #333740;
 }
 

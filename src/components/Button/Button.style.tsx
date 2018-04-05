@@ -1,23 +1,31 @@
 import { StyledComponentClass } from 'styled-components';
-import { ThemeType } from '../../themes';
+import { ButtonThemeType, ThemeType } from '../../themes';
 import styled from '../../utility/styled';
 import ButtonTemplate, { PropsType } from './Button.template';
 
-const applyTheme = (
-    backgroundColor:string,
-    borderRadius:string,
-    borderWidth:string,
-    borderColor:string,
-    color:string
-):string => {
+const applyTheme = (buttonTheme:ButtonThemeType):string => {
     return `
-        background-color: ${backgroundColor};
-        border-radius: ${borderRadius};
-        border: solid ${borderWidth} ${borderColor};
-        color: ${color};
+        background-color: ${buttonTheme.backgroundColor.default};
+        border-radius: ${buttonTheme.borderRadius};
+        border: solid ${buttonTheme.borderWidth} ${buttonTheme.borderColor.default};
+        color: ${buttonTheme.color.default};
 
         &:hover {
-            color: ${color};
+            background-color: ${buttonTheme.backgroundColor.hover};
+            border-color: ${buttonTheme.borderColor.hover};
+            color: ${buttonTheme.color.hover};
+        }
+
+        &:focus {
+            background-color: ${buttonTheme.backgroundColor.focus};
+            border-color: ${buttonTheme.borderColor.focus};
+            color: ${buttonTheme.color.focus};
+        }
+
+        &:active {
+            background-color: ${buttonTheme.backgroundColor.active};
+            border-color: ${buttonTheme.borderColor.active};
+            color: ${buttonTheme.color.active};
         }
     `;
 };
@@ -40,34 +48,10 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
 
     ${({ variant, theme }):string => {
         switch (variant) {
-            case 'secondary': return applyTheme(
-                theme.buttonSecondaryBackgroundColor,
-                theme.buttonSecondaryBorderRadius,
-                theme.buttonSecondaryBorderWidth,
-                theme.buttonSecondaryBorderColor,
-                theme.buttonSecondaryColor,
-            );
-            case 'destructive': return applyTheme(
-                theme.buttonDestructiveBackgroundColor,
-                theme.buttonDestructiveBorderRadius,
-                theme.buttonDestructiveBorderWidth,
-                theme.buttonDestructiveBorderColor,
-                theme.buttonDestructiveColor,
-            );
-            case 'warning': return applyTheme(
-                theme.buttonWarningBackgroundColor,
-                theme.buttonWarningBorderRadius,
-                theme.buttonWarningBorderWidth,
-                theme.buttonWarningBorderColor,
-                theme.buttonWarningColor,
-            );
-            default: return applyTheme(
-                theme.buttonPrimaryBackgroundColor,
-                theme.buttonPrimaryBorderRadius,
-                theme.buttonPrimaryBorderWidth,
-                theme.buttonPrimaryBorderColor,
-                theme.buttonPrimaryColor,
-            );
+            case 'secondary': return applyTheme(theme.button.secondary);
+            case 'destructive': return applyTheme(theme.button.destructive);
+            case 'warning': return applyTheme(theme.button.warning);
+            default: return applyTheme(theme.button.primary);
         }
     }}
 
