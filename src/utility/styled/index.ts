@@ -2,7 +2,7 @@
 
 import Component from 'react';
 import * as styledComponents from 'styled-components';
-import { ThemeType } from '../../themes';
+import ThemeType from '../../types/ThemeType';
 
 const {
   default: styled,

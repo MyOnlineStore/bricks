@@ -1,5 +1,6 @@
 import { StyledComponentClass } from 'styled-components';
-import { ButtonThemeType, ThemeType } from '../../themes';
+import ButtonThemeType from '../../types/ButtonThemeType';
+import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
 import ButtonTemplate, { PropsType } from './Button.template';
 

@@ -1,9 +1,8 @@
 import React from 'react';
-import { adminTheme } from '../../../src/themes';
-import { ThemeProvider } from '../../../src/utility/styled';
+import MosTheme from '../../../src/themes/MosTheme/MosTheme';
 
 const themeDecorator = (story:Function):JSX.Element => (
-    <ThemeProvider theme={adminTheme}>{story()}</ThemeProvider>
+    <MosTheme>{story()}</MosTheme>
 );
 
 export default themeDecorator;

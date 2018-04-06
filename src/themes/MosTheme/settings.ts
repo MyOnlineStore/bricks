@@ -1,47 +1,6 @@
-type ThemeType = {
-    button:{
-        destructive:ButtonThemeType;
-        flat:ButtonThemeType;
-        primary:ButtonThemeType;
-        secondary:ButtonThemeType;
-        warning:ButtonThemeType;
-    };
-    color:string;
-    fontFamily:string;
-    fontSize:string;
-    headingColor:string;
-    headingFontFamily:string;
-    headingFontSize:string;
-    iconFill:string;
-    subHeadingColor:string;
-    subHeadingFontFamily:string;
-    subHeadingFontSize:string;
-};
+import ThemeType from '../../types/ThemeType';
 
-type ButtonThemeType = {
-    backgroundColor:{
-        default:string;
-        hover:string;
-        focus:string;
-        active:string;
-    };
-    borderColor:{
-        default:string;
-        hover:string;
-        focus:string;
-        active:string;
-    };
-    borderRadius:string;
-    borderWidth:string;
-    color:{
-        default:string;
-        hover:string;
-        focus:string;
-        active:string;
-    };
-};
-
-const adminTheme:ThemeType = {
+const settings:ThemeType = {
     button: {
         destructive: {
             backgroundColor: {
@@ -166,4 +125,4 @@ const adminTheme:ThemeType = {
     subHeadingFontSize: '20px',
 };
 
-export { ThemeType, ButtonThemeType, adminTheme };
+export default settings;
