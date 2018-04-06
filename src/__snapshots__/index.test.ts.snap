@@ -42,7 +42,7 @@ exports[`Storyshots Button Destructive 1`] = `
   user-select: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background-color: #ED2157;
   border-radius: 0;
@@ -125,7 +125,7 @@ exports[`Storyshots Button Primary 1`] = `
   user-select: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background-color: #5BD16A;
   border-radius: 0;
@@ -208,7 +208,7 @@ exports[`Storyshots Button Secondary 1`] = `
   user-select: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background-color: #EDEFF2;
   border-radius: 0;
@@ -291,7 +291,7 @@ exports[`Storyshots Button Warning 1`] = `
   user-select: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background-color: #FCC200;
   border-radius: 0;
@@ -374,7 +374,7 @@ exports[`Storyshots Button With a link 1`] = `
   user-select: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background-color: #5BD16A;
   border-radius: 0;
@@ -457,7 +457,7 @@ exports[`Storyshots FlatButton default 1`] = `
   user-select: none;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background: transparent;
   border-radius: 0;
@@ -613,7 +613,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   user-select: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Arial;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   background-color: #EDEFF2;
   border-radius: 0;
@@ -722,8 +722,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 
 exports[`Storyshots Heading With a hierarchy 1`] = `
 .c0 {
-  color: #21252B;
-  font-family: Arial;
+  color: #333740;
+  font-family: Melbourne,sans-serif;
   font-size: 28px;
   font-weight: 400;
   line-height: 1.5;
@@ -742,8 +742,8 @@ exports[`Storyshots Heading With a hierarchy 1`] = `
 
 exports[`Storyshots Heading default 1`] = `
 .c0 {
-  color: #21252B;
-  font-family: Arial;
+  color: #333740;
+  font-family: Melbourne,sans-serif;
   font-size: 28px;
   font-weight: 400;
   line-height: 1.5;
@@ -966,9 +966,9 @@ exports[`Storyshots Spacer Without props 1`] = `
 
 exports[`Storyshots SubHeading With a hierarchy 1`] = `
 .c0 {
-  color: #21252B;
-  font-family: Arial;
-  font-size: 20px;
+  color: #88979d;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
@@ -986,9 +986,9 @@ exports[`Storyshots SubHeading With a hierarchy 1`] = `
 
 exports[`Storyshots SubHeading default 1`] = `
 .c0 {
-  color: #21252B;
-  font-family: Arial;
-  font-size: 20px;
+  color: #88979d;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
@@ -1004,8 +1004,8 @@ exports[`Storyshots SubHeading default 1`] = `
 
 exports[`Storyshots Text default 1`] = `
 .c0 {
-  color: #55656D;
-  font-family: Arial;
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
