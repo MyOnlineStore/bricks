@@ -3,7 +3,7 @@ import React, { StatelessComponent } from 'react';
 type PropsType = {
     className?:string;
     title:string;
-    variant?:'primary' | 'secondary' | 'destructive' | 'warning' | 'plain';
+    variant?:'primary' | 'secondary' | 'destructive' | 'warning';
     target?:HTMLAnchorElement['target'];
     href?:string;
     action?():void;
