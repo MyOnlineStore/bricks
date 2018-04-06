@@ -1,5 +1,5 @@
 import styled, { StyledComponentClass } from 'styled-components';
-import ThemeType from '../../types/ThemeType';
+import ThemeType from '../../themes/types/ThemeType';
 import SpacerTemplate, { OffsetType, PropsType } from './Spacer.template';
 
 const Spacer:StyledComponentClass<PropsType, ThemeType> = styled(SpacerTemplate)`

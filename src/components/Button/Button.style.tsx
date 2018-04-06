@@ -1,6 +1,6 @@
 import { StyledComponentClass } from 'styled-components';
-import ButtonThemeType from '../../types/ButtonThemeType';
-import ThemeType from '../../types/ThemeType';
+import ButtonThemeType from '../../themes/types/ButtonThemeType';
+import ThemeType from '../../themes/types/ThemeType';
 import styled from '../../utility/styled';
 import ButtonTemplate, { PropsType } from './Button.template';
 
@@ -44,8 +44,8 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s;
     user-select: none;
     text-decoration: none;
-    font-family: ${({ theme }):string => theme.fontFamily}
-    font-size: ${({ theme }):string => theme.fontSize}
+    font-family: ${({ theme }):string => theme.fontFamily};
+    font-size: ${({ theme }):string => theme.fontSize};
 
     ${({ variant, theme }):string => {
         switch (variant) {

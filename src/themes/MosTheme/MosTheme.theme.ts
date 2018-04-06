@@ -1,6 +1,6 @@
-import ThemeType from '../../types/ThemeType';
+import ThemeType from '../types/ThemeType';
 
-const settings:ThemeType = {
+const theme:ThemeType = {
     button: {
         destructive: {
             backgroundColor: {
@@ -113,16 +113,16 @@ const settings:ThemeType = {
             }
         },
     },
-    color: '#55656D',
-    fontFamily: 'Arial',
+    color: '#333740',
+    fontFamily: 'Source Sans Pro, sans-serif',
     fontSize: '16px',
-    headingColor: '#21252B',
-    headingFontFamily: 'Arial',
+    headingColor: '#333740',
+    headingFontFamily: 'Melbourne, sans-serif',
     headingFontSize: '28px',
     iconFill: '#5BD16A',
-    subHeadingColor: '#21252B',
-    subHeadingFontFamily: 'Arial',
-    subHeadingFontSize: '20px',
+    subHeadingColor: '#88979d',
+    subHeadingFontFamily: 'Source Sans Pro, sans-serif',
+    subHeadingFontSize: '18px',
 };
 
-export default settings;
+export default theme;

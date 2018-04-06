@@ -1,5 +1,5 @@
 import React, { StatelessComponent } from 'react';
-import ThemeType from '../../types/ThemeType';
+import ThemeType from '../../themes/types/ThemeType';
 import { LargeIcons, SmallIcons } from './Icon.types';
 
 type BasePropsType = {

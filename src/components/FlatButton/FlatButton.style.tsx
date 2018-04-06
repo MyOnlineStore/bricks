@@ -1,5 +1,5 @@
 import { StyledComponentClass } from 'styled-components';
-import ThemeType from '../../types/ThemeType';
+import ThemeType from '../../themes/types/ThemeType';
 import styled from '../../utility/styled';
 import ButtonTemplate, { PropsType } from '../Button/Button.template';
 
