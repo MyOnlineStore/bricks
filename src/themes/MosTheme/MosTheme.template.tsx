@@ -1,6 +1,6 @@
 import React, { StatelessComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
-import themeSettings from './settings';
+import theme from './MosTheme.theme';
 
 type PropsType = {
 
@@ -8,7 +8,7 @@ type PropsType = {
 
 const MosTheme:StatelessComponent<PropsType> = (props):JSX.Element => {
     return (
-        <ThemeProvider theme={themeSettings}>
+        <ThemeProvider theme={theme}>
             {props.children}
         </ThemeProvider>
     );
