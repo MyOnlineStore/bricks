@@ -1,3 +1,4 @@
+import { boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Button from '../Button';
@@ -52,7 +53,7 @@ storiesOf('Button', module)
             <Button
                 title="Click me if you can!"
                 action={():void => { alert('clicked!'); }}
-                disabled={true}
+                disabled={boolean('disabled', true)}
             >
                 Click me if you can!
             </Button>
