@@ -51,6 +51,7 @@ storiesOf('Button', module)
         return (
             <Button
                 title="Click me if you can!"
+                action={():void => { alert('clicked!'); }}
                 disabled={true}
             >
                 Click me if you can!
