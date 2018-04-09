@@ -18,7 +18,7 @@ const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
         : 'button';
 
     const clickAction = ():void => {
-        if (props.action !== undefined && !props.disabled) {
+        if (props.action !== undefined && props.disabled !== false) {
             props.action();
         }
     };
