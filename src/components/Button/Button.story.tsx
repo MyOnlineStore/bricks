@@ -47,15 +47,25 @@ storiesOf('Button', module)
             </Button>
         );
     })
-    .add('With a link', () => {
+    .add('Disabled', () => {
         return (
             <Button
-                variant="primary"
-                title="Click me!"
-                href="http://www.google.nl"
-                target="_blank"
+                title="Click me if you can!"
+                disabled={true}
             >
-                Click me
+                Click me if you can!
             </Button>
         );
+    })
+    .add('With a link', () => {
+            return (
+                <Button
+                    variant="primary"
+                    title="Click me!"
+                    href="http://www.google.nl"
+                    target="_blank"
+                >
+                    Click me
+                </Button>
+            );
     });

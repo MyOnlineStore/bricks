@@ -70,6 +70,25 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
         transform: translateY(-2px);
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
+
+    &[disabled] {
+        cursor: default;
+        opacity: .7;
+        transform: scale(1);
+        color: ${({ theme }):string => theme.button.secondary.color.default};
+        background:
+            ${({ theme }):string => theme.button.secondary.backgroundColor.default}
+            repeating-linear-gradient(
+                -45deg,
+                rgba(0, 0, 0, .05),
+                rgba(0, 0, 0, .05) 20px,
+                transparent 20px,
+                transparent 40px
+            );
+        border: 0;
+        padding: 12px 36px;
+        box-shadow: none;
+    }
 `;
 
 export default Button;

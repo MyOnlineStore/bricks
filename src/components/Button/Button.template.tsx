@@ -6,6 +6,7 @@ type PropsType = {
     variant?:'primary' | 'secondary' | 'destructive' | 'warning';
     target?:HTMLAnchorElement['target'];
     href?:string;
+    disabled?:boolean;
     action?():void;
 };
 
@@ -17,7 +18,7 @@ const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
         : 'button';
 
     const clickAction = ():void => {
-        if (props.action !== undefined) {
+        if (props.action !== undefined && !props.disabled) {
             props.action();
         }
     };
@@ -30,6 +31,7 @@ const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
             target={props.target}
             onClick={clickAction}
             type={!isLink ? 'button' : undefined}
+            disabled={props.disabled}
         >
             {props.children}
         </Element>
