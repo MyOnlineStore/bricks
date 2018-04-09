@@ -1,5 +1,6 @@
 import ButtonThemeType from './ButtonThemeType';
 import FlatButtonThemeType from './FlatButtonThemeType';
+import NotificationThemeType from './NotificationThemeType';
 
 type ThemeType = {
     button:{
@@ -14,6 +15,12 @@ type ThemeType = {
         color:string;
     };
     buttonFlat:FlatButtonThemeType;
+    notification:{
+        success:NotificationThemeType;
+        error:NotificationThemeType;
+        warning:NotificationThemeType;
+        info:NotificationThemeType;
+    };
     color:string;
     fontFamily:string;
     fontSize:string;

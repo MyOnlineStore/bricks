@@ -28,7 +28,7 @@ describe('Button component', () => {
                     title=""
                     variant="primary"
                     action={undefined}
-                    >
+                >
                     Click me
                 </Button>
             );

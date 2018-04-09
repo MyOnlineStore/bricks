@@ -6,6 +6,7 @@ export { default as Heading } from './components/Heading';
 export { default as Icon } from './components/Icon';
 export { default as MerchantTheme } from './themes/MerchantTheme';
 export { default as MosTheme } from './themes/MosTheme';
+export { default as Notification } from './components/Notification';
 export { default as Spacer } from './components/Spacer';
 export { default as SubHeading } from './components/SubHeading';
 export { default as Text } from './components/Text';

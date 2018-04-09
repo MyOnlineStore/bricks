@@ -1,4 +1,5 @@
 {
+  "extends": ["tslint-react"],
   "rules": {
     "align": true,
     "array-type": [true, "generic"],
@@ -23,6 +24,11 @@
     "import-spacing": true,
     "indent": [true, "spaces", 4],
     "interface-name": [true, "never-prefix"],
+
+    "jsx-alignment": true,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "jsx-boolean-value": false,
 
     "label-position": true,
     "linebreak-style": [true, "LF"],

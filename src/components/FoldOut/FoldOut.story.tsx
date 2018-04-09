@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Button from '../Button';
 import FoldOut from '../FoldOut';
 import Spacer from '../Spacer';
+import Text from '../Text';
 
 type StateType = {
     isOpen:boolean;
@@ -46,20 +47,20 @@ class DemoComponent extends Component<{}, StateType> {
     public render():JSX.Element {
         return (
             <div>
-                <Spacer bottom={24}>
-                    <Button
-                        action={():void => this.setState({
-                            isOpen: !this.state.isOpen
-                        })}
-                        title="open FoldOut"
-                        variant="secondary"
-                    >
-                        Toggle
-                    </Button>
-                </Spacer>
                 <FoldOut isOpen={this.state.isOpen}>
-                    {demoContent}
+                    <Spacer bottom={12} offsetType="inner">
+                        <Text>{demoContent}</Text>
+                    </Spacer>
                 </FoldOut>
+                <Button
+                    action={():void => this.setState({
+                        isOpen: !this.state.isOpen
+                    })}
+                    title="open FoldOut"
+                    variant="secondary"
+                >
+                    Toggle
+                </Button>
             </div>
         );
     }

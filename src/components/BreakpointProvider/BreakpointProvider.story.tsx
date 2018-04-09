@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import BreakpointProvider from '../BreakpointProvider';
-import { BreakpointType } from './BreakpointProvider.template';
+import Text from '../Text';
 
 const StyledDiv = styled.div`
     background: #eee;
@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
 
 storiesOf('BreakpointProvider', module)
     .add('default', () => {
-        const breakpoints:BreakpointType = {
+        const breakpoints = {
             small: 0,
             medium: 300,
             large: 600,
@@ -23,7 +23,7 @@ storiesOf('BreakpointProvider', module)
                 {(breakpoint):JSX.Element => {
                     return (
                         <StyledDiv>
-                            <div>Current breakpoint is {breakpoint}</div>
+                            <Text>Current breakpoint is {breakpoint}</Text>
                         </StyledDiv>
                     );
                 }}

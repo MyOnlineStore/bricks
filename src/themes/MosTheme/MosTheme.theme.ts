@@ -112,6 +112,28 @@ const theme:ThemeType = {
             active: '#21252b',
         },
     },
+    notification: {
+        error: {
+            color: '#c81746',
+            background: '#ffbdce',
+            borderColor: '#ff6c93',
+        },
+        warning: {
+            color: '#bb8d0a',
+            background: '#fff0be',
+            borderColor: '#ffce28',
+        },
+        success: {
+            color: '#31953d',
+            background: '#d2f5d6',
+            borderColor: '#6bde78',
+        },
+        info: {
+            color: '#4e82bb',
+            background: '#dde7f2',
+            borderColor: '#c8d2dd',
+        },
+    },
     color: '#333740',
     fontFamily: 'Source Sans Pro, sans-serif',
     fontSize: '16px',

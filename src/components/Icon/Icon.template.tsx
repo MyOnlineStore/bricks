@@ -27,9 +27,9 @@ const Icon:StatelessComponent<PropsType> = (props):JSX.Element => {
 
     return (
         <span
+            className={props.className}
             aria-hidden
             role="img"
-            className={props.className}
             /* tslint:disable */
             dangerouslySetInnerHTML={{ __html: icon as any }}
             /* tslint:enable */
