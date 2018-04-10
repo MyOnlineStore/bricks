@@ -1,9 +1,9 @@
 import { StyledComponentClass } from 'styled-components';
 import ThemeType from '../../themes/types/ThemeType';
 import styled from '../../utility/styled';
-import ButtonTemplate, { PropsType } from '../Button/Button.template';
+import FlatButtonTemplate, { PropsType } from './FlatButton.template';
 
-const FlatButton:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)`
+const FlatButton:StyledComponentClass<PropsType, ThemeType> = styled(FlatButtonTemplate)`
     appearance: none;
     border: none;
     line-height: 1;
