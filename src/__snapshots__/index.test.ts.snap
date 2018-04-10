@@ -44,27 +44,27 @@ exports[`Storyshots Button Destructive 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #ED2157;
+  background-color: #ed2157;
   border-radius: 0;
-  border: solid 1px #ED2157;
+  border: solid 1px #ed2157;
   color: #fff;
 }
 
 .c0:hover {
-  background-color: #ED2157;
-  border-color: #ED2157;
+  background-color: #ed2157;
+  border-color: #ed2157;
   color: #fff;
 }
 
 .c0:focus {
-  background-color: #ED2157;
-  border-color: #ED2157;
+  background-color: #ed2157;
+  border-color: #ed2157;
   color: #fff;
 }
 
 .c0:active {
-  background-color: #ED2157;
-  border-color: #ED2157;
+  background-color: #ed2157;
+  border-color: #ed2157;
   color: #fff;
 }
 
@@ -89,17 +89,17 @@ exports[`Storyshots Button Destructive 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c0[disabled] {
+.c0:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 <button
@@ -141,27 +141,27 @@ exports[`Storyshots Button Disabled 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #5BD16A;
+  background-color: #5bd16a;
   border-radius: 0;
-  border: solid 1px #5BD16A;
+  border: solid 1px #5bd16a;
   color: #fff;
 }
 
 .c0:hover {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
 .c0:focus {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
 .c0:active {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
@@ -186,17 +186,17 @@ exports[`Storyshots Button Disabled 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c0[disabled] {
+.c0:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 <button
@@ -238,27 +238,27 @@ exports[`Storyshots Button Primary 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #5BD16A;
+  background-color: #5bd16a;
   border-radius: 0;
-  border: solid 1px #5BD16A;
+  border: solid 1px #5bd16a;
   color: #fff;
 }
 
 .c0:hover {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
 .c0:focus {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
 .c0:active {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
@@ -283,17 +283,17 @@ exports[`Storyshots Button Primary 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c0[disabled] {
+.c0:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 <button
@@ -335,26 +335,26 @@ exports[`Storyshots Button Secondary 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-radius: 0;
   border: solid 1px #d2d7e0;
   color: #333740;
 }
 
 .c0:hover {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
 .c0:focus {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
 .c0:active {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
@@ -380,17 +380,17 @@ exports[`Storyshots Button Secondary 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c0[disabled] {
+.c0:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 <button
@@ -432,27 +432,27 @@ exports[`Storyshots Button Warning 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #FCC200;
+  background-color: #fcc200;
   border-radius: 0;
-  border: solid 1px #FCC200;
+  border: solid 1px #fcc200;
   color: #fff;
 }
 
 .c0:hover {
-  background-color: #FCC200;
-  border-color: #FCC200;
+  background-color: #fcc200;
+  border-color: #fcc200;
   color: #fff;
 }
 
 .c0:focus {
-  background-color: #FCC200;
-  border-color: #FCC200;
+  background-color: #fcc200;
+  border-color: #fcc200;
   color: #fff;
 }
 
 .c0:active {
-  background-color: #FCC200;
-  border-color: #FCC200;
+  background-color: #fcc200;
+  border-color: #fcc200;
   color: #fff;
 }
 
@@ -477,17 +477,17 @@ exports[`Storyshots Button Warning 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c0[disabled] {
+.c0:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 <button
@@ -529,27 +529,27 @@ exports[`Storyshots Button With a link 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #5BD16A;
+  background-color: #5bd16a;
   border-radius: 0;
-  border: solid 1px #5BD16A;
+  border: solid 1px #5bd16a;
   color: #fff;
 }
 
 .c0:hover {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
 .c0:focus {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
 .c0:active {
-  background-color: #5BD16A;
-  border-color: #5BD16A;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
@@ -574,17 +574,17 @@ exports[`Storyshots Button With a link 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c0[disabled] {
+.c0:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 <a
@@ -701,26 +701,26 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-radius: 0;
   border: solid 1px #d2d7e0;
   color: #333740;
 }
 
 .c1:hover {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
 .c1:focus {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
 .c1:active {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
@@ -746,17 +746,17 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c1[disabled] {
+.c1:disabled {
+  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  border: 0;
+  padding: 12px 36px;
+  box-shadow: none;
   cursor: default;
   opacity: .7;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   color: #333740;
-  background: #EDEFF2 repeating-linear-gradient( -45deg, rgba(0,0,0,.05), rgba(0,0,0,.05) 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
 }
 
 .c2 {
