@@ -68,14 +68,4 @@ class DemoComponent extends Component<{}, StateType> {
 storiesOf('FoldOut', module)
     .add('With a toggle', () => (
         <DemoComponent />
-    ))
-    .add('Open', () => (
-        <FoldOut isOpen>
-            {demoContent}
-        </FoldOut>
-    ))
-    .add('Closed', () => (
-        <FoldOut isOpen={false}>
-            {demoContent}
-        </FoldOut>
     ));

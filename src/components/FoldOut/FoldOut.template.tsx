@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 import StyledFoldOut from './FoldOut.style';
 
 type ContentProps = {
@@ -15,7 +16,8 @@ type PropsType = {
 };
 
 class FoldOut extends Component<PropsType, StateType> {
-    private contentRef:HTMLDivElement | null;
+    private contentRef:HTMLDivElement;
+    private resizeObserver:ResizeObserver;
 
     public constructor(props:PropsType) {
         super(props);
@@ -23,29 +25,46 @@ class FoldOut extends Component<PropsType, StateType> {
         this.state = {
             contentHeight: undefined,
         };
-    }
 
-    private updateHeight = ():void => {
-        if (this.contentRef !== null) {
-            this.setState({
-                contentHeight: this.contentRef.offsetHeight,
+        try {
+            this.resizeObserver = new ResizeObserver((entries:Array<ResizeObserverEntry>):void => {
+                entries.forEach((entry:ResizeObserverEntry):void => {
+                    this.setState({
+                        contentHeight: entry.contentRect.height,
+                    });
+                });
             });
+        } catch (error) {
+            console.warn(`
+                ResizeObserver is not available in this environment.
+                 Folding animation will be unavailable. Fallback used.
+            `);
         }
     }
 
     public componentDidMount():void {
-        window.addEventListener('resize', this.updateHeight);
-        this.updateHeight();
+        try {
+            this.resizeObserver.observe(this.contentRef);
+        } catch {
+            // no-op when ResizeObserver is not available.
+        }
     }
 
     public componentWillUnmount():void {
-        window.removeEventListener('resize', this.updateHeight);
+        try {
+            this.resizeObserver.unobserve(this.contentRef);
+        } catch {
+            // no-op when ResizeObserver is not available.
+        }
     }
 
     public render():JSX.Element {
         return (
-            <StyledFoldOut isOpen={this.props.isOpen} contentHeight={this.state.contentHeight}>
-                <div ref={(ref):void => { this.contentRef = ref; }}>
+            <StyledFoldOut
+                isOpen={this.props.isOpen}
+                contentHeight={this.state.contentHeight}
+            >
+                <div ref={(ref):void => { this.contentRef = ref as HTMLDivElement; }}>
                     {this.props.children}
                 </div>
             </StyledFoldOut>
