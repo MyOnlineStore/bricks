@@ -86,7 +86,7 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
         box-shadow: none;
         cursor: default;
         opacity: .7;
-        transform: scale(1);
+        transform: none;
         color: ${({ theme }):string => theme.buttonDisabled.color};
     }
 `;

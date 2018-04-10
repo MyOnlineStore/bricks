@@ -96,9 +96,9 @@ exports[`Storyshots Button Destructive 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
@@ -193,9 +193,9 @@ exports[`Storyshots Button Disabled 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
@@ -290,9 +290,9 @@ exports[`Storyshots Button Primary 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
@@ -387,9 +387,9 @@ exports[`Storyshots Button Secondary 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
@@ -484,9 +484,9 @@ exports[`Storyshots Button Warning 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
@@ -581,9 +581,9 @@ exports[`Storyshots Button With a link 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
@@ -753,9 +753,9 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   box-shadow: none;
   cursor: default;
   opacity: .7;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
 }
 
