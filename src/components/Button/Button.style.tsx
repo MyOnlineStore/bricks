@@ -71,23 +71,23 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
 
-    &[disabled] {
-        cursor: default;
-        opacity: .7;
-        transform: scale(1);
-        color: ${({ theme }):string => theme.button.secondary.color.default};
+    &:disabled {
         background:
-            ${({ theme }):string => theme.button.secondary.backgroundColor.default}
+            ${({ theme }):string => theme.buttonDisabled.backgroundColor1}
             repeating-linear-gradient(
                 -45deg,
-                rgba(0, 0, 0, .05),
-                rgba(0, 0, 0, .05) 20px,
+                ${({ theme }):string => theme.buttonDisabled.backgroundColor2},
+                ${({ theme }):string => theme.buttonDisabled.backgroundColor2} 20px,
                 transparent 20px,
                 transparent 40px
             );
         border: 0;
         padding: 12px 36px;
         box-shadow: none;
+        cursor: default;
+        opacity: .7;
+        transform: scale(1);
+        color: ${({ theme }):string => theme.buttonDisabled.color};
     }
 `;
 

@@ -18,31 +18,31 @@ const FlatButton:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTempl
     text-decoration: underline;
     font-family: ${({ theme }):string => theme.fontFamily};
     font-size: ${({ theme }):string => theme.fontSize};
-    background:  ${({ theme }):string => theme.button.flat.backgroundColor.default};
-    border-radius:  ${({ theme }):string => theme.button.flat.borderRadius};
-    border: solid ${({ theme }):string => theme.button.flat.borderWidth} ${({ theme }):string => theme.button.flat.borderColor.default};
-    color: ${({ theme }):string => theme.button.flat.color.default};
+    background: transparent;
+    border-radius: ${({ theme }):string => theme.buttonFlat.borderRadius};
+    border: solid ${({ theme }):string => theme.buttonFlat.borderWidth} ${({ theme }):string => theme.buttonFlat.borderColor.default};
+    color: ${({ theme }):string => theme.buttonFlat.color.default};
 
     &:hover {
-        background-color: ${({ theme }):string => theme.button.flat.backgroundColor.hover};
-        border-color: ${({ theme }):string => theme.button.flat.borderColor.hover};
-        color: ${({ theme }):string => theme.button.flat.color.hover};
+        background-color: transparent;
+        border-color: ${({ theme }):string => theme.buttonFlat.borderColor.hover};
+        color: ${({ theme }):string => theme.buttonFlat.color.hover};
         transform: translateY(-2px);
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
 
     &:focus {
-        background-color: ${({ theme }):string => theme.button.flat.backgroundColor.focus};
-        border-color: ${({ theme }):string => theme.button.flat.borderColor.focus};
-        color: ${({ theme }):string => theme.button.flat.color.focus};
+        background-color: transparent;
+        border-color: ${({ theme }):string => theme.buttonFlat.borderColor.focus};
+        color: ${({ theme }):string => theme.buttonFlat.color.focus};
         transform: translateY(-2px);
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
 
     &:active {
-        background-color: ${({ theme }):string => theme.button.flat.backgroundColor.active};
-        border-color: ${({ theme }):string => theme.button.flat.borderColor.active};
-        color: ${({ theme }):string => theme.button.flat.color.active};
+        background-color: transparent;
+        border-color: ${({ theme }):string => theme.buttonFlat.borderColor.active};
+        color: ${({ theme }):string => theme.buttonFlat.color.active};
         transform: translateY(0);
         box-shadow: 0 2px 3px -2px rgba(51, 55, 64 ,.3);
     }
