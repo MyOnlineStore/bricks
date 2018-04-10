@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MerchantTheme should render the merchant theme 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "color": "mockValue",
+    }
+  }
+/>
+`;

@@ -13,3 +13,6 @@ const MerchantTheme:StatelessComponent<PropsType> = (props):JSX.Element => (
 );
 
 export default MerchantTheme;
+export {
+    PropsType,
+};
