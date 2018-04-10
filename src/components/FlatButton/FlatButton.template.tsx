@@ -4,7 +4,6 @@ import Button from '../Button';
 type PropsType = {
     className?:string;
     title:string;
-    variant?:'primary' | 'secondary' | 'destructive' | 'warning';
     target?:HTMLAnchorElement['target'];
     href?:string;
     action?():void;
