@@ -1,8 +1,8 @@
 import React, { StatelessComponent } from 'react';
-import Button from '../Button';
+import { StyledType } from '../../utility/styled';
+import Button from '../Button/Button.template';
 
-type PropsType = {
-    className?:string;
+type PropsType = StyledType & {
     title:string;
     target?:HTMLAnchorElement['target'];
     href?:string;
@@ -10,13 +10,19 @@ type PropsType = {
 };
 
 const FlatButton:StatelessComponent<PropsType> = (props):JSX.Element => {
+    const action = ():void => {
+        if (props.action !== undefined) {
+            props.action();
+        }
+    };
+
     return (
         <Button
             title={props.title}
             className={props.className}
             href={props.href}
             target={props.target}
-            action={props.action}
+            action={action}
             disabled={false}
         >
             {props.children}

@@ -601,89 +601,6 @@ exports[`Storyshots Button With a link 1`] = `
 `;
 
 exports[`Storyshots FlatButton default 1`] = `
-.c1 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
-  background-color: #5bd16a;
-  border-radius: 0;
-  border: solid 1px #5bd16a;
-  color: #fff;
-}
-
-.c1:hover {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c1:focus {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c1:active {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c1:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c1:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c1:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c1:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
-  box-shadow: none;
-  cursor: default;
-  opacity: .7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #333740;
-}
-
 .c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -746,7 +663,7 @@ exports[`Storyshots FlatButton default 1`] = `
 }
 
 <button
-  className="c0 c1"
+  className="c0"
   disabled={false}
   href={undefined}
   onClick={[Function]}
