@@ -629,13 +629,13 @@ exports[`Storyshots FlatButton default 1`] = `
   background: transparent;
   border-radius: 0;
   border: solid 1px transparent;
-  color: #21252B;
+  color: #21252b;
 }
 
 .c0:hover {
   background-color: transparent;
   border-color: #d2d7e0;
-  color: #21252B;
+  color: #21252b;
   -webkit-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
   transform: translateY(-2px);
@@ -645,7 +645,7 @@ exports[`Storyshots FlatButton default 1`] = `
 .c0:focus {
   background-color: transparent;
   border-color: #d2d7e0;
-  color: #21252B;
+  color: #21252b;
   -webkit-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
   transform: translateY(-2px);
@@ -655,7 +655,7 @@ exports[`Storyshots FlatButton default 1`] = `
 .c0:active {
   background-color: transparent;
   border-color: #d2d7e0;
-  color: #21252B;
+  color: #21252b;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
