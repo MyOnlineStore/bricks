@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots BreakpointProvider default 1`] = `
+.c1 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .c0 {
   background: #eee;
   padding: 24px;
@@ -10,10 +19,12 @@ exports[`Storyshots BreakpointProvider default 1`] = `
   <div
     className="c0"
   >
-    <div>
+    <p
+      className="c1"
+    >
       Current breakpoint is 
       large
-    </div>
+    </p>
   </div>
 </div>
 `;
@@ -676,7 +687,16 @@ exports[`Storyshots FlatButton default 1`] = `
 `;
 
 exports[`Storyshots FoldOut With a toggle 1`] = `
-.c1 {
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -707,46 +727,46 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   color: #333740;
 }
 
-.c1:hover {
+.c3:hover {
   background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
-.c1:focus {
+.c3:focus {
   background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
-.c1:active {
+.c3:active {
   background-color: #edeff2;
   border-color: #d2d7e0;
   color: #333740;
 }
 
-.c1:hover {
+.c3:hover {
   -webkit-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
   transform: translateY(-2px);
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c1:active {
+.c3:active {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
 }
 
-.c1:focus {
+.c3:focus {
   -webkit-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
   transform: translateY(-2px);
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
-.c1:disabled {
+.c3:disabled {
   background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
   border: 0;
   padding: 12px 36px;
@@ -759,38 +779,29 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   color: #333740;
 }
 
-.c2 {
+.c0 {
   -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
   transition: height 300ms cubic-bezier(0.5,0,0.1,1);
   overflow: hidden;
   height: 0;
 }
 
-.c0 {
-  margin: 0px 0px 24px 0px;
+.c1 {
+  padding: 0px 0px 12px 0px;
 }
 
 <div>
   <div
     className="c0"
   >
-    <button
-      className="c1"
-      disabled={undefined}
-      href={undefined}
-      onClick={[Function]}
-      target={undefined}
-      title="open FoldOut"
-      type="button"
-    >
-      Toggle
-    </button>
-  </div>
-  <div
-    className="c2"
-  >
     <div>
-      
+      <div
+        className="c1"
+      >
+        <p
+          className="c2"
+        >
+          
     Now this is the story all about how
     My life got flipped, turned upside down
     And I'd like to take a minute just sit right there
@@ -815,8 +826,21 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     Looked at my kingdom I was finally there
     To sit on my throne as the prince of Bel-air
 
+        </p>
+      </div>
     </div>
   </div>
+  <button
+    className="c3"
+    disabled={undefined}
+    href={undefined}
+    onClick={[Function]}
+    target={undefined}
+    title="open FoldOut"
+    type="button"
+  >
+    Toggle
+  </button>
 </div>
 `;
 
@@ -1001,7 +1025,266 @@ exports[`Storyshots Icon With some text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Notification Error 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c0 {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  background: #ffbdce;
+  border-color: #ff6c93;
+  color: #c81746;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+       
+    Oops, something wen't wrong. Please try again.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification Info 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c0 {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  background: #dde7f2;
+  border-color: #c8d2dd;
+  color: #4e82bb;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+       
+    Oops, something wen't wrong. Please try again.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification Success 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c0 {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  background: #d2f5d6;
+  border-color: #6bde78;
+  color: #31953d;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+       
+    Wow, Great job!
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification Warning 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c0 {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  background: #fff0be;
+  border-color: #ffce28;
+  color: #bb8d0a;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+       
+    Careful, this might go wrong.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification With a custom icon 1`] = `
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c0 {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  background: #fff0be;
+  border-color: #ffce28;
+  color: #bb8d0a;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+       
+    Meh, I am not impressed.
+  </div>
+</div>
+`;
+
 exports[`Storyshots Spacer With margin 1`] = `
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .c0 {
   margin: 12px 12px 12px 12px;
 }
@@ -1017,12 +1300,25 @@ exports[`Storyshots Spacer With margin 1`] = `
   <div
     className="c1"
   >
-    This has a margin.
+    <p
+      className="c2"
+    >
+      This has a margin.
+    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots Spacer With padding 1`] = `
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .c1 {
   padding: 12px 12px 12px 12px;
 }
@@ -1038,12 +1334,25 @@ exports[`Storyshots Spacer With padding 1`] = `
   <div
     className="c1"
   >
-    This has padding.
+    <p
+      className="c2"
+    >
+      This has padding.
+    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots Spacer Without props 1`] = `
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .c0 {
   margin: 0px 0px 0px 0px;
 }
@@ -1059,7 +1368,11 @@ exports[`Storyshots Spacer Without props 1`] = `
   <div
     className="c1"
   >
-    This has no spacing.
+    <p
+      className="c2"
+    >
+      This has no spacing.
+    </p>
   </div>
 </div>
 `;
