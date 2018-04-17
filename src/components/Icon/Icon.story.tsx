@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '.';
 import Spacer from '../Spacer';
 
 storiesOf('Icon', module)

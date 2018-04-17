@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
+import FoldOut from '.';
 import Button from '../Button';
-import FoldOut from '../FoldOut';
 import Spacer from '../Spacer';
 import Text from '../Text';
 

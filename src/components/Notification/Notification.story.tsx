@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Notification from '../Notification';
+import Notification from '.';
 
 storiesOf('Notification', module)
     .add('Success', () => (

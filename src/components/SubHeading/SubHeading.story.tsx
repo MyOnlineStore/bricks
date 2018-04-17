@@ -1,7 +1,7 @@
 import { select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import SubHeading from '../SubHeading';
+import SubHeading from '.';
 
 storiesOf('SubHeading', module)
     .add('default', () => (

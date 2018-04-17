@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Text from '../Text';
+import Text from '.';
 
 const demoContent = `
     Now this is the story all about how

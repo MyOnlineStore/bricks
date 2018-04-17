@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
-import Spacer from '../Spacer';
+import Spacer from '.';
 import Text from '../Text';
 
 const StyledDiv = styled.div`

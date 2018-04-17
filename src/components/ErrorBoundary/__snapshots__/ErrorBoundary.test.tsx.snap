@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary should catch an error and report it 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
+}
+
+.c0 {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  background: #ffbdce;
+  border-color: #ff6c93;
+  color: #c81746;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+       
+    This has an error
+  </div>
+</div>
+`;

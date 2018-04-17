@@ -611,6 +611,25 @@ exports[`Storyshots Button With a link 1`] = `
 </a>
 `;
 
+exports[`Storyshots ErrorBoundary default 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<div>
+  <p
+    className="c0"
+  >
+    This does not have an error.
+  </p>
+</div>
+`;
+
 exports[`Storyshots FlatButton default 1`] = `
 .c0 {
   -webkit-appearance: none;
@@ -779,15 +798,15 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   color: #333740;
 }
 
+.c1 {
+  padding: 0px 0px 12px 0px;
+}
+
 .c0 {
   -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
   transition: height 300ms cubic-bezier(0.5,0,0.1,1);
   overflow: hidden;
   height: 0;
-}
-
-.c1 {
-  padding: 0px 0px 12px 0px;
 }
 
 <div>
@@ -961,10 +980,6 @@ exports[`Storyshots Icon With overwritten fill 1`] = `
 `;
 
 exports[`Storyshots Icon With some text 1`] = `
-.c1 {
-  margin: 12px 0px 0px 0px;
-}
-
 .c0 {
   display: inline-block;
   vertical-align: middle;
@@ -989,6 +1004,10 @@ exports[`Storyshots Icon With some text 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 0px 0px 0px;
 }
 
 <div>
@@ -1026,10 +1045,6 @@ exports[`Storyshots Icon With some text 1`] = `
 `;
 
 exports[`Storyshots Notification Error 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1041,6 +1056,10 @@ exports[`Storyshots Notification Error 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1076,10 +1095,6 @@ exports[`Storyshots Notification Error 1`] = `
 `;
 
 exports[`Storyshots Notification Info 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1091,6 +1106,10 @@ exports[`Storyshots Notification Info 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1126,10 +1145,6 @@ exports[`Storyshots Notification Info 1`] = `
 `;
 
 exports[`Storyshots Notification Success 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1141,6 +1156,10 @@ exports[`Storyshots Notification Success 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1176,10 +1195,6 @@ exports[`Storyshots Notification Success 1`] = `
 `;
 
 exports[`Storyshots Notification Warning 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1191,6 +1206,10 @@ exports[`Storyshots Notification Warning 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -1226,10 +1245,6 @@ exports[`Storyshots Notification Warning 1`] = `
 `;
 
 exports[`Storyshots Notification With a custom icon 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   vertical-align: middle;
@@ -1241,6 +1256,10 @@ exports[`Storyshots Notification With a custom icon 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
