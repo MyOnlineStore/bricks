@@ -26,6 +26,7 @@
     "@storybook/addon-options": "^3.4.0",
     "@storybook/addon-storyshots": "^3.3.15",
     "@storybook/react": "^3.3.15",
+    "@storybook/storybook-deployer": "^2.3.0",
     "@types/enzyme": "^3.1.9",
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
@@ -67,7 +68,9 @@
     "build": "rimraf ./dist && webpack --config ./config/webpack/webpack.config.js",
     "cs-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "cs-check": "tslint --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
-    "watch": "start-storybook -p 9001 -c ./config/storybook"
+    "watch": "start-storybook -p 9001 -c ./config/storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook -c ./config/storybook -o .out"
   },
   "files": [
     "dist"
