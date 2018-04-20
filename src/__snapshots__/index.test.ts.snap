@@ -1427,6 +1427,136 @@ exports[`Storyshots Notification With a custom icon 1`] = `
 </div>
 `;
 
+exports[`Storyshots PriceTag With a dashed fraction 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  €
+   
+  10
+  ,
+  -
+</span>
+`;
+
+exports[`Storyshots PriceTag With a fraction in superscript 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  €
+   
+  10
+  ,
+  <sup>
+    20
+  </sup>
+</span>
+`;
+
+exports[`Storyshots PriceTag With a hidden currency 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  
+   
+  10
+  ,
+  20
+</span>
+`;
+
+exports[`Storyshots PriceTag With a hidden currency and superscript franction 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  
+   
+  10
+  ,
+  <sup>
+    20
+  </sup>
+</span>
+`;
+
+exports[`Storyshots PriceTag With a hidden fraction on a round value 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  €
+   
+  10
+  
+  
+</span>
+`;
+
+exports[`Storyshots PriceTag With showDash and superscript on a round value 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  €
+   
+  10
+  ,
+  -
+</span>
+`;
+
+exports[`Storyshots PriceTag default 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 28px;
+}
+
+<span
+  className="c0"
+>
+  €
+   
+  10
+  ,
+  00
+</span>
+`;
+
 exports[`Storyshots Spacer With margin 1`] = `
 .c2 {
   color: #333740;

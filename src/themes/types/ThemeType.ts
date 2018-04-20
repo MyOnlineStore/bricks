@@ -28,6 +28,11 @@ type ThemeType = {
     headingFontFamily:string;
     headingFontSize:string;
     iconFill:string;
+    priceTag:{
+        color:string;
+        fontFamily:string;
+        fontSize:string;
+    };
     subHeadingColor:string;
     subHeadingFontFamily:string;
     subHeadingFontSize:string;

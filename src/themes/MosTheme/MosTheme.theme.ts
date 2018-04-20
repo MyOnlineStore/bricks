@@ -141,6 +141,11 @@ const theme:ThemeType = {
     headingFontFamily: 'Melbourne, sans-serif',
     headingFontSize: '28px',
     iconFill: '#5bd16a',
+    priceTag: {
+        color: '#333740',
+        fontFamily: 'Source Sans Pro, sans-serif',
+        fontSize: '28px',
+    },
     subHeadingColor: '#88979d',
     subHeadingFontFamily: 'Source Sans Pro, sans-serif',
     subHeadingFontSize: '18px',
