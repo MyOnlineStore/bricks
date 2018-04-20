@@ -32,16 +32,17 @@ const applyTheme = (buttonTheme:ButtonThemeType):string => {
 };
 
 const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)`
+    position: relative;
     appearance: none;
     border: none;
     line-height: 1;
     padding: 11px 35px;
-    box-shadow: 0 6px 3px -5px rgba(51, 55, 64 ,.3);
+    box-shadow: 0 6px 3px -5px rgba(51, 55, 64, .3);
     cursor: pointer;
     display: inline-block;
     outline: none;
     transform: translateZ(0) translate3d(0, 0, 0);
-    transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s;
+    transition: transform .1s, background .3s, color .3s, box-shadow .1s, border .3s;
     user-select: none;
     text-decoration: none;
     font-family: ${({ theme }):string => theme.fontFamily};
@@ -71,23 +72,38 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
 
+    &::before {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        opacity: 0;
+        transition: opacity .3s;
+        background: repeating-linear-gradient(
+            -45deg,
+            ${({ theme }):string => theme.buttonDisabled.backgroundColor2},
+            ${({ theme }):string => theme.buttonDisabled.backgroundColor2} 20px,
+            transparent 20px,
+            transparent 40px
+        );
+    }
+
     &:disabled {
-        background:
-            ${({ theme }):string => theme.buttonDisabled.backgroundColor1}
-            repeating-linear-gradient(
-                -45deg,
-                ${({ theme }):string => theme.buttonDisabled.backgroundColor2},
-                ${({ theme }):string => theme.buttonDisabled.backgroundColor2} 20px,
-                transparent 20px,
-                transparent 40px
-            );
-        border: 0;
-        padding: 12px 36px;
+        background: ${({ theme }):string => theme.buttonDisabled.backgroundColor1}
+        border: 1px solid transparent;
         box-shadow: none;
         cursor: default;
         opacity: .7;
         transform: none;
         color: ${({ theme }):string => theme.buttonDisabled.color};
+
+        &::before {
+            opacity: 1;
+        }
     }
 `;
 

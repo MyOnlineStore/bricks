@@ -31,22 +31,23 @@ exports[`Storyshots BreakpointProvider default 1`] = `
 
 exports[`Storyshots Button Destructive 1`] = `
 .c0 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -100,10 +101,24 @@ exports[`Storyshots Button Destructive 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c0::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c0:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -111,6 +126,10 @@ exports[`Storyshots Button Destructive 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c0:disabled::before {
+  opacity: 1;
 }
 
 <button
@@ -128,22 +147,23 @@ exports[`Storyshots Button Destructive 1`] = `
 
 exports[`Storyshots Button Disabled 1`] = `
 .c0 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -197,10 +217,24 @@ exports[`Storyshots Button Disabled 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c0::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c0:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -208,6 +242,10 @@ exports[`Storyshots Button Disabled 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c0:disabled::before {
+  opacity: 1;
 }
 
 <button
@@ -225,22 +263,23 @@ exports[`Storyshots Button Disabled 1`] = `
 
 exports[`Storyshots Button Primary 1`] = `
 .c0 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -294,10 +333,24 @@ exports[`Storyshots Button Primary 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c0::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c0:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -305,6 +358,10 @@ exports[`Storyshots Button Primary 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c0:disabled::before {
+  opacity: 1;
 }
 
 <button
@@ -322,22 +379,23 @@ exports[`Storyshots Button Primary 1`] = `
 
 exports[`Storyshots Button Secondary 1`] = `
 .c0 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -391,10 +449,24 @@ exports[`Storyshots Button Secondary 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c0::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c0:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -402,6 +474,10 @@ exports[`Storyshots Button Secondary 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c0:disabled::before {
+  opacity: 1;
 }
 
 <button
@@ -419,22 +495,23 @@ exports[`Storyshots Button Secondary 1`] = `
 
 exports[`Storyshots Button Warning 1`] = `
 .c0 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -488,10 +565,24 @@ exports[`Storyshots Button Warning 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c0::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c0:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -499,6 +590,10 @@ exports[`Storyshots Button Warning 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c0:disabled::before {
+  opacity: 1;
 }
 
 <button
@@ -516,22 +611,23 @@ exports[`Storyshots Button Warning 1`] = `
 
 exports[`Storyshots Button With a link 1`] = `
 .c0 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -585,10 +681,24 @@ exports[`Storyshots Button With a link 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c0::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c0:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -596,6 +706,10 @@ exports[`Storyshots Button With a link 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c0:disabled::before {
+  opacity: 1;
 }
 
 <a
@@ -716,22 +830,23 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 }
 
 .c3 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
   padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64 ,.3);
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -785,10 +900,24 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
 }
 
+.c3::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+}
+
 .c3:disabled {
-  background: #edeff2 repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
-  border: 0;
-  padding: 12px 36px;
+  background: #edeff2;
+  border: 1px solid transparent;
   box-shadow: none;
   cursor: default;
   opacity: .7;
@@ -796,6 +925,10 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   -ms-transform: none;
   transform: none;
   color: #333740;
+}
+
+.c3:disabled::before {
+  opacity: 1;
 }
 
 .c1 {
