@@ -83,13 +83,14 @@ const Button:StyledComponentClass<PropsType, ThemeType> = styled(ButtonTemplate)
         content: '';
         opacity: 0;
         transition: opacity .3s;
-        background: repeating-linear-gradient(
-            -45deg,
-            ${({ theme }):string => theme.buttonDisabled.backgroundColor2},
-            ${({ theme }):string => theme.buttonDisabled.backgroundColor2} 20px,
-            transparent 20px,
-            transparent 40px
-        );
+        background: ${({ theme }):string => theme.buttonDisabled.backgroundColor1}
+            repeating-linear-gradient(
+                -45deg,
+                ${({ theme }):string => theme.buttonDisabled.backgroundColor2},
+                ${({ theme }):string => theme.buttonDisabled.backgroundColor2} 20px,
+                transparent 20px,
+                transparent 40px
+            );
     }
 
     &:disabled {
