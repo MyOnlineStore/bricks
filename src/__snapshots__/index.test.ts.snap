@@ -280,6 +280,182 @@ exports[`Storyshots Box Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots BoxItem Default 1`] = `
+.c5 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  margin: 0;
+}
+
+.c1 > * {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.c3.c3 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  margin: 6px;
+}
+
+.c3 > * {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+
+.c0 {
+  border: 1px dashed #aaa;
+  height: 60vh;
+  padding: 6px;
+}
+
+.c2 {
+  background: #eee;
+  border: 1px dashed #aaa;
+  padding: 6px 0;
+}
+
+.c4 {
+  border: 1px dashed #aaa;
+  margin: 6px 12px;
+  padding: 12px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2 c3"
+    >
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+    </div>
+    <div
+      className="c2 c3"
+    >
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+    </div>
+    <div
+      className="c2 c3"
+    >
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+      <p
+        className="c4 c5"
+      >
+        BoxItem content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots BreakpointProvider default 1`] = `
 .c1 {
   color: #333740;
