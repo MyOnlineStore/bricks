@@ -5,6 +5,12 @@ exports[`PriceTag should render with a dashed fraction 1`] = `
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.c0 > sup {
+  font-size: .7em;
+  font-weight: 400;
 }
 
 <Styled(PriceTag)
@@ -80,6 +86,12 @@ exports[`PriceTag should render with a fraction in superscript 1`] = `
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.c0 > sup {
+  font-size: .7em;
+  font-weight: 400;
 }
 
 <Styled(PriceTag)
@@ -159,6 +171,12 @@ exports[`PriceTag should render with a hidden currency 1`] = `
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.c0 > sup {
+  font-size: .7em;
+  font-weight: 400;
 }
 
 <Styled(PriceTag)
@@ -233,6 +251,12 @@ exports[`PriceTag should render with a hidden currency and superscript franction
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.c0 > sup {
+  font-size: .7em;
+  font-weight: 400;
 }
 
 <Styled(PriceTag)
@@ -313,6 +337,12 @@ exports[`PriceTag should render with a hidden fraction on a round value 1`] = `
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.c0 > sup {
+  font-size: .7em;
+  font-weight: 400;
 }
 
 <Styled(PriceTag)
@@ -386,6 +416,12 @@ exports[`PriceTag should render with showDash and superscript on a round value 1
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;
+  font-weight: 400;
+}
+
+.c0 > sup {
+  font-size: .7em;
+  font-weight: 400;
 }
 
 <Styled(PriceTag)
