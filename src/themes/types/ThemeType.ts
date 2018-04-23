@@ -32,6 +32,11 @@ type ThemeType = {
         color:string;
         fontFamily:string;
         fontSize:string;
+        fontWeight:string;
+        sup:{
+            fontSize:string;
+            fontWeight:string;
+        };
     };
     subHeadingColor:string;
     subHeadingFontFamily:string;
