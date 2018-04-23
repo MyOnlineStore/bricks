@@ -10,13 +10,17 @@ storiesOf('PriceTag', module)
                 parts={[
                     { type: 'currency' , value: '€' },
                     { type: 'literal' , value: ' ' },
-                    { type: 'integer', value: number('integer', 10) },
+                    { type: 'integer', value: number('integer', 12) },
                     { type: 'decimal', value: select(
                         'decimal',
                         [',', '.'],
                         ',',
                     )},
-                    { type: 'fraction', value: number('fraction', 0) },
+                    { type: 'fraction', value: select(
+                        'fraction',
+                        ['00', '34'],
+                        '00',
+                    ) },
                 ]}
                 hideCurrency={boolean('hideCurrency', false)}
                 superScriptFraction={boolean('superScriptFraction', false)}
