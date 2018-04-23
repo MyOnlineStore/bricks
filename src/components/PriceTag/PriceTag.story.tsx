@@ -20,7 +20,7 @@ storiesOf('PriceTag', module)
                         'fraction',
                         ['00', '34'],
                         '00',
-                    ) },
+                    )},
                 ]}
                 hideCurrency={boolean('hideCurrency', false)}
                 superScriptFraction={boolean('superScriptFraction', false)}
