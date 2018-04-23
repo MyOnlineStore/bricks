@@ -8,7 +8,7 @@ const StyledPriceTag = styled(PriceTag)`
     font-size: ${({ theme }):string => theme.priceTag.fontSize};
     font-weight: ${({ theme }):string => theme.priceTag.fontWeight};
 
-    > sup {
+    sup {
         font-size: ${({ theme }):string => theme.priceTag.sup.fontSize};
         font-weight: ${({ theme }):string => theme.priceTag.sup.fontWeight};
     }
