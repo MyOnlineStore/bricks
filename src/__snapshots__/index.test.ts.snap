@@ -1435,7 +1435,7 @@ exports[`Storyshots PriceTag default 1`] = `
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
@@ -1445,9 +1445,9 @@ exports[`Storyshots PriceTag default 1`] = `
 >
   €
    
-  10
+  12
   ,
-  0
+  00
 </span>
 `;
 

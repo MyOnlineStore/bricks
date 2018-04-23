@@ -8,7 +8,7 @@ exports[`PriceTag should render with a dashed fraction 1`] = `
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
@@ -89,7 +89,7 @@ exports[`PriceTag should render with a fraction in superscript 1`] = `
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
@@ -174,7 +174,7 @@ exports[`PriceTag should render with a hidden currency 1`] = `
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
@@ -254,7 +254,7 @@ exports[`PriceTag should render with a hidden currency and superscript franction
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
@@ -340,7 +340,7 @@ exports[`PriceTag should render with a hidden fraction on a round value 1`] = `
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
@@ -419,7 +419,7 @@ exports[`PriceTag should render with showDash and superscript on a round value 1
   font-weight: 400;
 }
 
-.c0 > sup {
+.c0 sup {
   font-size: .7em;
   font-weight: 400;
 }
