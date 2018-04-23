@@ -113,7 +113,7 @@ exports[`Storyshots Button Destructive 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c0:disabled {
@@ -229,7 +229,7 @@ exports[`Storyshots Button Disabled 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c0:disabled {
@@ -345,7 +345,7 @@ exports[`Storyshots Button Primary 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c0:disabled {
@@ -461,7 +461,7 @@ exports[`Storyshots Button Secondary 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c0:disabled {
@@ -577,7 +577,7 @@ exports[`Storyshots Button Warning 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c0:disabled {
@@ -693,7 +693,7 @@ exports[`Storyshots Button With a link 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c0:disabled {
@@ -912,7 +912,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #dbdfe6, #dbdfe6 20px, transparent 20px, transparent 40px );
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
 .c3:disabled {
