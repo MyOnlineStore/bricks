@@ -5,7 +5,7 @@ import formatCurrency from './formatters/formatCurrency';
 import formatDecimalSeperator from './formatters/formatDecimalSeperator';
 import formatFraction from './formatters/formatFraction';
 
-type PartType =
+type PartTypeType =
     |'currency'
     |'decimal'
     |'fraction'
@@ -18,46 +18,62 @@ type PartType =
     |'plusSign'
     |'percentSign';
 
-type PartsType = Array<{
-    type:PartType;
+type PartType = {
+    type:PartTypeType;
     value:string;
-}>;
+};
 
 type PropsType = StyledType & {
     hideCurrency?:boolean;
     superScriptFraction?:boolean;
     showDash?:boolean;
     hideZeros?:boolean;
-    parts:PartsType;
+    parts:Array<PartType>;
+    freeLabel?:string;
+    isActionPrice?:boolean;
 };
 
+type StatsType = {
+    isRound:boolean;
+    isFree:boolean;
+};
+
+const isFree = (part:PartType):boolean =>
+    (part.type === 'integer' || part.type === 'fraction') && parseInt(part.value, 10) !== 0;
+
+const isRound = (part:PartType):boolean =>
+    part.type === 'fraction' && parseInt(part.value, 10) === 0;
+
+const deriveStatsFromPart = (initialStats:StatsType, part:PartType):StatsType => ({
+    isRound: isRound(part) ? true : initialStats.isRound,
+    isFree: isFree(part) ? false : initialStats.isFree,
+});
+
 const PriceTag:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const isRound = props.parts.reduce(
-        (round, part):boolean => {
-            return part.type === 'fraction' && parseInt(part.value, 10) === 0
-                ? true
-                : round;
-        },
-        false
+    const stats = props.parts.reduce(
+        deriveStatsFromPart,
+        { isRound: false, isFree: true }
     );
 
     const price = props.parts.map((part) => {
         switch (part.type) {
-            case 'fraction': return formatFraction(part.value, props, isRound);
+            case 'fraction': return formatFraction(part.value, props, stats.isRound);
             case 'currency': return formatCurrency(part.value, props);
-            case 'decimal': return formatDecimalSeperator(part.value, props, isRound);
+            case 'decimal': return formatDecimalSeperator(part.value, props, stats.isRound);
             default: return part.value;
         }
     });
 
     return (
-        <span className={props.className}>{price}</span>
+        <span className={props.className}>
+            {stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price}
+        </span>
     );
 };
 
 export default PriceTag;
 export {
     PropsType,
-    PartsType,
+    PartTypeType,
     PartType,
 };

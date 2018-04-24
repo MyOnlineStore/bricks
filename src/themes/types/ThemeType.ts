@@ -29,13 +29,27 @@ type ThemeType = {
     headingFontSize:string;
     iconFill:string;
     priceTag:{
-        color:string;
-        fontFamily:string;
-        fontSize:string;
-        fontWeight:string;
-        sup:{
+        default:{
+            color:string;
+            fontFamily:string;
             fontSize:string;
             fontWeight:string;
+
+            sup:{
+                fontSize:string;
+                fontWeight:string;
+            };
+        };
+        action:{
+            color:string;
+            fontFamily:string;
+            fontSize:string;
+            fontWeight:string;
+
+            sup:{
+                fontSize:string;
+                fontWeight:string;
+            };
         };
     };
     subHeadingColor:string;

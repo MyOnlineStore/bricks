@@ -1429,6 +1429,7 @@ exports[`Storyshots Notification With a custom icon 1`] = `
 
 exports[`Storyshots PriceTag default 1`] = `
 .c0 {
+  position: relative;
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 28px;

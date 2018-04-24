@@ -24,6 +24,25 @@ describe('PriceTag',  () => {
         expect(toJson(component)).toMatchSnapshot();
     });
 
+    it('should render an action price', () => {
+        const component = mount(
+            <MosTheme>
+                <PriceTag
+                    parts={[
+                        { type: 'currency' , value: '€' },
+                        { type: 'literal' , value: ' ' },
+                        { type: 'integer', value: '10' },
+                        { type: 'decimal', value: ',' },
+                        { type: 'fraction', value: '20' },
+                    ]}
+                    isActionPrice
+                />
+            </MosTheme>
+        ).find(PriceTag);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+
     it('should render with a hidden currency and superscript franction', () => {
         const component = mount(
             <MosTheme>
@@ -114,6 +133,25 @@ describe('PriceTag',  () => {
                     ]}
                     showDash
                     superScriptFraction
+                />
+            </MosTheme>
+        ).find(PriceTag);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+
+    it('should render a label with the price is 0', () => {
+        const component = mount(
+            <MosTheme>
+                <PriceTag
+                    parts={[
+                        { type: 'currency' , value: '€' },
+                        { type: 'literal' , value: ' ' },
+                        { type: 'integer', value: '0' },
+                        { type: 'decimal', value: ',' },
+                        { type: 'fraction', value: '00' },
+                    ]}
+                    freeLabel="free"
                 />
             </MosTheme>
         ).find(PriceTag);

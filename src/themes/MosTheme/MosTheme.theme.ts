@@ -142,13 +142,26 @@ const theme:ThemeType = {
     headingFontSize: '28px',
     iconFill: '#5bd16a',
     priceTag: {
-        color: '#333740',
-        fontFamily: 'Source Sans Pro, sans-serif',
-        fontSize: '28px',
-        fontWeight: '400',
-        sup: {
-            fontSize: '.7em',
+        default: {
+            color: '#333740',
+            fontFamily: 'Source Sans Pro, sans-serif',
+            fontSize: '28px',
             fontWeight: '400',
+            sup: {
+                fontSize: '.7em',
+                fontWeight: '400',
+            },
+        },
+        action: {
+            fontSize: '24px',
+            fontWeight: '400',
+            color: '#88979d',
+            fontFamily: 'Source Sans Pro, sans-serif',
+
+            sup: {
+                fontSize: '.7em',
+                fontWeight: '400',
+            }
         }
     },
     subHeadingColor: '#88979d',
