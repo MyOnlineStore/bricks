@@ -2,6 +2,23 @@ import { StyledComponentClass as _S } from 'styled-components';
 import styled from '../../utility/styled';
 import PriceTag from './PriceTag.template';
 
+type VariantType = {
+    color:string;
+    fontFamily:string;
+    fontSize:string;
+    fontWeight:string;
+
+    super:{
+        fontSize:string;
+        fontWeight:string;
+    };
+};
+
+type PriceTagThemeType = {
+    default:VariantType;
+    action:VariantType;
+};
+
 const StyledPriceTag = styled(PriceTag)`
     ${({ theme, isActionPrice }):string => {
         const identifier = isActionPrice !== undefined && isActionPrice
@@ -10,14 +27,14 @@ const StyledPriceTag = styled(PriceTag)`
 
         return `
             position: relative;
-            color: ${theme.priceTag[identifier].color};
-            font-family: ${theme.priceTag[identifier].fontFamily};
-            font-size: ${theme.priceTag[identifier].fontSize};
-            font-weight: ${theme.priceTag[identifier].fontWeight};
+            color: ${theme.PriceTag[identifier].color};
+            font-family: ${theme.PriceTag[identifier].fontFamily};
+            font-size: ${theme.PriceTag[identifier].fontSize};
+            font-weight: ${theme.PriceTag[identifier].fontWeight};
 
             sup {
-                font-size: ${theme.priceTag[identifier].sup.fontSize};
-                font-weight: ${theme.priceTag[identifier].sup.fontWeight};
+                font-size: ${theme.PriceTag[identifier].super.fontSize};
+                font-weight: ${theme.PriceTag[identifier].super.fontWeight};
             }
 
             ${isActionPrice !== undefined && isActionPrice
@@ -29,7 +46,7 @@ const StyledPriceTag = styled(PriceTag)`
                     top: 50%;
                     margin-top: -2px;
                     position: absolute;
-                    background: ${theme.priceTag[identifier].color};
+                    background: ${theme.PriceTag[identifier].color};
                     opacity: .7;
                     transform: rotate(-8deg);
                 }`
@@ -40,3 +57,7 @@ const StyledPriceTag = styled(PriceTag)`
 `;
 
 export default StyledPriceTag;
+export {
+    PriceTagThemeType,
+    VariantType,
+};

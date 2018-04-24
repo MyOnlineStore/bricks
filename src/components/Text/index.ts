@@ -1,1 +1,1 @@
-export { default as default } from './Text.style';
+export { default as default, TextThemeType } from './Text.style';

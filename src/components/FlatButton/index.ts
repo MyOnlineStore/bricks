@@ -1,1 +1,1 @@
-export { default as default } from './FlatButton.style';
+export { default as default, FlatButtonThemeType } from './FlatButton.style';

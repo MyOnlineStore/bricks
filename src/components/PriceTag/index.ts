@@ -1,1 +1,1 @@
-export { default as default } from './PriceTag.style';
+export { default as default, PriceTagThemeType } from './PriceTag.style';

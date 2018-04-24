@@ -1,1 +1,1 @@
-export { default as default } from './Heading.style';
+export { default as default, HeadingThemeType } from './Heading.style';

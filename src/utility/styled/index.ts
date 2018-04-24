@@ -1,8 +1,7 @@
 /* tslint:disable */
-
 import Component from 'react';
 import * as styledComponents from 'styled-components';
-import ThemeType from '../../themes/types/ThemeType';
+import ThemeType from '../../types/ThemeType';
 
 const {
   default: styled,

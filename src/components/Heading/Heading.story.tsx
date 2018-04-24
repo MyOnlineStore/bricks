@@ -13,7 +13,7 @@ storiesOf('Heading', module)
         const hierarchy = select(
             'Hierarchy',
             [1, 2, 3, 4, 5, 6],
-            1
+            1,
         );
 
         return (

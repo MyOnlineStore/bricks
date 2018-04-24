@@ -1,1 +1,1 @@
-export { default as default } from './SubHeading.style';
+export { default as default, SubHeadingThemeType } from './SubHeading.style';

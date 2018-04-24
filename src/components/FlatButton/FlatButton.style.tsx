@@ -1,9 +1,31 @@
-import { StyledComponentClass } from 'styled-components';
-import ThemeType from '../../themes/types/ThemeType';
+import { StyledComponentClass as _S } from 'styled-components';
 import styled from '../../utility/styled';
-import FlatButtonTemplate, { PropsType } from './FlatButton.template';
+import FlatButtonTemplate from './FlatButton.template';
 
-const FlatButton:StyledComponentClass<PropsType, ThemeType> = styled(FlatButtonTemplate)`
+type FlatButtonThemeType = {
+    idle:{
+        borderColor:string;
+        borderRadius:string;
+        borderWidth:string;
+        color:string;
+        fontFamily:string;
+        fontSize:string;
+    };
+    hover:{
+        borderColor:string;
+        color:string;
+    };
+    focus:{
+        borderColor:string;
+        color:string;
+    };
+    active:{
+        borderColor:string;
+        color:string;
+    };
+};
+
+const FlatButton = styled(FlatButtonTemplate)`
     appearance: none;
     border: none;
     line-height: 1;
@@ -16,36 +38,39 @@ const FlatButton:StyledComponentClass<PropsType, ThemeType> = styled(FlatButtonT
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s;
     user-select: none;
     text-decoration: underline;
-    font-family: ${({ theme }):string => theme.fontFamily};
-    font-size: ${({ theme }):string => theme.fontSize};
+    font-family: ${({ theme }):string => theme.FlatButton.idle.fontFamily};
+    font-size: ${({ theme }):string => theme.FlatButton.idle.fontSize};
     background: transparent;
-    border-radius: ${({ theme }):string => theme.buttonFlat.borderRadius};
-    border: solid ${({ theme }):string => theme.buttonFlat.borderWidth} ${({ theme }):string => theme.buttonFlat.borderColor.default};
-    color: ${({ theme }):string => theme.buttonFlat.color.default};
+    border-radius: ${({ theme }):string => theme.FlatButton.idle.borderRadius};
+    border: solid ${({ theme }):string => theme.FlatButton.idle.borderWidth} ${({ theme }):string => theme.FlatButton.idle.borderColor};
+    color: ${({ theme }):string => theme.FlatButton.idle.color};
 
     &:hover {
         background-color: transparent;
-        border-color: ${({ theme }):string => theme.buttonFlat.borderColor.hover};
-        color: ${({ theme }):string => theme.buttonFlat.color.hover};
+        border-color: ${({ theme }):string => theme.FlatButton.hover.borderColor};
+        color: ${({ theme }):string => theme.FlatButton.hover.color};
         transform: translateY(-2px);
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
 
     &:focus {
         background-color: transparent;
-        border-color: ${({ theme }):string => theme.buttonFlat.borderColor.focus};
-        color: ${({ theme }):string => theme.buttonFlat.color.focus};
+        border-color: ${({ theme }):string => theme.FlatButton.focus.borderColor};
+        color: ${({ theme }):string => theme.FlatButton.hover.color};
         transform: translateY(-2px);
         box-shadow: 0 9px 3px -6px rgba(51, 55, 64 ,.3);
     }
 
     &:active {
         background-color: transparent;
-        border-color: ${({ theme }):string => theme.buttonFlat.borderColor.active};
-        color: ${({ theme }):string => theme.buttonFlat.color.active};
+        border-color: ${({ theme }):string => theme.FlatButton.active.borderColor};
+        color: ${({ theme }):string => theme.FlatButton.active.color};
         transform: translateY(0);
         box-shadow: 0 2px 3px -2px rgba(51, 55, 64 ,.3);
     }
 `;
 
 export default FlatButton;
+export {
+    FlatButtonThemeType,
+};

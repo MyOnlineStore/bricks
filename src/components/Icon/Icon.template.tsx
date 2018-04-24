@@ -1,10 +1,8 @@
 import React, { StatelessComponent } from 'react';
-import ThemeType from '../../themes/types/ThemeType';
+import { StyledType } from '../../utility/styled';
 import { LargeIcons, SmallIcons } from './Icon.types';
 
-type BasePropsType = {
-    theme?:ThemeType;
-    className?:string;
+type BasePropsType = StyledType & {
     color?:string;
 };
 

@@ -4,7 +4,9 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
 <ThemeProvider
   theme={
     Object {
-      "color": "mockValue",
+      "Heading": Object {
+        "color": "mockValue",
+      },
     }
   }
 />

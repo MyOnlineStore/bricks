@@ -1424,10 +1424,10 @@ exports[`Storyshots Notification Error 1`] = `
 }
 
 .c0 {
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
   border-width: 1px;
   border-style: solid;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
   background: #ffbdce;
   border-color: #ff6c93;
   color: #c81746;
@@ -1474,10 +1474,10 @@ exports[`Storyshots Notification Info 1`] = `
 }
 
 .c0 {
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
   border-width: 1px;
   border-style: solid;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
   background: #dde7f2;
   border-color: #c8d2dd;
   color: #4e82bb;
@@ -1524,10 +1524,10 @@ exports[`Storyshots Notification Success 1`] = `
 }
 
 .c0 {
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
   border-width: 1px;
   border-style: solid;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
   background: #d2f5d6;
   border-color: #6bde78;
   color: #31953d;
@@ -1574,10 +1574,10 @@ exports[`Storyshots Notification Warning 1`] = `
 }
 
 .c0 {
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
   border-width: 1px;
   border-style: solid;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
   background: #fff0be;
   border-color: #ffce28;
   color: #bb8d0a;
@@ -1624,10 +1624,10 @@ exports[`Storyshots Notification With a custom icon 1`] = `
 }
 
 .c0 {
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
   border-width: 1px;
   border-style: solid;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
   background: #fff0be;
   border-color: #ffce28;
   color: #bb8d0a;
