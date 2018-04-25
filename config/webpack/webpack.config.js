@@ -1,3 +1,5 @@
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
     entry: "./src/index.ts",
     stats: {
@@ -12,7 +14,6 @@ module.exports = {
         libraryTarget: 'umd',
         umdNamedDefine: true,
     },
-    devtool: "source-map",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
@@ -32,4 +33,7 @@ module.exports = {
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     },
+    plugins: [
+        new UglifyJSPlugin()
+    ]
 };
