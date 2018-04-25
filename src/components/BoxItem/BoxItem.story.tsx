@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import Box from '../Box';
-import Spacer from '../Spacer/Spacer.style';
 import Text from '../Text';
 import BoxItem from './BoxItem.style';
 
@@ -29,7 +28,6 @@ storiesOf('BoxItem', module)
     .add('Default', () => {
         const verticalOptions = ['top', 'bottom', 'center', 'stretch'];
         const horizontalOptions = ['left', 'right', 'center', 'stretch'];
-        const gutterOptions = [[0], [12], [24]];
         const items:Array<JSX.Element> = [];
         const boxgroupId = 'BOX';
         const boxItemgroupId = 'BOXITEM';
