@@ -1,9 +1,9 @@
 defaults: &defaults
-    docker:
-      - image: circleci/node:8.9.1
-    environment:
-        CC_TEST_REPORTER_ID: 39ff6fab79be04ad2f3f4fe6d57d7665c761a8c0875f5f38c27624ed60ae3a22
-    working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.9.1
+  environment:
+    CC_TEST_REPORTER_ID: 39ff6fab79be04ad2f3f4fe6d57d7665c761a8c0875f5f38c27624ed60ae3a22
+  working_directory: ~/repo
 
 version: 2
 
@@ -95,67 +95,67 @@ workflows:
   version: 2
 
   acceptance:
-      jobs:
-        - setup:
-            filters:
-              branches:
-                ignore: gh-pages
-        - test:
-            filters:
-              branches:
-                ignore: gh-pages
-            requires:
-              - setup
-        - build:
-            filters:
-              branches:
-                ignore: gh-pages
-            requires:
-              - setup
+    jobs:
+      - setup:
+          filters:
+            branches:
+              ignore: gh-pages
+      - test:
+          filters:
+            branches:
+              ignore: gh-pages
+          requires:
+            - setup
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
+          requires:
+            - setup
 
   release:
-      jobs:
-        - setup:
-            filters:
-              branches:
-                only:
-                  - master
-              tags:
-                only: /^[0-9]+\.[0-9]+\.[0-9]$/
-        - cleanup:
-            filters:
-              branches:
-                only:
-                  - master
-              tags:
-                only: /^[0-9]+\.[0-9]+\.[0-9]$/
-            requires:
-              - build
-        - build:
-            filters:
-              branches:
-                only:
-                  - master
-              tags:
-                only: /^[0-9]+\.[0-9]+\.[0-9]$/
-            requires:
-              - setup
-        - test:
-            filters:
-              branches:
-                only:
-                  - master
-              tags:
-                only: /^[0-9]+\.[0-9]+\.[0-9]$/
-            requires:
-              - setup
-        - publish-npm:
-            filters:
-              branches:
-                only:
-                  - master
-              tags:
-                only: /^[0-9]+\.[0-9]+\.[0-9]$/
-            requires:
-              - cleanup
-              - test
+    jobs:
+      - setup:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only: /^[0-9]+\.[0-9]+\.[0-9]$/
+      - cleanup:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only: /^[0-9]+\.[0-9]+\.[0-9]$/
+          requires:
+            - build
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only: /^[0-9]+\.[0-9]+\.[0-9]$/
+          requires:
+            - setup
+      - test:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only: /^[0-9]+\.[0-9]+\.[0-9]$/
+          requires:
+            - setup
+      - publish-npm:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only: /^[0-9]+\.[0-9]+\.[0-9]$/
+          requires:
+            - cleanup
+            - test
