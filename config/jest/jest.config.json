@@ -32,11 +32,12 @@
     },
     "collectCoverageFrom": [
         "src/**/*.{ts,tsx}",
+        "!src/**/__snapshots__/*",
         "!<rootDir>/node_modules/",
         "!src/**/*.story.{ts,tsx}",
         "!src/**/*.test.{ts,tsx}",
         "!src/**/*.d.ts",
-        "!src/**/index.{ts,tsx}"
+        "!src/index.ts"
     ],
     "setupTestFrameworkScriptFile": "./config/jest/setup.tsx",
     "moduleNameMapper": {

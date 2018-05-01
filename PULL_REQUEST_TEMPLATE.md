@@ -1,6 +1,6 @@
 ### This PR:
 
-**Resolves** #[resolved issue number]
+resolves #[resolved issue number]
 
 **Adds** ✨
 - Feature `foo`

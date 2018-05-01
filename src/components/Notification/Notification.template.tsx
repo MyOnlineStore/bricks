@@ -1,5 +1,6 @@
 import React, { StatelessComponent } from 'react';
 import { StyledType } from '../../utility/styled';
+import trbl from '../../utility/trbl';
 import Icon, { SmallIcons } from '../Icon';
 import Spacer from '../Spacer';
 
@@ -24,10 +25,7 @@ const Notification:StatelessComponent<PropsType> = (props):JSX.Element => {
     return (
         <div className={props.className}>
             <Spacer
-                top={12}
-                right={12}
-                bottom={12}
-                left={12}
+                offset={trbl(12)}
                 offsetType="outer"
             >
                 <Icon size="small" icon={icon} />

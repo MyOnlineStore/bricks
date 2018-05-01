@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import Spacer from '.';
+import trbl from '../../utility/trbl';
 import Text from '../Text';
 
 const StyledDiv = styled.div`
@@ -11,12 +12,7 @@ const StyledDiv = styled.div`
 
 storiesOf('Spacer', module)
     .add('With margin', () => (
-        <Spacer
-            top={12}
-            right={12}
-            bottom={12}
-            left={12}
-        >
+        <Spacer offset={trbl(12)}>
             <StyledDiv>
                 <Text>This has a margin.</Text>
             </StyledDiv>
@@ -25,20 +21,10 @@ storiesOf('Spacer', module)
     .add('With padding', () => (
         <StyledDiv>
             <Spacer
-                top={12}
-                right={12}
-                bottom={12}
-                left={12}
+                offset={trbl(12)}
                 offsetType="inner"
             >
                 <Text>This has padding.</Text>
             </Spacer>
         </StyledDiv>
-    ))
-    .add('Without props', () => (
-        <Spacer>
-            <StyledDiv>
-                <Text>This has no spacing.</Text>
-            </StyledDiv>
-        </Spacer>
     ));

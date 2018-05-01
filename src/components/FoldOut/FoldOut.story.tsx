@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import FoldOut from '.';
+import trbl from '../../utility/trbl';
 import Button from '../Button';
 import Spacer from '../Spacer';
 import Text from '../Text';
@@ -48,7 +49,7 @@ class DemoComponent extends Component<{}, StateType> {
         return (
             <div>
                 <FoldOut isOpen={this.state.isOpen}>
-                    <Spacer bottom={12} offsetType="inner">
+                    <Spacer offset={trbl(0, 0, 12)} offsetType="inner">
                         <Text>{demoContent}</Text>
                     </Spacer>
                 </FoldOut>

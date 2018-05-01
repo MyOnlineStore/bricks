@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Icon from '.';
+import trbl from '../../utility/trbl';
 import Spacer from '../Spacer';
 
 storiesOf('Icon', module)
@@ -17,7 +18,7 @@ storiesOf('Icon', module)
         <div>
             <Icon size="small" icon="mos" />
             <span> With some text</span>
-            <Spacer top={12}>
+            <Spacer offset={trbl(12, 0, 0, 0)}>
                 <Icon size="large" icon="award" />
                 <span> With some other text</span>
             </Spacer>

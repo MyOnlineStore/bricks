@@ -1520,40 +1520,6 @@ exports[`Storyshots Spacer With padding 1`] = `
 </div>
 `;
 
-exports[`Storyshots Spacer Without props 1`] = `
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c0 {
-  margin: 0px 0px 0px 0px;
-}
-
-.c1 {
-  border: solid 3px rgba(255,36,94,0.3);
-  border-radius: 5px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      This has no spacing.
-    </p>
-  </div>
-</div>
-`;
-
 exports[`Storyshots SubHeading With a hierarchy 1`] = `
 .c0 {
   color: #88979d;

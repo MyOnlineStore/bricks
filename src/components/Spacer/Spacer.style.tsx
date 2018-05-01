@@ -1,13 +1,10 @@
 import styled, { StyledComponentClass } from 'styled-components';
 import ThemeType from '../../themes/types/ThemeType';
-import SpacerTemplate, { OffsetType, PropsType } from './Spacer.template';
+import SpacerTemplate, { PropsType } from './Spacer.template';
 
 const Spacer:StyledComponentClass<PropsType, ThemeType> = styled(SpacerTemplate)`
     ${({ offsetType }):string => offsetType === 'inner' ? 'padding' : 'margin'}:
-        ${({ top }):OffsetType => top !== undefined ? top : 0}px
-        ${({ right }):OffsetType => right !== undefined ? right : 0}px
-        ${({ bottom }):OffsetType => bottom !== undefined ? bottom : 0}px
-        ${({ left }):OffsetType => left !== undefined ? left : 0}px;
+        ${({ offset }):string => `${offset.top} ${offset.right} ${offset.bottom} ${offset.left}`}
 `;
 
 export default Spacer;
