@@ -5,7 +5,7 @@ import ErrorBoundary from '.';
 import Text from '../Text';
 
 storiesOf('ErrorBoundary', module)
-    .add('default', () => {
+    .add('Default', () => {
         const hasError = select(
             'hasError',
             ['true', 'false'],

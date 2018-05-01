@@ -29,6 +29,6 @@ const demoContent = `
 `;
 
 storiesOf('Text', module)
-    .add('default', () => (
+    .add('Default', () => (
         <Text>{demoContent}</Text>
     ));

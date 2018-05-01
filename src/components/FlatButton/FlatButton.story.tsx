@@ -3,7 +3,7 @@ import React from 'react';
 import FlatButton from '.';
 
 storiesOf('FlatButton', module)
-    .add('default', () => {
+    .add('Default', () => {
         return (
             <FlatButton
                 title="Click me!"

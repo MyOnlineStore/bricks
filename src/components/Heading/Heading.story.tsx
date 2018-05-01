@@ -4,7 +4,7 @@ import React from 'react';
 import Heading from '.';
 
 storiesOf('Heading', module)
-    .add('default', () => (
+    .add('Default', () => (
         <Heading>
             This is a div element.
         </Heading>

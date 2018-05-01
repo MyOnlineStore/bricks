@@ -4,7 +4,7 @@ import React from 'react';
 import PriceTag from '.';
 
 storiesOf('PriceTag', module)
-    .add('default', () => (
+    .add('Default', () => (
         <PriceTag
             parts={[
                 { type: 'currency' , value: '€' },

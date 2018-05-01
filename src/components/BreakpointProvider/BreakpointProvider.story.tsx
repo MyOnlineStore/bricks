@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 `;
 
 storiesOf('BreakpointProvider', module)
-    .add('default', () => {
+    .add('Default', () => {
         const breakpoints = {
             small: 0,
             medium: 300,
