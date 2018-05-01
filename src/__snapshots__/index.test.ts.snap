@@ -1,8 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< HEAD
-exports[`Storyshots BreakpointProvider default 1`] = `
-=======
 exports[`Storyshots Box Default 1`] = `
 .c4 {
   padding: 48px 48px 48px 48px;
@@ -40,7 +37,7 @@ exports[`Storyshots Box Default 1`] = `
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  margin: 0px;
+  margin: 0px 0px 0px 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -82,7 +79,7 @@ exports[`Storyshots Box Default 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  margin: 0px;
+  margin: 0px 0px 0px 0px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -232,7 +229,6 @@ exports[`Storyshots Box Default 1`] = `
 `;
 
 exports[`Storyshots BreakpointProvider Default 1`] = `
->>>>>>> 69318fa... fixup! Added Box component
 .c1 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -1752,45 +1748,7 @@ exports[`Storyshots Spacer With padding 1`] = `
 </div>
 `;
 
-<<<<<<< HEAD
-exports[`Storyshots SubHeading With a hierarchy 1`] = `
-=======
-exports[`Storyshots Spacer Without props 1`] = `
-.c0 {
-  margin: 0px 0px 0px 0px;
-}
-
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c1 {
-  border: solid 3px rgba(255,36,94,0.3);
-  border-radius: 5px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      This has no spacing.
-    </p>
-  </div>
-</div>
-`;
-
 exports[`Storyshots SubHeading Default 1`] = `
->>>>>>> 69318fa... fixup! Added Box component
 .c0 {
   color: #88979d;
   font-family: Source Sans Pro,sans-serif;

@@ -2,6 +2,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import React from 'react';
 import Box from '.';
+import trbl from '../../utility/trbl';
 
 describe('Box', () => {
     it('aligns children to the right', () => {
@@ -35,7 +36,7 @@ describe('Box', () => {
     });
 
     it('can have a margin', () => {
-        const component = shallow(<Box margin={[24, 0, 'auto']} />);
+        const component = shallow(<Box margin={trbl(24, 0, 'auto')} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });

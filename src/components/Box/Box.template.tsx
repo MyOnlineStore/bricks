@@ -1,6 +1,6 @@
 import React, { StatelessComponent } from 'react';
-import { OffsetType } from '../../types/OffsetType';
 import { StyledType } from '../../utility/styled';
+import { TrblType } from '../../utility/trbl';
 
 type PropsType = StyledType & {
     justifyContent?:'flex-start'|'flex-end'|'center'|'stretch'|'space-between'|'space-around'|'space-evenly';
@@ -8,7 +8,7 @@ type PropsType = StyledType & {
     alignContent?:'flex-start'|'flex-end'|'center'|'stretch'|'space-between'|'space-around';
     direction?:'row'|'row-reverse'|'column'|'column-reverse';
     height?:string;
-    margin?:Array<OffsetType>;
+    margin?:TrblType;
     wrap?:boolean;
     grow?:number;
     shrink?:number;

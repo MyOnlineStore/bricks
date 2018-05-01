@@ -416,7 +416,7 @@ exports[`Box can have a margin 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  margin: 24px 0px auto;
+  margin: 24px 0px auto 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -438,11 +438,12 @@ exports[`Box can have a margin 1`] = `
 <Box
   className="c0"
   margin={
-    Array [
-      24,
-      0,
-      "auto",
-    ]
+    Object {
+      "bottom": "auto",
+      "left": "0px",
+      "right": "0px",
+      "top": "24px",
+    }
   }
 />
 `;

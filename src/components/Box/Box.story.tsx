@@ -2,6 +2,7 @@ import { boolean, number, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
+import trbl from '../../utility/trbl';
 import Spacer from '../Spacer/Spacer.style';
 import Text from '../Text';
 import Box from './Box.style';
@@ -32,7 +33,7 @@ storiesOf('Box', module)
             items.push(
                 <Box
                     key={i}
-                    margin={[select('Child margin', [0, 6, 12], 0, 'Child')]}
+                    margin={trbl(select('Child margin', [0, 6, 12], 0, 'Child'))}
                     grow={number('Child grow', '1', 'Child')}
                     shrink={number('Child shrink', '1', 'Child')}
                     basis={text('Child basis', 'auto', 'Child')}
@@ -40,7 +41,7 @@ storiesOf('Box', module)
                     alignSelf={select('Child alignSelf', alignSelf, alignSelf[0], 'Child')}
                 >
                     <Item>
-                        <Spacer offsetType="inner" top={48} right={48} bottom={48} left={48}>
+                        <Spacer offsetType="inner" offset={trbl(48)}>
                             <Text>Box {i + 1}</Text>
                         </Spacer>
                     </Item>
@@ -51,7 +52,7 @@ storiesOf('Box', module)
         return (
             <Wrapper>
                 <Box
-                    margin={[select('Parent margin', [-12, -6, 0, 6, 12], 0, 'Parent')]}
+                    margin={trbl(select('Parent margin', [-12, -6, 0, 6, 12], 0, 'Parent'))}
                     justifyContent={select('Parent justifyContent', justifyOptions, justifyOptions[0], 'Parent')}
                     alignItems={select('Parent alignItems', alignItemsOptions, alignItemsOptions[0], 'Parent')}
                     alignContent={select('Parent alignContent', alignContentOptions, alignContentOptions[0], 'Parent')}
