@@ -34,10 +34,10 @@ storiesOf('Box', module)
                 <Box
                     key={i}
                     margin={trbl(select('margin', [0, 6, 12], 0, 'Child'))}
-                    grow={number('grow', '1', 'Child')}
-                    shrink={number('shrink', '1', 'Child')}
+                    grow={number('grow', 1, {}, 'Child')}
+                    shrink={number('shrink', 1, {}, 'Child')}
                     basis={text('basis', 'auto', 'Child')}
-                    order={number('order', '1', 'Child')}
+                    order={number('order', 1, {}, 'Child')}
                     alignSelf={select('alignSelf', alignSelf, alignSelf[0], 'Child')}
                 >
                     <Item>
