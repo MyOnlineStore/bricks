@@ -235,6 +235,11 @@ const theme:ThemeType = {
         fontFamily: bodyFont,
         fontSize: fontSize.larger1,
         fontWeight: '400',
+    },
+    ScrollBox: {
+        scrollbar: {
+            background: grey.base,
+        }
     }
 };
 

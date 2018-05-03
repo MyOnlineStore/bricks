@@ -3,6 +3,7 @@ import { FlatButtonThemeType } from '../components/FlatButton';
 import { HeadingThemeType } from '../components/Heading';
 import { NotificationThemeType } from '../components/Notification';
 import { PriceTagThemeType } from '../components/PriceTag';
+import { ScrollBoxThemeType } from '../components/ScrollBox';
 import { SubHeadingThemeType } from '../components/SubHeading';
 import { TextThemeType } from '../components/Text';
 
@@ -14,6 +15,7 @@ type ThemeType = {
     Heading:HeadingThemeType;
     FlatButton:FlatButtonThemeType;
     Button:ButtonThemeType;
+    ScrollBox:ScrollBoxThemeType;
 };
 
 export default ThemeType;

@@ -15,7 +15,8 @@ module.exports = (baseConfig, env) => {
             extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
         },
         devServer: {
-            quiet: true
+            quiet: true,
+            host: "0.0.0.0",
         },
         module: {
             rules: [
@@ -29,6 +30,10 @@ module.exports = (baseConfig, env) => {
                 {
                     test: /\.svg$/,
                     loader: 'svg-inline-loader'
+                },
+                {
+                    test: /\.css$/,
+                    use: [ 'style-loader', 'css-loader' ]
                 },
                 {
                     enforce: "pre",
