@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] = `
+<Styled(Box)
+  alignItems="center"
+  direction="row-reverse"
+  justifyContent="flex-start"
+  margin={
+    Object {
+      "bottom": "-6px",
+      "left": "-6px",
+      "right": "-6px",
+      "top": "-6px",
+    }
+  }
+  wrap={true}
+>
+  <Styled(Box)
+    direction="column"
+    justifyContent="stretch"
+    key=".0"
+    margin={
+      Object {
+        "bottom": "6px",
+        "left": "6px",
+        "right": "6px",
+        "top": "6px",
+      }
+    }
+  >
+    <Styled(Button)
+      title="Test"
+      variant="primary"
+    />
+  </Styled(Box)>
+  <Styled(Box)
+    direction="column"
+    justifyContent="stretch"
+    key=".1"
+    margin={
+      Object {
+        "bottom": "6px",
+        "left": "6px",
+        "right": "6px",
+        "top": "6px",
+      }
+    }
+  >
+    <Styled(FlatButton)
+      title="Test"
+    />
+  </Styled(Box)>
+</Styled(Box)>
+`;
+
+exports[`ButtonGroup renders with a single Button in a small node 1`] = `
+<Styled(Box)
+  alignItems="stretch"
+  direction="column"
+  justifyContent="flex-start"
+  margin={
+    Object {
+      "bottom": "-6px",
+      "left": "-6px",
+      "right": "-6px",
+      "top": "-6px",
+    }
+  }
+  wrap={true}
+>
+  <Styled(Box)
+    direction="column"
+    justifyContent="stretch"
+    key=".0"
+    margin={
+      Object {
+        "bottom": "6px",
+        "left": "6px",
+        "right": "6px",
+        "top": "6px",
+      }
+    }
+  >
+    <Styled(Button)
+      title="Test"
+      variant="primary"
+    />
+  </Styled(Box)>
+</Styled(Box)>
+`;

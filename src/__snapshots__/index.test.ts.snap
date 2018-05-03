@@ -971,6 +971,304 @@ exports[`Storyshots Button With a link 1`] = `
 </a>
 `;
 
+exports[`Storyshots ButtonGroup Default 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 6px 6px 6px 6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: -6px -6px -6px -6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c3 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 0;
+  border-width: 1px;
+  font-weight: 400;
+  border-style: solid;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c3:hover {
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c3:focus {
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c3:active {
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c3:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c3:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c3:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c3::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+}
+
+.c3:disabled {
+  background: #edeff2;
+  border: 1px solid transparent;
+  box-shadow: none;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #333740;
+}
+
+.c3:disabled::before {
+  opacity: 1;
+}
+
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  background: transparent;
+  border-radius: 0;
+  border: solid 1px transparent;
+  color: #21252b;
+}
+
+.c4:hover {
+  background-color: transparent;
+  border-color: #d2d7e0;
+  color: #21252b;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c4:focus {
+  background-color: transparent;
+  border-color: #d2d7e0;
+  color: #21252b;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c4:active {
+  background-color: transparent;
+  border-color: #d2d7e0;
+  color: #21252b;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c0 {
+  max-width: 640px;
+  border: solid 3px rgba(255,36,94,0.3);
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <button
+          className="c3"
+          disabled={undefined}
+          href={undefined}
+          onClick={[Function]}
+          target={undefined}
+          title="Primary button"
+          type="button"
+        >
+          Primary button
+        </button>
+      </div>
+      <div
+        className="c2"
+      >
+        <button
+          className="c4"
+          disabled={false}
+          href={undefined}
+          onClick={[Function]}
+          target={undefined}
+          title="Primary button"
+          type="button"
+        >
+          Cancel button
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ErrorBoundary Default 1`] = `
 .c0 {
   color: #333740;
