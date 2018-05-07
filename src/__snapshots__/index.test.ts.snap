@@ -1687,7 +1687,6 @@ exports[`Storyshots PriceTag Default 1`] = `
 
 .c0 sup {
   font-size: .7em;
-  font-weight: 400;
 }
 
 <span

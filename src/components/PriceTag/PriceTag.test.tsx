@@ -24,6 +24,25 @@ describe('PriceTag',  () => {
         expect(toJson(component)).toMatchSnapshot();
     });
 
+    it('should render a base price', () => {
+        const component = mount(
+            <MosTheme>
+                <PriceTag
+                    parts={[
+                        { type: 'currency' , value: '€' },
+                        { type: 'literal' , value: ' ' },
+                        { type: 'integer', value: '10' },
+                        { type: 'decimal', value: ',' },
+                        { type: 'fraction', value: '20' },
+                    ]}
+                    displayType="base"
+                />
+            </MosTheme>
+        ).find(PriceTag);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+
     it('should render an action price', () => {
         const component = mount(
             <MosTheme>
@@ -35,7 +54,7 @@ describe('PriceTag',  () => {
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '20' },
                     ]}
-                    isActionPrice
+                    displayType="action"
                 />
             </MosTheme>
         ).find(PriceTag);

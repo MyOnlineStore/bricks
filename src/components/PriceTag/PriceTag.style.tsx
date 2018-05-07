@@ -7,22 +7,18 @@ type VariantType = {
     fontFamily:string;
     fontSize:string;
     fontWeight:string;
-
-    super:{
-        fontSize:string;
-        fontWeight:string;
-    };
 };
 
 type PriceTagThemeType = {
     default:VariantType;
     action:VariantType;
+    base:VariantType;
 };
 
 const StyledPriceTag = styled(PriceTag)`
-    ${({ theme, isActionPrice }):string => {
-        const identifier = isActionPrice !== undefined && isActionPrice
-            ? 'action'
+    ${({ theme, displayType }):string => {
+        const identifier = displayType !== undefined
+            ? displayType
             : 'default';
 
         return `
@@ -33,11 +29,10 @@ const StyledPriceTag = styled(PriceTag)`
             font-weight: ${theme.PriceTag[identifier].fontWeight};
 
             sup {
-                font-size: ${theme.PriceTag[identifier].super.fontSize};
-                font-weight: ${theme.PriceTag[identifier].super.fontWeight};
+                font-size: .7em;
             }
 
-            ${isActionPrice !== undefined && isActionPrice
+            ${displayType !== undefined && displayType === 'base'
                 ? `&::after {
                     content: '';
                     width: 100%;

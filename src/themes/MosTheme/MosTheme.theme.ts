@@ -216,21 +216,18 @@ const theme:ThemeType = {
             fontFamily: bodyFont,
             fontSize: fontSize.larger2,
             fontWeight: '400',
-            super: {
-                fontSize: '.7em',
-                fontWeight: '400',
-            },
         },
         action: {
+            fontSize: fontSize.larger2,
+            fontWeight: '400',
+            color: green.base,
+            fontFamily: bodyFont,
+        },
+        base: {
             fontSize: fontSize.larger1,
             fontWeight: '400',
             color: grey.lighter2,
             fontFamily: bodyFont,
-
-            super: {
-                fontSize: '.7em',
-                fontWeight: '400',
-            }
         }
     },
     SubHeading:{

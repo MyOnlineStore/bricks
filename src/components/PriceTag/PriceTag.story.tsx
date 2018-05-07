@@ -25,7 +25,11 @@ storiesOf('PriceTag', module)
             superScriptFraction={boolean('superScriptFraction', false)}
             showDash={boolean('showDash', false)}
             hideZeros={boolean('hideZeros', false)}
-            isActionPrice={boolean('isActionPrice', false)}
+            displayType={select(
+                'displayType',
+                ['action', 'base', 'default'],
+                'default',
+            )}
             freeLabel={text('freeLabel', 'free!')}
         />
     ));

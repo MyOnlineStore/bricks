@@ -30,7 +30,7 @@ type PropsType = StyledType & {
     hideZeros?:boolean;
     parts:Array<PartType>;
     freeLabel?:string;
-    isActionPrice?:boolean;
+    displayType?:'base'|'action'|'default';
 };
 
 type StatsType = {
