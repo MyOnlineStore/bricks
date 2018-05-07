@@ -6,11 +6,13 @@ type VariantStyleType = {
     background:string;
     borderColor:string;
     color:string;
-    fontFamily:string;
-    fontSize:string;
 };
 
 type NotificationThemeType = {
+    common:{
+        fontFamily:string;
+        fontSize:string;
+    };
     error:VariantStyleType;
     info:VariantStyleType;
     success:VariantStyleType;
@@ -20,9 +22,10 @@ type NotificationThemeType = {
 const StyledNotification = styled(Notification)`
     border-width: 1px;
     border-style: solid;
+    font-family: ${({ theme }):string => theme.Notification.common.fontFamily};
+    font-size: ${({ theme }):string => theme.Notification.common.fontSize};
+
     ${({ theme, severity }):string => `
-        font-family: ${theme.Notification[severity].fontFamily};
-        font-size: ${theme.Notification[severity].fontSize};
         background: ${theme.Notification[severity].background};
         border-color: ${theme.Notification[severity].borderColor};
         color: ${theme.Notification[severity].color};

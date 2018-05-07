@@ -3,15 +3,7 @@ import styled from '../../utility/styled';
 import ButtonTemplate from './Button.template';
 
 type ButtonStylesType = {
-    idle:{
-        fontFamily:string;
-        fontSize:string;
-        backgroundColor:string;
-        borderRadius:string;
-        borderWidth:string;
-        borderColor:string;
-        color:string;
-    };
+    idle:ButtonVariantStylesType;
     active:ButtonVariantStylesType;
     focus:ButtonVariantStylesType;
     hover:ButtonVariantStylesType;
@@ -24,6 +16,13 @@ type ButtonVariantStylesType = {
 };
 
 type ButtonThemeType = {
+    common:{
+        fontSize:string;
+        fontFamily:string;
+        weight:string;
+        borderWidth:string;
+        borderRadius:string;
+    };
     primary:ButtonStylesType;
     secondary:ButtonStylesType;
     destructive:ButtonStylesType;
@@ -31,20 +30,14 @@ type ButtonThemeType = {
     disabled:{
         color:string;
         backgroundColor:string;
-
-        lines:{
-            background:string;
-        };
+        stripingColor:string;
     };
 };
 
 const applyTheme = (buttonTheme:ButtonStylesType):string => {
     return `
-        font-family: ${buttonTheme.idle.fontFamily};
-        font-size: ${buttonTheme.idle.fontSize};
         background-color: ${buttonTheme.idle.backgroundColor};
-        border-radius: ${buttonTheme.idle.borderRadius};
-        border: solid ${buttonTheme.idle.borderWidth} ${buttonTheme.idle.borderColor};
+        border-color: ${buttonTheme.idle.borderColor};
         color: ${buttonTheme.idle.color};
 
         &:hover {
@@ -81,6 +74,12 @@ const Button = styled(ButtonTemplate)`
     transition: transform .1s, background .3s, color .3s, box-shadow .1s, border .3s;
     user-select: none;
     text-decoration: none;
+    font-family: ${({ theme }):string => theme.Button.common.fontFamily};
+    font-size: ${({ theme }):string => theme.Button.common.fontSize};
+    border-radius: ${({ theme }):string => theme.Button.common.borderRadius};
+    border-width: ${({ theme }):string => theme.Button.common.borderWidth};
+    weight: ${({ theme }):string => theme.Button.common.weight};
+    border-style: solid;
 
     ${({ variant, theme }):string => {
         switch (variant) {
@@ -117,7 +116,13 @@ const Button = styled(ButtonTemplate)`
         content: '';
         opacity: 0;
         transition: opacity .3s;
-        background: ${({ theme }):string => theme.Button.disabled.lines.background}
+        background: ${({ theme }):string => `repeating-linear-gradient(
+            -45deg,
+            ${theme.Button.disabled.backgroundColor},
+            ${theme.Button.disabled.backgroundColor} 20px,
+            ${theme.Button.disabled.stripingColor} 20px,
+            ${theme.Button.disabled.stripingColor} 40px
+        );`}
     }
 
     &:disabled {

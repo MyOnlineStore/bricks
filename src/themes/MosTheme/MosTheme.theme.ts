@@ -7,18 +7,22 @@ const white = '#fff';
 const grey = '#edeff2';
 const red = '#ed2157';
 const yellow = '#fcc200';
+const black = '#333740';
 
 const theme:ThemeType = {
     Button: {
+        common: {
+            borderRadius: '0',
+            borderWidth: '1px',
+            fontSize: '16px',
+            weight: '400',
+            fontFamily: sourceSans,
+        },
         primary: {
             idle: {
                 backgroundColor: green,
                 borderColor: green,
-                borderRadius: '0',
-                borderWidth: '1px',
                 color: white,
-                fontFamily: sourceSans,
-                fontSize: '16px',
             },
             hover: {
                 backgroundColor: green,
@@ -40,37 +44,29 @@ const theme:ThemeType = {
             idle: {
                 backgroundColor: grey,
                 borderColor: '#d2d7e0',
-                borderRadius: '0',
-                borderWidth: '1px',
-                color: '#333740',
-                fontFamily: sourceSans,
-                fontSize: '16px',
+                color: black,
             },
             hover: {
                 backgroundColor: grey,
                 borderColor: '#d2d7e0',
-                color: '#333740',
+                color: black,
             },
             focus: {
                 backgroundColor: grey,
                 borderColor: '#d2d7e0',
-                color: '#333740',
+                color: black,
             },
             active: {
                 backgroundColor: grey,
                 borderColor: '#d2d7e0',
-                color: '#333740',
+                color: black,
             },
         },
         warning: {
             idle: {
                 backgroundColor: yellow,
                 borderColor: yellow,
-                borderRadius: '0',
-                borderWidth: '1px',
                 color: white,
-                fontFamily: sourceSans,
-                fontSize: '16px',
             },
             hover: {
                 backgroundColor: yellow,
@@ -92,11 +88,7 @@ const theme:ThemeType = {
             idle: {
                 backgroundColor: red,
                 borderColor: red,
-                borderRadius: '0',
-                borderWidth: '1px',
                 color: white,
-                fontFamily: sourceSans,
-                fontSize: '16px',
             },
             hover: {
                 backgroundColor: red,
@@ -115,18 +107,9 @@ const theme:ThemeType = {
             },
         },
         disabled:{
-            color: '#333740',
+            color: black,
             backgroundColor: grey,
-
-            lines: {
-                background: `repeating-linear-gradient(
-                    -45deg,
-                    ${grey},
-                    ${grey} 20px,
-                    #dbdfe6 20px,
-                    #dbdfe6 40px
-                );`,
-            },
+            stripingColor: '#dbdfe6',
         },
     },
     FlatButton: {
@@ -152,48 +135,45 @@ const theme:ThemeType = {
         },
     },
     Notification: {
+        common: {
+            fontFamily: sourceSans,
+            fontSize: '14px',
+        },
         error: {
             color: '#c81746',
             background: '#ffbdce',
             borderColor: '#ff6c93',
-            fontFamily: sourceSans,
-            fontSize: '14px',
         },
         warning: {
             color: '#bb8d0a',
             background: '#fff0be',
             borderColor: '#ffce28',
-            fontFamily: sourceSans,
-            fontSize: '14px',
         },
         success: {
             color: '#31953d',
             background: '#d2f5d6',
             borderColor: '#6bde78',
-            fontFamily: sourceSans,
-            fontSize: '14px',
         },
         info: {
             color: '#4e82bb',
             background: '#dde7f2',
             borderColor: '#c8d2dd',
-            fontFamily: sourceSans,
-            fontSize: '14px',
         },
     },
     Text:{
-        color: '#333740',
+        color: black,
         fontFamily: sourceSans,
         fontSize: '16px',
     },
     Heading:{
-        color: '#333740',
+        color: black,
         fontFamily: melbourne,
         fontSize: '28px',
+        weight: '400',
     },
     PriceTag: {
         default: {
-            color: '#333740',
+            color: black,
             fontFamily: sourceSans,
             fontSize: '28px',
             fontWeight: '400',
@@ -218,6 +198,7 @@ const theme:ThemeType = {
         color: '#88979d',
         fontFamily: sourceSans,
         fontSize: '18px',
+        weight: '400',
     }
 };
 
