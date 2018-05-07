@@ -284,9 +284,12 @@ exports[`Storyshots Button Destructive 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #ed2157;
   border-radius: 0;
-  border: solid 1px #ed2157;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #ed2157;
+  border-color: #ed2157;
   color: #fff;
 }
 
@@ -400,9 +403,12 @@ exports[`Storyshots Button Disabled 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #5bd16a;
   border-radius: 0;
-  border: solid 1px #5bd16a;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
@@ -516,9 +522,12 @@ exports[`Storyshots Button Primary 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #5bd16a;
   border-radius: 0;
-  border: solid 1px #5bd16a;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
@@ -632,9 +641,12 @@ exports[`Storyshots Button Secondary 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #edeff2;
   border-radius: 0;
-  border: solid 1px #d2d7e0;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #edeff2;
+  border-color: #d2d7e0;
   color: #333740;
 }
 
@@ -748,9 +760,12 @@ exports[`Storyshots Button Warning 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #fcc200;
   border-radius: 0;
-  border: solid 1px #fcc200;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #fcc200;
+  border-color: #fcc200;
   color: #fff;
 }
 
@@ -864,9 +879,12 @@ exports[`Storyshots Button With a link 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #5bd16a;
   border-radius: 0;
-  border: solid 1px #5bd16a;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
   color: #fff;
 }
 
@@ -1087,9 +1105,12 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
-  background-color: #edeff2;
   border-radius: 0;
-  border: solid 1px #d2d7e0;
+  border-width: 1px;
+  weight: 400;
+  border-style: solid;
+  background-color: #edeff2;
+  border-color: #d2d7e0;
   color: #333740;
 }
 
