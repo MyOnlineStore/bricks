@@ -277,7 +277,7 @@ const theme:ThemeType = {
             borderColor: '#c8d2dd',
         },
     },
-    Text:{
+    Text: {
         default: {
             color: grey.base,
             fontFamily: bodyFont,
@@ -289,9 +289,9 @@ const theme:ThemeType = {
         },
         strong: {
             fontWeight: '700',
-        }
+        },
     },
-    Heading:{
+    Heading: {
         color: grey.base,
         fontFamily: headingFont,
         fontSize: fontSize.larger2,
@@ -317,7 +317,7 @@ const theme:ThemeType = {
             fontFamily: bodyFont,
         }
     },
-    SubHeading:{
+    SubHeading: {
         color: grey.lighter2,
         fontFamily: bodyFont,
         fontSize: fontSize.larger1,

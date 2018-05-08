@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransitionAnimation/animations should fade in/out 1`] = `
+"
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            animation: fadeIn .3s;
+        "
+`;
+
+exports[`TransitionAnimation/animations should fade in/out 2`] = `
+"
+            @keyframes fadeOut {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+
+            animation: fadeOut .3s;
+        "
+`;
+
+exports[`TransitionAnimation/animations should zoom in/out 1`] = `
+"
+            @keyframes zoomIn {
+                0% { opacity: 0; transform: scale3d(0, 0, 0); }
+                100% { opacity: 1; transform: scale3d(1, 1, 1); }
+            }
+
+            animation: zoomIn .3s;
+        "
+`;
+
+exports[`TransitionAnimation/animations should zoom in/out 2`] = `
+"
+            @keyframes zoomOut {
+                0% { opacity: 1; transform: scale3d(1, 1, 1); }
+                100% { opacity: 0; transform: scale3d(0, 0, 0); }
+            }
+
+            animation: zoomOut .3s;
+        "
+`;

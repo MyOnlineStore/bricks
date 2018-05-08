@@ -3356,3 +3356,40 @@ exports[`Storyshots Text Default 1`] = `
 
 </p>
 `;
+
+exports[`Storyshots TransitionAnimation Zoom 1`] = `
+.c2 {
+  color: #333740;
+  font-family: Melbourne,sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c0 {
+  -webkit-animation: zoomIn .3s;
+  animation: zoomIn .3s;
+}
+
+.c1 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
+  text-align: center;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      role="heading"
+    >
+      Lorem ipsum
+    </div>
+  </div>
+</div>
+`;
