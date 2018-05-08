@@ -4,6 +4,8 @@
 
 # Bricks
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MyOnlineStore/bricks.svg)](https://greenkeeper.io/)
+
 ## Use it:
 Install it using: `npm install @myonlinestore/bricks`.
 
