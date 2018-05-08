@@ -83,7 +83,7 @@ exports[`PriceTag should render an action price 1`] = `
   position: relative;
   color: #88979d;
   font-family: Source Sans Pro,sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
 }
 

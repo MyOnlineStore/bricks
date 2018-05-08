@@ -23,7 +23,7 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   border-style: solid;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  background: #ffbdce;
+  background-color: #ffbdce;
   border-color: #ff6c93;
   color: #c81746;
 }

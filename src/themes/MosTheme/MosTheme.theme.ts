@@ -148,7 +148,7 @@ const theme:ThemeType = {
         disabled:{
             color: grey.base,
             backgroundColor: silver.medium,
-            stripingColor: silver.extradark,
+            stripingColor: silver.darker,
         },
     },
     FlatButton: {
@@ -176,7 +176,7 @@ const theme:ThemeType = {
     Notification: {
         common: {
             fontFamily: bodyFont,
-            fontSize: fontSize.medium,
+            fontSize: fontSize.base,
         },
         error: {
             color: red.dark,
