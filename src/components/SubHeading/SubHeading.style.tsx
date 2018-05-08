@@ -6,14 +6,14 @@ type SubHeadingThemeType = {
     color:string;
     fontFamily:string;
     fontSize:string;
-    weight:string;
+    fontWeight:string;
 };
 
 const StyledSubHeading = styled(SubHeading)`
     color: ${({ theme }):string => theme.SubHeading.color};
     font-family: ${({ theme }):string => theme.SubHeading.fontFamily};
     font-size: ${({ theme }):string => theme.SubHeading.fontSize};
-    font-weight: ${({ theme }):string => theme.SubHeading.weight};
+    font-weight: ${({ theme }):string => theme.SubHeading.fontWeight};
     line-height: 1.5;
     margin: 0;
 `;

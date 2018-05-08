@@ -19,7 +19,7 @@ type ButtonThemeType = {
     common:{
         fontSize:string;
         fontFamily:string;
-        weight:string;
+        fontWeight:string;
         borderWidth:string;
         borderRadius:string;
     };
@@ -78,7 +78,7 @@ const Button = styled(ButtonTemplate)`
     font-size: ${({ theme }):string => theme.Button.common.fontSize};
     border-radius: ${({ theme }):string => theme.Button.common.borderRadius};
     border-width: ${({ theme }):string => theme.Button.common.borderWidth};
-    weight: ${({ theme }):string => theme.Button.common.weight};
+    font-weight: ${({ theme }):string => theme.Button.common.fontWeight};
     border-style: solid;
 
     ${({ variant, theme }):string => {

@@ -3,7 +3,7 @@ import styled from '../../utility/styled';
 import Notification from './Notification.template';
 
 type VariantStyleType = {
-    background:string;
+    backgroundColor:string;
     borderColor:string;
     color:string;
 };
@@ -26,7 +26,7 @@ const StyledNotification = styled(Notification)`
     font-size: ${({ theme }):string => theme.Notification.common.fontSize};
 
     ${({ theme, severity }):string => `
-        background: ${theme.Notification[severity].background};
+        background-color: ${theme.Notification[severity].backgroundColor};
         border-color: ${theme.Notification[severity].borderColor};
         color: ${theme.Notification[severity].color};
     `}

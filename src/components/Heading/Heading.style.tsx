@@ -6,14 +6,14 @@ type HeadingThemeType = {
     color:string;
     fontFamily:string;
     fontSize:string;
-    weight:string;
+    fontWeight:string;
 };
 
 const StyledHeading = styled(Heading)`
     color: ${({ theme }):string => theme.Heading.color};
     font-family: ${({ theme }):string => theme.Heading.fontFamily};
     font-size: ${({ theme }):string => theme.Heading.fontSize};
-    font-weight: ${({ theme }):string => theme.Heading.weight};
+    font-weight: ${({ theme }):string => theme.Heading.fontWeight};
     line-height: 1.5;
     margin: 0;
 `;
