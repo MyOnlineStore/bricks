@@ -4,48 +4,48 @@ const bodyFont = 'Source Sans Pro, sans-serif';
 const headingFont = 'Melbourne, sans-serif';
 
 const fontSize = {
-    larger: '36px',
-    large: '28px',
-    medium: '22px',
+    larger3: '36px',
+    larger2: '28px',
+    larger1: '22px',
     base: '14px',
 };
 
 const green = {
-    light: '#7ce88a',
+    lighter1: '#7ce88a',
     base: '#6bde78',
-    dark: '#5bd16a',
-    darker: '#4cc55b',
+    darker1: '#5bd16a',
+    darker2: '#4cc55b',
 };
 
 const silver = {
-    light: '#fff',
+    lighter1: '#fff',
     base: '#f8f9fb',
-    medium: '#edeff2',
-    dark: '#e4e7ec',
-    darker: '#dbdfe6',
-    extradark: '#d2d7e0',
+    darker1: '#edeff2',
+    darker2: '#e4e7ec',
+    darker3: '#dbdfe6',
+    darker4: '#d2d7e0',
 };
 
 const grey = {
-    lighter: '#a6aab3',
-    light: '#88979d',
-    medium: '#55656d',
+    lighter3: '#a6aab3',
+    lighter2: '#88979d',
+    lighter1: '#55656d',
     base: '#333740',
-    dark: '#21252b',
+    darker1: '#21252b',
 };
 
 const red = {
-    light: '#ff245e',
+    lighter1: '#ff245e',
     base: '#ed2157',
-    medium: '#dc1b4f',
-    dark: '#c81746',
+    darker1: '#dc1b4f',
+    darker2: '#c81746',
 };
 
 const yellow = {
-    light: '#ffda5b',
+    lighter1: '#ffda5b',
     base: '#ffce28',
-    medium: '#fcc200',
-    dark: '#edb107',
+    darker1: '#fcc200',
+    darker2: '#edb107',
 };
 
 const theme:ThemeType = {
@@ -59,96 +59,96 @@ const theme:ThemeType = {
         },
         primary: {
             idle: {
-                backgroundColor: green.dark,
-                borderColor: green.dark,
-                color: silver.light,
+                backgroundColor: green.darker1,
+                borderColor: green.darker1,
+                color: silver.lighter1,
             },
             hover: {
-                backgroundColor: green.dark,
-                borderColor: green.dark,
-                color: silver.light,
+                backgroundColor: green.darker1,
+                borderColor: green.darker1,
+                color: silver.lighter1,
             },
             focus: {
-                backgroundColor: green.dark,
-                borderColor: green.dark,
-                color: silver.light,
+                backgroundColor: green.darker1,
+                borderColor: green.darker1,
+                color: silver.lighter1,
             },
             active: {
-                backgroundColor: green.dark,
-                borderColor: green.dark,
-                color: silver.light,
+                backgroundColor: green.darker1,
+                borderColor: green.darker1,
+                color: silver.lighter1,
             },
         },
         secondary: {
             idle: {
-                backgroundColor: silver.medium,
-                borderColor: silver.extradark,
+                backgroundColor: silver.darker1,
+                borderColor: silver.darker4,
                 color: grey.base,
             },
             hover: {
-                backgroundColor: silver.medium,
-                borderColor: silver.extradark,
+                backgroundColor: silver.darker1,
+                borderColor: silver.darker4,
                 color: grey.base,
             },
             focus: {
-                backgroundColor: silver.medium,
-                borderColor: silver.extradark,
+                backgroundColor: silver.darker1,
+                borderColor: silver.darker4,
                 color: grey.base,
             },
             active: {
-                backgroundColor: silver.medium,
-                borderColor: silver.extradark,
+                backgroundColor: silver.darker1,
+                borderColor: silver.darker4,
                 color: grey.base,
             },
         },
         warning: {
             idle: {
-                backgroundColor: yellow.medium,
-                borderColor: yellow.medium,
-                color: silver.light,
+                backgroundColor: yellow.darker1,
+                borderColor: yellow.darker1,
+                color: silver.lighter1,
             },
             hover: {
-                backgroundColor: yellow.medium,
-                borderColor: yellow.medium,
-                color: silver.light,
+                backgroundColor: yellow.darker1,
+                borderColor: yellow.darker1,
+                color: silver.lighter1,
             },
             focus: {
-                backgroundColor: yellow.medium,
-                borderColor: yellow.medium,
-                color: silver.light,
+                backgroundColor: yellow.darker1,
+                borderColor: yellow.darker1,
+                color: silver.lighter1,
             },
             active: {
-                backgroundColor: yellow.medium,
-                borderColor: yellow.medium,
-                color: silver.light,
+                backgroundColor: yellow.darker1,
+                borderColor: yellow.darker1,
+                color: silver.lighter1,
             },
         },
         destructive: {
             idle: {
                 backgroundColor: red.base,
                 borderColor: red.base,
-                color: silver.light,
+                color: silver.lighter1,
             },
             hover: {
                 backgroundColor: red.base,
                 borderColor: red.base,
-                color: silver.light,
+                color: silver.lighter1,
             },
             focus: {
                 backgroundColor: red.base,
                 borderColor: red.base,
-                color: silver.light,
+                color: silver.lighter1,
             },
             active: {
                 backgroundColor: red.base,
                 borderColor: red.base,
-                color: silver.light,
+                color: silver.lighter1,
             },
         },
         disabled:{
             color: grey.base,
-            backgroundColor: silver.medium,
-            stripingColor: silver.darker,
+            backgroundColor: silver.darker1,
+            stripingColor: silver.darker3,
         },
     },
     FlatButton: {
@@ -156,21 +156,21 @@ const theme:ThemeType = {
             borderColor: 'transparent',
             borderRadius: '0',
             borderWidth: '1px',
-            color: grey.dark,
+            color: grey.darker1,
             fontFamily: bodyFont,
             fontSize: fontSize.base,
         },
         hover: {
-            borderColor: silver.extradark,
-            color: grey.dark,
+            borderColor: silver.darker4,
+            color: grey.darker1,
         },
         focus: {
-            borderColor: silver.extradark,
-            color: grey.dark,
+            borderColor: silver.darker4,
+            color: grey.darker1,
         },
         active: {
-            borderColor: silver.extradark,
-            color: grey.dark,
+            borderColor: silver.darker4,
+            color: grey.darker1,
         },
     },
     Notification: {
@@ -179,7 +179,7 @@ const theme:ThemeType = {
             fontSize: fontSize.base,
         },
         error: {
-            color: red.dark,
+            color: red.darker2,
             backgroundColor: '#ffbdce',
             borderColor: '#ff6c93',
         },
@@ -207,14 +207,14 @@ const theme:ThemeType = {
     Heading:{
         color: grey.base,
         fontFamily: headingFont,
-        fontSize: fontSize.large,
+        fontSize: fontSize.larger2,
         fontWeight: '400',
     },
     PriceTag: {
         default: {
             color: grey.base,
             fontFamily: bodyFont,
-            fontSize: fontSize.large,
+            fontSize: fontSize.larger2,
             fontWeight: '400',
             super: {
                 fontSize: '.7em',
@@ -222,9 +222,9 @@ const theme:ThemeType = {
             },
         },
         action: {
-            fontSize: fontSize.medium,
+            fontSize: fontSize.larger1,
             fontWeight: '400',
-            color: grey.light,
+            color: grey.lighter2,
             fontFamily: bodyFont,
 
             super: {
@@ -234,9 +234,9 @@ const theme:ThemeType = {
         }
     },
     SubHeading:{
-        color: grey.light,
+        color: grey.lighter2,
         fontFamily: bodyFont,
-        fontSize: fontSize.medium,
+        fontSize: fontSize.larger1,
         fontWeight: '400',
     }
 };
