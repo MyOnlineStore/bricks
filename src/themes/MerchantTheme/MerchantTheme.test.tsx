@@ -8,7 +8,7 @@ describe('MerchantTheme', () => {
     it('should render the merchant theme', () => {
         const theme = {
             Heading: {
-                color: 'mockValue'
+                color: 'mockValue',
             },
         };
 

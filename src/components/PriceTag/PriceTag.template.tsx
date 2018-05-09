@@ -52,7 +52,7 @@ const deriveStatsFromPart = (initialStats:StatsType, part:PartType):StatsType =>
 const PriceTag:StatelessComponent<PropsType> = (props):JSX.Element => {
     const stats = props.parts.reduce(
         deriveStatsFromPart,
-        { isRound: false, isFree: true }
+        { isRound: false, isFree: true },
     );
 
     const price = props.parts.map((part) => {

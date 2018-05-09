@@ -18,7 +18,7 @@ describe('PriceTag',  () => {
                     ]}
                     hideCurrency
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -37,7 +37,7 @@ describe('PriceTag',  () => {
                     ]}
                     displayType="base"
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe('PriceTag',  () => {
                     ]}
                     displayType="action"
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -76,7 +76,7 @@ describe('PriceTag',  () => {
                     superScriptFraction
                     hideCurrency
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -95,7 +95,7 @@ describe('PriceTag',  () => {
                     ]}
                     showDash
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -114,7 +114,7 @@ describe('PriceTag',  () => {
                     ]}
                     hideZeros
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -133,7 +133,7 @@ describe('PriceTag',  () => {
                     ]}
                     superScriptFraction
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -153,7 +153,7 @@ describe('PriceTag',  () => {
                     showDash
                     superScriptFraction
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -172,7 +172,7 @@ describe('PriceTag',  () => {
                     ]}
                     freeLabel="free"
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();

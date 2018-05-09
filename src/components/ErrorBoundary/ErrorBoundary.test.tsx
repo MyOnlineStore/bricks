@@ -35,7 +35,7 @@ describe('ErrorBoundary', () => {
                 >
                     <ThrowingComponent />
                 </ErrorBoundary>
-            </MosTheme>
+            </MosTheme>,
         ).toJSON();
 
         expect(boundary).toMatchSnapshot();

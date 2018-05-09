@@ -7,7 +7,7 @@ const renderOptions = {
     createNodeMock: ():Object => ({
         contentRect: {
             height: 900,
-        }
+        },
     }),
 };
 
@@ -24,7 +24,7 @@ jest.mock('resize-observer-polyfill', () => jest
             callback([element]);
         }),
         unobserve: jest.fn(),
-    }))
+    })),
 );
 
 describe('FoldOut', () => {
@@ -40,7 +40,7 @@ describe('FoldOut', () => {
     it('should have no height when closed', () => {
         const foldOut = renderer.create(
             <FoldOut isOpen={false} />,
-            renderOptions
+            renderOptions,
         ).toJSON();
 
         expect(foldOut).toMatchSnapshot();
@@ -55,7 +55,7 @@ describe('FoldOut', () => {
 
         const foldOut = renderer.create(
             <FoldOut isOpen />,
-            renderOptions
+            renderOptions,
         ).toJSON();
 
         expect(foldOut).toMatchSnapshot();

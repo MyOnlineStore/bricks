@@ -18,10 +18,10 @@ describe('BreakpointProvider component', () => {
     it('executes the render prop with a default breakpoint', () => {
         const renderMock = jest.fn();
 
-         mount(
+        mount(
             <BreakpointProvider breakpoints={breakpoints}>
                 {renderMock}
-            </BreakpointProvider>
+            </BreakpointProvider>,
         );
 
         expect(renderMock).toBeCalledWith('small');
@@ -56,7 +56,7 @@ describe('BreakpointProvider component', () => {
         mount(
             <BreakpointProvider breakpoints={faultyBreakpoints}>
                 {renderMock}
-            </BreakpointProvider>
+            </BreakpointProvider>,
         );
 
         expect(renderMock).toBeCalledWith('small');
@@ -68,7 +68,7 @@ describe('BreakpointProvider component', () => {
         const component = mount(
             <BreakpointProvider breakpoints={breakpoints}>
                 {renderMock}
-            </BreakpointProvider>
+            </BreakpointProvider>,
         );
 
         component.unmount();

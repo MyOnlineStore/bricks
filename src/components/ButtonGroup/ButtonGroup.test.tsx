@@ -17,7 +17,7 @@ describe('ButtonGroup', () => {
             <ButtonGroup>
                 <Button title="Test" variant="primary" />
                 <FlatButton title="Test" />
-            </ButtonGroup>
+            </ButtonGroup>,
         ).dive();
 
         expect(toJson(component)).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('ButtonGroup', () => {
         const component = shallow(
             <ButtonGroup>
                 <Button title="Test" variant="primary" />
-            </ButtonGroup>
+            </ButtonGroup>,
         ).dive();
 
         expect(toJson(component)).toMatchSnapshot();

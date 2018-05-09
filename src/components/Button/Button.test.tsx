@@ -13,7 +13,7 @@ describe('Button component', () => {
                 action={clickMock}
             >
                 Click me
-            </Button>
+            </Button>,
         );
 
         component.simulate('click');
@@ -30,7 +30,7 @@ describe('Button component', () => {
                     action={undefined}
                 >
                     Click me
-                </Button>
+                </Button>,
             );
 
             component.simulate('click');
