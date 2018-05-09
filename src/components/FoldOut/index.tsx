@@ -27,13 +27,17 @@ class FoldOut extends Component<PropsType, StateType> {
         };
 
         try {
-            this.resizeObserver = new ResizeObserver((entries: Array<ResizeObserverEntry>): void => {
-                entries.forEach((entry: ResizeObserverEntry): void => {
-                    this.setState({
-                        contentHeight: entry.contentRect.height,
-                    });
-                });
-            });
+            this.resizeObserver = new ResizeObserver(
+                (entries: Array<ResizeObserverEntry>): void => {
+                    entries.forEach(
+                        (entry: ResizeObserverEntry): void => {
+                            this.setState({
+                                contentHeight: entry.contentRect.height,
+                            });
+                        },
+                    );
+                },
+            );
         } catch (error) {
             console.warn(`
                 ResizeObserver is not available in this environment.

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import ScrollBox from '.';
 import styled from '../../utility/styled';
 import trbl from '../../utility/trbl';
+import Box from '../Box';
 import Heading from '../Heading';
 import Spacer from '../Spacer';
 import Text from '../Text';
@@ -73,23 +74,23 @@ class Demo extends Component<{}, DemoStateType> {
         return (
             <>
                 <StyledDiv>
-                    <ScrollBox
-                        maxHeight={number('maxHeight', 400)}
-                        showInsetShadow={boolean('showInsetShadow', true)}
-                        autoHideScrollBar={boolean('autoHideScrollBar', true)}
-                        onScroll={({ scrollTop, scrollBottom, scrollDirection }): void => {
-                            this.setState({
-                                scrollTop,
-                                scrollBottom,
-                                scrollDirection,
-                            });
-                        }}
-                    >
-                        <Spacer offsetType="inner" offset={trbl(12, 24, 12, 12)}>
-                            <Heading>Lorem ipsum dolor sit amet.</Heading>
-                            <Text>{demoContent}</Text>
-                        </Spacer>
-                    </ScrollBox>
+                    <Box height={`${number('maxHeight', 400)}px`}>
+                        <ScrollBox
+                            autoHideScrollBar={boolean('autoHideScrollBar', true)}
+                            onScroll={({ scrollTop, scrollBottom, scrollDirection }): void => {
+                                this.setState({
+                                    scrollTop,
+                                    scrollBottom,
+                                    scrollDirection,
+                                });
+                            }}
+                        >
+                            <Spacer offsetType="inner" offset={trbl(12, 24, 12, 12)}>
+                                <Heading>They see me scrollin'</Heading>
+                                <Text>{demoContent}</Text>
+                            </Spacer>
+                        </ScrollBox>
+                    </Box>
                 </StyledDiv>
                 <Spacer offset={trbl(48, 0, 12)}>
                     <Heading>Scroll event</Heading>

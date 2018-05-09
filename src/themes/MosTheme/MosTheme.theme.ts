@@ -472,6 +472,7 @@ const theme: ThemeType = {
             borderColor: grey.lighter1,
         },
     },
+<<<<<<< HEAD
     Toggle: {
         general: {
             background: silver.lighter1,
@@ -501,6 +502,9 @@ const theme: ThemeType = {
             border: `1px solid ${red.darker2}`,
         },
     },
+=======
+    Modal: {},
+>>>>>>> 916dd13... Added Modal
 };
 
 export default theme;

@@ -33,25 +33,27 @@ beforeEach(() => {
 describe('ScrollBox', () => {
     it('should show a top shadow when scrolling down', () => {
         /* tslint:disable */
-        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
-            /* tslint:enable */
-            scrollBarOptions = options;
+        (ScrollBar as any).mockImplementationOnce(
+            (element: HTMLElement, options: Object): Object => {
+                /* tslint:enable */
+                scrollBarOptions = options;
 
-            return {
-                getScrollElement: jest.fn().mockReturnValue({
-                    addEventListener: jest.fn().mockImplementation((event, callback) => {
-                        callback();
+                return {
+                    getScrollElement: jest.fn().mockReturnValue({
+                        addEventListener: jest.fn().mockImplementation((event, callback) => {
+                            callback();
+                        }),
                     }),
-                }),
-                getContentElement: jest.fn().mockReturnValue({
-                    offsetHeight: 400,
-                }),
-            };
-        });
+                    getContentElement: jest.fn().mockReturnValue({
+                        offsetHeight: 400,
+                    }),
+                };
+            },
+        );
 
         const component = mount(
             <MosTheme>
-                <ScrollBox showInsetShadow maxHeight={900} />
+                <ScrollBox />
             </MosTheme>,
         );
 
@@ -72,7 +74,7 @@ describe('ScrollBox', () => {
     it('should show a bottom shadow when scrolling up', () => {
         const component = mount(
             <MosTheme>
-                <ScrollBox showInsetShadow maxHeight={900} />
+                <ScrollBox />
             </MosTheme>,
         );
 
@@ -93,7 +95,7 @@ describe('ScrollBox', () => {
     it('should hide the scrollbar when autoHideScrollBar is set', () => {
         mount(
             <MosTheme>
-                <ScrollBox autoHideScrollBar maxHeight={900} />
+                <ScrollBox autoHideScrollBar height={900} />
             </MosTheme>,
         );
 
@@ -105,7 +107,7 @@ describe('ScrollBox', () => {
 
         mount(
             <MosTheme>
-                <ScrollBox autoHideScrollBar maxHeight={900} onScroll={onScrollMock} />
+                <ScrollBox autoHideScrollBar height={900} onScroll={onScrollMock} />
             </MosTheme>,
         );
 
@@ -120,24 +122,26 @@ describe('ScrollBox', () => {
         const removeListenerMock = jest.fn();
 
         /* tslint:disable */
-        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
-            /* tslint:enable */
-            return {
-                getScrollElement: jest.fn().mockReturnValue({
-                    addEventListener: jest.fn().mockImplementation((event, callback) => {
-                        callback();
+        (ScrollBar as any).mockImplementationOnce(
+            (element: HTMLElement, options: Object): Object => {
+                /* tslint:enable */
+                return {
+                    getScrollElement: jest.fn().mockReturnValue({
+                        addEventListener: jest.fn().mockImplementation((event, callback) => {
+                            callback();
+                        }),
+                        removeEventListener: removeListenerMock,
                     }),
-                    removeEventListener: removeListenerMock,
-                }),
-                getContentElement: jest.fn().mockReturnValue({
-                    offsetHeight: 400,
-                }),
-            };
-        });
+                    getContentElement: jest.fn().mockReturnValue({
+                        offsetHeight: 400,
+                    }),
+                };
+            },
+        );
 
         const component = mount(
             <MosTheme>
-                <ScrollBox autoHideScrollBar maxHeight={900} />
+                <ScrollBox autoHideScrollBar height={900} />
             </MosTheme>,
         );
 

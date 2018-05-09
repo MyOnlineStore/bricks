@@ -1,12 +1,12 @@
 import React, { Component, createRef, RefObject } from 'react';
+
 import ScrollBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
 import { StyledType } from '../../utility/styled';
-import StyledScrollBox, { StyledBottom, StyledTop } from './style';
+import StyledScrollBox from './style';
 
 type PropsType = StyledType & {
-    maxHeight: number;
-    showInsetShadow?: boolean;
+    height?: number;
     autoHideScrollBar?: boolean;
     onScroll?(eventData: {
         scrollTop: number;
@@ -17,28 +17,25 @@ type PropsType = StyledType & {
 
 type StateType = {
     scrollPosition: number;
-    scrollDirection: 'up' | 'down';
+    scrollDirection: 'up' | 'down' | 'idle';
 };
 
 class ScrollBox extends Component<PropsType, StateType> {
     private scrollbar: ScrollBar;
-    private contentRef: RefObject<HTMLDivElement>;
+    private contentRef: HTMLDivElement | null;
 
     public constructor(props: PropsType) {
         super(props);
-        this.contentRef = createRef();
 
         this.state = {
             scrollPosition: 0,
-            scrollDirection: 'up',
+            scrollDirection: 'idle',
         };
     }
 
     private handleScroll = (): void => {
         const element = this.scrollbar.getScrollElement();
-
         const contentElement = this.scrollbar.getContentElement();
-
         const direction = this.state.scrollPosition >= element.scrollTop ? 'up' : 'down';
 
         const scrollBottom =
@@ -61,7 +58,7 @@ class ScrollBox extends Component<PropsType, StateType> {
     };
 
     public componentDidMount(): void {
-        this.scrollbar = new ScrollBar(this.contentRef.current as HTMLDivElement, {
+        this.scrollbar = new ScrollBar(this.contentRef as HTMLDivElement, {
             autoHide: this.props.autoHideScrollBar !== undefined ? this.props.autoHideScrollBar : true,
         });
 
@@ -74,18 +71,12 @@ class ScrollBox extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <StyledScrollBox maxHeight={this.props.maxHeight} autoHideScrollBar={this.props.autoHideScrollBar}>
-                {this.props.showInsetShadow === true && this.state.scrollDirection === 'down' ? (
-                    <StyledTop />
-                ) : (
-                    undefined
-                )}
-                <div ref={this.contentRef}>{this.props.children}</div>
-                {this.props.showInsetShadow === true && this.state.scrollDirection === 'up' ? (
-                    <StyledBottom />
-                ) : (
-                    undefined
-                )}
+            <StyledScrollBox
+                innerRef={(ref): void => {
+                    this.contentRef = ref;
+                }}
+            >
+                {this.props.children}
             </StyledScrollBox>
         );
     }

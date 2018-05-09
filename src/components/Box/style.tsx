@@ -22,8 +22,8 @@ const StyledBox = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
     margin: ${({ margin }): string =>
         margin !== undefined ? `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}` : ''};
     flex-grow: ${({ grow }): number => (grow ? grow : 0)};
-    flex-shrink: ${({ shrink }): number => (shrink ? shrink : 1)};
-    flex-basis: ${({ basis }): string => (basis ? basis : '')};
+    flex-shrink: ${({ shrink }): number => (shrink !== undefined ? shrink : 1)};
+    flex-basis: ${({ basis }): string => (basis ? basis : 'auto')};
     order: ${({ flexOrder }): number => (flexOrder ? flexOrder : 0)};
     align-self: ${({ alignSelf }): string => (alignSelf ? alignSelf : '')};
 `;
