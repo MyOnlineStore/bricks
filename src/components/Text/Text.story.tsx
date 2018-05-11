@@ -1,3 +1,4 @@
+import { boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Text from '.';
@@ -30,5 +31,5 @@ const demoContent = `
 
 storiesOf('Text', module)
     .add('Default', () => (
-        <Text>{demoContent}</Text>
+        <Text strong={boolean('strong', false)} descriptive={boolean('descriptive', false)}>{demoContent}</Text>
     ));

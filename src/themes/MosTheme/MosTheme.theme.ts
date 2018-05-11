@@ -200,9 +200,18 @@ const theme:ThemeType = {
         },
     },
     Text:{
-        color: grey.base,
-        fontFamily: bodyFont,
-        fontSize: fontSize.base,
+        default: {
+            color: grey.base,
+            fontFamily: bodyFont,
+            fontSize: fontSize.base,
+            fontWeight: '400',
+        },
+        descriptive: {
+            color: grey.lighter3,
+        },
+        strong: {
+            fontWeight: '700',
+        }
     },
     Heading:{
         color: grey.base,

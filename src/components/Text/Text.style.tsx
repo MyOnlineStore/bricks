@@ -3,16 +3,25 @@ import styled from '../../utility/styled';
 import Text from './Text.template';
 
 type TextThemeType = {
-    color:string;
-    fontFamily:string;
-    fontSize:string;
+    default:{
+        color:string;
+        fontFamily:string;
+        fontSize:string;
+        fontWeight:string;
+    };
+    descriptive:{
+        color:string;
+    };
+    strong:{
+        fontWeight:string;
+    };
 };
 
 const StyledText = styled(Text)`
-    color: ${({ theme }):string => theme.Text.color};
-    font-family: ${({ theme }):string => theme.Text.fontFamily};
-    font-size: ${({ theme }):string => theme.Text.fontSize};
-    font-weight: 400;
+    color: ${({ descriptive, theme }):string => descriptive ? theme.Text.descriptive.color : theme.Text.default.color};
+    font-family: ${({ theme }):string => theme.Text.default.fontFamily};
+    font-size: ${({ theme }):string => theme.Text.default.fontSize};
+    font-weight: ${({ strong, theme }):string => strong ? theme.Text.strong.fontWeight : theme.Text.default.fontWeight};
     line-height: 1.5;
     margin: 0;
 `;

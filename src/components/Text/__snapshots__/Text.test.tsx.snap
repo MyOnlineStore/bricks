@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should render text with default styling 1`] = `
+<Styled(Text)>
+  Default text
+</Styled(Text)>
+`;
+
+exports[`Text should render text with descriptive styling 1`] = `
+<Styled(Text)
+  descriptive={true}
+>
+  Descriptive text
+</Styled(Text)>
+`;
+
+exports[`Text should render text with strong styling 1`] = `
+<Styled(Text)
+  strong={true}
+>
+  Strong text
+</Styled(Text)>
+`;

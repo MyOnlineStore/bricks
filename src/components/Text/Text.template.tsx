@@ -1,7 +1,10 @@
 import React, { StatelessComponent } from 'react';
 import { StyledType } from '../../utility/styled';
 
-type PropsType = StyledType & {};
+type PropsType = StyledType & {
+    strong?:boolean;
+    descriptive?:boolean;
+};
 
 const Text:StatelessComponent<PropsType> = (props):JSX.Element => (
     <p className={props.className}>{props.children}</p>
