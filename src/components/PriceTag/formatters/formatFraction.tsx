@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropsType } from '../PriceTag.template';
 
+/* tslint:disable:cyclomatic-complexity */
 const formatFraction = (
     value:string,
     { hideZeros, showDash, superScriptFraction }:PropsType,
@@ -20,5 +21,6 @@ const formatFraction = (
 
     return value;
 };
+/* tslint:enable:cyclomatic-complexity */
 
 export default formatFraction;

@@ -9,7 +9,7 @@ storiesOf('ErrorBoundary', module)
         const hasError = select(
             'hasError',
             ['true', 'false'],
-            'false'
+            'false',
         );
 
         return (

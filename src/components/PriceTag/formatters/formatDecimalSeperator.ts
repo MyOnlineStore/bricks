@@ -3,7 +3,7 @@ import { PropsType } from '../PriceTag.template';
 const formatDecimalSeperator = (
     value:string,
     { hideZeros }:PropsType,
-    isRound:boolean
+    isRound:boolean,
 ):string => {
     return hideZeros !== undefined && hideZeros && isRound
         ? ''

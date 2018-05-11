@@ -21,7 +21,7 @@ describe('FlatButton', () => {
                 action={mockAction}
             >
                 foo
-            </FlatButton>
+            </FlatButton>,
         );
 
         expect(mockAction).toHaveBeenCalled();
@@ -32,7 +32,7 @@ describe('FlatButton', () => {
             renderer.create(
                 <FlatButton title="foo">
                     foo
-                </FlatButton>
+                </FlatButton>,
             );
         };
 

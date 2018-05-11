@@ -45,7 +45,7 @@ storiesOf('Box', module)
                             <Text>Box {i + 1}</Text>
                         </Spacer>
                     </Item>
-                </Box>
+                </Box>,
             );
         }
 

@@ -1,7 +1,14 @@
 {
   "extends": ["tslint-react"],
   "rules": {
-    "align": true,
+    "align": [
+        true,
+        "parameters",
+        "arguments",
+        "statements",
+        "members",
+        "elements"
+    ],
     "array-type": [true, "generic"],
     "arrow-return-shorthand": true,
     "await-promise": true,
@@ -13,6 +20,7 @@
     "class-name": true,
     "comment-format": true,
     "curly": true,
+    "cyclomatic-complexity": [true, 5],
 
     "deprecation": true,
     
@@ -92,6 +100,7 @@
     "no-misused-new": true,
     "no-null-keyword": true,
     "no-object-literal-type-assertion": true,
+    "no-parameter-reassignment": true,
     "no-require-imports": true,
     "no-return-await": true,
     "no-sparse-arrays": true,
@@ -116,8 +125,8 @@
     "ordered-imports": [
         true,
         {
-            "import-sources-order": "case-insensitive",
-            "named-imports-order": "case-insensitive"
+            "named-imports-order": "case-insensitive",
+            "module-source-order": "basename"
         }
     ],
 
@@ -168,8 +177,10 @@
         "variable-declaration": "nospace"
       }
     ],
-    "trailing-comma": true,
-
+    "trailing-comma": [
+        true,
+        { "multiline": "always", "singleline": "never" }
+    ],
     "unified-signatures": true,
     "use-default-type-parameter": true,
     "use-isnan": true,
