@@ -1,23 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text should render text with default styling 1`] = `
-<Styled(Text)>
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+<Text
+  className="c0"
+>
   Default text
-</Styled(Text)>
-`;
-
-exports[`Text should render text with descriptive styling 1`] = `
-<Styled(Text)
-  descriptive={true}
->
-  Descriptive text
-</Styled(Text)>
-`;
-
-exports[`Text should render text with strong styling 1`] = `
-<Styled(Text)
-  strong={true}
->
-  Strong text
-</Styled(Text)>
+</Text>
 `;
