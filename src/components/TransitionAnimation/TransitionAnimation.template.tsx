@@ -9,16 +9,16 @@ type PropsType = {
 };
 
 const TransitionAnimation:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const stayMounted = props.stayMounted !== undefined
-        ? props.stayMounted
+    const unmount = props.stayMounted !== undefined
+        ? !props.stayMounted
         : true;
 
     return (
         <Transition
             in={props.show}
             timeout={300}
-            mountOnEnter={stayMounted}
-            unmountOnExit={stayMounted}
+            mountOnEnter={unmount}
+            unmountOnExit={unmount}
         >
             {(state:StyledPropsType['state']):JSX.Element => (
                 <StyledAnimation animation={props.animation} state={state}>
