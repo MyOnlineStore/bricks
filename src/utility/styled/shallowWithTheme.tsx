@@ -4,7 +4,7 @@ import MosTheme from '../../themes/MosTheme';
 
 /* tslint:disable */
 const shallowWithTheme = (component:JSX.Element):ShallowWrapper => {
-    const context = shallow(<MosTheme />)
+    const context = (shallow(<MosTheme />) as any)
         .dive()
         .instance()
         .getChildContext();
