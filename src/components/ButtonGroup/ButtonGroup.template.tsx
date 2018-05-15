@@ -14,18 +14,21 @@ const ButtonGroup:StatelessComponent = (props):JSX.Element => {
         >
             {(breakpoint):JSX.Element => {
                 const direction = breakpoint === 'small' ? 'column' : 'row-reverse';
-                const alignItems = breakpoint === 'small' ? 'stretch' : 'center';
 
                 return (
                     <Box
                         direction={direction}
                         justifyContent="flex-start"
-                        alignItems={alignItems}
-                        wrap={true}
+                        alignItems="stretch"
+                        wrap
                         margin={trbl(-6)}
                     >
                         {Children.map(props.children, (child):JSX.Element => (
-                            <Box direction="column" justifyContent="stretch" margin={trbl(6)}>
+                            <Box
+                                direction={breakpoint === 'small' ? 'column' : 'row'}
+                                alignSelf="stretch"
+                                margin={trbl(6)}
+                            >
                                 {child}
                             </Box>
                         ))}

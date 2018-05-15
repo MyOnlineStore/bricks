@@ -2,7 +2,7 @@
 
 exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] = `
 <Styled(Box)
-  alignItems="center"
+  alignItems="stretch"
   direction="row-reverse"
   justifyContent="flex-start"
   margin={
@@ -16,8 +16,8 @@ exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] 
   wrap={true}
 >
   <Styled(Box)
-    direction="column"
-    justifyContent="stretch"
+    alignSelf="stretch"
+    direction="row"
     key=".0"
     margin={
       Object {
@@ -34,8 +34,8 @@ exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] 
     />
   </Styled(Box)>
   <Styled(Box)
-    direction="column"
-    justifyContent="stretch"
+    alignSelf="stretch"
+    direction="row"
     key=".1"
     margin={
       Object {
@@ -46,8 +46,9 @@ exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] 
       }
     }
   >
-    <Styled(FlatButton)
+    <Styled(Button)
       title="Test"
+      variant="secondary"
     />
   </Styled(Box)>
 </Styled(Box)>
@@ -69,8 +70,8 @@ exports[`ButtonGroup renders with a single Button in a small node 1`] = `
   wrap={true}
 >
   <Styled(Box)
+    alignSelf="stretch"
     direction="column"
-    justifyContent="stretch"
     key=".0"
     margin={
       Object {

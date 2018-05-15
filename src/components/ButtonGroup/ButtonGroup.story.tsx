@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import ButtonGroup from '.';
 import Button from '../Button';
-import FlatButton from '../FlatButton';
 
 const Wrap = styled.div`
     max-width: 640px;
@@ -15,8 +14,8 @@ storiesOf('ButtonGroup', module)
         return (
             <Wrap>
                 <ButtonGroup>
-                    <Button title="Primary button">Primary button</Button>
-                    <FlatButton title="Primary button">Cancel button</FlatButton>
+                    <Button variant="primary" title="Primary button">Primary button</Button>
+                    <Button variant="secondary" title="Secondary button">Secondary button</Button>
                 </ButtonGroup>
             </Wrap>
         );

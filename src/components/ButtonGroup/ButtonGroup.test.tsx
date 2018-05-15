@@ -5,7 +5,6 @@ import ButtonGroup from '.';
 import BreakpointProvider from '../BreakpointProvider';
 import { PropsType } from '../BreakpointProvider/BreakpointProvider.template';
 import Button from '../Button';
-import FlatButton from '../FlatButton';
 
 jest.mock('../BreakpointProvider', () => jest.fn().mockImplementation((props:PropsType):JSX.Element => {
     return props.children('large');
@@ -16,7 +15,7 @@ describe('ButtonGroup', () => {
         const component = shallow(
             <ButtonGroup>
                 <Button title="Test" variant="primary" />
-                <FlatButton title="Test" />
+                <Button title="Test" variant="secondary" />
             </ButtonGroup>
         ).dive();
 

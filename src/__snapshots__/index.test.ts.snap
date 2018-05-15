@@ -257,16 +257,15 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Destructive 1`] = `
-.c0 {
+exports[`Storyshots Button On a darker background 1`] = `
+.c1 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  padding: 11px 24px;
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -284,218 +283,104 @@ exports[`Storyshots Button Destructive 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: 3px;
+  border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #ed2157;
-  border-color: #ed2157;
-  color: #fff;
+  background-color: #fff;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c0:hover {
-  background-color: #ed2157;
-  border-color: #ed2157;
-  color: #fff;
+.c1:hover {
+  background-color: #e4e7ec;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c0:focus {
-  background-color: #ed2157;
-  border-color: #ed2157;
-  color: #fff;
+.c1:focus {
+  background-color: #fff;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #fff;
 }
 
-.c0:active {
-  background-color: #ed2157;
-  border-color: #ed2157;
-  color: #fff;
+.c1:active {
+  background-color: #e4e7ec;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
 }
 
-.c0:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+.c1:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
-.c0:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0::before {
+.c1::before {
   position: absolute;
   display: block;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
   content: '';
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
 }
 
-.c0:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
+.c1:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
   cursor: default;
   opacity: .7;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  color: #333740;
+  color: #88979d;
+  box-shadow: none;
 }
 
-.c0:disabled::before {
+.c1:disabled::before {
   opacity: 1;
 }
 
-<button
-  className="c0"
-  disabled={undefined}
-  href={undefined}
-  onClick={[Function]}
-  target={undefined}
-  title="Click me!"
-  type="button"
->
-  Click me
-</button>
-`;
-
-exports[`Storyshots Button Disabled 1`] = `
 .c0 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
-  font-weight: 400;
-  border-style: solid;
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:hover {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:focus {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:active {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0::before {
   position: absolute;
-  display: block;
-  left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8f9fb;
+  padding: 24px;
 }
 
-.c0:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
-  cursor: default;
-  opacity: .7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #333740;
-}
-
-.c0:disabled::before {
-  opacity: 1;
-}
-
-<button
+<div
   className="c0"
-  disabled={true}
-  href={undefined}
-  onClick={[Function]}
-  target={undefined}
-  title="Click me if you can!"
-  type="button"
 >
-  Click me if you can!
-</button>
+  <button
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onClick={[Function]}
+    target={undefined}
+    title="Click me"
+    type="button"
+  >
+    Click me
+  </button>
+</div>
 `;
 
-exports[`Storyshots Button Primary 1`] = `
+exports[`Storyshots Button With an icon 1`] = `
 .c0 {
   position: relative;
   -webkit-appearance: none;
@@ -503,8 +388,7 @@ exports[`Storyshots Button Primary 1`] = `
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  padding: 11px 12px;
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -522,171 +406,41 @@ exports[`Storyshots Button Primary 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: 3px;
+  border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:hover {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:focus {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:active {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
-}
-
-.c0:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
-  cursor: default;
-  opacity: .7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
+  background-color: #f8f9fb;
+  border-color: transparent;
   color: #333740;
-}
-
-.c0:disabled::before {
-  opacity: 1;
-}
-
-<button
-  className="c0"
-  disabled={undefined}
-  href={undefined}
-  onClick={[Function]}
-  target={undefined}
-  title="Click me!"
-  type="button"
->
-  Click me
-</button>
-`;
-
-exports[`Storyshots Button Secondary 1`] = `
-.c0 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
-  font-weight: 400;
-  border-style: solid;
-  background-color: #edeff2;
-  border-color: #d2d7e0;
-  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:hover {
   background-color: #edeff2;
-  border-color: #d2d7e0;
+  border-color: transparent;
   color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:focus {
-  background-color: #edeff2;
-  border-color: #d2d7e0;
+  background-color: #f8f9fb;
+  border-color: transparent;
   color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c0:active {
   background-color: #edeff2;
-  border-color: #d2d7e0;
+  border-color: transparent;
   color: #333740;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  box-shadow: none;
 }
 
 .c0:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .c0::before {
@@ -696,44 +450,68 @@ exports[`Storyshots Button Secondary 1`] = `
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
   content: '';
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
 }
 
 .c0:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
+  background: #e4e7ec;
+  border-color: transparent;
   cursor: default;
   opacity: .7;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  color: #333740;
+  color: #88979d;
+  box-shadow: none;
 }
 
 .c0:disabled::before {
   opacity: 1;
 }
 
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c1 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
 <button
   className="c0"
-  disabled={undefined}
+  disabled={false}
   href={undefined}
   onClick={[Function]}
   target={undefined}
-  title="Click me!"
+  title="Click me"
   type="button"
 >
-  Click me
+  <span
+    aria-hidden={true}
+    className="c1"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    role="img"
+  />
 </button>
 `;
 
-exports[`Storyshots Button Warning 1`] = `
+exports[`Storyshots Button With text 1`] = `
 .c0 {
   position: relative;
   -webkit-appearance: none;
@@ -741,8 +519,7 @@ exports[`Storyshots Button Warning 1`] = `
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  padding: 11px 24px;
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -760,52 +537,41 @@ exports[`Storyshots Button Warning 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: 3px;
+  border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #fcc200;
-  border-color: #fcc200;
+  background-color: #5bd16a;
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:hover {
-  background-color: #fcc200;
-  border-color: #fcc200;
+  background-color: #4cc55b;
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:focus {
-  background-color: #fcc200;
-  border-color: #fcc200;
+  background-color: #5bd16a;
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c0:active {
-  background-color: #fcc200;
-  border-color: #fcc200;
+  background-color: #4cc55b;
+  border-color: transparent;
   color: #fff;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  box-shadow: none;
 }
 
 .c0:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .c0::before {
@@ -815,24 +581,26 @@ exports[`Storyshots Button Warning 1`] = `
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
   content: '';
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
 }
 
 .c0:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
+  background: #e4e7ec;
+  border-color: transparent;
   cursor: default;
   opacity: .7;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  color: #333740;
+  color: #88979d;
+  box-shadow: none;
 }
 
 .c0:disabled::before {
@@ -841,179 +609,18 @@ exports[`Storyshots Button Warning 1`] = `
 
 <button
   className="c0"
-  disabled={undefined}
+  disabled={false}
   href={undefined}
   onClick={[Function]}
   target={undefined}
-  title="Click me!"
+  title="Click me"
   type="button"
 >
   Click me
 </button>
-`;
-
-exports[`Storyshots Button With a link 1`] = `
-.c0 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
-  font-weight: 400;
-  border-style: solid;
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:hover {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:focus {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:active {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
-  color: #fff;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
-}
-
-.c0:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
-  cursor: default;
-  opacity: .7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #333740;
-}
-
-.c0:disabled::before {
-  opacity: 1;
-}
-
-<a
-  className="c0"
-  disabled={undefined}
-  href="http://www.google.nl"
-  onClick={[Function]}
-  target="_blank"
-  title="Click me!"
-  type={undefined}
->
-  Click me
-</a>
 `;
 
 exports[`Storyshots ButtonGroup Default 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: stretch;
-  -webkit-justify-content: stretch;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  margin: 6px 6px 6px 6px;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1030,10 +637,10 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
@@ -1056,6 +663,48 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   align-self: auto;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 6px 6px 6px 6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
 .c3 {
   position: relative;
   -webkit-appearance: none;
@@ -1063,8 +712,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  padding: 11px 24px;
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -1082,52 +730,41 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: 3px;
+  border-width: 0;
   font-weight: 400;
   border-style: solid;
   background-color: #5bd16a;
-  border-color: #5bd16a;
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:hover {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
+  background-color: #4cc55b;
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:focus {
   background-color: #5bd16a;
-  border-color: #5bd16a;
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c3:active {
-  background-color: #5bd16a;
-  border-color: #5bd16a;
+  background-color: #4cc55b;
+  border-color: transparent;
   color: #fff;
-}
-
-.c3:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  box-shadow: none;
 }
 
 .c3:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c3:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .c3::before {
@@ -1137,24 +774,26 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
   content: '';
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
 }
 
 .c3:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
+  background: #e4e7ec;
+  border-color: transparent;
   cursor: default;
   opacity: .7;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  color: #333740;
+  color: #88979d;
+  box-shadow: none;
 }
 
 .c3:disabled::before {
@@ -1162,64 +801,98 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 35px;
-  box-shadow: none;
+  padding: 11px 24px;
   cursor: pointer;
   display: inline-block;
   outline: none;
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  background: transparent;
-  border-radius: 0;
-  border: solid 1px transparent;
-  color: #21252b;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  background-color: #f8f9fb;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c4:hover {
-  background-color: transparent;
-  border-color: #d2d7e0;
-  color: #21252b;
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c4:focus {
-  background-color: transparent;
-  border-color: #d2d7e0;
-  color: #21252b;
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  background-color: #f8f9fb;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c4:active {
-  background-color: transparent;
-  border-color: #d2d7e0;
-  color: #21252b;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+}
+
+.c4:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c4::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.c4:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c4:disabled::before {
+  opacity: 1;
 }
 
 .c0 {
@@ -1254,14 +927,14 @@ exports[`Storyshots ButtonGroup Default 1`] = `
       >
         <button
           className="c4"
-          disabled={false}
+          disabled={undefined}
           href={undefined}
           onClick={[Function]}
           target={undefined}
-          title="Primary button"
+          title="Secondary button"
           type="button"
         >
-          Cancel button
+          Secondary button
         </button>
       </div>
     </div>
@@ -1288,81 +961,6 @@ exports[`Storyshots ErrorBoundary Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots FlatButton Default 1`] = `
-.c0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 35px;
-  box-shadow: none;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  background: transparent;
-  border-radius: 0;
-  border: solid 1px transparent;
-  color: #21252b;
-}
-
-.c0:hover {
-  background-color: transparent;
-  border-color: #d2d7e0;
-  color: #21252b;
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0:focus {
-  background-color: transparent;
-  border-color: #d2d7e0;
-  color: #21252b;
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
-}
-
-.c0:active {
-  background-color: transparent;
-  border-color: #d2d7e0;
-  color: #21252b;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-<button
-  className="c0"
-  disabled={false}
-  href={undefined}
-  onClick={[Function]}
-  target={undefined}
-  title="Click me!"
-  type="button"
->
-  Click me
-</button>
-`;
-
 exports[`Storyshots FoldOut With a toggle 1`] = `
 .c1 {
   padding: 0px 0px 12px 0px;
@@ -1384,8 +982,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 35px;
-  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  padding: 11px 24px;
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -1403,52 +1000,41 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   text-decoration: none;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: 3px;
+  border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #edeff2;
-  border-color: #d2d7e0;
+  background-color: #f8f9fb;
+  border-color: transparent;
   color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:hover {
   background-color: #edeff2;
-  border-color: #d2d7e0;
+  border-color: transparent;
   color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:focus {
-  background-color: #edeff2;
-  border-color: #d2d7e0;
+  background-color: #f8f9fb;
+  border-color: transparent;
   color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c3:active {
   background-color: #edeff2;
-  border-color: #d2d7e0;
+  border-color: transparent;
   color: #333740;
-}
-
-.c3:hover {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  box-shadow: none;
 }
 
 .c3:active {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
-}
-
-.c3:focus {
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .c3::before {
@@ -1458,24 +1044,26 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
   content: '';
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
 }
 
 .c3:disabled {
-  background: #edeff2;
-  border: 1px solid transparent;
-  box-shadow: none;
+  background: #e4e7ec;
+  border-color: transparent;
   cursor: default;
   opacity: .7;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
-  color: #333740;
+  color: #88979d;
+  box-shadow: none;
 }
 
 .c3:disabled::before {
