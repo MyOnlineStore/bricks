@@ -1724,6 +1724,296 @@ exports[`Storyshots Icon With some text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Message Error 1`] = `
+.c1 {
+  padding: 12px 24px 12px 24px;
+}
+
+.c3 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c4 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c0 {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #dbdfe6;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #ed2157;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p
+      className="c2"
+    >
+      Oops!
+    </p>
+    <p
+      className="c3"
+    >
+      Something went wrong. Please try again.
+    </p>
+    <p
+      className="c4"
+    >
+      Yesterday 12:12
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Message Info 1`] = `
+.c1 {
+  padding: 12px 24px 12px 24px;
+}
+
+.c3 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c4 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c0 {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #dbdfe6;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #dbdfe6;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p
+      className="c2"
+    >
+      FYI
+    </p>
+    <p
+      className="c3"
+    >
+      This just is happend.
+    </p>
+    <p
+      className="c4"
+    >
+      12-12-2012
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Message Success 1`] = `
+.c1 {
+  padding: 12px 24px 12px 24px;
+}
+
+.c3 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c4 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c0 {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #dbdfe6;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #5bd16a;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p
+      className="c2"
+    >
+      Wow, Great job!
+    </p>
+    <p
+      className="c3"
+    >
+      This went very well.
+    </p>
+    <p
+      className="c4"
+    >
+      A few minutes ago
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Message Warning 1`] = `
+.c1 {
+  padding: 12px 24px 12px 24px;
+}
+
+.c3 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c2 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c4 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c0 {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #dbdfe6;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #fcc200;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p
+      className="c2"
+    >
+      Careful!
+    </p>
+    <p
+      className="c3"
+    >
+      This might go wrong.
+    </p>
+    <p
+      className="c4"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Notification Error 1`] = `
 .c1 {
   margin: 12px 12px 12px 12px;
