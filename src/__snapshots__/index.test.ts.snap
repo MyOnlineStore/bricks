@@ -1724,12 +1724,12 @@ exports[`Storyshots Icon With some text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Message Error 1`] = `
+exports[`Storyshots Message Default 1`] = `
 .c1 {
   padding: 12px 24px 12px 24px;
 }
 
-.c3 {
+.c5 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -1738,7 +1738,7 @@ exports[`Storyshots Message Error 1`] = `
   margin: 0;
 }
 
-.c2 {
+.c4 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -1747,7 +1747,7 @@ exports[`Storyshots Message Error 1`] = `
   margin: 0;
 }
 
-.c4 {
+.c6 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -1756,150 +1756,235 @@ exports[`Storyshots Message Error 1`] = `
   margin: 0;
 }
 
-.c0 {
-  position: relative;
-  background: #fff;
-  border-bottom: 1px solid #dbdfe6;
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  margin: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
 }
 
-.c0::before {
-  content: '';
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 0px 12px 0px 0px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 300px;
+  -ms-flex-preferred-size: 300px;
+  flex-basis: 300px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 6px 0px 6px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c8 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 35px;
+  box-shadow: 0 6px 3px -5px rgba(51,55,64,.3);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 0;
+  border-width: 1px;
+  font-weight: 400;
+  border-style: solid;
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c8:hover {
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c8:focus {
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c8:active {
+  background-color: #5bd16a;
+  border-color: #5bd16a;
+  color: #fff;
+}
+
+.c8:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c8:active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px -2px rgba(51,55,64 ,.3);
+}
+
+.c8:focus {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 3px -6px rgba(51,55,64 ,.3);
+}
+
+.c8::before {
   position: absolute;
+  display: block;
   left: 0;
   top: 0;
-  height: 100%;
-  width: 5px;
-  background: #ed2157;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      Oops!
-    </p>
-    <p
-      className="c3"
-    >
-      Something went wrong. Please try again.
-    </p>
-    <p
-      className="c4"
-    >
-      Yesterday 12:12
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Message Info 1`] = `
-.c1 {
-  padding: 12px 24px 12px 24px;
-}
-
-.c3 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c4 {
-  color: #a6aab3;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c0 {
-  position: relative;
-  background: #fff;
-  border-bottom: 1px solid #dbdfe6;
-}
-
-.c0::before {
+  right: 0;
+  bottom: 0;
+  z-index: -1;
   content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 5px;
-  background: #dbdfe6;
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: repeating-linear-gradient( -45deg, #edeff2, #edeff2 20px, #dbdfe6 20px, #dbdfe6 40px );
 }
 
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      FYI
-    </p>
-    <p
-      className="c3"
-    >
-      This just is happend.
-    </p>
-    <p
-      className="c4"
-    >
-      12-12-2012
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Message Success 1`] = `
-.c1 {
-  padding: 12px 24px 12px 24px;
-}
-
-.c3 {
+.c8:disabled {
+  background: #edeff2;
+  border: 1px solid transparent;
+  box-shadow: none;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
 }
 
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c4 {
-  color: #a6aab3;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
+.c8:disabled::before {
+  opacity: 1;
 }
 
 .c0 {
@@ -1924,92 +2009,44 @@ exports[`Storyshots Message Success 1`] = `
   <div
     className="c1"
   >
-    <p
+    <div
       className="c2"
     >
-      Wow, Great job!
-    </p>
-    <p
-      className="c3"
-    >
-      This went very well.
-    </p>
-    <p
-      className="c4"
-    >
-      A few minutes ago
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Message Warning 1`] = `
-.c1 {
-  padding: 12px 24px 12px 24px;
-}
-
-.c3 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c4 {
-  color: #a6aab3;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c0 {
-  position: relative;
-  background: #fff;
-  border-bottom: 1px solid #dbdfe6;
-}
-
-.c0::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 5px;
-  background: #fcc200;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      Careful!
-    </p>
-    <p
-      className="c3"
-    >
-      This might go wrong.
-    </p>
-    <p
-      className="c4"
-    />
+      <div
+        className="c3"
+      >
+        <p
+          className="c4"
+        >
+          Title
+        </p>
+        <p
+          className="c5"
+        >
+          Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus.
+        </p>
+        <p
+          className="c6"
+        >
+          Today 12:00
+        </p>
+      </div>
+      <div
+        className="c7"
+      >
+        <button
+          className="c8"
+          disabled={undefined}
+          href={undefined}
+          onClick={[Function]}
+          target={undefined}
+          title="Click me"
+          type="button"
+        >
+          Click me
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
