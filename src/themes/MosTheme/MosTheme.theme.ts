@@ -250,9 +250,10 @@ const theme:ThemeType = {
             background: grey.base,
         }
     },
-    Message: {
-        idle: {
+    MessageStream: {
+        common: {
             backgroundColor: silver.lighter1,
+            borderColor: silver.darker3,
         },
         read: {
             backgroundColor: silver.base,

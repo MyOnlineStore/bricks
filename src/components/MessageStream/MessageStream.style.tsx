@@ -1,14 +1,16 @@
+import React from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import styled from '../../utility/styled';
-import Message from './Message.template';
+import MessageStream, { Message } from './MessageStream.template';
 
 type VariantStyleType = {
     borderColor:string;
 };
 
-type MessageThemeType = {
-    idle:{
+type MessageStreamThemeType = {
+    common:{
         backgroundColor:string;
+        borderColor:string;
     };
     read:{
         backgroundColor:string;
@@ -19,9 +21,17 @@ type MessageThemeType = {
     warning:VariantStyleType;
 };
 
+const StyledMessageStream = styled(MessageStream)`
+    display: block;
+`;
+
+const MessageSeparator = styled.div`
+    border-bottom: 1px solid ${({ theme }):string => theme.MessageStream.common.borderColor};
+`;
+
 const StyledMessage = styled(Message)`
     position: relative;
-    background: ${({ theme, read }):string => read ? theme.Message.read.backgroundColor : theme.Message.idle.backgroundColor};
+    background: ${({ theme, read }):string => read ? theme.MessageStream.read.backgroundColor : theme.MessageStream.common.backgroundColor};
 
     ${({ theme, severity }):string => `
         &::before {
@@ -31,13 +41,15 @@ const StyledMessage = styled(Message)`
             top: 0;
             height: 100%;
             width: 5px;
-            background: ${theme.Message[severity].borderColor};
+            background: ${theme.MessageStream[severity].borderColor};
         }
     `}
 `;
 
-export default StyledMessage;
+export default StyledMessageStream;
 export {
-    MessageThemeType,
+    StyledMessage,
+    MessageSeparator,
+    MessageStreamThemeType,
     VariantStyleType,
 };
