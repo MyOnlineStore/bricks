@@ -7,13 +7,11 @@ type VariantStyleType = {
 };
 
 type MessageThemeType = {
-    common:{
+    idle:{
         backgroundColor:string;
-        borderColor:string;
     };
     read:{
         backgroundColor:string;
-        borderColor:string;
     };
     error:VariantStyleType;
     info:VariantStyleType;
@@ -23,8 +21,7 @@ type MessageThemeType = {
 
 const StyledMessage = styled(Message)`
     position: relative;
-    background: ${({ theme, read }):string => read ? theme.Message.read.backgroundColor : theme.Message.common.backgroundColor};
-    border-bottom: 1px solid ${({ theme, read }):string => read ? theme.Message.read.borderColor : theme.Message.common.borderColor};
+    background: ${({ theme, read }):string => read ? theme.Message.read.backgroundColor : theme.Message.idle.backgroundColor};
 
     ${({ theme, severity }):string => `
         &::before {

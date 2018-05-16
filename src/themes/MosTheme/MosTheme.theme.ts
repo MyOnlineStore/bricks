@@ -251,13 +251,11 @@ const theme:ThemeType = {
         }
     },
     Message: {
-        common: {
+        idle: {
             backgroundColor: silver.lighter1,
-            borderColor: silver.darker3,
         },
         read: {
             backgroundColor: silver.base,
-            borderColor: silver.darker3,
         },
         success: {
             borderColor: green.darker1,
