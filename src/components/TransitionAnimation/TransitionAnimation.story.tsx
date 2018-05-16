@@ -14,7 +14,7 @@ const StyledDiv = styled.div`
 `;
 
 storiesOf('TransitionAnimation', module)
-    .add('Zoom', () => {
+    .add('Default', () => {
         const show = boolean('show', true);
 
         return (
