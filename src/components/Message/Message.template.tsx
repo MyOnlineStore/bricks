@@ -39,7 +39,7 @@ const Message:StatelessComponent<PropsType> = (props):JSX.Element => {
                 offsetType="inner"
             >
                 <Box wrap alignItems="center" alignContent="flex-start">
-                    <Box direction="column" grow={1} basis={'300px'} margin={trbl(0, 12, 0, 0)}>
+                    <Box direction="column" grow={1} basis={'250px'} margin={trbl(0, 24, 0, 0)}>
                         <Text strong>{props.title}</Text>
                         <Text>{props.message}</Text>
                         <Text descriptive>{props.date}</Text>
