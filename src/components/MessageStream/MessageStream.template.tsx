@@ -1,4 +1,5 @@
-import React, { StatelessComponent } from 'react';
+import React, { Fragment, StatelessComponent } from 'react';
+import uuid from 'uuid';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
@@ -22,20 +23,22 @@ type PropsType = StyledType & {
     messages:Array<MessagePropsType>;
 };
 
+const mapVariant = (severity:MessagePropsType['severity']):ButtonPropsType['variant'] => {
+    switch (severity) {
+        case 'warning':
+            return 'warning';
+        case 'error':
+            return 'destructive';
+        case 'info':
+            return 'secondary';
+        case 'success':
+        default:
+            return 'primary';
+    }
+};
+
 const Message:StatelessComponent<MessagePropsType> = (props):JSX.Element => {
-    const mapVariant = (severity:MessagePropsType['severity']):ButtonPropsType['variant'] => {
-        switch (severity) {
-            case 'warning':
-                return 'warning';
-            case 'error':
-                return 'destructive';
-            case 'info':
-                return 'secondary';
-            case 'success':
-            default:
-                return 'primary';
-        }
-    };
+    const variant = mapVariant(props.severity);
 
     return (
         <div className={props.className}>
@@ -49,10 +52,26 @@ const Message:StatelessComponent<MessagePropsType> = (props):JSX.Element => {
                         <Text>{props.message}</Text>
                         <Text descriptive>{props.date}</Text>
                     </Box>
-                    {props.action !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0 &&
-                    <Box direction="column" basis="auto" justifyContent="center" alignItems="flex-end" margin={trbl(6, 0)}>
-                        <Button title={props.buttonLabel} variant={mapVariant(props.severity)} action={props.action}>{props.buttonLabel}</Button>
-                    </Box>
+                    {props.action !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0
+                        ? (
+                            <Box
+                                direction="column"
+                                basis="auto"
+                                justifyContent="center"
+                                alignItems="flex-end"
+                                margin={trbl(6, 0)}
+                            >
+                                <Button
+                                    title={props.buttonLabel}
+                                    variant={variant}
+                                    action={():void => {
+                                        (props.action as Function)();
+                                    }}
+                                >
+                                    {props.buttonLabel}
+                                </Button>
+                            </Box>
+                        ) : undefined
                     }
                 </Box>
             </Spacer>
@@ -60,23 +79,19 @@ const Message:StatelessComponent<MessagePropsType> = (props):JSX.Element => {
     );
 };
 
-const MessageStream:StatelessComponent<PropsType> = (props):JSX.Element => {
-
-    const messages = props.messages.map((message:MessagePropsType, index:number):JSX.Element => (
-        <div key={index}>
-            <StyledMessage {...message} />
-            {index < props.messages.length - 1 &&
-                <MessageSeparator />
-            }
-        </div>
-    ));
-
-    return (
-        <div className={props.className}>
-            {messages}
-        </div>
-    );
-};
+const MessageStream:StatelessComponent<PropsType> = (props):JSX.Element => (
+    <div className={props.className}>
+        {props.messages.map((message:MessagePropsType, index:number):JSX.Element => (
+            <Fragment key={uuid()}>
+                <StyledMessage {...message} />
+                {index < props.messages.length - 1
+                    ? <MessageSeparator />
+                    : undefined
+                }
+            </Fragment>
+        ))}
+    </div>
+);
 
 export default MessageStream;
 export {

@@ -2388,275 +2388,263 @@ exports[`Storyshots MessageStream Default 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className="c1"
+  >
     <div
-      className="c1"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
-          <div
-            className="c4"
+          <p
+            className="c5"
           >
-            <p
-              className="c5"
-            >
-              Sit Inceptos Magna
-            </p>
-            <p
-              className="c6"
-            >
-              Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.
-            </p>
-            <p
-              className="c7"
-            >
-              Today 12:00
-            </p>
-          </div>
+            Sit Inceptos Magna
+          </p>
+          <p
+            className="c6"
+          >
+            Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.
+          </p>
+          <p
+            className="c7"
+          >
+            Today 12:00
+          </p>
         </div>
       </div>
     </div>
-    <div
-      className="c8"
-    />
   </div>
-  <div>
+  <div
+    className="c8"
+  />
+  <div
+    className="c9"
+  >
     <div
-      className="c9"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
-          <div
-            className="c4"
+          <p
+            className="c5"
           >
-            <p
-              className="c5"
-            >
-              Aenean Dapibus Vulputate Tortor Magna
-            </p>
-            <p
-              className="c6"
-            >
-              Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
+            Aenean Dapibus Vulputate Tortor Magna
+          </p>
+          <p
+            className="c6"
+          >
+            Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
                  aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis.
-            </p>
-            <p
-              className="c7"
-            >
-              Today 10:00
-            </p>
-          </div>
+          </p>
+          <p
+            className="c7"
+          >
+            Today 10:00
+          </p>
         </div>
       </div>
     </div>
-    <div
-      className="c8"
-    />
   </div>
-  <div>
+  <div
+    className="c8"
+  />
+  <div
+    className="c1"
+  >
     <div
-      className="c1"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
-          <div
-            className="c4"
+          <p
+            className="c5"
           >
-            <p
-              className="c5"
-            >
-              Vestibulum Dapibus
-            </p>
-            <p
-              className="c6"
-            >
-              Curabitur blandit tempus porttitor.
-            </p>
-            <p
-              className="c7"
-            >
-              Yesterday 12:00
-            </p>
-          </div>
-          <div
-            className="c10"
+            Vestibulum Dapibus
+          </p>
+          <p
+            className="c6"
           >
-            <button
-              className="c11"
-              disabled={undefined}
-              href={undefined}
-              onClick={[Function]}
-              target={undefined}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            Curabitur blandit tempus porttitor.
+          </p>
+          <p
+            className="c7"
+          >
+            Yesterday 12:00
+          </p>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c11"
+            disabled={undefined}
+            href={undefined}
+            onClick={[Function]}
+            target={undefined}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="c8"
-    />
   </div>
-  <div>
+  <div
+    className="c8"
+  />
+  <div
+    className="c12"
+  >
     <div
-      className="c12"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
-          <div
-            className="c4"
+          <p
+            className="c5"
           >
-            <p
-              className="c5"
-            >
-              Parturient Euismod Mollis Fringilla
-            </p>
-            <p
-              className="c6"
-            >
-              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+            Parturient Euismod Mollis Fringilla
+          </p>
+          <p
+            className="c6"
+          >
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
                  amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.
-            </p>
-            <p
-              className="c7"
-            >
-              12-12-2012 12:00
-            </p>
-          </div>
-          <div
-            className="c10"
+          </p>
+          <p
+            className="c7"
           >
-            <button
-              className="c13"
-              disabled={undefined}
-              href={undefined}
-              onClick={[Function]}
-              target={undefined}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            12-12-2012 12:00
+          </p>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c13"
+            disabled={undefined}
+            href={undefined}
+            onClick={[Function]}
+            target={undefined}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="c8"
-    />
   </div>
-  <div>
+  <div
+    className="c8"
+  />
+  <div
+    className="c14"
+  >
     <div
-      className="c14"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
-          <div
-            className="c4"
+          <p
+            className="c5"
           >
-            <p
-              className="c5"
-            >
-              Tortor Cursus
-            </p>
-            <p
-              className="c6"
-            >
-              Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
-            </p>
-            <p
-              className="c7"
-            >
-              12-12-2012 12:00
-            </p>
-          </div>
-          <div
-            className="c10"
+            Tortor Cursus
+          </p>
+          <p
+            className="c6"
           >
-            <button
-              className="c15"
-              disabled={undefined}
-              href={undefined}
-              onClick={[Function]}
-              target={undefined}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+          </p>
+          <p
+            className="c7"
+          >
+            12-12-2012 12:00
+          </p>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c15"
+            disabled={undefined}
+            href={undefined}
+            onClick={[Function]}
+            target={undefined}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
-    <div
-      className="c8"
-    />
   </div>
-  <div>
+  <div
+    className="c8"
+  />
+  <div
+    className="c16"
+  >
     <div
-      className="c16"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
-          <div
-            className="c4"
+          <p
+            className="c5"
           >
-            <p
-              className="c5"
-            >
-              Euismod Dolor Consectetur
-            </p>
-            <p
-              className="c6"
-            >
-              Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.
-            </p>
-            <p
-              className="c7"
-            />
-          </div>
-          <div
-            className="c10"
+            Euismod Dolor Consectetur
+          </p>
+          <p
+            className="c6"
           >
-            <button
-              className="c17"
-              disabled={undefined}
-              href={undefined}
-              onClick={[Function]}
-              target={undefined}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.
+          </p>
+          <p
+            className="c7"
+          />
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c17"
+            disabled={undefined}
+            href={undefined}
+            onClick={[Function]}
+            target={undefined}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>

@@ -20,7 +20,8 @@
     "@types/react-dom": "^16.0.5",
     "resize-observer-polyfill": "^1.5.0",
     "simplebar": "^2.6.1",
-    "styled-components": "^3.2.3"
+    "styled-components": "^3.2.3",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "^3.4.3",
@@ -34,6 +35,7 @@
     "@types/react-test-renderer": "^16.0.1",
     "@types/simplebar": "^2.4.1",
     "@types/storybook__react": "^3.0.7",
+    "@types/uuid": "^3.4.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-styled-components": "^1.5.1",

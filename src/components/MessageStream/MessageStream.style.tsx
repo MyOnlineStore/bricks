@@ -1,4 +1,4 @@
-import React from 'react';
+import {  ClassAttributes as _C, HTMLAttributes as _H } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import styled from '../../utility/styled';
 import MessageStream, { Message } from './MessageStream.template';
