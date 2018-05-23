@@ -22,6 +22,12 @@ exports[`TransitionAnimation/animations should fade in/out 2`] = `
         "
 `;
 
+exports[`TransitionAnimation/animations should fade in/out 3`] = `
+"
+            opacity: 0;
+        "
+`;
+
 exports[`TransitionAnimation/animations should zoom in/out 1`] = `
 "
             @keyframes zoomIn {
@@ -41,5 +47,12 @@ exports[`TransitionAnimation/animations should zoom in/out 2`] = `
             }
 
             animation: zoomOut .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should zoom in/out 3`] = `
+"
+            opacity: 0;
+            transform: scale3d(.5, .5, .5);
         "
 `;

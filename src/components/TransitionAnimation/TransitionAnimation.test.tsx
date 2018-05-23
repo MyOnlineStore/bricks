@@ -38,10 +38,12 @@ describe('TransitionAnimation/animations', () => {
     it('should zoom in/out', () => {
         expect(zoom('entering')).toMatchSnapshot();
         expect(zoom('exiting')).toMatchSnapshot();
+        expect(zoom('exited')).toMatchSnapshot();
     });
 
     it('should fade in/out', () => {
         expect(fade('entering')).toMatchSnapshot();
         expect(fade('exiting')).toMatchSnapshot();
+        expect(fade('exited')).toMatchSnapshot();
     });
 });

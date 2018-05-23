@@ -11,6 +11,31 @@ jest.mock('simplebar', () => jest.fn().mockImplementation((element:HTMLElement, 
     })
 })));
 
+/* tslint:disable */
+jest.mock('react-popper', () => {
+    const React = require('react');
+
+    return {
+        Manager: (props:any):JSX.Element => {
+            return props.children;
+        },
+        Popper: (props:any):JSX.Element => {
+            return props.children({
+                ref: null,
+                style: '',
+                placement: '',
+                arrowProps: { ref: null, style: '' }
+            });
+        },
+        Reference: (props:any):JSX.Element => {
+            return props.children({
+                ref: null,
+            });
+        },
+    };
+});
+/* tslint:enable */
+
 initStoryshots({
     configPath: './config/storybook',
     test: snapshotWithOptions({

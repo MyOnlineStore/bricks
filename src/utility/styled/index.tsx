@@ -1,27 +1,28 @@
 /* tslint:disable */
-import React, { Component } from 'react';
+import React from 'react';
 import * as styledComponents from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { shallow, mount, ReactWrapper, ShallowWrapper } from 'enzyme';
 import MosTheme from '../../themes/MosTheme';
+import theme from '../../themes/MosTheme/MosTheme.theme';
 
 const {
   default: styled,
   css,
   injectGlobal,
   keyframes,
-  ThemeProvider
+  ThemeProvider,
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeType>;
 
 type StyledType = {
     theme?:ThemeType;
     className?:string;
+    innerRef?:any;
 };
 
 /* tslint:disable */
 const shallowWithTheme = (component:JSX.Element):ShallowWrapper => {
-    const context = (shallow(<MosTheme />) as any)
-        .dive()
+    const context = (shallow(<ThemeProvider theme={theme} />) as any)
         .instance()
         .getChildContext();
 
@@ -29,10 +30,10 @@ const shallowWithTheme = (component:JSX.Element):ShallowWrapper => {
 };
 
 const mountWithTheme = (component:JSX.Element):ReactWrapper => {
-    const ThemeProvider = (shallow(<MosTheme />) as any).dive();
-    const context = ThemeProvider
+    const context = (shallow(<ThemeProvider theme={theme} />) as any)
         .instance()
         .getChildContext();
+
     return mount(component, { context, childContextTypes: ThemeProvider.childContextTypes });
 };
 

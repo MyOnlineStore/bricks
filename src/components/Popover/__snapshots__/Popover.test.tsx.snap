@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover should render with defaults 1`] = `
+<styled.div
+  innerRef={null}
+  style=""
+>
+  <styled.div>
+    Mock content
+  </styled.div>
+  <styled.div />
+  <styled.div
+    innerRef={null}
+    placement=""
+    style=""
+  />
+  <styled.div
+    placement=""
+    shadow={true}
+    style=""
+  />
+</styled.div>
+`;
+
+exports[`Popover should render with defaults 2`] = `
+<styled.div
+  innerRef={null}
+/>
+`;
+
+exports[`PopoverArrow should render at the bottom with shadow 1`] = `
+.c0 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  top: -8px;
+  -webkit-transform: scaleY(.75) rotate(45deg);
+  -ms-transform: scaleY(.75) rotate(45deg);
+  transform: scaleY(.75) rotate(45deg);
+  box-shadow: 0 1px 12px rgba(0 ,0,0,.2);
+  z-index: 1;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`PopoverArrow should render at the top 1`] = `
+.c0 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  bottom: -8px;
+  -webkit-transform: scaleY(.75) rotate(45deg);
+  -ms-transform: scaleY(.75) rotate(45deg);
+  transform: scaleY(.75) rotate(45deg);
+  background: #fff;
+  z-index: 3;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`PopoverArrow should render on the left 1`] = `
+.c0 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  right: -8px;
+  -webkit-transform: scaleX(.75) rotate(45deg);
+  -ms-transform: scaleX(.75) rotate(45deg);
+  transform: scaleX(.75) rotate(45deg);
+  background: #fff;
+  z-index: 3;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`PopoverArrow should render on the right 1`] = `
+.c0 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  left: -8px;
+  -webkit-transform: scaleX(.75) rotate(45deg);
+  -ms-transform: scaleX(.75) rotate(45deg);
+  transform: scaleX(.75) rotate(45deg);
+  background: #fff;
+  z-index: 3;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`PopoverBackground should render with defaults 1`] = `
+.c0 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  box-shadow: 0 1px 12px rgba(0,0,0,.2);
+  background: #fff;
+  border-radius: 5px;
+}
+
+<div
+  className="c0"
+/>
+`;

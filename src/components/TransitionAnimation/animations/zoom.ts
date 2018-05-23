@@ -10,6 +10,10 @@ const zoom = (state:AnimationStateType):string => {
 
             animation: zoomOut .3s both;
         `;
+        case 'exited': return `
+            opacity: 0;
+            transform: scale3d(.5, .5, .5);
+        `;
         default: return `
             @keyframes zoomIn {
                 0% { opacity: 0; transform: scale3d(.5, .5, .5); }

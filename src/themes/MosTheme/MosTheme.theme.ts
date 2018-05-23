@@ -297,6 +297,10 @@ const theme:ThemeType = {
         fontSize: fontSize.larger2,
         fontWeight: '400',
     },
+    Popover: {
+        background: silver.lighter1,
+        borderRadius: 5,
+    },
     PriceTag: {
         default: {
             color: grey.base,

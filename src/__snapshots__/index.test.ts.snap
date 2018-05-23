@@ -3024,6 +3024,185 @@ exports[`Storyshots Notification With a custom icon 1`] = `
 </div>
 `;
 
+exports[`Storyshots Popover Default 1`] = `
+.c1 {
+  margin: 48px 48px 48px 48px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c3 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  background-color: #5bd16a;
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:hover {
+  background-color: #4cc55b;
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:focus {
+  background-color: #5bd16a;
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:active {
+  background-color: #4cc55b;
+  border-color: transparent;
+  color: #fff;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c3::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  border-radius: 3px;
+}
+
+.c3:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c3:disabled::before {
+  opacity: 1;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <button
+        className="c3"
+        disabled={undefined}
+        href={undefined}
+        onClick={[Function]}
+        target={undefined}
+        title="Toggle"
+        type="button"
+      >
+        Toggle
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots PriceTag Default 1`] = `
 .c0 {
   position: relative;

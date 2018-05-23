@@ -10,6 +10,9 @@ const fade = (state:AnimationStateType):string => {
 
             animation: fadeOut .3s both;
         `;
+        case 'exited': return `
+            opacity: 0;
+        `;
         default: return `
             @keyframes fadeIn {
                 0% { opacity: 0; }

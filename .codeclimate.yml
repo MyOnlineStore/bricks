@@ -38,6 +38,7 @@ exclude_patterns:
     - '**/vendor/'
     - '**/*_test.go'
     - '**/*.d.ts'
+    - '**/*.style.tsx'
     - '**/*.theme.ts'
     - '**/*.test.ts'
     - '**/*.test.tsx'
