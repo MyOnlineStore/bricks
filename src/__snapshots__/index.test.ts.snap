@@ -378,7 +378,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -387,7 +387,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #e4e7ec;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -396,7 +396,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -428,8 +428,8 @@ exports[`Storyshots Button On a contrast area 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -490,7 +490,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -499,7 +499,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -531,7 +531,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
   box-shadow: none;
   border-radius: 3px;
 }
@@ -657,7 +657,7 @@ exports[`Storyshots Button With an icon 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -666,7 +666,7 @@ exports[`Storyshots Button With an icon 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -675,7 +675,7 @@ exports[`Storyshots Button With an icon 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -707,8 +707,8 @@ exports[`Storyshots Button With an icon 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -796,7 +796,7 @@ exports[`Storyshots Button With text 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -805,7 +805,7 @@ exports[`Storyshots Button With text 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -814,7 +814,7 @@ exports[`Storyshots Button With text 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -846,8 +846,8 @@ exports[`Storyshots Button With text 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -997,7 +997,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1006,7 +1006,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1015,7 +1015,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1047,8 +1047,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -1100,7 +1100,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1109,7 +1109,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1118,7 +1118,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1150,8 +1150,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -1256,7 +1256,7 @@ Array [
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1265,7 +1265,7 @@ Array [
   background-color: #e4e7ec;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1274,7 +1274,7 @@ Array [
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1306,8 +1306,8 @@ Array [
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -1386,7 +1386,7 @@ Array [
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1395,7 +1395,7 @@ Array [
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1404,7 +1404,7 @@ Array [
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1436,8 +1436,8 @@ Array [
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -1540,7 +1540,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1549,7 +1549,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1558,7 +1558,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1590,8 +1590,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -2043,7 +2043,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2052,7 +2052,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2061,7 +2061,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2093,8 +2093,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -2146,7 +2146,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2155,7 +2155,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #e4e7ec;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2164,7 +2164,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2196,8 +2196,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -2249,7 +2249,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #fcc200;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2258,7 +2258,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #edb107;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2267,7 +2267,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #fcc200;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(252,194,0,.25);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2299,8 +2299,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
@@ -2352,7 +2352,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #ed2157;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2361,7 +2361,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #dc1b4f;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2370,7 +2370,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #ed2157;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(237,33,87,.25);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2402,8 +2402,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   border-radius: 3px;
 }
 
