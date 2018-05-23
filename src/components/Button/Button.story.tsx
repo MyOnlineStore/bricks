@@ -1,23 +1,12 @@
 import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import styled from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Contrast from '../Contrast';
 import Icon from '../Icon';
 import Spacer from '../Spacer';
-
-const StyledBackground = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f8f9fb;
-    padding: 24px;
-`;
 
 storiesOf('Button', module)
     .add('With text', () => {
