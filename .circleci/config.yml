@@ -74,8 +74,8 @@ jobs:
       - run:
           name: Publishing to NPM
           command: |
-            if !npm publish; then
-              echo this tag is already published
+            if ! npm publish; then
+              echo command returned true
             fi
 
   cleanup:
