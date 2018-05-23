@@ -5,6 +5,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Button from '../Button';
 import { PropsType as ButtonPropsType } from '../Button/Button.template';
+import Contrast from '../Contrast';
 import Spacer from '../Spacer';
 import Text from '../Text';
 import { MessageSeparator, StyledMessage } from './MessageStream.style';
@@ -42,39 +43,41 @@ const Message:StatelessComponent<MessagePropsType> = (props):JSX.Element => {
 
     return (
         <div className={props.className}>
-            <Spacer
-                offset={trbl(12, 24)}
-                offsetType="inner"
-            >
-                <Box wrap alignItems="center" alignContent="flex-start">
-                    <Box direction="column" grow={1} basis={'250px'} margin={trbl(0, 24, 0, 0)}>
-                        <Text strong>{props.title}</Text>
-                        <Text>{props.message}</Text>
-                        <Text descriptive>{props.date}</Text>
-                    </Box>
-                    {props.action !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0
-                        ? (
-                            <Box
-                                direction="column"
-                                basis="auto"
-                                justifyContent="center"
-                                alignItems="flex-end"
-                                margin={trbl(6, 0)}
-                            >
-                                <Button
-                                    title={props.buttonLabel}
-                                    variant={variant}
-                                    action={():void => {
-                                        (props.action as Function)();
-                                    }}
+            <Contrast enable={props.read}>
+                <Spacer
+                    offset={trbl(12, 24)}
+                    offsetType="inner"
+                >
+                    <Box wrap alignItems="center" alignContent="flex-start">
+                        <Box direction="column" grow={1} basis={'250px'} margin={trbl(0, 24, 0, 0)}>
+                            <Text strong>{props.title}</Text>
+                            <Text>{props.message}</Text>
+                            <Text descriptive>{props.date}</Text>
+                        </Box>
+                        {props.action !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0
+                            ? (
+                                <Box
+                                    direction="column"
+                                    basis="auto"
+                                    justifyContent="center"
+                                    alignItems="flex-end"
+                                    margin={trbl(6, 0)}
                                 >
-                                    {props.buttonLabel}
-                                </Button>
-                            </Box>
-                        ) : undefined
-                    }
-                </Box>
-            </Spacer>
+                                    <Button
+                                        title={props.buttonLabel}
+                                        variant={variant}
+                                        action={():void => {
+                                            (props.action as Function)();
+                                        }}
+                                    >
+                                        {props.buttonLabel}
+                                    </Button>
+                                </Box>
+                            ) : undefined
+                        }
+                    </Box>
+                </Spacer>
+            </Contrast>
         </div>
     );
 };

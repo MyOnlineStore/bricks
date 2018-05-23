@@ -1,5 +1,6 @@
 import {  ClassAttributes as _C, HTMLAttributes as _H } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
+import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
 import MessageStream, { Message } from './MessageStream.template';
 
@@ -31,7 +32,6 @@ const MessageSeparator = styled.div`
 
 const StyledMessage = styled(Message)`
     position: relative;
-    background: ${({ theme, read }):string => read ? theme.MessageStream.read.backgroundColor : theme.MessageStream.common.backgroundColor};
 
     ${({ theme, severity }):string => `
         &::before {
