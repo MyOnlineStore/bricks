@@ -12,3 +12,4 @@ export { default as Spacer } from './components/Spacer';
 export { default as SubHeading } from './components/SubHeading';
 export { default as Text } from './components/Text';
 export { default as trbl } from './utility/trbl';
+export { default as Contrast } from './components/Contrast';
