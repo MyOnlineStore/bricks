@@ -22,7 +22,6 @@ storiesOf('TransitionAnimation', module)
                 <TransitionAnimation
                     show={show}
                     animation={select('animation', ['zoom', 'fade'], 'zoom')}
-                    key={0}
                 >
                     <StyledDiv>
                         <Heading>Lorem ipsum</Heading>

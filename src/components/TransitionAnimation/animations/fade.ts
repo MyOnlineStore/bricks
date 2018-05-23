@@ -8,7 +8,7 @@ const fade = (state:AnimationStateType):string => {
                 100% { opacity: 0; }
             }
 
-            animation: fadeOut .3s;
+            animation: fadeOut .3s both;
         `;
         default: return `
             @keyframes fadeIn {
@@ -16,7 +16,7 @@ const fade = (state:AnimationStateType):string => {
                 100% { opacity: 1; }
             }
 
-            animation: fadeIn .3s;
+            animation: fadeIn .3s both;
         `;
     }
 };

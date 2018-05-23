@@ -3357,7 +3357,7 @@ exports[`Storyshots Text Default 1`] = `
 </p>
 `;
 
-exports[`Storyshots TransitionAnimation Zoom 1`] = `
+exports[`Storyshots TransitionAnimation Default 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3410,8 +3410,8 @@ exports[`Storyshots TransitionAnimation Zoom 1`] = `
 }
 
 .c1 {
-  -webkit-animation: zoomIn .3s;
-  animation: zoomIn .3s;
+  -webkit-animation: zoomIn .3s both;
+  animation: zoomIn .3s both;
 }
 
 .c2 {

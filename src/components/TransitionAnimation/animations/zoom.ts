@@ -8,7 +8,7 @@ const zoom = (state:AnimationStateType):string => {
                 100% { opacity: 0; transform: scale3d(.5, .5, .5); }
             }
 
-            animation: zoomOut .3s;
+            animation: zoomOut .3s both;
         `;
         default: return `
             @keyframes zoomIn {
@@ -16,7 +16,7 @@ const zoom = (state:AnimationStateType):string => {
                 100% { opacity: 1; transform: scale3d(1, 1, 1); }
             }
 
-            animation: zoomIn .3s;
+            animation: zoomIn .3s both;
         `;
     }
 };
