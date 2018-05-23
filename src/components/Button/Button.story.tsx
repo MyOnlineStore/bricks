@@ -2,8 +2,12 @@ import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from '../../utility/styled';
+import trbl from '../../utility/trbl';
 import Button from '../Button';
+import ButtonGroup from '../ButtonGroup';
+import Contrast from '../Contrast';
 import Icon from '../Icon';
+import Spacer from '../Spacer';
 
 const StyledBackground = styled.div`
     position: absolute;
@@ -24,7 +28,6 @@ storiesOf('Button', module)
                     [
                         'primary',
                         'secondary',
-                        'tertiary',
                         'warning',
                         'destructive',
                         'flat'
@@ -48,7 +51,6 @@ storiesOf('Button', module)
                         'secondary',
                         'warning',
                         'destructive',
-                        'light',
                         'flat'
                     ],
                     'secondary'
@@ -62,15 +64,27 @@ storiesOf('Button', module)
             </Button>
         );
     })
-    .add('On a darker background', () => {
+    .add('On a contrast area', () => {
         return (
-            <StyledBackground>
-                <Button
-                    variant="tertiary"
-                    title={text('title', 'Click me')}
-                    disabled={boolean('disabled', false)}
-                    action={():void => { /* */ }}
-                />
-            </StyledBackground>
+            <Contrast>
+                <Spacer offsetType="inner" offset={trbl(12)}>
+                    <ButtonGroup>
+                        <Button
+                            variant="secondary"
+                            title={text('title', 'Click me')}
+                            disabled={boolean('disabled', false)}
+                            action={():void => { /* */ }}
+                        />
+                        <Button
+                            variant="flat"
+                            title={'Click me'}
+                            action={():void => { /* */ }}
+                            compact
+                        >
+                            <Icon size="small" icon="gear" />
+                        </Button>
+                    </ButtonGroup>
+                </Spacer>
+            </Contrast>
         );
     });

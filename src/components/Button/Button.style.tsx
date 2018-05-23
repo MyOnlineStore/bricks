@@ -1,4 +1,5 @@
 import { StyledComponentClass as _S } from 'styled-components';
+import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
 import ButtonTemplate from './Button.template';
 
@@ -14,6 +15,7 @@ type ButtonVariantStylesType = {
     borderColor:string;
     color:string;
     boxShadow:string;
+    textDecoration:string;
 };
 
 type ButtonThemeType = {
@@ -28,7 +30,6 @@ type ButtonThemeType = {
     destructive:ButtonStylesType;
     warning:ButtonStylesType;
     secondary:ButtonStylesType;
-    tertiary:ButtonStylesType;
     flat:ButtonStylesType;
     disabled:{
         color:string;
@@ -66,12 +67,14 @@ const Button = styled(ButtonTemplate)`
             border-color: ${theme.Button[variant].idle.borderColor};
             color: ${theme.Button[variant].idle.color};
             box-shadow: ${theme.Button[variant].idle.boxShadow};
+            text-decoration: ${theme.Button[variant].idle.textDecoration};
 
             &:hover {
                 background-color: ${theme.Button[variant].hover.backgroundColor};
                 border-color: ${theme.Button[variant].hover.borderColor};
                 color: ${theme.Button[variant].hover.color};
                 box-shadow: ${theme.Button[variant].hover.boxShadow};
+                text-decoration: ${theme.Button[variant].hover.textDecoration};
             }
 
             &:focus {
@@ -79,6 +82,7 @@ const Button = styled(ButtonTemplate)`
                 border-color: ${theme.Button[variant].focus.borderColor};
                 color: ${theme.Button[variant].focus.color};
                 box-shadow: ${theme.Button[variant].focus.boxShadow};
+                text-decoration: ${theme.Button[variant].focus.textDecoration};
             }
 
             &:active {
@@ -86,6 +90,7 @@ const Button = styled(ButtonTemplate)`
                 border-color: ${theme.Button[variant].active.borderColor};
                 color: ${theme.Button[variant].active.color};
                 box-shadow: ${theme.Button[variant].active.boxShadow};
+                text-decoration: ${theme.Button[variant].active.textDecoration};
             }
         `;
     }}

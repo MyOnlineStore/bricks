@@ -4,7 +4,7 @@ type PropsType = {
     className?:string;
     compact?:boolean;
     title:string;
-    variant:'primary'|'destructive'|'warning'|'secondary'|'tertiary'|'flat';
+    variant:'primary'|'destructive'|'warning'|'secondary'|'flat';
     target?:HTMLAnchorElement['target'];
     href?:string;
     disabled?:boolean;

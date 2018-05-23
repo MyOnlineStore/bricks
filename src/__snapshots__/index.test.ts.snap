@@ -257,8 +257,96 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button On a darker background 1`] = `
+exports[`Storyshots Button On a contrast area 1`] = `
 .c1 {
+  padding: 12px 12px 12px 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: -6px -6px -6px -6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 6px 6px 6px 6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
+.c4 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -287,40 +375,48 @@ exports[`Storyshots Button On a darker background 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #fff;
+  background-color: #edeff2;
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.c1:hover {
+.c4:hover {
   background-color: #e4e7ec;
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.c1:focus {
-  background-color: #fff;
+.c4:focus {
+  background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #fff;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.c1:active {
+.c4:active {
   background-color: #e4e7ec;
   border-color: transparent;
   color: #333740;
   box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.c1:active {
+.c4:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c1::before {
+.c4::before {
   position: absolute;
   display: block;
   left: 0;
@@ -337,7 +433,7 @@ exports[`Storyshots Button On a darker background 1`] = `
   border-radius: 3px;
 }
 
-.c1:disabled {
+.c4:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -349,34 +445,182 @@ exports[`Storyshots Button On a darker background 1`] = `
   box-shadow: none;
 }
 
-.c1:disabled::before {
+.c4:disabled::before {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 12px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  background-color: transparent;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5:hover {
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5:focus {
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5:active {
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c5::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+.c5:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c5:disabled::before {
   opacity: 1;
 }
 
 .c0 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: #f8f9fb;
-  padding: 24px;
+}
+
+.c6 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c6 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
 }
 
 <div
   className="c0"
 >
-  <button
+  <div
     className="c1"
-    disabled={false}
-    href={undefined}
-    onClick={[Function]}
-    target={undefined}
-    title="Click me"
-    type="button"
   >
-    Click me
-  </button>
+    <div>
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <button
+            className="c4"
+            disabled={false}
+            href={undefined}
+            onClick={[Function]}
+            target={undefined}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
+        </div>
+        <div
+          className="c3"
+        >
+          <button
+            className="c5"
+            disabled={undefined}
+            href={undefined}
+            onClick={[Function]}
+            target={undefined}
+            title="Click me"
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="c6"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -414,6 +658,8 @@ exports[`Storyshots Button With an icon 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:hover {
@@ -421,6 +667,8 @@ exports[`Storyshots Button With an icon 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:focus {
@@ -428,6 +676,8 @@ exports[`Storyshots Button With an icon 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:active {
@@ -435,6 +685,8 @@ exports[`Storyshots Button With an icon 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:active {
@@ -545,6 +797,8 @@ exports[`Storyshots Button With text 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:hover {
@@ -552,6 +806,8 @@ exports[`Storyshots Button With text 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:focus {
@@ -559,6 +815,8 @@ exports[`Storyshots Button With text 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:active {
@@ -566,6 +824,8 @@ exports[`Storyshots Button With text 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:active {
@@ -738,6 +998,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:hover {
@@ -745,6 +1007,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:focus {
@@ -752,6 +1016,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:active {
@@ -759,6 +1025,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #fff;
   box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:active {
@@ -833,6 +1101,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c4:hover {
@@ -840,6 +1110,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c4:focus {
@@ -847,6 +1119,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c4:active {
@@ -854,6 +1128,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c4:active {
@@ -942,6 +1218,263 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Contrast Default 1`] = `
+Array [
+  .c1 {
+  padding: 12px 12px 12px 12px;
+}
+
+.c2 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover {
+  background-color: #e4e7ec;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:focus {
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:active {
+  background-color: #e4e7ec;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c2::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.c2:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c2:disabled::before {
+  opacity: 1;
+}
+
+.c0 {
+  background: #f8f9fb;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <button
+        className="c2"
+        disabled={undefined}
+        href={undefined}
+        onClick={[Function]}
+        target={undefined}
+        title="Inside Contrast"
+        type="button"
+      >
+        Inside Contrast
+      </button>
+    </div>
+  </div>,
+  .c0 {
+  padding: 12px 12px 12px 12px;
+}
+
+.c1 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  transition: transform .1s,background .3s,color .3s,box-shadow .1s,border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  background-color: #f8f9fb;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:hover {
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus {
+  background-color: #f8f9fb;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:active {
+  background-color: #edeff2;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c1::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.c1:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: .7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c1:disabled::before {
+  opacity: 1;
+}
+
+<div
+    className="c0"
+  >
+    <button
+      className="c1"
+      disabled={undefined}
+      href={undefined}
+      onClick={[Function]}
+      target={undefined}
+      title="Outside of Contrast"
+      type="button"
+    >
+      Outside of Contrast
+    </button>
+  </div>,
+]
+`;
+
 exports[`Storyshots ErrorBoundary Default 1`] = `
 .c0 {
   color: #333740;
@@ -1008,6 +1541,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:hover {
@@ -1015,6 +1550,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:focus {
@@ -1022,6 +1559,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:active {
@@ -1029,6 +1568,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   border-color: transparent;
   color: #333740;
   box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c3:active {
