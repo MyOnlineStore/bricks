@@ -5,11 +5,11 @@ import { ThemeProvider } from '../../utility/styled';
 import StyledContrast from './Contrast.style';
 
 type PropsType = {
-    enable?:boolean;
+    enable?: boolean;
 };
 
-const Contrast:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const contrastTheme = (theme:ThemeType):ThemeType => {
+const Contrast: StatelessComponent<PropsType> = (props): JSX.Element => {
+    const contrastTheme = (theme: ThemeType): ThemeType => {
         return deepmerge(theme, theme.Contrast.overides as Partial<ThemeType>);
     };
 

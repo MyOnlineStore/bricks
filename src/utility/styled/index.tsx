@@ -1,27 +1,28 @@
 /* tslint:disable */
-import React from 'react';
+import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
+import React, { Component } from 'react';
 import * as styledComponents from 'styled-components';
-import ThemeType from '../../types/ThemeType';
-import { shallow, mount, ReactWrapper, ShallowWrapper } from 'enzyme';
 import MosTheme from '../../themes/MosTheme';
 import theme from '../../themes/MosTheme/MosTheme.theme';
+import ThemeType from '../../types/ThemeType';
 
 const {
-  default: styled,
-  css,
-  injectGlobal,
-  keyframes,
-  ThemeProvider,
-} = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeType>;
+    default: styled,
+    css,
+    injectGlobal,
+    keyframes,
+    ThemeProvider,
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<
+    ThemeType
+>;
 
 type StyledType = {
-    theme?:ThemeType;
-    className?:string;
-    innerRef?:any;
+    theme?: ThemeType;
+    className?: string;
+    innerRef?: any;
 };
 
-/* tslint:disable */
-const shallowWithTheme = (component:JSX.Element):ShallowWrapper => {
+const shallowWithTheme = (component: JSX.Element): ShallowWrapper => {
     const context = (shallow(<ThemeProvider theme={theme} />) as any)
         .instance()
         .getChildContext();
@@ -29,15 +30,24 @@ const shallowWithTheme = (component:JSX.Element):ShallowWrapper => {
     return shallow(component, { context });
 };
 
-const mountWithTheme = (component:JSX.Element):ReactWrapper => {
+const mountWithTheme = (component: JSX.Element): ReactWrapper => {
     const context = (shallow(<ThemeProvider theme={theme} />) as any)
         .instance()
         .getChildContext();
 
-    return mount(component, { context, childContextTypes: ThemeProvider.childContextTypes });
+    return mount(component, {
+        context,
+        childContextTypes: ThemeProvider.childContextTypes,
+    });
 };
 
-/* tslint:enable */
-
-export { css, injectGlobal, keyframes, ThemeProvider, StyledType, shallowWithTheme, mountWithTheme };
+export {
+    css,
+    injectGlobal,
+    keyframes,
+    ThemeProvider,
+    StyledType,
+    shallowWithTheme,
+    mountWithTheme,
+};
 export default styled;

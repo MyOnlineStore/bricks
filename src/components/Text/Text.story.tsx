@@ -29,7 +29,11 @@ const demoContent = `
     To sit on my throne as the prince of Bel-air
 `;
 
-storiesOf('Text', module)
-    .add('Default', () => (
-        <Text strong={boolean('strong', false)} descriptive={boolean('descriptive', false)}>{demoContent}</Text>
-    ));
+storiesOf('Text', module).add('Default', () => (
+    <Text
+        strong={boolean('strong', false)}
+        descriptive={boolean('descriptive', false)}
+    >
+        {demoContent}
+    </Text>
+));

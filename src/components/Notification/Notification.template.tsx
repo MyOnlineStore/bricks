@@ -12,22 +12,18 @@ enum SeverityIcons {
 }
 
 type PropsType = StyledType & {
-    severity:keyof typeof SeverityIcons;
-    message:string;
-    icon?:keyof typeof SmallIcons;
+    severity: keyof typeof SeverityIcons;
+    message: string;
+    icon?: keyof typeof SmallIcons;
 };
 
-const Notification:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const icon = props.icon !== undefined
-        ? props.icon
-        : SeverityIcons[props.severity];
+const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
+    const icon =
+        props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (
         <div className={props.className}>
-            <Spacer
-                offset={trbl(12)}
-                offsetType="outer"
-            >
+            <Spacer offset={trbl(12)} offsetType="outer">
                 <Icon size="small" icon={icon} />
                 &nbsp;&nbsp;&nbsp;
                 {props.message}
@@ -37,7 +33,4 @@ const Notification:StatelessComponent<PropsType> = (props):JSX.Element => {
 };
 
 export default Notification;
-export {
-    PropsType,
-    SeverityIcons,
-};
+export { PropsType, SeverityIcons };

@@ -20,10 +20,7 @@ storiesOf('Spacer', module)
     ))
     .add('With padding', () => (
         <StyledDiv>
-            <Spacer
-                offset={trbl(12)}
-                offsetType="inner"
-            >
+            <Spacer offset={trbl(12)} offsetType="inner">
                 <Text>This has padding.</Text>
             </Spacer>
         </StyledDiv>

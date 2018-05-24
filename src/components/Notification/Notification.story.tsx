@@ -4,10 +4,7 @@ import Notification from '.';
 
 storiesOf('Notification', module)
     .add('Success', () => (
-        <Notification
-            severity="success"
-            message="Wow, Great job!"
-        />
+        <Notification severity="success" message="Wow, Great job!" />
     ))
     .add('Error', () => (
         <Notification

@@ -3,7 +3,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
 
-const ButtonGroup:StatelessComponent = (props):JSX.Element => {
+const ButtonGroup: StatelessComponent = (props): JSX.Element => {
     return (
         <BreakpointProvider
             breakpoints={{
@@ -12,8 +12,9 @@ const ButtonGroup:StatelessComponent = (props):JSX.Element => {
                 large: 375,
             }}
         >
-            {(breakpoint):JSX.Element => {
-                const direction = breakpoint === 'small' ? 'column' : 'row-reverse';
+            {(breakpoint): JSX.Element => {
+                const direction =
+                    breakpoint === 'small' ? 'column' : 'row-reverse';
 
                 return (
                     <Box
@@ -23,9 +24,11 @@ const ButtonGroup:StatelessComponent = (props):JSX.Element => {
                         wrap
                         margin={trbl(-6)}
                     >
-                        {Children.map(props.children, (child):JSX.Element => (
+                        {Children.map(props.children, (child): JSX.Element => (
                             <Box
-                                direction={breakpoint === 'small' ? 'column' : 'row'}
+                                direction={
+                                    breakpoint === 'small' ? 'column' : 'row'
+                                }
                                 alignSelf="stretch"
                                 margin={trbl(6)}
                             >

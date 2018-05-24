@@ -10,23 +10,22 @@ describe('TransitionAnimation', () => {
         const componentIn = shallow(
             <TransitionAnimation show animation={'fade'}>
                 <div>children</div>
-            </TransitionAnimation>
+            </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fadeIn .3s both');
+        (expect(componentIn.dive()) as any).toHaveStyleRule(
+            'animation',
+            'fadeIn .3s both',
+        );
         /* tslint:enable */
     });
 
     it('should stay mounted', () => {
         const component = mount(
-            <TransitionAnimation
-                show={false}
-                animation="zoom"
-                stayMounted
-            >
+            <TransitionAnimation show={false} animation="zoom" stayMounted>
                 <div>children</div>
-            </TransitionAnimation>
+            </TransitionAnimation>,
         );
 
         expect(component.find(Transition).prop('mountOnEnter')).toBe(false);

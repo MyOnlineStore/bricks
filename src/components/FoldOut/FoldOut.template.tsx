@@ -3,23 +3,23 @@ import ResizeObserver from 'resize-observer-polyfill';
 import StyledFoldOut from './FoldOut.style';
 
 type ContentProps = {
-    contentHeight?:StateType['contentHeight'];
-    isOpen:PropsType['isOpen'];
+    contentHeight?: StateType['contentHeight'];
+    isOpen: PropsType['isOpen'];
 };
 
 type StateType = {
-    contentHeight?:number;
+    contentHeight?: number;
 };
 
 type PropsType = {
-    isOpen:boolean;
+    isOpen: boolean;
 };
 
 class FoldOut extends Component<PropsType, StateType> {
-    private contentRef:HTMLDivElement;
-    private resizeObserver:ResizeObserver;
+    private contentRef: HTMLDivElement;
+    private resizeObserver: ResizeObserver;
 
-    public constructor(props:PropsType) {
+    public constructor(props: PropsType) {
         super(props);
 
         this.state = {
@@ -27,13 +27,15 @@ class FoldOut extends Component<PropsType, StateType> {
         };
 
         try {
-            this.resizeObserver = new ResizeObserver((entries:Array<ResizeObserverEntry>):void => {
-                entries.forEach((entry:ResizeObserverEntry):void => {
-                    this.setState({
-                        contentHeight: entry.contentRect.height,
+            this.resizeObserver = new ResizeObserver(
+                (entries: Array<ResizeObserverEntry>): void => {
+                    entries.forEach((entry: ResizeObserverEntry): void => {
+                        this.setState({
+                            contentHeight: entry.contentRect.height,
+                        });
                     });
-                });
-            });
+                },
+            );
         } catch (error) {
             console.warn(`
                 ResizeObserver is not available in this environment.
@@ -42,7 +44,7 @@ class FoldOut extends Component<PropsType, StateType> {
         }
     }
 
-    public componentDidMount():void {
+    public componentDidMount(): void {
         try {
             this.resizeObserver.observe(this.contentRef);
         } catch {
@@ -50,7 +52,7 @@ class FoldOut extends Component<PropsType, StateType> {
         }
     }
 
-    public componentWillUnmount():void {
+    public componentWillUnmount(): void {
         try {
             this.resizeObserver.unobserve(this.contentRef);
         } catch {
@@ -58,13 +60,17 @@ class FoldOut extends Component<PropsType, StateType> {
         }
     }
 
-    public render():JSX.Element {
+    public render(): JSX.Element {
         return (
             <StyledFoldOut
                 isOpen={this.props.isOpen}
                 contentHeight={this.state.contentHeight}
             >
-                <div ref={(ref):void => { this.contentRef = ref as HTMLDivElement; }}>
+                <div
+                    ref={(ref): void => {
+                        this.contentRef = ref as HTMLDivElement;
+                    }}
+                >
                     {this.props.children}
                 </div>
             </StyledFoldOut>
@@ -73,8 +79,4 @@ class FoldOut extends Component<PropsType, StateType> {
 }
 
 export default FoldOut;
-export {
-    ContentProps,
-    StateType,
-    PropsType,
-};
+export { ContentProps, StateType, PropsType };

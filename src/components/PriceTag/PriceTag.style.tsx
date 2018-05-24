@@ -4,23 +4,21 @@ import styled from '../../utility/styled';
 import PriceTag from './PriceTag.template';
 
 type VariantType = {
-    color:string;
-    fontFamily:string;
-    fontSize:string;
-    fontWeight:string;
+    color: string;
+    fontFamily: string;
+    fontSize: string;
+    fontWeight: string;
 };
 
 type PriceTagThemeType = {
-    default:VariantType;
-    action:VariantType;
-    base:VariantType;
+    default: VariantType;
+    action: VariantType;
+    base: VariantType;
 };
 
 const StyledPriceTag = styled(PriceTag)`
-    ${({ theme, displayType }):string => {
-        const identifier = displayType !== undefined
-            ? displayType
-            : 'default';
+    ${({ theme, displayType }): string => {
+        const identifier = displayType !== undefined ? displayType : 'default';
 
         return `
             position: relative;
@@ -33,8 +31,9 @@ const StyledPriceTag = styled(PriceTag)`
                 font-size: .7em;
             }
 
-            ${displayType !== undefined && displayType === 'base'
-                ? `&::after {
+            ${
+                displayType !== undefined && displayType === 'base'
+                    ? `&::after {
                     content: '';
                     width: 100%;
                     height: 2px;
@@ -46,14 +45,11 @@ const StyledPriceTag = styled(PriceTag)`
                     opacity: .7;
                     transform: rotate(-8deg);
                 }`
-                : ''
+                    : ''
             }
         `;
-    }}
+    }};
 `;
 
 export default StyledPriceTag;
-export {
-    PriceTagThemeType,
-    VariantType,
-};
+export { PriceTagThemeType, VariantType };

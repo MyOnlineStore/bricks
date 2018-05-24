@@ -11,18 +11,18 @@ jest.mock('react-popper', () => {
     const React = require('react');
 
     return {
-        Manager: (props:any):JSX.Element => {
+        Manager: (props: any): JSX.Element => {
             return props.children;
         },
-        Popper: (props:any):JSX.Element => {
+        Popper: (props: any): JSX.Element => {
             return props.children({
                 ref: null,
                 style: '',
                 placement: '',
-                arrowProps: { ref: null, style: '' }
+                arrowProps: { ref: null, style: '' },
             });
         },
-        Reference: (props:any):JSX.Element => {
+        Reference: (props: any): JSX.Element => {
             return props.children({
                 ref: null,
             });
@@ -36,8 +36,8 @@ describe('Popover', () => {
         const component = shallowWithTheme(
             <Popover
                 isOpen={true}
-                renderContent={():string => 'Mock content'}
-            />
+                renderContent={(): string => 'Mock content'}
+            />,
         );
 
         const reference = component.find(Reference);
@@ -53,8 +53,8 @@ describe('Popover', () => {
         const component = shallowWithTheme(
             <Popover
                 isOpen={false}
-                renderContent={():string => 'Mock content'}
-            />
+                renderContent={(): string => 'Mock content'}
+            />,
         );
 
         const transition = component.find(TransitionAnimation);
@@ -68,8 +68,8 @@ describe('Popover', () => {
                 isOpen={true}
                 placement="left"
                 fixed={true}
-                renderContent={():string => 'Mock content'}
-            />
+                renderContent={(): string => 'Mock content'}
+            />,
         );
 
         const popper = component.find(Popper);
@@ -80,9 +80,7 @@ describe('Popover', () => {
 
 describe('PopoverBackground', () => {
     it('should render with defaults', () => {
-        const component = shallowWithTheme(
-            <PopoverBackground />
-        );
+        const component = shallowWithTheme(<PopoverBackground />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
@@ -91,32 +89,26 @@ describe('PopoverBackground', () => {
 describe('PopoverArrow', () => {
     it('should render at the bottom with shadow', () => {
         const component = shallowWithTheme(
-            <PopoverArrow placement="bottom" shadow />
+            <PopoverArrow placement="bottom" shadow />,
         );
 
         expect(toJson(component)).toMatchSnapshot();
     });
 
     it('should render at the top', () => {
-        const component = shallowWithTheme(
-            <PopoverArrow placement="top" />
-        );
+        const component = shallowWithTheme(<PopoverArrow placement="top" />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
 
     it('should render on the left', () => {
-        const component = shallowWithTheme(
-            <PopoverArrow placement="left" />
-        );
+        const component = shallowWithTheme(<PopoverArrow placement="left" />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
 
     it('should render on the right', () => {
-        const component = shallowWithTheme(
-            <PopoverArrow placement="right" />
-        );
+        const component = shallowWithTheme(<PopoverArrow placement="right" />);
 
         expect(toJson(component)).toMatchSnapshot();
     });

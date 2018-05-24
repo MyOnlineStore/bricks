@@ -85,7 +85,8 @@
     "watch": "start-storybook -p 9001 -c ./config/storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -c ./config/storybook -o .out",
-    "cs-fix": "prettier --config ./config/prettier/.prettierrc --write ./src/**/*.{ts,tsx}"
+    "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
+    "cs": "prettier --list-different ./src/**/*.{ts,tsx}"
   },
   "files": [
     "dist"

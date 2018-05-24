@@ -3,25 +3,26 @@ import { StyledType } from '../../utility/styled';
 import { LargeIcons, SmallIcons } from './Icon.types';
 
 type BasePropsType = StyledType & {
-    color?:string;
+    color?: string;
 };
 
 type SmallPropsType = BasePropsType & {
-    size:'small';
-    icon:keyof typeof SmallIcons;
+    size: 'small';
+    icon: keyof typeof SmallIcons;
 };
 
 type LargePropsType = BasePropsType & {
-    size:'large';
-    icon:keyof typeof LargeIcons;
+    size: 'large';
+    icon: keyof typeof LargeIcons;
 };
 
 type PropsType = SmallPropsType | LargePropsType;
 
-const Icon:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const icon = props.size === 'large'
-        ? LargeIcons[props.icon]
-        : SmallIcons[props.icon];
+const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
+    const icon =
+        props.size === 'large'
+            ? LargeIcons[props.icon]
+            : SmallIcons[props.icon];
 
     return (
         <span

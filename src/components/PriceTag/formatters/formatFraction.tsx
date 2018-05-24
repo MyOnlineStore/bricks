@@ -2,10 +2,10 @@ import React from 'react';
 import { PropsType } from '../PriceTag.template';
 
 const formatFraction = (
-    value:string,
-    { hideZeros, showDash, superScriptFraction }:PropsType,
-    isRound:boolean,
-):string|JSX.Element => {
+    value: string,
+    { hideZeros, showDash, superScriptFraction }: PropsType,
+    isRound: boolean,
+): string | JSX.Element => {
     if (isRound && hideZeros !== undefined && hideZeros) {
         return '';
     }

@@ -5,28 +5,26 @@ import { StyledType } from '../../utility/styled';
 import { StyledBottom, StyledTop } from './ScrollBox.style';
 
 type PropsType = StyledType & {
-    maxHeight:number;
-    showInsetShadow?:boolean;
-    autoHideScrollBar?:boolean;
-    onScroll?(
-        eventData:{
-            scrollTop:number;
-            scrollBottom:number;
-            scrollDirection:StateType['scrollDirection'];
-        }
-    ):void;
+    maxHeight: number;
+    showInsetShadow?: boolean;
+    autoHideScrollBar?: boolean;
+    onScroll?(eventData: {
+        scrollTop: number;
+        scrollBottom: number;
+        scrollDirection: StateType['scrollDirection'];
+    }): void;
 };
 
 type StateType = {
-    scrollPosition:number;
-    scrollDirection:'up'|'down';
+    scrollPosition: number;
+    scrollDirection: 'up' | 'down';
 };
 
-class ScrollBox extends Component<PropsType, StateType>{
-    private scrollbar:ScrollBar;
-    private contentRef:RefObject<HTMLDivElement>;
+class ScrollBox extends Component<PropsType, StateType> {
+    private scrollbar: ScrollBar;
+    private contentRef: RefObject<HTMLDivElement>;
 
-    public constructor(props:PropsType) {
+    public constructor(props: PropsType) {
         super(props);
         this.contentRef = createRef();
 
@@ -36,19 +34,18 @@ class ScrollBox extends Component<PropsType, StateType>{
         };
     }
 
-    private handleScroll = ():void => {
+    private handleScroll = (): void => {
         const element = this.scrollbar.getScrollElement();
 
-        const contentElement = this.scrollbar
-            .getContentElement();
+        const contentElement = this.scrollbar.getContentElement();
 
-        const direction = this.state.scrollPosition >= element.scrollTop
-            ? 'up'
-            : 'down';
+        const direction =
+            this.state.scrollPosition >= element.scrollTop ? 'up' : 'down';
 
-        const scrollBottom = (contentElement as HTMLDivElement).offsetHeight
-            - element.scrollTop
-            - (element as HTMLDivElement).offsetHeight;
+        const scrollBottom =
+            (contentElement as HTMLDivElement).offsetHeight -
+            element.scrollTop -
+            (element as HTMLDivElement).offsetHeight;
 
         if (this.props.onScroll !== undefined) {
             this.props.onScroll({
@@ -62,47 +59,51 @@ class ScrollBox extends Component<PropsType, StateType>{
             scrollPosition: element.scrollTop,
             scrollDirection: direction,
         });
-    }
+    };
 
-    public componentDidMount():void {
+    public componentDidMount(): void {
         if (this.contentRef.current !== null) {
             this.scrollbar = new ScrollBar(this.contentRef.current, {
-                autoHide: this.props.autoHideScrollBar !== undefined
-                    ? this.props.autoHideScrollBar
-                    : true,
+                autoHide:
+                    this.props.autoHideScrollBar !== undefined
+                        ? this.props.autoHideScrollBar
+                        : true,
             });
 
-            this.scrollbar.getScrollElement().addEventListener('scroll', this.handleScroll);
+            this.scrollbar
+                .getScrollElement()
+                .addEventListener('scroll', this.handleScroll);
         }
     }
 
-    public componentWillUnmount():void {
+    public componentWillUnmount(): void {
         if (this.contentRef.current !== null) {
-            this.scrollbar.getScrollElement().removeEventListener('scroll', this.handleScroll);
+            this.scrollbar
+                .getScrollElement()
+                .removeEventListener('scroll', this.handleScroll);
         }
     }
 
-    public render():JSX.Element {
+    public render(): JSX.Element {
         return (
             <div className={this.props.className}>
-                {this.props.showInsetShadow === true && this.state.scrollDirection === 'down'
-                    ? <StyledTop />
-                    : undefined
-                }
-                <div ref={this.contentRef}>
-                    {this.props.children}
-                </div>
-                {this.props.showInsetShadow === true && this.state.scrollDirection === 'up'
-                    ? <StyledBottom />
-                    : undefined
-                }
+                {this.props.showInsetShadow === true &&
+                this.state.scrollDirection === 'down' ? (
+                    <StyledTop />
+                ) : (
+                    undefined
+                )}
+                <div ref={this.contentRef}>{this.props.children}</div>
+                {this.props.showInsetShadow === true &&
+                this.state.scrollDirection === 'up' ? (
+                    <StyledBottom />
+                ) : (
+                    undefined
+                )}
             </div>
         );
     }
 }
 
 export default ScrollBox;
-export {
-    StateType,
-    PropsType,
-};
+export { StateType, PropsType };

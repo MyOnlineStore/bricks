@@ -7,7 +7,7 @@ import Spacer from '../Spacer';
 import Text from '../Text';
 
 type StateType = {
-    isOpen:boolean;
+    isOpen: boolean;
 };
 
 const demoContent = `
@@ -37,7 +37,7 @@ const demoContent = `
 `;
 
 class DemoComponent extends Component<{}, StateType> {
-    public constructor(props:{}) {
+    public constructor(props: {}) {
         super(props);
 
         this.state = {
@@ -45,7 +45,7 @@ class DemoComponent extends Component<{}, StateType> {
         };
     }
 
-    public render():JSX.Element {
+    public render(): JSX.Element {
         return (
             <div>
                 <FoldOut isOpen={this.state.isOpen}>
@@ -54,9 +54,11 @@ class DemoComponent extends Component<{}, StateType> {
                     </Spacer>
                 </FoldOut>
                 <Button
-                    action={():void => this.setState({
-                        isOpen: !this.state.isOpen
-                    })}
+                    action={(): void =>
+                        this.setState({
+                            isOpen: !this.state.isOpen,
+                        })
+                    }
                     title="open FoldOut"
                     variant="secondary"
                 >
@@ -67,7 +69,4 @@ class DemoComponent extends Component<{}, StateType> {
     }
 }
 
-storiesOf('FoldOut', module)
-    .add('With a toggle', () => (
-        <DemoComponent />
-    ));
+storiesOf('FoldOut', module).add('With a toggle', () => <DemoComponent />);

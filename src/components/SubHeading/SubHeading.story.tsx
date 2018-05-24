@@ -4,22 +4,12 @@ import React from 'react';
 import SubHeading from '.';
 
 storiesOf('SubHeading', module)
-    .add('Default', () => (
-        <SubHeading>
-            This is a div element.
-        </SubHeading>
-    ))
+    .add('Default', () => <SubHeading>This is a div element.</SubHeading>)
     .add('With a hierarchy', () => {
-        const hierarchy = select(
-            'Hierarchy',
-            [1, 2, 3, 4, 5, 6],
-            2,
-        );
+        const hierarchy = select('Hierarchy', [1, 2, 3, 4, 5, 6], 2);
 
         return (
-            <SubHeading
-                hierarchy={hierarchy}
-            >
+            <SubHeading hierarchy={hierarchy}>
                 This is an h{hierarchy} element.
             </SubHeading>
         );

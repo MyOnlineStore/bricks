@@ -13,21 +13,19 @@ const StyledDiv = styled.div`
     text-align: center;
 `;
 
-storiesOf('TransitionAnimation', module)
-    .add('Default', () => {
-        const show = boolean('show', true);
+storiesOf('TransitionAnimation', module).add('Default', () => {
+    const show = boolean('show', true);
 
-        return (
-            <Box direction="column" alignItems="center">
-                <TransitionAnimation
-                    show={show}
-                    animation={select('animation', ['zoom', 'fade'], 'zoom')}
-                >
-                    <StyledDiv>
-                        <Heading>Lorem ipsum</Heading>
-                    </StyledDiv>
-                </TransitionAnimation>
-            </Box>
-        );
-    }
-);
+    return (
+        <Box direction="column" alignItems="center">
+            <TransitionAnimation
+                show={show}
+                animation={select('animation', ['zoom', 'fade'], 'zoom')}
+            >
+                <StyledDiv>
+                    <Heading>Lorem ipsum</Heading>
+                </StyledDiv>
+            </TransitionAnimation>
+        </Box>
+    );
+});

@@ -14,7 +14,7 @@ describe('Button component', () => {
                     variant="primary"
                     action={clickMock}
                 />
-            </MosTheme>
+            </MosTheme>,
         );
 
         component.simulate('click');
@@ -31,7 +31,7 @@ describe('Button component', () => {
                     action={undefined}
                     href="http://foo.bar"
                 />
-            </MosTheme>
+            </MosTheme>,
         );
 
         expect(component.find('a').length).toBe(1);
@@ -39,7 +39,7 @@ describe('Button component', () => {
     });
 
     it('should no-op on click without an action', () => {
-        const fn = ():void => {
+        const fn = (): void => {
             const component = mount(
                 <MosTheme>
                     <Button
@@ -47,7 +47,7 @@ describe('Button component', () => {
                         variant="primary"
                         action={undefined}
                     />
-                </MosTheme>
+                </MosTheme>,
             );
 
             component.simulate('click');
@@ -59,16 +59,15 @@ describe('Button component', () => {
     it('should have less side padding when compact is true', () => {
         const component = mount(
             <MosTheme>
-                <Button
-                    title="button title"
-                    variant="primary"
-                    compact
-                />
-            </MosTheme>
+                <Button title="button title" variant="primary" compact />
+            </MosTheme>,
         );
 
         /* tslint:disable */
-        (expect(component.find(Button)) as any).toHaveStyleRule('padding', '11px 12px');
+        (expect(component.find(Button)) as any).toHaveStyleRule(
+            'padding',
+            '11px 12px',
+        );
         /* tslint:enable */
     });
 });

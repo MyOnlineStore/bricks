@@ -1,24 +1,22 @@
 import React, { Children, StatelessComponent } from 'react';
 
 type PropsType = {
-    className?:string;
-    compact?:boolean;
-    title:string;
-    variant:'primary'|'destructive'|'warning'|'secondary'|'flat';
-    target?:HTMLAnchorElement['target'];
-    href?:string;
-    disabled?:boolean;
-    action?():void;
+    className?: string;
+    compact?: boolean;
+    title: string;
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'flat';
+    target?: HTMLAnchorElement['target'];
+    href?: string;
+    disabled?: boolean;
+    action?(): void;
 };
 
-const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
+const Button: StatelessComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
-    const Element = isLink
-        ? 'a'
-        : 'button';
+    const Element = isLink ? 'a' : 'button';
 
-    const clickAction = ():void => {
+    const clickAction = (): void => {
         if (props.action !== undefined && props.disabled !== true) {
             props.action();
         }
@@ -34,10 +32,7 @@ const Button:StatelessComponent<PropsType> = (props):JSX.Element => {
             type={!isLink ? 'button' : undefined}
             disabled={props.disabled}
         >
-            {Children.count(props.children) > 0
-                ? props.children
-                : props.title
-            }
+            {Children.count(props.children) > 0 ? props.children : props.title}
         </Element>
     );
 };

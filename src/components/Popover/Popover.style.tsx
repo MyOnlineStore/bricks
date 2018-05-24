@@ -1,4 +1,4 @@
-import {  ClassAttributes as _C, HTMLAttributes as _H } from 'react';
+import { ClassAttributes as _C, HTMLAttributes as _H } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
@@ -15,9 +15,9 @@ const PopoverBackground = styled.div`
     width: 100%;
     height: 100%;
     z-index: 2;
-    box-shadow: 0 1px 12px rgba(0,0,0,.2);
-    background: ${({ theme }):string => theme.Popover.background};
-    border-radius: ${({ theme }):number => theme.Popover.borderRadius}px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+    background: ${({ theme }): string => theme.Popover.background};
+    border-radius: ${({ theme }): number => theme.Popover.borderRadius}px;
 `;
 
 const PopoverContent = styled.div`
@@ -33,10 +33,10 @@ const PopoverArrow = styled.div`
     position: absolute;
     width: 16px;
     height: 16px;
-    background: ${({ theme }):string => theme.Popover.background};
+    background: ${({ theme }): string => theme.Popover.background};
 
-    ${({ placement }:PopoverArrowPropsType):string => {
-        const pointerSize:number = 16;
+    ${({ placement }: PopoverArrowPropsType): string => {
+        const pointerSize: number = 16;
 
         switch (placement) {
             case 'left':
@@ -66,17 +66,16 @@ const PopoverArrow = styled.div`
                     transform: scaleY(.75) rotate(45deg);
                 `;
         }
-    }}
-
-    ${({ theme, shadow }):string => shadow
-        ? `
+    }} ${({ theme, shadow }): string =>
+        shadow
+            ? `
             box-shadow: 0 1px 12px rgba(0 , 0, 0, .2);
             z-index: 1;
-        ` : `
+        `
+            : `
             background: ${theme.Popover.background};
             z-index: 3;
-        `
-    }
+        `};
 `;
 
 export {

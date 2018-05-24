@@ -5,17 +5,15 @@ import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
 
 type ContrastThemeType = {
-    overides:RecursivePartial<ThemeType>;
-    default:{
-        background:string;
+    overides: RecursivePartial<ThemeType>;
+    default: {
+        background: string;
     };
 };
 
 const StyledContrast = styled.div`
-    background: ${({ theme }):string => theme.Contrast.default.background};
+    background: ${({ theme }): string => theme.Contrast.default.background};
 `;
 
 export default StyledContrast;
-export {
-    ContrastThemeType,
-};
+export { ContrastThemeType };

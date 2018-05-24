@@ -3,8 +3,11 @@ import _T from '../../types/ThemeType';
 import SpacerTemplate from './Spacer.template';
 
 const Spacer = styled(SpacerTemplate)`
-    ${({ offsetType }):string => offsetType === 'inner' ? 'padding' : 'margin'}:
-        ${({ offset }):string => `${offset.top} ${offset.right} ${offset.bottom} ${offset.left}`}
+    ${({ offsetType }): string =>
+        offsetType === 'inner' ? 'padding' : 'margin'}: ${({
+        offset,
+    }): string =>
+        `${offset.top} ${offset.right} ${offset.bottom} ${offset.left}`};
 `;
 
 export default Spacer;

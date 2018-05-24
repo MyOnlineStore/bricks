@@ -10,41 +10,43 @@ import Text from '../Text';
 import { PlacementType } from './Popover.template';
 
 type PropsType = {
-    placement:PlacementType;
-    fixed:boolean;
+    placement: PlacementType;
+    fixed: boolean;
 };
 
 type StateType = {
-    isOpen:boolean;
+    isOpen: boolean;
 };
 
-const DemoContent:StatelessComponent = ():JSX.Element => {
+const DemoContent: StatelessComponent = (): JSX.Element => {
     return (
         <Spacer offset={trbl(24)}>
             <Text>
-                Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus
-                mollis interdum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                Donec sed odio dui. Morbi leo risus, porta ac consectetur ac,
+                vestibulum at eros. Maecenas faucibus mollis interdum. Donec id
+                elit non mi porta gravida at eget metus. Fusce dapibus, tellus
+                ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+                massa justo sit amet risus.
             </Text>
         </Spacer>
     );
 };
 
 class Demo extends Component<PropsType, StateType> {
-    public constructor(props:PropsType) {
+    public constructor(props: PropsType) {
         super(props);
         this.state = {
-            isOpen:false,
+            isOpen: false,
         };
     }
 
-    private toggle = ():void => {
+    private toggle = (): void => {
         this.setState({
             isOpen: !this.state.isOpen,
         });
-    }
+    };
 
-    public render():JSX.Element {
+    public render(): JSX.Element {
         return (
             <Box height="90vh" justifyContent="center" alignItems="center">
                 <Spacer offset={trbl(48)}>
@@ -52,9 +54,13 @@ class Demo extends Component<PropsType, StateType> {
                         isOpen={this.state.isOpen}
                         placement={this.props.placement}
                         fixed={this.props.fixed}
-                        renderContent={():JSX.Element => <DemoContent />}
+                        renderContent={(): JSX.Element => <DemoContent />}
                     >
-                        <Button variant="primary" title="Toggle" action={this.toggle} />
+                        <Button
+                            variant="primary"
+                            title="Toggle"
+                            action={this.toggle}
+                        />
                     </Popover>
                 </Spacer>
             </Box>
@@ -62,10 +68,11 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-storiesOf('Popover', module)
-    .add('Default', () => (
-        <Demo
-            placement={select('placement', [
+storiesOf('Popover', module).add('Default', () => (
+    <Demo
+        placement={select(
+            'placement',
+            [
                 'auto-start',
                 'auto',
                 'auto-end',
@@ -81,7 +88,9 @@ storiesOf('Popover', module)
                 'left-end',
                 'left',
                 'left-start',
-            ], 'bottom')}
-            fixed={boolean('fixed', false)}
-        />
-    ));
+            ],
+            'bottom',
+        )}
+        fixed={boolean('fixed', false)}
+    />
+));

@@ -3,11 +3,12 @@ import React from 'react';
 import MessageStream from '.';
 import { MessagePropsType } from './MessageStream.template';
 
-const messagesMock:Array<MessagePropsType> = [
+const messagesMock: Array<MessagePropsType> = [
     {
         severity: 'success',
         title: 'Sit Inceptos Magna',
-        message: 'Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.',
+        message:
+            'Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.',
         date: 'Today 12:00',
         read: false,
     },
@@ -26,7 +27,9 @@ const messagesMock:Array<MessagePropsType> = [
         buttonLabel: 'Click me',
         date: 'Yesterday 12:00',
         read: false,
-        action: ():void => { alert('Clicked!'); },
+        action: (): void => {
+            alert('Clicked!');
+        },
     },
     {
         severity: 'warning',
@@ -36,30 +39,35 @@ const messagesMock:Array<MessagePropsType> = [
         buttonLabel: 'Click me',
         date: '12-12-2012 12:00',
         read: false,
-        action: ():void => { alert('Clicked!'); },
+        action: (): void => {
+            alert('Clicked!');
+        },
     },
     {
         severity: 'error',
         title: 'Tortor Cursus',
-        message: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.',
+        message:
+            'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.',
         buttonLabel: 'Click me',
         date: '12-12-2012 12:00',
         read: true,
-        action: ():void => { alert('Clicked!'); },
+        action: (): void => {
+            alert('Clicked!');
+        },
     },
     {
         severity: 'info',
         title: 'Euismod Dolor Consectetur',
-        message: 'Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.',
+        message:
+            'Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.',
         buttonLabel: 'Click me',
         read: true,
-        action: ():void => { alert('Clicked!'); },
+        action: (): void => {
+            alert('Clicked!');
+        },
     },
 ];
 
-storiesOf('MessageStream', module)
-    .add('Default', () => (
-        <MessageStream
-            messages={messagesMock}
-        />
-    ));
+storiesOf('MessageStream', module).add('Default', () => (
+    <MessageStream messages={messagesMock} />
+));

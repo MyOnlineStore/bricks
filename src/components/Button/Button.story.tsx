@@ -14,18 +14,14 @@ storiesOf('Button', module)
             <Button
                 variant={select(
                     'variant',
-                    [
-                        'primary',
-                        'secondary',
-                        'warning',
-                        'destructive',
-                        'flat'
-                    ],
-                    'primary'
+                    ['primary', 'secondary', 'warning', 'destructive', 'flat'],
+                    'primary',
                 )}
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
-                action={():void => { /* */ }}
+                action={(): void => {
+                    /* */
+                }}
                 compact={boolean('compact', false)}
             />
         );
@@ -35,18 +31,14 @@ storiesOf('Button', module)
             <Button
                 variant={select(
                     'variant',
-                    [
-                        'primary',
-                        'secondary',
-                        'warning',
-                        'destructive',
-                        'flat'
-                    ],
-                    'secondary'
+                    ['primary', 'secondary', 'warning', 'destructive', 'flat'],
+                    'secondary',
                 )}
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
-                action={():void => { /* */ }}
+                action={(): void => {
+                    /* */
+                }}
                 compact
             >
                 <Icon size="small" icon="gear" />
@@ -62,12 +54,16 @@ storiesOf('Button', module)
                             variant="secondary"
                             title={text('title', 'Click me')}
                             disabled={boolean('disabled', false)}
-                            action={():void => { /* */ }}
+                            action={(): void => {
+                                /* */
+                            }}
                         />
                         <Button
                             variant="flat"
                             title={'Click me'}
-                            action={():void => { /* */ }}
+                            action={(): void => {
+                                /* */
+                            }}
                             compact
                         >
                             <Icon size="small" icon="gear" />

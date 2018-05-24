@@ -4,21 +4,21 @@ import React from 'react';
 import PriceTag from '.';
 import MosTheme from '../../themes/MosTheme';
 
-describe('PriceTag',  () => {
+describe('PriceTag', () => {
     it('should render with a hidden currency', () => {
         const component = mount(
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '20' },
                     ]}
                     hideCurrency
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -29,15 +29,15 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '20' },
                     ]}
                     displayType="base"
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -48,15 +48,15 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '20' },
                     ]}
                     displayType="action"
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -67,8 +67,8 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '20' },
@@ -76,7 +76,7 @@ describe('PriceTag',  () => {
                     superScriptFraction
                     hideCurrency
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -87,15 +87,15 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '00' },
                     ]}
                     showDash
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -106,15 +106,15 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '00' },
                     ]}
                     hideZeros
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -125,15 +125,15 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '20' },
                     ]}
                     superScriptFraction
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -144,8 +144,8 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '10' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '00' },
@@ -153,7 +153,7 @@ describe('PriceTag',  () => {
                     showDash
                     superScriptFraction
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();
@@ -164,15 +164,15 @@ describe('PriceTag',  () => {
             <MosTheme>
                 <PriceTag
                     parts={[
-                        { type: 'currency' , value: '€' },
-                        { type: 'literal' , value: ' ' },
+                        { type: 'currency', value: '€' },
+                        { type: 'literal', value: ' ' },
                         { type: 'integer', value: '0' },
                         { type: 'decimal', value: ',' },
                         { type: 'fraction', value: '00' },
                     ]}
                     freeLabel="free"
                 />
-            </MosTheme>
+            </MosTheme>,
         ).find(PriceTag);
 
         expect(toJson(component)).toMatchSnapshot();

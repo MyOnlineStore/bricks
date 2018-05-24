@@ -15,7 +15,9 @@ beforeEach(() => {
         error: jest.fn(),
     };
 
-    jest.spyOn((window as any)._virtualConsole, 'emit').mockImplementation(() => false);
+    jest
+        .spyOn((window as any)._virtualConsole, 'emit')
+        .mockImplementation(() => false);
     /* tslint:enable */
 });
 
@@ -23,7 +25,7 @@ describe('ErrorBoundary', () => {
     it('should catch an error and report it', () => {
         const mockReport = jest.fn();
 
-        const ThrowingComponent = ():JSX.Element => {
+        const ThrowingComponent = (): JSX.Element => {
             throw new Error('Mock Error');
         };
 
@@ -35,7 +37,7 @@ describe('ErrorBoundary', () => {
                 >
                     <ThrowingComponent />
                 </ErrorBoundary>
-            </MosTheme>
+            </MosTheme>,
         ).toJSON();
 
         expect(boundary).toMatchSnapshot();

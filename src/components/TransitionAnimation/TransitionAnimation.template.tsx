@@ -3,15 +3,15 @@ import { Transition } from 'react-transition-group';
 import StyledAnimation, { StyledPropsType } from './TransitionAnimation.style';
 
 type PropsType = {
-    show:boolean;
-    animation:StyledPropsType['animation'];
-    stayMounted?:boolean;
+    show: boolean;
+    animation: StyledPropsType['animation'];
+    stayMounted?: boolean;
 };
 
-const TransitionAnimation:StatelessComponent<PropsType> = (props):JSX.Element => {
-    const unmount = props.stayMounted !== undefined
-        ? !props.stayMounted
-        : true;
+const TransitionAnimation: StatelessComponent<PropsType> = (
+    props,
+): JSX.Element => {
+    const unmount = props.stayMounted !== undefined ? !props.stayMounted : true;
 
     return (
         <Transition
@@ -20,7 +20,7 @@ const TransitionAnimation:StatelessComponent<PropsType> = (props):JSX.Element =>
             mountOnEnter={unmount}
             unmountOnExit={unmount}
         >
-            {(state:StyledPropsType['state']):JSX.Element => (
+            {(state: StyledPropsType['state']): JSX.Element => (
                 <StyledAnimation animation={props.animation} state={state}>
                     {props.children}
                 </StyledAnimation>
@@ -30,6 +30,4 @@ const TransitionAnimation:StatelessComponent<PropsType> = (props):JSX.Element =>
 };
 
 export default TransitionAnimation;
-export {
-    PropsType,
-};
+export { PropsType };

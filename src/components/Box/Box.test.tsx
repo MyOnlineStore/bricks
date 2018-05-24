@@ -48,7 +48,13 @@ describe('Box', () => {
     });
 
     it('stretches the children', () => {
-        const component = shallow(<Box justifyContent="stretch" alignItems="stretch" alignContent="stretch" />);
+        const component = shallow(
+            <Box
+                justifyContent="stretch"
+                alignItems="stretch"
+                alignContent="stretch"
+            />,
+        );
 
         expect(toJson(component)).toMatchSnapshot();
     });

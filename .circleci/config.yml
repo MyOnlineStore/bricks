@@ -36,8 +36,8 @@ jobs:
           at: .
       - checkout
       - run:
-          name: Running codestyle checks
-          command: npm run cs-check
+          name: Running linter
+          command: npm run lint
       - run:
           name: Setting up CodeClimate test-reporter
           command: |

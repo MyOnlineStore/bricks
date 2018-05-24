@@ -55,13 +55,13 @@ const StyledDiv = styled.div`
 `;
 
 type DemoStateType = {
-    scrollTop:number;
-    scrollBottom?:number;
-    scrollDirection:string;
+    scrollTop: number;
+    scrollBottom?: number;
+    scrollDirection: string;
 };
 
 class Demo extends Component<{}, DemoStateType> {
-    public constructor(props:{}) {
+    public constructor(props: {}) {
         super(props);
 
         this.state = {
@@ -70,7 +70,7 @@ class Demo extends Component<{}, DemoStateType> {
         };
     }
 
-    public render():JSX.Element {
+    public render(): JSX.Element {
         return (
             <>
                 <StyledDiv>
@@ -78,7 +78,11 @@ class Demo extends Component<{}, DemoStateType> {
                         maxHeight={number('maxHeight', 400)}
                         showInsetShadow={boolean('showInsetShadow', true)}
                         autoHideScrollBar={boolean('autoHideScrollBar', true)}
-                        onScroll={({ scrollTop, scrollBottom, scrollDirection }):void => {
+                        onScroll={({
+                            scrollTop,
+                            scrollBottom,
+                            scrollDirection,
+                        }): void => {
                             this.setState({
                                 scrollTop,
                                 scrollBottom,
@@ -86,18 +90,17 @@ class Demo extends Component<{}, DemoStateType> {
                             });
                         }}
                     >
-                        <Spacer offsetType="inner" offset={trbl(12, 24, 12, 12)}>
+                        <Spacer
+                            offsetType="inner"
+                            offset={trbl(12, 24, 12, 12)}
+                        >
                             <Heading>Lorem ipsum dolor sit amet.</Heading>
-                            <Text>
-                                {demoContent}
-                            </Text>
+                            <Text>{demoContent}</Text>
                         </Spacer>
                     </ScrollBox>
                 </StyledDiv>
                 <Spacer offset={trbl(48, 0, 12)}>
-                    <SubHeading>
-                        Scroll event
-                    </SubHeading>
+                    <SubHeading>Scroll event</SubHeading>
                 </Spacer>
                 <Text>
                     scrollTop: {this.state.scrollTop}px<br />
@@ -109,9 +112,6 @@ class Demo extends Component<{}, DemoStateType> {
     }
 }
 
-storiesOf('ScrollBox', module)
-    .add('Default', () => {
-        return (
-            <Demo />
-        );
-    });
+storiesOf('ScrollBox', module).add('Default', () => {
+    return <Demo />;
+});

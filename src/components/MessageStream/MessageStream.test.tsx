@@ -9,14 +9,16 @@ describe('MessageStream', () => {
 
         const message = mountWithTheme(
             <MessageStream
-                messages={[{
-                    action,
-                    buttonLabel: 'label',
-                    severity: 'success',
-                    title: 'title',
-                    message: 'message',
-                }]}
-            />
+                messages={[
+                    {
+                        action,
+                        buttonLabel: 'label',
+                        severity: 'success',
+                        title: 'title',
+                        message: 'message',
+                    },
+                ]}
+            />,
         );
 
         message.find(Button).simulate('click');
@@ -26,12 +28,14 @@ describe('MessageStream', () => {
     it('should not render an action when no label action is set', () => {
         const message = mountWithTheme(
             <MessageStream
-                messages={[{
-                    severity: 'success',
-                    title: 'title',
-                    message: 'message',
-                }]}
-            />
+                messages={[
+                    {
+                        severity: 'success',
+                        title: 'title',
+                        message: 'message',
+                    },
+                ]}
+            />,
         );
 
         expect(message.find(Button).length).toBe(0);

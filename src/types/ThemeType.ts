@@ -10,16 +10,16 @@ import { SubHeadingThemeType } from '../components/SubHeading';
 import { TextThemeType } from '../components/Text';
 
 type ThemeType = {
-    Button:ButtonThemeType;
-    Contrast:ContrastThemeType;
-    Heading:HeadingThemeType;
-    MessageStream:MessageStreamThemeType;
-    Notification:NotificationThemeType;
-    Popover:PopoverThemeType;
-    PriceTag:PriceTagThemeType;
-    ScrollBox:ScrollBoxThemeType;
-    SubHeading:SubHeadingThemeType;
-    Text:TextThemeType;
+    Button: ButtonThemeType;
+    Contrast: ContrastThemeType;
+    Heading: HeadingThemeType;
+    MessageStream: MessageStreamThemeType;
+    Notification: NotificationThemeType;
+    Popover: PopoverThemeType;
+    PriceTag: PriceTagThemeType;
+    ScrollBox: ScrollBoxThemeType;
+    SubHeading: SubHeadingThemeType;
+    Text: TextThemeType;
 };
 
 export default ThemeType;

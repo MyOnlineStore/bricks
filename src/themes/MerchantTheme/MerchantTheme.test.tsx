@@ -8,11 +8,13 @@ describe('MerchantTheme', () => {
     it('should render the merchant theme', () => {
         const theme = {
             Heading: {
-                color: 'mockValue'
+                color: 'mockValue',
             },
         };
 
-        const component = shallow(<MerchantTheme theme={theme as PropsType['theme']} />);
+        const component = shallow(
+            <MerchantTheme theme={theme as PropsType['theme']} />,
+        );
 
         expect(toJson(component)).toMatchSnapshot();
     });
