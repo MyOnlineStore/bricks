@@ -377,7 +377,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   border-style: solid;
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -386,7 +386,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 .c4:hover {
   background-color: #e4e7ec;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -395,7 +395,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 .c4:focus {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -404,7 +404,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 .c4:active {
   background-color: #e4e7ec;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -656,7 +656,7 @@ exports[`Storyshots Button With an icon 1`] = `
   border-style: solid;
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -665,7 +665,7 @@ exports[`Storyshots Button With an icon 1`] = `
 .c0:hover {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -674,7 +674,7 @@ exports[`Storyshots Button With an icon 1`] = `
 .c0:focus {
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -683,7 +683,7 @@ exports[`Storyshots Button With an icon 1`] = `
 .c0:active {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1099,7 +1099,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-style: solid;
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1108,7 +1108,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 .c4:hover {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1117,7 +1117,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 .c4:focus {
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1126,7 +1126,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 .c4:active {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1255,7 +1255,7 @@ Array [
   border-style: solid;
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1264,7 +1264,7 @@ Array [
 .c2:hover {
   background-color: #e4e7ec;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1273,7 +1273,7 @@ Array [
 .c2:focus {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1282,7 +1282,7 @@ Array [
 .c2:active {
   background-color: #e4e7ec;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1385,7 +1385,7 @@ Array [
   border-style: solid;
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1394,7 +1394,7 @@ Array [
 .c1:hover {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1403,7 +1403,7 @@ Array [
 .c1:focus {
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1412,7 +1412,7 @@ Array [
 .c1:active {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1539,7 +1539,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   border-style: solid;
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1548,7 +1548,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 .c3:hover {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1557,7 +1557,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 .c3:focus {
   background-color: #f8f9fb;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1566,7 +1566,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 .c3:active {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2145,7 +2145,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-style: solid;
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2154,7 +2154,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 .c17:hover {
   background-color: #e4e7ec;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2163,7 +2163,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 .c17:focus {
   background-color: #edeff2;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2172,7 +2172,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 .c17:active {
   background-color: #e4e7ec;
   border-color: transparent;
-  color: #333740;
+  color: #55656d;
   box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
