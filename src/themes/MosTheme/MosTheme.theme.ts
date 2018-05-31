@@ -6,10 +6,11 @@ const bodyFont = 'Source Sans Pro, sans-serif';
 const headingFont = 'Melbourne, sans-serif';
 
 const fontSize = {
-    larger3: '36px',
-    larger2: '28px',
-    larger1: '22px',
+    smaller1: '12px',
     base: '14px',
+    larger1: '22px',
+    larger2: '28px',
+    larger3: '36px',
 };
 
 const green = {
@@ -50,7 +51,7 @@ const yellow = {
     darker2: '#edb107',
 };
 
-const theme:ThemeType = {
+const theme: ThemeType = {
     Button: {
         common: {
             borderRadius: '3px',
@@ -78,7 +79,8 @@ const theme:ThemeType = {
                 backgroundColor: green.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(107, 222, 120, .4)',
+                boxShadow:
+                    '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(107, 222, 120, .4)',
                 textDecoration: 'none',
             },
             active: {
@@ -108,7 +110,8 @@ const theme:ThemeType = {
                 backgroundColor: silver.base,
                 borderColor: 'transparent',
                 color: grey.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
+                boxShadow:
+                    '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
                 textDecoration: 'none',
             },
             active: {
@@ -138,7 +141,8 @@ const theme:ThemeType = {
                 backgroundColor: yellow.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(252, 194, 0, .25)',
+                boxShadow:
+                    '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(252, 194, 0, .25)',
                 textDecoration: 'none',
             },
             active: {
@@ -168,7 +172,8 @@ const theme:ThemeType = {
                 backgroundColor: red.base,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(237, 33, 87, .25)',
+                boxShadow:
+                    '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(237, 33, 87, .25)',
                 textDecoration: 'none',
             },
             active: {
@@ -198,7 +203,8 @@ const theme:ThemeType = {
                 backgroundColor: silver.base,
                 borderColor: 'transparent',
                 color: grey.base,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
+                boxShadow:
+                    '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
                 textDecoration: 'underline',
             },
             active: {
@@ -209,7 +215,7 @@ const theme:ThemeType = {
                 textDecoration: 'underline',
             },
         },
-        disabled:{
+        disabled: {
             color: grey.lighter2,
             backgroundColor: silver.darker2,
             stripingColor: 'rgba(0, 0, 0, .04)',
@@ -233,7 +239,9 @@ const theme:ThemeType = {
                     },
                     focus: {
                         backgroundColor: silver.darker1,
-                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${silver.darker2}`,
+                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${
+                            silver.darker2
+                        }`,
                     },
                 },
                 flat: {
@@ -245,11 +253,13 @@ const theme:ThemeType = {
                     },
                     focus: {
                         backgroundColor: silver.darker1,
-                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${silver.darker2}`,
+                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${
+                            silver.darker2
+                        }`,
                     },
-                }
-            }
-        }
+                },
+            },
+        },
     },
     Notification: {
         common: {
@@ -291,6 +301,26 @@ const theme:ThemeType = {
             fontWeight: '700',
         },
     },
+    TextField: {
+        idle: {
+            common: {
+                borderRadius: '3px',
+                borderColor: silver.darker4,
+                fontSize: fontSize.base,
+                fontFamily: bodyFont,
+                color: grey.lighter3,
+            },
+        },
+        active: {
+            common: {
+                color: grey.lighter3,
+                borderColor: grey.lighter1,
+            },
+            label: {
+                color: grey.lighter3,
+            },
+        },
+    },
     Heading: {
         color: grey.base,
         fontFamily: headingFont,
@@ -300,6 +330,16 @@ const theme:ThemeType = {
     Popover: {
         background: silver.lighter1,
         borderRadius: 5,
+    },
+    InlineNotification: {
+        common: {
+            fontSize: fontSize.smaller1,
+            fontFamily: bodyFont,
+        },
+        error: { color: red.darker2 },
+        success: { color: green.darker2 },
+        info: { color: grey.lighter2 },
+        warning: { color: yellow.darker2 },
     },
     PriceTag: {
         default: {
@@ -319,7 +359,7 @@ const theme:ThemeType = {
             fontWeight: '400',
             color: grey.lighter2,
             fontFamily: bodyFont,
-        }
+        },
     },
     SubHeading: {
         color: grey.lighter2,
@@ -330,7 +370,7 @@ const theme:ThemeType = {
     ScrollBox: {
         scrollbar: {
             background: grey.base,
-        }
+        },
     },
     MessageStream: {
         common: {
@@ -352,7 +392,7 @@ const theme:ThemeType = {
         error: {
             borderColor: red.base,
         },
-    }
+    },
 };
 
 export default theme;

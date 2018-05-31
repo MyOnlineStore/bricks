@@ -259,7 +259,4 @@ enum LargeIcons {
 }
 /* tslint:enable */
 
-export {
-    SmallIcons,
-    LargeIcons,
-};
+export { SmallIcons, LargeIcons };

@@ -1,1 +1,1 @@
-export { default as default } from './TransitionAnimation.template';
+export { default } from './TransitionAnimation.template';

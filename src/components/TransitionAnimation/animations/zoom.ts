@@ -1,8 +1,9 @@
 import { AnimationStateType } from '../TransitionAnimation.style';
 
-const zoom = (state:AnimationStateType):string => {
+const zoom = (state: AnimationStateType): string => {
     switch (state) {
-        case 'exiting': return `
+        case 'exiting':
+            return `
             @keyframes zoomOut {
                 0% { opacity: 1; transform: scale3d(1, 1, 1); }
                 100% { opacity: 0; transform: scale3d(.5, .5, .5); }
@@ -10,11 +11,13 @@ const zoom = (state:AnimationStateType):string => {
 
             animation: zoomOut .3s both;
         `;
-        case 'exited': return `
+        case 'exited':
+            return `
             opacity: 0;
             transform: scale3d(.5, .5, .5);
         `;
-        default: return `
+        default:
+            return `
             @keyframes zoomIn {
                 0% { opacity: 0; transform: scale3d(.5, .5, .5); }
                 100% { opacity: 1; transform: scale3d(1, 1, 1); }

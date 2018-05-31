@@ -135,7 +135,7 @@
       "restrict-plus-operands": true,
       
       "space-before-function-paren": [true, "never"],
-      "strict-boolean-expressions": true,
+      "strict-boolean-expressions": false,
       "strict-type-predicates": true,
       "switch-default": true,
       "switch-final-break": true,

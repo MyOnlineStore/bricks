@@ -1,1 +1,1 @@
-export { default as default } from './Spacer.style';
+export { default } from './Spacer.style';

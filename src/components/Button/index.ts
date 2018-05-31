@@ -1,1 +1,1 @@
-export { default as default, ButtonThemeType } from './Button.style';
+export { default, ButtonThemeType } from './Button.style';

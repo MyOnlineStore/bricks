@@ -21,6 +21,7 @@
         "json",
         "node"
     ],
+    "clearMocks": true,
     "coverageDirectory": "./reports/jest",
     "coverageThreshold": {
         "src": {
@@ -37,13 +38,15 @@
         "!src/**/*.story.{ts,tsx}",
         "!src/**/*.test.{ts,tsx}",
         "!src/**/*.d.ts",
-        "!src/index.ts"
+        "!src/**/*.DontTest.tsx",
+        "!src/index.ts",
+        "!src/utility/styled/index.tsx"
     ],
-    "setupTestFrameworkScriptFile": "./config/jest/setup.tsx",
-    "setupFiles": [
-        "./config/jest/setup.storyshots.tsx"
-    ],
+    "setupTestFrameworkScriptFile": "./config/jest/setupFramework.tsx",
+    "setupFiles": ["./config/jest/setup.tsx"],
     "moduleNameMapper": {
-        "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":"<rootDir>/config/jest/__mocks__/fileMock.js"
+        "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/__mocks__/fileMock.js",
+        "resize-observer-polyfill": "<rootDir>/config/jest/__mocks__/resizeObserverPolyfill.ts",
+        "simplebar": "<rootDir>/config/jest/__mocks__/simplebar.ts"
     }
 }

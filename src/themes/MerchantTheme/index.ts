@@ -1,1 +1,1 @@
-export { default as default } from './MerchantTheme.template';
+export { default } from './MerchantTheme.template';

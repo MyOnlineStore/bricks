@@ -1,1 +1,1 @@
-export { default as default } from './FoldOut.template';
+export { default } from './FoldOut.template';

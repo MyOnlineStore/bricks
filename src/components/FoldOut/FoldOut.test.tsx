@@ -3,6 +3,10 @@ import renderer from 'react-test-renderer';
 import ResizeObserver from 'resize-observer-polyfill';
 import FoldOut from '../FoldOut';
 
+/* tslint:disable */
+(console.warn as any).mockImplementation(() => {});
+/* tslint:enable */
+
 const renderOptions = {
     createNodeMock: (): Object => ({
         contentRect: {
@@ -10,21 +14,6 @@ const renderOptions = {
         },
     }),
 };
-
-/* tslint:disable */
-(global as any).console = {
-    warn: jest.fn() as Function,
-};
-/* tslint:enable */
-
-jest.mock('resize-observer-polyfill', () =>
-    jest.fn().mockImplementation(callback => ({
-        observe: jest.fn().mockImplementation(element => {
-            callback([element]);
-        }),
-        unobserve: jest.fn(),
-    })),
-);
 
 describe('FoldOut', () => {
     it('should have a height when open', () => {
@@ -44,17 +33,19 @@ describe('FoldOut', () => {
     });
 
     it('should use the fallback and warn once ResizeObserver is not available or throws', () => {
-        const spy = jest.spyOn(console, 'warn');
-
-        (ResizeObserver as jest.Mock<ResizeObserver>).mockImplementation(() => {
-            throw TypeError;
-        });
+        (ResizeObserver as jest.Mock<ResizeObserver>).mockImplementationOnce(
+            () => {
+                throw TypeError;
+            },
+        );
 
         const foldOut = renderer
             .create(<FoldOut isOpen />, renderOptions)
             .toJSON();
 
         expect(foldOut).toMatchSnapshot();
-        expect(spy).toHaveBeenCalled();
+        /* tslint:disable */
+        expect(console.warn).toHaveBeenCalled();
+        /* tslint:enable */
     });
 });

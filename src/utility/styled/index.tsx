@@ -1,10 +1,11 @@
 /* tslint:disable */
-import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
-import React, { Component } from 'react';
+import React from 'react';
 import * as styledComponents from 'styled-components';
+import ThemeType from '../../types/ThemeType';
+import { shallow, mount, ReactWrapper, ShallowWrapper } from 'enzyme';
 import MosTheme from '../../themes/MosTheme';
 import theme from '../../themes/MosTheme/MosTheme.theme';
-import ThemeType from '../../types/ThemeType';
+import { ThemedStyledFunction } from 'styled-components';
 
 const {
     default: styled,
@@ -22,6 +23,15 @@ type StyledType = {
     innerRef?: any;
 };
 
+type StyledFunction<T> = styledComponents.ThemedStyledFunction<T, ThemeType>;
+
+function withProps<T, U extends HTMLElement = HTMLElement>(
+    styledFunction: StyledFunction<React.HTMLProps<U>>,
+): StyledFunction<T & React.HTMLProps<U>> {
+    return styledFunction;
+}
+
+/* tslint:disable */
 const shallowWithTheme = (component: JSX.Element): ShallowWrapper => {
     const context = (shallow(<ThemeProvider theme={theme} />) as any)
         .instance()
@@ -41,13 +51,17 @@ const mountWithTheme = (component: JSX.Element): ReactWrapper => {
     });
 };
 
+/* tslint:enable */
+
 export {
     css,
     injectGlobal,
     keyframes,
     ThemeProvider,
     StyledType,
+    StyledFunction,
     shallowWithTheme,
     mountWithTheme,
+    withProps,
 };
 export default styled;

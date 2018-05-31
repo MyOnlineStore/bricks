@@ -1,5 +1,7 @@
-export { default as Box } from './components/Box';
+/// <reference path='./declarations/modules.d.ts' />
+/// <reference path="./declarations/global.d.ts" />
 export { default as BreakpointProvider } from './components/BreakpointProvider';
+export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Contrast } from './components/Contrast';
@@ -17,5 +19,7 @@ export { default as ScrollBox } from './components/ScrollBox';
 export { default as Spacer } from './components/Spacer';
 export { default as SubHeading } from './components/SubHeading';
 export { default as Text } from './components/Text';
-export { default as TransitionAnimation } from './components/TransitionAnimation';
+export {
+    default as TransitionAnimation,
+} from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';
