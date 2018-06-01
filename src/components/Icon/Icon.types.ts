@@ -9,7 +9,6 @@ enum SmallIcons {
     barChart = require('./assets/bar-chart.svg'),
     barcode = require('./assets/barcode.svg'),
     bars = require('./assets/bars.svg'),
-    bellSlash = require('./assets/bell-slash.svg'),
     bell = require('./assets/bell.svg'),
     book = require('./assets/book.svg'),
     bookmark = require('./assets/bookmark.svg'),
