@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] = `
+<Box
+  alignItems="stretch"
+  direction="row-reverse"
+  justifyContent="flex-start"
+  margin={
+    Object {
+      "bottom": "-6px",
+      "left": "-6px",
+      "right": "-6px",
+      "top": "-6px",
+    }
+  }
+  wrap={true}
+>
+  <Box
+    alignSelf="stretch"
+    direction="row"
+    key=".0"
+    margin={
+      Object {
+        "bottom": "6px",
+        "left": "6px",
+        "right": "6px",
+        "top": "6px",
+      }
+    }
+  >
+    <Button
+      title="Test"
+      variant="primary"
+    />
+  </Box>
+  <Box
+    alignSelf="stretch"
+    direction="row"
+    key=".1"
+    margin={
+      Object {
+        "bottom": "6px",
+        "left": "6px",
+        "right": "6px",
+        "top": "6px",
+      }
+    }
+  >
+    <Button
+      title="Test"
+      variant="secondary"
+    />
+  </Box>
+</Box>
+`;
+
+exports[`ButtonGroup renders with a single Button in a small node 1`] = `
+<Box
+  alignItems="stretch"
+  direction="column"
+  justifyContent="flex-start"
+  margin={
+    Object {
+      "bottom": "-6px",
+      "left": "-6px",
+      "right": "-6px",
+      "top": "-6px",
+    }
+  }
+  wrap={true}
+>
+  <Box
+    alignSelf="stretch"
+    direction="column"
+    key=".0"
+    margin={
+      Object {
+        "bottom": "6px",
+        "left": "6px",
+        "right": "6px",
+        "top": "6px",
+      }
+    }
+  >
+    <Button
+      title="Test"
+      variant="primary"
+    />
+  </Box>
+</Box>
+`;

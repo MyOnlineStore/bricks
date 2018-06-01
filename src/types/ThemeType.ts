@@ -1,15 +1,15 @@
-import { ButtonThemeType } from '../components/Button';
-import { ContrastThemeType } from '../components/Contrast';
+import { ButtonThemeType } from '../components/Button/style';
+import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';
-import { InlineNotificationThemeType } from '../components/InlineNotification';
-import { MessageStreamThemeType } from '../components/MessageStream';
-import { NotificationThemeType } from '../components/Notification';
+import { InlineNotificationThemeType } from '../components/InlineNotification/style';
+import { MessageStreamThemeType } from '../components/MessageStream/style';
+import { NotificationThemeType } from '../components/Notification/style';
 import { PopoverThemeType } from '../components/Popover';
-import { PriceTagThemeType } from '../components/PriceTag';
-import { ScrollBoxThemeType } from '../components/ScrollBox';
+import { PriceTagThemeType } from '../components/PriceTag/style';
+import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { SubHeadingThemeType } from '../components/SubHeading';
-import { TextThemeType } from '../components/Text';
-import { TextFieldThemeType } from '../components/TextField';
+import { TextThemeType } from '../components/Text/style';
+import { TextFieldThemeType } from '../components/TextField/style';
 
 type ThemeType = {
     Button: ButtonThemeType;

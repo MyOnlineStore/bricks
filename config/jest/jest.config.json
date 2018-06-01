@@ -3,8 +3,13 @@
         "ts-jest": {
             "tsConfigFile": "./config/typescript/tsconfig.json",
             "babelConfig": {
-                "plugins": ["babel-plugin-styled-components"],
-                "presets": ["env", "react"]
+                "plugins": [
+                    "babel-plugin-styled-components"
+                ],
+                "presets": [
+                    "env",
+                    "react"
+                ]
             }
         }
     },
@@ -35,7 +40,7 @@
         "src/**/*.{ts,tsx}",
         "!src/**/__snapshots__/*",
         "!<rootDir>/node_modules/",
-        "!src/**/*.story.{ts,tsx}",
+        "!src/**/story.{ts,tsx}",
         "!src/**/*.test.{ts,tsx}",
         "!src/**/*.d.ts",
         "!src/**/*.DontTest.tsx",
@@ -43,7 +48,9 @@
         "!src/utility/styled/index.tsx"
     ],
     "setupTestFrameworkScriptFile": "./config/jest/setupFramework.tsx",
-    "setupFiles": ["./config/jest/setup.tsx"],
+    "setupFiles": [
+        "./config/jest/setup.tsx"
+    ],
     "moduleNameMapper": {
         "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/__mocks__/fileMock.js",
         "resize-observer-polyfill": "<rootDir>/config/jest/__mocks__/resizeObserverPolyfill.ts",

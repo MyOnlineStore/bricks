@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Box Default 1`] = `
-.c4 {
-  padding: 48px 48px 48px 48px;
-}
-
-.c5 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -96,6 +83,19 @@ exports[`Storyshots Box Default 1`] = `
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
+}
+
+.c4 {
+  padding: 48px 48px 48px 48px;
+}
+
+.c5 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .c0 {
@@ -258,10 +258,6 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
 `;
 
 exports[`Storyshots Button On a contrast area 1`] = `
-.c1 {
-  padding: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -344,6 +340,10 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
+}
+
+.c1 {
+  padding: 12px 12px 12px 12px;
 }
 
 .c4 {
@@ -585,9 +585,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           <button
             className="c4"
             disabled={false}
-            href={undefined}
             onClick={[Function]}
-            target={undefined}
             title="Click me"
             type="button"
           >
@@ -600,9 +598,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           <button
             className="c5"
             disabled={undefined}
-            href={undefined}
             onClick={[Function]}
-            target={undefined}
             title="Click me"
             type="button"
           >
@@ -744,9 +740,7 @@ exports[`Storyshots Button With an icon 1`] = `
 <button
   className="c0"
   disabled={false}
-  href={undefined}
   onClick={[Function]}
-  target={undefined}
   title="Click me"
   type="button"
 >
@@ -870,9 +864,7 @@ exports[`Storyshots Button With text 1`] = `
 <button
   className="c0"
   disabled={false}
-  href={undefined}
   onClick={[Function]}
-  target={undefined}
   title="Click me"
   type="button"
 >
@@ -1189,9 +1181,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         <button
           className="c3"
           disabled={undefined}
-          href={undefined}
           onClick={[Function]}
-          target={undefined}
           title="Primary button"
           type="button"
         >
@@ -1204,9 +1194,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         <button
           className="c4"
           disabled={undefined}
-          href={undefined}
           onClick={[Function]}
-          target={undefined}
           title="Secondary button"
           type="button"
         >
@@ -1340,9 +1328,7 @@ Array [
       <button
         className="c2"
         disabled={undefined}
-        href={undefined}
         onClick={[Function]}
-        target={undefined}
         title="Inside Contrast"
         type="button"
       >
@@ -1463,9 +1449,7 @@ Array [
     <button
       className="c1"
       disabled={undefined}
-      href={undefined}
       onClick={[Function]}
-      target={undefined}
       title="Outside of Contrast"
       type="button"
     >
@@ -1661,9 +1645,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   <button
     className="c3"
     disabled={undefined}
-    href={undefined}
     onClick={[Function]}
-    target={undefined}
     title="open FoldOut"
     type="button"
   >
@@ -1929,37 +1911,6 @@ exports[`Storyshots InlineNotification With Icon 1`] = `
 `;
 
 exports[`Storyshots MessageStream Default 1`] = `
-.c2 {
-  padding: 12px 24px 12px 24px;
-}
-
-.c6 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c5 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c7 {
-  color: #a6aab3;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2084,6 +2035,37 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
+}
+
+.c2 {
+  padding: 12px 24px 12px 24px;
+}
+
+.c6 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c5 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c7 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .c11 {
@@ -2571,6 +2553,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 >
   <div
     className="c1"
+    title="Sit Inceptos Magna"
   >
     <div>
       <div
@@ -2607,6 +2590,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   />
   <div
     className="c9"
+    title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div>
       <div
@@ -2644,6 +2628,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   />
   <div
     className="c1"
+    title="Vestibulum Dapibus"
   >
     <div>
       <div
@@ -2677,9 +2662,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             <button
               className="c11"
               disabled={undefined}
-              href={undefined}
               onClick={[Function]}
-              target={undefined}
               title="Click me"
               type="button"
             >
@@ -2695,6 +2678,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   />
   <div
     className="c12"
+    title="Parturient Euismod Mollis Fringilla"
   >
     <div>
       <div
@@ -2729,9 +2713,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             <button
               className="c13"
               disabled={undefined}
-              href={undefined}
               onClick={[Function]}
-              target={undefined}
               title="Click me"
               type="button"
             >
@@ -2747,6 +2729,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   />
   <div
     className="c14"
+    title="Tortor Cursus"
   >
     <div
       className="c15"
@@ -2782,9 +2765,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             <button
               className="c16"
               disabled={undefined}
-              href={undefined}
               onClick={[Function]}
-              target={undefined}
               title="Click me"
               type="button"
             >
@@ -2800,6 +2781,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   />
   <div
     className="c9"
+    title="Euismod Dolor Consectetur"
   >
     <div
       className="c15"
@@ -2833,9 +2815,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             <button
               className="c17"
               disabled={undefined}
-              href={undefined}
               onClick={[Function]}
-              target={undefined}
               title="Click me"
               type="button"
             >
@@ -3100,10 +3080,6 @@ exports[`Storyshots Notification With a custom icon 1`] = `
 `;
 
 exports[`Storyshots Popover Default 1`] = `
-.c1 {
-  margin: 48px 48px 48px 48px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3144,6 +3120,10 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
+}
+
+.c1 {
+  margin: 48px 48px 48px 48px;
 }
 
 .c3 {
@@ -3265,9 +3245,7 @@ exports[`Storyshots Popover Default 1`] = `
       <button
         className="c3"
         disabled={undefined}
-        href={undefined}
         onClick={[Function]}
-        target={undefined}
         title="Toggle"
         type="button"
       >
