@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Popover should render with a stretched anchor 1`] = `
+.c0 {
+  display: block;
+  position: relative;
+  width: 100%: height:100%;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`Popover should render with defaults 1`] = `
 <styled.div
   innerRef={null}
@@ -25,6 +37,29 @@ exports[`Popover should render with defaults 1`] = `
 exports[`Popover should render with defaults 2`] = `
 <styled.div
   innerRef={null}
+  stretch={false}
+/>
+`;
+
+exports[`PopoverAnchor should render inline 1`] = `
+.c0 {
+  display: inline-block;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`PopoverAnchor should render stretched 1`] = `
+.c0 {
+  display: block;
+  position: relative;
+  width: 100%: height:100%;
+}
+
+<div
+  className="c0"
 />
 `;
 

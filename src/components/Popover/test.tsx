@@ -4,7 +4,7 @@ import { Popper, Reference } from 'react-popper';
 import Popover from '.';
 import { shallowWithTheme } from '../../utility/styled';
 import TransitionAnimation from '../TransitionAnimation';
-import { PopoverArrow, PopoverBackground } from './style';
+import { PopoverAnchor, PopoverArrow, PopoverBackground } from './Popover.style';
 
 /* tslint:disable */
 jest.mock('react-popper', () => {
@@ -33,12 +33,7 @@ jest.mock('react-popper', () => {
 
 describe('Popover', () => {
     it('should render with defaults', () => {
-        const component = shallowWithTheme(
-            <Popover
-                isOpen={true}
-                renderContent={(): string => 'Mock content'}
-            />,
-        );
+        const component = shallowWithTheme(<Popover isOpen={true} renderContent={(): string => 'Mock content'} />);
 
         const reference = component.find(Reference);
         const popper = component.find(Popper);
@@ -50,12 +45,7 @@ describe('Popover', () => {
     });
 
     it('should render closed', () => {
-        const component = shallowWithTheme(
-            <Popover
-                isOpen={false}
-                renderContent={(): string => 'Mock content'}
-            />,
-        );
+        const component = shallowWithTheme(<Popover isOpen={false} renderContent={(): string => 'Mock content'} />);
 
         const transition = component.find(TransitionAnimation);
 
@@ -64,17 +54,36 @@ describe('Popover', () => {
 
     it('should render with a fixed postition', () => {
         const component = shallowWithTheme(
-            <Popover
-                isOpen={true}
-                placement="left"
-                fixed={true}
-                renderContent={(): string => 'Mock content'}
-            />,
+            <Popover isOpen={true} placement="left" fixed={true} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
 
         expect(popper.prop('positionFixed')).toEqual(true);
+    });
+
+    it('should render with a stretched anchor', () => {
+        const component = shallowWithTheme(
+            <Popover isOpen={true} stretch renderContent={(): string => 'Mock content'} />,
+        );
+
+        const reference = component.find(Reference).dive();
+
+        expect(toJson(reference.dive())).toMatchSnapshot();
+    });
+
+    it('should render with a custom offset', () => {
+        const component = shallowWithTheme(
+            <Popover isOpen={true} offset={0} renderContent={(): string => 'Mock content'} />,
+        );
+
+        const popper = component.find(Popper);
+
+        expect(popper.prop('modifiers')).toEqual({
+            offset: {
+                offset: '0px',
+            },
+        });
     });
 });
 
@@ -86,11 +95,23 @@ describe('PopoverBackground', () => {
     });
 });
 
+describe('PopoverAnchor', () => {
+    it('should render inline', () => {
+        const component = shallowWithTheme(<PopoverAnchor />);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+
+    it('should render stretched', () => {
+        const component = shallowWithTheme(<PopoverAnchor stretch={true} />);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+});
+
 describe('PopoverArrow', () => {
     it('should render at the bottom with shadow', () => {
-        const component = shallowWithTheme(
-            <PopoverArrow placement="bottom" shadow />,
-        );
+        const component = shallowWithTheme(<PopoverArrow placement="bottom" shadow />);
 
         expect(toJson(component)).toMatchSnapshot();
     });

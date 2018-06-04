@@ -1,11 +1,22 @@
 import { ClassAttributes as _C, HTMLAttributes as _H } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import { PopoverArrowPropsType } from '.';
 import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
+import { PopoverAnchorPropsType, PopoverArrowPropsType } from './Popover.template';
 
 const PopoverAnchor = styled.div`
-    display: inline-block;
+    ${({ stretch }: PopoverAnchorPropsType): string => {
+        if (stretch === true) {
+            return `
+                display: block;
+                position: relative;
+                width: 100%:
+                height: 100%;
+            `;
+        }
+
+        return 'display: inline-block;';
+    }};
 `;
 
 const PopoverBackground = styled.div`
@@ -78,10 +89,4 @@ const PopoverArrow = styled.div`
         `};
 `;
 
-export {
-    PopoverAnchor,
-    PopoverArrow,
-    PopoverBackground,
-    PopoverContent,
-    PopoverWindow,
-};
+export { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow };
