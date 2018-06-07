@@ -36,15 +36,8 @@ class Demo extends Component<DemoPropsType, { value: string }> {
                     this.ref = ref;
                 }}
                 feedback={{
-                    message: text(
-                        'feedback message',
-                        'This is a feedback message',
-                    ),
-                    severity: select(
-                        'feedback type',
-                        ['success', 'warning', 'error', 'info'],
-                        'error',
-                    ) as SeverityType,
+                    message: text('feedback message', 'This is a feedback message'),
+                    severity: select('feedback type', ['success', 'warning', 'error', 'info'], 'error') as SeverityType,
                 }}
             />
         ) : (
@@ -61,9 +54,5 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     }
 }
 
-storiesOf('TextField', module).add('Default', () => (
-    <Demo withFeedback={false} />
-));
-storiesOf('TextField', module).add('With Feedback', () => (
-    <Demo withFeedback />
-));
+storiesOf('TextField', module).add('Default', () => <Demo withFeedback={false} />);
+storiesOf('TextField', module).add('With Feedback', () => <Demo withFeedback />);

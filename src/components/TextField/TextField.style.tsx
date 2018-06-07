@@ -2,7 +2,7 @@ import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import SeverityType from '../../types/SeverityType';
 import _T, { default as ThemeType } from '../../types/ThemeType';
-import styled from '../../utility/styled';
+import styled, { withProps } from '../../utility/styled';
 
 type TextFieldThemeType = {
     idle: {
@@ -35,37 +35,49 @@ const StyledInput = styled.input`
     margin: 1em 0 0 0;
     padding: 0;
     line-height: 1.5;
+    outline: none;
 `;
 
 type FloatingLabelProps = {
     active: boolean;
 };
 
-const StyledFloatingLabel = styled.label`
-    transition: top 0.2s, margin-top 0.2s, font-size 0.2s, color 0.2s;
+const StyledFloatingLabel = withProps<FloatingLabelProps, HTMLLabelElement>(styled.label)`
+    transition: top 0.2s, transform 0.2s, font-size 0.2s, color 0.2s;
     display: block;
     line-height: 1.5;
     position: absolute;
+    transform-origin: top left;
+    top: 0;
+    font-size: 1em;
+    user-select: none;
 
-    ${({
-        active,
-        theme,
-    }: FloatingLabelProps & { theme: ThemeType }): string => {
+    ${({ active, theme }): string => {
         return active
             ? `
                 color: ${theme.TextField.active.label.color};
-                top: 0.3em;
-                margin-top: 0;
-                font-size: 0.85em;
+                transform: translate3d(0, 0.3em, 0) scale(0.85);
             `
             : `
                 color: ${theme.TextField.idle.common.color};
-                font-size: 1em;
-                top: 50%;
-                margin-top: -0.75em;
+                transform: translate3d(0, 0.85em, 0) scale(1);
             `;
     }};
 `;
+
+/*
+color: ${theme.TextField.active.label.color};
+top: 0.3em;
+margin-top: 0;
+font-size: 0.85em;
+*/
+
+/*
+color: ${theme.TextField.idle.common.color};
+font-size: 1em;
+top: 50%;
+margin-top: -0.75em;
+*/
 
 type WrapperProps = {
     active: boolean;
@@ -75,19 +87,14 @@ type WrapperProps = {
     };
 };
 
-const StyledWrapper = styled.div`
+const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: border-color 0.3s;
     border: solid 1px
-        ${({ active, theme }: WrapperProps & { theme: ThemeType }): string => {
-            return active
-                ? theme.TextField.active.common.borderColor
-                : theme.TextField.idle.common.borderColor;
-        }};
+        ${({ active, theme }): string =>
+            active ? theme.TextField.active.common.borderColor : theme.TextField.idle.common.borderColor};
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
-    font-family: ${({ theme }): string =>
-        theme.TextField.idle.common.fontFamily};
-    border-radius: ${({ theme }): string =>
-        theme.TextField.idle.common.borderRadius};
+    font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
+    border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
     display: inline-block;
     position: relative;
     padding: 0.3em 12px 0.4em 12px;
@@ -97,9 +104,7 @@ const StyledWrapper = styled.div`
             ? `
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
-                border-bottom: solid 2px ${
-                    theme.InlineNotification[feedback.severity].color
-                };
+                border-bottom: solid 2px ${theme.InlineNotification[feedback.severity].color};
             `
             : ''};
     * {
