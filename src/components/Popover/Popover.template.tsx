@@ -24,7 +24,6 @@ type PropsType = {
     placement?: PlacementType;
     isOpen: boolean;
     fixed?: boolean;
-    stretch?: boolean;
     offset?: number;
     renderContent(): JSX.Element | string;
 };
@@ -35,9 +34,7 @@ const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
             <Manager>
                 <Reference>
                     {({ ref }: ReferenceChildrenProps): JSX.Element => (
-                        <PopoverAnchor stretch={props.stretch !== undefined ? props.stretch : false} innerRef={ref}>
-                            {props.children}
-                        </PopoverAnchor>
+                        <PopoverAnchor innerRef={ref}>{props.children}</PopoverAnchor>
                     )}
                 </Reference>
                 <TransitionAnimation show={props.isOpen} animation="fade">
@@ -46,7 +43,7 @@ const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
                         placement={props.placement !== undefined ? props.placement : 'bottom'}
                         modifiers={{
                             offset: {
-                                offset: props.offset !== undefined ? `${props.offset}px` : '16px',
+                                offset: props.offset !== undefined ? `0 ${props.offset}px` : '0 16px',
                             },
                         }}
                     >

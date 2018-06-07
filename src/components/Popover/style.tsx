@@ -5,18 +5,8 @@ import styled from '../../utility/styled';
 import { PopoverAnchorPropsType, PopoverArrowPropsType } from './Popover.template';
 
 const PopoverAnchor = styled.div`
-    ${({ stretch }: PopoverAnchorPropsType): string => {
-        if (stretch === true) {
-            return `
-                display: block;
-                position: relative;
-                width: 100%;
-                height: 100%;
-            `;
-        }
-
-        return 'display: inline-block;';
-    }};
+    display: inline-block;
+    flex-grow: 1;
 `;
 
 const PopoverBackground = styled.div`

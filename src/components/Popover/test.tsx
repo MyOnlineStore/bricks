@@ -62,26 +62,16 @@ describe('Popover', () => {
         expect(popper.prop('positionFixed')).toEqual(true);
     });
 
-    it('should render with a stretched anchor', () => {
-        const component = shallowWithTheme(
-            <Popover isOpen={true} stretch renderContent={(): string => 'Mock content'} />,
-        );
-
-        const reference = component.find(Reference).dive();
-
-        expect(toJson(reference.dive())).toMatchSnapshot();
-    });
-
     it('should render with a custom offset', () => {
         const component = shallowWithTheme(
-            <Popover isOpen={true} offset={0} renderContent={(): string => 'Mock content'} />,
+            <Popover isOpen={true} offset={6} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
 
         expect(popper.prop('modifiers')).toEqual({
             offset: {
-                offset: '0px',
+                offset: '0 6px',
             },
         });
     });
@@ -98,12 +88,6 @@ describe('PopoverBackground', () => {
 describe('PopoverAnchor', () => {
     it('should render inline', () => {
         const component = shallowWithTheme(<PopoverAnchor />);
-
-        expect(toJson(component)).toMatchSnapshot();
-    });
-
-    it('should render stretched', () => {
-        const component = shallowWithTheme(<PopoverAnchor stretch={true} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
