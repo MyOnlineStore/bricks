@@ -1,3 +1,5 @@
+/// <reference path="../../src/declarations/global.d.ts" />
+
 const orginalError = console.error;
 const orginalWarn = console.warn;
 const orginalLog = console.log;

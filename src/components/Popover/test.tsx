@@ -6,31 +6,6 @@ import { shallowWithTheme } from '../../utility/styled';
 import TransitionAnimation from '../TransitionAnimation';
 import { PopoverAnchor, PopoverArrow, PopoverBackground } from './style';
 
-/* tslint:disable */
-jest.mock('react-popper', () => {
-    const React = require('react');
-
-    return {
-        Manager: (props: any): JSX.Element => {
-            return props.children;
-        },
-        Popper: (props: any): JSX.Element => {
-            return props.children({
-                ref: null,
-                style: '',
-                placement: '',
-                arrowProps: { ref: null, style: '' },
-            });
-        },
-        Reference: (props: any): JSX.Element => {
-            return props.children({
-                ref: null,
-            });
-        },
-    };
-});
-/* tslint:enable */
-
 describe('Popover', () => {
     it('should render with defaults', () => {
         const component = shallowWithTheme(<Popover isOpen={true} renderContent={(): string => 'Mock content'} />);
