@@ -34,7 +34,7 @@ const StyledInput = styled.input`
     background: transparent;
     font-size: inherit;
     display: block;
-    margin: 1em 0 0 0;
+    margin-top: 1em;
     padding: 0;
     line-height: 1.5;
     outline: none;

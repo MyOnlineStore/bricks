@@ -26,7 +26,7 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     }
 
     public render(): JSX.Element {
-        return this.props.withFeedback ? (
+        return (
             <TextField
                 value={this.state.value}
                 name="firstname"
@@ -35,20 +35,18 @@ class Demo extends Component<DemoPropsType, { value: string }> {
                 extractRef={(ref: HTMLInputElement): void => {
                     this.ref = ref;
                 }}
-                feedback={{
-                    message: text('feedback message', 'This is a feedback message'),
-                    severity: select('feedback type', ['success', 'warning', 'error', 'info'], 'error') as SeverityType,
-                }}
-            />
-        ) : (
-            <TextField
-                value={this.state.value}
-                name="firstname"
-                label="First name"
-                handleChange={(value: string): void => this.setState({ value })}
-                extractRef={(ref: HTMLInputElement): void => {
-                    this.ref = ref;
-                }}
+                feedback={
+                    this.props.withFeedback
+                        ? {
+                              message: text('feedback message', 'This is a feedback message'),
+                              severity: select(
+                                  'feedback type',
+                                  ['success', 'warning', 'error', 'info'],
+                                  'error',
+                              ) as SeverityType,
+                          }
+                        : undefined
+                }
             />
         );
     }
