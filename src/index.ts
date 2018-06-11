@@ -17,6 +17,8 @@ export { default as MosTheme } from './themes/MosTheme';
 export { default as Notification } from './components/Notification';
 export { default as Popover } from './components/Popover';
 export { default as PriceTag } from './components/PriceTag';
+export { default as RadioButton } from './components/RadioButton';
+export { default as RadioButtonGroup } from './components/RadioButtonGroup';
 export { default as ScrollBox } from './components/ScrollBox';
 export { default as Spacer } from './components/Spacer';
 export { default as SubHeading } from './components/SubHeading';
