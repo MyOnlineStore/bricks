@@ -4,7 +4,7 @@ import { HeadingThemeType } from '../components/Heading';
 import { InlineNotificationThemeType } from '../components/InlineNotification/style';
 import { MessageStreamThemeType } from '../components/MessageStream/style';
 import { NotificationThemeType } from '../components/Notification/style';
-import { PopoverThemeType } from '../components/Popover';
+import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { SubHeadingThemeType } from '../components/SubHeading';

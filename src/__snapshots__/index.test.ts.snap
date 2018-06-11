@@ -3231,6 +3231,10 @@ exports[`Storyshots Popover Default 1`] = `
 
 .c2 {
   display: inline-block;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 <div

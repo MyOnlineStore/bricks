@@ -28,6 +28,20 @@ exports[`Popover should render with defaults 2`] = `
 />
 `;
 
+exports[`PopoverAnchor should render inline 1`] = `
+.c0 {
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`PopoverArrow should render at the bottom with shadow 1`] = `
 .c0 {
   position: absolute;
