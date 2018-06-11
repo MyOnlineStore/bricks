@@ -23,9 +23,9 @@ type NotificationThemeType = {
 
 type NotificationPropsType = {
     severity: SeverityType;
-}
+};
 
-const StyledNotification = withProps<NotificationPropsType, HTMLDivElement>(styled.div) `
+const StyledNotification = withProps<NotificationPropsType, HTMLDivElement>(styled.div)`
     border-width: 1px;
     border-style: solid;
     font-family: ${({ theme }): string => theme.Notification.common.fontFamily};

@@ -13,9 +13,7 @@ const {
     injectGlobal,
     keyframes,
     ThemeProvider,
-} = styledComponents as styledComponents.ThemedStyledComponentsModule<
-    ThemeType
->;
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeType>;
 
 type StyledType = {
     theme?: ThemeType;
@@ -33,17 +31,13 @@ function withProps<T, U extends HTMLElement = HTMLElement>(
 
 /* tslint:disable */
 const shallowWithTheme = (component: JSX.Element): ShallowWrapper => {
-    const context = (shallow(<ThemeProvider theme={theme} />) as any)
-        .instance()
-        .getChildContext();
+    const context = (shallow(<ThemeProvider theme={theme} />) as any).instance().getChildContext();
 
     return shallow(component, { context });
 };
 
 const mountWithTheme = (component: JSX.Element): ReactWrapper => {
-    const context = (shallow(<ThemeProvider theme={theme} />) as any)
-        .instance()
-        .getChildContext();
+    const context = (shallow(<ThemeProvider theme={theme} />) as any).instance().getChildContext();
 
     return mount(component, {
         context,

@@ -22,7 +22,6 @@ const Button: StatelessComponent<PropsType> = (props): JSX.Element => {
     };
 
     if (isLink) {
-
         return (
             <StyledAnchor
                 variant={props.variant}
@@ -51,7 +50,6 @@ const Button: StatelessComponent<PropsType> = (props): JSX.Element => {
             {Children.count(props.children) > 0 ? props.children : props.title}
         </StyledButton>
     );
-
 };
 
 export default Button;

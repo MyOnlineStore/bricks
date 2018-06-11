@@ -78,11 +78,7 @@ class Demo extends Component<{}, DemoStateType> {
                         maxHeight={number('maxHeight', 400)}
                         showInsetShadow={boolean('showInsetShadow', true)}
                         autoHideScrollBar={boolean('autoHideScrollBar', true)}
-                        onScroll={({
-                            scrollTop,
-                            scrollBottom,
-                            scrollDirection,
-                        }): void => {
+                        onScroll={({ scrollTop, scrollBottom, scrollDirection }): void => {
                             this.setState({
                                 scrollTop,
                                 scrollBottom,
@@ -90,10 +86,7 @@ class Demo extends Component<{}, DemoStateType> {
                             });
                         }}
                     >
-                        <Spacer
-                            offsetType="inner"
-                            offset={trbl(12, 24, 12, 12)}
-                        >
+                        <Spacer offsetType="inner" offset={trbl(12, 24, 12, 12)}>
                             <Heading>Lorem ipsum dolor sit amet.</Heading>
                             <Text>{demoContent}</Text>
                         </Spacer>

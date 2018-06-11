@@ -15,9 +15,7 @@ const Contrast: StatelessComponent<PropsType> = (props): JSX.Element => {
 
     return props.enable === undefined || props.enable ? (
         <StyledContrast>
-            <ThemeProvider theme={contrastTheme}>
-                {props.children}
-            </ThemeProvider>
+            <ThemeProvider theme={contrastTheme}>{props.children}</ThemeProvider>
         </StyledContrast>
     ) : (
         <div>{props.children}</div>

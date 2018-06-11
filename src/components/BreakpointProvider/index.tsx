@@ -23,16 +23,10 @@ class BreakpointProvider extends Component<PropsType, StateType> {
         this.state = { offsetWidth: 0 };
     }
 
-    private readonly getBreakpoint = (
-        breakpoints: BreakpointType,
-        offsetWidth: number,
-    ): keyof BreakpointType =>
+    private readonly getBreakpoint = (breakpoints: BreakpointType, offsetWidth: number): keyof BreakpointType =>
         Object.keys(this.props.breakpoints).reduce<keyof BreakpointType>(
             (smallestKey, key: keyof BreakpointType): keyof BreakpointType => {
-                if (
-                    breakpoints[key] > breakpoints[smallestKey] &&
-                    offsetWidth >= breakpoints[key]
-                ) {
+                if (breakpoints[key] > breakpoints[smallestKey] && offsetWidth >= breakpoints[key]) {
                     return key;
                 }
 
@@ -61,12 +55,7 @@ class BreakpointProvider extends Component<PropsType, StateType> {
                     this.element = element;
                 }}
             >
-                {this.props.children(
-                    this.getBreakpoint(
-                        this.props.breakpoints,
-                        this.state.offsetWidth,
-                    ),
-                )}
+                {this.props.children(this.getBreakpoint(this.props.breakpoints, this.state.offsetWidth))}
             </div>
         );
     }

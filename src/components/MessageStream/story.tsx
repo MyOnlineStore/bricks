@@ -45,8 +45,7 @@ const messagesMock: Array<MessagePropsType> = [
     {
         severity: 'error',
         title: 'Tortor Cursus',
-        message:
-            'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.',
+        message: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.',
         buttonLabel: 'Click me',
         date: '12-12-2012 12:00',
         read: true,
@@ -57,8 +56,7 @@ const messagesMock: Array<MessagePropsType> = [
     {
         severity: 'info',
         title: 'Euismod Dolor Consectetur',
-        message:
-            'Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.',
+        message: 'Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.',
         buttonLabel: 'Click me',
         read: true,
         action: (): void => {
@@ -67,6 +65,4 @@ const messagesMock: Array<MessagePropsType> = [
     },
 ];
 
-storiesOf('MessageStream', module).add('Default', () => (
-    <MessageStream messages={messagesMock} />
-));
+storiesOf('MessageStream', module).add('Default', () => <MessageStream messages={messagesMock} />);

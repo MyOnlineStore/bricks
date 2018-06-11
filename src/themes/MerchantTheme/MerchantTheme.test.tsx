@@ -12,9 +12,7 @@ describe('MerchantTheme', () => {
             },
         };
 
-        const component = shallow(
-            <MerchantTheme theme={theme as PropsType['theme']} />,
-        );
+        const component = shallow(<MerchantTheme theme={theme as PropsType['theme']} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });

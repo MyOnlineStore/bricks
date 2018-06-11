@@ -14,10 +14,7 @@ describe('TransitionAnimation', () => {
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule(
-            'animation',
-            'fadeIn .3s both',
-        );
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fadeIn .3s both');
         /* tslint:enable */
     });
 

@@ -15,11 +15,9 @@ jest.mock('simplebar', () =>
             getScrollElement: jest.fn().mockReturnValue({
                 offsetHeight: 200,
                 scrollTop: 0,
-                addEventListener: jest
-                    .fn()
-                    .mockImplementation((event, callback) => {
-                        callback();
-                    }),
+                addEventListener: jest.fn().mockImplementation((event, callback) => {
+                    callback();
+                }),
             }),
             getContentElement: jest.fn().mockReturnValue({
                 offsetHeight: 400,
@@ -42,11 +40,9 @@ describe('ScrollBox', () => {
 
                 return {
                     getScrollElement: jest.fn().mockReturnValue({
-                        addEventListener: jest
-                            .fn()
-                            .mockImplementation((event, callback) => {
-                                callback();
-                            }),
+                        addEventListener: jest.fn().mockImplementation((event, callback) => {
+                            callback();
+                        }),
                     }),
                     getContentElement: jest.fn().mockReturnValue({
                         offsetHeight: 400,
@@ -111,11 +107,7 @@ describe('ScrollBox', () => {
 
         mount(
             <MosTheme>
-                <ScrollBox
-                    autoHideScrollBar
-                    maxHeight={900}
-                    onScroll={onScrollMock}
-                />
+                <ScrollBox autoHideScrollBar maxHeight={900} onScroll={onScrollMock} />
             </MosTheme>,
         );
 
@@ -135,11 +127,9 @@ describe('ScrollBox', () => {
                 /* tslint:enable */
                 return {
                     getScrollElement: jest.fn().mockReturnValue({
-                        addEventListener: jest
-                            .fn()
-                            .mockImplementation((event, callback) => {
-                                callback();
-                            }),
+                        addEventListener: jest.fn().mockImplementation((event, callback) => {
+                            callback();
+                        }),
                         removeEventListener: removeListenerMock,
                     }),
                     getContentElement: jest.fn().mockReturnValue({

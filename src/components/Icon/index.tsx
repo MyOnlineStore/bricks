@@ -1,6 +1,6 @@
 import React, { StatelessComponent } from 'react';
 import { StyledType } from '../../utility/styled';
-import StyledIcon from './style'
+import StyledIcon from './style';
 import { LargeIcons, SmallIcons } from './types';
 
 type BasePropsType = StyledType & {
@@ -20,10 +20,7 @@ type LargePropsType = BasePropsType & {
 type PropsType = SmallPropsType | LargePropsType;
 
 const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const icon =
-        props.size === 'large'
-            ? LargeIcons[props.icon]
-            : SmallIcons[props.icon];
+    const icon = props.size === 'large' ? LargeIcons[props.icon] : SmallIcons[props.icon];
 
     return (
         <StyledIcon
@@ -39,11 +36,4 @@ const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
 };
 
 export default Icon;
-export {
-    PropsType,
-    SmallIcons,
-    LargeIcons,
-    BasePropsType,
-    SmallPropsType,
-    LargePropsType,
-};
+export { PropsType, SmallIcons, LargeIcons, BasePropsType, SmallPropsType, LargePropsType };

@@ -7,9 +7,11 @@ import { PropsType } from '../BreakpointProvider/';
 import Button from '../Button';
 
 jest.mock('../BreakpointProvider', () =>
-    jest.fn().mockImplementation((props: PropsType): JSX.Element => {
-        return props.children('large');
-    }),
+    jest.fn().mockImplementation(
+        (props: PropsType): JSX.Element => {
+            return props.children('large');
+        },
+    ),
 );
 
 describe('ButtonGroup', () => {
@@ -25,11 +27,11 @@ describe('ButtonGroup', () => {
     });
 
     it('renders with a single Button in a small node', () => {
-        (BreakpointProvider as jest.Mock<
-            BreakpointProvider
-            >).mockImplementationOnce((props: PropsType): JSX.Element => {
+        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
+            (props: PropsType): JSX.Element => {
                 return props.children('small');
-            });
+            },
+        );
 
         const component = shallow(
             <ButtonGroup>

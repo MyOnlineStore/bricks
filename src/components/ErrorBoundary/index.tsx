@@ -16,8 +16,7 @@ class ErrorBoundary extends Component<PropsType, StateType> {
         super(props);
 
         this.state = {
-            hasError:
-                this.props.hasError !== undefined ? this.props.hasError : false,
+            hasError: this.props.hasError !== undefined ? this.props.hasError : false,
         };
     }
 
@@ -30,8 +29,7 @@ class ErrorBoundary extends Component<PropsType, StateType> {
     }
 
     public render(): JSX.Element {
-        return this.state.hasError ||
-            (this.props.hasError !== undefined && this.props.hasError) ? (
+        return this.state.hasError || (this.props.hasError !== undefined && this.props.hasError) ? (
             <Notification severity="error" message={this.props.message} />
         ) : (
             <div>{this.props.children}</div>

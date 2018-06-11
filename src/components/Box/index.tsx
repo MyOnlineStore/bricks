@@ -2,23 +2,17 @@ import React, { StatelessComponent } from 'react';
 import { TrblType } from '../../utility/trbl';
 import StyledBox from './style';
 
-type PropsType = {
+type PropsType = JSX.IntrinsicElements['div'] & {
     justifyContent?:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'stretch'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly';
+        | 'flex-start'
+        | 'flex-end'
+        | 'center'
+        | 'stretch'
+        | 'space-between'
+        | 'space-around'
+        | 'space-evenly';
     alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch';
-    alignContent?:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'stretch'
-    | 'space-between'
-    | 'space-around';
+    alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
     height?: string;
     margin?: TrblType;
@@ -27,20 +21,14 @@ type PropsType = {
     shrink?: number;
     basis?: string;
     order?: number;
-    alignSelf?:
-    | 'auto'
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'baseline'
-    | 'stretch';
+    alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 };
 
 const Box: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const { order, direction, wrap, height, ...leftOver } = props;
+    const { order, direction, wrap, height, ref, ...filteredProps } = props;
 
     const newProps = {
-        ...leftOver,
+        ...filteredProps,
         flexWrap: wrap,
         elementHeight: height,
         flexDirection: direction,

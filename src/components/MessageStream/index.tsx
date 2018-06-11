@@ -23,9 +23,7 @@ type PropsType = StyledType & {
     messages: Array<MessagePropsType>;
 };
 
-const mapVariant = (
-    severity: MessagePropsType['severity'],
-): ButtonPropsType['variant'] => {
+const mapVariant = (severity: MessagePropsType['severity']): ButtonPropsType['variant'] => {
     switch (severity) {
         case 'warning':
             return 'warning';
@@ -43,46 +41,38 @@ const Message: StatelessComponent<MessagePropsType> = (props): JSX.Element => {
     const variant = mapVariant(props.severity);
 
     return (
-        <StyledMessage
-            title={props.title}
-            severity={props.severity}
-        >
+        <StyledMessage title={props.title} severity={props.severity}>
             <Contrast enable={props.read}>
                 <Spacer offset={trbl(12, 24)} offsetType="inner">
                     <Box wrap alignItems="center" alignContent="flex-start">
-                        <Box
-                            direction="column"
-                            grow={1}
-                            basis={'250px'}
-                            margin={trbl(0, 24, 0, 0)}
-                        >
+                        <Box direction="column" grow={1} basis={'250px'} margin={trbl(0, 24, 0, 0)}>
                             <Text strong>{props.title}</Text>
                             <Text>{props.message}</Text>
                             <Text descriptive>{props.date}</Text>
                         </Box>
                         {props.action !== undefined &&
-                            props.buttonLabel !== undefined &&
-                            props.buttonLabel.length > 0 ? (
-                                <Box
-                                    direction="column"
-                                    basis="auto"
-                                    justifyContent="center"
-                                    alignItems="flex-end"
-                                    margin={trbl(6, 0)}
+                        props.buttonLabel !== undefined &&
+                        props.buttonLabel.length > 0 ? (
+                            <Box
+                                direction="column"
+                                basis="auto"
+                                justifyContent="center"
+                                alignItems="flex-end"
+                                margin={trbl(6, 0)}
+                            >
+                                <Button
+                                    title={props.buttonLabel}
+                                    variant={variant}
+                                    action={(): void => {
+                                        (props.action as Function)();
+                                    }}
                                 >
-                                    <Button
-                                        title={props.buttonLabel}
-                                        variant={variant}
-                                        action={(): void => {
-                                            (props.action as Function)();
-                                        }}
-                                    >
-                                        {props.buttonLabel}
-                                    </Button>
-                                </Box>
-                            ) : (
-                                undefined
-                            )}
+                                    {props.buttonLabel}
+                                </Button>
+                            </Box>
+                        ) : (
+                            undefined
+                        )}
                     </Box>
                 </Spacer>
             </Contrast>
@@ -96,11 +86,7 @@ const MessageStream: StatelessComponent<PropsType> = (props): JSX.Element => (
             (message: MessagePropsType, index: number): JSX.Element => (
                 <Fragment key={uuid()}>
                     <Message {...message} />
-                    {index < props.messages.length - 1 ? (
-                        <MessageSeparator />
-                    ) : (
-                            undefined
-                        )}
+                    {index < props.messages.length - 1 ? <MessageSeparator /> : undefined}
                 </Fragment>
             ),
         )}

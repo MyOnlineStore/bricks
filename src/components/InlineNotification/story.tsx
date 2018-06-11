@@ -7,21 +7,13 @@ storiesOf('InlineNotification', module)
     .add('Default', () => (
         <InlineNotification
             message="Something is wrong!"
-            severity={select(
-                'severity',
-                ['error', 'warning', 'success', 'info'],
-                'error',
-            )}
+            severity={select('severity', ['error', 'warning', 'success', 'info'], 'error')}
         />
     ))
     .add('With Icon', () => (
         <InlineNotification
             icon="dangerCircle"
             message="Something is wrong!"
-            severity={select(
-                'severity',
-                ['error', 'warning', 'success', 'info'],
-                'error',
-            )}
+            severity={select('severity', ['error', 'warning', 'success', 'info'], 'error')}
         />
     ));

@@ -11,11 +11,7 @@ type ScrollBoxThemeType = {
 };
 
 const StyledTop = styled.div`
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 20%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0) 100%);
     height: 6px;
     position: absolute;
     top: 0;
@@ -24,11 +20,7 @@ const StyledTop = styled.div`
 `;
 
 const StyledBottom = styled.div`
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 20%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 100%);
     height: 6px;
     position: absolute;
     bottom: 0;
@@ -42,8 +34,7 @@ const StyledScrollBox = styled.div`
     overflow: hidden;
 
     .simplebar-scrollbar::before {
-        background: ${({ theme }): string =>
-            theme.ScrollBox.scrollbar.background};
+        background: ${({ theme }): string => theme.ScrollBox.scrollbar.background};
     }
 `;
 

@@ -42,15 +42,14 @@ type ButtonThemeType = {
 type ButtonPropsType = {
     compact?: PropsType['compact'];
     variant: PropsType['variant'];
-}
+};
 
-const StyledButton = withProps<ButtonPropsType>(styled.button) `
+const StyledButton = withProps<ButtonPropsType>(styled.button)`
     position: relative;
     appearance: none;
     border: none;
     line-height: 1;
-    padding: ${({ theme, compact }): string =>
-        compact !== undefined && compact ? '11px 12px' : '11px 24px'};
+    padding: ${({ theme, compact }): string => (compact !== undefined && compact ? '11px 12px' : '11px 24px')};
     cursor: pointer;
     display: inline-block;
     outline: none;
@@ -75,9 +74,7 @@ const StyledButton = withProps<ButtonPropsType>(styled.button) `
             text-decoration: ${theme.Button[variant].idle.textDecoration};
 
             &:hover {
-                background-color: ${
-            theme.Button[variant].hover.backgroundColor
-            };
+                background-color: ${theme.Button[variant].hover.backgroundColor};
                 border-color: ${theme.Button[variant].hover.borderColor};
                 color: ${theme.Button[variant].hover.color};
                 box-shadow: ${theme.Button[variant].hover.boxShadow};
@@ -85,9 +82,7 @@ const StyledButton = withProps<ButtonPropsType>(styled.button) `
             }
 
             &:focus {
-                background-color: ${
-            theme.Button[variant].focus.backgroundColor
-            };
+                background-color: ${theme.Button[variant].focus.backgroundColor};
                 border-color: ${theme.Button[variant].focus.borderColor};
                 color: ${theme.Button[variant].focus.color};
                 box-shadow: ${theme.Button[variant].focus.boxShadow};
@@ -95,9 +90,7 @@ const StyledButton = withProps<ButtonPropsType>(styled.button) `
             }
 
             &:active {
-                background-color: ${
-            theme.Button[variant].active.backgroundColor
-            };
+                background-color: ${theme.Button[variant].active.backgroundColor};
                 border-color: ${theme.Button[variant].active.borderColor};
                 color: ${theme.Button[variant].active.color};
                 box-shadow: ${theme.Button[variant].active.boxShadow};
@@ -129,15 +122,12 @@ const StyledButton = withProps<ButtonPropsType>(styled.button) `
                 transparent 20px
             );
         `};
-        box-shadow: ${({ variant, theme }): string =>
-        theme.Button[variant].idle.boxShadow};
-        border-radius: ${({ variant, theme }): string =>
-        theme.Button.common.borderRadius};
+        box-shadow: ${({ variant, theme }): string => theme.Button[variant].idle.boxShadow};
+        border-radius: ${({ variant, theme }): string => theme.Button.common.borderRadius};
     }
 
     &:disabled {
-        background: ${({ theme }): string =>
-        theme.Button.disabled.backgroundColor};
+        background: ${({ theme }): string => theme.Button.disabled.backgroundColor};
         border-color: transparent;
         cursor: default;
         opacity: 0.7;

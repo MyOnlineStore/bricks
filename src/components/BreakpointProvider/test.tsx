@@ -14,11 +14,7 @@ describe('BreakpointProvider component', () => {
     it('executes the render prop with a default breakpoint', () => {
         const renderMock = jest.fn();
 
-        mount(
-            <BreakpointProvider breakpoints={breakpoints}>
-                {renderMock}
-            </BreakpointProvider>,
-        );
+        mount(<BreakpointProvider breakpoints={breakpoints}>{renderMock}</BreakpointProvider>);
 
         expect(renderMock).toBeCalledWith('small');
     });
@@ -27,16 +23,11 @@ describe('BreakpointProvider component', () => {
         const renderMock = jest.fn();
 
         renderer
-            .create(
-                <BreakpointProvider breakpoints={breakpoints}>
-                    {renderMock}
-                </BreakpointProvider>,
-                {
-                    createNodeMock: (): Object => ({
-                        offsetWidth: 900,
-                    }),
-                },
-        )
+            .create(<BreakpointProvider breakpoints={breakpoints}>{renderMock}</BreakpointProvider>, {
+                createNodeMock: (): Object => ({
+                    offsetWidth: 900,
+                }),
+            })
             .toJSON();
 
         expect(renderMock).toBeCalledWith('large');
@@ -51,11 +42,7 @@ describe('BreakpointProvider component', () => {
             large: 600,
         };
 
-        mount(
-            <BreakpointProvider breakpoints={faultyBreakpoints}>
-                {renderMock}
-            </BreakpointProvider>,
-        );
+        mount(<BreakpointProvider breakpoints={faultyBreakpoints}>{renderMock}</BreakpointProvider>);
 
         expect(renderMock).toBeCalledWith('small');
     });
@@ -63,11 +50,7 @@ describe('BreakpointProvider component', () => {
     it('adds and removes resize eventListeners to the window', () => {
         const renderMock = jest.fn();
 
-        const component = mount(
-            <BreakpointProvider breakpoints={breakpoints}>
-                {renderMock}
-            </BreakpointProvider>,
-        );
+        const component = mount(<BreakpointProvider breakpoints={breakpoints}>{renderMock}</BreakpointProvider>);
 
         component.unmount();
 
