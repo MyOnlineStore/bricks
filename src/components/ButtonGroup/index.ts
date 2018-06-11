@@ -1,1 +1,1 @@
-export { default as default } from './ButtonGroup.template';
+export { default } from './ButtonGroup.template';

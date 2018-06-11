@@ -1,1 +1,1 @@
-export { default as default } from './Box.style';
+export { default } from './Box.style';

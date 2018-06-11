@@ -1,11 +1,11 @@
 import { ClassAttributes as _C, HTMLAttributes as _H } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import RecursivePartial from '../../types/RecursivePartial';
+import RecursivePartialType from '../../types/RecursivePartialType';
 import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
 
 type ContrastThemeType = {
-    overides: RecursivePartial<ThemeType>;
+    overides: RecursivePartialType<ThemeType>;
     default: {
         background: string;
     };

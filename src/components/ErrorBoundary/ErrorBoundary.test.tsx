@@ -3,25 +3,29 @@ import Renderer from 'react-test-renderer';
 import MosTheme from '../../themes/MosTheme';
 import ErrorBoundary from './ErrorBoundary.template';
 
-beforeEach(() => {
-    /*
-     * this mutes both the regular console aswell as the virtual console of jsdom
-     * because jest doesn't swallow jsdom errors in its console and react
-     * doesn't swallow caught errors even if they are caught.
-     */
-
-    /* tslint:disable */
-    (global as any).console = {
-        error: jest.fn(),
-    };
-
-    jest
-        .spyOn((window as any)._virtualConsole, 'emit')
-        .mockImplementation(() => false);
-    /* tslint:enable */
-});
+/* tslint:disable */
+(console.error as any).mockImplementationOnce(() => {});
+/* tslint:enable */
 
 describe('ErrorBoundary', () => {
+    beforeEach(() => {
+        /*
+         * this the virtual console of jsdom
+         * because jest doesn't swallow jsdom errors in its console and react
+         * doesn't swallow caught errors even if they are caught.
+         */
+
+        /* tslint:disable */
+        (global as any).console = {
+            error: jest.fn(),
+        };
+
+        jest
+            .spyOn((window as any)._virtualConsole, 'emit')
+            .mockImplementation(() => false);
+        /* tslint:enable */
+    });
+
     it('should catch an error and report it', () => {
         const mockReport = jest.fn();
 

@@ -1,1 +1,1 @@
-export { default as default, NotificationThemeType } from './Notification.style';
+export { default, NotificationThemeType } from './Notification.style';

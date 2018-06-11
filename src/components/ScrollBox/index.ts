@@ -1,1 +1,1 @@
-export { default as default, ScrollBoxThemeType } from './ScrollBox.style';
+export { default, ScrollBoxThemeType } from './ScrollBox.style';

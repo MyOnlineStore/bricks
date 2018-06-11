@@ -5,11 +5,6 @@ import BreakpointProvider, {
     BreakpointType,
 } from './BreakpointProvider.template';
 
-/* tslint:disable */
-(global as any).addEventListener = jest.fn();
-(global as any).removeEventListener = jest.fn();
-/* tslint:enable */
-
 const breakpoints: BreakpointType = {
     small: 0,
     medium: 300,
@@ -78,8 +73,8 @@ describe('BreakpointProvider component', () => {
         component.unmount();
 
         /* tslint:disable */
-        expect((global as any).addEventListener).toBeCalled();
-        expect((global as any).removeEventListener).toBeCalled();
+        expect(global.addEventListener).toBeCalled();
+        expect(global.removeEventListener).toBeCalled();
         /* tslint:enable */
     });
 });

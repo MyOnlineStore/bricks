@@ -62,26 +62,25 @@ class ScrollBox extends Component<PropsType, StateType> {
     };
 
     public componentDidMount(): void {
-        if (this.contentRef.current !== null) {
-            this.scrollbar = new ScrollBar(this.contentRef.current, {
+        this.scrollbar = new ScrollBar(
+            this.contentRef.current as HTMLDivElement,
+            {
                 autoHide:
                     this.props.autoHideScrollBar !== undefined
                         ? this.props.autoHideScrollBar
                         : true,
-            });
+            },
+        );
 
-            this.scrollbar
-                .getScrollElement()
-                .addEventListener('scroll', this.handleScroll);
-        }
+        this.scrollbar
+            .getScrollElement()
+            .addEventListener('scroll', this.handleScroll);
     }
 
     public componentWillUnmount(): void {
-        if (this.contentRef.current !== null) {
-            this.scrollbar
-                .getScrollElement()
-                .removeEventListener('scroll', this.handleScroll);
-        }
+        this.scrollbar
+            .getScrollElement()
+            .removeEventListener('scroll', this.handleScroll);
     }
 
     public render(): JSX.Element {

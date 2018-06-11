@@ -1853,6 +1853,81 @@ exports[`Storyshots Icon With some text 1`] = `
 </div>
 `;
 
+exports[`Storyshots InlineNotification Default 1`] = `
+.c0 {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 12px;
+  color: #c81746;
+  display: inline-block;
+}
+
+.c1 {
+  vertical-align: middle;
+}
+
+<span
+  className="c0"
+>
+    
+  <span
+    className="c1"
+  >
+    Something is wrong!
+  </span>
+</span>
+`;
+
+exports[`Storyshots InlineNotification With Icon 1`] = `
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c1 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c0 {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 12px;
+  color: #c81746;
+  display: inline-block;
+}
+
+.c2 {
+  vertical-align: middle;
+}
+
+<span
+  className="c0"
+>
+  <span
+    aria-hidden={true}
+    className="c1"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    role="img"
+  />
+    
+  <span
+    className="c2"
+  >
+    Something is wrong!
+  </span>
+</span>
+`;
+
 exports[`Storyshots MessageStream Default 1`] = `
 .c2 {
   padding: 12px 24px 12px 24px;
@@ -3227,168 +3302,6 @@ exports[`Storyshots PriceTag Default 1`] = `
 </span>
 `;
 
-exports[`Storyshots ScrollBox Default 1`] = `
-Array [
-  .c2 {
-  padding: 12px 24px 12px 12px;
-}
-
-.c4 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c3 {
-  color: #333740;
-  font-family: Melbourne,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c5 {
-  background: linear-gradient( to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.1) 100% );
-  height: 6px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.c1 {
-  position: relative;
-  max-height: 400px;
-  overflow: hidden;
-}
-
-.c1 .simplebar-scrollbar::before {
-  background: #333740;
-}
-
-.c0 {
-  max-width: 300px;
-  border: solid 3px rgba(255,36,94,0.3);
-}
-
-<div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div>
-        <div
-          className="c2"
-        >
-          <div
-            className="c3"
-            role="heading"
-          >
-            Lorem ipsum dolor sit amet.
-          </div>
-          <p
-            className="c4"
-          >
-            
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
-    cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
-    eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
-    a pulvinar est porta. Nunc tempus vulputate dapibus. In eget venenatis orci. Pellentesque habitant morbi
-    tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finibus lorem et quam imperdiet,
-    id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
-    pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh. Mauris tempor libero purus, vitae lacinia
-    felis hendrerit in. Vestibulum rhoncus vitae ipsum vel placerat.
-
-    Fusce euismod, sem quis tristique dictum, dolor nulla fermentum turpis, sed ultricies augue metus eget
-    lorem. Donec nisi leo, tristique ac pretium id, aliquam eget purus. Aenean nec lectus vitae eros condimentum
-    maximus et nec metus. Vestibulum ultricies dui non consequat porta. Vestibulum nec scelerisque sapien.
-    Nam eu urna nec augue pellentesque tempus. Nulla facilisi. Phasellus fringilla nisi ut lorem aliquet
-    mattis. Duis egestas dui ligula, ut lobortis purus suscipit id. Nunc non faucibus arcu. Integer eu
-    elit tellus. Fusce suscipit sem sem, ut aliquam elit mollis vel. Sed quis accumsan dolor. Nullam
-    gravida nec purus nec facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-    lectus purus, vulputate ut egestas condimentum, condimentum vel lorem.
-    Sed vitae consequat eros. Proin in magna odio. Morbi tempus nulla leo, sed condimentum velit semper et.
-    Duis porttitor odio nibh, eget pellentesque ligula dignissim quis. Vivamus elit lacus, maximus ac rhoncus
-    ultricies, dapibus at mi. Fusce sagittis nisl non lorem auctor viverra. Morbi lacinia vestibulum purus,
-    at malesuada urna hendrerit sed.
-
-    Proin ultricies vel nisl ac sollicitudin. Cras nisi mi, consectetur et sapien eget,
-    placerat pellentesque ex. In sollicitudin tellus id tincidunt facilisis.
-    Nunc hendrerit at eros vel venenatis. Pellentesque finibus sem tincidunt auctor cursus.
-    Phasellus commodo ornare felis, id suscipit turpis aliquam ac. Donec et metus condimentum,
-    dignissim sem et, dictum sapien.
-
-    Cras elementum enim lorem, et pharetra nisi accumsan eu. Praesent
-    feugiat nibh lacus, nec viverra turpis mattis et. Sed dolor urna,
-    efficitur vitae ultrices eu, faucibus ac libero. Quisque euismod
-    elit mattis, tincidunt lorem sed, fermentum risus. Morbi elementum cursus venenatis.
-    Ut turpis sem, varius in ultrices quis, tristique quis justo. In tortor neque, mollis
-    ut lacinia quis, euismod vel libero. Sed nec ipsum ante. Vivamus facilisis nulla
-    facilisis magna porta, tempor congue arcu sodales. Praesent commodo at lacus nec feugiat.
-    Donec libero dui, accumsan eget metus non, pharetra euismod erat. Quisque tincidunt est
-    in odio laoreet consequat consectetur at lectus. Praesent ut porta leo.
-
-          </p>
-        </div>
-      </div>
-      <div
-        className="c5"
-      />
-    </div>
-  </div>,
-  .c0 {
-  margin: 48px 0px 12px 0px;
-}
-
-.c1 {
-  color: #88979d;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-<div
-    className="c0"
-  >
-    <div
-      className="c1"
-      role="heading"
-    >
-      Scroll event
-    </div>
-  </div>,
-  .c0 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-<p
-    className="c0"
-  >
-    scrollTop: 
-    0
-    px
-    <br />
-    scrollBottom: 
-    px
-    <br />
-    scrollDirection: 
-    idle
-  </p>,
-]
-`;
-
 exports[`Storyshots Spacer With margin 1`] = `
 .c0 {
   margin: 12px 12px 12px 12px;
@@ -3534,6 +3447,215 @@ exports[`Storyshots Text Default 1`] = `
     To sit on my throne as the prince of Bel-air
 
 </p>
+`;
+
+exports[`Storyshots TextField Default 1`] = `
+.c2 {
+  position: relative;
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: inherit;
+  display: block;
+  margin-top: 1em;
+  padding: 0;
+  line-height: 1.5;
+  outline: none;
+}
+
+.c1 {
+  -webkit-transition: top 0.2s,-webkit-transform 0.2s,font-size 0.2s,color 0.2s;
+  -webkit-transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
+  transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
+  display: block;
+  line-height: 1.5;
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #a6aab3;
+  -webkit-transform: translate3d(0,0.85em,0) scale(1);
+  -ms-transform: translate3d(0,0.85em,0) scale(1);
+  transform: translate3d(0,0.85em,0) scale(1);
+}
+
+.c0 {
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  border: solid 1px #d2d7e0;
+  font-size: 14px;
+  font-family: Source Sans Pro,sans-serif;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  padding: 0.3em 12px 0.4em 12px;
+  cursor: text;
+}
+
+.c0 * {
+  cursor: text;
+}
+
+<div
+  className="c0"
+  onBlurCapture={[Function]}
+  onClick={[Function]}
+  onFocusCapture={[Function]}
+>
+  <label
+    className="c1"
+  >
+    First name
+  </label>
+  <input
+    className="c2"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots TextField With Feedback 1`] = `
+Array [
+  .c2 {
+  position: relative;
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: inherit;
+  display: block;
+  margin-top: 1em;
+  padding: 0;
+  line-height: 1.5;
+  outline: none;
+}
+
+.c1 {
+  -webkit-transition: top 0.2s,-webkit-transform 0.2s,font-size 0.2s,color 0.2s;
+  -webkit-transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
+  transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
+  display: block;
+  line-height: 1.5;
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #a6aab3;
+  -webkit-transform: translate3d(0,0.85em,0) scale(1);
+  -ms-transform: translate3d(0,0.85em,0) scale(1);
+  transform: translate3d(0,0.85em,0) scale(1);
+}
+
+.c0 {
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  border: solid 1px #d2d7e0;
+  font-size: 14px;
+  font-family: Source Sans Pro,sans-serif;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  padding: 0.3em 12px 0.4em 12px;
+  cursor: text;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: solid 2px #c81746;
+}
+
+.c0 * {
+  cursor: text;
+}
+
+<div
+    className="c0"
+    onBlurCapture={[Function]}
+    onClick={[Function]}
+    onFocusCapture={[Function]}
+  >
+    <label
+      className="c1"
+    >
+      First name
+    </label>
+    <input
+      className="c2"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="text"
+      value=""
+    />
+  </div>,
+  .c0 {
+  margin: 6px 0px 0px 12px;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c1 {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 12px;
+  color: #c81746;
+  display: inline-block;
+}
+
+.c3 {
+  vertical-align: middle;
+}
+
+<div
+    className="c0"
+  >
+    <span
+      className="c1"
+    >
+      <span
+        aria-hidden={true}
+        className="c2"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
+        }
+        role="img"
+      />
+        
+      <span
+        className="c3"
+      >
+        This is a feedback message
+      </span>
+    </span>
+  </div>,
+]
 `;
 
 exports[`Storyshots TransitionAnimation Default 1`] = `

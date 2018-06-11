@@ -1,8 +1,9 @@
 import { AnimationStateType } from '../TransitionAnimation.style';
 
-const fade = (state:AnimationStateType):string => {
+const fade = (state: AnimationStateType): string => {
     switch (state) {
-        case 'exiting': return `
+        case 'exiting':
+            return `
             @keyframes fadeOut {
                 0% { opacity: 1; }
                 100% { opacity: 0; }
@@ -10,10 +11,12 @@ const fade = (state:AnimationStateType):string => {
 
             animation: fadeOut .3s both;
         `;
-        case 'exited': return `
+        case 'exited':
+            return `
             opacity: 0;
         `;
-        default: return `
+        default:
+            return `
             @keyframes fadeIn {
                 0% { opacity: 0; }
                 100% { opacity: 1; }

@@ -1,1 +1,1 @@
-export { default as default } from './BreakpointProvider.template';
+export { default } from './BreakpointProvider.template';
