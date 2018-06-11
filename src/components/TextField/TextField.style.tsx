@@ -17,11 +17,13 @@ type TextFieldThemeType = {
     active: {
         common: {
             color: string;
-            borderColor: string;
         };
         label: {
             color: string;
         };
+    };
+    focus: {
+        borderColor: string;
     };
 };
 
@@ -65,22 +67,9 @@ const StyledFloatingLabel = withProps<FloatingLabelProps, HTMLLabelElement>(styl
     }};
 `;
 
-/*
-color: ${theme.TextField.active.label.color};
-top: 0.3em;
-margin-top: 0;
-font-size: 0.85em;
-*/
-
-/*
-color: ${theme.TextField.idle.common.color};
-font-size: 1em;
-top: 50%;
-margin-top: -0.75em;
-*/
-
 type WrapperProps = {
     active: boolean;
+    focus: boolean;
     feedback?: {
         severity: SeverityType;
         message: string;
@@ -89,9 +78,8 @@ type WrapperProps = {
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: border-color 0.3s;
-    border: solid 1px
-        ${({ active, theme }): string =>
-            active ? theme.TextField.active.common.borderColor : theme.TextField.idle.common.borderColor};
+    border: solid 1px ${({ focus, theme }): string =>
+        focus ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
@@ -99,6 +87,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     position: relative;
     padding: 0.3em 12px 0.4em 12px;
     cursor: text;
+
     ${({ feedback, theme }): string =>
         feedback !== undefined && feedback.severity !== 'info'
             ? `

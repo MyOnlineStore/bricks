@@ -3,11 +3,7 @@ import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
 import Spacer from '../Spacer';
-import {
-    StyledFloatingLabel,
-    StyledInput,
-    StyledWrapper,
-} from './TextField.style';
+import { StyledFloatingLabel, StyledInput, StyledWrapper } from './TextField.style';
 
 type PropsType = {
     value: string;
@@ -23,6 +19,7 @@ type PropsType = {
 };
 
 type StateType = {
+    focus: boolean;
     active: boolean;
 };
 
@@ -33,26 +30,28 @@ class TextField extends Component<PropsType, StateType> {
         super(props);
 
         this.state = {
+            focus: false,
             active: false,
         };
     }
 
-    public static getDerivedStateFromProps(
-        nextProps: PropsType,
-        currentState: StateType,
-    ): StateType {
+    public static getDerivedStateFromProps(nextProps: PropsType, currentState: StateType): Partial<StateType> {
         return {
             active: nextProps.value !== '' || currentState.active,
         };
     }
 
     public handleFocus = (): void => {
-        this.setState({ active: true });
+        this.setState({
+            focus: true,
+            active: true,
+        });
         this.inputRef.focus();
     };
 
     public handleBlur = (): void => {
         this.setState({
+            focus: false,
             active: this.props.value !== '',
         });
     };
@@ -65,15 +64,14 @@ class TextField extends Component<PropsType, StateType> {
         return (
             <>
                 <StyledWrapper
+                    focus={this.state.focus}
                     active={this.state.active}
                     feedback={this.props.feedback}
                     onFocusCapture={this.handleFocus}
                     onBlurCapture={this.handleBlur}
                     onClick={this.handleFocus}
                 >
-                    <StyledFloatingLabel active={this.state.active}>
-                        {this.props.label}
-                    </StyledFloatingLabel>
+                    <StyledFloatingLabel active={this.state.active}>{this.props.label}</StyledFloatingLabel>
                     <StyledInput
                         type="text"
                         value={this.props.value}
@@ -91,11 +89,7 @@ class TextField extends Component<PropsType, StateType> {
                 {this.props.feedback && (
                     <Spacer offset={trbl(6, 0, 0, 12)}>
                         <InlineNotification
-                            icon={
-                                this.props.feedback.severity === 'info'
-                                    ? 'questionCircle'
-                                    : 'dangerCircle'
-                            }
+                            icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

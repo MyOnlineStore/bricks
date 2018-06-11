@@ -3460,18 +3460,29 @@ exports[`Storyshots TextField Default 1`] = `
   margin: 1em 0 0 0;
   padding: 0;
   line-height: 1.5;
+  outline: none;
 }
 
 .c1 {
-  -webkit-transition: top 0.2s,margin-top 0.2s,font-size 0.2s,color 0.2s;
-  transition: top 0.2s,margin-top 0.2s,font-size 0.2s,color 0.2s;
+  -webkit-transition: top 0.2s,-webkit-transform 0.2s,font-size 0.2s,color 0.2s;
+  -webkit-transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
+  transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
   display: block;
   line-height: 1.5;
   position: absolute;
-  color: #a6aab3;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0;
   font-size: 1em;
-  top: 50%;
-  margin-top: -0.75em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #a6aab3;
+  -webkit-transform: translate3d(0,0.85em,0) scale(1);
+  -ms-transform: translate3d(0,0.85em,0) scale(1);
+  transform: translate3d(0,0.85em,0) scale(1);
 }
 
 .c0 {
@@ -3525,18 +3536,29 @@ Array [
   margin: 1em 0 0 0;
   padding: 0;
   line-height: 1.5;
+  outline: none;
 }
 
 .c1 {
-  -webkit-transition: top 0.2s,margin-top 0.2s,font-size 0.2s,color 0.2s;
-  transition: top 0.2s,margin-top 0.2s,font-size 0.2s,color 0.2s;
+  -webkit-transition: top 0.2s,-webkit-transform 0.2s,font-size 0.2s,color 0.2s;
+  -webkit-transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
+  transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
   display: block;
   line-height: 1.5;
   position: absolute;
-  color: #a6aab3;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0;
   font-size: 1em;
-  top: 50%;
-  margin-top: -0.75em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #a6aab3;
+  -webkit-transform: translate3d(0,0.85em,0) scale(1);
+  -ms-transform: translate3d(0,0.85em,0) scale(1);
+  transform: translate3d(0,0.85em,0) scale(1);
 }
 
 .c0 {

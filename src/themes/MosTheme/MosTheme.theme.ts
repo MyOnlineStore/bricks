@@ -79,8 +79,7 @@ const theme: ThemeType = {
                 backgroundColor: green.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow:
-                    '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(107, 222, 120, .4)',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(107, 222, 120, .4)',
                 textDecoration: 'none',
             },
             active: {
@@ -110,8 +109,7 @@ const theme: ThemeType = {
                 backgroundColor: silver.base,
                 borderColor: 'transparent',
                 color: grey.lighter1,
-                boxShadow:
-                    '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
                 textDecoration: 'none',
             },
             active: {
@@ -141,8 +139,7 @@ const theme: ThemeType = {
                 backgroundColor: yellow.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow:
-                    '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(252, 194, 0, .25)',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(252, 194, 0, .25)',
                 textDecoration: 'none',
             },
             active: {
@@ -172,8 +169,7 @@ const theme: ThemeType = {
                 backgroundColor: red.base,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow:
-                    '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(237, 33, 87, .25)',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, .1) inset, 0 0 0 3px rgba(237, 33, 87, .25)',
                 textDecoration: 'none',
             },
             active: {
@@ -203,8 +199,7 @@ const theme: ThemeType = {
                 backgroundColor: silver.base,
                 borderColor: 'transparent',
                 color: grey.base,
-                boxShadow:
-                    '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(51, 55, 64, .08)',
                 textDecoration: 'underline',
             },
             active: {
@@ -239,9 +234,7 @@ const theme: ThemeType = {
                     },
                     focus: {
                         backgroundColor: silver.darker1,
-                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${
-                            silver.darker2
-                        }`,
+                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${silver.darker2}`,
                     },
                 },
                 flat: {
@@ -253,9 +246,7 @@ const theme: ThemeType = {
                     },
                     focus: {
                         backgroundColor: silver.darker1,
-                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${
-                            silver.darker2
-                        }`,
+                        boxShadow: `0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px ${silver.darker2}`,
                     },
                 },
             },
@@ -314,11 +305,13 @@ const theme: ThemeType = {
         active: {
             common: {
                 color: grey.lighter3,
-                borderColor: grey.lighter1,
             },
             label: {
                 color: grey.lighter3,
             },
+        },
+        focus: {
+            borderColor: grey.lighter1,
         },
     },
     Heading: {
