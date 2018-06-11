@@ -1,4 +1,4 @@
-import { AnimationStateType } from '../TransitionAnimation.style';
+import { AnimationStateType } from '../style';
 
 const fade = (state: AnimationStateType): string => {
     switch (state) {

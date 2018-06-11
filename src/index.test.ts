@@ -1,7 +1,5 @@
-import initStoryshots, {
-    snapshotWithOptions,
-} from '@storybook/addon-storyshots';
-import { ReactElement } from 'react';
+import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import _R, { ReactElement } from 'react';
 
 jest.mock('simplebar', () =>
     jest.fn((element: HTMLElement, options: Object) => ({
@@ -37,7 +35,6 @@ jest.mock('react-popper', () => {
 /* tslint:enable */
 
 initStoryshots({
-    storyKindRegex: /^((?!.*?DontTest).)*$/,
     configPath: './config/storybook',
     test: snapshotWithOptions({
         createNodeMock: (element: ReactElement<HTMLDivElement>): Object => ({
@@ -46,4 +43,5 @@ initStoryshots({
             focus: jest.fn(),
         }),
     }),
+    storyKindRegex: /^((?!.*?DontTest).)*$/,
 });

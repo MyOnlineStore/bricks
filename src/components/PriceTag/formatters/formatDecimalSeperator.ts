@@ -1,4 +1,4 @@
-import { PropsType } from '../PriceTag.template';
+import { PropsType } from '../';
 
 const formatDecimalSeperator = (
     value: string,

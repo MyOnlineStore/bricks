@@ -1,5 +1,5 @@
 import React from 'react';
-import { PropsType } from '../PriceTag.template';
+import { PropsType } from '../';
 
 const formatFraction = (
     value: string,
