@@ -62,6 +62,7 @@ class Demo extends Component<PropsType, StateType> {
 }
 
 storiesOf('Popover', module).add('Default', () => (
+    /* tslint:disable */
     <Demo
         placement={
             select(
@@ -88,4 +89,5 @@ storiesOf('Popover', module).add('Default', () => (
         }
         fixed={boolean('fixed', false)}
     />
+    /* tslint:enable */
 ));
