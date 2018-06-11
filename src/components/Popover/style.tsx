@@ -1,8 +1,13 @@
-import { ClassAttributes as _C, HTMLAttributes as _H } from 'react';
+import _R, { ClassAttributes as _C, HTMLAttributes as _H } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
+import { PlacementType } from '.';
 import _T from '../../types/ThemeType';
-import styled from '../../utility/styled';
-import { PopoverArrowPropsType } from './Popover.template';
+import styled, { withProps } from '../../utility/styled';
+
+type PopoverThemeType = {
+    background: string;
+    borderRadius: number;
+};
 
 const PopoverAnchor = styled.div`
     display: inline-block;
@@ -30,13 +35,18 @@ const PopoverWindow = styled.div`
     max-width: 500px;
 `;
 
-const PopoverArrow = styled.div`
+type PopoverArrowPropsType = {
+    placement: PlacementType;
+    shadow?: boolean;
+};
+
+const PopoverArrow = withProps<PopoverArrowPropsType, HTMLDivElement>(styled.div)`
     position: absolute;
     width: 16px;
     height: 16px;
     background: ${({ theme }): string => theme.Popover.background};
 
-    ${({ placement }: PopoverArrowPropsType): string => {
+    ${({ placement }): string => {
         const pointerSize: number = 16;
 
         switch (placement) {
@@ -68,15 +78,15 @@ const PopoverArrow = styled.div`
                 `;
         }
     }} ${({ theme, shadow }): string =>
-        shadow
-            ? `
+    shadow
+        ? `
             box-shadow: 0 1px 12px rgba(0 , 0, 0, .2);
             z-index: 1;
         `
-            : `
+        : `
             background: ${theme.Popover.background};
             z-index: 3;
         `};
 `;
 
-export { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow };
+export { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow, PopoverThemeType };

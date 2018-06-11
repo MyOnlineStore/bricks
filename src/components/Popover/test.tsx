@@ -4,7 +4,7 @@ import { Popper, Reference } from 'react-popper';
 import Popover from '.';
 import { shallowWithTheme } from '../../utility/styled';
 import TransitionAnimation from '../TransitionAnimation';
-import { PopoverAnchor, PopoverArrow, PopoverBackground } from './Popover.style';
+import { PopoverAnchor, PopoverArrow, PopoverBackground } from './style';
 
 /* tslint:disable */
 jest.mock('react-popper', () => {

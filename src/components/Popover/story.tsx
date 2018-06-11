@@ -21,11 +21,9 @@ const DemoContent: StatelessComponent = (): JSX.Element => {
     return (
         <Spacer offset={trbl(24)}>
             <Text>
-                Donec sed odio dui. Morbi leo risus, porta ac consectetur ac,
-                vestibulum at eros. Maecenas faucibus mollis interdum. Donec id
-                elit non mi porta gravida at eget metus. Fusce dapibus, tellus
-                ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-                massa justo sit amet risus.
+                Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus
+                mollis interdum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
             </Text>
         </Spacer>
     );
@@ -55,11 +53,7 @@ class Demo extends Component<PropsType, StateType> {
                         fixed={this.props.fixed}
                         renderContent={(): JSX.Element => <DemoContent />}
                     >
-                        <Button
-                            variant="primary"
-                            title="Toggle"
-                            action={this.toggle}
-                        />
+                        <Button variant="primary" title="Toggle" action={this.toggle} />
                     </Popover>
                 </Spacer>
             </Box>
@@ -69,27 +63,29 @@ class Demo extends Component<PropsType, StateType> {
 
 storiesOf('Popover', module).add('Default', () => (
     <Demo
-        placement={select(
-            'placement',
-            [
-                'auto-start',
-                'auto',
-                'auto-end',
-                'top-start',
-                'top',
-                'top-end',
-                'right-start',
-                'right',
-                'right-end',
-                'bottom-end',
+        placement={
+            select(
+                'placement',
+                [
+                    'auto-start',
+                    'auto',
+                    'auto-end',
+                    'top-start',
+                    'top',
+                    'top-end',
+                    'right-start',
+                    'right',
+                    'right-end',
+                    'bottom-end',
+                    'bottom',
+                    'bottom-start',
+                    'left-end',
+                    'left',
+                    'left-start',
+                ],
                 'bottom',
-                'bottom-start',
-                'left-end',
-                'left',
-                'left-start',
-            ],
-            'bottom',
-        )}
+            ) as PlacementType
+        }
         fixed={boolean('fixed', false)}
     />
 ));

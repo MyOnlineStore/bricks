@@ -1,22 +1,7 @@
 import React, { StatelessComponent } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
-import { StyledType } from '../../utility/styled';
 import TransitionAnimation from '../TransitionAnimation';
-import { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow } from './Popover.style';
-
-type PopoverThemeType = {
-    background: string;
-    borderRadius: number;
-};
-
-type PopoverAnchorPropsType = StyledType & {
-    stretch?: boolean;
-};
-
-type PopoverArrowPropsType = StyledType & {
-    placement: PlacementType;
-    shadow?: boolean;
-};
+import { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow } from './style';
 
 type PlacementType = PopperChildrenProps['placement'];
 
@@ -24,7 +9,6 @@ type PropsType = {
     placement?: PlacementType;
     isOpen: boolean;
     fixed?: boolean;
-    stretch?: boolean;
     offset?: number;
     renderContent(): JSX.Element | string;
 };
@@ -35,9 +19,7 @@ const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
             <Manager>
                 <Reference>
                     {({ ref }: ReferenceChildrenProps): JSX.Element => (
-                        <PopoverAnchor stretch={props.stretch !== undefined ? props.stretch : false} innerRef={ref}>
-                            {props.children}
-                        </PopoverAnchor>
+                        <PopoverAnchor innerRef={ref}>{props.children}</PopoverAnchor>
                     )}
                 </Reference>
                 <TransitionAnimation show={props.isOpen} animation="fade">
@@ -46,7 +28,7 @@ const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
                         placement={props.placement !== undefined ? props.placement : 'bottom'}
                         modifiers={{
                             offset: {
-                                offset: props.offset !== undefined ? `${props.offset}px` : '16px',
+                                offset: props.offset !== undefined ? `0 ${props.offset}px` : '0 16px',
                             },
                         }}
                     >
@@ -70,4 +52,4 @@ const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
 };
 
 export default Popover;
-export { PropsType, PopoverAnchorPropsType, PopoverArrowPropsType, PopoverThemeType, PlacementType };
+export { PropsType, PlacementType };
