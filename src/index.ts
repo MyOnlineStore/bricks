@@ -10,6 +10,7 @@ export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
 export { default as Heading } from './components/Heading';
 export { default as Icon } from './components/Icon';
+export { default as Link } from './components/Link';
 export { default as MerchantTheme } from './themes/MerchantTheme';
 export { default as MessageStream } from './components/MessageStream';
 export { default as MosTheme } from './themes/MosTheme';
@@ -20,7 +21,5 @@ export { default as ScrollBox } from './components/ScrollBox';
 export { default as Spacer } from './components/Spacer';
 export { default as SubHeading } from './components/SubHeading';
 export { default as Text } from './components/Text';
-export {
-    default as TransitionAnimation,
-} from './components/TransitionAnimation';
+export { default as TransitionAnimation } from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';
