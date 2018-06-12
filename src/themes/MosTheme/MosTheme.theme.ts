@@ -323,6 +323,20 @@ const theme: ThemeType = {
             },
         },
     },
+    Checkbox: {
+        idle: {
+            borderColor: silver.darker4,
+            backgroundColor: silver.base,
+            borderRadius: '3px',
+        },
+        focus: {
+            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+        },
+        checked: {
+            borderColor: green.darker2,
+            backgroundColor: green.base,
+        },
+    },
     Contrast: {
         default: {
             background: silver.base,
@@ -498,14 +512,14 @@ const theme: ThemeType = {
     RadioButton: {
         idle: {
             backgroundColor: silver.base,
-            boxShadow: green.base,
             borderColor: silver.darker4,
+            boxShadow: '0px 0px 0px 5.5px transparent',
         },
-        hover: {
+        focus: {
             boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
         },
         active: {
-            boxShadow: `inset 0px 0px 0px 5.5px ${green.base}`,
+            boxShadow: `0px 0px 0px 5.5px ${green.base}`,
             borderColor: green.darker2,
             backgroundColor: silver.lighter1,
         },

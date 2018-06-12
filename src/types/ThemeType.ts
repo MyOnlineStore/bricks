@@ -1,5 +1,6 @@
 import { BadgeThemeType } from '../components/Badge';
 import { ButtonThemeType } from '../components/Button/style';
+import { CheckboxThemeType } from '../components/Checkbox/style';
 import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';
 import { InlineNotificationThemeType } from '../components/InlineNotification/style';
@@ -18,6 +19,7 @@ import { ToggleThemeType } from '../components/Toggle/style';
 type ThemeType = {
     Badge: BadgeThemeType;
     Button: ButtonThemeType;
+    Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
     Heading: HeadingThemeType;
     MessageStream: MessageStreamThemeType;

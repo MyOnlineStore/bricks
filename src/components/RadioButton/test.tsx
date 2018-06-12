@@ -1,7 +1,8 @@
 import React from 'react';
 import RadioButton from '.';
+import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled';
-import StyledRadioButton from './style';
+import StyledRadioButton, { StyledRadioButtonSkin } from './style';
 
 describe('RadioButton', () => {
     it('should not have box-shadow when not checked', () => {
@@ -27,5 +28,20 @@ describe('RadioButton', () => {
             checked: true,
             value: 'bar',
         });
+    });
+
+    it('should have box-shadow on focus', () => {
+        const radioButton = mountWithTheme(
+            <RadioButton name="demo" label="foo" checked={false} value="bar" changeHandler={(): void => undefined} />,
+        );
+
+        radioButton.find(StyledRadioButton).simulate('focus');
+
+        /* tslint:disable */
+        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+            'box-shadow',
+            `${mosTheme.RadioButton.focus.boxShadow}, inset ${mosTheme.RadioButton.idle.boxShadow}`,
+        );
+        /* tslint:enable */
     });
 });

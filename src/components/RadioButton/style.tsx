@@ -7,6 +7,11 @@ type RadioButtonPropsType = {
     checked: boolean;
 };
 
+type RadioButtonSkinPropsType = {
+    checked: boolean;
+    elementFocus: boolean;
+};
+
 type RadioButtonThemeType = {
     idle: {
         boxShadow: string;
@@ -18,7 +23,7 @@ type RadioButtonThemeType = {
         borderColor: string;
         backgroundColor: string;
     };
-    hover: {
+    focus: {
         boxShadow: string;
     };
 };
@@ -29,29 +34,27 @@ const StyledRadioWrapper = styled.div`
 
 const StyledRadioButton = withProps<RadioButtonPropsType, HTMLInputElement>(styled.input)`
     position: relative;
-    display: none;
+    opacity: 0;
+    height: 0;
+    width: 0;
 `;
 
-const StyledRadioButtonSkin = withProps<RadioButtonPropsType, HTMLDivElement>(styled.div)`
+const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement>(styled.div)`
     width: 17px;
     height: 17px;
     border-radius: 100%;
-    transition: box-shadow 300ms ease, border 300ms ease;
+    transition: box-shadow 100ms, border 100ms;
     background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
 
     border: 1px solid ${({ theme, checked }): string =>
         checked ? theme.RadioButton.active.borderColor : theme.RadioButton.idle.borderColor};
 
-    box-shadow: ${({ theme, checked }): string =>
-        checked ? theme.RadioButton.active.boxShadow : theme.RadioButton.idle.boxShadow};
 
-    &:hover{
-        box-shadow: ${({ theme }): string => `inset 0 0 0 0 transparent, ${theme.RadioButton.hover.boxShadow}`};
-        box-shadow: ${({ theme, checked }): string =>
-            checked
-                ? `${theme.RadioButton.active.boxShadow}, ${theme.RadioButton.hover.boxShadow}`
-                : `${theme.RadioButton.idle.boxShadow}, ${theme.RadioButton.hover.boxShadow}`};
-    };
+    box-shadow: ${({ theme, elementFocus, checked }): string =>
+        `
+        ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow},
+        inset ${checked ? theme.RadioButton.active.boxShadow : theme.RadioButton.idle.boxShadow}
+        `};
 `;
 
 export default StyledRadioButton;

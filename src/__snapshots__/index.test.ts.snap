@@ -1164,6 +1164,79 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Checkbox Default 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 12px;
+  width: 12px;
+}
+
+.c2 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: #fff;
+}
+
+.c3 {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.c0 {
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border-radius: 3px;
+  position: relative;
+  outline: none;
+  -webkit-transition: box-shadow 100ms,border 100ms,background-color 100ms;
+  transition: box-shadow 100ms,border 100ms,background-color 100ms;
+  background-color: #6bde78;
+  border: 1px solid #4cc55b;
+}
+
+.c1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -6px;
+  margin-top: -12px;
+}
+
+<div
+  checked={true}
+  className="c0"
+  onClick={[Function]}
+>
+  <div
+    className="c1"
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+  </div>
+  <input
+    checked={true}
+    className="c3"
+    name="foo"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+    value="bar"
+  />
+</div>
+`;
+
 exports[`Storyshots Contrast Default 1`] = `
 Array [
   .c1 {
@@ -3995,23 +4068,20 @@ exports[`Storyshots RadioButton Default 1`] = `
 
 .c3 {
   position: relative;
-  display: none;
+  opacity: 0;
+  height: 0;
+  width: 0;
 }
 
 .c2 {
   width: 17px;
   height: 17px;
   border-radius: 100%;
-  -webkit-transition: box-shadow 300ms ease,border 300ms ease;
-  transition: box-shadow 300ms ease,border 300ms ease;
+  -webkit-transition: box-shadow 100ms,border 100ms;
+  transition: box-shadow 100ms,border 100ms;
   background-color: #f8f9fb;
   border: 1px solid #4cc55b;
-  box-shadow: inset 0px 0px 0px 5.5px #6bde78;
-}
-
-.c2:hover {
-  box-shadow: inset 0 0 0 0 transparent,0 0 0 4px rgba(107,222,120,0.4);
-  box-shadow: inset 0px 0px 0px 5.5px #6bde78,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0px 0px 0px 5.5px transparent, inset 0px 0px 0px 5.5px #6bde78;
 }
 
 <div
@@ -4029,7 +4099,9 @@ exports[`Storyshots RadioButton Default 1`] = `
         checked={true}
         className="c3"
         name="demo"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         type="radio"
         value="demo2"
       />
@@ -4132,39 +4204,31 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
 
 .c6 {
   position: relative;
-  display: none;
+  opacity: 0;
+  height: 0;
+  width: 0;
 }
 
 .c5 {
   width: 17px;
   height: 17px;
   border-radius: 100%;
-  -webkit-transition: box-shadow 300ms ease,border 300ms ease;
-  transition: box-shadow 300ms ease,border 300ms ease;
+  -webkit-transition: box-shadow 100ms,border 100ms;
+  transition: box-shadow 100ms,border 100ms;
   background-color: #f8f9fb;
   border: 1px solid #4cc55b;
-  box-shadow: inset 0px 0px 0px 5.5px #6bde78;
-}
-
-.c5:hover {
-  box-shadow: inset 0 0 0 0 transparent,0 0 0 4px rgba(107,222,120,0.4);
-  box-shadow: inset 0px 0px 0px 5.5px #6bde78,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0px 0px 0px 5.5px transparent, inset 0px 0px 0px 5.5px #6bde78;
 }
 
 .c8 {
   width: 17px;
   height: 17px;
   border-radius: 100%;
-  -webkit-transition: box-shadow 300ms ease,border 300ms ease;
-  transition: box-shadow 300ms ease,border 300ms ease;
+  -webkit-transition: box-shadow 100ms,border 100ms;
+  transition: box-shadow 100ms,border 100ms;
   background-color: #f8f9fb;
   border: 1px solid #d2d7e0;
-  box-shadow: #6bde78;
-}
-
-.c8:hover {
-  box-shadow: inset 0 0 0 0 transparent,0 0 0 4px rgba(107,222,120,0.4);
-  box-shadow: #6bde78,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0px 0px 0px 5.5px transparent, inset 0px 0px 0px 5.5px transparent;
 }
 
 .c0 {
@@ -4197,7 +4261,9 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
                 checked={true}
                 className="c6"
                 name="demo"
+                onBlur={[Function]}
                 onChange={[Function]}
+                onFocus={[Function]}
                 type="radio"
                 value="1"
               />
@@ -4232,7 +4298,9 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
                 checked={false}
                 className="c6"
                 name="demo"
+                onBlur={[Function]}
                 onChange={[Function]}
+                onFocus={[Function]}
                 type="radio"
                 value="2"
               />
@@ -4267,7 +4335,9 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
                 checked={false}
                 className="c6"
                 name="demo"
+                onBlur={[Function]}
                 onChange={[Function]}
+                onFocus={[Function]}
                 type="radio"
                 value="3"
               />

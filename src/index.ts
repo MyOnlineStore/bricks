@@ -5,6 +5,7 @@ export { default as Badge } from './components/Badge';
 export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
+export { default as Checkbox } from './components/Checkbox';
 export { default as Contrast } from './components/Contrast';
 export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
