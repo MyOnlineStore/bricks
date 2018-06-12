@@ -4,7 +4,7 @@ import { StyledType } from '../../utility/styled';
 import formatCurrency from './formatters/formatCurrency';
 import formatDecimalSeperator from './formatters/formatDecimalSeperator';
 import formatFraction from './formatters/formatFraction';
-import StyledPriceTag from './style'
+import StyledPriceTag from './style';
 
 type PartTypeType =
     | 'currency'
@@ -40,16 +40,11 @@ type StatsType = {
 };
 
 const isFree = (part: PartType): boolean =>
-    (part.type === 'integer' || part.type === 'fraction') &&
-    parseInt(part.value, 10) !== 0;
+    (part.type === 'integer' || part.type === 'fraction') && parseInt(part.value, 10) !== 0;
 
-const isRound = (part: PartType): boolean =>
-    part.type === 'fraction' && parseInt(part.value, 10) === 0;
+const isRound = (part: PartType): boolean => part.type === 'fraction' && parseInt(part.value, 10) === 0;
 
-const deriveStatsFromPart = (
-    initialStats: StatsType,
-    part: PartType,
-): StatsType => ({
+const deriveStatsFromPart = (initialStats: StatsType, part: PartType): StatsType => ({
     isRound: isRound(part) ? true : initialStats.isRound,
     isFree: isFree(part) ? false : initialStats.isFree,
 });
@@ -75,9 +70,7 @@ const PriceTag: StatelessComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledPriceTag displayType={props.displayType}>
-            {stats.isFree && props.freeLabel !== undefined
-                ? props.freeLabel
-                : price}
+            {stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price}
         </StyledPriceTag>
     );
 };

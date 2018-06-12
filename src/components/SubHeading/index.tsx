@@ -11,7 +11,7 @@ type SubHeadingThemeType = {
     fontWeight: string;
 };
 
-const SubHeading = styled(HeadingElement) `
+const SubHeading = styled(HeadingElement)`
     color: ${({ theme }): string => theme.SubHeading.color};
     font-family: ${({ theme }): string => theme.SubHeading.fontFamily};
     font-size: ${({ theme }): string => theme.SubHeading.fontSize};

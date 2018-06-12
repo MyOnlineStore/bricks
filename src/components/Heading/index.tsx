@@ -15,8 +15,7 @@ type PropsType = StyledType & {
 };
 
 const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const Element =
-        props.hierarchy !== undefined ? `h${props.hierarchy}` : 'div';
+    const Element = props.hierarchy !== undefined ? `h${props.hierarchy}` : 'div';
 
     return (
         <Element role="heading" className={props.className}>
@@ -25,7 +24,7 @@ const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
     );
 };
 
-const StyledHeading = styled(HeadingElement) `
+const StyledHeading = styled(HeadingElement)`
     color: ${({ theme }): string => theme.Heading.color};
     font-family: ${({ theme }): string => theme.Heading.fontFamily};
     font-size: ${({ theme }): string => theme.Heading.fontSize};

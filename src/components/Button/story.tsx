@@ -1,7 +1,7 @@
 import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { PropsType } from '.'
+import { PropsType } from '.';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -13,11 +13,13 @@ storiesOf('Button', module)
     .add('With text', () => {
         return (
             <Button
-                variant={select(
-                    'variant',
-                    ['primary', 'secondary', 'warning', 'destructive', 'flat'],
-                    'primary',
-                ) as PropsType['variant']}
+                variant={
+                    select(
+                        'variant',
+                        ['primary', 'secondary', 'warning', 'destructive', 'flat'],
+                        'primary',
+                    ) as PropsType['variant']
+                }
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
                 action={(): void => {
@@ -30,21 +32,22 @@ storiesOf('Button', module)
     .add('With an icon', () => {
         return (
             <Button
-                variant={select(
-                    'variant',
-                    ['primary', 'secondary', 'warning', 'destructive', 'flat'],
-                    'secondary',
-                ) as PropsType['variant']}
+                variant={
+                    select(
+                        'variant',
+                        ['primary', 'secondary', 'warning', 'destructive', 'flat'],
+                        'secondary',
+                    ) as PropsType['variant']
+                }
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
                 action={(): void => {
                     /* */
-                }
-                }
+                }}
                 compact
             >
                 <Icon size="small" icon="gear" />
-            </Button >
+            </Button>
         );
     })
     .add('On a contrast area', () => {

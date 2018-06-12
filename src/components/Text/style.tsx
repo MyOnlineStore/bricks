@@ -1,4 +1,4 @@
-import _R from 'react'
+import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import { PropsType } from '.';
 import _T from '../../types/ThemeType';
@@ -19,7 +19,7 @@ type TextThemeType = {
     };
 };
 
-const StyledText = withProps<PropsType>(styled.p) `
+const StyledText = withProps<PropsType>(styled.p)`
     color: ${({ descriptive, theme }): string =>
         descriptive ? theme.Text.descriptive.color : theme.Text.default.color};
     font-family: ${({ theme }): string => theme.Text.default.fontFamily};

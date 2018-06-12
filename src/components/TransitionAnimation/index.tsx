@@ -8,18 +8,11 @@ type PropsType = {
     stayMounted?: boolean;
 };
 
-const TransitionAnimation: StatelessComponent<PropsType> = (
-    props,
-): JSX.Element => {
+const TransitionAnimation: StatelessComponent<PropsType> = (props): JSX.Element => {
     const unmount = props.stayMounted !== undefined ? !props.stayMounted : true;
 
     return (
-        <Transition
-            in={props.show}
-            timeout={300}
-            mountOnEnter={unmount}
-            unmountOnExit={unmount}
-        >
+        <Transition in={props.show} timeout={300} mountOnEnter={unmount} unmountOnExit={unmount}>
             {(state: StyledPropsType['state']): JSX.Element => (
                 <StyledAnimation animation={props.animation} state={state}>
                     {props.children}

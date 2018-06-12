@@ -1,6 +1,6 @@
-import _R from 'react'
+import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import { PropsType } from '.'
+import { PropsType } from '.';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 
@@ -19,9 +19,9 @@ type PriceTagThemeType = {
 
 type PriceTagPropsType = {
     displayType?: PropsType['displayType'];
-}
+};
 
-const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span) `
+const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span)`
     ${({ theme, displayType }): string => {
         const identifier = displayType !== undefined ? displayType : 'default';
 
@@ -37,8 +37,8 @@ const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span
             }
 
             ${
-            displayType !== undefined && displayType === 'base'
-                ? `&::after {
+                displayType !== undefined && displayType === 'base'
+                    ? `&::after {
                     content: '';
                     width: 100%;
                     height: 2px;
@@ -50,7 +50,7 @@ const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span
                     opacity: .7;
                     transform: rotate(-8deg);
                 }`
-                : ''
+                    : ''
             }
         `;
     }};

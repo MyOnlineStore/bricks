@@ -11,22 +11,15 @@ describe('Text', () => {
     });
 
     it('should render text with strong styling', () => {
-        const component = shallowWithTheme(
-            <Text strong={true}>Strong text</Text>,
-        );
+        const component = shallowWithTheme(<Text strong={true}>Strong text</Text>);
 
         /* tslint:disable */
-        (expect(toJson(component.dive())) as any).toHaveStyleRule(
-            'font-weight',
-            '700',
-        );
+        (expect(toJson(component.dive())) as any).toHaveStyleRule('font-weight', '700');
         /* tslint:enable */
     });
 
     it('should render text with descriptive styling', () => {
-        const component = shallowWithTheme(
-            <Text descriptive={true}>Descriptive text</Text>,
-        );
+        const component = shallowWithTheme(<Text descriptive={true}>Descriptive text</Text>);
 
         /* tslint:disable */
         (expect(toJson(component.dive())) as any).toHaveStyleRule('color', '#a6aab3');

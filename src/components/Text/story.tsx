@@ -30,10 +30,7 @@ const demoContent = `
 `;
 
 storiesOf('Text', module).add('Default', () => (
-    <Text
-        strong={boolean('strong', false)}
-        descriptive={boolean('descriptive', false)}
-    >
+    <Text strong={boolean('strong', false)} descriptive={boolean('descriptive', false)}>
         {demoContent}
     </Text>
 ));

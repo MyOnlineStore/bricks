@@ -6,26 +6,18 @@ import { mountWithTheme } from '../../utility/styled';
 
 describe('Button', () => {
     it('should render a link with children', () => {
-
         const component = mountWithTheme(
             <Button href="#" title="Foo Bar?" variant="warning">
                 Foo Bar
-            </Button>
-        )
+            </Button>,
+        );
         expect(component.find('a').text()).toEqual('Foo Bar');
     });
 
     it('should call the passed action on click', () => {
         const clickMock = jest.fn();
 
-        const component = mountWithTheme(
-
-            <Button
-                title="button title"
-                variant="primary"
-                action={clickMock}
-            />,
-        );
+        const component = mountWithTheme(<Button title="button title" variant="primary" action={clickMock} />);
 
         component.simulate('click');
 
@@ -35,12 +27,7 @@ describe('Button', () => {
     it('should render an a tag when a href is provided', () => {
         const component = mount(
             <MosTheme>
-                <Button
-                    title="button title"
-                    variant="primary"
-                    action={undefined}
-                    href="http://foo.bar"
-                />
+                <Button title="button title" variant="primary" action={undefined} href="http://foo.bar" />
             </MosTheme>,
         );
 
@@ -51,11 +38,7 @@ describe('Button', () => {
         const fn = (): void => {
             const component = mount(
                 <MosTheme>
-                    <Button
-                        title="button title"
-                        variant="primary"
-                        action={undefined}
-                    />
+                    <Button title="button title" variant="primary" action={undefined} />
                 </MosTheme>,
             );
 
@@ -73,10 +56,7 @@ describe('Button', () => {
         );
 
         /* tslint:disable */
-        (expect(component.find(Button)) as any).toHaveStyleRule(
-            'padding',
-            '11px 12px',
-        );
+        (expect(component.find(Button)) as any).toHaveStyleRule('padding', '11px 12px');
         /* tslint:enable */
     });
 });

@@ -4,7 +4,7 @@ import ErrorBoundary from '.';
 import MosTheme from '../../themes/MosTheme';
 
 /* tslint:disable */
-(console.error as any).mockImplementationOnce(() => { });
+(console.error as any).mockImplementationOnce(() => {});
 /* tslint:enable */
 
 describe('ErrorBoundary', () => {
@@ -20,9 +20,7 @@ describe('ErrorBoundary', () => {
             error: jest.fn(),
         };
 
-        jest
-            .spyOn((window as any)._virtualConsole, 'emit')
-            .mockImplementation(() => false);
+        jest.spyOn((window as any)._virtualConsole, 'emit').mockImplementation(() => false);
         /* tslint:enable */
     });
 
@@ -35,10 +33,7 @@ describe('ErrorBoundary', () => {
 
         const boundary = Renderer.create(
             <MosTheme>
-                <ErrorBoundary
-                    message="This has an error"
-                    reportError={mockReport}
-                >
+                <ErrorBoundary message="This has an error" reportError={mockReport}>
                     <ThrowingComponent />
                 </ErrorBoundary>
             </MosTheme>,

@@ -29,11 +29,13 @@ class FoldOut extends Component<PropsType, StateType> {
         try {
             this.resizeObserver = new ResizeObserver(
                 (entries: Array<ResizeObserverEntry>): void => {
-                    entries.forEach((entry: ResizeObserverEntry): void => {
-                        this.setState({
-                            contentHeight: entry.contentRect.height,
-                        });
-                    });
+                    entries.forEach(
+                        (entry: ResizeObserverEntry): void => {
+                            this.setState({
+                                contentHeight: entry.contentRect.height,
+                            });
+                        },
+                    );
                 },
             );
         } catch (error) {
@@ -62,10 +64,7 @@ class FoldOut extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <StyledFoldOut
-                isOpen={this.props.isOpen}
-                contentHeight={this.state.contentHeight}
-            >
+            <StyledFoldOut isOpen={this.props.isOpen} contentHeight={this.state.contentHeight}>
                 <div
                     ref={(ref): void => {
                         this.contentRef = ref as HTMLDivElement;

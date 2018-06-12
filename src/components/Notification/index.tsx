@@ -19,8 +19,7 @@ type PropsType = StyledType & {
 };
 
 const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const icon =
-        props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
+    const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (
         <StyledNotification severity={props.severity}>
