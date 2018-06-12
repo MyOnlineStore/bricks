@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Badge Default 1`] = `
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 18px;
+  min-height: 18px;
+  padding: 4px 6px;
+  border-radius: 9px;
+  background: #ed2157;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 10px;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+}
+
+<div
+  className="c0"
+>
+  1
+</div>
+`;
+
 exports[`Storyshots Box Default 1`] = `
 .c1 {
   display: -webkit-box;

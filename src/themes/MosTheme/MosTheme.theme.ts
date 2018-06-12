@@ -52,6 +52,10 @@ const yellow = {
 };
 
 const theme: ThemeType = {
+    Badge: {
+        backgroundColor: red.base,
+        color: silver.lighter1,
+    },
     Button: {
         common: {
             borderRadius: '3px',

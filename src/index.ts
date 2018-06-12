@@ -1,6 +1,7 @@
 /// <reference path='./declarations/modules.d.ts' />
 /// <reference path="./declarations/global.d.ts" />
 export { default as BreakpointProvider } from './components/BreakpointProvider';
+export { default as Badge } from './components/Badge';
 export { default as Box } from './components/Box';
 export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
