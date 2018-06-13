@@ -13,11 +13,11 @@ const StyledBadge = styled.div`
     box-sizing: border-box;
     min-width: 18px;
     min-height: 18px;
-    padding: 4px 6px;
+    padding: 3px 6px;
     border-radius: 9px;
     background: ${({ theme }): string => theme.Badge.backgroundColor};
     font-family: ${({ theme }): string => theme.Text.default.fontFamily};
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1;
     color: ${({ theme }): string => theme.Badge.color};
     white-space: nowrap;
