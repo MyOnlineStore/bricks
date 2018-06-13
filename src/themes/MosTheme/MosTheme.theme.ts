@@ -69,14 +69,14 @@ const theme: ThemeType = {
                 backgroundColor: green.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             hover: {
                 backgroundColor: green.darker2,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             focus: {
@@ -99,14 +99,14 @@ const theme: ThemeType = {
                 backgroundColor: silver.base,
                 borderColor: 'transparent',
                 color: grey.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             hover: {
                 backgroundColor: silver.darker1,
                 borderColor: 'transparent',
                 color: grey.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             focus: {
@@ -129,14 +129,14 @@ const theme: ThemeType = {
                 backgroundColor: yellow.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             hover: {
                 backgroundColor: yellow.darker2,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             focus: {
@@ -159,14 +159,14 @@ const theme: ThemeType = {
                 backgroundColor: red.base,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             hover: {
                 backgroundColor: red.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'none',
             },
             focus: {
@@ -196,7 +196,7 @@ const theme: ThemeType = {
                 backgroundColor: silver.base,
                 borderColor: 'transparent',
                 color: grey.base,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, 0.2) inset',
                 textDecoration: 'underline',
             },
             focus: {
@@ -217,7 +217,7 @@ const theme: ThemeType = {
         disabled: {
             color: grey.lighter2,
             backgroundColor: silver.darker2,
-            stripingColor: 'rgba(0, 0, 0, .04)',
+            stripingColor: 'rgba(0, 0, 0, 0.04)',
         },
     },
     Contrast: {
@@ -324,9 +324,24 @@ const theme: ThemeType = {
             borderColor: green.base,
         },
         info: {
-            color: '#4e82bb',
+            color: green.base,
             backgroundColor: '#dde7f2',
             borderColor: '#c8d2dd',
+        },
+    },
+    RadioButton: {
+        idle: {
+            backgroundColor: silver.base,
+            boxShadow: green.base,
+            borderColor: silver.darker4,
+        },
+        hover: {
+            boxShadow: '0 0 0 4px rgba(107, 222, 120, 0.4)',
+        },
+        active: {
+            boxShadow: `inset 0px 0px 0px 5.5px ${green.base}`,
+            borderColor: green.darker2,
+            backgroundColor: silver.lighter1,
         },
     },
     Popover: {

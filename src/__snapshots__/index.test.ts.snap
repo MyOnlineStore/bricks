@@ -401,7 +401,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -410,7 +410,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #e4e7ec;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -451,8 +451,8 @@ exports[`Storyshots Button On a contrast area 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -513,7 +513,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -554,7 +554,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
   box-shadow: none;
   border-radius: 3px;
 }
@@ -676,7 +676,7 @@ exports[`Storyshots Button With an icon 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -685,7 +685,7 @@ exports[`Storyshots Button With an icon 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -726,8 +726,8 @@ exports[`Storyshots Button With an icon 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -813,7 +813,7 @@ exports[`Storyshots Button With text 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -822,7 +822,7 @@ exports[`Storyshots Button With text 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -863,8 +863,8 @@ exports[`Storyshots Button With text 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -1012,7 +1012,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1021,7 +1021,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1062,8 +1062,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -1115,7 +1115,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1124,7 +1124,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1165,8 +1165,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -1267,7 +1267,7 @@ Array [
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1276,7 +1276,7 @@ Array [
   background-color: #e4e7ec;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1317,8 +1317,8 @@ Array [
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -1395,7 +1395,7 @@ Array [
   background-color: #f8f9fb;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1404,7 +1404,7 @@ Array [
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1445,8 +1445,8 @@ Array [
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -1547,7 +1547,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   background-color: #f8f9fb;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1556,7 +1556,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1597,8 +1597,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -2203,7 +2203,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2212,7 +2212,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2253,8 +2253,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -2306,7 +2306,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #edeff2;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2315,7 +2315,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #e4e7ec;
   border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2356,8 +2356,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -2409,7 +2409,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #fcc200;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2418,7 +2418,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #edb107;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2459,8 +2459,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -2512,7 +2512,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #ed2157;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2521,7 +2521,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #dc1b4f;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2562,8 +2562,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -3007,7 +3007,7 @@ exports[`Storyshots Notification Info 1`] = `
   font-size: 14px;
   background-color: #dde7f2;
   border-color: #c8d2dd;
-  color: #4e82bb;
+  color: #6bde78;
 }
 
 <div
@@ -3261,7 +3261,7 @@ exports[`Storyshots Popover Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -3270,7 +3270,7 @@ exports[`Storyshots Popover Default 1`] = `
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -3311,8 +3311,8 @@ exports[`Storyshots Popover Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,.04), rgba(0,0,0,.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
 }
 
@@ -3385,6 +3385,345 @@ exports[`Storyshots PriceTag Default 1`] = `
   ,
   00
 </span>
+`;
+
+exports[`Storyshots RadioButton Default 1`] = `
+.c1 {
+  margin: 0px 9px 0px 0px;
+}
+
+.c4 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  position: relative;
+  display: none;
+}
+
+.c2 {
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  -webkit-transition: box-shadow 300ms ease,border 300ms ease;
+  transition: box-shadow 300ms ease,border 300ms ease;
+  background-color: #f8f9fb;
+  border: 1px solid #4cc55b;
+  box-shadow: inset 0px 0px 0px 5.5px #6bde78;
+}
+
+.c2:hover {
+  box-shadow: inset 0 0 0 0 transparent,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: inset 0px 0px 0px 5.5px #6bde78,0 0 0 4px rgba(107,222,120,0.4);
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+>
+  <div
+    className="c1"
+  >
+    <div
+      checked={true}
+      className="c2"
+    >
+      <input
+        checked={true}
+        className="c3"
+        name="demo"
+        onChange={[Function]}
+        type="radio"
+        value="demo2"
+      />
+    </div>
+  </div>
+  <p
+    className="c4"
+  >
+    <label
+      htmlFor="demo"
+    >
+      foo
+    </label>
+  </p>
+</div>
+`;
+
+exports[`Storyshots RadioButtonGroup Default 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: no-wrap;
+  -ms-flex-wrap: no-wrap;
+  flex-wrap: no-wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: 6px 6px 6px 6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  margin: -6px -6px -6px -6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.c4 {
+  margin: 0px 9px 0px 0px;
+}
+
+.c7 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  position: relative;
+  display: none;
+}
+
+.c5 {
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  -webkit-transition: box-shadow 300ms ease,border 300ms ease;
+  transition: box-shadow 300ms ease,border 300ms ease;
+  background-color: #f8f9fb;
+  border: 1px solid #4cc55b;
+  box-shadow: inset 0px 0px 0px 5.5px #6bde78;
+}
+
+.c5:hover {
+  box-shadow: inset 0 0 0 0 transparent,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: inset 0px 0px 0px 5.5px #6bde78,0 0 0 4px rgba(107,222,120,0.4);
+}
+
+.c8 {
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  -webkit-transition: box-shadow 300ms ease,border 300ms ease;
+  transition: box-shadow 300ms ease,border 300ms ease;
+  background-color: #f8f9fb;
+  border: 1px solid #d2d7e0;
+  box-shadow: #6bde78;
+}
+
+.c8:hover {
+  box-shadow: inset 0 0 0 0 transparent,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: #6bde78,0 0 0 4px rgba(107,222,120,0.4);
+}
+
+.c0 {
+  max-width: 640px;
+  border: solid 3px rgba(255,36,94,0.3);
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          onClick={[Function]}
+        >
+          <div
+            className="c4"
+          >
+            <div
+              checked={true}
+              className="c5"
+            >
+              <input
+                checked={true}
+                className="c6"
+                name="demo"
+                onChange={[Function]}
+                type="radio"
+                value="1"
+              />
+            </div>
+          </div>
+          <p
+            className="c7"
+          >
+            <label
+              htmlFor="demo"
+            >
+              bar 1
+            </label>
+          </p>
+        </div>
+      </div>
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          onClick={[Function]}
+        >
+          <div
+            className="c4"
+          >
+            <div
+              checked={false}
+              className="c8"
+            >
+              <input
+                checked={false}
+                className="c6"
+                name="demo"
+                onChange={[Function]}
+                type="radio"
+                value="2"
+              />
+            </div>
+          </div>
+          <p
+            className="c7"
+          >
+            <label
+              htmlFor="demo"
+            >
+              bar 2
+            </label>
+          </p>
+        </div>
+      </div>
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          onClick={[Function]}
+        >
+          <div
+            className="c4"
+          >
+            <div
+              checked={false}
+              className="c8"
+            >
+              <input
+                checked={false}
+                className="c6"
+                name="demo"
+                onChange={[Function]}
+                type="radio"
+                value="3"
+              />
+            </div>
+          </div>
+          <p
+            className="c7"
+          >
+            <label
+              htmlFor="demo"
+            >
+              bar 3
+            </label>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Spacer With margin 1`] = `

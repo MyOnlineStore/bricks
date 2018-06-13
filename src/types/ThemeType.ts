@@ -8,6 +8,7 @@ import { MessageStreamThemeType } from '../components/MessageStream/style';
 import { NotificationThemeType } from '../components/Notification/style';
 import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
+import { RadioButtonThemeType } from '../components/RadioButton/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { SubHeadingThemeType } from '../components/SubHeading';
 import { TextThemeType } from '../components/Text/style';
@@ -28,6 +29,7 @@ type ThemeType = {
     SubHeading: SubHeadingThemeType;
     Text: TextThemeType;
     TextField: TextFieldThemeType;
+    RadioButton: RadioButtonThemeType;
 };
 
 export default ThemeType;
