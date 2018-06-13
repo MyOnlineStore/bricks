@@ -1933,6 +1933,86 @@ exports[`Storyshots InlineNotification With Icon 1`] = `
 </span>
 `;
 
+exports[`Storyshots Link Action with child element 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c1 {
+  color: #333740;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+  -webkit-transition: color 100ms;
+  transition: color 100ms;
+  display: inline;
+  border: none;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.c1:hover {
+  color: #5bd16a;
+}
+
+<p
+  className="c0"
+>
+  <button
+    className="c1"
+    onClick={[Function]}
+    title="Google search"
+    type="button"
+  >
+    <span>
+      Click me!
+    </span>
+  </button>
+</p>
+`;
+
+exports[`Storyshots Link Default 1`] = `
+.c0 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c1 {
+  color: #333740;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-transition: color 100ms;
+  transition: color 100ms;
+}
+
+.c1:hover {
+  color: #5bd16a;
+}
+
+<p
+  className="c0"
+>
+  <a
+    className="c1"
+    href="http://www.google.com"
+    target="_self"
+    title="Google search"
+  >
+    Google search
+  </a>
+</p>
+`;
+
 exports[`Storyshots MessageStream Default 1`] = `
 .c3 {
   display: -webkit-box;

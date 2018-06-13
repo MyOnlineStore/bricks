@@ -17,18 +17,15 @@ const ButtonGroup: StatelessComponent = (props): JSX.Element => {
 
                 return (
                     <Box direction={direction} justifyContent="flex-start" alignItems="stretch" wrap margin={trbl(-6)}>
-                        {Children.map(
-                            props.children,
-                            (child): JSX.Element => (
-                                <Box
-                                    direction={breakpoint === 'small' ? 'column' : 'row'}
-                                    alignSelf="stretch"
-                                    margin={trbl(6)}
-                                >
-                                    {child}
-                                </Box>
-                            ),
-                        )}
+                        {Children.map(props.children, (child): JSX.Element => (
+                            <Box
+                                direction={breakpoint === 'small' ? 'column' : 'row'}
+                                alignSelf="stretch"
+                                margin={trbl(6)}
+                            >
+                                {child}
+                            </Box>
+                        ))}
                     </Box>
                 );
             }}

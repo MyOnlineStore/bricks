@@ -3,6 +3,7 @@ import { ButtonThemeType } from '../components/Button/style';
 import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';
 import { InlineNotificationThemeType } from '../components/InlineNotification/style';
+import { LinkThemeType } from '../components/Link/style';
 import { MessageStreamThemeType } from '../components/MessageStream/style';
 import { NotificationThemeType } from '../components/Notification/style';
 import { PopoverThemeType } from '../components/Popover/style';
@@ -20,6 +21,7 @@ type ThemeType = {
     MessageStream: MessageStreamThemeType;
     Notification: NotificationThemeType;
     InlineNotification: InlineNotificationThemeType;
+    Link: LinkThemeType;
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
     ScrollBox: ScrollBoxThemeType;

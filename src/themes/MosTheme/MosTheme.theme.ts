@@ -256,6 +256,53 @@ const theme: ThemeType = {
             },
         },
     },
+    Heading: {
+        color: grey.base,
+        fontFamily: headingFont,
+        fontSize: fontSize.larger2,
+        fontWeight: '400',
+    },
+    InlineNotification: {
+        common: {
+            fontSize: fontSize.smaller1,
+            fontFamily: bodyFont,
+        },
+        error: { color: red.darker2 },
+        success: { color: green.darker2 },
+        info: { color: grey.lighter2 },
+        warning: { color: yellow.darker2 },
+    },
+    Link: {
+        default: {
+            color: grey.base,
+            textDecoration: 'underline',
+            fontSize: fontSize.base,
+        },
+        hover: {
+            color: green.darker1,
+        },
+    },
+    MessageStream: {
+        common: {
+            backgroundColor: silver.lighter1,
+            borderColor: silver.darker3,
+        },
+        read: {
+            backgroundColor: silver.base,
+        },
+        success: {
+            borderColor: green.darker1,
+        },
+        info: {
+            borderColor: silver.darker3,
+        },
+        warning: {
+            borderColor: yellow.darker1,
+        },
+        error: {
+            borderColor: red.base,
+        },
+    },
     Notification: {
         common: {
             fontFamily: bodyFont,
@@ -281,6 +328,41 @@ const theme: ThemeType = {
             backgroundColor: '#dde7f2',
             borderColor: '#c8d2dd',
         },
+    },
+    Popover: {
+        background: silver.lighter1,
+        borderRadius: 5,
+    },
+    PriceTag: {
+        default: {
+            color: grey.base,
+            fontFamily: bodyFont,
+            fontSize: fontSize.larger2,
+            fontWeight: '400',
+        },
+        action: {
+            fontSize: fontSize.larger2,
+            fontWeight: '400',
+            color: green.base,
+            fontFamily: bodyFont,
+        },
+        base: {
+            fontSize: fontSize.larger1,
+            fontWeight: '400',
+            color: grey.lighter2,
+            fontFamily: bodyFont,
+        },
+    },
+    ScrollBox: {
+        scrollbar: {
+            background: grey.base,
+        },
+    },
+    SubHeading: {
+        color: grey.lighter2,
+        fontFamily: bodyFont,
+        fontSize: fontSize.larger1,
+        fontWeight: '400',
     },
     Text: {
         default: {
@@ -316,78 +398,6 @@ const theme: ThemeType = {
         },
         focus: {
             borderColor: grey.lighter1,
-        },
-    },
-    Heading: {
-        color: grey.base,
-        fontFamily: headingFont,
-        fontSize: fontSize.larger2,
-        fontWeight: '400',
-    },
-    Popover: {
-        background: silver.lighter1,
-        borderRadius: 5,
-    },
-    InlineNotification: {
-        common: {
-            fontSize: fontSize.smaller1,
-            fontFamily: bodyFont,
-        },
-        error: { color: red.darker2 },
-        success: { color: green.darker2 },
-        info: { color: grey.lighter2 },
-        warning: { color: yellow.darker2 },
-    },
-    PriceTag: {
-        default: {
-            color: grey.base,
-            fontFamily: bodyFont,
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-        },
-        action: {
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-            color: green.base,
-            fontFamily: bodyFont,
-        },
-        base: {
-            fontSize: fontSize.larger1,
-            fontWeight: '400',
-            color: grey.lighter2,
-            fontFamily: bodyFont,
-        },
-    },
-    SubHeading: {
-        color: grey.lighter2,
-        fontFamily: bodyFont,
-        fontSize: fontSize.larger1,
-        fontWeight: '400',
-    },
-    ScrollBox: {
-        scrollbar: {
-            background: grey.base,
-        },
-    },
-    MessageStream: {
-        common: {
-            backgroundColor: silver.lighter1,
-            borderColor: silver.darker3,
-        },
-        read: {
-            backgroundColor: silver.base,
-        },
-        success: {
-            borderColor: green.darker1,
-        },
-        info: {
-            borderColor: silver.darker3,
-        },
-        warning: {
-            borderColor: yellow.darker1,
-        },
-        error: {
-            borderColor: red.base,
         },
     },
 };
