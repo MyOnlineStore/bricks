@@ -7,11 +7,9 @@ import { PropsType } from '../BreakpointProvider/';
 import Button from '../Button';
 
 jest.mock('../BreakpointProvider', () =>
-    jest.fn().mockImplementation(
-        (props: PropsType): JSX.Element => {
-            return props.children('large');
-        },
-    ),
+    jest.fn().mockImplementation((props: PropsType): JSX.Element => {
+        return props.children('large');
+    }),
 );
 
 describe('ButtonGroup', () => {

@@ -82,14 +82,12 @@ const Message: StatelessComponent<MessagePropsType> = (props): JSX.Element => {
 
 const MessageStream: StatelessComponent<PropsType> = (props): JSX.Element => (
     <StyledMessageStream>
-        {props.messages.map(
-            (message: MessagePropsType, index: number): JSX.Element => (
-                <Fragment key={uuid()}>
-                    <Message {...message} />
-                    {index < props.messages.length - 1 ? <MessageSeparator /> : undefined}
-                </Fragment>
-            ),
-        )}
+        {props.messages.map((message: MessagePropsType, index: number): JSX.Element => (
+            <Fragment key={uuid()}>
+                <Message {...message} />
+                {index < props.messages.length - 1 ? <MessageSeparator /> : undefined}
+            </Fragment>
+        ))}
     </StyledMessageStream>
 );
 

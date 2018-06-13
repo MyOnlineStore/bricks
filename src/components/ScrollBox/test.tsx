@@ -33,23 +33,21 @@ beforeEach(() => {
 describe('ScrollBox', () => {
     it('should show a top shadow when scrolling down', () => {
         /* tslint:disable */
-        (ScrollBar as any).mockImplementationOnce(
-            (element: HTMLElement, options: Object): Object => {
-                /* tslint:enable */
-                scrollBarOptions = options;
+        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
+            /* tslint:enable */
+            scrollBarOptions = options;
 
-                return {
-                    getScrollElement: jest.fn().mockReturnValue({
-                        addEventListener: jest.fn().mockImplementation((event, callback) => {
-                            callback();
-                        }),
+            return {
+                getScrollElement: jest.fn().mockReturnValue({
+                    addEventListener: jest.fn().mockImplementation((event, callback) => {
+                        callback();
                     }),
-                    getContentElement: jest.fn().mockReturnValue({
-                        offsetHeight: 400,
-                    }),
-                };
-            },
-        );
+                }),
+                getContentElement: jest.fn().mockReturnValue({
+                    offsetHeight: 400,
+                }),
+            };
+        });
 
         const component = mount(
             <MosTheme>
@@ -122,22 +120,20 @@ describe('ScrollBox', () => {
         const removeListenerMock = jest.fn();
 
         /* tslint:disable */
-        (ScrollBar as any).mockImplementationOnce(
-            (element: HTMLElement, options: Object): Object => {
-                /* tslint:enable */
-                return {
-                    getScrollElement: jest.fn().mockReturnValue({
-                        addEventListener: jest.fn().mockImplementation((event, callback) => {
-                            callback();
-                        }),
-                        removeEventListener: removeListenerMock,
+        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
+            /* tslint:enable */
+            return {
+                getScrollElement: jest.fn().mockReturnValue({
+                    addEventListener: jest.fn().mockImplementation((event, callback) => {
+                        callback();
                     }),
-                    getContentElement: jest.fn().mockReturnValue({
-                        offsetHeight: 400,
-                    }),
-                };
-            },
-        );
+                    removeEventListener: removeListenerMock,
+                }),
+                getContentElement: jest.fn().mockReturnValue({
+                    offsetHeight: 400,
+                }),
+            };
+        });
 
         const component = mount(
             <MosTheme>
