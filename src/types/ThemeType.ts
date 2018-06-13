@@ -1,4 +1,4 @@
-import { BadgeThemeType } from '../components/Badge/style';
+import { BadgeThemeType } from '../components/Badge';
 import { ButtonThemeType } from '../components/Button/style';
 import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';

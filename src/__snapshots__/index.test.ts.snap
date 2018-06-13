@@ -6,11 +6,11 @@ exports[`Storyshots Badge Default 1`] = `
   box-sizing: border-box;
   min-width: 18px;
   min-height: 18px;
-  padding: 4px 6px;
+  padding: 3px 6px;
   border-radius: 9px;
   background: #ed2157;
   font-family: Source Sans Pro,sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1;
   color: #fff;
   white-space: nowrap;
