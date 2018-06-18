@@ -16,6 +16,7 @@ describe('RadioButton', () => {
 
     it('should be able to change checked value', () => {
         const mockHandler = jest.fn();
+
         const radioButton = mountWithTheme(
             <RadioButton name="demo" label="foo" checked={false} value="bar" changeHandler={mockHandler} />,
         );

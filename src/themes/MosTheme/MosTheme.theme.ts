@@ -83,7 +83,7 @@ const theme: ThemeType = {
                 backgroundColor: green.darker1,
                 borderColor: 'transparent',
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(107, 222, 120, .4)',
+                boxShadow: '0 -2px 0 rgba(0, 0, 0, .2) inset, 0 0 0 4px rgba(107,222,120,0.4)',
                 textDecoration: 'none',
             },
             active: {
@@ -470,6 +470,35 @@ const theme: ThemeType = {
         },
         focus: {
             borderColor: grey.lighter1,
+        },
+    },
+    Toggle: {
+        general: {
+            background: silver.lighter1,
+        },
+        idle: {
+            border: `1px solid ${silver.darker4}`,
+            background: silver.base,
+        },
+        focus: {
+            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+        },
+        checked: {
+            border: `1px solid ${green.darker2}`,
+            background: green.base,
+        },
+        idleDisabled: {
+            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 5px,${silver.darker1} 5px,${
+                silver.darker1
+            } 12px )`,
+        },
+        checkedDisabled: {
+            background: `repeating-linear-gradient( -45deg,${green.base},${green.base} 5px,${green.darker1} 5px,${
+                green.darker1
+            } 12px )`,
+        },
+        error: {
+            border: `1px solid ${red.darker2}`,
         },
     },
 };

@@ -23,5 +23,6 @@ export { default as ScrollBox } from './components/ScrollBox';
 export { default as Spacer } from './components/Spacer';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Text } from './components/Text';
+export { default as Toggle } from './components/Toggle';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';

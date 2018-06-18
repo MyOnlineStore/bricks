@@ -779,7 +779,7 @@ exports[`Storyshots Button With text 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -950,7 +950,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -2024,7 +2024,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -3066,7 +3066,7 @@ exports[`Storyshots Popover Default 1`] = `
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -3797,6 +3797,87 @@ Array [
     </span>
   </div>,
 ]
+`;
+
+exports[`Storyshots Toggle Default 1`] = `
+.c1 {
+  margin: 0px 9px 0px 0px;
+}
+
+.c3 {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.c2 {
+  width: 48px;
+  height: 18px;
+  margin-top: 1px;
+  border-radius: 10px;
+  position: relative;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  box-sizing: border-box;
+  background: #6bde78;
+  border: 1px solid #4cc55b;
+}
+
+.c2::after {
+  -webkit-transition: background 100ms,-webkit-transform 100ms,border 100ms;
+  -webkit-transition: background 100ms,transform 100ms,border 100ms;
+  transition: background 100ms,transform 100ms,border 100ms;
+  content: "";
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  top: 50%;
+  margin-top: -12px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: #fff;
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+  border: 1px solid #d2d7e0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+>
+  <div
+    className="c1"
+  >
+    <div
+      checked={true}
+      className="c2"
+      disabled={false}
+    >
+      <input
+        checked={true}
+        className="c3"
+        disabled={false}
+        id={undefined}
+        name="Toggle"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+        value="foot"
+      />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots TransitionAnimation Default 1`] = `

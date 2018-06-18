@@ -12,6 +12,7 @@ import { RadioButtonThemeType } from '../components/RadioButton/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
+import { ToggleThemeType } from '../components/Toggle/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -28,6 +29,7 @@ type ThemeType = {
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     RadioButton: RadioButtonThemeType;
+    Toggle: ToggleThemeType;
 };
 
 export default ThemeType;

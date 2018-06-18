@@ -1,18 +1,12 @@
 {
+
     "globals": {
         "ts-jest": {
-            "tsConfigFile": "./config/typescript/tsconfig.json",
-            "babelConfig": {
-                "plugins": [
-                    "babel-plugin-styled-components"
-                ],
-                "presets": [
-                    "env",
-                    "react"
-                ]
-            }
+            "useBabelrc": true,
+            "babelrcFile": ".babelrc",
+            "tsConfigFile": "./config/typescript/tsconfig.json" 
         }
-    },
+    },   
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
     },
