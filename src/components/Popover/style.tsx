@@ -9,9 +9,21 @@ type PopoverThemeType = {
     borderRadius: number;
 };
 
-const PopoverAnchor = styled.div`
-    display: inline-block;
-    flex-grow: 1;
+type PopoverAnchorPropsType = {
+    stretch?: boolean;
+};
+
+const PopoverAnchor = withProps<PopoverAnchorPropsType, HTMLDivElement>(styled.div)`
+    ${({ stretch }): string =>
+        stretch
+            ? `
+            display: block;
+            flex-grow: 1;
+            height: 100%;
+        `
+            : `
+            display: inline-block;
+        `}
 `;
 
 const PopoverBackground = styled.div`
@@ -21,7 +33,7 @@ const PopoverBackground = styled.div`
     width: 100%;
     height: 100%;
     z-index: 2;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 48px rgba(0, 0, 0, 0.3);
     background: ${({ theme }): string => theme.Popover.background};
     border-radius: ${({ theme }): number => theme.Popover.borderRadius}px;
 `;

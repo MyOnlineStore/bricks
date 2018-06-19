@@ -1,4 +1,4 @@
-import { boolean, select } from '@storybook/addon-knobs/react';
+import { boolean, number, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React, { Component, StatelessComponent } from 'react';
 import Popover, { PlacementType } from '.';
@@ -11,6 +11,7 @@ import Text from '../Text';
 type PropsType = {
     placement: PlacementType;
     fixed: boolean;
+    offset: number;
 };
 
 type StateType = {
@@ -51,6 +52,7 @@ class Demo extends Component<PropsType, StateType> {
                         isOpen={this.state.isOpen}
                         placement={this.props.placement}
                         fixed={this.props.fixed}
+                        offset={this.props.offset}
                         renderContent={(): JSX.Element => <DemoContent />}
                     >
                         <Button variant="primary" title="Toggle" action={this.toggle} />
@@ -88,6 +90,7 @@ storiesOf('Popover', module).add('Default', () => (
             ) as PlacementType
         }
         fixed={boolean('fixed', false)}
+        offset={number('offset', 16)}
     />
     /* tslint:enable */
 ));

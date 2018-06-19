@@ -46,7 +46,10 @@ describe('Popover', () => {
 
         expect(popper.prop('modifiers')).toEqual({
             offset: {
-                offset: '0 6px',
+                offset: '0, 6px',
+            },
+            flip: {
+                enabled: false,
             },
         });
     });
@@ -63,6 +66,12 @@ describe('PopoverBackground', () => {
 describe('PopoverAnchor', () => {
     it('should render inline', () => {
         const component = shallowWithTheme(<PopoverAnchor />);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+
+    it('should render block', () => {
+        const component = shallowWithTheme(<PopoverAnchor stretch={true} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
