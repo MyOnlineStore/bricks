@@ -25,4 +25,12 @@ describe('Text', () => {
         (expect(toJson(component.dive())) as any).toHaveStyleRule('color', '#a6aab3');
         /* tslint:enable */
     });
+
+    it('should render text with compact styling', () => {
+        const component = shallowWithTheme(<Text compact={true}>Descriptive text</Text>);
+
+        /* tslint:disable */
+        (expect(toJson(component.dive())) as any).toHaveStyleRule('line-height', '1.25');
+        /* tslint:enable */
+    });
 });

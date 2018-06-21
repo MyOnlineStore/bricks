@@ -3,12 +3,13 @@ import { StyledType } from '../../utility/styled';
 import StyledText from './style';
 
 type PropsType = StyledType & {
-    strong?: boolean;
+    compact?: boolean;
     descriptive?: boolean;
+    strong?: boolean;
 };
 
 const Text: StatelessComponent<PropsType> = (props): JSX.Element => (
-    <StyledText descriptive={props.descriptive} strong={props.strong}>
+    <StyledText descriptive={props.descriptive} strong={props.strong} compact={props.compact}>
         {props.children}
     </StyledText>
 );

@@ -26,7 +26,7 @@ const StyledText = withProps<PropsType>(styled.p)`
     font-size: ${({ theme }): string => theme.Text.default.fontSize};
     font-weight: ${({ strong, theme }): string =>
         strong ? theme.Text.strong.fontWeight : theme.Text.default.fontWeight};
-    line-height: 1.5;
+    line-height: ${({ compact }): string => (compact ? '1.25' : '1.5')};
     margin: 0;
 `;
 
