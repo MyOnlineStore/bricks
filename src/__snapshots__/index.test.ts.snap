@@ -1959,6 +1959,7 @@ exports[`Storyshots Link Action with child element 1`] = `
 
 .c1:hover {
   color: #5bd16a;
+  background-color: transparent;
 }
 
 <p
@@ -1993,10 +1994,12 @@ exports[`Storyshots Link Default 1`] = `
   text-decoration: underline;
   -webkit-transition: color 100ms;
   transition: color 100ms;
+  background-color: transparent;
 }
 
 .c1:hover {
   color: #5bd16a;
+  background-color: transparent;
 }
 
 <p

@@ -18,9 +18,11 @@ const StyledLink = styled.a`
     color: ${({ theme }): string => theme.Link.default.color};
     text-decoration: ${({ theme }): string => theme.Link.default.textDecoration};
     transition: color 100ms;
+    background-color: transparent;
 
     &:hover {
         color: ${({ theme }): string => theme.Link.hover.color};
+        background-color: transparent;
     }
 `;
 
@@ -37,6 +39,7 @@ const StyledButton = styled.button`
 
     &:hover {
         color: ${({ theme }): string => theme.Link.hover.color};
+        background-color: transparent;
     }
 `;
 
