@@ -48,6 +48,7 @@ const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
 };
 
 const StyledHeading = styled(HeadingElement)`
+<<<<<<< HEAD
     color: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.color : theme.Heading.hierarchy[`hierarchy${hierarchy}`].color};
     font-family: ${({ hierarchy, theme }): string =>
@@ -60,6 +61,13 @@ const StyledHeading = styled(HeadingElement)`
         !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].lineHeight};
     text-transform: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.textTransform : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
+=======
+    color: ${({ theme }): string => theme.Heading.color};
+    font-family: ${({ theme }): string => theme.Heading.fontFamily};
+    font-size: ${({ theme }): string => theme.Heading.fontSize};
+    font-weight: ${({ theme }): string => theme.Heading.fontWeight};
+    line-height: 1.2;
+>>>>>>> d6e137e... Work in progress
     margin: 0;
 `;
 

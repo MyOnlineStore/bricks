@@ -1603,8 +1603,12 @@ exports[`Storyshots Heading Default 1`] = `
   font-family: Melbourne,sans-serif;
   font-size: 36px;
   font-weight: 400;
+<<<<<<< HEAD
   line-height: 1.25;
   text-transform: none;
+=======
+  line-height: 1.2;
+>>>>>>> d6e137e... Work in progress
   margin: 0;
 }
 
@@ -1622,6 +1626,7 @@ exports[`Storyshots Heading Default 1`] = `
 
 exports[`Storyshots Icon Large icons 1`] = `
 .c0 {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1640,6 +1645,14 @@ exports[`Storyshots Icon Large icons 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
+=======
+  color: #333740;
+  font-family: Melbourne,sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+>>>>>>> d6e137e... Work in progress
 }
 
 <div
@@ -3910,8 +3923,12 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
   font-family: Melbourne,sans-serif;
   font-size: 28px;
   font-weight: 400;
+<<<<<<< HEAD
   line-height: 1.5;
   text-transform: none;
+=======
+  line-height: 1.2;
+>>>>>>> d6e137e... Work in progress
   margin: 0;
 }
 

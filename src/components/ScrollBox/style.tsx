@@ -19,5 +19,14 @@ const StyledScrollBox = styled.div`
     }
 `;
 
+const StyledBottom = styled.div`
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 100%);
+    height: 6px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+`;
+
 export default StyledScrollBox;
-export { ScrollBoxThemeType };
+export { ScrollBoxThemeType, StyledBottom };

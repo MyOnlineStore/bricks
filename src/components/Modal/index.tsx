@@ -29,21 +29,29 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
     return (
         <StyledModalWrapper show={props.show} onClick={closeAction}>
             <TransitionAnimation key={0} show={props.show} animation="zoom">
-                <BreakpointProvider breakpoints={{ small: 0, medium: 0, large: 375 }}>
+                <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
                     {(breakpoint): JSX.Element => (
                         <StyledModal>
-                            <Box margin={trbl(24, 36)} alignContent="center" justifyContent="space-between">
-                                <Heading>{props.title}</Heading>
+                            <Box
+                                shrink={0}
+                                margin={breakpoint === 'small' ? trbl(24, 12) : trbl(24, 24, 12)}
+                                alignContent="center"
+                                justifyContent="space-between"
+                            >
+                                <Heading hierarchy={2}>{props.title}</Heading>
                                 <Box alignContent="center" alignItems="flex-end" grow={0} onClick={closeAction}>
-                                    <Spacer offsetType="inner" offset={trbl(24, 0, 12, 0)}>
+                                    <Spacer offsetType="inner" offset={trbl(0)}>
                                         <Button variant="flat" title="close" compact>
                                             <Icon size="small" icon="close" />
                                         </Button>
                                     </Spacer>
                                 </Box>
                             </Box>
-                            <ScrollBox>
-                                <Spacer offsetType="inner" offset={trbl(12, 24, 12, 24)}>
+                            <ScrollBox showInsetShadow>
+                                <Spacer
+                                    offsetType="inner"
+                                    offset={breakpoint === 'small' ? trbl(0, 12, 12, 12) : trbl(36, 24)}
+                                >
                                     {props.children}
                                 </Spacer>
                             </ScrollBox>

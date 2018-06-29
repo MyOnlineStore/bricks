@@ -1,14 +1,15 @@
 import React, { Component, createRef, RefObject } from 'react';
-
 import ScrollBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
 import { StyledType } from '../../utility/styled';
-import StyledScrollBox from './style';
+import StyledScrollBox, { StyledBottom } from './style';
 
 type PropsType = StyledType & {
     height?: number;
+    showInsetShadow?: boolean;
     autoHideScrollBar?: boolean;
     onScroll?(eventData: {
+        showInsetShadow?: boolean;
         scrollTop: number;
         scrollBottom: number;
         scrollDirection: StateType['scrollDirection'];
@@ -77,6 +78,7 @@ class ScrollBox extends Component<PropsType, StateType> {
                 }}
             >
                 {this.props.children}
+                {this.props.showInsetShadow === true && this.state.scrollDirection === 'down' && <StyledBottom />}
             </StyledScrollBox>
         );
     }
