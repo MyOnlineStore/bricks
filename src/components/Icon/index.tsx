@@ -22,17 +22,17 @@ type PropsType = SmallPropsType | LargePropsType;
 const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
     const icon = props.size === 'large' ? LargeIcons[props.icon] : SmallIcons[props.icon];
 
+    /* tslint:disable */
     return (
         <StyledIcon
             aria-hidden
             role="img"
-            /* tslint:disable */
             dangerouslySetInnerHTML={{ __html: icon as any }}
-            /* tslint:enable */
             elementSize={props.size}
             elementColor={props.color}
         />
     );
+    /* tslint:enable */
 };
 
 export default Icon;
