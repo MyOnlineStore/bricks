@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.38 13.31">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #333740;
-      }
-    </style>
-  </defs>
-  <title>danget-alt</title>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Layer_1-2" data-name="Layer 1">
-      <path class="cls-1" d="M7.69,0,0,13.31H15.38ZM6.94,5.06h1.5v4.5H6.94Zm0,5.25h1.5v1.5H6.94Z"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.38 13.31"><path d="M7.69,0,0,13.31H15.38ZM6.94,5.06h1.5v4.5H6.94Zm0,5.25h1.5v1.5H6.94Z"/></svg>
