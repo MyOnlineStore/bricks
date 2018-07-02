@@ -15,7 +15,7 @@ const largeIconKeys = Object.keys(LargeIcons).filter(key => LargeIcons[key as an
 
 storiesOf('Icon', module)
     .add('Small icons', () => {
-        const iconColor = color('fill', '');
+        const iconColor = color('fill', '#000');
 
         /* tslint:disable */
         return (
@@ -33,7 +33,7 @@ storiesOf('Icon', module)
         /* tslint:enable */
     })
     .add('Large icons', () => {
-        const iconColor = color('fill', '');
+        const iconColor = color('fill', '#000');
 
         /* tslint:disable */
         return (
