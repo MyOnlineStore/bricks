@@ -1,13 +1,13 @@
 import React, { StatelessComponent } from 'react';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
-import Icon, { SmallIcons } from '../Icon';
+import Icon, { MediumIcons } from '../Icon';
 import Spacer from '../Spacer';
 import StyledNotification from './style';
 
 enum SeverityIcons {
-    error = 'danger',
-    warning = 'danger',
+    error = 'dangerCircle',
+    warning = 'dangerCircle',
     info = 'infoCircle',
     success = 'checkmarkCircle',
 }
@@ -15,7 +15,7 @@ enum SeverityIcons {
 type PropsType = StyledType & {
     severity: keyof typeof SeverityIcons;
     message: string;
-    icon?: keyof typeof SmallIcons;
+    icon?: keyof typeof MediumIcons;
 };
 
 const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
@@ -24,7 +24,7 @@ const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
     return (
         <StyledNotification severity={props.severity}>
             <Spacer offset={trbl(12)} offsetType="outer">
-                <Icon size="small" icon={icon} />
+                <Icon size="medium" icon={icon} />
                 &nbsp;&nbsp;&nbsp;
                 {props.message}
             </Spacer>

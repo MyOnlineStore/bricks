@@ -6,10 +6,11 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Spacer from '../Spacer';
 import Text from '../Text';
-import { LargeIcons, SmallIcons } from './types';
+import { LargeIcons, MediumIcons, SmallIcons } from './types';
 
 /* tslint:disable */
 const smallIconKeys = Object.keys(SmallIcons).filter(key => SmallIcons[key as any].match('<svg'));
+const mediumIcons = Object.keys(MediumIcons).filter(key => MediumIcons[key as any].match('<svg'));
 const largeIconKeys = Object.keys(LargeIcons).filter(key => LargeIcons[key as any].match('<svg'));
 /* tslint:enable */
 
@@ -23,6 +24,24 @@ storiesOf('Icon', module)
                 {smallIconKeys.map(icon => (
                     <Box basis={'33.333333%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
                         <Icon color={iconColor} size="small" icon={icon as any} />
+                        <Spacer offset={trbl(0, 0, 0, 24)}>
+                            <Text>{icon}</Text>
+                        </Spacer>
+                    </Box>
+                ))}
+            </Box>
+        );
+        /* tslint:enable */
+    })
+    .add('Medium icons', () => {
+        const iconColor = color('fill', '#000');
+
+        /* tslint:disable */
+        return (
+            <Box wrap margin={trbl(24)}>
+                {mediumIcons.map(icon => (
+                    <Box basis={'50%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
+                        <Icon color={iconColor} size="medium" icon={icon as any} />
                         <Spacer offset={trbl(0, 0, 0, 24)}>
                             <Text>{icon}</Text>
                         </Spacer>

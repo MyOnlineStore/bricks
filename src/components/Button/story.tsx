@@ -46,7 +46,7 @@ storiesOf('Button', module)
                 }}
                 compact
             >
-                <Icon size="small" icon="gear" />
+                <Icon size="medium" icon="gear" />
             </Button>
         );
     })
@@ -71,7 +71,7 @@ storiesOf('Button', module)
                             }}
                             compact
                         >
-                            <Icon size="small" icon="gear" />
+                            <Icon size="medium" icon="gear" />
                         </Button>
                     </ButtonGroup>
                 </Spacer>
