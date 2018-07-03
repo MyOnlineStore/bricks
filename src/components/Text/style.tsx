@@ -4,6 +4,10 @@ import { PropsType } from '.';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 
+type TextVariantStyleType = {
+    fontSize: string;
+};
+
 type TextThemeType = {
     default: {
         color: string;
@@ -17,13 +21,23 @@ type TextThemeType = {
     strong: {
         fontWeight: string;
     };
+    small: TextVariantStyleType;
+    base: TextVariantStyleType;
+    large: TextVariantStyleType;
 };
 
-const StyledText = withProps<PropsType>(styled.p)`
+type TextPropsType = {
+    compact?: boolean;
+    descriptive?: boolean;
+    strong?: boolean;
+    variant?: 'small' | 'base' | 'large';
+};
+
+const StyledText = withProps<TextPropsType>(styled.p)`
     color: ${({ descriptive, theme }): string =>
         descriptive ? theme.Text.descriptive.color : theme.Text.default.color};
     font-family: ${({ theme }): string => theme.Text.default.fontFamily};
-    font-size: ${({ theme }): string => theme.Text.default.fontSize};
+    font-size: ${({ variant, theme }): string => variant !== undefined ? theme.Text[variant].fontSize : theme.Text.base.fontSize };
     font-weight: ${({ strong, theme }): string =>
         strong ? theme.Text.strong.fontWeight : theme.Text.default.fontWeight};
     line-height: ${({ compact }): string => (compact ? '1.25' : '1.5')};
@@ -31,4 +45,4 @@ const StyledText = withProps<PropsType>(styled.p)`
 `;
 
 export default StyledText;
-export { TextThemeType };
+export { TextThemeType, TextVariantStyleType };

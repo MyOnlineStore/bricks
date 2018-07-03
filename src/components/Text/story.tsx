@@ -1,4 +1,4 @@
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Text from '.';
@@ -34,6 +34,7 @@ storiesOf('Text', module).add('Default', () => (
         strong={boolean('strong', false)}
         descriptive={boolean('descriptive', false)}
         compact={boolean('compact', false)}
+        variant={select('variant', ['small', 'base', 'large'], 'base')}
     >
         {demoContent}
     </Text>

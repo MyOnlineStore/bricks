@@ -392,6 +392,15 @@ const theme: ThemeType = {
         strong: {
             fontWeight: '700',
         },
+        small: {
+            fontSize: '12px'
+        },
+        base: {
+            fontSize: '14px'
+        },
+        large: {
+            fontSize: '16px'
+        }
     },
     TextField: {
         idle: {
