@@ -9,7 +9,7 @@ export { default as Contrast } from './components/Contrast';
 export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
 export { default as Heading } from './components/Heading';
-export { default as Icon, SmallIcons, LargeIcons } from './components/Icon';
+export { default as Icon, SmallIcons, MediumIcons, LargeIcons } from './components/Icon';
 export { default as Link } from './components/Link';
 export { default as MerchantTheme } from './themes/MerchantTheme';
 export { default as MessageStream } from './components/MessageStream';

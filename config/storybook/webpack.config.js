@@ -8,43 +8,44 @@ module.exports = (baseConfig, env) => {
     return {
         ...config,
         node: {
-            fs: 'empty'
+            fs: 'empty',
         },
-        devtool: "source-map",
+        devtool: 'source-map',
         resolve: {
-            extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
+            extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
         },
         devServer: {
             quiet: true,
-            host: "0.0.0.0",
+            host: '0.0.0.0',
         },
         module: {
             rules: [
                 {
                     test: /\.tsx?$/,
-                    loader: "ts-loader",
+                    loader: 'ts-loader',
                     options: {
-                        configFile: __dirname + "/../typescript/tsconfig.json",
-                    }
+                        configFile: __dirname + '/../typescript/tsconfig.json',
+                    },
                 },
                 {
                     test: /\.svg$/,
-                    loader: 'svg-inline-loader'
+                    loader: 'svg-inline-loader',
+                    options: {
+                        removeTags: true,
+                        removingTags: ['title', 'desc', 'defs', 'style'],
+                    },
                 },
                 {
                     test: /\.css$/,
-                    use: [ 'style-loader', 'css-loader' ]
+                    use: ['style-loader', 'css-loader'],
                 },
                 {
-                    enforce: "pre",
+                    enforce: 'pre',
                     test: /\.js$/,
-                    loader: "source-map-loader"
-                }
-            ]
+                    loader: 'source-map-loader',
+                },
+            ],
         },
-        plugins: [
-            ...config.plugins,
-            new FriendlyErrorsWebpackPlugin()
-        ]
+        plugins: [...config.plugins, new FriendlyErrorsWebpackPlugin()],
     };
 };
