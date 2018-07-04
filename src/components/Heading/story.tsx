@@ -5,13 +5,13 @@ import Heading, { PropsType } from '.';
 
 storiesOf('Heading', module)
     .add('Default', () => <Heading>This is a div element.</Heading>)
-    .add('With subHeading and variation', () => {
-        const subHeading = boolean('SubHeading', false);
+    .add('With SubHeading', () => {
         const hierarchy = select('Hierarchy', [1, 2, 3, 4, 5, 6], 1) as PropsType['hierarchy'];
+        const subHeading = boolean('SubHeading', false);
 
         return (
-            <Heading subHeading={subHeading} hierarchy={hierarchy}>
-                This is an {!subHeading ? 'Heading' : 'SubHeading'} {hierarchy !== undefined ? `h${hierarchy}` : 'div'} element.
+            <Heading hierarchy={hierarchy} subHeading={subHeading}>
+                This is an {!subHeading ? 'Heading' : 'SubHeading'}-{hierarchy !== undefined ? `h${hierarchy}` : 'div'} element.
             </Heading>
         );
     });
