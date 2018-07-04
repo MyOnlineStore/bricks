@@ -257,10 +257,18 @@ const theme: ThemeType = {
         },
     },
     Heading: {
-        color: grey.base,
-        fontFamily: headingFont,
-        fontSize: fontSize.larger2,
-        fontWeight: '400',
+        default: {
+            color: grey.base,
+            fontFamily: headingFont,
+            fontSize: fontSize.larger2,
+            fontWeight: '400',
+        },
+        subHeading: {
+            color: grey.lighter2,
+            fontFamily: bodyFont,
+            fontSize: fontSize.larger1,
+            fontWeight: '400',
+        },
     },
     InlineNotification: {
         common: {
@@ -373,12 +381,6 @@ const theme: ThemeType = {
             background: grey.base,
         },
     },
-    SubHeading: {
-        color: grey.lighter2,
-        fontFamily: bodyFont,
-        fontSize: fontSize.larger1,
-        fontWeight: '400',
-    },
     Text: {
         default: {
             color: grey.base,
@@ -393,14 +395,14 @@ const theme: ThemeType = {
             fontWeight: '700',
         },
         small: {
-            fontSize: '12px'
+            fontSize: '12px',
         },
         base: {
-            fontSize: '14px'
+            fontSize: '14px',
         },
         large: {
-            fontSize: '16px'
-        }
+            fontSize: '16px',
+        },
     },
     TextField: {
         idle: {

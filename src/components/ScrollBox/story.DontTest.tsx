@@ -6,7 +6,6 @@ import styled from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Heading from '../Heading';
 import Spacer from '../Spacer';
-import SubHeading from '../SubHeading';
 import Text from '../Text';
 
 const demoContent = `
@@ -93,7 +92,7 @@ class Demo extends Component<{}, DemoStateType> {
                     </ScrollBox>
                 </StyledDiv>
                 <Spacer offset={trbl(48, 0, 12)}>
-                    <SubHeading>Scroll event</SubHeading>
+                    {/* <SubHeading>Scroll event</SubHeading> */}
                 </Spacer>
                 <Text>
                     scrollTop: {this.state.scrollTop}px<br />

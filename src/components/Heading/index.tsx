@@ -4,10 +4,18 @@ import _T from '../../types/ThemeType';
 import styled, { StyledType } from '../../utility/styled';
 
 type HeadingThemeType = StyledType & {
-    color: string;
-    fontFamily: string;
-    fontSize: string;
-    fontWeight: string;
+    default: {
+        color: string;
+        fontFamily: string;
+        fontSize: string;
+        fontWeight: string;
+    };
+    subHeading: {
+        color: string;
+        fontFamily: string;
+        fontSize: string;
+        fontWeight: string;
+    };
 };
 
 type PropsType = StyledType & {
@@ -26,10 +34,14 @@ const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
 };
 
 const StyledHeading = styled(HeadingElement)`
-    color: ${({ subHeading, theme }): string => !subHeading ? theme.Heading.color : theme.SubHeading.color};
-    font-family: ${({ subHeading, theme }): string => !subHeading ? theme.Heading.fontFamily : theme.SubHeading.fontFamily};
-    font-size: ${({ subHeading, theme }): string => !subHeading ? theme.Heading.fontSize : theme.SubHeading.fontSize};
-    font-weight: ${({ subHeading, theme }): string => !subHeading ? theme.Heading.fontWeight : theme.SubHeading.fontWeight};
+    color: ${({ subHeading, theme }): string =>
+        !subHeading ? theme.Heading.default.color : theme.Heading.subHeading.color};
+    font-family: ${({ subHeading, theme }): string =>
+        !subHeading ? theme.Heading.default.fontFamily : theme.Heading.subHeading.fontFamily};
+    font-size: ${({ subHeading, theme }): string =>
+        !subHeading ? theme.Heading.default.fontSize : theme.Heading.subHeading.fontSize};
+    font-weight: ${({ subHeading, theme }): string =>
+        !subHeading ? theme.Heading.default.fontWeight : theme.Heading.subHeading.fontWeight};
     line-height: 1.5;
     margin: 0;
 `;

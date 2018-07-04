@@ -10,7 +10,6 @@ import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
 import { RadioButtonThemeType } from '../components/RadioButton/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
-import { SubHeadingThemeType } from '../components/SubHeading';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 
@@ -26,7 +25,6 @@ type ThemeType = {
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
     ScrollBox: ScrollBoxThemeType;
-    SubHeading: SubHeadingThemeType;
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     RadioButton: RadioButtonThemeType;

@@ -8,7 +8,18 @@ describe('MerchantTheme', () => {
     it('should render the merchant theme', () => {
         const theme = {
             Heading: {
-                color: 'mockValue',
+                default: {
+                    color: 'mockValue',
+                    fontFamily: 'mockValue',
+                    fontSize: 'mockValue',
+                    fontWeight: 'mockValue',
+                },
+                subHeading: {
+                    color: 'mockValue',
+                    fontFamily: 'mockValue',
+                    fontSize: 'mockValue',
+                    fontWeight: 'mockValue',
+                },
             },
         };
 

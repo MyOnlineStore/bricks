@@ -21,7 +21,6 @@ export { default as RadioButton } from './components/RadioButton';
 export { default as RadioButtonGroup } from './components/RadioButtonGroup';
 export { default as ScrollBox } from './components/ScrollBox';
 export { default as Spacer } from './components/Spacer';
-export { default as SubHeading } from './components/SubHeading';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Text } from './components/Text';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
