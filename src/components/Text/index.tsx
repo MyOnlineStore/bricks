@@ -6,14 +6,11 @@ type PropsType = StyledType & {
     compact?: boolean;
     descriptive?: boolean;
     strong?: boolean;
-    variant?: 'small' | 'base' | 'large'
+    variant?: 'small' | 'base' | 'large';
 };
 
 const Text: StatelessComponent<PropsType> = (props): JSX.Element => (
-    <StyledText variant={props.variant} 
-                descriptive={props.descriptive}
-                strong={props.strong}
-                compact={props.compact}>
+    <StyledText variant={props.variant} descriptive={props.descriptive} strong={props.strong} compact={props.compact}>
         {props.children}
     </StyledText>
 );
