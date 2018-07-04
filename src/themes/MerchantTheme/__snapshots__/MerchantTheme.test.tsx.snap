@@ -5,7 +5,18 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
   theme={
     Object {
       "Heading": Object {
-        "color": "mockValue",
+        "default": Object {
+    +           "color": "mockValue",
+    +           "fontFamily": "mockValue",
+    +           "fontSize": "mockValue",
+    +           "fontWeight": "mockValue",
+    +         },
+    +         "subHeading": Object {
+    +           "color": "mockValue",
+    +           "fontFamily": "mockValue",
+    +           "fontSize": "mockValue",
+    +           "fontWeight": "mockValue",
+    +         },
       },
     }
   }
