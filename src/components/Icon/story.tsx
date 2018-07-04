@@ -15,7 +15,6 @@ const largeIconKeys = Object.keys(LargeIcons).filter(key => LargeIcons[key as an
 /* tslint:enable */
 
 storiesOf('Icon', module)
-<<<<<<< HEAD
     .add('Small icons', () => {
         const iconColor = color('fill', '#000');
 
@@ -70,23 +69,3 @@ storiesOf('Icon', module)
         );
         /* tslint:enable */
     });
-=======
-    .add('Small icon', () => <Icon size="small" icon="checkmark" />)
-    .add('Medium icon', () => <Icon size="medium" icon="heartO" />)
-    .add('Large icon', () => <Icon size="large" icon="mos" />)
-    .add('With overwritten fill', () => <Icon color="BlueViolet" size="large" icon="heart" />)
-    .add('With some text', () => (
-        <div>
-            <Icon size="small" icon="checkmark" />
-            <span> With some text</span>
-            <Spacer offset={trbl(12, 0, 0, 0)}>
-                <Icon size="medium" icon="lightbulb" />
-                <span> With some other text</span>
-                <Spacer offset={trbl(18, 0, 0, 0)}>
-                    <Icon size="large" icon="mos" />
-                    <span> With some other other text</span>
-                </Spacer>
-            </Spacer>
-        </div>
-    ));
->>>>>>> f02804f7dd5f08fa67efc61215009fef655f93af
