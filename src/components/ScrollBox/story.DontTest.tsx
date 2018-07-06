@@ -92,7 +92,7 @@ class Demo extends Component<{}, DemoStateType> {
                     </ScrollBox>
                 </StyledDiv>
                 <Spacer offset={trbl(48, 0, 12)}>
-                    {/* <SubHeading>Scroll event</SubHeading> */}
+                    <Heading>Scroll event</Heading>
                 </Spacer>
                 <Text>
                     scrollTop: {this.state.scrollTop}px<br />

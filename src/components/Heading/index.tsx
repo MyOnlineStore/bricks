@@ -9,17 +9,63 @@ type HeadingThemeType = StyledType & {
         fontFamily: string;
         fontSize: string;
         fontWeight: string;
+        lineHeight: string;
+        textTransform: string;
     };
-    subHeading: {
-        color: string;
-        fontFamily: string;
-        fontSize: string;
-        fontWeight: string;
-    };
+    hierarchy: [
+        {
+            color: string;
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            textTransform: string;
+        },
+        {
+            color: string;
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            textTransform: string;
+        },
+        {
+            color: string;
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            textTransform: string;
+        },
+        {
+            color: string;
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            textTransform: string;
+        },
+        {
+            color: string;
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            textTransform: string;
+        },
+        {
+            color: string;
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            textTransform: string;
+        }
+    ];
+
 };
 
 type PropsType = StyledType & {
-    subHeading?: boolean;
     hierarchy?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
@@ -27,22 +73,25 @@ const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
     const Element = props.hierarchy !== undefined ? `h${props.hierarchy}` : 'div';
 
     return (
-        <Element role="heading" className={props.className} subHeading={props.subHeading}>
+        <Element role="heading" className={props.className}>
             {props.children}
         </Element>
     );
 };
 
 const StyledHeading = styled(HeadingElement)`
-    color: ${({ subHeading, theme }): string =>
-        !subHeading ? theme.Heading.default.color : theme.Heading.subHeading.color};
-    font-family: ${({ subHeading, theme }): string =>
-        !subHeading ? theme.Heading.default.fontFamily : theme.Heading.subHeading.fontFamily};
-    font-size: ${({ subHeading, theme }): string =>
-        !subHeading ? theme.Heading.default.fontSize : theme.Heading.subHeading.fontSize};
-    font-weight: ${({ subHeading, theme }): string =>
-        !subHeading ? theme.Heading.default.fontWeight : theme.Heading.subHeading.fontWeight};
-    line-height: 1.5;
+    color: ${({ hierarchy, theme }): string =>
+        !hierarchy ? theme.Heading.default.color : theme.Heading.hierarchy[hierarchy - 1].color};
+    font-family: ${({ hierarchy, theme }): string =>
+        !hierarchy ? theme.Heading.default.fontFamily : theme.Heading.hierarchy[hierarchy - 1].fontFamily};
+    font-size: ${({ hierarchy, theme }): string =>
+        !hierarchy ? theme.Heading.default.fontSize : theme.Heading.hierarchy[hierarchy - 1].fontSize};
+    font-weight: ${({ hierarchy, theme }): string =>
+        !hierarchy ? theme.Heading.default.fontWeight : theme.Heading.hierarchy[hierarchy - 1].fontWeight};
+    line-height: ${({ hierarchy, theme }): string => 
+        !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[hierarchy - 1].lineHeight};
+    text-transform: ${({ hierarchy, theme }) => 
+        !hierarchy ? theme.Heading.default.textTransform : theme.Heading.hierarchy[hierarchy - 1].textTransform}
     margin: 0;
 `;
 

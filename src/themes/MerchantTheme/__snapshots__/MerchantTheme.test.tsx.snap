@@ -6,19 +6,69 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
     Object {
       "Heading": Object {
         "default": Object {
-              "color": "mockValue",
-               "fontFamily": "mockValue",
-              "fontSize": "mockValue",
-              "fontWeight": "mockValue",
-             },
-      "subHeading": Object {
-              "color": "mockValue",
-              "fontFamily": "mockValue",
-              "fontSize": "mockValue",
-              "fontWeight": "mockValue",
-             },
+          "color": "mockValue",
+          "fontFamily": "mockValue",
+          "fontSize": "mockValue",
+          "fontWeight": "mockValue",
+          "lineHeight": "mockValue",
+          "textTransform": "mockValue",
+        },
+        "hierarchy": Array [
+          Object {
+            "color": "mockValue",
+            "fontFamily": "mockValue",
+            "fontSize": "mockValue",
+            "fontWeight": "mockValue",
+            "lineHeight": "mockValue",
+            "textTransform": "mockValue",
+          },
+          Object {
+            "color": "mockValue",
+            "fontFamily": "mockValue",
+            "fontSize": "mockValue",
+            "fontWeight": "mockValue",
+            "lineHeight": "mockValue",
+            "textTransform": "mockValue",
+          },
+          Object {
+            "color": "mockValue",
+            "fontFamily": "mockValue",
+            "fontSize": "mockValue",
+            "fontWeight": "mockValue",
+            "lineHeight": "mockValue",
+            "textTransform": "mockValue",
+          },
+          Object {
+            "color": "mockValue",
+            "fontFamily": "mockValue",
+            "fontSize": "mockValue",
+            "fontWeight": "mockValue",
+            "lineHeight": "mockValue",
+            "textTransform": "mockValue",
+          },
+          Object {
+            "color": "mockValue",
+            "fontFamily": "mockValue",
+            "fontSize": "mockValue",
+            "fontWeight": "mockValue",
+            "lineHeight": "mockValue",
+            "textTransform": "mockValue",
+          },
+          Object {
+            "color": "mockValue",
+            "fontFamily": "mockValue",
+            "fontSize": "mockValue",
+            "fontWeight": "mockValue",
+            "lineHeight": "mockValue",
+            "textTransform": "mockValue",
+          },
+        ],
       },
     }
   }
 />
 `;
+
+
+
+
