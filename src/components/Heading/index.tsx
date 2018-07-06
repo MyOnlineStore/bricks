@@ -62,7 +62,6 @@ type HeadingThemeType = StyledType & {
             textTransform: string;
         }
     ];
-
 };
 
 type PropsType = StyledType & {
@@ -88,9 +87,9 @@ const StyledHeading = styled(HeadingElement)`
         !hierarchy ? theme.Heading.default.fontSize : theme.Heading.hierarchy[hierarchy - 1].fontSize};
     font-weight: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.fontWeight : theme.Heading.hierarchy[hierarchy - 1].fontWeight};
-    line-height: ${({ hierarchy, theme }): string => 
+    line-height: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[hierarchy - 1].lineHeight};
-    text-transform: ${({ hierarchy, theme }) => 
+    text-transform: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.textTransform : theme.Heading.hierarchy[hierarchy - 1].textTransform}
     margin: 0;
 `;
