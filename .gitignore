@@ -2,6 +2,7 @@
 .idea
 .vscode
 /.stfolder
+/.vs
 /.phpstorm_helpers
 /node_modules
 /reports

@@ -5,7 +5,6 @@ import { StyledType } from '../../utility/styled';
 import StyledScrollBox, { StyledBottom, StyledTop } from './style';
 
 type PropsType = StyledType & {
-    height?: number;
     autoHideScrollBar?: boolean;
     showInsetShadow?: boolean;
     onScroll?(eventData: {

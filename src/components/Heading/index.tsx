@@ -34,7 +34,7 @@ type HeadingThemeType = StyledType & {
 
 type PropsType = StyledType & {
     hierarchy?: 1 | 2 | 3 | 4 | 5 | 6;
-    element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p' ;
+    element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
 };
 
 const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
@@ -48,7 +48,6 @@ const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
 };
 
 const StyledHeading = styled(HeadingElement)`
-<<<<<<< HEAD
     color: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.color : theme.Heading.hierarchy[`hierarchy${hierarchy}`].color};
     font-family: ${({ hierarchy, theme }): string =>
@@ -60,14 +59,9 @@ const StyledHeading = styled(HeadingElement)`
     line-height: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].lineHeight};
     text-transform: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.textTransform : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
-=======
-    color: ${({ theme }): string => theme.Heading.color};
-    font-family: ${({ theme }): string => theme.Heading.fontFamily};
-    font-size: ${({ theme }): string => theme.Heading.fontSize};
-    font-weight: ${({ theme }): string => theme.Heading.fontWeight};
-    line-height: 1.2;
->>>>>>> d6e137e... Work in progress
+        !hierarchy
+            ? theme.Heading.default.textTransform
+            : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
     margin: 0;
 `;
 

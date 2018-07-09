@@ -6,6 +6,8 @@ import BreakpointProvider from '../BreakpointProvider';
 import { PropsType } from '../BreakpointProvider/';
 import StyledModal, { StyledModalWrapper } from './style';
 
+jest.mock('../ScrollBox', () => jest.fn().mockImplementation((props: PropsType): string => 'div'));
+
 jest.mock('../BreakpointProvider', () =>
     jest.fn().mockImplementation((props: PropsType): JSX.Element => {
         return props.children('large');
@@ -13,12 +15,6 @@ jest.mock('../BreakpointProvider', () =>
 );
 
 describe('Modal', () => {
-    it('should render with a medium breakpoint', () => {
-        const component = mountWithTheme(<Modal show={true} title="Foo" />);
-
-        expect(component.find(StyledModal).length).toBe(1);
-    });
-
     it('should render with a small breakpoint', () => {
         (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
             (props: PropsType): JSX.Element => {
@@ -29,6 +25,18 @@ describe('Modal', () => {
         const component = mountWithTheme(
             <Modal show={true} renderFixed={(): JSX.Element => <div>bar</div>} title="Foo" />,
         );
+
+        expect(component.find(StyledModal).length).toBe(1);
+    });
+
+    it('should render with a medium breakpoint', () => {
+        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
+            (props: PropsType): JSX.Element => {
+                return props.children('medium');
+            },
+        );
+
+        const component = mountWithTheme(<Modal show={true} title="Foo" />);
 
         expect(component.find(StyledModal).length).toBe(1);
     });

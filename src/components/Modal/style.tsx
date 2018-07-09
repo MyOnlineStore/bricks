@@ -1,5 +1,5 @@
 import _R from 'react';
-import { StyledComponentClass } from 'styled-components';
+import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 
@@ -32,13 +32,13 @@ const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
 const StyledModal = styled.div`
     margin: auto;
     max-width: 600px;
-    width: 95%;
+    width: calc(100% - 24px);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     min-height: 300px;
     min-width: 150px;
-    height: 99%;
+    height: calc(100% - 24px);
     overflow: hidden;
     max-height: calc(300px + (600 - 300) * (100vh - 300px) / (900 - 300));
     background: ${({ theme }): string => theme.Modal.backgroundColor};

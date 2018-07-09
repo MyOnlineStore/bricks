@@ -32,7 +32,7 @@ type ButtonThemeType = {
     warning: ButtonStylesType;
     secondary: ButtonStylesType;
     flat: ButtonStylesType;
-    naked: ButtonStylesType;
+    plain: ButtonStylesType;
     disabled: {
         color: string;
         backgroundColor: string;

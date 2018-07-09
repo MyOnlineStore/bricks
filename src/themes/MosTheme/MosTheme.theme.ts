@@ -214,7 +214,7 @@ const theme: ThemeType = {
                 textDecoration: 'underline',
             },
         },
-        naked: {
+        plain: {
             idle: {
                 backgroundColor: 'transparent',
                 borderColor: 'transparent',
