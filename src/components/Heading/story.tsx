@@ -1,7 +1,7 @@
+import { select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Heading, { PropsType } from '.';
-import { select, text } from '@storybook/addon-knobs/react';
 
 storiesOf('Heading', module)
     .add('Default', () => {
