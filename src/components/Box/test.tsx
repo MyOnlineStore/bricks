@@ -82,4 +82,10 @@ describe('Box', () => {
 
         expect(toJson(component.dive())).toMatchSnapshot();
     });
+
+    it('should display as inline-flex when inline is set to true', () => {
+        const component = shallow(<Box inline />);
+
+        expect(toJson(component.dive())).toMatchSnapshot();
+    });
 });
