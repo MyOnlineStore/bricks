@@ -1,15 +1,14 @@
-import React, { Component, createRef, RefObject } from 'react';
+import React, { Component } from 'react';
 import ScrollBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
 import { StyledType } from '../../utility/styled';
-import StyledScrollBox, { StyledBottom } from './style';
+import StyledScrollBox, { StyledBottom, StyledTop } from './style';
 
 type PropsType = StyledType & {
     height?: number;
-    showInsetShadow?: boolean;
     autoHideScrollBar?: boolean;
+    showInsetShadow?: boolean;
     onScroll?(eventData: {
-        showInsetShadow?: boolean;
         scrollTop: number;
         scrollBottom: number;
         scrollDirection: StateType['scrollDirection'];
@@ -19,6 +18,7 @@ type PropsType = StyledType & {
 type StateType = {
     scrollPosition: number;
     scrollDirection: 'up' | 'down' | 'idle';
+    showInsetShadow: boolean;
 };
 
 class ScrollBox extends Component<PropsType, StateType> {
@@ -31,6 +31,7 @@ class ScrollBox extends Component<PropsType, StateType> {
         this.state = {
             scrollPosition: 0,
             scrollDirection: 'idle',
+            showInsetShadow: false,
         };
     }
 
@@ -53,9 +54,17 @@ class ScrollBox extends Component<PropsType, StateType> {
         }
 
         this.setState({
+            showInsetShadow: this.hasOverflow(),
             scrollPosition: element.scrollTop,
             scrollDirection: direction,
         });
+    };
+
+    private hasOverflow = (): boolean => {
+        const element = this.scrollbar.getScrollElement();
+        const contentElement = this.scrollbar.getContentElement();
+
+        return (element as HTMLDivElement).offsetHeight < (contentElement as HTMLDivElement).offsetHeight;
     };
 
     public componentDidMount(): void {
@@ -64,6 +73,10 @@ class ScrollBox extends Component<PropsType, StateType> {
         });
 
         this.scrollbar.getScrollElement().addEventListener('scroll', this.handleScroll);
+
+        this.setState({
+            showInsetShadow: this.hasOverflow(),
+        });
     }
 
     public componentWillUnmount(): void {
@@ -77,8 +90,13 @@ class ScrollBox extends Component<PropsType, StateType> {
                     this.contentRef = ref;
                 }}
             >
+                <StyledTop show={this.state.showInsetShadow && this.state.scrollDirection === 'down' ? true : false} />
+
                 {this.props.children}
-                {this.props.showInsetShadow === true && this.state.scrollDirection === 'down' && <StyledBottom />}
+
+                <StyledBottom
+                    show={this.state.showInsetShadow && this.state.scrollDirection !== 'down' ? true : false}
+                />
             </StyledScrollBox>
         );
     }

@@ -1,9 +1,10 @@
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import ScrollBar from 'simplebar';
 import ScrollBox from '.';
 import MosTheme from '../../themes/MosTheme';
+import { mountWithTheme } from '../../utility/styled';
+import { StyledBottom, StyledTop } from './style';
 
 let scrollBarOptions = {};
 
@@ -33,13 +34,50 @@ beforeEach(() => {
 describe('ScrollBox', () => {
     it('should show a top shadow when scrolling down', () => {
         /* tslint:disable */
-        (ScrollBar as any).mockImplementationOnce(
-            (element: HTMLElement, options: Object): Object => {
+        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
+            /* tslint:enable */
+            scrollBarOptions = options;
+
+            return {
+                getScrollElement: jest.fn().mockReturnValue({
+                    scrollTop: 0,
+                    offsetHeight: 300,
+                    addEventListener: jest.fn().mockImplementation((event, callback) => {
+                        callback();
+                    }),
+                }),
+                getContentElement: jest.fn().mockReturnValue({
+                    offsetHeight: 400,
+                }),
+            };
+        });
+
+        const component = mount(
+            <MosTheme>
+                <ScrollBox showInsetShadow />
+            </MosTheme>,
+        );
+
+        component.simulate('scroll');
+
+        const shadow = component.find(StyledTop);
+
+        /* tslint:disable */
+        (expect(shadow) as any).toHaveStyleRule('opacity', '1');
+        /* tslint:enable */
+    });
+
+    it('should show a bottom shadow when scrolling up', () => {
+        /* tslint:disable */
+        (ScrollBar as any)
+            .mockImplementationOnce((element: HTMLElement, options: Object): Object => {
                 /* tslint:enable */
                 scrollBarOptions = options;
 
                 return {
                     getScrollElement: jest.fn().mockReturnValue({
+                        scrollTop: 0,
+                        offsetHeight: 300,
                         addEventListener: jest.fn().mockImplementation((event, callback) => {
                             callback();
                         }),
@@ -48,54 +86,41 @@ describe('ScrollBox', () => {
                         offsetHeight: 400,
                     }),
                 };
-            },
-        );
+            })
+            .mockImplementationOnce((element: HTMLElement, options: Object): Object => {
+                /* tslint:enable */
+                scrollBarOptions = options;
 
-        const component = mount(
-            <MosTheme>
-                <ScrollBox />
-            </MosTheme>,
-        );
+                return {
+                    getScrollElement: jest.fn().mockReturnValue({
+                        scrollTop: -100,
+                        offsetHeight: 300,
+                        addEventListener: jest.fn().mockImplementation((event, callback) => {
+                            callback();
+                        }),
+                    }),
+                    getContentElement: jest.fn().mockReturnValue({
+                        offsetHeight: 400,
+                    }),
+                };
+            });
 
-        const shadow = component
-            .childAt(0)
-            .childAt(0)
-            .childAt(0)
-            .childAt(0)
-            .childAt(0);
+        const component = mountWithTheme(<ScrollBox showInsetShadow />);
 
-        /* tslint:disable */
-        expect(toJson(shadow)).toMatchSnapshot();
-        (expect(shadow) as any).toHaveStyleRule('position', 'absolute');
-        (expect(shadow) as any).toHaveStyleRule('top', '0');
-        /* tslint:enable */
-    });
+        component.simulate('scroll');
+        component.update();
 
-    it('should show a bottom shadow when scrolling up', () => {
-        const component = mount(
-            <MosTheme>
-                <ScrollBox />
-            </MosTheme>,
-        );
-
-        const shadow = component
-            .childAt(0)
-            .childAt(0)
-            .childAt(0)
-            .childAt(0)
-            .childAt(1);
+        const shadow = component.find(StyledBottom);
 
         /* tslint:disable */
-        expect(toJson(shadow)).toMatchSnapshot();
-        (expect(shadow) as any).toHaveStyleRule('position', 'absolute');
-        (expect(shadow) as any).toHaveStyleRule('bottom', '0');
+        (expect(shadow) as any).toHaveStyleRule('opacity', '1');
         /* tslint:enable */
     });
 
     it('should hide the scrollbar when autoHideScrollBar is set', () => {
         mount(
             <MosTheme>
-                <ScrollBox autoHideScrollBar height={900} />
+                <ScrollBox autoHideScrollBar />
             </MosTheme>,
         );
 
@@ -107,7 +132,7 @@ describe('ScrollBox', () => {
 
         mount(
             <MosTheme>
-                <ScrollBox autoHideScrollBar height={900} onScroll={onScrollMock} />
+                <ScrollBox autoHideScrollBar onScroll={onScrollMock} />
             </MosTheme>,
         );
 
@@ -122,26 +147,24 @@ describe('ScrollBox', () => {
         const removeListenerMock = jest.fn();
 
         /* tslint:disable */
-        (ScrollBar as any).mockImplementationOnce(
-            (element: HTMLElement, options: Object): Object => {
-                /* tslint:enable */
-                return {
-                    getScrollElement: jest.fn().mockReturnValue({
-                        addEventListener: jest.fn().mockImplementation((event, callback) => {
-                            callback();
-                        }),
-                        removeEventListener: removeListenerMock,
+        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
+            /* tslint:enable */
+            return {
+                getScrollElement: jest.fn().mockReturnValue({
+                    addEventListener: jest.fn().mockImplementation((event, callback) => {
+                        callback();
                     }),
-                    getContentElement: jest.fn().mockReturnValue({
-                        offsetHeight: 400,
-                    }),
-                };
-            },
-        );
+                    removeEventListener: removeListenerMock,
+                }),
+                getContentElement: jest.fn().mockReturnValue({
+                    offsetHeight: 400,
+                }),
+            };
+        });
 
         const component = mount(
             <MosTheme>
-                <ScrollBox autoHideScrollBar height={900} />
+                <ScrollBox autoHideScrollBar />
             </MosTheme>,
         );
 

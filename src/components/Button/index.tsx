@@ -5,7 +5,7 @@ type PropsType = {
     className?: string;
     compact?: boolean;
     title: string;
-    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'flat';
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'flat' | 'naked';
     target?: HTMLAnchorElement['target'];
     href?: string;
     disabled?: boolean;

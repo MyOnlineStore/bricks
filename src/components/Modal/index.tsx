@@ -34,23 +34,24 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
                         <StyledModal>
                             <Box
                                 shrink={0}
-                                margin={breakpoint === 'small' ? trbl(24, 12) : trbl(24, 24, 12)}
+                                margin={breakpoint === 'small' ? trbl(24, 12) : trbl(36, 36, 24)}
+                                alignItems="flex-start"
                                 alignContent="center"
                                 justifyContent="space-between"
                             >
                                 <Heading hierarchy={2}>{props.title}</Heading>
-                                <Box alignContent="center" alignItems="flex-end" grow={0} onClick={closeAction}>
-                                    <Spacer offsetType="inner" offset={trbl(0)}>
-                                        <Button variant="flat" title="close" compact>
+                                <Spacer offsetType="outer" offset={trbl(-6, 0)}>
+                                    <Box alignContent="center" alignItems="center" grow={0} onClick={closeAction}>
+                                        <Button variant="naked" title="close" compact>
                                             <Icon size="small" icon="close" />
                                         </Button>
-                                    </Spacer>
-                                </Box>
+                                    </Box>
+                                </Spacer>
                             </Box>
-                            <ScrollBox showInsetShadow>
+                            <ScrollBox>
                                 <Spacer
                                     offsetType="inner"
-                                    offset={breakpoint === 'small' ? trbl(0, 12, 12, 12) : trbl(36, 24)}
+                                    offset={breakpoint === 'small' ? trbl(0, 12, 12, 12) : trbl(24, 36, 12, 36)}
                                 >
                                     {props.children}
                                 </Spacer>
@@ -58,7 +59,7 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
                             {props.renderFixed && (
                                 <Box direction="column" alignItems="stretch" shrink={0}>
                                     <Contrast>
-                                        <Spacer offsetType="inner" offset={trbl(24)}>
+                                        <Spacer offsetType="inner" offset={trbl(24, 36)}>
                                             {props.renderFixed()}
                                         </Spacer>
                                     </Contrast>
