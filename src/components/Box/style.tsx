@@ -12,20 +12,20 @@ type BoxPropsType = PropsType & {
 };
 
 const StyledBox = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
-    display: flex;
-    height: ${({ elementHeight }): string => (elementHeight !== undefined ? `${elementHeight}` : 'auto')};
-    flex-wrap: ${({ flexWrap }): string => (flexWrap !== undefined && flexWrap ? 'wrap' : 'no-wrap')};
-    flex-direction: ${({ flexDirection }): string => (flexDirection !== undefined ? flexDirection : 'row')};
-    justify-content: ${({ justifyContent }): string => (justifyContent !== undefined ? justifyContent : 'flex-start')};
-    align-items: ${({ alignItems }): string => (alignItems !== undefined ? alignItems : 'stretch')};
-    align-content: ${({ alignContent }): string => (alignContent !== undefined ? alignContent : 'stretch')};
+    display: ${({ inline }): string => (inline ? 'inline-flex' : 'flex')};
+    height: ${({ elementHeight }): string => (elementHeight !== undefined ? `${elementHeight}` : '')};
+    flex-wrap: ${({ flexWrap }): string => (flexWrap !== undefined && flexWrap ? 'wrap' : '')};
+    flex-direction: ${({ flexDirection }): string => (flexDirection !== undefined ? flexDirection : '')};
+    justify-content: ${({ justifyContent }): string => (justifyContent !== undefined ? justifyContent : '')};
+    align-items: ${({ alignItems }): string => (alignItems !== undefined ? alignItems : '')};
+    align-content: ${({ alignContent }): string => (alignContent !== undefined ? alignContent : '')};
     margin: ${({ margin }): string =>
-        margin !== undefined ? `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}` : '0'};
+        margin !== undefined ? `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}` : ''};
     flex-grow: ${({ grow }): number => (grow ? grow : 0)};
     flex-shrink: ${({ shrink }): number => (shrink ? shrink : 1)};
-    flex-basis: ${({ basis }): string => (basis ? basis : 'auto')};
+    flex-basis: ${({ basis }): string => (basis ? basis : '')};
     order: ${({ flexOrder }): number => (flexOrder ? flexOrder : 0)};
-    align-self: ${({ alignSelf }): string => (alignSelf ? alignSelf : 'auto')};
+    align-self: ${({ alignSelf }): string => (alignSelf ? alignSelf : '')};
 `;
 
 export default StyledBox;

@@ -14,6 +14,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch';
     alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+    inline?: boolean;
     height?: string;
     margin?: TrblType;
     wrap?: boolean;
