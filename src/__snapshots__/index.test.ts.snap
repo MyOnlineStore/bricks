@@ -55,15 +55,9 @@ exports[`Storyshots Box Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c2 {
@@ -71,24 +65,6 @@ exports[`Storyshots Box Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 0px 0px 0px 0px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -286,7 +262,6 @@ exports[`Storyshots Button On a contrast area 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -301,9 +276,6 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: -6px -6px -6px -6px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -312,15 +284,9 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c3 {
@@ -328,24 +294,9 @@ exports[`Storyshots Button On a contrast area 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 6px 6px 6px 6px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -354,9 +305,6 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -901,7 +849,6 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -916,9 +863,6 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: -6px -6px -6px -6px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -927,15 +871,9 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c2 {
@@ -943,24 +881,9 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 6px 6px 6px 6px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -969,9 +892,6 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -1721,24 +1641,9 @@ exports[`Storyshots Icon Large icons 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 24px 24px 24px 24px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -1747,15 +1652,9 @@ exports[`Storyshots Icon Large icons 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 <div
@@ -1769,24 +1668,9 @@ exports[`Storyshots Icon Small icons 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 12px 12px 12px 12px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -1795,15 +1679,9 @@ exports[`Storyshots Icon Small icons 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 <div
@@ -1975,17 +1853,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1993,7 +1863,6 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  margin: 0;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -2001,15 +1870,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c4 {
@@ -2017,24 +1880,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 0px 24px 0px 0px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -2049,9 +1897,6 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c10 {
@@ -2059,10 +1904,6 @@ exports[`Storyshots MessageStream Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2074,9 +1915,6 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 6px 0px 6px 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -2091,9 +1929,6 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c2 {
@@ -3145,12 +2980,6 @@ exports[`Storyshots Popover Default 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 90vh;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -3159,10 +2988,6 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  margin: 0;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -3170,15 +2995,9 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c1 {
@@ -3420,24 +3239,9 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: 6px 6px 6px 6px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -3446,9 +3250,6 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -3462,7 +3263,6 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -3477,9 +3277,6 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
   margin: -6px -6px -6px -6px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
@@ -3488,15 +3285,9 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c4 {
@@ -4040,25 +3831,13 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  -webkit-flex-wrap: no-wrap;
-  -ms-flex-wrap: no-wrap;
-  flex-wrap: no-wrap;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  margin: 0;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -4066,15 +3845,9 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
 }
 
 .c3 {
