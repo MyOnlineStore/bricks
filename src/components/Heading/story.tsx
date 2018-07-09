@@ -1,16 +1,16 @@
-import { select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Heading, { PropsType } from '.';
+import { select, text } from '@storybook/addon-knobs/react';
 
 storiesOf('Heading', module)
-    .add('Default', () => <Heading>This is a div element.</Heading>)
-    .add('With Hierarchy', () => {
-        const hierarchy = select('Hierarchy', [1, 2, 3, 4, 5, 6], 1) as PropsType['hierarchy'];
+    .add('Default', () => {
+        const hierarchy = select('Hierarchy', [1, 2, 3, 4, 5, 6] , 1) as PropsType['hierarchy'];
+        const element = select('Element', ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'] , 'h1') as PropsType['element'];
 
         return (
-            <Heading hierarchy={hierarchy}>
-                This is an {hierarchy !== undefined ? `h${hierarchy}` : 'div'} element.
+            <Heading hierarchy={hierarchy} element={element}>
+                This is an {element !== undefined ? `${element}` : 'div'} element, with {hierarchy !== undefined ? `h${hierarchy}` : 'h1'} styling.
             </Heading>
         );
     });

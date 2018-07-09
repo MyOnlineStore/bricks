@@ -13,8 +13,8 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
           "lineHeight": "mockValue",
           "textTransform": "mockValue",
         },
-        "hierarchy": Array [
-          Object {
+        "hierarchy": Object {
+          "hierarchy1": Object {
             "color": "mockValue",
             "fontFamily": "mockValue",
             "fontSize": "mockValue",
@@ -22,7 +22,7 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
             "lineHeight": "mockValue",
             "textTransform": "mockValue",
           },
-          Object {
+          "hierarchy2": Object {
             "color": "mockValue",
             "fontFamily": "mockValue",
             "fontSize": "mockValue",
@@ -30,7 +30,7 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
             "lineHeight": "mockValue",
             "textTransform": "mockValue",
           },
-          Object {
+          "hierarchy3": Object {
             "color": "mockValue",
             "fontFamily": "mockValue",
             "fontSize": "mockValue",
@@ -38,7 +38,7 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
             "lineHeight": "mockValue",
             "textTransform": "mockValue",
           },
-          Object {
+          "hierarchy4": Object {
             "color": "mockValue",
             "fontFamily": "mockValue",
             "fontSize": "mockValue",
@@ -46,7 +46,7 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
             "lineHeight": "mockValue",
             "textTransform": "mockValue",
           },
-          Object {
+          "hierarchy5": Object {
             "color": "mockValue",
             "fontFamily": "mockValue",
             "fontSize": "mockValue",
@@ -54,7 +54,7 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
             "lineHeight": "mockValue",
             "textTransform": "mockValue",
           },
-          Object {
+          "hierarchy6": Object {
             "color": "mockValue",
             "fontFamily": "mockValue",
             "fontSize": "mockValue",
@@ -62,13 +62,9 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
             "lineHeight": "mockValue",
             "textTransform": "mockValue",
           },
-        ],
+        },
       },
     }
   }
 />
 `;
-
-
-
-

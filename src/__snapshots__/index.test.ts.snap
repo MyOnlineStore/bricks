@@ -1601,25 +1601,6 @@ exports[`Storyshots Heading Default 1`] = `
 .c0 {
   color: #333740;
   font-family: Melbourne,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-transform: none;
-  margin: 0;
-}
-
-<div
-  className="c0"
-  role="heading"
->
-  This is a div element.
-</div>
-`;
-
-exports[`Storyshots Heading With Hierarchy 1`] = `
-.c0 {
-  color: #333740;
-  font-family: Melbourne,sans-serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 1.25;
@@ -1633,7 +1614,9 @@ exports[`Storyshots Heading With Hierarchy 1`] = `
 >
   This is an 
   h1
-   element.
+   element, with 
+  h1
+   styling.
 </h1>
 `;
 

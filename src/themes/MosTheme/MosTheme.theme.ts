@@ -265,8 +265,8 @@ const theme: ThemeType = {
             lineHeight: '1.5',
             textTransform: 'none',
         },
-        hierarchy: [
-            {
+        hierarchy: {
+            hierarchy1: {
                 color: grey.base,
                 fontFamily: headingFont,
                 fontSize: fontSize.larger3,
@@ -274,7 +274,7 @@ const theme: ThemeType = {
                 lineHeight: '1.25',
                 textTransform: 'none',
             },
-            {
+            hierarchy2: {
                 color: grey.base,
                 fontFamily: headingFont,
                 fontSize: fontSize.larger2,
@@ -282,7 +282,7 @@ const theme: ThemeType = {
                 lineHeight: '1.25',
                 textTransform: 'none',
             },
-            {
+            hierarchy3: {
                 color: grey.base,
                 fontFamily: headingFont,
                 fontSize: fontSize.larger1,
@@ -290,7 +290,7 @@ const theme: ThemeType = {
                 lineHeight: '1.25',
                 textTransform: 'none',
             },
-            {
+            hierarchy4: {
                 color: grey.base,
                 fontFamily: bodyFont,
                 fontSize: '20px',
@@ -298,7 +298,7 @@ const theme: ThemeType = {
                 lineHeight: '1.25',
                 textTransform: 'none',
             },
-            {
+            hierarchy5: {
                 color: grey.base,
                 fontFamily: bodyFont,
                 fontSize: '18px',
@@ -306,7 +306,7 @@ const theme: ThemeType = {
                 lineHeight: '1.25',
                 textTransform: 'none',
             },
-            {
+            hierarchy6: {
                 color: grey.base,
                 fontFamily: bodyFont,
                 fontSize: fontSize.base,
@@ -314,7 +314,7 @@ const theme: ThemeType = {
                 lineHeight: '1.25',
                 textTransform: 'uppercase',
             },
-        ]
+        }
     },
     InlineNotification: {
         common: {
