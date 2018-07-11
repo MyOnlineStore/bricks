@@ -14,4 +14,13 @@ describe('Icon', () => {
         });
         /* tslint:enable */
     });
+
+    it('should have the correct size', () => {
+        const icon = shallowWithTheme(<Icon size="small" icon="checkmark" />);
+
+        /* tslint:disable */
+        (expect(icon.find(StyledIcon)) as any).toHaveStyleRule('height', '12px');
+        (expect(icon.find(StyledIcon)) as any).toHaveStyleRule('width', '12px');
+        /* tslint:enable */
+    });
 });
