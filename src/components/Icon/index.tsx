@@ -25,7 +25,7 @@ type LargePropsType = BasePropsType & {
 type PropsType = SmallPropsType | MediumPropsType | LargePropsType;
 
 const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const icon = ((props: PropsType) => {
+    const icon = ((props: PropsType): SmallIcons | MediumIcons | LargeIcons => {
         switch (props.size) {
             case 'large':
                 return LargeIcons[props.icon];
@@ -36,6 +36,7 @@ const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
         }
     })(props);
 
+    /* tslint:disable */
     return (
         <StyledIcon
             aria-hidden
