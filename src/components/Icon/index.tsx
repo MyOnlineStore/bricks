@@ -25,16 +25,16 @@ type LargePropsType = BasePropsType & {
 type PropsType = SmallPropsType | MediumPropsType | LargePropsType;
 
 const Icon: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const icon = ((size: string) => {
-        switch (size) {
+    const icon = ((props: PropsType) => {
+        switch (props.size) {
             case 'large':
-                return LargeIcons[props.icon as any];
+                return LargeIcons[props.icon];
             case 'medium':
-                return MediumIcons[props.icon as any];
+                return MediumIcons[props.icon];
             default:
-                return SmallIcons[props.icon as any];
+                return SmallIcons[props.icon];
         }
-    })(props.size);
+    })(props);
 
     return (
         <StyledIcon
