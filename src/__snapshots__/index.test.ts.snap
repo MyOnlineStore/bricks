@@ -2506,7 +2506,13 @@ exports[`Storyshots MessageStream Default 1`] = `
             <p
               className="c6"
             >
-              Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.",
+                  }
+                }
+              />
             </p>
             <p
               className="c7"
@@ -2543,8 +2549,14 @@ exports[`Storyshots MessageStream Default 1`] = `
             <p
               className="c6"
             >
-              Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
-                 aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis.
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
+                 aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis.",
+                  }
+                }
+              />
             </p>
             <p
               className="c7"
@@ -2581,7 +2593,13 @@ exports[`Storyshots MessageStream Default 1`] = `
             <p
               className="c6"
             >
-              Curabitur blandit tempus porttitor.
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Curabitur blandit tempus porttitor.",
+                  }
+                }
+              />
             </p>
             <p
               className="c7"
@@ -2631,8 +2649,14 @@ exports[`Storyshots MessageStream Default 1`] = `
             <p
               className="c6"
             >
-              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                 amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                 amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
+                  }
+                }
+              />
             </p>
             <p
               className="c7"
@@ -2684,7 +2708,13 @@ exports[`Storyshots MessageStream Default 1`] = `
             <p
               className="c6"
             >
-              Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.",
+                  }
+                }
+              />
             </p>
             <p
               className="c7"
@@ -2736,7 +2766,13 @@ exports[`Storyshots MessageStream Default 1`] = `
             <p
               className="c6"
             >
-              Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.",
+                  }
+                }
+              />
             </p>
             <p
               className="c7"

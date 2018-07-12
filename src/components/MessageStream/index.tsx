@@ -47,7 +47,9 @@ const Message: StatelessComponent<MessagePropsType> = (props): JSX.Element => {
                     <Box wrap alignItems="center" alignContent="flex-start">
                         <Box direction="column" grow={1} basis={'250px'} margin={trbl(0, 24, 0, 0)}>
                             <Text strong>{props.title}</Text>
-                            <Text>{props.message}</Text>
+                            <Text>
+                                <span dangerouslySetInnerHTML={{ __html: props.message }} />
+                            </Text>
                             <Text descriptive>{props.date}</Text>
                         </Box>
                         {props.action !== undefined &&
