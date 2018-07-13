@@ -571,6 +571,26 @@ const theme: ThemeType = {
             background: grey.base,
         },
     },
+    Table: {
+        backgroundColor: silver.darker4,
+    },
+    TableCell: {
+        default: {
+            backgroundColor: silver.lighter1,
+            borderColor: silver.darker4,
+        },
+        header: {
+            backgroundColor: silver.darker1,
+        },
+    },
+    TableRow: {
+        default: {
+            backgroundColor: silver.lighter1,
+        },
+        hover: {
+            backgroundColor: silver.base,
+        },
+    },
     Text: {
         default: {
             color: grey.base,

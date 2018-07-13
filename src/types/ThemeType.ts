@@ -12,6 +12,9 @@ import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
 import { RadioButtonThemeType } from '../components/RadioButton/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
+import { TableThemeType } from '../components/Table/style';
+import { TableCellThemeType } from '../components/TableCell/style';
+import { TableRowThemeType } from '../components/TableRow/style';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 import { ToggleThemeType } from '../components/Toggle/style';
@@ -31,7 +34,13 @@ type ThemeType = {
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
     ScrollBox: ScrollBoxThemeType;
+<<<<<<< HEAD
     Select: SelectThemeType;
+=======
+    Table: TableThemeType;
+    TableCell: TableCellThemeType;
+    TableRow: TableRowThemeType;
+>>>>>>> 2fb90bf... first working prototype
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     RadioButton: RadioButtonThemeType;

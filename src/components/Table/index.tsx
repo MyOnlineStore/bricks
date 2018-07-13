@@ -1,29 +1,26 @@
-import React, { Component } from 'react';
-import Box from '../Box';
+import React, { SFC } from 'react';
+import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 
-class Table extends Component {
-    public onDragStart = (): void => {
-        this.setState({
-            isDragging: true,
-        });
-    };
+type PropsType = {
+    dragEndHandler(result: DropResult): void;
+};
 
-    public onDragEnd = (): void => {
-        this.setState({
-            isDragging: false,
-        });
-    };
+const Table: SFC<PropsType> = (props): JSX.Element => {
+    const dragEndHandler = (result: DropResult): void => props.dragEndHandler(result);
 
-    public render(): JSX.Element {
-        return (
-            <Box>
-                <StyledTable>
-                    <tbody>{this.props.children}</tbody>
-                </StyledTable>
-            </Box>
-        );
-    }
-}
+    return (
+        <DragDropContext onDragEnd={dragEndHandler}>
+            <Droppable droppableId="droppable">
+                {(provided): JSX.Element => (
+                    <StyledTable innerRef={provided.innerRef}>
+                        <tbody>{props.children}</tbody>
+                    </StyledTable>
+                )}
+            </Droppable>
+        </DragDropContext>
+    );
+};
 
 export default Table;
+export { PropsType, DragDropContext };

@@ -5,20 +5,32 @@ import styled, { withProps } from '../../utility/styled';
 
 type CellPropsType = {
     align?: 'left' | 'center' | 'right';
+    tableHead?: boolean;
+    elementWidth?: string;
+};
+
+type TableCellThemeType = {
+    default: {
+        backgroundColor: string;
+        borderColor: string;
+    };
+
+    header: {
+        backgroundColor: string;
+    };
 };
 
 const StyledCell = withProps<CellPropsType, HTMLTableCellElement>(styled.td)`
-text-align: ${({ align }): string => (align ? `${align}` : 'left')};
-    padding: 1em 0.5em;
+    width: ${({ elementWidth }): string => (elementWidth ? elementWidth : 'inherit')};
+    text-align: ${({ align }): string => (align ? align : 'left')};
+    border-bottom: ${({ theme }): string => `1px solid ${theme.TableCell.default.borderColor}`};
+    padding: ${({ tableHead }): string => (tableHead ? '12px' : '24px 12px')};
     position: relative;
-    border-bottom: 2px solid #d2d7e0;
-`;
 
-const StyledHeaderCell = withProps<CellPropsType, HTMLTableCellElement>(styled.th)`
-    padding: 1em 0.5em 0;
-    position: relative;
-    border-bottom: 2px solid #d2d7e0;
+    &:focus {
+        outline: none;
+}
 `;
 
 export default StyledCell;
-export { StyledHeaderCell };
+export { TableCellThemeType, CellPropsType };

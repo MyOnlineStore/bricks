@@ -49,6 +49,7 @@
         "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/__mocks__/fileMock.js",
         "resize-observer-polyfill": "<rootDir>/config/jest/__mocks__/resizeObserverPolyfill.ts",
         "simplebar": "<rootDir>/config/jest/__mocks__/simplebar.ts",
-        "react-popper": "<rootDir>/config/jest/__mocks__/reactPopper.tsx"
+        "react-popper": "<rootDir>/config/jest/__mocks__/reactPopper.tsx",
+        "react-beautiful-dnd": "<rootDir>/config/jest/__mocks__/reactBeautifulDnd.tsx"
     }
 }

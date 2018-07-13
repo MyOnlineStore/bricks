@@ -5708,8 +5708,1077 @@ exports[`Storyshots Select Default 1`] = `
   margin: 0;
 }
 
+<<<<<<< HEAD
 .c6 {
   color: #a6aab3;
+=======
+.c0 {
+  border: solid 3px rgba(255,36,94,0.3);
+  border-radius: 5px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p
+      className="c2"
+    >
+      This has padding.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Table Default 1`] = `
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c11 {
+  margin: 0px 6px 0px 0px;
+}
+
+.c9 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c4 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c15 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  background-color: transparent;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15:focus {
+  background-color: transparent;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15:active {
+  background-color: transparent;
+  border-color: transparent;
+  color: #333740;
+  box-shadow: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c15::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+.c15:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c15:disabled::before {
+  opacity: 1;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c7 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: #A6AAB3;
+}
+
+.c12 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  width: 18px;
+}
+
+.c12 svg {
+  max-height: 100%;
+  max-width: 100%;
+  fill: #31353D;
+}
+
+.c0 {
+  border-spacing: 0;
+  background-color: #d2d7e0;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.c2 {
+  width: 18px;
+  text-align: left;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 24px 12px;
+  position: relative;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c3 {
+  width: inherit;
+  text-align: left;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 12px;
+  position: relative;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c5 {
+  width: 18px;
+  text-align: left;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 12px;
+  position: relative;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c8 {
+  width: inherit;
+  text-align: left;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 24px 12px;
+  position: relative;
+}
+
+.c8:focus {
+  outline: none;
+}
+
+.c13 {
+  width: 18px;
+  text-align: right;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 24px 12px;
+  position: relative;
+}
+
+.c13:focus {
+  outline: none;
+}
+
+.c1 {
+  background-color: #fff;
+  text-align: left;
+  border-spacing: 0 1px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c1:hover {
+  background-color: #f8f9fb;
+}
+
+.c1:after {
+  pointer-events: none;
+  box-shadow: 0 0 0 4px rgba(107,222,120,0.4);
+  position: absolute;
+  height: 85px;
+  border-radius: 3px;
+  width: calc(100vw - 16px);
+  left: 8px;
+}
+
+.c6 {
+  background-color: #fff;
+  text-align: left;
+  border-spacing: 0 1px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 35px rgba(0,0,0,.5);
+}
+
+.c6:hover {
+  background-color: #f8f9fb;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2);
+}
+
+.c6:after {
+  pointer-events: none;
+  box-shadow: 0 0 0 4px rgba(107,222,120,0.4);
+  position: absolute;
+  height: 85px;
+  border-radius: 3px;
+  width: calc(100vw - 16px);
+  left: 0;
+  top: 0;
+}
+
+<div>
+  <table
+    className="c0"
+  >
+    <tbody>
+      <tr
+        className="c1"
+      >
+        <td
+          className="c2"
+        />
+        <td
+          className="c3"
+        >
+          <p
+            className="c4"
+          >
+            Filter
+          </p>
+        </td>
+        <td
+          className="c3"
+        >
+          <p
+            className="c4"
+          >
+            Filter Type
+          </p>
+        </td>
+        <td
+          className="c3"
+        >
+          <p
+            className="c4"
+          >
+            Eenheden
+          </p>
+        </td>
+        <td
+          className="c5"
+        />
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Merk
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Lijst
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $122,500.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Prijs
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Bereik
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $122,500.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Lengte
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Bereik
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $19,090.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Breedte
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Bereik
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $122,500.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Hoogte
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Bereik
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $122,500.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Gewicht
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Bereik
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $122,500.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c6"
+        onBlurCapture={[Function]}
+        onFocusCapture={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c2"
+        >
+          <span
+            aria-hidden={true}
+            className="c7"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            Voorraad
+          </p>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <span
+                aria-hidden={true}
+                className="c12"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </div>
+            <p
+              className="c9"
+            >
+              Lijst
+            </p>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <p
+            className="c9"
+          >
+            $122,500.00
+          </p>
+        </td>
+        <td
+          className="c13"
+        >
+          <div
+            className="c14"
+          >
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <button
+                className="c15"
+                disabled={undefined}
+                onClick={[Function]}
+                title="delete"
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="c7"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "test-file-stub",
+                    }
+                  }
+                  role="img"
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Storyshots Text Default 1`] = `
+.c0 {
+  color: #333740;
+>>>>>>> 2fb90bf... first working prototype
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
   font-weight: 400;

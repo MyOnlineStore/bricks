@@ -3,27 +3,47 @@ import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 
-type RowThemeType = {
-    header: {
-        fontWeight: string;
-        borderColor: string;
+type TableRowThemeType = {
+    default: {
         backgroundColor: string;
     };
+
     hover: {
-        boxShadow: string;
         backgroundColor: string;
     };
 };
 
-const StyledRow = styled.tr`
-    transition: background-color 100ms;
+type StyledRowProps = {
+    ref?: HTMLElement;
+    isDragging?: boolean;
+    focus: boolean;
+};
+
+const StyledRow = withProps<StyledRowProps>(styled.tr)`
+    background-color: ${({ theme }): string => theme.TableRow.default.backgroundColor};
     text-align: left;
-    font-weight: light;
+    border-spacing: 0 1px;
+    box-sizing: border-box;
     position: relative;
+    ${({ isDragging, focus }): string => (isDragging && !focus ? 'box-shadow: 0 0 35px rgba(0,0,0,.5);' : '')}
 
     &:hover {
-        background-color: #f7f8fa;
+        background-color: ${({ theme }): string => theme.TableRow.hover.backgroundColor};
+        ${({ isDragging }): string => (isDragging ? 'box-shadow: 0 -2px 0 rgba(0,0,0,.2);' : '')}
     }
-`;
+
+    &:after {
+        pointer-events: none;
+        ${({ focus }): string => (focus ? 'content: ""' : '')};
+        box-shadow: 0 0 0 4px rgba(107,222,120,0.4);
+        position: absolute;
+        height: 85px;
+        border-radius: 3px;
+        width: calc(100vw - 16px);
+        left: ${({ isDragging }): string => (isDragging ? '0' : '8px')}
+        ${({ isDragging }): string => (isDragging ? 'top: 0' : '')}
+    }
+    `;
 
 export default StyledRow;
+export { StyledRowProps, TableRowThemeType };

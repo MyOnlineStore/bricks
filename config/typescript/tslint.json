@@ -12,7 +12,7 @@
       "callable-types": true,
       "class-name": true,
       "comment-format": true,
-      "curly": true,
+      "curly": false,
   
       "deprecation": true,
       
