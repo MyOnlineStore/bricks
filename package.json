@@ -80,6 +80,7 @@
     "react-dom": "^16.3.2"
   },
   "scripts": {
+    "prepublish": "npm run build",
     "test": "jest --config=./config/jest/jest.config.json --coverage",
     "build": "rimraf ./dist && webpack --config ./config/webpack/webpack.config.js",
     "lint-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
