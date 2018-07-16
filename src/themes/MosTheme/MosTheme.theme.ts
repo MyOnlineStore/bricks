@@ -437,6 +437,9 @@ const theme: ThemeType = {
             },
         },
     },
+    Illustration: {
+        size: '186px',
+    },
     InlineNotification: {
         common: {
             fontSize: fontSize.smaller1,

@@ -3,6 +3,7 @@ import { ButtonThemeType } from '../components/Button/style';
 import { CheckboxThemeType } from '../components/Checkbox/style';
 import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';
+import { IllustrationThemeType } from '../components/Illustration/style';
 import { InlineNotificationThemeType } from '../components/InlineNotification/style';
 import { LinkThemeType } from '../components/Link/style';
 import { MessageStreamThemeType } from '../components/MessageStream/style';
@@ -25,6 +26,7 @@ type ThemeType = {
     MessageStream: MessageStreamThemeType;
     Modal: ModalThemeType;
     Notification: NotificationThemeType;
+    Illustration: IllustrationThemeType;
     InlineNotification: InlineNotificationThemeType;
     Link: LinkThemeType;
     Popover: PopoverThemeType;

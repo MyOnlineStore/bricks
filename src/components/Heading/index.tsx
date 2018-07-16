@@ -34,7 +34,8 @@ type HeadingThemeType = StyledType & {
 
 type PropsType = StyledType & {
     hierarchy?: 1 | 2 | 3 | 4 | 5 | 6;
-    element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
+    element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p' ;
+    textAlign?: 'left' | 'right' | 'center' | 'justify';
 };
 
 const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
@@ -59,9 +60,9 @@ const StyledHeading = styled(HeadingElement)`
     line-height: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].lineHeight};
     text-transform: ${({ hierarchy, theme }): string =>
-        !hierarchy
-            ? theme.Heading.default.textTransform
-            : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
+        !hierarchy ? theme.Heading.default.textTransform : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
+    text-align: ${({ textAlign }): string =>
+        textAlign !== undefined ? textAlign : 'left'}
     margin: 0;
 `;
 

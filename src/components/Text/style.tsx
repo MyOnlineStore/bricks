@@ -30,17 +30,18 @@ type TextPropsType = {
     descriptive?: boolean;
     strong?: boolean;
     variant?: 'small' | 'base' | 'large';
+    textAlign?: 'left' | 'right' | 'center' | 'justify';
 };
 
 const StyledText = withProps<TextPropsType, HTMLParagraphElement>(styled.p)`
     color: ${({ descriptive, theme }): string =>
         descriptive ? theme.Text.descriptive.color : theme.Text.default.color};
     font-family: ${({ theme }): string => theme.Text.default.fontFamily};
-    font-size: ${({ variant, theme }): string =>
-        variant !== undefined ? theme.Text[variant].fontSize : theme.Text.base.fontSize};
+    font-size: ${({ variant, theme }): string => (variant ? theme.Text[variant].fontSize : theme.Text.base.fontSize)}
     font-weight: ${({ strong, theme }): string =>
         strong ? theme.Text.strong.fontWeight : theme.Text.default.fontWeight};
     line-height: ${({ compact }): string => (compact ? '1.25' : '1.5')};
+    text-align: ${({ textAlign }): string => (textAlign ? textAlign : 'left')}
     margin: 0;
 `;
 

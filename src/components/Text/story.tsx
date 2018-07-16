@@ -35,6 +35,7 @@ storiesOf('Text', module).add('Default', () => (
         descriptive={boolean('descriptive', false)}
         compact={boolean('compact', false)}
         variant={select('variant', ['small', 'base', 'large'], 'base')}
+        textAlign={select('text-align', ['left' , 'right', 'center', 'justify'], 'center')}
     >
         {demoContent}
     </Text>
