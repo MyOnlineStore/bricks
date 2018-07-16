@@ -8,25 +8,6 @@ import { StyledBottom, StyledTop } from './style';
 
 let scrollBarOptions = {};
 
-jest.mock('simplebar', () =>
-    jest.fn().mockImplementation((element: HTMLElement, options: Object) => {
-        scrollBarOptions = options;
-
-        return {
-            getScrollElement: jest.fn().mockReturnValue({
-                offsetHeight: 200,
-                scrollTop: 0,
-                addEventListener: jest.fn().mockImplementation((event, callback) => {
-                    callback();
-                }),
-            }),
-            getContentElement: jest.fn().mockReturnValue({
-                offsetHeight: 400,
-            }),
-        };
-    }),
-);
-
 beforeEach(() => {
     scrollBarOptions = {};
 });
@@ -71,8 +52,6 @@ describe('ScrollBox', () => {
         /* tslint:disable */
         (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
             /* tslint:enable */
-            scrollBarOptions = options;
-
             return {
                 getScrollElement: jest.fn().mockReturnValue({
                     scrollTop: -100,
@@ -100,6 +79,25 @@ describe('ScrollBox', () => {
     });
 
     it('should hide the scrollbar when autoHideScrollBar is set', () => {
+        /* tslint:disable */
+        (ScrollBar as any).mockImplementationOnce((element: HTMLElement, options: Object): Object => {
+            /* tslint:enable */
+            scrollBarOptions = options;
+
+            return {
+                getScrollElement: jest.fn().mockReturnValue({
+                    scrollTop: -100,
+                    offsetHeight: 300,
+                    addEventListener: jest.fn().mockImplementation((event, callback) => {
+                        callback();
+                    }),
+                }),
+                getContentElement: jest.fn().mockReturnValue({
+                    offsetHeight: 400,
+                }),
+            };
+        });
+
         mount(
             <MosTheme>
                 <ScrollBox autoHideScrollBar />

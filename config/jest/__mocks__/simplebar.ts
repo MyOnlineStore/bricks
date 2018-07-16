@@ -1,5 +1,8 @@
 const mock = jest.fn(() => ({
-    getScrollElement: jest.fn().mockReturnValueOnce({
+    getContentElement: jest.fn(() => ({
+        offsetHeight: 400,
+    })),
+    getScrollElement: jest.fn().mockReturnValue({
         scrollTop: 0,
         offsetHeight: 200,
         addEventListener: jest.fn((event, callback) => {
@@ -8,21 +11,6 @@ const mock = jest.fn(() => ({
         removeEventListener: jest.fn((event, callback) => {
             callback();
         }),
-    }).mockReturnValueOnce({
-        scrollTop: 100,
-        offsetHeight: 200,
-        addEventListener: jest.fn((event, callback) => {
-            callback();
-        }),
-    }).mockReturnValueOnce({
-        scrollTop: 100,
-        offsetHeight: 200,
-        addEventListener: jest.fn((event, callback) => {
-            callback();
-        }),
-    }),
-    getContentElement: jest.fn().mockReturnValue({
-        offsetHeight: 400,
     }),
 }));
 

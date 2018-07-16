@@ -17,7 +17,7 @@ function requireAll(requireContext) {
 }
 
 function loadStories() {
-    requireAll(require.context('../../src', true, /story\.(dontTest\.)?tsx?$/));
+    requireAll(require.context('../../src', true, /story\.(DontTest\.)?tsx?$/));
 }
 
 configure(loadStories, module);

@@ -41,14 +41,8 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
                             >
                                 <Heading hierarchy={2}>{props.title}</Heading>
                                 <Spacer offsetType="outer" offset={trbl(-12, -12, -6, 0)}>
-                                    <Box
-                                        alignContent="center"
-                                        justifyContent="flex-end"
-                                        alignItems="center"
-                                        grow={0}
-                                        onClick={closeAction}
-                                    >
-                                        <Button variant="plain" title="close" compact>
+                                    <Box alignContent="center" justifyContent="flex-end" alignItems="center" grow={0}>
+                                        <Button variant="plain" title="close" action={closeAction} compact>
                                             <Icon size="small" icon="close" />
                                         </Button>
                                     </Box>
