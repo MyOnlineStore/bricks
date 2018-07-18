@@ -89,13 +89,19 @@ class ScrollBox extends Component<PropsType, StateType> {
                     this.contentRef = ref;
                 }}
             >
-                <StyledTop show={this.state.showInsetShadow && this.state.scrollDirection === 'down' ? true : false} />
+                {this.props.showInsetShadow && (
+                    <StyledTop
+                        show={this.state.showInsetShadow && this.state.scrollDirection === 'down' ? true : false}
+                    />
+                )}
 
                 {this.props.children}
 
-                <StyledBottom
-                    show={this.state.showInsetShadow && this.state.scrollDirection !== 'down' ? true : false}
-                />
+                {this.props.showInsetShadow && (
+                    <StyledBottom
+                        show={this.state.showInsetShadow && this.state.scrollDirection !== 'down' ? true : false}
+                    />
+                )}
             </StyledScrollBox>
         );
     }

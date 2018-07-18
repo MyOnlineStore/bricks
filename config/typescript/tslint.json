@@ -113,13 +113,6 @@
       "one-line": true,
       "only-arrow-functions": true,
       "one-variable-per-declaration": true,
-      "ordered-imports": [
-          true,
-          {
-              "import-sources-order": "case-insensitive",
-              "named-imports-order": "case-insensitive"
-          }
-      ],
   
       "prefer-function-over-method": true,
       "prefer-conditional-expression": true,
@@ -165,4 +158,3 @@
       ]
     }
   }
-  

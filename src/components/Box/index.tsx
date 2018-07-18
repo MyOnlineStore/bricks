@@ -1,6 +1,6 @@
 import React, { StatelessComponent } from 'react';
 import { TrblType } from '../../utility/trbl';
-import StyledBox from './style';
+import { StyledDiv, StyledSpan } from './style';
 
 type PropsType = JSX.IntrinsicElements['div'] & {
     justifyContent?:
@@ -17,6 +17,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     inline?: boolean;
     height?: string;
     margin?: TrblType;
+    maxHeight?: string;
     wrap?: boolean;
     grow?: number;
     shrink?: number;
@@ -26,17 +27,22 @@ type PropsType = JSX.IntrinsicElements['div'] & {
 };
 
 const Box: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const { order, direction, wrap, height, ref, ...filteredProps } = props;
+    const { order, direction, wrap, height, maxHeight, ref, ...filteredProps } = props;
 
     const newProps = {
         ...filteredProps,
         flexWrap: wrap,
         elementHeight: height,
+        elementMaxHeight: maxHeight,
         flexDirection: direction,
         flexOrder: order,
     };
 
-    return <StyledBox {...newProps}>{props.children}</StyledBox>;
+    return props.inline ? (
+        <StyledSpan {...newProps}>{props.children}</StyledSpan>
+    ) : (
+        <StyledDiv {...newProps}>{props.children}</StyledDiv>
+    );
 };
 
 export { PropsType };

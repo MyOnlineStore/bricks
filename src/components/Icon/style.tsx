@@ -10,6 +10,7 @@ type IconPropsType = {
 
 const StyledIcon = withProps<IconPropsType>(styled.span)`
     display: inline-block;
+    position: relative;
     vertical-align: middle;
     height: ${({ elementSize }): string =>
         elementSize === 'large' ? '60px' : elementSize === 'medium' ? '18px' : '12px'};
@@ -17,6 +18,10 @@ const StyledIcon = withProps<IconPropsType>(styled.span)`
         elementSize === 'large' ? '60px' : elementSize === 'medium' ? '18px' : '12px'};
 
     svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         max-height: 100%;
         max-width: 100%;
         fill: ${({ elementColor }): string => (elementColor !== undefined ? elementColor : 'currentColor')};

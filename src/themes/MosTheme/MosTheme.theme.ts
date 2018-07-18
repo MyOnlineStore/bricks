@@ -551,6 +551,31 @@ const theme: ThemeType = {
             fontFamily: bodyFont,
         },
     },
+    Select: {
+        common: {
+            secondaryColor: silver.base,
+            borderRadius: '3px',
+        },
+        wrapper: {
+            common: {
+                borderColor: silver.darker4,
+            },
+            focus: {
+                boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            },
+        },
+        input: {
+            background: silver.lighter1,
+            borderColor: silver.darker4,
+            color: grey.base,
+            fontFamily: bodyFont,
+            fontSize: fontSize.base,
+            fontWeight: '400',
+        },
+        placeholder: {
+            color: silver.darker4,
+        },
+    },
     ScrollBox: {
         scrollbar: {
             background: grey.base,

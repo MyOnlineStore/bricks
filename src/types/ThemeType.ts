@@ -16,6 +16,7 @@ import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 import { ToggleThemeType } from '../components/Toggle/style';
+import { SelectThemeType } from '../components/Select/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -32,6 +33,7 @@ type ThemeType = {
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
     ScrollBox: ScrollBoxThemeType;
+    Select: SelectThemeType;
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     RadioButton: RadioButtonThemeType;
