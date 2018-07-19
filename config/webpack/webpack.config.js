@@ -33,8 +33,10 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: 'svg-inline-loader',
-                removeTags: true,
-                removingTags: ['title', 'desc', 'defs', 'style'],
+                options: {
+                    removeTags: true,
+                    removingTags: ['title', 'desc', 'defs', 'style'],
+                },
             },
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
