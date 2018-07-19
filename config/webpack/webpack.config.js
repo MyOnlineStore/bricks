@@ -1,43 +1,43 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.ts",
+    entry: './src/index.ts',
     stats: {
         assets: true,
         modules: false,
         children: false,
     },
     output: {
-        filename: "index.js",
-        path: __dirname + "/../../dist",
+        filename: 'index.js',
+        path: __dirname + '/../../dist',
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: ['.ts', '.tsx', '.js', '.json'],
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
+                loader: 'ts-loader',
                 options: {
-                    configFile: __dirname + "/../typescript/tsconfig.json",
-                }
+                    configFile: __dirname + '/../typescript/tsconfig.json',
+                },
             },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.svg$/,
-                loader: 'svg-inline-loader'
+                loader: 'svg-inline-loader',
+                removeTags: true,
+                removingTags: ['title', 'desc', 'defs', 'style'],
             },
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
-        ]
+            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+        ],
     },
-    plugins: [
-        new UglifyJSPlugin()
-    ]
+    plugins: [new UglifyJSPlugin()],
 };
