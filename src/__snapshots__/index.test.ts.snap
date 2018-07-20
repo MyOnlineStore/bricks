@@ -1593,7 +1593,7 @@ exports[`Storyshots EmptyState Default 1`] = `
 }
 
 .c4 {
-  padding: 36px 0px 0px 0px;
+  padding: 18px 0px 0px 0px;
 }
 
 .c6 {
@@ -1753,7 +1753,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
 }
 
 .c4 {
-  padding: 36px 0px 0px 0px;
+  padding: 18px 0px 0px 0px;
 }
 
 .c6 {
