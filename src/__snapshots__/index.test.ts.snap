@@ -1592,15 +1592,15 @@ exports[`Storyshots EmptyState Default 1`] = `
   order: 0;
 }
 
-.c5 {
+.c4 {
   padding: 36px 0px 0px 0px;
 }
 
-.c7 {
+.c6 {
   margin: 12px 0px 24px 0px;
 }
 
-.c8 {
+.c7 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -1610,7 +1610,7 @@ exports[`Storyshots EmptyState Default 1`] = `
   margin: 0;
 }
 
-.c6 {
+.c5 {
   color: #333740;
   font-family: Melbourne,sans-serif;
   font-size: 36px;
@@ -1621,20 +1621,6 @@ exports[`Storyshots EmptyState Default 1`] = `
   margin: 0;
 }
 
-.c4 {
-  border-radius: 50%;
-  background: #F8F9FB;
-  height: 209px;
-  width: 209px;
-  top: 0px;
-  right: -48px;
-  bottom: 24px;
-  left: auto;
-  display: block;
-  position: absolute;
-  z-index: 0;
-}
-
 .c3 {
   display: inline-block;
   position: relative;
@@ -1643,7 +1629,6 @@ exports[`Storyshots EmptyState Default 1`] = `
 .c3 svg {
   height: 186px;
   width: 186px;
-  fill: #D2D7E0;
   z-index: 1;
   position: relative;
 }
@@ -1660,34 +1645,28 @@ exports[`Storyshots EmptyState Default 1`] = `
       <div
         aria-hidden={true}
         className="c3"
-        role="img"
-      >
-        <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "test-file-stub",
-            }
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
           }
-        />
-        <div
-          className="c4"
-        />
-      </div>
+        }
+        role="img"
+      />
       <div
-        className="c5"
+        className="c4"
       >
         <div
-          className="c6"
+          className="c5"
           role="heading"
         >
           Geen filters toegevoegd
         </div>
       </div>
       <div
-        className="c7"
+        className="c6"
       >
         <p
-          className="c8"
+          className="c7"
         >
           Er zijn nog geen filters toegevoegd aan jouw webwinkel. Gebruik de knop hieronder om een filter toe te voegen.
         </p>
@@ -1773,15 +1752,15 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   order: 0;
 }
 
-.c5 {
+.c4 {
   padding: 36px 0px 0px 0px;
 }
 
-.c7 {
+.c6 {
   margin: 12px 0px 24px 0px;
 }
 
-.c8 {
+.c7 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -1791,7 +1770,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   margin: 0;
 }
 
-.c9 {
+.c8 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1828,7 +1807,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   text-decoration: none;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
@@ -1837,7 +1816,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   text-decoration: none;
 }
 
-.c9:focus {
+.c8:focus {
   background-color: #5bd16a;
   border-color: transparent;
   color: #fff;
@@ -1846,7 +1825,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   text-decoration: none;
 }
 
-.c9:active {
+.c8:active {
   background-color: #4cc55b;
   border-color: transparent;
   color: #fff;
@@ -1855,13 +1834,13 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   text-decoration: none;
 }
 
-.c9:active {
+.c8:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c9::before {
+.c8::before {
   position: absolute;
   display: block;
   left: 0;
@@ -1878,7 +1857,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   border-radius: 3px;
 }
 
-.c9:disabled {
+.c8:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -1890,11 +1869,11 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   box-shadow: none;
 }
 
-.c9:disabled::before {
+.c8:disabled::before {
   opacity: 1;
 }
 
-.c6 {
+.c5 {
   color: #333740;
   font-family: Melbourne,sans-serif;
   font-size: 36px;
@@ -1905,20 +1884,6 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   margin: 0;
 }
 
-.c4 {
-  border-radius: 50%;
-  background: #F8F9FB;
-  height: 209px;
-  width: 209px;
-  top: 0px;
-  right: -48px;
-  bottom: 24px;
-  left: auto;
-  display: block;
-  position: absolute;
-  z-index: 0;
-}
-
 .c3 {
   display: inline-block;
   position: relative;
@@ -1927,7 +1892,6 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
 .c3 svg {
   height: 186px;
   width: 186px;
-  fill: #D2D7E0;
   z-index: 1;
   position: relative;
 }
@@ -1944,40 +1908,34 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       <div
         aria-hidden={true}
         className="c3"
-        role="img"
-      >
-        <span
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "test-file-stub",
-            }
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
           }
-        />
-        <div
-          className="c4"
-        />
-      </div>
+        }
+        role="img"
+      />
       <div
-        className="c5"
+        className="c4"
       >
         <div
-          className="c6"
+          className="c5"
           role="heading"
         >
           Geen filters toegevoegd
         </div>
       </div>
       <div
-        className="c7"
+        className="c6"
       >
         <p
-          className="c8"
+          className="c7"
         >
           Er zijn nog geen filters toegevoegd aan jouw webwinkel. Gebruik de knop hieronder om een filter toe te voegen.
         </p>
       </div>
       <button
-        className="c9"
+        className="c8"
         disabled={undefined}
         onClick={[Function]}
         title="Filter toevoegen"
@@ -2806,20 +2764,6 @@ exports[`Storyshots Illustration default 1`] = `
   order: 0;
 }
 
-.c2 {
-  border-radius: 50%;
-  background: #F8F9FB;
-  height: 209px;
-  width: 209px;
-  top: 0px;
-  right: -48px;
-  bottom: 24px;
-  left: auto;
-  display: block;
-  position: absolute;
-  z-index: 0;
-}
-
 .c1 {
   display: inline-block;
   position: relative;
@@ -2828,7 +2772,6 @@ exports[`Storyshots Illustration default 1`] = `
 .c1 svg {
   height: 186px;
   width: 186px;
-  fill: #D2D7E0;
   z-index: 1;
   position: relative;
 }
@@ -2839,19 +2782,13 @@ exports[`Storyshots Illustration default 1`] = `
   <div
     aria-hidden={true}
     className="c1"
-    role="img"
-  >
-    <span
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "test-file-stub",
-        }
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
       }
-    />
-    <div
-      className="c2"
-    />
-  </div>
+    }
+    role="img"
+  />
 </div>
 `;
 
