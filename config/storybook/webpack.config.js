@@ -28,11 +28,18 @@ module.exports = (baseConfig, env) => {
                     },
                 },
                 {
-                    test: /\.svg$/,
+                    test: /^.*(?<!\.color)\.svg$/,
                     loader: 'svg-inline-loader',
                     options: {
                         removeTags: true,
                         removingTags: ['title', 'desc', 'defs', 'style'],
+                    },
+                },
+                {
+                    test: /\.color\.svg$/,
+                    loader: 'svg-inline-loader',
+                    options: {
+                        removeTags: false,
                     },
                 },
                 {

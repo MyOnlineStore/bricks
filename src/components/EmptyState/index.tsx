@@ -18,7 +18,7 @@ const EmptyStateElement: StatelessComponent<EmptyStatePropsType> = (props): JSX.
     <Box direction="column" alignItems="center" justifyContent="space-around">
         <Illustration illustration={'cactus'} />
 
-        <Spacer offset={trbl(36, 0, 0, 0)} offsetType="inner">
+        <Spacer offset={trbl(18, 0, 0, 0)} offsetType="inner">
             <Heading hierarchy={1} textAlign="center">
                 {props.title}
             </Heading>
