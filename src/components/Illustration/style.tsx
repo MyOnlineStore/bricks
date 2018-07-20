@@ -8,13 +8,9 @@ type IllustrationThemeType = {
 };
 
 const StyledIllustration = styled.div`
-    display: inline-block;
-    position: relative;
     svg {
         height: ${({ theme }): string => theme.Illustration.size};
         width: ${({ theme }): string => theme.Illustration.size};
-        z-index: 1;
-        position: relative;
     }
 `;
 
