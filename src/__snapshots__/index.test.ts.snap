@@ -378,7 +378,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c4:active {
@@ -481,7 +481,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c5:active {
@@ -653,7 +653,7 @@ exports[`Storyshots Button With an icon 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c0:active {
@@ -790,7 +790,7 @@ exports[`Storyshots Button With text 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c0:active {
@@ -967,7 +967,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c3:active {
@@ -1070,7 +1070,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c4:active {
@@ -1222,7 +1222,7 @@ Array [
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c2:active {
@@ -1350,7 +1350,7 @@ Array [
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c1:active {
@@ -1502,7 +1502,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c3:active {
@@ -2053,7 +2053,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c11:active {
@@ -2156,7 +2156,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c17:active {
@@ -2259,7 +2259,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(252,194,0,.25);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25);
 }
 
 .c13:active {
@@ -2362,7 +2362,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(237,33,87,.25);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25);
 }
 
 .c16:active {
@@ -3024,7 +3024,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c19:active {
@@ -3127,7 +3127,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
 .c7:active {
@@ -3230,7 +3230,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c20:active {
@@ -3870,7 +3870,7 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c3:active {

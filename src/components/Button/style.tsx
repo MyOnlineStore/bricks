@@ -100,19 +100,19 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     border-style: solid;
 
     ${({ variant, flat, theme }): string => {
-        const isFlat = flat ? 'flat' : 'regular';
+        const subVariant = flat ? 'flat' : 'regular';
 
         return `
-            color: ${theme.Button[variant][isFlat].idle.color};
-            background-color: ${theme.Button[variant][isFlat].idle.backgroundColor};
-            text-decoration: ${theme.Button[variant][isFlat].idle.textDecoration};
+            color: ${theme.Button[variant][subVariant].idle.color};
+            background-color: ${theme.Button[variant][subVariant].idle.backgroundColor};
+            text-decoration: ${theme.Button[variant][subVariant].idle.textDecoration};
             ${!flat ? `border-color: ${theme.Button[variant].regular.hover.borderColor}` : ''};
             ${!flat ? `box-shadow: ${theme.Button[variant].regular.idle.boxShadow}` : ''};
 
             &:hover {
-                color: ${theme.Button[variant][isFlat].hover.color};
-                background-color: ${theme.Button[variant][isFlat].hover.backgroundColor};
-                text-decoration: ${theme.Button[variant][isFlat].hover.textDecoration};
+                color: ${theme.Button[variant][subVariant].hover.color};
+                background-color: ${theme.Button[variant][subVariant].hover.backgroundColor};
+                text-decoration: ${theme.Button[variant][subVariant].hover.textDecoration};
                 ${flat ? 'transform: scale(1.1);' : ''}
                 ${!flat ? `border-color: ${theme.Button[variant].regular.hover.borderColor}` : ''};
                 ${!flat ? `box-shadow: ${theme.Button[variant].regular.hover.boxShadow}` : ''};
@@ -134,9 +134,9 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
             }
 
             &:active {
-                color: ${theme.Button[variant][isFlat].active.color};
-                background-color: ${theme.Button[variant][isFlat].active.backgroundColor};
-                text-decoration: ${theme.Button[variant][isFlat].active.textDecoration};
+                color: ${theme.Button[variant][subVariant].active.color};
+                background-color: ${theme.Button[variant][subVariant].active.backgroundColor};
+                text-decoration: ${theme.Button[variant][subVariant].active.textDecoration};
                 ${!flat ? `border-color: ${theme.Button[variant].regular.active.borderColor}` : ''};
                 ${!flat ? `box-shadow: ${theme.Button[variant].regular.active.boxShadow}` : ''};
             }
