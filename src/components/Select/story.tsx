@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Search from '.';
 import Box from '../Box';
+import { text } from '@storybook/addon-knobs';
 
 const options = [
     {
@@ -42,22 +43,17 @@ const options = [
     },
 ];
 
-class Demo extends Component<{}, { value: string; filter: string }> {
+class Demo extends Component<{}, { value: string }> {
     public constructor(props: {}) {
         super(props);
 
         this.state = {
             value: '',
-            filter: '',
         };
     }
 
     public handleChange = (value: string): void => {
         this.setState({ value });
-    };
-
-    public handleInput = (value: string): void => {
-        this.setState({ filter: value });
     };
 
     public render(): JSX.Element {
@@ -66,9 +62,8 @@ class Demo extends Component<{}, { value: string; filter: string }> {
                 <Box basis="300px" grow={0} direction="column">
                     <Search
                         placeholder="Search a thing"
-                        value={this.state.value}
+                        value={text('value', this.state.value)}
                         emptyText={'No results'}
-                        onInput={this.handleInput}
                         onChange={this.handleChange}
                         options={options}
                     />

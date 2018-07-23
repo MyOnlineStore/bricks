@@ -18,7 +18,6 @@ type OptionBase = {
 type StateType<GenericOption extends OptionBase> = {
     input: string;
     isOpen: boolean;
-    isFocussed: boolean;
     optionPointer: number;
     filteredOption: Array<GenericOption>;
 };
@@ -28,7 +27,6 @@ type PropsType<GenericOption extends OptionBase> = {
     value: string;
     options: Array<GenericOption>;
     emptyText: string;
-    onInput(value: string): void;
     onChange(value: string): void;
     renderOption?(option: GenericOption): JSX.Element;
 };
@@ -42,7 +40,6 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         this.inputRef = createRef();
 
         this.state = {
-            isFocussed: false,
             isOpen: false,
             input: props.value,
             optionPointer: 0,
@@ -52,14 +49,14 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
     private cycleUp = (): void => {
         const optionPointer =
-            this.state.optionPointer < this.state.filteredOption.length ? this.state.optionPointer + 1 : 0;
+            this.state.optionPointer < this.state.filteredOption.length - 1 ? this.state.optionPointer + 1 : 0;
 
         this.setState({ optionPointer });
     };
 
     private cycleDown = (): void => {
         const optionPointer =
-            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.state.filteredOption.length;
+            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.state.filteredOption.length - 1;
 
         this.setState({ optionPointer });
     };
@@ -101,10 +98,9 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         const input = event.target.value;
 
         const filteredOption = this.props.options.filter(
-            option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
+            option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1,
         );
 
-        this.props.onInput(input);
         this.setState({ input, filteredOption });
     };
 
@@ -140,7 +136,6 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 innerRef={(ref): void => {
                     this.wrapperRef = ref;
                 }}
-                isFocussed={this.state.isFocussed && !this.state.isOpen}
                 isOpen={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
                 tabIndex={0}
@@ -169,7 +164,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         )}
                         <Button
                             compact
-                            title={'close'}
+                            title={this.state.isOpen ? 'close' : 'open'}
                             variant={'plain'}
                             action={this.state.isOpen ? this.close : this.open}
                         >
@@ -180,12 +175,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 <StyledWindow isOpen={this.state.isOpen}>
                     <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                         <FoldOut isOpen={this.state.isOpen}>
-                            {this.state.filteredOption.length === 0 &&
-                                this.props.emptyText !== undefined && (
-                                    <Spacer offsetType={'inner'} offset={trbl(12)}>
-                                        <Text>{this.props.emptyText}</Text>
-                                    </Spacer>
-                                )}
+                            {this.state.filteredOption.length === 0 && (
+                                <Spacer offsetType={'inner'} offset={trbl(12)}>
+                                    <Text>{this.props.emptyText}</Text>
+                                </Spacer>
+                            )}
                             {this.state.filteredOption.length > 0 &&
                                 this.state.filteredOption.map((option, index) => (
                                     <Option

@@ -31,7 +31,6 @@ type SelectThemeType = {
 
 type WrapperProps = {
     isOpen: boolean;
-    isFocussed: boolean;
 };
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
@@ -42,7 +41,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
         isOpen
             ? `solid 1px ${theme.Select.wrapper.common.borderColor}`
             : `solid 0px ${theme.Select.common.secondaryColor}`};
-    margin: ${({ theme, isOpen }): string => (isOpen ? '-6px' : '0')};
+    margin: ${({ theme, isOpen }): string => (isOpen ? '-7px' : '0')};
     padding: ${({ theme, isOpen }): string => (isOpen ? '6px' : '0')};
     background: ${({ theme }): string => theme.Select.common.secondaryColor};
     border-bottom: none;

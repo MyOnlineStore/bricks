@@ -3,12 +3,19 @@
 exports[`ErrorBoundary should catch an error and report it 1`] = `
 .c2 {
   display: inline-block;
+  position: relative;
   vertical-align: middle;
   height: 18px;
   width: 18px;
 }
 
 .c2 svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;

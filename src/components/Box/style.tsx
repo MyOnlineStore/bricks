@@ -15,7 +15,7 @@ type BoxPropsType = PropsType & {
 const StyledDiv = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
     display: ${({ inline }): string => (inline ? 'inline-flex' : 'flex')};
     height: ${({ elementHeight }): string => (elementHeight !== undefined ? elementHeight : '')};
-    max-Height: ${({ elementMaxHeight }): string => (elementMaxHeight !== undefined ? elementMaxHeight : '')};
+    max-height: ${({ elementMaxHeight }): string => (elementMaxHeight !== undefined ? elementMaxHeight : '')};
     flex-wrap: ${({ flexWrap }): string => (flexWrap !== undefined && flexWrap ? 'wrap' : '')};
     flex-direction: ${({ flexDirection }): string => (flexDirection !== undefined ? flexDirection : '')};
     justify-content: ${({ justifyContent }): string => (justifyContent !== undefined ? justifyContent : '')};
