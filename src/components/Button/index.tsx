@@ -5,10 +5,11 @@ type PropsType = {
     className?: string;
     compact?: boolean;
     title: string;
-    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'flat' | 'plain';
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     target?: HTMLAnchorElement['target'];
     href?: string;
     disabled?: boolean;
+    flat?: boolean;
     action?(): void;
 };
 
@@ -31,6 +32,7 @@ const Button: StatelessComponent<PropsType> = (props): JSX.Element => {
                 href={props.href}
                 target={props.target}
                 disabled={props.disabled}
+                flat={props.flat}
             >
                 {Children.count(props.children) > 0 ? props.children : props.title}
             </StyledAnchor>
@@ -46,6 +48,7 @@ const Button: StatelessComponent<PropsType> = (props): JSX.Element => {
             onClick={clickAction}
             type="button"
             disabled={props.disabled}
+            flat={props.flat}
         >
             {Children.count(props.children) > 0 ? props.children : props.title}
         </StyledButton>

@@ -11,11 +11,23 @@ type ButtonStylesType = {
     hover: ButtonVariantStylesType;
 };
 
+type FlatButtonStylesType = {
+    idle: FlatButtonVariantStylesType;
+    active: FlatButtonVariantStylesType;
+    hover: FlatButtonVariantStylesType;
+};
+
 type ButtonVariantStylesType = {
     backgroundColor: string;
     borderColor: string;
     color: string;
     boxShadow: string;
+    textDecoration: string;
+};
+
+type FlatButtonVariantStylesType = {
+    backgroundColor: string;
+    color: string;
     textDecoration: string;
 };
 
@@ -27,21 +39,43 @@ type ButtonThemeType = {
         borderWidth: string;
         borderRadius: string;
     };
-    primary: ButtonStylesType;
-    destructive: ButtonStylesType;
-    warning: ButtonStylesType;
-    secondary: ButtonStylesType;
-    flat: ButtonStylesType;
-    plain: ButtonStylesType;
+    primary: {
+        regular: ButtonStylesType;
+        flat: FlatButtonStylesType;
+    };
+    destructive: {
+        regular: ButtonStylesType;
+        flat: FlatButtonStylesType;
+    };
+    warning: {
+        regular: ButtonStylesType;
+        flat: FlatButtonStylesType;
+    };
+    secondary: {
+        regular: ButtonStylesType;
+        flat: FlatButtonStylesType;
+    };
+    plain: {
+        regular: ButtonStylesType;
+        flat: FlatButtonStylesType;
+    };
     disabled: {
-        color: string;
-        backgroundColor: string;
-        stripingColor: string;
+        regular: {
+            color: string;
+            backgroundColor: string;
+            stripingColor: string;
+        };
+        flat: {
+            color: string;
+            backgroundColor: string;
+            textDecoration: string;
+        };
     };
 };
 
 type ButtonPropsType = {
     compact?: PropsType['compact'];
+    flat?: PropsType['flat'];
     variant: PropsType['variant'];
 };
 
@@ -50,13 +84,12 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     appearance: none;
     border: none;
     line-height: 1;
-    padding: ${({ theme, compact }): string => (compact !== undefined && compact ? '11px 12px' : '11px 24px')};
+    padding: ${({ compact }): string => (compact ? '11px 12px' : '11px 24px')};
     cursor: pointer;
     display: inline-block;
     outline: none;
     transform: translateZ(0) translate3d(0, 0, 0);
-    transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s,
-        border 0.3s;
+    transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
     user-select: none;
     text-decoration: none;
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
@@ -66,36 +99,46 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
     border-style: solid;
 
-    ${({ variant, theme }): string => {
+    ${({ variant, flat, theme }): string => {
+        const isFlat = flat ? 'flat' : 'regular';
+
         return `
-            background-color: ${theme.Button[variant].idle.backgroundColor};
-            border-color: ${theme.Button[variant].idle.borderColor};
-            color: ${theme.Button[variant].idle.color};
-            box-shadow: ${theme.Button[variant].idle.boxShadow};
-            text-decoration: ${theme.Button[variant].idle.textDecoration};
+            color: ${theme.Button[variant][isFlat].idle.color};
+            background-color: ${theme.Button[variant][isFlat].idle.backgroundColor};
+            text-decoration: ${theme.Button[variant][isFlat].idle.textDecoration};
+            ${!flat ? `border-color: ${theme.Button[variant].regular.hover.borderColor}` : ''};
+            ${!flat ? `box-shadow: ${theme.Button[variant].regular.idle.boxShadow}` : ''};
 
             &:hover {
-                background-color: ${theme.Button[variant].hover.backgroundColor};
-                border-color: ${theme.Button[variant].hover.borderColor};
-                color: ${theme.Button[variant].hover.color};
-                box-shadow: ${theme.Button[variant].hover.boxShadow};
-                text-decoration: ${theme.Button[variant].hover.textDecoration};
+                color: ${theme.Button[variant][isFlat].hover.color};
+                background-color: ${theme.Button[variant][isFlat].hover.backgroundColor};
+                text-decoration: ${theme.Button[variant][isFlat].hover.textDecoration};
+                ${flat ? 'transform: scale(1.1);' : ''}
+                ${!flat ? `border-color: ${theme.Button[variant].regular.hover.borderColor}` : ''};
+                ${!flat ? `box-shadow: ${theme.Button[variant].regular.hover.boxShadow}` : ''};
             }
 
             &:focus {
-                background-color: ${theme.Button[variant].focus.backgroundColor};
-                border-color: ${theme.Button[variant].focus.borderColor};
-                color: ${theme.Button[variant].focus.color};
-                box-shadow: ${theme.Button[variant].focus.boxShadow};
-                text-decoration: ${theme.Button[variant].focus.textDecoration};
+
+                ${
+                    !flat
+                        ? `
+                            color: ${theme.Button[variant].regular.focus.color};
+                            background-color: ${theme.Button[variant].regular.focus.backgroundColor};
+                            text-decoration: ${theme.Button[variant].regular.focus.textDecoration};
+                            border-color: ${theme.Button[variant].regular.focus.borderColor};
+                            box-shadow: ${theme.Button[variant].regular.focus.boxShadow};
+                        `
+                        : ''
+                }
             }
 
             &:active {
-                background-color: ${theme.Button[variant].active.backgroundColor};
-                border-color: ${theme.Button[variant].active.borderColor};
-                color: ${theme.Button[variant].active.color};
-                box-shadow: ${theme.Button[variant].active.boxShadow};
-                text-decoration: ${theme.Button[variant].active.textDecoration};
+                color: ${theme.Button[variant][isFlat].active.color};
+                background-color: ${theme.Button[variant][isFlat].active.backgroundColor};
+                text-decoration: ${theme.Button[variant][isFlat].active.textDecoration};
+                ${!flat ? `border-color: ${theme.Button[variant].regular.active.borderColor}` : ''};
+                ${!flat ? `box-shadow: ${theme.Button[variant].regular.active.boxShadow}` : ''};
             }
         `;
     }} &:active {
@@ -113,27 +156,32 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
         content: '';
         opacity: 0;
         transition: opacity 0.3s;
-        background: ${({ theme }): string => `
-            ${theme.Button.disabled.backgroundColor}
+        background: ${({ theme, flat }): string =>
+            !flat
+                ? `
+            ${theme.Button.disabled.regular.backgroundColor}
             repeating-linear-gradient(
                 -45deg,
-                ${theme.Button.disabled.stripingColor},
-                ${theme.Button.disabled.stripingColor} 10px,
+                ${theme.Button.disabled.regular.stripingColor},
+                ${theme.Button.disabled.regular.stripingColor} 10px,
                 transparent 10px,
                 transparent 20px
             );
-        `};
-        box-shadow: ${({ variant, theme }): string => theme.Button[variant].idle.boxShadow};
-        border-radius: ${({ variant, theme }): string => theme.Button.common.borderRadius};
+        `
+                : theme.Button.disabled.flat.backgroundColor};
+        box-shadow: ${({ variant, theme, flat }): string =>
+            !flat ? theme.Button[variant].regular.idle.boxShadow : ''};
+        border-radius: ${({ theme }): string => theme.Button.common.borderRadius};
     }
 
     &:disabled {
-        background: ${({ theme }): string => theme.Button.disabled.backgroundColor};
+        background: ${({ theme, flat }): string =>
+            !flat ? theme.Button.disabled.regular.backgroundColor : theme.Button.disabled.flat.backgroundColor};
         border-color: transparent;
         cursor: default;
         opacity: 0.7;
         transform: none;
-        color: ${({ theme }): string => theme.Button.disabled.color};
+        color: ${({ theme }): string => theme.Button.disabled.regular.color};
         box-shadow: none;
 
         &::before {
@@ -145,4 +193,11 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
 const StyledAnchor = StyledButton.withComponent('a');
 
 export default StyledButton;
-export { ButtonStylesType, ButtonVariantStylesType, ButtonThemeType, StyledAnchor };
+export {
+    ButtonStylesType,
+    FlatButtonStylesType,
+    FlatButtonVariantStylesType,
+    ButtonVariantStylesType,
+    ButtonThemeType,
+    StyledAnchor,
+};

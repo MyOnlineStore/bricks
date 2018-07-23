@@ -340,9 +340,9 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -355,39 +355,39 @@ exports[`Storyshots Button On a contrast area 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c4:hover {
-  background-color: #e4e7ec;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c4:focus {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c4:active {
-  background-color: #e4e7ec;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c4:active {
@@ -443,9 +443,9 @@ exports[`Storyshots Button On a contrast area 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -458,39 +458,39 @@ exports[`Storyshots Button On a contrast area 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: transparent;
-  border-color: transparent;
   color: #333740;
-  box-shadow: none;
+  background-color: transparent;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c5:hover {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c5:focus {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  background-color: #edeff2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c5:active {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #333740;
-  box-shadow: none;
+  background-color: #edeff2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c5:active {
@@ -615,9 +615,9 @@ exports[`Storyshots Button With an icon 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -630,39 +630,39 @@ exports[`Storyshots Button With an icon 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:hover {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:focus {
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
 }
 
 .c0:active {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c0:active {
@@ -752,9 +752,9 @@ exports[`Storyshots Button With text 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -767,39 +767,39 @@ exports[`Storyshots Button With text 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:hover {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c0:focus {
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c0:active {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c0:active {
@@ -929,9 +929,9 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -944,39 +944,39 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:hover {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:focus {
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c3:active {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c3:active {
@@ -1032,9 +1032,9 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1047,39 +1047,39 @@ exports[`Storyshots ButtonGroup Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c4:hover {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c4:focus {
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
 }
 
 .c4:active {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c4:active {
@@ -1184,9 +1184,9 @@ Array [
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1199,39 +1199,39 @@ Array [
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c2:hover {
-  background-color: #e4e7ec;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c2:focus {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c2:active {
-  background-color: #e4e7ec;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c2:active {
@@ -1312,9 +1312,9 @@ Array [
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1327,39 +1327,39 @@ Array [
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c1:hover {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c1:focus {
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
 }
 
 .c1:active {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c1:active {
@@ -1464,9 +1464,9 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1479,39 +1479,39 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:hover {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:focus {
-  background-color: #f8f9fb;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
+  background-color: #f8f9fb;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
 }
 
 .c3:active {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c3:active {
@@ -2015,9 +2015,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2030,39 +2030,39 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c11:hover {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c11:focus {
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c11:active {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c11:active {
@@ -2118,9 +2118,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2133,39 +2133,39 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c17:hover {
-  background-color: #e4e7ec;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c17:focus {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c17:active {
-  background-color: #e4e7ec;
-  border-color: transparent;
   color: #55656d;
-  box-shadow: none;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c17:active {
@@ -2221,9 +2221,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2236,39 +2236,39 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #fcc200;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #fcc200;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c13:hover {
-  background-color: #edb107;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edb107;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c13:focus {
-  background-color: #fcc200;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(252,194,0,.25);
+  background-color: #fcc200;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(252,194,0,.25);
 }
 
 .c13:active {
-  background-color: #edb107;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #edb107;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c13:active {
@@ -2324,9 +2324,9 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2339,39 +2339,39 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #ed2157;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #ed2157;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c16:hover {
-  background-color: #dc1b4f;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #dc1b4f;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c16:focus {
-  background-color: #ed2157;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(237,33,87,.25);
+  background-color: #ed2157;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.1) inset,0 0 0 3px rgba(237,33,87,.25);
 }
 
 .c16:active {
-  background-color: #dc1b4f;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #dc1b4f;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c16:active {
@@ -2986,9 +2986,9 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3001,39 +3001,39 @@ exports[`Storyshots Modal Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c19:hover {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c19:focus {
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c19:active {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c19:active {
@@ -3089,9 +3089,9 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3104,39 +3104,39 @@ exports[`Storyshots Modal Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: transparent;
-  border-color: transparent;
   color: #333740;
+  background-color: transparent;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  border-color: transparent;
   box-shadow: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c7:hover {
-  background-color: transparent;
-  border-color: transparent;
   color: #333740;
-  box-shadow: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  background-color: #f8f9fb;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c7:focus {
-  background-color: transparent;
-  border-color: transparent;
   color: #333740;
-  box-shadow: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  background-color: #f8f9fb;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(51,55,64,.08);
 }
 
 .c7:active {
-  background-color: transparent;
-  border-color: transparent;
   color: #333740;
+  background-color: #f8f9fb;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  border-color: transparent;
   box-shadow: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c7:active {
@@ -3192,9 +3192,9 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3207,39 +3207,39 @@ exports[`Storyshots Modal Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: transparent;
-  border-color: transparent;
   color: #333740;
-  box-shadow: none;
+  background-color: transparent;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c20:hover {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #edeff2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c20:focus {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #333740;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
+  background-color: #edeff2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c20:active {
-  background-color: #edeff2;
-  border-color: transparent;
   color: #333740;
-  box-shadow: none;
+  background-color: #edeff2;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c20:active {
@@ -3832,9 +3832,9 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3847,39 +3847,39 @@ exports[`Storyshots Popover Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:hover {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c3:focus {
-  background-color: #5bd16a;
-  border-color: transparent;
   color: #fff;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  background-color: #5bd16a;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
 .c3:active {
-  background-color: #4cc55b;
-  border-color: transparent;
   color: #fff;
-  box-shadow: none;
+  background-color: #4cc55b;
   -webkit-text-decoration: none;
   text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .c3:active {

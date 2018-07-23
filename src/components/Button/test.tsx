@@ -14,6 +14,18 @@ describe('Button', () => {
         expect(component.find('a').text()).toEqual('Foo Bar');
     });
 
+    it('should render a flat component', () => {
+        const component = mountWithTheme(
+            <Button href="#" title="Foo Bar?" flat variant="primary">
+                Foo Bar
+            </Button>,
+        );
+
+        /* tslint:disable */
+        (expect(component) as any).toHaveStyleRule('background-color', 'transparent');
+        /* tslint:enable */
+    });
+
     it('should call the passed action on click', () => {
         const clickMock = jest.fn();
 

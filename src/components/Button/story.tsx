@@ -16,12 +16,13 @@ storiesOf('Button', module)
                 variant={
                     select(
                         'variant',
-                        ['primary', 'secondary', 'warning', 'destructive', 'flat'],
+                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
                         'primary',
                     ) as PropsType['variant']
                 }
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
+                flat={boolean('flat', false)}
                 action={(): void => {
                     /* */
                 }}
@@ -35,12 +36,13 @@ storiesOf('Button', module)
                 variant={
                     select(
                         'variant',
-                        ['primary', 'secondary', 'warning', 'destructive', 'flat'],
+                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
                         'secondary',
                     ) as PropsType['variant']
                 }
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
+                flat={boolean('flat', false)}
                 action={(): void => {
                     /* */
                 }}
@@ -64,7 +66,7 @@ storiesOf('Button', module)
                             }}
                         />
                         <Button
-                            variant="flat"
+                            variant="plain"
                             title={'Click me'}
                             action={(): void => {
                                 /* */

@@ -35,7 +35,7 @@ storiesOf('Modal', module).add('Default', () => {
             renderFixed={(): JSX.Element => (
                 <ButtonGroup>
                     <Button variant="primary" title="Activate" />
-                    <Button variant="flat" title="Close" />
+                    <Button variant="plain" title="Close" />
                 </ButtonGroup>
             )}
         >
