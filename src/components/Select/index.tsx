@@ -19,7 +19,7 @@ type StateType<GenericOption extends OptionBase> = {
     input: string;
     isOpen: boolean;
     optionPointer: number;
-    filteredOption: Array<GenericOption>;
+    filteredOptions: Array<GenericOption>;
 };
 
 type PropsType<GenericOption extends OptionBase> = {
@@ -43,20 +43,24 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             isOpen: false,
             input: props.value,
             optionPointer: -1,
-            filteredOption: props.options,
+            filteredOptions: props.options,
         };
     }
 
     private cycleUp = (): void => {
         const optionPointer =
-            this.state.optionPointer < this.state.filteredOption.length - 1 ? this.state.optionPointer + 1 : 0;
+            this.state.optionPointer < this.state.filteredOptions.length - 1 ? this.state.optionPointer + 1 : 0;
 
         this.setState({ optionPointer });
     };
 
+    private cycleTo = (index: number): void => {
+        this.setState({ optionPointer: index });
+    };
+
     private cycleDown = (): void => {
         const optionPointer =
-            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.state.filteredOption.length - 1;
+            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.state.filteredOptions.length - 1;
 
         this.setState({ optionPointer });
     };
@@ -97,15 +101,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     public handleInput = (event: ChangeEvent<HTMLInputElement>): void => {
         const input = event.target.value;
 
-        const filteredOption = this.props.options.filter(
+        const filteredOptions = this.props.options.filter(
             option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1,
         );
 
-        this.setState({ input, filteredOption, optionPointer: -1 });
-    };
-
-    public handleMouseMove = (): void => {
-        this.setState({ optionPointer: -1 });
+        this.setState({ input, filteredOptions, optionPointer: -1 });
     };
 
     public handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
@@ -122,7 +122,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         }
 
         if (event.key === 'Enter' && this.state.optionPointer !== -1) {
-            this.handleChange(this.state.filteredOption[this.state.optionPointer].value);
+            this.handleChange(this.state.filteredOptions[this.state.optionPointer].value);
             this.wrapperRef.focus();
         }
     };
@@ -176,19 +176,20 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         </Button>
                     </Box>
                 </StyledInput>
-                <StyledWindow isOpen={this.state.isOpen} onMouseMoveCapture={this.handleMouseMove}>
+                <StyledWindow isOpen={this.state.isOpen}>
                     <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                         <FoldOut isOpen={this.state.isOpen}>
-                            {this.state.filteredOption.length === 0 && (
+                            {this.state.filteredOptions.length === 0 && (
                                 <Spacer offsetType={'inner'} offset={trbl(12)}>
                                     <Text>{this.props.emptyText}</Text>
                                 </Spacer>
                             )}
-                            {this.state.filteredOption.length > 0 &&
-                                this.state.filteredOption.map((option, index) => (
+                            {this.state.filteredOptions.length > 0 &&
+                                this.state.filteredOptions.map((option, index) => (
                                     <Option
                                         isTargeted={index === this.state.optionPointer}
                                         key={`${option.value}-${option.label}`}
+                                        onMouseEnter={(): void => this.cycleTo(index)}
                                         onClick={(): void => {
                                             this.handleChange(option.value);
                                         }}

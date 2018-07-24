@@ -5299,10 +5299,6 @@ exports[`Storyshots Select Default 1`] = `
   cursor: pointer;
 }
 
-.c12:hover {
-  background: #f8f9fb;
-}
-
 .c2 {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -5437,7 +5433,6 @@ exports[`Storyshots Select Default 1`] = `
       </div>
       <div
         className="c9"
-        onMouseMoveCapture={[Function]}
       >
         <div
           className="c10"
@@ -5449,6 +5444,7 @@ exports[`Storyshots Select Default 1`] = `
               <div
                 className="c12"
                 onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 <div
                   className="c13"
@@ -5468,6 +5464,7 @@ exports[`Storyshots Select Default 1`] = `
               <div
                 className="c12"
                 onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 <div
                   className="c13"
@@ -5487,6 +5484,7 @@ exports[`Storyshots Select Default 1`] = `
               <div
                 className="c12"
                 onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 <div
                   className="c13"
@@ -5506,6 +5504,7 @@ exports[`Storyshots Select Default 1`] = `
               <div
                 className="c12"
                 onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 <div
                   className="c13"
@@ -5525,6 +5524,7 @@ exports[`Storyshots Select Default 1`] = `
               <div
                 className="c12"
                 onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 <div
                   className="c13"
@@ -5544,6 +5544,7 @@ exports[`Storyshots Select Default 1`] = `
               <div
                 className="c12"
                 onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 <div
                   className="c13"

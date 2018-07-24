@@ -10,10 +10,6 @@ type OptionPropsType = {
 const StyledOption = withProps<OptionPropsType, HTMLDivElement>(styled.div)`
     cursor: pointer;
     background: ${({ theme, isTargeted }): string => (isTargeted ? theme.Select.common.secondaryColor : '')};
-
-    &:hover {
-        background: ${({ theme }): string => theme.Select.common.secondaryColor};
-    }
 `;
 
 export default StyledOption;

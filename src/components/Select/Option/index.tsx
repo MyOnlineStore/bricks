@@ -6,6 +6,7 @@ import StyledOption from './style';
 type PropsType = {
     isTargeted: boolean;
     onClick(): void;
+    onMouseEnter(): void;
 };
 
 type StateType = {
@@ -13,12 +14,13 @@ type StateType = {
 };
 
 const Option: SFC<PropsType> = (props): JSX.Element => {
-    const handleClick = (): void => {
-        props.onClick();
-    };
+    /* tslint:disable:no-invalid-this */
+    const onClick = props.onClick.bind(this);
+    const mouseEnter = props.onMouseEnter.bind(this);
+    /* tslint:enable:no-invalid-this */
 
     return (
-        <StyledOption isTargeted={props.isTargeted} onClick={handleClick}>
+        <StyledOption isTargeted={props.isTargeted} onClick={onClick} onMouseEnter={mouseEnter}>
             <Spacer offsetType="inner" offset={trbl(6, 18)}>
                 {props.children}
             </Spacer>

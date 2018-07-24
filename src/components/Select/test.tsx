@@ -314,7 +314,7 @@ describe('Select', () => {
         expect(component.findWhere(node => node.text() === emptyText).length).toBe(1);
     });
 
-    it('should reset the option pointer on mousemove inside window', () => {
+    it('should target an Option when mouse enters', () => {
         const component = shallowWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="" options={options} />,
         );
@@ -325,14 +325,16 @@ describe('Select', () => {
             .at(1)
             .simulate('click');
 
-        component.simulate('keyDownCapture', {
-            key: 'ArrowDown',
-        });
+        component
+            .find(Option)
+            .at(2)
+            .simulate('mouseEnter');
 
-        expect(component.findWhere(node => node.prop('isTargeted') === true && node.is(Option)).length).toBe(1);
-
-        component.find(StyledWindow).simulate('mouseMoveCapture');
-
-        expect(component.findWhere(node => node.prop('isTargeted') === true && node.is(Option)).length).toBe(0);
+        expect(
+            component
+                .find(Option)
+                .at(2)
+                .prop('isTargeted'),
+        ).toBe(true);
     });
 });
