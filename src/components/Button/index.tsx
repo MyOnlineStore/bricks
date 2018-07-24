@@ -10,6 +10,7 @@ type PropsType = {
     href?: string;
     disabled?: boolean;
     flat?: boolean;
+    color?: string;
     action?(): void;
 };
 
@@ -49,6 +50,7 @@ const Button: StatelessComponent<PropsType> = (props): JSX.Element => {
             type="button"
             disabled={props.disabled}
             flat={props.flat}
+            color={props.color}
         >
             {Children.count(props.children) > 0 ? props.children : props.title}
         </StyledButton>

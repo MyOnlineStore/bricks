@@ -104,8 +104,8 @@ class Demo extends Component<{}, DemoStateType> {
                         <TableCell width="18px" align="right">
                             <Box justifyContent="flex-end">
                                 <div onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-                                    <Button title="delete" variant="plain">
-                                        <Icon color="#A6AAB3" size="medium" icon="trash" />
+                                    <Button title="delete" flat={true} variant="destructive">
+                                        <Icon size="medium" icon="trash" />
                                     </Button>
                                 </div>
                             </Box>

@@ -1,35 +1,46 @@
 import deepmerge from 'deepmerge';
-import React, { Component } from 'react';
+import React, { Component, forwardRef, StatelessComponent } from 'react';
 import ThemeType from '../../types/ThemeType';
 import { ThemeProvider } from '../../utility/styled';
-import StyledContrast from './style';
-import { withTheme } from 'styled-components';
+import StyledContrast, { withContrastStyles } from './style';
 
 type PropsType = {
     enable?: boolean;
     theme?: ThemeType;
 };
 
-class Contrast extends Component<PropsType> {
-    public contrastTheme: ThemeType;
+const contrastTheme = (theme: ThemeType): ThemeType => {
+    return deepmerge(theme, theme.Contrast.overides as Partial<ThemeType>);
+};
 
-    public constructor(props: PropsType) {
-        super(props);
-        const theme = props.theme as ThemeType;
+const Contrast: StatelessComponent<PropsType> = (props): JSX.Element => {
+    return props.enable === undefined || props.enable ? (
+        <StyledContrast>
+            <ThemeProvider theme={contrastTheme}>{props.children}</ThemeProvider>
+        </StyledContrast>
+    ) : (
+        <div>{props.children}</div>
+    );
+};
 
-        this.contrastTheme = deepmerge(theme, theme.Contrast.overides as Partial<ThemeType>);
+const withContrast = (WrappedComponent: any): any => {
+    class ComponentWithContrast extends Component<any, any> {
+        public render(): JSX.Element {
+            const ComponentWithContrast = withContrastStyles(WrappedComponent);
+            const { contrastEnabled, ...filteredProps } = this.props;
+
+            return contrastEnabled ? (
+                <ThemeProvider ref={this.props.forwardedRef} theme={contrastTheme}>
+                    <ComponentWithContrast {...filteredProps} />
+                </ThemeProvider>
+            ) : (
+                <Component ref={this.props.forwardedRef} {...filteredProps} />
+            );
+        }
     }
 
-    public render(): JSX.Element {
-        return this.props.enable === undefined || this.props.enable ? (
-            <StyledContrast>
-                <ThemeProvider theme={this.contrastTheme}>{this.props.children}</ThemeProvider>
-            </StyledContrast>
-        ) : (
-            <div>{this.props.children}</div>
-        );
-    }
-}
+    return forwardRef((props: any, ref: any): any => <ComponentWithContrast {...props} forwardedRef={ref} />);
+};
 
-export default withTheme(Contrast);
-export { PropsType };
+export default Contrast;
+export { PropsType, withContrast };

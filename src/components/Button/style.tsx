@@ -99,11 +99,11 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
     border-style: solid;
 
-    ${({ variant, flat, theme }): string => {
+    ${({ variant, flat, theme, color }): string => {
         const subVariant = flat ? 'flat' : 'regular';
 
         return `
-            color: ${theme.Button[variant][subVariant].idle.color};
+            color: ${color ? color : theme.Button[variant][subVariant].idle.color};
             background-color: ${theme.Button[variant][subVariant].idle.backgroundColor};
             text-decoration: ${theme.Button[variant][subVariant].idle.textDecoration};
             ${!flat ? `border-color: ${theme.Button[variant].regular.hover.borderColor}` : ''};

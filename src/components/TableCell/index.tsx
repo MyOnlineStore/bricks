@@ -1,6 +1,5 @@
 import React, { SFC } from 'react';
 import trbl from '../../utility/trbl';
-import Icon from '../Icon';
 import StyledCell from './style';
 
 type PropsType = {

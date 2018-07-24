@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { withContrast } from '../Contrast';
 import Icon from '../Icon';
 import TableCell from '../TableCell';
 import StyledRow from './style';
@@ -50,11 +51,12 @@ class TableRow extends Component<PropsType, StateType> {
     };
 
     public render(): JSX.Element {
+        const Row = withContrast(StyledRow);
         if (this.props.draggable && this.props.index !== undefined) {
             return (
                 <Draggable draggableId={`id-${this.props.index}`} index={this.props.index}>
                     {(provided, snapshot): JSX.Element => (
-                        <StyledRow
+                        <Row
                             onMouseEnter={this.handleMouseEnter}
                             onMouseLeave={this.handleMouseLeave}
                             onFocusCapture={this.handleFocus}
@@ -65,20 +67,20 @@ class TableRow extends Component<PropsType, StateType> {
                             focus={this.state.focus}
                         >
                             <TableCell width="18px" provided={provided.dragHandleProps}>
-                                <Icon color={this.state.hover ? '#000' : '#A6AAB3'} size="medium" flat icon="bars" />
+                                <Icon color={this.state.hover ? '#000' : '#A6AAB3'} size="medium" icon="bars" />
                             </TableCell>
                             {this.props.children}
-                        </StyledRow>
+                        </Row>
                     )}
                 </Draggable>
             );
         }
 
         return (
-            <StyledRow focus={false}>
+            <Row focus={false}>
                 <TableCell width={this.props.draggable ? '18px' : '0'} />
                 {this.props.children}
-            </StyledRow>
+            </Row>
         );
     }
 }
