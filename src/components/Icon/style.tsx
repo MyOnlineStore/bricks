@@ -22,6 +22,7 @@ const StyledIcon = withProps<IconPropsType>(styled.span)`
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        width: 100%;
         max-height: 100%;
         max-width: 100%;
         fill: ${({ elementColor }): string => (elementColor !== undefined ? elementColor : 'currentColor')};

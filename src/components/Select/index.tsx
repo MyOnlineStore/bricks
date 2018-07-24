@@ -42,7 +42,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         this.state = {
             isOpen: false,
             input: props.value,
-            optionPointer: 0,
+            optionPointer: -1,
             filteredOption: props.options,
         };
     }
@@ -90,7 +90,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     public handleChange = (value: string): void => {
-        this.setState({ isOpen: false, input: '' });
+        this.setState({ isOpen: false, input: '', optionPointer: -1 });
         this.props.onChange(value);
     };
 
@@ -101,7 +101,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1,
         );
 
-        this.setState({ input, filteredOption });
+        this.setState({ input, filteredOption, optionPointer: -1 });
+    };
+
+    public handleMouseMove = (): void => {
+        this.setState({ optionPointer: -1 });
     };
 
     public handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
@@ -172,7 +176,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         </Button>
                     </Box>
                 </StyledInput>
-                <StyledWindow isOpen={this.state.isOpen}>
+                <StyledWindow isOpen={this.state.isOpen} onMouseMoveCapture={this.handleMouseMove}>
                     <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                         <FoldOut isOpen={this.state.isOpen}>
                             {this.state.filteredOption.length === 0 && (
