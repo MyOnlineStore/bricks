@@ -41,7 +41,7 @@ const StyledText = withProps<TextPropsType, HTMLParagraphElement>(styled.p)`
     font-weight: ${({ strong, theme }): string =>
         strong ? theme.Text.strong.fontWeight : theme.Text.default.fontWeight};
     line-height: ${({ compact }): string => (compact ? '1.25' : '1.5')};
-    text-align: ${({ textAlign }): string => (textAlign ? textAlign : 'left')}
+    text-align: ${({ textAlign }): string => (textAlign ? textAlign : '')}
     margin: 0;
 `;
 

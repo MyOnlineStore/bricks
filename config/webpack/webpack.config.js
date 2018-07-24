@@ -31,11 +31,18 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.svg$/,
+                test: /^.*(?<!\.color)\.svg$/,
                 loader: 'svg-inline-loader',
                 options: {
                     removeTags: true,
                     removingTags: ['title', 'desc', 'defs', 'style'],
+                },
+            },
+            {
+                test: /\.color\.svg$/,
+                loader: 'svg-inline-loader',
+                options: {
+                    removeTags: false,
                 },
             },
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
