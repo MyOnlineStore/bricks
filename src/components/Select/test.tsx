@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme, shallowWithTheme } from '../../utility/styled';
-import { StyledInput, StyledWindow } from './style';
+import { StyledInput } from './style';
 import Box from '../Box';
 import Option from './Option';
 import FoldOut from '../FoldOut';
