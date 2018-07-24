@@ -69,7 +69,7 @@ class Demo extends Component<{}, DemoStateType> {
     public render(): JSX.Element {
         return (
             <Table dragEndHandler={this.dragEndHandler}>
-                <TableRow draggable>
+                <TableRow>
                     {this.state.headings.map((cell, i) => (
                         <TableCell key={`cell-${i}`} tableHead>
                             <Text strong>{cell}</Text>

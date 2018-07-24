@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { withContrast } from '../Contrast';
 import Icon from '../Icon';
 import TableCell from '../TableCell';
 import StyledRow from './style';
+import { ContrastThemeProvider } from '../Contrast';
+import Button from '../Button';
 
 type PropsType = {
     index?: number;
@@ -51,36 +52,37 @@ class TableRow extends Component<PropsType, StateType> {
     };
 
     public render(): JSX.Element {
-        const Row = withContrast(StyledRow);
         if (this.props.draggable && this.props.index !== undefined) {
             return (
                 <Draggable draggableId={`id-${this.props.index}`} index={this.props.index}>
                     {(provided, snapshot): JSX.Element => (
-                        <Row
-                            onMouseEnter={this.handleMouseEnter}
-                            onMouseLeave={this.handleMouseLeave}
-                            onFocusCapture={this.handleFocus}
-                            onBlurCapture={this.handleBlur}
-                            {...provided.draggableProps}
-                            isDragging={snapshot.isDragging}
-                            innerRef={provided.innerRef}
-                            focus={this.state.focus}
-                        >
-                            <TableCell width="18px" provided={provided.dragHandleProps}>
-                                <Icon color={this.state.hover ? '#000' : '#A6AAB3'} size="medium" icon="bars" />
-                            </TableCell>
-                            {this.props.children}
-                        </Row>
+                        <ContrastThemeProvider isEnabled={this.state.hover}>
+                            <StyledRow
+                                onMouseEnter={this.handleMouseEnter}
+                                onMouseLeave={this.handleMouseLeave}
+                                onFocusCapture={this.handleFocus}
+                                onBlurCapture={this.handleBlur}
+                                {...provided.draggableProps}
+                                isDragging={snapshot.isDragging}
+                                innerRef={provided.innerRef}
+                                focus={this.state.focus}
+                            >
+                                <TableCell width="18px" provided={provided.dragHandleProps}>
+                                    <Icon color={this.state.hover ? '#000' : '#A6AAB3'} size="medium" icon="bars" />
+                                </TableCell>
+                                {this.props.children}
+                            </StyledRow>
+                        </ContrastThemeProvider>
                     )}
                 </Draggable>
             );
         }
 
         return (
-            <Row focus={false}>
+            <StyledRow focus={false}>
                 <TableCell width={this.props.draggable ? '18px' : '0'} />
                 {this.props.children}
-            </Row>
+            </StyledRow>
         );
     }
 }
