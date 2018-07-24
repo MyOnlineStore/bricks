@@ -48,7 +48,7 @@ class Demo extends Component<{}, { value: string }> {
         super(props);
 
         this.state = {
-            value: '',
+            value: 'F',
         };
     }
 

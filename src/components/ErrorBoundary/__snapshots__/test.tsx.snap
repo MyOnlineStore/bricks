@@ -16,6 +16,7 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  width: 100%;
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;

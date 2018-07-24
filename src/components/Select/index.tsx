@@ -66,7 +66,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     private open = (): void => {
-        this.setState({ isOpen: true });
+        this.setState({ isOpen: true, input: '' });
     };
 
     public componentDidUpdate(prevProps: PropsType<GenericOption>, prevState: StateType<GenericOption>): void {
@@ -84,13 +84,13 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     }
 
     public handleClickOutside = (event: MouseEvent): void => {
-        if (this.wrapperRef !== null && !this.wrapperRef.contains(event.target as Node)) {
+        if (!this.wrapperRef.contains(event.target as Node)) {
             this.close();
         }
     };
 
     public handleChange = (value: string): void => {
-        this.setState({ isOpen: false, input: '', optionPointer: -1 });
+        this.setState({ isOpen: false, optionPointer: -1 });
         this.props.onChange(value);
     };
 
@@ -121,7 +121,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             this.cycleUp();
         }
 
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && this.state.optionPointer !== -1) {
             this.handleChange(this.state.filteredOption[this.state.optionPointer].value);
             this.wrapperRef.focus();
         }

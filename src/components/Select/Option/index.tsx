@@ -13,8 +13,12 @@ type StateType = {
 };
 
 const Option: SFC<PropsType> = (props): JSX.Element => {
+    const handleClick = (): void => {
+        props.onClick();
+    };
+
     return (
-        <StyledOption isTargeted={props.isTargeted} onClick={props.onClick}>
+        <StyledOption isTargeted={props.isTargeted} onClick={handleClick}>
             <Spacer offsetType="inner" offset={trbl(6, 18)}>
                 {props.children}
             </Spacer>

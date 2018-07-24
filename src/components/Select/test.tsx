@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme, shallowWithTheme } from '../../utility/styled';
-import { StyledInput } from './style';
+import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
 import FoldOut from '../FoldOut';
@@ -44,6 +44,8 @@ const options = [
         description: 'Lorem ipsum dolor sit amet.',
     },
 ];
+
+/* tslint:disable:max-file-line-count */
 
 describe('Select', () => {
     it('should open when the spacebar is pressed', () => {
@@ -185,6 +187,10 @@ describe('Select', () => {
             key: 'ArrowDown',
         });
 
+        component.simulate('keyDownCapture', {
+            key: 'ArrowDown',
+        });
+
         expect(
             component
                 .find(Option)
@@ -220,6 +226,10 @@ describe('Select', () => {
         });
 
         component.simulate('keyDownCapture', {
+            key: 'ArrowDown',
+        });
+
+        component.simulate('keyDownCapture', {
             key: 'ArrowUp',
         });
 
@@ -242,7 +252,7 @@ describe('Select', () => {
         ).toBe(true);
     });
 
-    it('should set the value of the target option when enter is pressed', () => {
+    it('should set the value of the target option when enter is pressed on a targeted option', () => {
         const changeHandler = jest.fn();
 
         const component = mountWithTheme(
@@ -251,6 +261,10 @@ describe('Select', () => {
 
         component.simulate('keyDown', {
             key: ' ',
+        });
+
+        component.simulate('keyDown', {
+            key: 'ArrowDown',
         });
 
         component.simulate('keyDown', {
@@ -298,5 +312,27 @@ describe('Select', () => {
             .simulate('click');
 
         expect(component.findWhere(node => node.text() === emptyText).length).toBe(1);
+    });
+
+    it('should reset the option pointer on mousemove inside window', () => {
+        const component = shallowWithTheme(
+            <Select onChange={(): void => undefined} value="" emptyText="" options={options} />,
+        );
+
+        component
+            .find(StyledInput)
+            .find(Box)
+            .at(1)
+            .simulate('click');
+
+        component.simulate('keyDownCapture', {
+            key: 'ArrowDown',
+        });
+
+        expect(component.findWhere(node => node.prop('isTargeted') === true && node.is(Option)).length).toBe(1);
+
+        component.find(StyledWindow).simulate('mouseMoveCapture');
+
+        expect(component.findWhere(node => node.prop('isTargeted') === true && node.is(Option)).length).toBe(0);
     });
 });
