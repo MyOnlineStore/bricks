@@ -9,17 +9,19 @@ type PropsType = {
 const Table: SFC<PropsType> = (props): JSX.Element => {
     const dragEndHandler = (result: DropResult): void => props.dragEndHandler(result);
 
+    /* tslint:disable:no-unbound-method */
     return (
         <DragDropContext onDragEnd={dragEndHandler}>
             <Droppable droppableId="droppable">
-                {(provided): JSX.Element => (
-                    <StyledTable innerRef={provided.innerRef}>
+                {({ innerRef }): JSX.Element => (
+                    <StyledTable innerRef={innerRef}>
                         <tbody>{props.children}</tbody>
                     </StyledTable>
                 )}
             </Droppable>
         </DragDropContext>
     );
+    /* tslint:enable:no-unbound-method */
 };
 
 export default Table;

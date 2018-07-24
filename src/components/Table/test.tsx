@@ -1,5 +1,5 @@
 import React from 'react';
-import DragDropContext from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
 import { mountWithTheme } from '../../utility/styled';
 import TableCell from '../TableCell';
@@ -7,9 +7,15 @@ import TableRow from '../TableRow';
 
 describe('Table', () => {
     it('should render ', () => {
-        // (DragDropContext as jest.Mock<DragDropContext>).mockImplementationOnce(() => undefined);
+        /* tslint:disable */
+        (DragDropContext as any).mockImplementationOnce(({ onDragEnd }: any) => {
+            onDragEnd();
+            return <div />;
+        });
+        /* tslint:enable */
 
         const dragHandler = jest.fn();
+
         const component = mountWithTheme(
             <Table dragEndHandler={dragHandler}>
                 <TableRow>
@@ -18,7 +24,7 @@ describe('Table', () => {
             </Table>,
         );
 
-        expect(dragHandler).toHaveBeenCalledWith({ undefined });
+        expect(dragHandler).toHaveBeenCalled();
         expect(component.find(Table).length).toBe(1);
     });
 
@@ -32,22 +38,4 @@ describe('Table', () => {
         );
         expect(component.find(Table).length).toBe(1);
     });
-
-    // it('should call dragEndHandler', () => {
-    //     const mockHandler = jest.fn();
-
-    //     (DragDropContext as jest.Mock<DragDropContext>).mockImplementationOnce((props: PropsType): any => {
-    //         return props.dragEndHandler(mockHandler);
-    //     });
-
-    //     const component = mountWithTheme(
-    //         <Table dragEndHandler={jest.fn().mockReturnValue(undefined)}>
-    //             <TableRow>
-    //                 <TableCell>Boo!</TableCell>
-    //             </TableRow>
-    //         </Table>,
-    //     );
-
-    //     expect(component.find(Table).length).toBe(1);
-    // });
 });

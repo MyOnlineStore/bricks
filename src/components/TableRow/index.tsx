@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { ContrastThemeProvider } from '../Contrast';
 import Icon from '../Icon';
 import TableCell from '../TableCell';
 import StyledRow from './style';
-import { ContrastThemeProvider } from '../Contrast';
-import Button from '../Button';
 
 type PropsType = {
     index?: number;
@@ -53,10 +52,11 @@ class TableRow extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         if (this.props.draggable && this.props.index !== undefined) {
+            /* tslint:disable:no-unbound-method */
             return (
                 <Draggable draggableId={`id-${this.props.index}`} index={this.props.index}>
                     {(provided, snapshot): JSX.Element => (
-                        <ContrastThemeProvider isEnabled={this.state.hover}>
+                        <ContrastThemeProvider enabled={this.state.hover}>
                             <StyledRow
                                 onMouseEnter={this.handleMouseEnter}
                                 onMouseLeave={this.handleMouseLeave}
@@ -76,11 +76,12 @@ class TableRow extends Component<PropsType, StateType> {
                     )}
                 </Draggable>
             );
+            /* tslint:enable:no-unbound-method */
         }
 
         return (
             <StyledRow focus={false}>
-                <TableCell width={this.props.draggable ? '18px' : '0'} />
+                <TableCell />
                 {this.props.children}
             </StyledRow>
         );

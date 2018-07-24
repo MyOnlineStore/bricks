@@ -29,7 +29,9 @@ describe('Button', () => {
     it('should call the passed action on click', () => {
         const clickMock = jest.fn();
 
-        const component = mountWithTheme(<Button title="button title" variant="primary" action={clickMock} />);
+        const component = mountWithTheme(
+            <Button title="button title" color="#f00" variant="primary" action={clickMock} />,
+        );
 
         component.simulate('click');
 

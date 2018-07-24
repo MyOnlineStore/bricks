@@ -1,5 +1,5 @@
 import React, { SFC } from 'react';
-import trbl from '../../utility/trbl';
+import { DraggableProvided } from 'react-beautiful-dnd';
 import StyledCell from './style';
 
 type PropsType = {
@@ -7,7 +7,7 @@ type PropsType = {
     align?: 'left' | 'center' | 'right';
     width?: string;
     dragHandler?: boolean;
-    provided?: any;
+    provided?: DraggableProvided['dragHandleProps'];
 };
 
 const TableCell: SFC<PropsType> = (props): JSX.Element => {

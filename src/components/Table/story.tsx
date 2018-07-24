@@ -54,18 +54,6 @@ class Demo extends Component<{}, DemoStateType> {
         }
     };
 
-    public handleMouseEnter = (): void => {
-        this.setState({
-            hover: true,
-        });
-    };
-
-    public handleMouseLeave = (): void => {
-        this.setState({
-            hover: false,
-        });
-    };
-
     public render(): JSX.Element {
         return (
             <Table dragEndHandler={this.dragEndHandler}>
@@ -103,11 +91,9 @@ class Demo extends Component<{}, DemoStateType> {
                         ))}
                         <TableCell width="18px" align="right">
                             <Box justifyContent="flex-end">
-                                <div onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-                                    <Button title="delete" flat={true} variant="destructive">
-                                        <Icon size="medium" icon="trash" />
-                                    </Button>
-                                </div>
+                                <Button title="delete" compact flat={true} variant="destructive">
+                                    <Icon size="medium" icon="trash" />
+                                </Button>
                             </Box>
                         </TableCell>
                     </TableRow>

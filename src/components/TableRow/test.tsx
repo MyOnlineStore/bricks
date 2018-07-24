@@ -1,7 +1,7 @@
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import TableRow from '.';
 import { mountWithTheme } from '../../utility/styled';
+import TableCell from '../TableCell';
 import StyledRow from './style';
 
 describe('Table', () => {
@@ -33,7 +33,7 @@ describe('Table', () => {
             <table>
                 <tbody>
                     <TableRow draggable index={1}>
-                        <td>Boo!</td>
+                        <TableCell>Boo!</TableCell>
                     </TableRow>
                 </tbody>
             </table>,

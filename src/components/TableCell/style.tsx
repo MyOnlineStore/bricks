@@ -20,7 +20,7 @@ type TableCellThemeType = {
     };
 };
 
-const StyledCell = withProps<CellPropsType, HTMLTableCellElement>(styled.td)`
+const StyledCell = withProps<CellPropsType>(styled.td)`
     width: ${({ elementWidth }): string => (elementWidth ? elementWidth : 'inherit')};
     text-align: ${({ align }): string => (align ? align : 'left')};
     border-bottom: ${({ theme }): string => `1px solid ${theme.TableCell.default.borderColor}`};
