@@ -1,5 +1,7 @@
 ### This PR:
 
+proposed release: [`major`|`minor`|`patch`]
+
 resolves #[resolved issue number]
 
 **Adds** ✨
@@ -10,3 +12,6 @@ resolves #[resolved issue number]
 
 **Removes** 👋
 - depracted `foop` method
+
+**Breaking changes** 🔥
+- Feature `foo` no longer supports `foo` and needs to be converted to `foop`
