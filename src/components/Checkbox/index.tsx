@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Icon from '../Icon';
-import StyledCheckbox, { StyledCheckboxSkin, StyledIcon } from './style';
+import StyledCheckbox, { StyledCheckboxSkin } from './style';
+import Box from '../Box';
 
 type StateType = {
     focus: boolean;
@@ -39,8 +40,9 @@ class Checkbox extends Component<PropsType, StateType> {
                 elementFocus={this.state.focus}
                 checked={this.props.checked}
             >
-                <StyledIcon>{this.props.checked && <Icon size="small" color="#fff" icon="checkmark" />}</StyledIcon>
-
+                <Box justifyContent="center" alignItems="center" height="100%">
+                    {this.props.checked && <Icon size="small" color="#fff" icon="checkmark" />}
+                </Box>
                 <StyledCheckbox
                     onFocus={this.toggleFocus}
                     onBlur={this.toggleFocus}

@@ -54,15 +54,7 @@ const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(sty
                 background-color: ${theme.Checkbox.idle.backgroundColor};
                 border: 1px solid ${theme.Checkbox.idle.borderColor}
             `}
-    `;
-
-const StyledIcon = styled.div`
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -6px;
-    margin-top: -12px;
 `;
 
 export default StyledCheckbox;
-export { StyledCheckboxSkin, StyledIcon, StyledCheckboxType, CheckboxThemeType };
+export { StyledCheckboxSkin, StyledCheckboxType, CheckboxThemeType };
