@@ -12,6 +12,7 @@ type PropsType = {
     placement: PlacementType;
     fixed: boolean;
     offset: number;
+    distance: number;
 };
 
 type StateType = {
@@ -53,6 +54,7 @@ class Demo extends Component<PropsType, StateType> {
                         placement={this.props.placement}
                         fixed={this.props.fixed}
                         offset={this.props.offset}
+                        distance={this.props.distance}
                         renderContent={(): JSX.Element => <DemoContent />}
                     >
                         <Button variant="primary" title="Toggle" action={this.toggle} />
@@ -90,7 +92,8 @@ storiesOf('Popover', module).add('Default', () => (
             ) as PlacementType
         }
         fixed={boolean('fixed', false)}
-        offset={number('offset', 16)}
+        offset={number('offset', 0)}
+        distance={number('distance', 16)}
     />
     /* tslint:enable */
 ));

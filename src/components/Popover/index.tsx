@@ -10,11 +10,25 @@ type PropsType = {
     isOpen: boolean;
     fixed?: boolean;
     offset?: number;
+    distance?: number;
     stretch?: boolean;
     renderContent(): JSX.Element | string;
 };
 
 const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
+    const mapOffset = (props: PropsType): string => {
+        switch (true) {
+            case props.offset === undefined && props.distance === undefined:
+                return '0, 16px';
+            case props.offset !== undefined && props.distance === undefined:
+                return `${props.offset}px, 16px`;
+            case props.offset === undefined && props.distance !== undefined:
+                return `0, ${props.distance}px`;
+            default:
+                return `${props.offset}px, ${props.distance}px`;
+        }
+    };
+
     return (
         <>
             <Manager>
@@ -31,7 +45,7 @@ const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
                         placement={props.placement !== undefined ? props.placement : 'bottom'}
                         modifiers={{
                             offset: {
-                                offset: props.offset !== undefined ? `0, ${props.offset}px` : '0, 16px',
+                                offset: mapOffset(props),
                             },
                             flip: {
                                 enabled: false,

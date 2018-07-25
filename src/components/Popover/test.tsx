@@ -37,9 +37,43 @@ describe('Popover', () => {
         expect(popper.prop('positionFixed')).toEqual(true);
     });
 
-    it('should render with a custom offset', () => {
+    it('should render with a custom distance and offset', () => {
         const component = shallowWithTheme(
-            <Popover isOpen={true} offset={6} renderContent={(): string => 'Mock content'} />,
+            <Popover isOpen={true} offset={20} distance={6} renderContent={(): string => 'Mock content'} />,
+        );
+
+        const popper = component.find(Popper);
+
+        expect(popper.prop('modifiers')).toEqual({
+            offset: {
+                offset: '20px, 6px',
+            },
+            flip: {
+                enabled: false,
+            },
+        });
+    });
+
+    it('should render with only a custom offset', () => {
+        const component = shallowWithTheme(
+            <Popover isOpen={true} offset={20} renderContent={(): string => 'Mock content'} />,
+        );
+
+        const popper = component.find(Popper);
+
+        expect(popper.prop('modifiers')).toEqual({
+            offset: {
+                offset: '20px, 16px',
+            },
+            flip: {
+                enabled: false,
+            },
+        });
+    });
+
+    it('should render with only a custom distance', () => {
+        const component = shallowWithTheme(
+            <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
