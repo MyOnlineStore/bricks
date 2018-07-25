@@ -70,7 +70,8 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     private open = (): void => {
-        this.setState({ isOpen: true, input: '' });
+        this.handleInput('');
+        this.setState({ isOpen: true });
     };
 
     public componentDidUpdate(prevProps: PropsType<GenericOption>, prevState: StateType<GenericOption>): void {
@@ -98,9 +99,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         this.props.onChange(value);
     };
 
-    public handleInput = (event: ChangeEvent<HTMLInputElement>): void => {
-        const input = event.target.value;
-
+    public handleInput = (input: string): void => {
         const filteredOptions = this.props.options.filter(
             option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1,
         );
@@ -156,7 +155,9 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                     type="text"
                                     placeholder={this.props.placeholder}
                                     value={this.state.input}
-                                    onChange={this.handleInput}
+                                    onChange={(event: ChangeEvent<HTMLInputElement>): void =>
+                                        this.handleInput(event.target.value)
+                                    }
                                 />
                             </>
                         )) || (
@@ -168,8 +169,9 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         )}
                         <Button
                             compact
+                            flat
+                            variant="secondary"
                             title={this.state.isOpen ? 'close' : 'open'}
-                            variant={'plain'}
                             action={this.state.isOpen ? this.close : this.open}
                         >
                             <Icon icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} size="small" />
