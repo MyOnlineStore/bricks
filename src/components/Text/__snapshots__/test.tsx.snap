@@ -7,7 +7,7 @@ exports[`Text should render text with default styling 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 <p

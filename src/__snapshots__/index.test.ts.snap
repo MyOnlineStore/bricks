@@ -97,7 +97,7 @@ exports[`Storyshots Box Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c0 {
@@ -237,7 +237,7 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c0 {
@@ -1181,14 +1181,51 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 `;
 
 exports[`Storyshots Checkbox Default 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   display: inline-block;
+  position: relative;
   vertical-align: middle;
   height: 12px;
   width: 12px;
 }
 
 .c2 svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
   max-height: 100%;
   max-width: 100%;
   fill: #fff;
@@ -1211,14 +1248,6 @@ exports[`Storyshots Checkbox Default 1`] = `
   transition: box-shadow 100ms,border 100ms,background-color 100ms;
   background-color: #6bde78;
   border: 1px solid #4cc55b;
-}
-
-.c1 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -6px;
-  margin-top: -12px;
 }
 
 <div
@@ -1883,7 +1912,7 @@ exports[`Storyshots ErrorBoundary Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 <div>
@@ -1906,7 +1935,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c3 {
@@ -2277,7 +2306,7 @@ exports[`Storyshots Link Action with child element 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c1 {
@@ -2322,7 +2351,7 @@ exports[`Storyshots Link Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c1 {
@@ -2450,7 +2479,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c5 {
@@ -2459,7 +2488,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c7 {
@@ -2468,7 +2497,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c11 {
@@ -3439,7 +3468,7 @@ exports[`Storyshots Modal Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c19 {
@@ -4502,7 +4531,7 @@ exports[`Storyshots RadioButton Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c0 {
@@ -4638,7 +4667,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c3 {
@@ -4838,7 +4867,7 @@ Array [
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c5 {
@@ -4996,7 +5025,7 @@ Array [
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 <p
@@ -5165,9 +5194,9 @@ exports[`Storyshots Select Default 1`] = `
   -webkit-transform: translateZ(0) translate3d(0,0,0);
   -ms-transform: translateZ(0) translate3d(0,0,0);
   transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s, border 0.3s;
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -5180,37 +5209,25 @@ exports[`Storyshots Select Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
+  color: #55656d;
   background-color: transparent;
-  border-color: transparent;
-  color: #333740;
-  box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c7:hover {
+  color: #21252b;
   background-color: transparent;
-  border-color: transparent;
-  color: #333740;
-  box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c7:focus {
-  background-color: transparent;
-  border-color: transparent;
-  color: #333740;
-  box-shadow: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .c7:active {
+  color: #21252b;
   background-color: transparent;
-  border-color: transparent;
-  color: #333740;
-  box-shadow: none;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -5233,13 +5250,12 @@ exports[`Storyshots Select Default 1`] = `
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: none;
+  background: transparent;
   border-radius: 3px;
 }
 
 .c7:disabled {
-  background: #e4e7ec;
+  background: transparent;
   border-color: transparent;
   cursor: default;
   opacity: 0.7;
@@ -5581,7 +5597,7 @@ exports[`Storyshots Spacer With margin 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c1 {
@@ -5615,7 +5631,7 @@ exports[`Storyshots Spacer With padding 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  text-align: margin:0;
+  margin: 0;
 }
 
 .c0 {
