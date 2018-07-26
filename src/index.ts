@@ -11,6 +11,7 @@ export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
 export { default as Heading } from './components/Heading';
 export { default as Icon, SmallIcons, MediumIcons, LargeIcons } from './components/Icon';
+export { default as InlineNotification } from './components/InlineNotification';
 export { default as Link } from './components/Link';
 export { default as MerchantTheme } from './themes/MerchantTheme';
 export { default as MessageStream } from './components/MessageStream';
