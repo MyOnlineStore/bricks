@@ -507,7 +507,7 @@ const theme: ThemeType = {
             borderColor: green.base,
         },
         info: {
-            color: green.base,
+            color: '#4e82bb',
             backgroundColor: '#dde7f2',
             borderColor: '#c8d2dd',
         },
