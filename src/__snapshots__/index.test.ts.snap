@@ -4153,7 +4153,7 @@ exports[`Storyshots Notification Info 1`] = `
   font-size: 14px;
   background-color: #dde7f2;
   border-color: #c8d2dd;
-  color: #6bde78;
+  color: #4e82bb;
 }
 
 <div
