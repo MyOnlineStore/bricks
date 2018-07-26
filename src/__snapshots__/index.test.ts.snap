@@ -30,6 +30,7 @@ exports[`Storyshots Box Default 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  width: 100%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -48,6 +49,7 @@ exports[`Storyshots Box Default 1`] = `
   -ms-flex-line-pack: start;
   align-content: flex-start;
   margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -69,6 +71,7 @@ exports[`Storyshots Box Default 1`] = `
   display: -ms-flexbox;
   display: flex;
   margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -88,7 +91,24 @@ exports[`Storyshots Box Default 1`] = `
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   padding: 48px 48px 48px 48px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
 }
 
 .c5 {
@@ -322,10 +342,6 @@ exports[`Storyshots Button On a contrast area 1`] = `
   align-self: stretch;
 }
 
-.c1 {
-  padding: 12px 12px 12px 12px;
-}
-
 .c4 {
   position: relative;
   -webkit-appearance: none;
@@ -555,6 +571,10 @@ exports[`Storyshots Button On a contrast area 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  padding: 12px 12px 12px 12px;
 }
 
 <div
@@ -1284,11 +1304,7 @@ exports[`Storyshots Checkbox Default 1`] = `
 
 exports[`Storyshots Contrast Default 1`] = `
 Array [
-  .c1 {
-  padding: 12px 12px 12px 12px;
-}
-
-.c2 {
+  .c2 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1395,6 +1411,10 @@ Array [
   background: #f8f9fb;
 }
 
+.c1 {
+  padding: 12px 12px 12px 12px;
+}
+
 <div
     className="c0"
   >
@@ -1412,11 +1432,7 @@ Array [
       </button>
     </div>
   </div>,
-  .c0 {
-  padding: 12px 12px 12px 12px;
-}
-
-.c1 {
+  .c1 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1519,6 +1535,10 @@ Array [
   opacity: 1;
 }
 
+.c0 {
+  padding: 12px 12px 12px 12px;
+}
+
 <div
     className="c0"
   >
@@ -1591,14 +1611,6 @@ exports[`Storyshots EmptyState Default 1`] = `
   order: 0;
 }
 
-.c3 {
-  padding: 18px 0px 0px 0px;
-}
-
-.c5 {
-  margin: 12px 0px 24px 0px;
-}
-
 .c6 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
@@ -1607,6 +1619,14 @@ exports[`Storyshots EmptyState Default 1`] = `
   line-height: 1.5;
   text-align: center;
   margin: 0;
+}
+
+.c3 {
+  padding: 18px 0px 0px 0px;
+}
+
+.c5 {
+  margin: 12px 0px 24px 0px;
 }
 
 .c4 {
@@ -1718,14 +1738,6 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-}
-
-.c3 {
-  padding: 18px 0px 0px 0px;
-}
-
-.c5 {
-  margin: 12px 0px 24px 0px;
 }
 
 .c6 {
@@ -1841,6 +1853,14 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   opacity: 1;
 }
 
+.c3 {
+  padding: 18px 0px 0px 0px;
+}
+
+.c5 {
+  margin: 12px 0px 24px 0px;
+}
+
 .c4 {
   color: #333740;
   font-family: Melbourne,sans-serif;
@@ -1925,10 +1945,6 @@ exports[`Storyshots ErrorBoundary Default 1`] = `
 `;
 
 exports[`Storyshots FoldOut With a toggle 1`] = `
-.c1 {
-  padding: 0px 0px 12px 0px;
-}
-
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -2039,6 +2055,10 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 
 .c3:disabled::before {
   opacity: 1;
+}
+
+.c1 {
+  padding: 0px 0px 12px 0px;
 }
 
 .c0 {
@@ -2467,10 +2487,6 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-}
-
-.c2 {
-  padding: 12px 24px 12px 24px;
 }
 
 .c6 {
@@ -2914,6 +2930,10 @@ exports[`Storyshots MessageStream Default 1`] = `
 
 .c15 {
   background: #f8f9fb;
+}
+
+.c2 {
+  padding: 12px 24px 12px 24px;
 }
 
 .c0 {
@@ -3450,18 +3470,6 @@ exports[`Storyshots Modal Default 1`] = `
   order: 0;
 }
 
-.c5 {
-  margin: -12px -12px -6px 0px;
-}
-
-.c16 {
-  padding: 24px 36px 24px 36px;
-}
-
-.c11 {
-  padding: 0px 36px 36px 36px;
-}
-
 .c12 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -3805,6 +3813,18 @@ exports[`Storyshots Modal Default 1`] = `
   fill: currentColor;
 }
 
+.c5 {
+  margin: -12px -12px -6px 0px;
+}
+
+.c16 {
+  padding: 24px 36px 24px 36px;
+}
+
+.c11 {
+  padding: 0px 36px 36px 36px;
+}
+
 .c4 {
   color: #333740;
   font-family: Melbourne,sans-serif;
@@ -4043,10 +4063,6 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
 `;
 
 exports[`Storyshots Notification Error 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   position: relative;
@@ -4066,6 +4082,10 @@ exports[`Storyshots Notification Error 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4101,10 +4121,6 @@ exports[`Storyshots Notification Error 1`] = `
 `;
 
 exports[`Storyshots Notification Info 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   position: relative;
@@ -4124,6 +4140,10 @@ exports[`Storyshots Notification Info 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4159,10 +4179,6 @@ exports[`Storyshots Notification Info 1`] = `
 `;
 
 exports[`Storyshots Notification Success 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   position: relative;
@@ -4182,6 +4198,10 @@ exports[`Storyshots Notification Success 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4217,10 +4237,6 @@ exports[`Storyshots Notification Success 1`] = `
 `;
 
 exports[`Storyshots Notification Warning 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   position: relative;
@@ -4240,6 +4256,10 @@ exports[`Storyshots Notification Warning 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4275,10 +4295,6 @@ exports[`Storyshots Notification Warning 1`] = `
 `;
 
 exports[`Storyshots Notification With a custom icon 1`] = `
-.c1 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   display: inline-block;
   position: relative;
@@ -4298,6 +4314,10 @@ exports[`Storyshots Notification With a custom icon 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c1 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4360,10 +4380,6 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
-}
-
-.c1 {
-  margin: 48px 48px 48px 48px;
 }
 
 .c3 {
@@ -4469,6 +4485,10 @@ exports[`Storyshots Popover Default 1`] = `
   opacity: 1;
 }
 
+.c1 {
+  margin: 48px 48px 48px 48px;
+}
+
 .c2 {
   display: inline-block;
 }
@@ -4521,10 +4541,6 @@ exports[`Storyshots PriceTag Default 1`] = `
 `;
 
 exports[`Storyshots RadioButton Default 1`] = `
-.c1 {
-  margin: 0px 9px 0px 0px;
-}
-
 .c4 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -4532,6 +4548,10 @@ exports[`Storyshots RadioButton Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.c1 {
+  margin: 0px 9px 0px 0px;
 }
 
 .c0 {
@@ -4657,10 +4677,6 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   order: 0;
 }
 
-.c4 {
-  margin: 0px 9px 0px 0px;
-}
-
 .c7 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -4668,6 +4684,10 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.c4 {
+  margin: 0px 9px 0px 0px;
 }
 
 .c3 {
@@ -4857,10 +4877,6 @@ Array [
   order: 0;
 }
 
-.c4 {
-  padding: 12px 24px 12px 12px;
-}
-
 .c6 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -4868,6 +4884,10 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.c4 {
+  padding: 12px 24px 12px 12px;
 }
 
 .c5 {
@@ -5158,10 +5178,6 @@ exports[`Storyshots Select Default 1`] = `
   order: 0;
 }
 
-.c13 {
-  padding: 6px 18px 6px 18px;
-}
-
 .c14 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -5289,6 +5305,10 @@ exports[`Storyshots Select Default 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c13 {
+  padding: 6px 18px 6px 18px;
 }
 
 .c11 {
@@ -5587,10 +5607,6 @@ exports[`Storyshots Select Default 1`] = `
 `;
 
 exports[`Storyshots Spacer With margin 1`] = `
-.c0 {
-  margin: 12px 12px 12px 12px;
-}
-
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -5598,6 +5614,10 @@ exports[`Storyshots Spacer With margin 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.c0 {
+  margin: 12px 12px 12px 12px;
 }
 
 .c1 {
@@ -5621,10 +5641,6 @@ exports[`Storyshots Spacer With margin 1`] = `
 `;
 
 exports[`Storyshots Spacer With padding 1`] = `
-.c1 {
-  padding: 12px 12px 12px 12px;
-}
-
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -5632,6 +5648,10 @@ exports[`Storyshots Spacer With padding 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.c1 {
+  padding: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -5848,11 +5868,7 @@ Array [
       value=""
     />
   </div>,
-  .c0 {
-  margin: 6px 0px 0px 12px;
-}
-
-.c2 {
+  .c2 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -5871,6 +5887,10 @@ Array [
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c0 {
+  margin: 6px 0px 0px 12px;
 }
 
 .c1 {

@@ -52,6 +52,14 @@ describe('Box', () => {
         /* tslint:enable */
     });
 
+    it('can have padding', () => {
+        const component = shallow(<Box padding={trbl(24, 0, 'auto')} />);
+
+        /*tslint:disable */
+        (expect(component) as any).toHaveStyleRule('padding', '24px 0px auto 0px');
+        /* tslint:enable */
+    });
+
     it('prevents wrapping of children', () => {
         const component = shallow(<Box wrap={false} />);
 
@@ -121,6 +129,30 @@ describe('Box', () => {
 
         /* tslint:disable */
         (expect(component) as any).toHaveStyleRule('max-height', '100%');
+        /* tslint:enable */
+    });
+
+    it('should have a minHeight', () => {
+        const component = shallow(<Box minHeight={'50px'} />);
+
+        /* tslint:disable */
+        (expect(component) as any).toHaveStyleRule('min-height', '50px');
+        /* tslint:enable */
+    });
+
+    it('should have a maxWidth', () => {
+        const component = shallow(<Box maxWidth={'100%'} />);
+
+        /* tslint:disable */
+        (expect(component) as any).toHaveStyleRule('max-width', '100%');
+        /* tslint:enable */
+    });
+
+    it('should have a minWidth', () => {
+        const component = shallow(<Box minWidth={'50px'} />);
+
+        /* tslint:disable */
+        (expect(component) as any).toHaveStyleRule('min-width', '50px');
         /* tslint:enable */
     });
 });

@@ -4,7 +4,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Box, { PropsType } from '.';
 import trbl, { PxCoordinateType } from '../../utility/trbl';
-import Spacer from '../Spacer/style';
 import Text from '../Text';
 
 const Wrapper = styled.div`
@@ -36,16 +35,23 @@ storiesOf('Box', module).add('Default', () => {
             <Box
                 key={i}
                 margin={trbl(select('margin', [0, 6, 12], 0, 'Child') as PxCoordinateType)}
+                padding={trbl(select('padding', [0, 6, 12], 0, 'Child') as PxCoordinateType)}
                 grow={number('grow', 1, {}, 'Child')}
                 shrink={number('shrink', 1, {}, 'Child')}
                 basis={text('basis', 'auto', 'Child')}
                 order={number('order', 1, {}, 'Child')}
                 alignSelf={select('alignSelf', alignSelf, alignSelf[0], 'Child') as PropsType['alignSelf']}
+                height={text('height', '', 'Child')}
+                maxHeight={text('maxHeight', '', 'Child')}
+                minHeight={text('minHeight', '', 'Child')}
+                width={text('width', '', 'Child')}
+                maxWidth={text('maxWidth', '', 'Child')}
+                minWidth={text('minWidth', '', 'Child')}
             >
                 <Item>
-                    <Spacer offsetType="inner" elementOffset={trbl(48)}>
+                    <Box padding={trbl(48)}>
                         <Text>Box {i + 1}</Text>
-                    </Spacer>
+                    </Box>
                 </Item>
             </Box>,
         );
@@ -55,6 +61,7 @@ storiesOf('Box', module).add('Default', () => {
         <Wrapper>
             <Box
                 margin={trbl(select('margin', [-12, -6, 0, 6, 12], 0, 'Parent') as PxCoordinateType)}
+                padding={trbl(select('padding', [-12, -6, 0, 6, 12], 0, 'Parent') as PxCoordinateType)}
                 justifyContent={
                     select('justifyContent', justifyOptions, justifyOptions[0], 'Parent') as PropsType['justifyContent']
                 }
@@ -74,6 +81,7 @@ storiesOf('Box', module).add('Default', () => {
                 }
                 wrap={boolean('wrap', true, 'Parent')}
                 height="100%"
+                width="100%"
             >
                 {items}
             </Box>
