@@ -1,5 +1,11 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
-import _R, { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
+import ReactDOM from 'react-dom';
+
+// Workaround for https://github.com/facebook/react/issues/11565#issuecomment-368877149
+/* tslint:disable */
+(ReactDOM as any).createPortal = (node: any): any => React.createElement('MockPortal', null, node);
+/* tslint:enable */
 
 initStoryshots({
     configPath: './config/storybook',

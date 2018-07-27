@@ -33,7 +33,7 @@ type PropsType<GenericOption extends OptionBase> = {
 
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
-    private wrapperRef?: HTMLDivElement;
+    private wrapperRef: HTMLDivElement;
 
     public constructor(props: PropsType<GenericOption>) {
         super(props);
@@ -94,7 +94,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     }
 
     public handleClickOutside = (event: MouseEvent): void => {
-        if (this.wrapperRef !== undefined && !this.wrapperRef.contains(event.target as Node)) {
+        if (!this.wrapperRef.contains(event.target as Node)) {
             this.close();
         }
     };
@@ -123,10 +123,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
         if (event.key === 'Enter' && this.state.optionPointer !== -1) {
             this.handleChange(this.filterOptions()[this.state.optionPointer].value);
-
-            if (this.wrapperRef !== undefined) {
-                this.wrapperRef.focus();
-            }
+            this.wrapperRef.focus();
         }
     };
 
@@ -185,7 +182,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 {createPortal(
                     <StyledWindow
                         isOpen={this.state.isOpen}
-                        rect={this.wrapperRef !== undefined ? this.wrapperRef.getBoundingClientRect() : undefined}
+                        rect={
+                            (this.wrapperRef as HTMLDivElement | undefined) !== undefined
+                                ? this.wrapperRef.getBoundingClientRect()
+                                : undefined
+                        }
                     >
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                             <FoldOut isOpen={this.state.isOpen}>

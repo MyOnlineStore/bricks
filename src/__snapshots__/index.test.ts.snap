@@ -5367,16 +5367,14 @@ exports[`Storyshots Select Default 1`] = `
   position: absolute;
   max-height: 240px;
   overflow: hidden;
-  top: calc(100% + 6px);
   padding-top: 6px;
-  right: -6px;
-  left: -6px;
   border: solid 2px transparent;
   border-top: none;
   border-radius: 3px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .c3 {
@@ -5444,7 +5442,7 @@ exports[`Storyshots Select Default 1`] = `
             <p
               className="c6"
             >
-              Search a thing
+              Search a value
             </p>
           </div>
           <button
@@ -5467,140 +5465,142 @@ exports[`Storyshots Select Default 1`] = `
           </button>
         </div>
       </div>
-      <div
-        className="c9"
-      >
+      <MockPortal>
         <div
-          className="c10"
+          className="c9"
         >
           <div
-            className="c11"
+            className="c10"
           >
-            <div>
-              <div
-                className="c12"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
+            <div
+              className="c11"
+            >
+              <div>
                 <div
-                  className="c13"
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  <p
-                    className="c14"
+                  <div
+                    className="c13"
                   >
-                    <span
-                      className="c15"
-                    />
-                    <span>
-                      Bar A
-                    </span>
-                  </p>
+                    <p
+                      className="c14"
+                    >
+                      <span
+                        className="c15"
+                      />
+                      <span>
+                        Bar A
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className="c12"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
                 <div
-                  className="c13"
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  <p
-                    className="c14"
+                  <div
+                    className="c13"
                   >
-                    <span
-                      className="c15"
-                    />
-                    <span>
-                      Foo B
-                    </span>
-                  </p>
+                    <p
+                      className="c14"
+                    >
+                      <span
+                        className="c15"
+                      />
+                      <span>
+                        Foo B
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className="c12"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
                 <div
-                  className="c13"
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  <p
-                    className="c14"
+                  <div
+                    className="c13"
                   >
-                    <span
-                      className="c15"
-                    />
-                    <span>
-                      Bar C
-                    </span>
-                  </p>
+                    <p
+                      className="c14"
+                    >
+                      <span
+                        className="c15"
+                      />
+                      <span>
+                        Bar C
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className="c12"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
                 <div
-                  className="c13"
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  <p
-                    className="c14"
+                  <div
+                    className="c13"
                   >
-                    <span
-                      className="c15"
-                    />
-                    <span>
-                      Foo D
-                    </span>
-                  </p>
+                    <p
+                      className="c14"
+                    >
+                      <span
+                        className="c15"
+                      />
+                      <span>
+                        Foo D
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className="c12"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
                 <div
-                  className="c13"
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  <p
-                    className="c14"
+                  <div
+                    className="c13"
                   >
-                    <span
-                      className="c15"
-                    />
-                    <span>
-                      Bar E
-                    </span>
-                  </p>
+                    <p
+                      className="c14"
+                    >
+                      <span
+                        className="c15"
+                      />
+                      <span>
+                        Bar E
+                      </span>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div
-                className="c12"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
                 <div
-                  className="c13"
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  <p
-                    className="c14"
+                  <div
+                    className="c13"
                   >
-                    <span
-                      className="c15"
-                    />
-                    <span>
-                      Bar F
-                    </span>
-                  </p>
+                    <p
+                      className="c14"
+                    >
+                      <span
+                        className="c15"
+                      />
+                      <span>
+                        Bar F
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </MockPortal>
     </div>
   </div>
 </div>
