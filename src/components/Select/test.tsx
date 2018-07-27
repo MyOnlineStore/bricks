@@ -1,10 +1,11 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme, shallowWithTheme } from '../../utility/styled';
-import { StyledInput } from './style';
+import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
 import FoldOut from '../FoldOut';
+import Text from '../Text';
 
 const options = [
     {
@@ -49,11 +50,11 @@ const options = [
 
 describe('Select', () => {
     it('should open when the spacebar is pressed', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: ' ',
         });
 
@@ -61,11 +62,11 @@ describe('Select', () => {
     });
 
     it('should show an input and options on click', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: ' ',
         });
 
@@ -74,7 +75,7 @@ describe('Select', () => {
     });
 
     it('should filter options on input', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select
                 onChange={(): void => undefined}
                 value=""
@@ -92,7 +93,7 @@ describe('Select', () => {
             />,
         );
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: ' ',
         });
 
@@ -156,11 +157,11 @@ describe('Select', () => {
     it('should handle a change', () => {
         const changeHandler = jest.fn();
 
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={changeHandler} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: ' ',
         });
 
@@ -175,19 +176,19 @@ describe('Select', () => {
     it('should target next option when arrow down is pressed and reset after last option', () => {
         const options = [{ value: 'A', label: 'A' }, { value: 'B', label: 'B' }];
 
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: ' ',
         });
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowDown',
         });
 
@@ -198,7 +199,7 @@ describe('Select', () => {
                 .prop('isTargeted'),
         ).toBe(true);
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowDown',
         });
 
@@ -213,23 +214,23 @@ describe('Select', () => {
     it('should target the previous option when arrow up is pressed and target last item on first option', () => {
         const options = [{ value: 'A', label: 'A' }, { value: 'B', label: 'B' }];
 
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: ' ',
         });
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowUp',
         });
 
@@ -240,7 +241,7 @@ describe('Select', () => {
                 .prop('isTargeted'),
         ).toBe(true);
 
-        component.simulate('keyDownCapture', {
+        component.simulate('keyDown', {
             key: 'ArrowUp',
         });
 
@@ -301,7 +302,7 @@ describe('Select', () => {
     it('should show an empty state', () => {
         const emptyText = 'mock empty text';
 
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText={emptyText} options={[]} />,
         );
 
@@ -311,11 +312,16 @@ describe('Select', () => {
             .at(1)
             .simulate('click');
 
-        expect(component.findWhere(node => node.text() === emptyText).length).toBe(1);
+        expect(
+            component
+                .find(StyledWindow)
+                .find(Text)
+                .text(),
+        ).toEqual(emptyText);
     });
 
     it('should target an Option when mouse enters', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="" options={options} />,
         );
 

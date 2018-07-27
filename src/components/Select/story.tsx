@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-import Search from '.';
+import Select from '.';
 import Box from '../Box';
-import { text } from '@storybook/addon-knobs';
+import { object, text } from '@storybook/addon-knobs';
 
 const options = [
     {
@@ -60,12 +60,12 @@ class Demo extends Component<{}, { value: string }> {
         return (
             <Box>
                 <Box basis="300px" grow={0} direction="column">
-                    <Search
-                        placeholder="Search a thing"
-                        value={text('value', this.state.value)}
-                        emptyText={'No results'}
+                    <Select
+                        placeholder={text('placeholder', 'Search a value')}
+                        value={this.state.value}
+                        emptyText={text('emptyText', 'No results')}
                         onChange={this.handleChange}
-                        options={options}
+                        options={object('options', options)}
                     />
                 </Box>
             </Box>

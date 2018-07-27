@@ -33,6 +33,8 @@ type WrapperProps = {
     isOpen: boolean;
 };
 
+const INNER_OFFSET: number = 6;
+
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: all .3s;
     outline: none;
@@ -63,25 +65,27 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
         border-bottom: none;
         background: ${({ theme }): string => theme.Select.common.secondaryColor};
         position: absolute;
-        top: ${({ isOpen }): string => (isOpen ? '-6px' : '0')};
-        left: ${({ isOpen }): string => (isOpen ? '-6px' : '0')};
-        right: ${({ isOpen }): string => (isOpen ? '-6px' : '0')};
-        bottom: ${({ isOpen }): string => (isOpen ? '-6px' : '0')};
+        top: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
+        left: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
+        right: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
+        bottom: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
     }
 `;
 
 type WindowProps = {
     isOpen: boolean;
+    rect?: ClientRect;
 };
 
 const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     position: absolute;
     max-height: 240px;
     overflow: hidden;
-    top: calc(100% + 6px);
+    top: ${({ rect }): string =>
+        rect !== undefined ? `${(rect.top as number) + (rect.height as number) + INNER_OFFSET}px` : ''};
+    left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
+    width: ${({ rect }): string => (rect !== undefined ? `${(rect.width as number) + INNER_OFFSET + 4}px` : '')};
     padding-top: 6px;
-    right: -6px;
-    left: -6px;
     border: ${({ theme, isOpen }): string =>
         isOpen ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 2px transparent'};
     border-top: none;
@@ -89,6 +93,7 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     ${({ isOpen }): string => (!isOpen ? 'cursor: pointer' : '')};
+    z-index: 1000;
 `;
 
 const StyledInput = styled.div`

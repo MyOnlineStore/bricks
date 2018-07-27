@@ -1,4 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef } from 'react';
+import { createPortal } from 'react-dom';
 import Box from '../Box';
 import FoldOut from '../FoldOut';
 import ScrollBox from '../ScrollBox';
@@ -15,11 +16,10 @@ type OptionBase = {
     label: string;
 };
 
-type StateType<GenericOption extends OptionBase> = {
+type StateType = {
     input: string;
     isOpen: boolean;
     optionPointer: number;
-    filteredOptions: Array<GenericOption>;
 };
 
 type PropsType<GenericOption extends OptionBase> = {
@@ -31,9 +31,9 @@ type PropsType<GenericOption extends OptionBase> = {
     renderOption?(option: GenericOption): JSX.Element;
 };
 
-class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType<GenericOption>> {
+class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
-    private wrapperRef: HTMLDivElement;
+    private wrapperRef?: HTMLDivElement;
 
     public constructor(props: PropsType<GenericOption>) {
         super(props);
@@ -43,13 +43,12 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             isOpen: false,
             input: props.value,
             optionPointer: -1,
-            filteredOptions: props.options,
         };
     }
 
     private cycleUp = (): void => {
         const optionPointer =
-            this.state.optionPointer < this.state.filteredOptions.length - 1 ? this.state.optionPointer + 1 : 0;
+            this.state.optionPointer < this.filterOptions().length - 1 ? this.state.optionPointer + 1 : 0;
 
         this.setState({ optionPointer });
     };
@@ -60,7 +59,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
     private cycleDown = (): void => {
         const optionPointer =
-            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.state.filteredOptions.length - 1;
+            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.filterOptions().length - 1;
 
         this.setState({ optionPointer });
     };
@@ -74,7 +73,13 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         this.setState({ isOpen: true });
     };
 
-    public componentDidUpdate(prevProps: PropsType<GenericOption>, prevState: StateType<GenericOption>): void {
+    private filterOptions = (): ReadonlyArray<GenericOption> => {
+        return this.props.options.filter(
+            option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
+        );
+    };
+
+    public componentDidUpdate(prevProps: PropsType<GenericOption>, prevState: StateType): void {
         if (this.inputRef.current !== null && !prevState.isOpen && this.state.isOpen) {
             this.inputRef.current.focus();
         }
@@ -89,22 +94,18 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     }
 
     public handleClickOutside = (event: MouseEvent): void => {
-        if (!this.wrapperRef.contains(event.target as Node)) {
+        if (this.wrapperRef !== undefined && !this.wrapperRef.contains(event.target as Node)) {
             this.close();
         }
     };
 
     public handleChange = (value: string): void => {
-        this.setState({ isOpen: false, optionPointer: -1 });
         this.props.onChange(value);
+        this.setState({ isOpen: false, optionPointer: -1 });
     };
 
     public handleInput = (input: string): void => {
-        const filteredOptions = this.props.options.filter(
-            option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1,
-        );
-
-        this.setState({ input, filteredOptions, optionPointer: -1 });
+        this.setState({ input, optionPointer: -1 });
     };
 
     public handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
@@ -121,8 +122,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         }
 
         if (event.key === 'Enter' && this.state.optionPointer !== -1) {
-            this.handleChange(this.state.filteredOptions[this.state.optionPointer].value);
-            this.wrapperRef.focus();
+            this.handleChange(this.filterOptions()[this.state.optionPointer].value);
+
+            if (this.wrapperRef !== undefined) {
+                this.wrapperRef.focus();
+            }
         }
     };
 
@@ -178,41 +182,47 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         </Button>
                     </Box>
                 </StyledInput>
-                <StyledWindow isOpen={this.state.isOpen}>
-                    <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                        <FoldOut isOpen={this.state.isOpen}>
-                            {this.state.filteredOptions.length === 0 && (
-                                <Spacer offsetType={'inner'} offset={trbl(12)}>
-                                    <Text>{this.props.emptyText}</Text>
-                                </Spacer>
-                            )}
-                            {this.state.filteredOptions.length > 0 &&
-                                this.state.filteredOptions.map((option, index) => (
-                                    <Option
-                                        isTargeted={index === this.state.optionPointer}
-                                        key={`${option.value}-${option.label}`}
-                                        onMouseEnter={(): void => this.cycleTo(index)}
-                                        onClick={(): void => {
-                                            this.handleChange(option.value);
-                                        }}
-                                    >
-                                        <Text descriptive={option.value === this.props.value}>
-                                            <Box margin={trbl(0, 6, 0, 0)} inline>
-                                                {option.value === this.props.value && (
-                                                    <Icon size="small" icon="checkmark" />
-                                                )}
-                                            </Box>
-                                            <span>
-                                                {(this.props.renderOption !== undefined &&
-                                                    this.props.renderOption(option)) ||
-                                                    option.label}
-                                            </span>
-                                        </Text>
-                                    </Option>
-                                ))}
-                        </FoldOut>
-                    </ScrollBox>
-                </StyledWindow>
+                {createPortal(
+                    <StyledWindow
+                        isOpen={this.state.isOpen}
+                        rect={this.wrapperRef !== undefined ? this.wrapperRef.getBoundingClientRect() : undefined}
+                    >
+                        <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
+                            <FoldOut isOpen={this.state.isOpen}>
+                                {this.filterOptions().length === 0 && (
+                                    <Spacer offsetType={'inner'} offset={trbl(12)}>
+                                        <Text>{this.props.emptyText}</Text>
+                                    </Spacer>
+                                )}
+                                {this.filterOptions().length > 0 &&
+                                    this.filterOptions().map((option, index) => (
+                                        <Option
+                                            isTargeted={index === this.state.optionPointer}
+                                            key={`${option.value}-${option.label}`}
+                                            onMouseEnter={(): void => this.cycleTo(index)}
+                                            onClick={(): void => {
+                                                this.handleChange(option.value);
+                                            }}
+                                        >
+                                            <Text descriptive={option.value === this.props.value}>
+                                                <Box margin={trbl(0, 6, 0, 0)} inline>
+                                                    {option.value === this.props.value && (
+                                                        <Icon size="small" icon="checkmark" />
+                                                    )}
+                                                </Box>
+                                                <span>
+                                                    {(this.props.renderOption !== undefined &&
+                                                        this.props.renderOption(option)) ||
+                                                        option.label}
+                                                </span>
+                                            </Text>
+                                        </Option>
+                                    ))}
+                            </FoldOut>
+                        </ScrollBox>
+                    </StyledWindow>,
+                    document.body,
+                )}
             </StyledWrapper>
         );
     }
