@@ -5368,6 +5368,7 @@ exports[`Storyshots Select Default 1`] = `
   max-height: 240px;
   overflow: hidden;
   padding-top: 6px;
+  background: #fff;
   border: solid 2px transparent;
   border-top: none;
   border-radius: 3px;

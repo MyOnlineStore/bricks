@@ -211,7 +211,6 @@ const theme: ThemeType = {
                 },
             },
         },
-
         destructive: {
             regular: {
                 idle: {
@@ -553,6 +552,7 @@ const theme: ThemeType = {
     },
     Select: {
         common: {
+            backgroundColor: silver.lighter1,
             secondaryColor: silver.base,
             borderRadius: '3px',
         },

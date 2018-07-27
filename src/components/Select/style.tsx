@@ -5,6 +5,7 @@ import { StyledComponentClass as _S } from 'styled-components';
 
 type SelectThemeType = {
     common: {
+        backgroundColor: string;
         secondaryColor: string;
         borderRadius: string;
     };
@@ -39,7 +40,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: all .3s;
     outline: none;
     display: inline-block;
-    background: #fff;
+    background: ${({ theme }): string => theme.Select.common.backgroundColor};
     position: relative;
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
 
@@ -86,6 +87,7 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${(rect.width as number) + INNER_OFFSET + 4}px` : '')};
     padding-top: 6px;
+    background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border: ${({ theme, isOpen }): string =>
         isOpen ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 2px transparent'};
     border-top: none;
