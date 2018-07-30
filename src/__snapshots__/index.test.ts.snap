@@ -25,6 +25,7 @@ exports[`Storyshots Badge Default 1`] = `
 
 exports[`Storyshots Box Default 1`] = `
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -66,6 +67,7 @@ exports[`Storyshots Box Default 1`] = `
 }
 
 .c2 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,6 +93,7 @@ exports[`Storyshots Box Default 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -281,6 +284,7 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
 
 exports[`Storyshots Button On a contrast area 1`] = `
 .c2 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -316,6 +320,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -890,6 +895,7 @@ exports[`Storyshots Button With text 1`] = `
 
 exports[`Storyshots ButtonGroup Default 1`] = `
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -925,6 +931,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 }
 
 .c2 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1202,6 +1209,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 
 exports[`Storyshots Checkbox Default 1`] = `
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1557,6 +1565,7 @@ Array [
 
 exports[`Storyshots EmptyState Default 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1581,6 +1590,7 @@ exports[`Storyshots EmptyState Default 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1686,6 +1696,7 @@ exports[`Storyshots EmptyState Default 1`] = `
 
 exports[`Storyshots EmptyState With button (as children) 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1710,6 +1721,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2146,6 +2158,7 @@ exports[`Storyshots Heading Default 1`] = `
 
 exports[`Storyshots Icon Large icons 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2176,6 +2189,7 @@ exports[`Storyshots Icon Large icons 1`] = `
 
 exports[`Storyshots Icon Medium icons 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2206,6 +2220,7 @@ exports[`Storyshots Icon Medium icons 1`] = `
 
 exports[`Storyshots Icon Small icons 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2404,6 +2419,7 @@ exports[`Storyshots Link Default 1`] = `
 
 exports[`Storyshots MessageStream Default 1`] = `
 .c3 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2434,6 +2450,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2458,6 +2475,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 }
 
 .c10 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3318,7 +3336,8 @@ exports[`Storyshots MessageStream Default 1`] = `
 `;
 
 exports[`Storyshots Modal Default 1`] = `
-.c17 {
+.c16 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3353,7 +3372,8 @@ exports[`Storyshots Modal Default 1`] = `
   order: 0;
 }
 
-.c18 {
+.c17 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3380,7 +3400,8 @@ exports[`Storyshots Modal Default 1`] = `
   align-self: stretch;
 }
 
-.c6 {
+.c5 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3396,6 +3417,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
+  margin: -12px -12px -6px 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -3411,7 +3433,8 @@ exports[`Storyshots Modal Default 1`] = `
   order: 0;
 }
 
-.c14 {
+.c13 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3439,6 +3462,7 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3454,7 +3478,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
-  margin: 36px 36px 36px 36px;
+  margin: 24px 36px 24px 36px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -3470,13 +3494,228 @@ exports[`Storyshots Modal Default 1`] = `
   order: 0;
 }
 
-.c12 {
+.c10 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 36px 36px 36px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c11 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.c18 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  color: #fff;
+  background-color: #5bd16a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+}
+
+.c18:hover {
+  color: #fff;
+  background-color: #4cc55b;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+}
+
+.c18:focus {
+  color: #fff;
+  background-color: #5bd16a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+}
+
+.c18:active {
+  color: #fff;
+  background-color: #4cc55b;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.c18:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c18::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.c18:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c18:disabled::before {
+  opacity: 1;
+}
+
+.c6 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 12px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  color: #55656d;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover {
+  color: #21252b;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c6:active {
+  color: #21252b;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c6::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: transparent;
+  border-radius: 3px;
+}
+
+.c6:disabled {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c6:disabled::before {
+  opacity: 1;
 }
 
 .c19 {
@@ -3508,37 +3747,37 @@ exports[`Storyshots Modal Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  color: #fff;
-  background-color: #5bd16a;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  color: #333740;
+  background-color: transparent;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: none;
 }
 
 .c19:hover {
-  color: #fff;
-  background-color: #4cc55b;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  color: #333740;
+  background-color: #edeff2;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
   border-color: transparent;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
 .c19:focus {
-  color: #fff;
-  background-color: #5bd16a;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  color: #333740;
+  background-color: #edeff2;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c19:active {
-  color: #fff;
-  background-color: #4cc55b;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  color: #333740;
+  background-color: #edeff2;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
   border-color: transparent;
   box-shadow: none;
 }
@@ -3562,7 +3801,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
   background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: none;
   border-radius: 3px;
 }
 
@@ -3582,217 +3821,11 @@ exports[`Storyshots Modal Default 1`] = `
   opacity: 1;
 }
 
-.c7 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 12px;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 3px;
-  border-width: 0;
-  font-weight: 400;
-  border-style: solid;
-  color: #333740;
-  background-color: transparent;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c7:hover {
-  color: #333740;
-  background-color: #f8f9fb;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c7:focus {
-  color: #333740;
-  background-color: #f8f9fb;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
-}
-
-.c7:active {
-  color: #333740;
-  background-color: #f8f9fb;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c7:active {
-  -webkit-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
-}
-
-.c7::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: none;
-  border-radius: 3px;
-}
-
-.c7:disabled {
-  background: #e4e7ec;
-  border-color: transparent;
-  cursor: default;
-  opacity: 0.7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #88979d;
-  box-shadow: none;
-}
-
-.c7:disabled::before {
-  opacity: 1;
-}
-
-.c20 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 24px;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 3px;
-  border-width: 0;
-  font-weight: 400;
-  border-style: solid;
-  color: #333740;
-  background-color: transparent;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c20:hover {
-  color: #333740;
-  background-color: #edeff2;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c20:focus {
-  color: #333740;
-  background-color: #edeff2;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
-}
-
-.c20:active {
-  color: #333740;
-  background-color: #edeff2;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c20:active {
-  -webkit-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
-}
-
-.c20::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: none;
-  border-radius: 3px;
-}
-
-.c20:disabled {
-  background: #e4e7ec;
-  border-color: transparent;
-  cursor: default;
-  opacity: 0.7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #88979d;
-  box-shadow: none;
-}
-
-.c20:disabled::before {
-  opacity: 1;
-}
-
-.c15 {
+.c14 {
   background: #f8f9fb;
 }
 
-.c8 {
+.c7 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -3800,7 +3833,7 @@ exports[`Storyshots Modal Default 1`] = `
   width: 12px;
 }
 
-.c8 svg {
+.c7 svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -3813,16 +3846,8 @@ exports[`Storyshots Modal Default 1`] = `
   fill: currentColor;
 }
 
-.c5 {
-  margin: -12px -12px -6px 0px;
-}
-
-.c16 {
+.c15 {
   padding: 24px 36px 24px 36px;
-}
-
-.c11 {
-  padding: 0px 36px 36px 36px;
 }
 
 .c4 {
@@ -3836,7 +3861,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin: 0;
 }
 
-.c9 {
+.c8 {
   position: relative;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3845,11 +3870,11 @@ exports[`Storyshots Modal Default 1`] = `
   overflow: hidden;
 }
 
-.c9 .simplebar-scrollbar::before {
+.c8 .simplebar-scrollbar::before {
   background: #333740;
 }
 
-.c10 {
+.c9 {
   opacity: 0;
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
@@ -3861,7 +3886,7 @@ exports[`Storyshots Modal Default 1`] = `
   right: 0;
 }
 
-.c13 {
+.c12 {
   opacity: 1;
   -webkit-transition: opacity 100ms;
   transition: opacity 100ms;
@@ -3885,6 +3910,7 @@ exports[`Storyshots Modal Default 1`] = `
   position: fixed;
   height: 100%;
   width: 100%;
+  padding: 12px;
   top: 0;
   left: 0;
   box-sizing: border-box;
@@ -3903,10 +3929,14 @@ exports[`Storyshots Modal Default 1`] = `
   opacity: 1;
 }
 
+.c0 > * {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .c2 {
-  margin: auto;
-  max-width: 600px;
-  width: calc(100% - 24px);
+  max-width: 100%;
+  width: 791px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3919,7 +3949,6 @@ exports[`Storyshots Modal Default 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 300px;
-  min-width: 150px;
   height: calc(100% - 24px);
   overflow: hidden;
   max-height: calc(300px + (600 - 300) * (100vh - 300px) / (900 - 300));
@@ -3950,41 +3979,37 @@ exports[`Storyshots Modal Default 1`] = `
           <div
             className="c5"
           >
-            <div
+            <button
               className="c6"
+              disabled={undefined}
+              onClick={[Function]}
+              title="close"
+              type="button"
             >
-              <button
+              <span
+                aria-hidden={true}
                 className="c7"
-                disabled={undefined}
-                onClick={[Function]}
-                title="close"
-                type="button"
-              >
-                <span
-                  aria-hidden={true}
-                  className="c8"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "test-file-stub",
-                    }
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
                   }
-                  role="img"
-                />
-              </button>
-            </div>
+                }
+                role="img"
+              />
+            </button>
           </div>
         </div>
         <div
-          className="c9"
+          className="c8"
         >
           <div
-            className="c10"
+            className="c9"
           />
           <div
-            className="c11"
+            className="c10"
           >
             <p
-              className="c12"
+              className="c11"
             >
               
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -4009,27 +4034,27 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
             </p>
           </div>
           <div
-            className="c13"
+            className="c12"
           />
         </div>
         <div
-          className="c14"
+          className="c13"
         >
           <div
-            className="c15"
+            className="c14"
           >
             <div
-              className="c16"
+              className="c15"
             >
               <div>
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   <div
-                    className="c18"
+                    className="c17"
                   >
                     <button
-                      className="c19"
+                      className="c18"
                       disabled={undefined}
                       onClick={[Function]}
                       title="Activate"
@@ -4039,10 +4064,10 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                     </button>
                   </div>
                   <div
-                    className="c18"
+                    className="c17"
                   >
                     <button
-                      className="c20"
+                      className="c19"
                       disabled={undefined}
                       onClick={[Function]}
                       title="Close"
@@ -4354,6 +4379,7 @@ exports[`Storyshots Notification With a custom icon 1`] = `
 
 exports[`Storyshots Popover Default 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4616,6 +4642,7 @@ exports[`Storyshots RadioButton Default 1`] = `
 
 exports[`Storyshots RadioButtonGroup Default 1`] = `
 .c2 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4643,6 +4670,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4857,6 +4885,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
 exports[`Storyshots ScrollBox Default 1`] = `
 Array [
   .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5067,6 +5096,7 @@ Array [
 
 exports[`Storyshots Select Default 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5087,6 +5117,7 @@ exports[`Storyshots Select Default 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5110,6 +5141,7 @@ exports[`Storyshots Select Default 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5134,6 +5166,7 @@ exports[`Storyshots Select Default 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5158,6 +5191,7 @@ exports[`Storyshots Select Default 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -6017,6 +6051,7 @@ exports[`Storyshots Toggle Default 1`] = `
 
 exports[`Storyshots TransitionAnimation Default 1`] = `
 .c0 {
+  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
