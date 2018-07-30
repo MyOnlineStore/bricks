@@ -6,7 +6,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Heading from '../Heading';
 import Illustration from '../Illustration';
-import Spacer from '../Spacer';
+
 import Text from '../Text';
 
 type EmptyStatePropsType = {
@@ -17,16 +17,16 @@ type EmptyStatePropsType = {
 const EmptyStateElement: StatelessComponent<EmptyStatePropsType> = (props): JSX.Element => (
     <Box direction="column" alignItems="center" justifyContent="space-around">
         <Illustration illustration={'cactus'} />
-        <Spacer offset={trbl(18, 0, 0, 0)} offsetType="inner">
+        <Box padding={trbl(18, 0, 0, 0)}>
             <Heading hierarchy={1} textAlign="center">
                 {props.title}
             </Heading>
-        </Spacer>
-        <Spacer offset={trbl(12, 0, 24, 0)}>
+        </Box>
+        <Box margin={trbl(12, 0, 24, 0)}>
             <Text textAlign="center" descriptive>
                 {props.message}
             </Text>
-        </Spacer>
+        </Box>
         {props.children}
     </Box>
 );

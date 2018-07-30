@@ -7,7 +7,7 @@ import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Contrast from '../Contrast';
 import Icon from '../Icon';
-import Spacer from '../Spacer';
+import Box from '../Box';
 
 storiesOf('Button', module)
     .add('With text', () => {
@@ -55,7 +55,7 @@ storiesOf('Button', module)
     .add('On a contrast area', () => {
         return (
             <Contrast>
-                <Spacer offsetType="inner" offset={trbl(12)}>
+                <Box padding={trbl(12)}>
                     <ButtonGroup>
                         <Button
                             variant="secondary"
@@ -76,7 +76,7 @@ storiesOf('Button', module)
                             <Icon size="medium" icon="gear" />
                         </Button>
                     </ButtonGroup>
-                </Spacer>
+                </Box>
             </Contrast>
         );
     });

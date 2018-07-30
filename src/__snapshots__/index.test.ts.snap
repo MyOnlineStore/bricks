@@ -268,7 +268,13 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
   padding: 24px;
 }
 
-<div>
+<div
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
   <div
     className="c0"
   >
@@ -283,6 +289,28 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
 `;
 
 exports[`Storyshots Button On a contrast area 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   box-sizing: border-box;
   display: -webkit-box;
@@ -578,17 +606,19 @@ exports[`Storyshots Button On a contrast area 1`] = `
   fill: currentColor;
 }
 
-.c1 {
-  padding: 12px 12px 12px 12px;
-}
-
 <div
   className="c0"
 >
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+    >
       <div
         className="c2"
       >
@@ -1172,7 +1202,13 @@ exports[`Storyshots ButtonGroup Default 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
     <div
       className="c1"
     >
@@ -1312,7 +1348,29 @@ exports[`Storyshots Checkbox Default 1`] = `
 
 exports[`Storyshots Contrast Default 1`] = `
 Array [
-  .c2 {
+  .c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c2 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1419,10 +1477,6 @@ Array [
   background: #f8f9fb;
 }
 
-.c1 {
-  padding: 12px 12px 12px 12px;
-}
-
 <div
     className="c0"
   >
@@ -1440,7 +1494,29 @@ Array [
       </button>
     </div>
   </div>,
-  .c1 {
+  .c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c1 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1543,10 +1619,6 @@ Array [
   opacity: 1;
 }
 
-.c0 {
-  padding: 12px 12px 12px 12px;
-}
-
 <div
     className="c0"
   >
@@ -1621,6 +1693,50 @@ exports[`Storyshots EmptyState Default 1`] = `
   order: 0;
 }
 
+.c3 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 18px 0px 0px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 12px 0px 24px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c6 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
@@ -1629,14 +1745,6 @@ exports[`Storyshots EmptyState Default 1`] = `
   line-height: 1.5;
   text-align: center;
   margin: 0;
-}
-
-.c3 {
-  padding: 18px 0px 0px 0px;
-}
-
-.c5 {
-  margin: 12px 0px 24px 0px;
 }
 
 .c4 {
@@ -1737,6 +1845,50 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c3 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 18px 0px 0px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 12px 0px 24px 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -1865,14 +2017,6 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   opacity: 1;
 }
 
-.c3 {
-  padding: 18px 0px 0px 0px;
-}
-
-.c5 {
-  margin: 12px 0px 24px 0px;
-}
-
 .c4 {
   color: #333740;
   font-family: Melbourne,sans-serif;
@@ -1957,6 +2101,28 @@ exports[`Storyshots ErrorBoundary Default 1`] = `
 `;
 
 exports[`Storyshots FoldOut With a toggle 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 0px 12px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -2067,10 +2233,6 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
 
 .c3:disabled::before {
   opacity: 1;
-}
-
-.c1 {
-  padding: 0px 0px 12px 0px;
 }
 
 .c0 {
@@ -2418,7 +2580,7 @@ exports[`Storyshots Link Default 1`] = `
 `;
 
 exports[`Storyshots MessageStream Default 1`] = `
-.c3 {
+.c2 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2434,6 +2596,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
+  padding: 12px 24px 12px 24px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -2449,7 +2612,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   order: 0;
 }
 
-.c4 {
+.c3 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2474,7 +2637,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   order: 0;
 }
 
-.c10 {
+.c9 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2507,7 +2670,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   order: 0;
 }
 
-.c6 {
+.c5 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -2516,7 +2679,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   margin: 0;
 }
 
-.c5 {
+.c4 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -2525,7 +2688,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   margin: 0;
 }
 
-.c7 {
+.c6 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -2534,7 +2697,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   margin: 0;
 }
 
-.c11 {
+.c10 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2571,7 +2734,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c11:hover {
+.c10:hover {
   color: #fff;
   background-color: #4cc55b;
   -webkit-text-decoration: none;
@@ -2580,7 +2743,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c11:focus {
+.c10:focus {
   color: #fff;
   background-color: #5bd16a;
   -webkit-text-decoration: none;
@@ -2589,7 +2752,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
-.c11:active {
+.c10:active {
   color: #fff;
   background-color: #4cc55b;
   -webkit-text-decoration: none;
@@ -2598,13 +2761,13 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: none;
 }
 
-.c11:active {
+.c10:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c11::before {
+.c10::before {
   position: absolute;
   display: block;
   left: 0;
@@ -2621,7 +2784,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-radius: 3px;
 }
 
-.c11:disabled {
+.c10:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -2633,213 +2796,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: none;
 }
 
-.c11:disabled::before {
-  opacity: 1;
-}
-
-.c17 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 24px;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 3px;
-  border-width: 0;
-  font-weight: 400;
-  border-style: solid;
-  color: #55656d;
-  background-color: #edeff2;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c17:hover {
-  color: #55656d;
-  background-color: #e4e7ec;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c17:focus {
-  color: #55656d;
-  background-color: #edeff2;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
-}
-
-.c17:active {
-  color: #55656d;
-  background-color: #e4e7ec;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c17:active {
-  -webkit-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
-}
-
-.c17::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
-}
-
-.c17:disabled {
-  background: #e4e7ec;
-  border-color: transparent;
-  cursor: default;
-  opacity: 0.7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #88979d;
-  box-shadow: none;
-}
-
-.c17:disabled::before {
-  opacity: 1;
-}
-
-.c13 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 24px;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 3px;
-  border-width: 0;
-  font-weight: 400;
-  border-style: solid;
-  color: #fff;
-  background-color: #fcc200;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c13:hover {
-  color: #fff;
-  background-color: #edb107;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c13:focus {
-  color: #fff;
-  background-color: #fcc200;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25);
-}
-
-.c13:active {
-  color: #fff;
-  background-color: #edb107;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c13:active {
-  -webkit-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
-}
-
-.c13::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
-}
-
-.c13:disabled {
-  background: #e4e7ec;
-  border-color: transparent;
-  cursor: default;
-  opacity: 0.7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #88979d;
-  box-shadow: none;
-}
-
-.c13:disabled::before {
+.c10:disabled::before {
   opacity: 1;
 }
 
@@ -2872,8 +2829,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  color: #fff;
-  background-color: #ed2157;
+  color: #55656d;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -2881,8 +2838,8 @@ exports[`Storyshots MessageStream Default 1`] = `
 }
 
 .c16:hover {
-  color: #fff;
-  background-color: #dc1b4f;
+  color: #55656d;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -2890,17 +2847,17 @@ exports[`Storyshots MessageStream Default 1`] = `
 }
 
 .c16:focus {
-  color: #fff;
-  background-color: #ed2157;
+  color: #55656d;
+  background-color: #edeff2;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
 .c16:active {
-  color: #fff;
-  background-color: #dc1b4f;
+  color: #55656d;
+  background-color: #e4e7ec;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -2946,19 +2903,221 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 1;
 }
 
-.c15 {
-  background: #f8f9fb;
+.c12 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  color: #fff;
+  background-color: #fcc200;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c2 {
-  padding: 12px 24px 12px 24px;
+.c12:hover {
+  color: #fff;
+  background-color: #edb107;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+}
+
+.c12:focus {
+  color: #fff;
+  background-color: #fcc200;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25);
+}
+
+.c12:active {
+  color: #fff;
+  background-color: #edb107;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.c12:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c12::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.c12:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c12:disabled::before {
+  opacity: 1;
+}
+
+.c15 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 24px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  color: #fff;
+  background-color: #ed2157;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+}
+
+.c15:hover {
+  color: #fff;
+  background-color: #dc1b4f;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+}
+
+.c15:focus {
+  color: #fff;
+  background-color: #ed2157;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25);
+}
+
+.c15:active {
+  color: #fff;
+  background-color: #dc1b4f;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.c15:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c15::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+}
+
+.c15:disabled {
+  background: #e4e7ec;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c15:disabled::before {
+  opacity: 1;
+}
+
+.c14 {
+  background: #f8f9fb;
 }
 
 .c0 {
   display: block;
 }
 
-.c8 {
+.c7 {
   border-bottom: 1px solid #dbdfe6;
 }
 
@@ -2976,11 +3135,11 @@ exports[`Storyshots MessageStream Default 1`] = `
   background: #5bd16a;
 }
 
-.c9 {
+.c8 {
   position: relative;
 }
 
-.c9::before {
+.c8::before {
   content: '';
   position: absolute;
   left: 0;
@@ -2990,11 +3149,11 @@ exports[`Storyshots MessageStream Default 1`] = `
   background: #dbdfe6;
 }
 
-.c12 {
+.c11 {
   position: relative;
 }
 
-.c12::before {
+.c11::before {
   content: '';
   position: absolute;
   left: 0;
@@ -3004,11 +3163,11 @@ exports[`Storyshots MessageStream Default 1`] = `
   background: #fcc200;
 }
 
-.c14 {
+.c13 {
   position: relative;
 }
 
-.c14::before {
+.c13::before {
   content: '';
   position: absolute;
   left: 0;
@@ -3032,40 +3191,36 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c3"
         >
-          <div
+          <p
             className="c4"
           >
-            <p
-              className="c5"
-            >
-              Sit Inceptos Magna
-            </p>
-            <p
-              className="c6"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.",
-                  }
+            Sit Inceptos Magna
+          </p>
+          <p
+            className="c5"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.",
                 }
-              />
-            </p>
-            <p
-              className="c7"
-            >
-              Today 12:00
-            </p>
-          </div>
+              }
+            />
+          </p>
+          <p
+            className="c6"
+          >
+            Today 12:00
+          </p>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c8"
+    className="c7"
   />
   <div
-    className="c9"
+    className="c8"
     title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div>
@@ -3075,38 +3230,34 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c3"
         >
-          <div
+          <p
             className="c4"
           >
-            <p
-              className="c5"
-            >
-              Aenean Dapibus Vulputate Tortor Magna
-            </p>
-            <p
-              className="c6"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
+            Aenean Dapibus Vulputate Tortor Magna
+          </p>
+          <p
+            className="c5"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
                  aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis.",
-                  }
                 }
-              />
-            </p>
-            <p
-              className="c7"
-            >
-              Today 10:00
-            </p>
-          </div>
+              }
+            />
+          </p>
+          <p
+            className="c6"
+          >
+            Today 10:00
+          </p>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c8"
+    className="c7"
   />
   <div
     className="c1"
@@ -3119,53 +3270,49 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c3"
         >
-          <div
+          <p
             className="c4"
           >
-            <p
-              className="c5"
-            >
-              Vestibulum Dapibus
-            </p>
-            <p
-              className="c6"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Curabitur blandit tempus porttitor.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c7"
-            >
-              Yesterday 12:00
-            </p>
-          </div>
-          <div
-            className="c10"
+            Vestibulum Dapibus
+          </p>
+          <p
+            className="c5"
           >
-            <button
-              className="c11"
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Curabitur blandit tempus porttitor.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="c6"
+          >
+            Yesterday 12:00
+          </p>
+        </div>
+        <div
+          className="c9"
+        >
+          <button
+            className="c10"
+            disabled={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c8"
+    className="c7"
   />
   <div
-    className="c12"
+    className="c11"
     title="Parturient Euismod Mollis Fringilla"
   >
     <div>
@@ -3175,58 +3322,54 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c3"
         >
-          <div
+          <p
             className="c4"
           >
-            <p
-              className="c5"
-            >
-              Parturient Euismod Mollis Fringilla
-            </p>
-            <p
-              className="c6"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                 amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c7"
-            >
-              12-12-2012 12:00
-            </p>
-          </div>
-          <div
-            className="c10"
+            Parturient Euismod Mollis Fringilla
+          </p>
+          <p
+            className="c5"
           >
-            <button
-              className="c13"
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                 amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="c6"
+          >
+            12-12-2012 12:00
+          </p>
+        </div>
+        <div
+          className="c9"
+        >
+          <button
+            className="c12"
+            disabled={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c8"
+    className="c7"
   />
   <div
-    className="c14"
+    className="c13"
     title="Tortor Cursus"
   >
     <div
-      className="c15"
+      className="c14"
     >
       <div
         className="c2"
@@ -3234,57 +3377,53 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c3"
         >
-          <div
+          <p
             className="c4"
           >
-            <p
-              className="c5"
-            >
-              Tortor Cursus
-            </p>
-            <p
-              className="c6"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c7"
-            >
-              12-12-2012 12:00
-            </p>
-          </div>
-          <div
-            className="c10"
+            Tortor Cursus
+          </p>
+          <p
+            className="c5"
           >
-            <button
-              className="c16"
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="c6"
+          >
+            12-12-2012 12:00
+          </p>
+        </div>
+        <div
+          className="c9"
+        >
+          <button
+            className="c15"
+            disabled={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c8"
+    className="c7"
   />
   <div
-    className="c9"
+    className="c8"
     title="Euismod Dolor Consectetur"
   >
     <div
-      className="c15"
+      className="c14"
     >
       <div
         className="c2"
@@ -3292,42 +3431,38 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c3"
         >
-          <div
+          <p
             className="c4"
           >
-            <p
-              className="c5"
-            >
-              Euismod Dolor Consectetur
-            </p>
-            <p
-              className="c6"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c7"
-            />
-          </div>
-          <div
-            className="c10"
+            Euismod Dolor Consectetur
+          </p>
+          <p
+            className="c5"
           >
-            <button
-              className="c17"
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="c6"
+          />
+        </div>
+        <div
+          className="c9"
+        >
+          <button
+            className="c16"
+            disabled={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
         </div>
       </div>
     </div>
@@ -3336,7 +3471,7 @@ exports[`Storyshots MessageStream Default 1`] = `
 `;
 
 exports[`Storyshots Modal Default 1`] = `
-.c16 {
+.c15 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3372,7 +3507,7 @@ exports[`Storyshots Modal Default 1`] = `
   order: 0;
 }
 
-.c17 {
+.c16 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3433,7 +3568,7 @@ exports[`Storyshots Modal Default 1`] = `
   order: 0;
 }
 
-.c13 {
+.c14 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3446,6 +3581,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  padding: 24px 36px 24px 36px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -3525,7 +3661,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin: 0;
 }
 
-.c18 {
+.c17 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3562,7 +3698,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c18:hover {
+.c17:hover {
   color: #fff;
   background-color: #4cc55b;
   -webkit-text-decoration: none;
@@ -3571,7 +3707,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c18:focus {
+.c17:focus {
   color: #fff;
   background-color: #5bd16a;
   -webkit-text-decoration: none;
@@ -3580,7 +3716,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
-.c18:active {
+.c17:active {
   color: #fff;
   background-color: #4cc55b;
   -webkit-text-decoration: none;
@@ -3589,13 +3725,13 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: none;
 }
 
-.c18:active {
+.c17:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c18::before {
+.c17::before {
   position: absolute;
   display: block;
   left: 0;
@@ -3612,7 +3748,7 @@ exports[`Storyshots Modal Default 1`] = `
   border-radius: 3px;
 }
 
-.c18:disabled {
+.c17:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -3624,7 +3760,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: none;
 }
 
-.c18:disabled::before {
+.c17:disabled::before {
   opacity: 1;
 }
 
@@ -3718,7 +3854,7 @@ exports[`Storyshots Modal Default 1`] = `
   opacity: 1;
 }
 
-.c19 {
+.c18 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3755,7 +3891,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: none;
 }
 
-.c19:hover {
+.c18:hover {
   color: #333740;
   background-color: #edeff2;
   -webkit-text-decoration: underline;
@@ -3764,7 +3900,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c19:focus {
+.c18:focus {
   color: #333740;
   background-color: #edeff2;
   -webkit-text-decoration: underline;
@@ -3773,7 +3909,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px #e4e7ec;
 }
 
-.c19:active {
+.c18:active {
   color: #333740;
   background-color: #edeff2;
   -webkit-text-decoration: underline;
@@ -3782,13 +3918,13 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: none;
 }
 
-.c19:active {
+.c18:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c19::before {
+.c18::before {
   position: absolute;
   display: block;
   left: 0;
@@ -3805,7 +3941,7 @@ exports[`Storyshots Modal Default 1`] = `
   border-radius: 3px;
 }
 
-.c19:disabled {
+.c18:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -3817,11 +3953,11 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: none;
 }
 
-.c19:disabled::before {
+.c18:disabled::before {
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   background: #f8f9fb;
 }
 
@@ -3844,10 +3980,6 @@ exports[`Storyshots Modal Default 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c15 {
-  padding: 24px 36px 24px 36px;
 }
 
 .c4 {
@@ -3958,7 +4090,13 @@ exports[`Storyshots Modal Default 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+    >
       <div
         className="c2"
       >
@@ -4039,38 +4177,40 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
             className="c14"
           >
             <div
-              className="c15"
+              style={
+                Object {
+                  "flexGrow": 1,
+                }
+              }
             >
-              <div>
+              <div
+                className="c15"
+              >
                 <div
                   className="c16"
                 >
-                  <div
+                  <button
                     className="c17"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    title="Activate"
+                    type="button"
                   >
-                    <button
-                      className="c18"
-                      disabled={undefined}
-                      onClick={[Function]}
-                      title="Activate"
-                      type="button"
-                    >
-                      Activate
-                    </button>
-                  </div>
-                  <div
-                    className="c17"
+                    Activate
+                  </button>
+                </div>
+                <div
+                  className="c16"
+                >
+                  <button
+                    className="c18"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    title="Close"
+                    type="button"
                   >
-                    <button
-                      className="c19"
-                      disabled={undefined}
-                      onClick={[Function]}
-                      title="Close"
-                      type="button"
-                    >
-                      Close
-                    </button>
-                  </div>
+                    Close
+                  </button>
                 </div>
               </div>
             </div>
@@ -4083,6 +4223,32 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
 `;
 
 exports[`Storyshots Notification Error 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   display: inline-block;
   position: relative;
@@ -4102,10 +4268,6 @@ exports[`Storyshots Notification Error 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4141,6 +4303,32 @@ exports[`Storyshots Notification Error 1`] = `
 `;
 
 exports[`Storyshots Notification Info 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   display: inline-block;
   position: relative;
@@ -4160,10 +4348,6 @@ exports[`Storyshots Notification Info 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4199,6 +4383,32 @@ exports[`Storyshots Notification Info 1`] = `
 `;
 
 exports[`Storyshots Notification Success 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   display: inline-block;
   position: relative;
@@ -4218,10 +4428,6 @@ exports[`Storyshots Notification Success 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4257,6 +4463,32 @@ exports[`Storyshots Notification Success 1`] = `
 `;
 
 exports[`Storyshots Notification Warning 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   display: inline-block;
   position: relative;
@@ -4276,10 +4508,6 @@ exports[`Storyshots Notification Warning 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4315,6 +4543,32 @@ exports[`Storyshots Notification Warning 1`] = `
 `;
 
 exports[`Storyshots Notification With a custom icon 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c2 {
   display: inline-block;
   position: relative;
@@ -4334,10 +4588,6 @@ exports[`Storyshots Notification With a custom icon 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c1 {
-  margin: 12px 12px 12px 12px;
 }
 
 .c0 {
@@ -4388,6 +4638,28 @@ exports[`Storyshots Popover Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 48px 48px 48px 48px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -4506,10 +4778,6 @@ exports[`Storyshots Popover Default 1`] = `
   opacity: 1;
 }
 
-.c1 {
-  margin: 48px 48px 48px 48px;
-}
-
 .c2 {
   display: inline-block;
 }
@@ -4562,6 +4830,28 @@ exports[`Storyshots PriceTag Default 1`] = `
 `;
 
 exports[`Storyshots RadioButton Default 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 9px 0px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c4 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -4569,10 +4859,6 @@ exports[`Storyshots RadioButton Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-.c1 {
-  margin: 0px 9px 0px 0px;
 }
 
 .c0 {
@@ -4664,6 +4950,28 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   align-self: stretch;
 }
 
+.c4 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 9px 0px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c1 {
   box-sizing: border-box;
   display: -webkit-box;
@@ -4707,10 +5015,6 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-.c4 {
-  margin: 0px 9px 0px 0px;
 }
 
 .c3 {
@@ -4757,7 +5061,13 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
     <div
       className="c1"
     >
@@ -4901,6 +5211,31 @@ Array [
   order: 0;
 }
 
+.c4 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px 24px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c6 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -4908,10 +5243,6 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-}
-
-.c4 {
-  padding: 12px 24px 12px 12px;
 }
 
 .c5 {
@@ -5038,7 +5369,25 @@ Array [
     </div>
   </div>,
   .c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin: 48px 0px 12px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
 }
 
 .c1 {
@@ -5172,6 +5521,28 @@ exports[`Storyshots Select Default 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c13 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 18px 6px 18px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -5332,10 +5703,6 @@ exports[`Storyshots Select Default 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c13 {
-  padding: 6px 18px 6px 18px;
 }
 
 .c11 {
@@ -5896,7 +6263,29 @@ Array [
       value=""
     />
   </div>,
-  .c2 {
+  .c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 6px 0px 0px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c2 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -5915,10 +6304,6 @@ Array [
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
-}
-
-.c0 {
-  margin: 6px 0px 0px 12px;
 }
 
 .c1 {
@@ -5963,7 +6348,25 @@ Array [
 
 exports[`Storyshots Toggle Default 1`] = `
 .c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0px 9px 0px 0px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
 }
 
 .c3 {

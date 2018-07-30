@@ -6,7 +6,6 @@ import styled from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Heading from '../Heading';
-import Spacer from '../Spacer';
 import Text from '../Text';
 
 const demoContent = `
@@ -85,16 +84,16 @@ class Demo extends Component<{}, DemoStateType> {
                                 });
                             }}
                         >
-                            <Spacer offsetType="inner" offset={trbl(12, 24, 12, 12)}>
+                            <Box padding={trbl(12, 24, 12, 12)} direction={'column'}>
                                 <Heading>They see me scrollin'</Heading>
                                 <Text>{demoContent}</Text>
-                            </Spacer>
+                            </Box>
                         </ScrollBox>
                     </Box>
                 </StyledDiv>
-                <Spacer offset={trbl(48, 0, 12)}>
+                <Box margin={trbl(48, 0, 12)}>
                     <Heading>Scroll event</Heading>
-                </Spacer>
+                </Box>
                 <Text>
                     scrollTop: {this.state.scrollTop}px<br />
                     scrollBottom: {this.state.scrollBottom}px<br />

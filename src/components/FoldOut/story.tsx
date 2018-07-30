@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import FoldOut from '.';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
-import Spacer from '../Spacer';
+import Box from '../Box';
 import Text from '../Text';
 
 type StateType = {
@@ -49,9 +49,9 @@ class DemoComponent extends Component<{}, StateType> {
         return (
             <div>
                 <FoldOut isOpen={this.state.isOpen}>
-                    <Spacer offset={trbl(0, 0, 12)} offsetType="inner">
+                    <Box padding={trbl(0, 0, 12)}>
                         <Text>{demoContent}</Text>
-                    </Spacer>
+                    </Box>
                 </FoldOut>
                 <Button
                     action={(): void =>

@@ -2,7 +2,7 @@ import React, { ChangeEvent, Component } from 'react';
 import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
-import Spacer from '../Spacer';
+import Box from '../Box';
 import { StyledFloatingLabel, StyledInput, StyledWrapper } from './style';
 
 type PropsType = {
@@ -87,13 +87,13 @@ class TextField extends Component<PropsType, StateType> {
                     />
                 </StyledWrapper>
                 {this.props.feedback && (
-                    <Spacer offset={trbl(6, 0, 0, 12)}>
+                    <Box margin={trbl(6, 0, 0, 12)}>
                         <InlineNotification
                             icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />
-                    </Spacer>
+                    </Box>
                 )}
             </>
         );

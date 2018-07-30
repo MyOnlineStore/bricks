@@ -8,7 +8,6 @@ import Contrast from '../Contrast';
 import Heading from '../Heading';
 import Icon from '../Icon';
 import ScrollBox from '../ScrollBox';
-import Spacer from '../Spacer';
 import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
 
@@ -58,13 +57,11 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
                                 </Box>
                             </ScrollBox>
                             {props.renderFixed && (
-                                <Box direction="column" alignItems="stretch" shrink={0}>
-                                    <Contrast>
-                                        <Spacer offsetType="inner" offset={trbl(24, 36)}>
-                                            {props.renderFixed()}
-                                        </Spacer>
-                                    </Contrast>
-                                </Box>
+                                <Contrast>
+                                    <Box direction="column" alignItems="stretch" shrink={0} padding={trbl(24, 36)}>
+                                        {props.renderFixed()}
+                                    </Box>
+                                </Contrast>
                             )}
                         </StyledModal>
                     )}

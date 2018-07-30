@@ -51,6 +51,7 @@ class BreakpointProvider extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <div
+                style={{ flexGrow: 1 }}
                 ref={(element: HTMLDivElement): void => {
                     this.element = element;
                 }}

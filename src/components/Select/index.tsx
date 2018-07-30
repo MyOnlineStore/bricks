@@ -6,7 +6,6 @@ import ScrollBox from '../ScrollBox';
 import Option from './Option';
 import { StyledWrapper, StyledInput, StyledWindow } from './style';
 import Text from '../Text';
-import Spacer from '../Spacer';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import { Button } from '../../index';
@@ -191,9 +190,9 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                             <FoldOut isOpen={this.state.isOpen}>
                                 {this.filterOptions().length === 0 && (
-                                    <Spacer offsetType={'inner'} offset={trbl(12)}>
+                                    <Box padding={trbl(12)}>
                                         <Text>{this.props.emptyText}</Text>
-                                    </Spacer>
+                                    </Box>
                                 )}
                                 {this.filterOptions().length > 0 &&
                                     this.filterOptions().map((option, index) => (

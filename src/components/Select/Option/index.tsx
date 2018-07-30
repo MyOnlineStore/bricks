@@ -1,5 +1,5 @@
 import React, { SFC } from 'react';
-import Spacer from '../../Spacer';
+import Box from '../../Box';
 import trbl from '../../../utility/trbl';
 import StyledOption from './style';
 
@@ -21,9 +21,7 @@ const Option: SFC<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledOption isTargeted={props.isTargeted} onClick={onClick} onMouseEnter={mouseEnter}>
-            <Spacer offsetType="inner" offset={trbl(6, 18)}>
-                {props.children}
-            </Spacer>
+            <Box padding={trbl(6, 18)}>{props.children}</Box>
         </StyledOption>
     );
 };

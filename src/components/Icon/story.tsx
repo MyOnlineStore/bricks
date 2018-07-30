@@ -4,7 +4,6 @@ import React from 'react';
 import Icon from '.';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
-import Spacer from '../Spacer';
 import Text from '../Text';
 import { LargeIcons, MediumIcons, SmallIcons } from './types';
 
@@ -24,9 +23,9 @@ storiesOf('Icon', module)
                 {smallIconKeys.map(icon => (
                     <Box basis={'33.333333%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
                         <Icon color={iconColor} size="small" icon={icon as any} />
-                        <Spacer offset={trbl(0, 0, 0, 24)}>
+                        <Box margin={trbl(0, 0, 0, 24)}>
                             <Text>{icon}</Text>
-                        </Spacer>
+                        </Box>
                     </Box>
                 ))}
             </Box>
@@ -42,9 +41,9 @@ storiesOf('Icon', module)
                 {mediumIconKeys.map(icon => (
                     <Box basis={'33.333333%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
                         <Icon color={iconColor} size="medium" icon={icon as any} />
-                        <Spacer offset={trbl(0, 0, 0, 24)}>
+                        <Box margin={trbl(0, 0, 0, 24)}>
                             <Text>{icon}</Text>
-                        </Spacer>
+                        </Box>
                     </Box>
                 ))}
             </Box>
@@ -60,9 +59,9 @@ storiesOf('Icon', module)
                 {largeIconKeys.map(icon => (
                     <Box basis={'50%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
                         <Icon color={iconColor} size="large" icon={icon as any} />
-                        <Spacer offset={trbl(0, 0, 0, 24)}>
+                        <Box margin={trbl(0, 0, 0, 24)}>
                             <Text>{icon}</Text>
-                        </Spacer>
+                        </Box>
                     </Box>
                 ))}
             </Box>

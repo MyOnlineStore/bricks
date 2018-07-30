@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import trbl from '../../utility/trbl';
-import Spacer from '../Spacer';
+import Box from '../Box';
 import StyledToggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
 
 type StateType = {
@@ -40,7 +40,7 @@ class Toggle extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <StyledToggleWrapper onClick={this.handleChange}>
-                <Spacer offset={trbl(0, 9, 0, 0)}>
+                <Box margin={trbl(0, 9, 0, 0)}>
                     <StyledToggleSkin
                         elementFocus={this.state.focus}
                         disabled={this.props.disabled}
@@ -60,7 +60,7 @@ class Toggle extends Component<PropsType, StateType> {
                             onChange={this.handleChange}
                         />
                     </StyledToggleSkin>
-                </Spacer>
+                </Box>
             </StyledToggleWrapper>
         );
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import trbl from '../../utility/trbl';
-import Spacer from '../Spacer';
+import Box from '../Box';
 import Text from '../Text';
 import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
 
@@ -39,7 +39,7 @@ class RadioButton extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <StyledRadioWrapper onClick={this.handleChange}>
-                <Spacer offset={trbl(0, 9, 0, 0)}>
+                <Box margin={trbl(0, 9, 0, 0)}>
                     <StyledRadioButtonSkin elementFocus={this.state.focus} checked={this.props.checked}>
                         <StyledRadioButton
                             onFocus={this.toggleFocus}
@@ -51,7 +51,7 @@ class RadioButton extends Component<PropsType, StateType> {
                             value={this.props.value}
                         />
                     </StyledRadioButtonSkin>
-                </Spacer>
+                </Box>
                 <Text>
                     <label htmlFor={this.props.name}>{this.props.label}</label>
                 </Text>

@@ -2,7 +2,7 @@ import React, { StatelessComponent } from 'react';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
-import Spacer from '../Spacer';
+import Box from '../Box';
 import StyledNotification from './style';
 
 enum SeverityIcons {
@@ -23,11 +23,11 @@ const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledNotification severity={props.severity}>
-            <Spacer offset={trbl(12)} offsetType="outer">
+            <Box margin={trbl(12)} alignItems={'center'}>
                 <Icon size="medium" icon={icon} />
                 &nbsp;&nbsp;&nbsp;
                 {props.message}
-            </Spacer>
+            </Box>
         </StyledNotification>
     );
 };

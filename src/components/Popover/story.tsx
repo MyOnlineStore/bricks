@@ -5,7 +5,6 @@ import Popover, { PlacementType } from '.';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Button from '../Button';
-import Spacer from '../Spacer';
 import Text from '../Text';
 
 type PropsType = {
@@ -21,13 +20,13 @@ type StateType = {
 
 const DemoContent: StatelessComponent = (): JSX.Element => {
     return (
-        <Spacer offset={trbl(24)}>
+        <Box margin={trbl(24)}>
             <Text>
                 Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus
                 mollis interdum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
                 commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
             </Text>
-        </Spacer>
+        </Box>
     );
 };
 
@@ -48,7 +47,7 @@ class Demo extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <Box height="90vh" justifyContent="center" alignItems="center">
-                <Spacer offset={trbl(48)}>
+                <Box margin={trbl(48)}>
                     <Popover
                         isOpen={this.state.isOpen}
                         placement={this.props.placement}
@@ -59,7 +58,7 @@ class Demo extends Component<PropsType, StateType> {
                     >
                         <Button variant="primary" title="Toggle" action={this.toggle} />
                     </Popover>
-                </Spacer>
+                </Box>
             </Box>
         );
     }
