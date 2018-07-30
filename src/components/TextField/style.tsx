@@ -93,7 +93,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
             ? `
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
-                border-bottom: solid 2px ${theme.InlineNotification[feedback.severity].color};
+                border-bottom: solid 2px ${theme.Text.severity[feedback.severity].color};
             `
             : ''};
     * {

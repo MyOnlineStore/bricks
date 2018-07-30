@@ -4,13 +4,7 @@ import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
-
-enum SeverityIcons {
-    error = 'dangerCircle',
-    warning = 'dangerCircle',
-    info = 'infoCircle',
-    success = 'checkmarkCircle',
-}
+import { SeverityIcons } from '../../types/SeverityType';
 
 type PropsType = StyledType & {
     severity: keyof typeof SeverityIcons;

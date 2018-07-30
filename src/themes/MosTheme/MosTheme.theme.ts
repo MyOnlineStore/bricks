@@ -439,16 +439,6 @@ const theme: ThemeType = {
     Illustration: {
         size: '186px',
     },
-    InlineNotification: {
-        common: {
-            fontSize: fontSize.smaller1,
-            fontFamily: bodyFont,
-        },
-        error: { color: red.darker2 },
-        success: { color: green.darker2 },
-        info: { color: grey.lighter2 },
-        warning: { color: yellow.darker2 },
-    },
     Link: {
         default: {
             color: grey.base,
@@ -602,6 +592,12 @@ const theme: ThemeType = {
         },
         large: {
             fontSize: '16px',
+        },
+        severity: {
+            error: { color: red.darker2 },
+            success: { color: green.darker2 },
+            info: { color: grey.lighter2 },
+            warning: { color: yellow.darker2 },
         },
     },
     TextField: {

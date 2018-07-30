@@ -1,7 +1,7 @@
 import { boolean, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Text from '.';
+import Text, { PropsType } from '.';
 
 const demoContent = `
     Now this is the story all about how
@@ -34,8 +34,9 @@ storiesOf('Text', module).add('Default', () => (
         strong={boolean('strong', false)}
         descriptive={boolean('descriptive', false)}
         compact={boolean('compact', false)}
-        variant={select('variant', ['small', 'base', 'large'], 'base')}
-        textAlign={select('text-align', ['left' , 'right', 'center', 'justify'], 'center')}
+        variant={select('variant', ['small', 'base', 'large'], 'base') as PropsType['variant']}
+        textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'center') as PropsType['textAlign']}
+        severity={select('severity', ['', 'success', 'warning', 'error'], '') as PropsType['severity']}
     >
         {demoContent}
     </Text>

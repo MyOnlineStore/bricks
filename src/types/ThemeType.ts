@@ -4,7 +4,6 @@ import { CheckboxThemeType } from '../components/Checkbox/style';
 import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';
 import { IllustrationThemeType } from '../components/Illustration/style';
-import { InlineNotificationThemeType } from '../components/InlineNotification/style';
 import { LinkThemeType } from '../components/Link/style';
 import { MessageStreamThemeType } from '../components/MessageStream/style';
 import { ModalThemeType } from '../components/Modal/style';
@@ -28,7 +27,6 @@ type ThemeType = {
     Modal: ModalThemeType;
     Notification: NotificationThemeType;
     Illustration: IllustrationThemeType;
-    InlineNotification: InlineNotificationThemeType;
     Link: LinkThemeType;
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
