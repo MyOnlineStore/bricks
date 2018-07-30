@@ -34,27 +34,28 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
                         <StyledModal>
                             <Box
                                 shrink={0}
-                                margin={breakpoint === 'small' ? trbl(24) : trbl(36)}
+                                margin={breakpoint === 'small' ? trbl(24) : trbl(24, 36)}
                                 alignItems="flex-start"
                                 alignContent="center"
                                 justifyContent="space-between"
                             >
                                 <Heading hierarchy={2}>{props.title}</Heading>
-                                <Spacer offsetType="outer" offset={trbl(-12, -12, -6, 0)}>
-                                    <Box alignContent="center" justifyContent="flex-end" alignItems="center" grow={0}>
-                                        <Button variant="plain" title="close" action={closeAction} compact>
-                                            <Icon size="small" icon="close" />
-                                        </Button>
-                                    </Box>
-                                </Spacer>
+                                <Box
+                                    margin={trbl(-12, -12, -6, 0)}
+                                    alignContent="center"
+                                    justifyContent="flex-end"
+                                    alignItems="center"
+                                    grow={0}
+                                >
+                                    <Button variant="plain" flat title="close" action={closeAction} compact>
+                                        <Icon size="small" icon="close" />
+                                    </Button>
+                                </Box>
                             </Box>
                             <ScrollBox>
-                                <Spacer
-                                    offsetType="inner"
-                                    offset={breakpoint === 'small' ? trbl(0, 24, 24, 24) : trbl(0, 36, 36, 36)}
-                                >
+                                <Box padding={breakpoint === 'small' ? trbl(0, 24, 24, 24) : trbl(0, 36, 36, 36)}>
                                     {props.children}
-                                </Spacer>
+                                </Box>
                             </ScrollBox>
                             {props.renderFixed && (
                                 <Box direction="column" alignItems="stretch" shrink={0}>

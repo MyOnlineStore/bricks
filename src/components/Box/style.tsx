@@ -17,6 +17,7 @@ type BoxPropsType = PropsType & {
 };
 
 const StyledDiv = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
+    box-sizing: border-box;
     display: ${({ inline }): string => (inline ? 'inline-flex' : 'flex')};
     height: ${({ elementHeight }): string => (elementHeight !== undefined ? elementHeight : '')};
     width: ${({ elementWidth }): string => (elementWidth !== undefined ? elementWidth : '')};

@@ -5,6 +5,7 @@ import Modal from '.';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Text from '../Text';
+import Box from '../Box';
 
 const demoContent = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,

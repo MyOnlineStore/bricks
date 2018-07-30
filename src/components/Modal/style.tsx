@@ -19,25 +19,28 @@ const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
     position: fixed;
     height: 100%;
     width: 100%;
+    padding: 12px;
     top: 0;
     left: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-
     ${({ show }): string => (show ? 'opacity: 1;' : 'opacity: 0; pointer-events: none;')};
+
+    > * {
+        max-width: 100%;
+        max-height: 100%;
+    }
 `;
 
 const StyledModal = styled.div`
-    margin: auto;
-    max-width: 600px;
-    width: calc(100% - 24px);
+    max-width: 100%;
+    width: 791px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     min-height: 300px;
-    min-width: 150px;
     height: calc(100% - 24px);
     overflow: hidden;
     max-height: calc(300px + (600 - 300) * (100vh - 300px) / (900 - 300));
