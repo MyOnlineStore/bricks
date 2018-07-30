@@ -3857,7 +3857,6 @@ exports[`Storyshots Modal Default 1`] = `
   font-weight: 400;
   line-height: 1.25;
   text-transform: none;
-  text-align: left;
   margin: 0;
 }
 
@@ -4922,7 +4921,6 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   text-transform: none;
-  text-align: left;
   margin: 0;
 }
 
@@ -5050,7 +5048,6 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   text-transform: none;
-  text-align: left;
   margin: 0;
 }
 
@@ -6081,7 +6078,6 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   text-transform: none;
-  text-align: left;
   margin: 0;
 }
 
