@@ -15,8 +15,9 @@ type TableRowThemeType = {
 
 type StyledRowProps = {
     ref?: HTMLElement;
-    isDragging?: boolean;
+    draggable?: boolean;
     focus: boolean;
+    header?: boolean;
 };
 
 const StyledRow = withProps<StyledRowProps>(styled.tr)`
@@ -25,24 +26,33 @@ const StyledRow = withProps<StyledRowProps>(styled.tr)`
     border-spacing: 0 1px;
     box-sizing: border-box;
     position: relative;
-    ${({ isDragging, focus }): string => (isDragging && !focus ? 'box-shadow: 0 0 35px rgba(0,0,0,.5);' : '')}
+    ${({ draggable, focus }): string => (draggable && !focus ? 'box-shadow: 0 0 35px rgba(0,0,0,.5);' : '')}
 
     &:hover {
+
         background-color: ${({ theme }): string => theme.TableRow.hover.backgroundColor};
-        ${({ isDragging }): string => (isDragging ? 'box-shadow: 0 -2px 0 rgba(0,0,0,.2);' : '')}
+        ${({ draggable }): string => (draggable ? 'box-shadow: 0 -2px 0 rgba(0,0,0,.2);' : '')}
     }
 
-    &:after {
-        pointer-events: none;
-        ${({ focus }): string => (focus ? 'content: ""' : '')};
-        box-shadow: 0 0 0 4px rgba(107,222,120,0.4);
-        position: absolute;
-        height: 85px;
-        border-radius: 3px;
-        width: calc(100vw - 16px);
-        left: ${({ isDragging }): string => (isDragging ? '0' : '8px')}
-        ${({ isDragging }): string => (isDragging ? 'top: 0' : '')}
-    }
+    ${({ focus }): string =>
+        focus
+            ? `td {
+            border-top: 5px solid rgba(107,222,120,0.4);
+            border-bottom: 5px solid rgba(107,222,120,0.4);
+        }
+
+        td:first-child {
+            border-left: 5px solid rgba(107,222,120,0.4);
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        td:last-child {
+            border-right: 5px solid rgba(107,222,120,0.4);
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;`
+            : ''};
+
     `;
 
 export default StyledRow;

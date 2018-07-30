@@ -34,13 +34,10 @@ type ThemeType = {
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
     ScrollBox: ScrollBoxThemeType;
-<<<<<<< HEAD
     Select: SelectThemeType;
-=======
     Table: TableThemeType;
     TableCell: TableCellThemeType;
     TableRow: TableRowThemeType;
->>>>>>> 2fb90bf... first working prototype
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     RadioButton: RadioButtonThemeType;

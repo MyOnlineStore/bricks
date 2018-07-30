@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, RefObject, createRef } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { ContrastThemeProvider } from '../Contrast';
 import Icon from '../Icon';
 import TableCell from '../TableCell';
+import Text from '../Text';
 import StyledRow from './style';
 
 type PropsType = {
@@ -11,8 +12,8 @@ type PropsType = {
 };
 
 type StateType = {
-    focus: boolean;
-    hover: boolean;
+    hasFocus: boolean;
+    hasHover: boolean;
 };
 
 class TableRow extends Component<PropsType, StateType> {
@@ -20,55 +21,59 @@ class TableRow extends Component<PropsType, StateType> {
         super(props);
 
         this.state = {
-            focus: false,
-            hover: false,
+            hasFocus: false,
+            hasHover: false,
         };
     }
 
     public handleMouseEnter = (): void => {
         this.setState({
-            hover: true,
+            hasHover: true,
         });
     };
 
     public handleMouseLeave = (): void => {
         this.setState({
-            hover: false,
+            hasHover: false,
         });
     };
 
     public handleFocus = (): void => {
         this.setState({
-            focus: true,
+            hasFocus: true,
         });
     };
 
     public handleBlur = (): void => {
         this.setState({
-            focus: false,
-            hover: false,
+            hasFocus: false,
         });
     };
 
     public render(): JSX.Element {
         if (this.props.draggable && this.props.index !== undefined) {
-            /* tslint:disable:no-unbound-method */
+            /*tslint:disable*/
             return (
                 <Draggable draggableId={`id-${this.props.index}`} index={this.props.index}>
                     {(provided, snapshot): JSX.Element => (
-                        <ContrastThemeProvider enabled={this.state.hover}>
+                        <ContrastThemeProvider enable={this.state.hasHover}>
                             <StyledRow
                                 onMouseEnter={this.handleMouseEnter}
                                 onMouseLeave={this.handleMouseLeave}
-                                onFocusCapture={this.handleFocus}
-                                onBlurCapture={this.handleBlur}
                                 {...provided.draggableProps}
-                                isDragging={snapshot.isDragging}
+                                draggable={snapshot.isDragging}
                                 innerRef={provided.innerRef}
-                                focus={this.state.focus}
+                                focus={this.state.hasFocus}
                             >
-                                <TableCell width="18px" provided={provided.dragHandleProps}>
-                                    <Icon color={this.state.hover ? '#000' : '#A6AAB3'} size="medium" icon="bars" />
+                                <TableCell
+                                    width="18px"
+                                    provided={provided.dragHandleProps}
+                                    onBlur={this.handleBlur}
+                                    onFocus={this.handleFocus}
+                                >
+                                    <Text descriptive={!this.state.hasHover}>
+                                        <Icon size="medium" icon="bars" />
+                                    </Text>
                                 </TableCell>
                                 {this.props.children}
                             </StyledRow>
@@ -76,15 +81,10 @@ class TableRow extends Component<PropsType, StateType> {
                     )}
                 </Draggable>
             );
-            /* tslint:enable:no-unbound-method */
+            /*tslint:enable*/
         }
 
-        return (
-            <StyledRow focus={false}>
-                <TableCell />
-                {this.props.children}
-            </StyledRow>
-        );
+        return <StyledRow focus={false}>{this.props.children}</StyledRow>;
     }
 }
 

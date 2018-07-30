@@ -1,27 +1,63 @@
-import React, { SFC } from 'react';
+import React, { ReactNode } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
-import StyledTable from './style';
+import StyledTable, { StyledTableBody } from './style';
+import TableRow from '../TableRow';
+import TableCell from '../TableCell';
 
-type PropsType = {
-    dragEndHandler(result: DropResult): void;
+type PropsType<GenericRowType, GenericCellType> = {
+    children?: ReactNode;
+    data?: ReadonlyArray<GenericRowType>;
+    draggable?: boolean;
+    dragEndHandler?(result: DropResult): void;
+    renderCell?(cell: GenericCellType): JSX.Element;
 };
 
-const Table: SFC<PropsType> = (props): JSX.Element => {
-    const dragEndHandler = (result: DropResult): void => props.dragEndHandler(result);
+type CellBaseType = {
+    text?: string;
+};
 
-    /* tslint:disable:no-unbound-method */
+const Table = <GenericCellType extends CellBaseType, GenericRowType extends Array<GenericCellType>>(
+    props: PropsType<GenericRowType, GenericCellType>,
+): JSX.Element => {
+    const dragEndHandler = (result: DropResult): void => {
+        if (props.dragEndHandler !== undefined) props.dragEndHandler(result);
+    };
+
     return (
         <DragDropContext onDragEnd={dragEndHandler}>
             <Droppable droppableId="droppable">
-                {({ innerRef }): JSX.Element => (
-                    <StyledTable innerRef={innerRef}>
-                        <tbody>{props.children}</tbody>
-                    </StyledTable>
-                )}
+                {({ innerRef }): JSX.Element => {
+                    if (props.children !== undefined) {
+                        return (
+                            <StyledTable innerRef={innerRef}>
+                                <StyledTableBody>{props.children}</StyledTableBody>
+                            </StyledTable>
+                        );
+                    }
+
+                    return (
+                        <>
+                            <StyledTable innerRef={innerRef}>
+                                <StyledTableBody>
+                                    {props.data !== undefined &&
+                                        props.data.map((row: GenericRowType, j: number) => (
+                                            <TableRow key={`row-${j}`} index={j} draggable={props.draggable}>
+                                                {row.map((cell, i: number) => (
+                                                    <TableCell key={`cell-${i}`}>
+                                                        {(props.renderCell !== undefined && props.renderCell(cell)) ||
+                                                            cell.text}
+                                                    </TableCell>
+                                                ))}
+                                            </TableRow>
+                                        ))}
+                                </StyledTableBody>
+                            </StyledTable>
+                        </>
+                    );
+                }}
             </Droppable>
         </DragDropContext>
     );
-    /* tslint:enable:no-unbound-method */
 };
 
 export default Table;

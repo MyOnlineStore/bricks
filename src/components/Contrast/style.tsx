@@ -15,7 +15,5 @@ const StyledContrast = styled.div`
     background: ${({ theme }): string => theme.Contrast.default.background};
 `;
 
-const withContrastStyles = StyledContrast.withComponent;
-
 export default StyledContrast;
-export { ContrastThemeType, withContrastStyles };
+export { ContrastThemeType };

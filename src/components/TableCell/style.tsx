@@ -5,7 +5,7 @@ import styled, { withProps } from '../../utility/styled';
 
 type CellPropsType = {
     align?: 'left' | 'center' | 'right';
-    tableHead?: boolean;
+    header?: boolean;
     elementWidth?: string;
 };
 
@@ -24,8 +24,16 @@ const StyledCell = withProps<CellPropsType>(styled.td)`
     width: ${({ elementWidth }): string => (elementWidth ? elementWidth : 'inherit')};
     text-align: ${({ align }): string => (align ? align : 'left')};
     border-bottom: ${({ theme }): string => `1px solid ${theme.TableCell.default.borderColor}`};
-    padding: ${({ tableHead }): string => (tableHead ? '12px' : '24px 12px')};
-    position: relative;
+    padding: 12px;
+    border-top: 3px solid transparent;
+
+    &:first-child {
+        border-left: 3px solid transparent;
+    }
+
+    &:last-child {
+        border-right: 3px solid transparent;
+    }
 
     &:focus {
         outline: none;

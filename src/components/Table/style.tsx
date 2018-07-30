@@ -7,17 +7,17 @@ type TableThemeType = {
     backgroundColor: string;
 };
 
-type StyledTableProps = {
-    ref: HTMLTableElement;
-};
-
 const StyledTable = styled.table`
-    border-spacing: 0;
-    background-color: ${({ theme }): string => theme.Table.backgroundColor};
-    border-collapse: separate;
     width: 100%;
-    // table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: separate;
+    background-color: ${({ theme }): string => theme.Table.backgroundColor};
+`;
+
+const StyledTableBody = styled.tbody`
+    overflow: auto
+    min-width: 350px;
 `;
 
 export default StyledTable;
-export { StyledTable, TableThemeType, StyledTableProps };
+export { StyledTable, TableThemeType, StyledTableBody };
