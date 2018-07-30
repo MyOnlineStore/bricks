@@ -36,7 +36,7 @@ const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
 
 const StyledModal = styled.div`
     max-width: 100%;
-    width: 791px;
+    width: 792px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
