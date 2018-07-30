@@ -32,6 +32,7 @@ storiesOf('Modal', module).add('Default', () => {
         <Modal
             show={boolean('show', true)}
             title="Would you like me to be your role modal?"
+            closeAction={(): void => alert('You are now closing this modal, do you wish to continue?')}
             renderFixed={(): JSX.Element => (
                 <ButtonGroup>
                     <Button variant="primary" title="Activate" />

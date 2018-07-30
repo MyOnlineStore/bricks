@@ -65,6 +65,8 @@ const StyledHeading = styled(HeadingElement)`
             : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
     text-align: ${({ textAlign }): string => (textAlign !== undefined ? textAlign : '')};
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 `;
 
 export default StyledHeading;

@@ -1,10 +1,11 @@
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import Modal from '.';
-import { mountWithTheme, shallowWithTheme } from '../../utility/styled';
+import { mountWithTheme } from '../../utility/styled';
 import BreakpointProvider from '../BreakpointProvider';
 import { PropsType } from '../BreakpointProvider/';
-import StyledModal, { StyledModalWrapper } from './style';
+import StyledModal from './style';
+import TransitionAnimation from '../TransitionAnimation';
+import Button from '../Button';
 
 jest.mock('../ScrollBox', () => jest.fn().mockImplementation((props: PropsType): string => 'div'));
 
@@ -43,20 +44,27 @@ describe('Modal', () => {
 
     it('should be possible to close the modal view', () => {
         const clickMock = jest.fn();
-        const component = shallowWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
-        const styledModalWrapper = component.find(StyledModalWrapper);
+        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
+        const closeButton = component.find(Button).first();
 
-        styledModalWrapper.simulate('click');
+        closeButton.simulate('click');
 
-        expect(toJson(component.dive())).toMatchSnapshot();
         expect(clickMock).toHaveBeenCalled();
+    });
 
-        const componentNoAction = shallowWithTheme(<Modal show={true} title="Foo" closeAction={undefined} />);
-        componentNoAction.simulate('click');
+    it('should not break when no closeAction is provided', () => {
+        const component = mountWithTheme(<Modal show={true} title="Foo" />);
+        const closeButton = component.find(Button).first();
+        const fn = (): void => {
+            closeButton.simulate('click');
+        };
+        expect(fn).not.toThrow();
     });
 
     it('should render closed', () => {
         const component = mountWithTheme(<Modal show={false} title="Foo" />);
-        expect(component.length).toBe(1);
+        const transitionAnimation = component.find(TransitionAnimation);
+
+        expect(transitionAnimation.prop('show')).toBe(false);
     });
 });

@@ -121,6 +121,8 @@ exports[`Storyshots Box Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c0 {
@@ -261,6 +263,8 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c0 {
@@ -1753,6 +1757,8 @@ exports[`Storyshots EmptyState Default 1`] = `
   line-height: 1.5;
   text-align: center;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c4 {
@@ -1764,6 +1770,8 @@ exports[`Storyshots EmptyState Default 1`] = `
   text-transform: none;
   text-align: center;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c2 svg {
@@ -1920,6 +1928,8 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   line-height: 1.5;
   text-align: center;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c7 {
@@ -2034,6 +2044,8 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   text-transform: none;
   text-align: center;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c2 svg {
@@ -2098,6 +2110,8 @@ exports[`Storyshots ErrorBoundary Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 <div>
@@ -2139,6 +2153,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c3 {
@@ -2314,6 +2330,8 @@ exports[`Storyshots Heading Default 1`] = `
   text-transform: none;
   text-align: left;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 <h1
@@ -2637,6 +2655,8 @@ exports[`Storyshots Link Action with child element 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c1 {
@@ -2682,6 +2702,8 @@ exports[`Storyshots Link Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c1 {
@@ -2810,6 +2832,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c5 {
@@ -2819,6 +2843,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   font-weight: 700;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c7 {
@@ -2828,6 +2854,8 @@ exports[`Storyshots MessageStream Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c11 {
@@ -3804,6 +3832,8 @@ exports[`Storyshots Modal Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c17 {
@@ -4135,6 +4165,8 @@ exports[`Storyshots Modal Default 1`] = `
   line-height: 1.25;
   text-transform: none;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c8 {
@@ -4202,6 +4234,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  z-index: 999999999999;
   opacity: 1;
 }
 
@@ -4230,7 +4263,6 @@ exports[`Storyshots Modal Default 1`] = `
 
 <div
   className="c0"
-  onClick={[Function]}
 >
   <div
     className="c1"
@@ -5008,6 +5040,8 @@ exports[`Storyshots RadioButton Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c0 {
@@ -5164,6 +5198,8 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c3 {
@@ -5392,6 +5428,8 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c5 {
@@ -5402,6 +5440,8 @@ Array [
   line-height: 1.5;
   text-transform: none;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c2 {
@@ -5547,6 +5587,8 @@ Array [
   line-height: 1.5;
   text-transform: none;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 <div
@@ -5566,6 +5608,8 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 <p
@@ -5732,6 +5776,8 @@ exports[`Storyshots Select Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c6 {
@@ -5741,6 +5787,8 @@ exports[`Storyshots Select Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c7 {
@@ -6159,6 +6207,8 @@ exports[`Storyshots Spacer ⚠️  With margin 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c0 {
@@ -6193,6 +6243,8 @@ exports[`Storyshots Spacer ⚠️  With padding 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c1 {
@@ -7333,6 +7385,8 @@ exports[`Storyshots Text Default 1`] = `
   line-height: 1.5;
   text-align: center;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 <p
@@ -7783,6 +7837,8 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
   line-height: 1.5;
   text-transform: none;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c1 {

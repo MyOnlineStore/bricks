@@ -64,6 +64,8 @@ const StyledParagraph = withProps<TextPropsType, HTMLParagraphElement>(styled.p)
     line-height: ${({ compact }): string => (compact ? '1.25' : '1.5')};
     text-align: ${({ textAlign }): string => (textAlign ? textAlign : '')};
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 `;
 
 const StyledSpan = StyledParagraph.withComponent('span');

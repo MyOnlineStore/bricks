@@ -26,7 +26,7 @@ const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
     };
 
     return (
-        <StyledModalWrapper show={props.show} onClick={closeAction}>
+        <StyledModalWrapper show={props.show}>
             <TransitionAnimation key={0} show={props.show} animation="zoom">
                 <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
                     {(breakpoint): JSX.Element => (
