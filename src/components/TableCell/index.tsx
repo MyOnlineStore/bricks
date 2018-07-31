@@ -15,6 +15,7 @@ type PropsType = {
 const TableCell: SFC<PropsType> = (props): JSX.Element => {
     const extraProps = props.provided !== undefined ? props.provided : {};
 
+    /* tslint:disable:no-unbound-method */
     return (
         <StyledCell
             {...extraProps}
@@ -27,6 +28,7 @@ const TableCell: SFC<PropsType> = (props): JSX.Element => {
             {props.children}
         </StyledCell>
     );
+    /* tslint:enable:no-unbound-method */
 };
 
 export default TableCell;

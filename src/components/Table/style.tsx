@@ -12,12 +12,9 @@ const StyledTable = styled.table`
     border-spacing: 0;
     border-collapse: separate;
     background-color: ${({ theme }): string => theme.Table.backgroundColor};
-`;
-
-const StyledTableBody = styled.tbody`
     overflow: auto
-    min-width: 350px;
+    min-width: 100%;
 `;
 
 export default StyledTable;
-export { StyledTable, TableThemeType, StyledTableBody };
+export { StyledTable, TableThemeType };

@@ -1,4 +1,4 @@
-import React, { Component, RefObject, createRef } from 'react';
+import React, { Component } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import Icon from '../Icon';
 import TableCell from '../TableCell';
@@ -43,6 +43,7 @@ class TableRow extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         if (this.props.draggable && this.props.index !== undefined) {
+            /* tslint:disable:no-unbound-method */
             return (
                 <Draggable draggableId={`id-${this.props.index}`} index={this.props.index}>
                     {(provided, snapshot): JSX.Element => (
@@ -70,7 +71,7 @@ class TableRow extends Component<PropsType, StateType> {
                     )}
                 </Draggable>
             );
-            /*tslint:enable*/
+            /* tslint:enable:no-unbound-method */
         }
 
         return <Row>{this.props.children}</Row>;

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
-import StyledTable, { StyledTableBody } from './style';
+import StyledTable from './style';
 import TableRow from '../TableRow';
 import TableCell from '../TableCell';
 
@@ -28,7 +28,7 @@ const Table = <GenericCellType extends CellBaseType, GenericRowType extends Arra
             <Droppable droppableId="droppable">
                 {({ innerRef }): JSX.Element => (
                     <StyledTable innerRef={innerRef}>
-                        <StyledTableBody>
+                        <tbody>
                             {props.children !== undefined && props.children}
                             {props.data !== undefined &&
                                 props.data.map((row: GenericRowType, j: number) => (
@@ -41,7 +41,7 @@ const Table = <GenericCellType extends CellBaseType, GenericRowType extends Arra
                                         ))}
                                     </TableRow>
                                 ))}
-                        </StyledTableBody>
+                        </tbody>
                     </StyledTable>
                 )}
             </Droppable>

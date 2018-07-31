@@ -13,20 +13,24 @@ type PropsType = {
     onMouseLeave?(): void;
 };
 
-const Row: SFC<PropsType> = (props): JSX.Element => (
-    <ContrastThemeProvider enable={props.hasHover}>
-        <StyledRow
-            {...props.draggableProps}
-            draggable={props.draggable}
-            innerRef={props.innerRef}
-            focus={props.focus}
-            onMouseEnter={props.onMouseEnter}
-            onMouseLeave={props.onMouseLeave}
-        >
-            {props.children}
-        </StyledRow>
-    </ContrastThemeProvider>
-);
+const Row: SFC<PropsType> = (props): JSX.Element => {
+    /* tslint:disable:no-unbound-method */
+    return (
+        <ContrastThemeProvider enable={props.hasHover}>
+            <StyledRow
+                {...props.draggableProps}
+                draggable={props.draggable}
+                innerRef={props.innerRef}
+                focus={props.focus}
+                onMouseEnter={props.onMouseEnter}
+                onMouseLeave={props.onMouseLeave}
+            >
+                {props.children}
+            </StyledRow>
+        </ContrastThemeProvider>
+    );
+    /* tslint:enable:no-unbound-method */
+};
 
 export default Row;
 export { PropsType };
