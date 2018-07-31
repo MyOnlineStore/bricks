@@ -2492,6 +2492,8 @@ exports[`Storyshots InlineNotification Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c3 {
@@ -2595,6 +2597,8 @@ exports[`Storyshots InlineNotification With overwritten Icon 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c3 {
@@ -7644,6 +7648,8 @@ Array [
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c4 {
