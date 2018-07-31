@@ -45,7 +45,7 @@ type TextPropsType = {
     severity?: SeverityType | '';
 };
 
-const StyledText = withProps<TextPropsType, HTMLParagraphElement>(styled.p)`
+const StyledParagraph = withProps<TextPropsType, HTMLParagraphElement>(styled.p)`
     color: ${({ descriptive, severity, theme }): string => {
         if (descriptive !== undefined && descriptive) {
             return theme.Text.descriptive.color;
@@ -66,5 +66,6 @@ const StyledText = withProps<TextPropsType, HTMLParagraphElement>(styled.p)`
     margin: 0;
 `;
 
-export default StyledText;
-export { TextThemeType, TextVariantStyleType, SeverityStyleType };
+const StyledSpan = StyledParagraph.withComponent('span');
+
+export { StyledSpan, StyledParagraph, TextThemeType, TextVariantStyleType, SeverityStyleType };
