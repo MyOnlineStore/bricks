@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
     border-radius: 5px;
 `;
 
-storiesOf('Spacer', module)
+storiesOf('Spacer ⚠️ ', module)
     .add('With margin', () => (
         <Spacer offset={trbl(12)}>
             <StyledDiv>

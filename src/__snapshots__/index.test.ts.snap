@@ -6124,7 +6124,7 @@ exports[`Storyshots Select Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Spacer With margin 1`] = `
+exports[`Storyshots Spacer ⚠️  With margin 1`] = `
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -6158,7 +6158,7 @@ exports[`Storyshots Spacer With margin 1`] = `
 </div>
 `;
 
-exports[`Storyshots Spacer With padding 1`] = `
+exports[`Storyshots Spacer ⚠️  With padding 1`] = `
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
