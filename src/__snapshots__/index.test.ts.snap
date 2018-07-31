@@ -6283,6 +6283,8 @@ exports[`Storyshots Table Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c3 {
@@ -6292,6 +6294,8 @@ exports[`Storyshots Table Default 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c6 {
@@ -6812,6 +6816,8 @@ exports[`Storyshots Table Verbose 1`] = `
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c3 {
@@ -6821,6 +6827,8 @@ exports[`Storyshots Table Verbose 1`] = `
   font-weight: 700;
   line-height: 1.5;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .c7 {
