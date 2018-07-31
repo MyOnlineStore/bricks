@@ -26,35 +26,24 @@ const Table = <GenericCellType extends CellBaseType, GenericRowType extends Arra
     return (
         <DragDropContext onDragEnd={dragEndHandler}>
             <Droppable droppableId="droppable">
-                {({ innerRef }): JSX.Element => {
-                    if (props.children !== undefined) {
-                        return (
-                            <StyledTable innerRef={innerRef}>
-                                <StyledTableBody>{props.children}</StyledTableBody>
-                            </StyledTable>
-                        );
-                    }
-
-                    return (
-                        <>
-                            <StyledTable innerRef={innerRef}>
-                                <StyledTableBody>
-                                    {props.data !== undefined &&
-                                        props.data.map((row: GenericRowType, j: number) => (
-                                            <TableRow key={`row-${j}`} index={j} draggable={props.draggable}>
-                                                {row.map((cell, i: number) => (
-                                                    <TableCell key={`cell-${i}`}>
-                                                        {(props.renderCell !== undefined && props.renderCell(cell)) ||
-                                                            cell.text}
-                                                    </TableCell>
-                                                ))}
-                                            </TableRow>
+                {({ innerRef }): JSX.Element => (
+                    <StyledTable innerRef={innerRef}>
+                        <StyledTableBody>
+                            {props.children !== undefined && props.children}
+                            {props.data !== undefined &&
+                                props.data.map((row: GenericRowType, j: number) => (
+                                    <TableRow key={`row-${j}`} index={j} draggable={props.draggable}>
+                                        {row.map((cell, i: number) => (
+                                            <TableCell key={`cell-${i}`}>
+                                                {(props.renderCell !== undefined && props.renderCell(cell)) ||
+                                                    cell.text}
+                                            </TableCell>
                                         ))}
-                                </StyledTableBody>
-                            </StyledTable>
-                        </>
-                    );
-                }}
+                                    </TableRow>
+                                ))}
+                        </StyledTableBody>
+                    </StyledTable>
+                )}
             </Droppable>
         </DragDropContext>
     );

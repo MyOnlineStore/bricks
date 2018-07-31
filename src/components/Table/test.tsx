@@ -16,7 +16,7 @@ describe('Table', () => {
 
         const dragHandler = jest.fn();
 
-        const component = mountWithTheme(
+        mountWithTheme(
             <Table dragEndHandler={dragHandler}>
                 <TableRow>
                     <TableCell>Boo!</TableCell>
@@ -35,18 +35,16 @@ describe('Table', () => {
         });
         /* tslint:enable */
 
-        const dragHandler = jest.fn();
+        const fn = (): void => {
+            mountWithTheme(<Table />);
+        };
 
-        const component = mountWithTheme(<Table />);
-
-        expect(component.find(Table).length).toBe(1);
-        expect(dragHandler).not.toHaveBeenCalledWith(undefined);
+        expect(fn).not.toThrow();
     });
 
-    it('should render text cell', () => {
+    it('should render the correct amount of cells', () => {
         const data = [[{ text: 'Test A' }, { text: 'Test C' }], [{ text: 'Test A' }, { text: 'Test C' }]];
-        const component = mountWithTheme(<Table dragEndHandler={undefined} data={data} />);
-
+        const component = mountWithTheme(<Table data={data} />);
         expect(component.find(TableCell).length).toBe(4);
     });
 });

@@ -13,20 +13,14 @@ type PropsType = {
 };
 
 const TableCell: SFC<PropsType> = (props): JSX.Element => {
-    if (props.header) {
-        return (
-            <StyledCell elementWidth={props.width} header={props.header} align={props.align}>
-                {props.children}
-            </StyledCell>
-        );
-    }
+    const extraProps = props.provided !== undefined ? props.provided : {};
 
     return (
         <StyledCell
+            {...extraProps}
             elementWidth={props.width}
             header={props.header}
             align={props.align}
-            {...props.provided}
             onFocus={props.onFocus}
             onBlur={props.onBlur}
         >

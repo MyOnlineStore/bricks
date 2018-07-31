@@ -586,9 +586,13 @@ const theme: ThemeType = {
     TableRow: {
         default: {
             backgroundColor: silver.lighter1,
+            borderColor: 'rgba(107,222,120,0)',
         },
         hover: {
             backgroundColor: silver.base,
+        },
+        focus: {
+            borderColor: 'rgba(107,222,120,0.4)',
         },
     },
     Text: {

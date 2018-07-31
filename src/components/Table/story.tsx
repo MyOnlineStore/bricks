@@ -20,7 +20,7 @@ type CellType = {
     type?: 'actions' | 'list' | 'range';
 };
 
-type RowType = [CellType, CellType, CellType, CellType];
+type RowType = [CellType, CellType, CellType];
 
 type DemoPropsType = {
     draggable: boolean;
@@ -33,19 +33,14 @@ type DemoStateType = {
     hover: boolean;
 };
 
-const headings: RowType = [
-    { text: 'filter' },
-    { text: 'Filter type' },
-    { text: 'Filter type' },
-    { text: 'Filter type' },
-];
+const headings: RowType = [{ text: 'filter' }, { text: 'Filter type' }, { text: 'Filter type' }];
 
 const data: Array<RowType> = [
-    [{ text: 'Test A', type: 'actions' }, { text: 'Test C' }, { text: 'Test D' }, { text: 'Test D' }],
-    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }, { text: 'Test D' }],
-    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }, { text: 'Test D' }],
-    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }, { text: 'Test D' }],
-    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }, { text: 'Test D' }],
+    [{ text: 'Test A', type: 'actions' }, { text: 'Test C' }, { text: 'Test D' }],
+    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
+    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
+    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
+    [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
 ];
 
 class Demo extends Component<DemoPropsType, DemoStateType> {
@@ -122,7 +117,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
                 data={this.state.data}
                 renderCell={({ text, type }): JSX.Element => {
                     return type === 'actions' ? (
-                        <Button title="foo" variant="primary" action={undefined} />
+                        <Button title="foo" variant="secondary" action={undefined} />
                     ) : (
                         <Text>{text}</Text>
                     );
