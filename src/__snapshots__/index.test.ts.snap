@@ -5751,30 +5751,8 @@ exports[`Storyshots Select Default 1`] = `
   order: 0;
 }
 
-.c15 {
-  box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: 0px 6px 0px 0px;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-}
-
-.c14 {
-  color: #333740;
+.c6 {
+  color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -5784,8 +5762,8 @@ exports[`Storyshots Select Default 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c6 {
-  color: #a6aab3;
+.c14 {
+  color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -6081,16 +6059,15 @@ exports[`Storyshots Select Default 1`] = `
                   <div
                     className="c13"
                   >
-                    <p
+                    <span
                       className="c14"
                     >
-                      <span
-                        className="c15"
-                      />
-                      <span>
+                      <div
+                        className="c0"
+                      >
                         Bar A
-                      </span>
-                    </p>
+                      </div>
+                    </span>
                   </div>
                 </div>
                 <div
@@ -6101,16 +6078,15 @@ exports[`Storyshots Select Default 1`] = `
                   <div
                     className="c13"
                   >
-                    <p
+                    <span
                       className="c14"
                     >
-                      <span
-                        className="c15"
-                      />
-                      <span>
+                      <div
+                        className="c0"
+                      >
                         Foo B
-                      </span>
-                    </p>
+                      </div>
+                    </span>
                   </div>
                 </div>
                 <div
@@ -6121,16 +6097,15 @@ exports[`Storyshots Select Default 1`] = `
                   <div
                     className="c13"
                   >
-                    <p
+                    <span
                       className="c14"
                     >
-                      <span
-                        className="c15"
-                      />
-                      <span>
+                      <div
+                        className="c0"
+                      >
                         Bar C
-                      </span>
-                    </p>
+                      </div>
+                    </span>
                   </div>
                 </div>
                 <div
@@ -6141,16 +6116,15 @@ exports[`Storyshots Select Default 1`] = `
                   <div
                     className="c13"
                   >
-                    <p
+                    <span
                       className="c14"
                     >
-                      <span
-                        className="c15"
-                      />
-                      <span>
+                      <div
+                        className="c0"
+                      >
                         Foo D
-                      </span>
-                    </p>
+                      </div>
+                    </span>
                   </div>
                 </div>
                 <div
@@ -6161,16 +6135,15 @@ exports[`Storyshots Select Default 1`] = `
                   <div
                     className="c13"
                   >
-                    <p
+                    <span
                       className="c14"
                     >
-                      <span
-                        className="c15"
-                      />
-                      <span>
+                      <div
+                        className="c0"
+                      >
                         Bar E
-                      </span>
-                    </p>
+                      </div>
+                    </span>
                   </div>
                 </div>
                 <div
@@ -6181,16 +6154,779 @@ exports[`Storyshots Select Default 1`] = `
                   <div
                     className="c13"
                   >
-                    <p
+                    <span
                       className="c14"
                     >
-                      <span
-                        className="c15"
-                      />
-                      <span>
+                      <div
+                        className="c0"
+                      >
                         Bar F
-                      </span>
-                    </p>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </MockPortal>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select With a custom option renderer 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 300px;
+  -ms-flex-preferred-size: 300px;
+  flex-basis: 300px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c4 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c13 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 18px 6px 18px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c15 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c16 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px 0px 0px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c17 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c6 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c18 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c14 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c7 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 12px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  color: #55656d;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7:hover {
+  color: #21252b;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c7:active {
+  color: #21252b;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c7::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: transparent;
+  border-radius: 3px;
+}
+
+.c7:disabled {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c7:disabled::before {
+  opacity: 1;
+}
+
+.c8 {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 12px;
+  width: 12px;
+}
+
+.c8 svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.c11 {
+  -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  transition: height 300ms cubic-bezier(0.5,0,0.1,1);
+  overflow: hidden;
+  height: 0;
+}
+
+.c10 {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.c10 .simplebar-scrollbar::before {
+  background: #333740;
+}
+
+.c12 {
+  cursor: pointer;
+}
+
+.c2 {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: none;
+  display: inline-block;
+  background: #fff;
+  position: relative;
+  border-radius: 3px;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0 4px rgba(107,222,120,0.4);
+}
+
+.c2:before {
+  content: '';
+  z-index: -1;
+  border-radius: 3px;
+  border: solid 0px #f8f9fb;
+  border-bottom: none;
+  background: #f8f9fb;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c9 {
+  position: absolute;
+  max-height: 240px;
+  overflow: hidden;
+  padding-top: 6px;
+  background: #fff;
+  border: solid 2px transparent;
+  border-top: none;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.c3 {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 0 0 12px;
+  border: solid 1px #d2d7e0;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.c3 input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  color: #333740;
+  font-size: 14px;
+  font-family: Source Sans Pro,sans-serif;
+  color: Source Sans Pro,sans-serif;
+}
+
+.c3 input::-webkit-input-placeholder {
+  color: #d2d7e0;
+}
+
+.c3 input::-moz-placeholder {
+  color: #d2d7e0;
+}
+
+.c3 input:-ms-input-placeholder {
+  color: #d2d7e0;
+}
+
+.c3 input::placeholder {
+  color: #d2d7e0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      onKeyDownCapture={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+            onClick={[Function]}
+          >
+            <p
+              className="c6"
+            >
+              Search a value
+            </p>
+          </div>
+          <button
+            className="c7"
+            color={undefined}
+            disabled={undefined}
+            onClick={[Function]}
+            title="open"
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="c8"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
+          </button>
+        </div>
+      </div>
+      <MockPortal>
+        <div
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <div>
+                <div
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <div
+                    className="c13"
+                  >
+                    <span
+                      className="c14"
+                    >
+                      <div
+                        className="c0"
+                      >
+                        <div
+                          className="c0"
+                        >
+                          <div
+                            className="c15"
+                          >
+                            <img
+                              alt="Bar A"
+                              src="https://picsum.photos/g/40/40/?random"
+                            />
+                          </div>
+                          <div
+                            className="c16"
+                          >
+                            <p
+                              className="c17"
+                            >
+                              Bar A
+                            </p>
+                            <p
+                              className="c18"
+                            >
+                              Lorem ipsum dolor sit amet.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <div
+                    className="c13"
+                  >
+                    <span
+                      className="c14"
+                    >
+                      <div
+                        className="c0"
+                      >
+                        <div
+                          className="c0"
+                        >
+                          <div
+                            className="c15"
+                          >
+                            <img
+                              alt="Foo B"
+                              src="https://picsum.photos/g/40/40/?random"
+                            />
+                          </div>
+                          <div
+                            className="c16"
+                          >
+                            <p
+                              className="c17"
+                            >
+                              Foo B
+                            </p>
+                            <p
+                              className="c18"
+                            >
+                              Lorem ipsum dolor sit amet.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <div
+                    className="c13"
+                  >
+                    <span
+                      className="c14"
+                    >
+                      <div
+                        className="c0"
+                      >
+                        <div
+                          className="c0"
+                        >
+                          <div
+                            className="c15"
+                          >
+                            <img
+                              alt="Bar C"
+                              src="https://picsum.photos/g/40/40/?random"
+                            />
+                          </div>
+                          <div
+                            className="c16"
+                          >
+                            <p
+                              className="c17"
+                            >
+                              Bar C
+                            </p>
+                            <p
+                              className="c18"
+                            >
+                              Lorem ipsum dolor sit amet.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <div
+                    className="c13"
+                  >
+                    <span
+                      className="c14"
+                    >
+                      <div
+                        className="c0"
+                      >
+                        <div
+                          className="c0"
+                        >
+                          <div
+                            className="c15"
+                          >
+                            <img
+                              alt="Foo D"
+                              src="https://picsum.photos/g/40/40/?random"
+                            />
+                          </div>
+                          <div
+                            className="c16"
+                          >
+                            <p
+                              className="c17"
+                            >
+                              Foo D
+                            </p>
+                            <p
+                              className="c18"
+                            >
+                              Lorem ipsum dolor sit amet.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <div
+                    className="c13"
+                  >
+                    <span
+                      className="c14"
+                    >
+                      <div
+                        className="c0"
+                      >
+                        <div
+                          className="c0"
+                        >
+                          <div
+                            className="c15"
+                          >
+                            <img
+                              alt="Bar E"
+                              src="https://picsum.photos/g/40/40/?random"
+                            />
+                          </div>
+                          <div
+                            className="c16"
+                          >
+                            <p
+                              className="c17"
+                            >
+                              Bar E
+                            </p>
+                            <p
+                              className="c18"
+                            >
+                              Lorem ipsum dolor sit amet.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="c12"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <div
+                    className="c13"
+                  >
+                    <span
+                      className="c14"
+                    >
+                      <div
+                        className="c0"
+                      >
+                        <div
+                          className="c0"
+                        >
+                          <div
+                            className="c15"
+                          >
+                            <img
+                              alt="Bar F"
+                              src="https://picsum.photos/g/40/40/?random"
+                            />
+                          </div>
+                          <div
+                            className="c16"
+                          >
+                            <p
+                              className="c17"
+                            >
+                              Bar F
+                            </p>
+                            <p
+                              className="c18"
+                            >
+                              Lorem ipsum dolor sit amet.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
                   </div>
                 </div>
               </div>
