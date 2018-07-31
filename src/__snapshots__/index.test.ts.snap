@@ -2713,11 +2713,7 @@ exports[`Storyshots Link Default 1`] = `
 `;
 
 exports[`Storyshots MessageStream Default 1`] = `
-<<<<<<< HEAD
-.c2 {
-=======
-.c4 {
->>>>>>> 685165e... Fixed Contrast component
+.c3 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2749,11 +2745,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   order: 0;
 }
 
-<<<<<<< HEAD
-.c3 {
-=======
-.c5 {
->>>>>>> 685165e... Fixed Contrast component
+.c4 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2778,11 +2770,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   order: 0;
 }
 
-<<<<<<< HEAD
-.c9 {
-=======
-.c11 {
->>>>>>> 685165e... Fixed Contrast component
+.c10 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2815,11 +2803,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   order: 0;
 }
 
-<<<<<<< HEAD
-.c5 {
-=======
-.c7 {
->>>>>>> 685165e... Fixed Contrast component
+.c6 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -2828,11 +2812,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   margin: 0;
 }
 
-<<<<<<< HEAD
-.c4 {
-=======
-.c6 {
->>>>>>> 685165e... Fixed Contrast component
+.c5 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -2841,11 +2821,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   margin: 0;
 }
 
-<<<<<<< HEAD
-.c6 {
-=======
-.c8 {
->>>>>>> 685165e... Fixed Contrast component
+.c7 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -2854,11 +2830,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   margin: 0;
 }
 
-<<<<<<< HEAD
-.c10 {
-=======
-.c12 {
->>>>>>> 685165e... Fixed Contrast component
+.c11 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2895,11 +2867,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-<<<<<<< HEAD
-.c10:hover {
-=======
-.c12:hover {
->>>>>>> 685165e... Fixed Contrast component
+.c11:hover {
   color: #fff;
   background-color: #4cc55b;
   -webkit-text-decoration: none;
@@ -2908,11 +2876,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-<<<<<<< HEAD
-.c10:focus {
-=======
-.c12:focus {
->>>>>>> 685165e... Fixed Contrast component
+.c11:focus {
   color: #fff;
   background-color: #5bd16a;
   -webkit-text-decoration: none;
@@ -2921,11 +2885,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4);
 }
 
-<<<<<<< HEAD
-.c10:active {
-=======
-.c12:active {
->>>>>>> 685165e... Fixed Contrast component
+.c11:active {
   color: #fff;
   background-color: #4cc55b;
   -webkit-text-decoration: none;
@@ -2934,21 +2894,13 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: none;
 }
 
-<<<<<<< HEAD
-.c10:active {
-=======
-.c12:active {
->>>>>>> 685165e... Fixed Contrast component
+.c11:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-<<<<<<< HEAD
-.c10::before {
-=======
-.c12::before {
->>>>>>> 685165e... Fixed Contrast component
+.c11::before {
   position: absolute;
   display: block;
   left: 0;
@@ -2965,11 +2917,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-radius: 3px;
 }
 
-<<<<<<< HEAD
-.c10:disabled {
-=======
-.c12:disabled {
->>>>>>> 685165e... Fixed Contrast component
+.c11:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -2981,11 +2929,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: none;
 }
 
-<<<<<<< HEAD
-.c10:disabled::before {
-=======
-.c12:disabled::before {
->>>>>>> 685165e... Fixed Contrast component
+.c11:disabled::before {
   opacity: 1;
 }
 
@@ -3092,11 +3036,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 1;
 }
 
-<<<<<<< HEAD
-.c12 {
-=======
-.c14 {
->>>>>>> 685165e... Fixed Contrast component
+.c13 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3133,11 +3073,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-<<<<<<< HEAD
-.c12:hover {
-=======
-.c14:hover {
->>>>>>> 685165e... Fixed Contrast component
+.c13:hover {
   color: #fff;
   background-color: #edb107;
   -webkit-text-decoration: none;
@@ -3146,11 +3082,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-<<<<<<< HEAD
-.c12:focus {
-=======
-.c14:focus {
->>>>>>> 685165e... Fixed Contrast component
+.c13:focus {
   color: #fff;
   background-color: #fcc200;
   -webkit-text-decoration: none;
@@ -3159,11 +3091,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25);
 }
 
-<<<<<<< HEAD
-.c12:active {
-=======
-.c14:active {
->>>>>>> 685165e... Fixed Contrast component
+.c13:active {
   color: #fff;
   background-color: #edb107;
   -webkit-text-decoration: none;
@@ -3172,21 +3100,13 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: none;
 }
 
-<<<<<<< HEAD
-.c12:active {
-=======
-.c14:active {
->>>>>>> 685165e... Fixed Contrast component
+.c13:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-<<<<<<< HEAD
-.c12::before {
-=======
-.c14::before {
->>>>>>> 685165e... Fixed Contrast component
+.c13::before {
   position: absolute;
   display: block;
   left: 0;
@@ -3203,11 +3123,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   border-radius: 3px;
 }
 
-<<<<<<< HEAD
-.c12:disabled {
-=======
-.c14:disabled {
->>>>>>> 685165e... Fixed Contrast component
+.c13:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -3219,11 +3135,7 @@ exports[`Storyshots MessageStream Default 1`] = `
   box-shadow: none;
 }
 
-<<<<<<< HEAD
-.c12:disabled::before {
-=======
-.c14:disabled::before {
->>>>>>> 685165e... Fixed Contrast component
+.c13:disabled::before {
   opacity: 1;
 }
 
@@ -3330,30 +3242,15 @@ exports[`Storyshots MessageStream Default 1`] = `
   opacity: 1;
 }
 
-<<<<<<< HEAD
-.c14 {
-  background: #f8f9fb;
-}
-
-=======
 .c2 {
   background: #f8f9fb;
 }
 
-.c3 {
-  padding: 12px 24px 12px 24px;
-}
-
->>>>>>> 685165e... Fixed Contrast component
 .c0 {
   display: block;
 }
 
-<<<<<<< HEAD
-.c7 {
-=======
-.c9 {
->>>>>>> 685165e... Fixed Contrast component
+.c8 {
   border-bottom: 1px solid #dbdfe6;
 }
 
@@ -3371,19 +3268,11 @@ exports[`Storyshots MessageStream Default 1`] = `
   background: #5bd16a;
 }
 
-<<<<<<< HEAD
-.c8 {
+.c9 {
   position: relative;
 }
 
-.c8::before {
-=======
-.c10 {
-  position: relative;
-}
-
-.c10::before {
->>>>>>> 685165e... Fixed Contrast component
+.c9::before {
   content: '';
   position: absolute;
   left: 0;
@@ -3393,19 +3282,11 @@ exports[`Storyshots MessageStream Default 1`] = `
   background: #dbdfe6;
 }
 
-<<<<<<< HEAD
-.c11 {
+.c12 {
   position: relative;
 }
 
-.c11::before {
-=======
-.c13 {
-  position: relative;
-}
-
-.c13::before {
->>>>>>> 685165e... Fixed Contrast component
+.c12::before {
   content: '';
   position: absolute;
   left: 0;
@@ -3415,19 +3296,11 @@ exports[`Storyshots MessageStream Default 1`] = `
   background: #fcc200;
 }
 
-<<<<<<< HEAD
-.c13 {
+.c14 {
   position: relative;
 }
 
-.c13::before {
-=======
-.c15 {
-  position: relative;
-}
-
-.c15::before {
->>>>>>> 685165e... Fixed Contrast component
+.c14::before {
   content: '';
   position: absolute;
   left: 0;
@@ -3453,14 +3326,13 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c4"
         >
-<<<<<<< HEAD
           <p
-            className="c4"
+            className="c5"
           >
             Sit Inceptos Magna
           </p>
           <p
-            className="c5"
+            className="c6"
           >
             <span
               dangerouslySetInnerHTML={
@@ -3471,53 +3343,19 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="c6"
+            className="c7"
           >
             Today 12:00
           </p>
-=======
-          <div
-            className="c5"
-          >
-            <p
-              className="c6"
-            >
-              Sit Inceptos Magna
-            </p>
-            <p
-              className="c7"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c8"
-            >
-              Today 12:00
-            </p>
-          </div>
->>>>>>> 685165e... Fixed Contrast component
         </div>
       </div>
     </div>
   </div>
   <div
-<<<<<<< HEAD
-    className="c7"
-  />
-  <div
     className="c8"
-=======
-    className="c9"
   />
   <div
-    className="c10"
->>>>>>> 685165e... Fixed Contrast component
+    className="c9"
     title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div
@@ -3529,67 +3367,34 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c4"
         >
-<<<<<<< HEAD
           <p
-            className="c4"
+            className="c5"
           >
             Aenean Dapibus Vulputate Tortor Magna
           </p>
           <p
-            className="c5"
+            className="c6"
           >
             <span
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
-=======
-          <div
-            className="c5"
-          >
-            <p
-              className="c6"
-            >
-              Aenean Dapibus Vulputate Tortor Magna
-            </p>
-            <p
-              className="c7"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
->>>>>>> 685165e... Fixed Contrast component
                  aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis.",
                 }
-<<<<<<< HEAD
               }
             />
           </p>
           <p
-            className="c6"
+            className="c7"
           >
             Today 10:00
           </p>
-=======
-              />
-            </p>
-            <p
-              className="c8"
-            >
-              Today 10:00
-            </p>
-          </div>
->>>>>>> 685165e... Fixed Contrast component
         </div>
       </div>
     </div>
   </div>
   <div
-<<<<<<< HEAD
-    className="c7"
-=======
-    className="c9"
->>>>>>> 685165e... Fixed Contrast component
+    className="c8"
   />
   <div
     className="c1"
@@ -3604,14 +3409,13 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c4"
         >
-<<<<<<< HEAD
           <p
-            className="c4"
+            className="c5"
           >
             Vestibulum Dapibus
           </p>
           <p
-            className="c5"
+            className="c6"
           >
             <span
               dangerouslySetInnerHTML={
@@ -3622,16 +3426,17 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="c6"
+            className="c7"
           >
             Yesterday 12:00
           </p>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <button
-            className="c10"
+            className="c11"
+            color={undefined}
             disabled={undefined}
             onClick={[Function]}
             title="Click me"
@@ -3639,63 +3444,15 @@ exports[`Storyshots MessageStream Default 1`] = `
           >
             Click me
           </button>
-=======
-          <div
-            className="c5"
-          >
-            <p
-              className="c6"
-            >
-              Vestibulum Dapibus
-            </p>
-            <p
-              className="c7"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Curabitur blandit tempus porttitor.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c8"
-            >
-              Yesterday 12:00
-            </p>
-          </div>
-          <div
-            className="c11"
-          >
-            <button
-              className="c12"
-              color={undefined}
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
->>>>>>> 685165e... Fixed Contrast component
         </div>
       </div>
     </div>
   </div>
   <div
-<<<<<<< HEAD
-    className="c7"
+    className="c8"
   />
   <div
-    className="c11"
-=======
-    className="c9"
-  />
-  <div
-    className="c13"
->>>>>>> 685165e... Fixed Contrast component
+    className="c12"
     title="Parturient Euismod Mollis Fringilla"
   >
     <div
@@ -3707,53 +3464,35 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c4"
         >
-<<<<<<< HEAD
           <p
-            className="c4"
+            className="c5"
           >
             Parturient Euismod Mollis Fringilla
           </p>
           <p
-            className="c5"
+            className="c6"
           >
             <span
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-=======
-          <div
-            className="c5"
-          >
-            <p
-              className="c6"
-            >
-              Parturient Euismod Mollis Fringilla
-            </p>
-            <p
-              className="c7"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
->>>>>>> 685165e... Fixed Contrast component
                  amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
                 }
-<<<<<<< HEAD
               }
             />
           </p>
           <p
-            className="c6"
+            className="c7"
           >
             12-12-2012 12:00
           </p>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <button
-            className="c12"
+            className="c13"
+            color={undefined}
             disabled={undefined}
             onClick={[Function]}
             title="Click me"
@@ -3761,54 +3500,19 @@ exports[`Storyshots MessageStream Default 1`] = `
           >
             Click me
           </button>
-=======
-              />
-            </p>
-            <p
-              className="c8"
-            >
-              12-12-2012 12:00
-            </p>
-          </div>
-          <div
-            className="c11"
-          >
-            <button
-              className="c14"
-              color={undefined}
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
->>>>>>> 685165e... Fixed Contrast component
         </div>
       </div>
     </div>
   </div>
   <div
-<<<<<<< HEAD
-    className="c7"
+    className="c8"
   />
   <div
-    className="c13"
-    title="Tortor Cursus"
-  >
-    <div
-      className="c14"
-=======
-    className="c9"
-  />
-  <div
-    className="c15"
+    className="c14"
     title="Tortor Cursus"
   >
     <div
       className="c2"
->>>>>>> 685165e... Fixed Contrast component
     >
       <div
         className="c3"
@@ -3816,14 +3520,13 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c4"
         >
-<<<<<<< HEAD
           <p
-            className="c4"
+            className="c5"
           >
             Tortor Cursus
           </p>
           <p
-            className="c5"
+            className="c6"
           >
             <span
               dangerouslySetInnerHTML={
@@ -3834,16 +3537,17 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="c6"
+            className="c7"
           >
             12-12-2012 12:00
           </p>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <button
             className="c15"
+            color={undefined}
             disabled={undefined}
             onClick={[Function]}
             title="Click me"
@@ -3851,71 +3555,19 @@ exports[`Storyshots MessageStream Default 1`] = `
           >
             Click me
           </button>
-=======
-          <div
-            className="c5"
-          >
-            <p
-              className="c6"
-            >
-              Tortor Cursus
-            </p>
-            <p
-              className="c7"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c8"
-            >
-              12-12-2012 12:00
-            </p>
-          </div>
-          <div
-            className="c11"
-          >
-            <button
-              className="c16"
-              color={undefined}
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
->>>>>>> 685165e... Fixed Contrast component
         </div>
       </div>
     </div>
   </div>
   <div
-<<<<<<< HEAD
-    className="c7"
-  />
-  <div
     className="c8"
-    title="Euismod Dolor Consectetur"
-  >
-    <div
-      className="c14"
-=======
-    className="c9"
   />
   <div
-    className="c10"
+    className="c9"
     title="Euismod Dolor Consectetur"
   >
     <div
       className="c2"
->>>>>>> 685165e... Fixed Contrast component
     >
       <div
         className="c3"
@@ -3923,14 +3575,13 @@ exports[`Storyshots MessageStream Default 1`] = `
         <div
           className="c4"
         >
-<<<<<<< HEAD
           <p
-            className="c4"
+            className="c5"
           >
             Euismod Dolor Consectetur
           </p>
           <p
-            className="c5"
+            className="c6"
           >
             <span
               dangerouslySetInnerHTML={
@@ -3941,14 +3592,15 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="c6"
+            className="c7"
           />
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <button
             className="c16"
+            color={undefined}
             disabled={undefined}
             onClick={[Function]}
             title="Click me"
@@ -3956,45 +3608,6 @@ exports[`Storyshots MessageStream Default 1`] = `
           >
             Click me
           </button>
-=======
-          <div
-            className="c5"
-          >
-            <p
-              className="c6"
-            >
-              Euismod Dolor Consectetur
-            </p>
-            <p
-              className="c7"
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.",
-                  }
-                }
-              />
-            </p>
-            <p
-              className="c8"
-            />
-          </div>
-          <div
-            className="c11"
-          >
-            <button
-              className="c17"
-              color={undefined}
-              disabled={undefined}
-              onClick={[Function]}
-              title="Click me"
-              type="button"
-            >
-              Click me
-            </button>
-          </div>
->>>>>>> 685165e... Fixed Contrast component
         </div>
       </div>
     </div>
@@ -4724,12 +4337,12 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                 >
                   <button
                     className="c17"
+                    color={undefined}
                     disabled={undefined}
                     onClick={[Function]}
                     title="Activate"
                     type="button"
                   >
-<<<<<<< HEAD
                     Activate
                   </button>
                 </div>
@@ -4738,6 +4351,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                 >
                   <button
                     className="c18"
+                    color={undefined}
                     disabled={undefined}
                     onClick={[Function]}
                     title="Close"
@@ -4745,33 +4359,6 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   >
                     Close
                   </button>
-=======
-                    <button
-                      className="c18"
-                      color={undefined}
-                      disabled={undefined}
-                      onClick={[Function]}
-                      title="Activate"
-                      type="button"
-                    >
-                      Activate
-                    </button>
-                  </div>
-                  <div
-                    className="c17"
-                  >
-                    <button
-                      className="c19"
-                      color={undefined}
-                      disabled={undefined}
-                      onClick={[Function]}
-                      title="Close"
-                      type="button"
-                    >
-                      Close
-                    </button>
-                  </div>
->>>>>>> 685165e... Fixed Contrast component
                 </div>
               </div>
             </div>
@@ -6267,10 +5854,6 @@ exports[`Storyshots Select Default 1`] = `
   fill: currentColor;
 }
 
-.c13 {
-  padding: 6px 18px 6px 18px;
-}
-
 .c11 {
   -webkit-transition: height 300ms cubic-bezier(0.5,0,0.1,1);
   transition: height 300ms cubic-bezier(0.5,0,0.1,1);
@@ -6568,7 +6151,7 @@ exports[`Storyshots Select Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Spacer With margin 1`] = `
+exports[`Storyshots Spacer ⚠️  With margin 1`] = `
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -6602,7 +6185,7 @@ exports[`Storyshots Spacer With margin 1`] = `
 </div>
 `;
 
-exports[`Storyshots Spacer With padding 1`] = `
+exports[`Storyshots Spacer ⚠️  With padding 1`] = `
 .c2 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
@@ -6779,58 +6362,6 @@ exports[`Storyshots Table Default 1`] = `
   fill: currentColor;
 }
 
-<<<<<<< HEAD
-.c8 {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  height: 18px;
-  width: 18px;
-}
-
-.c8 svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 100%;
-  max-height: 100%;
-  max-width: 100%;
-  fill: #A6AAB3;
-}
-
-<<<<<<< HEAD
-=======
-.c12 {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  height: 18px;
-  width: 18px;
-}
-
-.c12 svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 100%;
-  max-height: 100%;
-  max-width: 100%;
-  fill: #31353D;
-}
-
->>>>>>> 685165e... Fixed Contrast component
-.c11 {
-  margin: 0px 6px 0px 0px;
-}
-
-=======
->>>>>>> 3a4dd89... fixup! Fixed Contrast component
 .c0 {
   width: 100%;
   border-spacing: 0;
@@ -7786,85 +7317,10 @@ exports[`Storyshots Table Verbose 1`] = `
               />
             </button>
           </div>
-<<<<<<< HEAD
-        </div>
-      </MockPortal>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Spacer ⚠️  With margin 1`] = `
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c0 {
-  margin: 12px 12px 12px 12px;
-}
-
-.c1 {
-  border: solid 3px rgba(255,36,94,0.3);
-  border-radius: 5px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      This has a margin.
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Spacer ⚠️  With padding 1`] = `
-.c2 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.c1 {
-  padding: 12px 12px 12px 12px;
-}
-
-.c0 {
-  border: solid 3px rgba(255,36,94,0.3);
-  border-radius: 5px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <p
-      className="c2"
-    >
-      This has padding.
-    </p>
-  </div>
-=======
         </td>
       </tr>
     </tbody>
   </table>
->>>>>>> 685165e... Fixed Contrast component
 </div>
 `;
 
