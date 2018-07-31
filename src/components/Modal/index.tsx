@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react';
+import React, { Component } from 'react';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
@@ -18,58 +18,86 @@ type PropsType = StyledType & {
     renderFixed?(): JSX.Element;
 };
 
-const Modal: StatelessComponent<PropsType> = (props): JSX.Element => {
-    const closeAction = (): void => {
-        if (props.closeAction !== undefined) {
-            props.closeAction();
+class Modal extends Component<PropsType> {
+    private styledModalRef: HTMLDivElement;
+
+    public constructor(props: PropsType) {
+        super(props);
+    }
+
+    private closeAction = (): void => {
+        if (this.props.closeAction !== undefined) {
+            this.props.closeAction();
         }
     };
 
-    return (
-        <StyledModalWrapper show={props.show}>
-            <TransitionAnimation key={0} show={props.show} animation="zoom">
-                <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
-                    {(breakpoint): JSX.Element => (
-                        <StyledModal>
-                            <Box
-                                shrink={0}
-                                margin={breakpoint === 'small' ? trbl(24) : trbl(24, 36)}
-                                alignItems="flex-start"
-                                alignContent="center"
-                                justifyContent="space-between"
+    public handleClickOutside(event: Event): void {
+        const node = this.styledModalRef;
+
+        if (this.props.show && !node.contains(event.target as Node)) {
+            this.closeAction();
+        }
+    }
+
+    public componentDidMount(): void {
+        document.addEventListener('mousedown', this.handleClickOutside.bind(this), false);
+    }
+
+    public componentWillUnmount(): void {
+        document.removeEventListener('mousedown', this.handleClickOutside.bind(this), false);
+    }
+
+    public render(): JSX.Element {
+        return (
+            <StyledModalWrapper show={this.props.show}>
+                <TransitionAnimation key={0} show={this.props.show} animation="zoom">
+                    <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
+                        {(breakpoint): JSX.Element => (
+                            <StyledModal
+                                innerRef={(ref): void => {
+                                    this.styledModalRef = ref;
+                                }}
                             >
-                                <Heading hierarchy={2}>{props.title}</Heading>
                                 <Box
-                                    margin={trbl(-12, -12, -6, 0)}
+                                    shrink={0}
+                                    margin={breakpoint === 'small' ? trbl(24) : trbl(24, 36)}
+                                    alignItems="flex-start"
                                     alignContent="center"
-                                    justifyContent="flex-end"
-                                    alignItems="center"
-                                    grow={0}
+                                    justifyContent="space-between"
                                 >
-                                    <Button variant="plain" flat title="close" action={closeAction} compact>
-                                        <Icon size="small" icon="close" />
-                                    </Button>
-                                </Box>
-                            </Box>
-                            <ScrollBox>
-                                <Box padding={breakpoint === 'small' ? trbl(0, 24, 24, 24) : trbl(0, 36, 36, 36)}>
-                                    {props.children}
-                                </Box>
-                            </ScrollBox>
-                            {props.renderFixed && (
-                                <Contrast>
-                                    <Box direction="column" alignItems="stretch" shrink={0} padding={trbl(24, 36)}>
-                                        {props.renderFixed()}
+                                    <Heading hierarchy={2}>{this.props.title}</Heading>
+                                    <Box
+                                        margin={trbl(-12, -12, -6, 0)}
+                                        alignContent="center"
+                                        justifyContent="flex-end"
+                                        alignItems="center"
+                                        grow={0}
+                                    >
+                                        <Button variant="plain" flat title="close" action={this.closeAction} compact>
+                                            <Icon size="small" icon="close" />
+                                        </Button>
                                     </Box>
-                                </Contrast>
-                            )}
-                        </StyledModal>
-                    )}
-                </BreakpointProvider>
-            </TransitionAnimation>
-        </StyledModalWrapper>
-    );
-};
+                                </Box>
+                                <ScrollBox>
+                                    <Box padding={breakpoint === 'small' ? trbl(0, 24, 24, 24) : trbl(0, 36, 36, 36)}>
+                                        {this.props.children}
+                                    </Box>
+                                </ScrollBox>
+                                {this.props.renderFixed && (
+                                    <Contrast>
+                                        <Box direction="column" alignItems="stretch" shrink={0} padding={trbl(24, 36)}>
+                                            {this.props.renderFixed()}
+                                        </Box>
+                                    </Contrast>
+                                )}
+                            </StyledModal>
+                        )}
+                    </BreakpointProvider>
+                </TransitionAnimation>
+            </StyledModalWrapper>
+        );
+    }
+}
 
 export default Modal;
 export { PropsType };
