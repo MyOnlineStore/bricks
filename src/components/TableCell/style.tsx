@@ -25,19 +25,10 @@ const StyledCell = withProps<CellPropsType>(styled.td)`
     text-align: ${({ align }): string => (align ? align : 'left')};
     border-bottom: ${({ theme }): string => `1px solid ${theme.TableCell.default.borderColor}`};
     padding: 12px;
-    border-top: 3px solid transparent;
-
-    &:first-child {
-        border-left: 3px solid transparent;
-    }
-
-    &:last-child {
-        border-right: 3px solid transparent;
-    }
 
     &:focus {
         outline: none;
-}
+    }
 `;
 
 export default StyledCell;

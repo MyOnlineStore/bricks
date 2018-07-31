@@ -1,5 +1,4 @@
 {
-
     "globals": {
         "ts-jest": {
             "useBabelrc": true,

@@ -6848,15 +6848,6 @@ exports[`Storyshots Table Default 1`] = `
   text-align: left;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
-  border-top: 3px solid transparent;
-}
-
-.c3:first-child {
-  border-left: 3px solid transparent;
-}
-
-.c3:last-child {
-  border-right: 3px solid transparent;
 }
 
 .c3:focus {
@@ -6868,15 +6859,6 @@ exports[`Storyshots Table Default 1`] = `
   text-align: left;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
-  border-top: 3px solid transparent;
-}
-
-.c6:first-child {
-  border-left: 3px solid transparent;
-}
-
-.c6:last-child {
-  border-right: 3px solid transparent;
 }
 
 .c6:focus {
@@ -7387,15 +7369,6 @@ exports[`Storyshots Table Verbose 1`] = `
   text-align: left;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
-  border-top: 3px solid transparent;
-}
-
-.c3:first-child {
-  border-left: 3px solid transparent;
-}
-
-.c3:last-child {
-  border-right: 3px solid transparent;
 }
 
 .c3:focus {
@@ -7407,15 +7380,6 @@ exports[`Storyshots Table Verbose 1`] = `
   text-align: right;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
-  border-top: 3px solid transparent;
-}
-
-.c6:first-child {
-  border-left: 3px solid transparent;
-}
-
-.c6:last-child {
-  border-right: 3px solid transparent;
 }
 
 .c6:focus {
