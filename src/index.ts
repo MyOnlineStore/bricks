@@ -1,16 +1,18 @@
 /// <reference path='./declarations/modules.d.ts' />
 /// <reference path="./declarations/global.d.ts" />
-export { default as BreakpointProvider } from './components/BreakpointProvider';
 export { default as Badge } from './components/Badge';
 export { default as Box } from './components/Box';
+export { default as BreakpointProvider } from './components/BreakpointProvider';
 export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Contrast } from './components/Contrast';
+export { default as EmptyState } from './components/EmptyState';
 export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
 export { default as Heading } from './components/Heading';
 export { default as Icon, SmallIcons, MediumIcons, LargeIcons } from './components/Icon';
+export { default as Illustration } from './components/Illustration';
 export { default as InlineNotification } from './components/InlineNotification';
 export { default as Link } from './components/Link';
 export { default as MerchantTheme } from './themes/MerchantTheme';
@@ -22,12 +24,15 @@ export { default as Popover } from './components/Popover';
 export { default as PriceTag } from './components/PriceTag';
 export { default as RadioButton } from './components/RadioButton';
 export { default as RadioButtonGroup } from './components/RadioButtonGroup';
-export { default as Select } from './components/Select';
 export { default as ScrollBox } from './components/ScrollBox';
+export { default as Select } from './components/Select';
 export { default as Spacer } from './components/Spacer';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Table } from './components/Table';
+export { default as TableCell } from './components/TableCell';
+export { default as TableRow } from './components/TableRow';
 export { default as Text } from './components/Text';
+export { default as TextField } from './components/TextField';
 export { default as Toggle } from './components/Toggle';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';

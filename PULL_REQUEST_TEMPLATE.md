@@ -1,8 +1,10 @@
 ### This PR:
 
 proposed release: [`major`|`minor`|`patch`]
-
 resolves #[resolved issue number]
+
+**Checklist** 🛡
+- [ ] I have exported my addition from `src/index.ts` (check if not applicable)
 
 **Adds** ✨
 - Feature `foo`
