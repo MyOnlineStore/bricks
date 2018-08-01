@@ -77,6 +77,7 @@ type ButtonPropsType = {
     compact?: PropsType['compact'];
     flat?: PropsType['flat'];
     variant: PropsType['variant'];
+    icon?: string;
 };
 
 const StyledButton = withProps<ButtonPropsType>(styled.button)`
@@ -98,6 +99,8 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     border-width: ${({ theme }): string => theme.Button.common.borderWidth};
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
     border-style: solid;
+
+    ${({ icon }): string => (icon !== undefined ? 'display: flex; align-items: center;' : '')}
 
     ${({ variant, flat, theme, color }): string => {
         const subVariant = flat ? 'flat' : 'regular';

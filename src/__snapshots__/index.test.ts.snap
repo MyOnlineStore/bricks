@@ -585,10 +585,6 @@ exports[`Storyshots Button On a contrast area 1`] = `
   opacity: 1;
 }
 
-.c0 {
-  background: #f8f9fb;
-}
-
 .c6 {
   display: inline-block;
   position: relative;
@@ -608,6 +604,10 @@ exports[`Storyshots Button On a contrast area 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c0 {
+  background: #f8f9fb;
 }
 
 <div
@@ -633,6 +633,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
             className="c4"
             color={undefined}
             disabled={false}
+            icon={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -647,6 +648,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
             className="c5"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -670,6 +672,28 @@ exports[`Storyshots Button On a contrast area 1`] = `
 `;
 
 exports[`Storyshots Button With an icon 1`] = `
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0px 0px 0px 6px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
 .c0 {
   position: relative;
   -webkit-appearance: none;
@@ -699,8 +723,16 @@ exports[`Storyshots Button With an icon 1`] = `
   border-width: 0;
   font-weight: 400;
   border-style: solid;
-  color: #55656d;
-  background-color: #f8f9fb;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  background-color: #ed2157;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -708,8 +740,8 @@ exports[`Storyshots Button With an icon 1`] = `
 }
 
 .c0:hover {
-  color: #55656d;
-  background-color: #edeff2;
+  color: #fff;
+  background-color: #dc1b4f;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -717,17 +749,17 @@ exports[`Storyshots Button With an icon 1`] = `
 }
 
 .c0:focus {
-  color: #55656d;
-  background-color: #f8f9fb;
+  color: #fff;
+  background-color: #ed2157;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25);
 }
 
 .c0:active {
-  color: #55656d;
-  background-color: #edeff2;
+  color: #fff;
+  background-color: #dc1b4f;
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -773,7 +805,7 @@ exports[`Storyshots Button With an icon 1`] = `
   opacity: 1;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -781,7 +813,7 @@ exports[`Storyshots Button With an icon 1`] = `
   width: 18px;
 }
 
-.c1 svg {
+.c2 svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -798,20 +830,26 @@ exports[`Storyshots Button With an icon 1`] = `
   className="c0"
   color={undefined}
   disabled={false}
+  icon="keyboard"
   onClick={[Function]}
-  title="Click me"
+  title="Press any key to continue"
   type="button"
 >
+  Press any key to continue
   <span
-    aria-hidden={true}
     className="c1"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "test-file-stub",
+  >
+    <span
+      aria-hidden={true}
+      className="c2"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
       }
-    }
-    role="img"
-  />
+      role="img"
+    />
+  </span>
 </button>
 `;
 
@@ -923,6 +961,7 @@ exports[`Storyshots Button With text 1`] = `
   className="c0"
   color={undefined}
   disabled={false}
+  icon={undefined}
   onClick={[Function]}
   title="Click me"
   type="button"
@@ -1227,6 +1266,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
           className="c3"
           color={undefined}
           disabled={undefined}
+          icon={undefined}
           onClick={[Function]}
           title="Primary button"
           type="button"
@@ -1241,6 +1281,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
           className="c4"
           color={undefined}
           disabled={undefined}
+          icon={undefined}
           onClick={[Function]}
           title="Secondary button"
           type="button"
@@ -1497,6 +1538,7 @@ Array [
         className="c2"
         color={undefined}
         disabled={undefined}
+        icon={undefined}
         onClick={[Function]}
         title="Inside Contrast"
         type="button"
@@ -1637,6 +1679,7 @@ Array [
       className="c1"
       color={undefined}
       disabled={undefined}
+      icon={undefined}
       onClick={[Function]}
       title="Outside of Contrast"
       type="button"
@@ -2092,6 +2135,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       className="c7"
       color={undefined}
       disabled={undefined}
+      icon={undefined}
       onClick={[Function]}
       title="Add filter"
       type="button"
@@ -2311,6 +2355,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     className="c3"
     color={undefined}
     disabled={undefined}
+    icon={undefined}
     onClick={[Function]}
     title="open FoldOut"
     type="button"
@@ -3470,6 +3515,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             className="c11"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -3526,6 +3572,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             className="c13"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -3581,6 +3628,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             className="c15"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -3634,6 +3682,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             className="c16"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -4136,10 +4185,6 @@ exports[`Storyshots Modal Default 1`] = `
   opacity: 1;
 }
 
-.c13 {
-  background: #f8f9fb;
-}
-
 .c7 {
   display: inline-block;
   position: relative;
@@ -4159,6 +4204,10 @@ exports[`Storyshots Modal Default 1`] = `
   max-height: 100%;
   max-width: 100%;
   fill: currentColor;
+}
+
+.c13 {
+  background: #f8f9fb;
 }
 
 .c4 {
@@ -4297,6 +4346,7 @@ exports[`Storyshots Modal Default 1`] = `
               className="c6"
               color={undefined}
               disabled={undefined}
+              icon={undefined}
               onClick={[Function]}
               title="close"
               type="button"
@@ -4375,6 +4425,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                     className="c17"
                     color={undefined}
                     disabled={undefined}
+                    icon={undefined}
                     onClick={[Function]}
                     title="Activate"
                     type="button"
@@ -4389,6 +4440,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                     className="c18"
                     color={undefined}
                     disabled={undefined}
+                    icon={undefined}
                     onClick={[Function]}
                     title="Close"
                     type="button"
@@ -4979,6 +5031,7 @@ exports[`Storyshots Popover Default 1`] = `
         className="c3"
         color={undefined}
         disabled={undefined}
+        icon={undefined}
         onClick={[Function]}
         title="Toggle"
         type="button"
@@ -6045,6 +6098,7 @@ exports[`Storyshots Select Default 1`] = `
             className="c7"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="open"
             type="button"
@@ -6508,6 +6562,7 @@ exports[`Storyshots Table Default 1`] = `
             className="c6"
             color={undefined}
             disabled={undefined}
+            icon={undefined}
             onClick={[Function]}
             title="foo"
             type="button"
@@ -7089,6 +7144,7 @@ exports[`Storyshots Table Verbose 1`] = `
               className="c7"
               color={undefined}
               disabled={undefined}
+              icon={undefined}
               onClick={[Function]}
               title="delete"
               type="button"
@@ -7158,6 +7214,7 @@ exports[`Storyshots Table Verbose 1`] = `
               className="c7"
               color={undefined}
               disabled={undefined}
+              icon={undefined}
               onClick={[Function]}
               title="delete"
               type="button"
@@ -7227,6 +7284,7 @@ exports[`Storyshots Table Verbose 1`] = `
               className="c7"
               color={undefined}
               disabled={undefined}
+              icon={undefined}
               onClick={[Function]}
               title="delete"
               type="button"
@@ -7296,6 +7354,7 @@ exports[`Storyshots Table Verbose 1`] = `
               className="c7"
               color={undefined}
               disabled={undefined}
+              icon={undefined}
               onClick={[Function]}
               title="delete"
               type="button"
@@ -7365,6 +7424,7 @@ exports[`Storyshots Table Verbose 1`] = `
               className="c7"
               color={undefined}
               disabled={undefined}
+              icon={undefined}
               onClick={[Function]}
               title="delete"
               type="button"

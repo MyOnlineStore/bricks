@@ -16,7 +16,7 @@ describe('Button', () => {
 
     it('should render a flat component', () => {
         const component = mountWithTheme(
-            <Button href="#" title="Foo Bar?" flat variant="primary">
+            <Button icon={'checkmark'} iconAlign="right" href="#" title="Foo Bar?" flat variant="primary">
                 Foo Bar
             </Button>,
         );
@@ -41,7 +41,13 @@ describe('Button', () => {
     it('should render an a tag when a href is provided', () => {
         const component = mount(
             <MosTheme>
-                <Button title="button title" variant="primary" action={undefined} href="http://foo.bar" />
+                <Button
+                    icon={'checkmark'}
+                    title="button title"
+                    variant="primary"
+                    action={undefined}
+                    href="http://foo.bar"
+                />
             </MosTheme>,
         );
 
@@ -52,7 +58,7 @@ describe('Button', () => {
         const fn = (): void => {
             const component = mount(
                 <MosTheme>
-                    <Button title="button title" variant="primary" action={undefined} />
+                    <Button icon={'checkmark'} title="button title" variant="primary" action={undefined} />
                 </MosTheme>,
             );
 
