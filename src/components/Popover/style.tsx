@@ -6,7 +6,7 @@ import styled, { withProps } from '../../utility/styled';
 
 type PopoverThemeType = {
     background: string;
-    borderRadius: number;
+    borderRadius: string;
 };
 
 type PopoverAnchorPropsType = {
@@ -35,7 +35,7 @@ const PopoverBackground = styled.div`
     z-index: 2;
     box-shadow: 0 3px 48px rgba(0, 0, 0, 0.3);
     background: ${({ theme }): string => theme.Popover.background};
-    border-radius: ${({ theme }): number => theme.Popover.borderRadius}px;
+    border-radius: ${({ theme }): string => theme.Popover.borderRadius};
 `;
 
 const PopoverContent = styled.div`

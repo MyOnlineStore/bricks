@@ -51,6 +51,10 @@ const yellow = {
     darker2: '#edb107',
 };
 
+const roundness = {
+    base: '3px',
+};
+
 const theme: ThemeType = {
     Badge: {
         backgroundColor: red.base,
@@ -58,7 +62,7 @@ const theme: ThemeType = {
     },
     Button: {
         common: {
-            borderRadius: '3px',
+            borderRadius: roundness.base,
             borderWidth: '0',
             fontSize: fontSize.base,
             fontWeight: '400',
@@ -326,7 +330,7 @@ const theme: ThemeType = {
         idle: {
             borderColor: silver.darker4,
             backgroundColor: silver.base,
-            borderRadius: '3px',
+            borderRadius: roundness.base,
         },
         focus: {
             boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
@@ -473,7 +477,7 @@ const theme: ThemeType = {
     Modal: {
         backgroundColor: silver.lighter1,
         backdropColor: 'rgba(0,0,0,0.3)',
-        borderRadius: '3px',
+        borderRadius: roundness.base,
     },
     Notification: {
         common: {
@@ -518,7 +522,7 @@ const theme: ThemeType = {
     },
     Popover: {
         background: silver.lighter1,
-        borderRadius: 5,
+        borderRadius: roundness.base,
     },
     PriceTag: {
         default: {
@@ -544,7 +548,7 @@ const theme: ThemeType = {
         common: {
             backgroundColor: silver.lighter1,
             secondaryColor: silver.base,
-            borderRadius: '3px',
+            borderRadius: roundness.base,
         },
         wrapper: {
             common: {
@@ -564,6 +568,15 @@ const theme: ThemeType = {
         },
         placeholder: {
             color: silver.darker4,
+        },
+    },
+    Skeleton: {
+        common: {
+            backgroundColor: silver.base,
+            borderRadius: roundness.base,
+        },
+        Text: {
+            fontSize: fontSize.base,
         },
     },
     ScrollBox: {
@@ -627,7 +640,7 @@ const theme: ThemeType = {
     TextField: {
         idle: {
             common: {
-                borderRadius: '3px',
+                borderRadius: roundness.base,
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,

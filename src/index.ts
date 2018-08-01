@@ -26,6 +26,7 @@ export { default as RadioButton } from './components/RadioButton';
 export { default as RadioButtonGroup } from './components/RadioButtonGroup';
 export { default as ScrollBox } from './components/ScrollBox';
 export { default as Select } from './components/Select';
+export { default as Skeleton } from './components/Skeleton';
 export { default as Spacer } from './components/Spacer';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Table } from './components/Table';

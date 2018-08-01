@@ -19,6 +19,7 @@ import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 import { ToggleThemeType } from '../components/Toggle/style';
 import { SelectThemeType } from '../components/Select/style';
+import { SkeletonThemeType } from '../components/Skeleton/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -35,6 +36,7 @@ type ThemeType = {
     PriceTag: PriceTagThemeType;
     ScrollBox: ScrollBoxThemeType;
     Select: SelectThemeType;
+    Skeleton: SkeletonThemeType;
     Table: TableThemeType;
     TableCell: TableCellThemeType;
     TableRow: TableRowThemeType;

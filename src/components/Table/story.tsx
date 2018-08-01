@@ -130,6 +130,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
 storiesOf('Table', module).add('Default', () => {
     return <Demo draggable={false} />;
 });
+
 storiesOf('Table', module).add('Verbose', () => {
     return <Demo verbose draggable={boolean('draggable', false)} />;
 });
