@@ -26,7 +26,7 @@ const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999999999999;
+    z-index: 800;
 
     ${({ show }): string => (show ? 'opacity: 1;' : 'opacity: 0; pointer-events: none;')};
 

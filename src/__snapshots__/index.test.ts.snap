@@ -4238,7 +4238,7 @@ exports[`Storyshots Modal Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 999999999999;
+  z-index: 800;
   opacity: 1;
 }
 
