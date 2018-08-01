@@ -6269,15 +6269,19 @@ exports[`Storyshots Skeleton Text 1`] = `
   border-radius: 3px;
   color: transparent;
   display: inline-block;
+<<<<<<< HEAD
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+=======
+>>>>>>> 65d0195... Added text skeleton
   height: 14px;
   margin: calc(14px / 4) 0;
   width: 70%;
 }
 
+<<<<<<< HEAD
 .c0 + br {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -6285,6 +6289,8 @@ exports[`Storyshots Skeleton Text 1`] = `
   user-select: none;
 }
 
+=======
+>>>>>>> 65d0195... Added text skeleton
 <div>
   <div
     aria-hidden={true}
