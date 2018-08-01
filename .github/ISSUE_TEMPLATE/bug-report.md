@@ -5,7 +5,7 @@ about: Create a report to help us fix it for you
 ---
 
 ### Bricks version 📦
-(e.g. v0.1.20)
+Bricks version you found the bug in.
 
 ### Describe the bug 🔍
 A clear and concise description of what the bug is.
