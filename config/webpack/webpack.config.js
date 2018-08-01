@@ -36,12 +36,14 @@ module.exports = {
                 options: {
                     removeTags: true,
                     removingTags: ['title', 'desc', 'defs', 'style'],
+                    removingTagAttrs: ['class'],
                 },
             },
             {
                 test: /\.color\.svg$/,
                 loader: 'svg-inline-loader',
                 options: {
+                    classPrefix: true,
                     removeTags: false,
                 },
             },
