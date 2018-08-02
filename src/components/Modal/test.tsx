@@ -57,18 +57,18 @@ describe('Modal', () => {
         const clickMock = jest.fn();
 
         /*tslint:disable*/
-        const map = {} as any;
+        const mapMouseEvent = {} as any;
         /*tslint:enable*/
 
-        document.addEventListener = jest.fn((event, cb) => {
-            map[event] = cb;
+        document.addEventListener = jest.fn((event, callback) => {
+            mapMouseEvent[event] = callback;
         });
 
         const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(
             StyledModalWrapper,
         );
 
-        map.mousedown({
+        mapMouseEvent.mousedown({
             target: ReactDOM.findDOMNode(component.instance()),
         });
 
@@ -79,16 +79,16 @@ describe('Modal', () => {
         const clickMock = jest.fn();
 
         /*tslint:disable*/
-        const map = {} as any;
+        const mapMouseEvent = {} as any;
         /*tslint:enable*/
 
-        document.addEventListener = jest.fn((event, cb) => {
-            map[event] = cb;
+        document.addEventListener = jest.fn((event, callback) => {
+            mapMouseEvent[event] = callback;
         });
 
         const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(StyledModal);
 
-        map.mousedown({
+        mapMouseEvent.mousedown({
             target: ReactDOM.findDOMNode(component.instance()),
         });
 

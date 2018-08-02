@@ -31,20 +31,18 @@ class Modal extends Component<PropsType> {
         }
     };
 
-    public handleClickOutside(event: Event): void {
-        const node = this.styledModalRef;
-
-        if (this.props.show && !node.contains(event.target as Node)) {
+    public handleClickOutside = (event: Event): void => {
+        if (this.props.show && !this.styledModalRef.contains(event.target as Node)) {
             this.closeAction();
         }
-    }
+    };
 
     public componentDidMount(): void {
-        document.addEventListener('mousedown', this.handleClickOutside.bind(this), false);
+        document.addEventListener('mousedown', this.handleClickOutside, false);
     }
 
     public componentWillUnmount(): void {
-        document.removeEventListener('mousedown', this.handleClickOutside.bind(this), false);
+        document.removeEventListener('mousedown', this.handleClickOutside, false);
     }
 
     public render(): JSX.Element {
