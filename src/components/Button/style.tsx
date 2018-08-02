@@ -77,7 +77,7 @@ type ButtonPropsType = {
     compact?: PropsType['compact'];
     flat?: PropsType['flat'];
     variant: PropsType['variant'];
-    icon?: string;
+    icon?: PropsType['icon'];
 };
 
 const StyledButton = withProps<ButtonPropsType>(styled.button)`

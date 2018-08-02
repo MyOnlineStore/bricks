@@ -701,7 +701,7 @@ exports[`Storyshots Button With an icon 1`] = `
   appearance: none;
   border: none;
   line-height: 1;
-  padding: 11px 12px;
+  padding: 11px 24px;
   cursor: pointer;
   display: inline-block;
   outline: none;
