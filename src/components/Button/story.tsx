@@ -47,7 +47,7 @@ storiesOf('Button', module)
                 iconAlign={select('Align icon', ['left', 'right'], 'right') as PropsType['iconAlign']}
                 disabled={boolean('disabled', false)}
                 flat={boolean('flat', false)}
-                compact={boolean('flat', false)}
+                compact={boolean('compact', false)}
             />
         );
     })
