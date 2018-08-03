@@ -30,7 +30,7 @@ const getSkeletonStyles = (theme: ThemeType): string => `
     background-repeat: no-repeat;
     background-size: 200px 100%;
     animation: 3s infinite wipe;
-    border-radius: 3px;
+    border-radius: ${theme.Skeleton.common.borderRadius};
 `;
 
 /* tslint:enable */

@@ -9,6 +9,8 @@ type TextPropsType = {
 const Text: SFC<TextPropsType> = ({ lines, baseWidth }): JSX.Element => {
     const generatedLines: Array<JSX.Element> = [];
 
+    if (baseWidth !== undefined) baseWidth = baseWidth < 6 ? 6 : baseWidth;
+
     for (let i = 0; i < lines; i++) {
         generatedLines.push(
             <Fragment key={i}>

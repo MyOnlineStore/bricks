@@ -20,7 +20,7 @@ const Demo: SFC<DemoPropsType> = ({ loading }): JSX.Element => {
     return (
         <div>
             <Text>Leverage agile frameworks to provide a robust synopsis for high level overviews.</Text>
-            <Text> Iterative approaches to corporate strategy foster collaborative</Text>
+            <Text>Iterative approaches to corporate strategy foster collaborative</Text>
             <Text>thinking to further the overall value proposition.</Text>
         </div>
     );

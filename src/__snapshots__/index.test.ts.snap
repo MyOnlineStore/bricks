@@ -6269,9 +6269,20 @@ exports[`Storyshots Skeleton Text 1`] = `
   border-radius: 3px;
   color: transparent;
   display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   height: 14px;
   margin: calc(14px / 4) 0;
   width: 70%;
+}
+
+.c0 + br {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 <div>
