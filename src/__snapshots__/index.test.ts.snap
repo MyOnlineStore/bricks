@@ -6257,8 +6257,39 @@ exports[`Storyshots Select Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Skeleton Text 1`] = `
+exports[`Storyshots Skeleton Button 1`] = `
 .c0 {
+  color: transparent;
+  background-color: #f8f9fb;
+  background-image: linear-gradient(100deg,transparent,rgba(0,0,0,0.02),transparent);
+  background-repeat: no-repeat;
+  background-size: 200px 100%;
+  -webkit-animation: 3s infinite wipe;
+  animation: 3s infinite wipe;
+  border-radius: 3px;
+  color: transparent;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1;
+  padding: 11px 24px;
+  width: 80px;
+}
+
+<div
+  aria-hidden={true}
+  className="c0"
+  width={80}
+>
+  _
+</div>
+`;
+
+exports[`Storyshots Skeleton Text 1`] = `
+Array [
+  .c0 {
   color: transparent;
   background-color: #f8f9fb;
   background-image: linear-gradient(100deg,transparent,rgba(0,0,0,0.02),transparent);
@@ -6285,28 +6316,81 @@ exports[`Storyshots Skeleton Text 1`] = `
   user-select: none;
 }
 
-<div>
-  <div
+<div
     aria-hidden={true}
     className="c0"
   >
     _
-  </div>
-  <br />
-  <div
+  </div>,
+  <br />,
+  .c0 {
+  color: transparent;
+  background-color: #f8f9fb;
+  background-image: linear-gradient(100deg,transparent,rgba(0,0,0,0.02),transparent);
+  background-repeat: no-repeat;
+  background-size: 200px 100%;
+  -webkit-animation: 3s infinite wipe;
+  animation: 3s infinite wipe;
+  border-radius: 3px;
+  color: transparent;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 14px;
+  margin: calc(14px / 4) 0;
+  width: 70%;
+}
+
+.c0 + br {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div
     aria-hidden={true}
     className="c0"
   >
     _
-  </div>
-  <br />
-  <div
+  </div>,
+  <br />,
+  .c0 {
+  color: transparent;
+  background-color: #f8f9fb;
+  background-image: linear-gradient(100deg,transparent,rgba(0,0,0,0.02),transparent);
+  background-repeat: no-repeat;
+  background-size: 200px 100%;
+  -webkit-animation: 3s infinite wipe;
+  animation: 3s infinite wipe;
+  border-radius: 3px;
+  color: transparent;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 14px;
+  margin: calc(14px / 4) 0;
+  width: 70%;
+}
+
+.c0 + br {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div
     aria-hidden={true}
     className="c0"
   >
     _
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Storyshots Spacer ⚠️  With margin 1`] = `
