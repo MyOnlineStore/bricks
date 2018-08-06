@@ -7012,7 +7012,7 @@ exports[`Storyshots Spacer ⚠️  With padding 1`] = `
 `;
 
 exports[`Storyshots Table Default 1`] = `
-.c7 {
+.c9 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -7024,6 +7024,17 @@ exports[`Storyshots Table Default 1`] = `
 }
 
 .c3 {
+  color: #333740;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c6 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -7034,7 +7045,7 @@ exports[`Storyshots Table Default 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c6 {
+.c8 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -7071,7 +7082,7 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c6:hover {
+.c8:hover {
   color: #55656d;
   background-color: #edeff2;
   -webkit-text-decoration: none;
@@ -7080,7 +7091,7 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
 }
 
-.c6:focus {
+.c8:focus {
   color: #55656d;
   background-color: #f8f9fb;
   -webkit-text-decoration: none;
@@ -7089,7 +7100,7 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
 }
 
-.c6:active {
+.c8:active {
   color: #55656d;
   background-color: #edeff2;
   -webkit-text-decoration: none;
@@ -7098,13 +7109,13 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: none;
 }
 
-.c6:active {
+.c8:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c6::before {
+.c8::before {
   position: absolute;
   display: block;
   left: 0;
@@ -7121,7 +7132,7 @@ exports[`Storyshots Table Default 1`] = `
   border-radius: 3px;
 }
 
-.c6:disabled {
+.c8:disabled {
   background: #e4e7ec;
   border-color: transparent;
   cursor: default;
@@ -7133,11 +7144,11 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: none;
 }
 
-.c6:disabled::before {
+.c8:disabled::before {
   opacity: 1;
 }
 
-.c4 {
+.c7 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -7145,7 +7156,7 @@ exports[`Storyshots Table Default 1`] = `
   width: 18px;
 }
 
-.c4 svg {
+.c7 svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -7168,7 +7179,7 @@ exports[`Storyshots Table Default 1`] = `
 }
 
 .c2 {
-  width: 18px;
+  width: inherit;
   text-align: left;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
@@ -7179,7 +7190,7 @@ exports[`Storyshots Table Default 1`] = `
 }
 
 .c5 {
-  width: inherit;
+  width: 18px;
   text-align: left;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
@@ -7197,10 +7208,22 @@ exports[`Storyshots Table Default 1`] = `
   border-spacing: 0 1px;
   box-sizing: border-box;
   position: relative;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  color: red !important;
+}
+
+.c4 {
+  background-color: #fff;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+  text-align: left;
+  border-spacing: 0 1px;
+  box-sizing: border-box;
+  position: relative;
   box-shadow: 0 0 35px rgba(0,0,0,.5);
 }
 
-.c1:hover {
+.c4:hover {
   background-color: #f8f9fb;
 }
 
@@ -7211,21 +7234,66 @@ exports[`Storyshots Table Default 1`] = `
     <tbody>
       <tr
         className="c1"
+        draggable={undefined}
+        onMouseEnter={undefined}
+        onMouseLeave={undefined}
+      >
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        />
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c3"
+          >
+            filter
+          </p>
+        </td>
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c3"
+          >
+            Filter type
+          </p>
+        </td>
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c3"
+          >
+            Filter type
+          </p>
+        </td>
+      </tr>
+      <tr
+        className="c4"
         draggable={true}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c2"
+          className="c5"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c3"
+            className="c6"
           >
             <span
               aria-hidden={true}
-              className="c4"
+              className="c7"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "test-file-stub",
@@ -7236,12 +7304,12 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <button
-            className="c6"
+            className="c8"
             color={undefined}
             disabled={undefined}
             onClick={[Function]}
@@ -7252,45 +7320,45 @@ exports[`Storyshots Table Default 1`] = `
           </button>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test C
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test D
           </p>
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={true}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c2"
+          className="c5"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c3"
+            className="c6"
           >
             <span
               aria-hidden={true}
-              className="c4"
+              className="c7"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "test-file-stub",
@@ -7301,56 +7369,121 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <button
+            className="c8"
+            color={undefined}
+            disabled={undefined}
+            onClick={[Function]}
+            title="foo"
+            type="button"
+          >
+            foo
+          </button>
+        </td>
+        <td
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
+          >
+            Test C
+          </p>
+        </td>
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c9"
+          >
+            Test D
+          </p>
+        </td>
+      </tr>
+      <tr
+        className="c4"
+        draggable={true}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c5"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <p
+            className="c6"
+          >
+            <span
+              aria-hidden={true}
+              className="c7"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
+          </p>
+        </td>
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c9"
           >
             Test A
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test B
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test C
           </p>
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={true}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c2"
+          className="c5"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c3"
+            className="c6"
           >
             <span
               aria-hidden={true}
-              className="c4"
+              className="c7"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "test-file-stub",
@@ -7361,56 +7494,56 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test A
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test B
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test C
           </p>
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={true}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c2"
+          className="c5"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c3"
+            className="c6"
           >
             <span
               aria-hidden={true}
-              className="c4"
+              className="c7"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "test-file-stub",
@@ -7421,56 +7554,56 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test A
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test B
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test C
           </p>
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={true}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c2"
+          className="c5"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c3"
+            className="c6"
           >
             <span
               aria-hidden={true}
-              className="c4"
+              className="c7"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "test-file-stub",
@@ -7481,34 +7614,34 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test A
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test B
           </p>
         </td>
         <td
-          className="c5"
+          className="c2"
           onBlur={undefined}
           onFocus={undefined}
         >
           <p
-            className="c7"
+            className="c9"
           >
             Test C
           </p>
@@ -7520,7 +7653,7 @@ exports[`Storyshots Table Default 1`] = `
 `;
 
 exports[`Storyshots Table Verbose 1`] = `
-.c6 {
+.c7 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7545,7 +7678,7 @@ exports[`Storyshots Table Verbose 1`] = `
   order: 0;
 }
 
-.c4 {
+.c5 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -7567,7 +7700,7 @@ exports[`Storyshots Table Verbose 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c7 {
+.c8 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -7602,7 +7735,7 @@ exports[`Storyshots Table Verbose 1`] = `
   text-decoration: none;
 }
 
-.c7:hover {
+.c8:hover {
   color: #ed2157;
   background-color: transparent;
   -webkit-text-decoration: none;
@@ -7612,20 +7745,20 @@ exports[`Storyshots Table Verbose 1`] = `
   transform: scale(1.1);
 }
 
-.c7:active {
+.c8:active {
   color: #ed2157;
   background-color: transparent;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c7:active {
+.c8:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c7::before {
+.c8::before {
   position: absolute;
   display: block;
   left: 0;
@@ -7641,7 +7774,7 @@ exports[`Storyshots Table Verbose 1`] = `
   border-radius: 3px;
 }
 
-.c7:disabled {
+.c8:disabled {
   background: transparent;
   border-color: transparent;
   cursor: default;
@@ -7653,11 +7786,11 @@ exports[`Storyshots Table Verbose 1`] = `
   box-shadow: none;
 }
 
-.c7:disabled::before {
+.c8:disabled::before {
   opacity: 1;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -7665,7 +7798,7 @@ exports[`Storyshots Table Verbose 1`] = `
   width: 18px;
 }
 
-.c8 svg {
+.c9 svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -7698,14 +7831,14 @@ exports[`Storyshots Table Verbose 1`] = `
   outline: none;
 }
 
-.c5 {
+.c6 {
   width: 18px;
   text-align: right;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
 }
 
-.c5:focus {
+.c6:focus {
   outline: none;
 }
 
@@ -7718,9 +7851,21 @@ exports[`Storyshots Table Verbose 1`] = `
   box-sizing: border-box;
   position: relative;
   box-shadow: 0 0 0 rgba(0,0,0,0);
+  color: red !important;
 }
 
-.c1:hover {
+.c4 {
+  background-color: #fff;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+  text-align: left;
+  border-spacing: 0 1px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.c4:hover {
   background-color: #f8f9fb;
 }
 
@@ -7775,7 +7920,7 @@ exports[`Storyshots Table Verbose 1`] = `
         />
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}
@@ -7786,7 +7931,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test A
           </p>
@@ -7797,7 +7942,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test C
           </p>
@@ -7808,21 +7953,21 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test D
           </p>
         </td>
         <td
-          className="c5"
+          className="c6"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c7"
           >
             <button
-              className="c7"
+              className="c8"
               color={undefined}
               disabled={undefined}
               onClick={[Function]}
@@ -7831,7 +7976,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c9"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -7844,7 +7989,7 @@ exports[`Storyshots Table Verbose 1`] = `
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}
@@ -7855,7 +8000,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test A
           </p>
@@ -7866,9 +8011,9 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
-            Test B
+            Test C
           </p>
         </td>
         <td
@@ -7877,21 +8022,21 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
-            Test C
+            Test D
           </p>
         </td>
         <td
-          className="c5"
+          className="c6"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c7"
           >
             <button
-              className="c7"
+              className="c8"
               color={undefined}
               disabled={undefined}
               onClick={[Function]}
@@ -7900,7 +8045,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c9"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -7913,7 +8058,7 @@ exports[`Storyshots Table Verbose 1`] = `
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}
@@ -7924,7 +8069,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test A
           </p>
@@ -7935,7 +8080,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test B
           </p>
@@ -7946,21 +8091,21 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test C
           </p>
         </td>
         <td
-          className="c5"
+          className="c6"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c7"
           >
             <button
-              className="c7"
+              className="c8"
               color={undefined}
               disabled={undefined}
               onClick={[Function]}
@@ -7969,7 +8114,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c9"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -7982,7 +8127,7 @@ exports[`Storyshots Table Verbose 1`] = `
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}
@@ -7993,7 +8138,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test A
           </p>
@@ -8004,7 +8149,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test B
           </p>
@@ -8015,21 +8160,21 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test C
           </p>
         </td>
         <td
-          className="c5"
+          className="c6"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c7"
           >
             <button
-              className="c7"
+              className="c8"
               color={undefined}
               disabled={undefined}
               onClick={[Function]}
@@ -8038,7 +8183,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c9"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -8051,7 +8196,7 @@ exports[`Storyshots Table Verbose 1`] = `
         </td>
       </tr>
       <tr
-        className="c1"
+        className="c4"
         draggable={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}
@@ -8062,7 +8207,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test A
           </p>
@@ -8073,7 +8218,7 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test B
           </p>
@@ -8084,21 +8229,21 @@ exports[`Storyshots Table Verbose 1`] = `
           onFocus={undefined}
         >
           <p
-            className="c4"
+            className="c5"
           >
             Test C
           </p>
         </td>
         <td
-          className="c5"
+          className="c6"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c7"
           >
             <button
-              className="c7"
+              className="c8"
               color={undefined}
               disabled={undefined}
               onClick={[Function]}
@@ -8107,7 +8252,76 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c9"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c4"
+        draggable={undefined}
+        onMouseEnter={undefined}
+        onMouseLeave={undefined}
+      >
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c5"
+          >
+            Test A
+          </p>
+        </td>
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c5"
+          >
+            Test B
+          </p>
+        </td>
+        <td
+          className="c2"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <p
+            className="c5"
+          >
+            Test C
+          </p>
+        </td>
+        <td
+          className="c6"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c7"
+          >
+            <button
+              className="c8"
+              color={undefined}
+              disabled={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="c9"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
