@@ -25,7 +25,7 @@ const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
         );
     } else {
         if (loading) {
-            return <Skeleton.Button width={number('baseWidth', 80)} />;
+            return <Skeleton.Button width={number('width', 139)} />;
         }
 
         return <Button title="The button has loaded" variant="primary" />;

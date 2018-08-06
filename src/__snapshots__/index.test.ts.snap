@@ -6275,13 +6275,14 @@ exports[`Storyshots Skeleton Button 1`] = `
   user-select: none;
   line-height: 1;
   padding: 11px 24px;
-  width: 80px;
+  height: 14px;
+  width: 139px;
 }
 
 <div
   aria-hidden={true}
   className="c0"
-  width={80}
+  width={139}
 >
   _
 </div>
