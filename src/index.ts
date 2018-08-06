@@ -33,6 +33,7 @@ export { default as Table } from './components/Table';
 export { default as Text } from './components/Text';
 export { default as TextField } from './components/TextField';
 export { default as Tile } from './components/Tile';
+export { default as Toaster } from './components/Toaster';
 export { default as Toggle } from './components/Toggle';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';
