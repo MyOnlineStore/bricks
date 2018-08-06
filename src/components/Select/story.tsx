@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Select from '.';
-import Box from '../Box';
 import { object, text } from '@storybook/addon-knobs';
 
 const options = [
@@ -58,17 +57,13 @@ class Demo extends Component<{}, { value: string }> {
 
     public render(): JSX.Element {
         return (
-            <Box>
-                <Box basis="300px" grow={0} direction="column">
-                    <Select
-                        placeholder={text('placeholder', 'Search a value')}
-                        value={this.state.value}
-                        emptyText={text('emptyText', 'No results')}
-                        onChange={this.handleChange}
-                        options={object('options', options)}
-                    />
-                </Box>
-            </Box>
+            <Select
+                placeholder={text('placeholder', 'Search a value')}
+                value={this.state.value}
+                emptyText={text('emptyText', 'No results')}
+                onChange={this.handleChange}
+                options={object('options', options)}
+            />
         );
     }
 }

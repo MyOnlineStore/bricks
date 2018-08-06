@@ -79,17 +79,18 @@ type WindowProps = {
 };
 
 const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
+    box-sizing: border-box;
     position: absolute;
     max-height: 240px;
     overflow: hidden;
     top: ${({ rect }): string =>
         rect !== undefined ? `${(rect.top as number) + (rect.height as number) + INNER_OFFSET}px` : ''};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
-    width: ${({ rect }): string => (rect !== undefined ? `${(rect.width as number) + INNER_OFFSET + 4}px` : '')};
-    padding-top: 6px;
+    width: ${({ rect }): string => (rect !== undefined ? `${(rect.width as number) + INNER_OFFSET + 6}px` : '')};
+    padding-top: ${({ isOpen }): string => (isOpen ? '6px' : '0')};
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border: ${({ theme, isOpen }): string =>
-        isOpen ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 2px transparent'};
+        isOpen ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
     border-top: none;
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     border-top-left-radius: 0;
