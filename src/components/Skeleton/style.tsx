@@ -27,6 +27,7 @@ const getSkeletonStyles = (theme: ThemeType): string => `
         }
     }
 
+    user-select: none;
     color: transparent;
     background-color: ${theme.Skeleton.common.backgroundColor};
     background-image: linear-gradient(100deg, transparent, rgba(0, 0, 0, 0.02), transparent);

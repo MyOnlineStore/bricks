@@ -9,12 +9,12 @@ type PropsType = {
 };
 
 const StyledButtonSkeleton = withProps<PropsType>(styled.div)`
-    ${({ theme }): string => getSkeletonStyles(theme)} color: transparent;
+    ${({ theme }): string => getSkeletonStyles(theme)}
+    color: transparent;
     display: inline-block;
-    user-select: none;
     line-height: 1;
     padding: 11px 24px;
-    height: ${({ theme }): string => theme.Skeleton.Button.fontSize};
+    font-size: ${({ theme }): string => theme.Skeleton.Button.fontSize};
     width: ${({ width }): string => (width !== undefined ? `${width}px` : '0')}
 `;
 

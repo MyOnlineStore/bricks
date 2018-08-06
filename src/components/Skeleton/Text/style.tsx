@@ -10,9 +10,9 @@ type PropsType = {
 };
 
 const StyledTextSkeleton = withProps<PropsType>(styled.div)`
-    ${({ theme }): string => getSkeletonStyles(theme)} color: transparent;
+    ${({ theme }): string => getSkeletonStyles(theme)}
+    color: transparent;
     display:inline-block;
-    user-select: none;
     height: ${({ theme }): string => theme.Skeleton.Text.fontSize};
     margin: ${({ theme }): string => `calc(${theme.Skeleton.Text.fontSize} / 4) 0`};
     width: ${({ baseWidth }): string =>
