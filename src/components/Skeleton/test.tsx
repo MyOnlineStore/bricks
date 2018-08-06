@@ -12,7 +12,7 @@ describe('Skeleton', () => {
         expect(fn).not.toThrow();
     });
 
-    it('should not crash when no baseWidth is set on the Button variant', () => {
+    it('should not crash when no width is set on the Button variant', () => {
         const fn = (): void => {
             mountWithTheme(<Skeleton.Button />);
         };
