@@ -1,51 +1,69 @@
-import React, { ReactNode } from 'react';
+import React, { SFC, ReactNode } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
-import TableRow from '../TableRow';
-import TableCell from '../TableCell';
+import Row from './Row';
+import Branch from '../../utility/Branch';
+import HeaderRow from './Header';
 
-type PropsType<GenericRowType, GenericCellType> = {
-    children?: ReactNode;
-    data?: ReadonlyArray<GenericRowType>;
+type PropsType = {
+    rows: Array<Array<ReactNode>>;
+    headers?: Array<ReactNode>;
+    alignments?: Array<'left' | 'center' | 'right'>;
     draggable?: boolean;
-    dragEndHandler?(result: DropResult): void;
-    renderCell?(cell: GenericCellType): JSX.Element;
+    onDragEnd?(result: DropResult): void;
 };
 
-type CellBaseType = {
-    text?: string;
-};
-
-const Table = <GenericCellType extends CellBaseType, GenericRowType extends Array<GenericCellType>>(
-    props: PropsType<GenericRowType, GenericCellType>,
-): JSX.Element => {
+const Table: SFC<PropsType> = ({ alignments, draggable, headers, rows, onDragEnd }): JSX.Element => {
     const dragEndHandler = (result: DropResult): void => {
-        if (props.dragEndHandler !== undefined) props.dragEndHandler(result);
+        (onDragEnd as Function)(result);
     };
 
+    const mappedAlignment =
+        alignments !== undefined
+            ? alignments.map(item =>
+                  ((): 'flex-start' | 'center' | 'flex-end' => {
+                      switch (item) {
+                          case 'center':
+                              return 'center';
+                          case 'right':
+                              return 'flex-end';
+                          default:
+                              return 'flex-start';
+                      }
+                  })(),
+              )
+            : [];
+
+    const isDraggable = draggable !== undefined ? draggable : false;
+
     return (
-        <DragDropContext onDragEnd={dragEndHandler}>
-            <Droppable droppableId="droppable">
-                {({ innerRef }): JSX.Element => (
-                    <StyledTable innerRef={innerRef}>
-                        <tbody>
-                            {props.children !== undefined && props.children}
-                            {props.data !== undefined &&
-                                props.data.map((row: GenericRowType, j: number) => (
-                                    <TableRow key={`row-${j}`} index={j} draggable={props.draggable}>
-                                        {row.map((cell, i: number) => (
-                                            <TableCell key={`cell-${i}`}>
-                                                {(props.renderCell !== undefined && props.renderCell(cell)) ||
-                                                    cell.text}
-                                            </TableCell>
-                                        ))}
-                                    </TableRow>
-                                ))}
-                        </tbody>
-                    </StyledTable>
-                )}
-            </Droppable>
-        </DragDropContext>
+        <Branch
+            condition={isDraggable}
+            ifTrue={(children): JSX.Element => (
+                <DragDropContext onDragEnd={dragEndHandler}>
+                    <Droppable droppableId="droppable">
+                        {({ innerRef }): JSX.Element => <StyledTable innerRef={innerRef}>{children}</StyledTable>}
+                    </Droppable>
+                </DragDropContext>
+            )}
+            ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
+        >
+            {headers !== undefined && (
+                <HeaderRow alignments={mappedAlignment} draggable={isDraggable} headers={headers} />
+            )}
+            <tbody>
+                {rows !== undefined &&
+                    rows.map((cells: Array<ReactNode>, rowIndex: number) => (
+                        <Row
+                            alignments={mappedAlignment}
+                            cells={cells}
+                            key={`row-${rowIndex}`}
+                            draggable={isDraggable}
+                            index={rowIndex}
+                        />
+                    ))}
+            </tbody>
+        </Branch>
     );
 };
 

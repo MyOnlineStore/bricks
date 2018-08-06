@@ -31,8 +31,6 @@ export { default as Skeleton } from './components/Skeleton';
 export { default as Spacer } from './components/Spacer';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Table } from './components/Table';
-export { default as TableCell } from './components/TableCell';
-export { default as TableRow } from './components/TableRow';
 export { default as Text } from './components/Text';
 export { default as TextField } from './components/TextField';
 export { default as Tile } from './components/Tile';

@@ -6728,515 +6728,56 @@ exports[`Storyshots Spacer ⚠️  With padding 1`] = `
 `;
 
 exports[`Storyshots Table Default 1`] = `
-.c7 {
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.c3 {
-  color: #a6aab3;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.c6 {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  line-height: 1;
-  padding: 11px 24px;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  -webkit-transform: translateZ(0) translate3d(0,0,0);
-  -ms-transform: translateZ(0) translate3d(0,0,0);
-  transform: translateZ(0) translate3d(0,0,0);
-  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  border-radius: 3px;
-  border-width: 0;
-  font-weight: 400;
-  border-style: solid;
-  color: #55656d;
-  background-color: #f8f9fb;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c6:hover {
-  color: #55656d;
-  background-color: #edeff2;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-}
-
-.c6:focus {
-  color: #55656d;
-  background-color: #f8f9fb;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08);
-}
-
-.c6:active {
-  color: #55656d;
-  background-color: #edeff2;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.c6:active {
-  -webkit-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
-}
-
-.c6::before {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  background: #e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px );
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
-}
-
-.c6:disabled {
-  background: #e4e7ec;
-  border-color: transparent;
-  cursor: default;
-  opacity: 0.7;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  color: #88979d;
-  box-shadow: none;
-}
-
-.c6:disabled::before {
-  opacity: 1;
-}
-
-.c4 {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  height: 18px;
-  width: 18px;
-}
-
-.c4 svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 100%;
-  max-height: 100%;
-  max-width: 100%;
-  fill: currentColor;
-}
-
-.c0 {
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: separate;
-  background-color: #d2d7e0;
-  overflow: auto;
-  min-width: 100%;
-}
-
 .c2 {
-  width: 18px;
-  text-align: left;
-  border-bottom: 1px solid #d2d7e0;
-  padding: 12px;
-}
-
-.c2:focus {
-  outline: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
 }
 
 .c5 {
-  width: inherit;
-  text-align: left;
-  border-bottom: 1px solid #d2d7e0;
-  padding: 12px;
-}
-
-.c5:focus {
-  outline: none;
-}
-
-.c1 {
-  background-color: #fff;
-  -webkit-transition: background-color 300ms;
-  transition: background-color 300ms;
-  text-align: left;
-  border-spacing: 0 1px;
   box-sizing: border-box;
-  position: relative;
-  box-shadow: 0 0 35px rgba(0,0,0,.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
 }
 
-.c1:hover {
-  background-color: #f8f9fb;
-}
-
-<div>
-  <table
-    className="c0"
-  >
-    <tbody>
-      <tr
-        className="c1"
-        draggable={true}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <td
-          className="c2"
-          onBlur={[Function]}
-          onFocus={[Function]}
-        >
-          <p
-            className="c3"
-          >
-            <span
-              aria-hidden={true}
-              className="c4"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <button
-            className="c6"
-            color={undefined}
-            disabled={undefined}
-            icon={undefined}
-            onClick={[Function]}
-            title="foo"
-            type="button"
-          >
-            foo
-          </button>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test C
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test D
-          </p>
-        </td>
-      </tr>
-      <tr
-        className="c1"
-        draggable={true}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <td
-          className="c2"
-          onBlur={[Function]}
-          onFocus={[Function]}
-        >
-          <p
-            className="c3"
-          >
-            <span
-              aria-hidden={true}
-              className="c4"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test A
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test B
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test C
-          </p>
-        </td>
-      </tr>
-      <tr
-        className="c1"
-        draggable={true}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <td
-          className="c2"
-          onBlur={[Function]}
-          onFocus={[Function]}
-        >
-          <p
-            className="c3"
-          >
-            <span
-              aria-hidden={true}
-              className="c4"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test A
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test B
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test C
-          </p>
-        </td>
-      </tr>
-      <tr
-        className="c1"
-        draggable={true}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <td
-          className="c2"
-          onBlur={[Function]}
-          onFocus={[Function]}
-        >
-          <p
-            className="c3"
-          >
-            <span
-              aria-hidden={true}
-              className="c4"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test A
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test B
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test C
-          </p>
-        </td>
-      </tr>
-      <tr
-        className="c1"
-        draggable={true}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      >
-        <td
-          className="c2"
-          onBlur={[Function]}
-          onFocus={[Function]}
-        >
-          <p
-            className="c3"
-          >
-            <span
-              aria-hidden={true}
-              className="c4"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test A
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test B
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c7"
-          >
-            Test C
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`Storyshots Table Verbose 1`] = `
 .c6 {
   box-sizing: border-box;
   display: -webkit-box;
@@ -7262,7 +6803,7 @@ exports[`Storyshots Table Verbose 1`] = `
   order: 0;
 }
 
-.c4 {
+.c11 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -7284,7 +6825,18 @@ exports[`Storyshots Table Verbose 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c7 {
+.c9 {
+  color: #a6aab3;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c12 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -7319,8 +6871,8 @@ exports[`Storyshots Table Verbose 1`] = `
   text-decoration: none;
 }
 
-.c7:hover {
-  color: #ed2157;
+.c12:hover {
+  color: #21252b;
   background-color: transparent;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -7329,20 +6881,20 @@ exports[`Storyshots Table Verbose 1`] = `
   transform: scale(1.1);
 }
 
-.c7:active {
-  color: #ed2157;
+.c12:active {
+  color: #21252b;
   background-color: transparent;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c7:active {
+.c12:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c7::before {
+.c12::before {
   position: absolute;
   display: block;
   left: 0;
@@ -7358,7 +6910,7 @@ exports[`Storyshots Table Verbose 1`] = `
   border-radius: 3px;
 }
 
-.c7:disabled {
+.c12:disabled {
   background: transparent;
   border-color: transparent;
   cursor: default;
@@ -7370,11 +6922,101 @@ exports[`Storyshots Table Verbose 1`] = `
   box-shadow: none;
 }
 
-.c7:disabled::before {
+.c12:disabled::before {
   opacity: 1;
 }
 
-.c8 {
+.c13 {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  line-height: 1;
+  padding: 11px 12px;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  -webkit-transform: translateZ(0) translate3d(0,0,0);
+  -ms-transform: translateZ(0) translate3d(0,0,0);
+  transform: translateZ(0) translate3d(0,0,0);
+  -webkit-transition: -webkit-transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  transition: transform 0.1s,background 0.3s,color 0.3s,box-shadow 0.1s,border 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border-width: 0;
+  font-weight: 400;
+  border-style: solid;
+  color: #55656d;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13:hover {
+  color: #ed2157;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.c13:active {
+  color: #ed2157;
+  background-color: transparent;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.c13::before {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  background: transparent;
+  border-radius: 3px;
+}
+
+.c13:disabled {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+  opacity: 0.7;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  color: #88979d;
+  box-shadow: none;
+}
+
+.c13:disabled::before {
+  opacity: 1;
+}
+
+.c4 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -7382,7 +7024,7 @@ exports[`Storyshots Table Verbose 1`] = `
   width: 18px;
 }
 
-.c8 svg {
+.c4 svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -7404,29 +7046,27 @@ exports[`Storyshots Table Verbose 1`] = `
   min-width: 100%;
 }
 
-.c2 {
-  width: inherit;
-  text-align: left;
-  border-bottom: 1px solid #d2d7e0;
-  padding: 12px;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c5 {
+.c8 {
   width: 18px;
-  text-align: right;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
 }
 
-.c5:focus {
+.c8:focus {
   outline: none;
 }
 
-.c1 {
+.c10 {
+  width: inherit;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 12px;
+}
+
+.c10:focus {
+  outline: none;
+}
+
+.c7 {
   background-color: #fff;
   -webkit-transition: background-color 300ms;
   transition: background-color 300ms;
@@ -7434,104 +7074,165 @@ exports[`Storyshots Table Verbose 1`] = `
   border-spacing: 0 1px;
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 35px rgba(0,0,0,.5);
 }
 
-.c1:hover {
+.c7:hover {
   background-color: #f8f9fb;
+}
+
+.c1 {
+  padding: 12px;
+  background: #fff;
+  border-bottom: solid 1px #d2d7e0;
 }
 
 <div>
   <table
     className="c0"
   >
+    <thead>
+      <tr>
+        <th
+          className="c1"
+        />
+        <th
+          className="c1"
+        >
+          <div
+            className="c2"
+          >
+            <p
+              className="c3"
+            >
+              <span
+                aria-hidden={true}
+                className="c4"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+                Custom Header A
+            </p>
+          </div>
+        </th>
+        <th
+          className="c1"
+        >
+          <div
+            className="c2"
+          >
+            <p
+              className="c3"
+            >
+              Header B
+            </p>
+          </div>
+        </th>
+        <th
+          className="c1"
+        >
+          <div
+            className="c5"
+          >
+            <p
+              className="c3"
+            >
+              Header C
+            </p>
+          </div>
+        </th>
+        <th
+          className="c1"
+        >
+          <div
+            className="c6"
+          >
+            <p
+              className="c3"
+            >
+              Actions
+            </p>
+          </div>
+        </th>
+      </tr>
+    </thead>
     <tbody>
       <tr
-        className="c1"
-        draggable={undefined}
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
+        className="c7"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
+          className="c8"
+          onBlur={[Function]}
+          onFocus={[Function]}
         >
           <p
-            className="c3"
+            className="c9"
           >
-            filter
+            <span
+              aria-hidden={true}
+              className="c4"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
           </p>
         </td>
         <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c3"
+          <div
+            className="c2"
           >
-            Filter type
-          </p>
+            <p
+              className="c11"
+            >
+              A1
+            </p>
+          </div>
         </td>
         <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c3"
+          <div
+            className="c2"
           >
-            Filter type
-          </p>
+            <p
+              className="c11"
+            >
+              B1
+            </p>
+          </div>
         </td>
         <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        />
-      </tr>
-      <tr
-        className="c1"
-        draggable={undefined}
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
-      >
-        <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c4"
+          <div
+            className="c5"
           >
-            Test A
-          </p>
+            <p
+              className="c11"
+            >
+              C1
+            </p>
+          </div>
         </td>
         <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test C
-          </p>
-        </td>
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test D
-          </p>
-        </td>
-        <td
-          className="c5"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7539,7 +7240,27 @@ exports[`Storyshots Table Verbose 1`] = `
             className="c6"
           >
             <button
-              className="c7"
+              className="c12"
+              color={undefined}
+              disabled={undefined}
+              icon={undefined}
+              onClick={[Function]}
+              title="edit"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="c4"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+            <button
+              className="c13"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7549,7 +7270,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c4"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -7562,46 +7283,77 @@ exports[`Storyshots Table Verbose 1`] = `
         </td>
       </tr>
       <tr
-        className="c1"
-        draggable={undefined}
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
+        className="c7"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
+          className="c8"
+          onBlur={[Function]}
+          onFocus={[Function]}
         >
           <p
-            className="c4"
+            className="c9"
           >
-            Test A
+            <span
+              aria-hidden={true}
+              className="c4"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
           </p>
         </td>
         <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c4"
+          <div
+            className="c2"
           >
-            Test B
-          </p>
+            <p
+              className="c11"
+            >
+              A2
+            </p>
+          </div>
         </td>
         <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c4"
+          <div
+            className="c2"
           >
-            Test C
-          </p>
+            <p
+              className="c11"
+            >
+              B2
+            </p>
+          </div>
         </td>
         <td
-          className="c5"
+          className="c10"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c5"
+          >
+            <p
+              className="c11"
+            >
+              C2
+            </p>
+          </div>
+        </td>
+        <td
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7609,7 +7361,27 @@ exports[`Storyshots Table Verbose 1`] = `
             className="c6"
           >
             <button
-              className="c7"
+              className="c12"
+              color={undefined}
+              disabled={undefined}
+              icon={undefined}
+              onClick={[Function]}
+              title="edit"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="c4"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+            <button
+              className="c13"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7619,7 +7391,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c4"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -7632,46 +7404,77 @@ exports[`Storyshots Table Verbose 1`] = `
         </td>
       </tr>
       <tr
-        className="c1"
-        draggable={undefined}
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
+        className="c7"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
+          className="c8"
+          onBlur={[Function]}
+          onFocus={[Function]}
         >
           <p
-            className="c4"
+            className="c9"
           >
-            Test A
+            <span
+              aria-hidden={true}
+              className="c4"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
           </p>
         </td>
         <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c4"
+          <div
+            className="c2"
           >
-            Test B
-          </p>
+            <p
+              className="c11"
+            >
+              A3
+            </p>
+          </div>
         </td>
         <td
-          className="c2"
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
-          <p
-            className="c4"
+          <div
+            className="c2"
           >
-            Test C
-          </p>
+            <p
+              className="c11"
+            >
+              B3
+            </p>
+          </div>
         </td>
         <td
-          className="c5"
+          className="c10"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c5"
+          >
+            <p
+              className="c11"
+            >
+              C3
+            </p>
+          </div>
+        </td>
+        <td
+          className="c10"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7679,17 +7482,17 @@ exports[`Storyshots Table Verbose 1`] = `
             className="c6"
           >
             <button
-              className="c7"
+              className="c12"
               color={undefined}
               disabled={undefined}
               icon={undefined}
               onClick={[Function]}
-              title="delete"
+              title="edit"
               type="button"
             >
               <span
                 aria-hidden={true}
-                className="c8"
+                className="c4"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",
@@ -7698,58 +7501,8 @@ exports[`Storyshots Table Verbose 1`] = `
                 role="img"
               />
             </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        className="c1"
-        draggable={undefined}
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
-      >
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test A
-          </p>
-        </td>
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test B
-          </p>
-        </td>
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test C
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <div
-            className="c6"
-          >
             <button
-              className="c7"
+              className="c13"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7759,77 +7512,7 @@ exports[`Storyshots Table Verbose 1`] = `
             >
               <span
                 aria-hidden={true}
-                className="c8"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "test-file-stub",
-                  }
-                }
-                role="img"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr
-        className="c1"
-        draggable={undefined}
-        onMouseEnter={undefined}
-        onMouseLeave={undefined}
-      >
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test A
-          </p>
-        </td>
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test B
-          </p>
-        </td>
-        <td
-          className="c2"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <p
-            className="c4"
-          >
-            Test C
-          </p>
-        </td>
-        <td
-          className="c5"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <div
-            className="c6"
-          >
-            <button
-              className="c7"
-              color={undefined}
-              disabled={undefined}
-              icon={undefined}
-              onClick={[Function]}
-              title="delete"
-              type="button"
-            >
-              <span
-                aria-hidden={true}
-                className="c8"
+                className="c4"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "test-file-stub",

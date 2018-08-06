@@ -14,8 +14,6 @@ import { RadioButtonThemeType } from '../components/RadioButton/style';
 import { RaisedThemeType } from '../components/Raised/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { TableThemeType } from '../components/Table/style';
-import { TableCellThemeType } from '../components/TableCell/style';
-import { TableRowThemeType } from '../components/TableRow/style';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 import { TileThemeType } from '../components/Tile';
@@ -41,8 +39,6 @@ type ThemeType = {
     Select: SelectThemeType;
     Skeleton: SkeletonThemeType;
     Table: TableThemeType;
-    TableCell: TableCellThemeType;
-    TableRow: TableRowThemeType;
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     Tile: TileThemeType;
