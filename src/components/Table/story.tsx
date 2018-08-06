@@ -37,6 +37,7 @@ const headings: RowType = [{ text: 'filter' }, { text: 'Filter type' }, { text: 
 
 const data: Array<RowType> = [
     [{ text: 'Test A', type: 'actions' }, { text: 'Test C' }, { text: 'Test D' }],
+    [{ text: 'Test A', type: 'actions' }, { text: 'Test C' }, { text: 'Test D' }],
     [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
     [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
     [{ text: 'Test A' }, { text: 'Test B' }, { text: 'Test C' }],
@@ -72,14 +73,14 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
         if (this.props.verbose) {
             return (
                 <Table dragEndHandler={this.dragEndHandler}>
-                    <TableRow>
+                    <TableRow header={true}>
                         {this.props.draggable && <TableCell />}
                         {this.state.headings.map((cell, i) => (
-                            <TableCell key={`cell-${i}`} header>
+                            <TableCell key={`cell-${i}`}>
                                 <Text strong>{cell.text}</Text>
                             </TableCell>
                         ))}
-                        <TableCell header />
+                        <TableCell />
                     </TableRow>
 
                     {this.state.data.map((row, i) => (
@@ -112,6 +113,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
 
         return (
             <Table
+                headingData={this.state.headings}
                 dragEndHandler={this.dragEndHandler}
                 draggable={boolean('draggable', true)}
                 data={this.state.data}

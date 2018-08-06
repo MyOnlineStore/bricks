@@ -15,6 +15,10 @@ type OptionBase = {
     label: string;
 };
 
+type OptionAdditionsType = {
+    isSelected: boolean;
+};
+
 type StateType = {
     input: string;
     isOpen: boolean;
@@ -27,7 +31,7 @@ type PropsType<GenericOption extends OptionBase> = {
     options: Array<GenericOption>;
     emptyText: string;
     onChange(value: string): void;
-    renderOption?(option: GenericOption): JSX.Element;
+    renderOption?(option: GenericOption & OptionAdditionsType): JSX.Element;
 };
 
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
@@ -195,29 +199,39 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                     </Box>
                                 )}
                                 {this.filterOptions().length > 0 &&
-                                    this.filterOptions().map((option, index) => (
-                                        <Option
-                                            isTargeted={index === this.state.optionPointer}
-                                            key={`${option.value}-${option.label}`}
-                                            onMouseEnter={(): void => this.cycleTo(index)}
-                                            onClick={(): void => {
-                                                this.handleChange(option.value);
-                                            }}
-                                        >
-                                            <Text descriptive={option.value === this.props.value}>
-                                                <Box margin={trbl(0, 6, 0, 0)} inline>
-                                                    {option.value === this.props.value && (
-                                                        <Icon size="small" icon="checkmark" />
-                                                    )}
-                                                </Box>
-                                                <span>
-                                                    {(this.props.renderOption !== undefined &&
-                                                        this.props.renderOption(option)) ||
-                                                        option.label}
-                                                </span>
-                                            </Text>
-                                        </Option>
-                                    ))}
+                                    this.filterOptions().map((option, index) => {
+                                        const isSelected = option.value === this.props.value;
+
+                                        /* tslint:disable:no-any */
+                                        return (
+                                            <Option
+                                                isTargeted={index === this.state.optionPointer}
+                                                key={`${option.value}-${option.label}`}
+                                                onMouseEnter={(): void => this.cycleTo(index)}
+                                                onClick={(): void => {
+                                                    this.handleChange(option.value);
+                                                }}
+                                            >
+                                                <Text inline descriptive={option.value === this.props.value}>
+                                                    {isSelected &&
+                                                        this.props.renderOption === undefined && (
+                                                            <Box margin={trbl(0, 6, 0, 0)} inline>
+                                                                <Icon size="small" icon="checkmark" />
+                                                            </Box>
+                                                        )}
+                                                    <Box>
+                                                        {(this.props.renderOption !== undefined &&
+                                                            this.props.renderOption({
+                                                                ...(option as any),
+                                                                isSelected,
+                                                            })) ||
+                                                            option.label}
+                                                    </Box>
+                                                </Text>
+                                            </Option>
+                                        );
+                                        /* tslint:enable:no-any */
+                                    })}
                             </FoldOut>
                         </ScrollBox>
                     </StyledWindow>,
@@ -229,4 +243,4 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 }
 
 export default Select;
-export { PropsType, StateType, OptionBase };
+export { PropsType, StateType, OptionBase, OptionAdditionsType };

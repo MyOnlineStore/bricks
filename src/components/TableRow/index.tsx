@@ -8,6 +8,7 @@ import Row from './Row';
 type PropsType = {
     index?: number;
     draggable?: boolean;
+    header?: boolean;
 };
 
 type StateType = {
@@ -44,10 +45,12 @@ class TableRow extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         if (this.props.draggable && this.props.index !== undefined) {
             /* tslint:disable:no-unbound-method */
+
             return (
                 <Draggable draggableId={`id-${this.props.index}`} index={this.props.index}>
                     {(provided, snapshot): JSX.Element => (
                         <Row
+                            header={this.props.header}
                             onMouseEnter={this.handleMouseEnter}
                             onMouseLeave={this.handleMouseLeave}
                             draggable={snapshot.isDragging}
@@ -74,7 +77,7 @@ class TableRow extends Component<PropsType, StateType> {
             /* tslint:enable:no-unbound-method */
         }
 
-        return <Row>{this.props.children}</Row>;
+        return <Row header={this.props.header}>{this.props.children}</Row>;
     }
 }
 

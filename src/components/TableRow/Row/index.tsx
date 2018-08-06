@@ -7,6 +7,7 @@ type PropsType = {
     draggableProps?: DraggableProvidedDraggableProps;
     draggable?: boolean;
     focus?: boolean;
+    header?: boolean;
     hasHover?: boolean;
     innerRef?(ref: HTMLTableRowElement): void;
     onMouseEnter?(): void;
@@ -15,10 +16,12 @@ type PropsType = {
 
 const Row: SFC<PropsType> = (props): JSX.Element => {
     /* tslint:disable:no-unbound-method */
+
     return (
         <ContrastThemeProvider enable={props.hasHover}>
             <StyledRow
                 {...props.draggableProps}
+                header={props.header}
                 draggable={props.draggable}
                 innerRef={props.innerRef}
                 focus={props.focus}

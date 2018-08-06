@@ -37,8 +37,14 @@ const StyledTableRow = withProps<StyledRowProps>(styled.tr)`
 
     ${({ focus, theme }): string => (focus ? `outline: solid 4px ${theme.TableRow.focus.borderColor}` : '')};
 
-    &:hover {
-        background-color: ${({ theme }): string => theme.TableRow.hover.backgroundColor};
+    ${({ header, theme }): string => (header ? 'color: red !important;' : '')}
+
+    ${({ header, theme }): string =>
+        !header
+            ? `&:hover {
+                background-color: ${theme.TableRow.hover.backgroundColor};
+            }`
+            : ''}
 `;
 
 export default StyledTableRow;

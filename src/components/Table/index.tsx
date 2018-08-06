@@ -3,10 +3,12 @@ import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 import TableRow from '../TableRow';
 import TableCell from '../TableCell';
+import Text from '../Text';
 
 type PropsType<GenericRowType, GenericCellType> = {
     children?: ReactNode;
     data?: ReadonlyArray<GenericRowType>;
+    headingData?: GenericRowType;
     draggable?: boolean;
     dragEndHandler?(result: DropResult): void;
     renderCell?(cell: GenericCellType): JSX.Element;
@@ -30,6 +32,16 @@ const Table = <GenericCellType extends CellBaseType, GenericRowType extends Arra
                     <StyledTable innerRef={innerRef}>
                         <tbody>
                             {props.children !== undefined && props.children}
+                            {props.headingData !== undefined && (
+                                <TableRow header>
+                                    {props.draggable && <TableCell header />}
+                                    {props.headingData.map((cell, i: number) => (
+                                        <TableCell key={`cell-${i}`}>
+                                            <Text strong>{cell.text}</Text>
+                                        </TableCell>
+                                    ))}
+                                </TableRow>
+                            )}
                             {props.data !== undefined &&
                                 props.data.map((row: GenericRowType, j: number) => (
                                     <TableRow key={`row-${j}`} index={j} draggable={props.draggable}>
