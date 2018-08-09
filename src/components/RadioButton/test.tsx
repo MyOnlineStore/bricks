@@ -1,7 +1,7 @@
 import React from 'react';
 import RadioButton from '.';
 import { mosTheme } from '../../themes/MosTheme';
-import { mountWithTheme } from '../../utility/styled';
+import { mountWithTheme } from '../../utility/styled/testing';
 import StyledRadioButton, { StyledRadioButtonSkin } from './style';
 
 describe('RadioButton', () => {

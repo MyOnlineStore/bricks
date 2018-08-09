@@ -1,5 +1,7 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
+const Visualizer = require('webpack-visualizer-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     devtool: 'source-map',
@@ -25,6 +27,7 @@ module.exports = {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
                 options: {
+                    onlyCompileBundledFiles: true,
                     configFile: __dirname + '/../typescript/tsconfig.json',
                 },
             },
@@ -52,12 +55,27 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
+    externals: {
+        '@types/react': '@types/react',
+        '@types/react-dom': '@types/react-dom',
+        react: 'react',
+        'react-dom': 'react-dom',
+        'styled-components': 'styled-components',
+    },
     plugins: [
         new UglifyJSPlugin({
             sourceMap: true,
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
+        }),
+        new Visualizer({
+            filename: '../reports/webpack/statistics-circle.html',
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            openAnalyzer: false,
+            reportFilename: '../reports/webpack/statistics-tree.html',
         }),
     ],
 };

@@ -2,7 +2,7 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import { Popper, Reference } from 'react-popper';
 import Popover from '.';
-import { shallowWithTheme } from '../../utility/styled';
+import { shallowWithTheme } from '../../utility/styled/testing';
 import TransitionAnimation from '../TransitionAnimation';
 import { PopoverAnchor, PopoverArrow, PopoverBackground } from './style';
 

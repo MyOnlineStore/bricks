@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import Button from '.';
 import MosTheme from '../../themes/MosTheme';
-import { mountWithTheme } from '../../utility/styled';
+import { mountWithTheme } from '../../utility/styled/testing';
 
 describe('Button', () => {
     it('should render a link with children', () => {

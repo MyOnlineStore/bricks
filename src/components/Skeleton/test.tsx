@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithTheme } from '../../utility/styled';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Skeleton from '.';
 import StyledTextSkeleton from './Text/style';
 

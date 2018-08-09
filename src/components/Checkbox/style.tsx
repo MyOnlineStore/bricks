@@ -41,7 +41,7 @@ const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(sty
     ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Checkbox.focus.boxShadow};` : '')}
 
     ${({ theme, checkedState }): string => {
-        if (checkedState === 'indeterminate' || checkedState === true) {
+        if (checkedState === 'indeterminate' || checkedState) {
             return `
                 background-color: ${theme.Checkbox.checked.backgroundColor};
                 border: 1px solid ${theme.Checkbox.checked.borderColor}

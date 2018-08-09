@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallowWithTheme } from '../../utility/styled';
+import { shallowWithTheme } from '../../utility/styled/testing';
 import Icon from '../Icon';
 import StyledIcon from './style';
 

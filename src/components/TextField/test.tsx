@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '.';
 import { Icon } from '../../index';
-import { mountWithTheme } from '../../utility/styled';
+import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper } from './style';
 
 describe('TextField', () => {

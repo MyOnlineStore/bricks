@@ -16,15 +16,11 @@
     "components"
   ],
   "dependencies": {
-    "@types/react": "^16.3.11",
-    "@types/react-dom": "^16.0.5",
     "deepmerge": "^2.1.0",
     "react-beautiful-dnd": "^8.0.3",
     "react-popper": "^1.0.0-beta.6",
     "resize-observer-polyfill": "^1.5.0",
-    "simplebar": "^2.6.1",
-    "styled-components": "^3.2.3",
-    "uuid": "^3.2.1"
+    "simplebar": "^2.6.1"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "^3.4.3",
@@ -37,6 +33,8 @@
     "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
+    "@types/react": "^16.3.11",
+    "@types/react-dom": "^16.0.5",
     "@types/react-beautiful-dnd": "^7.1.0",
     "@types/react-test-renderer": "^16.0.1",
     "@types/react-transition-group": "^2.0.9",
@@ -64,26 +62,30 @@
     "react-transition-group": "^2.3.1",
     "rimraf": "^2.6.2",
     "source-map-loader": "^0.2.3",
+    "styled-components": "^3.2.3",
     "svg-inline-loader": "^0.8.0",
     "ts-jest": "^22.4.1",
     "ts-loader": "3.5.0",
-    "tslint": "^5.9.1",
+    "tslint": "^5.11.0",
     "tslint-react": "^3.5.1",
     "typescript": "^2.6.2",
     "uglify-js": "^3.3.22",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.1"
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-dev-server": "^2.10.1",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "peerDependencies": {
     "@types/react": "^16.3.11",
     "@types/react-dom": "^16.0.5",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "styled-components": "^3.2.3"
   },
   "scripts": {
     "dev": "npm run watch",
-    "test": "jest --config=./config/jest/jest.config.json --notify",
+    "test": "jest --config=./config/jest/jest.config.json",
     "test-coverage": "jest --config=./config/jest/jest.config.json --coverage --runInBand --bail",
     "build": "rimraf ./dist && webpack --config ./config/webpack/webpack.config.js",
     "lint-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
@@ -93,7 +95,7 @@
     "build-storybook": "build-storybook -c ./config/storybook -o .out",
     "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./src/**/*.{ts,tsx}",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "files": [
     "dist"

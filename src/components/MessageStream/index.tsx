@@ -1,5 +1,4 @@
 import React, { Fragment, StatelessComponent } from 'react';
-import uuid from 'uuid';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
@@ -80,7 +79,7 @@ const Message: StatelessComponent<MessagePropsType> = (props): JSX.Element => {
 const MessageStream: StatelessComponent<PropsType> = (props): JSX.Element => (
     <StyledMessageStream>
         {props.messages.map((message: MessagePropsType, index: number): JSX.Element => (
-            <Fragment key={uuid()}>
+            <Fragment key={`${message.date}-${message.title}`}>
                 <Message {...message} />
                 {index < props.messages.length - 1 ? <MessageSeparator /> : undefined}
             </Fragment>

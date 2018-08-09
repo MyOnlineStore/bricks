@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from '.';
 import { mosTheme } from '../../themes/MosTheme';
-import { mountWithTheme } from '../../utility/styled';
+import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 
 describe('Checkbox', () => {

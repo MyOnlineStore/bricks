@@ -2,10 +2,6 @@
 import React from 'react';
 import * as styledComponents from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import { shallow, mount, ReactWrapper, ShallowWrapper } from 'enzyme';
-import MosTheme from '../../themes/MosTheme';
-import theme from '../../themes/MosTheme/MosTheme.theme';
-import { ThemedStyledFunction } from 'styled-components';
 
 const {
     default: styled,
@@ -29,33 +25,5 @@ function withProps<T, U extends HTMLElement = HTMLElement>(
     return styledFunction;
 }
 
-/* tslint:disable */
-const shallowWithTheme = (component: JSX.Element): ShallowWrapper => {
-    const context = (shallow(<ThemeProvider theme={theme} />) as any).instance().getChildContext();
-
-    return shallow(component, { context });
-};
-
-const mountWithTheme = (component: JSX.Element): ReactWrapper => {
-    const context = (shallow(<ThemeProvider theme={theme} />) as any).instance().getChildContext();
-
-    return mount(component, {
-        context,
-        childContextTypes: ThemeProvider.childContextTypes,
-    });
-};
-
-/* tslint:enable */
-
-export {
-    css,
-    injectGlobal,
-    keyframes,
-    ThemeProvider,
-    StyledType,
-    StyledFunction,
-    shallowWithTheme,
-    mountWithTheme,
-    withProps,
-};
+export { css, injectGlobal, keyframes, ThemeProvider, StyledType, StyledFunction, withProps };
 export default styled;

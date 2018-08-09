@@ -1,6 +1,6 @@
 import React from 'react';
 import Row from '.';
-import { mountWithTheme } from '../../../utility/styled';
+import { mountWithTheme } from '../../../utility/styled/testing';
 import StyledCell from '../Cell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';

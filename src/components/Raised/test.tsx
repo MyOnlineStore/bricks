@@ -1,10 +1,10 @@
-import { shallowWithTheme } from '../../utility/styled';
+import { shallowWithTheme } from '../../utility/styled/testing';
 import React from 'react';
 import Raised from '.';
 import MosTheme from '../../themes/MosTheme/MosTheme.theme';
 
 describe('Raised', () => {
-    it('shouldn\'t have a box-shadow on level 0', () => {
+    it('should not have a box-shadow on level 0', () => {
         const component = shallowWithTheme(<Raised level={0} />);
 
         /* tslint:disable */
@@ -27,4 +27,4 @@ describe('Raised', () => {
         (expect(component) as any).toHaveStyleRule('box-shadow', MosTheme.Raised.level2.boxShadow);
         /* tslint:enable */
     });
-})
+});

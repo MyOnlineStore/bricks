@@ -83,10 +83,9 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     position: absolute;
     max-height: 240px;
     overflow: hidden;
-    top: ${({ rect }): string =>
-        rect !== undefined ? `${(rect.top as number) + (rect.height as number) + INNER_OFFSET}px` : ''};
+    top: ${({ rect }): string => (rect !== undefined ? `${rect.top + rect.height + INNER_OFFSET}px` : '')};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
-    width: ${({ rect }): string => (rect !== undefined ? `${(rect.width as number) + INNER_OFFSET + 6}px` : '')};
+    width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
     padding-top: ${({ isOpen }): string => (isOpen ? '6px' : '0')};
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border: ${({ theme, isOpen }): string =>

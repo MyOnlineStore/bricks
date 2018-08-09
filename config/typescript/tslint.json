@@ -125,7 +125,6 @@
       "quotemark": [true, "single", "jsx-double", "avoid-template"],
       
       "radix": true,
-      "restrict-plus-operands": true,
       
       "space-before-function-paren": [true, "never"],
       "strict-boolean-expressions": false,

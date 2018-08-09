@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithTheme } from '../../../utility/styled';
+import { mountWithTheme } from '../../../utility/styled/testing';
 import Header from '.';
 import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 import Checkbox from '../../Checkbox';
