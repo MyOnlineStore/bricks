@@ -25,7 +25,7 @@ describe('Modal', () => {
         );
 
         const component = mountWithTheme(
-            <Modal show={true} renderFixed={(): JSX.Element => <div>bar</div>} title="Foo" />,
+            <Modal size="small" show={true} renderFixed={(): JSX.Element => <div>bar</div>} title="Foo" />,
         );
 
         expect(component.find(StyledModal).length).toBe(1);

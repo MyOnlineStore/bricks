@@ -14,6 +14,7 @@ import StyledModal, { StyledModalWrapper } from './style';
 type PropsType = StyledType & {
     show: boolean;
     title: string;
+    size?: 'small' | 'large';
     closeAction?(): void;
     renderFixed?(): JSX.Element;
 };
@@ -52,6 +53,7 @@ class Modal extends Component<PropsType> {
                     <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
                         {(breakpoint): JSX.Element => (
                             <StyledModal
+                                modalSize={this.props.size !== undefined ? this.props.size : 'large'}
                                 innerRef={(ref): void => {
                                     this.styledModalRef = ref;
                                 }}

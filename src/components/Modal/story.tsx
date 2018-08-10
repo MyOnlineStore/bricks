@@ -1,4 +1,4 @@
-import { boolean, text } from '@storybook/addon-knobs/react';
+import { boolean, text, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Modal from '.';
@@ -31,6 +31,7 @@ storiesOf('Modal', module).add('Default', () => {
     return (
         <Modal
             show={boolean('show', true)}
+            size={select('size', ['small', 'large'], 'large')}
             title="Would you like me to be your role modal?"
             closeAction={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
             renderFixed={(): JSX.Element => (

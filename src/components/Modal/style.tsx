@@ -3,6 +3,11 @@ import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 
+enum ModalSizes {
+    small = '480px',
+    large = '792px',
+}
+
 type ModalThemeType = {
     backgroundColor: string;
     backdropColor: string;
@@ -36,12 +41,15 @@ const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
     }
 `;
 
-const StyledModal = styled.div`
+type ModalPropsType = {
+    modalSize: keyof typeof ModalSizes;
+};
+
+const StyledModal = withProps<ModalPropsType>(styled.div)`
     max-width: 100%;
-    width: 792px;
+    width: ${({ modalSize }): string => ModalSizes[modalSize]};
     display: flex;
     flex-direction: column;
-    min-height: 300px;
     height: calc(100% - 24px);
     overflow: hidden;
     max-height: calc(300px + (600 - 300) * (100vh - 300px) / (900 - 300));
