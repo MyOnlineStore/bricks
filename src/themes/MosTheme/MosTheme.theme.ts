@@ -636,7 +636,7 @@ const theme: ThemeType = {
         severity: {
             error: { color: red.darker2 },
             success: { color: green.darker2 },
-            info: { color: grey.lighter2 },
+            info: { color: grey.lighter3 },
             warning: { color: yellow.darker2 },
         },
     },
