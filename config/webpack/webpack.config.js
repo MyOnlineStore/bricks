@@ -2,6 +2,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+    devtool: 'source-map',
     entry: './src/index.ts',
     stats: {
         assets: true,
@@ -52,7 +53,9 @@ module.exports = {
         ],
     },
     plugins: [
-        new UglifyJSPlugin(),
+        new UglifyJSPlugin({
+            sourceMap: true,
+        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
