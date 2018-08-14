@@ -2636,7 +2636,7 @@ exports[`Storyshots InlineNotification With children 1`] = `
 }
 
 .c0 {
-  color: #88979d;
+  color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 12px;
   font-weight: 400;
