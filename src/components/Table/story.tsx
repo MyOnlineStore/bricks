@@ -66,6 +66,7 @@ class Demo extends Component<PropsType, StateType> {
                     'Actions',
                 ]}
                 onDragEnd={this.onDragEnd}
+                selectable={this.props.selectable}
                 draggable={this.props.draggable}
                 rows={this.state.rows}
             />

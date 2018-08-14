@@ -10,7 +10,7 @@ storiesOf('RadioButton', module).add('Default', () => {
             name="demo"
             label="foo"
             value="demo2"
-            changeHandler={(): void => undefined}
+            onChange={(): void => undefined}
         />
     );
 });

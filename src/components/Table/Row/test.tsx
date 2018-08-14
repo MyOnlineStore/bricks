@@ -11,7 +11,7 @@ describe('Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row draggable alignments={[]} cells={['A1', 'B1', 'C1']} index={1} />
+                    <Row selectable draggable alignments={[]} cells={['A1', 'B1', 'C1']} index={1} />
                 </tbody>
             </table>,
         );
@@ -42,7 +42,7 @@ describe('Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
+                    <Row selectable alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
                 </tbody>
             </table>,
         );

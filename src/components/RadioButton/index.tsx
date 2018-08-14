@@ -13,7 +13,7 @@ type PropsType = {
     value: string;
     name: string;
     label: string;
-    changeHandler(change: { checked: boolean; value: string }): void;
+    onChange(change: { checked: boolean; value: string }): void;
 };
 
 class RadioButton extends Component<PropsType, StateType> {
@@ -30,7 +30,7 @@ class RadioButton extends Component<PropsType, StateType> {
     };
 
     public handleChange = (): void => {
-        this.props.changeHandler({
+        this.props.onChange({
             checked: !this.props.checked,
             value: this.props.value,
         });

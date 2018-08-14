@@ -7,11 +7,14 @@ import StyledRow from './style';
 import Branch from '../../../utility/Branch';
 import { ContrastThemeProvider } from '../../Contrast';
 import Box from '../../Box';
+import Checkbox from '../../Checkbox';
+import { Selection } from '../';
 
 type PropsType = {
     alignments: Array<'flex-start' | 'center' | 'flex-end'>;
     cells: Array<ReactNode>;
     draggable: boolean;
+    selectable: boolean;
     index: number;
 };
 
@@ -47,7 +50,7 @@ class Row extends Component<PropsType, StateType> {
     };
 
     public render(): JSX.Element {
-        const { alignments, draggable, index } = this.props;
+        const { cells, alignments, selectable, draggable, index } = this.props;
         const { hasFocus, hasHover } = this.state;
 
         return (
@@ -85,7 +88,17 @@ class Row extends Component<PropsType, StateType> {
                 }}
                 ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
             >
-                {this.props.cells.map((cell, cellIndex: number) => (
+                {selectable && (
+                    <Selection.Consumer>
+                        {({ state }): JSX.Element => (
+                            <Cell width={'18px'}>
+                                {state.test}
+                                <Checkbox checked={true} name="" value={'row'} onChange={(): void => undefined} />
+                            </Cell>
+                        )}
+                    </Selection.Consumer>
+                )}
+                {cells.map((cell, cellIndex: number) => (
                     <Cell key={`cell-${cellIndex}`}>
                         <Box justifyContent={alignments[cellIndex]}>
                             {(typeof cell === 'string' && <Text>{cell}</Text>) || cell}

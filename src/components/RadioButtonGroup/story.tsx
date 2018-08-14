@@ -31,7 +31,7 @@ class DemoComponent extends Component<{}, StateType> {
                         value="1"
                         checked={this.state.selected === '1'}
                         label="bar 1"
-                        changeHandler={({ value }): void => {
+                        onChange={({ value }): void => {
                             this.setState({ selected: value });
                         }}
                     />
@@ -41,7 +41,7 @@ class DemoComponent extends Component<{}, StateType> {
                         value="2"
                         label="bar 2"
                         checked={this.state.selected === '2'}
-                        changeHandler={({ value }): void => {
+                        onChange={({ value }): void => {
                             this.setState({ selected: value });
                         }}
                     />
@@ -51,7 +51,7 @@ class DemoComponent extends Component<{}, StateType> {
                         value="3"
                         label="bar 3"
                         checked={this.state.selected === '3'}
-                        changeHandler={({ value }): void => {
+                        onChange={({ value }): void => {
                             this.setState({ selected: value });
                         }}
                     />

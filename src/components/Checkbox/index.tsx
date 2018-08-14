@@ -11,7 +11,7 @@ type PropsType = {
     checked: boolean;
     value: string;
     name: string;
-    changeHandler(change: { checked: boolean }): void;
+    onChange(change: { checked: boolean }): void;
 };
 
 class Checkbox extends Component<PropsType, StateType> {
@@ -23,8 +23,8 @@ class Checkbox extends Component<PropsType, StateType> {
         };
     }
 
-    public handleChange = (): void => {
-        this.props.changeHandler({
+    public changeHandler = (): void => {
+        this.props.onChange({
             checked: !this.props.checked,
         });
     };
@@ -36,7 +36,7 @@ class Checkbox extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <StyledCheckboxSkin
-                onClick={this.handleChange}
+                onClick={this.changeHandler}
                 elementFocus={this.state.focus}
                 checked={this.props.checked}
             >
@@ -50,7 +50,7 @@ class Checkbox extends Component<PropsType, StateType> {
                     value={this.props.value}
                     checked={this.props.checked}
                     type="checkbox"
-                    onChange={this.handleChange}
+                    onChange={this.changeHandler}
                 />
             </StyledCheckboxSkin>
         );

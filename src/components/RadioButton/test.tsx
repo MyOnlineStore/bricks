@@ -7,7 +7,7 @@ import StyledRadioButton, { StyledRadioButtonSkin } from './style';
 describe('RadioButton', () => {
     it('should not have box-shadow when not checked', () => {
         const radioButton = mountWithTheme(
-            <RadioButton name="demo" label="foo" checked={false} value="bar" changeHandler={(): void => undefined} />,
+            <RadioButton name="demo" label="foo" checked={false} value="bar" onChange={(): void => undefined} />,
         );
 
         /* tslint:disable */
@@ -19,7 +19,7 @@ describe('RadioButton', () => {
         const mockHandler = jest.fn();
 
         const radioButton = mountWithTheme(
-            <RadioButton name="demo" label="foo" checked={false} value="bar" changeHandler={mockHandler} />,
+            <RadioButton name="demo" label="foo" checked={false} value="bar" onChange={mockHandler} />,
         );
 
         radioButton.find(StyledRadioButton).simulate('change');
@@ -32,7 +32,7 @@ describe('RadioButton', () => {
 
     it('should have box-shadow on focus', () => {
         const radioButton = mountWithTheme(
-            <RadioButton name="demo" label="foo" checked={false} value="bar" changeHandler={(): void => undefined} />,
+            <RadioButton name="demo" label="foo" checked={false} value="bar" onChange={(): void => undefined} />,
         );
 
         radioButton.find(StyledRadioButton).simulate('focus');
