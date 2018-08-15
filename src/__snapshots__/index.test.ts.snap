@@ -5681,6 +5681,67 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Raised Default 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c2 {
+  color: #333740;
+  font-family: Melbourne,sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: none;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c1 {
+  box-shadow: none;
+  -webkit-transition: box-shadow 300ms;
+  transition: box-shadow 300ms;
+  border-radius: 3px 3px 3px 3px;
+  padding: 36px;
+  width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      role="heading"
+    >
+      Level 
+      0
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ScrollBox Default 1`] = `
 Array [
   .c1 {
@@ -8110,6 +8171,65 @@ Array [
     </p>
   </div>,
 ]
+`;
+
+exports[`Storyshots Tile Default 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c2 {
+  color: #333740;
+  font-family: Melbourne,sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: none;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.c1 {
+  background: #ffffff;
+  border-radius: 3px 3px 3px 3px;
+  border: 1px solid #d2d7e0;
+  padding: 36px;
+  width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      role="heading"
+    >
+      Tile
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Toggle Default 1`] = `
