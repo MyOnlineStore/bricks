@@ -520,6 +520,17 @@ const theme: ThemeType = {
             backgroundColor: silver.lighter1,
         },
     },
+    Raised: {
+        level0: {
+            boxShadow: 'none',
+        },
+        level1: {
+            boxShadow: '0 2px 10px 0 rgba(33,37,43,0.15)',
+        },
+        level2: {
+            boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
+        },
+    },
     Popover: {
         background: silver.lighter1,
         borderRadius: roundness.base,

@@ -11,6 +11,7 @@ import { NotificationThemeType } from '../components/Notification/style';
 import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
 import { RadioButtonThemeType } from '../components/RadioButton/style';
+import { RaisedThemeType } from '../components/Raised/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { TableThemeType } from '../components/Table/style';
 import { TableCellThemeType } from '../components/TableCell/style';
@@ -34,6 +35,7 @@ type ThemeType = {
     Link: LinkThemeType;
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
+    Raised: RaisedThemeType;
     ScrollBox: ScrollBoxThemeType;
     Select: SelectThemeType;
     Skeleton: SkeletonThemeType;
