@@ -1,6 +1,5 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
 
 const StyledTile = styled.div`

@@ -1,6 +1,5 @@
 import React, { StatelessComponent } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import styled from '../../utility/styled';
 import StyledRaised, { RaisedPropsType } from './style';
 
 const RaisedElement: StatelessComponent<RaisedPropsType> = (props): JSX.Element => (
