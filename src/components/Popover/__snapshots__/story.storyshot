@@ -8,13 +8,14 @@ exports[`Storyshots Popover Default 1`] = `
     className="sc-bwzfXH hlYRxd"
   >
     <div
-      className="sc-hSdWYo jsleHI"
+      className="sc-iRbamj cFbMCC"
     >
       <button
         className="sc-htoDjs ilyuMW"
         color={undefined}
         disabled={undefined}
         icon={undefined}
+        id={undefined}
         onClick={[Function]}
         title="Toggle"
         type="button"

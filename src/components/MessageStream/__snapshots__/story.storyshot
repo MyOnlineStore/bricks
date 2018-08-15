@@ -2,10 +2,10 @@
 
 exports[`Storyshots MessageStream Default 1`] = `
 <div
-  className="sc-kpOJdX horMMw"
+  className="sc-hSdWYo kMXuRc"
 >
   <div
-    className="sc-ckVGcZ gNnIgu"
+    className="sc-cvbbAY htWQrb"
     title="Sit Inceptos Magna"
   >
     <div
@@ -43,10 +43,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-dxgOiQ jPgsCf"
+    className="sc-eHgmQL fJiqNk"
   />
   <div
-    className="sc-ckVGcZ fLEBEO"
+    className="sc-cvbbAY geuWpD"
     title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div
@@ -85,10 +85,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-dxgOiQ jPgsCf"
+    className="sc-eHgmQL fJiqNk"
   />
   <div
-    className="sc-ckVGcZ gNnIgu"
+    className="sc-cvbbAY htWQrb"
     title="Vestibulum Dapibus"
   >
     <div
@@ -130,6 +130,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             color={undefined}
             disabled={undefined}
             icon={undefined}
+            id={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -141,10 +142,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-dxgOiQ jPgsCf"
+    className="sc-eHgmQL fJiqNk"
   />
   <div
-    className="sc-ckVGcZ hzJZa"
+    className="sc-cvbbAY kGshrN"
     title="Parturient Euismod Mollis Fringilla"
   >
     <div
@@ -187,6 +188,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             color={undefined}
             disabled={undefined}
             icon={undefined}
+            id={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -198,10 +200,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-dxgOiQ jPgsCf"
+    className="sc-eHgmQL fJiqNk"
   />
   <div
-    className="sc-ckVGcZ ldMDZe"
+    className="sc-cvbbAY CIMVU"
     title="Tortor Cursus"
   >
     <div
@@ -243,6 +245,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             color={undefined}
             disabled={undefined}
             icon={undefined}
+            id={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"
@@ -254,10 +257,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-dxgOiQ jPgsCf"
+    className="sc-eHgmQL fJiqNk"
   />
   <div
-    className="sc-ckVGcZ fLEBEO"
+    className="sc-cvbbAY geuWpD"
     title="Euismod Dolor Consectetur"
   >
     <div
@@ -297,6 +300,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             color={undefined}
             disabled={undefined}
             icon={undefined}
+            id={undefined}
             onClick={[Function]}
             title="Click me"
             type="button"

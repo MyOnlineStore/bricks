@@ -2,10 +2,10 @@
 
 exports[`Storyshots Modal Default 1`] = `
 <div
-  className="sc-kkGfuU kYRmvt"
+  className="sc-jDwBTQ cVNqeE"
 >
   <div
-    className="sc-kEYyzF ktWOCH"
+    className="sc-jAaTju gCdsgd"
   >
     <div
       style={
@@ -15,7 +15,7 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-        className="sc-iAyFgw jkoAja"
+        className="sc-gPEVay eGsQIF"
       >
         <div
           className="sc-bwzfXH kpHVAA"
@@ -34,6 +34,7 @@ exports[`Storyshots Modal Default 1`] = `
               color={undefined}
               disabled={undefined}
               icon={undefined}
+              id={undefined}
               onClick={[Function]}
               title="close"
               type="button"
@@ -52,10 +53,10 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-jKJlTe jyxKbK"
+          className="sc-jWBwVP gbRbgV"
         >
           <div
-            className="sc-eNQAEJ hwHwRI"
+            className="sc-brqgnP bZwtnq"
           />
           <div
             className="sc-bwzfXH drOqMq"
@@ -86,7 +87,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
             </p>
           </div>
           <div
-            className="sc-hMqMXs iIvvPt"
+            className="sc-cMljjf eYeMcx"
           />
         </div>
         <div
@@ -113,6 +114,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
+                    id={undefined}
                     onClick={[Function]}
                     title="Activate"
                     type="button"
@@ -128,6 +130,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
+                    id={undefined}
                     onClick={[Function]}
                     title="Close"
                     type="button"

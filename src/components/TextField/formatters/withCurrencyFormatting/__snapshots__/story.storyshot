@@ -2,22 +2,22 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-  className="sc-TOsTZ fExzqJ"
+  className="sc-kEYyzF cTffAb"
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <div
-    className="sc-kjoXOD hNfDp"
+    className="sc-eNQAEJ hyKmtb"
   >
     <span
-      className="sc-cHGsZl iDuVYp"
+      className="sc-hMqMXs cBvgnM"
     >
       Username
     </span>
   </div>
   <input
-    className="sc-gisBJw iWPigU"
+    className="sc-jKJlTe deKEDS"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -25,10 +25,10 @@ exports[`Storyshots TextField Default 1`] = `
     value=""
   />
   <div
-    className="sc-kjoXOD hNfDp"
+    className="sc-eNQAEJ hyKmtb"
   >
     <span
-      className="sc-cHGsZl iDuVYp"
+      className="sc-hMqMXs cBvgnM"
     >
       $
     </span>
@@ -39,22 +39,22 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-    className="sc-TOsTZ fExzqJ"
+    className="sc-kEYyzF cTffAb"
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-kjoXOD hNfDp"
+      className="sc-eNQAEJ hyKmtb"
     >
       <span
-        className="sc-cHGsZl iDuVYp"
+        className="sc-hMqMXs cBvgnM"
       >
         $
       </span>
     </div>
     <input
-      className="sc-gisBJw iWPigU"
+      className="sc-jKJlTe deKEDS"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -99,22 +99,22 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-    className="sc-TOsTZ dNLDMw"
+    className="sc-kEYyzF jhLWRh"
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-kjoXOD hNfDp"
+      className="sc-eNQAEJ hyKmtb"
     >
       <span
-        className="sc-cHGsZl iDuVYp"
+        className="sc-hMqMXs cBvgnM"
       >
         Username
       </span>
     </div>
     <input
-      className="sc-gisBJw iWPigU"
+      className="sc-jKJlTe deKEDS"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -122,10 +122,10 @@ Array [
       value=""
     />
     <div
-      className="sc-kjoXOD hNfDp"
+      className="sc-eNQAEJ hyKmtb"
     >
       <span
-        className="sc-cHGsZl iDuVYp"
+        className="sc-hMqMXs cBvgnM"
       >
         $
       </span>

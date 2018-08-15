@@ -8,6 +8,7 @@ export { default as Contrast } from './components/Contrast';
 export { default as EmptyState } from './components/EmptyState';
 export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
+export { default as FormRow } from './components/FormRow';
 export { default as Heading } from './components/Heading';
 export { default as Icon, SmallIcons, MediumIcons, LargeIcons } from './components/Icon';
 export { default as Illustration } from './components/Illustration';

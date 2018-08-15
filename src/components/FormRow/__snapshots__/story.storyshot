@@ -1,0 +1,378 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots FormRow Default 1`] = `
+<form>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <div
+      className="sc-bwzfXH dbKHCw"
+    >
+      <div
+        className="sc-kgoBCf crOwZW"
+      >
+        <p
+          className="sc-bxivhb iBTcEE"
+        >
+          <label
+            htmlFor="thatButton"
+          >
+            Click that button
+          </label>
+        </p>
+      </div>
+      <div
+        className="sc-kGXeez koktic"
+      >
+        <button
+          className="sc-htoDjs hqsvnm"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          id="thatButton"
+          onClick={[Function]}
+          title="Click me"
+          type="button"
+        >
+          Click me
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <label>
+      <div
+        className="sc-bwzfXH dbKHCw"
+      >
+        <div
+          className="sc-kgoBCf crOwZW"
+        >
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            Click that button
+          </p>
+        </div>
+        <div
+          className="sc-kGXeez koktic"
+        >
+          <textarea />
+        </div>
+      </div>
+    </label>
+  </div>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <label>
+      <div
+        className="sc-bwzfXH dbKHCw"
+      >
+        <div
+          className="sc-kgoBCf crOwZW"
+        >
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            Fill that input
+          </p>
+        </div>
+        <div
+          className="sc-kGXeez koktic"
+        >
+          <div
+            className="sc-kEYyzF cTffAb"
+            onBlurCapture={[Function]}
+            onClick={[Function]}
+            onFocusCapture={[Function]}
+          >
+            <input
+              className="sc-jKJlTe deKEDS"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="sc-bwzfXH dRGel"
+        >
+          <button
+            className="sc-htoDjs gSiQTl"
+            color={undefined}
+            disabled={undefined}
+            icon="trash"
+            id={undefined}
+            onClick={[Function]}
+            title=""
+            type="button"
+          >
+            <span
+              className="sc-htpNat isoJMm"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </span>
+            
+          </button>
+          <button
+            className="sc-htoDjs eTKkfD"
+            color={undefined}
+            disabled={undefined}
+            icon="gear"
+            id={undefined}
+            onClick={[Function]}
+            title=""
+            type="button"
+          >
+            <span
+              className="sc-htpNat isoJMm"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </span>
+            
+          </button>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <div
+      className="sc-bwzfXH dbKHCw"
+    >
+      <div
+        className="sc-kgoBCf crOwZW"
+      >
+        <p
+          className="sc-bxivhb iBTcEE"
+        >
+          That's a radiobutton
+        </p>
+      </div>
+      <div
+        className="sc-kGXeez koktic"
+      >
+        <div
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <div
+            className="sc-bwzfXH jOssXm"
+          >
+            <div
+              className="sc-bwzfXH fuEFtX"
+            >
+              <div
+                className="sc-kpOJdX fJaedX"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH doEFQb"
+                >
+                  <div
+                    checked={true}
+                    className="sc-ckVGcZ kPvRdA"
+                  >
+                    <input
+                      checked={true}
+                      className="sc-dxgOiQ fSxPbe"
+                      name="bar"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="radio"
+                      value="foo1"
+                    />
+                  </div>
+                </div>
+                <p
+                  className="sc-bxivhb iBTcEE"
+                >
+                  <label
+                    htmlFor="bar"
+                  >
+                    foobar
+                  </label>
+                </p>
+              </div>
+            </div>
+            <div
+              className="sc-bwzfXH fuEFtX"
+            >
+              <div
+                className="sc-kpOJdX fJaedX"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH doEFQb"
+                >
+                  <div
+                    checked={false}
+                    className="sc-ckVGcZ iLkhjS"
+                  >
+                    <input
+                      checked={false}
+                      className="sc-dxgOiQ fSxPbe"
+                      name="bar"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="radio"
+                      value="foo2"
+                    />
+                  </div>
+                </div>
+                <p
+                  className="sc-bxivhb iBTcEE"
+                >
+                  <label
+                    htmlFor="bar"
+                  >
+                    foobar
+                  </label>
+                </p>
+              </div>
+            </div>
+            <div
+              className="sc-bwzfXH fuEFtX"
+            >
+              <div
+                className="sc-kpOJdX fJaedX"
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH doEFQb"
+                >
+                  <div
+                    checked={false}
+                    className="sc-ckVGcZ iLkhjS"
+                  >
+                    <input
+                      checked={false}
+                      className="sc-dxgOiQ fSxPbe"
+                      name="bar"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="radio"
+                      value="foo4"
+                    />
+                  </div>
+                </div>
+                <p
+                  className="sc-bxivhb iBTcEE"
+                >
+                  <label
+                    htmlFor="bar"
+                  >
+                    foobar
+                  </label>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-bwzfXH dRGel"
+      >
+        <button
+          className="sc-htoDjs gSiQTl"
+          color={undefined}
+          disabled={undefined}
+          icon="trash"
+          id={undefined}
+          onClick={[Function]}
+          title=""
+          type="button"
+        >
+          <span
+            className="sc-htpNat isoJMm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
+          </span>
+          
+        </button>
+         
+        <button
+          className="sc-htoDjs eTKkfD"
+          color={undefined}
+          disabled={undefined}
+          icon="gear"
+          id={undefined}
+          onClick={[Function]}
+          title=""
+          type="button"
+        >
+          <span
+            className="sc-htpNat isoJMm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
+          </span>
+          
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+`;

@@ -46,6 +46,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     color={undefined}
     disabled={undefined}
     icon={undefined}
+    id={undefined}
     onClick={[Function]}
     title="open FoldOut"
     type="button"

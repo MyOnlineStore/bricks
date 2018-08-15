@@ -81,6 +81,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       color={undefined}
       disabled={undefined}
       icon={undefined}
+      id={undefined}
       onClick={[Function]}
       title="Add filter"
       type="button"
