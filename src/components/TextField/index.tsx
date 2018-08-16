@@ -16,6 +16,7 @@ type PropsType = {
     suffix?: string;
     extractRef?(ref: HTMLInputElement): void;
     onChange(value: string): void;
+    onBlur?(): void;
 };
 
 type StateType = {
@@ -54,6 +55,10 @@ class TextField extends Component<PropsType, StateType> {
             focus: false,
             active: this.props.value !== '',
         });
+
+        if (this.props.onBlur !== undefined) {
+            this.props.onBlur();
+        }
     };
 
     public onChange = (event: ChangeEvent<HTMLInputElement>): void => {
