@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ErrorBoundary should catch an error and report it 1`] = `
-.c2 {
+.c3 {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -9,7 +9,7 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   width: 18px;
 }
 
-.c2 svg {
+.c3 svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -28,11 +28,33 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   margin: 12px 12px 12px 12px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c2 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 12px 0px 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -64,17 +86,20 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   <div
     className="c1"
   >
-    <span
-      aria-hidden={true}
+    <div
       className="c2"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "test-file-stub",
+    >
+      <span
+        aria-hidden={true}
+        className="c3"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
         }
-      }
-      role="img"
-    />
-       
+        role="img"
+      />
+    </div>
     This has an error
   </div>
 </div>

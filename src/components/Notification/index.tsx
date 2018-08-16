@@ -17,9 +17,10 @@ const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledNotification severity={props.severity}>
-            <Box margin={trbl(12)} alignItems={'center'}>
-                <Icon size="medium" icon={icon} />
-                &nbsp;&nbsp;&nbsp;
+            <Box margin={trbl(12)} alignItems={'flex-start'} >
+                <Box margin={trbl(0,12,0,0)}>
+                    <Icon size="medium" icon={icon} />
+                </Box>
                 {props.message}
             </Box>
         </StyledNotification>
