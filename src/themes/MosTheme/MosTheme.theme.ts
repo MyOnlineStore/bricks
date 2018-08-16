@@ -673,6 +673,9 @@ const theme: ThemeType = {
             borderColor: grey.lighter1,
         },
     },
+    Tile: {
+        borderColor: silver.darker4,
+    },
     Toggle: {
         general: {
             background: silver.lighter1,

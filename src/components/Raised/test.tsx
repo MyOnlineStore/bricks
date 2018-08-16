@@ -4,7 +4,7 @@ import Raised from '.';
 import MosTheme from '../../themes/MosTheme/MosTheme.theme';
 
 describe('Raised', () => {
-    it('shouldn\'t have a box-shadow', () => {
+    it('shouldn\'t have a box-shadow on level 0', () => {
         const component = shallowWithTheme(<Raised level={0} />);
 
         /* tslint:disable */
@@ -12,7 +12,7 @@ describe('Raised', () => {
         /* tslint:enable */
     });
 
-    it('should render a box-shadow like the MosTheme level1', () => {
+    it('should render a box-shadow on level 1', () => {
         const component = shallowWithTheme(<Raised level={1} />);
 
         /* tslint:disable */
@@ -20,7 +20,7 @@ describe('Raised', () => {
         /* tslint:enable */
     });
 
-    it('should render a box-shadow like the MosTheme level2', () => {
+    it('should render a bigger box-shadow on level 2', () => {
         const component = shallowWithTheme(<Raised level={2} />);
 
         /* tslint:disable */

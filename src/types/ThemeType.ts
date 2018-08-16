@@ -18,6 +18,7 @@ import { TableCellThemeType } from '../components/TableCell/style';
 import { TableRowThemeType } from '../components/TableRow/style';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
+import { TileThemeType } from '../components/Tile';
 import { ToggleThemeType } from '../components/Toggle/style';
 import { SelectThemeType } from '../components/Select/style';
 import { SkeletonThemeType } from '../components/Skeleton/style';
@@ -44,6 +45,7 @@ type ThemeType = {
     TableRow: TableRowThemeType;
     Text: TextThemeType;
     TextField: TextFieldThemeType;
+    Tile: TileThemeType;
     RadioButton: RadioButtonThemeType;
     Toggle: ToggleThemeType;
 };
