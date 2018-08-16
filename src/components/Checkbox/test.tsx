@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from '.';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled';
-import Styledcheckbox, { StyledCheckboxSkin } from './style';
+import { StyledCheckbox, StyledCheckboxSkin } from './style';
 
 describe('Checkbox', () => {
     it('should have theme background when checked', () => {
@@ -23,7 +23,7 @@ describe('Checkbox', () => {
             <Checkbox onChange={(): void => undefined} name="demo" checked={false} value="bar" />,
         );
 
-        checkbox.find(Styledcheckbox).simulate('focus');
+        checkbox.find(StyledCheckbox).simulate('focus');
 
         /* tslint:disable */
         (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(

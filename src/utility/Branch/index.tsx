@@ -1,4 +1,4 @@
-import React, { SFC, ReactNode, Children } from 'react';
+import { SFC, ReactNode, Children } from 'react';
 
 type PropsType = {
     condition: boolean;

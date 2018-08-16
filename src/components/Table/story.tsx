@@ -8,8 +8,8 @@ import Button from '../Button';
 import Text from '../Text';
 
 type StateType = {
-    rows: Array<Array<ReactNode>>;
     hover: boolean;
+    rows: Array<{ id: string; cells: Array<ReactNode> }>;
 };
 
 type PropsType = {
@@ -17,24 +17,29 @@ type PropsType = {
     selectable: boolean;
 };
 
+const actions = (
+    <>
+        <Button title="edit" flat compact variant="secondary">
+            <Icon icon="pencil" size="medium" />
+        </Button>
+        <Button title="delete" flat compact variant="destructive">
+            <Icon icon="trash" size="medium" />
+        </Button>
+    </>
+);
+
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
-        const actions = (
-            <>
-                <Button title="edit" flat compact variant="secondary">
-                    <Icon icon="pencil" size="medium" />
-                </Button>
-                <Button title="delete" flat compact variant="destructive">
-                    <Icon icon="trash" size="medium" />
-                </Button>
-            </>
-        );
-
         this.state = {
             hover: false,
-            rows: [['A1', 'B1', 'C1', actions], ['A2', 'B2', 'C2', actions], ['A3', 'B3', 'C3', actions]],
+            rows: [
+                { id: 'row-1', cells: ['A1', 'B1', 'C1', actions] },
+                { id: 'row-2', cells: ['A2', 'B2', 'C2', actions] },
+                { id: 'row-3', cells: ['A3', 'B3', 'C3', actions] },
+                { id: 'row-4', cells: ['A4', 'B4', 'C4', actions] },
+            ],
         };
     }
 

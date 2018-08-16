@@ -1366,7 +1366,6 @@ exports[`Storyshots Checkbox Default 1`] = `
 }
 
 <div
-  checked={true}
   className="c0"
   onClick={[Function]}
 >
@@ -7041,7 +7040,7 @@ exports[`Storyshots Table Default 1`] = `
   width: 100%;
   border-spacing: 0;
   border-collapse: separate;
-  background-color: #d2d7e0;
+  background-color: #edeff2;
   overflow: auto;
   min-width: 100%;
 }
@@ -7470,6 +7469,127 @@ exports[`Storyshots Table Default 1`] = `
               className="c11"
             >
               C3
+            </p>
+          </div>
+        </td>
+        <td
+          className="c10"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c6"
+          >
+            <button
+              className="c12"
+              color={undefined}
+              disabled={undefined}
+              icon={undefined}
+              onClick={[Function]}
+              title="edit"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="c4"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+            <button
+              className="c13"
+              color={undefined}
+              disabled={undefined}
+              icon={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="c4"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="c7"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <td
+          className="c8"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <p
+            className="c9"
+          >
+            <span
+              aria-hidden={true}
+              className="c4"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+              role="img"
+            />
+          </p>
+        </td>
+        <td
+          className="c10"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c2"
+          >
+            <p
+              className="c11"
+            >
+              A4
+            </p>
+          </div>
+        </td>
+        <td
+          className="c10"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c2"
+          >
+            <p
+              className="c11"
+            >
+              B4
+            </p>
+          </div>
+        </td>
+        <td
+          className="c10"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c5"
+          >
+            <p
+              className="c11"
+            >
+              C4
             </p>
           </div>
         </td>

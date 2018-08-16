@@ -3,6 +3,7 @@ import StyledHeader from './style';
 import Text from '../../Text';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
+import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 
 type PropsType = {
     alignments: Array<'flex-start' | 'center' | 'flex-end'>;
@@ -18,7 +19,31 @@ const Header: SFC<PropsType> = ({ alignments, draggable, selectable, headers }):
                 {draggable && <StyledHeader />}
                 {selectable && (
                     <StyledHeader>
-                        <Checkbox checked={true} name="" value={'row'} onChange={(): void => undefined} />
+                        <SubscriptionConsumer>
+                            {({ items, updateAll }): JSX.Element => {
+                                const checkedState = ((): 'indeterminate' | boolean => {
+                                    const checkedItems = items.filter(item => item.payload === true);
+
+                                    switch (checkedItems.length) {
+                                        case 0:
+                                            return false;
+                                        case items.length:
+                                            return true;
+                                        default:
+                                            return 'indeterminate';
+                                    }
+                                })();
+
+                                return (
+                                    <Checkbox
+                                        checked={checkedState}
+                                        name=""
+                                        value=""
+                                        onChange={({ checked }): void => updateAll(checked)}
+                                    />
+                                );
+                            }}
+                        </SubscriptionConsumer>
                     </StyledHeader>
                 )}
                 {headers.map((header, headerIndex): JSX.Element => {

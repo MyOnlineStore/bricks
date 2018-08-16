@@ -38,7 +38,8 @@
         "!src/**/*.d.ts",
         "!src/**/*.DontTest.tsx",
         "!src/index.ts",
-        "!src/utility/styled/index.tsx"
+        "!src/utility/styled/index.tsx",
+        "!src/utility/SubscriptionContext/index.tsx"
     ],
     "setupTestFrameworkScriptFile": "./config/jest/setupFramework.tsx",
     "setupFiles": [

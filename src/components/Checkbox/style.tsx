@@ -3,12 +3,8 @@ import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 
-type StyledCheckboxType = {
-    checked: boolean;
-};
-
 type StyledCheckboxSkinType = {
-    checked: boolean;
+    checkedState: boolean | 'indeterminate';
     elementFocus: boolean;
 };
 
@@ -27,7 +23,7 @@ type CheckboxThemeType = {
     };
 };
 
-const StyledCheckbox = withProps<StyledCheckboxType, HTMLInputElement>(styled.input)`
+const StyledCheckbox = withProps<{}, HTMLInputElement>(styled.input)`
     opacity: 0;
     height: 0;
     width: 0;
@@ -44,17 +40,19 @@ const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(sty
 
     ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Checkbox.focus.boxShadow};` : '')}
 
-    ${({ theme, checked }): string =>
-        checked
-            ? `
+    ${({ theme, checkedState }): string => {
+        if (checkedState === 'indeterminate' || checkedState === true) {
+            return `
                 background-color: ${theme.Checkbox.checked.backgroundColor};
                 border: 1px solid ${theme.Checkbox.checked.borderColor}
-            `
-            : `
+            `;
+        }
+
+        return `
                 background-color: ${theme.Checkbox.idle.backgroundColor};
                 border: 1px solid ${theme.Checkbox.idle.borderColor}
-            `}
+        `;
+    }}
 `;
 
-export default StyledCheckbox;
-export { StyledCheckboxSkin, StyledCheckboxType, CheckboxThemeType };
+export { StyledCheckbox, StyledCheckboxSkin, CheckboxThemeType };

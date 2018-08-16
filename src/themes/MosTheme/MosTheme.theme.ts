@@ -600,7 +600,7 @@ const theme: ThemeType = {
     },
     Table: {
         default: {
-            backgroundColor: silver.darker4,
+            backgroundColor: silver.darker1,
         },
         cell: {
             default: {
