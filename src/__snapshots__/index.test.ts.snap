@@ -7734,51 +7734,78 @@ exports[`Storyshots Text Default 1`] = `
 
 exports[`Storyshots TextField Default 1`] = `
 .c2 {
-  position: relative;
   width: 100%;
   border: none;
   background: transparent;
   font-size: inherit;
   display: block;
-  margin-top: 1em;
-  padding: 0;
+  padding: 9px;
   line-height: 1.5;
   outline: none;
 }
 
 .c1 {
-  -webkit-transition: top 0.2s,-webkit-transform 0.2s,font-size 0.2s,color 0.2s;
-  -webkit-transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
-  transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
-  display: block;
-  line-height: 1.5;
-  position: absolute;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  top: 0;
-  font-size: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 3px 0 0 3px;
+  padding: 0 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #a6aab3;
-  -webkit-transform: translate3d(0,0.85em,0) scale(1);
-  -ms-transform: translate3d(0,0.85em,0) scale(1);
-  transform: translate3d(0,0.85em,0) scale(1);
+  color: #55656d;
+  background-color: #f8f9fb;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 3px 3px 0;
+  padding: 0 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #55656d;
+  background-color: #f8f9fb;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c0 {
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+  margin-top: 1em;
+  -webkit-transition: border-color 100ms,box-shadow 100ms;
+  transition: border-color 100ms,box-shadow 100ms;
   border: solid 1px #d2d7e0;
+  border-radius: 3px;
   font-size: 14px;
   font-family: Source Sans Pro,sans-serif;
   border-radius: 3px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
-  padding: 0.3em 12px 0.4em 12px;
   cursor: text;
+  margin-bottom: 9px;
 }
 
 .c0 * {
@@ -7791,11 +7818,11 @@ exports[`Storyshots TextField Default 1`] = `
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
-  <label
+  <div
     className="c1"
   >
-    First name
-  </label>
+    Huisnummer
+  </div>
   <input
     className="c2"
     onBlur={[Function]}
@@ -7804,60 +7831,90 @@ exports[`Storyshots TextField Default 1`] = `
     type="text"
     value=""
   />
+  <div
+    className="c3"
+  >
+    $
+  </div>
 </div>
 `;
 
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   .c2 {
-  position: relative;
   width: 100%;
   border: none;
   background: transparent;
   font-size: inherit;
   display: block;
-  margin-top: 1em;
-  padding: 0;
+  padding: 9px;
   line-height: 1.5;
   outline: none;
 }
 
 .c1 {
-  -webkit-transition: top 0.2s,-webkit-transform 0.2s,font-size 0.2s,color 0.2s;
-  -webkit-transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
-  transition: top 0.2s,transform 0.2s,font-size 0.2s,color 0.2s;
-  display: block;
-  line-height: 1.5;
-  position: absolute;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  top: 0;
-  font-size: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 3px 0 0 3px;
+  padding: 0 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #a6aab3;
-  -webkit-transform: translate3d(0,0.85em,0) scale(1);
-  -ms-transform: translate3d(0,0.85em,0) scale(1);
-  transform: translate3d(0,0.85em,0) scale(1);
+  color: #55656d;
+  background-color: #f8f9fb;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 3px 3px 0;
+  padding: 0 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #55656d;
+  background-color: #f8f9fb;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c0 {
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+  margin-top: 1em;
+  -webkit-transition: border-color 100ms,box-shadow 100ms;
+  transition: border-color 100ms,box-shadow 100ms;
   border: solid 1px #d2d7e0;
+  border-radius: 3px;
   font-size: 14px;
   font-family: Source Sans Pro,sans-serif;
   border-radius: 3px;
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
-  padding: 0.3em 12px 0.4em 12px;
   cursor: text;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom: solid 2px #c81746;
+  margin-bottom: 9px;
+  border: solid 1px #c81746;
 }
 
 .c0 * {
@@ -7870,11 +7927,11 @@ Array [
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
-    <label
+    <div
       className="c1"
     >
-      First name
-    </label>
+      Huisnummer
+    </div>
     <input
       className="c2"
       onBlur={[Function]}
@@ -7883,6 +7940,11 @@ Array [
       type="text"
       value=""
     />
+    <div
+      className="c3"
+    >
+      $
+    </div>
   </div>,
   .c0 {
   box-sizing: border-box;

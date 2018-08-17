@@ -13,6 +13,16 @@ type TextFieldThemeType = {
             fontFamily: string;
             color: string;
         };
+        label: {
+            color: string;
+            backgroundColor: string;
+        };
+        prefix: {
+            borderRadius: string;
+        };
+        suffix: {
+            borderRadius: string;
+        };
     };
     active: {
         common: {
@@ -24,47 +34,43 @@ type TextFieldThemeType = {
     };
     focus: {
         borderColor: string;
+        boxShadow: string;
     };
 };
 
-const StyledInput = styled.input`
-    position: relative;
+const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
     background: transparent;
     font-size: inherit;
     display: block;
-    margin-top: 1em;
-    padding: 0;
+    padding: 9px;
     line-height: 1.5;
     outline: none;
 `;
 
-type FloatingLabelProps = {
-    active: boolean;
-};
-
-const StyledFloatingLabel = withProps<FloatingLabelProps, HTMLLabelElement>(styled.label)`
-    transition: top 0.2s, transform 0.2s, font-size 0.2s, color 0.2s;
-    display: block;
-    line-height: 1.5;
-    position: absolute;
-    transform-origin: top left;
-    top: 0;
-    font-size: 1em;
+const StyledPrefix = styled.div`
+    display: flex;
+    border-radius: ${({ theme }): string => theme.TextField.idle.prefix.borderRadius};
+    padding: 0 12px;
     user-select: none;
+    color: ${({ theme }): string => theme.TextField.idle.label.color};
+    background-color: ${({ theme }): string => theme.TextField.idle.label.backgroundColor};
+    align-items: center;
+    max-width: 40%;
+    flex-shrink: 0;
+`;
 
-    ${({ active, theme }): string => {
-        return active
-            ? `
-                color: ${theme.TextField.active.label.color};
-                transform: translate3d(0, 0.3em, 0) scale(0.85);
-            `
-            : `
-                color: ${theme.TextField.idle.common.color};
-                transform: translate3d(0, 0.85em, 0) scale(1);
-            `;
-    }};
+const StyledSuffix = styled.div`
+    display: flex;
+    border-radius: ${({ theme }): string => theme.TextField.idle.suffix.borderRadius};
+    padding: 0 12px;
+    user-select: none;
+    color: ${({ theme }): string => theme.TextField.idle.label.color};
+    background-color: ${({ theme }): string => theme.TextField.idle.label.backgroundColor};
+    align-items: center;
+    max-width: 40%;
+    flex-shrink: 0;
 `;
 
 type WrapperProps = {
@@ -77,28 +83,26 @@ type WrapperProps = {
 };
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
-    transition: border-color 0.3s;
+    margin-top: 1em;
+    transition: border-color 100ms, box-shadow 100ms;
     border: solid 1px ${({ focus, theme }): string =>
         focus ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
+    box-shadow: ${({ focus, theme }): string => (focus ? theme.TextField.focus.boxShadow : '')};
+    border-radius: 3px;
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
-    display: inline-block;
+    display: flex;
     position: relative;
-    padding: 0.3em 12px 0.4em 12px;
     cursor: text;
-
-    ${({ feedback, theme }): string =>
-        feedback !== undefined && feedback.severity !== 'info'
-            ? `
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-                border-bottom: solid 2px ${theme.Text.severity[feedback.severity].color};
-            `
+    margin-bottom: 9px;
+    ${({ feedback, theme, focus }): string =>
+        feedback !== undefined && feedback.severity !== 'info' && focus === false
+            ? `border: solid 1px ${theme.Text.severity[feedback.severity].color};`
             : ''};
     * {
         cursor: text;
     }
 `;
 
-export { StyledWrapper, StyledInput, StyledFloatingLabel, TextFieldThemeType };
+export { StyledWrapper, StyledInput, TextFieldThemeType, StyledPrefix, StyledSuffix };

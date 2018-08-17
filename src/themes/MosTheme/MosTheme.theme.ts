@@ -31,8 +31,8 @@ const silver = {
 
 const grey = {
     lighter3: '#a6aab3',
-    lighter2: '#88979d',
     lighter1: '#55656d',
+    lighter2: '#88979d',
     base: '#333740',
     darker1: '#21252b',
 };
@@ -665,6 +665,16 @@ const theme: ThemeType = {
                 fontFamily: bodyFont,
                 color: grey.lighter3,
             },
+            label: {
+                color: grey.lighter1,
+                backgroundColor: silver.base,
+            },
+            prefix: {
+                borderRadius: `${roundness.base} 0 0 ${roundness.base}`,
+            },
+            suffix: {
+                borderRadius: `0 ${roundness.base} ${roundness.base} 0`,
+            },
         },
         active: {
             common: {
@@ -675,7 +685,8 @@ const theme: ThemeType = {
             },
         },
         focus: {
-            borderColor: grey.lighter1,
+            borderColor: green.darker2,
+            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
         },
     },
     Tile: {

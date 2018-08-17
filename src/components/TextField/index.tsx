@@ -3,7 +3,7 @@ import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
-import { StyledFloatingLabel, StyledInput, StyledWrapper } from './style';
+import { StyledInput, StyledWrapper, StyledPrefix, StyledSuffix } from './style';
 
 type PropsType = {
     value: string;
@@ -12,8 +12,9 @@ type PropsType = {
         severity: SeverityType;
         message: string;
     };
-    label: string;
     floating?: boolean;
+    prefix?: string;
+    suffix?: string;
     extractRef?(ref: HTMLInputElement): void;
     handleChange(value: string): void;
 };
@@ -71,10 +72,12 @@ class TextField extends Component<PropsType, StateType> {
                     onBlurCapture={this.handleBlur}
                     onClick={this.handleFocus}
                 >
-                    <StyledFloatingLabel active={this.state.active}>{this.props.label}</StyledFloatingLabel>
+                    {this.props.prefix && <StyledPrefix>{this.props.prefix}</StyledPrefix>}
                     <StyledInput
                         type="text"
+                        active={this.state.active}
                         value={this.props.value}
+                        focus={this.state.focus}
                         onChange={this.handleChange}
                         onFocus={this.handleFocus}
                         onBlur={this.handleBlur}
@@ -85,6 +88,7 @@ class TextField extends Component<PropsType, StateType> {
                             }
                         }}
                     />
+                    {this.props.suffix && <StyledSuffix>{this.props.suffix}</StyledSuffix>}
                 </StyledWrapper>
                 {this.props.feedback && (
                     <Box margin={trbl(6, 0, 0, 12)}>

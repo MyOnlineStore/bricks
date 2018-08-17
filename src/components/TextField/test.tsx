@@ -6,25 +6,19 @@ import { StyledInput, StyledWrapper } from './style';
 
 describe('TextField', () => {
     it('should render an idle state', () => {
-        const component = mountWithTheme(
-            <TextField value="" name="firstName" label="First name" handleChange={jest.fn()} />,
-        );
+        const component = mountWithTheme(<TextField value="" name="firstName" handleChange={jest.fn()} />);
 
         expect(component.find(StyledWrapper).prop('active')).toBe(false);
     });
 
     it('should render an active state with a value', () => {
-        const component = mountWithTheme(
-            <TextField value="Jane" name="firstName" label="First name" handleChange={jest.fn()} />,
-        );
+        const component = mountWithTheme(<TextField value="Jane" name="firstName" handleChange={jest.fn()} />);
 
         expect(component.find(StyledWrapper).prop('active')).toBe(true);
     });
 
     it('should render an active state when focussed', () => {
-        const component = mountWithTheme(
-            <TextField value="" name="firstName" label="First name" handleChange={jest.fn()} />,
-        );
+        const component = mountWithTheme(<TextField value="" name="firstName" handleChange={jest.fn()} />);
 
         component.find(StyledInput).simulate('focus');
 
@@ -32,9 +26,7 @@ describe('TextField', () => {
     });
 
     it('should retain active state with a value on blur', () => {
-        const component = mountWithTheme(
-            <TextField value="John" name="firstName" label="First name" handleChange={jest.fn()} />,
-        );
+        const component = mountWithTheme(<TextField value="John" name="firstName" handleChange={jest.fn()} />);
 
         component.find(StyledInput).simulate('blur');
 
@@ -44,9 +36,7 @@ describe('TextField', () => {
     it('should handle a change', () => {
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(
-            <TextField value="John" name="firstName" label="First name" handleChange={changeMock} />,
-        );
+        const component = mountWithTheme(<TextField value="John" name="firstName" handleChange={changeMock} />);
 
         component.find(StyledInput).simulate('change');
 
@@ -58,7 +48,6 @@ describe('TextField', () => {
             <TextField
                 value="John"
                 name="firstName"
-                label="First name"
                 handleChange={(): void => {
                     /**/
                 }}
