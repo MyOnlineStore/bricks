@@ -16,7 +16,7 @@ type PropsType = {
     prefix?: string;
     suffix?: string;
     extractRef?(ref: HTMLInputElement): void;
-    handleChange(value: string): void;
+    onChange(value: string): void;
 };
 
 type StateType = {
@@ -57,8 +57,8 @@ class TextField extends Component<PropsType, StateType> {
         });
     };
 
-    public handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        this.props.handleChange(event.target.value);
+    public onChange = (event: ChangeEvent<HTMLInputElement>): void => {
+        this.props.onChange(event.target.value);
     };
 
     public render(): JSX.Element {
@@ -78,7 +78,7 @@ class TextField extends Component<PropsType, StateType> {
                         active={this.state.active}
                         value={this.props.value}
                         focus={this.state.focus}
-                        onChange={this.handleChange}
+                        onChange={this.onChange}
                         onFocus={this.handleFocus}
                         onBlur={this.handleBlur}
                         innerRef={(ref): void => {

@@ -32,7 +32,7 @@ class Demo extends Component<DemoPropsType, { value: string }> {
                 suffix={text('Suffix', '$')}
                 value={this.state.value}
                 name="firstname"
-                handleChange={(value: string): void => this.setState({ value })}
+                onChange={(value: string): void => this.setState({ value })}
                 extractRef={(ref: HTMLInputElement): void => {
                     this.ref = ref;
                 }}
