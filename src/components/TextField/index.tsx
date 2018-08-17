@@ -56,7 +56,7 @@ class TextField extends Component<PropsType, StateType> {
         });
     };
 
-    public onChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    public handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         this.props.onChange(event.target.value);
     };
 
@@ -81,7 +81,7 @@ class TextField extends Component<PropsType, StateType> {
                         active={this.state.active}
                         value={this.props.value}
                         focus={this.state.focus}
-                        onChange={this.onChange}
+                        onChange={this.handleChange}
                         onFocus={this.handleFocus}
                         onBlur={this.handleBlur}
                         innerRef={(ref): void => {

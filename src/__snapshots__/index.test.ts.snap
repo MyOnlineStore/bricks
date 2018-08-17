@@ -7733,7 +7733,11 @@ exports[`Storyshots Text Default 1`] = `
 `;
 
 exports[`Storyshots TextField Default 1`] = `
+<<<<<<< HEAD
 .c3 {
+=======
+.c2 {
+>>>>>>> 63516b3... Updated TextField
   width: 100%;
   border: none;
   background: transparent;
@@ -7750,6 +7754,10 @@ exports[`Storyshots TextField Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
+=======
+  border-radius: 3px 0 0 3px;
+>>>>>>> 63516b3... Updated TextField
   padding: 0 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -7761,6 +7769,7 @@ exports[`Storyshots TextField Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -7783,9 +7792,43 @@ exports[`Storyshots TextField Default 1`] = `
 }
 
 .c0 {
+=======
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 3px 3px 0;
+  padding: 0 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #55656d;
+  background-color: #f8f9fb;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 {
+  margin-top: 1em;
+>>>>>>> 63516b3... Updated TextField
   -webkit-transition: border-color 100ms,box-shadow 100ms;
   transition: border-color 100ms,box-shadow 100ms;
   border: solid 1px #d2d7e0;
+  border-radius: 3px;
   font-size: 14px;
   font-family: Source Sans Pro,sans-serif;
   border-radius: 3px;
@@ -7795,7 +7838,11 @@ exports[`Storyshots TextField Default 1`] = `
   display: flex;
   position: relative;
   cursor: text;
+<<<<<<< HEAD
   overflow: hidden;
+=======
+  margin-bottom: 9px;
+>>>>>>> 63516b3... Updated TextField
 }
 
 .c0 * {
@@ -7811,11 +7858,15 @@ exports[`Storyshots TextField Default 1`] = `
   <div
     className="c1"
   >
+<<<<<<< HEAD
     <span
       className="c2"
     >
       Username
     </span>
+=======
+    Huisnummer
+>>>>>>> 63516b3... Updated TextField
   </div>
   <input
     className="c3"
@@ -7826,6 +7877,7 @@ exports[`Storyshots TextField Default 1`] = `
     value=""
   />
   <div
+<<<<<<< HEAD
     className="c1"
   >
     <span
@@ -7833,13 +7885,22 @@ exports[`Storyshots TextField Default 1`] = `
     >
       $
     </span>
+=======
+    className="c3"
+  >
+    $
+>>>>>>> 63516b3... Updated TextField
   </div>
 </div>
 `;
 
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
+<<<<<<< HEAD
   .c3 {
+=======
+  .c2 {
+>>>>>>> 63516b3... Updated TextField
   width: 100%;
   border: none;
   background: transparent;
@@ -7856,6 +7917,10 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
+=======
+  border-radius: 3px 0 0 3px;
+>>>>>>> 63516b3... Updated TextField
   padding: 0 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -7867,6 +7932,7 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -7889,9 +7955,43 @@ Array [
 }
 
 .c0 {
+=======
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 3px 3px 0;
+  padding: 0 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #55656d;
+  background-color: #f8f9fb;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 40%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 {
+  margin-top: 1em;
+>>>>>>> 63516b3... Updated TextField
   -webkit-transition: border-color 100ms,box-shadow 100ms;
   transition: border-color 100ms,box-shadow 100ms;
   border: solid 1px #d2d7e0;
+  border-radius: 3px;
   font-size: 14px;
   font-family: Source Sans Pro,sans-serif;
   border-radius: 3px;
@@ -7901,7 +8001,11 @@ Array [
   display: flex;
   position: relative;
   cursor: text;
+<<<<<<< HEAD
   overflow: hidden;
+=======
+  margin-bottom: 9px;
+>>>>>>> 63516b3... Updated TextField
   border: solid 1px #c81746;
 }
 
@@ -7918,11 +8022,15 @@ Array [
     <div
       className="c1"
     >
+<<<<<<< HEAD
       <span
         className="c2"
       >
         Username
       </span>
+=======
+      Huisnummer
+>>>>>>> 63516b3... Updated TextField
     </div>
     <input
       className="c3"
@@ -7933,6 +8041,7 @@ Array [
       value=""
     />
     <div
+<<<<<<< HEAD
       className="c1"
     >
       <span
@@ -7940,6 +8049,11 @@ Array [
       >
         $
       </span>
+=======
+      className="c3"
+    >
+      $
+>>>>>>> 63516b3... Updated TextField
     </div>
   </div>,
   .c0 {

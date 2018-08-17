@@ -31,8 +31,8 @@ const silver = {
 
 const grey = {
     lighter3: '#a6aab3',
-    lighter2: '#88979d',
     lighter1: '#55656d',
+    lighter2: '#88979d',
     base: '#333740',
     darker1: '#21252b',
 };
