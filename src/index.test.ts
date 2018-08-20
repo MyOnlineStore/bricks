@@ -1,4 +1,4 @@
-import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 import React, { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -11,7 +11,7 @@ jest.mock('./utility/calculateRandomPercentage', (): Function => (): number => 7
 
 initStoryshots({
     configPath: './config/storybook',
-    test: snapshotWithOptions({
+    test: multiSnapshotWithOptions({
         createNodeMock: (element: ReactElement<HTMLDivElement>): Object => ({
             offsetWidth: 900,
             offsetHeight: 900,

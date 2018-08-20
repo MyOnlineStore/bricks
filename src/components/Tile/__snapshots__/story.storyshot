@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Tile Default 1`] = `
+<div
+  className="sc-bwzfXH gCBYeZ"
+>
+  <div
+    className="sc-TOsTZ kVbVSe"
+  >
+    <div
+      className="sc-fjdhpX jskuQK"
+      role="heading"
+    >
+      Tile
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Popover Default 1`] = `
+<div
+  className="sc-bwzfXH iFCcSe"
+>
+  <div
+    className="sc-bwzfXH hlYRxd"
+  >
+    <div
+      className="sc-hSdWYo jsleHI"
+    >
+      <button
+        className="sc-htoDjs ilyuMW"
+        color={undefined}
+        disabled={undefined}
+        icon={undefined}
+        onClick={[Function]}
+        title="Toggle"
+        type="button"
+      >
+        Toggle
+      </button>
+    </div>
+  </div>
+</div>
+`;

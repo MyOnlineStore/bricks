@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RadioButtonGroup Default 1`] = `
+<div
+  className="sc-iRbamj gIjvke"
+>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <div
+      className="sc-bwzfXH jOssXm"
+    >
+      <div
+        className="sc-bwzfXH fuEFtX"
+      >
+        <div
+          className="sc-jAaTju oBWUp"
+          onClick={[Function]}
+        >
+          <div
+            className="sc-bwzfXH doEFQb"
+          >
+            <div
+              checked={true}
+              className="sc-gPEVay FytyS"
+            >
+              <input
+                checked={true}
+                className="sc-jDwBTQ doDyNU"
+                name="demo"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="radio"
+                value="1"
+              />
+            </div>
+          </div>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <label
+              htmlFor="demo"
+            >
+              bar 1
+            </label>
+          </p>
+        </div>
+      </div>
+      <div
+        className="sc-bwzfXH fuEFtX"
+      >
+        <div
+          className="sc-jAaTju oBWUp"
+          onClick={[Function]}
+        >
+          <div
+            className="sc-bwzfXH doEFQb"
+          >
+            <div
+              checked={false}
+              className="sc-gPEVay lhBttS"
+            >
+              <input
+                checked={false}
+                className="sc-jDwBTQ doDyNU"
+                name="demo"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="radio"
+                value="2"
+              />
+            </div>
+          </div>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <label
+              htmlFor="demo"
+            >
+              bar 2
+            </label>
+          </p>
+        </div>
+      </div>
+      <div
+        className="sc-bwzfXH fuEFtX"
+      >
+        <div
+          className="sc-jAaTju oBWUp"
+          onClick={[Function]}
+        >
+          <div
+            className="sc-bwzfXH doEFQb"
+          >
+            <div
+              checked={false}
+              className="sc-gPEVay lhBttS"
+            >
+              <input
+                checked={false}
+                className="sc-jDwBTQ doDyNU"
+                name="demo"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="radio"
+                value="3"
+              />
+            </div>
+          </div>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <label
+              htmlFor="demo"
+            >
+              bar 3
+            </label>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

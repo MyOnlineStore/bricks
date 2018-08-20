@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Notification Error 1`] = `
+<div
+  className="sc-kAzzGY dCBEuI"
+>
+  <div
+    className="sc-bwzfXH bqlIBP"
+  >
+    <div
+      className="sc-bwzfXH bHnPca"
+    >
+      <span
+        aria-hidden={true}
+        className="sc-iwsKbI jSMqMr"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
+        }
+        role="img"
+      />
+    </div>
+    Oops, something wen't wrong. Please try again.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification Info 1`] = `
+<div
+  className="sc-kAzzGY iXGhyW"
+>
+  <div
+    className="sc-bwzfXH bqlIBP"
+  >
+    <div
+      className="sc-bwzfXH bHnPca"
+    >
+      <span
+        aria-hidden={true}
+        className="sc-iwsKbI jSMqMr"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
+        }
+        role="img"
+      />
+    </div>
+    Oops, something wen't wrong. Please try again.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification Success 1`] = `
+<div
+  className="sc-kAzzGY dJXWDj"
+>
+  <div
+    className="sc-bwzfXH bqlIBP"
+  >
+    <div
+      className="sc-bwzfXH bHnPca"
+    >
+      <span
+        aria-hidden={true}
+        className="sc-iwsKbI jSMqMr"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
+        }
+        role="img"
+      />
+    </div>
+    Wow, Great job!
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification Warning 1`] = `
+<div
+  className="sc-kAzzGY jDXFMi"
+>
+  <div
+    className="sc-bwzfXH bqlIBP"
+  >
+    <div
+      className="sc-bwzfXH bHnPca"
+    >
+      <span
+        aria-hidden={true}
+        className="sc-iwsKbI jSMqMr"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
+        }
+        role="img"
+      />
+    </div>
+    Careful, this might go wrong.
+  </div>
+</div>
+`;
+
+exports[`Storyshots Notification With a custom icon 1`] = `
+<div
+  className="sc-kAzzGY jDXFMi"
+>
+  <div
+    className="sc-bwzfXH bqlIBP"
+  >
+    <div
+      className="sc-bwzfXH bHnPca"
+    >
+      <span
+        aria-hidden={true}
+        className="sc-iwsKbI jSMqMr"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "test-file-stub",
+          }
+        }
+        role="img"
+      />
+    </div>
+    Meh, I am not impressed.
+  </div>
+</div>
+`;

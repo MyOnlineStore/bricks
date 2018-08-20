@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Link Action with child element 1`] = `
+<p
+  className="sc-bxivhb iBTcEE"
+>
+  <button
+    className="sc-kGXeez bRcunU"
+    onClick={[Function]}
+    title="Google search"
+    type="button"
+  >
+    <span>
+      Click me!
+    </span>
+  </button>
+</p>
+`;
+
+exports[`Storyshots Link Default 1`] = `
+<p
+  className="sc-bxivhb iBTcEE"
+>
+  <a
+    className="sc-kgoBCf jeROkT"
+    href="http://www.google.com"
+    target="_self"
+    title="Google search"
+  >
+    Google search
+  </a>
+</p>
+`;

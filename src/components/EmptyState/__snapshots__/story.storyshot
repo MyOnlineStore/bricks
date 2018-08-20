@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots EmptyState Default 1`] = `
+<div
+  className="sc-bwzfXH jYgPHr"
+>
+  <div
+    className="sc-bwzfXH cDtNgB"
+  >
+    <div
+      aria-hidden={true}
+      className="sc-jzJRlG VdiAW"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+    <div
+      className="sc-bwzfXH hSjhuh"
+    >
+      <div
+        className="sc-fjdhpX gUNTtb"
+        role="heading"
+      >
+        No filters applied
+      </div>
+    </div>
+    <div
+      className="sc-bwzfXH bbhEiF"
+    >
+      <p
+        className="sc-bxivhb bXRBiU"
+      >
+        ..A tumbleweed passes by
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmptyState With button (as children) 1`] = `
+<div
+  className="sc-bwzfXH jYgPHr"
+>
+  <div
+    className="sc-bwzfXH cDtNgB"
+  >
+    <div
+      aria-hidden={true}
+      className="sc-jzJRlG VdiAW"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      role="img"
+    />
+    <div
+      className="sc-bwzfXH hSjhuh"
+    >
+      <div
+        className="sc-fjdhpX gUNTtb"
+        role="heading"
+      >
+        No filters applied
+      </div>
+    </div>
+    <div
+      className="sc-bwzfXH bbhEiF"
+    >
+      <p
+        className="sc-bxivhb bXRBiU"
+      >
+        There are no filters applied yet. Use the button below to apply a filter.
+      </p>
+    </div>
+    <button
+      className="sc-htoDjs ilyuMW"
+      color={undefined}
+      disabled={undefined}
+      icon={undefined}
+      onClick={[Function]}
+      title="Add filter"
+      type="button"
+    >
+      Add filter
+    </button>
+  </div>
+</div>
+`;

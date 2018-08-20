@@ -1,11 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-import withCurrencyFormatting from '.';
 import TextField from '../../';
 import { select } from '@storybook/addon-knobs';
-import Text from '../../../Text';
-
-const Field = withCurrencyFormatting(TextField);
 
 type PropsType = { locale: string; currency: string };
 type StateType = { value: number };
@@ -23,7 +19,7 @@ class Demo extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Field
+            <TextField.Currency
                 name="first name"
                 currency={this.props.currency}
                 feedback={{

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Heading Default 1`] = `
+<h1
+  className="sc-fjdhpX bveVLo"
+  role="heading"
+>
+  This is an 
+  h1
+   element, with 
+  h1
+   styling.
+</h1>
+`;

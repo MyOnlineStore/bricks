@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots TransitionAnimation Default 1`] = `
+<div
+  className="sc-bwzfXH fbNcqF"
+>
+  <div
+    className="sc-kEYyzF ktWOCH"
+  >
+    <div
+      className="sc-frDJqD koECJT"
+    >
+      <div
+        className="sc-fjdhpX jPMeup"
+        role="heading"
+      >
+        Lorem ipsum
+      </div>
+    </div>
+  </div>
+</div>
+`;

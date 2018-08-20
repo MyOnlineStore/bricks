@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Modal Default 1`] = `
+<div
+  className="sc-kkGfuU kYRmvt"
+>
+  <div
+    className="sc-kEYyzF ktWOCH"
+  >
+    <div
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+    >
+      <div
+        className="sc-iAyFgw jkoAja"
+      >
+        <div
+          className="sc-bwzfXH kpHVAA"
+        >
+          <div
+            className="sc-fjdhpX jskuQK"
+            role="heading"
+          >
+            Would you like me to be your role modal?
+          </div>
+          <div
+            className="sc-bwzfXH lfhseO"
+          >
+            <button
+              className="sc-htoDjs TzVGU"
+              color={undefined}
+              disabled={undefined}
+              icon={undefined}
+              onClick={[Function]}
+              title="close"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI MOBcS"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          className="sc-jKJlTe jyxKbK"
+        >
+          <div
+            className="sc-eNQAEJ hwHwRI"
+          />
+          <div
+            className="sc-bwzfXH drOqMq"
+          >
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
+cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
+eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
+a pulvinar est porta. Nunc tempus vulputate dapibus. In eget venenatis orci. Pellentesque habitant morbi
+tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finibus lorem et quam imperdiet,
+id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
+pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh. Mauris tempor libero purus, vitae lacinia
+felis hendrerit in. Vestibulum rhoncus vitae ipsum vel placerat.
+eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
+a pulvinar est porta. Nunc tempus vulputate dapibus. In eget venenatis orci. Pellentesque habitant morbi
+tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finibus lorem et quam imperdiet,
+id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
+pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh. Mauris tempor libero purus, vitae lacinia
+felis hendrerit in. Vestibulum rhoncus vitae ipsum vel placerat.
+eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
+a pulvinar est porta. Nunc tempus vulputate dapibus. In eget venenatis orci. Pellentesque habitant morbi
+tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finibus lorem et quam imperdiet,
+id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
+pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
+            </p>
+          </div>
+          <div
+            className="sc-hMqMXs iIvvPt"
+          />
+        </div>
+        <div
+          className="sc-gZMcBi huJyDB"
+        >
+          <div
+            className="sc-bwzfXH bEpOqh"
+          >
+            <div
+              style={
+                Object {
+                  "flexGrow": 1,
+                }
+              }
+            >
+              <div
+                className="sc-bwzfXH bFmMmv"
+              >
+                <div
+                  className="sc-bwzfXH fuEFtX"
+                >
+                  <button
+                    className="sc-htoDjs ilyuMW"
+                    color={undefined}
+                    disabled={undefined}
+                    icon={undefined}
+                    onClick={[Function]}
+                    title="Activate"
+                    type="button"
+                  >
+                    Activate
+                  </button>
+                </div>
+                <div
+                  className="sc-bwzfXH fuEFtX"
+                >
+                  <button
+                    className="sc-htoDjs cMPsNt"
+                    color={undefined}
+                    disabled={undefined}
+                    icon={undefined}
+                    onClick={[Function]}
+                    title="Close"
+                    type="button"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

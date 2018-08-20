@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots BreakpointProvider Default 1`] = `
+<div
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <div
+    className="sc-gzVnrw eSDhrQ"
+  >
+    <p
+      className="sc-bxivhb iBTcEE"
+    >
+      Current breakpoint is 
+      large
+    </p>
+  </div>
+</div>
+`;

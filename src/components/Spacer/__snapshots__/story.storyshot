@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Spacer ⚠️  With margin 1`] = `
+<div
+  className="sc-fMiknA cRrWmT"
+>
+  <div
+    className="sc-hmzhuo kgjxfD"
+  >
+    <p
+      className="sc-bxivhb iBTcEE"
+    >
+      This has a margin.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Spacer ⚠️  With padding 1`] = `
+<div
+  className="sc-hmzhuo kgjxfD"
+>
+  <div
+    className="sc-fMiknA jBwXaT"
+  >
+    <p
+      className="sc-bxivhb iBTcEE"
+    >
+      This has padding.
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots MessageStream Default 1`] = `
+<div
+  className="sc-kpOJdX horMMw"
+>
+  <div
+    className="sc-ckVGcZ gNnIgu"
+    title="Sit Inceptos Magna"
+  >
+    <div
+      className="sc-gZMcBi huJyDB"
+    >
+      <div
+        className="sc-bwzfXH gSpAWE"
+      >
+        <div
+          className="sc-bwzfXH iYmIXv"
+        >
+          <p
+            className="sc-bxivhb fYhFYx"
+          >
+            Sit Inceptos Magna
+          </p>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="sc-bxivhb kOPFRV"
+          >
+            Today 12:00
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dxgOiQ jPgsCf"
+  />
+  <div
+    className="sc-ckVGcZ fLEBEO"
+    title="Aenean Dapibus Vulputate Tortor Magna"
+  >
+    <div
+      className="sc-gZMcBi huJyDB"
+    >
+      <div
+        className="sc-bwzfXH gSpAWE"
+      >
+        <div
+          className="sc-bwzfXH iYmIXv"
+        >
+          <p
+            className="sc-bxivhb fYhFYx"
+          >
+            Aenean Dapibus Vulputate Tortor Magna
+          </p>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit
+                 aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="sc-bxivhb kOPFRV"
+          >
+            Today 10:00
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dxgOiQ jPgsCf"
+  />
+  <div
+    className="sc-ckVGcZ gNnIgu"
+    title="Vestibulum Dapibus"
+  >
+    <div
+      className="sc-gZMcBi huJyDB"
+    >
+      <div
+        className="sc-bwzfXH gSpAWE"
+      >
+        <div
+          className="sc-bwzfXH iYmIXv"
+        >
+          <p
+            className="sc-bxivhb fYhFYx"
+          >
+            Vestibulum Dapibus
+          </p>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Curabitur blandit tempus porttitor.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="sc-bxivhb kOPFRV"
+          >
+            Yesterday 12:00
+          </p>
+        </div>
+        <div
+          className="sc-bwzfXH jzqIJL"
+        >
+          <button
+            className="sc-htoDjs ilyuMW"
+            color={undefined}
+            disabled={undefined}
+            icon={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dxgOiQ jPgsCf"
+  />
+  <div
+    className="sc-ckVGcZ hzJZa"
+    title="Parturient Euismod Mollis Fringilla"
+  >
+    <div
+      className="sc-gZMcBi huJyDB"
+    >
+      <div
+        className="sc-bwzfXH gSpAWE"
+      >
+        <div
+          className="sc-bwzfXH iYmIXv"
+        >
+          <p
+            className="sc-bxivhb fYhFYx"
+          >
+            Parturient Euismod Mollis Fringilla
+          </p>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                 amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="sc-bxivhb kOPFRV"
+          >
+            12-12-2012 12:00
+          </p>
+        </div>
+        <div
+          className="sc-bwzfXH jzqIJL"
+        >
+          <button
+            className="sc-htoDjs gYhvrc"
+            color={undefined}
+            disabled={undefined}
+            icon={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dxgOiQ jPgsCf"
+  />
+  <div
+    className="sc-ckVGcZ ldMDZe"
+    title="Tortor Cursus"
+  >
+    <div
+      className="sc-gZMcBi huJyDB"
+    >
+      <div
+        className="sc-bwzfXH gSpAWE"
+      >
+        <div
+          className="sc-bwzfXH iYmIXv"
+        >
+          <p
+            className="sc-bxivhb fYhFYx"
+          >
+            Tortor Cursus
+          </p>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="sc-bxivhb kOPFRV"
+          >
+            12-12-2012 12:00
+          </p>
+        </div>
+        <div
+          className="sc-bwzfXH jzqIJL"
+        >
+          <button
+            className="sc-htoDjs hqsvnm"
+            color={undefined}
+            disabled={undefined}
+            icon={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dxgOiQ jPgsCf"
+  />
+  <div
+    className="sc-ckVGcZ fLEBEO"
+    title="Euismod Dolor Consectetur"
+  >
+    <div
+      className="sc-gZMcBi huJyDB"
+    >
+      <div
+        className="sc-bwzfXH gSpAWE"
+      >
+        <div
+          className="sc-bwzfXH iYmIXv"
+        >
+          <p
+            className="sc-bxivhb fYhFYx"
+          >
+            Euismod Dolor Consectetur
+          </p>
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.",
+                }
+              }
+            />
+          </p>
+          <p
+            className="sc-bxivhb kOPFRV"
+          />
+        </div>
+        <div
+          className="sc-bwzfXH jzqIJL"
+        >
+          <button
+            className="sc-htoDjs dmMyib"
+            color={undefined}
+            disabled={undefined}
+            icon={undefined}
+            onClick={[Function]}
+            title="Click me"
+            type="button"
+          >
+            Click me
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

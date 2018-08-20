@@ -26,6 +26,8 @@ type NumberFormatter = Intl.NumberFormat & {
     formatToParts(value: number): Array<PartType>;
 };
 
+type WithCurrencyFormattingType = ComponentClass<PropsType>;
+
 const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): ComponentClass<PropsType> => {
     class WithCurrencyFormatting extends Component<PropsType, StateType> {
         private formatter: NumberFormatter;
@@ -38,7 +40,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
                 value: `${props.value}`,
                 currency: '',
                 currencyAlignment: 'left',
-                decimalSeperator: '',
+                decimalSeperator: '.',
             };
         }
 
@@ -149,3 +151,4 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
 };
 
 export default withCurrencyFormatting;
+export { WithCurrencyFormattingType };

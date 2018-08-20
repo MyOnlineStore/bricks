@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ButtonGroup Default 1`] = `
+<div
+  className="sc-gqjmRU cDLrsf"
+>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <div
+      className="sc-bwzfXH bFmMmv"
+    >
+      <div
+        className="sc-bwzfXH fuEFtX"
+      >
+        <button
+          className="sc-htoDjs ilyuMW"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          onClick={[Function]}
+          title="Primary button"
+          type="button"
+        >
+          Primary button
+        </button>
+      </div>
+      <div
+        className="sc-bwzfXH fuEFtX"
+      >
+        <button
+          className="sc-htoDjs ljxUvq"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          onClick={[Function]}
+          title="Secondary button"
+          type="button"
+        >
+          Secondary button
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

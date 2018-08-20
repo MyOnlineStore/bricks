@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Skeleton Button 1`] = `
+<div
+  aria-hidden={true}
+  className="sc-fBuWsC hMiOjB"
+  width={139}
+>
+  _
+</div>
+`;
+
+exports[`Storyshots Skeleton Text 1`] = `
+Array [
+  <div
+    aria-hidden={true}
+    className="sc-jhAzac foibEO"
+  >
+    _
+  </div>,
+  <br />,
+  <div
+    aria-hidden={true}
+    className="sc-jhAzac foibEO"
+  >
+    _
+  </div>,
+  <br />,
+  <div
+    aria-hidden={true}
+    className="sc-jhAzac foibEO"
+  >
+    _
+  </div>,
+]
+`;

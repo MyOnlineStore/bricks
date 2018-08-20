@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ErrorBoundary Default 1`] = `
+<div>
+  <p
+    className="sc-bxivhb iBTcEE"
+  >
+    This does not have an error.
+  </p>
+</div>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RadioButton Default 1`] = `
+<div
+  className="sc-jAaTju oBWUp"
+  onClick={[Function]}
+>
+  <div
+    className="sc-bwzfXH doEFQb"
+  >
+    <div
+      checked={true}
+      className="sc-gPEVay FytyS"
+    >
+      <input
+        checked={true}
+        className="sc-jDwBTQ doDyNU"
+        name="demo"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="radio"
+        value="demo2"
+      />
+    </div>
+  </div>
+  <p
+    className="sc-bxivhb iBTcEE"
+  >
+    <label
+      htmlFor="demo"
+    >
+      foo
+    </label>
+  </p>
+</div>
+`;
