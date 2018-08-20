@@ -7733,7 +7733,7 @@ exports[`Storyshots Text Default 1`] = `
 `;
 
 exports[`Storyshots TextField Default 1`] = `
-.c2 {
+.c3 {
   width: 100%;
   border: none;
   background: transparent;
@@ -7749,7 +7749,6 @@ exports[`Storyshots TextField Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 3px 0 0 3px;
   padding: 0 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -7761,33 +7760,26 @@ exports[`Storyshots TextField Default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  max-width: 40%;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  max-width: 40%;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c2 {
+  max-width: 100%;
+  border-radius: 3px 0 0 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c4 {
+  max-width: 100%;
   border-radius: 0 3px 3px 0;
-  padding: 0 12px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #55656d;
-  background-color: #f8f9fb;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  max-width: 40%;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .c0 {
@@ -7821,10 +7813,14 @@ exports[`Storyshots TextField Default 1`] = `
   <div
     className="c1"
   >
-    Huisnummer
+    <span
+      className="c2"
+    >
+      Username
+    </span>
   </div>
   <input
-    className="c2"
+    className="c3"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -7832,16 +7828,20 @@ exports[`Storyshots TextField Default 1`] = `
     value=""
   />
   <div
-    className="c3"
+    className="c1"
   >
-    $
+    <span
+      className="c4"
+    >
+      $
+    </span>
   </div>
 </div>
 `;
 
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
-  .c2 {
+  .c3 {
   width: 100%;
   border: none;
   background: transparent;
@@ -7857,7 +7857,6 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 3px 0 0 3px;
   padding: 0 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -7869,33 +7868,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  max-width: 40%;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  max-width: 40%;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c2 {
+  max-width: 100%;
+  border-radius: 3px 0 0 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c4 {
+  max-width: 100%;
   border-radius: 0 3px 3px 0;
-  padding: 0 12px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #55656d;
-  background-color: #f8f9fb;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  max-width: 40%;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .c0 {
@@ -7930,10 +7922,14 @@ Array [
     <div
       className="c1"
     >
-      Huisnummer
+      <span
+        className="c2"
+      >
+        Username
+      </span>
     </div>
     <input
-      className="c2"
+      className="c3"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -7941,9 +7937,13 @@ Array [
       value=""
     />
     <div
-      className="c3"
+      className="c1"
     >
-      $
+      <span
+        className="c4"
+      >
+        $
+      </span>
     </div>
   </div>,
   .c0 {

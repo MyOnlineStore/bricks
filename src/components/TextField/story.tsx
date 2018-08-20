@@ -28,7 +28,7 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     public render(): JSX.Element {
         return (
             <TextField
-                prefix={text('Prefix', 'Huisnummer')}
+                prefix={text('Prefix', 'Username')}
                 suffix={text('Suffix', '$')}
                 value={this.state.value}
                 name="firstname"

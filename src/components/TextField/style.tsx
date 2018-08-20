@@ -49,28 +49,31 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     outline: none;
 `;
 
-const StyledPrefix = styled.div`
+const StyledFixWrapper = styled.div`
     display: flex;
-    border-radius: ${({ theme }): string => theme.TextField.idle.prefix.borderRadius};
     padding: 0 12px;
     user-select: none;
     color: ${({ theme }): string => theme.TextField.idle.label.color};
     background-color: ${({ theme }): string => theme.TextField.idle.label.backgroundColor};
     align-items: center;
-    max-width: 40%;
     flex-shrink: 0;
+    max-width: 40%;
 `;
 
-const StyledSuffix = styled.div`
-    display: flex;
+const StyledPrefix = styled.span`
+    max-width: 100%;
+    border-radius: ${({ theme }): string => theme.TextField.idle.prefix.borderRadius};
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+`;
+
+const StyledSuffix = styled.span`
+    max-width: 100%;
     border-radius: ${({ theme }): string => theme.TextField.idle.suffix.borderRadius};
-    padding: 0 12px;
-    user-select: none;
-    color: ${({ theme }): string => theme.TextField.idle.label.color};
-    background-color: ${({ theme }): string => theme.TextField.idle.label.backgroundColor};
-    align-items: center;
-    max-width: 40%;
-    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 type WrapperProps = {
@@ -105,4 +108,4 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }
 `;
 
-export { StyledWrapper, StyledInput, TextFieldThemeType, StyledPrefix, StyledSuffix };
+export { StyledWrapper, StyledInput, TextFieldThemeType, StyledPrefix, StyledSuffix, StyledFixWrapper };
