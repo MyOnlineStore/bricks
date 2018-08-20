@@ -13,22 +13,16 @@ type TextFieldThemeType = {
             fontFamily: string;
             color: string;
         };
-        label: {
+        affix: {
             color: string;
             backgroundColor: string;
-        };
-        prefix: {
-            borderRadius: string;
-        };
-        suffix: {
-            borderRadius: string;
         };
     };
     active: {
         common: {
             color: string;
         };
-        label: {
+        affix: {
             color: string;
         };
     };
@@ -49,12 +43,12 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     outline: none;
 `;
 
-const StyledFixWrapper = styled.div`
+const StyledAffixWrapper = styled.div`
     display: flex;
     padding: 0 12px;
     user-select: none;
-    color: ${({ theme }): string => theme.TextField.idle.label.color};
-    background-color: ${({ theme }): string => theme.TextField.idle.label.backgroundColor};
+    color: ${({ theme }): string => theme.TextField.idle.affix.color};
+    background-color: ${({ theme }): string => theme.TextField.idle.affix.backgroundColor};
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
@@ -62,7 +56,6 @@ const StyledFixWrapper = styled.div`
 
 const StyledPrefix = styled.span`
     max-width: 100%;
-    border-radius: ${({ theme }): string => theme.TextField.idle.prefix.borderRadius};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -70,7 +63,6 @@ const StyledPrefix = styled.span`
 
 const StyledSuffix = styled.span`
     max-width: 100%;
-    border-radius: ${({ theme }): string => theme.TextField.idle.suffix.borderRadius};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -91,7 +83,6 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     border: solid 1px ${({ focus, theme }): string =>
         focus ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
     box-shadow: ${({ focus, theme }): string => (focus ? theme.TextField.focus.boxShadow : '')};
-    border-radius: 3px;
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
@@ -108,4 +99,4 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }
 `;
 
-export { StyledWrapper, StyledInput, TextFieldThemeType, StyledPrefix, StyledSuffix, StyledFixWrapper };
+export { StyledWrapper, StyledInput, TextFieldThemeType, StyledPrefix, StyledSuffix, StyledAffixWrapper };

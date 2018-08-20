@@ -3,7 +3,7 @@ import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
-import { StyledInput, StyledWrapper, StyledPrefix, StyledSuffix, StyledFixWrapper } from './style';
+import { StyledInput, StyledWrapper, StyledPrefix, StyledSuffix, StyledAffixWrapper } from './style';
 
 type PropsType = {
     value: string;
@@ -73,9 +73,9 @@ class TextField extends Component<PropsType, StateType> {
                     onClick={this.handleFocus}
                 >
                     {this.props.prefix && (
-                        <StyledFixWrapper>
+                        <StyledAffixWrapper>
                             <StyledPrefix>{this.props.prefix}</StyledPrefix>
-                        </StyledFixWrapper>
+                        </StyledAffixWrapper>
                     )}
                     <StyledInput
                         type="text"
@@ -93,9 +93,9 @@ class TextField extends Component<PropsType, StateType> {
                         }}
                     />
                     {this.props.suffix && (
-                        <StyledFixWrapper>
+                        <StyledAffixWrapper>
                             <StyledSuffix>{this.props.suffix}</StyledSuffix>
-                        </StyledFixWrapper>
+                        </StyledAffixWrapper>
                     )}
                 </StyledWrapper>
                 {this.props.feedback && (

@@ -665,22 +665,16 @@ const theme: ThemeType = {
                 fontFamily: bodyFont,
                 color: grey.lighter3,
             },
-            label: {
+            affix: {
                 color: grey.lighter1,
                 backgroundColor: silver.base,
-            },
-            prefix: {
-                borderRadius: `${roundness.base} 0 0 ${roundness.base}`,
-            },
-            suffix: {
-                borderRadius: `0 ${roundness.base} ${roundness.base} 0`,
             },
         },
         active: {
             common: {
                 color: grey.lighter3,
             },
-            label: {
+            affix: {
                 color: grey.lighter3,
             },
         },
