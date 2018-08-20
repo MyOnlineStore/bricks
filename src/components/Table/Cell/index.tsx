@@ -3,6 +3,7 @@ import { DraggableProvided } from 'react-beautiful-dnd';
 import StyledCell from './style';
 
 type PropsType = {
+    align: 'flex-start' | 'center' | 'flex-end';
     width?: string;
     dragHandler?: boolean;
     provided?: DraggableProvided['dragHandleProps'];
@@ -10,12 +11,12 @@ type PropsType = {
     onBlur?(): void;
 };
 
-const TableCell: SFC<PropsType> = ({ provided, width, onFocus, onBlur, children }): JSX.Element => {
+const TableCell: SFC<PropsType> = ({ align, provided, width, onFocus, onBlur, children }): JSX.Element => {
     const extraProps = provided !== undefined ? provided : {};
 
     /* tslint:disable:no-unbound-method */
     return (
-        <StyledCell {...extraProps} elementWidth={width} onFocus={onFocus} onBlur={onBlur}>
+        <StyledCell align={align} {...extraProps} elementWidth={width} onFocus={onFocus} onBlur={onBlur}>
             {children}
         </StyledCell>
     );

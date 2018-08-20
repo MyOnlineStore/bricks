@@ -74,6 +74,7 @@ class Row extends Component<PropsType, StateType> {
                                             {...provided.draggableProps}
                                         >
                                             <Cell
+                                                align="flex-start"
                                                 width="18px"
                                                 provided={provided.dragHandleProps}
                                                 onBlur={this.handleBlur}
@@ -95,7 +96,7 @@ class Row extends Component<PropsType, StateType> {
                 ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
             >
                 {selectable && (
-                    <Cell width={'18px'}>
+                    <Cell align="flex-start" width={'18px'}>
                         <SubscriptionConsumer>
                             {({ update, remove, getPayload }): JSX.Element => {
                                 return (
@@ -115,7 +116,7 @@ class Row extends Component<PropsType, StateType> {
                     </Cell>
                 )}
                 {cells.map((cell, cellIndex: number) => (
-                    <Cell key={`cell-${cellIndex}`}>
+                    <Cell align={alignments[cellIndex]} key={`cell-${cellIndex}`}>
                         <Box justifyContent={alignments[cellIndex]}>
                             {(typeof cell === 'string' && <Text>{cell}</Text>) || cell}
                         </Box>

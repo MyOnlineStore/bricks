@@ -6752,7 +6752,7 @@ exports[`Storyshots Table Default 1`] = `
   order: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6777,7 +6777,7 @@ exports[`Storyshots Table Default 1`] = `
   order: 0;
 }
 
-.c6 {
+.c8 {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6802,7 +6802,7 @@ exports[`Storyshots Table Default 1`] = `
   order: 0;
 }
 
-.c11 {
+.c13 {
   color: #333740;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -6824,7 +6824,7 @@ exports[`Storyshots Table Default 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c9 {
+.c11 {
   color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
@@ -6835,7 +6835,7 @@ exports[`Storyshots Table Default 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.c12 {
+.c16 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -6870,7 +6870,7 @@ exports[`Storyshots Table Default 1`] = `
   text-decoration: none;
 }
 
-.c12:hover {
+.c16:hover {
   color: #21252b;
   background-color: transparent;
   -webkit-text-decoration: none;
@@ -6880,20 +6880,20 @@ exports[`Storyshots Table Default 1`] = `
   transform: scale(1.1);
 }
 
-.c12:active {
+.c16:active {
   color: #21252b;
   background-color: transparent;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c12:active {
+.c16:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c12::before {
+.c16::before {
   position: absolute;
   display: block;
   left: 0;
@@ -6909,7 +6909,7 @@ exports[`Storyshots Table Default 1`] = `
   border-radius: 3px;
 }
 
-.c12:disabled {
+.c16:disabled {
   background: transparent;
   border-color: transparent;
   cursor: default;
@@ -6921,11 +6921,11 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: none;
 }
 
-.c12:disabled::before {
+.c16:disabled::before {
   opacity: 1;
 }
 
-.c13 {
+.c17 {
   position: relative;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -6960,7 +6960,7 @@ exports[`Storyshots Table Default 1`] = `
   text-decoration: none;
 }
 
-.c13:hover {
+.c17:hover {
   color: #ed2157;
   background-color: transparent;
   -webkit-text-decoration: none;
@@ -6970,20 +6970,20 @@ exports[`Storyshots Table Default 1`] = `
   transform: scale(1.1);
 }
 
-.c13:active {
+.c17:active {
   color: #ed2157;
   background-color: transparent;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c13:active {
+.c17:active {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
-.c13::before {
+.c17::before {
   position: absolute;
   display: block;
   left: 0;
@@ -6999,7 +6999,7 @@ exports[`Storyshots Table Default 1`] = `
   border-radius: 3px;
 }
 
-.c13:disabled {
+.c17:disabled {
   background: transparent;
   border-color: transparent;
   cursor: default;
@@ -7011,7 +7011,7 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: none;
 }
 
-.c13:disabled::before {
+.c17:disabled::before {
   opacity: 1;
 }
 
@@ -7045,27 +7045,51 @@ exports[`Storyshots Table Default 1`] = `
   min-width: 100%;
 }
 
-.c8 {
+.c10 {
   width: 18px;
   border-bottom: 1px solid #d2d7e0;
   padding: 12px;
-}
-
-.c8:focus {
-  outline: none;
-}
-
-.c10 {
-  width: inherit;
-  border-bottom: 1px solid #d2d7e0;
-  padding: 12px;
+  text-align: left;
 }
 
 .c10:focus {
   outline: none;
 }
 
-.c7 {
+.c12 {
+  width: inherit;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 12px;
+  text-align: left;
+}
+
+.c12:focus {
+  outline: none;
+}
+
+.c14 {
+  width: inherit;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 12px;
+  text-align: center;
+}
+
+.c14:focus {
+  outline: none;
+}
+
+.c15 {
+  width: inherit;
+  border-bottom: 1px solid #d2d7e0;
+  padding: 12px;
+  text-align: right;
+}
+
+.c15:focus {
+  outline: none;
+}
+
+.c9 {
   background-color: #fff;
   -webkit-transition: background-color 300ms;
   transition: background-color 300ms;
@@ -7076,12 +7100,27 @@ exports[`Storyshots Table Default 1`] = `
   box-shadow: 0 0 35px rgba(0,0,0,.5);
 }
 
-.c7:hover {
+.c9:hover {
   background-color: #f8f9fb;
 }
 
 .c1 {
   padding: 12px;
+  text-align: left;
+  background: #fff;
+  border-bottom: solid 1px #d2d7e0;
+}
+
+.c5 {
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+  border-bottom: solid 1px #d2d7e0;
+}
+
+.c7 {
+  padding: 12px;
+  text-align: right;
   background: #fff;
   border-bottom: solid 1px #d2d7e0;
 }
@@ -7132,10 +7171,10 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </th>
         <th
-          className="c1"
+          className="c5"
         >
           <div
-            className="c5"
+            className="c6"
           >
             <p
               className="c3"
@@ -7145,10 +7184,10 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </th>
         <th
-          className="c1"
+          className="c7"
         >
           <div
-            className="c6"
+            className="c8"
           >
             <p
               className="c3"
@@ -7161,17 +7200,17 @@ exports[`Storyshots Table Default 1`] = `
     </thead>
     <tbody>
       <tr
-        className="c7"
+        className="c9"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c8"
+          className="c10"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c9"
+            className="c11"
           >
             <span
               aria-hidden={true}
@@ -7186,7 +7225,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7194,14 +7233,14 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               A1
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7209,37 +7248,37 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               B1
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c14"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c5"
+            className="c6"
           >
             <p
-              className="c11"
+              className="c13"
             >
               C1
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c15"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c8"
           >
             <button
-              className="c12"
+              className="c16"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7259,7 +7298,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="c13"
+              className="c17"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7282,17 +7321,17 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="c7"
+        className="c9"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c8"
+          className="c10"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c9"
+            className="c11"
           >
             <span
               aria-hidden={true}
@@ -7307,7 +7346,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7315,14 +7354,14 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               A2
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7330,37 +7369,37 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               B2
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c14"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c5"
+            className="c6"
           >
             <p
-              className="c11"
+              className="c13"
             >
               C2
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c15"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="c6"
+            className="c8"
           >
             <button
-              className="c12"
+              className="c16"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7380,7 +7419,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="c13"
+              className="c17"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7403,17 +7442,17 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="c7"
+        className="c9"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c8"
+          className="c10"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c9"
+            className="c11"
           >
             <span
               aria-hidden={true}
@@ -7428,7 +7467,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7436,14 +7475,14 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               A3
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7451,37 +7490,37 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               B3
             </p>
           </div>
         </td>
         <td
-          className="c10"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <div
-            className="c5"
-          >
-            <p
-              className="c11"
-            >
-              C3
-            </p>
-          </div>
-        </td>
-        <td
-          className="c10"
+          className="c14"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
             className="c6"
           >
+            <p
+              className="c13"
+            >
+              C3
+            </p>
+          </div>
+        </td>
+        <td
+          className="c15"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c8"
+          >
             <button
-              className="c12"
+              className="c16"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7501,7 +7540,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="c13"
+              className="c17"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7524,17 +7563,17 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="c7"
+        className="c9"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="c8"
+          className="c10"
           onBlur={[Function]}
           onFocus={[Function]}
         >
           <p
-            className="c9"
+            className="c11"
           >
             <span
               aria-hidden={true}
@@ -7549,7 +7588,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7557,14 +7596,14 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               A4
             </p>
           </div>
         </td>
         <td
-          className="c10"
+          className="c12"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -7572,37 +7611,37 @@ exports[`Storyshots Table Default 1`] = `
             className="c2"
           >
             <p
-              className="c11"
+              className="c13"
             >
               B4
             </p>
           </div>
         </td>
         <td
-          className="c10"
-          onBlur={undefined}
-          onFocus={undefined}
-        >
-          <div
-            className="c5"
-          >
-            <p
-              className="c11"
-            >
-              C4
-            </p>
-          </div>
-        </td>
-        <td
-          className="c10"
+          className="c14"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
             className="c6"
           >
+            <p
+              className="c13"
+            >
+              C4
+            </p>
+          </div>
+        </td>
+        <td
+          className="c15"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="c8"
+          >
             <button
-              className="c12"
+              className="c16"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -7622,7 +7661,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="c13"
+              className="c17"
               color={undefined}
               disabled={undefined}
               icon={undefined}

@@ -16,9 +16,9 @@ const Header: SFC<PropsType> = ({ alignments, draggable, selectable, headers }):
     return (
         <thead>
             <tr>
-                {draggable && <StyledHeader />}
+                {draggable && <StyledHeader align="flex-start" />}
                 {selectable && (
-                    <StyledHeader>
+                    <StyledHeader align="flex-start">
                         <SubscriptionConsumer>
                             {({ items, updateAll }): JSX.Element => {
                                 const checkedState = ((): 'indeterminate' | boolean => {
@@ -48,7 +48,7 @@ const Header: SFC<PropsType> = ({ alignments, draggable, selectable, headers }):
                 )}
                 {headers.map((header, headerIndex): JSX.Element => {
                     return (
-                        <StyledHeader key={headerIndex}>
+                        <StyledHeader align={alignments[headerIndex]} key={headerIndex}>
                             <Box justifyContent={alignments[headerIndex]}>
                                 {(typeof header === 'string' && <Text strong>{header}</Text>) || header}
                             </Box>
