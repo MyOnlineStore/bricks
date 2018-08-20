@@ -7769,19 +7769,16 @@ exports[`Storyshots TextField Default 1`] = `
 .c2 {
   max-width: 100%;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .c4 {
   max-width: 100%;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .c0 {
-  margin-top: 1em;
   -webkit-transition: border-color 100ms,box-shadow 100ms;
   transition: border-color 100ms,box-shadow 100ms;
   border: solid 1px #d2d7e0;
@@ -7795,6 +7792,7 @@ exports[`Storyshots TextField Default 1`] = `
   position: relative;
   cursor: text;
   margin-bottom: 9px;
+  overflow: hidden;
 }
 
 .c0 * {
@@ -7874,19 +7872,16 @@ Array [
 .c2 {
   max-width: 100%;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .c4 {
   max-width: 100%;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .c0 {
-  margin-top: 1em;
   -webkit-transition: border-color 100ms,box-shadow 100ms;
   transition: border-color 100ms,box-shadow 100ms;
   border: solid 1px #d2d7e0;
@@ -7900,6 +7895,7 @@ Array [
   position: relative;
   cursor: text;
   margin-bottom: 9px;
+  overflow: hidden;
   border: solid 1px #c81746;
 }
 

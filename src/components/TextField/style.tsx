@@ -57,14 +57,12 @@ const StyledAffixWrapper = styled.div`
 const StyledPrefix = styled.span`
     max-width: 100%;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
 `;
 
 const StyledSuffix = styled.span`
     max-width: 100%;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
 `;
 
@@ -78,7 +76,6 @@ type WrapperProps = {
 };
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
-    margin-top: 1em;
     transition: border-color 100ms, box-shadow 100ms;
     border: solid 1px ${({ focus, theme }): string =>
         focus ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
@@ -90,10 +87,13 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     position: relative;
     cursor: text;
     margin-bottom: 9px;
+    overflow: hidden;
+
     ${({ feedback, theme, focus }): string =>
         feedback !== undefined && feedback.severity !== 'info' && focus === false
             ? `border: solid 1px ${theme.Text.severity[feedback.severity].color};`
             : ''};
+
     * {
         cursor: text;
     }
