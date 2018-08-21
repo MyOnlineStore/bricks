@@ -9,9 +9,10 @@ import { ContrastThemeProvider } from '../../Contrast';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
+import { mapAlignment } from '..';
 
 type PropsType = {
-    alignments: Array<'flex-start' | 'center' | 'flex-end'>;
+    alignments: Array<'left' | 'center' | 'right'>;
     cells: Array<ReactNode>;
     draggable: boolean;
     selectable: boolean;
@@ -74,7 +75,7 @@ class Row extends Component<PropsType, StateType> {
                                             {...provided.draggableProps}
                                         >
                                             <Cell
-                                                align="flex-start"
+                                                align="left"
                                                 width="18px"
                                                 provided={provided.dragHandleProps}
                                                 onBlur={this.handleBlur}
@@ -96,7 +97,7 @@ class Row extends Component<PropsType, StateType> {
                 ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
             >
                 {selectable && (
-                    <Cell align="flex-start" width={'18px'}>
+                    <Cell align="left" width={'18px'}>
                         <SubscriptionConsumer>
                             {({ update, remove, getPayload }): JSX.Element => {
                                 return (
@@ -117,7 +118,7 @@ class Row extends Component<PropsType, StateType> {
                 )}
                 {cells.map((cell, cellIndex: number) => (
                     <Cell align={alignments[cellIndex]} key={`cell-${cellIndex}`}>
-                        <Box justifyContent={alignments[cellIndex]}>
+                        <Box justifyContent={mapAlignment(alignments[cellIndex])}>
                             {(typeof cell === 'string' && <Text>{cell}</Text>) || cell}
                         </Box>
                     </Cell>

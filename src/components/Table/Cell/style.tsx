@@ -4,7 +4,7 @@ import _T from '../../../types/ThemeType';
 import styled, { withProps } from '../../../utility/styled';
 
 type CellPropsType = {
-    align: 'flex-start' | 'center' | 'flex-end';
+    align: 'left' | 'center' | 'right';
     elementWidth?: string;
 };
 
@@ -12,16 +12,7 @@ const StyledCell = withProps<CellPropsType>(styled.td)`
     width: ${({ elementWidth }): string => (elementWidth ? elementWidth : 'inherit')};
     border-bottom: ${({ theme }): string => `1px solid ${theme.Table.cell.default.borderColor}`};
     padding: 12px;
-    text-align: ${({ align }): string => {
-        switch (align) {
-            case 'flex-end':
-                return 'right';
-            case 'center':
-                return 'center';
-            default:
-                return 'left';
-        }
-    }};
+    text-align: ${({ align }): string => align}};
 
     &:focus {
         outline: none;

@@ -37,7 +37,7 @@ describe('Table Header', () => {
         const component = mountWithTheme(
             <table>
                 <Header
-                    alignments={['flex-start', 'flex-start', 'flex-end']}
+                    alignments={['left', 'left', 'right']}
                     headers={['Header A', 'Header B', 'Header C']}
                     selectable
                 />
@@ -69,7 +69,7 @@ describe('Table Header', () => {
         const component = mountWithTheme(
             <table>
                 <Header
-                    alignments={['flex-start', 'flex-start', 'flex-end']}
+                    alignments={['left', 'center', 'right']}
                     headers={['Header A', 'Header B', 'Header C']}
                     selectable
                 />
@@ -101,7 +101,7 @@ describe('Table Header', () => {
         const component = mountWithTheme(
             <table>
                 <Header
-                    alignments={['flex-start', 'flex-start', 'flex-end']}
+                    alignments={['left', 'left', 'right']}
                     headers={['Header A', 'Header B', 'Header C']}
                     selectable
                 />
@@ -131,7 +131,7 @@ describe('Table Header', () => {
         const component = mountWithTheme(
             <table>
                 <Header
-                    alignments={['flex-start', 'flex-start', 'flex-end']}
+                    alignments={['left', 'left', 'right']}
                     headers={['Header A', 'Header B', 'Header C']}
                     selectable
                 />

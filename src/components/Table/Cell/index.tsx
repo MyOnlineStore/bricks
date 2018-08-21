@@ -3,7 +3,7 @@ import { DraggableProvided } from 'react-beautiful-dnd';
 import StyledCell from './style';
 
 type PropsType = {
-    align: 'flex-start' | 'center' | 'flex-end';
+    align: 'left' | 'center' | 'right';
     width?: string;
     dragHandler?: boolean;
     provided?: DraggableProvided['dragHandleProps'];

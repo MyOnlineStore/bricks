@@ -4,9 +4,10 @@ import Text from '../../Text';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
+import { mapAlignment } from '..';
 
 type PropsType = {
-    alignments: Array<'flex-start' | 'center' | 'flex-end'>;
+    alignments: Array<'left' | 'center' | 'right'>;
     headers: Array<ReactNode>;
     selectable?: boolean;
     draggable?: boolean;
@@ -16,9 +17,9 @@ const Header: SFC<PropsType> = ({ alignments, draggable, selectable, headers }):
     return (
         <thead>
             <tr>
-                {draggable && <StyledHeader align="flex-start" />}
+                {draggable && <StyledHeader align="left" />}
                 {selectable && (
-                    <StyledHeader align="flex-start">
+                    <StyledHeader align="left">
                         <SubscriptionConsumer>
                             {({ items, updateAll }): JSX.Element => {
                                 const checkedState = ((): 'indeterminate' | boolean => {
@@ -49,7 +50,7 @@ const Header: SFC<PropsType> = ({ alignments, draggable, selectable, headers }):
                 {headers.map((header, headerIndex): JSX.Element => {
                     return (
                         <StyledHeader align={alignments[headerIndex]} key={headerIndex}>
-                            <Box justifyContent={alignments[headerIndex]}>
+                            <Box justifyContent={mapAlignment(alignments[headerIndex])}>
                                 {(typeof header === 'string' && <Text strong>{header}</Text>) || header}
                             </Box>
                         </StyledHeader>

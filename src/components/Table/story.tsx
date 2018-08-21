@@ -35,7 +35,15 @@ class Demo extends Component<PropsType, StateType> {
         this.state = {
             hover: false,
             rows: [
-                { id: 'row-1', cells: ['A1', 'B1', 'C1', actions] },
+                {
+                    id: 'row-1',
+                    cells: [
+                        'A1',
+                        'B1',
+                        'C1',
+                        actions,
+                    ],
+                },
                 { id: 'row-2', cells: ['A2', 'B2', 'C2', actions] },
                 { id: 'row-3', cells: ['A3', 'B3', 'C3', actions] },
                 { id: 'row-4', cells: ['A4', 'B4', 'C4', actions] },

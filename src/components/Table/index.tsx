@@ -16,6 +16,17 @@ type PropsType = {
     onSelection?(selectedIds: Array<string>): void;
 };
 
+const mapAlignment = (alignment: 'left' | 'center' | 'right'): 'flex-end' | 'center' | 'flex-start' => {
+    switch (alignment) {
+        case 'right':
+            return 'flex-end';
+        case 'center':
+            return 'center';
+        default:
+            return 'flex-start';
+    }
+};
+
 class Table extends Component<PropsType> {
     private selectedRows: Array<string> = [];
 
@@ -28,26 +39,11 @@ class Table extends Component<PropsType> {
     };
 
     public render(): JSX.Element {
-        const { alignments, draggable, selectable, headers, rows, onSelection } = this.props;
+        const { headers, rows, onSelection } = this.props;
 
-        const mappedAlignment =
-            alignments !== undefined
-                ? alignments.map(item =>
-                      ((): 'flex-start' | 'center' | 'flex-end' => {
-                          switch (item) {
-                              case 'center':
-                                  return 'center';
-                              case 'right':
-                                  return 'flex-end';
-                              default:
-                                  return 'flex-start';
-                          }
-                      })(),
-                  )
-                : [];
-
-        const isDraggable = draggable !== undefined ? draggable : false;
-        const isSelectable = selectable !== undefined ? selectable : false;
+        const alignments = this.props.alignments !== undefined ? this.props.alignments : [];
+        const isDraggable = this.props.draggable !== undefined ? this.props.draggable : false;
+        const isSelectable = this.props.selectable !== undefined ? this.props.selectable : false;
 
         return (
             <Branch
@@ -88,7 +84,7 @@ class Table extends Component<PropsType> {
                 >
                     {headers !== undefined && (
                         <Header
-                            alignments={mappedAlignment}
+                            alignments={alignments}
                             draggable={isDraggable}
                             headers={headers}
                             selectable={isSelectable}
@@ -99,7 +95,7 @@ class Table extends Component<PropsType> {
                             return (
                                 <Row
                                     key={id}
-                                    alignments={mappedAlignment}
+                                    alignments={alignments}
                                     cells={cells}
                                     draggable={isDraggable}
                                     selectable={isSelectable}
@@ -116,4 +112,4 @@ class Table extends Component<PropsType> {
 }
 
 export default Table;
-export { PropsType, DragDropContext };
+export { PropsType, DragDropContext, mapAlignment };
