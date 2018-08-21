@@ -2,18 +2,18 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-  className="sc-cHGsZl cCcOP"
+  className="sc-TOsTZ hSETfp"
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <div
-    className="sc-gisBJw cGCAsM"
+    className="sc-kjoXOD bjvyLn"
   >
     Huisnummer
   </div>
   <input
-    className="sc-caSCKo jdOCfg"
+    className="sc-gisBJw gsqkpa"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -21,7 +21,7 @@ exports[`Storyshots TextField Default 1`] = `
     value=""
   />
   <div
-    className="sc-kjoXOD bjASyr"
+    className="sc-cHGsZl hVcyhF"
   >
     $
   </div>
@@ -31,18 +31,18 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-    className="sc-cHGsZl cCcOP"
+    className="sc-TOsTZ hSETfp"
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-gisBJw cGCAsM"
+      className="sc-kjoXOD bjvyLn"
     >
       $
     </div>
     <input
-      className="sc-caSCKo jdOCfg"
+      className="sc-gisBJw gsqkpa"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -87,18 +87,18 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-    className="sc-cHGsZl bsewnC"
+    className="sc-TOsTZ jTGDTf"
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-gisBJw cGCAsM"
+      className="sc-kjoXOD bjvyLn"
     >
       Huisnummer
     </div>
     <input
-      className="sc-caSCKo jdOCfg"
+      className="sc-gisBJw gsqkpa"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -106,7 +106,7 @@ Array [
       value=""
     />
     <div
-      className="sc-kjoXOD bjASyr"
+      className="sc-cHGsZl hVcyhF"
     >
       $
     </div>

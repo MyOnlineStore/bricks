@@ -51,26 +51,24 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             }) as NumberFormatter;
         }
 
-        private parseIn(value: string): string {
-            const regex = new RegExp(`[^0-9${this.state.decimalSeperator}]`);
+        private parse(direction: 'in', value: string): string;
+        private parse(direction: 'out', value: string): number;
+        private parse(direction: 'in' | 'out', value: string): string | number {
+            const stripped = value.replace(new RegExp(`[^0-9${this.state.decimalSeperator}]`), '');
 
-            return value.replace(regex, '');
-        }
+            if (direction === 'out') {
+                const parsed = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
 
-        private parseOut(value: string): number {
-            const parsed = parseFloat(value.replace(this.state.decimalSeperator, '.'));
-
-            if (!isNaN(parsed)) {
-                return parseFloat(parsed.toFixed(2));
+                return !isNaN(parsed) ? parseFloat(parsed.toFixed(2)) : this.props.value;
             }
 
-            return this.props.value;
+            return stripped;
         }
 
         private format(value: string): string {
             try {
                 return this.formatter
-                    .formatToParts(this.parseOut(value))
+                    .formatToParts(this.parse('out', value))
                     .filter((part, index, parts) => {
                         switch (part.type) {
                             case 'currency': {
@@ -108,23 +106,18 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         }
 
         private handleChange = (value: string): void => {
-            this.setState({ value: this.parseIn(value) });
-            this.props.onChange(this.parseOut(value));
+            this.setState({ value: this.parse('in', value) });
+            this.props.onChange(this.parse('out', value));
         };
 
         private handleBlur = (): void => {
             this.setState({ value: this.format(this.state.value) });
         };
 
-        public componentWillMount(): void {
-            this.setState({
-                value: this.format(this.state.value),
-            });
-        }
-
         public componentDidUpdate(prevProps: PropsType): void {
             if (prevProps.currency !== this.props.currency || prevProps.locale !== this.props.locale) {
                 this.setFormatter(this.props.locale, this.props.currency);
+                this.setState({ value: this.format(this.state.value) });
             }
         }
 
