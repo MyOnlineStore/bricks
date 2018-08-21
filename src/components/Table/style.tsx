@@ -20,6 +20,9 @@ type TableThemeType = {
         focus: {
             borderColor: string;
         };
+        dragging: {
+            boxShadow: string;
+        };
     };
     cell: {
         default: {

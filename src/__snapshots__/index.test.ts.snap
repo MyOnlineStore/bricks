@@ -7097,7 +7097,7 @@ exports[`Storyshots Table Default 1`] = `
   border-spacing: 0 1px;
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0 0 35px rgba(0,0,0,.5);
+  box-shadow: 0 6px 48px 0 rgba(33,37,43,0.30);
 }
 
 .c9:hover {

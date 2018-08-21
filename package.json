@@ -83,7 +83,8 @@
   },
   "scripts": {
     "dev": "npm run watch",
-    "test": "jest --config=./config/jest/jest.config.json --coverage",
+    "test": "jest --config=./config/jest/jest.config.json --notify",
+    "test-coverage": "jest --config=./config/jest/jest.config.json --coverage --runInBand --bail",
     "build": "rimraf ./dist && webpack --config ./config/webpack/webpack.config.js",
     "lint-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "lint": "tslint --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",

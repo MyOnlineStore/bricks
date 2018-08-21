@@ -622,6 +622,9 @@ const theme: ThemeType = {
             focus: {
                 borderColor: 'rgba(107,222,120,0.4)',
             },
+            dragging: {
+                boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
+            },
         },
     },
     Text: {
