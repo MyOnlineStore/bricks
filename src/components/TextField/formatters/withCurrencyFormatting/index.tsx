@@ -54,7 +54,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         private parse(direction: 'in', value: string): string;
         private parse(direction: 'out', value: string): number;
         private parse(direction: 'in' | 'out', value: string): string | number {
-            const stripped = value.replace(new RegExp(`[^0-9${this.state.decimalSeperator}]`), '');
+            const stripped = value.replace(new RegExp(`[^0-9${this.state.decimalSeperator}]`, 'g'), '');
 
             if (direction === 'out') {
                 const parsed = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));

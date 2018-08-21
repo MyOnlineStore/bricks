@@ -75,6 +75,31 @@ describe('withCurrencyFormatting', () => {
         expect(changeMock).toHaveBeenCalledWith(19000000.12);
     });
 
+    it('should not break formatting on a double blur', () => {
+        const changeMock = jest.fn();
+        const CurrencyField = withCurrencyFormatting(TextField);
+
+        const component = mountWithTheme(
+            <CurrencyField name="" value={19.12} locale="nl-NL" currency="EUR" onChange={changeMock} />,
+        );
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '19000000,121111111',
+            },
+        });
+
+        component.find('input').simulate('blur');
+
+        component.update();
+
+        component.find('input').simulate('blur');
+
+        expect(component.find('input').prop('value')).toEqual('19.000.000,12');
+        expect(component.find(TextField).prop('prefix')).toEqual('€');
+        expect(changeMock).toHaveBeenCalledWith(19000000.12);
+    });
+
     it('should no-op on unparseable input', () => {
         const changeMock = jest.fn();
         const CurrencyField = withCurrencyFormatting(TextField);
