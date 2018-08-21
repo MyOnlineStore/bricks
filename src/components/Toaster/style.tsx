@@ -26,14 +26,13 @@ const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
     transition: opacity 100ms, box-shadow 100ms;
     box-sizing: border-box;
     background-color: #fff;
-    max-width: 1200px;
-    margin-top: 100px;
+    max-width: 792px;
     border-radius: 3px;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 3px 48px rgba(0,0,0,0.3);
     position: fixed;
-    margin: 24px 5px;
+    margin: 24px 6px;
     align-items: center;
     border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity].color};`}
     ${({ show }): string =>
