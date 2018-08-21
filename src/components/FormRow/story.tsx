@@ -1,66 +1,162 @@
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { Component } from 'react';
 import FormRow from '.';
 import RadioButton from '../RadioButton';
 import RadioButtonGroup from '../RadioButtonGroup';
-import Button from '../Button';
 import Text from '../Text';
 import Box from '../Box';
 import TextField from '../TextField';
+import trbl from '../../utility/trbl';
 
-storiesOf('FormRow', module).add('Default', () => (
-    <form>
-        <FormRow
-            rowLabel={
-                <Text>
-                    <label htmlFor="thatButton">Click that button</label>
-                </Text>
-            }
-            rowValue={<Button variant="destructive" id="thatButton" title="Click me" />}
-        />
+type StateType = {
+    selected: string;
+    initials: string;
+    forename: string;
+    surname: string;
+    username: string;
+    zip: string;
+    country: string;
+};
+class DemoComponent extends Component<{}, StateType> {
+    public constructor(props: {}) {
+        super(props);
 
-        <FormRow rowLabel={'Click that button'} rowValue={<textarea />} />
+        this.state = {
+            selected: '1',
+            initials: '',
+            forename: '',
+            surname: '',
+            username: '',
+            zip: '',
+            country: '',
+        };
+    }
 
-        <FormRow
-            rowLabel="Fill that input"
-            rowValue={
-                <TextField handleChange={(): void => undefined} name="name" value="" label="What is your name?" />
-            }
-            rowButtons={
-                <Box>
-                    <Button title="" variant="destructive" flat compact icon="trash" />
-                    <Button title="" variant="primary" flat compact icon="gear" />
-                </Box>
-            }
-        />
+    public render(): JSX.Element {
+        return (
+            <form>
+                <FormRow
+                    label={
+                        <Text>
+                            <label htmlFor="Username">Username</label>
+                        </Text>
+                    }
+                    field={
+                        <TextField
+                            name="Username"
+                            label="Username"
+                            id="Username"
+                            value={this.state.username}
+                            handleChange={(username: string): void => this.setState({ username })}
+                        />
+                    }
+                />
 
-        <FormRow
-            rowLabel={<Text>That's a radiobutton</Text>}
-            rowValue={
-                <RadioButtonGroup>
-                    <RadioButton changeHandler={(): void => undefined} label="foobar" value="foo1" name="bar" checked />
-                    <RadioButton
-                        changeHandler={(): void => undefined}
-                        label="foobar"
-                        value="foo2"
-                        name="bar"
-                        checked={false}
-                    />
-                    <RadioButton
-                        changeHandler={(): void => undefined}
-                        label="foobar"
-                        value="foo4"
-                        name="bar"
-                        checked={false}
-                    />
-                </RadioButtonGroup>
-            }
-            rowButtons={
-                <Box>
-                    <Button title="" variant="destructive" flat compact icon="trash" />{' '}
-                    <Button title="" variant="primary" flat compact icon="gear" />
-                </Box>
-            }
-        />
-    </form>
-));
+                <FormRow
+                    label={
+                        <Box margin={trbl(6, 6, 0, 0)}>
+                            <Text>What's your name?</Text>
+                        </Box>
+                    }
+                    field={
+                        <Box wrap width="100%">
+                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    name="Country"
+                                    label="Country"
+                                    id="Country"
+                                    value={this.state.country}
+                                    handleChange={(country: string): void => this.setState({ country })}
+                                />
+                            </Box>
+                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    name="Zip code"
+                                    label="Zip code"
+                                    id="Zip code"
+                                    value={this.state.zip}
+                                    handleChange={(zip: string): void => this.setState({ zip })}
+                                />
+                            </Box>
+                        </Box>
+                    }
+                />
+
+                <FormRow
+                    label={
+                        <Box margin={trbl(6, 6, 0, 0)}>
+                            <Text>What's your name?</Text>
+                        </Box>
+                    }
+                    field={
+                        <Box wrap width="100%">
+                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    name="Initials"
+                                    label="Initials"
+                                    id="Initials"
+                                    value={this.state.initials}
+                                    handleChange={(initials: string): void => this.setState({ initials })}
+                                />
+                            </Box>
+                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    name="Forename"
+                                    label="Forename"
+                                    id="Forename"
+                                    value={this.state.forename}
+                                    handleChange={(forename: string): void => this.setState({ forename })}
+                                />
+                            </Box>
+                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    name="Surname"
+                                    label="Surname"
+                                    id="Surname"
+                                    value={this.state.surname}
+                                    handleChange={(surname: string): void => this.setState({ surname })}
+                                />
+                            </Box>
+                        </Box>
+                    }
+                />
+                <FormRow
+                    label="Can a boolean have only two values?"
+                    valignLabel={false}
+                    field={
+                        <RadioButtonGroup>
+                            <RadioButton
+                                name="bool"
+                                label="True"
+                                value="1"
+                                checked={this.state.selected === '1'}
+                                onChange={({ value }): void => {
+                                    this.setState({ selected: value });
+                                }}
+                            />
+                            <RadioButton
+                                name="bool"
+                                label="False"
+                                value="2"
+                                checked={this.state.selected === '2'}
+                                onChange={({ value }): void => {
+                                    this.setState({ selected: value });
+                                }}
+                            />
+                            <RadioButton
+                                name="bool"
+                                label="Sometimes"
+                                value="3"
+                                checked={this.state.selected === '3'}
+                                onChange={({ value }): void => {
+                                    this.setState({ selected: value });
+                                }}
+                            />
+                        </RadioButtonGroup>
+                    }
+                />
+            </form>
+        );
+    }
+}
+storiesOf('FormRow', module).add('Default', () => <DemoComponent />);

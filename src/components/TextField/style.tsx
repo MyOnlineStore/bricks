@@ -90,7 +90,8 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     display: flex;
     position: relative;
     cursor: text;
-    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 
     ${({ feedback, theme, focus }): string =>
         feedback !== undefined && feedback.severity !== 'info' && !focus
