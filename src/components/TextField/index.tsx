@@ -3,7 +3,7 @@ import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
-import { StyledInput, StyledWrapper, StyledPrefix, StyledSuffix, StyledAffixWrapper } from './style';
+import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
 
 type PropsType = {
     value: string;
@@ -12,7 +12,6 @@ type PropsType = {
         severity: SeverityType;
         message: string;
     };
-    floating?: boolean;
     prefix?: string;
     suffix?: string;
     extractRef?(ref: HTMLInputElement): void;
@@ -74,7 +73,7 @@ class TextField extends Component<PropsType, StateType> {
                 >
                     {this.props.prefix && (
                         <StyledAffixWrapper>
-                            <StyledPrefix>{this.props.prefix}</StyledPrefix>
+                            <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
                     <StyledInput
@@ -94,7 +93,7 @@ class TextField extends Component<PropsType, StateType> {
                     />
                     {this.props.suffix && (
                         <StyledAffixWrapper>
-                            <StyledSuffix>{this.props.suffix}</StyledSuffix>
+                            <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
                 </StyledWrapper>

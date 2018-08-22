@@ -63,17 +63,11 @@ const StyledAffixWrapper = styled.div`
     }
 `;
 
-const StyledPrefix = styled.span`
+const StyledAffix = styled.span`
     max-width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-`;
-
-const StyledSuffix = styled.span`
-    max-width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 `;
 
 type WrapperProps = {
@@ -108,4 +102,4 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }
 `;
 
-export { StyledWrapper, StyledInput, TextFieldThemeType, StyledPrefix, StyledSuffix, StyledAffixWrapper };
+export { StyledWrapper, StyledInput, TextFieldThemeType, StyledAffix, StyledAffixWrapper };

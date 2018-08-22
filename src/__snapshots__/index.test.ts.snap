@@ -7782,12 +7782,6 @@ exports[`Storyshots TextField Default 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  max-width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
 .c0 {
   -webkit-transition: border-color 100ms,box-shadow 100ms;
   transition: border-color 100ms,box-shadow 100ms;
@@ -7835,7 +7829,7 @@ exports[`Storyshots TextField Default 1`] = `
     className="c1"
   >
     <span
-      className="c4"
+      className="c2"
     >
       $
     </span>
@@ -7894,12 +7888,6 @@ Array [
   overflow: hidden;
 }
 
-.c4 {
-  max-width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
 .c0 {
   -webkit-transition: border-color 100ms,box-shadow 100ms;
   transition: border-color 100ms,box-shadow 100ms;
@@ -7948,7 +7936,7 @@ Array [
       className="c1"
     >
       <span
-        className="c4"
+        className="c2"
       >
         $
       </span>
