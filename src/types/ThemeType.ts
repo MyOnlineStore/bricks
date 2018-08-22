@@ -17,6 +17,7 @@ import { TableThemeType } from '../components/Table/style';
 import { TextThemeType } from '../components/Text/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 import { TileThemeType } from '../components/Tile';
+import { ToasterThemeType } from '../components/Toaster/style';
 import { ToggleThemeType } from '../components/Toggle/style';
 import { SelectThemeType } from '../components/Select/style';
 import { SkeletonThemeType } from '../components/Skeleton/style';
@@ -42,6 +43,7 @@ type ThemeType = {
     Text: TextThemeType;
     TextField: TextFieldThemeType;
     Tile: TileThemeType;
+    Toaster: ToasterThemeType;
     RadioButton: RadioButtonThemeType;
     Toggle: ToggleThemeType;
 };

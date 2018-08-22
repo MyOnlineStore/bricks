@@ -10,6 +10,10 @@ type ToasterPropsType = {
     direction: 'column' | 'row';
 };
 
+type ToasterThemeType = {
+    borderRadius: string;
+};
+
 const StyledToasterWrapper = styled.div`
     position: fixed;
     left: 0;
@@ -27,19 +31,16 @@ const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
     box-sizing: border-box;
     background-color: #fff;
     max-width: 792px;
-    border-radius: 3px;
+    border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 3px 48px rgba(0,0,0,0.3);
     position: fixed;
     margin: 24px 6px;
     align-items: center;
+    box-shadow: 0 3px 48px rgba(0,0,0,0.3);
     border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity].color};`}
-    ${({ show }): string =>
-        show
-            ? 'opacity: 1; box-shadow: 0 3px 48px rgba(0,0,0,0.3);'
-            : 'opacity: 0; pointer-events: none; box-shadow: 0 0 0 rgba(0,0,0,0.3);'};
+    ${({ show }): string => (show ? 'opacity: 1;' : 'opacity: 0; pointer-events: none;')};
 `;
 
 export default StyledToaster;
-export { ToasterPropsType, StyledToasterWrapper };
+export { ToasterPropsType, StyledToasterWrapper, ToasterThemeType };
