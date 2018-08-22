@@ -11,10 +11,9 @@ import trbl from '../../utility/trbl';
 type StateType = {
     selected: string;
     initials: string;
-    forename: string;
+    firstname: string;
     surname: string;
-    username: string;
-    zip: string;
+    city: string;
     country: string;
 };
 
@@ -25,10 +24,9 @@ class DemoComponent extends Component<{}, StateType> {
         this.state = {
             selected: '1',
             initials: '',
-            forename: '',
+            firstname: '',
             surname: '',
-            username: '',
-            zip: '',
+            city: '',
             country: '',
         };
     }
@@ -50,21 +48,39 @@ class DemoComponent extends Component<{}, StateType> {
                         </label>
                     }
                     field={
-                        <TextField
-                            name="Username"
-                            label="Username"
-                            id="Username"
-                            value={this.state.username}
-                            handleChange={(username: string): void => this.setState({ username })}
-                        />
+                        <Box wrap width="100%">
+                            <Box margin={trbl(12, 12, 0, 0)} justifyContent="stretch" basis="100px" grow={1}>
+                                <TextField
+                                    prefix="Initials"
+                                    name="Initials"
+                                    value={this.state.initials}
+                                    onChange={(initials: string): void => this.setState({ initials })}
+                                />
+                            </Box>
+                            <Box margin={trbl(12, 12, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    prefix="First name"
+                                    name="First name"
+                                    value={this.state.firstname}
+                                    onChange={(firstname: string): void => this.setState({ firstname })}
+                                />
+                            </Box>
+                            <Box margin={trbl(12, 12, 0, 0)} justifyContent="stretch" grow={1}>
+                                <TextField
+                                    prefix="Surname"
+                                    name="Surname"
+                                    value={this.state.surname}
+                                    onChange={(surname: string): void => this.setState({ surname })}
+                                />
+                            </Box>
+                        </Box>
                     }
                 />
-
                 <FormRow
                     label={
                         <label>
                             <Box margin={trbl(0, 0, 6, 0)}>
-                                <Text>What is your name?</Text>
+                                <Text>Where do you live?</Text>
                             </Box>
                             <Text descriptive>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique
@@ -75,68 +91,20 @@ class DemoComponent extends Component<{}, StateType> {
                     }
                     field={
                         <Box wrap width="100%">
-                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                            <Box margin={trbl(12, 12, 0, 0)} justifyContent="stretch" grow={1}>
                                 <TextField
                                     name="Country"
-                                    label="Country"
-                                    id="Country"
+                                    prefix="Country"
                                     value={this.state.country}
-                                    handleChange={(country: string): void => this.setState({ country })}
+                                    onChange={(country: string): void => this.setState({ country })}
                                 />
                             </Box>
-                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
+                            <Box margin={trbl(12, 12, 0, 0)} justifyContent="stretch" grow={1}>
                                 <TextField
-                                    name="Zip code"
-                                    label="Zip code"
-                                    id="Zip code"
-                                    value={this.state.zip}
-                                    handleChange={(zip: string): void => this.setState({ zip })}
-                                />
-                            </Box>
-                        </Box>
-                    }
-                />
-
-                <FormRow
-                    label={
-                        <label>
-                            <Box margin={trbl(0, 0, 6, 0)}>
-                                <Text>What is your name?</Text>
-                            </Box>
-                            <Text descriptive>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique
-                                sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis.
-                                Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                            </Text>
-                        </label>
-                    }
-                    field={
-                        <Box wrap width="100%">
-                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
-                                <TextField
-                                    name="Initials"
-                                    label="Initials"
-                                    id="Initials"
-                                    value={this.state.initials}
-                                    handleChange={(initials: string): void => this.setState({ initials })}
-                                />
-                            </Box>
-                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
-                                <TextField
-                                    name="Forename"
-                                    label="Forename"
-                                    id="Forename"
-                                    value={this.state.forename}
-                                    handleChange={(forename: string): void => this.setState({ forename })}
-                                />
-                            </Box>
-                            <Box margin={trbl(6, 6, 0, 0)} justifyContent="stretch" grow={1}>
-                                <TextField
-                                    name="Surname"
-                                    label="Surname"
-                                    id="Surname"
-                                    value={this.state.surname}
-                                    handleChange={(surname: string): void => this.setState({ surname })}
+                                    name="City"
+                                    prefix="City"
+                                    value={this.state.city}
+                                    onChange={(city: string): void => this.setState({ city })}
                                 />
                             </Box>
                         </Box>
@@ -146,7 +114,7 @@ class DemoComponent extends Component<{}, StateType> {
                     label={
                         <label>
                             <Box margin={trbl(0, 0, 6, 0)}>
-                                <Text>What is your name?</Text>
+                                <Text>Can a boolean only be either true or false?</Text>
                             </Box>
                             <Text descriptive>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique

@@ -641,13 +641,13 @@ const theme: ThemeType = {
             fontWeight: '700',
         },
         small: {
-            fontSize: '12px',
+            fontSize: fontSize.smaller1,
         },
         base: {
-            fontSize: '14px',
+            fontSize: fontSize.base,
         },
         large: {
-            fontSize: '16px',
+            fontSize: fontSize.larger1,
         },
         severity: {
             error: { color: red.darker2 },

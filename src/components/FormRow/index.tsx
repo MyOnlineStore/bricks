@@ -1,5 +1,5 @@
-import React, { ReactNode, SFC } from 'react';
-import BreakpointProvider from '../BreakpointProvider';
+import React, { SFC } from 'react';
+
 import Box from '../Box';
 import trbl from '../../utility/trbl';
 
@@ -9,11 +9,11 @@ type PropsType = {
 };
 
 const FormRow: SFC<PropsType> = (props): JSX.Element => (
-    <Box margin={trbl(0, 0, 12, 0)} wrap>
-        <Box basis="420px" grow={1} margin={trbl(0, 18, 12, 0)} wrap justifyContent="stretch">
+    <Box wrap margin={trbl(0, 0, 12, 0)}>
+        <Box basis="420px" grow={1} margin={trbl(18, 18, 0, 0)} wrap justifyContent="stretch">
             {props.label}
         </Box>
-        <Box grow={1} basis="420px" margin={trbl(0, 0, 12, 0)}>
+        <Box grow={1} basis="420px" margin={trbl(9, 0)} alignItems="flex-start">
             {props.field}
         </Box>
     </Box>

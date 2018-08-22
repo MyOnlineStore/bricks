@@ -38,10 +38,10 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     background: transparent;
     font-size: inherit;
     display: block;
-    padding: 9px;
-    line-height: 1.5;
+    padding: 6px 12px;
+    line-height: 1.572;
     outline: none;
-    min-width: 12px;
+    min-width: 60px;
 `;
 
 const StyledAffixWrapper = styled.div`
@@ -54,11 +54,11 @@ const StyledAffixWrapper = styled.div`
     flex-shrink: 0;
     max-width: 40%;
 
-    &:first-of-type {
+    &:first-child {
         border-right: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
     }
 
-    &:last-of-type {
+    &:last-child {
         border-left: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
     }
 `;
@@ -91,6 +91,8 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     position: relative;
     cursor: text;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 
     ${({ feedback, theme, focus }): string =>
         feedback !== undefined && feedback.severity !== 'info' && !focus

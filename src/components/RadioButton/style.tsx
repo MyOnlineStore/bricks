@@ -40,8 +40,8 @@ const StyledRadioButton = withProps<RadioButtonPropsType, HTMLInputElement>(styl
 `;
 
 const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement>(styled.div)`
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
     background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
@@ -50,11 +50,10 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
         checked ? theme.RadioButton.active.borderColor : theme.RadioButton.idle.borderColor};
 
 
-    box-shadow: ${({ theme, elementFocus, checked }): string =>
-        `
+    box-shadow: ${({ theme, elementFocus, checked }): string => `
         ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow},
         inset ${checked ? theme.RadioButton.active.boxShadow : theme.RadioButton.idle.boxShadow}
-        `};
+    `};
 `;
 
 export default StyledRadioButton;
