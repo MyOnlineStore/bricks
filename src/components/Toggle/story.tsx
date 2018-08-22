@@ -19,7 +19,9 @@ class Demo extends Component<{}, StateType> {
     public render(): JSX.Element {
         return (
             <Toggle
-                changeHandler={({ checked }) => this.setState({ checked: checked })}
+                changeHandler={({ checked }): void => {
+                    this.setState({ checked });
+                }}
                 name="Toggle"
                 value="foot"
                 checked={boolean('checked', this.state.checked)}
