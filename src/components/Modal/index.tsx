@@ -20,7 +20,7 @@ type PropsType = StyledType & {
 };
 
 class Modal extends Component<PropsType> {
-    private styledModalRef: HTMLDivElement;
+    private ref: HTMLDivElement;
 
     public constructor(props: PropsType) {
         super(props);
@@ -33,7 +33,7 @@ class Modal extends Component<PropsType> {
     };
 
     public handleClickOutside = (event: Event): void => {
-        if (this.props.show && !this.styledModalRef.contains(event.target as Node)) {
+        if (this.props.show && !this.ref.contains(event.target as Node)) {
             this.closeAction();
         }
     };
@@ -55,7 +55,7 @@ class Modal extends Component<PropsType> {
                             <StyledModal
                                 modalSize={this.props.size !== undefined ? this.props.size : 'large'}
                                 innerRef={(ref): void => {
-                                    this.styledModalRef = ref;
+                                    this.ref = ref;
                                 }}
                             >
                                 <Box

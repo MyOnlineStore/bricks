@@ -1,11 +1,11 @@
-import React, { SFC } from 'react';
+import React, { SFC, MouseEvent } from 'react';
 import Box from '../../Box';
 import trbl from '../../../utility/trbl';
 import StyledOption from './style';
 
 type PropsType = {
     isTargeted: boolean;
-    onClick(): void;
+    onClick(event: MouseEvent<HTMLDivElement>): void;
     onMouseEnter(): void;
 };
 

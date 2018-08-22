@@ -5,6 +5,46 @@ import Modal from '.';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Text from '../Text';
+import Select from '../Select';
+
+const options: Array<any> = [
+    {
+        image: 'https://picsum.photos/g/40/40/?random',
+        value: 'Aaaaaaaaaaaaaaaaaaaaaaaaa',
+        label: 'Bar Aaaaaaaaaaaaaaaaaaaaaaaaa',
+        description: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        image: 'https://picsum.photos/g/40/40/?random',
+        value: 'B',
+        label: 'Foo B',
+        description: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        image: 'https://picsum.photos/g/40/40/?random',
+        value: 'C',
+        label: 'Bar C',
+        description: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        image: 'https://picsum.photos/g/40/40/?random',
+        value: 'D',
+        label: 'Foo D',
+        description: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        image: 'https://picsum.photos/g/40/40/?random',
+        value: 'E',
+        label: 'Bar E',
+        description: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+        image: 'https://picsum.photos/g/40/40/?random',
+        value: 'F',
+        label: 'Bar F',
+        description: 'Lorem ipsum dolor sit amet.',
+    },
+];
 
 const demoContent = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -41,7 +81,13 @@ storiesOf('Modal', module).add('Default', () => {
                 </ButtonGroup>
             )}
         >
-            <Text>{text('contents', demoContent)}</Text>
+            <Select
+                onChange={(): void => undefined}
+                value=""
+                emptyText="empty"
+                placeholder="placeholder"
+                options={options}
+            />
         </Modal>
     );
 });

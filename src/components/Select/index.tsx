@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef } from 'react';
+import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef, MouseEvent } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
 import FoldOut from '../FoldOut';
@@ -15,6 +15,10 @@ type OptionBase = {
     label: string;
 };
 
+type ProvidedType = {
+    isSelected: boolean;
+};
+
 type StateType = {
     input: string;
     isOpen: boolean;
@@ -27,7 +31,7 @@ type PropsType<GenericOption extends OptionBase> = {
     options: Array<GenericOption>;
     emptyText: string;
     onChange(value: string): void;
-    renderOption?(option: GenericOption): JSX.Element;
+    renderOption?(option: GenericOption, provided: ProvidedType): JSX.Element;
 };
 
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
@@ -78,21 +82,21 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         );
     };
 
-    public componentDidUpdate(prevProps: PropsType<GenericOption>, prevState: StateType): void {
+    public componentDidUpdate(_: PropsType<GenericOption>, prevState: StateType): void {
         if (this.inputRef.current !== null && !prevState.isOpen && this.state.isOpen) {
             this.inputRef.current.focus();
         }
     }
 
     public componentDidMount(): void {
-        document.addEventListener('mousedown', this.handleClickOutside);
+        document.addEventListener('mousedown', this.handleClickOutside as any);
     }
 
     public componentWillUnmount(): void {
-        document.removeEventListener('mousedown', this.handleClickOutside);
+        document.removeEventListener('mousedown', this.handleClickOutside as any);
     }
 
-    public handleClickOutside = (event: MouseEvent): void => {
+    public handleClickOutside = (event: MouseEvent<HTMLDivElement>): void => {
         if (!this.wrapperRef.contains(event.target as Node)) {
             this.close();
         }
@@ -195,29 +199,33 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                     </Box>
                                 )}
                                 {this.filterOptions().length > 0 &&
-                                    this.filterOptions().map((option, index) => (
-                                        <Option
-                                            isTargeted={index === this.state.optionPointer}
-                                            key={`${option.value}-${option.label}`}
-                                            onMouseEnter={(): void => this.cycleTo(index)}
-                                            onClick={(): void => {
-                                                this.handleChange(option.value);
-                                            }}
-                                        >
-                                            <Text descriptive={option.value === this.props.value}>
-                                                <Box margin={trbl(0, 6, 0, 0)} inline>
-                                                    {option.value === this.props.value && (
-                                                        <Icon size="small" icon="checkmark" />
-                                                    )}
-                                                </Box>
-                                                <span>
-                                                    {(this.props.renderOption !== undefined &&
-                                                        this.props.renderOption(option)) ||
-                                                        option.label}
-                                                </span>
-                                            </Text>
-                                        </Option>
-                                    ))}
+                                    this.filterOptions().map((option, index) => {
+                                        const isSelected = option.value === this.props.value;
+
+                                        return (
+                                            <Option
+                                                isTargeted={index === this.state.optionPointer}
+                                                key={`${option.value}-${option.label}`}
+                                                onMouseEnter={(): void => this.cycleTo(index)}
+                                                onClick={(event: MouseEvent<HTMLDivElement>): void => {
+                                                    event.stopPropagation();
+                                                    this.handleChange(option.value);
+                                                }}
+                                            >
+                                                {(this.props.renderOption !== undefined &&
+                                                    this.props.renderOption(option, { isSelected })) || (
+                                                    <Text inline descriptive={isSelected}>
+                                                        {isSelected && (
+                                                            <Box inline margin={trbl(0, 6, 0, 0)}>
+                                                                <Icon size="small" icon="checkmark" />
+                                                            </Box>
+                                                        )}
+                                                        {option.label}
+                                                    </Text>
+                                                )}
+                                            </Option>
+                                        );
+                                    })}
                             </FoldOut>
                         </ScrollBox>
                     </StyledWindow>,
@@ -229,4 +237,4 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 }
 
 export default Select;
-export { PropsType, StateType, OptionBase };
+export { PropsType, StateType, OptionBase, ProvidedType };
