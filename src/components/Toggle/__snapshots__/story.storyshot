@@ -9,12 +9,12 @@ exports[`Storyshots Toggle Default 1`] = `
     className="sc-bwzfXH doEFQb"
   >
     <div
-      checked={true}
-      className="sc-ksYbfQ eRLZjr"
+      checked={false}
+      className="sc-ksYbfQ gctwnu"
       disabled={false}
     >
       <input
-        checked={true}
+        checked={false}
         className="sc-cJSrbW biawQL"
         disabled={false}
         id={undefined}
@@ -27,5 +27,11 @@ exports[`Storyshots Toggle Default 1`] = `
       />
     </div>
   </div>
+  <p
+    className="sc-bxivhb iBTcEE"
+  >
+     
+    Turn me on!
+  </p>
 </div>
 `;

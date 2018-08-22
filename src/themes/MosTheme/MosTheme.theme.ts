@@ -707,8 +707,8 @@ const theme: ThemeType = {
             } 12px )`,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${green.base},${green.base} 5px,${green.darker1} 5px,${
-                green.darker1
+            background: `repeating-linear-gradient( -45deg,${green.lighter1},${green.lighter1} 5px,${green.base} 5px,${
+                green.base
             } 12px )`,
         },
         error: {

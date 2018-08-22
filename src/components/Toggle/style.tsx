@@ -55,6 +55,7 @@ const StyledToggleSkin = withProps<StyledToggleSkinType, HTMLDivElement>(styled.
     position: relative;
     transition: all 100ms;
     box-sizing: border-box;
+    cursor: pointer;
     ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Toggle.focus.boxShadow};` : '')}
 
     background: ${({ theme, checked, disabled }): string => {

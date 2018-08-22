@@ -1,11 +1,12 @@
 import React from 'react';
 import Toggle from '.';
+import Icon from '../Icon';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
 import Styledtoggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
 
 describe('Toggle', () => {
-    it('should render a checked background when disabled', () => {
+    it('should render a striped grey background when disabled and unchecked', () => {
         const toggleNotChecked = mountWithTheme(
             <Toggle
                 changeHandler={(): void => undefined}
@@ -22,6 +23,69 @@ describe('Toggle', () => {
         (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
             'background',
             mosTheme.Toggle.idleDisabled.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should render a striped green background when disabled and checked', () => {
+        const toggleNotChecked = mountWithTheme(
+            <Toggle
+                changeHandler={(): void => undefined}
+                name="demo"
+                error={true}
+                label="foo"
+                checked={true}
+                disabled={true}
+                value="bar"
+            />,
+        );
+
+        /* tslint:disable */
+        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.Toggle.checkedDisabled.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should render an unstriped grey background when unchecked', () => {
+        const toggleNotChecked = mountWithTheme(
+            <Toggle
+                changeHandler={(): void => undefined}
+                name="demo"
+                error={true}
+                label="foo"
+                checked={false}
+                disabled={false}
+                value="bar"
+            />,
+        );
+
+        /* tslint:disable */
+        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.Toggle.idle.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should render an unstriped green background when checked', () => {
+        const toggleNotChecked = mountWithTheme(
+            <Toggle
+                changeHandler={(): void => undefined}
+                name="demo"
+                error={true}
+                label="foo"
+                checked={true}
+                disabled={false}
+                value="bar"
+            />,
+        );
+
+        /* tslint:disable */
+        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.Toggle.checked.background,
         );
         /* tslint:enable */
     });
@@ -93,5 +157,33 @@ describe('Toggle', () => {
         expect(mockHandler).toHaveBeenCalledWith({
             checked: true,
         });
+    });
+
+    it('should render an icon when the disabledIcon prop is set', () => {
+        const mockHandler = jest.fn();
+
+        const toggle = mountWithTheme(
+            <Toggle
+                changeHandler={mockHandler}
+                name="demo"
+                disabled={true}
+                disabledIcon
+                label="foo"
+                checked={true}
+                value="bar"
+            />,
+        );
+
+        expect(toggle.find(Icon).length).toBe(1);
+    });
+
+    it('should render a label when a label is set', () => {
+        const mockHandler = jest.fn();
+
+        const toggle = mountWithTheme(
+            <Toggle changeHandler={mockHandler} name="demo" disabled={true} label="foo" checked={true} value="bar" />,
+        );
+
+        expect(toggle.find('p').length).toBe(1);
     });
 });

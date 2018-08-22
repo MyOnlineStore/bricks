@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
+import Text from '../Text';
+import Icon from '../Icon';
 import StyledToggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
 
 type StateType = {
@@ -10,9 +12,10 @@ type StateType = {
 type PropsType = {
     checked: boolean;
     disabled?: boolean;
+    disabledIcon?: boolean;
     error?: boolean;
     value: string;
-    label: string;
+    label?: string;
     name: string;
     id?: string;
     changeHandler(change: { checked: boolean }): void;
@@ -61,6 +64,10 @@ class Toggle extends Component<PropsType, StateType> {
                         />
                     </StyledToggleSkin>
                 </Box>
+                <Text descriptive={this.props.disabled ? true : false}>
+                    {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon="locked" />}{' '}
+                    {this.props.label}
+                </Text>
             </StyledToggleWrapper>
         );
     }

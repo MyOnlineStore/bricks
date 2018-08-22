@@ -1,16 +1,35 @@
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { Component } from 'react';
 import Toggle from '.';
 
-storiesOf('Toggle', module).add('Default', () => (
-    <Toggle
-        changeHandler={(): void => undefined}
-        name="Toggle"
-        value="foot"
-        checked={boolean('checked', true)}
-        disabled={boolean('disabled', false)}
-        error={boolean('error', false)}
-        label="Turn me on!"
-    />
-));
+type StateType = {
+    checked: boolean;
+};
+
+class Demo extends Component<{}, StateType> {
+    public constructor(props: {}) {
+        super(props);
+
+        this.state = {
+            checked: false,
+        };
+    }
+
+    public render(): JSX.Element {
+        return (
+            <Toggle
+                changeHandler={({ checked }) => this.setState({ checked: checked })}
+                name="Toggle"
+                value="foot"
+                checked={boolean('checked', this.state.checked)}
+                disabled={boolean('disabled', false)}
+                disabledIcon={boolean('disabled icon', false)}
+                error={boolean('error', false)}
+                label={text('label', 'Turn me on!')}
+            />
+        );
+    }
+}
+
+storiesOf('Toggle', module).add('Default', () => <Demo />);
