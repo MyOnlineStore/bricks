@@ -13,14 +13,8 @@ type PropsType = {
         severity: SeverityType;
         message: string;
     };
-<<<<<<< HEAD
     prefix?: string;
     suffix?: string;
-=======
-    label: string;
-    floating?: boolean;
-    id?: string;
->>>>>>> 91dd9fb... improved responsiveness
     extractRef?(ref: HTMLInputElement): void;
     onChange(value: string): void;
     onBlur?(): void;
@@ -92,7 +86,7 @@ class TextField extends Component<PropsType, StateType> {
                     )}
                     <StyledInput
                         type="text"
-                        id={this.props.id}
+                        active={this.state.active}
                         value={this.props.value}
                         focus={this.state.focus}
                         onChange={this.onChange}

@@ -17,6 +17,7 @@ type StateType = {
     zip: string;
     country: string;
 };
+
 class DemoComponent extends Component<{}, StateType> {
     public constructor(props: {}) {
         super(props);
@@ -37,9 +38,16 @@ class DemoComponent extends Component<{}, StateType> {
             <form>
                 <FormRow
                     label={
-                        <Text>
-                            <label htmlFor="Username">Username</label>
-                        </Text>
+                        <label>
+                            <Box margin={trbl(0, 0, 6, 0)}>
+                                <Text>What is your name?</Text>
+                            </Box>
+                            <Text descriptive>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique
+                                sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis.
+                                Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+                            </Text>
+                        </label>
                     }
                     field={
                         <TextField
@@ -54,9 +62,16 @@ class DemoComponent extends Component<{}, StateType> {
 
                 <FormRow
                     label={
-                        <Box margin={trbl(6, 6, 0, 0)}>
-                            <Text>What's your name?</Text>
-                        </Box>
+                        <label>
+                            <Box margin={trbl(0, 0, 6, 0)}>
+                                <Text>What is your name?</Text>
+                            </Box>
+                            <Text descriptive>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique
+                                sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis.
+                                Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+                            </Text>
+                        </label>
                     }
                     field={
                         <Box wrap width="100%">
@@ -84,9 +99,16 @@ class DemoComponent extends Component<{}, StateType> {
 
                 <FormRow
                     label={
-                        <Box margin={trbl(6, 6, 0, 0)}>
-                            <Text>What's your name?</Text>
-                        </Box>
+                        <label>
+                            <Box margin={trbl(0, 0, 6, 0)}>
+                                <Text>What is your name?</Text>
+                            </Box>
+                            <Text descriptive>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique
+                                sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis.
+                                Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+                            </Text>
+                        </label>
                     }
                     field={
                         <Box wrap width="100%">
@@ -121,8 +143,18 @@ class DemoComponent extends Component<{}, StateType> {
                     }
                 />
                 <FormRow
-                    label="Can a boolean have only two values?"
-                    valignLabel={false}
+                    label={
+                        <label>
+                            <Box margin={trbl(0, 0, 6, 0)}>
+                                <Text>What is your name?</Text>
+                            </Box>
+                            <Text descriptive>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique
+                                sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis.
+                                Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+                            </Text>
+                        </label>
+                    }
                     field={
                         <RadioButtonGroup>
                             <RadioButton
