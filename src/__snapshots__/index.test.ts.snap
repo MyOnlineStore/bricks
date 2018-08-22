@@ -7742,6 +7742,7 @@ exports[`Storyshots TextField Default 1`] = `
   padding: 9px;
   line-height: 1.5;
   outline: none;
+  min-width: 12px;
 }
 
 .c1 {
@@ -7766,10 +7767,19 @@ exports[`Storyshots TextField Default 1`] = `
   max-width: 40%;
 }
 
+.c1:first-of-type {
+  border-right: solid 1px #d2d7e0;
+}
+
+.c1:last-of-type {
+  border-left: solid 1px #d2d7e0;
+}
+
 .c2 {
   max-width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .c4 {
@@ -7791,7 +7801,6 @@ exports[`Storyshots TextField Default 1`] = `
   display: flex;
   position: relative;
   cursor: text;
-  margin-bottom: 9px;
   overflow: hidden;
 }
 
@@ -7845,6 +7854,7 @@ Array [
   padding: 9px;
   line-height: 1.5;
   outline: none;
+  min-width: 12px;
 }
 
 .c1 {
@@ -7869,10 +7879,19 @@ Array [
   max-width: 40%;
 }
 
+.c1:first-of-type {
+  border-right: solid 1px #d2d7e0;
+}
+
+.c1:last-of-type {
+  border-left: solid 1px #d2d7e0;
+}
+
 .c2 {
   max-width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .c4 {
@@ -7894,7 +7913,6 @@ Array [
   display: flex;
   position: relative;
   cursor: text;
-  margin-bottom: 9px;
   overflow: hidden;
   border: solid 1px #c81746;
 }

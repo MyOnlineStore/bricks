@@ -41,6 +41,7 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     padding: 9px;
     line-height: 1.5;
     outline: none;
+    min-width: 12px;
 `;
 
 const StyledAffixWrapper = styled.div`
@@ -52,12 +53,21 @@ const StyledAffixWrapper = styled.div`
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
+
+    &:first-of-type {
+        border-right: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
+    }
+
+    &:last-of-type {
+        border-left: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
+    }
 `;
 
 const StyledPrefix = styled.span`
     max-width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
 `;
 
 const StyledSuffix = styled.span`
@@ -86,7 +96,6 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     display: flex;
     position: relative;
     cursor: text;
-    margin-bottom: 9px;
     overflow: hidden;
 
     ${({ feedback, theme, focus }): string =>
