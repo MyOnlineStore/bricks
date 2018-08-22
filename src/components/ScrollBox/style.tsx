@@ -18,6 +18,16 @@ const StyledScrollBox = styled.div`
     flex-grow: 1;
     overflow: hidden;
 
+    .simplebar-track {
+        min-width: 3px;
+        width: 4%
+        max-width: 6px;
+    }
+
+    .simplebar-scrollbar {
+        width: 100%;
+    }
+
     .simplebar-scrollbar::before {
         background: ${({ theme }): string => theme.ScrollBox.scrollbar.background};
     }
