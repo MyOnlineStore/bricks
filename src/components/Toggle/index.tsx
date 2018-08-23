@@ -18,14 +18,14 @@ type PropsType = {
     name: string;
     id?: string;
     onChange(change: { checked: boolean }): void;
-} & Partial<DefaultProps>;
+} & Partial<DefaultPropsType>;
 
-type DefaultProps = {
+type DefaultPropsType = {
     disabledIcon: boolean;
 };
 
 class Toggle extends Component<PropsType, StateType> {
-    public static defaultProps: DefaultProps = {
+    public static defaultProps: DefaultPropsType = {
         disabledIcon: true,
     };
 
@@ -81,4 +81,4 @@ class Toggle extends Component<PropsType, StateType> {
 }
 
 export default Toggle;
-export { PropsType, StateType };
+export { PropsType, DefaultPropsType, StateType };
