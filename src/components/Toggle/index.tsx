@@ -71,7 +71,7 @@ class Toggle extends Component<PropsType, StateType> {
                         />
                     </StyledToggleSkin>
                 </Box>
-                <Text descriptive={this.props.disabled ? true : false}>
+                <Text descriptive={this.props.disabled}>
                     {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon="locked" />}{' '}
                     {this.props.label}
                 </Text>
