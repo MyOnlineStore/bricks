@@ -6,12 +6,13 @@ import Icon, { MediumIcons } from '../Icon';
 import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
+import TransitionAnimation from '../TransitionAnimation';
 import BreakpointProvider from '../BreakpointProvider';
 
 type PropsType = {
     title: string;
     icon?: keyof typeof MediumIcons;
-    show?: boolean;
+    isOpen: boolean;
     message?: string;
     buttonTitle?: string;
     buttonSeverity?: ButtonVariant;
@@ -41,39 +42,56 @@ const Toaster: SFC<PropsType> = (props): JSX.Element => {
     };
 
     return (
-        <BreakpointProvider breakpoints={{ small: 0, medium: 375, large: 800 }}>
-            {(breakpoint): JSX.Element => (
-                <StyledToasterWrapper>
-                    <StyledToaster direction="row" severity={props.severity} show={props.show}>
-                        {breakpoint !== 'small' && (
-                            <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
-                                <Text inline severity={props.severity}>
-                                    <Icon size="medium" icon={icon} />
-                                </Text>
-                            </Box>
-                        )}
-                        <Box direction="column" margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}>
-                            <Text strong>{props.title}</Text>
-                            <Text>{props.message}</Text>
+        <TransitionAnimation show={props.isOpen} animation="zoom">
+            <BreakpointProvider breakpoints={{ small: 0, medium: 375, large: 800 }}>
+                {(breakpoint): JSX.Element => (
+                    <StyledToasterWrapper>
+                        <Box margin={trbl(6, 24)}>
+                            <StyledToaster severity={props.severity}>
+                                {breakpoint !== 'small' && (
+                                    <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
+                                        <Text inline severity={props.severity}>
+                                            <Icon size="medium" icon={icon} />
+                                        </Text>
+                                    </Box>
+                                )}
+                                <Box
+                                    direction={breakpoint === 'small' ? 'column' : 'row'}
+                                    justifyContent="center"
+                                    alignContent="center"
+                                >
+                                    <Box direction="column" margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}>
+                                        <Text strong>{props.title}</Text>
+                                        <Text>{props.message}</Text>
+                                    </Box>
+                                    {props.buttonTitle && (
+                                        <Box
+                                            direction="column"
+                                            justifyContent="center"
+                                            margin={breakpoint === 'small' ? trbl(0, 12, 12, 12) : trbl(0, 12)}
+                                            alignItems="flex-start"
+                                        >
+                                            <Button
+                                                title={props.buttonTitle}
+                                                action={action}
+                                                variant={
+                                                    props.buttonSeverity ? props.buttonSeverity : expectedVariant()
+                                                }
+                                            />
+                                        </Box>
+                                    )}
+                                </Box>
+                                <Box direction="column">
+                                    <Button variant="plain" flat title="close" action={closeAction} compact>
+                                        <Icon size="small" icon="close" />
+                                    </Button>
+                                </Box>
+                            </StyledToaster>
                         </Box>
-                        {props.buttonTitle && (
-                            <Box direction="column" margin={trbl(0, 12)}>
-                                <Button
-                                    title={props.buttonTitle}
-                                    action={action}
-                                    variant={props.buttonSeverity ? props.buttonSeverity : expectedVariant()}
-                                />
-                            </Box>
-                        )}
-                        <Box direction="column">
-                            <Button variant="plain" flat title="close" action={closeAction} compact>
-                                <Icon size="small" icon="close" />
-                            </Button>
-                        </Box>
-                    </StyledToaster>
-                </StyledToasterWrapper>
-            )}
-        </BreakpointProvider>
+                    </StyledToasterWrapper>
+                )}
+            </BreakpointProvider>
+        </TransitionAnimation>
     );
 };
 

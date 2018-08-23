@@ -688,6 +688,7 @@ const theme: ThemeType = {
     },
     Toaster: {
         borderRadius: roundness.base,
+        backgroundColor: silver.lighter1,
     },
     Toggle: {
         general: {

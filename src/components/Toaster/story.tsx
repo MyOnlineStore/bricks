@@ -5,7 +5,7 @@ import Toaster, { PropsType } from '.';
 
 storiesOf('Toaster', module).add('Default', () => (
     <Toaster
-        show={boolean('show', true)}
+        isOpen={boolean('show', true)}
         severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}
         closeAction={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}
         title={text('title', 'Thought provoking we must stand.')}
@@ -20,7 +20,7 @@ storiesOf('Toaster', module).add('With action button', () => (
     <Toaster
         icon="cash"
         action={(): boolean => confirm('I love pressing F5, its so refreshing')}
-        show={boolean('show', true)}
+        isOpen={boolean('show', true)}
         severity={select('severity', ['success', 'warning', 'error', 'info'], 'error') as PropsType['severity']}
         closeAction={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}
         buttonTitle={text('Button title', 'Hello')}

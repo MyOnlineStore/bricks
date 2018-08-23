@@ -5,13 +5,12 @@ import styled, { withProps } from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 
 type ToasterPropsType = {
-    show?: boolean;
     severity: SeverityType;
-    direction: 'column' | 'row';
 };
 
 type ToasterThemeType = {
     borderRadius: string;
+    backgroundColor: string;
 };
 
 const StyledToasterWrapper = styled.div`
@@ -22,24 +21,20 @@ const StyledToasterWrapper = styled.div`
     bottom: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 `;
 
 const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
-    flex-direction: ${({ direction }): string => direction}
+    display: flex;
     transition: opacity 100ms, box-shadow 100ms;
     box-sizing: border-box;
-    background-color: #fff;
     max-width: 792px;
-    border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    margin: 24px 6px;
     align-items: center;
+    margin-top: 36px;
     box-shadow: 0 3px 48px rgba(0,0,0,0.3);
+    border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
+    background-color: ${({ theme }): string => theme.Toaster.backgroundColor}
     border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity].color};`}
-    ${({ show }): string => (show ? 'opacity: 1;' : 'opacity: 0; pointer-events: none;')};
 `;
 
 export default StyledToaster;

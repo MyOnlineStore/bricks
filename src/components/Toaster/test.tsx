@@ -8,7 +8,7 @@ describe('Toaster', () => {
         const clickMock = jest.fn();
 
         const component = mountWithTheme(
-            <Toaster severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
+            <Toaster isOpen={true} severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
         );
 
         const closeButton = component.find(Button).at(1);
@@ -19,7 +19,7 @@ describe('Toaster', () => {
     });
 
     it('should not break when no close is provided', () => {
-        const component = mountWithTheme(<Toaster severity={'info'} title="Foo" />);
+        const component = mountWithTheme(<Toaster isOpen={true} severity={'info'} title="Foo" />);
         const closeButton = component.find(Button).first();
 
         const fn = (): void => {
@@ -32,6 +32,7 @@ describe('Toaster', () => {
     it('should not break when no action is provided', () => {
         const component = mountWithTheme(
             <Toaster
+                isOpen={true}
                 severity={'warning'}
                 buttonSeverity={'destructive'}
                 buttonTitle="Bar?"
@@ -53,7 +54,14 @@ describe('Toaster', () => {
         const clickMock = jest.fn();
 
         const component = mountWithTheme(
-            <Toaster severity="warning" title="Foo" buttonTitle="Bar?" closeAction={undefined} action={clickMock} />,
+            <Toaster
+                isOpen={true}
+                severity="warning"
+                title="Foo"
+                buttonTitle="Bar?"
+                closeAction={undefined}
+                action={clickMock}
+            />,
         );
 
         const closeButton = component.find(Button).first();
