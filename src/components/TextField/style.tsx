@@ -93,7 +93,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     overflow: hidden;
 
     ${({ feedback, theme, focus }): string =>
-        feedback !== undefined && feedback.severity !== 'info' && focus === false
+        feedback !== undefined && feedback.severity !== 'info' && !focus
             ? `border: solid 1px ${theme.Text.severity[feedback.severity].color};`
             : ''};
 
