@@ -6,10 +6,10 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import Styledtoggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
 
 describe('Toggle', () => {
-    it('should render a striped grey background when disabled and unchecked', () => {
+    it('should render the correct background styling when disabled and unchecked', () => {
         const toggleNotChecked = mountWithTheme(
             <Toggle
-                changeHandler={(): void => undefined}
+                onChange={(): void => undefined}
                 name="demo"
                 error={true}
                 label="foo"
@@ -27,10 +27,10 @@ describe('Toggle', () => {
         /* tslint:enable */
     });
 
-    it('should render a striped green background when disabled and checked', () => {
+    it('should render the correct background styling when disabled and checked', () => {
         const toggleNotChecked = mountWithTheme(
             <Toggle
-                changeHandler={(): void => undefined}
+                onChange={(): void => undefined}
                 name="demo"
                 error={true}
                 label="foo"
@@ -48,10 +48,10 @@ describe('Toggle', () => {
         /* tslint:enable */
     });
 
-    it('should render an unstriped grey background when unchecked', () => {
+    it('should render the correct background styling when unchecked', () => {
         const toggleNotChecked = mountWithTheme(
             <Toggle
-                changeHandler={(): void => undefined}
+                onChange={(): void => undefined}
                 name="demo"
                 error={true}
                 label="foo"
@@ -69,10 +69,10 @@ describe('Toggle', () => {
         /* tslint:enable */
     });
 
-    it('should render an unstriped green background when checked', () => {
+    it('should render the correct background styling when checked', () => {
         const toggleNotChecked = mountWithTheme(
             <Toggle
-                changeHandler={(): void => undefined}
+                onChange={(): void => undefined}
                 name="demo"
                 error={true}
                 label="foo"
@@ -93,7 +93,7 @@ describe('Toggle', () => {
     it('should have a red border when error-state is active', () => {
         const toggleNotChecked = mountWithTheme(
             <Toggle
-                changeHandler={(): void => undefined}
+                onChange={(): void => undefined}
                 name="demo"
                 error={true}
                 label="foo"
@@ -112,7 +112,7 @@ describe('Toggle', () => {
 
     it('should have a box-shadow on focus and remove the box-shadow on blur', () => {
         const toggle = mountWithTheme(
-            <Toggle changeHandler={(): void => undefined} name="demo" label="foo" checked={false} value="bar" />,
+            <Toggle onChange={(): void => undefined} name="demo" label="foo" checked={false} value="bar" />,
         );
 
         toggle.find(Styledtoggle).simulate('focus');
@@ -135,7 +135,7 @@ describe('Toggle', () => {
         const mockHandler = jest.fn();
 
         const toggle = mountWithTheme(
-            <Toggle changeHandler={mockHandler} name="demo" label="foo" checked={false} value="bar" />,
+            <Toggle onChange={mockHandler} name="demo" label="foo" checked={false} value="bar" />,
         );
 
         toggle.find(StyledToggleWrapper).simulate('click');
@@ -149,7 +149,7 @@ describe('Toggle', () => {
         const mockHandler = jest.fn();
 
         const toggle = mountWithTheme(
-            <Toggle changeHandler={mockHandler} name="demo" disabled={true} label="foo" checked={true} value="bar" />,
+            <Toggle onChange={mockHandler} name="demo" disabled={true} label="foo" checked={true} value="bar" />,
         );
 
         toggle.find(StyledToggleWrapper).simulate('click');
@@ -164,7 +164,7 @@ describe('Toggle', () => {
 
         const toggle = mountWithTheme(
             <Toggle
-                changeHandler={mockHandler}
+                onChange={mockHandler}
                 name="demo"
                 disabled={true}
                 disabledIcon
@@ -181,7 +181,7 @@ describe('Toggle', () => {
         const mockHandler = jest.fn();
 
         const toggle = mountWithTheme(
-            <Toggle changeHandler={mockHandler} name="demo" disabled={true} label="foo" checked={true} value="bar" />,
+            <Toggle onChange={mockHandler} name="demo" disabled={true} label="foo" checked={true} value="bar" />,
         );
 
         expect(toggle.find('p').length).toBe(1);

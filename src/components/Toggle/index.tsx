@@ -12,16 +12,23 @@ type StateType = {
 type PropsType = {
     checked: boolean;
     disabled?: boolean;
-    disabledIcon?: boolean;
     error?: boolean;
     value: string;
     label?: string;
     name: string;
     id?: string;
-    changeHandler(change: { checked: boolean }): void;
+    onChange(change: { checked: boolean }): void;
+} & Partial<DefaultProps>;
+
+type DefaultProps = {
+    disabledIcon: boolean;
 };
 
 class Toggle extends Component<PropsType, StateType> {
+    public static defaultProps: DefaultProps = {
+        disabledIcon: true,
+    };
+
     public constructor(props: PropsType) {
         super(props);
 
@@ -31,7 +38,7 @@ class Toggle extends Component<PropsType, StateType> {
     }
 
     public handleChange = (): void => {
-        this.props.changeHandler({
+        this.props.onChange({
             checked: this.props.disabled ? this.props.checked : !this.props.checked,
         });
     };

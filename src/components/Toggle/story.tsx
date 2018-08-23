@@ -19,14 +19,14 @@ class Demo extends Component<{}, StateType> {
     public render(): JSX.Element {
         return (
             <Toggle
-                changeHandler={({ checked }): void => {
+                onChange={({ checked }): void => {
                     this.setState({ checked });
                 }}
                 name="Toggle"
                 value="foot"
                 checked={boolean('checked', this.state.checked)}
                 disabled={boolean('disabled', false)}
-                disabledIcon={boolean('disabled icon', false)}
+                disabledIcon={boolean('disabled icon', true)}
                 error={boolean('error', false)}
                 label={text('label', 'Turn me on!')}
             />
