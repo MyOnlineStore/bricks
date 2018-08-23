@@ -2,12 +2,12 @@
 
 exports[`Storyshots Select Default 1`] = `
 <div
-  className="sc-dVhcbM bAasMI"
+  className="sc-fBuWsC iBxgiy"
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-fAjcbJ dLIljh"
+    className="sc-dVhcbM igSrWH"
   >
     <div
       className="sc-bwzfXH jlwOxs"
@@ -47,17 +47,17 @@ exports[`Storyshots Select Default 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-eqIVtm jHHfvc"
+      className="sc-fMiknA eWeIhH"
     >
       <div
-        className="sc-jWBwVP gbRbgV"
+        className="sc-eHgmQL ejPwwx"
       >
         <div
           className="sc-chPdSV kiPOer"
         >
           <div>
             <div
-              className="sc-fMiknA gcjtue"
+              className="sc-jhAzac eoSnNw"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -77,7 +77,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-fMiknA gcjtue"
+              className="sc-jhAzac eoSnNw"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -97,7 +97,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-fMiknA gcjtue"
+              className="sc-jhAzac eoSnNw"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -117,7 +117,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-fMiknA gcjtue"
+              className="sc-jhAzac eoSnNw"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -137,7 +137,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-fMiknA gcjtue"
+              className="sc-jhAzac eoSnNw"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -157,7 +157,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-fMiknA gcjtue"
+              className="sc-jhAzac eoSnNw"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >

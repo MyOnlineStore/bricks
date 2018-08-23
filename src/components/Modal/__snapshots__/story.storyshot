@@ -2,10 +2,10 @@
 
 exports[`Storyshots Modal Default 1`] = `
 <div
-  className="sc-jDwBTQ cVNqeE"
+  className="sc-cMljjf NVYqP"
 >
   <div
-    className="sc-jAaTju gCdsgd"
+    className="sc-brqgnP bQpIOa"
   >
     <div
       style={
@@ -15,7 +15,7 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-        className="sc-gPEVay eGsQIF"
+        className="sc-jAaTju hGocDT"
       >
         <div
           className="sc-bwzfXH kpHVAA"
@@ -53,10 +53,10 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-jWBwVP gbRbgV"
+          className="sc-eHgmQL ejPwwx"
         >
           <div
-            className="sc-brqgnP bZwtnq"
+            className="sc-cvbbAY ctyBUi"
           />
           <div
             className="sc-bwzfXH drOqMq"
@@ -87,7 +87,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
             </p>
           </div>
           <div
-            className="sc-cMljjf eYeMcx"
+            className="sc-jWBwVP gfAFcm"
           />
         </div>
         <div
