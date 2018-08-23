@@ -18,13 +18,13 @@ const StyledScrollBox = styled.div`
     flex-grow: 1;
     overflow: hidden;
 
-    .simplebar-track {
+    .vertical {
         min-width: 3px;
         width: 4%
         max-width: 6px;
     }
 
-    .simplebar-scrollbar {
+    .vertical .simplebar-scrollbar {
         width: 100%;
     }
 
