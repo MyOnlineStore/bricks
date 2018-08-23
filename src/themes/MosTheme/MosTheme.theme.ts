@@ -479,6 +479,7 @@ const theme: ThemeType = {
         backdropColor: 'rgba(0,0,0,0.3)',
         borderRadius: roundness.base,
     },
+    MultiButton: {},
     Notification: {
         common: {
             fontFamily: bodyFont,

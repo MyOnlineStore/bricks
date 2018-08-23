@@ -7,6 +7,7 @@ import { IllustrationThemeType } from '../components/Illustration/style';
 import { LinkThemeType } from '../components/Link/style';
 import { MessageStreamThemeType } from '../components/MessageStream/style';
 import { ModalThemeType } from '../components/Modal/style';
+import { MultiButtonThemeType } from '../components/MultiButton/style';
 import { NotificationThemeType } from '../components/Notification/style';
 import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
@@ -30,6 +31,7 @@ type ThemeType = {
     Heading: HeadingThemeType;
     MessageStream: MessageStreamThemeType;
     Modal: ModalThemeType;
+    MultiButton: MultiButtonThemeType;
     Notification: NotificationThemeType;
     Illustration: IllustrationThemeType;
     Link: LinkThemeType;
