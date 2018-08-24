@@ -479,7 +479,11 @@ const theme: ThemeType = {
         backdropColor: 'rgba(0,0,0,0.3)',
         borderRadius: roundness.base,
     },
-    MultiButton: {},
+    MultiButton: {
+        backgroundColor: silver.lighter1,
+        secondaryColor: silver.base,
+        borderRadius: roundness.base,
+    },
     Notification: {
         common: {
             fontFamily: bodyFont,

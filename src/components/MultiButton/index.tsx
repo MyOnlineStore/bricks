@@ -3,10 +3,11 @@ import FoldOut from '../FoldOut';
 import Box from '../Box';
 import Button from '../Button';
 import Text from '../Text';
+import ScrollBox from '../ScrollBox';
 import Icon from '../Icon';
 import trbl from '../../utility/trbl';
 import Option from './Option';
-import { StyledWindow } from './style';
+import { StyledMultiButton, StyledWindow, StyledChevron } from './style';
 
 type OptionBase = {
     value: string;
@@ -71,41 +72,55 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
     public render(): JSX.Element {
         return (
             <div ref={this.wrapperRef}>
-                <Button
+                <StyledMultiButton
+                    title={this.props.title}
                     variant="secondary"
-                    title="MultiButton"
-                    compact
                     action={this.state.isOpen ? this.close : this.open}
                 >
-                    <Box>
-                        <Text>MultiButton</Text>
+                    <Box inline>
+                        {this.props.title}
 
-                        <Box padding={trbl(6)}>
+                        <StyledChevron>
                             <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
-                        </Box>
+                        </StyledChevron>
                     </Box>
-                </Button>
-                <StyledWindow isOpen={this.state.isOpen}>
+                </StyledMultiButton>
+                <StyledWindow
+                    isOpen={this.state.isOpen}
+                    rect={
+                        this.wrapperRef.current && this.wrapperRef.current !== undefined
+                            ? this.wrapperRef.current.getBoundingClientRect()
+                            : undefined
+                    }
+                >
                     <FoldOut isOpen={this.state.isOpen}>
                         {this.props.options.length > 0 &&
                             this.props.options.map((option, index) => (
                                 <Option
-                                    isTargeted={index === this.state.optionPointer}
+                                    isSelected={option.value === this.props.value}
                                     key={`${option.value}-${option.label}`}
                                     onMouseEnter={(): void => {}}
                                     onClick={(): void => {
                                         this.handleChange(option.value);
                                     }}
                                 >
-                                    <Text descriptive={option.value === this.props.value}>
-                                        <Box margin={trbl(0, 6, 0, 0)} inline>
+                                    <Box alignItems={'center'}>
+                                        <Box margin={trbl(0, 12, 0, 0)}>
                                             {option.value === this.props.value && (
-                                                <Icon size="small" icon="checkmark" />
+                                                <Icon size="medium" icon="checkmark" />
                                             )}
+                                            {option.value !== this.props.value && <Box width={'18px'} />}
                                         </Box>
-                                        <Text strong>{option.label}</Text>
-                                        <Text>{option.description}</Text>
-                                    </Text>
+                                        <Text descriptive strong={option.value === this.props.value}>
+                                            <div>
+                                                <Text descriptive={false} strong={option.value === this.props.value}>
+                                                    {option.label}
+                                                </Text>
+
+                                                <div>{option.description}</div>
+                                            </div>
+                                        </Text>
+                                    </Box>
                                 </Option>
                             ))}
                     </FoldOut>

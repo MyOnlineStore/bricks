@@ -4,7 +4,7 @@ import trbl from '../../../utility/trbl';
 import StyledOption from './style';
 
 type PropsType = {
-    isTargeted: boolean;
+    isSelected: boolean;
     onClick(): void;
     onMouseEnter(): void;
 };
@@ -20,8 +20,8 @@ const Option: SFC<PropsType> = (props): JSX.Element => {
     /* tslint:enable:no-invalid-this */
 
     return (
-        <StyledOption isTargeted={props.isTargeted} onClick={onClick} onMouseEnter={mouseEnter}>
-            <Box padding={trbl(6, 18)}>{props.children}</Box>
+        <StyledOption isSelected={props.isSelected} onClick={onClick} onMouseEnter={mouseEnter}>
+            <Box padding={trbl(12, 9)}>{props.children}</Box>
         </StyledOption>
     );
 };
