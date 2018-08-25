@@ -45,10 +45,8 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
     background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
-
     border: 1px solid ${({ theme, checked }): string =>
         checked ? theme.RadioButton.active.borderColor : theme.RadioButton.idle.borderColor};
-
 
     box-shadow: ${({ theme, elementFocus, checked }): string => `
         ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow},

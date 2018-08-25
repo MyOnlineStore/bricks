@@ -5,7 +5,7 @@ import Box from '../Box';
 const RadioButtonGroup: SFC = (props): JSX.Element => (
     <Box wrap direction="column" margin={trbl(9, 0)}>
         {Children.map(props.children, (child, index): JSX.Element => (
-            <Box direction="row" alignSelf="stretch" grow={1} margin={index > 0 ? trbl(12, 6, 0, 6) : trbl(0, 6)}>
+            <Box direction="row" alignSelf="stretch" grow={1} margin={index > 0 ? trbl(12, 6, 0, 0) : trbl(0, 6, 0, 0)}>
                 {child}
             </Box>
         ))}
