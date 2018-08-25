@@ -8,7 +8,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
     className="sc-bwzfXH hBjqMd"
   >
     <div
-      className="sc-bwzfXH bWjCs"
+      className="sc-bwzfXH dTTCsT"
     >
       <div
         className="sc-kgoBCf BEYlJ"
@@ -19,7 +19,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={true}
-            className="sc-kpOJdX byhVGz"
+            className="sc-kpOJdX kxmcXw"
           >
             <input
               checked={true}
@@ -45,7 +45,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH bXwfcX"
+      className="sc-bwzfXH isLvox"
     >
       <div
         className="sc-kgoBCf BEYlJ"
@@ -56,7 +56,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={false}
-            className="sc-kpOJdX cLFjqe"
+            className="sc-kpOJdX bHCyFz"
           >
             <input
               checked={false}
@@ -82,7 +82,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH bXwfcX"
+      className="sc-bwzfXH isLvox"
     >
       <div
         className="sc-kgoBCf BEYlJ"
@@ -93,7 +93,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={false}
-            className="sc-kpOJdX cLFjqe"
+            className="sc-kpOJdX bHCyFz"
           >
             <input
               checked={false}
