@@ -1,66 +1,70 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import { PropsType } from '.';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 import Button from '../Button';
 
-// type MultiButtonVariantStylesType = {
-//     backgroundColor: string;
-//     borderColor: string;
-//     color: string;
-//     boxShadow: string;
-//     textDecoration: string;
-// };
-
 type MultiButtonThemeType = {
-    backgroundColor: string;
-    secondaryColor: string;
-    borderRadius: string;
+    window: {
+        backgroundColor: string;
+        secondaryColor: string;
+        borderRadius: string;
+        boxShadow: string;
+    };
+    button: {
+        active: {
+            boxShadow: string;
+        };
+        borderRadius: string;
+    };
 };
 
-type MultiButtonPropsType = {};
+type StyledMultiButtonPropsType = {
+    isOpen: boolean;
+};
 
 const StyledMultiButton = styled(Button)`
-    padding-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    &:active {
+        transform: translateY(0px);
+    }
 `;
 
-const INNER_OFFSET: number = 6;
-
-type WindowProps = {
-    isOpen: boolean;
-    rect?: ClientRect;
-};
-
-const StyledChevron = styled.div`
-    display: flex;
+const StyledChevronButton = styled(Button)`
     align-items: center;
-    padding: 0 12px;
-    margin: -11px 0 -11px 24px;
-    max-width: 40%;
     border-left: solid 1px #dbdfe6;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    &:active {
+        transform: translateY(0px);
+    }
 `;
 
-const StyledWrapper = styled.div``;
+const StyledWrapper = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styled.div)`
+    border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius}
+    box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.active.boxShadow : '')};
+    transform: translateZ(0) translate3d(0, 0, 0);
+    transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
+    &:active {
+        transform: translateY(2px);
+    }
+`;
 
-const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
+const StyledWindow = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styled.div)`
     box-sizing: border-box;
-    background: ${({ theme }): string => theme.MultiButton.backgroundColor}
-    position: absolute;
+    background: ${({ theme }): string => theme.MultiButton.window.backgroundColor}
     overflow: hidden;
-    ${({ isOpen }): string => (!isOpen ? 'cursor: pointer' : '')};
-    z-index: 1000;
-    top: ${({ rect }): string => (rect !== undefined ? `${rect.top + rect.height + INNER_OFFSET}px` : '')};
-    left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
-    width: 350px;
-    padding-top: 0;    
+    max-width: 350px;
     border: ${({ isOpen }): string => (isOpen ? 'solid 1px #DBDFE6' : 'solid 0px transparent')}
-    border-radius: ${({ theme }): string => theme.MultiButton.borderRadius};
+    border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     ${({ isOpen }): string => (!isOpen ? 'cursor: pointer' : '')};
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10);
+    box-shadow: ${({ theme }): string => theme.MultiButton.window.boxShadow};
 `;
 
 export default StyledMultiButton;
-export { StyledMultiButton, StyledWrapper, StyledWindow, StyledChevron, MultiButtonThemeType };
+export { StyledMultiButton, StyledWrapper, StyledWindow, StyledChevronButton, MultiButtonThemeType };

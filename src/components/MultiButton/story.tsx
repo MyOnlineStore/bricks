@@ -1,57 +1,75 @@
 import { storiesOf } from '@storybook/react';
-import { object, text } from '@storybook/addon-knobs';
+import { object, text, select, number } from '@storybook/addon-knobs';
 import React, { Component } from 'react';
-import MultiButton from '.';
-import Text from '../Text';
+import MultiButton, { PlacementType } from '.';
 import Box from '../Box';
 import trbl from '../../utility/trbl';
 
 const options = [
     {
         value: 'Option 1',
-        label: 'Brooklyn green juice small batch af.',
-        description: `Unparalleled step-changes dynamically enable senior industry leaders for our market foci.`,
+        label: 'Default action',
+        default: true,
+        description: 'Unparalleled step-changes dynamically enable senior industry leaders for our market foci.',
+        action: () => {
+            alert('Default action');
+        },
     },
     {
         value: 'Option 2',
-        label: 'Fashion axe fixie irony poke shaman.',
-        description: `In the deliverable space, industry is virtually impacting its holistic verticals.`,
+        label: 'Alternative action 1',
+        description: 'In the deliverable space, industry is virtually impacting its holistic verticals.',
+        action: () => {
+            alert('Alternative action 1');
+        },
     },
     {
         value: 'Option 3',
-        label: 'Disrupt crucifix bicycle rights mumblecore.',
-        description: `Key players will take ownership of their big datas by iteratively integrating long-term capabilities.`,
+        label: 'Alternative action 2',
+        description:
+            'Key players will take ownership of their big datas by iteratively integrating long-term capabilities.',
+        action: () => {
+            alert('Alternative action 2');
+        },
     },
 ];
 
 class Demo extends Component<{}, { value: string }> {
-    public constructor(props: {}) {
-        super(props);
-
-        this.state = {
-            value: '',
-        };
-    }
-
-    public handleChange = (value: string): void => {
-        this.setState({ value });
-    };
-
     public render(): JSX.Element {
         return (
-            <>
-                <Box margin={trbl(0, 6)}>
+            <Box height="90vh" justifyContent="center" alignItems="center">
+                <Box margin={trbl(48)}>
                     <MultiButton
-                        title={text('title', 'Yuccie gentrify fam swag')}
                         options={object('options', options)}
-                        value={this.state.value}
-                        onChange={this.handleChange}
+                        placement={
+                            select(
+                                'placement',
+                                [
+                                    'auto-start',
+                                    'auto',
+                                    'auto-end',
+                                    'top-start',
+                                    'top',
+                                    'top-end',
+                                    'right-start',
+                                    'right',
+                                    'right-end',
+                                    'bottom-end',
+                                    'bottom',
+                                    'bottom-start',
+                                    'left-end',
+                                    'left',
+                                    'left-start',
+                                ],
+                                'bottom-end',
+                            ) as PlacementType
+                        }
+                        offset={number('offset', 0)}
+                        distance={number('distance', 3)}
+                        variant={'secondary'}
                     />
                 </Box>
-                <Box margin={trbl(6)}>
-                    <Text>You selected: {this.state.value}</Text>
-                </Box>
-            </>
+            </Box>
         );
     }
 }

@@ -1,44 +1,53 @@
 import React, { Component, RefObject, createRef } from 'react';
-import FoldOut from '../FoldOut';
+import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
+import TransitionAnimation from '../TransitionAnimation';
 import Box from '../Box';
-import Button from '../Button';
 import Text from '../Text';
-import ScrollBox from '../ScrollBox';
 import Icon from '../Icon';
 import trbl from '../../utility/trbl';
 import Option from './Option';
-import { StyledMultiButton, StyledWindow, StyledChevron } from './style';
+import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
+import { createPortal } from 'react-dom';
+
+type PlacementType = PopperChildrenProps['placement'];
 
 type OptionBase = {
     value: string;
     label: string;
     description: string;
+    default?: boolean;
+    action?(): void;
 };
 
 type PropsType<GenericOption extends OptionBase> = {
-    title: string;
+    placement?: PlacementType;
     options: Array<GenericOption>;
-    value: string;
-    onChange(value: string): void;
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
+    offset?: number;
+    distance?: number;
 };
 
 type StateType = {
     isOpen: boolean;
-    optionPointer: number;
+    value: string;
 };
 
 class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
-    private readonly buttonRef: RefObject<HTMLInputElement>;
     private wrapperRef: RefObject<HTMLDivElement>;
+    private buttonRef: RefObject<HTMLDivElement>;
+    private title: string = this.props.options[0].label;
+    private defaultOption: OptionBase = this.props.options.filter(option => {
+        return option.default === true;
+    })[0];
 
     public constructor(props: PropsType<GenericOption>) {
         super(props);
-        this.buttonRef = createRef();
         this.wrapperRef = createRef();
+        this.buttonRef = createRef();
 
         this.state = {
             isOpen: false,
-            optionPointer: -1,
+            value: this.defaultOption.value,
         };
     }
 
@@ -50,6 +59,19 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
         this.setState({ isOpen: false });
     };
 
+    private mapOffset = (offset: number | undefined, distance: number | undefined): string => {
+        switch (true) {
+            case offset === undefined && distance === undefined:
+                return '0, 0px';
+            case offset !== undefined && distance === undefined:
+                return `${offset}px, 0px`;
+            case offset === undefined && distance !== undefined:
+                return `0, ${distance}px`;
+            default:
+                return `${offset}px, ${distance}px`;
+        }
+    };
+
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
@@ -59,76 +81,117 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
     }
 
     public handleClickOutside = (event: MouseEvent): void => {
-        if (this.wrapperRef.current && !this.wrapperRef.current.contains(event.target as Node)) {
+        if (
+            this.wrapperRef.current &&
+            this.buttonRef.current &&
+            !this.wrapperRef.current.contains(event.target as Node) &&
+            !this.buttonRef.current.contains(event.target as Node)
+        ) {
             this.close();
         }
     };
 
-    public handleChange = (value: string): void => {
-        this.props.onChange(value);
-        this.setState({ isOpen: false, optionPointer: -1 });
+    public handleSelect = (option: OptionBase): void => {
+        this.setState({
+            isOpen: false,
+            value: option.value,
+        });
+
+        if (option.action) {
+            option.action();
+        }
     };
 
     public render(): JSX.Element {
         return (
-            <div ref={this.wrapperRef}>
-                <StyledMultiButton
-                    title={this.props.title}
-                    variant="secondary"
-                    action={this.state.isOpen ? this.close : this.open}
-                >
-                    <Box inline>
-                        {this.props.title}
-
-                        <StyledChevron>
-                            <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
-                        </StyledChevron>
-                    </Box>
-                </StyledMultiButton>
-                <StyledWindow
-                    isOpen={this.state.isOpen}
-                    rect={
-                        this.wrapperRef.current && this.wrapperRef.current !== undefined
-                            ? this.wrapperRef.current.getBoundingClientRect()
-                            : undefined
-                    }
-                >
-                    <FoldOut isOpen={this.state.isOpen}>
-                        {this.props.options.length > 0 &&
-                            this.props.options.map((option, index) => (
-                                <Option
-                                    isSelected={option.value === this.props.value}
-                                    key={`${option.value}-${option.label}`}
-                                    onMouseEnter={(): void => {}}
-                                    onClick={(): void => {
-                                        this.handleChange(option.value);
-                                    }}
+            <Manager>
+                <Reference>
+                    {({ ref }: ReferenceChildrenProps): JSX.Element => (
+                        <div ref={this.buttonRef}>
+                            <StyledWrapper innerRef={ref} isOpen={this.state.isOpen}>
+                                <StyledMultiButton
+                                    title={this.title}
+                                    variant={this.props.variant}
+                                    action={this.defaultOption.action}
                                 >
-                                    <Box alignItems={'center'}>
-                                        <Box margin={trbl(0, 12, 0, 0)}>
-                                            {option.value === this.props.value && (
-                                                <Icon size="medium" icon="checkmark" />
-                                            )}
-                                            {option.value !== this.props.value && <Box width={'18px'} />}
-                                        </Box>
-                                        <Text descriptive strong={option.value === this.props.value}>
-                                            <div>
-                                                <Text descriptive={false} strong={option.value === this.props.value}>
-                                                    {option.label}
-                                                </Text>
+                                    <Box inline>{this.title}</Box>
+                                </StyledMultiButton>
+                                <StyledChevronButton
+                                    compact
+                                    title={this.title}
+                                    variant={this.props.variant}
+                                    action={this.state.isOpen ? this.close : this.open}
+                                >
+                                    <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                                </StyledChevronButton>
+                            </StyledWrapper>
+                        </div>
+                    )}
+                </Reference>
+                {createPortal(
+                    <div ref={this.wrapperRef}>
+                        <TransitionAnimation show={this.state.isOpen} animation="fade">
+                            <Popper
+                                placement={this.props.placement !== undefined ? this.props.placement : 'bottom'}
+                                modifiers={{
+                                    offset: {
+                                        offset: this.mapOffset(this.props.offset, this.props.distance),
+                                    },
+                                    flip: {
+                                        enabled: false,
+                                    },
+                                }}
+                            >
+                                {({ ref, style }: PopperChildrenProps): JSX.Element => (
+                                    <StyledWindow isOpen={this.state.isOpen} innerRef={ref} style={style}>
+                                        {this.props.options.length > 0 &&
+                                            this.props.options.map(option => (
+                                                <Option
+                                                    isSelected={option.value === this.state.value}
+                                                    key={`${option.value}-${option.label}`}
+                                                    onClick={(): void => {
+                                                        this.handleSelect(option);
+                                                    }}
+                                                >
+                                                    <Box alignItems={'center'}>
+                                                        <Box margin={trbl(0, 12, 0, 0)}>
+                                                            {option.value === this.state.value && (
+                                                                <Icon size="medium" icon="checkmark" />
+                                                            )}
+                                                            {option.value !== this.state.value && (
+                                                                <Box width={'18px'} />
+                                                            )}
+                                                        </Box>
+                                                        <div>
+                                                            <Text
+                                                                inline
+                                                                descriptive
+                                                                strong={option.value === this.state.value}
+                                                            >
+                                                                <Text
+                                                                    descriptive={false}
+                                                                    strong={option.value === this.state.value}
+                                                                >
+                                                                    {option.label}
+                                                                </Text>
 
-                                                <div>{option.description}</div>
-                                            </div>
-                                        </Text>
-                                    </Box>
-                                </Option>
-                            ))}
-                    </FoldOut>
-                </StyledWindow>
-            </div>
+                                                                <span>{option.description}</span>
+                                                            </Text>
+                                                        </div>
+                                                    </Box>
+                                                </Option>
+                                            ))}
+                                    </StyledWindow>
+                                )}
+                            </Popper>
+                        </TransitionAnimation>
+                    </div>,
+                    document.body,
+                )}
+            </Manager>
         );
     }
 }
 
 export default MultiButton;
-export { PropsType };
+export { PropsType, PlacementType };

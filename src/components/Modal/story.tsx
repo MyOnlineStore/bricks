@@ -5,6 +5,7 @@ import Modal from '.';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Text from '../Text';
+import MultiButton from '../MultiButton';
 
 const demoContent = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -27,6 +28,25 @@ tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finib
 id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
 pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.`;
 
+const options = [
+    {
+        value: 'Option 1',
+        label: 'Default action',
+        description: 'Unparalleled step-changes dynamically enable senior industry leaders for our market foci.',
+    },
+    {
+        value: 'Option 2',
+        label: 'Alternative action 2',
+        description: 'In the deliverable space, industry is virtually impacting its holistic verticals.',
+    },
+    {
+        value: 'Option 3',
+        label: 'Alternative action 3',
+        description:
+            'Key players will take ownership of their big datas by iteratively integrating long-term capabilities.',
+    },
+];
+
 storiesOf('Modal', module).add('Default', () => {
     return (
         <Modal
@@ -42,6 +62,7 @@ storiesOf('Modal', module).add('Default', () => {
             )}
         >
             <Text>{text('contents', demoContent)}</Text>
+            <MultiButton options={options} placement={'bottom-end'} variant={'secondary'} />
         </Modal>
     );
 });

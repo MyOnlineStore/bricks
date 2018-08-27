@@ -480,9 +480,18 @@ const theme: ThemeType = {
         borderRadius: roundness.base,
     },
     MultiButton: {
-        backgroundColor: silver.lighter1,
-        secondaryColor: silver.base,
-        borderRadius: roundness.base,
+        window: {
+            backgroundColor: silver.lighter1,
+            secondaryColor: silver.base,
+            borderRadius: roundness.base,
+            boxShadow: '0 2px 6px 0 rgba(0,0,0,0.10)',
+        },
+        button: {
+            active: {
+                boxShadow: 'inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px rgba(136,151,157,0.20)',
+            },
+            borderRadius: roundness.base,
+        },
     },
     Notification: {
         common: {

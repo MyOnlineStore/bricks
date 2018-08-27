@@ -9,9 +9,9 @@ type OptionPropsType = {
 
 const StyledOption = withProps<OptionPropsType, HTMLDivElement>(styled.div)`
     cursor: pointer;
-    background: ${({ theme, isSelected }): string => (isSelected ? theme.MultiButton.secondaryColor : '')};
+    background: ${({ theme, isSelected }): string => (isSelected ? theme.MultiButton.window.secondaryColor : '')};
     &:hover {
-        background: ${({ theme }): string => theme.MultiButton.secondaryColor};
+        background: ${({ theme }): string => theme.MultiButton.window.secondaryColor};
     }
 `;
 
