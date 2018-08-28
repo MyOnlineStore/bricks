@@ -7,9 +7,9 @@ const Manager = jest.fn((props: any): JSX.Element => props.children);
 const Popper = jest.fn((props: any): JSX.Element =>
     props.children({
         ref: null,
-        style: '',
+        style: {},
         placement: '',
-        arrowProps: { ref: null, style: '' },
+        arrowProps: { ref: null, style: {} },
     }),
 );
 

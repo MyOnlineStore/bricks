@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots MultiButton Default 1`] = `
+<div
+  className="sc-bwzfXH iFCcSe"
+>
+  <div
+    className="sc-bwzfXH hlYRxd"
+  >
+    <div>
+      <div
+        className="sc-jlyJG gOsQFG"
+      >
+        <button
+          className="sc-gPEVay gLQGqq sc-htoDjs ljxUvq"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          id={undefined}
+          onClick={[Function]}
+          title="Default action"
+          type="button"
+        >
+          <span
+            className="sc-htpNat eGtcyu"
+          >
+            Default action
+          </span>
+        </button>
+        <button
+          className="sc-iRbamj eohxNk sc-htoDjs kBOTzf"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          id={undefined}
+          onClick={[Function]}
+          title="Default action"
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="sc-iwsKbI MOBcS"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </button>
+      </div>
+    </div>
+    <MockPortal>
+      <div />
+    </MockPortal>
+  </div>
+</div>
+`;

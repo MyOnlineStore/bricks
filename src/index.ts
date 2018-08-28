@@ -18,6 +18,7 @@ export { default as MerchantTheme } from './themes/MerchantTheme';
 export { default as MessageStream } from './components/MessageStream';
 export { default as MosTheme } from './themes/MosTheme';
 export { default as Modal } from './components/Modal';
+export { default as MultiButton } from './components/MultiButton';
 export { default as Notification } from './components/Notification';
 export { default as Popover } from './components/Popover';
 export { default as PriceTag } from './components/PriceTag';

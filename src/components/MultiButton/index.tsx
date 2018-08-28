@@ -1,6 +1,5 @@
 import React, { Component, RefObject, createRef } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
-import TransitionAnimation from '../TransitionAnimation';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
@@ -29,30 +28,33 @@ type PropsType<GenericOption extends OptionBase> = {
 
 type StateType = {
     isOpen: boolean;
-    value: string;
+    selectedOption: OptionBase;
 };
 
 class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
-    private wrapperRef: RefObject<HTMLDivElement>;
+    private windowRef: RefObject<HTMLDivElement>;
     private buttonRef: RefObject<HTMLDivElement>;
-    private title: string = this.props.options[0].label;
     private defaultOption: OptionBase = this.props.options.filter(option => {
         return option.default === true;
     })[0];
 
     public constructor(props: PropsType<GenericOption>) {
         super(props);
-        this.wrapperRef = createRef();
+        this.windowRef = createRef();
         this.buttonRef = createRef();
+        if (!this.defaultOption) this.defaultOption = this.props.options[0];
 
         this.state = {
             isOpen: false,
-            value: this.defaultOption.value,
+            selectedOption: this.defaultOption,
         };
     }
 
     private open = (): void => {
-        this.setState({ isOpen: true });
+        this.setState({
+            isOpen: true,
+            selectedOption: this.defaultOption,
+        });
     };
 
     private close = (): void => {
@@ -82,24 +84,33 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
 
     public handleClickOutside = (event: MouseEvent): void => {
         if (
-            this.wrapperRef.current &&
+            this.windowRef.current &&
             this.buttonRef.current &&
-            !this.wrapperRef.current.contains(event.target as Node) &&
+            !this.windowRef.current.contains(event.target as Node) &&
             !this.buttonRef.current.contains(event.target as Node)
         ) {
             this.close();
         }
     };
 
-    public handleSelect = (option: OptionBase): void => {
-        this.setState({
-            isOpen: false,
-            value: option.value,
-        });
-
+    public executeAction = (option: OptionBase): void => {
         if (option.action) {
             option.action();
         }
+    };
+
+    public handleSelect = (option: OptionBase): void => {
+        this.setState(
+            {
+                selectedOption: option,
+            },
+            () => {
+                if (this.state.selectedOption.action) {
+                    this.state.selectedOption.action();
+                }
+                this.close();
+            },
+        );
     };
 
     public render(): JSX.Element {
@@ -110,15 +121,17 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                         <div ref={this.buttonRef}>
                             <StyledWrapper innerRef={ref} isOpen={this.state.isOpen}>
                                 <StyledMultiButton
-                                    title={this.title}
+                                    title={this.defaultOption.label}
                                     variant={this.props.variant}
-                                    action={this.defaultOption.action}
+                                    action={(): void => {
+                                        this.executeAction(this.defaultOption);
+                                    }}
                                 >
-                                    <Box inline>{this.title}</Box>
+                                    <Box inline>{this.defaultOption.label}</Box>
                                 </StyledMultiButton>
                                 <StyledChevronButton
                                     compact
-                                    title={this.title}
+                                    title={this.defaultOption.label}
                                     variant={this.props.variant}
                                     action={this.state.isOpen ? this.close : this.open}
                                 >
@@ -129,8 +142,8 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                     )}
                 </Reference>
                 {createPortal(
-                    <div ref={this.wrapperRef}>
-                        <TransitionAnimation show={this.state.isOpen} animation="fade">
+                    <div ref={this.windowRef}>
+                        {this.state.isOpen && (
                             <Popper
                                 placement={this.props.placement !== undefined ? this.props.placement : 'bottom'}
                                 modifiers={{
@@ -147,7 +160,7 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                         {this.props.options.length > 0 &&
                                             this.props.options.map(option => (
                                                 <Option
-                                                    isSelected={option.value === this.state.value}
+                                                    isSelected={option.value === this.state.selectedOption.value}
                                                     key={`${option.value}-${option.label}`}
                                                     onClick={(): void => {
                                                         this.handleSelect(option);
@@ -155,10 +168,10 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                                 >
                                                     <Box alignItems={'center'}>
                                                         <Box margin={trbl(0, 12, 0, 0)}>
-                                                            {option.value === this.state.value && (
+                                                            {option.value === this.state.selectedOption.value && (
                                                                 <Icon size="medium" icon="checkmark" />
                                                             )}
-                                                            {option.value !== this.state.value && (
+                                                            {option.value !== this.state.selectedOption.value && (
                                                                 <Box width={'18px'} />
                                                             )}
                                                         </Box>
@@ -166,11 +179,15 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                                             <Text
                                                                 inline
                                                                 descriptive
-                                                                strong={option.value === this.state.value}
+                                                                strong={
+                                                                    option.value === this.state.selectedOption.value
+                                                                }
                                                             >
                                                                 <Text
                                                                     descriptive={false}
-                                                                    strong={option.value === this.state.value}
+                                                                    strong={
+                                                                        option.value === this.state.selectedOption.value
+                                                                    }
                                                                 >
                                                                     {option.label}
                                                                 </Text>
@@ -184,7 +201,7 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                     </StyledWindow>
                                 )}
                             </Popper>
-                        </TransitionAnimation>
+                        )}
                     </div>,
                     document.body,
                 )}

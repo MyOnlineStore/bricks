@@ -483,6 +483,7 @@ const theme: ThemeType = {
         window: {
             backgroundColor: silver.lighter1,
             secondaryColor: silver.base,
+            borderColor: silver.darker3,
             borderRadius: roundness.base,
             boxShadow: '0 2px 6px 0 rgba(0,0,0,0.10)',
         },

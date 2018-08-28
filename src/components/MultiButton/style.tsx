@@ -8,6 +8,7 @@ type MultiButtonThemeType = {
     window: {
         backgroundColor: string;
         secondaryColor: string;
+        borderColor: string;
         borderRadius: string;
         boxShadow: string;
     };
@@ -58,12 +59,12 @@ const StyledWindow = withProps<StyledMultiButtonPropsType, HTMLDivElement>(style
     background: ${({ theme }): string => theme.MultiButton.window.backgroundColor}
     overflow: hidden;
     max-width: 350px;
-    border: ${({ isOpen }): string => (isOpen ? 'solid 1px #DBDFE6' : 'solid 0px transparent')}
+    border: ${({ theme }): string => `solid 1px ${theme.MultiButton.window.borderColor}`};
     border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    ${({ isOpen }): string => (!isOpen ? 'cursor: pointer' : '')};
     box-shadow: ${({ theme }): string => theme.MultiButton.window.boxShadow};
+    z-index: 1000;
 `;
 
 export default StyledMultiButton;

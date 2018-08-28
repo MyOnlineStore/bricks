@@ -32,7 +32,9 @@ const options = [
     {
         value: 'Option 1',
         label: 'Default action',
+        default: true,
         description: 'Unparalleled step-changes dynamically enable senior industry leaders for our market foci.',
+        action: (): void => alert('Default action'),
     },
     {
         value: 'Option 2',
@@ -61,8 +63,8 @@ storiesOf('Modal', module).add('Default', () => {
                 </ButtonGroup>
             )}
         >
-            <Text>{text('contents', demoContent)}</Text>
             <MultiButton options={options} placement={'bottom-end'} variant={'secondary'} />
+            <Text>{text('contents', demoContent)}</Text>
         </Modal>
     );
 });
