@@ -1,4 +1,4 @@
-import React, { Component, SFC, RefObject, createRef } from 'react';
+import React, { Component, RefObject, createRef } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
 import Box from '../Box';
 import Text from '../Text';
@@ -7,7 +7,6 @@ import trbl from '../../utility/trbl';
 import Option from './Option';
 import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { createPortal } from 'react-dom';
-import { ThemeProvider } from '../../utility/styled';
 
 type PlacementType = PopperChildrenProps['placement'];
 
