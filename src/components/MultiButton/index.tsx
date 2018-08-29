@@ -7,38 +7,46 @@ import trbl from '../../utility/trbl';
 import Option from './Option';
 import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { createPortal } from 'react-dom';
+import { PropsType as ButtonPropsType } from '../Button';
+
+type OmittedKeys = 'action' | 'href' | 'flat' | 'compact' | 'title';
 
 type PlacementType = PopperChildrenProps['placement'];
 
-type OptionBase = {
-    value: string;
+type OptionsType = {
     label: string;
     description: string;
     default?: boolean;
-    action?(): void;
+    action(): void;
 };
 
-type PropsType<GenericOption extends OptionBase> = {
+type PropsType = Pick<ButtonPropsType, Exclude<keyof ButtonPropsType, OmittedKeys>> & {
     placement?: PlacementType;
-    options: Array<GenericOption>;
-    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
+    options: Array<OptionsType>;
     offset?: number;
     distance?: number;
 };
 
 type StateType = {
     isOpen: boolean;
-    selectedOption: OptionBase;
+    selectedOption: OptionsType;
+    selectedIndex: number;
 };
 
-class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
+class MultiButton extends Component<PropsType, StateType> {
     private windowRef: RefObject<HTMLDivElement>;
     private buttonRef: RefObject<HTMLDivElement>;
-    private defaultOption: OptionBase = this.props.options.filter(option => {
-        return option.default === true;
+    private defaultIndex: number;
+
+    private defaultOption: OptionsType = this.props.options.filter((option, index) => {
+        if (option.default === true) {
+            this.defaultIndex = index;
+
+            return option.default === true;
+        }
     })[0];
 
-    public constructor(props: PropsType<GenericOption>) {
+    public constructor(props: PropsType) {
         super(props);
         this.windowRef = createRef();
         this.buttonRef = createRef();
@@ -47,6 +55,7 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
         this.state = {
             isOpen: false,
             selectedOption: this.defaultOption,
+            selectedIndex: this.defaultIndex,
         };
     }
 
@@ -54,6 +63,7 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
         this.setState({
             isOpen: true,
             selectedOption: this.defaultOption,
+            selectedIndex: this.defaultIndex,
         });
     };
 
@@ -72,6 +82,32 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
             default:
                 return `${offset}px, ${distance}px`;
         }
+    };
+
+    private renderButtons = (): JSX.Element => {
+        // filter irrelevant buttonprops for JS users
+        // @ts-ignore
+        const { href, action, flat, compact, title, ...filteredProps } = this.props;
+
+        return (
+            <>
+                <StyledMultiButton
+                    {...filteredProps}
+                    title={this.defaultOption.label}
+                    action={(): void => this.defaultOption.action()}
+                >
+                    <Box inline>{this.defaultOption.label}</Box>
+                </StyledMultiButton>
+                <StyledChevronButton
+                    compact
+                    title={this.defaultOption.label}
+                    variant={this.props.variant}
+                    action={this.state.isOpen ? this.close : this.open}
+                >
+                    <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                </StyledChevronButton>
+            </>
+        );
     };
 
     public componentDidMount(): void {
@@ -93,45 +129,16 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
         }
     };
 
-    public defaultAction = (): void => {
-        if (this.defaultOption.action) {
-            this.defaultOption.action();
-        }
-    };
-
-    public handleSelect = (option: OptionBase): void => {
+    public handleSelect = (option: OptionsType, index: number): void => {
         this.setState(
             {
                 selectedOption: option,
+                selectedIndex: index,
             },
             () => {
-                if (this.state.selectedOption.action) {
-                    this.state.selectedOption.action();
-                }
+                this.state.selectedOption.action();
                 this.close();
             },
-        );
-    };
-
-    public renderButtons = (): JSX.Element => {
-        return (
-            <>
-                <StyledMultiButton
-                    title={this.defaultOption.label}
-                    variant={this.props.variant}
-                    action={(): void => this.defaultAction()}
-                >
-                    <Box inline>{this.defaultOption.label}</Box>
-                </StyledMultiButton>
-                <StyledChevronButton
-                    compact
-                    title={this.defaultOption.label}
-                    variant={this.props.variant}
-                    action={this.state.isOpen ? this.close : this.open}
-                >
-                    <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
-                </StyledChevronButton>
-            </>
         );
     };
 
@@ -161,20 +168,20 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                 {({ ref, style }: PopperChildrenProps): JSX.Element => (
                                     <StyledWindow isOpen={this.state.isOpen} innerRef={ref} style={style}>
                                         {this.props.options.length > 0 &&
-                                            this.props.options.map(option => (
+                                            this.props.options.map((option, index) => (
                                                 <Option
-                                                    isSelected={option.value === this.state.selectedOption.value}
-                                                    key={`${option.value}-${option.label}`}
+                                                    isSelected={index === this.state.selectedIndex}
+                                                    key={`${index}-${option.label}`}
                                                     onClick={(): void => {
-                                                        this.handleSelect(option);
+                                                        this.handleSelect(option, index);
                                                     }}
                                                 >
                                                     <Box alignItems={'center'}>
                                                         <Box margin={trbl(0, 12, 0, 0)}>
-                                                            {option.value === this.state.selectedOption.value && (
+                                                            {index === this.state.selectedIndex && (
                                                                 <Icon size="medium" icon="checkmark" />
                                                             )}
-                                                            {option.value !== this.state.selectedOption.value && (
+                                                            {index !== this.state.selectedIndex && (
                                                                 <Box width={'18px'} />
                                                             )}
                                                         </Box>
@@ -182,15 +189,11 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                                             <Text
                                                                 inline
                                                                 descriptive
-                                                                strong={
-                                                                    option.value === this.state.selectedOption.value
-                                                                }
+                                                                strong={index === this.state.selectedIndex}
                                                             >
                                                                 <Text
                                                                     descriptive={false}
-                                                                    strong={
-                                                                        option.value === this.state.selectedOption.value
-                                                                    }
+                                                                    strong={index === this.state.selectedIndex}
                                                                 >
                                                                     {option.label}
                                                                 </Text>

@@ -7,7 +7,6 @@ import trbl from '../../utility/trbl';
 
 const options = [
     {
-        value: 'Option 1',
         label: 'Default action',
         default: true,
         description: 'Unparalleled step-changes dynamically enable senior industry leaders for our market foci.',
@@ -16,7 +15,6 @@ const options = [
         },
     },
     {
-        value: 'Option 2',
         label: 'Alternative action 1',
         description: 'In the deliverable space, industry is virtually impacting its holistic verticals.',
         action: (): void => {
@@ -24,7 +22,6 @@ const options = [
         },
     },
     {
-        value: 'Option 3',
         label: 'Alternative action 2',
         description:
             'Key players will take ownership of their big datas by iteratively integrating long-term capabilities.',

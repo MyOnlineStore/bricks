@@ -49,6 +49,7 @@ const StyledWrapper = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styl
     box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.active.boxShadow : '')};
     transform: translateZ(0) translate3d(0, 0, 0);
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
+
     &:active {
         transform: translateY(2px);
     }
@@ -58,7 +59,7 @@ const StyledWindow = withProps<StyledMultiButtonPropsType, HTMLDivElement>(style
     box-sizing: border-box;
     background: ${({ theme }): string => theme.MultiButton.window.backgroundColor}
     overflow: hidden;
-    max-width: 350px;
+    max-width: 360px;
     border: ${({ theme }): string => `solid 1px ${theme.MultiButton.window.borderColor}`};
     border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius};
     border-top-left-radius: 0;
