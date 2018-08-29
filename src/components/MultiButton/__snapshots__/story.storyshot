@@ -9,10 +9,10 @@ exports[`Storyshots MultiButton Default 1`] = `
   >
     <div>
       <div
-        className="sc-jlyJG biBdiZ"
+        className="sc-jlyJG kuPSzU"
       >
         <button
-          className="sc-gPEVay eNKfde sc-htoDjs ljxUvq"
+          className="sc-gPEVay kBkaYM sc-htoDjs ljxUvq"
           color={undefined}
           disabled={undefined}
           icon={undefined}
@@ -28,25 +28,29 @@ exports[`Storyshots MultiButton Default 1`] = `
           </span>
         </button>
         <button
-          className="sc-iRbamj iAKMuZ sc-htoDjs kBOTzf"
+          className="sc-iRbamj kXZiZq sc-htoDjs kBOTzf"
           color={undefined}
           disabled={undefined}
           icon={undefined}
           id={undefined}
           onClick={[Function]}
-          title="Default action"
+          title="chevron"
           type="button"
         >
           <span
-            aria-hidden={true}
-            className="sc-iwsKbI MOBcS"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+            className="sc-htpNat eGtcyu"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI MOBcS"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </span>
         </button>
       </div>
     </div>

@@ -28,7 +28,12 @@ type StyledMultiButtonPropsType = {
 const StyledMultiButton = styled(Button)`
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    border-right: solid 0px transparent;
     margin-right: 0px;
+
+    &:focus {
+        z-index: 2;
+    }
 
     &:active {
         transform: translateY(0px);
@@ -36,7 +41,6 @@ const StyledMultiButton = styled(Button)`
 `;
 
 const StyledChevronButton = styled(Button)`
-    align-items: center;
     border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -44,11 +48,15 @@ const StyledChevronButton = styled(Button)`
 
     &:active {
         transform: translateY(0px);
-        border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
+        border-left-color: ${({ theme }): string => theme.MultiButton.button.dividerColor};
     }
 
     &:hover {
-        border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
+        border-left-color: ${({ theme }): string => theme.MultiButton.button.dividerColor};
+    }
+
+    &:focus {
+        border-left-color: ${({ theme }): string => theme.MultiButton.button.dividerColor};
     }
 `;
 
@@ -57,6 +65,11 @@ const StyledWrapper = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styl
     box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.active.boxShadow : '')};
     transform: translateZ(0) translate3d(0, 0, 0);
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
 
     &:active {
         transform: translateY(2px);

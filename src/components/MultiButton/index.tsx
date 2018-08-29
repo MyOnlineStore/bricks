@@ -100,11 +100,13 @@ class MultiButton extends Component<PropsType, StateType> {
                 </StyledMultiButton>
                 <StyledChevronButton
                     compact
-                    title={this.defaultOption.label}
+                    title={'chevron'}
                     variant={this.props.variant}
                     action={this.state.isOpen ? this.close : this.open}
                 >
-                    <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                    <Box inline>
+                        <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                    </Box>
                 </StyledChevronButton>
             </>
         );
