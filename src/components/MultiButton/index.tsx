@@ -1,4 +1,4 @@
-import React, { Component, RefObject, createRef } from 'react';
+import React, { Component, SFC, RefObject, createRef } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
 import Box from '../Box';
 import Text from '../Text';
@@ -7,6 +7,7 @@ import trbl from '../../utility/trbl';
 import Option from './Option';
 import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { createPortal } from 'react-dom';
+import { ThemeProvider } from '../../utility/styled';
 
 type PlacementType = PopperChildrenProps['placement'];
 
@@ -93,9 +94,9 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
         }
     };
 
-    public executeAction = (option: OptionBase): void => {
-        if (option.action) {
-            option.action();
+    public defaultAction = (): void => {
+        if (this.defaultOption.action) {
+            this.defaultOption.action();
         }
     };
 
@@ -113,6 +114,28 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
         );
     };
 
+    public renderButtons = (): JSX.Element => {
+        return (
+            <>
+                <StyledMultiButton
+                    title={this.defaultOption.label}
+                    variant={this.props.variant}
+                    action={(): void => this.defaultAction()}
+                >
+                    <Box inline>{this.defaultOption.label}</Box>
+                </StyledMultiButton>
+                <StyledChevronButton
+                    compact
+                    title={this.defaultOption.label}
+                    variant={this.props.variant}
+                    action={this.state.isOpen ? this.close : this.open}
+                >
+                    <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                </StyledChevronButton>
+            </>
+        );
+    };
+
     public render(): JSX.Element {
         return (
             <Manager>
@@ -120,23 +143,7 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                     {({ ref }: ReferenceChildrenProps): JSX.Element => (
                         <div ref={this.buttonRef}>
                             <StyledWrapper innerRef={ref} isOpen={this.state.isOpen}>
-                                <StyledMultiButton
-                                    title={this.defaultOption.label}
-                                    variant={this.props.variant}
-                                    action={(): void => {
-                                        this.executeAction(this.defaultOption);
-                                    }}
-                                >
-                                    <Box inline>{this.defaultOption.label}</Box>
-                                </StyledMultiButton>
-                                <StyledChevronButton
-                                    compact
-                                    title={this.defaultOption.label}
-                                    variant={this.props.variant}
-                                    action={this.state.isOpen ? this.close : this.open}
-                                >
-                                    <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
-                                </StyledChevronButton>
+                                {this.renderButtons()}
                             </StyledWrapper>
                         </div>
                     )}
@@ -149,9 +156,6 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                 modifiers={{
                                     offset: {
                                         offset: this.mapOffset(this.props.offset, this.props.distance),
-                                    },
-                                    flip: {
-                                        enabled: false,
                                     },
                                 }}
                             >
@@ -191,7 +195,6 @@ class MultiButton<GenericOption extends OptionBase> extends Component<PropsType<
                                                                 >
                                                                     {option.label}
                                                                 </Text>
-
                                                                 <span>{option.description}</span>
                                                             </Text>
                                                         </div>

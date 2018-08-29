@@ -252,9 +252,6 @@ describe('MultiButton', () => {
             offset: {
                 offset: '20px, 6px',
             },
-            flip: {
-                enabled: false,
-            },
         });
     });
 
@@ -270,9 +267,6 @@ describe('MultiButton', () => {
             offset: {
                 offset: '20px, 0px',
             },
-            flip: {
-                enabled: false,
-            },
         });
     });
 
@@ -287,9 +281,6 @@ describe('MultiButton', () => {
         expect(popper.prop('modifiers')).toEqual({
             offset: {
                 offset: '0, 6px',
-            },
-            flip: {
-                enabled: false,
             },
         });
     });
