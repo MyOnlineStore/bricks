@@ -3,7 +3,7 @@
 exports[`Popover should render with defaults 1`] = `
 <styled.div
   innerRef={null}
-  style=""
+  style={Object {}}
 >
   <styled.div>
     Mock content
@@ -12,12 +12,12 @@ exports[`Popover should render with defaults 1`] = `
   <styled.div
     innerRef={null}
     placement=""
-    style=""
+    style={Object {}}
   />
   <styled.div
     placement=""
     shadow={true}
-    style=""
+    style={Object {}}
   />
 </styled.div>
 `;

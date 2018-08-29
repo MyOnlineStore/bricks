@@ -164,7 +164,7 @@ describe('MultiButton', () => {
         expect(actionMock1).toHaveBeenCalled();
     });
 
-    it('should not break when no action is provided', () => {
+    it('should not break when no action is provided to the default button', () => {
         const optionsMock = [
             {
                 value: 'Optionmock',
@@ -175,12 +175,32 @@ describe('MultiButton', () => {
 
         const fn = (): void => {
             const component = mountWithTheme(<MultiButton variant={'secondary'} options={optionsMock} />);
-
-            const arrowButton = component.find(StyledChevronButton);
             const defaultButton = component.find(StyledMultiButton);
 
-            arrowButton.simulate('click');
             defaultButton.simulate('click');
+        };
+        expect(fn).not.toThrow();
+    });
+
+    it('should not break when no action is provided to the option buttons', () => {
+        const optionsMock = [
+            {
+                value: 'Optionmock',
+                label: 'Optionmock',
+                description: '',
+            },
+        ];
+
+        const fn = (): void => {
+            const component = mountWithTheme(<MultiButton variant={'secondary'} options={optionsMock} />);
+            const arrowButton = component.find(StyledChevronButton);
+
+            arrowButton.simulate('click');
+
+            expect(component.state('isOpen')).toEqual(true);
+            const option = component.find(Option).at(0);
+
+            option.simulate('click');
         };
         expect(fn).not.toThrow();
     });
