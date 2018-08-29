@@ -16,6 +16,7 @@ type MultiButtonThemeType = {
         active: {
             boxShadow: string;
         };
+        dividerColor: string;
         borderRadius: string;
     };
 };
@@ -27,6 +28,7 @@ type StyledMultiButtonPropsType = {
 const StyledMultiButton = styled(Button)`
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    margin-right: 0px;
 
     &:active {
         transform: translateY(0px);
@@ -35,12 +37,18 @@ const StyledMultiButton = styled(Button)`
 
 const StyledChevronButton = styled(Button)`
     align-items: center;
-    border-left: solid 1px #dbdfe6;
+    border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    margin-left: 0px;
 
     &:active {
         transform: translateY(0px);
+        border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
+    }
+
+    &:hover {
+        border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
     }
 `;
 

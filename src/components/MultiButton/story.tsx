@@ -59,9 +59,13 @@ const Demo: SFC = (): JSX.Element => {
                             'bottom-end',
                         ) as PlacementType
                     }
+                    variant={select(
+                        'variant',
+                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
+                        'secondary',
+                    )}
                     offset={number('offset', 0)}
                     distance={number('distance', 3)}
-                    variant={'secondary'}
                     options={object('options', options)}
                 />
             </Box>

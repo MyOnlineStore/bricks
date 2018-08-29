@@ -491,6 +491,7 @@ const theme: ThemeType = {
             active: {
                 boxShadow: 'inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px rgba(136,151,157,0.20)',
             },
+            dividerColor: silver.darker3,
             borderRadius: roundness.base,
         },
     },
