@@ -40,8 +40,12 @@ const StyledTable = styled.table`
     border-spacing: 0;
     border-collapse: separate;
     background-color: ${({ theme }): string => theme.Table.default.backgroundColor};
-    overflow: auto
+    overflow: auto;
     min-width: 100%;
+
+    & tr:last-of-type td {
+        border-bottom: 1px solid transparent;
+    }
 `;
 
 export default StyledTable;
