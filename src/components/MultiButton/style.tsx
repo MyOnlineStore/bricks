@@ -13,11 +13,30 @@ type MultiButtonThemeType = {
         boxShadow: string;
     };
     button: {
-        active: {
-            boxShadow: string;
+        common: {
+            active: {
+                boxShadow: string;
+            };
+            borderRadius: string;
         };
-        dividerColor: string;
-        borderRadius: string;
+        primary: {
+            dividerColor: string;
+        };
+        secondary: {
+            dividerColor: string;
+        };
+        warning: {
+            dividerColor: string;
+        };
+        destructive: {
+            dividerColor: string;
+        };
+        plain: {
+            dividerColor: string;
+        };
+        disabled: {
+            dividerColor: string;
+        };
     };
 };
 
@@ -41,28 +60,28 @@ const StyledMultiButton = styled(Button)`
 `;
 
 const StyledChevronButton = styled(Button)`
-    border-left: solid 1px ${({ theme }): string => theme.MultiButton.button.dividerColor};
+    border-left: solid 1px ${({ theme, variant }): string => theme.MultiButton.button[variant].dividerColor};
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     margin-left: 0px;
 
     &:active {
         transform: translateY(0px);
-        border-left-color: ${({ theme }): string => theme.MultiButton.button.dividerColor};
+        border-left-color: ${({ theme, variant }): string => theme.MultiButton.button[variant].dividerColor};
     }
 
     &:hover {
-        border-left-color: ${({ theme }): string => theme.MultiButton.button.dividerColor};
+        border-left-color: ${({ theme, variant }): string => theme.MultiButton.button[variant].dividerColor};
     }
 
     &:focus {
-        border-left-color: ${({ theme }): string => theme.MultiButton.button.dividerColor};
+        border-left-color: ${({ theme, variant }): string => theme.MultiButton.button[variant].dividerColor};
     }
 `;
 
 const StyledWrapper = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styled.div)`
     border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius}
-    box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.active.boxShadow : '')};
+    box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.common.active.boxShadow : '')};
     transform: translateZ(0) translate3d(0, 0, 0);
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
     outline: none;

@@ -132,6 +132,7 @@ describe('MultiButton', () => {
                 action: actionMock2,
             },
         ];
+
         const component = mountWithTheme(<MultiButton variant={'secondary'} options={optionsMock} />);
         const defaultButton = component.find(StyledMultiButton);
 
@@ -152,6 +153,7 @@ describe('MultiButton', () => {
                 action: actionMock1,
             },
         ];
+
         const component = mountWithTheme(<MultiButton variant={'secondary'} options={optionsMock} />);
         const arrowButton = component.find(StyledChevronButton);
         const defaultButton = component.find(StyledMultiButton);
@@ -183,6 +185,7 @@ describe('MultiButton', () => {
                 action: actionMock2,
             },
         ];
+
         const component = mountWithTheme(<MultiButton variant={'secondary'} options={optionsMock} />);
         const arrowButton = component.find(StyledChevronButton);
 
@@ -201,6 +204,7 @@ describe('MultiButton', () => {
         const component = mountWithTheme(
             <MultiButton variant={'secondary'} options={options} offset={20} distance={6} />,
         );
+
         const arrowButton = component.find(StyledChevronButton);
 
         arrowButton.simulate('click');
