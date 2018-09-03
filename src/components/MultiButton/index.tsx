@@ -90,7 +90,7 @@ class MultiButton extends Component<PropsType, StateType> {
         const { href, action, flat, compact, title, ...filteredProps } = this.props;
 
         return (
-            <>
+            <Box wrap={false}>
                 <StyledMultiButton
                     {...filteredProps}
                     title={this.defaultOption.label}
@@ -108,7 +108,7 @@ class MultiButton extends Component<PropsType, StateType> {
                         <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
                     </Box>
                 </StyledChevronButton>
-            </>
+            </Box>
         );
     };
 

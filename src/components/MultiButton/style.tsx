@@ -48,7 +48,7 @@ const StyledMultiButton = styled(Button)`
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-right: solid 0px transparent;
-    margin-right: 0px;
+    margin: 0px;
 
     &:focus {
         z-index: 2;
@@ -63,7 +63,7 @@ const StyledChevronButton = styled(Button)`
     border-left: solid 1px ${({ theme, variant }): string => theme.MultiButton.button[variant].dividerColor};
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    margin-left: 0px;
+    margin: 0px;
 
     &:active {
         transform: translateY(0px);
