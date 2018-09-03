@@ -5,13 +5,17 @@ exports[`Storyshots Tile Default 1`] = `
   className="sc-bwzfXH gCBYeZ"
 >
   <div
-    className="sc-kgAjT gvTANQ"
+    className="sc-kgAjT dCguES"
   >
     <div
-      className="sc-fjdhpX jskuQK"
-      role="heading"
+      className="sc-bwzfXH cQRyEr"
     >
-      Tile
+      <div
+        className="sc-fjdhpX jskuQK"
+        role="heading"
+      >
+        Tile
+      </div>
     </div>
   </div>
 </div>

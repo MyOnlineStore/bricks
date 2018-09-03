@@ -11,7 +11,6 @@ const StyledTile = styled.div`
     background: #ffffff;
     border-radius: 3px 3px 3px 3px;
     border: ${({ theme }):string => `1px solid ${theme.Tile.borderColor}`};
-    padding: 36px;
     width: 100%;
 `;
 
