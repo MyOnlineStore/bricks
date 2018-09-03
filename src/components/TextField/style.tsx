@@ -12,6 +12,7 @@ type TextFieldThemeType = {
             fontSize: string;
             fontFamily: string;
             color: string;
+            backgroundColor: string;
         };
         affix: {
             color: string;
@@ -35,7 +36,7 @@ type TextFieldThemeType = {
 const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
-    background: transparent;
+    background-color: ${({ theme }): string => theme.TextField.idle.common.backgroundColor};
     font-size: inherit;
     display: block;
     padding: 6px 12px;

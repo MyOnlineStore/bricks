@@ -17,7 +17,7 @@ exports[`Storyshots TextField Default 1`] = `
     </span>
   </div>
   <input
-    className="sc-dxgOiQ dToCqO"
+    className="sc-dxgOiQ iyMjck"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -54,7 +54,7 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ dToCqO"
+      className="sc-dxgOiQ iyMjck"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -114,7 +114,7 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ dToCqO"
+      className="sc-dxgOiQ iyMjck"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}

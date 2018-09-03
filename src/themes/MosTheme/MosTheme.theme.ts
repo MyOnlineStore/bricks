@@ -699,6 +699,7 @@ const theme: ThemeType = {
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
                 color: grey.lighter3,
+                backgroundColor: silver.lighter1,
             },
             affix: {
                 color: grey.lighter1,
