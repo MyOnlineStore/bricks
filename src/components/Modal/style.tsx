@@ -5,7 +5,8 @@ import styled, { withProps } from '../../utility/styled';
 
 enum ModalSizes {
     small = '480px',
-    large = '792px',
+    medium = '792px',
+    large = '1068px',
 }
 
 type ModalThemeType = {

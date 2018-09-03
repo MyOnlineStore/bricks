@@ -31,7 +31,7 @@ storiesOf('Modal', module).add('Default', () => {
     return (
         <Modal
             show={boolean('show', true)}
-            size={select('size', ['small', 'large'], 'large')}
+            size={select('size', ['small', 'medium', 'large'], 'large')}
             title="Would you like me to be your role modal?"
             closeAction={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
             renderFixed={(): JSX.Element => (

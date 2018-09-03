@@ -14,13 +14,14 @@ import StyledModal, { StyledModalWrapper } from './style';
 type PropsType = StyledType & {
     show: boolean;
     title: string;
-    size?: 'small' | 'large';
+    size?: 'small' | 'medium' | 'large';
     closeAction?(): void;
     renderFixed?(): JSX.Element;
 };
 
 class Modal extends Component<PropsType> {
     private styledModalRef: HTMLDivElement;
+    private styledModalWrapperRef: HTMLDivElement;
 
     public constructor(props: PropsType) {
         super(props);
@@ -33,7 +34,11 @@ class Modal extends Component<PropsType> {
     };
 
     public handleClickOutside = (event: Event): void => {
-        if (this.props.show && !this.styledModalRef.contains(event.target as Node)) {
+        if (
+            this.props.show &&
+            this.styledModalWrapperRef.contains(event.target as Node) &&
+            !this.styledModalRef.contains(event.target as Node)
+        ) {
             this.closeAction();
         }
     };
@@ -48,7 +53,12 @@ class Modal extends Component<PropsType> {
 
     public render(): JSX.Element {
         return (
-            <StyledModalWrapper show={this.props.show}>
+            <StyledModalWrapper
+                show={this.props.show}
+                innerRef={(ref): void => {
+                    this.styledModalWrapperRef = ref;
+                }}
+            >
                 <TransitionAnimation key={0} show={this.props.show} animation="zoom">
                     <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
                         {(breakpoint): JSX.Element => (
