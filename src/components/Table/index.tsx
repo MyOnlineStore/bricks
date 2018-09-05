@@ -58,7 +58,6 @@ class Table extends Component<PropsType, StateType> {
                 onUpdate={(items): void => {
                     if (this.props.onSelection !== undefined) this.props.onSelection(items.filter(item => item.payload).map(item => item.id));
                 }}
-
             >
                 <Branch
                     condition={isDraggable}
@@ -81,7 +80,6 @@ class Table extends Component<PropsType, StateType> {
                             selectable={isSelectable}
                         />
                     )}
-
                     <SubscriptionConsumer>
                         {({ update }): JSX.Element => (
                             <tbody>
