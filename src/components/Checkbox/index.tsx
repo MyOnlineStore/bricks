@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, MouseEvent } from 'react';
 import Icon from '../Icon';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 import Box from '../Box';
@@ -36,9 +36,10 @@ class Checkbox extends Component<PropsType, StateType> {
         if (this.props.onUnmount !== undefined) this.props.onUnmount();
     }
 
-    public changeHandler = (): void => {
+    public changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
         this.props.onChange({
             checked: !(this.props.checked === true),
+            event,
         });
     };
 
@@ -52,7 +53,7 @@ class Checkbox extends Component<PropsType, StateType> {
         return (
             <StyledCheckboxSkin
                 checkedState={this.props.checked}
-                onClick={this.changeHandler}
+                onClick={(event): void => this.changeHandler(event)}
                 elementFocus={this.state.focus}
             >
                 <Box justifyContent="center" alignItems="center" height="100%">
@@ -62,12 +63,12 @@ class Checkbox extends Component<PropsType, StateType> {
                 <StyledCheckbox
                     onFocus={this.toggleFocus}
                     onBlur={this.toggleFocus}
+                    readOnly
                     name={this.props.name}
                     value={this.props.value}
                     id={this.props.id}
                     checked={htmlChecked}
                     type="checkbox"
-                    onChange={this.changeHandler}
                 />
             </StyledCheckboxSkin>
         );

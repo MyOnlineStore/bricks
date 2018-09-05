@@ -6,6 +6,7 @@ import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
 import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
+import Checkbox from '../../Checkbox';
 
 jest.mock('../../../utility/SubscriptionContext', () => ({
     SubscriptionConsumer: jest.fn(props => {
@@ -88,9 +89,10 @@ describe('Table Row', () => {
             </table>,
         );
 
-        component.find('input').simulate('change');
-
         expect(updateMock).toHaveBeenCalledWith('row-1', false);
+
+        component.find(Checkbox).simulate('click');
+
         expect(updateMock).toHaveBeenCalledWith('row-1', true);
     });
 

@@ -138,7 +138,7 @@ describe('Table Header', () => {
             </table>,
         );
 
-        component.find('input').simulate('change');
+        component.find(Checkbox).simulate('click');
 
         expect(updateAllMock).toHaveBeenCalledWith(true);
     });

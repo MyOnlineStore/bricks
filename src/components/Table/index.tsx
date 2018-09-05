@@ -16,6 +16,11 @@ type PropsType = {
     onSelection?(selectedIds: Array<string>): void;
 };
 
+type StateType = {
+    firstCheckbox: number;
+    toggleAction: boolean | 'indeterminate';
+};
+
 const mapAlignment = (alignment: 'left' | 'center' | 'right'): 'flex-end' | 'center' | 'flex-start' => {
     switch (alignment) {
         case 'right':
@@ -27,11 +32,14 @@ const mapAlignment = (alignment: 'left' | 'center' | 'right'): 'flex-end' | 'cen
     }
 };
 
-class Table extends Component<PropsType> {
-    private selectedRows: Array<string> = [];
-
+class Table extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
+
+        this.state = {
+            firstCheckbox: -1,
+            toggleAction: true,
+        };
     }
 
     private dragEndHandler = (result: DropResult): void => {
@@ -39,35 +47,18 @@ class Table extends Component<PropsType> {
     };
 
     public render(): JSX.Element {
-        const { headers, rows, onSelection } = this.props;
+        const { headers, rows } = this.props;
 
         const alignments = this.props.alignments !== undefined ? this.props.alignments : [];
         const isDraggable = this.props.draggable !== undefined ? this.props.draggable : false;
         const isSelectable = this.props.selectable !== undefined ? this.props.selectable : false;
 
         return (
-            <Branch
-                condition={isSelectable}
-                ifTrue={(children): JSX.Element => (
-                    <SubscriptionProvider>
-                        <SubscriptionConsumer>
-                            {({ items }): ReactNode => {
-                                const selectedRows = items.filter(item => item.payload).map(item => item.id);
+            <SubscriptionProvider
+                onUpdate={(items): void => {
+                    if (this.props.onSelection !== undefined) this.props.onSelection(items.filter(item => item.payload).map(item => item.id));
+                }}
 
-                                if (
-                                    onSelection !== undefined &&
-                                    JSON.stringify(selectedRows) !== JSON.stringify(this.selectedRows)
-                                ) {
-                                    onSelection(selectedRows);
-                                }
-
-                                this.selectedRows = selectedRows;
-
-                                return children;
-                            }}
-                        </SubscriptionConsumer>
-                    </SubscriptionProvider>
-                )}
             >
                 <Branch
                     condition={isDraggable}
@@ -90,23 +81,61 @@ class Table extends Component<PropsType> {
                             selectable={isSelectable}
                         />
                     )}
-                    <tbody>
-                        {rows.map(({ id, cells }, rowIndex) => {
-                            return (
-                                <Row
-                                    key={id}
-                                    alignments={alignments}
-                                    cells={cells}
-                                    draggable={isDraggable}
-                                    selectable={isSelectable}
-                                    index={rowIndex}
-                                    identifier={id}
-                                />
-                            );
-                        })}
-                    </tbody>
+
+                    <SubscriptionConsumer>
+                        {({ update }): JSX.Element => (
+                            <tbody>
+                                {rows.map(({ id, cells }, rowIndex) => {
+                                    return (
+                                        <Row
+                                            key={id}
+                                            alignments={alignments}
+                                            cells={cells}
+                                            draggable={isDraggable}
+                                            selectable={isSelectable}
+                                            index={rowIndex}
+                                            identifier={id}
+                                            onCheck={(event, toggleAction): void => {
+                                                const idxOfClickedItem = this.props.rows.reduce(
+                                                    (combined, item, index) => {
+                                                        return item.id === id ? index : combined;
+                                                    },
+                                                    -1,
+                                                );
+
+                                                if (!event.shiftKey || this.state.firstCheckbox === -1) {
+                                                    this.setState({ firstCheckbox: idxOfClickedItem, toggleAction });
+                                                } else {
+                                                    const itemsInRange = this.props.rows.filter(
+                                                        (item, idx): boolean => {
+                                                            if (
+                                                                (idx > this.state.firstCheckbox &&
+                                                                    idx < idxOfClickedItem) ||
+                                                                (idx < this.state.firstCheckbox &&
+                                                                    idx > idxOfClickedItem)
+                                                            ) {
+                                                                return true;
+                                                            }
+
+                                                            return false;
+                                                        },
+                                                    );
+
+                                                    itemsInRange.forEach((item): void => {
+                                                        update(item.id, this.state.toggleAction);
+                                                    });
+
+                                                    window.getSelection().removeAllRanges();
+                                                }
+                                            }}
+                                        />
+                                    );
+                                })}
+                            </tbody>
+                        )}
+                    </SubscriptionConsumer>
                 </Branch>
-            </Branch>
+            </SubscriptionProvider>
         );
     }
 }

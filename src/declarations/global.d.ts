@@ -1,6 +1,9 @@
 declare namespace NodeJS {
     interface Global {
-        addEventListener: Function;
-        removeEventListener: Function;
+        addEventListener(): void;
+        removeEventListener(): void;
+        getSelection(): {
+            removeAllRanges(): void;
+        };
     }
 }
