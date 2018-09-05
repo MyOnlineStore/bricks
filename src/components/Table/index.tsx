@@ -46,6 +46,19 @@ class Table extends Component<PropsType, StateType> {
         (this.props.onDragEnd as Function)(result);
     };
 
+    private getItemsInRange = (rows: Array<{ id: string }>, idxOfClickedItem: number): Array<{ id: string }> => {
+        return rows.filter((item, idx): boolean => {
+            if (
+                (idx > this.state.firstCheckbox && idx < idxOfClickedItem) ||
+                (idx < this.state.firstCheckbox && idx > idxOfClickedItem)
+            ) {
+                return true;
+            }
+
+            return false;
+        });
+    };
+
     public render(): JSX.Element {
         const { headers, rows } = this.props;
 
@@ -56,7 +69,8 @@ class Table extends Component<PropsType, StateType> {
         return (
             <SubscriptionProvider
                 onUpdate={(items): void => {
-                    if (this.props.onSelection !== undefined) this.props.onSelection(items.filter(item => item.payload).map(item => item.id));
+                    if (this.props.onSelection !== undefined)
+                        this.props.onSelection(items.filter(item => item.payload).map(item => item.id));
                 }}
             >
                 <Branch
@@ -104,19 +118,9 @@ class Table extends Component<PropsType, StateType> {
                                                 if (!event.shiftKey || this.state.firstCheckbox === -1) {
                                                     this.setState({ firstCheckbox: idxOfClickedItem, toggleAction });
                                                 } else {
-                                                    const itemsInRange = this.props.rows.filter(
-                                                        (item, idx): boolean => {
-                                                            if (
-                                                                (idx > this.state.firstCheckbox &&
-                                                                    idx < idxOfClickedItem) ||
-                                                                (idx < this.state.firstCheckbox &&
-                                                                    idx > idxOfClickedItem)
-                                                            ) {
-                                                                return true;
-                                                            }
-
-                                                            return false;
-                                                        },
+                                                    const itemsInRange = this.getItemsInRange(
+                                                        this.props.rows,
+                                                        idxOfClickedItem,
                                                     );
 
                                                     itemsInRange.forEach((item): void => {
