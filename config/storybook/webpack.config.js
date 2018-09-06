@@ -44,7 +44,7 @@ module.exports = (baseConfig, env) => {
                 },
                 {
                     test: /\.css$/,
-                    use: ['style-loader', 'css-loader'],
+                    use: 'css-loader',
                 },
                 {
                     enforce: 'pre',

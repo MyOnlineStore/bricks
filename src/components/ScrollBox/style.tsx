@@ -1,7 +1,15 @@
 import { default as _R } from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
+import { StyledComponentClass as _S, injectGlobal } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
+
+/* tslint:disable */
+const simplebarStyles = require('simplebar/dist/simplebar.css').toString();
+
+injectGlobal`
+    ${simplebarStyles}
+`;
+/* tslint:enable */
 
 type ScrollBoxThemeType = {
     scrollbar: {

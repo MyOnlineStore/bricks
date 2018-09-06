@@ -2,7 +2,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -48,10 +47,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader',
-                }),
+                use: 'css-loader',
             },
             {
                 test: /^.*(?<!\.color)\.svg$/,
@@ -95,6 +91,5 @@ module.exports = {
             openAnalyzer: false,
             reportFilename: '../reports/webpack/statistics-tree.html',
         }),
-        new ExtractTextPlugin('styles.css'),
     ],
 };

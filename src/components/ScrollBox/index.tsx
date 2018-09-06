@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ScrollBar from 'simplebar';
-import 'simplebar/dist/simplebar.css';
 import { StyledType } from '../../utility/styled';
 import StyledScrollBox, { StyledBottom, StyledTop } from './style';
 
@@ -92,9 +91,7 @@ class ScrollBox extends Component<PropsType, StateType> {
                 {this.props.showInsetShadow !== false && (
                     <StyledTop show={this.state.showInsetShadow && this.state.scrollDirection === 'down'} />
                 )}
-
                 {this.props.children}
-
                 {this.props.showInsetShadow !== false && (
                     <StyledBottom show={this.state.showInsetShadow && this.state.scrollDirection !== 'down'} />
                 )}

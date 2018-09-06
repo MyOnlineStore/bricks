@@ -1,8 +1,16 @@
 {
     "globals": {
         "ts-jest": {
-            "useBabelrc": true,
-            "babelrcFile": ".babelrc",
+            "babelConfig": {
+                "plugins": [
+                    [
+                        "babel-plugin-styled-components",
+                        {
+                            "ssr": true
+                        }
+                    ]
+                ]
+            },
             "tsConfigFile": "./config/typescript/tsconfig.json" 
         }
     },   
