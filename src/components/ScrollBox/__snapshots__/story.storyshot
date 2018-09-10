@@ -3,30 +3,33 @@
 exports[`Storyshots ScrollBox Default 1`] = `
 Array [
   <div
-    className="sc-eqIVtm AMuDi"
+    className="sc-fAjcbJ cDmVGY"
   >
     <div
       className="sc-bwzfXH kbuYXZ"
     >
       <div
-        className="sc-eHgmQL gwATiB"
+        className="sc-eHgmQL bNASzp"
       >
         <div
-          className="sc-cvbbAY ctyBUi"
-        />
-        <div
-          className="sc-bwzfXH gzZJbb"
+          className="sc-cvbbAY hPPoNG"
         >
           <div
-            className="sc-fjdhpX jPMeup"
-            role="heading"
+            className="sc-jWBwVP jmLJxK"
+          />
+          <div
+            className="sc-bwzfXH gzZJbb"
           >
-            They see me scrollin'
-          </div>
-          <p
-            className="sc-bxivhb iBTcEE"
-          >
-            
+            <div
+              className="sc-fjdhpX jPMeup"
+              role="heading"
+            >
+              They see me scrollin'
+            </div>
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
     cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
     eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
@@ -65,11 +68,12 @@ Array [
     Donec libero dui, accumsan eget metus non, pharetra euismod erat. Quisque tincidunt est
     in odio laoreet consequat consectetur at lectus. Praesent ut porta leo.
 
-          </p>
+            </p>
+          </div>
+          <div
+            className="sc-brqgnP cWRNGt"
+          />
         </div>
-        <div
-          className="sc-jWBwVP gfAFcm"
-        />
       </div>
     </div>
   </div>,

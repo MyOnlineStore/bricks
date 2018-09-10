@@ -54,9 +54,11 @@
         "./config/jest/setup.tsx"
     ],
     "moduleNameMapper": {
-        "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/__mocks__/fileMock.js",
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/__mocks__/fileMock.js",
+        "\\.(css)$": "<rootDir>/config/jest/__mocks__/cssMock.js",
         "resize-observer-polyfill": "<rootDir>/config/jest/__mocks__/resizeObserverPolyfill.ts",
         "simplebar": "<rootDir>/config/jest/__mocks__/simplebar.ts",
+        "simplebar/dist/simplebar.min.css": "<rootDir>/config/jest/__mocks__/simplebarCss.ts",
         "react-popper": "<rootDir>/config/jest/__mocks__/reactPopper.tsx",
         "react-beautiful-dnd": "<rootDir>/config/jest/__mocks__/reactBeautifulDnd.tsx"
     }

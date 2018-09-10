@@ -2,10 +2,10 @@
 
 exports[`Storyshots Modal Default 1`] = `
 <div
-  className="sc-cMljjf NVYqP"
+  className="sc-jAaTju eFTTvg"
 >
   <div
-    className="sc-brqgnP bQpIOa"
+    className="sc-cMljjf kvJCEw"
   >
     <div
       style={
@@ -15,7 +15,7 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-        className="sc-jAaTju dVbUhv"
+        className="sc-jDwBTQ oOSwQ"
       >
         <div
           className="sc-bwzfXH kpHVAA"
@@ -53,18 +53,21 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-eHgmQL gwATiB"
+          className="sc-eHgmQL bNASzp"
         >
           <div
-            className="sc-cvbbAY ctyBUi"
-          />
-          <div
-            className="sc-bwzfXH drOqMq"
+            className="sc-cvbbAY hPPoNG"
           >
-            <p
-              className="sc-bxivhb iBTcEE"
+            <div
+              className="sc-jWBwVP jmLJxK"
+            />
+            <div
+              className="sc-bwzfXH drOqMq"
             >
-              
+              <p
+                className="sc-bxivhb iBTcEE"
+              >
+                
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
 cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
 eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
@@ -84,11 +87,12 @@ a pulvinar est porta. Nunc tempus vulputate dapibus. In eget venenatis orci. Pel
 tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finibus lorem et quam imperdiet,
 id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
 pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
-            </p>
+              </p>
+            </div>
+            <div
+              className="sc-brqgnP cWRNGt"
+            />
           </div>
-          <div
-            className="sc-jWBwVP gfAFcm"
-          />
         </div>
         <div
           className="sc-gZMcBi huJyDB"

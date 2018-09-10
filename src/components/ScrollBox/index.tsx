@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ScrollBar from 'simplebar';
 import { StyledType } from '../../utility/styled';
-import StyledScrollBox, { StyledBottom, StyledTop } from './style';
+import StyledScrollBox, { StyledBottom, StyledTop, StyledWrapper } from './style';
 
 type PropsType = StyledType & {
     autoHideScrollBar?: boolean;
@@ -83,19 +83,21 @@ class ScrollBox extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <StyledScrollBox
-                innerRef={(ref): void => {
-                    this.contentRef = ref;
-                }}
-            >
-                {this.props.showInsetShadow !== false && (
-                    <StyledTop show={this.state.showInsetShadow && this.state.scrollDirection === 'down'} />
-                )}
-                {this.props.children}
-                {this.props.showInsetShadow !== false && (
-                    <StyledBottom show={this.state.showInsetShadow && this.state.scrollDirection !== 'down'} />
-                )}
-            </StyledScrollBox>
+            <StyledWrapper>
+                <StyledScrollBox
+                    innerRef={(ref): void => {
+                        this.contentRef = ref;
+                    }}
+                >
+                    {this.props.showInsetShadow !== false && (
+                        <StyledTop show={this.state.showInsetShadow && this.state.scrollDirection === 'down'} />
+                    )}
+                    {this.props.children}
+                    {this.props.showInsetShadow !== false && (
+                        <StyledBottom show={this.state.showInsetShadow && this.state.scrollDirection !== 'down'} />
+                    )}
+                </StyledScrollBox>
+            </StyledWrapper>
         );
     }
 }
