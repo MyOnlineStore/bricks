@@ -17,7 +17,7 @@ type PropsType = {
 };
 
 type StateType = {
-    firstCheckbox: number;
+    selectionStart: number;
     toggleAction: boolean | 'indeterminate';
 };
 
@@ -37,7 +37,7 @@ class Table extends Component<PropsType, StateType> {
         super(props);
 
         this.state = {
-            firstCheckbox: -1,
+            selectionStart: -1,
             toggleAction: true,
         };
     }
@@ -46,11 +46,11 @@ class Table extends Component<PropsType, StateType> {
         (this.props.onDragEnd as Function)(result);
     };
 
-    private getItemsInRange = (rows: Array<{ id: string }>, idxOfClickedItem: number): Array<{ id: string }> => {
+    private getItemsInRange = (rows: Array<{ id: string }>, indexOfCheckedItem: number): Array<{ id: string }> => {
         return rows.filter((item, idx): boolean => {
             if (
-                (idx > this.state.firstCheckbox && idx < idxOfClickedItem) ||
-                (idx < this.state.firstCheckbox && idx > idxOfClickedItem)
+                (idx > this.state.selectionStart && idx < indexOfCheckedItem) ||
+                (idx < this.state.selectionStart && idx > indexOfCheckedItem)
             ) {
                 return true;
             }
@@ -108,19 +108,19 @@ class Table extends Component<PropsType, StateType> {
                                             index={rowIndex}
                                             identifier={id}
                                             onCheck={(event, toggleAction): void => {
-                                                const idxOfClickedItem = this.props.rows.reduce(
+                                                const indexOfCheckedItem = this.props.rows.reduce(
                                                     (combined, item, index) => {
                                                         return item.id === id ? index : combined;
                                                     },
                                                     -1,
                                                 );
 
-                                                if (!event.shiftKey || this.state.firstCheckbox === -1) {
-                                                    this.setState({ firstCheckbox: idxOfClickedItem, toggleAction });
+                                                if (!event.shiftKey || this.state.selectionStart === -1) {
+                                                    this.setState({ selectionStart: indexOfCheckedItem, toggleAction });
                                                 } else {
                                                     const itemsInRange = this.getItemsInRange(
                                                         this.props.rows,
-                                                        idxOfClickedItem,
+                                                        indexOfCheckedItem,
                                                     );
 
                                                     itemsInRange.forEach((item): void => {

@@ -100,7 +100,7 @@ class Row extends Component<PropsType, StateType> {
                 {selectable && (
                     <Cell align="left" width={'18px'}>
                         <SubscriptionConsumer>
-                            {({ items, update, remove, getPayload }): JSX.Element => {
+                            {({ update, remove, getPayload }): JSX.Element => {
                                 return (
                                     <Checkbox
                                         checked={getPayload(identifier)}
