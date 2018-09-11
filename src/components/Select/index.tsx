@@ -16,6 +16,7 @@ type OptionBase = {
 };
 
 type StateType = {
+    disabled: boolean;
     input: string;
     isOpen: boolean;
     optionPointer: number;
@@ -26,6 +27,7 @@ type PropsType<GenericOption extends OptionBase> = {
     value: string;
     options: Array<GenericOption>;
     emptyText: string;
+    disabled?: boolean;
     onChange(value: string): void;
     renderOption?(option: GenericOption): JSX.Element;
 };
@@ -39,6 +41,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         this.inputRef = createRef();
 
         this.state = {
+            disabled: props.disabled !== undefined ? props.disabled : false,
             isOpen: false,
             input: props.value,
             optionPointer: -1,
@@ -68,8 +71,10 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     private open = (): void => {
-        this.handleInput('');
-        this.setState({ isOpen: true });
+        if (!this.state.disabled) {
+            this.handleInput('');
+            this.setState({ isOpen: true });
+        }
     };
 
     private filterOptions = (): ReadonlyArray<GenericOption> => {
@@ -143,7 +148,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 onKeyDownCapture={this.handleKeyPress}
                 tabIndex={0}
             >
-                <StyledInput>
+                <StyledInput disabled={this.state.disabled}>
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
                             <>
@@ -173,6 +178,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                             variant="secondary"
                             title={this.state.isOpen ? 'close' : 'open'}
                             action={this.state.isOpen ? this.close : this.open}
+                            disabled={this.state.disabled}
                         >
                             <Icon icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} size="small" />
                         </Button>

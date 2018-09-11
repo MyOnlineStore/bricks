@@ -38,6 +38,7 @@ const INNER_OFFSET: number = 6;
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: all .3s;
+    width: 100%;
     outline: none;
     display: inline-block;
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
@@ -45,7 +46,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
 
     &:focus {
-        box-shadow: ${({ theme }): string => theme.Select.wrapper.focus.boxShadow}
+        box-shadow: ${({ theme }): string => theme.Select.wrapper.focus.boxShadow};
     }
 
     &:before {
@@ -78,6 +79,10 @@ type WindowProps = {
     rect?: ClientRect;
 };
 
+type InputProps = {
+    disabled: boolean;
+};
+
 const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     box-sizing: border-box;
     position: absolute;
@@ -98,13 +103,17 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     z-index: 1000;
 `;
 
-const StyledInput = styled.div`
+const StyledInput = withProps<InputProps>(styled.div)`
     box-sizing: border-box;
     width: 100%;
     padding: 0 0 0 12px;
     border: solid 1px ${({ theme }): string => theme.Select.input.borderColor};
-    background: ${({ theme }): string => theme.Select.input.background};
+    background: ${({ theme, disabled }): string =>
+        disabled
+            ? '#e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px )'
+            : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
+    opacity: ${({ disabled }): string => (disabled ? '0.7' : '1')};
 
     input {
         appearance: none;

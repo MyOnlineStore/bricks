@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Select from '.';
-import { object, text } from '@storybook/addon-knobs';
+import { object, text, boolean } from '@storybook/addon-knobs/react';
 
 const options = [
     {
@@ -63,6 +63,7 @@ class Demo extends Component<{}, { value: string }> {
                 emptyText={text('emptyText', 'No results')}
                 onChange={this.handleChange}
                 options={object('options', options)}
+                disabled={boolean('disabled', false)}
             />
         );
     }

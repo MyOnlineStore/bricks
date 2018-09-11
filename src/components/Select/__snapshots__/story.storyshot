@@ -25,7 +25,7 @@ exports[`Storyshots Select Default 1`] = `
       <button
         className="sc-htoDjs TzVGU"
         color={undefined}
-        disabled={undefined}
+        disabled={false}
         icon={undefined}
         id={undefined}
         onClick={[Function]}
