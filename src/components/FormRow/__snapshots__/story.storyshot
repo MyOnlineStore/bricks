@@ -51,6 +51,7 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
             <input
               className="sc-dxgOiQ iyMjck"
+              id={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -79,6 +80,7 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
             <input
               className="sc-dxgOiQ iyMjck"
+              id={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -107,6 +109,7 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
             <input
               className="sc-dxgOiQ iyMjck"
+              id={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -167,6 +170,7 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
             <input
               className="sc-dxgOiQ iyMjck"
+              id={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -195,6 +199,7 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
             <input
               className="sc-dxgOiQ iyMjck"
+              id={undefined}
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -252,6 +257,7 @@ exports[`Storyshots FormRow Default 1`] = `
                 <input
                   checked={true}
                   className="sc-kGXeez sKBUe"
+                  id={undefined}
                   name="bool"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -289,6 +295,7 @@ exports[`Storyshots FormRow Default 1`] = `
                 <input
                   checked={false}
                   className="sc-kGXeez sKBUe"
+                  id={undefined}
                   name="bool"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -326,6 +333,7 @@ exports[`Storyshots FormRow Default 1`] = `
                 <input
                   checked={false}
                   className="sc-kGXeez sKBUe"
+                  id={undefined}
                   name="bool"
                   onBlur={[Function]}
                   onChange={[Function]}

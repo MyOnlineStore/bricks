@@ -9,6 +9,7 @@ import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters
 type PropsType = {
     value: string;
     name: string;
+    id?: string;
     feedback?: {
         severity: SeverityType;
         message: string;
@@ -88,6 +89,7 @@ class TextField extends Component<PropsType, StateType> {
                         type="text"
                         active={this.state.active}
                         value={this.props.value}
+                        id={this.props.id}
                         focus={this.state.focus}
                         onChange={this.onChange}
                         onFocus={this.handleFocus}

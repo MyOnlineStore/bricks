@@ -15,6 +15,7 @@ exports[`Storyshots RadioButton Default 1`] = `
       <input
         checked={true}
         className="sc-kGXeez sKBUe"
+        id={undefined}
         name="demo"
         onBlur={[Function]}
         onChange={[Function]}

@@ -11,6 +11,7 @@ type PropsType = {
     checked: boolean | 'indeterminate';
     value: string;
     name: string;
+    id?: string;
     onChange(change: { checked: boolean | 'indeterminate' }): void;
     onMount?(): void;
     onUnmount?(): void;
@@ -63,6 +64,7 @@ class Checkbox extends Component<PropsType, StateType> {
                     onBlur={this.toggleFocus}
                     name={this.props.name}
                     value={this.props.value}
+                    id={this.props.id}
                     checked={htmlChecked}
                     type="checkbox"
                     onChange={this.changeHandler}

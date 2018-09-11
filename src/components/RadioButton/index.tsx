@@ -12,6 +12,7 @@ type PropsType = {
     checked: boolean;
     value: string;
     name: string;
+    id?: string;
     label: string;
     onChange(change: { checked: boolean; value: string }): void;
 };
@@ -49,6 +50,7 @@ class RadioButton extends Component<PropsType, StateType> {
                             type="radio"
                             name={this.props.name}
                             value={this.props.value}
+                            id={this.props.id}
                         />
                     </StyledRadioButtonSkin>
                 </Box>

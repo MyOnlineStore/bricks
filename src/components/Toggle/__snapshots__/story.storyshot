@@ -6,32 +6,36 @@ exports[`Storyshots Toggle Default 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH doEFQb"
+    className="sc-bwzfXH hzcxBm"
   >
     <div
-      checked={false}
-      className="sc-uJMKN gEWJmA"
-      disabled={false}
+      className="sc-bwzfXH doEFQb"
     >
-      <input
+      <div
         checked={false}
-        className="sc-jqCOkK koTgrE"
+        className="sc-uJMKN gEWJmA"
         disabled={false}
-        id={undefined}
-        name="Toggle"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-        value="foot"
-      />
+      >
+        <input
+          checked={false}
+          className="sc-jqCOkK koTgrE"
+          disabled={false}
+          id={undefined}
+          name="Toggle"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value="foot"
+        />
+      </div>
     </div>
+    <p
+      className="sc-bxivhb iBTcEE"
+    >
+       
+      Turn me on!
+    </p>
   </div>
-  <p
-    className="sc-bxivhb iBTcEE"
-  >
-     
-    Turn me on!
-  </p>
 </div>
 `;

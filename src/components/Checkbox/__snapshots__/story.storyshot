@@ -22,6 +22,7 @@ exports[`Storyshots Checkbox Default 1`] = `
   <input
     checked={true}
     className="sc-VigVT jXADSx"
+    id={undefined}
     name="foo"
     onBlur={[Function]}
     onChange={[Function]}
