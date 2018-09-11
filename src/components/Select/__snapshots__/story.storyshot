@@ -19,13 +19,17 @@ exports[`Storyshots Select Default 1`] = `
         <p
           className="sc-bxivhb kOPFRV"
         >
-          Search a value
+          <span
+            className="sc-caSCKo eRwWQW"
+          >
+            Search a value
+          </span>
         </p>
       </div>
       <button
         className="sc-htoDjs TzVGU"
         color={undefined}
-        disabled={false}
+        disabled={true}
         icon={undefined}
         id={undefined}
         onClick={[Function]}
@@ -34,7 +38,7 @@ exports[`Storyshots Select Default 1`] = `
       >
         <span
           aria-hidden={true}
-          className="sc-iwsKbI MOBcS"
+          className="sc-iwsKbI ezQlwQ"
           dangerouslySetInnerHTML={
             Object {
               "__html": "test-file-stub",

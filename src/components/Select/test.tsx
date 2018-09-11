@@ -109,7 +109,7 @@ describe('Select', () => {
     it('should tear down event listeners on unmount', () => {
         const spy = jest.spyOn(document, 'removeEventListener');
 
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
@@ -278,15 +278,17 @@ describe('Select', () => {
     it('should handle a selected option', () => {
         const component = shallowWithTheme(
             <Select onChange={(): void => undefined} value={options[1].value} emptyText="empty" options={options} />,
-        );
+        ).dive();
 
-        expect(component.find(StyledInput).findWhere(node => node.text() === options[1].label).length).toBe(1);
+        expect(
+            component.find(StyledInput).findWhere(node => node.text() === options[1].label).length,
+        ).toBe(1);
     });
 
-    it('should render a alternative option rendering', () => {
+    it('should render an alternative option rendering', () => {
         const renderOption = jest.fn();
 
-        shallowWithTheme(
+        mountWithTheme(
             <Select
                 onChange={(): void => undefined}
                 value=""
@@ -342,5 +344,36 @@ describe('Select', () => {
                 .at(2)
                 .prop('isTargeted'),
         ).toBe(true);
+    });
+
+    it('should not open the Option-Select window when the component is disabled', () => {
+        const component = mountWithTheme(
+            <Select onChange={(): void => undefined} value="" emptyText="" options={options} disabled />,
+        );
+
+        component
+            .find(StyledInput)
+            .find(Box)
+            .at(1)
+            .simulate('click');
+
+        expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
+    });
+
+    it('should close the Option-Select window when the component gets disabled', () => {
+        const component = mountWithTheme(
+            <Select onChange={(): void => undefined} value="" emptyText="" options={options} />,
+        );
+
+        component
+            .find(StyledInput)
+            .find(Box)
+            .at(1)
+            .simulate('click');
+
+        component.setProps({ disabled: true });
+        component.update();
+
+        expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
     });
 });

@@ -28,6 +28,10 @@ type SelectThemeType = {
     placeholder: {
         color: string;
     };
+    disabled: {
+        chevron: string;
+        color: string;
+    };
 };
 
 type WrapperProps = {
@@ -35,6 +39,10 @@ type WrapperProps = {
 };
 
 const INNER_OFFSET: number = 6;
+
+const StyledPlaceholder = styled.span`
+    color: ${({ theme }): string => theme.Select.disabled.color};
+`;
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: all .3s;
@@ -110,7 +118,7 @@ const StyledInput = withProps<InputProps>(styled.div)`
     border: solid 1px ${({ theme }): string => theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled
-            ? '#e4e7ec repeating-linear-gradient( -45deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 10px, transparent 10px, transparent 20px )'
+            ? '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )'
             : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     opacity: ${({ disabled }): string => (disabled ? '0.7' : '1')};
@@ -131,4 +139,4 @@ const StyledInput = withProps<InputProps>(styled.div)`
     }
 `;
 
-export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType };
+export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType, StyledPlaceholder };

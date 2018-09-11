@@ -63,7 +63,7 @@ class Demo extends Component<{}, { value: string }> {
                 emptyText={text('emptyText', 'No results')}
                 onChange={this.handleChange}
                 options={object('options', options)}
-                disabled={boolean('disabled', false)}
+                disabled={boolean('disabled', true)}
             />
         );
     }

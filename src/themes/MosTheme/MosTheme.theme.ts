@@ -615,6 +615,10 @@ const theme: ThemeType = {
         placeholder: {
             color: silver.darker4,
         },
+        disabled: {
+            chevron: grey.lighter2,
+            color: grey.lighter2,
+        }
     },
     Skeleton: {
         common: {
