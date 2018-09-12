@@ -31,6 +31,8 @@ type SelectThemeType = {
     disabled: {
         chevron: string;
         color: string;
+        gradientLighterColor: string;
+        gradientDarkerColor: string;
     };
 };
 
@@ -118,7 +120,9 @@ const StyledInput = withProps<InputProps>(styled.div)`
     border: solid 1px ${({ theme }): string => theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled
-            ? '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )'
+            ? `${theme.Select.disabled.gradientLighterColor} repeating-linear-gradient( -45deg, ${
+                  theme.Select.disabled.gradientDarkerColor
+              }, ${theme.Select.disabled.gradientDarkerColor} 10px, transparent 10px, transparent 20px )`
             : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     opacity: ${({ disabled }): string => (disabled ? '0.7' : '1')};
