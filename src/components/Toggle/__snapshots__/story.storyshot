@@ -13,12 +13,12 @@ exports[`Storyshots Toggle Default 1`] = `
     >
       <div
         checked={false}
-        className="sc-uJMKN gEWJmA"
+        className="sc-bbmXgH gbaxZN"
         disabled={false}
       >
         <input
           checked={false}
-          className="sc-jqCOkK koTgrE"
+          className="sc-uJMKN bdoFdy"
           disabled={false}
           id={undefined}
           name="Toggle"
