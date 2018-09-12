@@ -32,7 +32,7 @@ const StyledCheckbox = withProps<{}, HTMLInputElement>(styled.input)`
 const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(styled.div)`
     width: 16px;
     height: 16px;
-    margin-top: 1px;
+    margin-top: 12px;
     border-radius: ${({ theme }): string => theme.Checkbox.idle.borderRadius};
     position: relative;
     outline: none;

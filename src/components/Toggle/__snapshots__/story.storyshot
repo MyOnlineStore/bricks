@@ -2,23 +2,23 @@
 
 exports[`Storyshots Toggle Default 1`] = `
 <div
-  className="sc-gGBfsJ PMRrL"
+  className="sc-kkGfuU jvfvYf"
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH hzcxBm"
+    className="sc-bwzfXH dRGel"
   >
     <div
-      className="sc-bwzfXH doEFQb"
+      className="sc-bwzfXH kqlGkq"
     >
       <div
         checked={false}
-        className="sc-bbmXgH gbaxZN"
+        className="sc-kEYyzF brBMbf"
         disabled={false}
       >
         <input
           checked={false}
-          className="sc-uJMKN bdoFdy"
+          className="sc-hMqMXs iiejKk"
           disabled={false}
           id={undefined}
           name="Toggle"
@@ -30,12 +30,16 @@ exports[`Storyshots Toggle Default 1`] = `
         />
       </div>
     </div>
-    <p
-      className="sc-bxivhb iBTcEE"
+    <div
+      className="sc-bwzfXH XrkjT"
     >
-       
-      Turn me on!
-    </p>
+      <p
+        className="sc-bxivhb iBTcEE"
+      >
+         
+        Turn me on!
+      </p>
+    </div>
   </div>
 </div>
 `;
