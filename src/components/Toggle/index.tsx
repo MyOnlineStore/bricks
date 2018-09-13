@@ -38,9 +38,11 @@ class Toggle extends Component<PropsType, StateType> {
     }
 
     public handleChange = (): void => {
-        this.props.onChange({
-            checked: this.props.disabled ? this.props.checked : !this.props.checked,
-        });
+        if (!this.props.disabled) {
+            this.props.onChange({
+                checked: !this.props.checked,
+            });
+        }
     };
 
     public toggleFocus = (): void => {
