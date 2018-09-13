@@ -47,16 +47,11 @@ class Table extends Component<PropsType, StateType> {
     };
 
     private getItemsInRange = (rows: Array<{ id: string }>, indexOfCheckedItem: number): Array<{ id: string }> => {
-        return rows.filter((item, index): boolean => {
-            if (
+        return rows.filter(
+            (item, index): boolean =>
                 (index > this.state.selectionStart && index < indexOfCheckedItem) ||
-                (index < this.state.selectionStart && index > indexOfCheckedItem)
-            ) {
-                return true;
-            }
-
-            return false;
-        });
+                (index < this.state.selectionStart && index > indexOfCheckedItem),
+        );
     };
 
     public render(): JSX.Element {
