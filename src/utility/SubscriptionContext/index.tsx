@@ -4,7 +4,9 @@ import React, { Component, createContext, Consumer } from 'react';
 type PayloadType = any;
 /* tslint:enable */
 
-type PropsType = {};
+type PropsType = {
+    onUpdate?(items: StateType['items']): void;
+};
 
 type StateType = {
     items: Array<{ id: string; payload: PayloadType }>;
@@ -66,6 +68,12 @@ class SubscriptionProvider extends Component<PropsType, StateType> {
     private remove = (id: string): void => {
         this.setState(prevState => ({ items: prevState.items.filter(item => item.id !== id) }));
     };
+
+    public componentDidUpdate(prevProps: PropsType, prevState: StateType): void {
+        if (this.props.onUpdate !== undefined && JSON.stringify(prevState.items) !== JSON.stringify(this.state.items)) {
+            this.props.onUpdate(this.state.items);
+        }
+    }
 
     public render(): JSX.Element {
         const contextValue = {

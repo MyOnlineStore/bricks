@@ -154,9 +154,7 @@ describe('Toggle', () => {
 
         toggle.find(StyledToggleWrapper).simulate('click');
 
-        expect(mockHandler).toHaveBeenCalledWith({
-            checked: true,
-        });
+        expect(mockHandler).not.toHaveBeenCalled();
     });
 
     it('should render an icon when the disabledIcon prop is set', () => {
@@ -186,4 +184,5 @@ describe('Toggle', () => {
 
         expect(toggle.find('p').length).toBe(1);
     });
+
 });

@@ -47,6 +47,12 @@ class Demo extends Component<PropsType, StateType> {
                 { id: 'row-2', cells: ['A2', 'B2', 'C2', actions] },
                 { id: 'row-3', cells: ['A3', 'B3', 'C3', actions] },
                 { id: 'row-4', cells: ['A4', 'B4', 'C4', actions] },
+                { id: 'row-5', cells: ['A5', 'B5', 'C5', actions] },
+                { id: 'row-6', cells: ['A6', 'B6', 'C6', actions] },
+                { id: 'row-7', cells: ['A7', 'B7', 'C7', actions] },
+                { id: 'row-8', cells: ['A8', 'B8', 'C8', actions] },
+                { id: 'row-9', cells: ['A9', 'B9', 'C9', actions] },
+                { id: 'row-10', cells: ['A10', 'B10', 'C10', actions] },
             ],
         };
     }

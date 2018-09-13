@@ -34,14 +34,19 @@ describe('Checkbox', () => {
     });
 
     it('should be able to change checked value', () => {
-        const mockHandler = jest.fn();
+        let mockEvent;
+
+        const mockHandler = jest.fn(({ event }) => {
+            mockEvent = event;
+        });
 
         const checkbox = mountWithTheme(<Checkbox onChange={mockHandler} name="demo" checked={false} value="bar" />);
 
-        checkbox.find(StyledCheckboxSkin).simulate('click');
+        checkbox.simulate('click');
 
         expect(mockHandler).toHaveBeenCalledWith({
             checked: true,
+            event: mockEvent,
         });
     });
 });

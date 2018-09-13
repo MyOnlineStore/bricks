@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactNode, MouseEvent } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import Icon from '../../Icon';
 import Cell from '../Cell';
@@ -19,6 +19,7 @@ type PropsType = {
     selected?: boolean;
     index: number;
     identifier: string;
+    onCheck?(event: MouseEvent<HTMLDivElement>, toggleAction: boolean | 'indeterminate'): void;
 };
 
 type StateType = {
@@ -105,8 +106,9 @@ class Row extends Component<PropsType, StateType> {
                                         checked={getPayload(identifier)}
                                         name=""
                                         value=""
-                                        onChange={({ checked }): void => {
+                                        onChange={({ checked, event }): void => {
                                             update(identifier, checked);
+                                            if (this.props.onCheck) this.props.onCheck(event, checked);
                                         }}
                                         onMount={(): void => update(identifier, false)}
                                         onUnmount={(): void => remove(identifier)}
