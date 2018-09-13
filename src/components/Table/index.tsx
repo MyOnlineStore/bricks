@@ -47,10 +47,10 @@ class Table extends Component<PropsType, StateType> {
     };
 
     private getItemsInRange = (rows: Array<{ id: string }>, indexOfCheckedItem: number): Array<{ id: string }> => {
-        return rows.filter((item, idx): boolean => {
+        return rows.filter((item, index): boolean => {
             if (
-                (idx > this.state.selectionStart && idx < indexOfCheckedItem) ||
-                (idx < this.state.selectionStart && idx > indexOfCheckedItem)
+                (index > this.state.selectionStart && index < indexOfCheckedItem) ||
+                (index < this.state.selectionStart && index > indexOfCheckedItem)
             ) {
                 return true;
             }

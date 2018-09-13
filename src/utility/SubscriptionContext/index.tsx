@@ -73,8 +73,8 @@ class SubscriptionProvider extends Component<PropsType, StateType> {
         if (this.props.onUpdate !== undefined && JSON.stringify(prevState.items) !== JSON.stringify(this.state.items)) {
             this.props.onUpdate(this.state.items);
         }
-
     }
+
     public render(): JSX.Element {
         const contextValue = {
             items: this.state.items,
