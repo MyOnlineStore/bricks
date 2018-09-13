@@ -36,7 +36,7 @@ describe('Checkbox', () => {
     it('should be able to change checked value', () => {
         let mockEvent;
 
-        const mockHandler = jest.fn(({ checked, event }) => {
+        const mockHandler = jest.fn(({ event }) => {
             mockEvent = event;
         });
 
