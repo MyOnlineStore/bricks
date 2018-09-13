@@ -37,6 +37,7 @@ type PropsType<GenericOption extends OptionBase> = {
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private wrapperRef: HTMLDivElement;
+    private windowRef: HTMLDivElement;
 
     public constructor(props: PropsType<GenericOption>) {
         super(props);
@@ -84,7 +85,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         );
     };
 
-    public componentDidUpdate(prevProps: PropsType<GenericOption>, prevState: StateType): void {
+    public componentDidUpdate(_: PropsType<GenericOption>, prevState: StateType): void {
         if (prevState.isOpen && this.props.disabled) {
             this.setState({ isOpen: false });
         }
@@ -103,7 +104,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     }
 
     public handleClickOutside = (event: MouseEvent): void => {
-        if (!this.wrapperRef.contains(event.target as Node)) {
+        if (!this.wrapperRef.contains(event.target as Node) && !this.windowRef.contains(event.target as Node)) {
             this.close();
         }
     };
@@ -118,19 +119,18 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     public handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
-        if (!this.state.isOpen && event.key === ' ') {
-            this.setState({ isOpen: true });
+        if (!this.state.isOpen && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+            this.open();
         }
 
-        if (event.key === 'ArrowUp') {
-            this.cycleDown();
+        if (this.state.isOpen) {
+            if (event.key === 'Escape') this.close();
+            if (event.key === 'ArrowUp') this.cycleDown();
+            if (event.key === 'ArrowDown') this.cycleUp();
+            if (event.key === 'Tab') event.preventDefault();
         }
 
-        if (event.key === 'ArrowDown') {
-            this.cycleUp();
-        }
-
-        if (event.key === 'Enter' && this.state.optionPointer !== -1) {
+        if (this.state.isOpen && (event.key === 'Enter' || event.key === ' ') && this.state.optionPointer !== -1) {
             this.handleChange(this.filterOptions()[this.state.optionPointer].value);
             this.wrapperRef.focus();
         }
@@ -197,6 +197,9 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 </StyledInput>
                 {createPortal(
                     <StyledWindow
+                        innerRef={(ref): void => {
+                            this.windowRef = ref;
+                        }}
                         isOpen={this.state.isOpen}
                         rect={
                             (this.wrapperRef as HTMLDivElement | undefined) !== undefined

@@ -50,6 +50,7 @@ const options = [
 
 describe('Select', () => {
     it('should open when the spacebar is pressed', () => {
+        const preventDefaultMock = jest.fn();
         const component = mountWithTheme(
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
@@ -58,6 +59,26 @@ describe('Select', () => {
             key: ' ',
         });
 
+        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+
+        component.simulate('keyDown', {
+            key: 'Tab',
+            preventDefault: preventDefaultMock,
+        });
+    });
+
+    it('should open the arrowDown or arrowUp is pressed and close when escape is pressed', () => {
+        const component = mountWithTheme(
+            <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
+        );
+
+        component.simulate('keyDown', { key: 'ArrowDown' });
+        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+
+        component.simulate('keyDown', { key: 'Escape' });
+        expect(component.find(FoldOut).prop('isOpen')).toBe(false);
+
+        component.simulate('keyDown', { key: 'ArrowUp' });
         expect(component.find(FoldOut).prop('isOpen')).toBe(true);
     });
 
@@ -280,9 +301,7 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value={options[1].value} emptyText="empty" options={options} />,
         ).dive();
 
-        expect(
-            component.find(StyledInput).findWhere(node => node.text() === options[1].label).length,
-        ).toBe(1);
+        expect(component.find(StyledInput).findWhere(node => node.text() === options[1].label).length).toBe(1);
     });
 
     it('should render an alternative option rendering', () => {
