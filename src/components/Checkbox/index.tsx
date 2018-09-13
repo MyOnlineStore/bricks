@@ -12,7 +12,7 @@ type PropsType = {
     value: string;
     name: string;
     id?: string;
-    onChange(change: { checked: boolean | 'indeterminate' }): void;
+    onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
     onMount?(): void;
     onUnmount?(): void;
 };
