@@ -618,8 +618,7 @@ const theme: ThemeType = {
         disabled: {
             chevron: grey.lighter2,
             color: grey.lighter2,
-            gradientLighterColor: '#f5f6f7',
-            gradientDarkerColor: '#f0f1f2',
+            background: '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )',
         }
     },
     Skeleton: {
