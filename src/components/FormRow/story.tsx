@@ -61,23 +61,25 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                         field={
                             <Box wrap width="100%">
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        prefix="Initials"
-                                        name="Initials"
-                                        value={this.state.initials}
-                                        onChange={(initials: string): void => this.setState({ initials })}
-                                    />
+                                <Box>
+                                    <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1} width="40%">
+                                        <TextField
+                                            prefix="Initials"
+                                            name="Initials"
+                                            value={this.state.initials}
+                                            onChange={(initials: string): void => this.setState({ initials })}
+                                        />
+                                    </Box>
+                                    <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1} width="60%">
+                                        <TextField
+                                            prefix="First name"
+                                            name="First name"
+                                            value={this.state.firstname}
+                                            onChange={(firstname: string): void => this.setState({ firstname })}
+                                        />
+                                    </Box>
                                 </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        prefix="First name"
-                                        name="First name"
-                                        value={this.state.firstname}
-                                        onChange={(firstname: string): void => this.setState({ firstname })}
-                                    />
-                                </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
+                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={2}>
                                     <TextField
                                         prefix="Surname"
                                         name="Surname"

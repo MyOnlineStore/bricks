@@ -39,65 +39,69 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH evgYKs"
         >
           <div
-            className="sc-bwzfXH epQtTt"
+            className="sc-bwzfXH dRGel"
           >
             <div
-              className="sc-eNQAEJ lhLkZ"
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
+              className="sc-bwzfXH dvoLGo"
             >
               <div
-                className="sc-ckVGcZ jnUSGE"
+                className="sc-eNQAEJ lhLkZ"
+                onBlurCapture={[Function]}
+                onClick={[Function]}
+                onFocusCapture={[Function]}
               >
-                <span
-                  className="sc-jKJlTe eFYypy"
+                <div
+                  className="sc-ckVGcZ jnUSGE"
                 >
-                  Initials
-                </span>
+                  <span
+                    className="sc-jKJlTe eFYypy"
+                  >
+                    Initials
+                  </span>
+                </div>
+                <input
+                  className="sc-dxgOiQ iyMjck"
+                  id={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="text"
+                  value=""
+                />
               </div>
-              <input
-                className="sc-dxgOiQ iyMjck"
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
+            </div>
+            <div
+              className="sc-bwzfXH cgnXvs"
+            >
+              <div
+                className="sc-eNQAEJ lhLkZ"
+                onBlurCapture={[Function]}
+                onClick={[Function]}
+                onFocusCapture={[Function]}
+              >
+                <div
+                  className="sc-ckVGcZ jnUSGE"
+                >
+                  <span
+                    className="sc-jKJlTe eFYypy"
+                  >
+                    First name
+                  </span>
+                </div>
+                <input
+                  className="sc-dxgOiQ iyMjck"
+                  id={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="text"
+                  value=""
+                />
+              </div>
             </div>
           </div>
           <div
-            className="sc-bwzfXH epQtTt"
-          >
-            <div
-              className="sc-eNQAEJ lhLkZ"
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
-            >
-              <div
-                className="sc-ckVGcZ jnUSGE"
-              >
-                <span
-                  className="sc-jKJlTe eFYypy"
-                >
-                  First name
-                </span>
-              </div>
-              <input
-                className="sc-dxgOiQ iyMjck"
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-          <div
-            className="sc-bwzfXH epQtTt"
+            className="sc-bwzfXH eGeDri"
           >
             <div
               className="sc-eNQAEJ lhLkZ"
