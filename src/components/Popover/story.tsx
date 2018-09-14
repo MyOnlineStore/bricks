@@ -39,6 +39,7 @@ class Demo extends Component<PropsType, StateType> {
     }
 
     private toggle = (): void => {
+        console.log('TOGGLE ZE POPOVER');
         this.setState({
             isOpen: !this.state.isOpen,
         });
@@ -64,35 +65,112 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-storiesOf('Popover', module).add('Default', () => (
-    /* tslint:disable */
-    <Demo
-        placement={
-            select(
-                'placement',
-                [
-                    'auto-start',
-                    'auto',
-                    'auto-end',
-                    'top-start',
-                    'top',
-                    'top-end',
-                    'right-start',
-                    'right',
-                    'right-end',
-                    'bottom-end',
+storiesOf('Popover', module)
+    .add('Default', () => (
+        /* tslint:disable */
+        <Demo
+            placement={
+                select(
+                    'placement',
+                    [
+                        'auto-start',
+                        'auto',
+                        'auto-end',
+                        'top-start',
+                        'top',
+                        'top-end',
+                        'right-start',
+                        'right',
+                        'right-end',
+                        'bottom-end',
+                        'bottom',
+                        'bottom-start',
+                        'left-end',
+                        'left',
+                        'left-start',
+                    ],
                     'bottom',
-                    'bottom-start',
-                    'left-end',
-                    'left',
-                    'left-start',
-                ],
-                'bottom',
-            ) as PlacementType
-        }
-        fixed={boolean('fixed', false)}
-        offset={number('offset', 0)}
-        distance={number('distance', 16)}
-    />
-    /* tslint:enable */
-));
+                ) as PlacementType
+            }
+            fixed={boolean('fixed', false)}
+            offset={number('offset', 0)}
+            distance={number('distance', 16)}
+        />
+        /* tslint:enable */
+    ))
+    .add('Internal state on hover', () => (
+        <Box height="90vh" justifyContent="center" alignItems="center">
+            <Box margin={trbl(48)}>
+                <Popover
+                    triggerOn={'hover'}
+                    renderContent={(): JSX.Element => <DemoContent />}
+                    placement={
+                        select(
+                            'placement',
+                            [
+                                'auto-start',
+                                'auto',
+                                'auto-end',
+                                'top-start',
+                                'top',
+                                'top-end',
+                                'right-start',
+                                'right',
+                                'right-end',
+                                'bottom-end',
+                                'bottom',
+                                'bottom-start',
+                                'left-end',
+                                'left',
+                                'left-start',
+                            ],
+                            'bottom',
+                        ) as PlacementType
+                    }
+                    fixed={boolean('fixed', false)}
+                    offset={number('offset', 0)}
+                    distance={number('distance', 16)}
+                >
+                    <Button variant="primary" title="Hover over me" />
+                </Popover>
+            </Box>
+        </Box>
+    ))
+    .add('Internal state on click', () => (
+        <Box height="90vh" justifyContent="center" alignItems="center">
+            <Box margin={trbl(48)}>
+                <Popover
+                    triggerOn={'click'}
+                    renderContent={(): JSX.Element => <DemoContent />}
+                    placement={
+                        select(
+                            'placement',
+                            [
+                                'auto-start',
+                                'auto',
+                                'auto-end',
+                                'top-start',
+                                'top',
+                                'top-end',
+                                'right-start',
+                                'right',
+                                'right-end',
+                                'bottom-end',
+                                'bottom',
+                                'bottom-start',
+                                'left-end',
+                                'left',
+                                'left-start',
+                            ],
+                            'bottom',
+                        ) as PlacementType
+                    }
+                    fixed={boolean('fixed', false)}
+                    offset={number('offset', 0)}
+                    distance={number('distance', 16)}
+                >
+                    <Button variant="primary" title="Toggle" />
+                </Popover>
+            </Box>
+        </Box>
+    ));

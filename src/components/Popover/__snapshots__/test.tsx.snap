@@ -23,9 +23,11 @@ exports[`Popover should render with defaults 1`] = `
 `;
 
 exports[`Popover should render with defaults 2`] = `
-<styled.div
-  innerRef={null}
-/>
+<div>
+  <styled.div
+    innerRef={null}
+  />
+</div>
 `;
 
 exports[`PopoverAnchor should render block 1`] = `
