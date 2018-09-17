@@ -16,6 +16,8 @@ initStoryshots({
             offsetWidth: 900,
             offsetHeight: 900,
             focus: jest.fn(),
+            addEventListener: jest.fn(),
+            removeEventListener: jest.fn(),
         }),
     }),
 });

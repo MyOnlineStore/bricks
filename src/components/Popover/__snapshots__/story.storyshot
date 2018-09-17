@@ -28,3 +28,61 @@ exports[`Storyshots Popover Default 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Popover Internal state on click 1`] = `
+<div
+  className="sc-bwzfXH iFCcSe"
+>
+  <div
+    className="sc-bwzfXH hlYRxd"
+  >
+    <div>
+      <div
+        className="sc-Rmtcm fPMxqJ"
+      >
+        <button
+          className="sc-htoDjs ilyuMW"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          id={undefined}
+          onClick={[Function]}
+          title="Toggle"
+          type="button"
+        >
+          Toggle
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Popover Internal state on hover 1`] = `
+<div
+  className="sc-bwzfXH iFCcSe"
+>
+  <div
+    className="sc-bwzfXH hlYRxd"
+  >
+    <div>
+      <div
+        className="sc-Rmtcm fPMxqJ"
+      >
+        <button
+          className="sc-htoDjs ilyuMW"
+          color={undefined}
+          disabled={undefined}
+          icon={undefined}
+          id={undefined}
+          onClick={[Function]}
+          title="Hover over me"
+          type="button"
+        >
+          Hover over me
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

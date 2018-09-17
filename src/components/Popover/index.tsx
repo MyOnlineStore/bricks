@@ -46,7 +46,6 @@ class Popover extends Component<PropsType, StateType> {
     };
 
     private togglePopover = (): void => {
-        console.log('toggle popover');
         this.setState({ isOpen: !this.state.isOpen });
     };
 
@@ -119,6 +118,7 @@ class Popover extends Component<PropsType, StateType> {
                     </Reference>
                     <TransitionAnimation show={this.state.isOpen} animation="fade">
                         <div
+                            id="jemoeder"
                             ref={ref => {
                                 if (ref) this.popoverRef = ref;
                             }}
