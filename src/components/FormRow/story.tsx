@@ -79,7 +79,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                         />
                                     </Box>
                                 </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={2}>
+                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
                                     <TextField
                                         prefix="Surname"
                                         name="Surname"

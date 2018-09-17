@@ -3,105 +3,39 @@
 exports[`Storyshots FormRow Default 1`] = `
 <form>
   <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
+    className="sc-bwzfXH hiMhOx"
   >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <div
+          className="sc-bwzfXH dRGel"
+        >
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            What is your name?
+          </p>
+        </div>
+        <p
+          className="sc-bxivhb kOPFRV"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
     >
       <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <div
-            className="sc-bwzfXH dRGel"
-          >
-            <p
-              className="sc-bxivhb iBTcEE"
-            >
-              What is your name?
-            </p>
-          </div>
-          <p
-            className="sc-bxivhb kOPFRV"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
+        className="sc-bwzfXH evgYKs"
       >
         <div
-          className="sc-bwzfXH evgYKs"
+          className="sc-bwzfXH dRGel"
         >
           <div
-            className="sc-bwzfXH dRGel"
-          >
-            <div
-              className="sc-bwzfXH dvoLGo"
-            >
-              <div
-                className="sc-eNQAEJ lhLkZ"
-                onBlurCapture={[Function]}
-                onClick={[Function]}
-                onFocusCapture={[Function]}
-              >
-                <div
-                  className="sc-ckVGcZ jnUSGE"
-                >
-                  <span
-                    className="sc-jKJlTe eFYypy"
-                  >
-                    Initials
-                  </span>
-                </div>
-                <input
-                  className="sc-dxgOiQ iyMjck"
-                  id={undefined}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              className="sc-bwzfXH cgnXvs"
-            >
-              <div
-                className="sc-eNQAEJ lhLkZ"
-                onBlurCapture={[Function]}
-                onClick={[Function]}
-                onFocusCapture={[Function]}
-              >
-                <div
-                  className="sc-ckVGcZ jnUSGE"
-                >
-                  <span
-                    className="sc-jKJlTe eFYypy"
-                  >
-                    First name
-                  </span>
-                </div>
-                <input
-                  className="sc-dxgOiQ iyMjck"
-                  id={undefined}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="sc-bwzfXH eGeDri"
+            className="sc-bwzfXH dvoLGo"
           >
             <div
               className="sc-eNQAEJ lhLkZ"
@@ -115,7 +49,36 @@ exports[`Storyshots FormRow Default 1`] = `
                 <span
                   className="sc-jKJlTe eFYypy"
                 >
-                  Surname
+                  Initials
+                </span>
+              </div>
+              <input
+                className="sc-dxgOiQ iyMjck"
+                id={undefined}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="sc-bwzfXH cgnXvs"
+          >
+            <div
+              className="sc-eNQAEJ lhLkZ"
+              onBlurCapture={[Function]}
+              onClick={[Function]}
+              onFocusCapture={[Function]}
+            >
+              <div
+                className="sc-ckVGcZ jnUSGE"
+              >
+                <span
+                  className="sc-jKJlTe eFYypy"
+                >
+                  First name
                 </span>
               </div>
               <input
@@ -130,256 +93,269 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
-  >
-    <div
-      className="sc-bwzfXH hiMhOx"
-    >
-      <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <div
-            className="sc-bwzfXH dRGel"
-          >
-            <p
-              className="sc-bxivhb iBTcEE"
-            >
-              Where do you live?
-            </p>
-          </div>
-          <p
-            className="sc-bxivhb kOPFRV"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
-      >
         <div
-          className="sc-bwzfXH evgYKs"
+          className="sc-bwzfXH epQtTt"
         >
           <div
-            className="sc-bwzfXH epQtTt"
+            className="sc-eNQAEJ lhLkZ"
+            onBlurCapture={[Function]}
+            onClick={[Function]}
+            onFocusCapture={[Function]}
           >
             <div
-              className="sc-eNQAEJ lhLkZ"
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
+              className="sc-ckVGcZ jnUSGE"
             >
-              <div
-                className="sc-ckVGcZ jnUSGE"
+              <span
+                className="sc-jKJlTe eFYypy"
               >
-                <span
-                  className="sc-jKJlTe eFYypy"
-                >
-                  Country
-                </span>
-              </div>
-              <input
-                className="sc-dxgOiQ iyMjck"
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
+                Surname
+              </span>
             </div>
-          </div>
-          <div
-            className="sc-bwzfXH epQtTt"
-          >
-            <div
-              className="sc-eNQAEJ lhLkZ"
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
-            >
-              <div
-                className="sc-ckVGcZ jnUSGE"
-              >
-                <span
-                  className="sc-jKJlTe eFYypy"
-                >
-                  City
-                </span>
-              </div>
-              <input
-                className="sc-dxgOiQ iyMjck"
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              className="sc-dxgOiQ iyMjck"
+              id={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
+    className="sc-bwzfXH hiMhOx"
   >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <div
+          className="sc-bwzfXH dRGel"
+        >
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            Where do you live?
+          </p>
+        </div>
+        <p
+          className="sc-bxivhb kOPFRV"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
     >
       <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <div
-            className="sc-bwzfXH dRGel"
-          >
-            <p
-              className="sc-bxivhb iBTcEE"
-            >
-              Can a boolean only be either true or false?
-            </p>
-          </div>
-          <p
-            className="sc-bxivhb kOPFRV"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
+        className="sc-bwzfXH evgYKs"
       >
         <div
-          className="sc-bwzfXH gAByJX"
+          className="sc-bwzfXH epQtTt"
         >
           <div
-            className="sc-bwzfXH dTTCsT"
+            className="sc-eNQAEJ lhLkZ"
+            onBlurCapture={[Function]}
+            onClick={[Function]}
+            onFocusCapture={[Function]}
           >
             <div
-              className="sc-kgoBCf BEYlJ"
-              onClick={[Function]}
+              className="sc-ckVGcZ jnUSGE"
+            >
+              <span
+                className="sc-jKJlTe eFYypy"
+              >
+                Country
+              </span>
+            </div>
+            <input
+              className="sc-dxgOiQ iyMjck"
+              id={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="sc-bwzfXH epQtTt"
+        >
+          <div
+            className="sc-eNQAEJ lhLkZ"
+            onBlurCapture={[Function]}
+            onClick={[Function]}
+            onFocusCapture={[Function]}
+          >
+            <div
+              className="sc-ckVGcZ jnUSGE"
+            >
+              <span
+                className="sc-jKJlTe eFYypy"
+              >
+                City
+              </span>
+            </div>
+            <input
+              className="sc-dxgOiQ iyMjck"
+              id={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-bwzfXH hiMhOx"
+  >
+    <div
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <div
+          className="sc-bwzfXH dRGel"
+        >
+          <p
+            className="sc-bxivhb iBTcEE"
+          >
+            Can a boolean only be either true or false?
+          </p>
+        </div>
+        <p
+          className="sc-bxivhb kOPFRV"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
+    >
+      <div
+        className="sc-bwzfXH clfeTd"
+      >
+        <div
+          className="sc-bwzfXH dTTCsT"
+        >
+          <div
+            className="sc-kgoBCf BEYlJ"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-bwzfXH doEFQb"
             >
               <div
-                className="sc-bwzfXH doEFQb"
+                checked={true}
+                className="sc-kpOJdX kxmcXw"
               >
-                <div
+                <input
                   checked={true}
-                  className="sc-kpOJdX kxmcXw"
-                >
-                  <input
-                    checked={true}
-                    className="sc-kGXeez sKBUe"
-                    id={undefined}
-                    name="bool"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    type="radio"
-                    value="1"
-                  />
-                </div>
+                  className="sc-kGXeez sKBUe"
+                  id={undefined}
+                  name="bool"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="1"
+                />
               </div>
-              <p
-                className="sc-bxivhb iBTcEE"
-              >
-                <label
-                  htmlFor="bool"
-                >
-                  True
-                </label>
-              </p>
             </div>
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              <label
+                htmlFor="bool"
+              >
+                True
+              </label>
+            </p>
           </div>
+        </div>
+        <div
+          className="sc-bwzfXH isLvox"
+        >
           <div
-            className="sc-bwzfXH isLvox"
+            className="sc-kgoBCf BEYlJ"
+            onClick={[Function]}
           >
             <div
-              className="sc-kgoBCf BEYlJ"
-              onClick={[Function]}
+              className="sc-bwzfXH doEFQb"
             >
               <div
-                className="sc-bwzfXH doEFQb"
+                checked={false}
+                className="sc-kpOJdX bHCyFz"
               >
-                <div
+                <input
                   checked={false}
-                  className="sc-kpOJdX bHCyFz"
-                >
-                  <input
-                    checked={false}
-                    className="sc-kGXeez sKBUe"
-                    id={undefined}
-                    name="bool"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    type="radio"
-                    value="2"
-                  />
-                </div>
+                  className="sc-kGXeez sKBUe"
+                  id={undefined}
+                  name="bool"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="2"
+                />
               </div>
-              <p
-                className="sc-bxivhb iBTcEE"
-              >
-                <label
-                  htmlFor="bool"
-                >
-                  False
-                </label>
-              </p>
             </div>
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              <label
+                htmlFor="bool"
+              >
+                False
+              </label>
+            </p>
           </div>
+        </div>
+        <div
+          className="sc-bwzfXH isLvox"
+        >
           <div
-            className="sc-bwzfXH isLvox"
+            className="sc-kgoBCf BEYlJ"
+            onClick={[Function]}
           >
             <div
-              className="sc-kgoBCf BEYlJ"
-              onClick={[Function]}
+              className="sc-bwzfXH doEFQb"
             >
               <div
-                className="sc-bwzfXH doEFQb"
+                checked={false}
+                className="sc-kpOJdX bHCyFz"
               >
-                <div
+                <input
                   checked={false}
-                  className="sc-kpOJdX bHCyFz"
-                >
-                  <input
-                    checked={false}
-                    className="sc-kGXeez sKBUe"
-                    id={undefined}
-                    name="bool"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    type="radio"
-                    value="3"
-                  />
-                </div>
+                  className="sc-kGXeez sKBUe"
+                  id={undefined}
+                  name="bool"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="3"
+                />
               </div>
-              <p
-                className="sc-bxivhb iBTcEE"
-              >
-                <label
-                  htmlFor="bool"
-                >
-                  Sometimes
-                </label>
-              </p>
             </div>
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              <label
+                htmlFor="bool"
+              >
+                Sometimes
+              </label>
+            </p>
           </div>
         </div>
       </div>
@@ -391,381 +367,341 @@ exports[`Storyshots FormRow Default 1`] = `
 exports[`Storyshots FormRow No Descriptions 1`] = `
 <form>
   <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
+    className="sc-bwzfXH hiMhOx"
   >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <p
+          className="sc-bxivhb iBTcEE"
+        >
+          What is your name?
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
     >
       <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <p
-            className="sc-bxivhb iBTcEE"
-          >
-            What is your name?
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
+        className="sc-bwzfXH evgYKs"
       >
         <div
-          className="sc-bwzfXH evgYKs"
+          className="sc-bwzfXH gtYTvg"
         >
           <div
-            className="sc-bwzfXH gtYTvg"
+            className="sc-eNQAEJ lhLkZ"
+            onBlurCapture={[Function]}
+            onClick={[Function]}
+            onFocusCapture={[Function]}
           >
             <div
-              className="sc-eNQAEJ lhLkZ"
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
+              className="sc-ckVGcZ jnUSGE"
             >
-              <div
-                className="sc-ckVGcZ jnUSGE"
+              <span
+                className="sc-jKJlTe eFYypy"
               >
-                <span
-                  className="sc-jKJlTe eFYypy"
-                >
-                  Name
-                </span>
-              </div>
-              <input
-                className="sc-dxgOiQ iyMjck"
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
+                Name
+              </span>
             </div>
+            <input
+              className="sc-dxgOiQ iyMjck"
+              id={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
+    className="sc-bwzfXH hiMhOx"
   >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <p
+          className="sc-bxivhb iBTcEE"
+        >
+          Where do you live?
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
     >
       <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <p
-            className="sc-bxivhb iBTcEE"
-          >
-            Where do you live?
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
+        className="sc-bwzfXH evgYKs"
       >
         <div
-          className="sc-bwzfXH evgYKs"
+          className="sc-bwzfXH gtYTvg"
         >
           <div
-            className="sc-bwzfXH gtYTvg"
+            className="sc-eNQAEJ lhLkZ"
+            onBlurCapture={[Function]}
+            onClick={[Function]}
+            onFocusCapture={[Function]}
           >
             <div
-              className="sc-eNQAEJ lhLkZ"
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
+              className="sc-ckVGcZ jnUSGE"
             >
-              <div
-                className="sc-ckVGcZ jnUSGE"
+              <span
+                className="sc-jKJlTe eFYypy"
               >
-                <span
-                  className="sc-jKJlTe eFYypy"
-                >
-                  Country
-                </span>
-              </div>
-              <input
-                className="sc-dxgOiQ iyMjck"
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
+                Country
+              </span>
             </div>
+            <input
+              className="sc-dxgOiQ iyMjck"
+              id={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
+    className="sc-bwzfXH hiMhOx"
   >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH jwEHml"
     >
-      <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <p
-            className="sc-bxivhb iBTcEE"
-          >
-            Can a boolean only be true or false?
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
-      >
-        <div
-          className="sc-bwzfXH gAByJX"
+      <label>
+        <p
+          className="sc-bxivhb iBTcEE"
         >
-          <div
-            className="sc-bwzfXH dTTCsT"
-          >
-            <div
-              className="sc-kgoBCf BEYlJ"
-              onClick={[Function]}
-            >
-              <div
-                className="sc-bwzfXH doEFQb"
-              >
-                <div
-                  checked={true}
-                  className="sc-kpOJdX kxmcXw"
-                >
-                  <input
-                    checked={true}
-                    className="sc-kGXeez sKBUe"
-                    id={undefined}
-                    name="bool"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    type="radio"
-                    value="1"
-                  />
-                </div>
-              </div>
-              <p
-                className="sc-bxivhb iBTcEE"
-              >
-                <label
-                  htmlFor="bool"
-                >
-                  True
-                </label>
-              </p>
-            </div>
-          </div>
-          <div
-            className="sc-bwzfXH isLvox"
-          >
-            <div
-              className="sc-kgoBCf BEYlJ"
-              onClick={[Function]}
-            >
-              <div
-                className="sc-bwzfXH doEFQb"
-              >
-                <div
-                  checked={false}
-                  className="sc-kpOJdX bHCyFz"
-                >
-                  <input
-                    checked={false}
-                    className="sc-kGXeez sKBUe"
-                    id={undefined}
-                    name="bool"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    type="radio"
-                    value="2"
-                  />
-                </div>
-              </div>
-              <p
-                className="sc-bxivhb iBTcEE"
-              >
-                <label
-                  htmlFor="bool"
-                >
-                  False
-                </label>
-              </p>
-            </div>
-          </div>
-          <div
-            className="sc-bwzfXH isLvox"
-          >
-            <div
-              className="sc-kgoBCf BEYlJ"
-              onClick={[Function]}
-            >
-              <div
-                className="sc-bwzfXH doEFQb"
-              >
-                <div
-                  checked={false}
-                  className="sc-kpOJdX bHCyFz"
-                >
-                  <input
-                    checked={false}
-                    className="sc-kGXeez sKBUe"
-                    id={undefined}
-                    name="bool"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    type="radio"
-                    value="3"
-                  />
-                </div>
-              </div>
-              <p
-                className="sc-bxivhb iBTcEE"
-              >
-                <label
-                  htmlFor="bool"
-                >
-                  Sometimes
-                </label>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+          Can a boolean only be true or false?
+        </p>
+      </label>
     </div>
-  </div>
-  <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
-  >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH OfNUB"
     >
       <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <p
-            className="sc-bxivhb iBTcEE"
-          >
-            Do you like toggles?
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
+        className="sc-bwzfXH clfeTd"
       >
         <div
-          className="sc-kkGfuU jvfvYf"
-          onClick={[Function]}
+          className="sc-bwzfXH dTTCsT"
         >
           <div
-            className="sc-bwzfXH dRGel"
+            className="sc-kgoBCf BEYlJ"
+            onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kqlGkq"
+              className="sc-bwzfXH doEFQb"
             >
               <div
-                checked={false}
-                className="sc-kEYyzF brBMbf"
-                disabled={undefined}
+                checked={true}
+                className="sc-kpOJdX kxmcXw"
               >
                 <input
-                  checked={false}
-                  className="sc-hMqMXs iiejKk"
-                  disabled={false}
-                  id="toggle"
-                  name="toggle"
+                  checked={true}
+                  className="sc-kGXeez sKBUe"
+                  id={undefined}
+                  name="bool"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  type="checkbox"
-                  value="toggle"
+                  type="radio"
+                  value="1"
                 />
               </div>
             </div>
-            <div
-              className="sc-bwzfXH XrkjT"
+            <p
+              className="sc-bxivhb iBTcEE"
             >
-              <p
-                className="sc-bxivhb iBTcEE"
+              <label
+                htmlFor="bool"
               >
-                 
-                Toggle to indicate your preference!
-              </p>
+                True
+              </label>
+            </p>
+          </div>
+        </div>
+        <div
+          className="sc-bwzfXH isLvox"
+        >
+          <div
+            className="sc-kgoBCf BEYlJ"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-bwzfXH doEFQb"
+            >
+              <div
+                checked={false}
+                className="sc-kpOJdX bHCyFz"
+              >
+                <input
+                  checked={false}
+                  className="sc-kGXeez sKBUe"
+                  id={undefined}
+                  name="bool"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="2"
+                />
+              </div>
             </div>
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              <label
+                htmlFor="bool"
+              >
+                False
+              </label>
+            </p>
+          </div>
+        </div>
+        <div
+          className="sc-bwzfXH isLvox"
+        >
+          <div
+            className="sc-kgoBCf BEYlJ"
+            onClick={[Function]}
+          >
+            <div
+              className="sc-bwzfXH doEFQb"
+            >
+              <div
+                checked={false}
+                className="sc-kpOJdX bHCyFz"
+              >
+                <input
+                  checked={false}
+                  className="sc-kGXeez sKBUe"
+                  id={undefined}
+                  name="bool"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="3"
+                />
+              </div>
+            </div>
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+              <label
+                htmlFor="bool"
+              >
+                Sometimes
+              </label>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    style={
-      Object {
-        "flexGrow": 1,
-      }
-    }
+    className="sc-bwzfXH hiMhOx"
   >
     <div
-      className="sc-bwzfXH hiMhOx"
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <p
+          className="sc-bxivhb iBTcEE"
+        >
+          Do you like toggles?
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
     >
       <div
-        className="sc-bwzfXH crrimP"
-      >
-        <label>
-          <p
-            className="sc-bxivhb iBTcEE"
-          >
-            Do you like checkboxes
-          </p>
-        </label>
-      </div>
-      <div
-        className="sc-bwzfXH gmlPxA"
+        className="sc-kkGfuU jvfvYf"
+        onClick={[Function]}
       >
         <div
-          className="sc-jTzLTM hYTrgs"
-          onClick={[Function]}
+          className="sc-bwzfXH dRGel"
         >
           <div
-            className="sc-bwzfXH ctAWjx"
-          />
-          <input
-            checked={false}
-            className="sc-VigVT jXADSx"
-            id={undefined}
-            name="foo"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            type="checkbox"
-            value="bar"
-          />
+            className="sc-bwzfXH kqlGkq"
+          >
+            <div
+              checked={false}
+              className="sc-kEYyzF brBMbf"
+              disabled={undefined}
+            >
+              <input
+                checked={false}
+                className="sc-hMqMXs iiejKk"
+                disabled={false}
+                id="toggle"
+                name="toggle"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="checkbox"
+                value="toggle"
+              />
+            </div>
+          </div>
+          <div
+            className="sc-bwzfXH XrkjT"
+          >
+            <p
+              className="sc-bxivhb iBTcEE"
+            >
+               
+              Toggle to indicate your preference!
+            </p>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-bwzfXH hiMhOx"
+  >
+    <div
+      className="sc-bwzfXH jwEHml"
+    >
+      <label>
+        <p
+          className="sc-bxivhb iBTcEE"
+        >
+          Do you like checkboxes
+        </p>
+      </label>
+    </div>
+    <div
+      className="sc-bwzfXH OfNUB"
+    >
+      <div
+        className="sc-jTzLTM hYTrgs"
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH ctAWjx"
+        />
+        <input
+          checked={false}
+          className="sc-VigVT jXADSx"
+          id={undefined}
+          name="foo"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+          value="bar"
+        />
       </div>
     </div>
   </div>
