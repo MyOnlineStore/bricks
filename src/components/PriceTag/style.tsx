@@ -36,9 +36,9 @@ const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span
                 font-size: .7em;
             }
 
-            ${displayType !== undefined &&
-                displayType === 'base' &&
-                `&::after {
+            ${
+                displayType !== undefined && displayType === 'base'
+                    ? `&::after {
                     content: '';
                     width: 100%;
                     height: 2px;
@@ -49,7 +49,9 @@ const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span
                     background: ${theme.PriceTag[identifier].color};
                     opacity: .7;
                     transform: rotate(-8deg);
-                }`}
+                }`
+                    : ''
+            }
         `;
     }};
 `;

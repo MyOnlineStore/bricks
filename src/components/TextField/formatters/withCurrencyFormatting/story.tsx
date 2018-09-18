@@ -1,5 +1,5 @@
 import TextField from '../../';
-import React, { Component, ChangeEvent } from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 import { boolean } from '@storybook/addon-knobs/react';
@@ -27,7 +27,6 @@ class Demo extends Component<PropsType, StateType> {
                 feedback={{ severity: 'info', message: `The reported value of this field is: ${this.state.value}` }}
                 locale={this.props.locale}
                 value={this.state.value}
-                id="testId"
                 onChange={(value: number): void => this.setState({ value })}
             />
         );

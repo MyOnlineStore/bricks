@@ -37,6 +37,20 @@ type TextFieldThemeType = {
     };
 };
 
+type affixProps = {
+    disabled?: boolean;
+};
+
+type WrapperProps = {
+    active: boolean;
+    focus: boolean;
+    disabled?: boolean;
+    feedback?: {
+        severity: SeverityType;
+        message: string;
+    };
+};
+
 const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
@@ -55,12 +69,13 @@ const StyledAffixWrapper = withProps<affixProps, HTMLDivElement>(styled.div)`
     display: flex;
     padding: 0 12px;
     user-select: none;
-    color: ${({ theme, disabled }): string =>
-        disabled ? theme.TextField.disabled.color : theme.TextField.idle.affix.color};
+
     background-color: ${({ theme }): string => theme.TextField.idle.affix.background};
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
+    color: ${({ theme, disabled }): string =>
+        disabled ? theme.TextField.disabled.color : theme.TextField.idle.affix.color}
 
     &:first-child {
         border-right: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
@@ -77,20 +92,6 @@ const StyledAffix = styled.span`
     text-overflow: ellipsis;
     overflow: hidden;
 `;
-
-type affixProps = {
-    disabled?: boolean;
-};
-
-type WrapperProps = {
-    active: boolean;
-    focus: boolean;
-    disabled?: boolean;
-    feedback?: {
-        severity: SeverityType;
-        message: string;
-    };
-};
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: border-color 100ms, box-shadow 100ms;

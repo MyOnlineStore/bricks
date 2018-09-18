@@ -54,9 +54,8 @@ class TextField extends Component<PropsType, StateType> {
             active: true,
         });
         this.inputRef.focus();
-        if (this.props.onFocus !== undefined) {
-            this.props.onFocus();
-        }
+
+        if (this.props.onFocus !== undefined) this.props.onFocus();
     };
 
     public handleBlur = (): void => {
@@ -65,9 +64,7 @@ class TextField extends Component<PropsType, StateType> {
             active: this.props.value !== '',
         });
 
-        if (this.props.onBlur !== undefined) {
-            this.props.onBlur();
-        }
+        if (this.props.onBlur !== undefined) this.props.onBlur();
     };
 
     public onChange = (event: ChangeEvent<HTMLInputElement>): void => {

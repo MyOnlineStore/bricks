@@ -75,6 +75,50 @@ describe('withCurrencyFormatting', () => {
         expect(changeMock).toHaveBeenCalledWith(19000000.12);
     });
 
+    it('should handle empty value on blur', () => {
+        const changeMock = jest.fn();
+        const CurrencyField = withCurrencyFormatting(TextField);
+
+        const component = mountWithTheme(
+            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
+        );
+
+        expect(component.find('input').prop('value')).toEqual('19.12');
+        expect(component.find(TextField).prop('prefix')).toEqual('$');
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '',
+            },
+        });
+
+        component.find('input').simulate('blur');
+
+        expect(component.find('input').prop('value')).toEqual('0.00');
+    });
+
+    it('should handle empty value on blur', () => {
+        const changeMock = jest.fn();
+        const CurrencyField = withCurrencyFormatting(TextField);
+
+        const component = mountWithTheme(
+            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
+        );
+
+        expect(component.find('input').prop('value')).toEqual('19.12');
+        expect(component.find(TextField).prop('prefix')).toEqual('$');
+
+        component.find('input').simulate('focus');
+
+        component.find('input').simulate('change', {
+            target: { value: '' },
+        });
+
+        component.find('input').simulate('blur');
+
+        expect(component.find('input').prop('value')).toEqual('0.00');
+    });
+
     it('should not break formatting on a double blur', () => {
         const changeMock = jest.fn();
         const CurrencyField = withCurrencyFormatting(TextField);

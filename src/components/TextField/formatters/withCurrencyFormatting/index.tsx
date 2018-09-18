@@ -105,19 +105,15 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             this.props.onChange(this.parse('out', value));
 
             const target = event.target;
+            const selectionStart = target.selectionStart as number;
             const newInputLength = this.parse('in', value).length;
 
-            if (target.selectionStart !== null) {
-                this.setState({
-                    cursorPosition: target.selectionStart,
-                    inputLength: target.value.length,
-                });
-            }
+            this.setState({
+                inputLength: target.value.length,
+            });
 
             this.setState({ value: this.parse('in', value) }, () => {
-                this.state.inputLength === newInputLength
-                    ? (target.selectionEnd = this.state.cursorPosition)
-                    : (target.selectionEnd = this.state.cursorPosition - 1);
+                target.selectionEnd = this.state.inputLength === newInputLength ? selectionStart : selectionStart - 1;
             });
         };
 

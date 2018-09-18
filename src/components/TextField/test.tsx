@@ -11,6 +11,14 @@ describe('TextField', () => {
         expect(component.find(StyledWrapper).prop('active')).toBe(false);
     });
 
+    it('should render a disabled state', () => {
+        const component = mountWithTheme(
+            <TextField value="" disabled suffix={'$'} name="firstName" onChange={jest.fn()} />,
+        );
+
+        expect(component.find(StyledWrapper).prop('active')).toBe(false);
+    });
+
     it('should render an active state with a value', () => {
         const component = mountWithTheme(<TextField value="Jane" name="firstName" onChange={jest.fn()} />);
 
