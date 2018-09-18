@@ -697,8 +697,8 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           id={undefined}
           name="foo"
           onBlur={[Function]}
-          onChange={[Function]}
           onFocus={[Function]}
+          readOnly={true}
           type="checkbox"
           value="bar"
         />
