@@ -32,8 +32,8 @@ type PropsType<GenericOption extends OptionBase> = {
     disabled?: boolean;
     onChange(value: string): void;
     renderOption?(option: GenericOption): JSX.Element;
+    renderInput?(isOpen: boolean, inputOption: OptionBase, placeholder?: string): JSX.Element;
 };
-
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private wrapperRef: HTMLDivElement;
@@ -155,30 +155,36 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             >
                 <StyledInput disabled={!this.props.disabled ? false : this.props.disabled}>
                     <Box alignItems="stretch">
-                        {(this.state.isOpen && (
-                            <>
-                                <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                    <Icon icon="search" size="small" color={'#d2d7e0'} />
+                        {this.props.renderInput !== undefined &&
+                            this.props.renderInput(this.state.isOpen, selectedOption, this.props.placeholder)}
+
+                        {(this.props.renderInput === undefined &&
+                            (this.state.isOpen && (
+                                <>
+                                    <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
+                                        <Icon icon="search" size="small" color={'#d2d7e0'} />
+                                    </Box>
+
+                                    <input
+                                        ref={this.inputRef}
+                                        type="text"
+                                        placeholder={this.props.placeholder}
+                                        value={this.state.input}
+                                        onChange={(event: ChangeEvent<HTMLInputElement>): void =>
+                                            this.handleInput(event.target.value)
+                                        }
+                                    />
+                                </>
+                            ))) ||
+                            (this.props.renderInput === undefined && (
+                                <Box alignItems="center" grow={1} onClick={this.open}>
+                                    {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
+                                        <Text descriptive>
+                                            <StyledPlaceholder>{this.props.placeholder}</StyledPlaceholder>
+                                        </Text>
+                                    )}
                                 </Box>
-                                <input
-                                    ref={this.inputRef}
-                                    type="text"
-                                    placeholder={this.props.placeholder}
-                                    value={this.state.input}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>): void =>
-                                        this.handleInput(event.target.value)
-                                    }
-                                />
-                            </>
-                        )) || (
-                            <Box alignItems="center" grow={1} onClick={this.open}>
-                                {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
-                                    <Text descriptive>
-                                        <StyledPlaceholder>{this.props.placeholder}</StyledPlaceholder>
-                                    </Text>
-                                )}
-                            </Box>
-                        )}
+                            ))}
                         <Button
                             compact
                             flat

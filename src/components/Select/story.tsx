@@ -1,7 +1,10 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-import Select from '.';
+import Select, { OptionBase } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs/react';
+import Box from '../Box';
+import Text from '../Text';
+import trbl from '../../utility/trbl';
 
 const options = [
     {
@@ -42,8 +45,13 @@ const options = [
     },
 ];
 
-class Demo extends Component<{}, { value: string }> {
-    public constructor(props: {}) {
+type PropsType = {};
+
+type StateType = {
+    value: string;
+};
+class Demo extends Component<PropsType, StateType> {
+    public constructor(props: PropsType) {
         super(props);
 
         this.state = {
@@ -69,6 +77,71 @@ class Demo extends Component<{}, { value: string }> {
     }
 }
 
-storiesOf('Select', module).add('Default', () => {
-    return <Demo />;
-});
+const renderInput = (isOpen: boolean, inputOption: OptionBase, placeholder?: string): JSX.Element => {
+    if (inputOption.label !== '') {
+        return (
+            <Box margin={trbl(6)} grow={1} width="100%" direction="row" alignItems="center">
+                <Box margin={trbl(0, 9, 0, 0)}>
+                    <img src="http://via.placeholder.com/100x100" />
+                </Box>
+                <Text variant="large"> {inputOption.label}</Text>
+            </Box>
+        );
+    } else {
+        return (
+            <Box margin={trbl(6)} grow={1} width="100%" direction="row" alignItems="center">
+                <Text descriptive>{placeholder ? placeholder : 'Make a selection'}</Text>
+            </Box>
+        );
+    }
+};
+
+const renderOption = (option: OptionBase): JSX.Element => {
+    return (
+        <Box margin={trbl(6)} grow={1} width="100%" direction="row" alignItems="center">
+            <Box margin={trbl(0, 9, 0, 0)}>
+                <img src="http://via.placeholder.com/100x100" />
+            </Box>
+            <Text variant="large">{option.label}</Text>
+        </Box>
+    );
+};
+
+/*tslint:disable*/
+class RenderInputDemo extends Component<PropsType, StateType> {
+    public constructor(props: PropsType) {
+        super(props);
+
+        this.state = {
+            value: '',
+        };
+    }
+
+    public handleChange = (value: string): void => {
+        this.setState({ value });
+    };
+
+    public render(): JSX.Element {
+        return (
+            <Select
+                placeholder={text('placeholder', 'Select a value')}
+                value={this.state.value}
+                emptyText={text('emptyText', 'No results')}
+                onChange={this.handleChange}
+                disabled={boolean('disabled', false)}
+                options={object('options', options)}
+                renderInput={renderInput}
+                renderOption={renderOption}
+            />
+        );
+    }
+}
+/*tslint:enable*/
+
+storiesOf('Select', module)
+    .add('Default', () => {
+        return <Demo />;
+    })
+    .add('Custom rendering', () => {
+        return <RenderInputDemo />;
+    });
