@@ -16,9 +16,11 @@ type PropsType = {
     };
     prefix?: string;
     suffix?: string;
+    disabled?: boolean;
     extractRef?(ref: HTMLInputElement): void;
-    onChange(value: string): void;
+    onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
+    onFocus?(): void;
 };
 
 type StateType = {
@@ -52,6 +54,9 @@ class TextField extends Component<PropsType, StateType> {
             active: true,
         });
         this.inputRef.focus();
+        if (this.props.onFocus !== undefined) {
+            this.props.onFocus();
+        }
     };
 
     public handleBlur = (): void => {
@@ -66,7 +71,7 @@ class TextField extends Component<PropsType, StateType> {
     };
 
     public onChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        this.props.onChange(event.target.value);
+        this.props.onChange(event.target.value, event);
     };
 
     public render(): JSX.Element {
@@ -74,6 +79,7 @@ class TextField extends Component<PropsType, StateType> {
             <>
                 <StyledWrapper
                     focus={this.state.focus}
+                    disabled={this.props.disabled}
                     active={this.state.active}
                     feedback={this.props.feedback}
                     onFocusCapture={this.handleFocus}
@@ -81,12 +87,13 @@ class TextField extends Component<PropsType, StateType> {
                     onClick={this.handleFocus}
                 >
                     {this.props.prefix && (
-                        <StyledAffixWrapper>
+                        <StyledAffixWrapper disabled={this.props.disabled}>
                             <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
                     <StyledInput
                         type="text"
+                        disabled={this.props.disabled}
                         active={this.state.active}
                         value={this.props.value}
                         id={this.props.id}
@@ -102,7 +109,7 @@ class TextField extends Component<PropsType, StateType> {
                         }}
                     />
                     {this.props.suffix && (
-                        <StyledAffixWrapper>
+                        <StyledAffixWrapper disabled={this.props.disabled}>
                             <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}

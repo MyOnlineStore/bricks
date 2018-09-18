@@ -3,12 +3,14 @@
 exports[`Storyshots TextField Default 1`] = `
 <div
   className="sc-eNQAEJ lhLkZ"
+  disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <div
     className="sc-ckVGcZ jnUSGE"
+    disabled={false}
   >
     <span
       className="sc-jKJlTe eFYypy"
@@ -17,7 +19,8 @@ exports[`Storyshots TextField Default 1`] = `
     </span>
   </div>
   <input
-    className="sc-dxgOiQ iyMjck"
+    className="sc-dxgOiQ iSQIum"
+    disabled={false}
     id={undefined}
     onBlur={[Function]}
     onChange={[Function]}
@@ -27,6 +30,7 @@ exports[`Storyshots TextField Default 1`] = `
   />
   <div
     className="sc-ckVGcZ jnUSGE"
+    disabled={false}
   >
     <span
       className="sc-jKJlTe eFYypy"
@@ -41,12 +45,14 @@ exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
     className="sc-eNQAEJ lhLkZ"
+    disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
       className="sc-ckVGcZ jnUSGE"
+      disabled={false}
     >
       <span
         className="sc-jKJlTe eFYypy"
@@ -55,8 +61,9 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ iyMjck"
-      id={undefined}
+      className="sc-dxgOiQ iSQIum"
+      disabled={false}
+      id="testId"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -102,12 +109,14 @@ exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
     className="sc-eNQAEJ eTWvPu"
+    disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
       className="sc-ckVGcZ jnUSGE"
+      disabled={false}
     >
       <span
         className="sc-jKJlTe eFYypy"
@@ -116,7 +125,8 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ iyMjck"
+      className="sc-dxgOiQ iSQIum"
+      disabled={false}
       id={undefined}
       onBlur={[Function]}
       onChange={[Function]}
@@ -126,6 +136,7 @@ Array [
     />
     <div
       className="sc-ckVGcZ jnUSGE"
+      disabled={false}
     >
       <span
         className="sc-jKJlTe eFYypy"

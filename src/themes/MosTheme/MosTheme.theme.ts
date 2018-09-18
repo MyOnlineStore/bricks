@@ -618,8 +618,9 @@ const theme: ThemeType = {
         disabled: {
             chevron: grey.lighter2,
             color: grey.lighter2,
-            background: '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )',
-        }
+            background:
+                '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )',
+        },
     },
     Skeleton: {
         common: {
@@ -704,11 +705,11 @@ const theme: ThemeType = {
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
                 color: grey.lighter3,
-                backgroundColor: silver.lighter1,
+                background: silver.lighter1,
             },
             affix: {
                 color: grey.lighter1,
-                backgroundColor: silver.base,
+                background: silver.base,
             },
         },
         active: {
@@ -722,6 +723,12 @@ const theme: ThemeType = {
         focus: {
             borderColor: green.darker2,
             boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+        },
+        disabled: {
+            color: grey.lighter2,
+            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 10px,${silver.darker1} 10px,${
+                silver.darker1
+            } 20px )`,
         },
     },
     Tile: {

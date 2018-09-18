@@ -1,4 +1,4 @@
-import React, { Component, ComponentClass, ComponentType } from 'react';
+import React, { Component, ComponentClass, ComponentType, ChangeEvent } from 'react';
 import { PropsType as TextFieldPropsType } from '../../';
 
 type OmittedKeys = 'onChange' | 'value';
@@ -13,8 +13,10 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
 type StateType = {
     value: string;
     currency: string;
+    cursorPosition: number;
     currencyAlignment: 'left' | 'right';
     decimalSeperator: string;
+    inputLength: number;
 };
 
 type PartType = {
@@ -37,18 +39,17 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             this.setFormatter(props.locale, props.currency);
 
             this.state = {
+                cursorPosition: 0,
                 value: `${props.value}`,
                 currency: '',
                 currencyAlignment: 'left',
                 decimalSeperator: '.',
+                inputLength: 0,
             };
         }
 
         private setFormatter(locale: string, currency: string): void {
-            this.formatter = new Intl.NumberFormat(locale, {
-                style: 'currency',
-                currency,
-            }) as NumberFormatter;
+            this.formatter = new Intl.NumberFormat(locale, { style: 'currency', currency }) as NumberFormatter;
         }
 
         private parse(direction: 'in', value: string): string;
@@ -78,18 +79,13 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
                                     this.state.currency !== part.value ||
                                     this.state.currencyAlignment !== currencyAlignment
                                 ) {
-                                    this.setState({
-                                        currency: part.value,
-                                        currencyAlignment,
-                                    });
+                                    this.setState({ currency: part.value, currencyAlignment });
                                 }
 
                                 return false;
                             }
                             case 'decimal': {
-                                this.setState({
-                                    decimalSeperator: part.value,
-                                });
+                                this.setState({ decimalSeperator: part.value });
 
                                 return true;
                             }
@@ -105,13 +101,36 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             }
         }
 
-        private handleChange = (value: string): void => {
-            this.setState({ value: this.parse('in', value) });
+        private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
             this.props.onChange(this.parse('out', value));
+
+            const target = event.target;
+            const newInputLength = this.parse('in', value).length;
+
+            if (target.selectionStart !== null) {
+                this.setState({
+                    cursorPosition: target.selectionStart,
+                    inputLength: target.value.length,
+                });
+            }
+
+            this.setState({ value: this.parse('in', value) }, () => {
+                this.state.inputLength === newInputLength
+                    ? (target.selectionEnd = this.state.cursorPosition)
+                    : (target.selectionEnd = this.state.cursorPosition - 1);
+            });
         };
 
         private handleBlur = (): void => {
-            this.setState({ value: this.format(this.state.value) });
+            if (this.state.value.length !== 0) {
+                return this.setState({ value: this.format(this.state.value) });
+            }
+            this.props.onChange(this.parse('out', '0'));
+            this.setState({ value: this.format('0') });
+        };
+
+        private handleFocus = (): void => {
+            this.setState({ value: this.parse('in', this.state.value) });
         };
 
         public componentDidUpdate(prevProps: PropsType): void {
@@ -134,6 +153,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
                 suffix: this.state.currencyAlignment === 'right' ? this.state.currency : undefined,
                 onChange: this.handleChange,
                 onBlur: this.handleBlur,
+                onFocus: this.handleFocus,
             };
 
             return <Wrapped {...wrappedProps} />;

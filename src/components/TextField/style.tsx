@@ -12,11 +12,11 @@ type TextFieldThemeType = {
             fontSize: string;
             fontFamily: string;
             color: string;
-            backgroundColor: string;
+            background: string;
         };
         affix: {
             color: string;
-            backgroundColor: string;
+            background: string;
         };
     };
     active: {
@@ -31,26 +31,33 @@ type TextFieldThemeType = {
         borderColor: string;
         boxShadow: string;
     };
+    disabled: {
+        color: string;
+        background: string;
+    };
 };
 
 const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
-    background-color: ${({ theme }): string => theme.TextField.idle.common.backgroundColor};
+    background: ${({ theme, disabled }): string =>
+        disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
     font-size: inherit;
     display: block;
     padding: 6px 12px;
     line-height: 1.572;
     outline: none;
     min-width: 60px;
+    ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextField.disabled.color}` : '')}
 `;
 
-const StyledAffixWrapper = styled.div`
+const StyledAffixWrapper = withProps<affixProps, HTMLDivElement>(styled.div)`
     display: flex;
     padding: 0 12px;
     user-select: none;
-    color: ${({ theme }): string => theme.TextField.idle.affix.color};
-    background-color: ${({ theme }): string => theme.TextField.idle.affix.backgroundColor};
+    color: ${({ theme, disabled }): string =>
+        disabled ? theme.TextField.disabled.color : theme.TextField.idle.affix.color};
+    background-color: ${({ theme }): string => theme.TextField.idle.affix.background};
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
@@ -71,9 +78,14 @@ const StyledAffix = styled.span`
     overflow: hidden;
 `;
 
+type affixProps = {
+    disabled?: boolean;
+};
+
 type WrapperProps = {
     active: boolean;
     focus: boolean;
+    disabled?: boolean;
     feedback?: {
         severity: SeverityType;
         message: string;
@@ -82,9 +94,9 @@ type WrapperProps = {
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: border-color 100ms, box-shadow 100ms;
-    border: solid 1px ${({ focus, theme }): string =>
-        focus ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
-    box-shadow: ${({ focus, theme }): string => (focus ? theme.TextField.focus.boxShadow : '')};
+    border: solid 1px ${({ focus, theme, disabled }): string =>
+        focus && !disabled ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
+    box-shadow: ${({ focus, theme, disabled }): string => (focus && !disabled ? theme.TextField.focus.boxShadow : '')};
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};

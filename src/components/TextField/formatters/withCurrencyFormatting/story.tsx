@@ -1,7 +1,8 @@
-import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
 import TextField from '../../';
+import React, { Component, ChangeEvent } from 'react';
+import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs/react';
 
 type PropsType = { locale: string; currency: string };
 type StateType = { value: number };
@@ -21,13 +22,12 @@ class Demo extends Component<PropsType, StateType> {
         return (
             <TextField.Currency
                 name="first name"
+                disabled={boolean('disabled', false)}
                 currency={this.props.currency}
-                feedback={{
-                    severity: 'info',
-                    message: `The reported value of this field is: ${this.state.value}`,
-                }}
+                feedback={{ severity: 'info', message: `The reported value of this field is: ${this.state.value}` }}
                 locale={this.props.locale}
                 value={this.state.value}
+                id="testId"
                 onChange={(value: number): void => this.setState({ value })}
             />
         );

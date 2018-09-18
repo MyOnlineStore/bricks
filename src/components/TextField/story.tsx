@@ -1,4 +1,4 @@
-import { button, select, text } from '@storybook/addon-knobs/react';
+import { button, select, text, boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import TextField from '.';
@@ -31,6 +31,7 @@ class Demo extends Component<DemoPropsType, { value: string }> {
                 prefix={text('Prefix', 'Username')}
                 suffix={text('Suffix', '$')}
                 value={this.state.value}
+                disabled={boolean('disabled', false)}
                 name="firstname"
                 onChange={(value: string): void => this.setState({ value })}
                 extractRef={(ref: HTMLInputElement): void => {
