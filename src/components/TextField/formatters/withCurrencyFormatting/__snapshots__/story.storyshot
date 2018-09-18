@@ -9,7 +9,7 @@ exports[`Storyshots TextField Default 1`] = `
   onFocusCapture={[Function]}
 >
   <div
-    className="sc-ckVGcZ ktDEHs"
+    className="sc-ckVGcZ kdxLRP"
     disabled={false}
   >
     <span
@@ -29,7 +29,7 @@ exports[`Storyshots TextField Default 1`] = `
     value=""
   />
   <div
-    className="sc-ckVGcZ ktDEHs"
+    className="sc-ckVGcZ kdxLRP"
     disabled={false}
   >
     <span
@@ -51,7 +51,7 @@ Array [
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-ckVGcZ ktDEHs"
+      className="sc-ckVGcZ kdxLRP"
       disabled={false}
     >
       <span
@@ -115,7 +115,7 @@ Array [
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-ckVGcZ ktDEHs"
+      className="sc-ckVGcZ kdxLRP"
       disabled={false}
     >
       <span
@@ -135,7 +135,7 @@ Array [
       value=""
     />
     <div
-      className="sc-ckVGcZ ktDEHs"
+      className="sc-ckVGcZ kdxLRP"
       disabled={false}
     >
       <span

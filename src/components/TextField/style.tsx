@@ -37,7 +37,7 @@ type TextFieldThemeType = {
     };
 };
 
-type affixProps = {
+type AffixProps = {
     disabled?: boolean;
 };
 
@@ -65,11 +65,10 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextField.disabled.color}` : '')}
 `;
 
-const StyledAffixWrapper = withProps<affixProps, HTMLDivElement>(styled.div)`
+const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
     display: flex;
     padding: 0 12px;
     user-select: none;
-
     background-color: ${({ theme }): string => theme.TextField.idle.affix.background};
     align-items: center;
     flex-shrink: 0;

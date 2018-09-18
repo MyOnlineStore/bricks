@@ -68,7 +68,7 @@ class TextField extends Component<PropsType, StateType> {
     };
 
     public onChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        this.props.onChange(event.target.value, event);
+        if (!this.props.disabled) this.props.onChange(event.target.value, event);
     };
 
     public render(): JSX.Element {

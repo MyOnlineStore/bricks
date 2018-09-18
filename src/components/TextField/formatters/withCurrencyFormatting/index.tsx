@@ -119,10 +119,11 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
 
         private handleBlur = (): void => {
             if (this.state.value.length !== 0) {
-                return this.setState({ value: this.format(this.state.value) });
+                this.setState({ value: this.format(this.state.value) });
+            } else {
+                this.props.onChange(this.parse('out', '0'));
+                this.setState({ value: this.format('0') });
             }
-            this.props.onChange(this.parse('out', '0'));
-            this.setState({ value: this.format('0') });
         };
 
         private handleFocus = (): void => {

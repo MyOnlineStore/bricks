@@ -42,7 +42,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ ktDEHs"
+              className="sc-ckVGcZ kdxLRP"
               disabled={undefined}
             >
               <span
@@ -74,7 +74,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ ktDEHs"
+              className="sc-ckVGcZ kdxLRP"
               disabled={undefined}
             >
               <span
@@ -106,7 +106,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ ktDEHs"
+              className="sc-ckVGcZ kdxLRP"
               disabled={undefined}
             >
               <span
@@ -170,7 +170,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ ktDEHs"
+              className="sc-ckVGcZ kdxLRP"
               disabled={undefined}
             >
               <span
@@ -202,7 +202,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ ktDEHs"
+              className="sc-ckVGcZ kdxLRP"
               disabled={undefined}
             >
               <span

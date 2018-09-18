@@ -19,6 +19,16 @@ describe('TextField', () => {
         expect(component.find(StyledWrapper).prop('active')).toBe(false);
     });
 
+    it('should not change value when disabled', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(<TextField value="John" disabled name="firstName" onChange={changeMock} />);
+
+        component.find(StyledInput).simulate('change');
+
+        expect(changeMock).not.toHaveBeenCalled();
+    });
+
     it('should render an active state with a value', () => {
         const component = mountWithTheme(<TextField value="Jane" name="firstName" onChange={jest.fn()} />);
 
