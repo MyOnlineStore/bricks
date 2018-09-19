@@ -50,6 +50,7 @@ type PropsType = {};
 type StateType = {
     value: string;
 };
+
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
