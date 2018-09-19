@@ -3,19 +3,19 @@
 exports[`Storyshots ScrollBox Default 1`] = `
 Array [
   <div
-    className="sc-fAjcbJ cDmVGY"
+    className="sc-kjoXOD jPdYtG"
   >
     <div
       className="sc-bwzfXH kbuYXZ"
     >
       <div
-        className="sc-eHgmQL bNASzp"
+        className="sc-brqgnP jEhxYZ"
       >
         <div
-          className="sc-cvbbAY hPPoNG"
+          className="sc-cMljjf krgCXT"
         >
           <div
-            className="sc-jWBwVP jmLJxK"
+            className="sc-jAaTju cirfDK"
           />
           <div
             className="sc-bwzfXH gzZJbb"
@@ -27,7 +27,7 @@ Array [
               They see me scrollin'
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -71,7 +71,7 @@ Array [
             </p>
           </div>
           <div
-            className="sc-brqgnP cWRNGt"
+            className="sc-jDwBTQ gosvOi"
           />
         </div>
       </div>
@@ -88,7 +88,7 @@ Array [
     </div>
   </div>,
   <p
-    className="sc-bxivhb iBTcEE"
+    className="sc-bxivhb jpexxn"
   >
     scrollTop: 
     0

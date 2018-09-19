@@ -1,13 +1,296 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Select Default 1`] = `
+exports[`Storyshots Select Custom rendering 1`] = `
 <div
-  className="sc-kjoXOD jELVFZ"
+  className="sc-kgAjT ciiNMD"
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-TOsTZ cnlTxH"
+    className="sc-ksYbfQ bABYTq"
+    disabled={false}
+  >
+    <div
+      className="sc-bwzfXH jlwOxs"
+    >
+      <div
+        className="sc-bwzfXH emfJtP"
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bwzfXH ctFMhT"
+        >
+          <p
+            className="sc-bxivhb jVDCXG"
+          >
+            Select a value
+          </p>
+        </div>
+      </div>
+      <button
+        className="sc-htoDjs TzVGU"
+        color={undefined}
+        disabled={false}
+        icon={undefined}
+        id={undefined}
+        onClick={[Function]}
+        title="open"
+        type="button"
+      >
+        <span
+          aria-hidden={true}
+          className="sc-iwsKbI MOBcS"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "test-file-stub",
+            }
+          }
+          role="img"
+        />
+      </button>
+    </div>
+  </div>
+  <MockPortal>
+    <div
+      className="sc-cJSrbW rQyzh"
+    >
+      <div
+        className="sc-brqgnP jEhxYZ"
+      >
+        <div
+          className="sc-cMljjf krgCXT"
+        >
+          <div
+            className="sc-chPdSV kiPOer"
+          >
+            <div>
+              <div
+                className="sc-cHGsZl hvaami"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH jMGuhn"
+                >
+                  <span
+                    className="sc-htpNat gyldUw"
+                  >
+                    <span
+                      className="sc-htpNat bCblnl"
+                    />
+                    <div>
+                      <div
+                        className="sc-bwzfXH eSqaig"
+                      >
+                        <div
+                          className="sc-bwzfXH doEFQb"
+                        >
+                          <img
+                            src="http://via.placeholder.com/100x100"
+                          />
+                        </div>
+                        <p
+                          className="sc-bxivhb dMWGdr"
+                        >
+                          Bar A
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="sc-cHGsZl hvaami"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH jMGuhn"
+                >
+                  <span
+                    className="sc-htpNat gyldUw"
+                  >
+                    <span
+                      className="sc-htpNat bCblnl"
+                    />
+                    <div>
+                      <div
+                        className="sc-bwzfXH eSqaig"
+                      >
+                        <div
+                          className="sc-bwzfXH doEFQb"
+                        >
+                          <img
+                            src="http://via.placeholder.com/100x100"
+                          />
+                        </div>
+                        <p
+                          className="sc-bxivhb dMWGdr"
+                        >
+                          Foo B
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="sc-cHGsZl hvaami"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH jMGuhn"
+                >
+                  <span
+                    className="sc-htpNat gyldUw"
+                  >
+                    <span
+                      className="sc-htpNat bCblnl"
+                    />
+                    <div>
+                      <div
+                        className="sc-bwzfXH eSqaig"
+                      >
+                        <div
+                          className="sc-bwzfXH doEFQb"
+                        >
+                          <img
+                            src="http://via.placeholder.com/100x100"
+                          />
+                        </div>
+                        <p
+                          className="sc-bxivhb dMWGdr"
+                        >
+                          Bar C
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="sc-cHGsZl hvaami"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH jMGuhn"
+                >
+                  <span
+                    className="sc-htpNat gyldUw"
+                  >
+                    <span
+                      className="sc-htpNat bCblnl"
+                    />
+                    <div>
+                      <div
+                        className="sc-bwzfXH eSqaig"
+                      >
+                        <div
+                          className="sc-bwzfXH doEFQb"
+                        >
+                          <img
+                            src="http://via.placeholder.com/100x100"
+                          />
+                        </div>
+                        <p
+                          className="sc-bxivhb dMWGdr"
+                        >
+                          Foo D
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="sc-cHGsZl hvaami"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH jMGuhn"
+                >
+                  <span
+                    className="sc-htpNat gyldUw"
+                  >
+                    <span
+                      className="sc-htpNat bCblnl"
+                    />
+                    <div>
+                      <div
+                        className="sc-bwzfXH eSqaig"
+                      >
+                        <div
+                          className="sc-bwzfXH doEFQb"
+                        >
+                          <img
+                            src="http://via.placeholder.com/100x100"
+                          />
+                        </div>
+                        <p
+                          className="sc-bxivhb dMWGdr"
+                        >
+                          Bar E
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="sc-cHGsZl hvaami"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="sc-bwzfXH jMGuhn"
+                >
+                  <span
+                    className="sc-htpNat gyldUw"
+                  >
+                    <span
+                      className="sc-htpNat bCblnl"
+                    />
+                    <div>
+                      <div
+                        className="sc-bwzfXH eSqaig"
+                      >
+                        <div
+                          className="sc-bwzfXH doEFQb"
+                        >
+                          <img
+                            src="http://via.placeholder.com/100x100"
+                          />
+                        </div>
+                        <p
+                          className="sc-bxivhb dMWGdr"
+                        >
+                          Bar F
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </MockPortal>
+</div>
+`;
+
+exports[`Storyshots Select Default 1`] = `
+<div
+  className="sc-kgAjT ciiNMD"
+  onKeyDownCapture={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="sc-ksYbfQ bABYTq"
     disabled={false}
   >
     <div
@@ -18,10 +301,10 @@ exports[`Storyshots Select Default 1`] = `
         onClick={[Function]}
       >
         <p
-          className="sc-bxivhb kOPFRV"
+          className="sc-bxivhb jVDCXG"
         >
           <span
-            className="sc-gisBJw bCwECJ"
+            className="sc-TOsTZ bzKXAe"
           >
             Search a value
           </span>
@@ -52,136 +335,160 @@ exports[`Storyshots Select Default 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-cHGsZl zDQN"
+      className="sc-cJSrbW rQyzh"
     >
       <div
-        className="sc-eHgmQL bNASzp"
+        className="sc-brqgnP jEhxYZ"
       >
         <div
-          className="sc-cvbbAY hPPoNG"
+          className="sc-cMljjf krgCXT"
         >
           <div
             className="sc-chPdSV kiPOer"
           >
             <div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar A
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar A
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Foo B
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Foo B
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar C
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar C
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Foo D
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Foo D
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar E
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar E
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar F
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar F
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
             </div>

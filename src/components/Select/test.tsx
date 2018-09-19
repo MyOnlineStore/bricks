@@ -320,6 +320,22 @@ describe('Select', () => {
         expect(renderOption).toHaveBeenCalledTimes(options.length);
     });
 
+    it('should render an alternative input rendering', () => {
+        const renderInput = jest.fn();
+
+        mountWithTheme(
+            <Select
+                onChange={(): void => undefined}
+                value=""
+                emptyText="empty"
+                options={options}
+                renderInput={renderInput}
+            />,
+        );
+
+        expect(renderInput).toHaveBeenCalledTimes(1);
+    });
+
     it('should show an empty state', () => {
         const emptyText = 'mock empty text';
 

@@ -2,10 +2,10 @@
 
 exports[`Storyshots MessageStream Default 1`] = `
 <div
-  className="sc-kkGfuU cRGTNd"
+  className="sc-eHgmQL kzSkRt"
 >
   <div
-    className="sc-hSdWYo kGzGBP"
+    className="sc-jWBwVP clbKoT"
     title="Sit Inceptos Magna"
   >
     <div
@@ -18,12 +18,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH iYmIXv"
         >
           <p
-            className="sc-bxivhb fYhFYx"
+            className="sc-bxivhb gTyNSX"
           >
             Sit Inceptos Magna
           </p>
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             <span
               dangerouslySetInnerHTML={
@@ -34,7 +34,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb kOPFRV"
+            className="sc-bxivhb jVDCXG"
           >
             Today 12:00
           </p>
@@ -43,10 +43,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iAyFgw lkPEhT"
+    className="sc-cvbbAY gFhhfi"
   />
   <div
-    className="sc-hSdWYo dRkAAP"
+    className="sc-jWBwVP gnUmav"
     title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div
@@ -59,12 +59,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH iYmIXv"
         >
           <p
-            className="sc-bxivhb fYhFYx"
+            className="sc-bxivhb gTyNSX"
           >
             Aenean Dapibus Vulputate Tortor Magna
           </p>
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             <span
               dangerouslySetInnerHTML={
@@ -76,7 +76,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb kOPFRV"
+            className="sc-bxivhb jVDCXG"
           >
             Today 10:00
           </p>
@@ -85,10 +85,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iAyFgw lkPEhT"
+    className="sc-cvbbAY gFhhfi"
   />
   <div
-    className="sc-hSdWYo kGzGBP"
+    className="sc-jWBwVP clbKoT"
     title="Vestibulum Dapibus"
   >
     <div
@@ -101,12 +101,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH iYmIXv"
         >
           <p
-            className="sc-bxivhb fYhFYx"
+            className="sc-bxivhb gTyNSX"
           >
             Vestibulum Dapibus
           </p>
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             <span
               dangerouslySetInnerHTML={
@@ -117,7 +117,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb kOPFRV"
+            className="sc-bxivhb jVDCXG"
           >
             Yesterday 12:00
           </p>
@@ -142,10 +142,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iAyFgw lkPEhT"
+    className="sc-cvbbAY gFhhfi"
   />
   <div
-    className="sc-hSdWYo vDiCD"
+    className="sc-jWBwVP YbiWn"
     title="Parturient Euismod Mollis Fringilla"
   >
     <div
@@ -158,12 +158,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH iYmIXv"
         >
           <p
-            className="sc-bxivhb fYhFYx"
+            className="sc-bxivhb gTyNSX"
           >
             Parturient Euismod Mollis Fringilla
           </p>
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             <span
               dangerouslySetInnerHTML={
@@ -175,7 +175,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb kOPFRV"
+            className="sc-bxivhb jVDCXG"
           >
             12-12-2012 12:00
           </p>
@@ -200,10 +200,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iAyFgw lkPEhT"
+    className="sc-cvbbAY gFhhfi"
   />
   <div
-    className="sc-hSdWYo cXDdhV"
+    className="sc-jWBwVP dtfdFl"
     title="Tortor Cursus"
   >
     <div
@@ -216,12 +216,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH iYmIXv"
         >
           <p
-            className="sc-bxivhb fYhFYx"
+            className="sc-bxivhb gTyNSX"
           >
             Tortor Cursus
           </p>
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             <span
               dangerouslySetInnerHTML={
@@ -232,7 +232,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb kOPFRV"
+            className="sc-bxivhb jVDCXG"
           >
             12-12-2012 12:00
           </p>
@@ -257,10 +257,10 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-iAyFgw lkPEhT"
+    className="sc-cvbbAY gFhhfi"
   />
   <div
-    className="sc-hSdWYo dRkAAP"
+    className="sc-jWBwVP gnUmav"
     title="Euismod Dolor Consectetur"
   >
     <div
@@ -273,12 +273,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH iYmIXv"
         >
           <p
-            className="sc-bxivhb fYhFYx"
+            className="sc-bxivhb gTyNSX"
           >
             Euismod Dolor Consectetur
           </p>
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             <span
               dangerouslySetInnerHTML={
@@ -289,7 +289,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb kOPFRV"
+            className="sc-bxivhb jVDCXG"
           />
         </div>
         <div

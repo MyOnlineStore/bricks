@@ -2,10 +2,10 @@
 
 exports[`Storyshots RadioButtonGroup Default 1`] = `
 <div
-  className="sc-dVhcbM IjGNw"
+  className="sc-caSCKo hFCFuy"
 >
   <div
-    className="sc-bwzfXH dVPfPk"
+    className="sc-bwzfXH clfeTd"
   >
     <div
       className="sc-bwzfXH dTTCsT"
@@ -35,7 +35,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           </div>
         </div>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           <label
             htmlFor="demo"
@@ -73,7 +73,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           </div>
         </div>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           <label
             htmlFor="demo"
@@ -111,7 +111,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           </div>
         </div>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           <label
             htmlFor="demo"

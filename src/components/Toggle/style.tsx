@@ -50,7 +50,6 @@ const StyledToggle = withProps<StyledToggleType, HTMLInputElement>(styled.input)
 const StyledToggleSkin = withProps<StyledToggleSkinType, HTMLDivElement>(styled.div)`
     width: 48px;
     height: 18px;
-    margin-top: 1px;
     border-radius: 10px;
     position: relative;
     transition: all 100ms;
