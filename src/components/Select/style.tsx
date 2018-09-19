@@ -96,7 +96,6 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     box-sizing: border-box;
     position: absolute;
     max-height: 240px;
-    overflow: hidden;
     margin-top: 6px;
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};

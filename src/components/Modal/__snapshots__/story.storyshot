@@ -53,7 +53,7 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-brqgnP hfUywI"
+          className="sc-brqgnP jEhxYZ"
         >
           <div
             className="sc-cMljjf krgCXT"
@@ -180,7 +180,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
           </div>
         </div>
         <div
-          className="sc-brqgnP hfUywI"
+          className="sc-brqgnP jEhxYZ"
         >
           <div
             className="sc-cMljjf krgCXT"

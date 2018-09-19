@@ -2,25 +2,30 @@
 
 exports[`Storyshots Select Custom rendering 1`] = `
 <div
-  className="sc-kjoXOD jELVFZ"
+  className="sc-kgAjT ciiNMD"
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-TOsTZ cnlTxH"
+    className="sc-ksYbfQ bABYTq"
     disabled={false}
   >
     <div
       className="sc-bwzfXH jlwOxs"
     >
       <div
-        className="sc-bwzfXH eSqaig"
+        className="sc-bwzfXH emfJtP"
+        onClick={[Function]}
       >
-        <p
-          className="sc-bxivhb kOPFRV"
+        <div
+          className="sc-bwzfXH ctFMhT"
         >
-          Select a value
-        </p>
+          <p
+            className="sc-bxivhb jVDCXG"
+          >
+            Select a value
+          </p>
+        </div>
       </div>
       <button
         className="sc-htoDjs TzVGU"
@@ -47,33 +52,33 @@ exports[`Storyshots Select Custom rendering 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-cHGsZl zDQN"
+      className="sc-cJSrbW rQyzh"
     >
       <div
-        className="sc-eHgmQL bNASzp"
+        className="sc-brqgnP jEhxYZ"
       >
         <div
-          className="sc-cvbbAY hPPoNG"
+          className="sc-cMljjf krgCXT"
         >
           <div
             className="sc-chPdSV kiPOer"
           >
             <div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
+                    <div>
                       <div
                         className="sc-bwzfXH eSqaig"
                       >
@@ -85,30 +90,30 @@ exports[`Storyshots Select Custom rendering 1`] = `
                           />
                         </div>
                         <p
-                          className="sc-bxivhb kDWgYC"
+                          className="sc-bxivhb dMWGdr"
                         >
                           Bar A
                         </p>
                       </div>
-                    </span>
-                  </p>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
+                    <div>
                       <div
                         className="sc-bwzfXH eSqaig"
                       >
@@ -120,30 +125,30 @@ exports[`Storyshots Select Custom rendering 1`] = `
                           />
                         </div>
                         <p
-                          className="sc-bxivhb kDWgYC"
+                          className="sc-bxivhb dMWGdr"
                         >
                           Foo B
                         </p>
                       </div>
-                    </span>
-                  </p>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
+                    <div>
                       <div
                         className="sc-bwzfXH eSqaig"
                       >
@@ -155,30 +160,30 @@ exports[`Storyshots Select Custom rendering 1`] = `
                           />
                         </div>
                         <p
-                          className="sc-bxivhb kDWgYC"
+                          className="sc-bxivhb dMWGdr"
                         >
                           Bar C
                         </p>
                       </div>
-                    </span>
-                  </p>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
+                    <div>
                       <div
                         className="sc-bwzfXH eSqaig"
                       >
@@ -190,30 +195,30 @@ exports[`Storyshots Select Custom rendering 1`] = `
                           />
                         </div>
                         <p
-                          className="sc-bxivhb kDWgYC"
+                          className="sc-bxivhb dMWGdr"
                         >
                           Foo D
                         </p>
                       </div>
-                    </span>
-                  </p>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
+                    <div>
                       <div
                         className="sc-bwzfXH eSqaig"
                       >
@@ -225,30 +230,30 @@ exports[`Storyshots Select Custom rendering 1`] = `
                           />
                         </div>
                         <p
-                          className="sc-bxivhb kDWgYC"
+                          className="sc-bxivhb dMWGdr"
                         >
                           Bar E
                         </p>
                       </div>
-                    </span>
-                  </p>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
-                className="sc-caSCKo jtbUen"
+                className="sc-cHGsZl hvaami"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb iBTcEE"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
+                    <div>
                       <div
                         className="sc-bwzfXH eSqaig"
                       >
@@ -260,13 +265,13 @@ exports[`Storyshots Select Custom rendering 1`] = `
                           />
                         </div>
                         <p
-                          className="sc-bxivhb kDWgYC"
+                          className="sc-bxivhb dMWGdr"
                         >
                           Bar F
                         </p>
                       </div>
-                    </span>
-                  </p>
+                    </div>
+                  </span>
                 </div>
               </div>
             </div>
@@ -330,10 +335,10 @@ exports[`Storyshots Select Default 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-cJSrbW KBEED"
+      className="sc-cJSrbW rQyzh"
     >
       <div
-        className="sc-brqgnP hfUywI"
+        className="sc-brqgnP jEhxYZ"
       >
         <div
           className="sc-cMljjf krgCXT"
@@ -350,16 +355,20 @@ exports[`Storyshots Select Default 1`] = `
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb jpexxn"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar A
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar A
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -370,16 +379,20 @@ exports[`Storyshots Select Default 1`] = `
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb jpexxn"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Foo B
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Foo B
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -390,16 +403,20 @@ exports[`Storyshots Select Default 1`] = `
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb jpexxn"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar C
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar C
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -410,16 +427,20 @@ exports[`Storyshots Select Default 1`] = `
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb jpexxn"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Foo D
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Foo D
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -430,16 +451,20 @@ exports[`Storyshots Select Default 1`] = `
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb jpexxn"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar E
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar E
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
               <div
@@ -450,16 +475,20 @@ exports[`Storyshots Select Default 1`] = `
                 <div
                   className="sc-bwzfXH jMGuhn"
                 >
-                  <p
-                    className="sc-bxivhb jpexxn"
+                  <span
+                    className="sc-htpNat gyldUw"
                   >
                     <span
                       className="sc-htpNat bCblnl"
                     />
-                    <span>
-                      Bar F
-                    </span>
-                  </p>
+                    <div>
+                      <span
+                        className="sc-ifAKCX kRfhnK"
+                      >
+                        Bar F
+                      </span>
+                    </div>
+                  </span>
                 </div>
               </div>
             </div>
