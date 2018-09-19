@@ -65,8 +65,11 @@ const StyledParagraph = withProps<TextPropsType, HTMLParagraphElement>(styled.p)
     text-align: ${({ textAlign }): string => (textAlign ? textAlign : '')};
     margin: 0;
     -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-`;
+    -moz-osx-font-smoothing: grayscale;
+
+    // This makes sure text wraps in IE:
+    flex: 1;
+    `;
 
 const StyledSpan = StyledParagraph.withComponent('span');
 
