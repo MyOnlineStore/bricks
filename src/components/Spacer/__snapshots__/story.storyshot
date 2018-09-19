@@ -8,7 +8,7 @@ exports[`Storyshots Spacer ⚠️  With margin 1`] = `
     className="sc-jnlKLf khIVJj"
   >
     <p
-      className="sc-bxivhb iBTcEE"
+      className="sc-bxivhb jpexxn"
     >
       This has a margin.
     </p>
@@ -24,7 +24,7 @@ exports[`Storyshots Spacer ⚠️  With padding 1`] = `
     className="sc-kvZOFW iuPsxy"
   >
     <p
-      className="sc-bxivhb iBTcEE"
+      className="sc-bxivhb jpexxn"
     >
       This has padding.
     </p>

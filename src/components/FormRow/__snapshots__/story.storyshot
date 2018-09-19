@@ -13,13 +13,13 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH dRGel"
         >
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             What is your name?
           </p>
         </div>
         <p
-          className="sc-bxivhb kOPFRV"
+          className="sc-bxivhb jVDCXG"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -136,13 +136,13 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH dRGel"
         >
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             Where do you live?
           </p>
         </div>
         <p
-          className="sc-bxivhb kOPFRV"
+          className="sc-bxivhb jVDCXG"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -226,13 +226,13 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH dRGel"
         >
           <p
-            className="sc-bxivhb iBTcEE"
+            className="sc-bxivhb jpexxn"
           >
             Can a boolean only be either true or false?
           </p>
         </div>
         <p
-          className="sc-bxivhb kOPFRV"
+          className="sc-bxivhb jVDCXG"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -272,7 +272,7 @@ exports[`Storyshots FormRow Default 1`] = `
               </div>
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               <label
                 htmlFor="bool"
@@ -310,7 +310,7 @@ exports[`Storyshots FormRow Default 1`] = `
               </div>
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               <label
                 htmlFor="bool"
@@ -348,7 +348,7 @@ exports[`Storyshots FormRow Default 1`] = `
               </div>
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               <label
                 htmlFor="bool"
@@ -374,7 +374,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           What is your name?
         </p>
@@ -426,7 +426,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           Where do you live?
         </p>
@@ -478,7 +478,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           Can a boolean only be true or false?
         </p>
@@ -518,7 +518,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               </div>
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               <label
                 htmlFor="bool"
@@ -556,7 +556,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               </div>
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               <label
                 htmlFor="bool"
@@ -594,7 +594,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               </div>
             </div>
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
               <label
                 htmlFor="bool"
@@ -615,7 +615,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           Do you like toggles?
         </p>
@@ -657,7 +657,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             className="sc-bwzfXH XrkjT"
           >
             <p
-              className="sc-bxivhb iBTcEE"
+              className="sc-bxivhb jpexxn"
             >
                
               Toggle to indicate your preference!
@@ -675,7 +675,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
-          className="sc-bxivhb iBTcEE"
+          className="sc-bxivhb jpexxn"
         >
           Do you like checkboxes
         </p>

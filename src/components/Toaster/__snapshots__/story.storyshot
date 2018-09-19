@@ -24,7 +24,7 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH jwDFoo"
           >
             <span
-              className="sc-ifAKCX dlUdxY"
+              className="sc-ifAKCX kTqttQ"
             >
               <span
                 aria-hidden={true}
@@ -45,12 +45,12 @@ exports[`Storyshots Toaster Default 1`] = `
               className="sc-bwzfXH iQQUwN"
             >
               <p
-                className="sc-bxivhb fYhFYx"
+                className="sc-bxivhb gTyNSX"
               >
                 Thought provoking we must stand.
               </p>
               <p
-                className="sc-bxivhb iBTcEE"
+                className="sc-bxivhb jpexxn"
               >
                 Game-changer problem-solvers; state of play invest, synergy uplift we must stand up ideate social intrapreneurship.
               </p>
@@ -112,7 +112,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH jwDFoo"
           >
             <span
-              className="sc-ifAKCX cBRJkj"
+              className="sc-ifAKCX icOBot"
             >
               <span
                 aria-hidden={true}
@@ -133,12 +133,12 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH iQQUwN"
             >
               <p
-                className="sc-bxivhb fYhFYx"
+                className="sc-bxivhb gTyNSX"
               >
                 Overcome injustice.
               </p>
               <p
-                className="sc-bxivhb iBTcEE"
+                className="sc-bxivhb jpexxn"
               >
                 Global low-hanging fruit, collaborative consumption segmentation mobilize support. Problem-solvers cultivate, best practices, shared unit of.
               </p>

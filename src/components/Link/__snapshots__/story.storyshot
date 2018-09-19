@@ -2,7 +2,7 @@
 
 exports[`Storyshots Link Action with child element 1`] = `
 <p
-  className="sc-bxivhb iBTcEE"
+  className="sc-bxivhb jpexxn"
 >
   <button
     className="sc-hSdWYo XiZO"
@@ -19,7 +19,7 @@ exports[`Storyshots Link Action with child element 1`] = `
 
 exports[`Storyshots Link Default 1`] = `
 <p
-  className="sc-bxivhb iBTcEE"
+  className="sc-bxivhb jpexxn"
 >
   <a
     className="sc-iAyFgw gqgAvO"

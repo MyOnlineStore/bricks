@@ -65,7 +65,7 @@ exports[`Storyshots Modal Default 1`] = `
               className="sc-bwzfXH drOqMq"
             >
               <p
-                className="sc-bxivhb iBTcEE"
+                className="sc-bxivhb jpexxn"
               >
                 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -192,7 +192,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
               className="sc-bwzfXH drOqMq"
             >
               <p
-                className="sc-bxivhb iBTcEE"
+                className="sc-bxivhb jpexxn"
               >
                 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,

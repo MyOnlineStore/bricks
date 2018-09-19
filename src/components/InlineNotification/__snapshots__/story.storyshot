@@ -2,7 +2,7 @@
 
 exports[`Storyshots InlineNotification Default 1`] = `
 <p
-  className="sc-bxivhb kRfUJT"
+  className="sc-bxivhb eEGBVx"
 >
   <span
     className="sc-htpNat eGtcyu"
@@ -32,7 +32,7 @@ exports[`Storyshots InlineNotification Default 1`] = `
 
 exports[`Storyshots InlineNotification With children 1`] = `
 <p
-  className="sc-bxivhb WWdpn"
+  className="sc-bxivhb fhwEDr"
 >
   <span
     className="sc-htpNat eGtcyu"
@@ -71,7 +71,7 @@ exports[`Storyshots InlineNotification With children 1`] = `
 
 exports[`Storyshots InlineNotification With overwritten Icon 1`] = `
 <p
-  className="sc-bxivhb kRfUJT"
+  className="sc-bxivhb eEGBVx"
 >
   <span
     className="sc-htpNat eGtcyu"
