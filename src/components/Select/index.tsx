@@ -32,7 +32,7 @@ type PropsType<GenericOption extends OptionBase> = {
     disabled?: boolean;
     onChange(value: string): void;
     renderOption?(option: GenericOption): JSX.Element;
-    renderInput?(isOpen: boolean, inputOption: OptionBase, placeholder?: string): JSX.Element;
+    renderInput?(inputOption: OptionBase, placeholder?: string): JSX.Element;
 };
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
@@ -155,27 +155,23 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             >
                 <StyledInput disabled={!this.props.disabled ? false : this.props.disabled}>
                     <Box alignItems="stretch">
-                        {this.props.renderInput !== undefined &&
-                            this.props.renderInput(this.state.isOpen, selectedOption, this.props.placeholder)}
+                        {(this.state.isOpen && (
+                            <>
+                                <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
+                                    <Icon icon="search" size="small" color={'#d2d7e0'} />
+                                </Box>
 
-                        {(this.props.renderInput === undefined &&
-                            (this.state.isOpen && (
-                                <>
-                                    <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                        <Icon icon="search" size="small" color={'#d2d7e0'} />
-                                    </Box>
-
-                                    <input
-                                        ref={this.inputRef}
-                                        type="text"
-                                        placeholder={this.props.placeholder}
-                                        value={this.state.input}
-                                        onChange={(event: ChangeEvent<HTMLInputElement>): void =>
-                                            this.handleInput(event.target.value)
-                                        }
-                                    />
-                                </>
-                            ))) ||
+                                <input
+                                    ref={this.inputRef}
+                                    type="text"
+                                    placeholder={this.props.placeholder}
+                                    value={this.state.input}
+                                    onChange={(event: ChangeEvent<HTMLInputElement>): void =>
+                                        this.handleInput(event.target.value)
+                                    }
+                                />
+                            </>
+                        )) ||
                             (this.props.renderInput === undefined && (
                                 <Box alignItems="center" grow={1} onClick={this.open}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
@@ -184,7 +180,13 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                         </Text>
                                     )}
                                 </Box>
+                            )) ||
+                            (this.props.renderInput !== undefined && (
+                                <Box alignItems="center" grow={1} onClick={this.open}>
+                                    {this.props.renderInput(selectedOption, this.props.placeholder)}
+                                </Box>
                             ))}
+
                         <Button
                             compact
                             flat
@@ -230,18 +232,23 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                                 this.handleChange(option.value);
                                             }}
                                         >
-                                            <Text descriptive={option.value === this.props.value}>
+                                            <Box alignItems="center" inline>
                                                 <Box margin={trbl(0, 6, 0, 0)} inline>
                                                     {option.value === this.props.value && (
-                                                        <Icon size="small" icon="checkmark" />
+                                                        <Text descriptive={option.value === this.props.value}>
+                                                            <Icon size="small" icon="checkmark" />
+                                                        </Text>
                                                     )}
                                                 </Box>
-                                                <span>
+                                                <div>
                                                     {(this.props.renderOption !== undefined &&
-                                                        this.props.renderOption(option)) ||
-                                                        option.label}
-                                                </span>
-                                            </Text>
+                                                        this.props.renderOption(option)) || (
+                                                        <Text descriptive={option.value === this.props.value} inline>
+                                                            {option.label}
+                                                        </Text>
+                                                    )}
+                                                </div>
+                                            </Box>
                                         </Option>
                                     ))}
                             </FoldOut>

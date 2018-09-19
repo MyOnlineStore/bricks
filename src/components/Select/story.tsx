@@ -77,10 +77,10 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-const renderInput = (isOpen: boolean, inputOption: OptionBase, placeholder?: string): JSX.Element => {
+const renderInput = (inputOption: OptionBase, placeholder?: string): JSX.Element => {
     if (inputOption.label !== '') {
         return (
-            <Box margin={trbl(6)} grow={1} width="100%" direction="row" alignItems="center">
+            <Box margin={trbl(6)} direction="row" alignItems="center">
                 <Box margin={trbl(0, 9, 0, 0)}>
                     <img src="http://via.placeholder.com/100x100" />
                 </Box>
@@ -89,7 +89,7 @@ const renderInput = (isOpen: boolean, inputOption: OptionBase, placeholder?: str
         );
     } else {
         return (
-            <Box margin={trbl(6)} grow={1} width="100%" direction="row" alignItems="center">
+            <Box margin={trbl(6)} direction="row" alignItems="center">
                 <Text descriptive>{placeholder ? placeholder : 'Make a selection'}</Text>
             </Box>
         );

@@ -97,7 +97,7 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     position: absolute;
     max-height: 240px;
     overflow: hidden;
-    top: ${({ rect }): string => (rect !== undefined ? `${rect.top + rect.height + INNER_OFFSET}px` : '')};
+    margin-top: 6px;
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
     padding-top: ${({ isOpen }): string => (isOpen ? '6px' : '0')};
@@ -118,9 +118,7 @@ const StyledInput = withProps<InputProps>(styled.div)`
     padding: 0 0 0 12px;
     border: solid 1px ${({ theme }): string => theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
-        disabled
-            ? theme.Select.disabled.background
-            : theme.Select.input.background};
+        disabled ? theme.Select.disabled.background : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     opacity: ${({ disabled }): string => (disabled ? '0.7' : '1')};
 
