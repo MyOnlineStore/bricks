@@ -3,7 +3,7 @@
 exports[`Storyshots FormRow Default 1`] = `
 <form>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -135,7 +135,7 @@ exports[`Storyshots FormRow Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -231,7 +231,7 @@ exports[`Storyshots FormRow Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -382,7 +382,7 @@ exports[`Storyshots FormRow Default 1`] = `
 exports[`Storyshots FormRow No Descriptions 1`] = `
 <form>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -437,7 +437,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -492,7 +492,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -629,7 +629,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
@@ -689,7 +689,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH hiMhOx"
+    className="sc-bwzfXH foOZjd"
   >
     <div
       className="sc-bwzfXH jwEHml"
