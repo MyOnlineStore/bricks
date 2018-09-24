@@ -5,7 +5,6 @@ import Modal from '.';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Text from '../Text';
-import Select from '../Select';
 
 const demoContent = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -28,45 +27,6 @@ tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas finib
 id vestibulum odio molestie. Curabitur euismod sit amet tortor et imperdiet. Nam a nisl quis lorem porta
 pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.`;
 
-const options = [
-    {
-        image: 'http://via.placeholder.com/40x40',
-        value: 'A',
-        label: 'Bar A',
-        description: 'Lorem ipsum dolor sit amet.',
-    },
-    {
-        image: 'http://via.placeholder.com/40x40',
-        value: 'B',
-        label: 'Foo B',
-        description: 'Lorem ipsum dolor sit amet.',
-    },
-    {
-        image: 'http://via.placeholder.com/40x40',
-        value: 'C',
-        label: 'Bar C',
-        description: 'Lorem ipsum dolor sit amet.',
-    },
-    {
-        image: 'http://via.placeholder.com/40x40',
-        value: 'D',
-        label: 'Foo D',
-        description: 'Lorem ipsum dolor sit amet.',
-    },
-    {
-        image: 'http://via.placeholder.com/40x40',
-        value: 'E',
-        label: 'Bar E',
-        description: 'Lorem ipsum dolor sit amet.',
-    },
-    {
-        image: 'http://via.placeholder.com/40x40',
-        value: 'F',
-        label: 'Bar F',
-        description: 'Lorem ipsum dolor sit amet.',
-    },
-];
-
 storiesOf('Modal', module)
     .add('Default', () => {
         return (
@@ -82,17 +42,7 @@ storiesOf('Modal', module)
                     </ButtonGroup>
                 )}
             >
-                <Text>
-                    {text('contents', demoContent)}{' '}
-                    <Select
-                        placeholder={'Search a value'}
-                        value={''}
-                        emptyText={'No results'}
-                        onChange={this.handleChange}
-                        disabled={false}
-                        options={options}
-                    />
-                </Text>
+                <Text>{text('contents', demoContent)} </Text>
             </Modal>
         );
     })

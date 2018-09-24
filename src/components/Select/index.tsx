@@ -101,7 +101,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
 
             if (inputHeight !== prevState.inputHeight) {
-                this.setState({ inputHeight: inputHeight });
+                this.setState({ inputHeight });
             }
         }
     }
@@ -166,7 +166,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             >
                 <StyledInput
                     disabled={!this.props.disabled ? false : this.props.disabled}
-                    innerRef={ref => (this.inputWrapperRef = ref)}
+                    innerRef={(ref): void => (this.inputWrapperRef = ref)}
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
