@@ -86,6 +86,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
 type WindowProps = {
     isOpen: boolean;
     rect?: ClientRect;
+    inputHeight?: number;
 };
 
 type InputProps = {
@@ -96,7 +97,8 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     box-sizing: border-box;
     position: absolute;
     max-height: 240px;
-    margin-top: 6px;
+    top: ${({ rect, inputHeight }): string =>
+        rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
     padding-top: ${({ isOpen }): string => (isOpen ? '6px' : '0')};
