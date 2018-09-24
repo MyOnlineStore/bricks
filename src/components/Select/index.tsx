@@ -97,28 +97,17 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             this.inputRef.current.focus();
         }
 
-        // if (this.inputWrapperRef) {
-        //     console.log(`wrapper height: ${this.inputWrapperRef.getBoundingClientRect().height}`);
-        //     console.log(`wrapper width: ${this.inputWrapperRef.getBoundingClientRect().width}`);
-        // }
+        if (this.inputWrapperRef) {
+            const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
 
-        if (this.inputWrapperRef && !(this.state.inputHeight === prevState.inputHeight) && this.props.value === '') {
-            console.log('setting height');
-            this.setState({ inputHeight: this.inputWrapperRef.getBoundingClientRect().height });
+            if (inputHeight !== prevState.inputHeight) {
+                this.setState({ inputHeight: inputHeight });
+            }
         }
     }
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
-
-        if (this.inputWrapperRef) {
-            console.log(`wrapper height: ${this.inputWrapperRef.getBoundingClientRect().height}`);
-        }
-
-        if (this.inputWrapperRef && !this.state.inputHeight && this.props.value === '') {
-            console.log('setting height');
-            this.setState({ inputHeight: this.inputWrapperRef.getBoundingClientRect().height });
-        }
     }
 
     public componentWillUnmount(): void {
