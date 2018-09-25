@@ -95,6 +95,19 @@ describe('Select', () => {
         expect(component.find(Option).length).toBe(options.length);
     });
 
+    it('should show an input and options on click', () => {
+        const component = mountWithTheme(
+            <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
+        );
+
+        component.simulate('keyDown', {
+            key: ' ',
+        });
+
+        expect(component.find('input').length).toBe(1);
+        expect(component.find(Option).length).toBe(options.length);
+    });
+
     it('should filter options on input', () => {
         const component = mountWithTheme(
             <Select

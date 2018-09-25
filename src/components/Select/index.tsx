@@ -97,12 +97,10 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
             this.inputRef.current.focus();
         }
 
-        if (this.inputWrapperRef) {
-            const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
+        const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
 
-            if (inputHeight !== prevState.inputHeight) {
-                this.setState({ inputHeight });
-            }
+        if (inputHeight !== prevState.inputHeight) {
+            this.setState({ inputHeight });
         }
     }
 
