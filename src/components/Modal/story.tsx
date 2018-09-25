@@ -42,7 +42,7 @@ storiesOf('Modal', module)
                     </ButtonGroup>
                 )}
             >
-                <Text>{text('contents', demoContent)} </Text>
+                <Text>{text('contents', demoContent)}</Text>
             </Modal>
         );
     })
