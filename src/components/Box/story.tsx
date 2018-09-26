@@ -27,7 +27,7 @@ const alignContentOptions = ['flex-start', 'flex-end', 'center', 'stretch', 'spa
 const alignSelf = ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch'];
 const directionOptions = ['row', 'row-reverse', 'column', 'column-reverse'];
 
-const positionOptions = ['static', 'relative', 'fixed', 'absolute', 'sticky'];
+const positionOptions = ['static', 'relative', 'fixed', 'absolute'];
 
 storiesOf('Box', module).add('Default', () => {
     const items: Array<JSX.Element> = [];

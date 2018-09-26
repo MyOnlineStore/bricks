@@ -2,10 +2,10 @@
 
 exports[`Storyshots EmptyState Default 1`] = `
 <div
-  className="sc-bwzfXH bYBsFg"
+  className="sc-bwzfXH bMpfHL"
 >
   <div
-    className="sc-bwzfXH kXTLaH"
+    className="sc-bwzfXH aDbAH"
   >
     <div
       aria-hidden={true}
@@ -18,7 +18,7 @@ exports[`Storyshots EmptyState Default 1`] = `
       role="img"
     />
     <div
-      className="sc-bwzfXH cHpLhF"
+      className="sc-bwzfXH fbBXOr"
     >
       <div
         className="sc-fjdhpX gUNTtb"
@@ -28,7 +28,7 @@ exports[`Storyshots EmptyState Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH TTuOc"
+      className="sc-bwzfXH eTHzfe"
     >
       <p
         className="sc-bxivhb cFaXyW"
@@ -42,10 +42,10 @@ exports[`Storyshots EmptyState Default 1`] = `
 
 exports[`Storyshots EmptyState With button (as children) 1`] = `
 <div
-  className="sc-bwzfXH bYBsFg"
+  className="sc-bwzfXH bMpfHL"
 >
   <div
-    className="sc-bwzfXH kXTLaH"
+    className="sc-bwzfXH aDbAH"
   >
     <div
       aria-hidden={true}
@@ -58,7 +58,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       role="img"
     />
     <div
-      className="sc-bwzfXH cHpLhF"
+      className="sc-bwzfXH fbBXOr"
     >
       <div
         className="sc-fjdhpX gUNTtb"
@@ -68,7 +68,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH TTuOc"
+      className="sc-bwzfXH eTHzfe"
     >
       <p
         className="sc-bxivhb cFaXyW"
