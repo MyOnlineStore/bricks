@@ -2,18 +2,18 @@
 
 exports[`Storyshots Icon Large icons 1`] = `
 <div
-  className="sc-bwzfXH gXcAXg"
+  className="sc-bwzfXH NCLYG"
 />
 `;
 
 exports[`Storyshots Icon Medium icons 1`] = `
 <div
-  className="sc-bwzfXH gXcAXg"
+  className="sc-bwzfXH NCLYG"
 />
 `;
 
 exports[`Storyshots Icon Small icons 1`] = `
 <div
-  className="sc-bwzfXH jsvFLV"
+  className="sc-bwzfXH CfKiL"
 />
 `;

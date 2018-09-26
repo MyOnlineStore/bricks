@@ -39,6 +39,11 @@ const StyledDiv = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
     flex-basis: ${({ basis }): string => (basis ? basis : 'auto')};
     order: ${({ flexOrder }): number => (flexOrder ? flexOrder : 0)};
     align-self: ${({ alignSelf }): string => (alignSelf ? alignSelf : '')};
+    position: ${({ position }): string => position !== undefined ? position : ''};
+    top: ${({ top }): string => top !== undefined ? top : ''};
+    right: ${({ right }): string => right !== undefined ? right : ''};
+    bottom: ${({ bottom }): string => bottom !== undefined ? bottom : ''};
+    left: ${({ left }): string => left !== undefined ? left : ''};
 `;
 
 const StyledSpan = StyledDiv.withComponent('span');

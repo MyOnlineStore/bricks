@@ -3,14 +3,14 @@
 exports[`Storyshots FormRow Default 1`] = `
 <form>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <div
-          className="sc-bwzfXH dRGel"
+          className="sc-bwzfXH dWTtjZ"
         >
           <p
             className="sc-bxivhb jpexxn"
@@ -26,16 +26,16 @@ exports[`Storyshots FormRow Default 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
-        className="sc-bwzfXH evgYKs"
+        className="sc-bwzfXH hscxhP"
       >
         <div
-          className="sc-bwzfXH dRGel"
+          className="sc-bwzfXH dWTtjZ"
         >
           <div
-            className="sc-bwzfXH dvoLGo"
+            className="sc-bwzfXH cvRHil"
           >
             <div
               className="sc-eNQAEJ lhLkZ"
@@ -67,7 +67,7 @@ exports[`Storyshots FormRow Default 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH cgnXvs"
+            className="sc-bwzfXH jXfFPt"
           >
             <div
               className="sc-eNQAEJ lhLkZ"
@@ -100,7 +100,7 @@ exports[`Storyshots FormRow Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-bwzfXH epQtTt"
+          className="sc-bwzfXH hMzuwC"
         >
           <div
             className="sc-eNQAEJ lhLkZ"
@@ -135,14 +135,14 @@ exports[`Storyshots FormRow Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <div
-          className="sc-bwzfXH dRGel"
+          className="sc-bwzfXH dWTtjZ"
         >
           <p
             className="sc-bxivhb jpexxn"
@@ -158,13 +158,13 @@ exports[`Storyshots FormRow Default 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
-        className="sc-bwzfXH evgYKs"
+        className="sc-bwzfXH hscxhP"
       >
         <div
-          className="sc-bwzfXH epQtTt"
+          className="sc-bwzfXH hMzuwC"
         >
           <div
             className="sc-eNQAEJ lhLkZ"
@@ -196,7 +196,7 @@ exports[`Storyshots FormRow Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-bwzfXH epQtTt"
+          className="sc-bwzfXH hMzuwC"
         >
           <div
             className="sc-eNQAEJ lhLkZ"
@@ -231,14 +231,14 @@ exports[`Storyshots FormRow Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <div
-          className="sc-bwzfXH dRGel"
+          className="sc-bwzfXH dWTtjZ"
         >
           <p
             className="sc-bxivhb jpexxn"
@@ -254,20 +254,20 @@ exports[`Storyshots FormRow Default 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
-        className="sc-bwzfXH clfeTd"
+        className="sc-bwzfXH cEfyDW"
       >
         <div
-          className="sc-bwzfXH dTTCsT"
+          className="sc-bwzfXH ezjrvf"
         >
           <div
             className="sc-kgoBCf BEYlJ"
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH doEFQb"
+              className="sc-bwzfXH cFTVqv"
             >
               <div
                 checked={true}
@@ -298,14 +298,14 @@ exports[`Storyshots FormRow Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-bwzfXH isLvox"
+          className="sc-bwzfXH ferkAL"
         >
           <div
             className="sc-kgoBCf BEYlJ"
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH doEFQb"
+              className="sc-bwzfXH cFTVqv"
             >
               <div
                 checked={false}
@@ -336,14 +336,14 @@ exports[`Storyshots FormRow Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-bwzfXH isLvox"
+          className="sc-bwzfXH ferkAL"
         >
           <div
             className="sc-kgoBCf BEYlJ"
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH doEFQb"
+              className="sc-bwzfXH cFTVqv"
             >
               <div
                 checked={false}
@@ -382,10 +382,10 @@ exports[`Storyshots FormRow Default 1`] = `
 exports[`Storyshots FormRow No Descriptions 1`] = `
 <form>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <p
@@ -396,13 +396,13 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
-        className="sc-bwzfXH evgYKs"
+        className="sc-bwzfXH hscxhP"
       >
         <div
-          className="sc-bwzfXH gtYTvg"
+          className="sc-bwzfXH dRUzLs"
         >
           <div
             className="sc-eNQAEJ lhLkZ"
@@ -437,10 +437,10 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <p
@@ -451,13 +451,13 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
-        className="sc-bwzfXH evgYKs"
+        className="sc-bwzfXH hscxhP"
       >
         <div
-          className="sc-bwzfXH gtYTvg"
+          className="sc-bwzfXH dRUzLs"
         >
           <div
             className="sc-eNQAEJ lhLkZ"
@@ -492,10 +492,10 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <p
@@ -506,20 +506,20 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
-        className="sc-bwzfXH clfeTd"
+        className="sc-bwzfXH cEfyDW"
       >
         <div
-          className="sc-bwzfXH dTTCsT"
+          className="sc-bwzfXH ezjrvf"
         >
           <div
             className="sc-kgoBCf BEYlJ"
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH doEFQb"
+              className="sc-bwzfXH cFTVqv"
             >
               <div
                 checked={true}
@@ -550,14 +550,14 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           </div>
         </div>
         <div
-          className="sc-bwzfXH isLvox"
+          className="sc-bwzfXH ferkAL"
         >
           <div
             className="sc-kgoBCf BEYlJ"
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH doEFQb"
+              className="sc-bwzfXH cFTVqv"
             >
               <div
                 checked={false}
@@ -588,14 +588,14 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           </div>
         </div>
         <div
-          className="sc-bwzfXH isLvox"
+          className="sc-bwzfXH ferkAL"
         >
           <div
             className="sc-kgoBCf BEYlJ"
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH doEFQb"
+              className="sc-bwzfXH cFTVqv"
             >
               <div
                 checked={false}
@@ -629,10 +629,10 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <p
@@ -643,17 +643,17 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
         className="sc-kkGfuU jvfvYf"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH dRGel"
+          className="sc-bwzfXH dWTtjZ"
         >
           <div
-            className="sc-bwzfXH kqlGkq"
+            className="sc-bwzfXH jLZBZn"
           >
             <div
               checked={false}
@@ -675,7 +675,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH XrkjT"
+            className="sc-bwzfXH MPGV"
           >
             <p
               className="sc-bxivhb jpexxn"
@@ -689,10 +689,10 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH foOZjd"
+    className="sc-bwzfXH bWeyrt"
   >
     <div
-      className="sc-bwzfXH jwEHml"
+      className="sc-bwzfXH looiFG"
     >
       <label>
         <p
@@ -703,14 +703,14 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       </label>
     </div>
     <div
-      className="sc-bwzfXH OfNUB"
+      className="sc-bwzfXH jWhOBo"
     >
       <div
         className="sc-jTzLTM hYTrgs"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH ctAWjx"
+          className="sc-bwzfXH cpsKmf"
         />
         <input
           checked={false}

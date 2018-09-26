@@ -12,10 +12,10 @@ exports[`Storyshots ButtonGroup Default 1`] = `
     }
   >
     <div
-      className="sc-bwzfXH bFmMmv"
+      className="sc-bwzfXH dkoUaR"
     >
       <div
-        className="sc-bwzfXH fuEFtX"
+        className="sc-bwzfXH iesUlj"
       >
         <button
           className="sc-htoDjs ilyuMW"
@@ -31,7 +31,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         </button>
       </div>
       <div
-        className="sc-bwzfXH fuEFtX"
+        className="sc-bwzfXH iesUlj"
       >
         <button
           className="sc-htoDjs ljxUvq"

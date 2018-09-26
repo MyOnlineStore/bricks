@@ -72,16 +72,16 @@ Array [
     />
   </div>,
   <div
-    className="sc-bwzfXH eSFIdE"
+    className="sc-bwzfXH hIZlNG"
   >
     <p
       className="sc-bxivhb fhwEDr"
     >
       <span
-        className="sc-htpNat eGtcyu"
+        className="sc-htpNat iOQqef"
       >
         <span
-          className="sc-htpNat bCblnl"
+          className="sc-htpNat bSPlmE"
         >
           <span
             aria-hidden={true}
@@ -95,7 +95,7 @@ Array [
           />
         </span>
         <span
-          className="sc-htpNat eGtcyu"
+          className="sc-htpNat iOQqef"
         >
           The reported value of this field is: 10
         </span>
@@ -146,16 +146,16 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bwzfXH eSFIdE"
+    className="sc-bwzfXH hIZlNG"
   >
     <p
       className="sc-bxivhb eEGBVx"
     >
       <span
-        className="sc-htpNat eGtcyu"
+        className="sc-htpNat iOQqef"
       >
         <span
-          className="sc-htpNat bCblnl"
+          className="sc-htpNat bSPlmE"
         >
           <span
             aria-hidden={true}
@@ -169,7 +169,7 @@ Array [
           />
         </span>
         <span
-          className="sc-htpNat eGtcyu"
+          className="sc-htpNat iOQqef"
         >
           This is a feedback message
         </span>
