@@ -566,6 +566,20 @@ const theme: ThemeType = {
             boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
         },
     },
+    Range: {
+        track: {
+            background: silver.base,
+            border: `solid 1px ${silver.darker4}`,
+        },
+        trackActive: {
+            background: green.base,
+            border: `solid 1px ${green.darker2}`,
+        },
+        slider: {
+            background: silver.lighter1,
+            border: `solid 1px ${green.darker2}`,
+        },
+    },
     Popover: {
         background: silver.lighter1,
         borderRadius: roundness.base,

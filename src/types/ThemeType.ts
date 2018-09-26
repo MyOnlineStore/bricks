@@ -13,6 +13,7 @@ import { PopoverThemeType } from '../components/Popover/style';
 import { PriceTagThemeType } from '../components/PriceTag/style';
 import { RadioButtonThemeType } from '../components/RadioButton/style';
 import { RaisedThemeType } from '../components/Raised/style';
+import { RangeThemeType } from '../components/Range/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { TableThemeType } from '../components/Table/style';
 import { TextThemeType } from '../components/Text/style';
@@ -38,6 +39,7 @@ type ThemeType = {
     Popover: PopoverThemeType;
     PriceTag: PriceTagThemeType;
     Raised: RaisedThemeType;
+    Range: RangeThemeType;
     ScrollBox: ScrollBoxThemeType;
     Select: SelectThemeType;
     Skeleton: SkeletonThemeType;
