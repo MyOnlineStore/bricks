@@ -9,11 +9,9 @@ storiesOf('Branch', module).add('Default', () => {
         <Branch
             condition={boolean('condition', true)}
             ifTrue={(children): JSX.Element => <Text>This is shown when condition is true. {children}</Text>}
-            ifFalse={(children): JSX.Element => (
-                <Text>And this is will be shown when condition is false. {children}</Text>
-            )}
+            ifFalse={(children): JSX.Element => <Text>And this will be shown when condition is false. {children}</Text>}
         >
-            This line is shared wether the condition is true or not.
+            This line is shared whether the condition is true or not.
         </Branch>
     );
 });
