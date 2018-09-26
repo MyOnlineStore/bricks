@@ -2,7 +2,7 @@ import React, { ReactNode, Component } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 import Row from './Row';
-import Branch from '../../utility/Branch';
+import Branch from '../Branch';
 import Header from './Header';
 import { SubscriptionProvider, SubscriptionConsumer } from '../../utility/SubscriptionContext';
 

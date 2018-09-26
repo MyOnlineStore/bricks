@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Branch Default 1`] = `
+<p
+  className="sc-bxivhb jpexxn"
+>
+  This is shown when condition is true. 
+  This line is shared wether the condition is true or not.
+</p>
+`;

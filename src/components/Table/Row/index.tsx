@@ -4,12 +4,12 @@ import Icon from '../../Icon';
 import Cell from '../Cell';
 import Text from '../../Text';
 import StyledRow from './style';
-import Branch from '../../../utility/Branch';
 import { ContrastThemeProvider } from '../../Contrast';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 import { mapAlignment } from '..';
+import Branch from '../../Branch';
 
 type PropsType = {
     alignments: Array<'left' | 'center' | 'right'>;

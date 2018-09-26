@@ -1,4 +1,5 @@
 export { default as Badge } from './components/Badge';
+export { default as Branch } from './components/Branch';
 export { default as Box } from './components/Box';
 export { default as BreakpointProvider } from './components/BreakpointProvider';
 export { default as Button } from './components/Button';
