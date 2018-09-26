@@ -42,7 +42,6 @@ type AffixProps = {
 };
 
 type WrapperProps = {
-    active: boolean;
     focus: boolean;
     disabled?: boolean;
     feedback?: {

@@ -22,6 +22,7 @@ exports[`Storyshots TextField Default 1`] = `
     className="sc-dxgOiQ iSQIum"
     disabled={false}
     id={undefined}
+    name="firstname"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -64,6 +65,7 @@ Array [
       className="sc-dxgOiQ iSQIum"
       disabled={false}
       id={undefined}
+      name="first name"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -128,6 +130,7 @@ Array [
       className="sc-dxgOiQ iSQIum"
       disabled={false}
       id={undefined}
+      name="firstname"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}

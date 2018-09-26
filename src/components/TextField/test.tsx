@@ -5,34 +5,23 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper } from './style';
 
 describe('TextField', () => {
-    it('should render an idle state', () => {
-        const component = mountWithTheme(<TextField value="" name="firstName" onChange={jest.fn()} />);
+    it('should render an active state', () => {
+        const component = mountWithTheme(<TextField value="Jane" name="firstName" onChange={jest.fn()} />);
 
-        expect(component.find(StyledWrapper).prop('active')).toBe(false);
-    });
-
-    it('should render a disabled state', () => {
-        const component = mountWithTheme(
-            <TextField value="" disabled suffix={'$'} name="firstName" onChange={jest.fn()} />,
-        );
-
-        expect(component.find(StyledWrapper).prop('active')).toBe(false);
+        expect(component.find(StyledInput).prop('value')).toBe('Jane');
     });
 
     it('should not change value when disabled', () => {
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(<TextField value="John" disabled name="firstName" onChange={changeMock} />);
+        const component = mountWithTheme(
+            <TextField value="John" suffix={'firstname'} disabled name="firstName" onChange={changeMock} />,
+        );
 
         component.find(StyledInput).simulate('change');
+        component.find(StyledInput).simulate('blur');
 
         expect(changeMock).not.toHaveBeenCalled();
-    });
-
-    it('should render an active state with a value', () => {
-        const component = mountWithTheme(<TextField value="Jane" name="firstName" onChange={jest.fn()} />);
-
-        expect(component.find(StyledWrapper).prop('active')).toBe(true);
     });
 
     it('should render an active state when focussed', () => {
@@ -40,15 +29,7 @@ describe('TextField', () => {
 
         component.find(StyledInput).simulate('focus');
 
-        expect(component.find(StyledWrapper).prop('active')).toBe(true);
-    });
-
-    it('should retain active state with a value on blur', () => {
-        const component = mountWithTheme(<TextField value="John" name="firstName" onChange={jest.fn()} />);
-
-        component.find(StyledInput).simulate('blur');
-
-        expect(component.find(StyledWrapper).prop('active')).toBe(true);
+        expect(component.find(StyledInput).prop('focus')).toBe(true);
     });
 
     it('should handle a change', () => {
@@ -66,9 +47,7 @@ describe('TextField', () => {
             <TextField
                 value="John"
                 name="firstName"
-                onChange={(): void => {
-                    /**/
-                }}
+                onChange={(): void => undefined}
                 feedback={{
                     severity: 'info',
                     message: 'Hey, listen',

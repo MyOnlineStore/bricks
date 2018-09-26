@@ -25,7 +25,6 @@ type PropsType = {
 
 type StateType = {
     focus: boolean;
-    active: boolean;
 };
 
 class TextField extends Component<PropsType, StateType> {
@@ -38,20 +37,12 @@ class TextField extends Component<PropsType, StateType> {
 
         this.state = {
             focus: false,
-            active: false,
-        };
-    }
-
-    public static getDerivedStateFromProps(nextProps: PropsType, currentState: StateType): Partial<StateType> {
-        return {
-            active: nextProps.value !== '' || currentState.active,
         };
     }
 
     public handleFocus = (): void => {
         this.setState({
             focus: true,
-            active: true,
         });
         this.inputRef.focus();
 
@@ -61,7 +52,6 @@ class TextField extends Component<PropsType, StateType> {
     public handleBlur = (): void => {
         this.setState({
             focus: false,
-            active: this.props.value !== '',
         });
 
         if (this.props.onBlur !== undefined) this.props.onBlur();
@@ -77,7 +67,6 @@ class TextField extends Component<PropsType, StateType> {
                 <StyledWrapper
                     focus={this.state.focus}
                     disabled={this.props.disabled}
-                    active={this.state.active}
                     feedback={this.props.feedback}
                     onFocusCapture={this.handleFocus}
                     onBlurCapture={this.handleBlur}
@@ -90,8 +79,8 @@ class TextField extends Component<PropsType, StateType> {
                     )}
                     <StyledInput
                         type="text"
+                        name={this.props.name}
                         disabled={this.props.disabled}
-                        active={this.state.active}
                         value={this.props.value}
                         id={this.props.id}
                         focus={this.state.focus}
