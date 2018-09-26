@@ -116,7 +116,6 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
 const StyledInput = withProps<InputProps>(styled.div)`
     box-sizing: border-box;
     width: 100%;
-    padding: 0 0 0 12px;
     border: solid 1px ${({ theme }): string => theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.Select.disabled.background : theme.Select.input.background};

@@ -7,23 +7,23 @@ exports[`Storyshots Select Custom rendering 1`] = `
   tabIndex={0}
 >
   <div
-    className="sc-hmzhuo ePLdEr"
+    className="sc-hmzhuo zAMca"
     disabled={false}
   >
     <div
       className="sc-bwzfXH hUwEHM"
     >
       <div
-        className="sc-bwzfXH klepqf"
+        className="sc-bwzfXH iSqVrt"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH bHiKAK"
+          className="sc-bwzfXH fsbcIX"
         >
           <p
             className="sc-bxivhb jVDCXG"
           >
-            Select a value
+            Make a selection
           </p>
         </div>
       </div>
@@ -61,217 +61,221 @@ exports[`Storyshots Select Custom rendering 1`] = `
           className="sc-cMljjf krgCXT"
         >
           <div
-            className="sc-chPdSV kiPOer"
+            data-test="bricks-select-collapse"
+            style={
+              Object {
+                "display": "none",
+                "overflow": "hidden",
+              }
+            }
           >
-            <div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
                 <div
-                  className="sc-bwzfXH calcHG"
+                  className="sc-bwzfXH cozIiN"
                 >
-                  <span
-                    className="sc-htpNat kFobJr"
+                  <div
+                    className="sc-bwzfXH kcWmUX"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
+                    <img
+                      src="https://picsum.photos/100/100?image=988"
                     />
-                    <div>
-                      <div
-                        className="sc-bwzfXH btSquE"
-                      >
-                        <div
-                          className="sc-bwzfXH kcWmUX"
-                        >
-                          <img
-                            src="http://via.placeholder.com/100x100"
-                          />
-                        </div>
-                        <p
-                          className="sc-bxivhb dMWGdr"
-                        >
-                          Bar A
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                  </div>
+                  <div
+                    className="sc-bwzfXH bQfpwP"
+                  >
+                    <p
+                      className="sc-bxivhb jpexxn"
+                    >
+                      Bar A
+                    </p>
+                    <p
+                      className="sc-bxivhb jVDCXG"
+                    >
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
                 <div
-                  className="sc-bwzfXH calcHG"
+                  className="sc-bwzfXH cozIiN"
                 >
-                  <span
-                    className="sc-htpNat kFobJr"
+                  <div
+                    className="sc-bwzfXH kcWmUX"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
+                    <img
+                      src="https://picsum.photos/100/100?image=960"
                     />
-                    <div>
-                      <div
-                        className="sc-bwzfXH btSquE"
-                      >
-                        <div
-                          className="sc-bwzfXH kcWmUX"
-                        >
-                          <img
-                            src="http://via.placeholder.com/100x100"
-                          />
-                        </div>
-                        <p
-                          className="sc-bxivhb dMWGdr"
-                        >
-                          Foo B
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                  </div>
+                  <div
+                    className="sc-bwzfXH bQfpwP"
+                  >
+                    <p
+                      className="sc-bxivhb jpexxn"
+                    >
+                      Foo B
+                    </p>
+                    <p
+                      className="sc-bxivhb jVDCXG"
+                    >
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
                 <div
-                  className="sc-bwzfXH calcHG"
+                  className="sc-bwzfXH cozIiN"
                 >
-                  <span
-                    className="sc-htpNat kFobJr"
+                  <div
+                    className="sc-bwzfXH kcWmUX"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
+                    <img
+                      src="https://picsum.photos/100/100?image=958"
                     />
-                    <div>
-                      <div
-                        className="sc-bwzfXH btSquE"
-                      >
-                        <div
-                          className="sc-bwzfXH kcWmUX"
-                        >
-                          <img
-                            src="http://via.placeholder.com/100x100"
-                          />
-                        </div>
-                        <p
-                          className="sc-bxivhb dMWGdr"
-                        >
-                          Bar C
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                  </div>
+                  <div
+                    className="sc-bwzfXH bQfpwP"
+                  >
+                    <p
+                      className="sc-bxivhb jpexxn"
+                    >
+                      Bar C
+                    </p>
+                    <p
+                      className="sc-bxivhb jVDCXG"
+                    >
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
                 <div
-                  className="sc-bwzfXH calcHG"
+                  className="sc-bwzfXH cozIiN"
                 >
-                  <span
-                    className="sc-htpNat kFobJr"
+                  <div
+                    className="sc-bwzfXH kcWmUX"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
+                    <img
+                      src="https://picsum.photos/100/100?image=940"
                     />
-                    <div>
-                      <div
-                        className="sc-bwzfXH btSquE"
-                      >
-                        <div
-                          className="sc-bwzfXH kcWmUX"
-                        >
-                          <img
-                            src="http://via.placeholder.com/100x100"
-                          />
-                        </div>
-                        <p
-                          className="sc-bxivhb dMWGdr"
-                        >
-                          Foo D
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                  </div>
+                  <div
+                    className="sc-bwzfXH bQfpwP"
+                  >
+                    <p
+                      className="sc-bxivhb jpexxn"
+                    >
+                      Foo D
+                    </p>
+                    <p
+                      className="sc-bxivhb jVDCXG"
+                    >
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
                 <div
-                  className="sc-bwzfXH calcHG"
+                  className="sc-bwzfXH cozIiN"
                 >
-                  <span
-                    className="sc-htpNat kFobJr"
+                  <div
+                    className="sc-bwzfXH kcWmUX"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
+                    <img
+                      src="https://picsum.photos/100/100?image=924"
                     />
-                    <div>
-                      <div
-                        className="sc-bwzfXH btSquE"
-                      >
-                        <div
-                          className="sc-bwzfXH kcWmUX"
-                        >
-                          <img
-                            src="http://via.placeholder.com/100x100"
-                          />
-                        </div>
-                        <p
-                          className="sc-bxivhb dMWGdr"
-                        >
-                          Bar E
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                  </div>
+                  <div
+                    className="sc-bwzfXH bQfpwP"
+                  >
+                    <p
+                      className="sc-bxivhb jpexxn"
+                    >
+                      Bar E
+                    </p>
+                    <p
+                      className="sc-bxivhb jVDCXG"
+                    >
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
                 <div
-                  className="sc-bwzfXH calcHG"
+                  className="sc-bwzfXH cozIiN"
                 >
-                  <span
-                    className="sc-htpNat kFobJr"
+                  <div
+                    className="sc-bwzfXH kcWmUX"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
+                    <img
+                      src="https://picsum.photos/100/100?image=915"
                     />
-                    <div>
-                      <div
-                        className="sc-bwzfXH btSquE"
-                      >
-                        <div
-                          className="sc-bwzfXH kcWmUX"
-                        >
-                          <img
-                            src="http://via.placeholder.com/100x100"
-                          />
-                        </div>
-                        <p
-                          className="sc-bxivhb dMWGdr"
-                        >
-                          Bar F
-                        </p>
-                      </div>
-                    </div>
-                  </span>
+                  </div>
+                  <div
+                    className="sc-bwzfXH bQfpwP"
+                  >
+                    <p
+                      className="sc-bxivhb jpexxn"
+                    >
+                      Bar F
+                    </p>
+                    <p
+                      className="sc-bxivhb jVDCXG"
+                    >
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -290,14 +294,14 @@ exports[`Storyshots Select Default 1`] = `
   tabIndex={0}
 >
   <div
-    className="sc-hmzhuo ePLdEr"
+    className="sc-hmzhuo zAMca"
     disabled={false}
   >
     <div
       className="sc-bwzfXH hUwEHM"
     >
       <div
-        className="sc-bwzfXH klepqf"
+        className="sc-bwzfXH iSqVrt"
         onClick={[Function]}
       >
         <p
@@ -344,152 +348,126 @@ exports[`Storyshots Select Default 1`] = `
           className="sc-cMljjf krgCXT"
         >
           <div
-            className="sc-chPdSV kiPOer"
+            data-test="bricks-select-collapse"
+            style={
+              Object {
+                "display": "none",
+                "overflow": "hidden",
+              }
+            }
           >
-            <div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
-                <div
-                  className="sc-bwzfXH calcHG"
+                <span
+                  className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-htpNat kFobJr"
+                    className="sc-ifAKCX kRfhnK"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
-                    />
-                    <div>
-                      <span
-                        className="sc-ifAKCX kRfhnK"
-                      >
-                        Bar A
-                      </span>
-                    </div>
+                    Bar A
                   </span>
-                </div>
+                </span>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
-                <div
-                  className="sc-bwzfXH calcHG"
+                <span
+                  className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-htpNat kFobJr"
+                    className="sc-ifAKCX kRfhnK"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
-                    />
-                    <div>
-                      <span
-                        className="sc-ifAKCX kRfhnK"
-                      >
-                        Foo B
-                      </span>
-                    </div>
+                    Foo B
                   </span>
-                </div>
+                </span>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
-                <div
-                  className="sc-bwzfXH calcHG"
+                <span
+                  className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-htpNat kFobJr"
+                    className="sc-ifAKCX kRfhnK"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
-                    />
-                    <div>
-                      <span
-                        className="sc-ifAKCX kRfhnK"
-                      >
-                        Bar C
-                      </span>
-                    </div>
+                    Bar C
                   </span>
-                </div>
+                </span>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
-                <div
-                  className="sc-bwzfXH calcHG"
+                <span
+                  className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-htpNat kFobJr"
+                    className="sc-ifAKCX kRfhnK"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
-                    />
-                    <div>
-                      <span
-                        className="sc-ifAKCX kRfhnK"
-                      >
-                        Foo D
-                      </span>
-                    </div>
+                    Foo D
                   </span>
-                </div>
+                </span>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
-                <div
-                  className="sc-bwzfXH calcHG"
+                <span
+                  className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-htpNat kFobJr"
+                    className="sc-ifAKCX kRfhnK"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
-                    />
-                    <div>
-                      <span
-                        className="sc-ifAKCX kRfhnK"
-                      >
-                        Bar E
-                      </span>
-                    </div>
+                    Bar E
                   </span>
-                </div>
+                </span>
               </div>
+            </div>
+            <div
+              className="sc-TOsTZ NJJmQ"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
               <div
-                className="sc-TOsTZ NJJmQ"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
+                className="sc-bwzfXH calcHG"
               >
-                <div
-                  className="sc-bwzfXH calcHG"
+                <span
+                  className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-htpNat kFobJr"
+                    className="sc-ifAKCX kRfhnK"
                   >
-                    <span
-                      className="sc-htpNat hKonPW"
-                    />
-                    <div>
-                      <span
-                        className="sc-ifAKCX kRfhnK"
-                      >
-                        Bar F
-                      </span>
-                    </div>
+                    Bar F
                   </span>
-                </div>
+                </span>
               </div>
             </div>
           </div>

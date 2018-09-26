@@ -1,44 +1,52 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-import Select, { OptionBase } from '.';
+import Select, { OptionBase, OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs/react';
 import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
+import Icon from '../Icon';
 
-const options = [
+type DemoOptionType = {
+    image: string;
+    value: string;
+    label: string;
+    description: string;
+};
+
+const options: Array<DemoOptionType> = [
     {
-        image: 'http://via.placeholder.com/40x40',
+        image: 'https://picsum.photos/100/100?image=988',
         value: 'A',
         label: 'Bar A',
         description: 'Lorem ipsum dolor sit amet.',
     },
     {
-        image: 'http://via.placeholder.com/40x40',
+        image: 'https://picsum.photos/100/100?image=960',
         value: 'B',
         label: 'Foo B',
         description: 'Lorem ipsum dolor sit amet.',
     },
     {
-        image: 'http://via.placeholder.com/40x40',
+        image: 'https://picsum.photos/100/100?image=958',
         value: 'C',
         label: 'Bar C',
         description: 'Lorem ipsum dolor sit amet.',
     },
     {
-        image: 'http://via.placeholder.com/40x40',
+        image: 'https://picsum.photos/100/100?image=940',
         value: 'D',
         label: 'Foo D',
         description: 'Lorem ipsum dolor sit amet.',
     },
     {
-        image: 'http://via.placeholder.com/40x40',
+        image: 'https://picsum.photos/100/100?image=924',
         value: 'E',
         label: 'Bar E',
         description: 'Lorem ipsum dolor sit amet.',
     },
     {
-        image: 'http://via.placeholder.com/40x40',
+        image: 'https://picsum.photos/100/100?image=915',
         value: 'F',
         label: 'Bar F',
         description: 'Lorem ipsum dolor sit amet.',
@@ -78,32 +86,46 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-const renderInput = (inputOption: OptionBase, placeholder?: string): JSX.Element => {
-    if (inputOption.label !== '') {
+const renderSelected = (option: DemoOptionType): JSX.Element => {
+    if (option.label !== '') {
         return (
-            <Box margin={trbl(6)} direction="row" alignItems="center">
+            <Box grow={1} width="100%" direction="row" alignItems="center">
                 <Box margin={trbl(0, 9, 0, 0)}>
-                    <img src="http://via.placeholder.com/100x100" />
+                    <img width="50" height="50" src={option.image} />
                 </Box>
-                <Text variant="large"> {inputOption.label}</Text>
+                <Box direction="column">
+                    <Text>{option.label}</Text>
+                    <Text descriptive>{option.description}</Text>
+                </Box>
             </Box>
         );
     } else {
         return (
-            <Box margin={trbl(6)} direction="row" alignItems="center">
-                <Text descriptive>{placeholder ? placeholder : 'Make a selection'}</Text>
+            <Box direction="row" alignItems="center">
+                <Text descriptive>{'Make a selection'}</Text>
             </Box>
         );
     }
 };
 
-const renderOption = (option: OptionBase): JSX.Element => {
+const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX.Element => {
     return (
-        <Box margin={trbl(6)} grow={1} width="100%" direction="row" alignItems="center">
+        <Box grow={1} width="100%" direction="row" alignItems="center">
             <Box margin={trbl(0, 9, 0, 0)}>
-                <img src="http://via.placeholder.com/100x100" />
+                <img src={option.image} />
             </Box>
-            <Text variant="large">{option.label}</Text>
+            <Box direction="column">
+                <Text descriptive={optionState.isSelected}>
+                    {optionState.isSelected && (
+                        <Text inline descriptive>
+                            <Icon size="small" icon="checkmark" />
+                            &nbsp;&nbsp;
+                        </Text>
+                    )}
+                    {option.label}
+                </Text>
+                <Text descriptive>{option.description}</Text>
+            </Box>
         </Box>
     );
 };
@@ -131,7 +153,7 @@ class RenderInputDemo extends Component<PropsType, StateType> {
                 onChange={this.handleChange}
                 disabled={boolean('disabled', false)}
                 options={object('options', options)}
-                renderInput={renderInput}
+                renderSelected={renderSelected}
                 renderOption={renderOption}
             />
         );

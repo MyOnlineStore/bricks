@@ -1,7 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
-import FoldOut from '../FoldOut';
 import ScrollBox from '../ScrollBox';
 import Option from './Option';
 import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
@@ -15,6 +14,10 @@ import ThemeType from '../../types/ThemeType';
 type OptionBase = {
     value: string;
     label: string;
+};
+
+type OptionStateType = {
+    isSelected: boolean;
 };
 
 type StateType = {
@@ -32,9 +35,10 @@ type PropsType<GenericOption extends OptionBase> = {
     emptyText: string;
     disabled?: boolean;
     onChange(value: string): void;
-    renderOption?(option: GenericOption): JSX.Element;
-    renderInput?(inputOption: OptionBase, placeholder?: string): JSX.Element;
+    renderOption?(option: GenericOption, state: OptionStateType): JSX.Element;
+    renderSelected?(option: GenericOption): JSX.Element;
 };
+
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private inputWrapperRef: HTMLDivElement;
@@ -146,7 +150,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     public render(): JSX.Element {
-        const selectedOption = this.props.options.reduce<OptionBase>(
+        const selectedOption = this.props.options.reduce(
             (found, option) => {
                 return option.value === this.props.value ? option : found;
             },
@@ -168,11 +172,10 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
-                            <>
+                            <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                 <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
                                     <Icon icon="search" size="small" color={'#d2d7e0'} />
                                 </Box>
-
                                 <input
                                     ref={this.inputRef}
                                     type="text"
@@ -182,10 +185,10 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                         this.handleInput(event.target.value)
                                     }
                                 />
-                            </>
+                            </Box>
                         )) ||
-                            (this.props.renderInput === undefined && (
-                                <Box alignItems="center" grow={1} onClick={this.open}>
+                            (this.props.renderSelected === undefined && (
+                                <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
                                         <Text descriptive>
                                             <StyledPlaceholder>{this.props.placeholder}</StyledPlaceholder>
@@ -193,12 +196,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                     )}
                                 </Box>
                             )) ||
-                            (this.props.renderInput !== undefined && (
-                                <Box alignItems="center" grow={1} onClick={this.open}>
-                                    {this.props.renderInput(selectedOption, this.props.placeholder)}
+                            (this.props.renderSelected !== undefined && (
+                                <Box padding={trbl(6, 12)} alignItems="center" grow={1} onClick={this.open}>
+                                    {this.props.renderSelected(selectedOption as GenericOption)}
                                 </Box>
                             ))}
-
                         <Button
                             compact
                             flat
@@ -229,42 +231,49 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         inputHeight={this.state.inputHeight}
                     >
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                            <FoldOut isOpen={this.state.isOpen}>
+                            <div
+                                data-test="bricks-select-collapse"
+                                style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}
+                            >
                                 {this.filterOptions().length === 0 && (
                                     <Box padding={trbl(12)}>
                                         <Text>{this.props.emptyText}</Text>
                                     </Box>
                                 )}
                                 {this.filterOptions().length > 0 &&
-                                    this.filterOptions().map((option, index) => (
-                                        <Option
-                                            isTargeted={index === this.state.optionPointer}
-                                            key={`${option.value}-${option.label}`}
-                                            onMouseEnter={(): void => this.cycleTo(index)}
-                                            onClick={(): void => {
-                                                this.handleChange(option.value);
-                                            }}
-                                        >
-                                            <Box alignItems="center" inline>
-                                                <Box margin={trbl(0, 6, 0, 0)} inline>
-                                                    {option.value === this.props.value && (
-                                                        <Text descriptive={option.value === this.props.value}>
-                                                            <Icon size="small" icon="checkmark" />
-                                                        </Text>
-                                                    )}
-                                                </Box>
-                                                <div>
-                                                    {(this.props.renderOption !== undefined &&
-                                                        this.props.renderOption(option)) || (
+                                    this.filterOptions().map((option, index) => {
+                                        const optionsState = {
+                                            isSelected: option.value === this.props.value,
+                                        };
+
+                                        return (
+                                            <Option
+                                                isTargeted={index === this.state.optionPointer}
+                                                key={`${option.value}-${option.label}`}
+                                                onMouseEnter={(): void => this.cycleTo(index)}
+                                                onClick={(): void => {
+                                                    this.handleChange(option.value);
+                                                }}
+                                            >
+                                                {(this.props.renderOption !== undefined &&
+                                                    this.props.renderOption(option, optionsState)) || (
+                                                    <Box padding={trbl(6, 18)} alignItems="center" inline>
+                                                        {optionsState.isSelected && (
+                                                            <Box margin={trbl(0, 6, 0, 0)} inline>
+                                                                <Text descriptive={option.value === this.props.value}>
+                                                                    <Icon size="small" icon="checkmark" />
+                                                                </Text>
+                                                            </Box>
+                                                        )}
                                                         <Text descriptive={option.value === this.props.value} inline>
                                                             {option.label}
                                                         </Text>
-                                                    )}
-                                                </div>
-                                            </Box>
-                                        </Option>
-                                    ))}
-                            </FoldOut>
+                                                    </Box>
+                                                )}
+                                            </Option>
+                                        );
+                                    })}
+                            </div>
                         </ScrollBox>
                     </StyledWindow>,
                     document.body,
@@ -275,4 +284,4 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 }
 
 export default withTheme(Select);
-export { PropsType, StateType, OptionBase };
+export { PropsType, StateType, OptionBase, OptionStateType };
