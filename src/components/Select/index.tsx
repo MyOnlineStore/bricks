@@ -187,7 +187,11 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                 />
                             </Box>
                         )) ||
-                            (this.props.renderSelected === undefined && (
+                            (this.props.renderSelected !== undefined && (
+                                <Box padding={trbl(6, 12)} alignItems="center" grow={1} onClick={this.open}>
+                                    {this.props.renderSelected(selectedOption as GenericOption)}
+                                </Box>
+                            )) || (
                                 <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
                                         <Text descriptive>
@@ -195,12 +199,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                         </Text>
                                     )}
                                 </Box>
-                            )) ||
-                            (this.props.renderSelected !== undefined && (
-                                <Box padding={trbl(6, 12)} alignItems="center" grow={1} onClick={this.open}>
-                                    {this.props.renderSelected(selectedOption as GenericOption)}
-                                </Box>
-                            ))}
+                            )}
                         <Button
                             compact
                             flat
@@ -235,42 +234,32 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                 data-test="bricks-select-collapse"
                                 style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}
                             >
-                                {this.filterOptions().length === 0 && (
+                                {(this.filterOptions().length === 0 && (
                                     <Box padding={trbl(12)}>
                                         <Text>{this.props.emptyText}</Text>
                                     </Box>
-                                )}
-                                {this.filterOptions().length > 0 &&
+                                )) ||
                                     this.filterOptions().map((option, index) => {
-                                        const optionsState = {
+                                        const optionState = {
                                             isSelected: option.value === this.props.value,
                                         };
 
                                         return (
                                             <Option
+                                                label={option.label}
+                                                isSelected={optionState.isSelected}
                                                 isTargeted={index === this.state.optionPointer}
                                                 key={`${option.value}-${option.label}`}
                                                 onMouseEnter={(): void => this.cycleTo(index)}
                                                 onClick={(): void => {
                                                     this.handleChange(option.value);
                                                 }}
-                                            >
-                                                {(this.props.renderOption !== undefined &&
-                                                    this.props.renderOption(option, optionsState)) || (
-                                                    <Box padding={trbl(6, 18)} alignItems="center" inline>
-                                                        {optionsState.isSelected && (
-                                                            <Box margin={trbl(0, 6, 0, 0)} inline>
-                                                                <Text descriptive={option.value === this.props.value}>
-                                                                    <Icon size="small" icon="checkmark" />
-                                                                </Text>
-                                                            </Box>
-                                                        )}
-                                                        <Text descriptive={option.value === this.props.value} inline>
-                                                            {option.label}
-                                                        </Text>
-                                                    </Box>
-                                                )}
-                                            </Option>
+                                                content={
+                                                    this.props.renderOption !== undefined
+                                                        ? this.props.renderOption(option, optionState)
+                                                        : undefined
+                                                }
+                                            />
                                         );
                                     })}
                             </div>

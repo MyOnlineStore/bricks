@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-import Select, { OptionBase, OptionStateType } from '.';
+import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs/react';
 import Box from '../Box';
 import Text from '../Text';
