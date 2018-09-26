@@ -15,13 +15,13 @@ exports[`Storyshots Toaster Default 1`] = `
       className="sc-bbmXgH sFULU"
     >
       <div
-        className="sc-bwzfXH dMEGgX"
+        className="sc-bwzfXH cbcpsK"
       >
         <div
           className="sc-gGBfsJ YlteL"
         >
           <div
-            className="sc-bwzfXH jwDFoo"
+            className="sc-bwzfXH jQmHZh"
           >
             <span
               className="sc-ifAKCX kTqttQ"
@@ -39,10 +39,10 @@ exports[`Storyshots Toaster Default 1`] = `
             </span>
           </div>
           <div
-            className="sc-bwzfXH hIRDBz"
+            className="sc-bwzfXH kKctzU"
           >
             <div
-              className="sc-bwzfXH iQQUwN"
+              className="sc-bwzfXH gaQYSB"
             >
               <p
                 className="sc-bxivhb gTyNSX"
@@ -57,7 +57,7 @@ exports[`Storyshots Toaster Default 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH gaLISJ"
+            className="sc-bwzfXH bQfpwP"
           >
             <button
               className="sc-htoDjs TzVGU"
@@ -103,13 +103,13 @@ exports[`Storyshots Toaster With action button 1`] = `
       className="sc-bbmXgH sFULU"
     >
       <div
-        className="sc-bwzfXH dMEGgX"
+        className="sc-bwzfXH cbcpsK"
       >
         <div
           className="sc-gGBfsJ hPEQWZ"
         >
           <div
-            className="sc-bwzfXH jwDFoo"
+            className="sc-bwzfXH jQmHZh"
           >
             <span
               className="sc-ifAKCX icOBot"
@@ -127,10 +127,10 @@ exports[`Storyshots Toaster With action button 1`] = `
             </span>
           </div>
           <div
-            className="sc-bwzfXH hIRDBz"
+            className="sc-bwzfXH kKctzU"
           >
             <div
-              className="sc-bwzfXH iQQUwN"
+              className="sc-bwzfXH gaQYSB"
             >
               <p
                 className="sc-bxivhb gTyNSX"
@@ -144,7 +144,7 @@ exports[`Storyshots Toaster With action button 1`] = `
               </p>
             </div>
             <div
-              className="sc-bwzfXH iKXoij"
+              className="sc-bwzfXH kWLDUa"
             >
               <button
                 className="sc-htoDjs hqsvnm"
@@ -161,7 +161,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH gaLISJ"
+            className="sc-bwzfXH bQfpwP"
           >
             <button
               className="sc-htoDjs TzVGU"

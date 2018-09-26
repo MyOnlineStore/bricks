@@ -2,17 +2,17 @@
 
 exports[`Storyshots MultiButton Default 1`] = `
 <div
-  className="sc-bwzfXH iFCcSe"
+  className="sc-bwzfXH fnbwCb"
 >
   <div
-    className="sc-bwzfXH hlYRxd"
+    className="sc-bwzfXH kOFNQl"
   >
     <div>
       <div
         className="sc-bRBYWo iZCyXo"
       >
         <div
-          className="sc-bwzfXH dRGel"
+          className="sc-bwzfXH cAZkVZ"
         >
           <button
             className="sc-csuQGl jNOnPN sc-htoDjs ljxUvq"
@@ -25,7 +25,7 @@ exports[`Storyshots MultiButton Default 1`] = `
             type="button"
           >
             <span
-              className="sc-htpNat eGtcyu"
+              className="sc-htpNat frObKr"
             >
               Default action
             </span>
@@ -41,7 +41,7 @@ exports[`Storyshots MultiButton Default 1`] = `
             type="button"
           >
             <span
-              className="sc-htpNat eGtcyu"
+              className="sc-htpNat frObKr"
             >
               <span
                 aria-hidden={true}

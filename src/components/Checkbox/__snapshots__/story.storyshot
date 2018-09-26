@@ -6,7 +6,7 @@ exports[`Storyshots Checkbox Default 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH ctAWjx"
+    className="sc-bwzfXH hBZDfE"
   >
     <span
       aria-hidden={true}

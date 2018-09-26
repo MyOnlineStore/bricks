@@ -27,6 +27,8 @@ const alignContentOptions = ['flex-start', 'flex-end', 'center', 'stretch', 'spa
 const alignSelf = ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch'];
 const directionOptions = ['row', 'row-reverse', 'column', 'column-reverse'];
 
+const positionOptions = ['static', 'relative', 'fixed', 'absolute'];
+
 storiesOf('Box', module).add('Default', () => {
     const items: Array<JSX.Element> = [];
 
@@ -47,6 +49,11 @@ storiesOf('Box', module).add('Default', () => {
                 width={text('width', '', 'Child')}
                 maxWidth={text('maxWidth', '', 'Child')}
                 minWidth={text('minWidth', '', 'Child')}
+                position={select('position', positionOptions, positionOptions[0], 'Child') as PropsType['position']}
+                top={text('top', '', 'Child')}
+                right={text('right', '', 'Child')}
+                bottom={text('bottom', '', 'Child')}
+                left={text('left', '', 'Child')}
             >
                 <Item>
                     <Box padding={trbl(48)}>

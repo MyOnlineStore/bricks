@@ -29,6 +29,11 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     basis?: string;
     order?: number;
     alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+    position?: 'static' | 'relative' | 'fixed' | 'absolute';
+    top?: string;
+    right?: string;
+    bottom?: string;
+    left?: string;
 };
 
 const Box: StatelessComponent<PropsType> = (props): JSX.Element => {

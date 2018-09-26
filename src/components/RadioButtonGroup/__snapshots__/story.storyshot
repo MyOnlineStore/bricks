@@ -5,17 +5,17 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
   className="sc-caSCKo hFCFuy"
 >
   <div
-    className="sc-bwzfXH clfeTd"
+    className="sc-bwzfXH ewkCPx"
   >
     <div
-      className="sc-bwzfXH dTTCsT"
+      className="sc-bwzfXH hurwPi"
     >
       <div
         className="sc-kgoBCf BEYlJ"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH doEFQb"
+          className="sc-bwzfXH kcWmUX"
         >
           <div
             checked={true}
@@ -46,14 +46,14 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH isLvox"
+      className="sc-bwzfXH jQPdWH"
     >
       <div
         className="sc-kgoBCf BEYlJ"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH doEFQb"
+          className="sc-bwzfXH kcWmUX"
         >
           <div
             checked={false}
@@ -84,14 +84,14 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH isLvox"
+      className="sc-bwzfXH jQPdWH"
     >
       <div
         className="sc-kgoBCf BEYlJ"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH doEFQb"
+          className="sc-bwzfXH kcWmUX"
         >
           <div
             checked={false}

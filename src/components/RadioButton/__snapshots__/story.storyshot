@@ -6,7 +6,7 @@ exports[`Storyshots RadioButton Default 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH doEFQb"
+    className="sc-bwzfXH kcWmUX"
   >
     <div
       checked={true}
