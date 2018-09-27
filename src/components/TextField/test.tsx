@@ -5,12 +5,6 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper } from './style';
 
 describe('TextField', () => {
-    it('should render an active state', () => {
-        const component = mountWithTheme(<TextField value="Jane" name="firstName" onChange={jest.fn()} />);
-
-        expect(component.find(StyledInput).prop('value')).toBe('Jane');
-    });
-
     it('should not change value when disabled', () => {
         const changeMock = jest.fn();
 
