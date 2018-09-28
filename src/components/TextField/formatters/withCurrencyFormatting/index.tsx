@@ -144,7 +144,6 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         public render(): JSX.Element {
             const wrappedProps = {
                 ...this.props,
-                type: 'text',
                 value: this.state.value,
                 prefix: this.state.currencyAlignment === 'left' ? this.state.currency : undefined,
                 suffix: this.state.currencyAlignment === 'right' ? this.state.currency : undefined,
