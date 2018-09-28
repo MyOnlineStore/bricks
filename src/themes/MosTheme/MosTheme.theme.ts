@@ -712,14 +712,6 @@ const theme: ThemeType = {
                 background: silver.base,
             },
         },
-        active: {
-            common: {
-                color: grey.lighter3,
-            },
-            affix: {
-                color: grey.lighter3,
-            },
-        },
         focus: {
             borderColor: green.darker2,
             boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
