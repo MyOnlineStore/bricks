@@ -54,9 +54,9 @@ describe('Table Header', () => {
             jest.fn(props => {
                 return props.children({
                     items: [
-                        { id: 'row-1', payload: true },
-                        { id: 'row-2', payload: true },
-                        { id: 'row-2', payload: true },
+                        { id: 'row-1', checked: false, payload: true },
+                        { id: 'row-2', checked: false, payload: true },
+                        { id: 'row-2', checked: false, payload: true },
                     ],
 
                     update: (): void => undefined,
@@ -86,9 +86,9 @@ describe('Table Header', () => {
             jest.fn(props => {
                 return props.children({
                     items: [
-                        { id: 'row-1', payload: false },
-                        { id: 'row-2', payload: false },
-                        { id: 'row-2', payload: false },
+                        { id: 'row-1', checked: true, payload: false },
+                        { id: 'row-2', checked: true, payload: false },
+                        { id: 'row-2', checked: true, payload: false },
                     ],
 
                     update: (): void => undefined,

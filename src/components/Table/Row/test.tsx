@@ -23,7 +23,7 @@ describe('Table Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row identifier="row-1" selectable draggable alignments={[]} cells={['A1', 'B1', 'C1']} index={1} />
+                    <Row identifier="row-1" selectable checked={false} draggable alignments={[]} cells={['A1', 'B1', 'C1']} index={1} />
                 </tbody>
             </table>,
         );
@@ -54,7 +54,7 @@ describe('Table Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row identifier="row-1" selectable alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
+                    <Row identifier="row-1" selectable checked={false} alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
                 </tbody>
             </table>,
         );
@@ -84,7 +84,7 @@ describe('Table Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row identifier="row-1" selectable alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
+                    <Row identifier="row-1" selectable checked={true} alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
                 </tbody>
             </table>,
         );
@@ -114,7 +114,7 @@ describe('Table Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row identifier="row-1" selectable alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
+                    <Row identifier="row-1" selectable checked={false} alignments={[]} cells={['A1', 'B1', 'C1']} draggable index={1} />
                 </tbody>
             </table>,
         );

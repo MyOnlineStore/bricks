@@ -15,6 +15,7 @@ type PropsType = {
     onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
     onMount?(): void;
     onUnmount?(): void;
+    onUpdate?(): void;
 };
 
 class Checkbox extends Component<PropsType, StateType> {
@@ -24,6 +25,15 @@ class Checkbox extends Component<PropsType, StateType> {
             focus: false,
         };
     }
+
+    // private static getDerivedStateFromProps(nextProps: PropsType, prevState: PropsType): string {
+    //     console.log('getDerivedStateFromProps', nextProps, prevState);
+    //     if (nextProps.onUpdate !== undefined) {
+    //         // nextProps.onUpdate();
+    //     }
+
+    //     return '';
+    // }
 
     public componentDidMount(): void {
         if (this.props.onMount !== undefined) {
