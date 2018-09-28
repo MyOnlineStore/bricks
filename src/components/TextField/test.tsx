@@ -13,9 +13,20 @@ describe('TextField', () => {
         );
 
         component.find(StyledInput).simulate('change');
-        component.find(StyledInput).simulate('blur');
 
         expect(changeMock).not.toHaveBeenCalled();
+    });
+
+    it('should not break when no onBlur is provided', () => {
+        const component = mountWithTheme(
+            <TextField value="John" suffix={'firstname'} disabled name="firstName" onChange={(): void => undefined} />,
+        );
+
+        const fn = (): void => {
+            component.find(StyledInput).simulate('blur');
+        };
+
+        expect(fn).not.toThrow();
     });
 
     it('should render an active state when focussed', () => {
