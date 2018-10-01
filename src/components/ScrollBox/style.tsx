@@ -61,6 +61,7 @@ const StyledTop = withProps<effectPropsType, HTMLDivElement>(styled.div)`
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
 `;
 
 const StyledBottom = withProps<effectPropsType, HTMLDivElement>(styled.div)`
@@ -72,6 +73,7 @@ const StyledBottom = withProps<effectPropsType, HTMLDivElement>(styled.div)`
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
 `;
 
 export default StyledScrollBox;
