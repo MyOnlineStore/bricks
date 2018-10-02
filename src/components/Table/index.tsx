@@ -1,10 +1,9 @@
-import React, { ReactNode, Component } from 'react';
+import React, { ReactNode, Component, MouseEvent } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 import Row from './Row';
 import Branch from '../Branch';
 import Header from './Header';
-// import { SubscriptionProvider, SubscriptionConsumer } from '../../utility/SubscriptionContext';
 
 type PropsType = {
     rows: Array<RowType>;
@@ -16,7 +15,7 @@ type PropsType = {
     onSelection?(selectedIds: Array<RowType>): void;
 };
 
-type RowType = { id: string; checked: boolean; cells: Array<ReactNode> };
+type RowType = { id: string; checked?: boolean; cells: Array<ReactNode> };
 
 type StateType = {
     selectionStart: number;
@@ -38,6 +37,8 @@ class Table extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
+        console.log('onSelection !== undefined:', this.props.onSelection !== undefined);
+
         this.state = {
             selectionStart: -1,
             toggleAction: true,
@@ -47,6 +48,54 @@ class Table extends Component<PropsType, StateType> {
     private dragEndHandler = (result: DropResult): void => {
         (this.props.onDragEnd as Function)(result);
     };
+
+    private handleCheck(event: MouseEvent<HTMLDivElement>, toggleAction: boolean, id: string): void {
+        const { rows, onSelection, selectable } = this.props;
+        const selectionStart = rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
+
+        if (selectable && onSelection !== undefined) {
+            if (event.shiftKey) {
+                window.getSelection().removeAllRanges();
+                onSelection(
+                    rows.map((row, key): RowType => {
+                        return (key > this.state.selectionStart && key < selectionStart) ||
+                            (key < this.state.selectionStart && key > selectionStart) ||
+                            row.id === id
+                            ? { ...row, checked: this.state.toggleAction }
+                            : row;
+                    }),
+                );
+            } else {
+                this.setState({ selectionStart, toggleAction });
+                onSelection(rows.map(row => (row.id === id ? { ...row, checked: toggleAction } : row)));
+            }
+        }
+    }
+
+    private handleHeaderCheck(checked: boolean): void {
+        const { rows, onSelection, selectable } = this.props;
+        if (selectable && onSelection !== undefined)
+            onSelection(
+                rows.map(row => ({
+                    ...row,
+                    checked,
+                })),
+            );
+    }
+
+    private getHeaderState(): boolean | 'indeterminate' {
+        const { rows } = this.props;
+        const checkedItems = rows.filter(row => row.checked === true);
+
+        switch (checkedItems.length) {
+            case 0:
+                return false;
+            case rows.length:
+                return true;
+            default:
+                return 'indeterminate';
+        }
+    }
 
     public render(): JSX.Element {
         const { headers, rows } = this.props;
@@ -69,27 +118,8 @@ class Table extends Component<PropsType, StateType> {
             >
                 {headers !== undefined && (
                     <Header
-                        onCheck={(checked): void => {
-                            if (this.props.onSelection !== undefined) {
-                                this.props.onSelection(
-                                    this.props.rows.map(row => {
-                                        return { ...row, checked };
-                                    }),
-                                );
-                            }
-                        }}
-                        checked={((): 'indeterminate' | boolean => {
-                            const checkedItems = rows.filter(row => row.checked === true);
-
-                            switch (checkedItems.length) {
-                                case 0:
-                                    return false;
-                                case rows.length:
-                                    return true;
-                                default:
-                                    return 'indeterminate';
-                            }
-                        })()}
+                        onCheck={(checked): void => this.handleHeaderCheck(checked)}
+                        checked={this.getHeaderState()}
                         alignments={alignments}
                         draggable={isDraggable}
                         headers={headers}
@@ -98,53 +128,21 @@ class Table extends Component<PropsType, StateType> {
                 )}
 
                 <tbody>
-                    {rows.map(({ id, checked, cells }, rowIndex) => {
-                        return (
-                            <Row
-                                key={id}
-                                alignments={alignments}
-                                cells={cells}
-                                draggable={isDraggable}
-                                selectable={isSelectable}
-                                checked={checked}
-                                index={rowIndex}
-                                identifier={id}
-                                onCheck={(event, toggleAction): void => {
-                                    const indexOfCheckedItem = this.props.rows.reduce((combined, item, index) => {
-                                        return item.id === id ? index : combined;
-                                    }, -1);
-
-                                    if (this.props.onSelection !== undefined) {
-                                        if (!event.shiftKey || this.state.selectionStart === -1) {
-                                            this.setState({ selectionStart: indexOfCheckedItem, toggleAction });
-                                            this.props.onSelection(
-                                                this.props.rows.map(row => {
-                                                    return row.id === id ? { ...row, checked: toggleAction } : row;
-                                                }),
-                                            );
-                                        } else if (event.shiftKey) {
-                                            this.props.onSelection(
-                                                this.props.rows.map((row, index): RowType => {
-                                                    if (
-                                                        (index > this.state.selectionStart &&
-                                                            index < indexOfCheckedItem) ||
-                                                        (index < this.state.selectionStart &&
-                                                            index > indexOfCheckedItem) ||
-                                                        row.id === id
-                                                    ) {
-                                                        return { ...row, checked: this.state.toggleAction };
-                                                    }
-
-                                                    return row;
-                                                }),
-                                            );
-                                            window.getSelection().removeAllRanges();
-                                        }
-                                    }
-                                }}
-                            />
-                        );
-                    })}
+                    {rows.map(({ id, checked, cells }, rowIndex) => (
+                        <Row
+                            key={id}
+                            alignments={alignments}
+                            cells={cells}
+                            draggable={isDraggable}
+                            selectable={isSelectable}
+                            checked={checked !== undefined ? checked : false}
+                            index={rowIndex}
+                            identifier={id}
+                            onCheck={(event, toggleAction): void => {
+                                this.props.onSelection !== undefined && this.handleCheck(event, toggleAction, id);
+                            }}
+                        />
+                    ))}
                 </tbody>
             </Branch>
         );

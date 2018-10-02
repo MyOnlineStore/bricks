@@ -1,106 +1,16 @@
 import React from 'react';
 import { mountWithTheme } from '../../../utility/styled/testing';
-import Header from '.';
-import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
+import Table from '../';
+import Header from './';
 import Checkbox from '../../Checkbox';
 
-jest.mock('../../../utility/SubscriptionContext', () => ({
-    SubscriptionConsumer: jest.fn(props => {
-        return props.children({
-            update: (): void => undefined,
-            remove: (): void => undefined,
-            getPayload: (): void => undefined,
-        });
-    }),
-}));
-
 describe('Table Header', () => {
-    it('should have an indeterminate check when not all rows are checked', () => {
-        /* tslint:disable */
-        (SubscriptionConsumer as any).mockImplementationOnce(
-            /* tslint:enable */
-            jest.fn(props => {
-                return props.children({
-                    items: [
-                        { id: 'row-1', payload: true },
-                        { id: 'row-2', payload: false },
-                        { id: 'row-2', payload: true },
-                    ],
-
-                    update: (): void => undefined,
-                    remove: (): void => undefined,
-                    getPayload: (): void => undefined,
-                });
-            }),
-        );
-
+    it('should not break when onSelection is undefined', () => {
         const component = mountWithTheme(
             <table>
                 <Header
-                    alignments={['left', 'left', 'right']}
-                    headers={['Header A', 'Header B', 'Header C']}
-                    selectable
-                />
-            </table>,
-        );
-
-        expect(component.find(Checkbox).prop('checked')).toEqual('indeterminate');
-    });
-
-    it('should have a checked check when all rows are checked', () => {
-        /* tslint:disable */
-        (SubscriptionConsumer as any).mockImplementationOnce(
-            /* tslint:enable */
-            jest.fn(props => {
-                return props.children({
-                    items: [
-                        { id: 'row-1', checked: false, payload: true },
-                        { id: 'row-2', checked: false, payload: true },
-                        { id: 'row-2', checked: false, payload: true },
-                    ],
-
-                    update: (): void => undefined,
-                    remove: (): void => undefined,
-                    getPayload: (): void => undefined,
-                });
-            }),
-        );
-
-        const component = mountWithTheme(
-            <table>
-                <Header
-                    alignments={['left', 'center', 'right']}
-                    headers={['Header A', 'Header B', 'Header C']}
-                    selectable
-                />
-            </table>,
-        );
-
-        expect(component.find(Checkbox).prop('checked')).toEqual(true);
-    });
-
-    it('should have an uncheck check when no rows are checked', () => {
-        /* tslint:disable */
-        (SubscriptionConsumer as any).mockImplementationOnce(
-            /* tslint:enable */
-            jest.fn(props => {
-                return props.children({
-                    items: [
-                        { id: 'row-1', checked: true, payload: false },
-                        { id: 'row-2', checked: true, payload: false },
-                        { id: 'row-2', checked: true, payload: false },
-                    ],
-
-                    update: (): void => undefined,
-                    remove: (): void => undefined,
-                    getPayload: (): void => undefined,
-                });
-            }),
-        );
-
-        const component = mountWithTheme(
-            <table>
-                <Header
+                    checked={false}
+                    onCheck={(): void => undefined}
                     alignments={['left', 'left', 'right']}
                     headers={['Header A', 'Header B', 'Header C']}
                     selectable
@@ -111,35 +21,111 @@ describe('Table Header', () => {
         expect(component.find(Checkbox).prop('checked')).toEqual(false);
     });
 
-    it('should call the updateAll on the SubscriptionConsumer when changed', () => {
-        const updateAllMock = jest.fn();
-
-        /* tslint:disable */
-        (SubscriptionConsumer as any).mockImplementationOnce(
-            /* tslint:enable */
-            jest.fn(props => {
-                return props.children({
-                    items: [],
-                    update: (): void => undefined,
-                    updateAll: updateAllMock,
-                    remove: (): void => undefined,
-                    getPayload: (): void => undefined,
-                });
-            }),
+    it('should have an indeterminate check when not all rows are checked', () => {
+        const component = mountWithTheme(
+            <Table
+                alignments={['left', 'left', 'right']}
+                headers={['Header A', 'Header B', 'Header C']}
+                rows={[
+                    { id: 'row-1', checked: true, cells: ['A1', 'B1', 'C1'] },
+                    { id: 'row-2', checked: false, cells: ['A1', 'B1', 'C1'] },
+                    { id: 'row-3', cells: ['A1', 'B1', 'C1'] },
+                ]}
+                selectable
+            />,
         );
 
-        const component = mountWithTheme(
-            <table>
-                <Header
+        expect(
+            component
+                .find(Checkbox)
+                .first()
+                .prop('checked'),
+        ).toEqual('indeterminate');
+    });
+
+    it('should render without selectable', () => {
+        const fn = (): void => {
+            mountWithTheme(
+                <Table
                     alignments={['left', 'left', 'right']}
                     headers={['Header A', 'Header B', 'Header C']}
-                    selectable
-                />
-            </table>,
+                    rows={[{ id: 'row-3', cells: ['A1', 'B1', 'C1'] }]}
+                    onSelection={undefined}
+                />,
+            );
+        };
+
+        expect(fn).not.toThrow();
+    });
+
+    it('should have a checked check when all rows are checked', () => {
+        const component = mountWithTheme(
+            <Table
+                alignments={['left', 'left', 'right']}
+                headers={['Header A', 'Header B', 'Header C']}
+                rows={[
+                    { id: 'row-1', checked: true, cells: ['A1', 'B1', 'C1'] },
+                    { id: 'row-2', checked: true, cells: ['A1', 'B1', 'C1'] },
+                ]}
+                selectable
+            />,
         );
 
-        component.find(Checkbox).simulate('click');
+        expect(
+            component
+                .find(Checkbox)
+                .first()
+                .prop('checked'),
+        ).toEqual(true);
+    });
 
-        expect(updateAllMock).toHaveBeenCalledWith(true);
+    it('should have an uncheck check when no rows are checked', () => {
+        const component = mountWithTheme(
+            <Table
+                alignments={['left', 'left', 'right']}
+                headers={['Header A', 'Header B', 'Header C']}
+                rows={[
+                    { id: 'row-1', checked: false, cells: ['A1', 'B1', 'C1'] },
+                    { id: 'row-2', checked: false, cells: ['A1', 'B1', 'C1'] },
+                ]}
+                selectable
+            />,
+        );
+
+        expect(
+            component
+                .find(Checkbox)
+                .first()
+                .prop('checked'),
+        ).toEqual(false);
+    });
+
+    it('should handle onChange', () => {
+        const cells = [
+            { id: 'row-1', checked: true, cells: ['A1', 'B1', 'C1'] },
+            { id: 'row-2', checked: true, cells: ['A1', 'B1', 'C1'] },
+        ];
+        let mockEvent;
+
+        const mockHandler = jest.fn(({ event }) => {
+            mockEvent = event;
+        });
+
+        const component = mountWithTheme(
+            <Table
+                selectable
+                alignments={['left', 'left', 'right']}
+                headers={['Header A', 'Header B', 'Header C']}
+                rows={cells}
+                onSelection={mockHandler}
+            />,
+        );
+
+        component
+            .find(Checkbox)
+            .first()
+            .simulate('click');
+
+        expect(mockHandler).toHaveBeenCalled();
     });
 });

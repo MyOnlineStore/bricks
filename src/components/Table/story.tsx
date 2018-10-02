@@ -9,7 +9,7 @@ import Text from '../Text';
 
 type StateType = {
     hover: boolean;
-    rows: Array<{ id: string; checked: boolean; cells: Array<ReactNode> }>;
+    rows: Array<{ id: string; checked?: boolean; cells: Array<ReactNode> }>;
 };
 
 type PropsType = {
@@ -43,8 +43,8 @@ class Demo extends Component<PropsType, StateType> {
                 { id: 'row-6', checked: false, cells: ['A6', 'B6', 'C6', actions] },
                 { id: 'row-7', checked: true, cells: ['A7', 'B7', 'C7', actions] },
                 { id: 'row-8', checked: false, cells: ['A8', 'B8', 'C8', actions] },
-                { id: 'row-9', checked: true, cells: ['A9', 'B9', 'C9', actions] },
-                { id: 'row-10', checked: false, cells: ['A10', 'B10', 'C10', actions] },
+                { id: 'row-9', checked: false, cells: ['A9', 'B9', 'C9', actions] },
+                { id: 'row-10', cells: ['A10', 'B10', 'C10', actions] },
             ],
         };
     }

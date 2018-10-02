@@ -7,7 +7,6 @@ import StyledRow from './style';
 import { ContrastThemeProvider } from '../../Contrast';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
-// import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 import { mapAlignment } from '..';
 import Branch from '../../Branch';
 
@@ -20,7 +19,7 @@ type PropsType = {
     selected?: boolean;
     index: number;
     identifier: string;
-    onCheck?(event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
+    onCheck(event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
 };
 
 type StateType = {
@@ -104,9 +103,7 @@ class Row extends Component<PropsType, StateType> {
                             name=""
                             value=""
                             checked={checked}
-                            onChange={({ checked, event }): void => {
-                                if (this.props.onCheck) this.props.onCheck(event, checked as boolean);
-                            }}
+                            onChange={({ checked, event }): void => this.props.onCheck(event, checked as boolean)}
                         />
                     </Cell>
                 )}

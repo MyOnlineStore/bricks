@@ -3,7 +3,6 @@ import StyledHeader from './style';
 import Text from '../../Text';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
-import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 import { mapAlignment } from '..';
 
 type PropsType = {
@@ -11,8 +10,8 @@ type PropsType = {
     headers: Array<ReactNode>;
     selectable?: boolean;
     draggable?: boolean;
-    checked?: boolean | 'indeterminate';
-    onCheck?(checked: boolean): void;
+    checked: boolean | 'indeterminate';
+    onCheck(checked: boolean): void;
 };
 
 const Header: SFC<PropsType> = ({ alignments, checked, draggable, onCheck, selectable, headers }): JSX.Element => {
@@ -23,11 +22,11 @@ const Header: SFC<PropsType> = ({ alignments, checked, draggable, onCheck, selec
                 {selectable && (
                     <StyledHeader align="left">
                         <Checkbox
-                            checked={checked !== undefined ? checked : false}
+                            checked={checked}
                             name=""
                             value=""
                             onChange={({ checked }): void => {
-                                if (onCheck !== undefined) onCheck(checked as boolean);
+                                onCheck(checked as boolean);
                             }}
                         />
                     </StyledHeader>
