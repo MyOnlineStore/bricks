@@ -1,7 +1,6 @@
 import TextField from '../../';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { number } from '@storybook/addon-knobs';
 import { boolean } from '@storybook/addon-knobs/react';
 
 type PropsType = {};
@@ -19,9 +18,8 @@ class Demo extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <TextField.Number
-                type="number"
                 name="min value"
-                allowNegative={true}
+                disableNegative={boolean('disable negative numbers', false)}
                 value={this.state.value}
                 onChange={(value: number): void => this.setState({ value })}
             />

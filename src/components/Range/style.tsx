@@ -49,6 +49,12 @@ const StyledWrapper = styled.div`
             background: ${({ theme }): string => theme.Range.slider.background};
             border: ${({ theme }): string => theme.Range.slider.border};
             margin-top: -14px;
+            transition: none;
+        }
+
+        .input-range__slider:active {
+            transform: none;
+            box-shadow: 0 0 0 rgba(0,0,0,0) inset, 0 0 0 4px rgba(107,222,120,0.4);
         }
 
         .input-range__label-container {

@@ -8,6 +8,8 @@ import TextField from '../TextField';
 
 type PropsType = {
     value: RangeType;
+    minValue: number;
+    maxValue: number;
     label?: string;
     disabled?: boolean;
 };
@@ -25,34 +27,46 @@ class Range extends Component<PropsType, StateType> {
         };
     }
 
+    private onChangeMinimumValue = (value: number): void => {
+        if (value < this.state.value.max && value >= this.props.minValue) {
+            this.setState({
+                value: { ...this.state.value, min: value },
+            });
+        }
+    };
+
+    private onChangeMaximumValue = (value: number): void => {
+        if (value > this.state.value.min && value <= this.props.maxValue) {
+            this.setState({
+                value: { ...this.state.value, max: value },
+            });
+        }
+    };
+
     public render(): JSX.Element {
         return (
             <Box padding={trbl(12)} direction="column">
                 <Box justifyContent="space-between">
-                    <Box width="100px">
-                        <TextField
-                            value={`${this.state.value.min}`}
+                    <Box width="125px">
+                        <TextField.Number
+                            value={this.state.value.min}
                             suffix={this.props.label}
                             disabled={this.props.disabled}
                             name="minimum"
-                            onChange={(value): void =>
-                                this.setState({
-                                    value: { ...this.state.value, min: parseInt(value, 10) },
-                                })
-                            }
+                            onChange={(value): void => {
+                                this.onChangeMinimumValue(value);
+                            }}
                         />
                     </Box>
-                    <Box width="100px">
-                        <TextField
-                            value={`${this.state.value.max}`}
+                    <Box width="125px">
+                        <TextField.Number
+                            value={this.state.value.max}
                             suffix={this.props.label}
                             disabled={this.props.disabled}
                             name="maximum"
-                            onChange={(value): void =>
-                                this.setState({
-                                    value: { ...this.state.value, max: parseInt(value, 10) },
-                                })
-                            }
+                            onChange={(value): void => {
+                                this.onChangeMaximumValue(value);
+                            }}
                         />
                     </Box>
                 </Box>
@@ -63,6 +77,8 @@ class Range extends Component<PropsType, StateType> {
                         onChange={(value): void => {
                             this.setState({ value: value as RangeType });
                         }}
+                        minValue={this.props.minValue}
+                        maxValue={this.props.maxValue}
                     />
                 </StyledWrapper>
             </Box>
