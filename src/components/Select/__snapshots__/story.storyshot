@@ -2,12 +2,12 @@
 
 exports[`Storyshots Select Custom rendering 1`] = `
 <div
-  className="sc-kgAjT ciiNMD"
+  className="sc-cJSrbW dvBKrn"
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-ksYbfQ bABYTq"
+    className="sc-hmzhuo ePLdEr"
     disabled={false}
   >
     <div
@@ -52,7 +52,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-cJSrbW fNzhpc"
+      className="sc-ksYbfQ ggioh"
     >
       <div
         className="sc-brqgnP jEhxYZ"
@@ -65,7 +65,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
           >
             <div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -100,7 +100,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -135,7 +135,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -170,7 +170,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -205,7 +205,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -240,7 +240,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -285,12 +285,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
 
 exports[`Storyshots Select Default 1`] = `
 <div
-  className="sc-kgAjT ciiNMD"
+  className="sc-cJSrbW dvBKrn"
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-ksYbfQ bABYTq"
+    className="sc-hmzhuo ePLdEr"
     disabled={false}
   >
     <div
@@ -304,7 +304,7 @@ exports[`Storyshots Select Default 1`] = `
           className="sc-bxivhb jVDCXG"
         >
           <span
-            className="sc-TOsTZ bzKXAe"
+            className="sc-kgAjT WmYSY"
           >
             Search a value
           </span>
@@ -335,7 +335,7 @@ exports[`Storyshots Select Default 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-cJSrbW fNzhpc"
+      className="sc-ksYbfQ ggioh"
     >
       <div
         className="sc-brqgnP jEhxYZ"
@@ -348,7 +348,7 @@ exports[`Storyshots Select Default 1`] = `
           >
             <div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -372,7 +372,7 @@ exports[`Storyshots Select Default 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -396,7 +396,7 @@ exports[`Storyshots Select Default 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -420,7 +420,7 @@ exports[`Storyshots Select Default 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -444,7 +444,7 @@ exports[`Storyshots Select Default 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -468,7 +468,7 @@ exports[`Storyshots Select Default 1`] = `
                 </div>
               </div>
               <div
-                className="sc-cHGsZl hvaami"
+                className="sc-TOsTZ NJJmQ"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >

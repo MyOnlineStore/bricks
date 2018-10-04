@@ -21,14 +21,14 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             super(props);
 
             this.state = {
-                value: `${this.props.value}`
-            }
+                value: `${this.props.value}`,
+            };
         }
 
         public static getDerivedStateFromProps(nextProps: PropsType, prevState: StateType): StateType {
             return {
                 value: `${nextProps.value}`,
-            }
+            };
         }
 
         private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
@@ -47,6 +47,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             if (this.state.value.length === 0) {
                 this.setState({ value: '0' });
             }
+            if (this.props.onBlur !== undefined) this.props.onBlur();
         };
 
         public render(): JSX.Element {

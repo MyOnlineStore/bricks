@@ -3,7 +3,7 @@
 exports[`Storyshots Skeleton Button 1`] = `
 <div
   aria-hidden={true}
-  className="sc-frDJqD dLVbOW"
+  className="sc-kvZOFW gtCfQQ"
   width={139}
 >
   _
@@ -14,21 +14,21 @@ exports[`Storyshots Skeleton Text 1`] = `
 Array [
   <div
     aria-hidden={true}
-    className="sc-hmzhuo cDnzMY"
+    className="sc-frDJqD eyWbdn"
   >
     _
   </div>,
   <br />,
   <div
     aria-hidden={true}
-    className="sc-hmzhuo cDnzMY"
+    className="sc-frDJqD eyWbdn"
   >
     _
   </div>,
   <br />,
   <div
     aria-hidden={true}
-    className="sc-hmzhuo cDnzMY"
+    className="sc-frDJqD eyWbdn"
   >
     _
   </div>,

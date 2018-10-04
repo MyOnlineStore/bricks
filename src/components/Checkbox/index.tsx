@@ -20,7 +20,6 @@ type PropsType = {
 class Checkbox extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
-
         this.state = {
             focus: false,
         };

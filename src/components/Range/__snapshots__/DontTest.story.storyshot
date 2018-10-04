@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Range Default 1`] = `
+<div
+  className="sc-bwzfXH feFEoj"
+>
+  <div
+    className="sc-bwzfXH eoNmRC"
+  >
+    <div
+      className="sc-bwzfXH eiDsMy"
+    >
+      <div
+        className="sc-eNQAEJ lhLkZ"
+        disabled={false}
+        onBlurCapture={[Function]}
+        onClick={[Function]}
+        onFocusCapture={[Function]}
+      >
+        <input
+          className="sc-dxgOiQ iYDBE"
+          disabled={false}
+          id={undefined}
+          name="minimum"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value="3"
+        />
+        <div
+          className="sc-ckVGcZ kdxLRP"
+          disabled={false}
+        >
+          <span
+            className="sc-jKJlTe eFYypy"
+          >
+            cm
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-bwzfXH eiDsMy"
+    >
+      <div
+        className="sc-eNQAEJ lhLkZ"
+        disabled={false}
+        onBlurCapture={[Function]}
+        onClick={[Function]}
+        onFocusCapture={[Function]}
+      >
+        <input
+          className="sc-dxgOiQ iYDBE"
+          disabled={false}
+          id={undefined}
+          name="maximum"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value="5"
+        />
+        <div
+          className="sc-ckVGcZ kdxLRP"
+          disabled={false}
+        >
+          <span
+            className="sc-jKJlTe eFYypy"
+          >
+            cm
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-kjoXOD njeSs"
+    disabled={false}
+  >
+    <div />
+  </div>
+</div>
+`;

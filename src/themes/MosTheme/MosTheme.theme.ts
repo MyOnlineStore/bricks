@@ -567,17 +567,30 @@ const theme: ThemeType = {
         },
     },
     Range: {
-        track: {
-            background: silver.base,
-            border: `solid 1px ${silver.darker4}`,
+        default: {
+            track: {
+                background: silver.base,
+                border: `solid 1px ${silver.darker4}`,
+            },
+            active: {
+                background: green.base,
+                border: `solid 1px ${green.darker2}`,
+                boxShadow: '0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px rgba(107, 222, 120, 0.4)',
+            },
+            slider: {
+                background: silver.lighter1,
+                border: `solid 1px ${green.darker2}`,
+            },
         },
-        trackActive: {
-            background: green.base,
-            border: `solid 1px ${green.darker2}`,
-        },
-        slider: {
-            background: silver.lighter1,
-            border: `solid 1px ${green.darker2}`,
+        disabled: {
+            track: {
+                background: silver.base,
+                border: `solid 1px ${silver.darker4}`,
+            },
+            slider: {
+                background: silver.lighter1,
+                border: `solid 1px ${silver.darker4}`,
+            },
         },
     },
     Popover: {

@@ -19,7 +19,7 @@ exports[`Storyshots TextField Default 1`] = `
     </span>
   </div>
   <input
-    className="sc-dxgOiQ iSQIum"
+    className="sc-dxgOiQ iYDBE"
     disabled={false}
     id={undefined}
     name="firstname"
@@ -62,7 +62,7 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ iSQIum"
+      className="sc-dxgOiQ iYDBE"
       disabled={false}
       id={undefined}
       name="first name"
@@ -127,7 +127,7 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ iSQIum"
+      className="sc-dxgOiQ iYDBE"
       disabled={false}
       id={undefined}
       name="firstname"
@@ -180,4 +180,26 @@ Array [
     </p>
   </div>,
 ]
+`;
+
+exports[`Storyshots TextField With Number formatting 1`] = `
+<div
+  className="sc-eNQAEJ lhLkZ"
+  disabled={undefined}
+  onBlurCapture={[Function]}
+  onClick={[Function]}
+  onFocusCapture={[Function]}
+>
+  <input
+    className="sc-dxgOiQ iYDBE"
+    disabled={undefined}
+    id={undefined}
+    name="min value"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+    value="10"
+  />
+</div>
 `;

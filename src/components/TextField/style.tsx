@@ -49,7 +49,7 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
     font-size: inherit;
     display: block;
-    padding: 6px 12px;
+    padding: 6px 0 6px 12px;
     line-height: 1.572;
     outline: none;
     ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextField.disabled.color}` : '')}

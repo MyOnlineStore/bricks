@@ -26,6 +26,7 @@ export { default as PriceTag } from './components/PriceTag';
 export { default as RadioButton } from './components/RadioButton';
 export { default as RadioButtonGroup } from './components/RadioButtonGroup';
 export { default as Raised } from './components/Raised';
+export { default as Range } from './components/Range';
 export { default as ScrollBox } from './components/ScrollBox';
 export { default as Select } from './components/Select';
 export { default as Skeleton } from './components/Skeleton';
