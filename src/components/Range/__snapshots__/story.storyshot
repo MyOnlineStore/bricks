@@ -18,15 +18,15 @@ exports[`Storyshots Range Default 1`] = `
         onFocusCapture={[Function]}
       >
         <input
-          className="sc-dxgOiQ iYDBE"
+          className="sc-dxgOiQ jLQDMB"
           disabled={false}
           id={undefined}
           name="minimum"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          type="text"
-          value="3"
+          type="number"
+          value="5"
         />
         <div
           className="sc-ckVGcZ kdxLRP"
@@ -51,15 +51,15 @@ exports[`Storyshots Range Default 1`] = `
         onFocusCapture={[Function]}
       >
         <input
-          className="sc-dxgOiQ iYDBE"
+          className="sc-dxgOiQ jLQDMB"
           disabled={false}
           id={undefined}
           name="maximum"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
-          type="text"
-          value="5"
+          type="number"
+          value="15"
         />
         <div
           className="sc-ckVGcZ kdxLRP"

@@ -10,20 +10,7 @@ import withNumberFormatting, { WithNumberFormattingType } from './formatters/wit
 type PropsType = {
     value: string;
     name: string;
-    type?:
-        | 'text'
-        | 'button'
-        | 'checkbox'
-        | 'color'
-        | 'date'
-        | 'datetime-local'
-        | 'email'
-        | 'file'
-        | 'hidden'
-        | 'image'
-        | 'month'
-        | 'number'
-        | 'password';
+    type?: string;
     id?: string;
     feedback?: {
         severity: SeverityType;
@@ -94,7 +81,7 @@ class TextField extends Component<PropsType, StateType> {
                         </StyledAffixWrapper>
                     )}
                     <StyledInput
-                        type="text"
+                        type={this.props.type ? this.props.type : 'text'}
                         name={this.props.name}
                         disabled={this.props.disabled}
                         value={this.props.value}

@@ -103,7 +103,6 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
 
         private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
             this.props.onChange(this.parse('out', value));
-
             const target = event.target;
             const selectionStart = target.selectionStart as number;
             const newInputLength = this.parse('in', value).length;

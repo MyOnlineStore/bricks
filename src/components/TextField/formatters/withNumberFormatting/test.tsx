@@ -30,9 +30,9 @@ describe('Range', () => {
         const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(<NumberField name="" value={19} disableNegative onChange={changeMock} />);
 
-        component.find('input').simulate('change', { target: { value: -50 } });
+        component.find('input').simulate('change', { target: { value: -5 } });
         component.find('input').simulate('blur');
 
-        expect(component.find('input').prop('value')).toEqual('19');
+        expect(changeMock).toHaveBeenCalledWith(0);
     });
 });

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import InputRange, { Range as RangeType } from 'react-input-range';
 import StyledWrapper from './style';
-import 'react-input-range/lib/css/index.css';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import TextField from '../TextField';
@@ -16,98 +15,94 @@ type PropsType = {
 };
 
 type StateType = {
-    rangeValues: RangeType;
     inputValues: RangeType;
     inputFocus: boolean;
-    error: { min: boolean; max: boolean };
+    hasError: { min: boolean; max: boolean };
 };
 
 class Range extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
         this.state = {
-            rangeValues: props.value,
             inputValues: props.value,
             inputFocus: false,
-            error: { min: false, max: false },
+            hasError: { min: false, max: false },
         };
     }
 
+    public static isWithinRange(min: number, max: number, value: number): boolean {
+        return value <= max && value >= min;
+    }
+
     private onChangeMinimumValue = (min: number): void => {
-        const { inputValues, error } = this.state;
+        const { inputValues, hasError } = this.state;
+
         this.setState({ inputValues: { ...inputValues, min } });
 
-        if (this.isWithinRange(this.props.minLimit, this.getMaxLowValue(), min)) {
-            this.setState({
-                rangeValues: { ...inputValues, min },
-                error: { ...error, min: false },
-            });
+        if (Range.isWithinRange(this.props.minLimit, this.getMaxLowValue(), min)) {
+            this.setState({ hasError: { ...hasError, min: false } });
             if (this.props.onChange !== undefined) this.props.onChange({ ...inputValues, min });
         } else {
-            this.setState({ error: { ...error, min: true } });
+            this.setState({ hasError: { ...hasError, min: true } });
         }
     };
 
     private onChangeMaximumValue = (max: number): void => {
-        const { inputValues, error } = this.state;
+        const { inputValues, hasError } = this.state;
+
         this.setState({ inputValues: { ...inputValues, max } });
 
-        if (this.isWithinRange(this.getMinHighValue(), this.props.maxLimit, max)) {
-            this.setState({
-                rangeValues: { ...inputValues, max },
-                error: { ...error, max: false },
-            });
+        if (Range.isWithinRange(this.getMinHighValue(), this.props.maxLimit, max)) {
+            this.setState({ hasError: { ...hasError, max: false } });
             if (this.props.onChange !== undefined) this.props.onChange({ ...inputValues, max });
         } else {
-            this.setState({ error: { ...error, max: true } });
+            this.setState({ hasError: { ...hasError, max: true } });
         }
     };
 
     private onBlurMinimumValue = (): void => {
         const { min, max } = this.state.inputValues;
-        let newValues;
+        const newValues = (): RangeType => {
+            if (min < this.props.minLimit) return { ...this.state.inputValues, min: this.props.minLimit };
+            else if (min >= max) return { ...this.state.inputValues, min: this.getMaxLowValue() };
 
-        if (min < this.props.minLimit) newValues = { ...this.state.inputValues, min: this.props.minLimit };
-        else if (min >= max) newValues = { ...this.state.inputValues, min: this.getMaxLowValue() };
-        else newValues = { ...this.state.inputValues, min };
+            return this.state.inputValues;
+        };
 
         this.setState({
-            inputValues: newValues,
-            rangeValues: newValues,
+            inputValues: newValues(),
             inputFocus: false,
-            error: { ...this.state.error, min: false },
+            hasError: { ...this.state.hasError, min: false },
         });
-        if (this.props.onChange !== undefined) this.props.onChange(newValues);
+
+        if (this.props.onChange !== undefined) this.props.onChange(newValues());
     };
 
     private onBlurMaximumValue = (): void => {
-        const { min, max } = this.state.inputValues;
-        let inputValues;
+        const inputValues = (): RangeType => {
+            if (this.state.inputValues.max >= this.props.maxLimit)
+                return { ...this.state.inputValues, max: this.props.maxLimit };
+            else if (this.state.inputValues.max <= this.state.inputValues.min)
+                return { ...this.state.inputValues, max: this.getMinHighValue() };
 
-        if (max >= this.props.maxLimit) inputValues = { ...this.state.inputValues, max: this.props.maxLimit };
-        else if (max <= min) inputValues = { ...this.state.inputValues, max: this.getMinHighValue() };
-        else inputValues = { ...this.state.inputValues, max };
+            return this.state.inputValues;
+        };
 
         this.setState({
-            inputValues,
-            rangeValues: inputValues,
+            inputValues: inputValues(),
             inputFocus: false,
-            error: { ...this.state.error, max: false },
+            hasError: { ...this.state.hasError, max: false },
         });
-        if (this.props.onChange !== undefined) this.props.onChange(inputValues);
+        if (this.props.onChange !== undefined) this.props.onChange(inputValues());
     };
 
-    private isWithinRange = (min: number, max: number, value: number): boolean => {
-        return value <= max && value >= min;
-    };
-
-    private getMaxLowValue = (): number => {
+    private getMaxLowValue(): number {
         return this.state.inputValues.max - 1;
-    };
+    }
 
-    private getMinHighValue = (): number => {
+    private getMinHighValue(): number {
         return this.state.inputValues.min + 1;
-    };
+    }
 
     public render(): JSX.Element {
         return (
@@ -115,7 +110,7 @@ class Range extends Component<PropsType, StateType> {
                 <Box justifyContent="space-between">
                     <Box width="125px">
                         <TextField.Number
-                            feedback={this.state.error.min ? { severity: 'error', message: '' } : undefined}
+                            feedback={this.state.hasError.min ? { severity: 'error', message: '' } : undefined}
                             value={this.state.inputValues.min}
                             suffix={this.props.label}
                             disabled={this.props.disabled}
@@ -134,7 +129,7 @@ class Range extends Component<PropsType, StateType> {
                             value={this.state.inputValues.max}
                             disabled={this.props.disabled}
                             name="maximum"
-                            feedback={this.state.error.max ? { severity: 'error', message: '' } : undefined}
+                            feedback={this.state.hasError.max ? { severity: 'error', message: '' } : undefined}
                             onChange={(value): void => {
                                 this.setState({ inputFocus: true });
                                 this.onChangeMaximumValue(value);
@@ -147,12 +142,11 @@ class Range extends Component<PropsType, StateType> {
                     disabled={this.props.disabled ? this.props.disabled : false}
                 >
                     <InputRange
-                        value={this.state.rangeValues}
+                        value={this.props.value}
                         disabled={this.props.disabled}
                         onChange={(values): void => {
                             this.setState({
                                 inputFocus: false,
-                                rangeValues: values as RangeType,
                                 inputValues: values as RangeType,
                             });
                             if (this.props.onChange !== undefined) this.props.onChange(values as RangeType);
