@@ -37,8 +37,6 @@ class Table extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
-        console.log('onSelection !== undefined:', this.props.onSelection !== undefined);
-
         this.state = {
             selectionStart: -1,
             toggleAction: true,
@@ -50,10 +48,10 @@ class Table extends Component<PropsType, StateType> {
     };
 
     private handleCheck(event: MouseEvent<HTMLDivElement>, toggleAction: boolean, id: string): void {
-        const { rows, onSelection, selectable } = this.props;
-        const selectionStart = rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
+        if (this.props.onSelection !== undefined) {
+            const { rows, onSelection } = this.props;
+            const selectionStart = rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
 
-        if (selectable && onSelection !== undefined) {
             if (event.shiftKey) {
                 window.getSelection().removeAllRanges();
                 onSelection(
@@ -73,14 +71,9 @@ class Table extends Component<PropsType, StateType> {
     }
 
     private handleHeaderCheck(checked: boolean): void {
-        const { rows, onSelection, selectable } = this.props;
-        if (selectable && onSelection !== undefined)
-            onSelection(
-                rows.map(row => ({
-                    ...row,
-                    checked,
-                })),
-            );
+        if (this.props.onSelection !== undefined) {
+            this.props.onSelection(this.props.rows.map(row => ({ ...row, checked })));
+        }
     }
 
     private getHeaderState(): boolean | 'indeterminate' {
@@ -139,7 +132,7 @@ class Table extends Component<PropsType, StateType> {
                             index={rowIndex}
                             identifier={id}
                             onCheck={(event, toggleAction): void => {
-                                this.props.onSelection !== undefined && this.handleCheck(event, toggleAction, id);
+                                this.handleCheck(event, toggleAction, id);
                             }}
                         />
                     ))}

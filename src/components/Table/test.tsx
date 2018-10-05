@@ -68,6 +68,33 @@ describe('Table', () => {
         /* tslint:enable */
     });
 
+    it('should not break when checkout without onSelection', () => {
+        const headers = ['Test A1', 'Test B1', 'Test C1', 'Test D1'];
+        const rows = [
+            { id: 'row-1', checked: false, cells: ['Test A1', 'Test B1', 'Test C1', 'Test D1'] },
+            { id: 'row-2', checked: false, cells: ['Test A2', 'Test B2', 'Test C2', 'Test D2'] },
+            { id: 'row-3', checked: false, cells: ['Test A3', 'Test B3', 'Test C3', 'Test D3'] },
+        ];
+
+        const headerCheckFn = (): void => {
+            mountWithTheme(<Table selectable headers={headers} rows={rows} />)
+                .find(Checkbox)
+                .first()
+                .simulate('click');
+        };
+
+        expect(headerCheckFn).not.toThrow();
+
+        const bodyCheckFn = (): void => {
+            mountWithTheme(<Table selectable rows={rows} />)
+                .find(Checkbox)
+                .first()
+                .simulate('click');
+        };
+
+        expect(bodyCheckFn).not.toThrow();
+    });
+
     it('should select multiple checkboxes when shift-select from bottom to top', () => {
         const selectedRows: Array<Object> = [];
 
