@@ -70,7 +70,7 @@ class TextField extends Component<PropsType, StateType> {
                 <StyledWrapper
                     focus={this.state.focus}
                     disabled={this.props.disabled}
-                    feedback={this.props.feedback}
+                    feedback={this.props.feedback ? this.props.feedback : { severity: 'success', message: '' }}
                     onFocusCapture={this.handleFocus}
                     onBlurCapture={this.handleBlur}
                     onClick={this.handleFocus}
@@ -84,6 +84,7 @@ class TextField extends Component<PropsType, StateType> {
                         type={this.props.type ? this.props.type : 'text'}
                         name={this.props.name}
                         disabled={this.props.disabled}
+                        feedback={this.props.feedback ? this.props.feedback : { severity: 'success', message: '' }}
                         value={this.props.value}
                         id={this.props.id}
                         focus={this.state.focus}
@@ -103,15 +104,16 @@ class TextField extends Component<PropsType, StateType> {
                         </StyledAffixWrapper>
                     )}
                 </StyledWrapper>
-                {this.props.feedback && (
-                    <Box margin={trbl(6, 0, 0, 12)}>
-                        <InlineNotification
-                            icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
-                            message={this.props.feedback.message}
-                            severity={this.props.feedback.severity}
-                        />
-                    </Box>
-                )}
+                {this.props.feedback &&
+                    this.props.feedback.message !== '' && (
+                        <Box margin={trbl(6, 0, 0, 12)}>
+                            <InlineNotification
+                                icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
+                                message={this.props.feedback.message}
+                                severity={this.props.feedback.severity}
+                            />
+                        </Box>
+                    )}
             </>
         );
     }

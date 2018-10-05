@@ -21,7 +21,12 @@ type TextFieldThemeType = {
     };
     focus: {
         borderColor: string;
-        boxShadow: string;
+    };
+    severity: {
+        error: { boxShadow: string };
+        success: { boxShadow: string };
+        info: { boxShadow: string };
+        warning: { boxShadow: string };
     };
     disabled: {
         color: string;
@@ -36,9 +41,9 @@ type AffixProps = {
 type WrapperProps = {
     focus: boolean;
     disabled?: boolean;
-    feedback?: {
+    feedback: {
         severity: SeverityType;
-        message: string;
+        message?: string;
     };
 };
 
@@ -84,9 +89,8 @@ const StyledAffix = styled.span`
 
 const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     transition: border-color 100ms, box-shadow 100ms;
-    border: solid 1px ${({ focus, theme, disabled }): string =>
-        focus && !disabled ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
-    box-shadow: ${({ focus, theme, disabled }): string => (focus && !disabled ? theme.TextField.focus.boxShadow : '')};
+    box-shadow: ${({ focus, theme, disabled }): string =>
+        focus && !disabled ? theme.TextField.severity.success.boxShadow : ''};
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
@@ -97,10 +101,10 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     width: 100%;
     box-sizing: border-box;
 
-    ${({ feedback, theme, focus }): string =>
-        feedback !== undefined && feedback.severity !== 'info' && !focus
-            ? `border: solid 1px ${theme.Text.severity[feedback.severity].color};`
-            : ''};
+    ${({ feedback, theme }): string => `border: solid 1px ${theme.Text.severity[feedback.severity].color}`};
+
+    ${({ feedback, focus, theme, disabled }): string =>
+        focus && !disabled ? `box-shadow: ${theme.TextField.severity[feedback.severity].boxShadow} ` : ''};
 
     * {
         cursor: text;

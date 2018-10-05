@@ -38,7 +38,7 @@ exports[`Storyshots FormRow Default 1`] = `
             className="sc-bwzfXH kxsXCq"
           >
             <div
-              className="sc-eNQAEJ lhLkZ"
+              className="sc-eNQAEJ bdGfQx"
               disabled={undefined}
               onBlurCapture={[Function]}
               onClick={[Function]}
@@ -71,7 +71,7 @@ exports[`Storyshots FormRow Default 1`] = `
             className="sc-bwzfXH fkLxMw"
           >
             <div
-              className="sc-eNQAEJ lhLkZ"
+              className="sc-eNQAEJ bdGfQx"
               disabled={undefined}
               onBlurCapture={[Function]}
               onClick={[Function]}
@@ -105,7 +105,7 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ lhLkZ"
+            className="sc-eNQAEJ bdGfQx"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
@@ -170,7 +170,7 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ lhLkZ"
+            className="sc-eNQAEJ bdGfQx"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
@@ -203,7 +203,7 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ lhLkZ"
+            className="sc-eNQAEJ bdGfQx"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
@@ -410,7 +410,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH iFjvZT"
         >
           <div
-            className="sc-eNQAEJ lhLkZ"
+            className="sc-eNQAEJ bdGfQx"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
@@ -466,7 +466,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH iFjvZT"
         >
           <div
-            className="sc-eNQAEJ lhLkZ"
+            className="sc-eNQAEJ bdGfQx"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
