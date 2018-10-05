@@ -628,6 +628,7 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
             },
             focus: {
+                borderColor: green.darker2,
                 boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
             },
         },

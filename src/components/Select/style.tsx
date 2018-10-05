@@ -22,6 +22,7 @@ type SelectThemeType = {
             borderColor: string;
         };
         focus: {
+            borderColor: string;
             boxShadow: string;
         };
     };
@@ -37,6 +38,7 @@ type SelectThemeType = {
 
 type WrapperProps = {
     isOpen: boolean;
+    isDisabled?: boolean;
 };
 
 const INNER_OFFSET: number = 6;
@@ -50,13 +52,9 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     width: 100%;
     outline: none;
     display: inline-block;
-    background: ${({ theme }): string => theme.Select.common.backgroundColor};
     position: relative;
+    background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-
-    &:focus {
-        box-shadow: ${({ theme }): string => theme.Select.wrapper.focus.boxShadow};
-    }
 
     &:before {
         content: '';
@@ -81,6 +79,14 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
         right: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
         bottom: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
     }
+
+    ${({ theme, isDisabled }): string => {
+        return isDisabled === true
+            ? ''
+            : `&:focus {
+                box-shadow: ${theme.Select.wrapper.focus.boxShadow};
+            }`;
+    }}
 `;
 
 type WindowProps = {
@@ -89,13 +95,9 @@ type WindowProps = {
     inputHeight?: number;
 };
 
-type InputProps = {
-    disabled: boolean;
-};
-
 const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     max-height: 240px;
     top: ${({ rect, inputHeight }): string =>
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
@@ -113,10 +115,18 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     z-index: 1000;
 `;
 
+type InputProps = {
+    isOpen: boolean;
+    hasFocus: boolean;
+    disabled: boolean;
+};
+
 const StyledInput = withProps<InputProps>(styled.div)`
+    transition: all .3s;
     box-sizing: border-box;
     width: 100%;
-    border: solid 1px ${({ theme }): string => theme.Select.input.borderColor};
+    border: solid 1px ${({ theme, hasFocus, isOpen }): string =>
+        hasFocus && !isOpen ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.Select.disabled.background : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};

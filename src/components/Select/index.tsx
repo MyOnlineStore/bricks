@@ -22,6 +22,7 @@ type OptionStateType = {
 
 type StateType = {
     input: string;
+    hasFocus: boolean;
     isOpen: boolean;
     optionPointer: number;
     inputHeight: number | undefined;
@@ -39,6 +40,14 @@ type PropsType<GenericOption extends OptionBase> = {
     renderSelected?(option: GenericOption): JSX.Element;
 };
 
+const forEachScrollable = (callback: (node: Element) => void): void => {
+    const scrollBoxes = document.querySelectorAll('.simplebar-scroll-content, [data-bricks-scrollable]');
+
+    for (let i = 0; i < scrollBoxes.length; i++) {
+        callback(scrollBoxes[i]);
+    }
+};
+
 class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private inputWrapperRef: HTMLDivElement;
@@ -50,6 +59,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         this.inputRef = createRef();
 
         this.state = {
+            hasFocus: false,
             isOpen: false,
             input: props.value,
             optionPointer: -1,
@@ -76,13 +86,28 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
     };
 
     private close = (): void => {
+        window.removeEventListener('scroll', this.handleScroll);
         this.setState({ isOpen: false });
+
+        forEachScrollable((node: Element): void => {
+            if (!this.windowRef.contains(node)) {
+                node.removeEventListener('scroll', this.handleScroll);
+            }
+        });
     };
 
     private open = (): void => {
         if (!this.props.disabled) {
             this.handleInput('');
             this.setState({ isOpen: true });
+
+            window.addEventListener('scroll', this.handleScroll);
+
+            forEachScrollable((node: Element): void => {
+                if (!this.windowRef.contains(node)) {
+                    node.addEventListener('scroll', this.handleScroll);
+                }
+            });
         }
     };
 
@@ -90,6 +115,52 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         return this.props.options.filter(
             option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
         );
+    };
+
+    private handleScroll = (): void => {
+        if (this.state.isOpen) this.close();
+    };
+
+    private handleClickOutside = (event: MouseEvent): void => {
+        if (!this.wrapperRef.contains(event.target as Node) && !this.windowRef.contains(event.target as Node)) {
+            this.close();
+            this.handleBlur();
+        }
+    };
+
+    private handleChange = (value: string): void => {
+        this.props.onChange(value);
+        this.setState({ isOpen: false, optionPointer: -1 });
+    };
+
+    private handleInput = (input: string): void => {
+        this.setState({ input, optionPointer: -1 });
+    };
+
+    private handleFocus = (): void => {
+        this.setState({ hasFocus: true });
+    };
+
+    private handleBlur = (): void => {
+        this.setState({ hasFocus: false });
+    };
+
+    private handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
+        if (!this.state.isOpen && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+            this.open();
+        }
+
+        if (this.state.isOpen) {
+            if (event.key === 'Escape') this.close();
+            if (event.key === 'ArrowUp') this.cycleDown();
+            if (event.key === 'ArrowDown') this.cycleUp();
+            if (event.key === 'Tab') event.preventDefault();
+        }
+
+        if (this.state.isOpen && (event.key === 'Enter' || event.key === ' ') && this.state.optionPointer !== -1) {
+            this.handleChange(this.filterOptions()[this.state.optionPointer].value);
+            this.wrapperRef.focus();
+        }
     };
 
     public componentDidUpdate(_: PropsType<GenericOption>, prevState: StateType): void {
@@ -114,40 +185,14 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
+        window.removeEventListener('scroll', this.handleScroll);
+
+        forEachScrollable((node: Element) => {
+            if (!this.windowRef.contains(node)) {
+                node.removeEventListener('scroll', this.handleScroll);
+            }
+        });
     }
-
-    public handleClickOutside = (event: MouseEvent): void => {
-        if (!this.wrapperRef.contains(event.target as Node) && !this.windowRef.contains(event.target as Node)) {
-            this.close();
-        }
-    };
-
-    public handleChange = (value: string): void => {
-        this.props.onChange(value);
-        this.setState({ isOpen: false, optionPointer: -1 });
-    };
-
-    public handleInput = (input: string): void => {
-        this.setState({ input, optionPointer: -1 });
-    };
-
-    public handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
-        if (!this.state.isOpen && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
-            this.open();
-        }
-
-        if (this.state.isOpen) {
-            if (event.key === 'Escape') this.close();
-            if (event.key === 'ArrowUp') this.cycleDown();
-            if (event.key === 'ArrowDown') this.cycleUp();
-            if (event.key === 'Tab') event.preventDefault();
-        }
-
-        if (this.state.isOpen && (event.key === 'Enter' || event.key === ' ') && this.state.optionPointer !== -1) {
-            this.handleChange(this.filterOptions()[this.state.optionPointer].value);
-            this.wrapperRef.focus();
-        }
-    };
 
     public render(): JSX.Element {
         const selectedOption = this.props.options.reduce(
@@ -162,11 +207,16 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 innerRef={(ref): void => {
                     this.wrapperRef = ref;
                 }}
+                isDisabled={this.props.disabled}
                 isOpen={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
-                tabIndex={0}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                tabIndex={this.props.disabled ? -1 : 0}
             >
                 <StyledInput
+                    isOpen={this.state.isOpen}
+                    hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     innerRef={(ref): void => (this.inputWrapperRef = ref)}
                 >

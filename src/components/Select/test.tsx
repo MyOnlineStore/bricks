@@ -137,7 +137,7 @@ describe('Select', () => {
 
         component.unmount();
 
-        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledTimes(1);
     });
 
     it('should close when clicked outside of window', () => {
