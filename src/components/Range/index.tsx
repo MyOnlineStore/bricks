@@ -108,33 +108,35 @@ class Range extends Component<PropsType, StateType> {
         return (
             <Box padding={trbl(12)} direction="column">
                 <Box justifyContent="space-between">
-                    <Box width="125px">
-                        <TextField.Number
-                            feedback={this.state.hasError.min ? { severity: 'error', message: '' } : undefined}
-                            value={this.state.inputValues.min}
-                            suffix={this.props.label}
-                            disabled={this.props.disabled}
-                            name="minimum"
-                            onBlur={this.onBlurMinimumValue}
-                            onChange={(value): void => {
-                                this.setState({ inputFocus: true });
-                                this.onChangeMinimumValue(value);
-                            }}
-                        />
-                    </Box>
-                    <Box width="125px">
-                        <TextField.Number
-                            onBlur={this.onBlurMaximumValue}
-                            suffix={this.props.label}
-                            value={this.state.inputValues.max}
-                            disabled={this.props.disabled}
-                            name="maximum"
-                            feedback={this.state.hasError.max ? { severity: 'error', message: '' } : undefined}
-                            onChange={(value): void => {
-                                this.setState({ inputFocus: true });
-                                this.onChangeMaximumValue(value);
-                            }}
-                        />
+                    <Box wrap justifyContent="space-between" width="100%">
+                        <Box width="125px" shrink={0}>
+                            <TextField.Number
+                                feedback={this.state.hasError.min ? { severity: 'error', message: '' } : undefined}
+                                value={this.state.inputValues.min}
+                                suffix={this.props.label}
+                                disabled={this.props.disabled}
+                                name="minimum"
+                                onBlur={this.onBlurMinimumValue}
+                                onChange={(value): void => {
+                                    this.setState({ inputFocus: true });
+                                    this.onChangeMinimumValue(value);
+                                }}
+                            />
+                        </Box>
+                        <Box width="125px" shrink={0}>
+                            <TextField.Number
+                                onBlur={this.onBlurMaximumValue}
+                                suffix={this.props.label}
+                                value={this.state.inputValues.max}
+                                disabled={this.props.disabled}
+                                name="maximum"
+                                feedback={this.state.hasError.max ? { severity: 'error', message: '' } : undefined}
+                                onChange={(value): void => {
+                                    this.setState({ inputFocus: true });
+                                    this.onChangeMaximumValue(value);
+                                }}
+                            />
+                        </Box>
                     </Box>
                 </Box>
                 <StyledWrapper
