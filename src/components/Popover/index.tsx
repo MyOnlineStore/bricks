@@ -12,8 +12,8 @@ type PropsType = {
     offset?: number;
     distance?: number;
     stretch?: boolean;
-    renderContent(): JSX.Element | string;
     triggerOn?: 'click' | 'hover';
+    renderContent(): JSX.Element | string;
 };
 
 type StateType = {
@@ -30,6 +30,14 @@ class Popover extends Component<PropsType, StateType> {
         this.state = {
             isOpen: false,
         };
+    }
+
+    public static getDerivedStateFromProps(props: PropsType, state: StateType): Partial<StateType> {
+        if (props.isOpen !== undefined && props.isOpen !== state.isOpen) {
+            return { isOpen: props.isOpen };
+        }
+
+        return state;
     }
 
     private mapOffset = (props: PropsType): string => {
@@ -61,14 +69,6 @@ class Popover extends Component<PropsType, StateType> {
         }
     };
 
-    static getDerivedStateFromProps(props: PropsType, state: StateType) {
-        if (props.isOpen !== undefined && props.isOpen !== state.isOpen) {
-            return { isOpen: props.isOpen };
-        }
-
-        return state;
-    }
-
     public componentDidMount(): void {
         if (this.props.isOpen === undefined) {
             if (this.anchorRef) {
@@ -99,14 +99,14 @@ class Popover extends Component<PropsType, StateType> {
         }
     }
 
-    public render() {
+    public render(): JSX.Element {
         return (
             <>
                 <Manager>
                     <Reference>
                         {({ ref }: ReferenceChildrenProps): JSX.Element => (
                             <div
-                                ref={ref => {
+                                ref={(ref): void => {
                                     if (ref) this.anchorRef = ref;
                                 }}
                             >
@@ -119,7 +119,7 @@ class Popover extends Component<PropsType, StateType> {
                     <TransitionAnimation show={this.state.isOpen} animation="fade">
                         <div
                             id="jemoeder"
-                            ref={ref => {
+                            ref={(ref): void => {
                                 if (ref) this.popoverRef = ref;
                             }}
                         >

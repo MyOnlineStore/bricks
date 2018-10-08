@@ -39,7 +39,6 @@ class Demo extends Component<PropsType, StateType> {
     }
 
     private toggle = (): void => {
-        console.log('TOGGLE ZE POPOVER');
         this.setState({
             isOpen: !this.state.isOpen,
         });

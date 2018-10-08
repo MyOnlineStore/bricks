@@ -1,15 +1,11 @@
 import toJson from 'enzyme-to-json';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
-import ReactTestUtils from 'react-dom/test-utils';
-import { Popper, Reference, Manager } from 'react-popper';
+import { Popper, Reference } from 'react-popper';
 import Popover from '.';
 import Button from '../Button';
 import { shallowWithTheme, mountWithTheme } from '../../utility/styled/testing';
 import TransitionAnimation from '../TransitionAnimation';
-import { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverWindow } from './style';
-import ButtonGroup from '../ButtonGroup';
+import { PopoverAnchor, PopoverArrow, PopoverBackground } from './style';
 
 describe('Popover', () => {
     it('should render with defaults', () => {
@@ -92,25 +88,6 @@ describe('Popover', () => {
             },
         });
     });
-
-    // it('should render on click when triggerOn is defined test-renderer', () => {
-    //     const mockButton = <Button variant="primary" title="anchor" />;
-    //     const togglePopover = jest.fn();
-
-    //     const component = renderer.create(
-    //         <Popover triggerOn={'click'} distance={6} renderContent={(): string => 'Mock content'}>
-    //             {mockButton}
-    //         </Popover>,
-    //         {
-    //             createNodeMock: (): Object => ({
-    //                 addEventListener: togglePopover,
-    //                 removeEventListener: jest.fn(),
-    //             }),
-    //         },
-    //     );
-
-    //     //component.find(Button).simulate('click');
-    // });
 
     it('should render on click when triggerOn is defined', () => {
         const component = mountWithTheme(
