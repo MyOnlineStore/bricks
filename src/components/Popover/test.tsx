@@ -89,38 +89,6 @@ describe('Popover', () => {
         });
     });
 
-    it('should render on click when triggerOn is defined', () => {
-        const component = mountWithTheme(
-            <Popover triggerOn={'click'} distance={6} renderContent={(): string => 'Mock content'}>
-                <Button variant="primary" title="Hover over me" />
-            </Popover>,
-        );
-
-        const button = component.find(Button);
-
-        button.simulate('click');
-
-        component.update();
-
-        expect(button).toHaveLength(1);
-
-        expect(component.state('isOpen')).toBe(true);
-    });
-
-    it('should render on hover when triggerOn is defined', () => {
-        const component = mountWithTheme(
-            <Popover triggerOn={'hover'} distance={6} renderContent={(): string => 'Mock content'}>
-                <Button variant="primary" title="Hover over me" />
-            </Popover>,
-        );
-
-        component.find(Button).simulate('mouseenter');
-
-        component.update();
-
-        expect(component.state('isOpen')).toBe(true);
-    });
-
     it('should close when clicked outside the popover window', () => {
         const callbackMap: { [key: string]: Function } = {};
 
