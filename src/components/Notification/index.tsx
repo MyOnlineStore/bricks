@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react';
+import React, { SFC } from 'react';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
@@ -12,7 +12,7 @@ type PropsType = StyledType & {
     icon?: keyof typeof MediumIcons;
 };
 
-const Notification: StatelessComponent<PropsType> = (props): JSX.Element => {
+const Notification: SFC<PropsType> = (props): JSX.Element => {
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (

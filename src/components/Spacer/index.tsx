@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react';
+import React, { SFC } from 'react';
 import { TrblType } from '../../utility/trbl';
 import StyledSpacer from './style';
 
@@ -7,7 +7,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     offsetType?: 'inner' | 'outer';
 };
 
-const Spacer: StatelessComponent<PropsType> = (props): JSX.Element => {
+const Spacer: SFC<PropsType> = (props): JSX.Element => {
     const { offset, offsetType, ref, ...filteredProps } = props;
 
     return (

@@ -1,5 +1,4 @@
-import { StatelessComponent } from 'enzyme';
-import React from 'react';
+import React, { SFC } from 'react';
 import { StyledType } from '../../utility/styled';
 import formatCurrency from './formatters/formatCurrency';
 import formatDecimalSeperator from './formatters/formatDecimalSeperator';
@@ -49,7 +48,7 @@ const deriveStatsFromPart = (initialStats: StatsType, part: PartType): StatsType
     isFree: isFree(part) ? false : initialStats.isFree,
 });
 
-const PriceTag: StatelessComponent<PropsType> = (props): JSX.Element => {
+const PriceTag: SFC<PropsType> = (props): JSX.Element => {
     const stats = props.parts.reduce(deriveStatsFromPart, {
         isRound: false,
         isFree: true,

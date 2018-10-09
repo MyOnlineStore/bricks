@@ -1,9 +1,9 @@
-import React, { Children, StatelessComponent } from 'react';
+import React, { Children, SFC } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
 
-const ButtonGroup: StatelessComponent = (props): JSX.Element => {
+const ButtonGroup: SFC = (props): JSX.Element => {
     return (
         <BreakpointProvider
             breakpoints={{

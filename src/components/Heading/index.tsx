@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react';
+import React, { SFC } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { StyledType } from '../../utility/styled';
@@ -38,7 +38,7 @@ type PropsType = StyledType & {
     textAlign?: 'left' | 'right' | 'center' | 'justify';
 };
 
-const HeadingElement: StatelessComponent<PropsType> = (props): JSX.Element => {
+const HeadingElement: SFC<PropsType> = (props): JSX.Element => {
     const Element = props.element !== undefined ? `${props.element}` : 'div';
 
     return (

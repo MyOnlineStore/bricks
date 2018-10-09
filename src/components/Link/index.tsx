@@ -1,4 +1,4 @@
-import React, { Children, StatelessComponent } from 'react';
+import React, { Children, SFC } from 'react';
 import StyledLink, { StyledButton } from './style';
 
 type PropsType = {
@@ -8,7 +8,7 @@ type PropsType = {
     action?(): void;
 };
 
-const Link: StatelessComponent<PropsType> = (props): JSX.Element => {
+const Link: SFC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {

@@ -1,4 +1,4 @@
-import React, { StatelessComponent } from 'react';
+import React, { SFC } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
 import TransitionAnimation from '../TransitionAnimation';
 import { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow } from './style';
@@ -15,7 +15,7 @@ type PropsType = {
     renderContent(): JSX.Element | string;
 };
 
-const Popover: StatelessComponent<PropsType> = (props): JSX.Element => {
+const Popover: SFC<PropsType> = (props): JSX.Element => {
     const mapOffset = (props: PropsType): string => {
         switch (true) {
             case props.offset === undefined && props.distance === undefined:
