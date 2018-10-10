@@ -40,14 +40,6 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     renderSelected?(option: GenericOptionType): JSX.Element;
 };
 
-const forEachScrollable = (callback: (node: Element) => void): void => {
-    const scrollBoxes = document.querySelectorAll('.simplebar-scroll-content, [data-bricks-scrollable]');
-
-    for (let i = 0; i < scrollBoxes.length; i++) {
-        callback(scrollBoxes[i]);
-    }
-};
-
 class Select<GenericOptionType extends OptionBaseType> extends Component<PropsType<GenericOptionType>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private inputWrapperRef: HTMLDivElement;
@@ -86,28 +78,13 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private close = (): void => {
-        window.removeEventListener('scroll', this.handleScroll);
         this.setState({ isOpen: false });
-
-        forEachScrollable((node: Element): void => {
-            if (!this.windowRef.contains(node)) {
-                node.removeEventListener('scroll', this.handleScroll);
-            }
-        });
     };
 
     private open = (): void => {
         if (!this.props.disabled) {
             this.handleInput('');
             this.setState({ isOpen: true });
-
-            window.addEventListener('scroll', this.handleScroll);
-
-            forEachScrollable((node: Element): void => {
-                if (!this.windowRef.contains(node)) {
-                    node.addEventListener('scroll', this.handleScroll);
-                }
-            });
         }
     };
 
@@ -115,10 +92,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         return this.props.options.filter(
             option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
         );
-    };
-
-    private handleScroll = (): void => {
-        if (this.state.isOpen && this.wrapperRef.getBoundingClientRect().top) this.close();
     };
 
     private handleClickOutside = (event: MouseEvent): void => {
@@ -187,13 +160,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
-        window.removeEventListener('scroll', this.handleScroll);
-
-        forEachScrollable((node: Element) => {
-            if (!this.windowRef.contains(node)) {
-                node.removeEventListener('scroll', this.handleScroll);
-            }
-        });
     }
 
     public render(): JSX.Element {
