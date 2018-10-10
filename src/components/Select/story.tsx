@@ -131,7 +131,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
 };
 
 /*tslint:disable*/
-class RenderInputDemo extends Component<PropsType, StateType> {
+class CustomRenderDemo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
@@ -166,5 +166,5 @@ storiesOf('Select', module)
         return <Demo />;
     })
     .add('Custom rendering', () => {
-        return <RenderInputDemo />;
+        return <CustomRenderDemo />;
     });

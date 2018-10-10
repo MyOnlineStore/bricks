@@ -11,7 +11,7 @@ import { Button } from '../../index';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 
-type OptionBase = {
+type OptionBaseType = {
     value: string;
     label: string;
 };
@@ -28,16 +28,16 @@ type StateType = {
     inputHeight: number | undefined;
 };
 
-type PropsType<GenericOption extends OptionBase> = {
+type PropsType<GenericOptionType extends OptionBaseType> = {
     theme: ThemeType;
     placeholder?: string;
     value: string;
-    options: Array<GenericOption>;
+    options: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
     onChange(value: string): void;
-    renderOption?(option: GenericOption, state: OptionStateType): JSX.Element;
-    renderSelected?(option: GenericOption): JSX.Element;
+    renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
+    renderSelected?(option: GenericOptionType): JSX.Element;
 };
 
 const forEachScrollable = (callback: (node: Element) => void): void => {
@@ -48,13 +48,13 @@ const forEachScrollable = (callback: (node: Element) => void): void => {
     }
 };
 
-class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
+class Select<GenericOptionType extends OptionBaseType> extends Component<PropsType<GenericOptionType>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private inputWrapperRef: HTMLDivElement;
     private wrapperRef: HTMLDivElement;
     private windowRef: HTMLDivElement;
 
-    public constructor(props: PropsType<GenericOption>) {
+    public constructor(props: PropsType<GenericOptionType>) {
         super(props);
         this.inputRef = createRef();
 
@@ -111,20 +111,19 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         }
     };
 
-    private filterOptions = (): ReadonlyArray<GenericOption> => {
+    private filterOptions = (): ReadonlyArray<GenericOptionType> => {
         return this.props.options.filter(
             option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
         );
     };
 
     private handleScroll = (): void => {
-        if (this.state.isOpen) this.close();
+        if (this.state.isOpen && this.wrapperRef.getBoundingClientRect().top) this.close();
     };
 
     private handleClickOutside = (event: MouseEvent): void => {
         if (!this.wrapperRef.contains(event.target as Node) && !this.windowRef.contains(event.target as Node)) {
             this.close();
-            this.handleBlur();
         }
     };
 
@@ -159,11 +158,10 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
         if (this.state.isOpen && (event.key === 'Enter' || event.key === ' ') && this.state.optionPointer !== -1) {
             this.handleChange(this.filterOptions()[this.state.optionPointer].value);
-            this.wrapperRef.focus();
         }
     };
 
-    public componentDidUpdate(_: PropsType<GenericOption>, prevState: StateType): void {
+    public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
         if (prevState.isOpen && this.props.disabled) {
             this.setState({ isOpen: false });
         }
@@ -176,6 +174,10 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
         if (inputHeight !== prevState.inputHeight) {
             this.setState({ inputHeight });
+        }
+
+        if (prevState.isOpen && !this.state.isOpen) {
+            this.wrapperRef.focus();
         }
     }
 
@@ -239,7 +241,7 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         )) ||
                             (this.props.renderSelected !== undefined && (
                                 <Box padding={trbl(6, 12)} alignItems="center" grow={1} onClick={this.open}>
-                                    {this.props.renderSelected(selectedOption as GenericOption)}
+                                    {this.props.renderSelected(selectedOption as GenericOptionType)}
                                 </Box>
                             )) || (
                                 <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
@@ -323,4 +325,4 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 }
 
 export default withTheme(Select);
-export { PropsType, StateType, OptionBase, OptionStateType };
+export { PropsType, StateType, OptionBaseType, OptionStateType };
