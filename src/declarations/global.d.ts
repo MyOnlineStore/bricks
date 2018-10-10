@@ -1,9 +1,9 @@
 declare namespace NodeJS {
     interface Global {
-        addEventListener(): void;
-        removeEventListener(): void;
+        addEventListener: jest.Mock<Function>;
+        removeEventListener: jest.Mock<Function>;
         getSelection(): {
-            removeAllRanges(): void;
+            removeAllRanges: jest.Mock<Function>;
         };
     }
 }

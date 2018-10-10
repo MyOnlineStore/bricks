@@ -4,7 +4,6 @@ import { mountWithTheme, shallowWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
-import FoldOut from '../FoldOut';
 import Text from '../Text';
 
 const options = [
@@ -59,12 +58,14 @@ describe('Select', () => {
             key: ' ',
         });
 
-        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
         component.simulate('keyDown', {
             key: 'Tab',
             preventDefault: preventDefaultMock,
         });
+
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
     });
 
     it('should open the arrowDown or arrowUp is pressed and close when escape is pressed', () => {
@@ -73,13 +74,13 @@ describe('Select', () => {
         );
 
         component.simulate('keyDown', { key: 'ArrowDown' });
-        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
         component.simulate('keyDown', { key: 'Escape' });
-        expect(component.find(FoldOut).prop('isOpen')).toBe(false);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'none');
 
         component.simulate('keyDown', { key: 'ArrowUp' });
-        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
     });
 
     it('should show an input and options on click', () => {
@@ -136,7 +137,7 @@ describe('Select', () => {
 
         component.unmount();
 
-        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledTimes(1);
     });
 
     it('should close when clicked outside of window', () => {
@@ -154,7 +155,7 @@ describe('Select', () => {
             .at(1)
             .simulate('click');
 
-        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
         callbackMap.mousedown({
             target: component.first().getDOMNode(),
@@ -163,7 +164,7 @@ describe('Select', () => {
         component.update();
 
         // click inside
-        expect(component.find(FoldOut).prop('isOpen')).toBe(true);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
         // click outside
         callbackMap.mousedown({
@@ -172,7 +173,7 @@ describe('Select', () => {
 
         component.update();
 
-        expect(component.find(FoldOut).prop('isOpen')).toBe(false);
+        expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'none');
     });
 
     it('should handle a change', () => {
@@ -321,7 +322,7 @@ describe('Select', () => {
     });
 
     it('should render an alternative input rendering', () => {
-        const renderInput = jest.fn();
+        const renderSelected = jest.fn();
 
         mountWithTheme(
             <Select
@@ -329,11 +330,11 @@ describe('Select', () => {
                 value=""
                 emptyText="empty"
                 options={options}
-                renderInput={renderInput}
+                renderSelected={renderSelected}
             />,
         );
 
-        expect(renderInput).toHaveBeenCalledTimes(1);
+        expect(renderSelected).toHaveBeenCalledTimes(1);
     });
 
     it('should show an empty state', () => {

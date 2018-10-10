@@ -1,7 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
-import FoldOut from '../FoldOut';
 import ScrollBox from '../ScrollBox';
 import Option from './Option';
 import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
@@ -12,40 +11,47 @@ import { Button } from '../../index';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 
-type OptionBase = {
+type OptionBaseType = {
     value: string;
     label: string;
 };
 
+type OptionStateType = {
+    isSelected: boolean;
+};
+
 type StateType = {
     input: string;
+    hasFocus: boolean;
     isOpen: boolean;
     optionPointer: number;
     inputHeight: number | undefined;
 };
 
-type PropsType<GenericOption extends OptionBase> = {
+type PropsType<GenericOptionType extends OptionBaseType> = {
     theme: ThemeType;
     placeholder?: string;
     value: string;
-    options: Array<GenericOption>;
+    options: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
     onChange(value: string): void;
-    renderOption?(option: GenericOption): JSX.Element;
-    renderInput?(inputOption: OptionBase, placeholder?: string): JSX.Element;
+    renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
+    renderSelected?(option: GenericOptionType): JSX.Element;
 };
-class Select<GenericOption extends OptionBase> extends Component<PropsType<GenericOption>, StateType> {
+
+class Select<GenericOptionType extends OptionBaseType> extends Component<PropsType<GenericOptionType>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
     private inputWrapperRef: HTMLDivElement;
     private wrapperRef: HTMLDivElement;
     private windowRef: HTMLDivElement;
 
-    public constructor(props: PropsType<GenericOption>) {
+    public constructor(props: PropsType<GenericOptionType>) {
         super(props);
         this.inputRef = createRef();
 
         this.state = {
+            hasFocus: false,
             isOpen: false,
             input: props.value,
             optionPointer: -1,
@@ -82,52 +88,36 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
         }
     };
 
-    private filterOptions = (): ReadonlyArray<GenericOption> => {
+    private filterOptions = (): ReadonlyArray<GenericOptionType> => {
         return this.props.options.filter(
             option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
         );
     };
 
-    public componentDidUpdate(_: PropsType<GenericOption>, prevState: StateType): void {
-        if (prevState.isOpen && this.props.disabled) {
-            this.setState({ isOpen: false });
-        }
-
-        if (this.inputRef.current !== null && !prevState.isOpen && this.state.isOpen) {
-            this.inputRef.current.focus();
-        }
-
-        const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
-
-        if (inputHeight !== prevState.inputHeight) {
-            this.setState({ inputHeight });
-        }
-    }
-
-    public componentDidMount(): void {
-        document.addEventListener('mousedown', this.handleClickOutside);
-    }
-
-    public componentWillUnmount(): void {
-        document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-
-    public handleClickOutside = (event: MouseEvent): void => {
+    private handleClickOutside = (event: MouseEvent): void => {
         if (!this.wrapperRef.contains(event.target as Node) && !this.windowRef.contains(event.target as Node)) {
             this.close();
         }
     };
 
-    public handleChange = (value: string): void => {
+    private handleChange = (value: string): void => {
         this.props.onChange(value);
         this.setState({ isOpen: false, optionPointer: -1 });
     };
 
-    public handleInput = (input: string): void => {
+    private handleInput = (input: string): void => {
         this.setState({ input, optionPointer: -1 });
     };
 
-    public handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
+    private handleFocus = (): void => {
+        this.setState({ hasFocus: true });
+    };
+
+    private handleBlur = (): void => {
+        this.setState({ hasFocus: false });
+    };
+
+    private handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
         if (!this.state.isOpen && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
             this.open();
         }
@@ -141,12 +131,39 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 
         if (this.state.isOpen && (event.key === 'Enter' || event.key === ' ') && this.state.optionPointer !== -1) {
             this.handleChange(this.filterOptions()[this.state.optionPointer].value);
-            this.wrapperRef.focus();
         }
     };
 
+    public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
+        if (prevState.isOpen && this.props.disabled) {
+            this.setState({ isOpen: false });
+        }
+
+        if (this.inputRef.current !== null && !prevState.isOpen && this.state.isOpen) {
+            this.inputRef.current.focus();
+        }
+
+        const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
+
+        if (inputHeight !== prevState.inputHeight) {
+            this.setState({ inputHeight });
+        }
+
+        if (prevState.isOpen && !this.state.isOpen) {
+            this.wrapperRef.focus();
+        }
+    }
+
+    public componentDidMount(): void {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    public componentWillUnmount(): void {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
     public render(): JSX.Element {
-        const selectedOption = this.props.options.reduce<OptionBase>(
+        const selectedOption = this.props.options.reduce(
             (found, option) => {
                 return option.value === this.props.value ? option : found;
             },
@@ -158,21 +175,25 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                 innerRef={(ref): void => {
                     this.wrapperRef = ref;
                 }}
+                isDisabled={this.props.disabled}
                 isOpen={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
-                tabIndex={0}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                tabIndex={this.props.disabled ? -1 : 0}
             >
                 <StyledInput
+                    isOpen={this.state.isOpen}
+                    hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     innerRef={(ref): void => (this.inputWrapperRef = ref)}
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
-                            <>
+                            <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                 <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
                                     <Icon icon="search" size="small" color={'#d2d7e0'} />
                                 </Box>
-
                                 <input
                                     ref={this.inputRef}
                                     type="text"
@@ -182,23 +203,21 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                                         this.handleInput(event.target.value)
                                     }
                                 />
-                            </>
+                            </Box>
                         )) ||
-                            (this.props.renderInput === undefined && (
-                                <Box alignItems="center" grow={1} onClick={this.open}>
+                            (this.props.renderSelected !== undefined && (
+                                <Box padding={trbl(6, 12)} alignItems="center" grow={1} onClick={this.open}>
+                                    {this.props.renderSelected(selectedOption as GenericOptionType)}
+                                </Box>
+                            )) || (
+                                <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
                                         <Text descriptive>
                                             <StyledPlaceholder>{this.props.placeholder}</StyledPlaceholder>
                                         </Text>
                                     )}
                                 </Box>
-                            )) ||
-                            (this.props.renderInput !== undefined && (
-                                <Box alignItems="center" grow={1} onClick={this.open}>
-                                    {this.props.renderInput(selectedOption, this.props.placeholder)}
-                                </Box>
-                            ))}
-
+                            )}
                         <Button
                             compact
                             flat
@@ -229,42 +248,39 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
                         inputHeight={this.state.inputHeight}
                     >
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                            <FoldOut isOpen={this.state.isOpen}>
-                                {this.filterOptions().length === 0 && (
+                            <div
+                                data-test="bricks-select-collapse"
+                                style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}
+                            >
+                                {(this.filterOptions().length === 0 && (
                                     <Box padding={trbl(12)}>
                                         <Text>{this.props.emptyText}</Text>
                                     </Box>
-                                )}
-                                {this.filterOptions().length > 0 &&
-                                    this.filterOptions().map((option, index) => (
-                                        <Option
-                                            isTargeted={index === this.state.optionPointer}
-                                            key={`${option.value}-${option.label}`}
-                                            onMouseEnter={(): void => this.cycleTo(index)}
-                                            onClick={(): void => {
-                                                this.handleChange(option.value);
-                                            }}
-                                        >
-                                            <Box alignItems="center" inline>
-                                                <Box margin={trbl(0, 6, 0, 0)} inline>
-                                                    {option.value === this.props.value && (
-                                                        <Text descriptive={option.value === this.props.value}>
-                                                            <Icon size="small" icon="checkmark" />
-                                                        </Text>
-                                                    )}
-                                                </Box>
-                                                <div>
-                                                    {(this.props.renderOption !== undefined &&
-                                                        this.props.renderOption(option)) || (
-                                                        <Text descriptive={option.value === this.props.value} inline>
-                                                            {option.label}
-                                                        </Text>
-                                                    )}
-                                                </div>
-                                            </Box>
-                                        </Option>
-                                    ))}
-                            </FoldOut>
+                                )) ||
+                                    this.filterOptions().map((option, index) => {
+                                        const optionState = {
+                                            isSelected: option.value === this.props.value,
+                                        };
+
+                                        return (
+                                            <Option
+                                                label={option.label}
+                                                isSelected={optionState.isSelected}
+                                                isTargeted={index === this.state.optionPointer}
+                                                key={`${option.value}-${option.label}`}
+                                                onMouseEnter={(): void => this.cycleTo(index)}
+                                                onClick={(): void => {
+                                                    this.handleChange(option.value);
+                                                }}
+                                                content={
+                                                    this.props.renderOption !== undefined
+                                                        ? this.props.renderOption(option, optionState)
+                                                        : undefined
+                                                }
+                                            />
+                                        );
+                                    })}
+                            </div>
                         </ScrollBox>
                     </StyledWindow>,
                     document.body,
@@ -275,4 +291,4 @@ class Select<GenericOption extends OptionBase> extends Component<PropsType<Gener
 }
 
 export default withTheme(Select);
-export { PropsType, StateType, OptionBase };
+export { PropsType, StateType, OptionBaseType, OptionStateType };
