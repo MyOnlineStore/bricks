@@ -46,7 +46,7 @@ type wrapperProps = {
 
 // prettier-ignore
 const StyledWrapper = withProps<wrapperProps, HTMLDivElement>(styled.div)`
-    ${rangeStyles} padding: 15px 0;
+    ${rangeStyles} padding: 0;
     box-sizing: border-box;
 
     & {
