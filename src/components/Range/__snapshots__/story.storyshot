@@ -14,14 +14,14 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ lhLkZ"
+          className="sc-eNQAEJ hRGSZC"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
           onFocusCapture={[Function]}
         >
           <input
-            className="sc-dxgOiQ jLQDMB"
+            className="sc-dxgOiQ cNbhAj"
             disabled={false}
             id={undefined}
             name="minimum"
@@ -47,14 +47,14 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ lhLkZ"
+          className="sc-eNQAEJ hRGSZC"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
           onFocusCapture={[Function]}
         >
           <input
-            className="sc-dxgOiQ jLQDMB"
+            className="sc-dxgOiQ cNbhAj"
             disabled={false}
             id={undefined}
             name="maximum"

@@ -2,7 +2,7 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-  className="sc-eNQAEJ bdGfQx"
+  className="sc-eNQAEJ hRGSZC"
   disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
@@ -19,7 +19,7 @@ exports[`Storyshots TextField Default 1`] = `
     </span>
   </div>
   <input
-    className="sc-dxgOiQ jLQDMB"
+    className="sc-dxgOiQ cNbhAj"
     disabled={false}
     id={undefined}
     name="firstname"
@@ -45,7 +45,7 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-    className="sc-eNQAEJ dJFNrt"
+    className="sc-eNQAEJ hRGSZC"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
@@ -62,7 +62,7 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ jLQDMB"
+      className="sc-dxgOiQ cNbhAj"
       disabled={false}
       id={undefined}
       name="first name"
@@ -110,7 +110,7 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-    className="sc-eNQAEJ ewhTPW"
+    className="sc-eNQAEJ hRGSZC"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
@@ -127,7 +127,7 @@ Array [
       </span>
     </div>
     <input
-      className="sc-dxgOiQ jLQDMB"
+      className="sc-dxgOiQ cNbhAj"
       disabled={false}
       id={undefined}
       name="firstname"
@@ -184,14 +184,14 @@ Array [
 
 exports[`Storyshots TextField With Number formatting 1`] = `
 <div
-  className="sc-eNQAEJ lhLkZ"
+  className="sc-eNQAEJ hRGSZC"
   disabled={undefined}
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <input
-    className="sc-dxgOiQ jLQDMB"
+    className="sc-dxgOiQ cNbhAj"
     disabled={undefined}
     id={undefined}
     name="min value"

@@ -53,7 +53,6 @@ const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
     font-size: inherit;
-    display: block;
     padding: 6px 12px;
     line-height: 1.572;
     outline: none;
@@ -95,13 +94,15 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
     display: flex;
-    position: relative;
     cursor: text;
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
 
-    ${({ feedback, theme }): string => `border: solid 1px ${theme.Text.severity[feedback.severity].color}`};
+    ${({ focus, feedback, theme }): string =>
+        focus
+            ? `border: solid 1px ${theme.Text.severity[feedback.severity].color}`
+            : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
 
     ${({ feedback, focus, theme, disabled }): string =>
         focus && !disabled ? `box-shadow: ${theme.TextField.severity[feedback.severity].boxShadow} ` : ''};
