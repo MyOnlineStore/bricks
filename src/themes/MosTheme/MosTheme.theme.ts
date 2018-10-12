@@ -64,9 +64,22 @@ const theme: ThemeType = {
         common: {
             borderRadius: roundness.base,
             borderWidth: '0',
-            fontSize: fontSize.base,
             fontWeight: '400',
             fontFamily: bodyFont,
+            fontSize: fontSize.base,
+        },
+        Cta: {
+            common: {
+                borderRadius: '24px',
+            },
+            primary: {
+                color: silver.lighter1,
+                backgroundColor: green.base,
+            },
+            secondary: {
+                color: grey.darker1,
+                backgroundColor: '#FFC724',
+            },
         },
         primary: {
             regular: {

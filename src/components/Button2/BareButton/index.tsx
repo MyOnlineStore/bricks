@@ -1,32 +1,22 @@
 import React, { Children, SFC } from 'react';
 import StyledButton, { StyledAnchor } from './style';
-import Icon, { MediumPropsType } from '../Icon';
-import Box from '../Box';
-import trbl from '../../utility/trbl';
+import Icon, { MediumPropsType } from '../../Icon';
+import Box from '../../Box';
+import trbl from '../../../utility/trbl';
 
 type PropsType = {
     className?: string;
     title: string;
-    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     target?: HTMLAnchorElement['target'];
     href?: string;
     disabled?: boolean;
-    compact?: boolean;
-    flat?: boolean;
-    color?: string;
     icon?: MediumPropsType['icon'];
     iconAlign?: 'right' | 'left';
     id?: string;
     action?(): void;
 };
 
-type ButtonContentsType = {
-    icon?: PropsType['icon'];
-    iconAlign?: PropsType['iconAlign'];
-    title: PropsType['title'];
-};
-
-const ButtonContents: SFC<ButtonContentsType> = (props): JSX.Element => (
+const ButtonContents: SFC<PropsType> = (props): JSX.Element => (
     <>
         {props.icon &&
             props.iconAlign !== 'right' && (
@@ -44,7 +34,7 @@ const ButtonContents: SFC<ButtonContentsType> = (props): JSX.Element => (
     </>
 );
 
-const Button: SFC<PropsType> = (props): JSX.Element => {
+const BareButton: SFC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
@@ -54,35 +44,26 @@ const Button: SFC<PropsType> = (props): JSX.Element => {
     if (isLink) {
         return (
             <StyledAnchor
-                variant={props.variant}
-                compact={props.compact}
                 title={props.title}
                 className={props.className}
-                href={props.href}
-                target={props.target}
+                // TODO: FIX THIS
+                // href={props.href}
+                // target={props.target}
                 disabled={props.disabled}
-                flat={props.flat}
                 id={props.id}
             >
-                <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
-                    {props.children}
-                </ButtonContents>
+                {Children.count(props.children) > 0 ? props.children : props.title}
             </StyledAnchor>
         );
     }
 
     return (
         <StyledButton
-            variant={props.variant}
-            compact={props.compact}
             title={props.title}
             className={props.className}
             onClick={clickAction}
             type="button"
             disabled={props.disabled}
-            flat={props.flat}
-            color={props.color}
-            icon={props.icon}
             id={props.id}
         >
             <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
@@ -92,5 +73,5 @@ const Button: SFC<PropsType> = (props): JSX.Element => {
     );
 };
 
-export default Button;
+export default BareButton;
 export { PropsType };
