@@ -20,6 +20,10 @@ type StateType = {
     hasError: { min: boolean; max: boolean };
 };
 
+const isWithinRange = (min: number, max: number, value: number): boolean => {
+    return value <= max && value >= min;
+};
+
 class Range extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
@@ -30,16 +34,12 @@ class Range extends Component<PropsType, StateType> {
         };
     }
 
-    public static isWithinRange(min: number, max: number, value: number): boolean {
-        return value <= max && value >= min;
-    }
-
     private onChangeMinimumValue = (min: number): void => {
         const { inputValues, hasError } = this.state;
 
         this.setState({ inputValues: { ...inputValues, min } });
 
-        if (Range.isWithinRange(this.props.minLimit, this.getMaxLowValue(), min)) {
+        if (isWithinRange(this.props.minLimit, this.getMaxLowValue(), min)) {
             this.setState({ hasError: { ...hasError, min: false } });
             if (this.props.onChange !== undefined) this.props.onChange({ ...inputValues, min });
         } else {
@@ -52,7 +52,7 @@ class Range extends Component<PropsType, StateType> {
 
         this.setState({ inputValues: { ...inputValues, max } });
 
-        if (Range.isWithinRange(this.getMinHighValue(), this.props.maxLimit, max)) {
+        if (isWithinRange(this.getMinHighValue(), this.props.maxLimit, max)) {
             this.setState({ hasError: { ...hasError, max: false } });
             if (this.props.onChange !== undefined) this.props.onChange({ ...inputValues, max });
         } else {
@@ -104,12 +104,20 @@ class Range extends Component<PropsType, StateType> {
         return this.state.inputValues.min + 1;
     }
 
+    public componentDidUpdate(prevProps: PropsType): void {
+        if (prevProps.value !== this.props.value) {
+            this.setState({
+                inputValues: this.props.value,
+            });
+        }
+    }
+
     public render(): JSX.Element {
         return (
             <Box padding={trbl(12)} direction="column">
                 <Box justifyContent="space-between">
                     <Box wrap justifyContent="space-between" width="100%">
-                        <Box width="125px" shrink={0}>
+                        <Box width="136px" shrink={0}>
                             <TextField.Number
                                 feedback={this.state.hasError.min ? { severity: 'error', message: '' } : undefined}
                                 value={this.state.inputValues.min}
@@ -123,7 +131,7 @@ class Range extends Component<PropsType, StateType> {
                                 }}
                             />
                         </Box>
-                        <Box width="125px" shrink={0}>
+                        <Box width="136px" shrink={0}>
                             <TextField.Number
                                 onBlur={this.onBlurMaximumValue}
                                 suffix={this.props.label}

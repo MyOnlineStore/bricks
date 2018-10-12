@@ -169,4 +169,24 @@ describe('Range', () => {
 
         expect(changeMock).toHaveBeenCalledWith({ min: 6, max: 7 });
     });
+
+    it('should update TextField values when props change', () => {
+        const component = mountWithTheme(
+            <Range value={{ min: 6, max: 8 }} minLimit={1} maxLimit={10} onChange={(): void => undefined} />,
+        );
+
+        const firstInputPreUpdate = component.find('input').filterWhere(item => item.prop('value') === '6').length;
+        const secondInputPreUpdate = component.find('input').filterWhere(item => item.prop('value') === '8').length;
+
+        component.setProps({ value: { min: 4, max: 7 } });
+        component.update();
+
+        const firstInputPostUpdate = component.find('input').filterWhere(item => item.prop('value') === '4').length;
+        const secondInputPostUpdate = component.find('input').filterWhere(item => item.prop('value') === '7').length;
+
+        expect(firstInputPreUpdate).toBe(1);
+        expect(secondInputPreUpdate).toBe(1);
+        expect(firstInputPostUpdate).toBe(1);
+        expect(secondInputPostUpdate).toBe(1);
+    });
 });
