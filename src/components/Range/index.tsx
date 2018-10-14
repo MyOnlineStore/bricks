@@ -114,10 +114,10 @@ class Range extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Box padding={trbl(12)} direction="column">
+            <Box direction="column">
                 <Box justifyContent="space-between">
                     <Box wrap justifyContent="space-between" width="100%">
-                        <Box width="136px" shrink={0}>
+                        <Box width="136px" shrink={0} padding={trbl(0, 0, 12, 0)}>
                             <TextField.Number
                                 feedback={this.state.hasError.min ? { severity: 'error', message: '' } : undefined}
                                 value={this.state.inputValues.min}
@@ -131,7 +131,7 @@ class Range extends Component<PropsType, StateType> {
                                 }}
                             />
                         </Box>
-                        <Box width="136px" shrink={0}>
+                        <Box width="136px" shrink={0} padding={trbl(0, 0, 12, 0)}>
                             <TextField.Number
                                 onBlur={this.onBlurMaximumValue}
                                 suffix={this.props.label}
