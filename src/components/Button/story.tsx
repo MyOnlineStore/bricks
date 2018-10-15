@@ -28,7 +28,7 @@ storiesOf('Button', module)
     .add('Button Plain', () => {
         return (
             <Button.Plain
-                variant={select('variant', ['default', 'error'], 'default') as PlainPropsType['variant']}
+                variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
                 title={text('title', 'Click me')}
             />
         );

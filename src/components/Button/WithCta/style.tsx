@@ -10,35 +10,22 @@ type ButtonPropsType = {
     variant: PropsType['variant'];
 };
 
-type ButtonCtaThemeType = {
-    common: {
-        borderRadius: string;
-    };
-    primary: {
-        color: string;
-        backgroundColor: string;
-    };
-    secondary: {
-        color: string;
-        backgroundColor: string;
-    };
-};
-
 const StyledCta = withProps<ButtonPropsType>(styled(BareButton))`
     ${({ variant, theme }): string => {
         return `
             padding: 11px 24px;
-            color: ${theme.ButtonCta[variant].color};
-            background-color: ${theme.ButtonCta[variant].backgroundColor};
-            border-radius: ${theme.ButtonCta.common.borderRadius};
+            color: ${theme.Button.Cta[variant].color};
+            background-color: ${theme.Button.Cta[variant].backgroundColor};
+            border-radius: ${theme.Button.Cta.common.borderRadius};
+            box-shadow: ${theme.Button.Cta.common.boxShadow}
 
+            &:hover {
+                background-color: ${theme.Button.Cta[variant].hover.backgroundColor};
+                box-shadow: ${theme.Button.Cta[variant].hover.boxShadow}
+            }
             `;
-        // &:hover {
-        //     background-color: ${theme.Button[variant].regular.hover.backgroundColor};
-        //     border-color: ${theme.Button[variant].regular.hover.borderColor}};
-        //     box-shadow: ${theme.Button[variant].regular.hover.boxShadow}
-        // }
 
+        // box-shadow: ${theme.Button[variant].regular.hover.boxShadow}
         // &:focus {
         //     background-color: ${theme.Button[variant].regular.focus.backgroundColor};
         //     border-color: ${theme.Button[variant].regular.focus.borderColor};
@@ -46,7 +33,6 @@ const StyledCta = withProps<ButtonPropsType>(styled(BareButton))`
         // }
 
         // &:active {
-        //     transform: translateY(2px);
         //     background-color: ${theme.Button[variant].regular.active.backgroundColor};
         //     border-color: ${theme.Button[variant].regular.active.borderColor};
         //     box-shadow: ${theme.Button[variant].regular.active.boxShadow};
@@ -55,4 +41,3 @@ const StyledCta = withProps<ButtonPropsType>(styled(BareButton))`
 `;
 
 export default StyledCta;
-export { ButtonCtaThemeType };

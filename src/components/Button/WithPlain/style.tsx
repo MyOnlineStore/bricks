@@ -10,27 +10,18 @@ type ButtonPropsType = {
     variant: PropsType['variant'];
 };
 
-type ButtonPlainThemeType = {
-    primary: {
-        color: string;
-    };
-    destructive: {
-        color: string;
-    };
-};
-
 const StyledPlain = withProps<ButtonPropsType>(styled(BareButton))`
     ${({ variant, theme }): string => {
         return `
             padding: 11px 12px;
-            color: ${theme.ButtonPlain.primary.color};
+            color: ${theme.Button.Plain.primary.color};
+            transform: none;
 
             &:hover {
                 transform: scale(1.1);
-                color: ${
-                    variant === 'destructive' ? theme.ButtonPlain.destructive.color : theme.ButtonPlain.primary.color
-                };
+                ${variant === 'destructive' ? `color: ${theme.Button.Plain.destructive.color}` : ''};
             }
+
             &:active {
                 transform: translateY(2px);
             }
@@ -40,4 +31,3 @@ const StyledPlain = withProps<ButtonPropsType>(styled(BareButton))`
 `;
 
 export default StyledPlain;
-export { ButtonPlainThemeType };

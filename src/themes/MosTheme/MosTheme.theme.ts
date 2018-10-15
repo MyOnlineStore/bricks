@@ -73,25 +73,21 @@ const theme: ThemeType = {
             primary: {
                 idle: {
                     backgroundColor: green.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 hover: {
                     backgroundColor: green.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 focus: {
                     backgroundColor: green.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
                 },
                 active: {
                     backgroundColor: green.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: 'none',
                 },
@@ -99,25 +95,21 @@ const theme: ThemeType = {
             secondary: {
                 idle: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 hover: {
                     backgroundColor: silver.darker1,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 focus: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
                 },
                 active: {
                     backgroundColor: silver.darker1,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: 'none',
                 },
@@ -125,25 +117,21 @@ const theme: ThemeType = {
             warning: {
                 idle: {
                     backgroundColor: yellow.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 hover: {
                     backgroundColor: yellow.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 focus: {
                     backgroundColor: yellow.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25)',
+                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
                 },
                 active: {
                     backgroundColor: yellow.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: 'none',
                 },
@@ -151,25 +139,21 @@ const theme: ThemeType = {
             destructive: {
                 idle: {
                     backgroundColor: red.base,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 hover: {
                     backgroundColor: red.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 focus: {
                     backgroundColor: red.base,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25)',
                 },
                 active: {
                     backgroundColor: red.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: 'none',
                 },
@@ -177,26 +161,22 @@ const theme: ThemeType = {
             plain: {
                 idle: {
                     backgroundColor: 'transparent',
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: 'none',
                     textDecoration: 'underline',
                 },
                 hover: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
                 focus: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
                 },
                 active: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: 'none',
                 },
@@ -211,21 +191,30 @@ const theme: ThemeType = {
             primary: {
                 color: grey.darker1,
             },
-            error: {
+            destructive: {
                 color: red.base,
             },
         },
         Cta: {
             common: {
                 borderRadius: '24px',
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             primary: {
                 color: silver.lighter1,
                 backgroundColor: green.base,
+                hover: {
+                    backgroundColor: '#6FC268',
+                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+                },
             },
             secondary: {
                 color: grey.darker1,
                 backgroundColor: '#FFC724',
+                hover: {
+                    backgroundColor: silver.base,
+                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+                },
             },
         },
     },
@@ -248,7 +237,7 @@ const theme: ThemeType = {
             background: silver.base,
         },
         overides: {
-            ButtonDefault: {
+            Button: {
                 Default: {
                     secondary: {
                         idle: {

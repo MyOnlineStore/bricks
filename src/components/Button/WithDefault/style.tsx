@@ -11,90 +11,38 @@ type ButtonPropsType = {
     compact?: boolean;
 };
 
-type DefaultTypes = {
-    backgroundColor: string;
-    borderColor: string;
-    color: string;
-    boxShadow: string;
-};
-
-type ComponentStateTypes = {
-    idle: DefaultTypes;
-    hover: DefaultTypes;
-    focus: DefaultTypes;
-    active: DefaultTypes;
-};
-
-type ButtonDefaultThemeType = {
-    common: {
-        borderRadius: string;
-        borderWidth: string;
-        fontWeight: string;
-        fontFamily: string;
-        fontSize: string;
-        textDecoration: string;
-    };
-    Default: {
-        primary: ComponentStateTypes;
-        secondary: ComponentStateTypes;
-        warning: ComponentStateTypes;
-        destructive: ComponentStateTypes;
-        plain: {
-            hover: DefaultTypes;
-            focus: DefaultTypes;
-            active: DefaultTypes;
-            idle: {
-                backgroundColor: string;
-                borderColor: string;
-                color: string;
-                boxShadow: string;
-                textDecoration: string;
-            };
-        };
-        disabled: {
-            backgroundColor: string;
-            color: string;
-            stripingColor: string;
-        };
-    };
-};
-
 const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
     ${({ variant, theme, compact }): string => {
         return `
             padding: ${compact ? '11px 12px' : '11px 24px'};
-            color: ${theme.ButtonDefault.Default[variant].idle.color};
-            background-color: ${theme.ButtonDefault.Default[variant].idle.backgroundColor};
-            border-radius: ${theme.ButtonDefault.common.borderRadius};
-            box-shadow: ${theme.ButtonDefault.Default[variant].idle.boxShadow}
-            ${variant === 'plain' ? `text-decoration: ${theme.ButtonDefault.Default.plain.idle.textDecoration}` : ''}
+            color: ${theme.Button.Default[variant].idle.color};
+            background-color: ${theme.Button.Default[variant].idle.backgroundColor};
+            border-radius: ${theme.Button.common.borderRadius};
+            box-shadow: ${theme.Button.Default[variant].idle.boxShadow}
+            ${variant === 'plain' ? `text-decoration: ${theme.Button.Default.plain.idle.textDecoration}` : ''}
 
             &:hover {
-                background-color: ${theme.ButtonDefault.Default[variant].hover.backgroundColor};
-                border-color: ${theme.ButtonDefault.Default[variant].hover.borderColor};
-                box-shadow: ${theme.ButtonDefault.Default[variant].hover.boxShadow}
+                background-color: ${theme.Button.Default[variant].hover.backgroundColor};
+                box-shadow: ${theme.Button.Default[variant].hover.boxShadow}
             }
 
             &:focus {
-                background-color: ${theme.ButtonDefault.Default[variant].focus.backgroundColor};
-                border-color: ${theme.ButtonDefault.Default[variant].focus.borderColor};
-                box-shadow: ${theme.ButtonDefault.Default[variant].focus.boxShadow};
+                background-color: ${theme.Button.Default[variant].focus.backgroundColor};
+                box-shadow: ${theme.Button.Default[variant].focus.boxShadow};
             }
 
             &:active {
-                transform: translateY(2px);
-                background-color: ${theme.ButtonDefault.Default[variant].active.backgroundColor};
-                border-color: ${theme.ButtonDefault.Default[variant].active.borderColor};
-                box-shadow: ${theme.ButtonDefault.Default[variant].active.boxShadow};
+                background-color: ${theme.Button.Default[variant].active.backgroundColor};
+                box-shadow: ${theme.Button.Default[variant].active.boxShadow};
             }
 
             &:disabled {
-                background: ${theme.ButtonDefault.Default.disabled.backgroundColor};
+                background: ${theme.Button.Default.disabled.backgroundColor};
                 border-color: transparent;
                 cursor: default;
                 opacity: 0.7;
                 transform: none;
-                color: ${theme.ButtonDefault.Default.disabled.color};
+                color: ${theme.Button.Default.disabled.color};
                 box-shadow: none;
 
                 &::before {
@@ -113,21 +61,19 @@ const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
                 content: '';
                 opacity: 0;
                 transition: opacity 0.3s;
-                background: ${theme.ButtonDefault.Default.disabled.backgroundColor}
+                background: ${theme.Button.Default.disabled.backgroundColor}
                     repeating-linear-gradient(
                         -45deg,
-                        ${theme.ButtonDefault.Default.disabled.stripingColor},
-                        ${theme.ButtonDefault.Default.disabled.stripingColor} 10px,
+                        ${theme.Button.Default.disabled.stripingColor},
+                        ${theme.Button.Default.disabled.stripingColor} 10px,
                         transparent 10px,
                         transparent 20px
                     );
-                box-shadow: ${theme.ButtonDefault.Default[variant].idle.boxShadow};
-                border-radius: ${theme.ButtonDefault.common.borderRadius};
+                box-shadow: ${theme.Button.Default[variant].idle.boxShadow};
+                border-radius: ${theme.Button.common.borderRadius};
             }
             `;
-        // box-shadow: ${theme.Button[variant].idle.boxShadow};
     }};
 `;
 
 export default StyledDefault;
-export { ButtonDefaultThemeType };
