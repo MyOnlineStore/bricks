@@ -2,7 +2,7 @@
 
 exports[`Storyshots ButtonGroup Default 1`] = `
 <div
-  className="sc-gqjmRU cDLrsf"
+  className="sc-fjdhpX jIPJGs"
 >
   <div
     style={
@@ -18,10 +18,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         className="sc-bwzfXH jHAPPC"
       >
         <button
-          className="sc-htoDjs ilyuMW"
-          color={undefined}
+          className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
           disabled={undefined}
-          icon={undefined}
           id={undefined}
           onClick={[Function]}
           title="Primary button"
@@ -34,10 +32,8 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         className="sc-bwzfXH jHAPPC"
       >
         <button
-          className="sc-htoDjs ljxUvq"
-          color={undefined}
+          className="sc-VigVT ckqqWe sc-htoDjs enpGLi"
           disabled={undefined}
-          icon={undefined}
           id={undefined}
           onClick={[Function]}
           title="Secondary button"

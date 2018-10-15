@@ -44,14 +44,17 @@ const BareButton: SFC<PropsType> = (props): JSX.Element => {
     if (isLink) {
         return (
             <StyledAnchor
+                // @ts-ignore
+                href={props.href}
+                target={props.target}
                 title={props.title}
                 className={props.className}
-                // href={props.href}
-                // target={props.target}
                 disabled={props.disabled}
                 id={props.id}
             >
-                {Children.count(props.children) > 0 ? props.children : props.title}
+                <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
+                    {props.children}
+                </ButtonContents>
             </StyledAnchor>
         );
     }
@@ -65,7 +68,7 @@ const BareButton: SFC<PropsType> = (props): JSX.Element => {
             disabled={props.disabled}
             id={props.id}
         >
-            <ButtonContents action={props.action} title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
+            <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
                 {props.children}
             </ButtonContents>
         </StyledButton>

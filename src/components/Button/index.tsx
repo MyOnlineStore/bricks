@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { MediumPropsType } from '../Icon';
-import StyledCta from './WithCta/style';
-import StyledPlain from './WithPlain/style';
-import StyledDefault from './WithDefault/style';
+import StyledCta, { WithStyledCtaType } from './styleCta';
+import StyledPlain, { WithStyledPlainType } from './stylePlain';
+import StyledDefault, { WithStyledDefaultType } from './styleDefault';
 
 type PropsType = {
     className?: string;
@@ -19,9 +19,9 @@ type PropsType = {
 };
 
 class Button extends Component<PropsType> {
-    public static Cta: any = StyledCta;
-    public static Plain: any = StyledPlain;
-    public static Default: any = StyledDefault;
+    public static Cta: WithStyledCtaType = StyledCta;
+    public static Plain: WithStyledPlainType = StyledPlain;
+    public static Default: WithStyledDefaultType = StyledDefault;
 
     public render(): JSX.Element {
         return <Button.Default {...this.props} />;

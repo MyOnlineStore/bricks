@@ -9,13 +9,11 @@ exports[`Storyshots Popover Default 1`] = `
   >
     <div>
       <div
-        className="sc-jhAzac gaRQRf"
+        className="sc-dVhcbM gSIqyU"
       >
         <button
-          className="sc-htoDjs ilyuMW"
-          color={undefined}
+          className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
           disabled={undefined}
-          icon={undefined}
           id={undefined}
           onClick={[Function]}
           title="Toggle"
@@ -38,13 +36,11 @@ exports[`Storyshots Popover Internal state on click 1`] = `
   >
     <div>
       <div
-        className="sc-jhAzac gaRQRf"
+        className="sc-dVhcbM gSIqyU"
       >
         <button
-          className="sc-htoDjs ilyuMW"
-          color={undefined}
+          className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
           disabled={undefined}
-          icon={undefined}
           id={undefined}
           onClick={[Function]}
           title="Toggle"
@@ -67,13 +63,11 @@ exports[`Storyshots Popover Internal state on hover 1`] = `
   >
     <div>
       <div
-        className="sc-jhAzac gaRQRf"
+        className="sc-dVhcbM gSIqyU"
       >
         <button
-          className="sc-htoDjs ilyuMW"
-          color={undefined}
+          className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
           disabled={undefined}
-          icon={undefined}
           id={undefined}
           onClick={[Function]}
           title="Hover over me"

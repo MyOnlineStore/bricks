@@ -2,8 +2,8 @@ import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import { PropsType as CtaPropsType } from './WithCta';
-import { PropsType as PlainPropsType } from './WithPlain';
+import { ButtonPropsType as PlainPropsType } from './stylePlain';
+import { ButtonPropsType as CtaPropsType } from './styleCta';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -17,23 +17,23 @@ const mediumIconKeys = Object.keys(MediumIcons).filter(key => MediumIcons[key as
 /* tslint:enable */
 
 storiesOf('Button', module)
-    .add('Button Cta', () => {
+    .add('Default', () => {
         return (
-            <Button.Cta
-                variant={select('variant', ['primary', 'secondary'], 'primary') as CtaPropsType['variant']}
+            <Button.Default
+                variant={
+                    select(
+                        'variant',
+                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
+                        'primary',
+                    ) as PropsType['variant']
+                }
                 title={text('title', 'Click me')}
+                disabled={boolean('disabled', false)}
+                compact={boolean('compact', false)}
             />
         );
     })
-    .add('Button Plain', () => {
-        return (
-            <Button.Plain
-                variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
-                title={text('title', 'Click me')}
-            />
-        );
-    })
-    .add('Button default', () => {
+    .add('Default - link', () => {
         return (
             <Button.Default
                 variant={
@@ -45,11 +45,29 @@ storiesOf('Button', module)
                 }
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
+                href="http://www.google.com"
+                target="_blank"
                 compact={boolean('compact', false)}
             />
         );
     })
-    .add('With an icon2', () => {
+    .add('Call to Action', () => {
+        return (
+            <Button.Cta
+                variant={select('variant', ['primary', 'secondary'], 'primary') as CtaPropsType['variant']}
+                title={text('title', 'Click me')}
+            />
+        );
+    })
+    .add('Plain', () => {
+        return (
+            <Button.Plain
+                variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
+                title={text('title', 'Click me')}
+            />
+        );
+    })
+    .add('With an icon', () => {
         return (
             <Button.Cta
                 title={text('title', 'Press any key to continue')}
@@ -60,7 +78,7 @@ storiesOf('Button', module)
             />
         );
     })
-    .add('On a contrast area2', () => {
+    .add('On a contrast area', () => {
         return (
             <Contrast>
                 <Box padding={trbl(12)}>

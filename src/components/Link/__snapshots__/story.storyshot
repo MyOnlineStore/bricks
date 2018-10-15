@@ -5,7 +5,7 @@ exports[`Storyshots Link Action with child element 1`] = `
   className="sc-bxivhb jpexxn"
 >
   <button
-    className="sc-hSdWYo XiZO"
+    className="sc-jWBwVP ieZLxK"
     onClick={[Function]}
     title="Google search"
     type="button"
@@ -22,7 +22,7 @@ exports[`Storyshots Link Default 1`] = `
   className="sc-bxivhb jpexxn"
 >
   <a
-    className="sc-iAyFgw gqgAvO"
+    className="sc-cvbbAY jqqzQW"
     href="http://www.google.com"
     target="_self"
     title="Google search"

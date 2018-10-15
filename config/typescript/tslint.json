@@ -105,7 +105,6 @@
       "no-unnecessary-type-assertion": true,
       "no-unsafe-finally": true,
       "no-unused-expression": true,
-      "no-unused-variable": [true, {"ignore-pattern": "^_"}],
       "no-use-before-declare": true,
       "no-var-keyword": true,
   

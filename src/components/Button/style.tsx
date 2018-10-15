@@ -55,6 +55,10 @@ type ButtonThemeType = {
                 backgroundColor: string;
                 boxShadow: string;
             };
+            focus: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
         };
         secondary: {
             color: string;
@@ -63,11 +67,16 @@ type ButtonThemeType = {
                 backgroundColor: string;
                 boxShadow: string;
             };
+            focus: {
+                backgroundColor: string;
+                boxShadow: string;
+            };
         };
     };
     Plain: {
         primary: {
             color: string;
+            backgroundColor: string;
         };
         destructive: {
             color: string;

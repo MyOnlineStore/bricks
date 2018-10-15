@@ -3,7 +3,7 @@
 exports[`Storyshots FoldOut With a toggle 1`] = `
 <div>
   <div
-    className="sc-chPdSV kiPOer"
+    className="sc-kpOJdX hMPesZ"
   >
     <div>
       <div
@@ -42,10 +42,8 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     </div>
   </div>
   <button
-    className="sc-htoDjs ljxUvq"
-    color={undefined}
+    className="sc-VigVT ckqqWe sc-htoDjs enpGLi"
     disabled={undefined}
-    icon={undefined}
     id={undefined}
     onClick={[Function]}
     title="open FoldOut"

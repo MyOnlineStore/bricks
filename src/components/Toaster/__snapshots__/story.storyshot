@@ -2,7 +2,7 @@
 
 exports[`Storyshots Toaster Default 1`] = `
 <div
-  className="sc-gPEVay iwzqGY"
+  className="sc-gipzik gZSZiZ"
 >
   <div
     style={
@@ -12,13 +12,13 @@ exports[`Storyshots Toaster Default 1`] = `
     }
   >
     <div
-      className="sc-gGBfsJ chsGPI"
+      className="sc-tilXH kMPENQ"
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
-          className="sc-jnlKLf ePIpTz"
+          className="sc-hEsumM dckXUS"
         >
           <div
             className="sc-bwzfXH jQmHZh"
@@ -60,10 +60,8 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
-              className="sc-htoDjs TzVGU"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="close"
@@ -90,7 +88,7 @@ exports[`Storyshots Toaster Default 1`] = `
 
 exports[`Storyshots Toaster With action button 1`] = `
 <div
-  className="sc-gPEVay iwzqGY"
+  className="sc-gipzik gZSZiZ"
 >
   <div
     style={
@@ -100,13 +98,13 @@ exports[`Storyshots Toaster With action button 1`] = `
     }
   >
     <div
-      className="sc-gGBfsJ chsGPI"
+      className="sc-tilXH kMPENQ"
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
-          className="sc-jnlKLf chjwYs"
+          className="sc-hEsumM eaYoif"
         >
           <div
             className="sc-bwzfXH jQmHZh"
@@ -147,10 +145,8 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH kWLDUa"
             >
               <button
-                className="sc-htoDjs hqsvnm"
-                color={undefined}
+                className="sc-VigVT jCvgKd sc-htoDjs enpGLi"
                 disabled={undefined}
-                icon={undefined}
                 id={undefined}
                 onClick={[Function]}
                 title="Hello"
@@ -164,10 +160,8 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
-              className="sc-htoDjs TzVGU"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="close"

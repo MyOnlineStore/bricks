@@ -1,15 +1,17 @@
-import _R from 'react';
+import _R, { ComponentClass } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/styled';
-import BareButton from '../BareButton';
-import { PropsType } from './';
+import _T from '../../types/ThemeType';
+import styled, { withProps } from '../../utility/styled';
+import BareButton, { PropsType as BareButtonPropsType } from './BareButton';
+import { MediumIcons } from '../Icon';
 
-type ButtonPropsType = {
-    icon?: PropsType['icon'];
-    variant: PropsType['variant'];
+type ButtonPropsType = BareButtonPropsType & {
+    icon?: keyof typeof MediumIcons;
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     compact?: boolean;
 };
+
+type WithStyledDefaultType = ComponentClass<ButtonPropsType>;
 
 const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
     ${({ variant, theme, compact }): string => {
@@ -77,3 +79,4 @@ const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
 `;
 
 export default StyledDefault;
+export { ButtonPropsType, WithStyledDefaultType };

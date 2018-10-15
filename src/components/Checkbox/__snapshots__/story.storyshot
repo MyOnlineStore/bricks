@@ -2,7 +2,7 @@
 
 exports[`Storyshots Checkbox Default 1`] = `
 <div
-  className="sc-jTzLTM gLIeWe"
+  className="sc-cSHVUG bWWFEC"
   onClick={[Function]}
 >
   <div
@@ -21,7 +21,7 @@ exports[`Storyshots Checkbox Default 1`] = `
   </div>
   <input
     checked={true}
-    className="sc-VigVT jXADSx"
+    className="sc-jzJRlG gxbNVW"
     id={undefined}
     name="foo"
     onBlur={[Function]}

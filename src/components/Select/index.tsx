@@ -222,6 +222,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             title={this.state.isOpen ? 'close' : 'open'}
                             action={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
+                            variant="primary"
                         >
                             <Icon
                                 icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
@@ -255,9 +256,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     </Box>
                                 )) ||
                                     this.filterOptions().map((option, index) => {
-                                        const optionState = {
-                                            isSelected: option.value === this.props.value,
-                                        };
+                                        const optionState = { isSelected: option.value === this.props.value };
 
                                         return (
                                             <Option

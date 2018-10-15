@@ -190,6 +190,7 @@ const theme: ThemeType = {
         Plain: {
             primary: {
                 color: grey.darker1,
+                backgroundColor: 'transparent',
             },
             destructive: {
                 color: red.base,
@@ -202,18 +203,26 @@ const theme: ThemeType = {
             },
             primary: {
                 color: silver.lighter1,
-                backgroundColor: green.base,
+                backgroundColor: '#7BCE75',
                 hover: {
                     backgroundColor: '#6FC268',
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
                 },
+                focus: {
+                    backgroundColor: '#7BCE75',
+                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(123,206,117,.25)',
+                },
             },
             secondary: {
                 color: grey.darker1,
-                backgroundColor: '#FFC724',
+                backgroundColor: '#F8CF51',
                 hover: {
-                    backgroundColor: silver.base,
+                    backgroundColor: '#F4C343',
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+                },
+                focus: {
+                    backgroundColor: '#F8CF51',
+                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
                 },
             },
         },

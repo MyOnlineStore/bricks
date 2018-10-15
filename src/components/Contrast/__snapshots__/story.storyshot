@@ -3,16 +3,14 @@
 exports[`Storyshots Contrast Default 1`] = `
 Array [
   <div
-    className="sc-gZMcBi huJyDB"
+    className="sc-jTzLTM hDWBpv"
   >
     <div
       className="sc-bwzfXH iXkNPI"
     >
       <button
-        className="sc-htoDjs dmMyib"
-        color={undefined}
+        className="sc-VigVT dnhZzW sc-htoDjs enpGLi"
         disabled={undefined}
-        icon={undefined}
         id={undefined}
         onClick={[Function]}
         title="Inside Contrast"
@@ -26,10 +24,8 @@ Array [
     className="sc-bwzfXH iXkNPI"
   >
     <button
-      className="sc-htoDjs ljxUvq"
-      color={undefined}
+      className="sc-VigVT ckqqWe sc-htoDjs enpGLi"
       disabled={undefined}
-      icon={undefined}
       id={undefined}
       onClick={[Function]}
       title="Outside of Contrast"

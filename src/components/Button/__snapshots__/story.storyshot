@@ -1,8 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Call to Action 1`] = `
+<button
+  className="sc-gZMcBi kmtphj sc-htoDjs enpGLi"
+  disabled={undefined}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Default - link 1`] = `
+<a
+  className="sc-VigVT jCvgKd sc-dnqmqq bwaQUg"
+  disabled={false}
+  href="http://www.google.com"
+  id={undefined}
+  target="_blank"
+  title="Click me"
+>
+  Click me
+</a>
+`;
+
+exports[`Storyshots Button Default 1`] = `
+<button
+  className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
+  disabled={false}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  Click me
+</button>
+`;
+
 exports[`Storyshots Button On a contrast area 1`] = `
 <div
-  className="sc-gZMcBi huJyDB"
+  className="sc-jTzLTM hDWBpv"
 >
   <div
     className="sc-bwzfXH iXkNPI"
@@ -21,10 +60,8 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-htoDjs dmMyib"
-            color={undefined}
+            className="sc-VigVT dnhZzW sc-htoDjs enpGLi"
             disabled={false}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -37,10 +74,8 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-htoDjs jKHdGr"
-            color={undefined}
+            className="sc-VigVT fSBmSK sc-htoDjs enpGLi"
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -64,12 +99,23 @@ exports[`Storyshots Button On a contrast area 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button Plain 1`] = `
+<button
+  className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
+  disabled={undefined}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  Click me
+</button>
+`;
+
 exports[`Storyshots Button With an icon 1`] = `
 <button
-  className="sc-htoDjs gdufTA"
-  color={undefined}
+  className="sc-gZMcBi kmtphj sc-htoDjs enpGLi"
   disabled={false}
-  icon="keyboard"
   id={undefined}
   onClick={[Function]}
   title="Press any key to continue"
@@ -90,20 +136,5 @@ exports[`Storyshots Button With an icon 1`] = `
       role="img"
     />
   </span>
-</button>
-`;
-
-exports[`Storyshots Button With text 1`] = `
-<button
-  className="sc-htoDjs ilyuMW"
-  color={undefined}
-  disabled={false}
-  icon={undefined}
-  id={undefined}
-  onClick={[Function]}
-  title="Click me"
-  type="button"
->
-  Click me
 </button>
 `;

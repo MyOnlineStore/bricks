@@ -32,6 +32,7 @@ const options = [
 ];
 
 const Demo: SFC = (): JSX.Element => {
+    /* tslint:disable */
     return (
         <Box height="90vh" justifyContent="center" alignItems="center">
             <Box margin={trbl(48)}>
@@ -71,6 +72,7 @@ const Demo: SFC = (): JSX.Element => {
             </Box>
         </Box>
     );
+    /* tslint:enable */
 };
 
 storiesOf('MultiButton', module).add('Default', () => <Demo />);

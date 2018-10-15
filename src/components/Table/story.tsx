@@ -19,7 +19,7 @@ type PropsType = {
 
 const actions = (
     <>
-        <Button.Plain title="edit">
+        <Button.Plain title="edit" variant="primary">
             <Icon icon="pencil" size="medium" />
         </Button.Plain>
         <Button.Plain title="delete" variant="destructive">

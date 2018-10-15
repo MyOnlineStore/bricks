@@ -79,7 +79,11 @@ class Modal extends Component<PropsType> {
                                             alignItems="center"
                                             grow={0}
                                         >
-                                            <Button.Plain title="close" action={this.props.closeAction}>
+                                            <Button.Plain
+                                                variant="primary"
+                                                title="close"
+                                                action={this.props.closeAction}
+                                            >
                                                 <Icon size="small" icon="close" />
                                             </Button.Plain>
                                         </Box>

@@ -18,7 +18,9 @@ const StyledButton = styled.button`
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
-    }
+    justify-content: center;
+    display: flex;
+    align-items: center;
 
     &::before {
         content: '';

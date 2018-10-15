@@ -2,14 +2,14 @@
 
 exports[`Storyshots Select Custom rendering 1`] = `
 <div
-  className="sc-cJSrbW cBynbV"
+  className="sc-frDJqD knwbUz"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-hmzhuo fbmoed"
+    className="sc-hqyNC eDJwPQ"
     disabled={false}
   >
     <div
@@ -30,10 +30,8 @@ exports[`Storyshots Select Custom rendering 1`] = `
         </div>
       </div>
       <button
-        className="sc-htoDjs TzVGU"
-        color={undefined}
+        className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
         disabled={false}
-        icon={undefined}
         id={undefined}
         onClick={[Function]}
         title="open"
@@ -54,13 +52,13 @@ exports[`Storyshots Select Custom rendering 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-ksYbfQ pMeUU"
+      className="sc-kvZOFW iTUUXu"
     >
       <div
-        className="sc-brqgnP jwrNlU"
+        className="sc-jDwBTQ iGblEK"
       >
         <div
-          className="sc-cMljjf krgCXT"
+          className="sc-gPEVay fErmnm"
         >
           <div
             data-test="bricks-select-collapse"
@@ -72,7 +70,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
             }
           >
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -107,7 +105,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -142,7 +140,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -177,7 +175,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -212,7 +210,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -247,7 +245,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -291,14 +289,14 @@ exports[`Storyshots Select Custom rendering 1`] = `
 
 exports[`Storyshots Select Default 1`] = `
 <div
-  className="sc-cJSrbW cBynbV"
+  className="sc-frDJqD knwbUz"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
   tabIndex={0}
 >
   <div
-    className="sc-hmzhuo fbmoed"
+    className="sc-hqyNC eDJwPQ"
     disabled={false}
   >
     <div
@@ -312,17 +310,15 @@ exports[`Storyshots Select Default 1`] = `
           className="sc-bxivhb jVDCXG"
         >
           <span
-            className="sc-kgAjT WmYSY"
+            className="sc-hmzhuo hgIEwm"
           >
             Search a value
           </span>
         </p>
       </div>
       <button
-        className="sc-htoDjs TzVGU"
-        color={undefined}
+        className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
         disabled={false}
-        icon={undefined}
         id={undefined}
         onClick={[Function]}
         title="open"
@@ -343,13 +339,13 @@ exports[`Storyshots Select Default 1`] = `
   </div>
   <MockPortal>
     <div
-      className="sc-ksYbfQ pMeUU"
+      className="sc-kvZOFW iTUUXu"
     >
       <div
-        className="sc-brqgnP jwrNlU"
+        className="sc-jDwBTQ iGblEK"
       >
         <div
-          className="sc-cMljjf krgCXT"
+          className="sc-gPEVay fErmnm"
         >
           <div
             data-test="bricks-select-collapse"
@@ -361,7 +357,7 @@ exports[`Storyshots Select Default 1`] = `
             }
           >
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -380,7 +376,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -399,7 +395,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -418,7 +414,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -437,7 +433,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -456,7 +452,7 @@ exports[`Storyshots Select Default 1`] = `
               </div>
             </div>
             <div
-              className="sc-TOsTZ NJJmQ"
+              className="sc-ksYbfQ gDblCm"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >

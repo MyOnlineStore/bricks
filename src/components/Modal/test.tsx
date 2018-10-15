@@ -46,7 +46,7 @@ describe('Modal', () => {
     it('should be possible to close the modal view using the close button', () => {
         const clickMock = jest.fn();
         const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
-        const closeButton = component.find(Button).first();
+        const closeButton = component.find(Button.Plain).first();
 
         closeButton.simulate('click');
 
