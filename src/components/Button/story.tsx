@@ -2,6 +2,8 @@ import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
+import { PropsType as CtaPropsType } from './WithCta';
+import { PropsType as PlainPropsType } from './WithPlain';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -15,27 +17,25 @@ const mediumIconKeys = Object.keys(MediumIcons).filter(key => MediumIcons[key as
 /* tslint:enable */
 
 storiesOf('Button', module)
-    .add('With text', () => {
+    .add('Button Cta', () => {
         return (
-            <Button
-                variant={
-                    select(
-                        'variant',
-                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
-                        'primary',
-                    ) as PropsType['variant']
-                }
+            <Button.Cta
+                variant={select('variant', ['primary', 'secondary'], 'primary') as CtaPropsType['variant']}
                 title={text('title', 'Click me')}
-                disabled={boolean('disabled', false)}
-                flat={boolean('flat', false)}
-                compact={boolean('compact', false)}
             />
         );
     })
-    .add('With an icon', () => {
+    .add('Button Plain', () => {
         return (
-            <Button
-                title={text('title', 'Press any key to continue')}
+            <Button.Plain
+                variant={select('variant', ['default', 'error'], 'default') as PlainPropsType['variant']}
+                title={text('title', 'Click me')}
+            />
+        );
+    })
+    .add('Button default', () => {
+        return (
+            <Button.Default
                 variant={
                     select(
                         'variant',
@@ -43,15 +43,24 @@ storiesOf('Button', module)
                         'destructive',
                     ) as PropsType['variant']
                 }
-                icon={select('Icon', mediumIconKeys, 'keyboard') as PropsType['icon']}
-                iconAlign={select('Align icon', ['left', 'right'], 'right') as PropsType['iconAlign']}
+                title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
-                flat={boolean('flat', false)}
                 compact={boolean('compact', false)}
             />
         );
     })
-    .add('On a contrast area', () => {
+    .add('With an icon2', () => {
+        return (
+            <Button.Cta
+                title={text('title', 'Press any key to continue')}
+                variant={select('variant', ['primary', 'secondary'], 'primary') as CtaPropsType['variant']}
+                icon={select('Icon', mediumIconKeys, 'keyboard') as PropsType['icon']}
+                iconAlign={select('Align icon', ['left', 'right'], 'right') as PropsType['iconAlign']}
+                disabled={boolean('disabled', false)}
+            />
+        );
+    })
+    .add('On a contrast area2', () => {
         return (
             <Contrast>
                 <Box padding={trbl(12)}>
@@ -60,18 +69,8 @@ storiesOf('Button', module)
                             variant="secondary"
                             title={text('title', 'Click me')}
                             disabled={boolean('disabled', false)}
-                            action={(): void => {
-                                /* */
-                            }}
                         />
-                        <Button
-                            variant="plain"
-                            title={'Click me'}
-                            action={(): void => {
-                                /* */
-                            }}
-                            compact
-                        >
+                        <Button variant="plain" title={'Click me'} compact>
                             <Icon size="medium" icon="gear" />
                         </Button>
                     </ButtonGroup>

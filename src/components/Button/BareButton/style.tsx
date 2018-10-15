@@ -3,7 +3,7 @@ import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../../types/ThemeType';
 import styled from '../../../utility/styled';
 
-type ButtonThemeType = {
+type BareButtonThemeType = {
     common: {
         fontSize: string;
         fontFamily: string;
@@ -23,16 +23,13 @@ const StyledButton = styled.button`
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
     user-select: none;
     text-decoration: none;
-    font-family: ${({ theme }): string => theme.Button.common.fontFamily};
-    font-size: ${({ theme }): string => theme.Button.common.fontSize};
-    font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
-    }
-
-    &:active {
-        transform: translateY(2px);
+    font-family: ${({ theme }): string => theme.BareButton.common.fontFamily};
+    font-size: ${({ theme }): string => theme.BareButton.common.fontSize};
+    font-weight: ${({ theme }): string => theme.BareButton.common.fontWeight};
     }
 
     &::before {
+        content: '';
         position: absolute;
         display: block;
         left: 0;
@@ -40,7 +37,6 @@ const StyledButton = styled.button`
         right: 0;
         bottom: 0;
         z-index: -2;
-        content: '';
         opacity: 0;
         transition: opacity 0.3s;
     }
@@ -61,4 +57,4 @@ const StyledButton = styled.button`
 const StyledAnchor = StyledButton.withComponent('a');
 
 export default StyledButton;
-export { ButtonThemeType, StyledAnchor };
+export { BareButtonThemeType, StyledAnchor };

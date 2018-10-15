@@ -82,9 +82,9 @@ const Toaster: SFC<PropsType> = (props): JSX.Element => {
                                     )}
                                 </Box>
                                 <Box direction="column">
-                                    <Button variant="plain" flat title="close" action={closeAction} compact>
+                                    <Button.Plain title="close" action={closeAction} compact>
                                         <Icon size="small" icon="close" />
-                                    </Button>
+                                    </Button.Plain>
                                 </Box>
                             </StyledToaster>
                         </Box>

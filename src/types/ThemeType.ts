@@ -1,5 +1,8 @@
 import { BadgeThemeType } from '../components/Badge';
-import { ButtonThemeType } from '../components/Button/style';
+import { ButtonCtaThemeType } from '../components/Button/withCta/style';
+import { ButtonDefaultThemeType } from '../components/Button/WithDefault/style';
+import { ButtonPlainThemeType } from '../components/Button/withPlain/style';
+import { BareButtonThemeType } from '../components/Button/BareButton/style';
 import { CheckboxThemeType } from '../components/Checkbox/style';
 import { ContrastThemeType } from '../components/Contrast/style';
 import { HeadingThemeType } from '../components/Heading';
@@ -26,7 +29,11 @@ import { SkeletonThemeType } from '../components/Skeleton/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
-    Button: ButtonThemeType;
+    ButtonDefault: ButtonDefaultThemeType;
+    ButtonPlain: ButtonPlainThemeType;
+    ButtonCta: ButtonCtaThemeType;
+    BareButton: BareButtonThemeType;
+    Button: ButtonDefaultThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
     Heading: HeadingThemeType;

@@ -218,10 +218,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     )}
                                 </Box>
                             )}
-                        <Button
-                            compact
-                            flat
-                            variant="secondary"
+                        <Button.Plain
                             title={this.state.isOpen ? 'close' : 'open'}
                             action={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
@@ -231,7 +228,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 size="small"
                                 color={this.props.disabled ? this.props.theme.Select.disabled.chevron : undefined}
                             />
-                        </Button>
+                        </Button.Plain>
                     </Box>
                 </StyledInput>
                 {createPortal(

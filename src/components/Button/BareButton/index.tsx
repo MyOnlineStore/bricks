@@ -46,7 +46,6 @@ const BareButton: SFC<PropsType> = (props): JSX.Element => {
             <StyledAnchor
                 title={props.title}
                 className={props.className}
-                // TODO: FIX THIS
                 // href={props.href}
                 // target={props.target}
                 disabled={props.disabled}
@@ -66,7 +65,7 @@ const BareButton: SFC<PropsType> = (props): JSX.Element => {
             disabled={props.disabled}
             id={props.id}
         >
-            <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
+            <ButtonContents action={props.action} title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
                 {props.children}
             </ButtonContents>
         </StyledButton>
