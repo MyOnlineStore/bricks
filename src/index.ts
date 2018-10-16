@@ -34,6 +34,7 @@ export { default as Spacer } from './components/Spacer';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Table } from './components/Table';
 export { default as Text } from './components/Text';
+export { default as Textarea } from './components/Textarea';
 export { default as TextField } from './components/TextField';
 export { default as Tile } from './components/Tile';
 export { default as Toaster } from './components/Toaster';
