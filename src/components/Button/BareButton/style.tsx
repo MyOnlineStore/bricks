@@ -21,6 +21,7 @@ const StyledButton = styled.button`
     justify-content: center;
     display: flex;
     align-items: center;
+    display: inline-block;
 
     &::before {
         content: '';

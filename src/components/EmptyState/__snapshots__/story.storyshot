@@ -77,7 +77,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       </p>
     </div>
     <button
-      className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
+      className="sc-VigVT eYHbkk sc-htoDjs cRzONA"
       disabled={undefined}
       id={undefined}
       onClick={[Function]}

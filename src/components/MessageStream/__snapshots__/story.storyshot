@@ -126,7 +126,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
+            className="sc-VigVT eYHbkk sc-htoDjs cRzONA"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -182,7 +182,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-VigVT bVKTEQ sc-htoDjs enpGLi"
+            className="sc-VigVT fsfbYL sc-htoDjs cRzONA"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -237,7 +237,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-VigVT jCvgKd sc-htoDjs enpGLi"
+            className="sc-VigVT cZkyFH sc-htoDjs cRzONA"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -290,7 +290,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-VigVT dnhZzW sc-htoDjs enpGLi"
+            className="sc-VigVT hzpyGR sc-htoDjs cRzONA"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}

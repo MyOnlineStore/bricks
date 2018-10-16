@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
 import { ButtonPropsType as PlainPropsType } from './stylePlain';
-import { ButtonPropsType as CtaPropsType } from './styleCta';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -19,7 +18,7 @@ const mediumIconKeys = Object.keys(MediumIcons).filter(key => MediumIcons[key as
 storiesOf('Button', module)
     .add('Default', () => {
         return (
-            <Button.Default
+            <Button
                 variant={
                     select(
                         'variant',
@@ -35,7 +34,7 @@ storiesOf('Button', module)
     })
     .add('Default - link', () => {
         return (
-            <Button.Default
+            <Button
                 variant={
                     select(
                         'variant',
@@ -52,12 +51,7 @@ storiesOf('Button', module)
         );
     })
     .add('Call to Action', () => {
-        return (
-            <Button.Cta
-                variant={select('variant', ['primary', 'secondary'], 'primary') as CtaPropsType['variant']}
-                title={text('title', 'Click me')}
-            />
-        );
+        return <Button.Cta title={text('title', 'Click me')} />;
     })
     .add('Plain', () => {
         return (
@@ -71,9 +65,8 @@ storiesOf('Button', module)
         return (
             <Button.Cta
                 title={text('title', 'Press any key to continue')}
-                variant={select('variant', ['primary', 'secondary'], 'primary') as CtaPropsType['variant']}
                 icon={select('Icon', mediumIconKeys, 'keyboard') as PropsType['icon']}
-                iconAlign={select('Align icon', ['left', 'right'], 'right') as PropsType['iconAlign']}
+                iconAlign={select('Align icon', ['left', 'right'], 'left') as PropsType['iconAlign']}
                 disabled={boolean('disabled', false)}
             />
         );

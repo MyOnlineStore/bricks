@@ -44,33 +44,22 @@ type ButtonThemeType = {
     };
 
     Cta: {
-        common: {
-            borderRadius: string;
+        borderRadius: string;
+        boxShadow: string;
+
+        color: string;
+        backgroundColor: string;
+        hover: {
+            backgroundColor: string;
             boxShadow: string;
         };
-        primary: {
-            color: string;
+        focus: {
             backgroundColor: string;
-            hover: {
-                backgroundColor: string;
-                boxShadow: string;
-            };
-            focus: {
-                backgroundColor: string;
-                boxShadow: string;
-            };
+            boxShadow: string;
         };
-        secondary: {
-            color: string;
+        active: {
+            boxShadow: string;
             backgroundColor: string;
-            hover: {
-                backgroundColor: string;
-                boxShadow: string;
-            };
-            focus: {
-                backgroundColor: string;
-                boxShadow: string;
-            };
         };
     };
     Plain: {

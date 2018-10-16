@@ -2,7 +2,7 @@
 
 exports[`Storyshots Button Call to Action 1`] = `
 <button
-  className="sc-gZMcBi kmtphj sc-htoDjs enpGLi"
+  className="sc-gZMcBi fDLIXu sc-htoDjs cRzONA"
   disabled={undefined}
   id={undefined}
   onClick={[Function]}
@@ -15,7 +15,7 @@ exports[`Storyshots Button Call to Action 1`] = `
 
 exports[`Storyshots Button Default - link 1`] = `
 <a
-  className="sc-VigVT jCvgKd sc-dnqmqq bwaQUg"
+  className="sc-VigVT cZkyFH sc-dnqmqq jvSxnN"
   disabled={false}
   href="http://www.google.com"
   id={undefined}
@@ -28,7 +28,7 @@ exports[`Storyshots Button Default - link 1`] = `
 
 exports[`Storyshots Button Default 1`] = `
 <button
-  className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
+  className="sc-VigVT eYHbkk sc-htoDjs cRzONA"
   disabled={false}
   id={undefined}
   onClick={[Function]}
@@ -60,7 +60,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-VigVT dnhZzW sc-htoDjs enpGLi"
+            className="sc-VigVT hzpyGR sc-htoDjs cRzONA"
             disabled={false}
             id={undefined}
             onClick={[Function]}
@@ -74,7 +74,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-VigVT fSBmSK sc-htoDjs enpGLi"
+            className="sc-VigVT eGcvBH sc-htoDjs cRzONA"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -101,7 +101,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 
 exports[`Storyshots Button Plain 1`] = `
 <button
-  className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
+  className="sc-gqjmRU FzLHg sc-htoDjs cRzONA"
   disabled={undefined}
   id={undefined}
   onClick={[Function]}
@@ -114,16 +114,15 @@ exports[`Storyshots Button Plain 1`] = `
 
 exports[`Storyshots Button With an icon 1`] = `
 <button
-  className="sc-gZMcBi kmtphj sc-htoDjs enpGLi"
+  className="sc-gZMcBi fDLIXu sc-htoDjs cRzONA"
   disabled={false}
   id={undefined}
   onClick={[Function]}
   title="Press any key to continue"
   type="button"
 >
-  Press any key to continue
   <span
-    className="sc-htpNat hNxYQo"
+    className="sc-htpNat gHlfqR"
   >
     <span
       aria-hidden={true}
@@ -136,5 +135,6 @@ exports[`Storyshots Button With an icon 1`] = `
       role="img"
     />
   </span>
+  Press any key to continue
 </button>
 `;

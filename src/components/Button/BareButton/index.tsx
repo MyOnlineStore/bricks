@@ -13,7 +13,7 @@ type PropsType = {
     icon?: MediumPropsType['icon'];
     iconAlign?: 'right' | 'left';
     id?: string;
-    action?(): void;
+    onClick?(): void;
 };
 
 const ButtonContents: SFC<PropsType> = (props): JSX.Element => (
@@ -38,7 +38,7 @@ const BareButton: SFC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
-        if (props.action !== undefined && props.disabled !== true) props.action();
+        if (props.onClick !== undefined && props.disabled !== true) props.onClick();
     };
 
     if (isLink) {

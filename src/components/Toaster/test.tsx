@@ -29,14 +29,14 @@ describe('Toaster', () => {
         expect(fn).not.toThrow();
     });
 
-    it('should not break when no action is provided', () => {
+    it('should not break when no onClick is provided', () => {
         const component = mountWithTheme(
             <Toaster
                 isOpen={true}
                 severity={'warning'}
                 buttonSeverity={'destructive'}
                 buttonTitle="Bar?"
-                action={undefined}
+                onClick={undefined}
                 title="Foo"
             />,
         );
@@ -60,7 +60,7 @@ describe('Toaster', () => {
                 title="Foo"
                 buttonTitle="Bar?"
                 closeAction={undefined}
-                action={clickMock}
+                onClick={clickMock}
             />,
         );
 

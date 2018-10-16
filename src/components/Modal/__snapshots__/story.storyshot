@@ -30,7 +30,7 @@ exports[`Storyshots Modal Default 1`] = `
             className="sc-bwzfXH ghdkBw"
           >
             <button
-              className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
+              className="sc-gqjmRU FzLHg sc-htoDjs cRzONA"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -112,7 +112,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
+                    className="sc-VigVT eYHbkk sc-htoDjs cRzONA"
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}
@@ -126,7 +126,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-VigVT giFGSD sc-htoDjs enpGLi"
+                    className="sc-VigVT iNFlqA sc-htoDjs cRzONA"
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}
@@ -235,7 +235,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-VigVT dOiqdO sc-htoDjs enpGLi"
+                    className="sc-VigVT eYHbkk sc-htoDjs cRzONA"
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}
@@ -249,7 +249,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-VigVT giFGSD sc-htoDjs enpGLi"
+                    className="sc-VigVT iNFlqA sc-htoDjs cRzONA"
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}

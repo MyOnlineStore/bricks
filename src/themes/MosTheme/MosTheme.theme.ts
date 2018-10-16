@@ -197,33 +197,22 @@ const theme: ThemeType = {
             },
         },
         Cta: {
-            common: {
-                borderRadius: '24px',
+            borderRadius: '24px',
+            backgroundColor: green.darker1,
+            color: silver.lighter1,
+            boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+
+            hover: {
+                backgroundColor: green.darker2,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
-            primary: {
-                color: silver.lighter1,
-                backgroundColor: '#7BCE75',
-                hover: {
-                    backgroundColor: '#6FC268',
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: '#7BCE75',
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(123,206,117,.25)',
-                },
+            focus: {
+                backgroundColor: green.darker1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
             },
-            secondary: {
-                color: grey.darker1,
-                backgroundColor: '#F8CF51',
-                hover: {
-                    backgroundColor: '#F4C343',
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: '#F8CF51',
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
-                },
+            active: {
+                backgroundColor: green.darker2,
+                boxShadow: 'none',
             },
         },
     },

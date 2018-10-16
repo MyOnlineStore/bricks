@@ -82,7 +82,7 @@ class Modal extends Component<PropsType> {
                                             <Button.Plain
                                                 variant="primary"
                                                 title="close"
-                                                action={this.props.closeAction}
+                                                onClick={this.props.closeAction}
                                             >
                                                 <Icon size="small" icon="close" />
                                             </Button.Plain>

@@ -220,7 +220,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             )}
                         <Button.Plain
                             title={this.state.isOpen ? 'close' : 'open'}
-                            action={this.state.isOpen ? this.close : this.open}
+                            onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
                             variant="primary"
                         >

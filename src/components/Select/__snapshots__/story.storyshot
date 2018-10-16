@@ -30,7 +30,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
         </div>
       </div>
       <button
-        className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
+        className="sc-gqjmRU FzLHg sc-htoDjs cRzONA"
         disabled={false}
         id={undefined}
         onClick={[Function]}
@@ -317,7 +317,7 @@ exports[`Storyshots Select Default 1`] = `
         </p>
       </div>
       <button
-        className="sc-gqjmRU gIKjDZ sc-htoDjs enpGLi"
+        className="sc-gqjmRU FzLHg sc-htoDjs cRzONA"
         disabled={false}
         id={undefined}
         onClick={[Function]}
