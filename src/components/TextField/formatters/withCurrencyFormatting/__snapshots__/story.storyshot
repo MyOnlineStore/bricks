@@ -2,7 +2,7 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-  className="sc-eNQAEJ ajvZf"
+  className="sc-eNQAEJ iYCWTZ"
   disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
@@ -45,7 +45,7 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-    className="sc-eNQAEJ ajvZf"
+    className="sc-eNQAEJ iYCWTZ"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
@@ -110,7 +110,7 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-    className="sc-eNQAEJ ajvZf"
+    className="sc-eNQAEJ iYCWTZ"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
@@ -184,7 +184,7 @@ Array [
 
 exports[`Storyshots TextField With Number formatting 1`] = `
 <div
-  className="sc-eNQAEJ ajvZf"
+  className="sc-eNQAEJ iYCWTZ"
   disabled={undefined}
   onBlurCapture={[Function]}
   onClick={[Function]}

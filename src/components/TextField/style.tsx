@@ -41,7 +41,7 @@ type AffixProps = {
 type WrapperProps = {
     focus: boolean;
     disabled?: boolean;
-    feedback: SeverityType;
+    severity: SeverityType;
 };
 
 const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
@@ -94,11 +94,13 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     width: 100%;
     box-sizing: border-box;
 
-    ${({ focus, disabled, feedback, theme }): string =>
-        focus && !disabled
-            ? `box-shadow: ${theme.TextField.severity[feedback].boxShadow}
-            border: solid 1px ${theme.Text.severity[feedback].color}`
+    ${({ focus, severity, theme }): string =>
+        focus
+            ? `border: solid 1px ${theme.Text.severity[severity].color}`
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
+
+    ${({ focus, disabled, severity, theme }): string =>
+        focus && !disabled ? `box-shadow: ${theme.TextField.severity[severity].boxShadow}` : ''};
 
     * {
         cursor: text;
