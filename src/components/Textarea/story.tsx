@@ -45,5 +45,5 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     }
 }
 
-storiesOf('TextArea', module).add('Default', () => <Demo withFeedback={false} />);
-storiesOf('TextArea', module).add('With Feedback', () => <Demo withFeedback />);
+storiesOf('Textarea', module).add('Default', () => <Demo withFeedback={false} />);
+storiesOf('Textarea', module).add('With Feedback', () => <Demo withFeedback />);

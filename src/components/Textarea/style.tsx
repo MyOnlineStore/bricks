@@ -2,11 +2,13 @@ import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
+import SeverityType from '../../types/SeverityType';
 
 type TextareaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
     focus?: boolean;
+    severity: SeverityType;
 };
 
 const StyledTextareaWrapper = withProps<TextareaPropsType>(styled.div)`
@@ -15,14 +17,17 @@ const StyledTextareaWrapper = withProps<TextareaPropsType>(styled.div)`
     display: inline-block;
     width: 100%;
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
-    border: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
 
+        border: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor}
+
+
     &:focus-within {
-        border: solid 1px ${({ theme, disabled }): string =>
-            !disabled ? theme.TextField.focus.borderColor : theme.TextField.idle.common.borderColor};
-            box-shadow: ${({ theme, disabled }): string => (!disabled ? theme.TextField.focus.boxShadow : '')};
+        ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity].color}`};
+
+        ${({ disabled, severity, theme }): string =>
+            !disabled ? `box-shadow: ${theme.TextField.severity[severity].boxShadow}` : ''};
     }
 `;
 

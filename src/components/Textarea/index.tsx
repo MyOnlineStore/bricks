@@ -28,10 +28,14 @@ class Textarea extends Component<PropsType> {
     public render(): JSX.Element {
         return (
             <>
-                <StyledTextareaWrapper disabled={this.props.disabled}>
+                <StyledTextareaWrapper
+                    disabled={this.props.disabled}
+                    severity={this.props.feedback ? this.props.feedback.severity : 'success'}
+                >
                     <StyledTextarea
                         value={this.props.value}
                         rows={this.props.rows ? this.props.rows : 3}
+                        severity={this.props.feedback ? this.props.feedback.severity : 'success'}
                         placeholder={this.props.placeholder}
                         disabled={this.props.disabled}
                         resizeable={this.props.resizeable}
