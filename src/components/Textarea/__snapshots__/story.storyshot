@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots TextArea Default 1`] = `
+<div
+  className="sc-bbmXgH EcreM"
+  disabled={false}
+>
+  <textarea
+    className="sc-gGBfsJ jpKPwY"
+    disabled={false}
+    onChange={[Function]}
+    placeholder={undefined}
+    rows={3}
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots TextArea With Feedback 1`] = `
+Array [
+  <div
+    className="sc-bbmXgH EcreM"
+    disabled={false}
+  >
+    <textarea
+      className="sc-gGBfsJ jpKPwY"
+      disabled={false}
+      onChange={[Function]}
+      placeholder={undefined}
+      rows={3}
+      value=""
+    />
+  </div>,
+  <div
+    className="sc-bwzfXH gKGSfm"
+  >
+    <p
+      className="sc-bxivhb eEGBVx"
+    >
+      <span
+        className="sc-htpNat frObKr"
+      >
+        <span
+          className="sc-htpNat hKonPW"
+        >
+          <span
+            aria-hidden={true}
+            className="sc-iwsKbI jSMqMr"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "test-file-stub",
+              }
+            }
+            role="img"
+          />
+        </span>
+        <span
+          className="sc-htpNat frObKr"
+        >
+          This is a feedback message
+        </span>
+      </span>
+    </p>
+  </div>,
+]
+`;
