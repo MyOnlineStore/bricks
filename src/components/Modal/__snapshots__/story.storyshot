@@ -15,7 +15,7 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-        className="sc-jlyJG bhQyKQ"
+        className="sc-jlyJG cZkCvT"
       >
         <div
           className="sc-bwzfXH jTCciZ"
@@ -53,7 +53,7 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-brqgnP jEhxYZ"
+          className="sc-brqgnP jwrNlU"
         >
           <div
             className="sc-cMljjf krgCXT"
@@ -167,7 +167,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
       }
     >
       <div
-        className="sc-jlyJG bhQyKQ"
+        className="sc-jlyJG cZkCvT"
       >
         <div
           className="sc-bwzfXH jTCciZ"
@@ -180,7 +180,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
           </div>
         </div>
         <div
-          className="sc-brqgnP jEhxYZ"
+          className="sc-brqgnP jwrNlU"
         >
           <div
             className="sc-cMljjf krgCXT"
