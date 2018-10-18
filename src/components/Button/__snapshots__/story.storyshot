@@ -21,7 +21,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-htoDjs cHdbOr"
+            className="sc-htoDjs esfulY"
             color={undefined}
             disabled={false}
             icon={undefined}
@@ -37,7 +37,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-htoDjs fNOjyC"
+            className="sc-htoDjs eDvZhk"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -66,7 +66,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 
 exports[`Storyshots Button With an icon 1`] = `
 <button
-  className="sc-htoDjs feYNYX"
+  className="sc-htoDjs enAVaG"
   color={undefined}
   disabled={false}
   icon="keyboard"
@@ -95,7 +95,7 @@ exports[`Storyshots Button With an icon 1`] = `
 
 exports[`Storyshots Button With text 1`] = `
 <button
-  className="sc-htoDjs fAnDzT"
+  className="sc-htoDjs hanDma"
   color={undefined}
   disabled={false}
   icon={undefined}

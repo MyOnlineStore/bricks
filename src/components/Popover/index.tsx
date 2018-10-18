@@ -27,9 +27,7 @@ class Popover extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
-        this.state = {
-            isOpen: false,
-        };
+        this.state = { isOpen: false };
     }
 
     public static getDerivedStateFromProps(props: PropsType, state: StateType): Partial<StateType> {
@@ -65,21 +63,19 @@ class Popover extends Component<PropsType, StateType> {
             !this.anchorRef.contains(event.target as Node) &&
             !this.popoverRef.contains(event.target as Node)
         ) {
-            this.setState({ isOpen: false });
+            this.togglePopover();
         }
     };
 
     public componentDidMount(): void {
-        if (this.props.isOpen === undefined) {
-            if (this.anchorRef) {
-                this.anchorRef.addEventListener(
-                    this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
-                    this.togglePopover,
-                    false,
-                );
-                if (this.props.triggerOn === 'hover') {
-                    this.anchorRef.addEventListener('mouseleave', this.togglePopover, false);
-                }
+        if (this.props.isOpen === undefined && this.anchorRef) {
+            this.anchorRef.addEventListener(
+                this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
+                this.togglePopover,
+                false,
+            );
+            if (this.props.triggerOn === 'hover') {
+                this.anchorRef.addEventListener('mouseleave', this.togglePopover, false);
             }
         }
 
@@ -87,15 +83,13 @@ class Popover extends Component<PropsType, StateType> {
     }
 
     public componentWillUnmount(): void {
-        if (this.anchorRef) {
-            this.anchorRef.removeEventListener(
-                this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
-                this.togglePopover,
-                false,
-            );
-            if (this.props.triggerOn === 'hover') {
-                this.anchorRef.removeEventListener('mouseleave', this.togglePopover, false);
-            }
+        this.anchorRef.removeEventListener(
+            this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
+            this.togglePopover,
+            false,
+        );
+        if (this.props.triggerOn === 'hover') {
+            this.anchorRef.removeEventListener('mouseleave', this.togglePopover, false);
         }
     }
 
@@ -118,7 +112,6 @@ class Popover extends Component<PropsType, StateType> {
                     </Reference>
                     <TransitionAnimation show={this.state.isOpen} animation="fade">
                         <div
-                            id="jemoeder"
                             ref={(ref): void => {
                                 if (ref) this.popoverRef = ref;
                             }}

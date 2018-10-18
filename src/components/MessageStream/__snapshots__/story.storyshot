@@ -126,7 +126,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-htoDjs fAnDzT"
+            className="sc-htoDjs hanDma"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -184,7 +184,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-htoDjs cXnPMg"
+            className="sc-htoDjs cOfeCS"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -241,7 +241,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-htoDjs gCmkyb"
+            className="sc-htoDjs cUjlqA"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -296,7 +296,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-            className="sc-htoDjs cHdbOr"
+            className="sc-htoDjs esfulY"
             color={undefined}
             disabled={undefined}
             icon={undefined}

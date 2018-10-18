@@ -4,7 +4,6 @@ import { Transition } from 'react-transition-group';
 import TransitionAnimation from '.';
 import fade from './animations/fade';
 import zoom from './animations/zoom';
-import slide from './animations/slide';
 
 describe('TransitionAnimation', () => {
     it('should use the fade animation', () => {
@@ -16,18 +15,6 @@ describe('TransitionAnimation', () => {
 
         /* tslint:disable */
         (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fadeIn .3s both');
-        /* tslint:enable */
-    });
-
-    it('should use the slide animation', () => {
-        const componentIn = shallow(
-            <TransitionAnimation show animation={'slide'}>
-                <div>children</div>
-            </TransitionAnimation>,
-        );
-
-        /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
         /* tslint:enable */
     });
 
@@ -54,11 +41,5 @@ describe('TransitionAnimation/animations', () => {
         expect(fade('entering')).toMatchSnapshot();
         expect(fade('exiting')).toMatchSnapshot();
         expect(fade('exited')).toMatchSnapshot();
-    });
-
-    it('should slide in/out', () => {
-        expect(slide('entering')).toMatchSnapshot();
-        expect(slide('exiting')).toMatchSnapshot();
-        expect(slide('exited')).toMatchSnapshot();
     });
 });

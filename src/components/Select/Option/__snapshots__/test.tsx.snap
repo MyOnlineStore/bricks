@@ -128,6 +128,8 @@ exports[`Option should render 1`] = `
   isSelected={true}
   isTargeted={false}
   label="test"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   <styled.div
     isTargeted={false}

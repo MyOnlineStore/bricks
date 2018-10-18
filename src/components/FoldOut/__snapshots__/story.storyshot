@@ -42,7 +42,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     </div>
   </div>
   <button
-    className="sc-htoDjs eHXLyg"
+    className="sc-htoDjs iSympw"
     color={undefined}
     disabled={undefined}
     icon={undefined}

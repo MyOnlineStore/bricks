@@ -106,6 +106,24 @@ describe('Popover', () => {
         expect(component.state('isOpen')).toBe(false);
     });
 
+    it('should not break when clicked outside the closed popover', () => {
+        const callbackMap: { [key: string]: Function } = {};
+
+        document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
+
+        const component = mountWithTheme(
+            <Popover isOpen={false} distance={6} renderContent={(): string => 'Mock content'} />,
+        );
+
+        callbackMap.mousedown({
+            target: document.createElement('div'),
+        });
+
+        component.update();
+
+        expect(component.state('isOpen')).toBe(false);
+    });
+
     it('adds and removes eventListeners', () => {
         const component = mountWithTheme(
             <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,

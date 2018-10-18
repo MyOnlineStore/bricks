@@ -81,18 +81,18 @@ type ButtonPropsType = {
 };
 
 const StyledButton = withProps<ButtonPropsType>(styled.button)`
-    border: none;
-    outline: none;
-    line-height: 1;
-    cursor: pointer;
-    appearance: none;
-    user-select: none;
     position: relative;
-    text-decoration: none;
+    appearance: none;
+    border: none;
+    line-height: 1;
+    padding: ${({ compact }): string => (compact ? '11px 12px' : '11px 24px')};
+    cursor: pointer;
     display: inline-block;
+    outline: none;
     transform: translateZ(0) translate3d(0, 0, 0);
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
-    padding: ${({ compact }): string => (compact ? '11px 12px' : '11px 24px')};
+    user-select: none;
+    text-decoration: none;
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};
     border-radius: ${({ theme }): string => theme.Button.common.borderRadius};
@@ -147,15 +147,15 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     }
 
     &::before {
-        top: 0;
+        position: absolute;
+        display: block;
         left: 0;
+        top: 0;
         right: 0;
         bottom: 0;
-        opacity: 0;
         z-index: -2;
         content: '';
-        display: block;
-        position: absolute;
+        opacity: 0;
         transition: opacity 0.3s;
         background: ${({ theme, flat }): string =>
             !flat
@@ -176,14 +176,14 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     }
 
     &:disabled {
-        opacity: 0.7;
-        cursor: default;
-        transform: none;
-        box-shadow: none;
-        border-color: transparent;
-        color: ${({ theme }): string => theme.Button.disabled.regular.color};
         background: ${({ theme, flat }): string =>
             !flat ? theme.Button.disabled.regular.backgroundColor : theme.Button.disabled.flat.backgroundColor};
+        border-color: transparent;
+        cursor: default;
+        opacity: 0.7;
+        transform: none;
+        color: ${({ theme }): string => theme.Button.disabled.regular.color};
+        box-shadow: none;
 
         &::before {
             opacity: 1;

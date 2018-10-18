@@ -30,7 +30,7 @@ exports[`Storyshots Modal Default 1`] = `
             className="sc-bwzfXH ghdkBw"
           >
             <button
-              className="sc-htoDjs flaPve"
+              className="sc-htoDjs gZvvaB"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -114,7 +114,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-htoDjs fAnDzT"
+                    className="sc-htoDjs hanDma"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
@@ -130,7 +130,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-htoDjs gKbNMP"
+                    className="sc-htoDjs jUcpnH"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
@@ -241,7 +241,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-htoDjs fAnDzT"
+                    className="sc-htoDjs hanDma"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
@@ -257,7 +257,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-                    className="sc-htoDjs gKbNMP"
+                    className="sc-htoDjs jUcpnH"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
