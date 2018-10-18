@@ -30,7 +30,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
         </div>
       </div>
       <button
-        className="sc-htoDjs gZvvaB"
+        className="sc-htoDjs flaPve"
         color={undefined}
         disabled={false}
         icon={undefined}
@@ -319,7 +319,7 @@ exports[`Storyshots Select Default 1`] = `
         </p>
       </div>
       <button
-        className="sc-htoDjs gZvvaB"
+        className="sc-htoDjs flaPve"
         color={undefined}
         disabled={false}
         icon={undefined}

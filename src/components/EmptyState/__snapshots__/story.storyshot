@@ -77,7 +77,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       </p>
     </div>
     <button
-      className="sc-htoDjs hanDma"
+      className="sc-htoDjs fAnDzT"
       color={undefined}
       disabled={undefined}
       icon={undefined}
