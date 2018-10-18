@@ -5,13 +5,14 @@ const slide = (state: AnimationStateType): string => {
         case 'exiting':
             return `
             @keyframes slideOut {
-                from {
+                0% {
                     transform: translate3d(0, 0, 0);
+                    opacity: 1;
                 }
-
-                to {
+                100% {
+                    opacity: 0;
                     visibility: hidden;
-                    transform: translate3d(0, 100%, 0);
+                    transform: translate3d(0, -100%, 0);
                 }
             }
 
@@ -25,13 +26,12 @@ const slide = (state: AnimationStateType): string => {
         default:
             return `
             @keyframes slideIn {
-
-                from {
+                0% {
                     transform: translate3d(0, -100%, 0);
-                    visibility: visible;
+                    opacity: 0;
                 }
-
-                to {
+                100% {
+                    opacity: 1;
                     transform: translate3d(0, 0, 0);
                 }
             }
