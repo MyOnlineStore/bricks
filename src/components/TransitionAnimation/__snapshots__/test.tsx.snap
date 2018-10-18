@@ -28,6 +28,48 @@ exports[`TransitionAnimation/animations should fade in/out 3`] = `
         "
 `;
 
+exports[`TransitionAnimation/animations should slide in/out 1`] = `
+"
+            @keyframes slideIn {
+                0% {
+                    transform: translate3d(0, -100%, 0);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            animation: slideIn .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide in/out 2`] = `
+"
+            @keyframes slideOut {
+                0% {
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translate3d(0, -100%, 0);
+                }
+            }
+
+            animation: slideOut .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide in/out 3`] = `
+"
+            opacity: 0;
+            transform: translate3d(0, 0, 0);
+        "
+`;
+
 exports[`TransitionAnimation/animations should zoom in/out 1`] = `
 "
             @keyframes zoomIn {
