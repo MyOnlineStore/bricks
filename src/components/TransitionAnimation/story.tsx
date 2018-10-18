@@ -20,7 +20,7 @@ storiesOf('TransitionAnimation', module).add('Default', () => {
         <Box direction="column" alignItems="center">
             <TransitionAnimation
                 show={show}
-                animation={select('animation', ['zoom', 'fade'], 'zoom') as PropsType['animation']}
+                animation={select('animation', ['zoom', 'fade', 'slide'], 'zoom') as PropsType['animation']}
             >
                 <StyledDiv>
                     <Heading>Lorem ipsum</Heading>
