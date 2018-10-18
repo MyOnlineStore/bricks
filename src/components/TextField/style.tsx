@@ -44,7 +44,11 @@ type WrapperProps = {
     severity: SeverityType;
 };
 
-const StyledInput = withProps<WrapperProps, HTMLInputElement>(styled.input)`
+type InputProps = {
+    disabled?: boolean;
+};
+
+const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
     background: ${({ theme, disabled }): string =>

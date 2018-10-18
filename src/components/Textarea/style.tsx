@@ -4,10 +4,14 @@ import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 
+type TextareaWrapperPropsType = {
+    disabled?: boolean;
+    severity: SeverityType;
+};
+
 type TextareaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
-    severity: SeverityType;
 };
 
 type TextareaThemeType = {
@@ -32,7 +36,7 @@ type TextareaThemeType = {
     };
 };
 
-const StyledTextareaWrapper = withProps<TextareaPropsType>(styled.div)`
+const StyledTextareaWrapper = withProps<TextareaWrapperPropsType>(styled.div)`
     width: 100%;
     padding: 6px 12px;
     box-sizing: border-box;

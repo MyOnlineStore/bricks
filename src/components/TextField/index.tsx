@@ -56,14 +56,12 @@ class TextField extends Component<PropsType, StateType> {
     };
 
     public render(): JSX.Element {
-        const severity = this.props.feedback ? this.props.feedback.severity : 'success';
-
         return (
             <>
                 <StyledWrapper
                     focus={this.state.focus}
                     disabled={this.props.disabled}
-                    severity={severity}
+                    severity={this.props.feedback ? this.props.feedback.severity : 'success'}
                     onFocusCapture={this.handleFocus}
                     onBlurCapture={this.handleBlur}
                     onClick={this.handleFocus}
@@ -77,10 +75,8 @@ class TextField extends Component<PropsType, StateType> {
                         type={this.props.type ? this.props.type : 'text'}
                         name={this.props.name}
                         disabled={this.props.disabled}
-                        severity={severity}
                         value={this.props.value}
                         id={this.props.id}
-                        focus={this.state.focus}
                         onChange={this.onChange}
                         onFocus={this.handleFocus}
                         onBlur={this.handleBlur}

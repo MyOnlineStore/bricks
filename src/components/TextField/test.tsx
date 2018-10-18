@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import { StyledInput } from './style';
+import { StyledInput, StyledWrapper } from './style';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -33,7 +33,7 @@ describe('TextField', () => {
 
         component.find(StyledInput).simulate('focus');
 
-        expect(component.find(StyledInput).prop('focus')).toBe(true);
+        expect(component.find(StyledWrapper).prop('focus')).toBe(true);
     });
 
     it('should handle a change', () => {

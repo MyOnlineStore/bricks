@@ -25,17 +25,17 @@ class Textarea extends Component<PropsType> {
     };
 
     public render(): JSX.Element {
-        const severity = this.props.feedback ? this.props.feedback.severity : 'success';
-
         return (
             <>
-                <StyledTextareaWrapper disabled={this.props.disabled} severity={severity}>
+                <StyledTextareaWrapper
+                    disabled={this.props.disabled}
+                    severity={this.props.feedback ? this.props.feedback.severity : 'success'}
+                >
                     <StyledTextarea
                         value={this.props.value}
                         name={this.props.name}
                         id={this.props.id}
                         rows={this.props.rows ? this.props.rows : 3}
-                        severity={severity}
                         disabled={this.props.disabled}
                         resizeable={this.props.resizeable}
                         onChange={this.onChange}
