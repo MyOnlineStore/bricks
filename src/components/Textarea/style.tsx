@@ -7,46 +7,60 @@ import SeverityType from '../../types/SeverityType';
 type TextareaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
-    focus?: boolean;
     severity: SeverityType;
 };
 
+type TextareaThemeType = {
+    idle: {
+        common: {
+            borderRadius: string;
+            borderColor: string;
+            fontSize: string;
+            fontFamily: string;
+            background: string;
+        };
+    };
+    severity: {
+        error: { boxShadow: string };
+        success: { boxShadow: string };
+        info: { boxShadow: string };
+        warning: { boxShadow: string };
+    };
+    disabled: {
+        color: string;
+        background: string;
+    };
+};
+
 const StyledTextareaWrapper = withProps<TextareaPropsType>(styled.div)`
-    box-sizing: border-box;
-    padding: 12px;
-    display: inline-block;
     width: 100%;
-    border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border: solid 1px ${({ theme }): string => theme.Textarea.idle.common.borderColor}
+    border-radius: ${({ theme }): string => theme.Textarea.idle.common.borderRadius};
     background: ${({ theme, disabled }): string =>
-        disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
-
-        border: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor}
-
+        disabled ? theme.Textarea.disabled.background : theme.Textarea.idle.common.background};
 
     &:focus-within {
         ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity].color}`};
-
         ${({ disabled, severity, theme }): string =>
-            !disabled ? `box-shadow: ${theme.TextField.severity[severity].boxShadow}` : ''};
+            !disabled ? `box-shadow: ${theme.Textarea.severity[severity].boxShadow}` : ''};
     }
 `;
 
 const StyledTextarea = withProps<TextareaPropsType>(styled.textarea)`
+    padding: 0;
     width: 100%;
     border: none;
-    background: transparent
-    font-size: inherit;
-    ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
-    line-height: 1.572;
     outline: none;
-    ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextField.disabled.color}` : '')}
-    font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
-    font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
-    display: flex;
-    position: relative;
+    line-height: 1.572;
+    background: transparent;
     transition: border-color 100ms, box-shadow 100ms;
-    padding: 0;
+    font-size: ${({ theme }): string => theme.Textarea.idle.common.fontSize};
+    font-family: ${({ theme }): string => theme.Textarea.idle.common.fontFamily};
+    ${({ theme, disabled }): string => (disabled ? `color: ${theme.Textarea.disabled.color}` : '')}
+    ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
 `;
 
 export default StyledTextarea;
-export { TextareaPropsType, StyledTextarea, StyledTextareaWrapper };
+export { TextareaPropsType, StyledTextarea, StyledTextareaWrapper, TextareaThemeType };

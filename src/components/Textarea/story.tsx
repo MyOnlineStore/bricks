@@ -14,19 +14,17 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     public constructor(props: DemoPropsType) {
         super(props);
 
-        this.state = {
-            value: '',
-        };
+        this.state = { value: '' };
     }
 
     public render(): JSX.Element {
         return (
             <Textarea
-                disabled={boolean('disabled', false)}
-                value={this.state.value}
-                rows={number('rows', 3)}
-                resizeable={boolean('resizeable', false)}
                 name="description"
+                rows={number('rows', 3)}
+                value={this.state.value}
+                disabled={boolean('disabled', false)}
+                resizeable={boolean('resizeable', false)}
                 onChange={(value: string): void => this.setState({ value })}
                 feedback={
                     this.props.withFeedback

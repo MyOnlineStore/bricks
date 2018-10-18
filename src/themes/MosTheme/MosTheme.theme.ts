@@ -740,6 +740,30 @@ const theme: ThemeType = {
             warning: { color: yellow.darker2 },
         },
     },
+    Textarea: {
+        idle: {
+            common: {
+                borderRadius: roundness.base,
+                borderColor: silver.darker4,
+                fontSize: fontSize.base,
+                fontFamily: bodyFont,
+                background: silver.lighter1,
+            },
+        },
+        severity: {
+            error: { boxShadow: '0 0 0 4px rgba(200,23,70,0.4)' },
+            success: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
+            info: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
+            warning: { boxShadow: '0 0 0 4px rgba(237,177,7,0.4)' },
+        },
+
+        disabled: {
+            color: grey.lighter2,
+            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 10px,${silver.darker1} 10px,${
+                silver.darker1
+            } 20px )`,
+        },
+    },
     TextField: {
         idle: {
             common: {
@@ -773,6 +797,7 @@ const theme: ThemeType = {
             } 20px )`,
         },
     },
+
     Tile: {
         borderColor: silver.darker4,
     },

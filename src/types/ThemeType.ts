@@ -17,6 +17,7 @@ import { RangeThemeType } from '../components/Range/style';
 import { ScrollBoxThemeType } from '../components/ScrollBox/style';
 import { TableThemeType } from '../components/Table/style';
 import { TextThemeType } from '../components/Text/style';
+import { TextareaThemeType } from '../components/Textarea/style';
 import { TextFieldThemeType } from '../components/TextField/style';
 import { TileThemeType } from '../components/Tile';
 import { ToasterThemeType } from '../components/Toaster/style';
@@ -45,6 +46,7 @@ type ThemeType = {
     Skeleton: SkeletonThemeType;
     Table: TableThemeType;
     Text: TextThemeType;
+    Textarea: TextareaThemeType;
     TextField: TextFieldThemeType;
     Tile: TileThemeType;
     Toaster: ToasterThemeType;
