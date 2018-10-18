@@ -54,9 +54,11 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
+        component.simulate('focus');
         component.simulate('keyDown', {
             key: ' ',
         });
+        component.simulate('blur');
 
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 

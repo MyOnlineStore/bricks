@@ -19,13 +19,16 @@ type StateType = {
 };
 
 const Option: SFC<PropsType> = (props): JSX.Element => {
-    /* tslint:disable:no-invalid-this */
-    const onClick = props.onClick.bind(this);
-    const mouseEnter = props.onMouseEnter.bind(this);
-    /* tslint:enable:no-invalid-this */
+    const clickAction = (): void => {
+        props.onClick();
+    };
+
+    const hoverAction = (): void => {
+        props.onMouseEnter();
+    };
 
     return (
-        <StyledOption isTargeted={props.isTargeted} onClick={onClick} onMouseEnter={mouseEnter}>
+        <StyledOption isTargeted={props.isTargeted} onClick={clickAction} onMouseEnter={hoverAction}>
             <Box padding={trbl(6, 18)}>
                 {(props.content !== undefined && props.content) || (
                     <Box padding={trbl(6, 18)} alignItems="center" inline>
