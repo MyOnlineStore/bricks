@@ -4,7 +4,10 @@ import { Transition } from 'react-transition-group';
 import TransitionAnimation from '.';
 import fade from './animations/fade';
 import zoom from './animations/zoom';
-import slide from './animations/slide';
+import slideUp from './animations/slideUp';
+import slideDown from './animations/slideDown';
+import slideLeft from './animations/slideLeft';
+import slideRight from './animations/slideRight';
 
 describe('TransitionAnimation', () => {
     it('should use the fade animation', () => {
@@ -19,9 +22,45 @@ describe('TransitionAnimation', () => {
         /* tslint:enable */
     });
 
-    it('should use the slide animation', () => {
+    it('should use the slide up animation', () => {
         const componentIn = shallow(
-            <TransitionAnimation show animation={'slide'}>
+            <TransitionAnimation show animation="slideUp">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
+
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
+
+    it('should use the slide down animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideDown">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
+
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
+
+    it('should use the slide left animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideLeft">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
+
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
+
+    it('should use the slide right animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideRight">
                 <div>children</div>
             </TransitionAnimation>,
         );
@@ -56,9 +95,27 @@ describe('TransitionAnimation/animations', () => {
         expect(fade('exited')).toMatchSnapshot();
     });
 
-    it('should slide in/out', () => {
-        expect(slide('entering')).toMatchSnapshot();
-        expect(slide('exiting')).toMatchSnapshot();
-        expect(slide('exited')).toMatchSnapshot();
+    it('should slide up', () => {
+        expect(slideUp('entering')).toMatchSnapshot();
+        expect(slideUp('exiting')).toMatchSnapshot();
+        expect(slideUp('exited')).toMatchSnapshot();
+    });
+
+    it('should slide down', () => {
+        expect(slideDown('entering')).toMatchSnapshot();
+        expect(slideDown('exiting')).toMatchSnapshot();
+        expect(slideDown('exited')).toMatchSnapshot();
+    });
+
+    it('should slide left', () => {
+        expect(slideLeft('entering')).toMatchSnapshot();
+        expect(slideLeft('exiting')).toMatchSnapshot();
+        expect(slideLeft('exited')).toMatchSnapshot();
+    });
+
+    it('should slide right', () => {
+        expect(slideRight('entering')).toMatchSnapshot();
+        expect(slideRight('exiting')).toMatchSnapshot();
+        expect(slideRight('exited')).toMatchSnapshot();
     });
 });

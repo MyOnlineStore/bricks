@@ -28,15 +28,13 @@ exports[`TransitionAnimation/animations should fade in/out 3`] = `
         "
 `;
 
-exports[`TransitionAnimation/animations should slide in/out 1`] = `
+exports[`TransitionAnimation/animations should slide down 1`] = `
 "
             @keyframes slideIn {
                 0% {
-                    transform: translate3d(0, -100%, 0);
-                    opacity: 0;
+                    transform: translate3d(0, -150%, 0);
                 }
                 100% {
-                    opacity: 1;
                     transform: translate3d(0, 0, 0);
                 }
             }
@@ -45,17 +43,15 @@ exports[`TransitionAnimation/animations should slide in/out 1`] = `
         "
 `;
 
-exports[`TransitionAnimation/animations should slide in/out 2`] = `
+exports[`TransitionAnimation/animations should slide down 2`] = `
 "
             @keyframes slideOut {
                 0% {
                     transform: translate3d(0, 0, 0);
-                    opacity: 1;
                 }
                 100% {
-                    opacity: 0;
                     visibility: hidden;
-                    transform: translate3d(0, -100%, 0);
+                    transform: translate3d(0, -150%, 0);
                 }
             }
 
@@ -63,9 +59,119 @@ exports[`TransitionAnimation/animations should slide in/out 2`] = `
         "
 `;
 
-exports[`TransitionAnimation/animations should slide in/out 3`] = `
+exports[`TransitionAnimation/animations should slide down 3`] = `
 "
-            opacity: 0;
+            transform: translate3d(0, 0, 0);
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide left 1`] = `
+"
+            @keyframes slideIn {
+                0% {
+                    transform: translate3d(-150%, 0, 0);
+                }
+                100% {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            animation: slideIn .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide left 2`] = `
+"
+            @keyframes slideOut {
+                0% {
+                    transform: translate3d(0, 0, 0);
+                }
+                100% {
+                    visibility: hidden;
+                    transform: translate3d(-150%, 0, 0);
+                }
+            }
+
+            animation: slideOut .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide left 3`] = `
+"
+            transform: translate3d(0, 0, 0);
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide right 1`] = `
+"
+            @keyframes slideIn {
+                0% {
+                    transform: translate3d(150%, 0, 0);
+                }
+                100% {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            animation: slideIn .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide right 2`] = `
+"
+            @keyframes slideOut {
+                0% {
+                    transform: translate3d(0, 0, 0);
+                }
+                100% {
+                    visibility: hidden;
+                    transform: translate3d(150%, 0, 0);
+                }
+            }
+
+            animation: slideOut .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide right 3`] = `
+"
+            transform: translate3d(0, 0, 0);
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide up 1`] = `
+"
+            @keyframes slideIn {
+                0% {
+                    transform: translate3d(0, 150%, 0);
+                }
+                100% {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            animation: slideIn .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide up 2`] = `
+"
+            @keyframes slideOut {
+                0% {
+                    transform: translate3d(0, 0, 0);
+                }
+                100% {
+                    transform: translate3d(0, 150%, 0);
+                    visibility: hidden;
+                }
+            }
+
+            animation: slideOut .3s both;
+        "
+`;
+
+exports[`TransitionAnimation/animations should slide up 3`] = `
+"
             transform: translate3d(0, 0, 0);
         "
 `;
