@@ -13,6 +13,7 @@ describe('Button', () => {
         );
         expect(component.find('a').text()).toEqual('Foo Bar');
     });
+
     it('should render a disabled state', () => {
         const clickMock = jest.fn();
 
@@ -71,7 +72,7 @@ describe('Button', () => {
     it('should have less side padding when compact is true', () => {
         const component = mount(
             <MosTheme>
-                <Button title="button2 title" variant="primary" compact />
+                <Button title="button title" variant="primary" compact />
             </MosTheme>,
         );
 

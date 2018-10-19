@@ -1,10 +1,8 @@
-import _R, { ComponentClass } from 'react';
+import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
-import BareButton, { PropsType as BareButtonPropsType } from './BareButton';
-
-type WithStyledCtaType = ComponentClass<BareButtonPropsType>;
+import BareButton from './BareButton';
 
 const StyledCta = styled(BareButton)`
     ${({ theme }): string => {
@@ -34,4 +32,3 @@ const StyledCta = styled(BareButton)`
 `;
 
 export default StyledCta;
-export { WithStyledCtaType };

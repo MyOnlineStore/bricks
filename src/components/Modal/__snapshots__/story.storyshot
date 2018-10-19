@@ -30,7 +30,7 @@ exports[`Storyshots Modal Default 1`] = `
             className="sc-bwzfXH ghdkBw"
           >
             <button
-              className="sc-gqjmRU FzLHg sc-htoDjs hXMUTL"
+              className="sc-gqjmRU gIKjDZ sc-htoDjs hXMUTL"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}

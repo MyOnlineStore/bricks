@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MediumPropsType } from '../Icon';
-import StyledCta, { WithStyledCtaType } from './styleCta';
-import StyledPlain, { WithStyledPlainType } from './stylePlain';
+import StyledCta from './styleCta';
+import StyledPlain from './stylePlain';
 import StyledDefault from './styleDefault';
 
 type PropsType = {
@@ -19,8 +19,8 @@ type PropsType = {
 };
 
 class Button extends Component<PropsType> {
-    public static Cta: WithStyledCtaType = StyledCta;
-    public static Plain: WithStyledPlainType = StyledPlain;
+    public static Cta: typeof StyledCta = StyledCta;
+    public static Plain: typeof StyledPlain = StyledPlain;
 
     public render(): JSX.Element {
         return <StyledDefault {...this.props} />;

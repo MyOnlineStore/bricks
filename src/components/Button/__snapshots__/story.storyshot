@@ -101,7 +101,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 
 exports[`Storyshots Button Plain 1`] = `
 <button
-  className="sc-gqjmRU FzLHg sc-htoDjs hXMUTL"
+  className="sc-gqjmRU gIKjDZ sc-htoDjs hXMUTL"
   disabled={undefined}
   id={undefined}
   onClick={[Function]}
