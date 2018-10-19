@@ -1,5 +1,5 @@
 import React, { Component, ChangeEvent } from 'react';
-import StyledTextarea, { StyledTextareaWrapper } from './style';
+import StyledTextArea, { StyledTextAreaWrapper } from './style';
 import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
@@ -19,7 +19,7 @@ type PropsType = {
     onChange(value: string, event: ChangeEvent<HTMLTextAreaElement>): void;
 };
 
-class Textarea extends Component<PropsType> {
+class TextArea extends Component<PropsType> {
     public onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
         if (!this.props.disabled) this.props.onChange(event.target.value, event);
     };
@@ -27,11 +27,11 @@ class Textarea extends Component<PropsType> {
     public render(): JSX.Element {
         return (
             <>
-                <StyledTextareaWrapper
+                <StyledTextAreaWrapper
                     disabled={this.props.disabled}
                     severity={this.props.feedback ? this.props.feedback.severity : 'success'}
                 >
-                    <StyledTextarea
+                    <StyledTextArea
                         value={this.props.value}
                         name={this.props.name}
                         id={this.props.id}
@@ -40,7 +40,7 @@ class Textarea extends Component<PropsType> {
                         resizeable={this.props.resizeable}
                         onChange={this.onChange}
                     />
-                </StyledTextareaWrapper>
+                </StyledTextAreaWrapper>
                 {this.props.feedback && (
                     <Box margin={trbl(6, 0, 0, 12)}>
                         <InlineNotification
@@ -55,5 +55,5 @@ class Textarea extends Component<PropsType> {
     }
 }
 
-export default Textarea;
-export { PropsType, StyledTextarea };
+export default TextArea;
+export { PropsType, StyledTextArea };

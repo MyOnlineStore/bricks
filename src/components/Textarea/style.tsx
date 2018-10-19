@@ -4,17 +4,17 @@ import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 
-type TextareaWrapperPropsType = {
+type TextAreaWrapperPropsType = {
     disabled?: boolean;
     severity: SeverityType;
 };
 
-type TextareaPropsType = {
+type TextAreaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
 };
 
-type TextareaThemeType = {
+type TextAreaThemeType = {
     idle: {
         common: {
             borderRadius: string;
@@ -36,23 +36,23 @@ type TextareaThemeType = {
     };
 };
 
-const StyledTextareaWrapper = withProps<TextareaWrapperPropsType>(styled.div)`
+const StyledTextAreaWrapper = withProps<TextAreaWrapperPropsType>(styled.div)`
     width: 100%;
     padding: 6px 12px;
     box-sizing: border-box;
-    border: solid 1px ${({ theme }): string => theme.Textarea.idle.common.borderColor}
-    border-radius: ${({ theme }): string => theme.Textarea.idle.common.borderRadius};
+    border: solid 1px ${({ theme }): string => theme.TextArea.idle.common.borderColor}
+    border-radius: ${({ theme }): string => theme.TextArea.idle.common.borderRadius};
     background: ${({ theme, disabled }): string =>
-        disabled ? theme.Textarea.disabled.background : theme.Textarea.idle.common.background};
+        disabled ? theme.TextArea.disabled.background : theme.TextArea.idle.common.background};
 
     &:focus-within {
         ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity].color}`};
         ${({ disabled, severity, theme }): string =>
-            !disabled ? `box-shadow: ${theme.Textarea.severity[severity].boxShadow}` : ''};
+            !disabled ? `box-shadow: ${theme.TextArea.severity[severity].boxShadow}` : ''};
     }
 `;
 
-const StyledTextarea = withProps<TextareaPropsType>(styled.textarea)`
+const StyledTextArea = withProps<TextAreaPropsType>(styled.textarea)`
     padding: 0;
     width: 100%;
     border: none;
@@ -60,11 +60,11 @@ const StyledTextarea = withProps<TextareaPropsType>(styled.textarea)`
     line-height: 1.572;
     background: transparent;
     transition: border-color 100ms, box-shadow 100ms;
-    font-size: ${({ theme }): string => theme.Textarea.idle.common.fontSize};
-    font-family: ${({ theme }): string => theme.Textarea.idle.common.fontFamily};
-    ${({ theme, disabled }): string => (disabled ? `color: ${theme.Textarea.disabled.color}` : '')}
+    font-size: ${({ theme }): string => theme.TextArea.idle.common.fontSize};
+    font-family: ${({ theme }): string => theme.TextArea.idle.common.fontFamily};
+    ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextArea.disabled.color}` : '')}
     ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
 `;
 
-export default StyledTextarea;
-export { TextareaPropsType, StyledTextarea, StyledTextareaWrapper, TextareaThemeType };
+export default StyledTextArea;
+export { TextAreaPropsType, StyledTextArea, StyledTextAreaWrapper, TextAreaThemeType };

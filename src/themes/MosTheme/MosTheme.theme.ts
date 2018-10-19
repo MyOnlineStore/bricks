@@ -740,7 +740,7 @@ const theme: ThemeType = {
             warning: { color: yellow.darker2 },
         },
     },
-    Textarea: {
+    TextArea: {
         idle: {
             common: {
                 borderRadius: roundness.base,

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SeverityType from '../../types/SeverityType';
 import { select, text, boolean, number } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
-import Textarea from '.';
+import TextArea from '.';
 
 type DemoPropsType = {
     withFeedback: boolean;
@@ -19,7 +19,7 @@ class Demo extends Component<DemoPropsType, { value: string }> {
 
     public render(): JSX.Element {
         return (
-            <Textarea
+            <TextArea
                 name="description"
                 rows={number('rows', 3)}
                 value={this.state.value}
@@ -43,5 +43,5 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     }
 }
 
-storiesOf('Textarea', module).add('Default', () => <Demo withFeedback={false} />);
-storiesOf('Textarea', module).add('With Feedback', () => <Demo withFeedback />);
+storiesOf('TextArea', module).add('Default', () => <Demo withFeedback={false} />);
+storiesOf('TextArea', module).add('With Feedback', () => <Demo withFeedback />);
