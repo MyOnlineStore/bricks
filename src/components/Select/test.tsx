@@ -5,6 +5,7 @@ import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
 import Text from '../Text';
+import { mosTheme } from '../../themes/MosTheme';
 
 const options = [
     {
@@ -54,11 +55,9 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('focus');
         component.simulate('keyDown', {
             key: ' ',
         });
-        component.simulate('blur');
 
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
@@ -68,6 +67,28 @@ describe('Select', () => {
         });
 
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
+    });
+
+    it('should show focus when the select is open', () => {
+        const component = mountWithTheme(
+            <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
+        );
+
+        component.simulate('focus');
+
+        /* tslint:disable:no-any */
+        (expect(component.find(StyledInput)) as any).toHaveStyleRule(
+            'border',
+            `solid 1px ${mosTheme.Select.wrapper.focus.borderColor}`,
+        );
+
+        component.simulate('blur');
+
+        (expect(component.find(StyledInput)) as any).toHaveStyleRule(
+            'border',
+            `solid 1px ${mosTheme.Select.input.borderColor}`,
+        );
+        /* tslint:enable:no-any */
     });
 
     it('should open the arrowDown or arrowUp is pressed and close when escape is pressed', () => {

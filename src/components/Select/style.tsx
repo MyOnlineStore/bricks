@@ -55,6 +55,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     position: relative;
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
+    box-shadow: none;
 
     &:before {
         content: '';
