@@ -15,7 +15,7 @@ exports[`Storyshots MultiButton Default 1`] = `
           className="sc-bwzfXH cAZkVZ"
         >
           <button
-            className="sc-hzDkRC bCmsqU sc-VigVT jpssvu sc-htoDjs cRzONA"
+            className="sc-hzDkRC bCmsqU sc-VigVT jpssvu sc-htoDjs hXMUTL"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -29,7 +29,7 @@ exports[`Storyshots MultiButton Default 1`] = `
             </span>
           </button>
           <button
-            className="sc-jhAzac dDBNeq sc-VigVT fGIQgf sc-htoDjs cRzONA"
+            className="sc-jhAzac dDBNeq sc-VigVT fGIQgf sc-htoDjs hXMUTL"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}

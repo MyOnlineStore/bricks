@@ -42,7 +42,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     </div>
   </div>
   <button
-    className="sc-VigVT jpssvu sc-htoDjs cRzONA"
+    className="sc-VigVT jpssvu sc-htoDjs hXMUTL"
     disabled={undefined}
     id={undefined}
     onClick={[Function]}
