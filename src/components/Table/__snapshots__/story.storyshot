@@ -17,7 +17,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb gTyNSX"
+              className="sc-bxivhb gAVOHP"
             >
               <span
                 aria-hidden={true}
@@ -40,7 +40,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb gTyNSX"
+              className="sc-bxivhb gAVOHP"
             >
               Header B
             </p>
@@ -53,7 +53,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb gTyNSX"
+              className="sc-bxivhb gAVOHP"
             >
               Header C
             </p>
@@ -66,7 +66,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <p
-              className="sc-bxivhb gTyNSX"
+              className="sc-bxivhb gAVOHP"
             >
               Actions
             </p>
@@ -86,7 +86,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -109,7 +109,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A1
             </p>
@@ -124,7 +124,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B1
             </p>
@@ -139,7 +139,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C1
             </p>
@@ -205,7 +205,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -228,7 +228,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A2
             </p>
@@ -243,7 +243,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B2
             </p>
@@ -258,7 +258,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C2
             </p>
@@ -324,7 +324,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -347,7 +347,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A3
             </p>
@@ -362,7 +362,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B3
             </p>
@@ -377,7 +377,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C3
             </p>
@@ -443,7 +443,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -466,7 +466,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A4
             </p>
@@ -481,7 +481,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B4
             </p>
@@ -496,7 +496,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C4
             </p>
@@ -562,7 +562,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -585,7 +585,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A5
             </p>
@@ -600,7 +600,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B5
             </p>
@@ -615,7 +615,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C5
             </p>
@@ -681,7 +681,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -704,7 +704,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A6
             </p>
@@ -719,7 +719,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B6
             </p>
@@ -734,7 +734,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C6
             </p>
@@ -800,7 +800,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -823,7 +823,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A7
             </p>
@@ -838,7 +838,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B7
             </p>
@@ -853,7 +853,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C7
             </p>
@@ -919,7 +919,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -942,7 +942,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A8
             </p>
@@ -957,7 +957,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B8
             </p>
@@ -972,7 +972,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C8
             </p>
@@ -1038,7 +1038,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -1061,7 +1061,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A9
             </p>
@@ -1076,7 +1076,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B9
             </p>
@@ -1091,7 +1091,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C9
             </p>
@@ -1157,7 +1157,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             <span
               aria-hidden={true}
@@ -1180,7 +1180,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               A10
             </p>
@@ -1195,7 +1195,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               B10
             </p>
@@ -1210,7 +1210,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-              className="sc-bxivhb jpexxn"
+              className="sc-bxivhb fpMQQD"
             >
               C10
             </p>

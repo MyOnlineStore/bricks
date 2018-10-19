@@ -95,14 +95,14 @@ const renderSelected = (option: DemoOptionType): JSX.Element => {
                 </Box>
                 <Box direction="column">
                     <Text>{option.label}</Text>
-                    <Text descriptive>{option.description}</Text>
+                    <Text severity="info">{option.description}</Text>
                 </Box>
             </Box>
         );
     } else {
         return (
             <Box direction="row" alignItems="center">
-                <Text descriptive>{'Make a selection'}</Text>
+                <Text severity="info">{'Make a selection'}</Text>
             </Box>
         );
     }
@@ -115,16 +115,16 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <img src={option.image} />
             </Box>
             <Box direction="column">
-                <Text descriptive={optionState.isSelected}>
+                <Text severity={optionState.isSelected ? 'info' : 'default'}>
                     {optionState.isSelected && (
-                        <Text inline descriptive>
+                        <Text inline severity="info">
                             <Icon size="small" icon="checkmark" />
                             &nbsp;&nbsp;
                         </Text>
                     )}
                     {option.label}
                 </Text>
-                <Text descriptive>{option.description}</Text>
+                <Text severity="info">{option.description}</Text>
             </Box>
         </Box>
     );

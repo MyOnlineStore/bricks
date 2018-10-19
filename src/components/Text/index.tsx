@@ -1,16 +1,14 @@
 import React, { SFC } from 'react';
 import { StyledType } from '../../utility/styled';
 import { StyledSpan, StyledParagraph } from './style';
-import SeverityType from '../../types/SeverityType';
 
 type PropsType = StyledType & {
+    variant?: 'small' | 'regular' | 'large' | 'XL' | 'display';
+    severity?: 'default' | 'error' | 'success' | 'info' | 'warning';
+    textAlign?: 'left' | 'right' | 'center' | 'justify';
     compact?: boolean;
-    descriptive?: boolean;
     strong?: boolean;
     inline?: boolean;
-    variant?: 'small' | 'base' | 'large';
-    textAlign?: 'left' | 'right' | 'center' | 'justify';
-    severity?: SeverityType;
 };
 
 const Text: SFC<PropsType> = (props): JSX.Element => {
@@ -19,11 +17,11 @@ const Text: SFC<PropsType> = (props): JSX.Element => {
     return (
         <Element
             variant={props.variant}
-            descriptive={props.descriptive}
-            strong={props.strong}
-            compact={props.compact}
-            textAlign={props.textAlign}
             severity={props.severity}
+            textAlign={props.textAlign}
+            compact={props.compact}
+            strong={props.strong}
+            inline={props.inline}
         >
             {props.children}
         </Element>

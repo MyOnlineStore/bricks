@@ -2,7 +2,7 @@
 
 exports[`Storyshots Branch Default 1`] = `
 <p
-  className="sc-bxivhb jpexxn"
+  className="sc-bxivhb fpMQQD"
 >
   This is shown when condition is true. 
   This line is shared whether the condition is true or not.

@@ -96,7 +96,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
 
     ${({ focus, severity, theme }): string =>
         focus
-            ? `border: solid 1px ${theme.Text.severity[severity].color}`
+            ? `border: solid 1px ${theme.Text.severity[severity]}`
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
 
     ${({ focus, disabled, severity, theme }): string =>

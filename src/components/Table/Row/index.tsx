@@ -82,7 +82,7 @@ class Row extends Component<PropsType, StateType> {
                                                 onBlur={this.handleBlur}
                                                 onFocus={this.handleFocus}
                                             >
-                                                <Text descriptive={!hasHover}>
+                                                <Text severity={!hasHover ? 'info' : 'default'}>
                                                     <Icon size="medium" icon="bars" />
                                                 </Text>
                                             </Cell>
