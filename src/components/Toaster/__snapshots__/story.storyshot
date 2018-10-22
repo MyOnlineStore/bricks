@@ -60,7 +60,7 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
-              className="sc-gqjmRU gIKjDZ sc-htoDjs hXMUTL"
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -145,7 +145,7 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH kWLDUa"
             >
               <button
-                className="sc-VigVT cZkyFH sc-htoDjs hXMUTL"
+                className="sc-VigVT cZkyFH sc-htoDjs ifkBJX"
                 disabled={undefined}
                 id={undefined}
                 onClick={[Function]}
@@ -160,7 +160,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
-              className="sc-gqjmRU gIKjDZ sc-htoDjs hXMUTL"
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}

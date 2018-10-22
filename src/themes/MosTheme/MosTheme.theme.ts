@@ -187,7 +187,7 @@ const theme: ThemeType = {
                 stripingColor: 'rgba(0,0,0,0.04)',
             },
         },
-        Plain: {
+        Flat: {
             primary: {
                 color: grey.darker1,
                 backgroundColor: 'transparent',

@@ -11,7 +11,7 @@ describe('Toaster', () => {
             <Toaster isOpen={true} severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
         );
 
-        const closeButton = component.find(Button.Plain).first();
+        const closeButton = component.find(Button.Flat).first();
 
         closeButton.simulate('click');
 
@@ -20,7 +20,7 @@ describe('Toaster', () => {
 
     it('should not break when no close is provided', () => {
         const component = mountWithTheme(<Toaster isOpen={true} severity={'info'} title="Foo" />);
-        const closeButton = component.find(Button.Plain).first();
+        const closeButton = component.find(Button.Flat).first();
 
         const fn = (): void => {
             closeButton.simulate('click');

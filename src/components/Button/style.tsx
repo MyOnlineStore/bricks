@@ -62,7 +62,7 @@ type ButtonThemeType = {
             backgroundColor: string;
         };
     };
-    Plain: {
+    Flat: {
         primary: {
             color: string;
             backgroundColor: string;

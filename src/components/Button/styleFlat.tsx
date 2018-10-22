@@ -8,17 +8,17 @@ type ButtonPropsType = BareButtonPropsType & {
     variant: 'primary' | 'destructive';
 };
 
-const StyledPlain = withProps<ButtonPropsType>(styled(BareButton))`
+const StyledFlat = withProps<ButtonPropsType>(styled(BareButton))`
     ${({ theme, variant }): string => {
         return `
             padding: 11px 12px;
-            color: ${theme.Button.Plain.primary.color};
-            background-color: ${theme.Button.Plain.primary.backgroundColor};
+            color: ${theme.Button.Flat.primary.color};
+            background-color: ${theme.Button.Flat.primary.backgroundColor};
             transform: none;
 
             &:hover {
                 transform: scale(1.1);
-                ${variant === 'destructive' ? `color: ${theme.Button.Plain.destructive.color}` : ''};
+                ${variant === 'destructive' ? `color: ${theme.Button.Flat.destructive.color}` : ''};
             }
 
             &:active {
@@ -29,5 +29,5 @@ const StyledPlain = withProps<ButtonPropsType>(styled(BareButton))`
     }};
 `;
 
-export default StyledPlain;
+export default StyledFlat;
 export { ButtonPropsType };

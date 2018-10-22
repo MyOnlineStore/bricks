@@ -2,7 +2,7 @@ import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import { ButtonPropsType as PlainPropsType } from './stylePlain';
+import { ButtonPropsType as PlainPropsType } from './styleFlat';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -53,9 +53,9 @@ storiesOf('Button', module)
     .add('Call to Action', () => {
         return <Button.Cta title={text('title', 'Click me')} />;
     })
-    .add('Plain', () => {
+    .add('Flat', () => {
         return (
-            <Button.Plain
+            <Button.Flat
                 variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
                 title={text('title', 'Click me')}
             />

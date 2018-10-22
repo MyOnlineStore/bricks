@@ -5,7 +5,7 @@ import styled from '../../../utility/styled';
 
 const StyledButton = styled.button`
     border: none;
-    display: flex;
+    display: inline-flex;
     outline: none;
     line-height: 1;
     cursor: pointer;

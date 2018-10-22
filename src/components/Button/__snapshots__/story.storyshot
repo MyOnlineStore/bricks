@@ -2,7 +2,7 @@
 
 exports[`Storyshots Button Call to Action 1`] = `
 <button
-  className="sc-gZMcBi fDLIXu sc-htoDjs hXMUTL"
+  className="sc-gZMcBi fDLIXu sc-htoDjs ifkBJX"
   disabled={undefined}
   id={undefined}
   onClick={[Function]}
@@ -15,7 +15,7 @@ exports[`Storyshots Button Call to Action 1`] = `
 
 exports[`Storyshots Button Default - link 1`] = `
 <a
-  className="sc-VigVT cZkyFH sc-dnqmqq cXNSfq"
+  className="sc-VigVT cZkyFH sc-dnqmqq fselgR"
   disabled={false}
   href="http://www.google.com"
   id={undefined}
@@ -28,8 +28,21 @@ exports[`Storyshots Button Default - link 1`] = `
 
 exports[`Storyshots Button Default 1`] = `
 <button
-  className="sc-VigVT eYHbkk sc-htoDjs hXMUTL"
+  className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
   disabled={false}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Flat 1`] = `
+<button
+  className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
+  disabled={undefined}
   id={undefined}
   onClick={[Function]}
   title="Click me"
@@ -60,7 +73,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-VigVT hzpyGR sc-htoDjs hXMUTL"
+            className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
             disabled={false}
             id={undefined}
             onClick={[Function]}
@@ -74,7 +87,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-            className="sc-VigVT eGcvBH sc-htoDjs hXMUTL"
+            className="sc-VigVT eGcvBH sc-htoDjs ifkBJX"
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -101,7 +114,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 
 exports[`Storyshots Button Plain 1`] = `
 <button
-  className="sc-gqjmRU gIKjDZ sc-htoDjs hXMUTL"
+  className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
   disabled={undefined}
   id={undefined}
   onClick={[Function]}
@@ -114,7 +127,7 @@ exports[`Storyshots Button Plain 1`] = `
 
 exports[`Storyshots Button With an icon 1`] = `
 <button
-  className="sc-gZMcBi fDLIXu sc-htoDjs hXMUTL"
+  className="sc-gZMcBi fDLIXu sc-htoDjs ifkBJX"
   disabled={false}
   id={undefined}
   onClick={[Function]}

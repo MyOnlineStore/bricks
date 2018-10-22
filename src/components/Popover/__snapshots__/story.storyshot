@@ -12,7 +12,7 @@ exports[`Storyshots Popover Default 1`] = `
         className="sc-dVhcbM gSIqyU"
       >
         <button
-          className="sc-VigVT eYHbkk sc-htoDjs hXMUTL"
+          className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
           disabled={undefined}
           id={undefined}
           onClick={[Function]}
@@ -39,7 +39,7 @@ exports[`Storyshots Popover Internal state on click 1`] = `
         className="sc-dVhcbM gSIqyU"
       >
         <button
-          className="sc-VigVT eYHbkk sc-htoDjs hXMUTL"
+          className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
           disabled={undefined}
           id={undefined}
           onClick={[Function]}
@@ -66,7 +66,7 @@ exports[`Storyshots Popover Internal state on hover 1`] = `
         className="sc-dVhcbM gSIqyU"
       >
         <button
-          className="sc-VigVT eYHbkk sc-htoDjs hXMUTL"
+          className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
           disabled={undefined}
           id={undefined}
           onClick={[Function]}
