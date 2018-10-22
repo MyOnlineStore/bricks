@@ -4,32 +4,21 @@ import _T from '../../types/ThemeType';
 import styled, { StyledType } from '../../utility/styled';
 
 type HeadingHierarchyThemeType = {
-    color: string;
     fontFamily: string;
     fontSize: string;
     fontWeight: string;
     lineHeight: string;
-    textTransform: string;
+    color: string;
 };
 
 type HeadingThemeType = StyledType & {
-    default: {
-        color: string;
-        fontFamily: string;
-        fontSize: string;
-        fontWeight: string;
-        lineHeight: string;
-        textTransform: string;
-    };
-    hierarchy: {
-        hierarchy1: HeadingHierarchyThemeType;
-        hierarchy2: HeadingHierarchyThemeType;
-        hierarchy3: HeadingHierarchyThemeType;
-        hierarchy4: HeadingHierarchyThemeType;
-        hierarchy5: HeadingHierarchyThemeType;
-        hierarchy6: HeadingHierarchyThemeType;
-        [key: string]: HeadingHierarchyThemeType;
-    };
+    hierarchy1: HeadingHierarchyThemeType;
+    hierarchy2: HeadingHierarchyThemeType;
+    hierarchy3: HeadingHierarchyThemeType;
+    hierarchy4: HeadingHierarchyThemeType;
+    hierarchy5: HeadingHierarchyThemeType;
+    hierarchy6: HeadingHierarchyThemeType;
+    [key: string]: HeadingHierarchyThemeType;
 };
 
 type PropsType = StyledType & {
@@ -50,19 +39,16 @@ const HeadingElement: SFC<PropsType> = (props): JSX.Element => {
 
 const StyledHeading = styled(HeadingElement)`
     color: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.color : theme.Heading.hierarchy[`hierarchy${hierarchy}`].color};
+        !hierarchy ? theme.Heading.hierarchy1.color : theme.Heading[`hierarchy${hierarchy}`].color};
     font-family: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.fontFamily : theme.Heading.hierarchy[`hierarchy${hierarchy}`].fontFamily};
+        !hierarchy ? theme.Heading.hierarchy1.fontFamily : theme.Heading[`hierarchy${hierarchy}`].fontFamily};
     font-size: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.fontSize : theme.Heading.hierarchy[`hierarchy${hierarchy}`].fontSize};
+        !hierarchy ? theme.Heading.hierarchy1.fontSize : theme.Heading[`hierarchy${hierarchy}`].fontSize};
     font-weight: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.fontWeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].fontWeight};
+        !hierarchy ? theme.Heading.hierarchy1.fontWeight : theme.Heading[`hierarchy${hierarchy}`].fontWeight};
     line-height: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].lineHeight};
-    text-transform: ${({ hierarchy, theme }): string =>
-        !hierarchy
-            ? theme.Heading.default.textTransform
-            : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
+        !hierarchy ? theme.Heading.hierarchy1.lineHeight : theme.Heading[`hierarchy${hierarchy}`].lineHeight};
+
     text-align: ${({ textAlign }): string => (textAlign !== undefined ? textAlign : '')};
     margin: 0;
     -webkit-font-smoothing: antialiased;
