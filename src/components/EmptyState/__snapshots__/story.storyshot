@@ -21,7 +21,7 @@ exports[`Storyshots EmptyState Default 1`] = `
       className="sc-bwzfXH fbBXOr"
     >
       <div
-        className="sc-fjdhpX gUNTtb"
+        className="sc-fjdhpX jAXIwv"
         role="heading"
       >
         No filters applied
@@ -61,7 +61,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       className="sc-bwzfXH fbBXOr"
     >
       <div
-        className="sc-fjdhpX gUNTtb"
+        className="sc-fjdhpX jAXIwv"
         role="heading"
       >
         No filters applied

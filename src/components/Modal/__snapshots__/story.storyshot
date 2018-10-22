@@ -21,7 +21,7 @@ exports[`Storyshots Modal Default 1`] = `
           className="sc-bwzfXH jTCciZ"
         >
           <div
-            className="sc-fjdhpX jskuQK"
+            className="sc-fjdhpX jCgMDQ"
             role="heading"
           >
             Would you like me to be your role modal?
@@ -173,7 +173,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
           className="sc-bwzfXH jTCciZ"
         >
           <div
-            className="sc-fjdhpX jskuQK"
+            className="sc-fjdhpX jCgMDQ"
             role="heading"
           >
             Would you like me to be your role modal?

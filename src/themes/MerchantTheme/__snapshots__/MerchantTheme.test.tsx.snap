@@ -5,63 +5,47 @@ exports[`MerchantTheme should render the merchant theme 1`] = `
   theme={
     Object {
       "Heading": Object {
-        "default": Object {
+        "hierarchy1": Object {
           "color": "mockValue",
           "fontFamily": "mockValue",
           "fontSize": "mockValue",
           "fontWeight": "mockValue",
           "lineHeight": "mockValue",
-          "textTransform": "mockValue",
         },
-        "hierarchy": Object {
-          "hierarchy1": Object {
-            "color": "mockValue",
-            "fontFamily": "mockValue",
-            "fontSize": "mockValue",
-            "fontWeight": "mockValue",
-            "lineHeight": "mockValue",
-            "textTransform": "mockValue",
-          },
-          "hierarchy2": Object {
-            "color": "mockValue",
-            "fontFamily": "mockValue",
-            "fontSize": "mockValue",
-            "fontWeight": "mockValue",
-            "lineHeight": "mockValue",
-            "textTransform": "mockValue",
-          },
-          "hierarchy3": Object {
-            "color": "mockValue",
-            "fontFamily": "mockValue",
-            "fontSize": "mockValue",
-            "fontWeight": "mockValue",
-            "lineHeight": "mockValue",
-            "textTransform": "mockValue",
-          },
-          "hierarchy4": Object {
-            "color": "mockValue",
-            "fontFamily": "mockValue",
-            "fontSize": "mockValue",
-            "fontWeight": "mockValue",
-            "lineHeight": "mockValue",
-            "textTransform": "mockValue",
-          },
-          "hierarchy5": Object {
-            "color": "mockValue",
-            "fontFamily": "mockValue",
-            "fontSize": "mockValue",
-            "fontWeight": "mockValue",
-            "lineHeight": "mockValue",
-            "textTransform": "mockValue",
-          },
-          "hierarchy6": Object {
-            "color": "mockValue",
-            "fontFamily": "mockValue",
-            "fontSize": "mockValue",
-            "fontWeight": "mockValue",
-            "lineHeight": "mockValue",
-            "textTransform": "mockValue",
-          },
+        "hierarchy2": Object {
+          "color": "mockValue",
+          "fontFamily": "mockValue",
+          "fontSize": "mockValue",
+          "fontWeight": "mockValue",
+          "lineHeight": "mockValue",
+        },
+        "hierarchy3": Object {
+          "color": "mockValue",
+          "fontFamily": "mockValue",
+          "fontSize": "mockValue",
+          "fontWeight": "mockValue",
+          "lineHeight": "mockValue",
+        },
+        "hierarchy4": Object {
+          "color": "mockValue",
+          "fontFamily": "mockValue",
+          "fontSize": "mockValue",
+          "fontWeight": "mockValue",
+          "lineHeight": "mockValue",
+        },
+        "hierarchy5": Object {
+          "color": "mockValue",
+          "fontFamily": "mockValue",
+          "fontSize": "mockValue",
+          "fontWeight": "mockValue",
+          "lineHeight": "mockValue",
+        },
+        "hierarchy6": Object {
+          "color": "mockValue",
+          "fontFamily": "mockValue",
+          "fontSize": "mockValue",
+          "fontWeight": "mockValue",
+          "lineHeight": "mockValue",
         },
       },
     }
