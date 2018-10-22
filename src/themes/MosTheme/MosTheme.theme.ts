@@ -797,7 +797,6 @@ const theme: ThemeType = {
             } 20px )`,
         },
     },
-
     Tile: {
         borderColor: silver.darker4,
     },
