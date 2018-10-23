@@ -3,7 +3,7 @@
 exports[`Storyshots FoldOut With a toggle 1`] = `
 <div>
   <div
-    className="sc-chPdSV kiPOer"
+    className="sc-kpOJdX hMPesZ"
   >
     <div>
       <div
@@ -42,10 +42,13 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     </div>
   </div>
   <button
+<<<<<<< HEAD
     className="sc-htoDjs eHXLyg"
     color={undefined}
+=======
+    className="sc-VigVT jpssvu sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
     disabled={undefined}
-    icon={undefined}
     id={undefined}
     onClick={[Function]}
     title="open FoldOut"

@@ -79,265 +79,155 @@ const theme: ThemeType = {
         common: {
             borderRadius: roundness.base,
             borderWidth: '0',
-            fontSize: fontSize.base,
             fontWeight: '400',
             fontFamily: bodyFont,
+            fontSize: fontSize.base,
+            textDecoration: 'none',
         },
-        primary: {
-            regular: {
+        Default: {
+            primary: {
                 idle: {
                     backgroundColor: green.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 hover: {
                     backgroundColor: green.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 focus: {
                     backgroundColor: green.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
-                    textDecoration: 'none',
                 },
                 active: {
                     backgroundColor: green.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: 'none',
-                    textDecoration: 'none',
                 },
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-            },
-        },
-        secondary: {
-            regular: {
+            secondary: {
                 idle: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 hover: {
                     backgroundColor: silver.darker1,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 focus: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
-                    textDecoration: 'none',
                 },
                 active: {
                     backgroundColor: silver.darker1,
-                    borderColor: 'transparent',
                     color: grey.lighter1,
                     boxShadow: 'none',
-                    textDecoration: 'none',
                 },
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-            },
-        },
-        warning: {
-            regular: {
+            warning: {
                 idle: {
                     backgroundColor: yellow.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 hover: {
                     backgroundColor: yellow.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 focus: {
                     backgroundColor: yellow.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25)',
-                    textDecoration: 'none',
+                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
                 },
                 active: {
                     backgroundColor: yellow.darker2,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: 'none',
-                    textDecoration: 'none',
                 },
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-            },
-        },
-        destructive: {
-            regular: {
+            destructive: {
                 idle: {
                     backgroundColor: red.base,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 hover: {
                     backgroundColor: red.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
                 },
                 focus: {
                     backgroundColor: red.base,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25)',
-                    textDecoration: 'none',
                 },
                 active: {
                     backgroundColor: red.darker1,
-                    borderColor: 'transparent',
                     color: silver.lighter1,
                     boxShadow: 'none',
-                    textDecoration: 'none',
                 },
             },
-            flat: {
+            plain: {
                 idle: {
                     backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: red.base,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: red.base,
-                    textDecoration: 'none',
-                },
-            },
-        },
-        plain: {
-            regular: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: 'none',
                     textDecoration: 'underline',
                 },
                 hover: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'underline',
                 },
                 focus: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
-                    textDecoration: 'underline',
                 },
                 active: {
                     backgroundColor: silver.base,
-                    borderColor: 'transparent',
                     color: grey.base,
                     boxShadow: 'none',
-                    textDecoration: 'underline',
                 },
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-            },
-        },
-        disabled: {
-            regular: {
+            disabled: {
                 color: grey.lighter2,
                 backgroundColor: silver.darker2,
                 stripingColor: 'rgba(0,0,0,0.04)',
             },
-            flat: {
-                color: grey.lighter2,
+        },
+        Flat: {
+            primary: {
+                color: grey.darker1,
                 backgroundColor: 'transparent',
-                textDecoration: 'none',
+            },
+            destructive: {
+                color: red.base,
+            },
+        },
+        Cta: {
+            borderRadius: '24px',
+            backgroundColor: green.darker1,
+            color: silver.lighter1,
+            boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+
+            hover: {
+                backgroundColor: green.darker2,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: green.darker1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
+            },
+            active: {
+                backgroundColor: green.darker2,
+                boxShadow: 'none',
             },
         },
     },
@@ -373,8 +263,8 @@ const theme: ThemeType = {
         },
         overides: {
             Button: {
-                secondary: {
-                    regular: {
+                Default: {
+                    secondary: {
                         idle: {
                             backgroundColor: silver.darker1,
                         },
@@ -389,9 +279,7 @@ const theme: ThemeType = {
                             boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
                         },
                     },
-                },
-                plain: {
-                    regular: {
+                    plain: {
                         active: {
                             backgroundColor: silver.darker1,
                         },

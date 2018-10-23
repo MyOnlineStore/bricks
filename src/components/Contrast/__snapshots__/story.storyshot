@@ -3,16 +3,19 @@
 exports[`Storyshots Contrast Default 1`] = `
 Array [
   <div
-    className="sc-gZMcBi huJyDB"
+    className="sc-jTzLTM hDWBpv"
   >
     <div
       className="sc-bwzfXH iXkNPI"
     >
       <button
+<<<<<<< HEAD
         className="sc-htoDjs cHdbOr"
         color={undefined}
+=======
+        className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
         disabled={undefined}
-        icon={undefined}
         id={undefined}
         onClick={[Function]}
         title="Inside Contrast"
@@ -26,10 +29,13 @@ Array [
     className="sc-bwzfXH iXkNPI"
   >
     <button
+<<<<<<< HEAD
       className="sc-htoDjs eHXLyg"
       color={undefined}
+=======
+      className="sc-VigVT jpssvu sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
       disabled={undefined}
-      icon={undefined}
       id={undefined}
       onClick={[Function]}
       title="Outside of Contrast"

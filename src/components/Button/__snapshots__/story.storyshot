@@ -1,8 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Call to Action 1`] = `
+<button
+  className="sc-gZMcBi fDLIXu sc-htoDjs ifkBJX"
+  disabled={undefined}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Default - link 1`] = `
+<a
+  className="sc-VigVT cZkyFH sc-dnqmqq fselgR"
+  disabled={false}
+  href="http://www.google.com"
+  id={undefined}
+  target="_blank"
+  title="Click me"
+>
+  Click me
+</a>
+`;
+
+exports[`Storyshots Button Default 1`] = `
+<button
+  className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
+  disabled={false}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Storyshots Button Flat 1`] = `
+<button
+  className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
+  disabled={undefined}
+  id={undefined}
+  onClick={[Function]}
+  title="Click me"
+  type="button"
+>
+  <span
+    aria-hidden={true}
+    className="sc-iwsKbI jSMqMr"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    role="img"
+  />
+</button>
+`;
+
 exports[`Storyshots Button On a contrast area 1`] = `
 <div
-  className="sc-gZMcBi huJyDB"
+  className="sc-jTzLTM hDWBpv"
 >
   <div
     className="sc-bwzfXH iXkNPI"
@@ -21,10 +82,13 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
+<<<<<<< HEAD
             className="sc-htoDjs cHdbOr"
             color={undefined}
+=======
+            className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={false}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -37,10 +101,13 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
+<<<<<<< HEAD
             className="sc-htoDjs fNOjyC"
             color={undefined}
+=======
+            className="sc-VigVT eGcvBH sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -66,18 +133,20 @@ exports[`Storyshots Button On a contrast area 1`] = `
 
 exports[`Storyshots Button With an icon 1`] = `
 <button
+<<<<<<< HEAD
   className="sc-htoDjs feYNYX"
   color={undefined}
+=======
+  className="sc-gZMcBi fDLIXu sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
   disabled={false}
-  icon="keyboard"
   id={undefined}
   onClick={[Function]}
   title="Press any key to continue"
   type="button"
 >
-  Press any key to continue
   <span
-    className="sc-htpNat hNxYQo"
+    className="sc-htpNat gHlfqR"
   >
     <span
       aria-hidden={true}
@@ -90,6 +159,7 @@ exports[`Storyshots Button With an icon 1`] = `
       role="img"
     />
   </span>
+<<<<<<< HEAD
 </button>
 `;
 
@@ -105,5 +175,8 @@ exports[`Storyshots Button With text 1`] = `
   type="button"
 >
   Click me
+=======
+  Press any key to continue
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
 </button>
 `;

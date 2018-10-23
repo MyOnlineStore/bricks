@@ -20,7 +20,7 @@ storiesOf('Link', module)
         <Text>
             <Link
                 title="Google search"
-                action={(): void => {
+                onClick={(): void => {
                     /**/
                 }}
             >

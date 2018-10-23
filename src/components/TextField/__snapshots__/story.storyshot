@@ -2,24 +2,28 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
+<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
   className="sc-eNQAEJ ajvZf"
+=======
+  className="sc-kkGfuU ikROjB"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
   disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <div
-    className="sc-ckVGcZ kdxLRP"
+    className="sc-hMqMXs jGzyVm"
     disabled={false}
   >
     <span
-      className="sc-jKJlTe eFYypy"
+      className="sc-kEYyzF eTfXvk"
     >
       Username
     </span>
   </div>
   <input
-    className="sc-dxgOiQ cNbhAj"
+    className="sc-eNQAEJ kadEUO"
     disabled={false}
     id={undefined}
     name="firstname"
@@ -30,11 +34,11 @@ exports[`Storyshots TextField Default 1`] = `
     value=""
   />
   <div
-    className="sc-ckVGcZ kdxLRP"
+    className="sc-hMqMXs jGzyVm"
     disabled={false}
   >
     <span
-      className="sc-jKJlTe eFYypy"
+      className="sc-kEYyzF eTfXvk"
     >
       $
     </span>
@@ -45,24 +49,28 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
+<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
     className="sc-eNQAEJ ajvZf"
+=======
+    className="sc-kkGfuU ikROjB"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-ckVGcZ kdxLRP"
+      className="sc-hMqMXs jGzyVm"
       disabled={false}
     >
       <span
-        className="sc-jKJlTe eFYypy"
+        className="sc-kEYyzF eTfXvk"
       >
         $
       </span>
     </div>
     <input
-      className="sc-dxgOiQ cNbhAj"
+      className="sc-eNQAEJ kadEUO"
       disabled={false}
       id={undefined}
       name="first name"
@@ -110,24 +118,28 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
+<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
     className="sc-eNQAEJ ajvZf"
+=======
+    className="sc-kkGfuU ikROjB"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-ckVGcZ kdxLRP"
+      className="sc-hMqMXs jGzyVm"
       disabled={false}
     >
       <span
-        className="sc-jKJlTe eFYypy"
+        className="sc-kEYyzF eTfXvk"
       >
         Username
       </span>
     </div>
     <input
-      className="sc-dxgOiQ cNbhAj"
+      className="sc-eNQAEJ kadEUO"
       disabled={false}
       id={undefined}
       name="firstname"
@@ -138,11 +150,11 @@ Array [
       value=""
     />
     <div
-      className="sc-ckVGcZ kdxLRP"
+      className="sc-hMqMXs jGzyVm"
       disabled={false}
     >
       <span
-        className="sc-jKJlTe eFYypy"
+        className="sc-kEYyzF eTfXvk"
       >
         $
       </span>
@@ -184,14 +196,18 @@ Array [
 
 exports[`Storyshots TextField With Number formatting 1`] = `
 <div
+<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
   className="sc-eNQAEJ ajvZf"
+=======
+  className="sc-kkGfuU ikROjB"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
   disabled={undefined}
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <input
-    className="sc-dxgOiQ cNbhAj"
+    className="sc-eNQAEJ kadEUO"
     disabled={undefined}
     id={undefined}
     name="min value"

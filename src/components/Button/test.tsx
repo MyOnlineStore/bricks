@@ -14,24 +14,19 @@ describe('Button', () => {
         expect(component.find('a').text()).toEqual('Foo Bar');
     });
 
-    it('should render a flat component', () => {
-        const component = mountWithTheme(
-            <Button icon={'checkmark'} iconAlign="right" href="#" title="Foo Bar?" flat variant="primary">
-                Foo Bar
-            </Button>,
-        );
+    it('should render a disabled state', () => {
+        const clickMock = jest.fn();
 
-        /* tslint:disable */
-        (expect(component) as any).toHaveStyleRule('background-color', 'transparent');
-        /* tslint:enable */
+        const component = mountWithTheme(<Button disabled title="disabled" variant="primary" onClick={clickMock} />);
+
+        component.simulate('click');
+        expect(clickMock).not.toHaveBeenCalled();
     });
 
     it('should call the passed action on click', () => {
         const clickMock = jest.fn();
 
-        const component = mountWithTheme(
-            <Button title="button title" color="#f00" variant="primary" action={clickMock} />,
-        );
+        const component = mountWithTheme(<Button title="button2 title" variant="primary" onClick={clickMock} />);
 
         component.simulate('click');
 
@@ -43,9 +38,9 @@ describe('Button', () => {
             <MosTheme>
                 <Button
                     icon={'checkmark'}
-                    title="button title"
+                    title="button2 title"
                     variant="primary"
-                    action={undefined}
+                    onClick={undefined}
                     href="http://foo.bar"
                 />
             </MosTheme>,
@@ -54,11 +49,17 @@ describe('Button', () => {
         expect(component.find('a').length).toBe(1);
     });
 
-    it('should no-op on click without an action', () => {
+    it('should no-op on click without an onClick', () => {
         const fn = (): void => {
             const component = mount(
                 <MosTheme>
-                    <Button icon={'checkmark'} title="button title" variant="primary" action={undefined} />
+                    <Button
+                        icon={'checkmark'}
+                        iconAlign="right"
+                        title="button2 title"
+                        variant="primary"
+                        onClick={undefined}
+                    />
                 </MosTheme>,
             );
 

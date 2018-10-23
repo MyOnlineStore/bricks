@@ -14,14 +14,18 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
+<<<<<<< HEAD
           className="sc-eNQAEJ ajvZf"
+=======
+          className="sc-kkGfuU ikROjB"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
           onFocusCapture={[Function]}
         >
           <input
-            className="sc-dxgOiQ cNbhAj"
+            className="sc-eNQAEJ kadEUO"
             disabled={false}
             id={undefined}
             name="minimum"
@@ -32,11 +36,11 @@ exports[`Storyshots Range Default 1`] = `
             value="5"
           />
           <div
-            className="sc-ckVGcZ kdxLRP"
+            className="sc-hMqMXs jGzyVm"
             disabled={false}
           >
             <span
-              className="sc-jKJlTe eFYypy"
+              className="sc-kEYyzF eTfXvk"
             >
               cm
             </span>
@@ -47,14 +51,18 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
+<<<<<<< HEAD
           className="sc-eNQAEJ ajvZf"
+=======
+          className="sc-kkGfuU ikROjB"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
           onFocusCapture={[Function]}
         >
           <input
-            className="sc-dxgOiQ cNbhAj"
+            className="sc-eNQAEJ kadEUO"
             disabled={false}
             id={undefined}
             name="maximum"
@@ -65,11 +73,11 @@ exports[`Storyshots Range Default 1`] = `
             value="15"
           />
           <div
-            className="sc-ckVGcZ kdxLRP"
+            className="sc-hMqMXs jGzyVm"
             disabled={false}
           >
             <span
-              className="sc-jKJlTe eFYypy"
+              className="sc-kEYyzF eTfXvk"
             >
               cm
             </span>
@@ -79,7 +87,7 @@ exports[`Storyshots Range Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-kjoXOD idZrPy"
+    className="sc-kgAjT iPyhgS"
     disabled={false}
   >
     <div />

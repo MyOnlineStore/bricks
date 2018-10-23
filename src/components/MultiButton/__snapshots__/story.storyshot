@@ -9,16 +9,19 @@ exports[`Storyshots MultiButton Default 1`] = `
   >
     <div>
       <div
-        className="sc-bRBYWo iZCyXo"
+        className="sc-fBuWsC gAxSlR"
       >
         <div
           className="sc-bwzfXH cAZkVZ"
         >
           <button
+<<<<<<< HEAD
             className="sc-csuQGl jNOnPN sc-htoDjs eHXLyg"
             color={undefined}
+=======
+            className="sc-hzDkRC bCmsqU sc-VigVT jpssvu sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Default action"
@@ -31,10 +34,13 @@ exports[`Storyshots MultiButton Default 1`] = `
             </span>
           </button>
           <button
+<<<<<<< HEAD
             className="sc-Rmtcm lmZKVG sc-htoDjs bcNitD"
             color={undefined}
+=======
+            className="sc-jhAzac dDBNeq sc-VigVT fGIQgf sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="chevron"

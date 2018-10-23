@@ -19,12 +19,12 @@ type PropsType = {
 
 const actions = (
     <>
-        <Button title="edit" flat compact variant="secondary">
+        <Button.Flat title="edit" variant="primary">
             <Icon icon="pencil" size="medium" />
-        </Button>
-        <Button title="delete" flat compact variant="destructive">
+        </Button.Flat>
+        <Button.Flat title="delete" variant="destructive">
             <Icon icon="trash" size="medium" />
-        </Button>
+        </Button.Flat>
     </>
 );
 

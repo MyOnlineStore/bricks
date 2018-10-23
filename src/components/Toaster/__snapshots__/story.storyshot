@@ -2,7 +2,7 @@
 
 exports[`Storyshots Toaster Default 1`] = `
 <div
-  className="sc-gPEVay iwzqGY"
+  className="sc-gipzik gZSZiZ"
 >
   <div
     style={
@@ -12,13 +12,21 @@ exports[`Storyshots Toaster Default 1`] = `
     }
   >
     <div
+<<<<<<< HEAD
       className="sc-fYxtnH dlkCOS"
+=======
+      className="sc-tilXH kMPENQ"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
+<<<<<<< HEAD
           className="sc-tilXH cCFWJY"
+=======
+          className="sc-hEsumM dckXUS"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
         >
           <div
             className="sc-bwzfXH jQmHZh"
@@ -60,10 +68,13 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
+<<<<<<< HEAD
               className="sc-htoDjs flaPve"
               color={undefined}
+=======
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="close"
@@ -90,7 +101,7 @@ exports[`Storyshots Toaster Default 1`] = `
 
 exports[`Storyshots Toaster With action button 1`] = `
 <div
-  className="sc-gPEVay iwzqGY"
+  className="sc-gipzik gZSZiZ"
 >
   <div
     style={
@@ -100,13 +111,21 @@ exports[`Storyshots Toaster With action button 1`] = `
     }
   >
     <div
+<<<<<<< HEAD
       className="sc-fYxtnH dlkCOS"
+=======
+      className="sc-tilXH kMPENQ"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
+<<<<<<< HEAD
           className="sc-tilXH ixSjMq"
+=======
+          className="sc-hEsumM eaYoif"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
         >
           <div
             className="sc-bwzfXH jQmHZh"
@@ -147,10 +166,13 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH kWLDUa"
             >
               <button
+<<<<<<< HEAD
                 className="sc-htoDjs gCmkyb"
                 color={undefined}
+=======
+                className="sc-VigVT cZkyFH sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
                 disabled={undefined}
-                icon={undefined}
                 id={undefined}
                 onClick={[Function]}
                 title="Hello"
@@ -164,10 +186,13 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
+<<<<<<< HEAD
               className="sc-htoDjs flaPve"
               color={undefined}
+=======
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="close"

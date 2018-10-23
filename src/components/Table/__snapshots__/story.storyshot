@@ -3,15 +3,15 @@
 exports[`Storyshots Table Default 1`] = `
 <div>
   <table
-    className="sc-jbKcbu iTpJKE"
+    className="sc-uJMKN HWrZg"
   >
     <thead>
       <tr>
         <th
-          className="sc-uJMKN eZmZnz"
+          className="sc-jnlKLf gjbqjo"
         />
         <th
-          className="sc-uJMKN eZmZnz"
+          className="sc-jnlKLf gjbqjo"
         >
           <div
             className="sc-bwzfXH jXZncb"
@@ -34,7 +34,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </th>
         <th
-          className="sc-uJMKN eZmZnz"
+          className="sc-jnlKLf gjbqjo"
         >
           <div
             className="sc-bwzfXH jXZncb"
@@ -47,7 +47,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </th>
         <th
-          className="sc-uJMKN jMxXcn"
+          className="sc-jnlKLf crtRQH"
         >
           <div
             className="sc-bwzfXH keAoja"
@@ -60,7 +60,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </th>
         <th
-          className="sc-uJMKN ikRcdr"
+          className="sc-jnlKLf gurFTT"
         >
           <div
             className="sc-bwzfXH eFkGjS"
@@ -76,12 +76,12 @@ exports[`Storyshots Table Default 1`] = `
     </thead>
     <tbody>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -101,7 +101,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -116,7 +116,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -131,7 +131,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -146,7 +146,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -157,7 +157,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -178,7 +177,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -199,12 +197,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -224,7 +222,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -239,7 +237,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -254,7 +252,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -269,7 +267,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -280,7 +278,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -301,7 +298,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -322,12 +318,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -347,7 +343,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -362,7 +358,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -377,7 +373,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -392,7 +388,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -403,7 +399,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -424,7 +419,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -445,12 +439,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -470,7 +464,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -485,7 +479,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -500,7 +494,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -515,7 +509,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -526,7 +520,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -547,7 +540,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -568,12 +560,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -593,7 +585,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -608,7 +600,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -623,7 +615,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -638,7 +630,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -649,7 +641,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -670,7 +661,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -691,12 +681,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -716,7 +706,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -731,7 +721,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -746,7 +736,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -761,7 +751,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -772,7 +762,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -793,7 +782,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -814,12 +802,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -839,7 +827,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -854,7 +842,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -869,7 +857,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -884,7 +872,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -895,7 +883,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -916,7 +903,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -937,12 +923,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -962,7 +948,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -977,7 +963,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -992,7 +978,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1007,7 +993,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1018,7 +1004,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -1039,7 +1024,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -1060,12 +1044,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -1085,7 +1069,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1100,7 +1084,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1115,7 +1099,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1130,7 +1114,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1141,7 +1125,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -1162,7 +1145,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"
@@ -1183,12 +1165,12 @@ exports[`Storyshots Table Default 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-jqCOkK epAbzf"
+        className="sc-gGBfsJ dAIvxL"
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
         <td
-          className="sc-dNLxif cnFzRn"
+          className="sc-bbmXgH enHHBZ"
           onBlur={[Function]}
           onFocus={[Function]}
         >
@@ -1208,7 +1190,7 @@ exports[`Storyshots Table Default 1`] = `
           </p>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1223,7 +1205,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif bImkZW"
+          className="sc-bbmXgH hesWWb"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1238,7 +1220,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif cXYmpw"
+          className="sc-bbmXgH jfTqxA"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1253,7 +1235,7 @@ exports[`Storyshots Table Default 1`] = `
           </div>
         </td>
         <td
-          className="sc-dNLxif hdokdw"
+          className="sc-bbmXgH fWazFt"
           onBlur={undefined}
           onFocus={undefined}
         >
@@ -1264,7 +1246,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs flaPve"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="edit"
@@ -1285,7 +1266,6 @@ exports[`Storyshots Table Default 1`] = `
               className="sc-htoDjs goHcQN"
               color={undefined}
               disabled={undefined}
-              icon={undefined}
               id={undefined}
               onClick={[Function]}
               title="delete"

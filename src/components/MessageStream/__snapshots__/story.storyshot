@@ -2,14 +2,14 @@
 
 exports[`Storyshots MessageStream Default 1`] = `
 <div
-  className="sc-eHgmQL kzSkRt"
+  className="sc-brqgnP GAuRB"
 >
   <div
-    className="sc-jWBwVP clbKoT"
+    className="sc-jAaTju hYKaLJ"
     title="Sit Inceptos Magna"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH hUMRtq"
@@ -43,14 +43,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cvbbAY gFhhfi"
+    className="sc-cMljjf jTaGWd"
   />
   <div
-    className="sc-jWBwVP gnUmav"
+    className="sc-jAaTju fwacFr"
     title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH hUMRtq"
@@ -85,14 +85,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cvbbAY gFhhfi"
+    className="sc-cMljjf jTaGWd"
   />
   <div
-    className="sc-jWBwVP clbKoT"
+    className="sc-jAaTju hYKaLJ"
     title="Vestibulum Dapibus"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH hUMRtq"
@@ -126,10 +126,13 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
+<<<<<<< HEAD
             className="sc-htoDjs fAnDzT"
             color={undefined}
+=======
+            className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -142,14 +145,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cvbbAY gFhhfi"
+    className="sc-cMljjf jTaGWd"
   />
   <div
-    className="sc-jWBwVP YbiWn"
+    className="sc-jAaTju gzHdUk"
     title="Parturient Euismod Mollis Fringilla"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH hUMRtq"
@@ -184,10 +187,13 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
+<<<<<<< HEAD
             className="sc-htoDjs cXnPMg"
             color={undefined}
+=======
+            className="sc-VigVT fsfbYL sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -200,14 +206,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cvbbAY gFhhfi"
+    className="sc-cMljjf jTaGWd"
   />
   <div
-    className="sc-jWBwVP dtfdFl"
+    className="sc-jAaTju inwpMD"
     title="Tortor Cursus"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH hUMRtq"
@@ -241,10 +247,13 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
+<<<<<<< HEAD
             className="sc-htoDjs gCmkyb"
             color={undefined}
+=======
+            className="sc-VigVT cZkyFH sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"
@@ -257,14 +266,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cvbbAY gFhhfi"
+    className="sc-cMljjf jTaGWd"
   />
   <div
-    className="sc-jWBwVP gnUmav"
+    className="sc-jAaTju fwacFr"
     title="Euismod Dolor Consectetur"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH hUMRtq"
@@ -296,10 +305,13 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
+<<<<<<< HEAD
             className="sc-htoDjs cHdbOr"
             color={undefined}
+=======
+            className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
-            icon={undefined}
             id={undefined}
             onClick={[Function]}
             title="Click me"

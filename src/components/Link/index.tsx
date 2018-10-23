@@ -5,15 +5,15 @@ type PropsType = {
     href?: string;
     title: string;
     target?: '_blank' | '_self';
-    action?(): void;
+    onClick?(): void;
 };
 
 const Link: SFC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
-        if (props.action !== undefined) {
-            props.action();
+        if (props.onClick !== undefined) {
+            props.onClick();
         }
     };
 

@@ -9,7 +9,7 @@ import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } f
 import { createPortal } from 'react-dom';
 import { PropsType as ButtonPropsType } from '../Button';
 
-type OmittedKeys = 'action' | 'href' | 'flat' | 'compact' | 'title';
+type OmittedKeys = 'onClick' | 'href' | 'compact' | 'title';
 
 type PlacementType = PopperChildrenProps['placement'];
 
@@ -17,7 +17,7 @@ type OptionsType = {
     label: string;
     description: string;
     default?: boolean;
-    action(): void;
+    onClick(): void;
 };
 
 type PropsType = Pick<ButtonPropsType, Exclude<keyof ButtonPropsType, OmittedKeys>> & {
@@ -87,14 +87,14 @@ class MultiButton extends Component<PropsType, StateType> {
     private renderButtons = (): JSX.Element => {
         // filter irrelevant buttonprops for JS users
         // @ts-ignore
-        const { href, action, flat, compact, title, ...filteredProps } = this.props;
+        const { onClick, flat, compact, title, ...filteredProps } = this.props;
 
         return (
             <Box wrap={false}>
                 <StyledMultiButton
                     {...filteredProps}
                     title={this.defaultOption.label}
-                    action={(): void => this.defaultOption.action()}
+                    onClick={(): void => this.defaultOption.onClick()}
                 >
                     <Box inline>{this.defaultOption.label}</Box>
                 </StyledMultiButton>
@@ -102,7 +102,7 @@ class MultiButton extends Component<PropsType, StateType> {
                     compact
                     title={'chevron'}
                     variant={this.props.variant}
-                    action={this.state.isOpen ? this.close : this.open}
+                    onClick={this.state.isOpen ? this.close : this.open}
                 >
                     <Box inline>
                         <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
@@ -138,7 +138,7 @@ class MultiButton extends Component<PropsType, StateType> {
                 selectedIndex: index,
             },
             () => {
-                this.state.selectedOption.action();
+                this.state.selectedOption.onClick();
                 this.close();
             },
         );

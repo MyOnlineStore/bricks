@@ -2,8 +2,12 @@
 
 exports[`Storyshots Checkbox Default 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-jTzLTM dxYrGK"
   disabled={false}
+=======
+  className="sc-cSHVUG bWWFEC"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
   onClick={[Function]}
 >
   <div
@@ -22,7 +26,7 @@ exports[`Storyshots Checkbox Default 1`] = `
   </div>
   <input
     checked={true}
-    className="sc-VigVT jXADSx"
+    className="sc-jzJRlG gxbNVW"
     id={undefined}
     name="foo"
     onBlur={[Function]}

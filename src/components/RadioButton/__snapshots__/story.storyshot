@@ -2,7 +2,7 @@
 
 exports[`Storyshots RadioButton Default 1`] = `
 <div
-  className="sc-kgoBCf BEYlJ"
+  className="sc-dxgOiQ jgkVHV"
   onClick={[Function]}
 >
   <div
@@ -10,12 +10,16 @@ exports[`Storyshots RadioButton Default 1`] = `
   >
     <div
       checked={true}
+<<<<<<< HEAD
       className="sc-kpOJdX kyHwpB"
       disabled={false}
+=======
+      className="sc-jKJlTe fOEGOE"
+>>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
     >
       <input
         checked={true}
-        className="sc-kGXeez sKBUe"
+        className="sc-ckVGcZ fpRnfv"
         id={undefined}
         name="demo"
         onBlur={[Function]}
