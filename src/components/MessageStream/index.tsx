@@ -14,7 +14,7 @@ export type MessagePropsType = StyledType & {
     buttonLabel?: string;
     date?: string;
     read?: boolean;
-    action?(): void;
+    onClick?(): void;
 };
 
 type PropsType = StyledType & {
@@ -49,7 +49,7 @@ const Message: SFC<MessagePropsType> = (props): JSX.Element => {
                         </Text>
                         <Text descriptive>{props.date}</Text>
                     </Box>
-                    {props.action !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0 ? (
+                    {props.onClick !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0 ? (
                         <Box
                             direction="column"
                             basis="auto"
@@ -60,8 +60,8 @@ const Message: SFC<MessagePropsType> = (props): JSX.Element => {
                             <Button
                                 title={props.buttonLabel}
                                 variant={variant}
-                                action={(): void => {
-                                    (props.action as Function)();
+                                onClick={(): void => {
+                                    (props.onClick as Function)();
                                 }}
                             >
                                 {props.buttonLabel}

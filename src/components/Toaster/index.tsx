@@ -18,7 +18,7 @@ type PropsType = {
     buttonSeverity?: ButtonVariant;
     severity: SeverityType;
     closeAction?(): void;
-    action?(): void;
+    onClick?(): void;
 };
 
 type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
@@ -30,8 +30,8 @@ const Toaster: SFC<PropsType> = (props): JSX.Element => {
         if (props.closeAction !== undefined) props.closeAction();
     };
 
-    const action = (): void => {
-        if (props.action !== undefined) props.action();
+    const onClick = (): void => {
+        if (props.onClick !== undefined) props.onClick();
     };
 
     const expectedVariant = (): ButtonVariant => {
@@ -73,7 +73,7 @@ const Toaster: SFC<PropsType> = (props): JSX.Element => {
                                         >
                                             <Button
                                                 title={props.buttonTitle}
-                                                action={action}
+                                                onClick={onClick}
                                                 variant={
                                                     props.buttonSeverity ? props.buttonSeverity : expectedVariant()
                                                 }
@@ -82,9 +82,9 @@ const Toaster: SFC<PropsType> = (props): JSX.Element => {
                                     )}
                                 </Box>
                                 <Box direction="column">
-                                    <Button variant="plain" flat title="close" action={closeAction} compact>
+                                    <Button.Flat title="close" onClick={closeAction} variant="primary">
                                         <Icon size="small" icon="close" />
-                                    </Button>
+                                    </Button.Flat>
                                 </Box>
                             </StyledToaster>
                         </Box>

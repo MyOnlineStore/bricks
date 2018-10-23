@@ -1,8 +1,8 @@
-import React, { Children, SFC } from 'react';
-import StyledButton, { StyledAnchor } from './style';
-import Icon, { MediumPropsType } from '../Icon';
-import Box from '../Box';
-import trbl from '../../utility/trbl';
+import React, { Component } from 'react';
+import { MediumPropsType } from '../Icon';
+import StyledCta from './styleCta';
+import StyledFlat from './styleFlat';
+import StyledDefault from './styleDefault';
 
 type PropsType = {
     className?: string;
@@ -12,85 +12,20 @@ type PropsType = {
     target?: HTMLAnchorElement['target'];
     href?: string;
     disabled?: boolean;
-    flat?: boolean;
-    color?: string;
     icon?: MediumPropsType['icon'];
     iconAlign?: 'right' | 'left';
     id?: string;
-    action?(): void;
+    onClick?(): void;
 };
 
-type ButtonContentsType = {
-    icon?: PropsType['icon'];
-    iconAlign?: PropsType['iconAlign'];
-    title: PropsType['title'];
-};
+class Button extends Component<PropsType> {
+    public static Cta: typeof StyledCta = StyledCta;
+    public static Flat: typeof StyledFlat = StyledFlat;
 
-const ButtonContents: SFC<ButtonContentsType> = (props): JSX.Element => (
-    <>
-        {props.icon &&
-            props.iconAlign !== 'right' && (
-                <Box inline padding={trbl(0, 6, 0, 0)}>
-                    <Icon icon={props.icon} size={'medium'} />
-                </Box>
-            )}
-        {Children.count(props.children) > 0 ? props.children : props.title}
-        {props.icon &&
-            props.iconAlign === 'right' && (
-                <Box inline padding={trbl(0, 0, 0, 6)}>
-                    <Icon icon={props.icon} size={'medium'} />
-                </Box>
-            )}
-    </>
-);
-
-const Button: SFC<PropsType> = (props): JSX.Element => {
-    const isLink = props.href !== undefined;
-
-    const clickAction = (): void => {
-        if (props.action !== undefined && props.disabled !== true) props.action();
-    };
-
-    if (isLink) {
-        return (
-            <StyledAnchor
-                variant={props.variant}
-                compact={props.compact}
-                title={props.title}
-                className={props.className}
-                href={props.href}
-                target={props.target}
-                disabled={props.disabled}
-                flat={props.flat}
-                id={props.id}
-            >
-                <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
-                    {props.children}
-                </ButtonContents>
-            </StyledAnchor>
-        );
+    public render(): JSX.Element {
+        return <StyledDefault {...this.props} />;
     }
-
-    return (
-        <StyledButton
-            variant={props.variant}
-            compact={props.compact}
-            title={props.title}
-            className={props.className}
-            onClick={clickAction}
-            type="button"
-            disabled={props.disabled}
-            flat={props.flat}
-            color={props.color}
-            icon={props.icon}
-            id={props.id}
-        >
-            <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
-                {props.children}
-            </ButtonContents>
-        </StyledButton>
-    );
-};
+}
 
 export default Button;
 export { PropsType };

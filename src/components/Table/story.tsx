@@ -19,12 +19,12 @@ type PropsType = {
 
 const actions = (
     <>
-        <Button title="edit" flat compact variant="secondary">
+        <Button.Flat title="edit" variant="primary">
             <Icon icon="pencil" size="medium" />
-        </Button>
-        <Button title="delete" flat compact variant="destructive">
+        </Button.Flat>
+        <Button.Flat title="delete" variant="destructive">
             <Icon icon="trash" size="medium" />
-        </Button>
+        </Button.Flat>
     </>
 );
 
@@ -37,12 +37,7 @@ class Demo extends Component<PropsType, StateType> {
             rows: [
                 {
                     id: 'row-1',
-                    cells: [
-                        'A1',
-                        'B1',
-                        'C1',
-                        actions,
-                    ],
+                    cells: ['A1', 'B1', 'C1', actions],
                 },
                 { id: 'row-2', cells: ['A2', 'B2', 'C2', actions] },
                 { id: 'row-3', cells: ['A3', 'B3', 'C3', actions] },

@@ -11,7 +11,7 @@ describe('Toaster', () => {
             <Toaster isOpen={true} severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
         );
 
-        const closeButton = component.find(Button).at(1);
+        const closeButton = component.find(Button.Flat).first();
 
         closeButton.simulate('click');
 
@@ -20,7 +20,7 @@ describe('Toaster', () => {
 
     it('should not break when no close is provided', () => {
         const component = mountWithTheme(<Toaster isOpen={true} severity={'info'} title="Foo" />);
-        const closeButton = component.find(Button).first();
+        const closeButton = component.find(Button.Flat).first();
 
         const fn = (): void => {
             closeButton.simulate('click');
@@ -29,14 +29,14 @@ describe('Toaster', () => {
         expect(fn).not.toThrow();
     });
 
-    it('should not break when no action is provided', () => {
+    it('should not break when no onClick is provided', () => {
         const component = mountWithTheme(
             <Toaster
                 isOpen={true}
                 severity={'warning'}
                 buttonSeverity={'destructive'}
                 buttonTitle="Bar?"
-                action={undefined}
+                onClick={undefined}
                 title="Foo"
             />,
         );
@@ -60,7 +60,7 @@ describe('Toaster', () => {
                 title="Foo"
                 buttonTitle="Bar?"
                 closeAction={undefined}
-                action={clickMock}
+                onClick={clickMock}
             />,
         );
 

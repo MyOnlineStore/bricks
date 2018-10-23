@@ -56,7 +56,7 @@ class Demo extends Component<PropsType, StateType> {
                         distance={this.props.distance}
                         renderContent={(): JSX.Element => <DemoContent />}
                     >
-                        <Button variant="primary" title="Toggle" action={this.toggle} />
+                        <Button variant="primary" title="Toggle" onClick={this.toggle} />
                     </Popover>
                 </Box>
             </Box>

@@ -3,25 +3,25 @@
 exports[`Storyshots ScrollBox Default 1`] = `
 Array [
   <div
-    className="sc-cHGsZl cclTPC"
+    className="sc-cJSrbW hhZsSv"
   >
     <div
       className="sc-bwzfXH chAuJL"
     >
       <div
-        className="sc-brqgnP jwrNlU"
+        className="sc-jDwBTQ iGblEK"
       >
         <div
-          className="sc-cMljjf krgCXT"
+          className="sc-gPEVay fErmnm"
         >
           <div
-            className="sc-jAaTju fzRTCD"
+            className="sc-iRbamj deXeis"
           />
           <div
             className="sc-bwzfXH gAalro"
           >
             <div
-              className="sc-fjdhpX jPMeup"
+              className="sc-kAzzGY bTHTRF"
               role="heading"
             >
               They see me scrollin'
@@ -71,7 +71,7 @@ Array [
             </p>
           </div>
           <div
-            className="sc-jDwBTQ cXRqdb"
+            className="sc-jlyJG ipBmas"
           />
         </div>
       </div>
@@ -81,7 +81,7 @@ Array [
     className="sc-bwzfXH fPhHtF"
   >
     <div
-      className="sc-fjdhpX jPMeup"
+      className="sc-kAzzGY bTHTRF"
       role="heading"
     >
       Scroll event

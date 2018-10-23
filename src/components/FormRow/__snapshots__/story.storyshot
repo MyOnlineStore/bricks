@@ -38,24 +38,24 @@ exports[`Storyshots FormRow Default 1`] = `
             className="sc-bwzfXH kxsXCq"
           >
             <div
-              className="sc-eNQAEJ iYCWTZ"
+              className="sc-kkGfuU ikROjB"
               disabled={undefined}
               onBlurCapture={[Function]}
               onClick={[Function]}
               onFocusCapture={[Function]}
             >
               <div
-                className="sc-ckVGcZ kdxLRP"
+                className="sc-hMqMXs jGzyVm"
                 disabled={undefined}
               >
                 <span
-                  className="sc-jKJlTe eFYypy"
+                  className="sc-kEYyzF eTfXvk"
                 >
                   Initials
                 </span>
               </div>
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-eNQAEJ kadEUO"
                 disabled={undefined}
                 id={undefined}
                 name="Initials"
@@ -71,24 +71,24 @@ exports[`Storyshots FormRow Default 1`] = `
             className="sc-bwzfXH fkLxMw"
           >
             <div
-              className="sc-eNQAEJ iYCWTZ"
+              className="sc-kkGfuU ikROjB"
               disabled={undefined}
               onBlurCapture={[Function]}
               onClick={[Function]}
               onFocusCapture={[Function]}
             >
               <div
-                className="sc-ckVGcZ kdxLRP"
+                className="sc-hMqMXs jGzyVm"
                 disabled={undefined}
               >
                 <span
-                  className="sc-jKJlTe eFYypy"
+                  className="sc-kEYyzF eTfXvk"
                 >
                   First name
                 </span>
               </div>
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-eNQAEJ kadEUO"
                 disabled={undefined}
                 id={undefined}
                 name="First name"
@@ -105,24 +105,24 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ iYCWTZ"
+            className="sc-kkGfuU ikROjB"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-hMqMXs jGzyVm"
               disabled={undefined}
             >
               <span
-                className="sc-jKJlTe eFYypy"
+                className="sc-kEYyzF eTfXvk"
               >
                 Surname
               </span>
             </div>
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-eNQAEJ kadEUO"
               disabled={undefined}
               id={undefined}
               name="Surname"
@@ -170,24 +170,24 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ iYCWTZ"
+            className="sc-kkGfuU ikROjB"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-hMqMXs jGzyVm"
               disabled={undefined}
             >
               <span
-                className="sc-jKJlTe eFYypy"
+                className="sc-kEYyzF eTfXvk"
               >
                 Country
               </span>
             </div>
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-eNQAEJ kadEUO"
               disabled={undefined}
               id={undefined}
               name="Country"
@@ -203,24 +203,24 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ iYCWTZ"
+            className="sc-kkGfuU ikROjB"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-hMqMXs jGzyVm"
               disabled={undefined}
             >
               <span
-                className="sc-jKJlTe eFYypy"
+                className="sc-kEYyzF eTfXvk"
               >
                 City
               </span>
             </div>
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-eNQAEJ kadEUO"
               disabled={undefined}
               id={undefined}
               name="City"
@@ -268,7 +268,7 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hurwPi"
         >
           <div
-            className="sc-kgoBCf BEYlJ"
+            className="sc-dxgOiQ jgkVHV"
             onClick={[Function]}
           >
             <div
@@ -276,11 +276,11 @@ exports[`Storyshots FormRow Default 1`] = `
             >
               <div
                 checked={true}
-                className="sc-kpOJdX kxmcXw"
+                className="sc-jKJlTe fOEGOE"
               >
                 <input
                   checked={true}
-                  className="sc-kGXeez sKBUe"
+                  className="sc-ckVGcZ fpRnfv"
                   id={undefined}
                   name="bool"
                   onBlur={[Function]}
@@ -306,7 +306,7 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH jQPdWH"
         >
           <div
-            className="sc-kgoBCf BEYlJ"
+            className="sc-dxgOiQ jgkVHV"
             onClick={[Function]}
           >
             <div
@@ -314,11 +314,11 @@ exports[`Storyshots FormRow Default 1`] = `
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-jKJlTe dUZzPu"
               >
                 <input
                   checked={false}
-                  className="sc-kGXeez sKBUe"
+                  className="sc-ckVGcZ fpRnfv"
                   id={undefined}
                   name="bool"
                   onBlur={[Function]}
@@ -344,7 +344,7 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH jQPdWH"
         >
           <div
-            className="sc-kgoBCf BEYlJ"
+            className="sc-dxgOiQ jgkVHV"
             onClick={[Function]}
           >
             <div
@@ -352,11 +352,11 @@ exports[`Storyshots FormRow Default 1`] = `
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-jKJlTe dUZzPu"
               >
                 <input
                   checked={false}
-                  className="sc-kGXeez sKBUe"
+                  className="sc-ckVGcZ fpRnfv"
                   id={undefined}
                   name="bool"
                   onBlur={[Function]}
@@ -410,24 +410,24 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH iFjvZT"
         >
           <div
-            className="sc-eNQAEJ iYCWTZ"
+            className="sc-kkGfuU ikROjB"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-hMqMXs jGzyVm"
               disabled={undefined}
             >
               <span
-                className="sc-jKJlTe eFYypy"
+                className="sc-kEYyzF eTfXvk"
               >
                 Name
               </span>
             </div>
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-eNQAEJ kadEUO"
               disabled={undefined}
               id={undefined}
               name="Name"
@@ -466,24 +466,24 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH iFjvZT"
         >
           <div
-            className="sc-eNQAEJ iYCWTZ"
+            className="sc-kkGfuU ikROjB"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-hMqMXs jGzyVm"
               disabled={undefined}
             >
               <span
-                className="sc-jKJlTe eFYypy"
+                className="sc-kEYyzF eTfXvk"
               >
                 Country
               </span>
             </div>
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-eNQAEJ kadEUO"
               disabled={undefined}
               id={undefined}
               name="Country"
@@ -522,7 +522,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH hurwPi"
         >
           <div
-            className="sc-kgoBCf BEYlJ"
+            className="sc-dxgOiQ jgkVHV"
             onClick={[Function]}
           >
             <div
@@ -530,11 +530,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             >
               <div
                 checked={true}
-                className="sc-kpOJdX kxmcXw"
+                className="sc-jKJlTe fOEGOE"
               >
                 <input
                   checked={true}
-                  className="sc-kGXeez sKBUe"
+                  className="sc-ckVGcZ fpRnfv"
                   id={undefined}
                   name="bool"
                   onBlur={[Function]}
@@ -560,7 +560,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH jQPdWH"
         >
           <div
-            className="sc-kgoBCf BEYlJ"
+            className="sc-dxgOiQ jgkVHV"
             onClick={[Function]}
           >
             <div
@@ -568,11 +568,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-jKJlTe dUZzPu"
               >
                 <input
                   checked={false}
-                  className="sc-kGXeez sKBUe"
+                  className="sc-ckVGcZ fpRnfv"
                   id={undefined}
                   name="bool"
                   onBlur={[Function]}
@@ -598,7 +598,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH jQPdWH"
         >
           <div
-            className="sc-kgoBCf BEYlJ"
+            className="sc-dxgOiQ jgkVHV"
             onClick={[Function]}
           >
             <div
@@ -606,11 +606,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-jKJlTe dUZzPu"
               >
                 <input
                   checked={false}
-                  className="sc-kGXeez sKBUe"
+                  className="sc-ckVGcZ fpRnfv"
                   id={undefined}
                   name="bool"
                   onBlur={[Function]}
@@ -653,7 +653,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       className="sc-bwzfXH fQHYuO"
     >
       <div
-        className="sc-kkGfuU jvfvYf"
+        className="sc-eHgmQL glhXRz"
         onClick={[Function]}
       >
         <div
@@ -664,12 +664,12 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           >
             <div
               checked={false}
-              className="sc-kEYyzF brBMbf"
+              className="sc-hSdWYo jZPdTI"
               disabled={undefined}
             >
               <input
                 checked={false}
-                className="sc-hMqMXs iiejKk"
+                className="sc-iAyFgw iqMlLU"
                 disabled={false}
                 id="toggle"
                 name="toggle"
@@ -713,7 +713,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       className="sc-bwzfXH fQHYuO"
     >
       <div
-        className="sc-jTzLTM hYTrgs"
+        className="sc-cSHVUG dCtEcY"
         onClick={[Function]}
       >
         <div
@@ -721,7 +721,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
         />
         <input
           checked={false}
-          className="sc-VigVT jXADSx"
+          className="sc-jzJRlG gxbNVW"
           id={undefined}
           name="foo"
           onBlur={[Function]}
