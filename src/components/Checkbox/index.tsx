@@ -13,8 +13,6 @@ type PropsType = {
     name: string;
     id?: string;
     onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
-    onMount?(): void;
-    onUnmount?(): void;
 };
 
 class Checkbox extends Component<PropsType, StateType> {
@@ -23,16 +21,6 @@ class Checkbox extends Component<PropsType, StateType> {
         this.state = {
             focus: false,
         };
-    }
-
-    public componentDidMount(): void {
-        if (this.props.onMount !== undefined) {
-            this.props.onMount();
-        }
-    }
-
-    public componentWillUnmount(): void {
-        if (this.props.onUnmount !== undefined) this.props.onUnmount();
     }
 
     public changeHandler = (event: MouseEvent<HTMLDivElement>): void => {

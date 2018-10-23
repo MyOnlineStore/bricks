@@ -3,7 +3,6 @@ import StyledHeader from './style';
 import Text from '../../Text';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
-import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 import { mapAlignment } from '..';
 
 type PropsType = {
@@ -11,40 +10,25 @@ type PropsType = {
     headers: Array<ReactNode>;
     selectable?: boolean;
     draggable?: boolean;
+    checked: boolean | 'indeterminate';
+    onCheck(checked: boolean): void;
 };
 
-const Header: SFC<PropsType> = ({ alignments, draggable, selectable, headers }): JSX.Element => {
+const Header: SFC<PropsType> = ({ alignments, checked, draggable, onCheck, selectable, headers }): JSX.Element => {
     return (
         <thead>
             <tr>
                 {draggable && <StyledHeader align="left" />}
                 {selectable && (
                     <StyledHeader align="left">
-                        <SubscriptionConsumer>
-                            {({ items, updateAll }): JSX.Element => {
-                                const checkedState = ((): 'indeterminate' | boolean => {
-                                    const checkedItems = items.filter(item => item.payload === true);
-
-                                    switch (checkedItems.length) {
-                                        case 0:
-                                            return false;
-                                        case items.length:
-                                            return true;
-                                        default:
-                                            return 'indeterminate';
-                                    }
-                                })();
-
-                                return (
-                                    <Checkbox
-                                        checked={checkedState}
-                                        name=""
-                                        value=""
-                                        onChange={({ checked }): void => updateAll(checked)}
-                                    />
-                                );
+                        <Checkbox
+                            checked={checked}
+                            name=""
+                            value=""
+                            onChange={({ checked }): void => {
+                                onCheck(checked as boolean);
                             }}
-                        </SubscriptionConsumer>
+                        />
                     </StyledHeader>
                 )}
                 {headers.map((header, headerIndex): JSX.Element => {

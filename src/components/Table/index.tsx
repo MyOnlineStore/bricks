@@ -1,24 +1,25 @@
-import React, { ReactNode, Component } from 'react';
+import React, { ReactNode, Component, MouseEvent } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 import Row from './Row';
 import Branch from '../Branch';
 import Header from './Header';
-import { SubscriptionProvider, SubscriptionConsumer } from '../../utility/SubscriptionContext';
 
 type PropsType = {
-    rows: Array<{ id: string; cells: Array<ReactNode> }>;
+    rows: Array<RowType>;
     headers?: Array<ReactNode>;
     alignments?: Array<'left' | 'center' | 'right'>;
     draggable?: boolean;
     selectable?: boolean;
     onDragEnd?(result: DropResult): void;
-    onSelection?(selectedIds: Array<string>): void;
+    onSelection?(rows: Array<RowType>): void;
 };
+
+type RowType = { id: string; checked?: boolean; cells: Array<ReactNode> };
 
 type StateType = {
     selectionStart: number;
-    toggleAction: boolean | 'indeterminate';
+    toggleAction: boolean;
 };
 
 const mapAlignment = (alignment: 'left' | 'center' | 'right'): 'flex-end' | 'center' | 'flex-start' => {
@@ -46,13 +47,48 @@ class Table extends Component<PropsType, StateType> {
         (this.props.onDragEnd as Function)(result);
     };
 
-    private getItemsInRange = (rows: Array<{ id: string }>, indexOfCheckedItem: number): Array<{ id: string }> => {
-        return rows.filter(
-            (item, index): boolean =>
-                (index > this.state.selectionStart && index < indexOfCheckedItem) ||
-                (index < this.state.selectionStart && index > indexOfCheckedItem),
-        );
-    };
+    private handleCheck(event: MouseEvent<HTMLDivElement>, toggleAction: boolean, id: string): void {
+        if (this.props.onSelection !== undefined) {
+            const { rows, onSelection } = this.props;
+            const selectionStart = rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
+
+            if (event.shiftKey) {
+                window.getSelection().removeAllRanges();
+                onSelection(
+                    rows.map((row, key): RowType => {
+                        return (key > this.state.selectionStart && key < selectionStart) ||
+                            (key < this.state.selectionStart && key > selectionStart) ||
+                            row.id === id
+                            ? { ...row, checked: this.state.toggleAction }
+                            : row;
+                    }),
+                );
+            } else {
+                this.setState({ selectionStart, toggleAction });
+                onSelection(rows.map(row => (row.id === id ? { ...row, checked: toggleAction } : row)));
+            }
+        }
+    }
+
+    private handleHeaderCheck(checked: boolean): void {
+        if (this.props.onSelection !== undefined) {
+            this.props.onSelection(this.props.rows.map(row => ({ ...row, checked })));
+        }
+    }
+
+    private getHeaderState(): boolean | 'indeterminate' {
+        const { rows } = this.props;
+        const checkedItems = rows.filter(row => row.checked === true);
+
+        switch (checkedItems.length) {
+            case 0:
+                return false;
+            case rows.length:
+                return true;
+            default:
+                return 'indeterminate';
+        }
+    }
 
     public render(): JSX.Element {
         const { headers, rows } = this.props;
@@ -62,77 +98,46 @@ class Table extends Component<PropsType, StateType> {
         const isSelectable = this.props.selectable !== undefined ? this.props.selectable : false;
 
         return (
-            <SubscriptionProvider
-                onUpdate={(items): void => {
-                    if (this.props.onSelection !== undefined)
-                        this.props.onSelection(items.filter(item => item.payload).map(item => item.id));
-                }}
+            <Branch
+                condition={isDraggable}
+                ifTrue={(children): JSX.Element => (
+                    <DragDropContext onDragEnd={this.dragEndHandler}>
+                        <Droppable droppableId="droppable">
+                            {({ innerRef }): JSX.Element => <StyledTable innerRef={innerRef}>{children}</StyledTable>}
+                        </Droppable>
+                    </DragDropContext>
+                )}
+                ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
             >
-                <Branch
-                    condition={isDraggable}
-                    ifTrue={(children): JSX.Element => (
-                        <DragDropContext onDragEnd={this.dragEndHandler}>
-                            <Droppable droppableId="droppable">
-                                {({ innerRef }): JSX.Element => (
-                                    <StyledTable innerRef={innerRef}>{children}</StyledTable>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
-                    )}
-                    ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
-                >
-                    {headers !== undefined && (
-                        <Header
+                {headers !== undefined && (
+                    <Header
+                        onCheck={(checked): void => this.handleHeaderCheck(checked)}
+                        checked={this.getHeaderState()}
+                        alignments={alignments}
+                        draggable={isDraggable}
+                        headers={headers}
+                        selectable={isSelectable}
+                    />
+                )}
+
+                <tbody>
+                    {rows.map(({ id, checked, cells }, rowIndex) => (
+                        <Row
+                            key={id}
                             alignments={alignments}
+                            cells={cells}
                             draggable={isDraggable}
-                            headers={headers}
                             selectable={isSelectable}
+                            checked={checked !== undefined ? checked : false}
+                            index={rowIndex}
+                            identifier={id}
+                            onCheck={(event, toggleAction): void => {
+                                this.handleCheck(event, toggleAction, id);
+                            }}
                         />
-                    )}
-                    <SubscriptionConsumer>
-                        {({ update }): JSX.Element => (
-                            <tbody>
-                                {rows.map(({ id, cells }, rowIndex) => {
-                                    return (
-                                        <Row
-                                            key={id}
-                                            alignments={alignments}
-                                            cells={cells}
-                                            draggable={isDraggable}
-                                            selectable={isSelectable}
-                                            index={rowIndex}
-                                            identifier={id}
-                                            onCheck={(event, toggleAction): void => {
-                                                const indexOfCheckedItem = this.props.rows.reduce(
-                                                    (combined, item, index) => {
-                                                        return item.id === id ? index : combined;
-                                                    },
-                                                    -1,
-                                                );
-
-                                                if (!event.shiftKey || this.state.selectionStart === -1) {
-                                                    this.setState({ selectionStart: indexOfCheckedItem, toggleAction });
-                                                } else {
-                                                    const itemsInRange = this.getItemsInRange(
-                                                        this.props.rows,
-                                                        indexOfCheckedItem,
-                                                    );
-
-                                                    itemsInRange.forEach((item): void => {
-                                                        update(item.id, this.state.toggleAction);
-                                                    });
-
-                                                    window.getSelection().removeAllRanges();
-                                                }
-                                            }}
-                                        />
-                                    );
-                                })}
-                            </tbody>
-                        )}
-                    </SubscriptionConsumer>
-                </Branch>
-            </SubscriptionProvider>
+                    ))}
+                </tbody>
+            </Branch>
         );
     }
 }

@@ -7,7 +7,6 @@ import StyledRow from './style';
 import { ContrastThemeProvider } from '../../Contrast';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
-import { SubscriptionConsumer } from '../../../utility/SubscriptionContext';
 import { mapAlignment } from '..';
 import Branch from '../../Branch';
 
@@ -15,11 +14,12 @@ type PropsType = {
     alignments: Array<'left' | 'center' | 'right'>;
     cells: Array<ReactNode>;
     draggable: boolean;
+    checked: boolean;
     selectable: boolean;
     selected?: boolean;
     index: number;
     identifier: string;
-    onCheck?(event: MouseEvent<HTMLDivElement>, toggleAction: boolean | 'indeterminate'): void;
+    onCheck(event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
 };
 
 type StateType = {
@@ -54,7 +54,7 @@ class Row extends Component<PropsType, StateType> {
     };
 
     public render(): JSX.Element {
-        const { cells, alignments, selectable, draggable, index, identifier } = this.props;
+        const { cells, alignments, checked, selectable, draggable, index, identifier } = this.props;
         const { hasFocus, hasHover } = this.state;
 
         return (
@@ -99,23 +99,12 @@ class Row extends Component<PropsType, StateType> {
             >
                 {selectable && (
                     <Cell align="left" width={'18px'}>
-                        <SubscriptionConsumer>
-                            {({ update, remove, getPayload }): JSX.Element => {
-                                return (
-                                    <Checkbox
-                                        checked={getPayload(identifier)}
-                                        name=""
-                                        value=""
-                                        onChange={({ checked, event }): void => {
-                                            update(identifier, checked);
-                                            if (this.props.onCheck) this.props.onCheck(event, checked);
-                                        }}
-                                        onMount={(): void => update(identifier, false)}
-                                        onUnmount={(): void => remove(identifier)}
-                                    />
-                                );
-                            }}
-                        </SubscriptionConsumer>
+                        <Checkbox
+                            name=""
+                            value=""
+                            checked={checked}
+                            onChange={({ checked, event }): void => this.props.onCheck(event, checked as boolean)}
+                        />
                     </Cell>
                 )}
                 {cells.map((cell, cellIndex: number) => (
