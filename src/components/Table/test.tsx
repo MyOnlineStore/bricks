@@ -75,8 +75,9 @@ describe('Table', () => {
         /* tslint:enable */
     });
 
-    it('should not break when checkout without onSelection', () => {
+    it('should not break when rendered without onSelection', () => {
         const headers = ['Test A1', 'Test B1', 'Test C1', 'Test D1'];
+        
         const rows = [
             { id: 'row-1', checked: false, cells: ['Test A1', 'Test B1', 'Test C1', 'Test D1'] },
             { id: 'row-2', checked: false, cells: ['Test A2', 'Test B2', 'Test C2', 'Test D2'] },
@@ -120,6 +121,7 @@ describe('Table', () => {
             .find(Checkbox)
             .last()
             .simulate('click');
+        
         component
             .find(Checkbox)
             .first()
