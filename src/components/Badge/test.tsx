@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import { shallowWithTheme } from '../../utility/styled/testing';
 
 describe('Badge', () => {
-    it('should render the Badge with error color when there is no severity', () => {
+    it('should render the variety of severities and use error when no severity is chosen', () => {
         const badge = shallowWithTheme(<Badge />);
 
         /* tslint:disable */
