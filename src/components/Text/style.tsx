@@ -19,7 +19,7 @@ type TextThemeType = {
         small: TextVariantStyleType;
         regular: TextVariantStyleType;
         large: TextVariantStyleType;
-        XL: TextVariantStyleType;
+        extraLarge: TextVariantStyleType;
         display: TextVariantStyleType;
     };
     strong: {
@@ -46,9 +46,9 @@ const StyledParagraph = withProps<PropsType, HTMLParagraphElement>(styled.p)`
             return theme.Text.strong.fontWeight;
         } else if (variant && !strong) {
             return theme.Text.variant[variant].fontWeight;
-        } else {
-            return theme.Text.variant.regular.fontWeight;
         }
+
+        return theme.Text.variant.regular.fontWeight;
     }};
     line-height: ${({ variant, compact, theme }): string => {
         if (compact && variant) {
@@ -57,9 +57,9 @@ const StyledParagraph = withProps<PropsType, HTMLParagraphElement>(styled.p)`
             return theme.Text.variant[variant].lineHeight.default;
         } else if (compact && !variant) {
             return theme.Text.variant.regular.lineHeight.compact;
-        } else {
-            return theme.Text.variant.regular.lineHeight.default;
         }
+
+        return theme.Text.variant.regular.lineHeight.default;
     }};
     text-align: ${({ textAlign }): string => (textAlign ? textAlign : '')};
     margin: 0;

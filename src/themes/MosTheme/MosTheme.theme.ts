@@ -625,7 +625,7 @@ const theme: ThemeType = {
                     compact: '21px',
                 },
             },
-            XL: {
+            extraLarge: {
                 fontFamily: bodyFont,
                 fontSize: '21px',
                 fontWeight: fontWeight.light,

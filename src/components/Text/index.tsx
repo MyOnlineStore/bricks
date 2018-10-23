@@ -3,7 +3,7 @@ import { StyledType } from '../../utility/styled';
 import { StyledSpan, StyledParagraph } from './style';
 
 type PropsType = StyledType & {
-    variant?: 'small' | 'regular' | 'large' | 'XL' | 'display';
+    variant?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
     severity?: 'default' | 'error' | 'success' | 'info' | 'warning';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     compact?: boolean;

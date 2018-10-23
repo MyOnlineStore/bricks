@@ -31,7 +31,7 @@ const demoContent = `
 
 storiesOf('Text', module).add('Default', () => (
     <Text
-        variant={select('variant', ['small', 'regular', 'large', 'XL', 'display'], 'regular') as PropsType['variant']}
+        variant={select('variant', ['small', 'regular', 'large', 'extraLarge', 'display'], 'regular') as PropsType['variant']}
         severity={select('severity', ['default', 'error', 'success', 'info', 'warning'], 'default') as PropsType['severity']}
         textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'center') as PropsType['textAlign']}
         compact={boolean('compact', false)}
