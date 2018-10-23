@@ -113,11 +113,7 @@ describe('Table Header', () => {
             { id: 'row-3', checked: false, cells: ['A1', 'B1', 'C1'] },
         ];
 
-        let mockEvent;
-
-        const mockHandler = jest.fn(rows => {
-            mockEvent = rows;
-        });
+        const mockHandler = jest.fn();
 
         const component = mountWithTheme(
             <Table
