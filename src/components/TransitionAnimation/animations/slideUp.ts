@@ -9,7 +9,7 @@ const slide = (state: AnimationStateType): string => {
                     transform: translate3d(0, 0, 0);
                 }
                 100% {
-                    transform: translate3d(0, 150%, 0);
+                    transform: translate3d(0, 100%, 0);
                     visibility: hidden;
                 }
             }
@@ -24,7 +24,7 @@ const slide = (state: AnimationStateType): string => {
             return `
             @keyframes slideIn {
                 0% {
-                    transform: translate3d(0, 150%, 0);
+                    transform: translate3d(0, 100%, 0);
                 }
                 100% {
                     transform: translate3d(0, 0, 0);
