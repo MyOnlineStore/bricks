@@ -12,7 +12,7 @@ type PropsType = {
     draggable?: boolean;
     selectable?: boolean;
     onDragEnd?(result: DropResult): void;
-    onSelection?(selectedIds: Array<RowType>): void;
+    onSelection?(rows: Array<RowType>): void;
 };
 
 type RowType = { id: string; checked?: boolean; cells: Array<ReactNode> };

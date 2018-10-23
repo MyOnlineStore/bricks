@@ -2,6 +2,7 @@ import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
+import Cell from './Cell';
 import Checkbox from '../Checkbox';
 
 describe('Table', () => {
@@ -13,6 +14,12 @@ describe('Table', () => {
         };
 
         expect(fn).not.toThrow();
+    });
+
+    it('should render the correct amount of cells', () => {
+        const component = mountWithTheme(<Table rows={rows} />);
+
+        expect(component.find(Cell).length).toBe(4);
     });
 
     it('should render without onSelection', () => {

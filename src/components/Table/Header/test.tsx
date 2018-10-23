@@ -100,15 +100,23 @@ describe('Table Header', () => {
         ).toEqual(false);
     });
 
-    it('should handle onChange', () => {
+    it('should toggle all checks on header check', () => {
         const cells = [
             { id: 'row-1', checked: true, cells: ['A1', 'B1', 'C1'] },
             { id: 'row-2', checked: true, cells: ['A1', 'B1', 'C1'] },
+            { id: 'row-3', checked: true, cells: ['A1', 'B1', 'C1'] },
         ];
+
+        const mutatedCells = [
+            { id: 'row-1', checked: false, cells: ['A1', 'B1', 'C1'] },
+            { id: 'row-2', checked: false, cells: ['A1', 'B1', 'C1'] },
+            { id: 'row-3', checked: false, cells: ['A1', 'B1', 'C1'] },
+        ];
+
         let mockEvent;
 
-        const mockHandler = jest.fn(({ event }) => {
-            mockEvent = event;
+        const mockHandler = jest.fn(rows => {
+            mockEvent = rows;
         });
 
         const component = mountWithTheme(
@@ -126,6 +134,6 @@ describe('Table Header', () => {
             .first()
             .simulate('click');
 
-        expect(mockHandler).toHaveBeenCalled();
+        expect(mockHandler).toHaveBeenCalledWith(mutatedCells);
     });
 });

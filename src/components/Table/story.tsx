@@ -65,25 +65,23 @@ class Demo extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <>
-                <Table
-                    alignments={['left', 'left', 'center', 'right']}
-                    headers={[
-                        <Text key="header-a" strong>
-                            <Icon icon="heartO" size="medium" />
-                            &nbsp;&nbsp;Custom Header A
-                        </Text>,
-                        'Header B',
-                        'Header C',
-                        'Actions',
-                    ]}
-                    onDragEnd={this.onDragEnd}
-                    selectable={this.props.selectable}
-                    draggable={this.props.draggable}
-                    rows={this.state.rows}
-                    onSelection={(rows): void => this.setState({ rows })}
-                />
-            </>
+            <Table
+                alignments={['left', 'left', 'center', 'right']}
+                headers={[
+                    <Text key="header-a" strong>
+                        <Icon icon="heartO" size="medium" />
+                        &nbsp;&nbsp;Custom Header A
+                    </Text>,
+                    'Header B',
+                    'Header C',
+                    'Actions',
+                ]}
+                onDragEnd={this.onDragEnd}
+                selectable={this.props.selectable}
+                draggable={this.props.draggable}
+                rows={this.state.rows}
+                onSelection={(rows): void => this.setState({ rows })}
+            />
         );
     }
 }
