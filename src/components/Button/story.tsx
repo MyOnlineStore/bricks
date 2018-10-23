@@ -57,8 +57,10 @@ storiesOf('Button', module)
         return (
             <Button.Flat
                 variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
-                title={text('title', 'Click me')}
-            />
+                title="Click me"
+            >
+                <Icon size="medium" icon="trash" />
+            </Button.Flat>
         );
     })
     .add('With an icon', () => {

@@ -48,7 +48,16 @@ exports[`Storyshots Button Flat 1`] = `
   title="Click me"
   type="button"
 >
-  Click me
+  <span
+    aria-hidden={true}
+    className="sc-iwsKbI jSMqMr"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    role="img"
+  />
 </button>
 `;
 
@@ -110,19 +119,6 @@ exports[`Storyshots Button On a contrast area 1`] = `
     </div>
   </div>
 </div>
-`;
-
-exports[`Storyshots Button Plain 1`] = `
-<button
-  className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
-  disabled={undefined}
-  id={undefined}
-  onClick={[Function]}
-  title="Click me"
-  type="button"
->
-  Click me
-</button>
 `;
 
 exports[`Storyshots Button With an icon 1`] = `
