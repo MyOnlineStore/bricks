@@ -14,14 +14,14 @@ describe('Text', () => {
         const smallText = shallowWithTheme(<Text variant="small">Small text</Text>);
         const regularText = shallowWithTheme(<Text variant="regular">Regular text</Text>);
         const largeText = shallowWithTheme(<Text variant="large">Large text</Text>);
-        const XLText = shallowWithTheme(<Text variant="XL">XL text</Text>);
+        const extraLargeText = shallowWithTheme(<Text variant="extraLarge">extraLarge text</Text>);
         const displayText = shallowWithTheme(<Text variant="display">Display text</Text>);
 
         /* tslint:disable */
         (expect(toJson(smallText.dive())) as any).toHaveStyleRule('font-size', '12px');
         (expect(toJson(regularText.dive())) as any).toHaveStyleRule('font-size', '15px');
         (expect(toJson(largeText.dive())) as any).toHaveStyleRule('font-size', '18px');
-        (expect(toJson(XLText.dive())) as any).toHaveStyleRule('font-size', '21px');
+        (expect(toJson(extraLargeText.dive())) as any).toHaveStyleRule('font-size', '21px');
         (expect(toJson(displayText.dive())) as any).toHaveStyleRule('font-size', '60px');
         /* tslint:enable */
     });
@@ -44,11 +44,11 @@ describe('Text', () => {
 
     it('should render text with compact styling', () => {
         const defaultCompact = shallowWithTheme(<Text compact>Descriptive text</Text>);
-        const XLCompact = shallowWithTheme(<Text variant="XL" compact>Descriptive text</Text>);
+        const extraLargeCompact = shallowWithTheme(<Text variant="extraLarge" compact>Descriptive text</Text>);
 
         /* tslint:disable */
         (expect(toJson(defaultCompact.dive())) as any).toHaveStyleRule('line-height', '18px');
-        (expect(toJson(XLCompact.dive())) as any).toHaveStyleRule('line-height', '27px');
+        (expect(toJson(extraLargeCompact.dive())) as any).toHaveStyleRule('line-height', '27px');
         /* tslint:enable */
     });
 
