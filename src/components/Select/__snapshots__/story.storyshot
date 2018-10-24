@@ -2,11 +2,7 @@
 
 exports[`Storyshots Select Custom rendering 1`] = `
 <div
-<<<<<<< HEAD
   className="sc-frDJqD knwbUz"
-=======
-  className="sc-cJSrbW iWiqVx"
->>>>>>> 7b7db1d... refactored the Text Component to the size-steps according to design
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
@@ -293,11 +289,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
 
 exports[`Storyshots Select Default 1`] = `
 <div
-<<<<<<< HEAD
   className="sc-frDJqD knwbUz"
-=======
-  className="sc-cJSrbW iWiqVx"
->>>>>>> 7b7db1d... refactored the Text Component to the size-steps according to design
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
