@@ -31,12 +31,12 @@ const Option: SFC<PropsType> = (props): JSX.Element => {
                     <Box padding={trbl(6, 18)} alignItems="center" inline>
                         {props.isSelected && (
                             <Box margin={trbl(0, 6, 0, 0)} inline>
-                                <Text severity={props.isSelected ? 'info' : 'default'}>
+                                <Text severity={props.isSelected ? 'info' : undefined}>
                                     <Icon size="small" icon="checkmark" />
                                 </Text>
                             </Box>
                         )}
-                        <Text severity={props.isSelected ? 'info' : 'default'}>{props.label}</Text>
+                        <Text severity={props.isSelected ? 'info' : undefined}>{props.label}</Text>
                     </Box>
                 )}
             </Box>

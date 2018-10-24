@@ -115,7 +115,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <img src={option.image} />
             </Box>
             <Box direction="column">
-                <Text severity={optionState.isSelected ? 'info' : 'default'}>
+                <Text severity={optionState.isSelected ? 'info' : undefined}>
                     {optionState.isSelected && (
                         <Text inline severity="info">
                             <Icon size="small" icon="checkmark" />

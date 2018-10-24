@@ -1,10 +1,11 @@
 import React, { SFC } from 'react';
 import { StyledType } from '../../utility/styled';
 import { StyledSpan, StyledParagraph } from './style';
+import SeverityType from '../../types/SeverityType';
 
 type PropsType = StyledType & {
     variant?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
-    severity?: 'default' | 'error' | 'success' | 'info' | 'warning';
+    severity?: SeverityType;
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     compact?: boolean;
     strong?: boolean;

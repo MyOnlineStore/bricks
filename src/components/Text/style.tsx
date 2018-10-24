@@ -15,6 +15,9 @@ type TextVariantStyleType = {
 };
 
 type TextThemeType = {
+    default: {
+        color: string;
+    };
     variant: {
         small: TextVariantStyleType;
         regular: TextVariantStyleType;
@@ -26,7 +29,6 @@ type TextThemeType = {
         fontWeight: string;
     };
     severity: {
-        default: string;
         error: string;
         success: string;
         info: string;
@@ -36,7 +38,7 @@ type TextThemeType = {
 
 const StyledParagraph = withProps<PropsType, HTMLParagraphElement>(styled.p)`
     color: ${({ severity, theme }): string =>
-        !severity ? theme.Text.severity.default : theme.Text.severity[severity]};
+        severity ? theme.Text.severity[severity] : theme.Text.default.color};
     font-family: ${({ variant, theme }): string =>
         !variant ? theme.Text.variant.regular.fontFamily : theme.Text.variant[variant].fontFamily};
     font-size: ${({ variant, theme }): string =>

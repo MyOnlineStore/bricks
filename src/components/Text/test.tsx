@@ -2,6 +2,7 @@ import toJson from 'enzyme-to-json';
 import React from 'react';
 import Text from '.';
 import { shallowWithTheme } from '../../utility/styled/testing';
+import MosTheme from '../../themes/MosTheme/MosTheme.theme';
 
 describe('Text', () => {
     it('should render text with default styling', () => {
@@ -18,27 +19,27 @@ describe('Text', () => {
         const displayText = shallowWithTheme(<Text variant="display">Display text</Text>);
 
         /* tslint:disable */
-        (expect(toJson(smallText.dive())) as any).toHaveStyleRule('font-size', '12px');
-        (expect(toJson(regularText.dive())) as any).toHaveStyleRule('font-size', '15px');
-        (expect(toJson(largeText.dive())) as any).toHaveStyleRule('font-size', '18px');
-        (expect(toJson(extraLargeText.dive())) as any).toHaveStyleRule('font-size', '21px');
-        (expect(toJson(displayText.dive())) as any).toHaveStyleRule('font-size', '60px');
+        (expect(toJson(smallText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.small.fontSize);
+        (expect(toJson(regularText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.regular.fontSize);
+        (expect(toJson(largeText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.large.fontSize);
+        (expect(toJson(extraLargeText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.extraLarge.fontSize);
+        (expect(toJson(displayText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.display.fontSize);
         /* tslint:enable */
     });
 
     it('should render text with different severities', () => {
-        const defaultText = shallowWithTheme(<Text severity="default">Descriptive text</Text>);
+        const defaultText = shallowWithTheme(<Text>Descriptive text</Text>);
         const errorText = shallowWithTheme(<Text severity="error">Descriptive text</Text>);
         const successText = shallowWithTheme(<Text severity="success">Descriptive text</Text>);
         const infoText = shallowWithTheme(<Text severity="info">Descriptive text</Text>);
         const warningText = shallowWithTheme(<Text severity="warning">Descriptive text</Text>);
 
         /* tslint:disable */
-        (expect(toJson(defaultText.dive())) as any).toHaveStyleRule('color', '#333740');
-        (expect(toJson(errorText.dive())) as any).toHaveStyleRule('color', '#c81746');
-        (expect(toJson(successText.dive())) as any).toHaveStyleRule('color', '#4cc55b');
-        (expect(toJson(infoText.dive())) as any).toHaveStyleRule('color', '#a6aab3');
-        (expect(toJson(warningText.dive())) as any).toHaveStyleRule('color', '#edb107');
+        (expect(toJson(defaultText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.default.color);
+        (expect(toJson(errorText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.error);
+        (expect(toJson(successText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.success);
+        (expect(toJson(infoText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.info);
+        (expect(toJson(warningText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.warning);
         /* tslint:enable */
     });
 
@@ -47,8 +48,8 @@ describe('Text', () => {
         const extraLargeCompact = shallowWithTheme(<Text variant="extraLarge" compact>Descriptive text</Text>);
 
         /* tslint:disable */
-        (expect(toJson(defaultCompact.dive())) as any).toHaveStyleRule('line-height', '18px');
-        (expect(toJson(extraLargeCompact.dive())) as any).toHaveStyleRule('line-height', '27px');
+        (expect(toJson(defaultCompact.dive())) as any).toHaveStyleRule('line-height', MosTheme.Text.variant.regular.lineHeight.compact);
+        (expect(toJson(extraLargeCompact.dive())) as any).toHaveStyleRule('line-height', MosTheme.Text.variant.extraLarge.lineHeight.compact);
         /* tslint:enable */
     });
 
@@ -56,7 +57,7 @@ describe('Text', () => {
         const component = shallowWithTheme(<Text strong>Strong text</Text>);
 
         /* tslint:disable */
-        (expect(toJson(component.dive())) as any).toHaveStyleRule('font-weight', '700');
+        (expect(toJson(component.dive())) as any).toHaveStyleRule('font-weight', MosTheme.Text.strong.fontWeight);
         /* tslint:enable */
     });
 

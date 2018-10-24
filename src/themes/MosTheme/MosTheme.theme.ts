@@ -598,6 +598,9 @@ const theme: ThemeType = {
         },
     },
     Text: {
+        default: {
+            color: grey.base,
+        },
         variant: {
             small: {
                 fontFamily: bodyFont,
@@ -649,7 +652,6 @@ const theme: ThemeType = {
             fontWeight: fontWeight.bold,
         },
         severity: {
-            default: grey.base,
             error: severity.error,
             success: severity.success,
             info: severity.info,
