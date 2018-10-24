@@ -23,7 +23,7 @@ const EmptyStateElement: SFC<EmptyStatePropsType> = (props): JSX.Element => (
             </Heading>
         </Box>
         <Box margin={trbl(12, 0, 24, 0)}>
-            <Text textAlign="center" descriptive>
+            <Text textAlign="center" severity="info">
                 {props.message}
             </Text>
         </Box>

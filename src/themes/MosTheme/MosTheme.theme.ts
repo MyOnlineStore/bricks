@@ -13,6 +13,11 @@ const fontSize = {
     larger3: '36px',
 };
 
+const fontWeight = {
+    light: '300',
+    bold: '700',
+};
+
 const green = {
     lighter1: '#7ce88a',
     base: '#6bde78',
@@ -55,10 +60,18 @@ const roundness = {
     base: '3px',
 };
 
+const severity = {
+    error: red.darker2,
+    success: green.darker2,
+    info: grey.lighter3,
+    warning: yellow.darker2,
+};
+
 const theme: ThemeType = {
     Badge: {
         backgroundColor: red.base,
         color: silver.lighter1,
+        fontFamily: bodyFont,
     },
     Button: {
         common: {
@@ -587,30 +600,62 @@ const theme: ThemeType = {
     Text: {
         default: {
             color: grey.base,
-            fontFamily: bodyFont,
-            fontSize: fontSize.base,
-            fontWeight: '400',
         },
-        descriptive: {
-            color: grey.lighter3,
+        variant: {
+            small: {
+                fontFamily: bodyFont,
+                fontSize: '12px',
+                fontWeight: fontWeight.light,
+                lineHeight: {
+                    default: '18px',
+                    compact: '15px',
+                },
+            },
+            regular: {
+                fontFamily: bodyFont,
+                fontSize: '15px',
+                fontWeight: fontWeight.light,
+                lineHeight: {
+                    default: '21px',
+                    compact: '18px',
+                },
+            },
+            large: {
+                fontFamily: bodyFont,
+                fontSize: '18px',
+                fontWeight: fontWeight.light,
+                lineHeight: {
+                    default: '27px',
+                    compact: '21px',
+                },
+            },
+            extraLarge: {
+                fontFamily: bodyFont,
+                fontSize: '21px',
+                fontWeight: fontWeight.light,
+                lineHeight: {
+                    default: '30px',
+                    compact: '27px',
+                },
+            },
+            display: {
+                fontFamily: headingFont,
+                fontSize: '60px',
+                fontWeight: fontWeight.bold,
+                lineHeight: {
+                    default: '75px',
+                    compact: '75px',
+                },
+            },
         },
         strong: {
-            fontWeight: '700',
-        },
-        small: {
-            fontSize: fontSize.smaller1,
-        },
-        base: {
-            fontSize: fontSize.base,
-        },
-        large: {
-            fontSize: fontSize.larger1,
+            fontWeight: fontWeight.bold,
         },
         severity: {
-            error: { color: red.darker2 },
-            success: { color: green.darker2 },
-            info: { color: grey.lighter3 },
-            warning: { color: yellow.darker2 },
+            error: severity.error,
+            success: severity.success,
+            info: severity.info,
+            warning: severity.warning,
         },
     },
     TextField: {
@@ -652,6 +697,12 @@ const theme: ThemeType = {
     Toaster: {
         borderRadius: roundness.base,
         backgroundColor: silver.lighter1,
+        severity: {
+            error: severity.error,
+            success: severity.success,
+            info: severity.info,
+            warning: severity.warning,
+        },
     },
     Toggle: {
         general: {

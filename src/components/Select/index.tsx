@@ -212,7 +212,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             )) || (
                                 <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
-                                        <Text descriptive>
+                                        <Text severity="info">
                                             <StyledPlaceholder>{this.props.placeholder}</StyledPlaceholder>
                                         </Text>
                                     )}

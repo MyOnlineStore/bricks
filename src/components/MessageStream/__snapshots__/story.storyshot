@@ -18,12 +18,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-            className="sc-bxivhb gTyNSX"
+            className="sc-bxivhb gAVOHP"
           >
             Sit Inceptos Magna
           </p>
           <p
-            className="sc-bxivhb jpexxn"
+            className="sc-bxivhb fpMQQD"
           >
             <span
               dangerouslySetInnerHTML={
@@ -34,7 +34,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             Today 12:00
           </p>
@@ -59,12 +59,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-            className="sc-bxivhb gTyNSX"
+            className="sc-bxivhb gAVOHP"
           >
             Aenean Dapibus Vulputate Tortor Magna
           </p>
           <p
-            className="sc-bxivhb jpexxn"
+            className="sc-bxivhb fpMQQD"
           >
             <span
               dangerouslySetInnerHTML={
@@ -76,7 +76,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             Today 10:00
           </p>
@@ -101,12 +101,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-            className="sc-bxivhb gTyNSX"
+            className="sc-bxivhb gAVOHP"
           >
             Vestibulum Dapibus
           </p>
           <p
-            className="sc-bxivhb jpexxn"
+            className="sc-bxivhb fpMQQD"
           >
             <span
               dangerouslySetInnerHTML={
@@ -117,7 +117,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             Yesterday 12:00
           </p>
@@ -156,12 +156,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-            className="sc-bxivhb gTyNSX"
+            className="sc-bxivhb gAVOHP"
           >
             Parturient Euismod Mollis Fringilla
           </p>
           <p
-            className="sc-bxivhb jpexxn"
+            className="sc-bxivhb fpMQQD"
           >
             <span
               dangerouslySetInnerHTML={
@@ -173,7 +173,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             12-12-2012 12:00
           </p>
@@ -212,12 +212,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-            className="sc-bxivhb gTyNSX"
+            className="sc-bxivhb gAVOHP"
           >
             Tortor Cursus
           </p>
           <p
-            className="sc-bxivhb jpexxn"
+            className="sc-bxivhb fpMQQD"
           >
             <span
               dangerouslySetInnerHTML={
@@ -228,7 +228,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           >
             12-12-2012 12:00
           </p>
@@ -267,12 +267,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-            className="sc-bxivhb gTyNSX"
+            className="sc-bxivhb gAVOHP"
           >
             Euismod Dolor Consectetur
           </p>
           <p
-            className="sc-bxivhb jpexxn"
+            className="sc-bxivhb fpMQQD"
           >
             <span
               dangerouslySetInnerHTML={
@@ -283,7 +283,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb jpeJmp"
           />
         </div>
         <div

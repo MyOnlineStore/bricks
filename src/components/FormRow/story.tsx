@@ -52,7 +52,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 <Box>
                                     <Text>What is your name?</Text>
                                 </Box>
-                                <Text descriptive>
+                                <Text severity="info">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -96,7 +96,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 <Box>
                                     <Text>Where do you live?</Text>
                                 </Box>
-                                <Text descriptive>
+                                <Text severity="info">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -130,7 +130,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 <Box>
                                     <Text>Can a boolean only be either true or false?</Text>
                                 </Box>
-                                <Text descriptive>
+                                <Text severity="info">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
