@@ -2,7 +2,11 @@
 
 exports[`Storyshots Link Action with child element 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-bxivhb kFVWeI"
+=======
+  className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
 >
   <button
     className="sc-jWBwVP ieZLxK"
@@ -19,7 +23,11 @@ exports[`Storyshots Link Action with child element 1`] = `
 
 exports[`Storyshots Link Default 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-bxivhb kFVWeI"
+=======
+  className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
 >
   <a
     className="sc-cvbbAY jqqzQW"

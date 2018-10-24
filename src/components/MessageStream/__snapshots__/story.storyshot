@@ -18,12 +18,20 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb ildJSL"
+=======
+            className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Sit Inceptos Magna
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               dangerouslySetInnerHTML={
@@ -34,7 +42,11 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Today 12:00
           </p>
@@ -59,12 +71,20 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb ildJSL"
+=======
+            className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Aenean Dapibus Vulputate Tortor Magna
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               dangerouslySetInnerHTML={
@@ -76,7 +96,11 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Today 10:00
           </p>
@@ -101,12 +125,20 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb ildJSL"
+=======
+            className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Vestibulum Dapibus
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               dangerouslySetInnerHTML={
@@ -117,7 +149,11 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Yesterday 12:00
           </p>
@@ -161,12 +197,20 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb ildJSL"
+=======
+            className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Parturient Euismod Mollis Fringilla
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               dangerouslySetInnerHTML={
@@ -178,7 +222,11 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             12-12-2012 12:00
           </p>
@@ -222,12 +270,20 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb ildJSL"
+=======
+            className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Tortor Cursus
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               dangerouslySetInnerHTML={
@@ -238,7 +294,11 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             12-12-2012 12:00
           </p>
@@ -282,12 +342,20 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb ildJSL"
+=======
+            className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Euismod Dolor Consectetur
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               dangerouslySetInnerHTML={
@@ -298,7 +366,11 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           />
         </div>
         <div

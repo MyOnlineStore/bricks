@@ -22,6 +22,8 @@ type BadgeThemeType = {
 
 type VariantStyleType = {
     backgroundColor: string;
+    color: string;
+    fontFamily: string;
 };
 
 const StyledBadge = withProps<BadgePropsType>(styled.div)`
@@ -31,8 +33,8 @@ const StyledBadge = withProps<BadgePropsType>(styled.div)`
     min-height: 18px;
     padding: 3px 6px;
     border-radius: 9px;
-    background: ${({ theme, severity }): string => !severity ? theme.Badge.severity.error.backgroundColor : theme.Badge.severity[severity].backgroundColor};
-    font-family: ${({ theme }): string => theme.Text.default.fontFamily};
+    background: ${({ theme }): string => theme.Badge.backgroundColor};
+    font-family: ${({ theme }): string => theme.Badge.fontFamily};
     font-size: 12px;
     line-height: 1;
     color: ${({ theme }): string => theme.Badge.default.color};

@@ -98,6 +98,14 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     width: 100%;
     box-sizing: border-box;
 
+<<<<<<< HEAD
+=======
+    ${({ focus, severity, theme }): string =>
+        focus
+            ? `border: solid 1px ${theme.Text.severity[severity]}`
+            : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
+
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
     ${({ focus, disabled, severity, theme }): string =>
         focus && !disabled
             ? `

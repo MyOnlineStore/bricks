@@ -17,7 +17,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb ildJSL"
+=======
+              className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 aria-hidden={true}
@@ -40,7 +44,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb ildJSL"
+=======
+              className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               Header B
             </p>
@@ -53,7 +61,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb ildJSL"
+=======
+              className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               Header C
             </p>
@@ -66,7 +78,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb ildJSL"
+=======
+              className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               Actions
             </p>
@@ -86,7 +102,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -109,7 +129,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A1
             </p>
@@ -124,7 +148,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B1
             </p>
@@ -139,7 +167,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C1
             </p>
@@ -207,7 +239,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -230,7 +266,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A2
             </p>
@@ -245,7 +285,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B2
             </p>
@@ -260,7 +304,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C2
             </p>
@@ -328,7 +376,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -351,7 +403,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A3
             </p>
@@ -366,7 +422,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B3
             </p>
@@ -381,7 +441,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C3
             </p>
@@ -449,7 +513,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -472,7 +540,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A4
             </p>
@@ -487,7 +559,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B4
             </p>
@@ -502,7 +578,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C4
             </p>
@@ -570,7 +650,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -593,7 +677,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A5
             </p>
@@ -608,7 +696,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B5
             </p>
@@ -623,7 +715,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C5
             </p>
@@ -691,7 +787,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -714,7 +814,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A6
             </p>
@@ -729,7 +833,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B6
             </p>
@@ -744,7 +852,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C6
             </p>
@@ -812,7 +924,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -835,7 +951,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A7
             </p>
@@ -850,7 +970,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B7
             </p>
@@ -865,7 +989,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C7
             </p>
@@ -933,7 +1061,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -956,7 +1088,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A8
             </p>
@@ -971,7 +1107,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B8
             </p>
@@ -986,7 +1126,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C8
             </p>
@@ -1054,7 +1198,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -1077,7 +1225,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A9
             </p>
@@ -1092,7 +1244,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B9
             </p>
@@ -1107,7 +1263,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C9
             </p>
@@ -1175,7 +1335,11 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kTaguW"
+=======
+            className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             <span
               aria-hidden={true}
@@ -1198,7 +1362,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               A10
             </p>
@@ -1213,7 +1381,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               B10
             </p>
@@ -1228,7 +1400,11 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               C10
             </p>

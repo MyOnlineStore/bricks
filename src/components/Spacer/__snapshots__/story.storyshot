@@ -12,7 +12,11 @@ exports[`Storyshots Spacer ⚠️  With margin 1`] = `
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
   >
     <p
+<<<<<<< HEAD
       className="sc-bxivhb kFVWeI"
+=======
+      className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
     >
       This has a margin.
     </p>
@@ -32,7 +36,11 @@ exports[`Storyshots Spacer ⚠️  With padding 1`] = `
     className="sc-jqCOkK jMfdRS"
   >
     <p
+<<<<<<< HEAD
       className="sc-bxivhb kFVWeI"
+=======
+      className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
     >
       This has padding.
     </p>

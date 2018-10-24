@@ -31,7 +31,11 @@ exports[`Storyshots RadioButton Default 1`] = `
     </div>
   </div>
   <p
+<<<<<<< HEAD
     className="sc-bxivhb kFVWeI"
+=======
+    className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
   >
     <span
       className="sc-htpNat ivSMHx"

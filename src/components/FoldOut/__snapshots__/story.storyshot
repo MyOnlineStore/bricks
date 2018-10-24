@@ -10,7 +10,11 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
         className="sc-bwzfXH ebfsxO"
       >
         <p
+<<<<<<< HEAD
           className="sc-bxivhb kFVWeI"
+=======
+          className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           
     Now this is the story all about how

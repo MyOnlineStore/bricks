@@ -31,7 +31,11 @@ exports[`Storyshots EmptyState Default 1`] = `
       className="sc-bwzfXH eTHzfe"
     >
       <p
+<<<<<<< HEAD
         className="sc-bxivhb dGxAqY"
+=======
+        className="sc-bxivhb ieDGhz"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
       >
         ..A tumbleweed passes by
       </p>
@@ -71,7 +75,11 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       className="sc-bwzfXH eTHzfe"
     >
       <p
+<<<<<<< HEAD
         className="sc-bxivhb dGxAqY"
+=======
+        className="sc-bxivhb ieDGhz"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
       >
         There are no filters applied yet. Use the button below to apply a filter.
       </p>

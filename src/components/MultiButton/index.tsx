@@ -190,13 +190,10 @@ class MultiButton extends Component<PropsType, StateType> {
                                                         <div>
                                                             <Text
                                                                 inline
-                                                                descriptive
+                                                                severity="info"
                                                                 strong={index === this.state.selectedIndex}
                                                             >
-                                                                <Text
-                                                                    descriptive={false}
-                                                                    strong={index === this.state.selectedIndex}
-                                                                >
+                                                                <Text strong={index === this.state.selectedIndex}>
                                                                     {option.label}
                                                                 </Text>
                                                                 <span>{option.description}</span>

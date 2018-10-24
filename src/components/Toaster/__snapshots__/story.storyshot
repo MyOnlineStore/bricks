@@ -32,7 +32,11 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH jQmHZh"
           >
             <span
+<<<<<<< HEAD
               className="sc-ifAKCX chsNTs"
+=======
+              className="sc-ifAKCX jHMnVy"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 aria-hidden={true}
@@ -53,12 +57,20 @@ exports[`Storyshots Toaster Default 1`] = `
               className="sc-bwzfXH gaQYSB"
             >
               <p
+<<<<<<< HEAD
                 className="sc-bxivhb ildJSL"
+=======
+                className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
               >
                 Thought provoking we must stand.
               </p>
               <p
+<<<<<<< HEAD
                 className="sc-bxivhb kFVWeI"
+=======
+                className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
               >
                 Game-changer problem-solvers; state of play invest, synergy uplift we must stand up ideate social intrapreneurship.
               </p>
@@ -131,7 +143,11 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH jQmHZh"
           >
             <span
+<<<<<<< HEAD
               className="sc-ifAKCX hURNXo"
+=======
+              className="sc-ifAKCX fbGKwU"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 aria-hidden={true}
@@ -152,12 +168,20 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH gaQYSB"
             >
               <p
+<<<<<<< HEAD
                 className="sc-bxivhb ildJSL"
+=======
+                className="sc-bxivhb gAVOHP"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
               >
                 Overcome injustice.
               </p>
               <p
+<<<<<<< HEAD
                 className="sc-bxivhb kFVWeI"
+=======
+                className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
               >
                 Global low-hanging fruit, collaborative consumption segmentation mobilize support. Problem-solvers cultivate, best practices, shared unit of.
               </p>

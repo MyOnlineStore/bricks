@@ -2,7 +2,11 @@
 
 exports[`Storyshots InlineNotification Default 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-bxivhb gWsGB"
+=======
+  className="sc-bxivhb jNLkvd"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
 >
   <span
     className="sc-htpNat frObKr"
@@ -32,7 +36,11 @@ exports[`Storyshots InlineNotification Default 1`] = `
 
 exports[`Storyshots InlineNotification With children 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-bxivhb bfQmQc"
+=======
+  className="sc-bxivhb bgphtb"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
 >
   <span
     className="sc-htpNat frObKr"
@@ -71,7 +79,11 @@ exports[`Storyshots InlineNotification With children 1`] = `
 
 exports[`Storyshots InlineNotification With overwritten Icon 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-bxivhb gWsGB"
+=======
+  className="sc-bxivhb jNLkvd"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
 >
   <span
     className="sc-htpNat frObKr"

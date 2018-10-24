@@ -2,7 +2,11 @@
 
 exports[`Storyshots Branch Default 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-bxivhb kFVWeI"
+=======
+  className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
 >
   This is shown when condition is true. 
   This line is shared whether the condition is true or not.

@@ -11,6 +11,12 @@ type ToasterPropsType = {
 type ToasterThemeType = {
     borderRadius: string;
     backgroundColor: string;
+    severity: {
+        error: string;
+        success: string;
+        info: string;
+        warning: string;
+    };
 };
 
 const StyledToasterWrapper = styled.div`
@@ -34,7 +40,7 @@ const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
     box-shadow: 0 3px 48px rgba(0,0,0,0.3);
     border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
     background-color: ${({ theme }): string => theme.Toaster.backgroundColor}
-    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity].color};`}
+    border-left: ${({ severity, theme }): string => `4px solid ${theme.Toaster.severity[severity]};`}
 `;
 
 export default StyledToaster;

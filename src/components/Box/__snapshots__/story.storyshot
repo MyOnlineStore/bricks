@@ -17,7 +17,11 @@ exports[`Storyshots Box Default 1`] = `
           className="sc-bwzfXH cFJdBG"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Box 
             1
@@ -35,7 +39,11 @@ exports[`Storyshots Box Default 1`] = `
           className="sc-bwzfXH cFJdBG"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Box 
             2
@@ -53,7 +61,11 @@ exports[`Storyshots Box Default 1`] = `
           className="sc-bwzfXH cFJdBG"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Box 
             3
@@ -71,7 +83,11 @@ exports[`Storyshots Box Default 1`] = `
           className="sc-bwzfXH cFJdBG"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Box 
             4
@@ -89,7 +105,11 @@ exports[`Storyshots Box Default 1`] = `
           className="sc-bwzfXH cFJdBG"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Box 
             5
@@ -107,7 +127,11 @@ exports[`Storyshots Box Default 1`] = `
           className="sc-bwzfXH cFJdBG"
         >
           <p
+<<<<<<< HEAD
             className="sc-bxivhb kFVWeI"
+=======
+            className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
           >
             Box 
             6

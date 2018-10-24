@@ -12,10 +12,21 @@ exports[`Storyshots FormRow Default 1`] = `
         <p
           className="sc-bxivhb kFVWeI"
         >
+<<<<<<< HEAD
           What is your name?
         </p>
         <p
           className="sc-bxivhb kTaguW"
+=======
+          <p
+            className="sc-bxivhb fpMQQD"
+          >
+            What is your name?
+          </p>
+        </div>
+        <p
+          className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -155,10 +166,21 @@ exports[`Storyshots FormRow Default 1`] = `
         <p
           className="sc-bxivhb kFVWeI"
         >
+<<<<<<< HEAD
           Where do you live?
         </p>
         <p
           className="sc-bxivhb kTaguW"
+=======
+          <p
+            className="sc-bxivhb fpMQQD"
+          >
+            Where do you live?
+          </p>
+        </div>
+        <p
+          className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -257,10 +279,21 @@ exports[`Storyshots FormRow Default 1`] = `
         <p
           className="sc-bxivhb kFVWeI"
         >
+<<<<<<< HEAD
           Can a boolean only be either true or false?
         </p>
         <p
           className="sc-bxivhb kTaguW"
+=======
+          <p
+            className="sc-bxivhb fpMQQD"
+          >
+            Can a boolean only be either true or false?
+          </p>
+        </div>
+        <p
+          className="sc-bxivhb jpeJmp"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -305,7 +338,11 @@ exports[`Storyshots FormRow Default 1`] = `
               </div>
             </div>
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 className="sc-htpNat ivSMHx"
@@ -352,7 +389,11 @@ exports[`Storyshots FormRow Default 1`] = `
               </div>
             </div>
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 className="sc-htpNat ivSMHx"
@@ -399,7 +440,11 @@ exports[`Storyshots FormRow Default 1`] = `
               </div>
             </div>
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 className="sc-htpNat ivSMHx"
@@ -429,7 +474,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
+<<<<<<< HEAD
           className="sc-bxivhb kFVWeI"
+=======
+          className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           What is your name?
         </p>
@@ -489,7 +538,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
+<<<<<<< HEAD
           className="sc-bxivhb kFVWeI"
+=======
+          className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Where do you live?
         </p>
@@ -549,7 +602,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
+<<<<<<< HEAD
           className="sc-bxivhb kFVWeI"
+=======
+          className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Can a boolean only be true or false?
         </p>
@@ -594,7 +651,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               </div>
             </div>
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 className="sc-htpNat ivSMHx"
@@ -641,7 +702,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               </div>
             </div>
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 className="sc-htpNat ivSMHx"
@@ -688,7 +753,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               </div>
             </div>
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
               <span
                 className="sc-htpNat ivSMHx"
@@ -713,7 +782,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
+<<<<<<< HEAD
           className="sc-bxivhb kFVWeI"
+=======
+          className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Do you like toggles?
         </p>
@@ -755,7 +828,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             className="sc-bwzfXH fmiztD"
           >
             <p
+<<<<<<< HEAD
               className="sc-bxivhb kFVWeI"
+=======
+              className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
             >
                
               Toggle to indicate your preference!
@@ -773,7 +850,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
     >
       <label>
         <p
+<<<<<<< HEAD
           className="sc-bxivhb kFVWeI"
+=======
+          className="sc-bxivhb fpMQQD"
+>>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         >
           Do you like checkboxes
         </p>
