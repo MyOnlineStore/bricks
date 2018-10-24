@@ -71,6 +71,7 @@ const theme: ThemeType = {
     Badge: {
         backgroundColor: red.base,
         color: silver.lighter1,
+        fontFamily: bodyFont,
     },
     Button: {
         common: {

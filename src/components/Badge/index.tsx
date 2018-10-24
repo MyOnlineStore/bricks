@@ -6,6 +6,7 @@ import styled from '../../utility/styled';
 type BadgeThemeType = {
     backgroundColor: string;
     color: string;
+    fontFamily: string;
 };
 
 const StyledBadge = styled.div`
@@ -16,7 +17,7 @@ const StyledBadge = styled.div`
     padding: 3px 6px;
     border-radius: 9px;
     background: ${({ theme }): string => theme.Badge.backgroundColor};
-    font-family: ${({ theme }): string => theme.Text.variant.regular.fontFamily};
+    font-family: ${({ theme }): string => theme.Badge.fontFamily};
     font-size: 12px;
     line-height: 1;
     color: ${({ theme }): string => theme.Badge.color};
