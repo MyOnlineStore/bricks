@@ -10,6 +10,17 @@ exports[`Storyshots Skeleton Button 1`] = `
 </div>
 `;
 
+exports[`Storyshots Skeleton Rect 1`] = `
+<div
+  aria-hidden={true}
+  className="sc-hqyNC emlzo"
+  height="600px"
+  width="800px"
+>
+  _
+</div>
+`;
+
 exports[`Storyshots Skeleton Text 1`] = `
 Array [
   <div

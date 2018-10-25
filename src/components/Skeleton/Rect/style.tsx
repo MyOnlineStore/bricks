@@ -4,16 +4,12 @@ import { PropsType } from '../../Box';
 import _T from '../../../types/ThemeType';
 import styled, { withProps } from '../../../utility/styled';
 import { TrblType } from '../../../utility/trbl';
-import getSkeletonStyles from '../style';
 
 type ReactSkeletonPropsType = {
     top?: string;
     left?: string;
     right?: string;
     bottom?: string;
-    grow?: number;
-    basis?: string;
-    shrink?: number;
     margin?: TrblType;
     borderRadius?: string;
     height?: PropsType['height'];
@@ -22,24 +18,49 @@ type ReactSkeletonPropsType = {
     minHeight?: PropsType['minHeight'];
     maxWidth?: PropsType['maxWidth'];
     minWidth?: PropsType['minWidth'];
-    alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
     position?: 'static' | 'relative' | 'fixed' | 'absolute';
 };
 
 const StyledRectSkeleton = withProps<ReactSkeletonPropsType, HTMLDivElement>(styled.div)`
-    ${({ theme }): string => getSkeletonStyles(theme)}
+
+    @keyframes wipe {
+        0% {
+             transform: translate(-100%) rotate(5deg);
+            }
+
+        100% {
+            transform: translate(175%) rotate(5deg);
+        }
+    }
+
+    user-select: none;
+    color: transparent;
+    background-color: ${({ theme }): string => theme.Skeleton.common.backgroundColor};
+    background-size: 200px 100%;
+    border-radius: ${({ theme }): string => theme.Skeleton.common.borderRadius};
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        animation: 3s infinite wipe;
+        content: "";
+        height: 200%;
+        width: 75%;
+        top: -50%;
+        left: -25%;
+        transform: rotate(100deg);
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.02) 50%,rgba(0,0,0,0) 100%);
+        position: absolute;
+    }
+
     display: flex;
     color: transparent;
-    flex-grow: ${({ grow }): number => (grow ? grow : 0)};
-    flex-basis: ${({ basis }): string => (basis ? basis : 'auto')};
     ${({ width }): string => (width !== undefined ? `width: ${width}` : '')};
     ${({ height }): string => (height !== undefined ? `height: ${height}` : '')};
-    flex-shrink: ${({ shrink }): number => (shrink !== undefined ? shrink : 1)};
     max-width: ${({ maxWidth }): string => (maxWidth !== undefined ? maxWidth : '')};
     min-width: ${({ minWidth }): string => (minWidth !== undefined ? minWidth : '')};
     max-height: ${({ maxHeight }): string => (maxHeight !== undefined ? maxHeight : '')};
     min-height: ${({ minHeight }): string => (minHeight !== undefined ? minHeight : '')};
-    ${({ alignSelf }): string => (alignSelf ? `align-self: ${alignSelf}` : '')};
     ${({ borderRadius }): string => (borderRadius !== undefined ? `border-radius: ${borderRadius}` : '')};
     ${({ position }): string => (position !== undefined ? `position: ${position}` : '')};
     ${({ top }): string => (top !== undefined ? `top: ${top}` : '')};

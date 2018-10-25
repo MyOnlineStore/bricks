@@ -20,6 +20,14 @@ describe('Skeleton', () => {
         expect(fn).not.toThrow();
     });
 
+    it('should not crash when no props are set on the Rect variant', () => {
+        const fn = (): void => {
+            mountWithTheme(<Skeleton.Rect />);
+        };
+
+        expect(fn).not.toThrow();
+    });
+
     it('should not render placeholders less than 6px wide', () => {
         const component = mountWithTheme(<Skeleton.Text baseWidth={3} lines={1} />);
 

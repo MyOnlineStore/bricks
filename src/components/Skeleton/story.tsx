@@ -5,11 +5,13 @@ import { boolean, number, select, text } from '@storybook/addon-knobs';
 import Text from '../Text';
 import Button from '../Button';
 import trbl, { PxCoordinateType } from '../../utility/trbl';
-
+import { RectPropsType } from './Rect';
 type DemoPropsType = {
     loading?: boolean;
     element: string;
 };
+
+const positionOptions = ['absolute', 'fixed', 'relative', 'static'];
 
 const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
     if (element === 'Text') {
@@ -40,6 +42,11 @@ const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
                 minHeight={text('minHeight', '')}
                 maxHeight={text('maxHeight', '')}
                 borderRadius={text('radius', '3px')}
+                position={select('position', positionOptions, positionOptions[0]) as RectPropsType['position']}
+                left={text('left', '')}
+                right={text('right', '')}
+                top={text('top', '')}
+                bottom={text('bottom', '')}
                 margin={trbl(select('margin', [0, 6, 12], 0) as PxCoordinateType)}
             />
         );
