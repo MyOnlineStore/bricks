@@ -9,7 +9,10 @@ describe('MerchantTheme', () => {
         const HeadingHierarchyThemeType = {
             fontFamily: 'mockValue',
             fontSize: 'mockValue',
-            fontWeight: 'mockValue',
+            fontWeight: {
+                light: 'mockValue',
+                default: 'mockValue',
+            },
             lineHeight: 'mockValue',
             color: 'mockValue',
         };

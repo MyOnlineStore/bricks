@@ -286,42 +286,60 @@ const theme: ThemeType = {
         hierarchy1: {
             fontFamily: headingFont,
             fontSize: '36px',
-            fontWeight: fontWeight.bold,
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
+            },
             lineHeight: '45px',
             color: grey.base,
         },
         hierarchy2: {
             fontFamily: headingFont,
             fontSize: '30px',
-            fontWeight: fontWeight.bold,
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
+            },
             lineHeight: '36px',
             color: grey.base,
         },
         hierarchy3: {
             fontFamily: headingFont,
             fontSize: '24px',
-            fontWeight: fontWeight.bold,
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
+            },
             lineHeight: '30px',
             color: grey.base,
         },
         hierarchy4: {
             fontFamily: headingFont,
             fontSize: '21px',
-            fontWeight: fontWeight.bold,
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
+            },
             lineHeight: '27px',
             color: grey.base,
         },
         hierarchy5: {
             fontFamily: headingFont,
             fontSize: '18px',
-            fontWeight: fontWeight.bold,
+            fontWeight: {
+                light: fontWeight.bold,
+                default: fontWeight.bold,
+            },
             lineHeight: '21px',
             color: grey.base,
         },
         hierarchy6: {
             fontFamily: bodyFont,
             fontSize: '15px',
-            fontWeight: fontWeight.regular,
+            fontWeight: {
+                light: fontWeight.regular,
+                default: fontWeight.regular,
+            },
             lineHeight: '18px',
             color: grey.base,
         },
