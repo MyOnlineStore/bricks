@@ -51,11 +51,14 @@ const StyledModal = withProps<ModalPropsType>(styled.div)`
     width: ${({ modalSize }): string => ModalSizes[modalSize]};
     display: flex;
     flex-direction: column;
-    height: 100vh;
     overflow: hidden;
     max-height: calc(300px + (600 - 300) * (100vh - 300px) / (900 - 300));
     background: ${({ theme }): string => theme.Modal.backgroundColor};
     border-radius: ${({ theme }): string => theme.Modal.borderRadius};
+
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+        height: 100vh;
+    }
 `;
 
 export default StyledModal;
