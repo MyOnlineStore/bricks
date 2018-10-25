@@ -30,7 +30,7 @@ const getSkeletonStyles = (theme: ThemeType): string => `
     user-select: none;
     color: transparent;
     background-color: ${theme.Skeleton.common.backgroundColor};
-    background-image: linear-gradient(100deg, transparent, rgba(0, 0, 0, 0.02), transparent);
+    background-image: linear-gradient(100deg, transparent, rgba(255, 0, 0, 1), transparent);
     background-repeat: no-repeat;
     background-size: 200px 100%;
     animation: 3s infinite wipe;
