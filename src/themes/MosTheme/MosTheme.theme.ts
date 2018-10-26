@@ -15,6 +15,7 @@ const fontSize = {
 
 const fontWeight = {
     light: '300',
+    regular: '400',
     bold: '700',
 };
 
@@ -282,63 +283,65 @@ const theme: ThemeType = {
         },
     },
     Heading: {
-        default: {
-            color: grey.base,
+        hierarchy1: {
             fontFamily: headingFont,
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-            lineHeight: '1.5',
-            textTransform: 'none',
+            fontSize: '36px',
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
+            },
+            lineHeight: '45px',
+            color: grey.base,
         },
-        hierarchy: {
-            hierarchy1: {
-                color: grey.base,
-                fontFamily: headingFont,
-                fontSize: fontSize.larger3,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+        hierarchy2: {
+            fontFamily: headingFont,
+            fontSize: '30px',
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
             },
-            hierarchy2: {
-                color: grey.base,
-                fontFamily: headingFont,
-                fontSize: fontSize.larger2,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+            lineHeight: '36px',
+            color: grey.base,
+        },
+        hierarchy3: {
+            fontFamily: headingFont,
+            fontSize: '24px',
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
             },
-            hierarchy3: {
-                color: grey.base,
-                fontFamily: headingFont,
-                fontSize: fontSize.larger1,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+            lineHeight: '30px',
+            color: grey.base,
+        },
+        hierarchy4: {
+            fontFamily: headingFont,
+            fontSize: '21px',
+            fontWeight: {
+                light: fontWeight.light,
+                default: fontWeight.bold,
             },
-            hierarchy4: {
-                color: grey.base,
-                fontFamily: bodyFont,
-                fontSize: '20px',
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+            lineHeight: '27px',
+            color: grey.base,
+        },
+        hierarchy5: {
+            fontFamily: headingFont,
+            fontSize: '18px',
+            fontWeight: {
+                light: fontWeight.bold,
+                default: fontWeight.bold,
             },
-            hierarchy5: {
-                color: grey.base,
-                fontFamily: bodyFont,
-                fontSize: '18px',
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+            lineHeight: '21px',
+            color: grey.base,
+        },
+        hierarchy6: {
+            fontFamily: bodyFont,
+            fontSize: '15px',
+            fontWeight: {
+                light: fontWeight.regular,
+                default: fontWeight.regular,
             },
-            hierarchy6: {
-                color: grey.base,
-                fontFamily: bodyFont,
-                fontSize: fontSize.base,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'uppercase',
-            },
+            lineHeight: '18px',
+            color: grey.base,
         },
     },
     Illustration: {
