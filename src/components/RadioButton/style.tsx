@@ -47,20 +47,37 @@ const StyledRadioButton = withProps<RadioButtonPropsType, HTMLInputElement>(styl
 `;
 
 const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement>(styled.div)`
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
     background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
     background: ${({ theme, checked, disabled }): string =>
-        !checked && disabled ? theme.RadioButton.idleDisabled.background : ''};
+        disabled ? 'repeating-linear-gradient( -45deg,#ccc,#ccc 5px,#f8f9fb 5px,#f8f9fb 10px )' : ''};
     border: 1px solid ${({ theme, checked }): string =>
         checked ? theme.RadioButton.active.borderColor : theme.RadioButton.idle.borderColor};
 
     box-shadow: ${({ theme, elementFocus, checked }): string => `
         ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow},
-        inset ${checked ? theme.RadioButton.active.boxShadow : theme.RadioButton.idle.boxShadow}
+        inset ${checked ? '0px 0px 0px 5.5px rgba(107,222,120,0.50)' : theme.RadioButton.idle.boxShadow}
     `};
+    position: relative;
+
+    ${({ theme, checked, disabled }): string =>
+        checked && disabled
+            ? `&::after {
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        content: '';
+        background-color: ${theme.RadioButton.idle.backgroundColor};
+        z-index: 99999;
+    }`
+            : ''}
 `;
 
 export default StyledRadioButton;

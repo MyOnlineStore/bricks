@@ -562,9 +562,9 @@ const theme: ThemeType = {
             boxShadow: '0px 0px 0px 5.5px transparent',
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 2px,${silver.darker1} 2px,${
-                silver.darker1
-            } 12px )`,
+            background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 5px,${silver.base} 5px,${
+                silver.base
+            } 10px )`,
         },
         focus: {
             boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
