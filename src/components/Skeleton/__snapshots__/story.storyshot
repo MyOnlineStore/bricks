@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Skeleton Button 1`] = `
+exports[`Storyshots Skeleton Button ⚠️ 1`] = `
 <div
   aria-hidden={true}
   className="sc-hqyNC gQabiB"
