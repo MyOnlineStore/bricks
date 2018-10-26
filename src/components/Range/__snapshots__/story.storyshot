@@ -14,7 +14,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ iYCWTZ"
+          className="sc-eNQAEJ ajvZf"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
@@ -47,7 +47,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ iYCWTZ"
+          className="sc-eNQAEJ ajvZf"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
