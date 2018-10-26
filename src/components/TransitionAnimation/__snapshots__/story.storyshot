@@ -15,7 +15,7 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
     >
       <div
-        className="sc-kAzzGY bTHTRF"
+        className="sc-kAzzGY khAVEF"
         role="heading"
       >
         Lorem ipsum
