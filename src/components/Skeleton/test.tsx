@@ -12,14 +12,6 @@ describe('Skeleton', () => {
         expect(fn).not.toThrow();
     });
 
-    it('should not crash when no width is set on the Button variant', () => {
-        const fn = (): void => {
-            mountWithTheme(<Skeleton.Button />);
-        };
-
-        expect(fn).not.toThrow();
-    });
-
     it('should not render placeholders less than 6px wide', () => {
         const component = mountWithTheme(<Skeleton.Text baseWidth={3} lines={1} />);
 
