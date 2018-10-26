@@ -561,6 +561,11 @@ const theme: ThemeType = {
             borderColor: silver.darker4,
             boxShadow: '0px 0px 0px 5.5px transparent',
         },
+        idleDisabled: {
+            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 2px,${silver.darker1} 2px,${
+                silver.darker1
+            } 12px )`,
+        },
         focus: {
             boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
         },
@@ -568,6 +573,9 @@ const theme: ThemeType = {
             boxShadow: `0px 0px 0px 5.5px ${green.base}`,
             borderColor: green.darker2,
             backgroundColor: silver.lighter1,
+        },
+        activeDisabled: {
+            boxShadow: `0px`,
         },
     },
     Raised: {

@@ -9,6 +9,7 @@ type RadioButtonPropsType = {
 
 type RadioButtonSkinPropsType = {
     checked: boolean;
+    disabled: boolean | undefined;
     elementFocus: boolean;
 };
 
@@ -18,10 +19,16 @@ type RadioButtonThemeType = {
         borderColor: string;
         backgroundColor: string;
     };
+    idleDisabled: {
+        background: string;
+    };
     active: {
         boxShadow: string;
         borderColor: string;
         backgroundColor: string;
+    };
+    activeDisabled: {
+        boxShadow: string;
     };
     focus: {
         boxShadow: string;
@@ -45,6 +52,8 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
     background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
+    background: ${({ theme, checked, disabled }): string =>
+        !checked && disabled ? theme.RadioButton.idleDisabled.background : ''};
     border: 1px solid ${({ theme, checked }): string =>
         checked ? theme.RadioButton.active.borderColor : theme.RadioButton.idle.borderColor};
 

@@ -10,6 +10,7 @@ type StateType = {
 
 type PropsType = {
     checked: boolean;
+    disabled?: boolean;
     value: string;
     name: string;
     id?: string;
@@ -41,7 +42,11 @@ class RadioButton extends Component<PropsType, StateType> {
         return (
             <StyledRadioWrapper onClick={this.handleChange}>
                 <Box margin={trbl(0, 9, 0, 0)}>
-                    <StyledRadioButtonSkin elementFocus={this.state.focus} checked={this.props.checked}>
+                    <StyledRadioButtonSkin
+                        elementFocus={this.state.focus}
+                        checked={this.props.checked}
+                        disabled={this.props.disabled}
+                    >
                         <StyledRadioButton
                             onFocus={this.toggleFocus}
                             onBlur={this.toggleFocus}
@@ -50,6 +55,7 @@ class RadioButton extends Component<PropsType, StateType> {
                             type="radio"
                             name={this.props.name}
                             value={this.props.value}
+                            disabled={this.props.disabled}
                             id={this.props.id}
                         />
                     </StyledRadioButtonSkin>
