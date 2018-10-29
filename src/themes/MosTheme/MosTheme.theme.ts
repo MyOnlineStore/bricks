@@ -360,7 +360,8 @@ const theme: ThemeType = {
             } 10px )`,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )`,
+            background:
+                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
         },
         error: {
             borderColor: red.base,
@@ -586,8 +587,9 @@ const theme: ThemeType = {
             background: green.base,
         },
         activeDisabled: {
-            boxShadow: `0px 0px 0px 5.5px rgba(107,222,120,0.50)`,
-            background: `repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )`,
+            boxShadow: '0px 0px 0px 5.5px rgba(107,222,120,0.50)',
+            background:
+                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
         },
         error: {
             borderColor: red.base,
@@ -848,7 +850,8 @@ const theme: ThemeType = {
             } 10px )`,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )`,
+            background:
+                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
         },
         error: {
             border: `1px solid ${red.base}`,
