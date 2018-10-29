@@ -65,6 +65,7 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
         } else if (checked) {
             return theme.RadioButton.active.background;
         }
+
         return '';
     }};
     border: 1px solid ${({ theme, checked, error }): string =>

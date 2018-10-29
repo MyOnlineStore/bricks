@@ -56,6 +56,7 @@ const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(sty
             if (disabled && checkedState) {
                 return `background: ${theme.Checkbox.checkedDisabled.background};`;
             }
+
             return `background-color: ${theme.Checkbox.checked.backgroundColor};`;
         }
 
