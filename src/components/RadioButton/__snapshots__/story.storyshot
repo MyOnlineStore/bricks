@@ -6,11 +6,12 @@ exports[`Storyshots RadioButton Default 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH kcWmUX"
+    className="sc-bwzfXH gJbmkn"
   >
     <div
       checked={true}
-      className="sc-kpOJdX kxmcXw"
+      className="sc-kpOJdX kyWsI"
+      disabled={false}
     >
       <input
         checked={true}
@@ -28,11 +29,15 @@ exports[`Storyshots RadioButton Default 1`] = `
   <p
     className="sc-bxivhb jpexxn"
   >
-    <label
-      htmlFor="demo"
+    <span
+      className="sc-htpNat ivSMHx"
     >
-      foo
-    </label>
+      <label
+        htmlFor="demo"
+      >
+        foo
+      </label>
+    </span>
   </p>
 </div>
 `;

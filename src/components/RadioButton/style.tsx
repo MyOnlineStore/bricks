@@ -9,7 +9,8 @@ type RadioButtonPropsType = {
 
 type RadioButtonSkinPropsType = {
     checked: boolean;
-    disabled: boolean | undefined;
+    disabled?: boolean;
+    error?: boolean;
     elementFocus: boolean;
 };
 
@@ -25,13 +26,17 @@ type RadioButtonThemeType = {
     active: {
         boxShadow: string;
         borderColor: string;
-        backgroundColor: string;
+        background: string;
     };
     activeDisabled: {
         boxShadow: string;
+        background: string;
     };
     focus: {
         boxShadow: string;
+    };
+    error: {
+        borderColor: string;
     };
 };
 
@@ -47,28 +52,40 @@ const StyledRadioButton = withProps<RadioButtonPropsType, HTMLInputElement>(styl
 `;
 
 const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement>(styled.div)`
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
     background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
-    background: ${({ theme, checked, disabled }): string =>
-        disabled ? 'repeating-linear-gradient( -45deg,#ccc,#ccc 5px,#f8f9fb 5px,#f8f9fb 10px )' : ''};
-    border: 1px solid ${({ theme, checked }): string =>
-        checked ? theme.RadioButton.active.borderColor : theme.RadioButton.idle.borderColor};
+    background: ${({ theme, checked, disabled }): string => {
+        if (checked && disabled) {
+            return theme.RadioButton.activeDisabled.background;
+        } else if (!checked && disabled) {
+            return theme.RadioButton.idleDisabled.background;
+        } else if (checked) {
+            return theme.RadioButton.active.background;
+        }
+        return '';
+    }};
+    border: 1px solid ${({ theme, checked, error }): string =>
+        error
+            ? theme.RadioButton.error.borderColor
+            : checked
+                ? theme.RadioButton.active.borderColor
+                : theme.RadioButton.idle.borderColor};
 
-    box-shadow: ${({ theme, elementFocus, checked }): string => `
-        ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow},
-        inset ${checked ? '0px 0px 0px 5.5px rgba(107,222,120,0.50)' : theme.RadioButton.idle.boxShadow}
+    box-shadow: ${({ theme, elementFocus, checked, disabled }): string =>
+        `
+        ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow}
     `};
     position: relative;
 
     ${({ theme, checked, disabled }): string =>
-        checked && disabled
+        checked
             ? `&::after {
         border-radius: 100%;
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         position: absolute;
         left: 50%;
         top: 50%;

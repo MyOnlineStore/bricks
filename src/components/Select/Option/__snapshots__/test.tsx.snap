@@ -76,7 +76,7 @@ exports[`Option should render 1`] = `
 }
 
 .c4 {
-  color: #a6aab3;
+  color: #88979d;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -90,7 +90,7 @@ exports[`Option should render 1`] = `
 }
 
 .c6 {
-  color: #a6aab3;
+  color: #88979d;
   font-family: Source Sans Pro,sans-serif;
   font-size: 14px;
   font-weight: 400;

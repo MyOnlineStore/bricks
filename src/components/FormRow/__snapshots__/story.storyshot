@@ -19,7 +19,7 @@ exports[`Storyshots FormRow Default 1`] = `
           </p>
         </div>
         <p
-          className="sc-bxivhb jVDCXG"
+          className="sc-bxivhb fhIWly"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -154,7 +154,7 @@ exports[`Storyshots FormRow Default 1`] = `
           </p>
         </div>
         <p
-          className="sc-bxivhb jVDCXG"
+          className="sc-bxivhb fhIWly"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -252,7 +252,7 @@ exports[`Storyshots FormRow Default 1`] = `
           </p>
         </div>
         <p
-          className="sc-bxivhb jVDCXG"
+          className="sc-bxivhb fhIWly"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus, corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
         </p>
@@ -272,11 +272,12 @@ exports[`Storyshots FormRow Default 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kcWmUX"
+              className="sc-bwzfXH gJbmkn"
             >
               <div
                 checked={true}
-                className="sc-kpOJdX kxmcXw"
+                className="sc-kpOJdX kyWsI"
+                disabled={undefined}
               >
                 <input
                   checked={true}
@@ -294,11 +295,15 @@ exports[`Storyshots FormRow Default 1`] = `
             <p
               className="sc-bxivhb jpexxn"
             >
-              <label
-                htmlFor="bool"
+              <span
+                className="sc-htpNat ivSMHx"
               >
-                True
-              </label>
+                <label
+                  htmlFor="bool"
+                >
+                  True
+                </label>
+              </span>
             </p>
           </div>
         </div>
@@ -310,11 +315,12 @@ exports[`Storyshots FormRow Default 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kcWmUX"
+              className="sc-bwzfXH gJbmkn"
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-kpOJdX iNOmBO"
+                disabled={undefined}
               >
                 <input
                   checked={false}
@@ -332,11 +338,15 @@ exports[`Storyshots FormRow Default 1`] = `
             <p
               className="sc-bxivhb jpexxn"
             >
-              <label
-                htmlFor="bool"
+              <span
+                className="sc-htpNat ivSMHx"
               >
-                False
-              </label>
+                <label
+                  htmlFor="bool"
+                >
+                  False
+                </label>
+              </span>
             </p>
           </div>
         </div>
@@ -348,11 +358,12 @@ exports[`Storyshots FormRow Default 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kcWmUX"
+              className="sc-bwzfXH gJbmkn"
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-kpOJdX iNOmBO"
+                disabled={undefined}
               >
                 <input
                   checked={false}
@@ -370,11 +381,15 @@ exports[`Storyshots FormRow Default 1`] = `
             <p
               className="sc-bxivhb jpexxn"
             >
-              <label
-                htmlFor="bool"
+              <span
+                className="sc-htpNat ivSMHx"
               >
-                Sometimes
-              </label>
+                <label
+                  htmlFor="bool"
+                >
+                  Sometimes
+                </label>
+              </span>
             </p>
           </div>
         </div>
@@ -526,11 +541,12 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kcWmUX"
+              className="sc-bwzfXH gJbmkn"
             >
               <div
                 checked={true}
-                className="sc-kpOJdX kxmcXw"
+                className="sc-kpOJdX kyWsI"
+                disabled={undefined}
               >
                 <input
                   checked={true}
@@ -548,11 +564,15 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             <p
               className="sc-bxivhb jpexxn"
             >
-              <label
-                htmlFor="bool"
+              <span
+                className="sc-htpNat ivSMHx"
               >
-                True
-              </label>
+                <label
+                  htmlFor="bool"
+                >
+                  True
+                </label>
+              </span>
             </p>
           </div>
         </div>
@@ -564,11 +584,12 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kcWmUX"
+              className="sc-bwzfXH gJbmkn"
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-kpOJdX iNOmBO"
+                disabled={undefined}
               >
                 <input
                   checked={false}
@@ -586,11 +607,15 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             <p
               className="sc-bxivhb jpexxn"
             >
-              <label
-                htmlFor="bool"
+              <span
+                className="sc-htpNat ivSMHx"
               >
-                False
-              </label>
+                <label
+                  htmlFor="bool"
+                >
+                  False
+                </label>
+              </span>
             </p>
           </div>
         </div>
@@ -602,11 +627,12 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             onClick={[Function]}
           >
             <div
-              className="sc-bwzfXH kcWmUX"
+              className="sc-bwzfXH gJbmkn"
             >
               <div
                 checked={false}
-                className="sc-kpOJdX bHCyFz"
+                className="sc-kpOJdX iNOmBO"
+                disabled={undefined}
               >
                 <input
                   checked={false}
@@ -624,11 +650,15 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             <p
               className="sc-bxivhb jpexxn"
             >
-              <label
-                htmlFor="bool"
+              <span
+                className="sc-htpNat ivSMHx"
               >
-                Sometimes
-              </label>
+                <label
+                  htmlFor="bool"
+                >
+                  Sometimes
+                </label>
+              </span>
             </p>
           </div>
         </div>
@@ -660,7 +690,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH cAZkVZ"
         >
           <div
-            className="sc-bwzfXH kjVuAD"
+            className="sc-bwzfXH bDluOe"
           >
             <div
               checked={false}
@@ -713,7 +743,8 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       className="sc-bwzfXH fQHYuO"
     >
       <div
-        className="sc-jTzLTM hYTrgs"
+        className="sc-jTzLTM buZGri"
+        disabled={undefined}
         onClick={[Function]}
       >
         <div

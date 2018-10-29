@@ -9,7 +9,7 @@ exports[`Storyshots Toggle Default 1`] = `
     className="sc-bwzfXH cAZkVZ"
   >
     <div
-      className="sc-bwzfXH kjVuAD"
+      className="sc-bwzfXH bDluOe"
     >
       <div
         checked={false}

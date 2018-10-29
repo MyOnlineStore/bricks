@@ -15,11 +15,12 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH kcWmUX"
+          className="sc-bwzfXH gJbmkn"
         >
           <div
             checked={true}
-            className="sc-kpOJdX kxmcXw"
+            className="sc-kpOJdX kyWsI"
+            disabled={undefined}
           >
             <input
               checked={true}
@@ -37,11 +38,15 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         <p
           className="sc-bxivhb jpexxn"
         >
-          <label
-            htmlFor="demo"
+          <span
+            className="sc-htpNat ivSMHx"
           >
-            bar 1
-          </label>
+            <label
+              htmlFor="demo"
+            >
+              bar 1
+            </label>
+          </span>
         </p>
       </div>
     </div>
@@ -53,11 +58,12 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH kcWmUX"
+          className="sc-bwzfXH gJbmkn"
         >
           <div
             checked={false}
-            className="sc-kpOJdX bHCyFz"
+            className="sc-kpOJdX iNOmBO"
+            disabled={undefined}
           >
             <input
               checked={false}
@@ -75,11 +81,15 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         <p
           className="sc-bxivhb jpexxn"
         >
-          <label
-            htmlFor="demo"
+          <span
+            className="sc-htpNat ivSMHx"
           >
-            bar 2
-          </label>
+            <label
+              htmlFor="demo"
+            >
+              bar 2
+            </label>
+          </span>
         </p>
       </div>
     </div>
@@ -91,11 +101,12 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH kcWmUX"
+          className="sc-bwzfXH gJbmkn"
         >
           <div
             checked={false}
-            className="sc-kpOJdX bHCyFz"
+            className="sc-kpOJdX iNOmBO"
+            disabled={undefined}
           >
             <input
               checked={false}
@@ -113,11 +124,15 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         <p
           className="sc-bxivhb jpexxn"
         >
-          <label
-            htmlFor="demo"
+          <span
+            className="sc-htpNat ivSMHx"
           >
-            bar 3
-          </label>
+            <label
+              htmlFor="demo"
+            >
+              bar 3
+            </label>
+          </span>
         </p>
       </div>
     </div>

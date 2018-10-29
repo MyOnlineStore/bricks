@@ -9,6 +9,8 @@ type StateType = {
 
 type PropsType = {
     checked: boolean | 'indeterminate';
+    disabled?: boolean;
+    error?: boolean;
     value: string;
     name: string;
     id?: string;
@@ -42,6 +44,8 @@ class Checkbox extends Component<PropsType, StateType> {
                 checkedState={this.props.checked}
                 onClick={(event): void => this.changeHandler(event)}
                 elementFocus={this.state.focus}
+                disabled={this.props.disabled}
+                error={this.props.error}
             >
                 <Box justifyContent="center" alignItems="center" height="100%">
                     {this.props.checked === true && <Icon size="small" color="#fff" icon="checkmark" />}

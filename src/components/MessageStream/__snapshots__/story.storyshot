@@ -34,7 +34,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           >
             Today 12:00
           </p>
@@ -76,7 +76,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           >
             Today 10:00
           </p>
@@ -117,7 +117,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           >
             Yesterday 12:00
           </p>
@@ -175,7 +175,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           >
             12-12-2012 12:00
           </p>
@@ -232,7 +232,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           >
             12-12-2012 12:00
           </p>
@@ -289,7 +289,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           />
         </div>
         <div

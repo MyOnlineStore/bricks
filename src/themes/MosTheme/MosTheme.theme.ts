@@ -354,6 +354,17 @@ const theme: ThemeType = {
             borderColor: green.darker2,
             backgroundColor: green.base,
         },
+        idleDisabled: {
+            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 5px,${silver.darker1} 5px,${
+                silver.darker1
+            } 10px )`,
+        },
+        checkedDisabled: {
+            background: `repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )`,
+        },
+        error: {
+            borderColor: red.base,
+        },
     },
     Contrast: {
         default: {
@@ -572,10 +583,14 @@ const theme: ThemeType = {
         active: {
             boxShadow: `0px 0px 0px 5.5px ${green.base}`,
             borderColor: green.darker2,
-            backgroundColor: silver.lighter1,
+            background: green.base,
         },
         activeDisabled: {
-            boxShadow: `0px`,
+            boxShadow: `0px 0px 0px 5.5px rgba(107,222,120,0.50)`,
+            background: `repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )`,
+        },
+        error: {
+            borderColor: red.base,
         },
     },
     Raised: {
@@ -727,7 +742,7 @@ const theme: ThemeType = {
             fontWeight: '400',
         },
         descriptive: {
-            color: grey.lighter3,
+            color: grey.lighter2,
         },
         strong: {
             fontWeight: '700',
@@ -800,9 +815,9 @@ const theme: ThemeType = {
 
         disabled: {
             color: grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 10px,${silver.darker1} 10px,${
-                silver.darker1
-            } 20px )`,
+            background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 10px,${
+                silver.base
+            } 10px,${silver.base} 20px )`,
         },
     },
     Tile: {
@@ -830,15 +845,13 @@ const theme: ThemeType = {
         idleDisabled: {
             background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 5px,${silver.darker1} 5px,${
                 silver.darker1
-            } 12px )`,
+            } 10px )`,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${green.lighter1},${green.lighter1} 5px,${green.base} 5px,${
-                green.base
-            } 12px )`,
+            background: `repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )`,
         },
         error: {
-            border: `1px solid ${red.darker2}`,
+            border: `1px solid ${red.base}`,
         },
     },
 };

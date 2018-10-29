@@ -6,6 +6,8 @@ import styled, { withProps } from '../../utility/styled';
 type StyledCheckboxSkinType = {
     checkedState: boolean | 'indeterminate';
     elementFocus: boolean;
+    disabled?: boolean;
+    error?: boolean;
 };
 
 type CheckboxThemeType = {
@@ -19,6 +21,15 @@ type CheckboxThemeType = {
     };
     checked: {
         backgroundColor: string;
+        borderColor: string;
+    };
+    idleDisabled: {
+        background: string;
+    };
+    checkedDisabled: {
+        background: string;
+    };
+    error: {
         borderColor: string;
     };
 };
@@ -40,19 +51,29 @@ const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(sty
 
     ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Checkbox.focus.boxShadow};` : '')}
 
-    ${({ theme, checkedState }): string => {
+    ${({ theme, disabled, checkedState }): string => {
         if (checkedState === 'indeterminate' || checkedState) {
-            return `
-                background-color: ${theme.Checkbox.checked.backgroundColor};
-                border: 1px solid ${theme.Checkbox.checked.borderColor}
-            `;
+            if (disabled && checkedState) {
+                return `background: ${theme.Checkbox.checkedDisabled.background};`;
+            }
+            return `background-color: ${theme.Checkbox.checked.backgroundColor};`;
+        }
+
+        if (disabled) {
+            return `background: ${theme.Checkbox.idleDisabled.background};`;
         }
 
         return `
                 background-color: ${theme.Checkbox.idle.backgroundColor};
-                border: 1px solid ${theme.Checkbox.idle.borderColor}
         `;
     }}
+
+    border: 1px solid ${({ theme, checkedState, error }): string =>
+        error
+            ? theme.Checkbox.error.borderColor
+            : checkedState
+                ? theme.Checkbox.checked.borderColor
+                : theme.Checkbox.idle.borderColor};
 `;
 
 export { StyledCheckbox, StyledCheckboxSkin, CheckboxThemeType };

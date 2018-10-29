@@ -23,7 +23,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
           className="sc-bwzfXH fsbcIX"
         >
           <p
-            className="sc-bxivhb jVDCXG"
+            className="sc-bxivhb fhIWly"
           >
             Make a selection
           </p>
@@ -98,7 +98,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                       Bar A
                     </p>
                     <p
-                      className="sc-bxivhb jVDCXG"
+                      className="sc-bxivhb fhIWly"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -133,7 +133,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                       Foo B
                     </p>
                     <p
-                      className="sc-bxivhb jVDCXG"
+                      className="sc-bxivhb fhIWly"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -168,7 +168,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                       Bar C
                     </p>
                     <p
-                      className="sc-bxivhb jVDCXG"
+                      className="sc-bxivhb fhIWly"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -203,7 +203,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                       Foo D
                     </p>
                     <p
-                      className="sc-bxivhb jVDCXG"
+                      className="sc-bxivhb fhIWly"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -238,7 +238,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                       Bar E
                     </p>
                     <p
-                      className="sc-bxivhb jVDCXG"
+                      className="sc-bxivhb fhIWly"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -273,7 +273,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
                       Bar F
                     </p>
                     <p
-                      className="sc-bxivhb jVDCXG"
+                      className="sc-bxivhb fhIWly"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -309,7 +309,7 @@ exports[`Storyshots Select Default 1`] = `
         onClick={[Function]}
       >
         <p
-          className="sc-bxivhb jVDCXG"
+          className="sc-bxivhb fhIWly"
         >
           <span
             className="sc-kgAjT WmYSY"

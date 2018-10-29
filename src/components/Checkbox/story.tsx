@@ -4,5 +4,12 @@ import React from 'react';
 import Checkbox from '.';
 
 storiesOf('Checkbox', module).add('Default', () => (
-    <Checkbox onChange={(): void => undefined} value="bar" checked={boolean('checked', true)} name="foo" />
+    <Checkbox
+        onChange={(): void => undefined}
+        value="bar"
+        checked={boolean('checked', true)}
+        disabled={boolean('disabled', false)}
+        error={boolean('error', false)}
+        name="foo"
+    />
 ));

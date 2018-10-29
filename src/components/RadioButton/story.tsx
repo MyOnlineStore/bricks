@@ -8,6 +8,7 @@ storiesOf('RadioButton', module).add('Default', () => {
         <RadioButton
             checked={boolean('checked', true)}
             disabled={boolean('disabled', false)}
+            error={boolean('error', false)}
             name="demo"
             label="foo"
             value="demo2"

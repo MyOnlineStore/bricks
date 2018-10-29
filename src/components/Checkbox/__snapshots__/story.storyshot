@@ -2,7 +2,8 @@
 
 exports[`Storyshots Checkbox Default 1`] = `
 <div
-  className="sc-jTzLTM gLIeWe"
+  className="sc-jTzLTM dxYrGK"
+  disabled={false}
   onClick={[Function]}
 >
   <div

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
+import Icon from '../Icon';
 import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
 
 type StateType = {
@@ -11,6 +12,7 @@ type StateType = {
 type PropsType = {
     checked: boolean;
     disabled?: boolean;
+    error?: boolean;
     value: string;
     name: string;
     id?: string;
@@ -41,11 +43,12 @@ class RadioButton extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <StyledRadioWrapper onClick={this.handleChange}>
-                <Box margin={trbl(0, 9, 0, 0)}>
+                <Box margin={this.props.disabled ? trbl(0, 6, 0, 0) : trbl(0, 12, 0, 0)}>
                     <StyledRadioButtonSkin
                         elementFocus={this.state.focus}
                         checked={this.props.checked}
                         disabled={this.props.disabled}
+                        error={this.props.error}
                     >
                         <StyledRadioButton
                             onFocus={this.toggleFocus}
@@ -55,13 +58,19 @@ class RadioButton extends Component<PropsType, StateType> {
                             type="radio"
                             name={this.props.name}
                             value={this.props.value}
-                            disabled={this.props.disabled}
                             id={this.props.id}
                         />
                     </StyledRadioButtonSkin>
                 </Box>
-                <Text>
-                    <label htmlFor={this.props.name}>{this.props.label}</label>
+                <Text descriptive={this.props.disabled}>
+                    <Box inline direction="row" align-items="center">
+                        {this.props.disabled && (
+                            <Box inline margin={trbl(0, 12, 0, 0)}>
+                                <Icon size="medium" icon="locked" />{' '}
+                            </Box>
+                        )}
+                        <label htmlFor={this.props.name}>{this.props.label}</label>
+                    </Box>
                 </Text>
             </StyledRadioWrapper>
         );

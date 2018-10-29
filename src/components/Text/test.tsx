@@ -22,7 +22,7 @@ describe('Text', () => {
         const component = shallowWithTheme(<Text descriptive>Descriptive text</Text>);
 
         /* tslint:disable */
-        (expect(toJson(component.dive())) as any).toHaveStyleRule('color', '#a6aab3');
+        (expect(toJson(component.dive())) as any).toHaveStyleRule('color', '#88979d');
         /* tslint:enable */
     });
 

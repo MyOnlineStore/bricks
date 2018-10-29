@@ -53,7 +53,7 @@ class Toggle extends Component<PropsType, StateType> {
         return (
             <StyledToggleWrapper onClick={this.handleChange}>
                 <Box>
-                    <Box margin={trbl(12, 9, 0, 0)}>
+                    <Box margin={trbl(12, 12, 0, 0)}>
                         <StyledToggleSkin
                             elementFocus={this.state.focus}
                             disabled={this.props.disabled}

@@ -40,7 +40,7 @@ describe('RadioButton', () => {
         /* tslint:disable */
         (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
             'box-shadow',
-            `${mosTheme.RadioButton.focus.boxShadow}, inset ${mosTheme.RadioButton.idle.boxShadow}`,
+            `${mosTheme.RadioButton.focus.boxShadow}`,
         );
         /* tslint:enable */
     });
