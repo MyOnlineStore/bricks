@@ -10,9 +10,6 @@ type SkeletonThemeType = {
     Text: {
         fontSize: string;
     };
-    Button: {
-        fontSize: string;
-    };
 };
 
 /* tslint:disable */

@@ -562,9 +562,6 @@ const theme: ThemeType = {
         Text: {
             fontSize: fontSize.base,
         },
-        Button: {
-            fontSize: fontSize.base,
-        },
     },
     ScrollBox: {
         scrollbar: {
