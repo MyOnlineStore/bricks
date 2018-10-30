@@ -19,7 +19,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={true}
-            className="sc-kpOJdX kyWsI"
+            className="sc-kpOJdX kyHwpB"
             disabled={undefined}
           >
             <input

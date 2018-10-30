@@ -81,20 +81,20 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
     `};
     position: relative;
 
-    ${({ theme, checked, disabled }): string =>
+    ${({ theme, checked }): string =>
         checked
             ? `&::after {
-        border-radius: 100%;
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        content: '';
-        background-color: ${theme.RadioButton.idle.backgroundColor};
-        z-index: 99999;
-    }`
+                    border-radius: 100%;
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    content: '';
+                    background-color: ${theme.RadioButton.idle.backgroundColor};
+                    z-index: 99999;
+                }`
             : ''}
 `;
 
