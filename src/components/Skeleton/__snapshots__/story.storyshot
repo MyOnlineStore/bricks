@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Skeleton Button 1`] = `
-<div
-  aria-hidden={true}
-  className="sc-dNLxif dzSrhb"
-  width={139}
->
-  _
-</div>
-`;
-
 exports[`Storyshots Skeleton Text 1`] = `
 Array [
   <div
