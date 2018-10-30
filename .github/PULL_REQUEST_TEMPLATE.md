@@ -9,6 +9,7 @@ proposed release: [`major`|`minor`|`patch`]
 **Checklist** 🛡
 - [ ] I have exported my addition from `src/index.ts` (check if not applicable)
 - [ ] Appropriate tests have been added for my functionality (check if not applicable)
+- [ ] A designer has seen and approved my changes (check if not applicable)
 
 
 **Adds** ✨
