@@ -88,6 +88,7 @@
     "styled-components": "^3.2.3"
   },
   "scripts": {
+    "now-start": "npm run watch",
     "dev": "npm run watch",
     "test": "jest --config=./config/jest/jest.config.json",
     "test-coverage": "jest --config=./config/jest/jest.config.json --coverage --runInBand --bail",
