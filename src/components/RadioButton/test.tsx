@@ -44,4 +44,61 @@ describe('RadioButton', () => {
         );
         /* tslint:enable */
     });
+
+    it('should show a checked and disabled state', () => {
+        const radioButton = mountWithTheme(
+            <RadioButton
+                name="demo"
+                label="foo"
+                disabled={true}
+                checked={true}
+                value="bar"
+                onChange={(): void => undefined}
+            />,
+        );
+        /* tslint:disable */
+        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.RadioButton.activeDisabled.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should show an unchecked and disabled state', () => {
+        const radioButton = mountWithTheme(
+            <RadioButton
+                name="demo"
+                label="foo"
+                disabled={true}
+                checked={false}
+                value="bar"
+                onChange={(): void => undefined}
+            />,
+        );
+        /* tslint:disable */
+        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.RadioButton.idleDisabled.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should show an error state', () => {
+        const radioButton = mountWithTheme(
+            <RadioButton
+                name="demo"
+                label="foo"
+                error={true}
+                checked={false}
+                value="bar"
+                onChange={(): void => undefined}
+            />,
+        );
+        /* tslint:disable */
+        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+            'border',
+            `1px solid ${mosTheme.RadioButton.error.borderColor}`,
+        );
+        /* tslint:enable */
+    });
 });

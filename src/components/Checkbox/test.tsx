@@ -49,4 +49,40 @@ describe('Checkbox', () => {
             event: mockEvent,
         });
     });
+
+    it('should show a checked and disabled state', () => {
+        const checkbox = mountWithTheme(
+            <Checkbox onChange={(): void => undefined} name="demo" disabled={true} checked={true} value="bar" />,
+        );
+        /* tslint:disable */
+        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.Checkbox.checkedDisabled.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should show an unchecked and disabled state', () => {
+        const checkbox = mountWithTheme(
+            <Checkbox onChange={(): void => undefined} name="demo" disabled={true} checked={false} value="bar" />,
+        );
+        /* tslint:disable */
+        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+            'background',
+            mosTheme.Checkbox.idleDisabled.background,
+        );
+        /* tslint:enable */
+    });
+
+    it('should show an error state', () => {
+        const checkbox = mountWithTheme(
+            <Checkbox onChange={(): void => undefined} name="demo" error={true} checked={false} value="bar" />,
+        );
+        /* tslint:disable */
+        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+            'border',
+            `1px solid ${mosTheme.Checkbox.error.borderColor}`,
+        );
+        /* tslint:enable */
+    });
 });
