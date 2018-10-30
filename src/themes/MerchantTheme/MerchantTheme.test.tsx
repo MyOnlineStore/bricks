@@ -7,21 +7,32 @@ import { PropsType } from './MerchantTheme.template';
 describe('MerchantTheme', () => {
     it('should render the merchant theme', () => {
         const HeadingHierarchyThemeType = {
+            color: 'mockValue',
             fontFamily: 'mockValue',
             fontSize: 'mockValue',
             fontWeight: 'mockValue',
             lineHeight: 'mockValue',
-            color: 'mockValue',
+            textTransform: 'mockValue',
         };
 
         const theme = {
             Heading: {
-                hierarchy1: HeadingHierarchyThemeType,
-                hierarchy2: HeadingHierarchyThemeType,
-                hierarchy3: HeadingHierarchyThemeType,
-                hierarchy4: HeadingHierarchyThemeType,
-                hierarchy5: HeadingHierarchyThemeType,
-                hierarchy6: HeadingHierarchyThemeType,
+                default: {
+                    color: 'mockValue',
+                    fontFamily: 'mockValue',
+                    fontSize: 'mockValue',
+                    fontWeight: 'mockValue',
+                    lineHeight: 'mockValue',
+                    textTransform: 'mockValue',
+                },
+                hierarchy: {
+                    hierarchy1: HeadingHierarchyThemeType,
+                    hierarchy2: HeadingHierarchyThemeType,
+                    hierarchy3: HeadingHierarchyThemeType,
+                    hierarchy4: HeadingHierarchyThemeType,
+                    hierarchy5: HeadingHierarchyThemeType,
+                    hierarchy6: HeadingHierarchyThemeType,
+                },
             },
         };
 

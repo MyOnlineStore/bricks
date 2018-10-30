@@ -13,7 +13,7 @@ exports[`Storyshots Skeleton Button ⚠️ 1`] = `
 exports[`Storyshots Skeleton Rect 1`] = `
 <div
   aria-hidden={true}
-  className="sc-hqyNC emlzo"
+  className="sc-jbKcbu ehDHvn"
   height="600px"
   width="800px"
 >

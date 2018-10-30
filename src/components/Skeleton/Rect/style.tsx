@@ -5,7 +5,7 @@ import _T from '../../../types/ThemeType';
 import styled, { withProps } from '../../../utility/styled';
 import { TrblType } from '../../../utility/trbl';
 
-type ReactSkeletonPropsType = {
+type RectSkeletonPropsType = {
     top?: string;
     left?: string;
     right?: string;
@@ -21,7 +21,7 @@ type ReactSkeletonPropsType = {
     position?: 'static' | 'relative' | 'fixed' | 'absolute';
 };
 
-const StyledRectSkeleton = withProps<ReactSkeletonPropsType, HTMLDivElement>(styled.div)`
+const StyledRectSkeleton = withProps<RectSkeletonPropsType, HTMLDivElement>(styled.div)`
 
     @keyframes wipe {
         0% {
@@ -71,4 +71,4 @@ const StyledRectSkeleton = withProps<ReactSkeletonPropsType, HTMLDivElement>(sty
         margin !== undefined ? `margin: ${margin.top} ${margin.right} ${margin.bottom} ${margin.left}` : ''};
 `;
 export default StyledRectSkeleton;
-export { ReactSkeletonPropsType };
+export { RectSkeletonPropsType };

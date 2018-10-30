@@ -82,11 +82,11 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }
 
     ${({ theme, isDisabled, isOpen }): string => {
-        return !isDisabled || !isOpen
-            ? `&:focus {
-                box-shadow: ${theme.Select.wrapper.focus.boxShadow};
-            }`
-            : '';
+        return !isDisabled  || !isOpen
+        ? `&:focus {
+            box-shadow: ${theme.Select.wrapper.focus.boxShadow};
+        }`
+        : '';
     }}
 `;
 
