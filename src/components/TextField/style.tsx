@@ -98,13 +98,13 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     width: 100%;
     box-sizing: border-box;
 
-    ${({ focus, severity, theme }): string =>
-        focus
-            ? `border: solid 1px ${theme.Text.severity[severity].color}`
-            : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
-
     ${({ focus, disabled, severity, theme }): string =>
-        focus && !disabled ? `box-shadow: ${theme.TextField.severity[severity].boxShadow}` : ''};
+        focus && !disabled
+            ? `
+            border: solid 1px ${theme.Text.severity[severity].color}
+            box-shadow: ${theme.TextField.severity[severity].boxShadow}
+            `
+            : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
 
     * {
         cursor: text;
