@@ -68,8 +68,7 @@ const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
-    color: ${({ theme, disabled }): string =>
-        disabled ? theme.TextField.disabled.color : theme.TextField.idle.affix.color}
+    color: ${({ theme }): string => theme.TextField.idle.affix.color};
 
     &:first-child {
         border-right: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
