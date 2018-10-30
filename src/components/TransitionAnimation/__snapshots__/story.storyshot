@@ -9,10 +9,14 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
   >
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="sc-ktHwxA dvMpAQ"
 =======
       className="sc-cIShpX eUJFYD"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+      className="sc-ktHwxA dvMpAQ"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
     >
       <div
         className="sc-kAzzGY khAVEF"

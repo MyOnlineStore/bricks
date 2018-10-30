@@ -6,10 +6,14 @@ exports[`Storyshots Tile Default 1`] = `
 >
   <div
 <<<<<<< HEAD
+<<<<<<< HEAD
     className="sc-jnlKLf eJIbRA"
 =======
     className="sc-fYxtnH bKdTjx"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+    className="sc-jnlKLf eJIbRA"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
   >
     <div
       className="sc-bwzfXH gYXXqF"

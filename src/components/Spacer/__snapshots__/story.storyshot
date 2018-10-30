@@ -2,14 +2,18 @@
 
 exports[`Storyshots Spacer ⚠️  With margin 1`] = `
 <div
-  className="sc-jqCOkK eSGjvK"
+  className="sc-dNLxif cRIUiY"
 >
   <div
+<<<<<<< HEAD
 <<<<<<< HEAD
     className="sc-hEsumM kphJem"
 =======
     className="sc-ktHwxA geMWbx"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+    className="sc-hEsumM kphJem"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
   >
     <p
 <<<<<<< HEAD
@@ -27,13 +31,17 @@ exports[`Storyshots Spacer ⚠️  With margin 1`] = `
 exports[`Storyshots Spacer ⚠️  With padding 1`] = `
 <div
 <<<<<<< HEAD
+<<<<<<< HEAD
   className="sc-hEsumM kphJem"
 =======
   className="sc-ktHwxA geMWbx"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+  className="sc-hEsumM kphJem"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
 >
   <div
-    className="sc-jqCOkK jMfdRS"
+    className="sc-dNLxif kXdeJR"
   >
     <p
 <<<<<<< HEAD

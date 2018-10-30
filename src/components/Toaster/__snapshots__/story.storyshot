@@ -13,20 +13,28 @@ exports[`Storyshots Toaster Default 1`] = `
   >
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="sc-fYxtnH dlkCOS"
 =======
       className="sc-tilXH kMPENQ"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+      className="sc-fYxtnH dlkCOS"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
 <<<<<<< HEAD
+<<<<<<< HEAD
           className="sc-tilXH cCFWJY"
 =======
           className="sc-hEsumM dckXUS"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+          className="sc-tilXH cCFWJY"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
         >
           <div
             className="sc-bwzfXH jQmHZh"
@@ -124,20 +132,28 @@ exports[`Storyshots Toaster With action button 1`] = `
   >
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="sc-fYxtnH dlkCOS"
 =======
       className="sc-tilXH kMPENQ"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+      className="sc-fYxtnH dlkCOS"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
 <<<<<<< HEAD
+<<<<<<< HEAD
           className="sc-tilXH ixSjMq"
 =======
           className="sc-hEsumM eaYoif"
 >>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+=======
+          className="sc-tilXH ixSjMq"
+>>>>>>> 5f199d6... Removed Skeleton button (#238)
         >
           <div
             className="sc-bwzfXH jQmHZh"
