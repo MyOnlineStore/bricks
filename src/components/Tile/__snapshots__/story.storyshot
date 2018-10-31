@@ -7,6 +7,7 @@ exports[`Storyshots Tile Default 1`] = `
   <div
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     className="sc-jnlKLf eJIbRA"
 =======
     className="sc-fYxtnH bKdTjx"
@@ -14,6 +15,9 @@ exports[`Storyshots Tile Default 1`] = `
 =======
     className="sc-jnlKLf eJIbRA"
 >>>>>>> 5f199d6... Removed Skeleton button (#238)
+=======
+    className="sc-gGBfsJ itRKPA"
+>>>>>>> c0dcd4c... Removed Spacer (#245)
   >
     <div
       className="sc-bwzfXH gYXXqF"

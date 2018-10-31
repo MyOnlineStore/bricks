@@ -10,6 +10,7 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
     <div
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="sc-ktHwxA dvMpAQ"
 =======
       className="sc-cIShpX eUJFYD"
@@ -17,6 +18,9 @@ exports[`Storyshots TransitionAnimation Default 1`] = `
 =======
       className="sc-ktHwxA dvMpAQ"
 >>>>>>> 5f199d6... Removed Skeleton button (#238)
+=======
+      className="sc-tilXH kVLIsm"
+>>>>>>> c0dcd4c... Removed Spacer (#245)
     >
       <div
         className="sc-kAzzGY khAVEF"

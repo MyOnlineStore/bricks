@@ -14,6 +14,7 @@ exports[`Storyshots Toaster Default 1`] = `
     <div
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="sc-fYxtnH dlkCOS"
 =======
       className="sc-tilXH kMPENQ"
@@ -21,11 +22,15 @@ exports[`Storyshots Toaster Default 1`] = `
 =======
       className="sc-fYxtnH dlkCOS"
 >>>>>>> 5f199d6... Removed Skeleton button (#238)
+=======
+      className="sc-jnlKLf eAzyed"
+>>>>>>> c0dcd4c... Removed Spacer (#245)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           className="sc-tilXH cCFWJY"
@@ -35,6 +40,9 @@ exports[`Storyshots Toaster Default 1`] = `
 =======
           className="sc-tilXH cCFWJY"
 >>>>>>> 5f199d6... Removed Skeleton button (#238)
+=======
+          className="sc-fYxtnH cEKuPQ"
+>>>>>>> c0dcd4c... Removed Spacer (#245)
         >
           <div
             className="sc-bwzfXH jQmHZh"
@@ -133,6 +141,7 @@ exports[`Storyshots Toaster With action button 1`] = `
     <div
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       className="sc-fYxtnH dlkCOS"
 =======
       className="sc-tilXH kMPENQ"
@@ -140,11 +149,15 @@ exports[`Storyshots Toaster With action button 1`] = `
 =======
       className="sc-fYxtnH dlkCOS"
 >>>>>>> 5f199d6... Removed Skeleton button (#238)
+=======
+      className="sc-jnlKLf eAzyed"
+>>>>>>> c0dcd4c... Removed Spacer (#245)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           className="sc-tilXH ixSjMq"
@@ -154,6 +167,9 @@ exports[`Storyshots Toaster With action button 1`] = `
 =======
           className="sc-tilXH ixSjMq"
 >>>>>>> 5f199d6... Removed Skeleton button (#238)
+=======
+          className="sc-fYxtnH bGlNWm"
+>>>>>>> c0dcd4c... Removed Spacer (#245)
         >
           <div
             className="sc-bwzfXH jQmHZh"
