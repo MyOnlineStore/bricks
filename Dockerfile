@@ -12,5 +12,3 @@ COPY . .
 
 # Build and export the app
 RUN npm run build-now
-
-RUN cd /public && ls -la
