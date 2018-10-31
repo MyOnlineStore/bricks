@@ -31,7 +31,7 @@ exports[`Storyshots EmptyState Default 1`] = `
       className="sc-bwzfXH eTHzfe"
     >
       <p
-        className="sc-bxivhb fieUlb"
+        className="sc-bxivhb dGxAqY"
       >
         ..A tumbleweed passes by
       </p>
@@ -71,7 +71,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       className="sc-bwzfXH eTHzfe"
     >
       <p
-        className="sc-bxivhb fieUlb"
+        className="sc-bxivhb dGxAqY"
       >
         There are no filters applied yet. Use the button below to apply a filter.
       </p>

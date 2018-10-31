@@ -10,9 +10,6 @@ exports[`Text should render text with default styling 1`] = `
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
 }
 
 <p

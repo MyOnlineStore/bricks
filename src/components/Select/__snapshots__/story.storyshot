@@ -23,7 +23,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
           className="sc-bwzfXH fsbcIX"
         >
           <p
-            className="sc-bxivhb fhIWly"
+            className="sc-bxivhb kTaguW"
           >
             Make a selection
           </p>
@@ -93,12 +93,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-                      className="sc-bxivhb jpexxn"
+                      className="sc-bxivhb kFVWeI"
                     >
                       Bar A
                     </p>
                     <p
-                      className="sc-bxivhb fhIWly"
+                      className="sc-bxivhb kTaguW"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -128,12 +128,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-                      className="sc-bxivhb jpexxn"
+                      className="sc-bxivhb kFVWeI"
                     >
                       Foo B
                     </p>
                     <p
-                      className="sc-bxivhb fhIWly"
+                      className="sc-bxivhb kTaguW"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -163,12 +163,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-                      className="sc-bxivhb jpexxn"
+                      className="sc-bxivhb kFVWeI"
                     >
                       Bar C
                     </p>
                     <p
-                      className="sc-bxivhb fhIWly"
+                      className="sc-bxivhb kTaguW"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -198,12 +198,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-                      className="sc-bxivhb jpexxn"
+                      className="sc-bxivhb kFVWeI"
                     >
                       Foo D
                     </p>
                     <p
-                      className="sc-bxivhb fhIWly"
+                      className="sc-bxivhb kTaguW"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -233,12 +233,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-                      className="sc-bxivhb jpexxn"
+                      className="sc-bxivhb kFVWeI"
                     >
                       Bar E
                     </p>
                     <p
-                      className="sc-bxivhb fhIWly"
+                      className="sc-bxivhb kTaguW"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -268,12 +268,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-                      className="sc-bxivhb jpexxn"
+                      className="sc-bxivhb kFVWeI"
                     >
                       Bar F
                     </p>
                     <p
-                      className="sc-bxivhb fhIWly"
+                      className="sc-bxivhb kTaguW"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -309,7 +309,7 @@ exports[`Storyshots Select Default 1`] = `
         onClick={[Function]}
       >
         <p
-          className="sc-bxivhb fhIWly"
+          className="sc-bxivhb kTaguW"
         >
           <span
             className="sc-kgAjT WmYSY"
@@ -372,7 +372,7 @@ exports[`Storyshots Select Default 1`] = `
                   className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-ifAKCX kRfhnK"
+                    className="sc-ifAKCX cdTTkb"
                   >
                     Bar A
                   </span>
@@ -391,7 +391,7 @@ exports[`Storyshots Select Default 1`] = `
                   className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-ifAKCX kRfhnK"
+                    className="sc-ifAKCX cdTTkb"
                   >
                     Foo B
                   </span>
@@ -410,7 +410,7 @@ exports[`Storyshots Select Default 1`] = `
                   className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-ifAKCX kRfhnK"
+                    className="sc-ifAKCX cdTTkb"
                   >
                     Bar C
                   </span>
@@ -429,7 +429,7 @@ exports[`Storyshots Select Default 1`] = `
                   className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-ifAKCX kRfhnK"
+                    className="sc-ifAKCX cdTTkb"
                   >
                     Foo D
                   </span>
@@ -448,7 +448,7 @@ exports[`Storyshots Select Default 1`] = `
                   className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-ifAKCX kRfhnK"
+                    className="sc-ifAKCX cdTTkb"
                   >
                     Bar E
                   </span>
@@ -467,7 +467,7 @@ exports[`Storyshots Select Default 1`] = `
                   className="sc-htpNat kTMegb"
                 >
                   <span
-                    className="sc-ifAKCX kRfhnK"
+                    className="sc-ifAKCX cdTTkb"
                   >
                     Bar F
                   </span>
