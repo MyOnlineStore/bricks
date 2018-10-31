@@ -1,20 +1,16 @@
 import React, { SFC } from 'react';
 import StyledRectSkeleton from './style';
-import { PropsType as BoxPropsType } from '../../Box';
 
-type PropsType = BoxPropsType & {
-    borderRadius?: string;
+type PropsType = {
+    width?: string;
+    height?: string;
 };
 
-const Rect: SFC<PropsType> = (props): JSX.Element => {
-    const { ref, wrap, ...filteredProps } = props;
-
-    return (
-        <StyledRectSkeleton {...filteredProps} borderRadius={props.borderRadius} position={props.position}>
-            _
-        </StyledRectSkeleton>
-    );
-};
+const Rect: SFC<PropsType> = (props): JSX.Element => (
+    <StyledRectSkeleton aria-hidden {...props}>
+        _
+    </StyledRectSkeleton>
+);
 
 export default Rect;
 export { PropsType };

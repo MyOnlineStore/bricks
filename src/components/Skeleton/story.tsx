@@ -1,17 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import React, { SFC } from 'react';
 import Skeleton from '.';
-import { boolean, number, select, text } from '@storybook/addon-knobs';
+import { boolean, number, text } from '@storybook/addon-knobs';
 import Text from '../Text';
 import Button from '../Button';
-import trbl, { PxCoordinateType } from '../../utility/trbl';
-import { PropsType as BoxPropsType } from '../Box';
+import EmptyState from '../EmptyState';
 type DemoPropsType = {
     loading?: boolean;
     element: string;
 };
-
-const positionOptions = ['absolute', 'fixed', 'relative', 'static'];
 
 const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
     if (element === 'Text') {
@@ -33,26 +30,14 @@ const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
 
         return <Button title="The button has loaded" variant="primary" />;
     } else {
-        return (
-            <Skeleton.Rect
-                top={text('top', '')}
-                left={text('left', '')}
-                right={text('right', '')}
-                bottom={text('bottom', '')}
-                width={text('width', '800px')}
-                height={text('height', '600px')}
-                minWidth={text('minWidth', '')}
-                maxWidth={text('maxWidth', '')}
-                minHeight={text('minHeight', '')}
-                maxHeight={text('maxHeight', '')}
-                borderRadius={text('radius', '10px')}
-                margin={trbl(select('margin', [0, 6, 12], 0) as PxCoordinateType)}
-                position={select('position', positionOptions, positionOptions[0]) as BoxPropsType['position']}
-            />
-        );
+        if (loading) {
+            return <Skeleton.Rect width={text('width', '800px')} height={text('height', '600px')} />;
+        }
+
+        return <EmptyState title="Loaded!" message="If you are reading this, you wasting your time." />;
     }
 };
 
 storiesOf('Skeleton', module).add('Text', () => <Demo element="Text" loading={boolean('loading', true)} />);
+storiesOf('Skeleton', module).add('Rect', () => <Demo element="Rect" loading={boolean('loading', true)} />);
 storiesOf('Skeleton', module).add('Button ⚠️', () => <Demo element="Button" loading={boolean('loading', true)} />);
-storiesOf('Skeleton', module).add('Rect', () => <Demo element="Rect" />);
