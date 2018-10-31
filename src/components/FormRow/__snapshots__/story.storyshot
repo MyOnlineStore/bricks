@@ -41,7 +41,7 @@ exports[`Storyshots FormRow Default 1`] = `
               onFocusCapture={[Function]}
             >
               <div
-                className="sc-ckVGcZ kdxLRP"
+                className="sc-ckVGcZ icwBSM"
                 disabled={undefined}
               >
                 <span
@@ -50,17 +50,24 @@ exports[`Storyshots FormRow Default 1`] = `
                   Initials
                 </span>
               </div>
-              <input
-                className="sc-dxgOiQ cNbhAj"
-                disabled={undefined}
-                id={undefined}
-                name="Initials"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
+              <div
+                className="sc-bwzfXH grkVqn"
+              >
+                <input
+                  className="sc-dxgOiQ cNbhAj"
+                  disabled={undefined}
+                  id={undefined}
+                  name="Initials"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="sc-bwzfXH iOPxsx"
+                />
+              </div>
             </div>
           </div>
           <div
@@ -74,7 +81,7 @@ exports[`Storyshots FormRow Default 1`] = `
               onFocusCapture={[Function]}
             >
               <div
-                className="sc-ckVGcZ kdxLRP"
+                className="sc-ckVGcZ icwBSM"
                 disabled={undefined}
               >
                 <span
@@ -83,17 +90,24 @@ exports[`Storyshots FormRow Default 1`] = `
                   First name
                 </span>
               </div>
-              <input
-                className="sc-dxgOiQ cNbhAj"
-                disabled={undefined}
-                id={undefined}
-                name="First name"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                type="text"
-                value=""
-              />
+              <div
+                className="sc-bwzfXH grkVqn"
+              >
+                <input
+                  className="sc-dxgOiQ cNbhAj"
+                  disabled={undefined}
+                  id={undefined}
+                  name="First name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="sc-bwzfXH iOPxsx"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +122,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-ckVGcZ icwBSM"
               disabled={undefined}
             >
               <span
@@ -117,17 +131,24 @@ exports[`Storyshots FormRow Default 1`] = `
                 Surname
               </span>
             </div>
-            <input
-              className="sc-dxgOiQ cNbhAj"
-              disabled={undefined}
-              id={undefined}
-              name="Surname"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="text"
-              value=""
-            />
+            <div
+              className="sc-bwzfXH grkVqn"
+            >
+              <input
+                className="sc-dxgOiQ cNbhAj"
+                disabled={undefined}
+                id={undefined}
+                name="Surname"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="text"
+                value=""
+              />
+              <div
+                className="sc-bwzfXH iOPxsx"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -169,7 +190,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-ckVGcZ icwBSM"
               disabled={undefined}
             >
               <span
@@ -178,17 +199,24 @@ exports[`Storyshots FormRow Default 1`] = `
                 Country
               </span>
             </div>
-            <input
-              className="sc-dxgOiQ cNbhAj"
-              disabled={undefined}
-              id={undefined}
-              name="Country"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="text"
-              value=""
-            />
+            <div
+              className="sc-bwzfXH grkVqn"
+            >
+              <input
+                className="sc-dxgOiQ cNbhAj"
+                disabled={undefined}
+                id={undefined}
+                name="Country"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="text"
+                value=""
+              />
+              <div
+                className="sc-bwzfXH iOPxsx"
+              />
+            </div>
           </div>
         </div>
         <div
@@ -202,7 +230,7 @@ exports[`Storyshots FormRow Default 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-ckVGcZ icwBSM"
               disabled={undefined}
             >
               <span
@@ -211,17 +239,24 @@ exports[`Storyshots FormRow Default 1`] = `
                 City
               </span>
             </div>
-            <input
-              className="sc-dxgOiQ cNbhAj"
-              disabled={undefined}
-              id={undefined}
-              name="City"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="text"
-              value=""
-            />
+            <div
+              className="sc-bwzfXH grkVqn"
+            >
+              <input
+                className="sc-dxgOiQ cNbhAj"
+                disabled={undefined}
+                id={undefined}
+                name="City"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="text"
+                value=""
+              />
+              <div
+                className="sc-bwzfXH iOPxsx"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -420,7 +455,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-ckVGcZ icwBSM"
               disabled={undefined}
             >
               <span
@@ -429,17 +464,24 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
                 Name
               </span>
             </div>
-            <input
-              className="sc-dxgOiQ cNbhAj"
-              disabled={undefined}
-              id={undefined}
-              name="Name"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="text"
-              value=""
-            />
+            <div
+              className="sc-bwzfXH grkVqn"
+            >
+              <input
+                className="sc-dxgOiQ cNbhAj"
+                disabled={undefined}
+                id={undefined}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="text"
+                value=""
+              />
+              <div
+                className="sc-bwzfXH iOPxsx"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -476,7 +518,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ kdxLRP"
+              className="sc-ckVGcZ icwBSM"
               disabled={undefined}
             >
               <span
@@ -485,17 +527,24 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
                 Country
               </span>
             </div>
-            <input
-              className="sc-dxgOiQ cNbhAj"
-              disabled={undefined}
-              id={undefined}
-              name="Country"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="text"
-              value=""
-            />
+            <div
+              className="sc-bwzfXH grkVqn"
+            >
+              <input
+                className="sc-dxgOiQ cNbhAj"
+                disabled={undefined}
+                id={undefined}
+                name="Country"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="text"
+                value=""
+              />
+              <div
+                className="sc-bwzfXH iOPxsx"
+              />
+            </div>
           </div>
         </div>
       </div>

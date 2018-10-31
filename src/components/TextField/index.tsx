@@ -6,6 +6,7 @@ import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
 import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters/withCurrencyFormatting';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
+import Icon from '../Icon';
 
 type PropsType = {
     value: string;
@@ -71,20 +72,25 @@ class TextField extends Component<PropsType, StateType> {
                             <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
-                    <StyledInput
-                        type={this.props.type ? this.props.type : 'text'}
-                        name={this.props.name}
-                        disabled={this.props.disabled}
-                        value={this.props.value}
-                        id={this.props.id}
-                        onChange={this.onChange}
-                        onFocus={this.handleFocus}
-                        onBlur={this.handleBlur}
-                        innerRef={(ref): void => {
-                            this.inputRef = ref;
-                            if (this.props.extractRef !== undefined) this.props.extractRef(ref);
-                        }}
-                    />
+                    <Box position="relative" width="100%">
+                        <StyledInput
+                            type={this.props.type ? this.props.type : 'text'}
+                            name={this.props.name}
+                            disabled={this.props.disabled}
+                            value={this.props.value}
+                            id={this.props.id}
+                            onChange={this.onChange}
+                            onFocus={this.handleFocus}
+                            onBlur={this.handleBlur}
+                            innerRef={(ref): void => {
+                                this.inputRef = ref;
+                                if (this.props.extractRef !== undefined) this.props.extractRef(ref);
+                            }}
+                        />
+                        <Box position="absolute" right="8px" top="8px">
+                            {this.props.disabled && <Icon icon="locked" color="#A6AAB3" size="medium" />}
+                        </Box>
+                    </Box>
                     {this.props.suffix && (
                         <StyledAffixWrapper disabled={this.props.disabled}>
                             <StyledAffix>{this.props.suffix}</StyledAffix>

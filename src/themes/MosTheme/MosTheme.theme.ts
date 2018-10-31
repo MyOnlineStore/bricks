@@ -817,9 +817,9 @@ const theme: ThemeType = {
 
         disabled: {
             color: grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 10px,${
-                silver.base
-            } 10px,${silver.base} 20px )`,
+            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 10px,${silver.darker1} 10px,${
+                silver.darker1
+            } 20px )`,
         },
     },
     Tile: {
