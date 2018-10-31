@@ -1,3 +1,5 @@
+# This is the Dockerfile required to automatically deploy a static version of bricks to now.sh on every push to the Github repo 
+
 FROM mhart/alpine-node:10
 
 # Set the default working directory
