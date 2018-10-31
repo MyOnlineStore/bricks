@@ -5,7 +5,7 @@ import { boolean, number, select, text } from '@storybook/addon-knobs';
 import Text from '../Text';
 import Button from '../Button';
 import trbl, { PxCoordinateType } from '../../utility/trbl';
-import { RectPropsType } from './Rect';
+import { PropsType as BoxPropsType } from '../Box';
 type DemoPropsType = {
     loading?: boolean;
     element: string;
@@ -35,19 +35,19 @@ const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
     } else {
         return (
             <Skeleton.Rect
+                top={text('top', '')}
+                left={text('left', '')}
+                right={text('right', '')}
+                bottom={text('bottom', '')}
                 width={text('width', '800px')}
                 height={text('height', '600px')}
                 minWidth={text('minWidth', '')}
                 maxWidth={text('maxWidth', '')}
                 minHeight={text('minHeight', '')}
                 maxHeight={text('maxHeight', '')}
-                borderRadius={text('radius', '3px')}
-                position={select('position', positionOptions, positionOptions[0]) as RectPropsType['position']}
-                left={text('left', '')}
-                right={text('right', '')}
-                top={text('top', '')}
-                bottom={text('bottom', '')}
+                borderRadius={text('radius', '10px')}
                 margin={trbl(select('margin', [0, 6, 12], 0) as PxCoordinateType)}
+                position={select('position', positionOptions, positionOptions[0]) as BoxPropsType['position']}
             />
         );
     }
