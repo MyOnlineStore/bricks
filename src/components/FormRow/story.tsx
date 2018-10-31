@@ -49,9 +49,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                     <FormRow
                         label={
                             <label>
-                                <Box>
-                                    <Text>What is your name?</Text>
-                                </Box>
+                                <Text>What is your name?</Text>
                                 <Text descriptive>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
@@ -93,9 +91,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                     <FormRow
                         label={
                             <label>
-                                <Box>
-                                    <Text>Where do you live?</Text>
-                                </Box>
+                                <Text>Where do you live?</Text>
                                 <Text descriptive>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
@@ -127,9 +123,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                     <FormRow
                         label={
                             <label>
-                                <Box>
-                                    <Text>Can a boolean only be either true or false?</Text>
-                                </Box>
+                                <Text>Can a boolean only be either true or false?</Text>
                                 <Text descriptive>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
