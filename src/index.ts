@@ -41,3 +41,4 @@ export { default as Toaster } from './components/Toaster';
 export { default as Toggle } from './components/Toggle';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';
+export { default as hexToRGB } from './utility/hexToRGB';
