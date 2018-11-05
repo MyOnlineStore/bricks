@@ -20,7 +20,7 @@ type ContextValue = {
     getPayload: SubscriptionProvider['getPayload'];
 };
 
-const { Consumer, Provider } = createContext();
+const { Consumer, Provider } = createContext(undefined as any);
 
 const SubscriptionConsumer: Consumer<ContextValue> = Consumer;
 
