@@ -20,7 +20,9 @@ type ContextValue = {
     getPayload: SubscriptionProvider['getPayload'];
 };
 
-const { Consumer, Provider } = createContext(undefined as ContextValue);
+/* tslint:disable */
+const { Consumer, Provider } = createContext(undefined as any);
+/* tslint:enable */
 
 const SubscriptionConsumer: Consumer<ContextValue> = Consumer;
 
