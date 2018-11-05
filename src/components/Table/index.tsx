@@ -5,17 +5,32 @@ import Row from './Row';
 import Branch from '../Branch';
 import Header from './Header';
 
-type PropsType = {
-    rows: Array<RowType>;
-    headers?: Array<ReactNode>;
-    alignments?: Array<'left' | 'center' | 'right'>;
-    draggable?: boolean;
-    selectable?: boolean;
-    onDragEnd?(result: DropResult): void;
-    onSelection?(rows: Array<RowType>): void;
+type BaseRowType = {
+    id: string;
+    selected?: boolean;
+    // tslint:disable-next-line
+    [key: string]: any;
 };
 
-type RowType = { id: string; checked?: boolean; cells: Array<ReactNode> };
+type PropsType<GenericRowType extends BaseRowType> = {
+    rows: Array<GenericRowType>;
+    columns: Array<{
+        key: keyof Partial<GenericRowType>;
+        header?: ReactNode;
+        align?: 'start' | 'center' | 'end';
+        sortable?: boolean;
+    }>;
+    sort?: {
+        [key in keyof Partial<GenericRowType>]: (
+            a: GenericRowType[key],
+            b: GenericRowType[key],
+            direction: 'asc' | 'desc' | null,
+        ) => 0 | 1 | -1
+    };
+    renderCell?: { [key in keyof Partial<GenericRowType>]: (cell: GenericRowType[key]) => JSX.Element };
+    onSelection?(rows: Array<GenericRowType>): void;
+    onDragEnd?(rows: Array<GenericRowType>, dropResult: DropResult): void;
+};
 
 type StateType = {
     selectionStart: number;
@@ -33,8 +48,8 @@ const mapAlignment = (alignment: 'left' | 'center' | 'right'): 'flex-end' | 'cen
     }
 };
 
-class Table extends Component<PropsType, StateType> {
-    public constructor(props: PropsType) {
+class Table<GenericRowType extends BaseRowType> extends Component<PropsType<GenericRowType>, StateType> {
+    public constructor(props: PropsType<GenericRowType>) {
         super(props);
 
         this.state = {
@@ -55,7 +70,7 @@ class Table extends Component<PropsType, StateType> {
             if (event.shiftKey) {
                 window.getSelection().removeAllRanges();
                 onSelection(
-                    rows.map((row, key): RowType => {
+                    rows.map((row, key): GenericRowType => {
                         return (key > this.state.selectionStart && key < selectionStart) ||
                             (key < this.state.selectionStart && key > selectionStart) ||
                             row.id === id
@@ -119,7 +134,6 @@ class Table extends Component<PropsType, StateType> {
                         selectable={isSelectable}
                     />
                 )}
-
                 <tbody>
                     {rows.map(({ id, checked, cells }, rowIndex) => (
                         <Row

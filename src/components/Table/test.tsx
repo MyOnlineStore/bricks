@@ -6,25 +6,60 @@ import Cell from './Cell';
 import Checkbox from '../Checkbox';
 
 describe('Table', () => {
-    const rows = [{ id: 'row-1', checked: true, cells: ['Test A1', 'Test B1', 'Test C1', 'Test D1'] }];
-
     it('should render without draghandler', () => {
         const fn = (): void => {
-            mountWithTheme(<Table rows={rows} />);
+            mountWithTheme(
+                <Table
+                    columns={[
+                        { key: 'id', header: 'Product ID' },
+                        { key: 'name', header: 'name' },
+                        { key: 'price', header: 'Price' },
+                    ]}
+                    rows={[{ id: '61651320', checked: true, price: 19.12, name: 'foo', image: 'imageurl' }]}
+                />,
+            );
         };
 
         expect(fn).not.toThrow();
     });
 
     it('should render the correct amount of cells', () => {
-        const component = mountWithTheme(<Table rows={rows} />);
+        const component = mountWithTheme(
+            <Table
+                columns={[
+                    { key: 'id', header: 'Product ID' },
+                    { key: 'name', header: 'name' },
+                    { key: 'price', header: 'Price' },
+                ]}
+                rows={[
+                    { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                    { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                    { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                ]}
+            />,
+        );
 
         expect(component.find(Cell).length).toBe(4);
     });
 
     it('should render without onSelection', () => {
         const fn = (): void => {
-            mountWithTheme(<Table rows={rows} selectable draggable />);
+            mountWithTheme(
+                <Table
+                    columns={[
+                        { key: 'id', header: 'Product ID' },
+                        { key: 'name', header: 'name' },
+                        { key: 'price', header: 'Price' },
+                    ]}
+                    rows={[
+                        { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                        { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                        { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                        { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                    ]}
+                />,
+            );
         };
 
         expect(fn).not.toThrow();
@@ -41,9 +76,72 @@ describe('Table', () => {
         });
         /* tslint:enable */
 
-        mountWithTheme(<Table draggable rows={rows} onDragEnd={dragHandler} />);
+        mountWithTheme(
+            <Table
+                columns={[
+                    { key: 'id', header: 'Product ID' },
+                    { key: 'name', header: 'name' },
+                    { key: 'price', header: 'Price' },
+                ]}
+                rows={[
+                    { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                    { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                    { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                ]}
+                onDragEnd={dragHandler}
+            />,
+        );
 
         expect(dragHandler).toHaveBeenCalled();
+    });
+
+    it('should not break when rendered without onSelection', () => {
+        const headerCheckFn = (): void => {
+            mountWithTheme(
+                <Table
+                    columns={[
+                        { key: 'id', header: 'Product ID' },
+                        { key: 'name', header: 'name' },
+                        { key: 'price', header: 'Price' },
+                    ]}
+                    rows={[
+                        { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                        { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                        { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                        { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                    ]}
+                />,
+            )
+                .find(Checkbox)
+                .first()
+                .simulate('click');
+        };
+
+        expect(headerCheckFn).not.toThrow();
+
+        const bodyCheckFn = (): void => {
+            mountWithTheme(
+                <Table
+                    columns={[
+                        { key: 'id', header: 'Product ID' },
+                        { key: 'name', header: 'name' },
+                        { key: 'price', header: 'Price' },
+                    ]}
+                    rows={[
+                        { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                        { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                        { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                        { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                    ]}
+                />,
+            )
+                .find(Checkbox)
+                .first()
+                .simulate('click');
+        };
+
+        expect(bodyCheckFn).not.toThrow();
     });
 
     it('should select multiple checkboxes when shift-select from top to bottom', () => {
@@ -53,17 +151,26 @@ describe('Table', () => {
             selectedRows.push({ id });
         });
 
-        const rows = [
-            { id: 'row-1', checked: true, cells: ['Test A1', 'Test B1', 'Test C1', 'Test D1'] },
-            { id: 'row-2', checked: true, cells: ['Test A2', 'Test B2', 'Test C2', 'Test D2'] },
-        ];
-
-        const component = mountWithTheme(<Table onSelection={selectionMock} selectable rows={rows} />);
+        const component = mountWithTheme(
+            <Table
+                columns={[
+                    { key: 'id', header: 'Product ID' },
+                    { key: 'name', header: 'name' },
+                    { key: 'price', header: 'Price' },
+                ]}
+                rows={[
+                    { id: '61651320', checked: false, price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', checked: false, price: 19.2, name: 'foo1', image: 'imageurl' },
+                ]}
+                onSelection={selectionMock}
+            />,
+        );
 
         component
             .find(Checkbox)
             .first()
             .simulate('click');
+
         component
             .find(Checkbox)
             .last()
@@ -75,34 +182,6 @@ describe('Table', () => {
         /* tslint:enable */
     });
 
-    it('should not break when rendered without onSelection', () => {
-        const headers = ['Test A1', 'Test B1', 'Test C1', 'Test D1'];
-
-        const rows = [
-            { id: 'row-1', checked: false, cells: ['Test A1', 'Test B1', 'Test C1', 'Test D1'] },
-            { id: 'row-2', checked: false, cells: ['Test A2', 'Test B2', 'Test C2', 'Test D2'] },
-            { id: 'row-3', checked: false, cells: ['Test A3', 'Test B3', 'Test C3', 'Test D3'] },
-        ];
-
-        const headerCheckFn = (): void => {
-            mountWithTheme(<Table selectable headers={headers} rows={rows} />)
-                .find(Checkbox)
-                .first()
-                .simulate('click');
-        };
-
-        expect(headerCheckFn).not.toThrow();
-
-        const bodyCheckFn = (): void => {
-            mountWithTheme(<Table selectable rows={rows} />)
-                .find(Checkbox)
-                .first()
-                .simulate('click');
-        };
-
-        expect(bodyCheckFn).not.toThrow();
-    });
-
     it('should select multiple checkboxes when shift-select from bottom to top', () => {
         const selectedRows: Array<Object> = [];
 
@@ -110,12 +189,20 @@ describe('Table', () => {
             selectedRows.push({ id });
         });
 
-        const rows = [
-            { id: 'row-1', checked: true, cells: ['Test A1', 'Test B1', 'Test C1', 'Test D1'] },
-            { id: 'row-2', checked: true, cells: ['Test A2', 'Test B2', 'Test C2', 'Test D2'] },
-        ];
-
-        const component = mountWithTheme(<Table onSelection={selectionMock} selectable rows={rows} />);
+        const component = mountWithTheme(
+            <Table
+                columns={[
+                    { key: 'id', header: 'Product ID' },
+                    { key: 'name', header: 'name' },
+                    { key: 'price', header: 'Price' },
+                ]}
+                rows={[
+                    { id: '61651320', checked: false, price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', checked: false, price: 19.2, name: 'foo1', image: 'imageurl' },
+                ]}
+                onSelection={selectionMock}
+            />,
+        );
 
         component
             .find(Checkbox)
