@@ -34,14 +34,14 @@ exports[`Storyshots FormRow Default 1`] = `
             className="sc-bwzfXH kxsXCq"
           >
             <div
-              className="sc-eNQAEJ ajvZf"
+              className="sc-eNQAEJ hdXQwO"
               disabled={undefined}
               onBlurCapture={[Function]}
               onClick={[Function]}
               onFocusCapture={[Function]}
             >
               <div
-                className="sc-ckVGcZ icwBSM"
+                className="sc-ckVGcZ bUDAVg"
                 disabled={undefined}
               >
                 <span
@@ -54,7 +54,7 @@ exports[`Storyshots FormRow Default 1`] = `
                 className="sc-bwzfXH grkVqn"
               >
                 <input
-                  className="sc-dxgOiQ cNbhAj"
+                  className="sc-dxgOiQ hbfiTq"
                   disabled={undefined}
                   id={undefined}
                   name="Initials"
@@ -74,14 +74,14 @@ exports[`Storyshots FormRow Default 1`] = `
             className="sc-bwzfXH fkLxMw"
           >
             <div
-              className="sc-eNQAEJ ajvZf"
+              className="sc-eNQAEJ hdXQwO"
               disabled={undefined}
               onBlurCapture={[Function]}
               onClick={[Function]}
               onFocusCapture={[Function]}
             >
               <div
-                className="sc-ckVGcZ icwBSM"
+                className="sc-ckVGcZ bUDAVg"
                 disabled={undefined}
               >
                 <span
@@ -94,7 +94,7 @@ exports[`Storyshots FormRow Default 1`] = `
                 className="sc-bwzfXH grkVqn"
               >
                 <input
-                  className="sc-dxgOiQ cNbhAj"
+                  className="sc-dxgOiQ hbfiTq"
                   disabled={undefined}
                   id={undefined}
                   name="First name"
@@ -115,14 +115,14 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ ajvZf"
+            className="sc-eNQAEJ hdXQwO"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ icwBSM"
+              className="sc-ckVGcZ bUDAVg"
               disabled={undefined}
             >
               <span
@@ -135,7 +135,7 @@ exports[`Storyshots FormRow Default 1`] = `
               className="sc-bwzfXH grkVqn"
             >
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-dxgOiQ hbfiTq"
                 disabled={undefined}
                 id={undefined}
                 name="Surname"
@@ -183,14 +183,14 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ ajvZf"
+            className="sc-eNQAEJ hdXQwO"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ icwBSM"
+              className="sc-ckVGcZ bUDAVg"
               disabled={undefined}
             >
               <span
@@ -203,7 +203,7 @@ exports[`Storyshots FormRow Default 1`] = `
               className="sc-bwzfXH grkVqn"
             >
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-dxgOiQ hbfiTq"
                 disabled={undefined}
                 id={undefined}
                 name="Country"
@@ -223,14 +223,14 @@ exports[`Storyshots FormRow Default 1`] = `
           className="sc-bwzfXH hoLhPq"
         >
           <div
-            className="sc-eNQAEJ ajvZf"
+            className="sc-eNQAEJ hdXQwO"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ icwBSM"
+              className="sc-ckVGcZ bUDAVg"
               disabled={undefined}
             >
               <span
@@ -243,7 +243,7 @@ exports[`Storyshots FormRow Default 1`] = `
               className="sc-bwzfXH grkVqn"
             >
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-dxgOiQ hbfiTq"
                 disabled={undefined}
                 id={undefined}
                 name="City"
@@ -448,14 +448,14 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH iFjvZT"
         >
           <div
-            className="sc-eNQAEJ ajvZf"
+            className="sc-eNQAEJ hdXQwO"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ icwBSM"
+              className="sc-ckVGcZ bUDAVg"
               disabled={undefined}
             >
               <span
@@ -468,7 +468,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               className="sc-bwzfXH grkVqn"
             >
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-dxgOiQ hbfiTq"
                 disabled={undefined}
                 id={undefined}
                 name="Name"
@@ -511,14 +511,14 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           className="sc-bwzfXH iFjvZT"
         >
           <div
-            className="sc-eNQAEJ ajvZf"
+            className="sc-eNQAEJ hdXQwO"
             disabled={undefined}
             onBlurCapture={[Function]}
             onClick={[Function]}
             onFocusCapture={[Function]}
           >
             <div
-              className="sc-ckVGcZ icwBSM"
+              className="sc-ckVGcZ bUDAVg"
               disabled={undefined}
             >
               <span
@@ -531,7 +531,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
               className="sc-bwzfXH grkVqn"
             >
               <input
-                className="sc-dxgOiQ cNbhAj"
+                className="sc-dxgOiQ hbfiTq"
                 disabled={undefined}
                 id={undefined}
                 name="Country"

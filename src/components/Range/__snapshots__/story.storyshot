@@ -14,7 +14,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ ajvZf"
+          className="sc-eNQAEJ hdXQwO"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
@@ -24,7 +24,7 @@ exports[`Storyshots Range Default 1`] = `
             className="sc-bwzfXH grkVqn"
           >
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-dxgOiQ hbfiTq"
               disabled={false}
               id={undefined}
               name="minimum"
@@ -39,7 +39,7 @@ exports[`Storyshots Range Default 1`] = `
             />
           </div>
           <div
-            className="sc-ckVGcZ icwBSM"
+            className="sc-ckVGcZ bUDAVg"
             disabled={false}
           >
             <span
@@ -54,7 +54,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ ajvZf"
+          className="sc-eNQAEJ hdXQwO"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
@@ -64,7 +64,7 @@ exports[`Storyshots Range Default 1`] = `
             className="sc-bwzfXH grkVqn"
           >
             <input
-              className="sc-dxgOiQ cNbhAj"
+              className="sc-dxgOiQ hbfiTq"
               disabled={false}
               id={undefined}
               name="maximum"
@@ -79,7 +79,7 @@ exports[`Storyshots Range Default 1`] = `
             />
           </div>
           <div
-            className="sc-ckVGcZ icwBSM"
+            className="sc-ckVGcZ bUDAVg"
             disabled={false}
           >
             <span

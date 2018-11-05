@@ -7,6 +7,7 @@ import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './s
 import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters/withCurrencyFormatting';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
+import BreakpointProvider from '../BreakpointProvider';
 
 type PropsType = {
     value: string;
