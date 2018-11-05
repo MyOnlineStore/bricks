@@ -70,29 +70,31 @@ const severity = {
 
 const theme: ThemeType = {
     Badge: {
-<<<<<<< HEAD
         default: {
             color: silver.lighter1,
         },
         severity: {
             success: {
                 backgroundColor: green.darker1,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
             warning: {
                 backgroundColor: yellow.darker1,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
             error: {
                 backgroundColor: red.base,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
             info: {
                 backgroundColor: grey.lighter2,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
         },
-=======
-        backgroundColor: red.base,
-        color: silver.lighter1,
-        fontFamily: bodyFont,
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
     },
     Button: {
         common: {
@@ -646,10 +648,6 @@ const theme: ThemeType = {
         default: {
             color: grey.base,
         },
-<<<<<<< HEAD
-        descriptive: {
-            color: grey.lighter2,
-=======
         variant: {
             small: {
                 fontFamily: bodyFont,
@@ -696,7 +694,6 @@ const theme: ThemeType = {
                     compact: '75px',
                 },
             },
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
         },
         strong: {
             fontWeight: fontWeight.bold,

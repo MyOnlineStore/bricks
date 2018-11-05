@@ -18,20 +18,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb ildJSL"
-=======
-            className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb jKBUfU"
           >
             Sit Inceptos Magna
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kFVWeI"
-=======
-            className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb iyjEP"
           >
             <span
               dangerouslySetInnerHTML={
@@ -42,11 +34,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             Today 12:00
           </p>
@@ -71,20 +59,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb ildJSL"
-=======
-            className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb jKBUfU"
           >
             Aenean Dapibus Vulputate Tortor Magna
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kFVWeI"
-=======
-            className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb iyjEP"
           >
             <span
               dangerouslySetInnerHTML={
@@ -96,11 +76,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             Today 10:00
           </p>
@@ -125,20 +101,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb ildJSL"
-=======
-            className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb jKBUfU"
           >
             Vestibulum Dapibus
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kFVWeI"
-=======
-            className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb iyjEP"
           >
             <span
               dangerouslySetInnerHTML={
@@ -149,11 +117,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             Yesterday 12:00
           </p>
@@ -162,12 +126,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-<<<<<<< HEAD
-            className="sc-htoDjs fAnDzT"
-            color={undefined}
-=======
             className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -197,20 +156,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb ildJSL"
-=======
-            className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb jKBUfU"
           >
             Parturient Euismod Mollis Fringilla
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kFVWeI"
-=======
-            className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb iyjEP"
           >
             <span
               dangerouslySetInnerHTML={
@@ -222,11 +173,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             12-12-2012 12:00
           </p>
@@ -235,12 +182,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-<<<<<<< HEAD
-            className="sc-htoDjs cXnPMg"
-            color={undefined}
-=======
             className="sc-VigVT fsfbYL sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -270,20 +212,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb ildJSL"
-=======
-            className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb jKBUfU"
           >
             Tortor Cursus
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kFVWeI"
-=======
-            className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb iyjEP"
           >
             <span
               dangerouslySetInnerHTML={
@@ -294,11 +228,7 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             12-12-2012 12:00
           </p>
@@ -307,12 +237,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH gFsado"
         >
           <button
-<<<<<<< HEAD
-            className="sc-htoDjs gCmkyb"
-            color={undefined}
-=======
             className="sc-VigVT cZkyFH sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -342,20 +267,12 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH injrXU"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb ildJSL"
-=======
-            className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb jKBUfU"
           >
             Euismod Dolor Consectetur
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kFVWeI"
-=======
-            className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb iyjEP"
           >
             <span
               dangerouslySetInnerHTML={
@@ -366,23 +283,14 @@ exports[`Storyshots MessageStream Default 1`] = `
             />
           </p>
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           />
         </div>
         <div
           className="sc-bwzfXH gFsado"
         >
           <button
-<<<<<<< HEAD
-            className="sc-htoDjs cHdbOr"
-            color={undefined}
-=======
             className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
             id={undefined}
             onClick={[Function]}

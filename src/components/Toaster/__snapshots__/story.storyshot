@@ -12,47 +12,19 @@ exports[`Storyshots Toaster Default 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      className="sc-fYxtnH dlkCOS"
-=======
       className="sc-tilXH kMPENQ"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
-=======
-      className="sc-fYxtnH dlkCOS"
->>>>>>> 5f199d6... Removed Skeleton button (#238)
-=======
-      className="sc-jnlKLf eAzyed"
->>>>>>> c0dcd4c... Removed Spacer (#245)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          className="sc-tilXH cCFWJY"
-=======
           className="sc-hEsumM dckXUS"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
-=======
-          className="sc-tilXH cCFWJY"
->>>>>>> 5f199d6... Removed Skeleton button (#238)
-=======
-          className="sc-fYxtnH cEKuPQ"
->>>>>>> c0dcd4c... Removed Spacer (#245)
         >
           <div
             className="sc-bwzfXH jQmHZh"
           >
             <span
-<<<<<<< HEAD
-              className="sc-ifAKCX chsNTs"
-=======
-              className="sc-ifAKCX jHMnVy"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-ifAKCX eCQSHy"
             >
               <span
                 aria-hidden={true}
@@ -73,20 +45,12 @@ exports[`Storyshots Toaster Default 1`] = `
               className="sc-bwzfXH gaQYSB"
             >
               <p
-<<<<<<< HEAD
-                className="sc-bxivhb ildJSL"
-=======
-                className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                className="sc-bxivhb jKBUfU"
               >
                 Thought provoking we must stand.
               </p>
               <p
-<<<<<<< HEAD
-                className="sc-bxivhb kFVWeI"
-=======
-                className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                className="sc-bxivhb iyjEP"
               >
                 Game-changer problem-solvers; state of play invest, synergy uplift we must stand up ideate social intrapreneurship.
               </p>
@@ -96,12 +60,7 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
-<<<<<<< HEAD
-              className="sc-htoDjs flaPve"
-              color={undefined}
-=======
               className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -139,47 +98,19 @@ exports[`Storyshots Toaster With action button 1`] = `
     }
   >
     <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      className="sc-fYxtnH dlkCOS"
-=======
       className="sc-tilXH kMPENQ"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
-=======
-      className="sc-fYxtnH dlkCOS"
->>>>>>> 5f199d6... Removed Skeleton button (#238)
-=======
-      className="sc-jnlKLf eAzyed"
->>>>>>> c0dcd4c... Removed Spacer (#245)
     >
       <div
         className="sc-bwzfXH cbcpsK"
       >
         <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          className="sc-tilXH ixSjMq"
-=======
           className="sc-hEsumM eaYoif"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
-=======
-          className="sc-tilXH ixSjMq"
->>>>>>> 5f199d6... Removed Skeleton button (#238)
-=======
-          className="sc-fYxtnH bGlNWm"
->>>>>>> c0dcd4c... Removed Spacer (#245)
         >
           <div
             className="sc-bwzfXH jQmHZh"
           >
             <span
-<<<<<<< HEAD
-              className="sc-ifAKCX hURNXo"
-=======
-              className="sc-ifAKCX fbGKwU"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-ifAKCX hbrmCj"
             >
               <span
                 aria-hidden={true}
@@ -200,20 +131,12 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH gaQYSB"
             >
               <p
-<<<<<<< HEAD
-                className="sc-bxivhb ildJSL"
-=======
-                className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                className="sc-bxivhb jKBUfU"
               >
                 Overcome injustice.
               </p>
               <p
-<<<<<<< HEAD
-                className="sc-bxivhb kFVWeI"
-=======
-                className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                className="sc-bxivhb iyjEP"
               >
                 Global low-hanging fruit, collaborative consumption segmentation mobilize support. Problem-solvers cultivate, best practices, shared unit of.
               </p>
@@ -222,12 +145,7 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH kWLDUa"
             >
               <button
-<<<<<<< HEAD
-                className="sc-htoDjs gCmkyb"
-                color={undefined}
-=======
                 className="sc-VigVT cZkyFH sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
                 disabled={undefined}
                 id={undefined}
                 onClick={[Function]}
@@ -242,12 +160,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH bQfpwP"
           >
             <button
-<<<<<<< HEAD
-              className="sc-htoDjs flaPve"
-              color={undefined}
-=======
               className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
               disabled={undefined}
               id={undefined}
               onClick={[Function]}

@@ -82,12 +82,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-<<<<<<< HEAD
-            className="sc-htoDjs cHdbOr"
-            color={undefined}
-=======
             className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={false}
             id={undefined}
             onClick={[Function]}
@@ -101,12 +96,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           className="sc-bwzfXH jHAPPC"
         >
           <button
-<<<<<<< HEAD
-            className="sc-htoDjs fNOjyC"
-            color={undefined}
-=======
             className="sc-VigVT eGcvBH sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
             disabled={undefined}
             id={undefined}
             onClick={[Function]}
@@ -133,12 +123,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
 
 exports[`Storyshots Button With an icon 1`] = `
 <button
-<<<<<<< HEAD
-  className="sc-htoDjs feYNYX"
-  color={undefined}
-=======
   className="sc-gZMcBi fDLIXu sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
   disabled={false}
   id={undefined}
   onClick={[Function]}
@@ -159,24 +144,6 @@ exports[`Storyshots Button With an icon 1`] = `
       role="img"
     />
   </span>
-<<<<<<< HEAD
-</button>
-`;
-
-exports[`Storyshots Button With text 1`] = `
-<button
-  className="sc-htoDjs fAnDzT"
-  color={undefined}
-  disabled={false}
-  icon={undefined}
-  id={undefined}
-  onClick={[Function]}
-  title="Click me"
-  type="button"
->
-  Click me
-=======
   Press any key to continue
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
 </button>
 `;

@@ -10,11 +10,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
         className="sc-bwzfXH ebfsxO"
       >
         <p
-<<<<<<< HEAD
-          className="sc-bxivhb kFVWeI"
-=======
-          className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+          className="sc-bxivhb iyjEP"
         >
           
     Now this is the story all about how
@@ -46,12 +42,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     </div>
   </div>
   <button
-<<<<<<< HEAD
-    className="sc-htoDjs eHXLyg"
-    color={undefined}
-=======
     className="sc-VigVT jpssvu sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
     disabled={undefined}
     id={undefined}
     onClick={[Function]}

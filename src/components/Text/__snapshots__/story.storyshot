@@ -2,11 +2,7 @@
 
 exports[`Storyshots Text Default 1`] = `
 <p
-<<<<<<< HEAD
-  className="sc-bxivhb iLCmyv"
-=======
-  className="sc-bxivhb fYSYyq"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+  className="sc-bxivhb eIFOAK"
 >
   
     Now this is the story all about how

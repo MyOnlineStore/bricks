@@ -19,12 +19,8 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={true}
-<<<<<<< HEAD
-            className="sc-kpOJdX kyHwpB"
+            className="sc-jKJlTe kxsKl"
             disabled={undefined}
-=======
-            className="sc-jKJlTe fOEGOE"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           >
             <input
               checked={true}
@@ -40,11 +36,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           </div>
         </div>
         <p
-<<<<<<< HEAD
-          className="sc-bxivhb kFVWeI"
-=======
-          className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+          className="sc-bxivhb iyjEP"
         >
           <span
             className="sc-htpNat ivSMHx"
@@ -70,12 +62,8 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={false}
-<<<<<<< HEAD
-            className="sc-kpOJdX iNOmBO"
+            className="sc-jKJlTe bScetw"
             disabled={undefined}
-=======
-            className="sc-jKJlTe dUZzPu"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           >
             <input
               checked={false}
@@ -91,11 +79,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           </div>
         </div>
         <p
-<<<<<<< HEAD
-          className="sc-bxivhb kFVWeI"
-=======
-          className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+          className="sc-bxivhb iyjEP"
         >
           <span
             className="sc-htpNat ivSMHx"
@@ -121,12 +105,8 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={false}
-<<<<<<< HEAD
-            className="sc-kpOJdX iNOmBO"
+            className="sc-jKJlTe bScetw"
             disabled={undefined}
-=======
-            className="sc-jKJlTe dUZzPu"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           >
             <input
               checked={false}
@@ -142,11 +122,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           </div>
         </div>
         <p
-<<<<<<< HEAD
-          className="sc-bxivhb kFVWeI"
-=======
-          className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+          className="sc-bxivhb iyjEP"
         >
           <span
             className="sc-htpNat ivSMHx"

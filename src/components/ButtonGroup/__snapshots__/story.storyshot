@@ -18,12 +18,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         className="sc-bwzfXH jHAPPC"
       >
         <button
-<<<<<<< HEAD
-          className="sc-htoDjs fAnDzT"
-          color={undefined}
-=======
           className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           disabled={undefined}
           id={undefined}
           onClick={[Function]}
@@ -37,12 +32,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         className="sc-bwzfXH jHAPPC"
       >
         <button
-<<<<<<< HEAD
-          className="sc-htoDjs eHXLyg"
-          color={undefined}
-=======
           className="sc-VigVT jpssvu sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
           disabled={undefined}
           id={undefined}
           onClick={[Function]}

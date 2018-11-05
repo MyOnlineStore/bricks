@@ -2,11 +2,7 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
-  className="sc-eNQAEJ ajvZf"
-=======
-  className="sc-kkGfuU ikROjB"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
+  className="sc-kkGfuU ciCaUP"
   disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
@@ -49,11 +45,7 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
-    className="sc-eNQAEJ ajvZf"
-=======
-    className="sc-kkGfuU ikROjB"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
+    className="sc-kkGfuU ciCaUP"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
@@ -85,11 +77,7 @@ Array [
     className="sc-bwzfXH gKGSfm"
   >
     <p
-<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
-      className="sc-bxivhb bfQmQc"
-=======
-      className="sc-bxivhb bgphtb"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
+      className="sc-bxivhb fNUDhG"
     >
       <span
         className="sc-htpNat frObKr"
@@ -122,11 +110,7 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
-    className="sc-eNQAEJ ajvZf"
-=======
-    className="sc-kkGfuU ikROjB"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
+    className="sc-kkGfuU ciCaUP"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
@@ -168,11 +152,7 @@ Array [
     className="sc-bwzfXH gKGSfm"
   >
     <p
-<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
-      className="sc-bxivhb gWsGB"
-=======
-      className="sc-bxivhb jNLkvd"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
+      className="sc-bxivhb eiZPPq"
     >
       <span
         className="sc-htpNat frObKr"
@@ -204,11 +184,7 @@ Array [
 
 exports[`Storyshots TextField With Number formatting 1`] = `
 <div
-<<<<<<< HEAD:src/components/TextField/__snapshots__/story.storyshot
-  className="sc-eNQAEJ ajvZf"
-=======
-  className="sc-kkGfuU ikROjB"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220):src/components/TextField/formatters/withCurrencyFormatting/__snapshots__/story.storyshot
+  className="sc-kkGfuU ciCaUP"
   disabled={undefined}
   onBlurCapture={[Function]}
   onClick={[Function]}

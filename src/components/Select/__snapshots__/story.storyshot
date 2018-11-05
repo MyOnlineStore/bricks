@@ -2,7 +2,7 @@
 
 exports[`Storyshots Select Custom rendering 1`] = `
 <div
-  className="sc-cJSrbW gsVfEA"
+  className="sc-frDJqD hEGBJt"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
@@ -23,19 +23,14 @@ exports[`Storyshots Select Custom rendering 1`] = `
           className="sc-bwzfXH fsbcIX"
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             Make a selection
           </p>
         </div>
       </div>
       <button
-        className="sc-htoDjs flaPve"
-        color={undefined}
+        className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
         disabled={false}
         id={undefined}
         onClick={[Function]}
@@ -96,20 +91,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kFVWeI"
-=======
-                      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb iyjEP"
                     >
                       Bar A
                     </p>
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kTaguW"
-=======
-                      className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb cswGnm"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -139,20 +126,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kFVWeI"
-=======
-                      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb iyjEP"
                     >
                       Foo B
                     </p>
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kTaguW"
-=======
-                      className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb cswGnm"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -182,20 +161,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kFVWeI"
-=======
-                      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb iyjEP"
                     >
                       Bar C
                     </p>
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kTaguW"
-=======
-                      className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb cswGnm"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -225,20 +196,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kFVWeI"
-=======
-                      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb iyjEP"
                     >
                       Foo D
                     </p>
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kTaguW"
-=======
-                      className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb cswGnm"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -268,20 +231,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kFVWeI"
-=======
-                      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb iyjEP"
                     >
                       Bar E
                     </p>
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kTaguW"
-=======
-                      className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb cswGnm"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -311,20 +266,12 @@ exports[`Storyshots Select Custom rendering 1`] = `
                     className="sc-bwzfXH bQfpwP"
                   >
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kFVWeI"
-=======
-                      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb iyjEP"
                     >
                       Bar F
                     </p>
                     <p
-<<<<<<< HEAD
-                      className="sc-bxivhb kTaguW"
-=======
-                      className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                      className="sc-bxivhb cswGnm"
                     >
                       Lorem ipsum dolor sit amet.
                     </p>
@@ -342,11 +289,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
 
 exports[`Storyshots Select Default 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-cJSrbW gsVfEA"
-=======
-  className="sc-frDJqD knwbUz"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+  className="sc-frDJqD hEGBJt"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
@@ -364,11 +307,7 @@ exports[`Storyshots Select Default 1`] = `
         onClick={[Function]}
       >
         <p
-<<<<<<< HEAD
-          className="sc-bxivhb kTaguW"
-=======
-          className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+          className="sc-bxivhb cswGnm"
         >
           <span
             className="sc-hmzhuo hgIEwm"
@@ -378,12 +317,7 @@ exports[`Storyshots Select Default 1`] = `
         </p>
       </div>
       <button
-<<<<<<< HEAD
-        className="sc-htoDjs flaPve"
-        color={undefined}
-=======
         className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
         disabled={false}
         id={undefined}
         onClick={[Function]}
@@ -433,13 +367,8 @@ exports[`Storyshots Select Default 1`] = `
                 <span
                   className="sc-htpNat kTMegb"
                 >
-<<<<<<< HEAD
-                  <span
-                    className="sc-ifAKCX cdTTkb"
-=======
                   <p
-                    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                    className="sc-bxivhb iyjEP"
                   >
                     Bar A
                   </p>
@@ -457,13 +386,8 @@ exports[`Storyshots Select Default 1`] = `
                 <span
                   className="sc-htpNat kTMegb"
                 >
-<<<<<<< HEAD
-                  <span
-                    className="sc-ifAKCX cdTTkb"
-=======
                   <p
-                    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                    className="sc-bxivhb iyjEP"
                   >
                     Foo B
                   </p>
@@ -481,13 +405,8 @@ exports[`Storyshots Select Default 1`] = `
                 <span
                   className="sc-htpNat kTMegb"
                 >
-<<<<<<< HEAD
-                  <span
-                    className="sc-ifAKCX cdTTkb"
-=======
                   <p
-                    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                    className="sc-bxivhb iyjEP"
                   >
                     Bar C
                   </p>
@@ -505,13 +424,8 @@ exports[`Storyshots Select Default 1`] = `
                 <span
                   className="sc-htpNat kTMegb"
                 >
-<<<<<<< HEAD
-                  <span
-                    className="sc-ifAKCX cdTTkb"
-=======
                   <p
-                    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                    className="sc-bxivhb iyjEP"
                   >
                     Foo D
                   </p>
@@ -529,13 +443,8 @@ exports[`Storyshots Select Default 1`] = `
                 <span
                   className="sc-htpNat kTMegb"
                 >
-<<<<<<< HEAD
-                  <span
-                    className="sc-ifAKCX cdTTkb"
-=======
                   <p
-                    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                    className="sc-bxivhb iyjEP"
                   >
                     Bar E
                   </p>
@@ -553,13 +462,8 @@ exports[`Storyshots Select Default 1`] = `
                 <span
                   className="sc-htpNat kTMegb"
                 >
-<<<<<<< HEAD
-                  <span
-                    className="sc-ifAKCX cdTTkb"
-=======
                   <p
-                    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                    className="sc-bxivhb iyjEP"
                   >
                     Bar F
                   </p>

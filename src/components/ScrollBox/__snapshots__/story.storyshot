@@ -27,11 +27,7 @@ Array [
               They see me scrollin'
             </div>
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -92,11 +88,7 @@ Array [
     </div>
   </div>,
   <p
-<<<<<<< HEAD
-    className="sc-bxivhb kFVWeI"
-=======
-    className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+    className="sc-bxivhb iyjEP"
   >
     scrollTop: 
     0

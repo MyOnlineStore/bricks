@@ -76,22 +76,11 @@ exports[`Option should render 1`] = `
 }
 
 .c4 {
-  color: #88979d;
+  color: #a6aab3;
   font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.c6 {
-  color: #88979d;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 21px;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -211,10 +200,10 @@ exports[`Option should render 1`] = `
                         className="c3"
                       >
                         <Text
-                          descriptive={true}
+                          severity="info"
                         >
                           <styled.p
-                            descriptive={true}
+                            severity="info"
                           >
                             <p
                               className="c4"
@@ -252,18 +241,17 @@ exports[`Option should render 1`] = `
                     </styled.span>
                   </Box>
                   <Text
-                    descriptive={true}
-                    inline={true}
+                    severity="info"
                   >
-                    <styled.span
-                      descriptive={true}
+                    <styled.p
+                      severity="info"
                     >
-                      <span
-                        className="c6"
+                      <p
+                        className="c4"
                       >
                         test
-                      </span>
-                    </styled.span>
+                      </p>
+                    </styled.p>
                   </Text>
                 </span>
               </styled.span>

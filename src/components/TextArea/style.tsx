@@ -46,7 +46,7 @@ const StyledTextAreaWrapper = withProps<TextAreaWrapperPropsType>(styled.div)`
         disabled ? theme.TextArea.disabled.background : theme.TextArea.idle.common.background};
 
     &:focus-within {
-        ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity].color}`};
+        ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity]}`};
         ${({ disabled, severity, theme }): string =>
             !disabled ? `box-shadow: ${theme.TextArea.severity[severity].boxShadow}` : ''};
     }

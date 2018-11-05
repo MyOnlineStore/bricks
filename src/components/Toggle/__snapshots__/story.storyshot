@@ -34,11 +34,7 @@ exports[`Storyshots Toggle Default 1`] = `
       className="sc-bwzfXH fmiztD"
     >
       <p
-<<<<<<< HEAD
-        className="sc-bxivhb kFVWeI"
-=======
-        className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+        className="sc-bxivhb iyjEP"
       >
          
         Turn me on!

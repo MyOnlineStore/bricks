@@ -14,11 +14,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-<<<<<<< HEAD
-          className="sc-eNQAEJ ajvZf"
-=======
-          className="sc-kkGfuU ikROjB"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+          className="sc-kkGfuU ciCaUP"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
@@ -51,11 +47,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-<<<<<<< HEAD
-          className="sc-eNQAEJ ajvZf"
-=======
-          className="sc-kkGfuU ikROjB"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+          className="sc-kkGfuU ciCaUP"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}

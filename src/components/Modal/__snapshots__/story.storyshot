@@ -15,11 +15,7 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
-        className="sc-jlyJG fPCoSz"
-=======
-        className="sc-Rmtcm bsGdMr"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+        className="sc-Rmtcm jKaZXM"
       >
         <div
           className="sc-bwzfXH jTCciZ"
@@ -34,12 +30,7 @@ exports[`Storyshots Modal Default 1`] = `
             className="sc-bwzfXH ghdkBw"
           >
             <button
-<<<<<<< HEAD
-              className="sc-htoDjs flaPve"
-              color={undefined}
-=======
               className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -72,11 +63,7 @@ exports[`Storyshots Modal Default 1`] = `
               className="sc-bwzfXH fiOUi"
             >
               <p
-<<<<<<< HEAD
-                className="sc-bxivhb kFVWeI"
-=======
-                className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                className="sc-bxivhb iyjEP"
               >
                 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -125,12 +112,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-<<<<<<< HEAD
-                    className="sc-htoDjs fAnDzT"
-                    color={undefined}
-=======
                     className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}
@@ -144,12 +126,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-<<<<<<< HEAD
-                    className="sc-htoDjs gKbNMP"
-                    color={undefined}
-=======
                     className="sc-VigVT iNFlqA sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}
@@ -184,11 +161,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
       }
     >
       <div
-<<<<<<< HEAD
-        className="sc-jlyJG fPCoSz"
-=======
-        className="sc-Rmtcm bsGdMr"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
+        className="sc-Rmtcm jKaZXM"
       >
         <div
           className="sc-bwzfXH jTCciZ"
@@ -213,11 +186,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
               className="sc-bwzfXH fiOUi"
             >
               <p
-<<<<<<< HEAD
-                className="sc-bxivhb kFVWeI"
-=======
-                className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+                className="sc-bxivhb iyjEP"
               >
                 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
@@ -266,12 +235,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-<<<<<<< HEAD
-                    className="sc-htoDjs fAnDzT"
-                    color={undefined}
-=======
                     className="sc-VigVT eYHbkk sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}
@@ -285,12 +249,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH jHAPPC"
                 >
                   <button
-<<<<<<< HEAD
-                    className="sc-htoDjs gKbNMP"
-                    color={undefined}
-=======
                     className="sc-VigVT iNFlqA sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
                     disabled={undefined}
                     id={undefined}
                     onClick={[Function]}

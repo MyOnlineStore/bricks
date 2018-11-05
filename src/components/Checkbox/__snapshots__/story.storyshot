@@ -2,12 +2,8 @@
 
 exports[`Storyshots Checkbox Default 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-jTzLTM dxYrGK"
+  className="sc-cSHVUG btnxeg"
   disabled={false}
-=======
-  className="sc-cSHVUG bWWFEC"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
   onClick={[Function]}
 >
   <div

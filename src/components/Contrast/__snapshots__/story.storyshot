@@ -9,12 +9,7 @@ Array [
       className="sc-bwzfXH iXkNPI"
     >
       <button
-<<<<<<< HEAD
-        className="sc-htoDjs cHdbOr"
-        color={undefined}
-=======
         className="sc-VigVT hzpyGR sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
         disabled={undefined}
         id={undefined}
         onClick={[Function]}
@@ -29,12 +24,7 @@ Array [
     className="sc-bwzfXH iXkNPI"
   >
     <button
-<<<<<<< HEAD
-      className="sc-htoDjs eHXLyg"
-      color={undefined}
-=======
       className="sc-VigVT jpssvu sc-htoDjs ifkBJX"
->>>>>>> 4484a45... Added CTA button variant and changed button props (#220)
       disabled={undefined}
       id={undefined}
       onClick={[Function]}

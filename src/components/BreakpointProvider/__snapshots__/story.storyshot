@@ -12,11 +12,7 @@ exports[`Storyshots BreakpointProvider Default 1`] = `
     className="sc-gzVnrw eSDhrQ"
   >
     <p
-<<<<<<< HEAD
-      className="sc-bxivhb kFVWeI"
-=======
-      className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+      className="sc-bxivhb iyjEP"
     >
       Current breakpoint is 
       large

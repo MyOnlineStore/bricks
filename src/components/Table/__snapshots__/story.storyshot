@@ -17,11 +17,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb ildJSL"
-=======
-              className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb jKBUfU"
             >
               <span
                 aria-hidden={true}
@@ -44,11 +40,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb ildJSL"
-=======
-              className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb jKBUfU"
             >
               Header B
             </p>
@@ -61,11 +53,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb ildJSL"
-=======
-              className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb jKBUfU"
             >
               Header C
             </p>
@@ -78,11 +66,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb ildJSL"
-=======
-              className="sc-bxivhb gAVOHP"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb jKBUfU"
             >
               Actions
             </p>
@@ -102,11 +86,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -129,11 +109,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A1
             </p>
@@ -148,11 +124,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B1
             </p>
@@ -167,11 +139,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C1
             </p>
@@ -186,8 +154,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -206,8 +173,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -239,11 +205,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -266,11 +228,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A2
             </p>
@@ -285,11 +243,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B2
             </p>
@@ -304,11 +258,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C2
             </p>
@@ -323,8 +273,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -343,8 +292,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -376,11 +324,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -403,11 +347,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A3
             </p>
@@ -422,11 +362,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B3
             </p>
@@ -441,11 +377,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C3
             </p>
@@ -460,8 +392,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -480,8 +411,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -513,11 +443,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -540,11 +466,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A4
             </p>
@@ -559,11 +481,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B4
             </p>
@@ -578,11 +496,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C4
             </p>
@@ -597,8 +511,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -617,8 +530,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -650,11 +562,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -677,11 +585,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A5
             </p>
@@ -696,11 +600,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B5
             </p>
@@ -715,11 +615,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C5
             </p>
@@ -734,8 +630,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -754,8 +649,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -787,11 +681,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -814,11 +704,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A6
             </p>
@@ -833,11 +719,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B6
             </p>
@@ -852,11 +734,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C6
             </p>
@@ -871,8 +749,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -891,8 +768,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -924,11 +800,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -951,11 +823,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A7
             </p>
@@ -970,11 +838,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B7
             </p>
@@ -989,11 +853,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C7
             </p>
@@ -1008,8 +868,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1028,8 +887,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1061,11 +919,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -1088,11 +942,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A8
             </p>
@@ -1107,11 +957,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B8
             </p>
@@ -1126,11 +972,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C8
             </p>
@@ -1145,8 +987,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1165,8 +1006,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1198,11 +1038,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -1225,11 +1061,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A9
             </p>
@@ -1244,11 +1076,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B9
             </p>
@@ -1263,11 +1091,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C9
             </p>
@@ -1282,8 +1106,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1302,8 +1125,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1335,11 +1157,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={[Function]}
         >
           <p
-<<<<<<< HEAD
-            className="sc-bxivhb kTaguW"
-=======
-            className="sc-bxivhb jpeJmp"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+            className="sc-bxivhb cswGnm"
           >
             <span
               aria-hidden={true}
@@ -1362,11 +1180,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               A10
             </p>
@@ -1381,11 +1195,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH jXZncb"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               B10
             </p>
@@ -1400,11 +1210,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH keAoja"
           >
             <p
-<<<<<<< HEAD
-              className="sc-bxivhb kFVWeI"
-=======
-              className="sc-bxivhb fpMQQD"
->>>>>>> 07d3a3a... refactored the Text Component to the size-steps according to design (#228)
+              className="sc-bxivhb iyjEP"
             >
               C10
             </p>
@@ -1419,8 +1225,7 @@ exports[`Storyshots Table Default 1`] = `
             className="sc-bwzfXH eFkGjS"
           >
             <button
-              className="sc-htoDjs flaPve"
-              color={undefined}
+              className="sc-gqjmRU gIKjDZ sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
@@ -1439,8 +1244,7 @@ exports[`Storyshots Table Default 1`] = `
               />
             </button>
             <button
-              className="sc-htoDjs goHcQN"
-              color={undefined}
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
               disabled={undefined}
               id={undefined}
               onClick={[Function]}
