@@ -12,7 +12,7 @@ import { ColumnType, BaseRowType } from '..';
 
 type PropsType = {
     // tslint:disable-next-line
-    columns: Array<ColumnType<any>>;
+    columns: { [key: string]: ColumnType<any> };
     row: BaseRowType;
     draggable: boolean;
     selected: boolean;
@@ -104,19 +104,28 @@ class Row extends Component<PropsType, StateType> {
                     </Cell>
                 )}
 
-                {this.props.columns.map(column => {
-                    const cell = this.props.row[column.key as string];
-                    const align = column.align ? column.align : 'start';
+                {Object.keys(this.props.columns)
+                    .sort((a, b) => {
+                        if (this.props.columns[a].order === undefined || this.props.columns[b].order === undefined) {
+                            return -1;
+                        }
 
-                    return (
-                        <Cell align={align} key={`${this.props.row.id}-${column.key as string}`}>
-                            <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
-                                {((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>) ||
-                                    cell}
-                            </Box>
-                        </Cell>
-                    );
-                })}
+                        return (this.props.columns[a].order as number) - (this.props.columns[b].order as number);
+                    })
+                    .map(key => {
+                        const column = this.props.columns[key];
+                        const cell = this.props.row[key];
+                        const align = column.align ? column.align : 'start';
+
+                        return (
+                            <Cell align={align} key={`${this.props.row.id}-${key}`}>
+                                <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
+                                    {((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>) ||
+                                        cell}
+                                </Box>
+                            </Cell>
+                        );
+                    })}
             </Branch>
         );
     }

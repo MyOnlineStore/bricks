@@ -5,6 +5,7 @@ import styled, { withProps } from '../../../utility/styled';
 
 type PropsType = {
     align: 'start' | 'center' | 'end';
+    onClick?(): void;
 };
 
 const StyledHeader = withProps<PropsType>(styled.th)`
@@ -12,6 +13,7 @@ const StyledHeader = withProps<PropsType>(styled.th)`
     text-align: ${({ align }): string => align}};
     background: ${({ theme }): string => theme.Table.cell.default.backgroundColor};
     border-bottom: ${({ theme }): string => `solid 1px ${theme.Table.cell.default.borderColor}`};
+    ${({ onClick }): string => (onClick !== undefined ? 'cursor: pointer;' : '')}
 `;
 
 export default StyledHeader;

@@ -1,9 +1,14 @@
-import { boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Table from '.';
 
-type RowType = { id: string; price: number; name: string; image: string };
+type RowType = {
+    id: string;
+    price: number;
+    name: string;
+    image: string;
+    test?: boolean;
+};
 
 type StateType = {
     hover: boolean;
@@ -13,6 +18,7 @@ type StateType = {
 type PropsType = {
     draggable: boolean;
     selectable: boolean;
+    sortable: boolean;
 };
 
 class Demo extends Component<PropsType, StateType> {
@@ -41,12 +47,17 @@ class Demo extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <Table<RowType>
-                columns={[
-                    { key: 'image', header: 'Image' },
-                    { key: 'name', header: 'Name' },
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'price', header: 'Price', align: 'end' },
-                ]}
+                columns={{
+                    image: {
+                        header: 'Image',
+                    },
+                    name: { header: 'Name' },
+                    id: { header: 'Product ID' },
+                    price: {
+                        header: 'Price',
+                        align: 'end',
+                    },
+                }}
                 rows={this.state.rows}
                 onDragEnd={this.props.draggable ? (rows): void => this.setState({ rows }) : undefined}
                 onSelection={this.props.selectable ? (rows): void => this.setState({ rows }) : undefined}
@@ -55,6 +66,19 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-storiesOf('Table', module).add('Default', () => {
-    return <Demo selectable={boolean('selectable', false)} draggable={boolean('draggable', true)} />;
-});
+storiesOf('Table', module)
+    .add('Default', () => {
+        return <Demo draggable={false} selectable={false} sortable={false} />;
+    })
+    .add('Draggable', () => {
+        return <Demo draggable={true} selectable={false} sortable={false} />;
+    })
+    .add('Selectable', () => {
+        return <Demo draggable={false} selectable={true} sortable={false} />;
+    })
+    .add('Sortable', () => {
+        return <Demo draggable={false} selectable={false} sortable={true} />;
+    })
+    .add('Sortable and Selectable', () => {
+        return <Demo draggable={false} selectable={true} sortable={true} />;
+    });

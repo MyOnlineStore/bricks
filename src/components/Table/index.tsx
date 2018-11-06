@@ -3,7 +3,7 @@ import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 import Row from './Row';
 import Branch from '../Branch';
-import Header from './Header';
+import Headers from './Headers';
 
 type BaseRowType = {
     id: string;
@@ -12,24 +12,17 @@ type BaseRowType = {
     [key: string]: any;
 };
 
-type ColumnType<GenericRowType> = {
-    key: keyof Partial<GenericRowType>;
+type ColumnType<GenericCellType> = {
+    order?: number;
     header?: ReactNode;
     align?: 'start' | 'center' | 'end';
-    sortable?: boolean;
+    sort?(cellA: GenericCellType, cellB: GenericCellType): 0 | 1 | -1;
+    render?(cell: GenericCellType): JSX.Element;
 };
 
 type PropsType<GenericRowType extends BaseRowType> = {
     rows: Array<GenericRowType>;
-    columns: Array<ColumnType<GenericRowType>>;
-    sort?: {
-        [key in keyof Partial<GenericRowType>]: (
-            a: GenericRowType[key],
-            b: GenericRowType[key],
-            direction: 'asc' | 'desc' | null,
-        ) => 0 | 1 | -1
-    };
-    renderCell?: { [key in keyof Partial<GenericRowType>]: (cell: GenericRowType[key]) => JSX.Element };
+    columns: { [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<GenericRowType[GenericColumnType]> };
     onSelection?(rows: Array<GenericRowType>): void;
     onDragEnd?(rows: Array<GenericRowType>, dropResult: DropResult): void;
 };
@@ -113,6 +106,8 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         }
     }
 
+    private handleSort = (direction: 'ascending' | 'descending' | 'none'): void => {};
+
     public render(): JSX.Element {
         const isDraggable = this.props.onDragEnd !== undefined;
         const isSelectable = this.props.onSelection !== undefined;
@@ -129,12 +124,13 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                 )}
                 ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
             >
-                <Header
-                    onCheck={(selected): void => this.handleHeaderCheck(selected)}
+                <Headers
                     checked={this.getHeaderState()}
                     draggable={isDraggable}
                     selectable={isSelectable}
                     columns={this.props.columns}
+                    onCheck={(selected): void => this.handleHeaderCheck(selected)}
+                    onSort={this.handleSort}
                 />
                 <tbody>
                     {this.props.rows.map((row, rowIndex) => (

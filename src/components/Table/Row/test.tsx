@@ -1,23 +1,23 @@
 import React from 'react';
-import Row from '.';
+import Rows from '.';
 import { mountWithTheme } from '../../../utility/styled/testing';
 import StyledCell from '../Cell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
 
-describe('Table Row', () => {
+describe('Table Rows', () => {
     it('should handle mouse focus and blur when draggable', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row
+                    <Rows
                         row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
-                        columns={[
-                            { key: 'id', header: 'Product ID' },
-                            { key: 'name', header: 'name' },
-                            { key: 'price', header: 'Price' },
-                        ]}
+                        columns={{
+                            id: { header: 'Product ID' },
+                            name: { header: 'name' },
+                            price: { header: 'Price' },
+                        }}
                         selected={false}
                         selectable
                         draggable
@@ -54,13 +54,13 @@ describe('Table Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row
+                    <Rows
                         row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
-                        columns={[
-                            { key: 'id', header: 'Product ID' },
-                            { key: 'name', header: 'name' },
-                            { key: 'price', header: 'Price' },
-                        ]}
+                        columns={{
+                            id: { header: 'Product ID' },
+                            name: { header: 'name' },
+                            price: { header: 'Price' },
+                        }}
                         selected={false}
                         selectable
                         draggable

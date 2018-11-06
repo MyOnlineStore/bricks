@@ -10,11 +10,11 @@ describe('Table', () => {
     it('should render the correct amount of cells', () => {
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -31,11 +31,11 @@ describe('Table', () => {
         const fn = (): void => {
             mountWithTheme(
                 <Table
-                    columns={[
-                        { key: 'id', header: 'Product ID' },
-                        { key: 'name', header: 'name' },
-                        { key: 'price', header: 'Price' },
-                    ]}
+                    columns={{
+                        id: { header: 'Product ID' },
+                        name: { header: 'name' },
+                        price: { header: 'Price' },
+                    }}
                     rows={[{ id: '61651320', price: 19.12, name: 'foo', image: 'imageurl' }]}
                 />,
             );
@@ -62,11 +62,11 @@ describe('Table', () => {
         const fn = (): void => {
             mountWithTheme(
                 <Table
-                    columns={[
-                        { key: 'id', header: 'Product ID' },
-                        { key: 'name', header: 'name' },
-                        { key: 'price', header: 'Price' },
-                    ]}
+                    columns={{
+                        id: { header: 'Product ID' },
+                        name: { header: 'name' },
+                        price: { header: 'Price' },
+                    }}
                     rows={[{ id: '61651320', price: 19.12, name: 'foo', image: 'imageurl' }]}
                     onDragEnd={onDragEnd}
                 />,
@@ -80,11 +80,11 @@ describe('Table', () => {
         const fn = (): void => {
             mountWithTheme(
                 <Table
-                    columns={[
-                        { key: 'id', header: 'Product ID' },
-                        { key: 'name', header: 'name' },
-                        { key: 'price', header: 'Price' },
-                    ]}
+                    columns={{
+                        id: { header: 'Product ID' },
+                        name: { header: 'name' },
+                        price: { header: 'Price' },
+                    }}
                     rows={[
                         { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
                         { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -116,11 +116,11 @@ describe('Table', () => {
 
         mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -144,11 +144,11 @@ describe('Table', () => {
 
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', selected: false, price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -185,11 +185,11 @@ describe('Table', () => {
 
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', selected: false, price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -221,11 +221,11 @@ describe('Table', () => {
     it('should have an indeterminate check when not all rows are selected', () => {
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', selected: true, price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -248,11 +248,11 @@ describe('Table', () => {
         const fn = (): void => {
             mountWithTheme(
                 <Table
-                    columns={[
-                        { key: 'id', header: 'Product ID' },
-                        { key: 'name', header: 'name' },
-                        { key: 'price', header: 'Price' },
-                    ]}
+                    columns={{
+                        id: { header: 'Product ID' },
+                        name: { header: 'name' },
+                        price: { header: 'Price' },
+                    }}
                     rows={[
                         { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl' },
                         { id: '61651321', selected: true, price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -269,11 +269,11 @@ describe('Table', () => {
     it('should have a checked header checkbox when all rows are selected', () => {
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', selected: true, price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', selected: true, price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -295,11 +295,11 @@ describe('Table', () => {
     it('should have an unchecked check when no rows are selected', () => {
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={[
                     { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl' },
                     { id: '61651321', selected: false, price: 19.2, name: 'foo1', image: 'imageurl' },
@@ -330,11 +330,11 @@ describe('Table', () => {
 
         const component = mountWithTheme(
             <Table
-                columns={[
-                    { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
-                ]}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
                 rows={rows}
                 onSelection={mockHandler}
             />,
