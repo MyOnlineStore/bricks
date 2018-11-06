@@ -12,14 +12,17 @@ describe('Table Row', () => {
             <table>
                 <tbody>
                     <Row
-                        identifier="row-1"
+                        row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
+                        columns={[
+                            { key: 'id', header: 'Product ID' },
+                            { key: 'name', header: 'name' },
+                            { key: 'price', header: 'Price' },
+                        ]}
+                        selected={false}
                         selectable
-                        checked={false}
                         draggable
-                        alignments={[]}
-                        cells={['A1', 'B1', 'C1']}
                         index={1}
-                        onCheck={(): void => undefined}
+                        onSelection={(): void => undefined}
                     />
                 </tbody>
             </table>,
@@ -52,14 +55,17 @@ describe('Table Row', () => {
             <table>
                 <tbody>
                     <Row
-                        identifier="row-1"
+                        row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
+                        columns={[
+                            { key: 'id', header: 'Product ID' },
+                            { key: 'name', header: 'name' },
+                            { key: 'price', header: 'Price' },
+                        ]}
+                        selected={false}
                         selectable
-                        checked={false}
-                        alignments={[]}
-                        cells={['A1', 'B1', 'C1']}
                         draggable
                         index={1}
-                        onCheck={(): void => undefined}
+                        onSelection={(): void => undefined}
                     />
                 </tbody>
             </table>,

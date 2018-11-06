@@ -1,10 +1,7 @@
 import { boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
-import { DropResult } from 'react-beautiful-dnd';
 import Table from '.';
-import Icon from '../Icon';
-import Button from '../Button';
 
 type RowType = { id: string; price: number; name: string; image: string };
 
@@ -18,17 +15,6 @@ type PropsType = {
     selectable: boolean;
 };
 
-const actions = (
-    <>
-        <Button.Flat title="edit" variant="primary">
-            <Icon icon="pencil" size="medium" />
-        </Button.Flat>
-        <Button.Flat title="delete" variant="destructive">
-            <Icon icon="trash" size="medium" />
-        </Button.Flat>
-    </>
-);
-
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
@@ -36,10 +22,11 @@ class Demo extends Component<PropsType, StateType> {
         this.state = {
             hover: false,
             rows: [
-                { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
-                { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
-                { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
-                { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍' },
+                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌' },
+                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇' },
+                { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝' },
+                { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋' },
             ],
         };
     }
@@ -55,13 +42,14 @@ class Demo extends Component<PropsType, StateType> {
         return (
             <Table<RowType>
                 columns={[
+                    { key: 'image', header: 'Image' },
+                    { key: 'name', header: 'Name' },
                     { key: 'id', header: 'Product ID' },
-                    { key: 'name', header: 'name' },
-                    { key: 'price', header: 'Price' },
+                    { key: 'price', header: 'Price', align: 'end' },
                 ]}
                 rows={this.state.rows}
-                onDragEnd={(rows): void => this.setState({ rows })}
-                onSelection={(rows): void => this.setState({ rows })}
+                onDragEnd={this.props.draggable ? (rows): void => this.setState({ rows }) : undefined}
+                onSelection={this.props.selectable ? (rows): void => this.setState({ rows }) : undefined}
             />
         );
     }

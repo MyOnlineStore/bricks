@@ -1,49 +1,54 @@
-import React, { SFC, ReactNode } from 'react';
+import React, { SFC } from 'react';
 import StyledHeader from './style';
 import Text from '../../Text';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
-import { mapAlignment } from '..';
+import { ColumnType } from '..';
 
 type PropsType = {
-    alignments: Array<'left' | 'center' | 'right'>;
-    headers: Array<ReactNode>;
-    selectable?: boolean;
-    draggable?: boolean;
+    // tslint:disable-next-line
+    columns: Array<ColumnType<any>>;
     checked: boolean | 'indeterminate';
+    draggable: boolean;
+    selectable: boolean;
     onCheck(checked: boolean): void;
 };
 
-const Header: SFC<PropsType> = ({ alignments, checked, draggable, onCheck, selectable, headers }): JSX.Element => {
-    return (
-        <thead>
-            <tr>
-                {draggable && <StyledHeader align="left" />}
-                {selectable && (
-                    <StyledHeader align="left">
-                        <Checkbox
-                            checked={checked}
-                            name=""
-                            value=""
-                            onChange={({ checked }): void => {
-                                onCheck(checked as boolean);
-                            }}
-                        />
-                    </StyledHeader>
-                )}
-                {headers.map((header, headerIndex): JSX.Element => {
+const Header: SFC<PropsType> = (props): JSX.Element => (
+    <thead>
+        <tr>
+            {props.draggable && <StyledHeader align="start" />}
+            {props.selectable && (
+                <StyledHeader align="start">
+                    <Checkbox
+                        checked={props.checked}
+                        name=""
+                        value=""
+                        onChange={({ checked }): void => props.onCheck(checked as boolean)}
+                    />
+                </StyledHeader>
+            )}
+            {props.columns.map(
+                (column): JSX.Element => {
+                    const alignment = column.align ? column.align : 'start';
+
                     return (
-                        <StyledHeader align={alignments[headerIndex]} key={headerIndex}>
-                            <Box justifyContent={mapAlignment(alignments[headerIndex])}>
-                                {(typeof header === 'string' && <Text strong>{header}</Text>) || header}
+                        <StyledHeader align={alignment} key={column.key as string}>
+                            <Box
+                                justifyContent={
+                                    alignment !== 'center' ? (`flex-${alignment}` as 'flex-start') : alignment
+                                }
+                            >
+                                {(typeof column.header === 'string' && <Text strong>{column.header}</Text>) ||
+                                    column.header}
                             </Box>
                         </StyledHeader>
                     );
-                })}
-            </tr>
-        </thead>
-    );
-};
+                },
+            )}
+        </tr>
+    </thead>
+);
 
 export default Header;
 export { PropsType };

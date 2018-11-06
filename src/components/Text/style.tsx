@@ -37,8 +37,7 @@ type TextThemeType = {
 };
 
 const StyledParagraph = withProps<PropsType, HTMLParagraphElement>(styled.p)`
-    color: ${({ severity, theme }): string =>
-        severity ? theme.Text.severity[severity] : theme.Text.default.color};
+    color: ${({ severity, theme }): string => (severity ? theme.Text.severity[severity] : theme.Text.default.color)};
     font-family: ${({ variant, theme }): string =>
         !variant ? theme.Text.variant.regular.fontFamily : theme.Text.variant[variant].fontFamily};
     font-size: ${({ variant, theme }): string =>

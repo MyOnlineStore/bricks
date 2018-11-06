@@ -4,7 +4,7 @@ import _T from '../../../types/ThemeType';
 import styled, { withProps } from '../../../utility/styled';
 
 type PropsType = {
-    align: 'left' | 'center' | 'right';
+    align: 'start' | 'center' | 'end';
 };
 
 const StyledHeader = withProps<PropsType>(styled.th)`
