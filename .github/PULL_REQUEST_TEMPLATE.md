@@ -10,7 +10,7 @@ proposed release: [`major`|`minor`|`patch`]
 - [ ] I have exported my addition from `src/index.ts` (check if not applicable)
 - [ ] Appropriate tests have been added for my functionality (check if not applicable)
 - [ ] A designer has seen and approved my changes (check if not applicable)
-- [ ] I have tested my addition in all supported browsers and for responsivity (Chrome, Firefox, Safari, Edge, IE11 and mobile browsers)
+- [ ] I have tested my addition in all supported browsers and for responsiveness (Chrome, Firefox, Safari, Edge, IE11 and mobile browsers)
 
 
 **Adds** ✨
