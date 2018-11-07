@@ -28,34 +28,48 @@ class Demo extends Component<PropsType, StateType> {
         this.state = {
             hover: false,
             rows: [
-                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍' },
-                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌' },
-                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇' },
                 { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝' },
+                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍' },
+                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇' },
+                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌' },
                 { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋' },
             ],
         };
     }
 
-    private reorder = (list: StateType['rows'], startIndex: number, endIndex: number): StateType['rows'] => {
-        const [removed] = list.splice(startIndex, 1);
-        list.splice(endIndex, 0, removed);
+    private sortText = (a: string, b: string) => {
+        const valueA = a.toUpperCase();
+        const valueB = b.toUpperCase();
 
-        return list;
+        if (valueA < valueB) return -1;
+        if (valueA > valueB) return 1;
+
+        return 0;
     };
 
-    public render(): JSX.Element {
+    private sortPrice = (a: number, b: number) => a - b;
+
+    public render() {
         return (
             <Table<RowType>
                 columns={{
-                    image: {
-                        header: 'Image',
+                    image: { header: 'Image', order: 1 },
+                    name: {
+                        header: 'Name',
+                        order: 2,
+                        align: 'start',
+                        sort: this.props.sortable ? this.sortText : undefined,
                     },
-                    name: { header: 'Name' },
-                    id: { header: 'Product ID' },
+                    id: {
+                        header: 'Product ID',
+                        order: 0,
+                        sort: this.props.sortable ? this.sortText : undefined,
+                    },
                     price: {
                         header: 'Price',
                         align: 'end',
+                        order: 3,
+                        sort: this.props.sortable ? this.sortPrice : undefined,
                     },
                 }}
                 rows={this.state.rows}

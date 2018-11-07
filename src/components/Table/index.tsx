@@ -5,6 +5,8 @@ import Row from './Row';
 import Branch from '../Branch';
 import Headers from './Headers';
 
+type SortDirectionType = 'ascending' | 'descending' | 'none';
+
 type BaseRowType = {
     id: string;
     selected?: boolean;
@@ -16,7 +18,7 @@ type ColumnType<GenericCellType> = {
     order?: number;
     header?: ReactNode;
     align?: 'start' | 'center' | 'end';
-    sort?(cellA: GenericCellType, cellB: GenericCellType): 0 | 1 | -1;
+    sort?(cellA: GenericCellType, cellB: GenericCellType): number;
     render?(cell: GenericCellType): JSX.Element;
 };
 
@@ -27,12 +29,16 @@ type PropsType<GenericRowType extends BaseRowType> = {
     onDragEnd?(rows: Array<GenericRowType>, dropResult: DropResult): void;
 };
 
-type StateType = {
+type StateType<GenericRowType extends BaseRowType> = {
     selectionStart: number;
     toggleAction: boolean;
+    sorting?: { column: keyof Partial<GenericRowType>; direction: SortDirectionType };
 };
 
-class Table<GenericRowType extends BaseRowType> extends Component<PropsType<GenericRowType>, StateType> {
+class Table<GenericRowType extends BaseRowType> extends Component<
+    PropsType<GenericRowType>,
+    StateType<GenericRowType>
+> {
     public constructor(props: PropsType<GenericRowType>) {
         super(props);
 
@@ -93,7 +99,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         );
     }
 
-    private getHeaderState(): boolean | 'indeterminate' {
+    private getHeaderState() {
         const selectedItems = this.props.rows.filter(row => row.selected);
 
         switch (selectedItems.length) {
@@ -106,11 +112,45 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         }
     }
 
-    private handleSort = (direction: 'ascending' | 'descending' | 'none'): void => {};
+    private handleSort = (column: keyof Partial<GenericRowType>, direction: SortDirectionType) => {
+        this.setState({
+            sorting: {
+                column,
+                direction,
+            },
+        });
+    };
 
-    public render(): JSX.Element {
+    private sortRows = (): Array<GenericRowType> => {
+        if (this.state.sorting === undefined) return this.props.rows;
+
+        const sortingColumn = this.props.columns[this.state.sorting.column];
+        const rows = [...this.props.rows];
+        const column = this.state.sorting.column;
+
+        if (sortingColumn.sort !== undefined) {
+            const sortRows = sortingColumn.sort;
+
+            switch (this.state.sorting.direction) {
+                case 'ascending': {
+                    return rows.sort((a, b) => sortRows(a[column], b[column]));
+                }
+                case 'descending': {
+                    return rows.sort((a, b) => sortRows(a[column], b[column]) * -1);
+                }
+                default: {
+                    return rows;
+                }
+            }
+        }
+
+        return this.props.rows;
+    };
+
+    public render() {
         const isDraggable = this.props.onDragEnd !== undefined;
         const isSelectable = this.props.onSelection !== undefined;
+        const rows = this.sortRows();
 
         return (
             <Branch
@@ -133,7 +173,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                     onSort={this.handleSort}
                 />
                 <tbody>
-                    {this.props.rows.map((row, rowIndex) => (
+                    {rows.map((row, rowIndex) => (
                         <Row
                             key={row.id}
                             columns={this.props.columns}
@@ -154,4 +194,4 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
 }
 
 export default Table;
-export { PropsType, DragDropContext, ColumnType, BaseRowType };
+export { PropsType, DragDropContext, ColumnType, BaseRowType, SortDirectionType };

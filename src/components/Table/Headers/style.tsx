@@ -13,7 +13,13 @@ const StyledHeader = withProps<PropsType>(styled.th)`
     text-align: ${({ align }): string => align}};
     background: ${({ theme }): string => theme.Table.cell.default.backgroundColor};
     border-bottom: ${({ theme }): string => `solid 1px ${theme.Table.cell.default.borderColor}`};
-    ${({ onClick }): string => (onClick !== undefined ? 'cursor: pointer;' : '')}
+    ${({ onClick }): string =>
+        onClick !== undefined
+            ? `
+                cursor: pointer;
+                user-select: none;
+            `
+            : ''}
 `;
 
 export default StyledHeader;
