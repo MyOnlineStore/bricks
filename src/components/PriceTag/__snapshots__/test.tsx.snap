@@ -1,12 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PriceTag should render a base price 1`] = `
+exports[`PriceTag should not break when an incorrect price is provided 1`] = `
 .c0 {
   position: relative;
-  color: #88979d;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 22px;
-  font-weight: 400;
+}
+
+.c0 sup {
+  font-size: .7em;
+}
+
+<PriceTag
+  currency="EUR"
+  locale="de-DE"
+  value="🐛"
+>
+  <styled.span>
+    <span
+      className="c0"
+    >
+      0,[object Object] €
+    </span>
+  </styled.span>
+</PriceTag>
+`;
+
+exports[`PriceTag should render a label with the price is 0 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c0 sup {
+  font-size: .7em;
+}
+
+<PriceTag
+  currency="EUR"
+  freeLabel="free"
+  locale="nl-NL"
+  value="0"
+>
+  <styled.span>
+    <span
+      className="c0"
+    >
+      free
+    </span>
+  </styled.span>
+</PriceTag>
+`;
+
+exports[`PriceTag should render an action price 1`] = `
+.c0 {
+  position: relative;
 }
 
 .c0 sup {
@@ -29,149 +74,18 @@ exports[`PriceTag should render a base price 1`] = `
 }
 
 <PriceTag
-  displayType="base"
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "20",
-      },
-    ]
-  }
+  currency="EUR"
+  locale="nl-NL"
+  strikethrough={true}
+  value="10,20"
 >
   <styled.span
-    displayType="base"
+    strikethrough={true}
   >
     <span
       className="c0"
     >
-      €
-       
-      10
-      ,
-      20
-    </span>
-  </styled.span>
-</PriceTag>
-`;
-
-exports[`PriceTag should render a label with the price is 0 1`] = `
-.c0 {
-  position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.c0 sup {
-  font-size: .7em;
-}
-
-<PriceTag
-  freeLabel="free"
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "0",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "00",
-      },
-    ]
-  }
->
-  <styled.span>
-    <span
-      className="c0"
-    >
-      free
-    </span>
-  </styled.span>
-</PriceTag>
-`;
-
-exports[`PriceTag should render an action price 1`] = `
-.c0 {
-  position: relative;
-  color: #6bde78;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.c0 sup {
-  font-size: .7em;
-}
-
-<PriceTag
-  displayType="action"
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "20",
-      },
-    ]
-  }
->
-  <styled.span
-    displayType="action"
-  >
-    <span
-      className="c0"
-    >
-      €
-       
-      10
-      ,
-      20
+      € 1.020,[object Object]
     </span>
   </styled.span>
 </PriceTag>
@@ -180,10 +94,6 @@ exports[`PriceTag should render an action price 1`] = `
 exports[`PriceTag should render with a dashed fraction 1`] = `
 .c0 {
   position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
 }
 
 .c0 sup {
@@ -191,41 +101,16 @@ exports[`PriceTag should render with a dashed fraction 1`] = `
 }
 
 <PriceTag
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "00",
-      },
-    ]
-  }
-  showDash={true}
+  currency="EUR"
+  fractionFormat="dash"
+  locale="nl-NL"
+  value="10.00"
 >
   <styled.span>
     <span
       className="c0"
     >
-      €
-       
-      10
-      ,
-      -
+      € 10,[object Object]
     </span>
   </styled.span>
 </PriceTag>
@@ -234,10 +119,6 @@ exports[`PriceTag should render with a dashed fraction 1`] = `
 exports[`PriceTag should render with a fraction in superscript 1`] = `
 .c0 {
   position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
 }
 
 .c0 sup {
@@ -245,98 +126,16 @@ exports[`PriceTag should render with a fraction in superscript 1`] = `
 }
 
 <PriceTag
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "20",
-      },
-    ]
-  }
+  currency="EUR"
+  locale="nl-NL"
   superScriptFraction={true}
+  value="10,20"
 >
   <styled.span>
     <span
       className="c0"
     >
-      €
-       
-      10
-      ,
-      <sup
-        key="fraction"
-      >
-        20
-      </sup>
-    </span>
-  </styled.span>
-</PriceTag>
-`;
-
-exports[`PriceTag should render with a hidden currency 1`] = `
-.c0 {
-  position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.c0 sup {
-  font-size: .7em;
-}
-
-<PriceTag
-  hideCurrency={true}
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "20",
-      },
-    ]
-  }
->
-  <styled.span>
-    <span
-      className="c0"
-    >
-       
-      10
-      ,
-      20
+      € 1.020,[object Object]
     </span>
   </styled.span>
 </PriceTag>
@@ -345,10 +144,6 @@ exports[`PriceTag should render with a hidden currency 1`] = `
 exports[`PriceTag should render with a hidden currency and superscript franction 1`] = `
 .c0 {
   position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
 }
 
 .c0 sup {
@@ -356,44 +151,19 @@ exports[`PriceTag should render with a hidden currency and superscript franction
 }
 
 <PriceTag
+  currency="EUR"
   hideCurrency={true}
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "20",
-      },
-    ]
-  }
+  locale="nl-NL"
   superScriptFraction={true}
+  value="10,20"
 >
   <styled.span>
     <span
       className="c0"
     >
-       
-      10
-      ,
-      <sup
-        key="fraction"
-      >
-        20
+      1.020,
+      <sup>
+        00
       </sup>
     </span>
   </styled.span>
@@ -403,10 +173,6 @@ exports[`PriceTag should render with a hidden currency and superscript franction
 exports[`PriceTag should render with a hidden fraction on a round value 1`] = `
 .c0 {
   position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
 }
 
 .c0 sup {
@@ -414,39 +180,16 @@ exports[`PriceTag should render with a hidden fraction on a round value 1`] = `
 }
 
 <PriceTag
-  hideZeros={true}
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "00",
-      },
-    ]
-  }
+  currency="EUR"
+  fractionFormat="none"
+  locale="nl-NL"
+  value="10.00"
 >
   <styled.span>
     <span
       className="c0"
     >
-      €
-       
-      10
+      € 10[object Object]
     </span>
   </styled.span>
 </PriceTag>
@@ -455,10 +198,6 @@ exports[`PriceTag should render with a hidden fraction on a round value 1`] = `
 exports[`PriceTag should render with showDash and superscript on a round value 1`] = `
 .c0 {
   position: relative;
-  color: #333740;
-  font-family: Source Sans Pro,sans-serif;
-  font-size: 28px;
-  font-weight: 400;
 }
 
 .c0 sup {
@@ -466,42 +205,17 @@ exports[`PriceTag should render with showDash and superscript on a round value 1
 }
 
 <PriceTag
-  parts={
-    Array [
-      Object {
-        "type": "currency",
-        "value": "€",
-      },
-      Object {
-        "type": "literal",
-        "value": " ",
-      },
-      Object {
-        "type": "integer",
-        "value": "10",
-      },
-      Object {
-        "type": "decimal",
-        "value": ",",
-      },
-      Object {
-        "type": "fraction",
-        "value": "00",
-      },
-    ]
-  }
-  showDash={true}
+  currency="EUR"
+  fractionFormat="dash"
+  locale="nl-NL"
   superScriptFraction={true}
+  value="0,00"
 >
   <styled.span>
     <span
       className="c0"
     >
-      €
-       
-      10
-      ,
-      -
+      € 0,[object Object]
     </span>
   </styled.span>
 </PriceTag>

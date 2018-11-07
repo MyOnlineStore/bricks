@@ -549,24 +549,7 @@ const theme: ThemeType = {
         borderRadius: roundness.base,
     },
     PriceTag: {
-        default: {
-            color: grey.base,
-            fontFamily: bodyFont,
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-        },
-        action: {
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-            color: green.base,
-            fontFamily: bodyFont,
-        },
-        base: {
-            fontSize: fontSize.larger1,
-            fontWeight: '400',
-            color: grey.lighter2,
-            fontFamily: bodyFont,
-        },
+        strikethroughColor: grey.lighter2,
     },
     Select: {
         common: {

@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots PriceTag Default 1`] = `
-<span
-  className="sc-kjoXOD fQjGzC"
+<p
+  className="sc-bxivhb iyjEP"
 >
-  €
-   
-  12
-  ,
-  00
-</span>
+  <span
+    className="sc-kjoXOD dUQYME"
+  >
+    $ 1.[object Object]
+  </span>
+</p>
 `;
