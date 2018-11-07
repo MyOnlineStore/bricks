@@ -1843,16 +1843,20 @@ exports[`Storyshots Table Sortable 1`] = `
           >
             Product ID
           </p>
-          <span
-            aria-hidden={true}
-            className="sc-iwsKbI jSMqMr"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+          <p
+            className="sc-bxivhb cswGnm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </p>
         </div>
       </th>
       <th
@@ -1881,16 +1885,20 @@ exports[`Storyshots Table Sortable 1`] = `
           >
             Name
           </p>
-          <span
-            aria-hidden={true}
-            className="sc-iwsKbI jSMqMr"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+          <p
+            className="sc-bxivhb cswGnm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </p>
         </div>
       </th>
       <th
@@ -1905,16 +1913,20 @@ exports[`Storyshots Table Sortable 1`] = `
           >
             Price
           </p>
-          <span
-            aria-hidden={true}
-            className="sc-iwsKbI jSMqMr"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+          <p
+            className="sc-bxivhb cswGnm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </p>
         </div>
       </th>
     </tr>
@@ -2286,16 +2298,20 @@ exports[`Storyshots Table Sortable and Selectable 1`] = `
           >
             Product ID
           </p>
-          <span
-            aria-hidden={true}
-            className="sc-iwsKbI jSMqMr"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+          <p
+            className="sc-bxivhb cswGnm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </p>
         </div>
       </th>
       <th
@@ -2324,16 +2340,20 @@ exports[`Storyshots Table Sortable and Selectable 1`] = `
           >
             Name
           </p>
-          <span
-            aria-hidden={true}
-            className="sc-iwsKbI jSMqMr"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+          <p
+            className="sc-bxivhb cswGnm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </p>
         </div>
       </th>
       <th
@@ -2348,16 +2368,20 @@ exports[`Storyshots Table Sortable and Selectable 1`] = `
           >
             Price
           </p>
-          <span
-            aria-hidden={true}
-            className="sc-iwsKbI jSMqMr"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "test-file-stub",
+          <p
+            className="sc-bxivhb cswGnm"
+          >
+            <span
+              aria-hidden={true}
+              className="sc-iwsKbI jSMqMr"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
               }
-            }
-            role="img"
-          />
+              role="img"
+            />
+          </p>
         </div>
       </th>
     </tr>
