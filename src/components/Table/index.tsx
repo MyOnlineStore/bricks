@@ -11,7 +11,7 @@ type BaseRowType = {
     id: string;
     selected?: boolean;
     // tslint:disable-next-line
-    [key: string]: any;
+    [key: string]: string | number | boolean | undefined;
 };
 
 type ColumnType<GenericCellType> = {
@@ -128,23 +128,20 @@ class Table<GenericRowType extends BaseRowType> extends Component<
         const rows = [...this.props.rows];
         const column = this.state.sorting.column;
 
-        if (sortingColumn.sort !== undefined) {
-            const sortRows = sortingColumn.sort;
+        // tslint:disable-next-line
+        const sortRows = sortingColumn.sort as Required<ColumnType<any>>['sort'];
 
-            switch (this.state.sorting.direction) {
-                case 'ascending': {
-                    return rows.sort((a, b) => sortRows(a[column], b[column]));
-                }
-                case 'descending': {
-                    return rows.sort((a, b) => sortRows(a[column], b[column]) * -1);
-                }
-                default: {
-                    return rows;
-                }
+        switch (this.state.sorting.direction) {
+            case 'ascending': {
+                return rows.sort((a, b) => sortRows(a[column], b[column]));
+            }
+            case 'descending': {
+                return rows.sort((a, b) => sortRows(a[column], b[column]) * -1);
+            }
+            default: {
+                return rows;
             }
         }
-
-        return this.props.rows;
     };
 
     public render() {

@@ -1,10 +1,13 @@
 /// <reference path="../../declarations/global.d.ts" />
+/* tslint:disable:max-file-line-count */
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import Cell from './Cell';
 import Checkbox from '../Checkbox';
+import Icon from '../Icon';
+import Box from '../Box';
 
 describe('Table', () => {
     it('should render the correct amount of cells', () => {
@@ -45,9 +48,9 @@ describe('Table', () => {
     });
 
     it('should not break when no drag result destination is provided', () => {
-        /* tslint:disable */
         const onDragEnd = jest.fn();
 
+        // tslint:disable-next-line
         (DragDropContext as any).mockImplementationOnce(({ onDragEnd }: any) => {
             onDragEnd({
                 source: {
@@ -57,7 +60,6 @@ describe('Table', () => {
 
             return <div />;
         });
-        /* tslint:enable */
 
         const fn = (): void => {
             mountWithTheme(
@@ -99,9 +101,9 @@ describe('Table', () => {
     });
 
     it('should call the handler on drag end', () => {
-        /* tslint:disable */
         const dragHandler = jest.fn();
 
+        // tslint:disable-next-line
         (DragDropContext as any).mockImplementationOnce(({ onDragEnd }: any) => {
             onDragEnd({
                 source: {
@@ -112,7 +114,6 @@ describe('Table', () => {
 
             return <div />;
         });
-        /* tslint:enable */
 
         mountWithTheme(
             <Table
@@ -349,5 +350,286 @@ describe('Table', () => {
         const checkedRows = mockHandler.mock.calls[0].filter(row => (row as any).checked);
 
         expect(checkedRows.length).toBe(0);
+    });
+
+    it('should sort rows ascendingly when a column is given a sorting function and is clicked', () => {
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: {
+                        sort(a: number, b: number) {
+                            return a - b;
+                        },
+                    },
+                }}
+                rows={[
+                    { id: '1', value: 1 },
+                    { id: '0', value: 0 },
+                    { id: '4', value: 4 },
+                    { id: '3', value: 3 },
+                    { id: '2', value: 2 },
+                ]}
+            />,
+        );
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
+
+        for (let index = 0; index < component.prop<Array<Object>>('rows').length; index++) {
+            expect(
+                component
+                    .find('tbody')
+                    .find('tr')
+                    .at(index)
+                    .find('p')
+                    .text(),
+            ).toEqual(`${index}`);
+        }
+    });
+
+    it('should sort rows descendingly when a column is given a sorting function and is clicked twice', () => {
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: {
+                        sort(a: number, b: number) {
+                            return a - b;
+                        },
+                    },
+                }}
+                rows={[
+                    { id: '1', value: 1 },
+                    { id: '0', value: 0 },
+                    { id: '4', value: 4 },
+                    { id: '3', value: 3 },
+                    { id: '2', value: 2 },
+                ]}
+            />,
+        );
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
+
+        const rowLength = component.prop<Array<Object>>('rows').length;
+
+        for (let index = 0; index < rowLength; index++) {
+            expect(
+                component
+                    .find('tbody')
+                    .find('tr')
+                    .at(index)
+                    .find('p')
+                    .text(),
+            ).toEqual(`${rowLength - index - 1}`);
+        }
+    });
+
+    it('should reset row sorting when a column is given a sorting function and is clicked thrice', () => {
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: {
+                        sort(a: number, b: number) {
+                            return a - b;
+                        },
+                    },
+                }}
+                rows={[
+                    { id: '1', value: 1 },
+                    { id: '0', value: 0 },
+                    { id: '4', value: 4 },
+                    { id: '3', value: 3 },
+                    { id: '2', value: 2 },
+                ]}
+            />,
+        );
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
+
+        const rows = component.prop<Array<{ value: number }>>('rows');
+
+        for (let index = 0; index < rows.length; index++) {
+            expect(
+                component
+                    .find('tbody')
+                    .find('tr')
+                    .at(index)
+                    .find('p')
+                    .text(),
+            ).toEqual(`${rows[index].value}`);
+        }
+    });
+
+    it('should not sort a column with no sort function provided', () => {
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: {
+                        order: 0,
+                        sort(a: number, b: number) {
+                            return a - b;
+                        },
+                    },
+                    price: { order: 1 },
+                }}
+                rows={[
+                    { id: '1', value: 1, price: 11 },
+                    { id: '0', value: 0, price: 22 },
+                    { id: '4', value: 4, price: 33 },
+                    { id: '3', value: 3, price: 44 },
+                    { id: '2', value: 2, price: 55 },
+                ]}
+            />,
+        );
+
+        component
+            .find('thead')
+            .find('th')
+            .at(1)
+            .simulate('click');
+
+        const rows = component.prop<Array<{ value: number; price: number }>>('rows');
+
+        for (let index = 0; index < rows.length; index++) {
+            expect(
+                component
+                    .find('tbody')
+                    .find('tr')
+                    .at(index)
+                    .find('p')
+                    .at(1)
+                    .text(),
+            ).toEqual(`${rows[index].price}`);
+        }
+    });
+
+    it('should disable the sorting on other sortable columns after sorting a columns', () => {
+        const sort = (a: number, b: number) => a - b;
+
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: { order: 0, sort },
+                    price: { order: 1, sort },
+                }}
+                rows={[
+                    { id: '1', value: 1, price: 11 },
+                    { id: '0', value: 0, price: 22 },
+                    { id: '4', value: 4, price: 33 },
+                    { id: '3', value: 3, price: 44 },
+                    { id: '2', value: 2, price: 55 },
+                ]}
+            />,
+        );
+
+        component
+            .find('thead')
+            .find('th')
+            .at(0)
+            .simulate('click');
+
+        expect(
+            component
+                .find('thead')
+                .find('th')
+                .at(0)
+                .find(Icon)
+                .prop('icon'),
+        ).toBe('caretDown');
+
+        component
+            .find('thead')
+            .find('th')
+            .at(1)
+            .simulate('click');
+
+        expect(
+            component
+                .find('thead')
+                .find('th')
+                .at(0)
+                .find(Icon)
+                .prop('icon'),
+        ).toBe('caretVertical');
+    });
+
+    it('should be able to align a column in the center', () => {
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: { align: 'center' },
+                }}
+                rows={[
+                    { id: '1', value: 1, price: 11 },
+                    { id: '0', value: 0, price: 22 },
+                    { id: '4', value: 4, price: 33 },
+                    { id: '3', value: 3, price: 44 },
+                    { id: '2', value: 2, price: 55 },
+                ]}
+            />,
+        );
+
+        expect(
+            component
+                .find('thead')
+                .find('th')
+                .at(0)
+                .find(Box)
+                .prop('justifyContent'),
+        ).toBe('center');
+    });
+
+    it('should be able to align a column in the center', () => {
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    value: { align: 'center' },
+                }}
+                rows={[
+                    { id: '1', value: 1, price: 11 },
+                    { id: '0', value: 0, price: 22 },
+                    { id: '4', value: 4, price: 33 },
+                    { id: '3', value: 3, price: 44 },
+                    { id: '2', value: 2, price: 55 },
+                ]}
+            />,
+        );
+
+        expect(
+            component
+                .find('thead')
+                .find('th')
+                .at(0)
+                .find(Box)
+                .prop('justifyContent'),
+        ).toBe('center');
     });
 });

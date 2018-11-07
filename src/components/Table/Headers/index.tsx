@@ -54,36 +54,34 @@ class Headers extends Component<PropsType, StateType> {
     }
 
     private cycleSorting = (key: string): void => {
-        if (this.props.onSort !== undefined && this.state.columns[key].sorting !== undefined) {
-            const nextStep = SortingSteps[this.state.columns[key].sorting as SortDirectionType];
-            const columns: StateType['columns'] = {};
+        const nextStep = SortingSteps[this.state.columns[key].sorting as SortDirectionType];
+        const columns: StateType['columns'] = {};
 
-            this.props.onSort(key, nextStep);
+        (this.props.onSort as Required<PropsType>['onSort'])(key, nextStep);
 
-            Object.keys(this.state.columns).forEach(column => {
-                const currentColumn = this.state.columns[column];
+        Object.keys(this.state.columns).forEach(column => {
+            const currentColumn = this.state.columns[column];
 
-                const sorting = (() => {
-                    switch (currentColumn.sorting) {
-                        case 'ascending':
-                            return 'none';
-                        case 'descending':
-                            return 'none';
-                        default:
-                            return currentColumn.sorting;
-                    }
-                })();
+            const sorting = (() => {
+                switch (currentColumn.sorting) {
+                    case 'ascending':
+                        return 'none';
+                    case 'descending':
+                        return 'none';
+                    default:
+                        return currentColumn.sorting;
+                }
+            })();
 
-                columns[column] = {
-                    ...currentColumn,
-                    sorting: column === key ? nextStep : sorting,
-                };
-            });
+            columns[column] = {
+                ...currentColumn,
+                sorting: column === key ? nextStep : sorting,
+            };
+        });
 
-            this.setState({
-                columns,
-            });
-        }
+        this.setState({
+            columns,
+        });
     };
 
     public render() {
@@ -122,6 +120,7 @@ class Headers extends Component<PropsType, StateType> {
                                         align={alignment}
                                         key={key}
                                         onClick={
+                                            this.props.onSort !== undefined &&
                                             this.state.columns[key].sorting !== undefined
                                                 ? () => this.cycleSorting(key)
                                                 : undefined

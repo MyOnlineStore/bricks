@@ -12,7 +12,7 @@ import { ColumnType, BaseRowType } from '..';
 
 type PropsType = {
     // tslint:disable-next-line
-    columns: { [key: string]: ColumnType<any> };
+    columns: { [key: string]: ColumnType<string | number | boolean | undefined> };
     row: BaseRowType;
     draggable: boolean;
     selected: boolean;
@@ -120,8 +120,7 @@ class Row extends Component<PropsType, StateType> {
                         return (
                             <Cell align={align} key={`${this.props.row.id}-${key}`}>
                                 <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
-                                    {((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>) ||
-                                        cell}
+                                    {(typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>}
                                 </Box>
                             </Cell>
                         );
