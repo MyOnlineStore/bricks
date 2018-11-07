@@ -138,17 +138,16 @@ class Headers extends Component<PropsType, StateType> {
                                                 <Text strong>{column.header}</Text>
                                             )) ||
                                                 column.header}
-                                            {this.state.columns[key] !== undefined &&
-                                                this.state.columns[key].sorting !== undefined && (
-                                                    <Icon
-                                                        icon={
-                                                            SortingIcons[
-                                                                this.state.columns[key].sorting as SortDirectionType
-                                                            ]
-                                                        }
-                                                        size="medium"
-                                                    />
-                                                )}
+                                            {this.state.columns[key].sorting !== undefined && (
+                                                <Icon
+                                                    icon={
+                                                        SortingIcons[
+                                                            this.state.columns[key].sorting as SortDirectionType
+                                                        ]
+                                                    }
+                                                    size="medium"
+                                                />
+                                            )}
                                         </Box>
                                     </StyledHeader>
                                 );

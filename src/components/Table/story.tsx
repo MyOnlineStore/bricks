@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Table from '.';
+import Text from '../Text';
 
 type RowType = {
     id: string;
@@ -19,6 +20,7 @@ type PropsType = {
     draggable: boolean;
     selectable: boolean;
     sortable: boolean;
+    custom: boolean;
 };
 
 class Demo extends Component<PropsType, StateType> {
@@ -49,6 +51,21 @@ class Demo extends Component<PropsType, StateType> {
 
     private sortPrice = (a: number, b: number) => a - b;
 
+    private renderPrice = (price: number) => {
+        if (price < 1)
+            return (
+                <Text strong severity="success">
+                    {price}
+                </Text>
+            );
+
+        return (
+            <Text strong severity="error">
+                {price}
+            </Text>
+        );
+    };
+
     public render() {
         return (
             <Table<RowType>
@@ -70,6 +87,7 @@ class Demo extends Component<PropsType, StateType> {
                         align: 'end',
                         order: 3,
                         sort: this.props.sortable ? this.sortPrice : undefined,
+                        render: this.props.custom ? this.renderPrice : undefined,
                     },
                 }}
                 rows={this.state.rows}
@@ -82,17 +100,20 @@ class Demo extends Component<PropsType, StateType> {
 
 storiesOf('Table', module)
     .add('Default', () => {
-        return <Demo draggable={false} selectable={false} sortable={false} />;
+        return <Demo draggable={false} selectable={false} sortable={false} custom={false} />;
     })
     .add('Draggable', () => {
-        return <Demo draggable={true} selectable={false} sortable={false} />;
+        return <Demo draggable={true} selectable={false} sortable={false} custom={false} />;
     })
     .add('Selectable', () => {
-        return <Demo draggable={false} selectable={true} sortable={false} />;
+        return <Demo draggable={false} selectable={true} sortable={false} custom={false} />;
     })
     .add('Sortable', () => {
-        return <Demo draggable={false} selectable={false} sortable={true} />;
+        return <Demo draggable={false} selectable={false} sortable={true} custom={false} />;
     })
     .add('Sortable and Selectable', () => {
-        return <Demo draggable={false} selectable={true} sortable={true} />;
+        return <Demo draggable={false} selectable={true} sortable={true} custom={false} />;
+    })
+    .add('Custom rendered cells', () => {
+        return <Demo draggable={false} selectable={false} sortable={false} custom={true} />;
     });

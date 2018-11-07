@@ -1,5 +1,394 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Table Custom rendered cells 1`] = `
+<table
+  className="sc-dNLxif fhtdae"
+>
+  <thead>
+    <tr>
+      <th
+        className="sc-bbmXgH sCVJi"
+        onClick={undefined}
+      >
+        <div
+          className="sc-bwzfXH eLVXDi"
+        >
+          <p
+            className="sc-bxivhb jKBUfU"
+          >
+            Product ID
+          </p>
+        </div>
+      </th>
+      <th
+        className="sc-bbmXgH sCVJi"
+        onClick={undefined}
+      >
+        <div
+          className="sc-bwzfXH eLVXDi"
+        >
+          <p
+            className="sc-bxivhb jKBUfU"
+          >
+            Image
+          </p>
+        </div>
+      </th>
+      <th
+        className="sc-bbmXgH sCVJi"
+        onClick={undefined}
+      >
+        <div
+          className="sc-bwzfXH eLVXDi"
+        >
+          <p
+            className="sc-bxivhb jKBUfU"
+          >
+            Name
+          </p>
+        </div>
+      </th>
+      <th
+        className="sc-bbmXgH hYWGDM"
+        onClick={undefined}
+      >
+        <div
+          className="sc-bwzfXH hYEfgS"
+        >
+          <p
+            className="sc-bxivhb jKBUfU"
+          >
+            Price
+          </p>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="sc-uJMKN jYflQD"
+    >
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            61651323
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            🥝
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            Kiwi
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK dBFlhR"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH eFkGjS"
+        >
+          <p
+            className="sc-bxivhb eBfTxs"
+          >
+            0.8
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="sc-uJMKN jYflQD"
+    >
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            61651320
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            🍍
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            Pineapple
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK dBFlhR"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH eFkGjS"
+        >
+          <p
+            className="sc-bxivhb gJBvus"
+          >
+            3.5
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="sc-uJMKN jYflQD"
+    >
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            61651322
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            🍇
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            Grapes
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK dBFlhR"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH eFkGjS"
+        >
+          <p
+            className="sc-bxivhb gJBvus"
+          >
+            2.3
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="sc-uJMKN jYflQD"
+    >
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            61651321
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            🍌
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            Banana
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK dBFlhR"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH eFkGjS"
+        >
+          <p
+            className="sc-bxivhb gJBvus"
+          >
+            1.2
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="sc-uJMKN jYflQD"
+    >
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            61651324
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            🍋
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK clJpkq"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH jXZncb"
+        >
+          <p
+            className="sc-bxivhb iyjEP"
+          >
+            Lemon
+          </p>
+        </div>
+      </td>
+      <td
+        className="sc-jqCOkK dBFlhR"
+        onBlur={undefined}
+        onFocus={undefined}
+      >
+        <div
+          className="sc-bwzfXH eFkGjS"
+        >
+          <p
+            className="sc-bxivhb eBfTxs"
+          >
+            0.7
+          </p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots Table Default 1`] = `
 <table
   className="sc-dNLxif fhtdae"

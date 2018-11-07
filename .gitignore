@@ -8,4 +8,4 @@
 /reports
 /dist
 /.out
-/public
+.cache
