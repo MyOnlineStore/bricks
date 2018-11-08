@@ -14,31 +14,33 @@ type BaseRowType = {
     [key: string]: string | number | boolean | undefined;
 };
 
-type ColumnType<GenericCellType> = {
+type ColumnType<GenericCellType, GenericRowType> = {
     order?: number;
     header?: ReactNode;
     align?: 'start' | 'center' | 'end';
     sort?(cellA: GenericCellType, cellB: GenericCellType): number;
-    render?(cell: GenericCellType): JSX.Element;
+    render?(cell: GenericCellType, row: GenericRowType): JSX.Element;
 };
 
 type PropsType<GenericRowType extends BaseRowType> = {
     rows: Array<GenericRowType>;
-    columns: { [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<GenericRowType[GenericColumnType]> };
+    columns: {
+        [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<
+            GenericRowType[GenericColumnType],
+            GenericRowType
+        >
+    };
     onSelection?(rows: Array<GenericRowType>): void;
     onDragEnd?(rows: Array<GenericRowType>, dropResult: DropResult): void;
 };
 
-type StateType<GenericRowType extends BaseRowType> = {
+type StateType = {
     selectionStart: number;
     toggleAction: boolean;
-    sorting?: { column: keyof Partial<GenericRowType>; direction: SortDirectionType };
+    sorting?: { column: string; direction: SortDirectionType };
 };
 
-class Table<GenericRowType extends BaseRowType> extends Component<
-    PropsType<GenericRowType>,
-    StateType<GenericRowType>
-> {
+class Table<GenericRowType extends BaseRowType> extends Component<PropsType<GenericRowType>, StateType> {
     public constructor(props: PropsType<GenericRowType>) {
         super(props);
 
@@ -112,7 +114,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<
         }
     }
 
-    private handleSort = (column: keyof Partial<GenericRowType>, direction: SortDirectionType) => {
+    private handleSort = (column: string, direction: SortDirectionType) => {
         this.setState({
             sorting: {
                 column,
@@ -122,21 +124,24 @@ class Table<GenericRowType extends BaseRowType> extends Component<
     };
 
     private sortRows = (): Array<GenericRowType> => {
-        if (this.state.sorting === undefined) return this.props.rows;
+        // tslint:disable-next-line
+        if (this.state.sorting === undefined || this.props.columns[this.state.sorting.column].sort === undefined) {
+            return this.props.rows;
+        }
 
         const sortingColumn = this.props.columns[this.state.sorting.column];
         const rows = [...this.props.rows];
         const column = this.state.sorting.column;
 
         // tslint:disable-next-line
-        const sortRows = sortingColumn.sort as Required<ColumnType<any>>['sort'];
+        const sortRows = sortingColumn.sort as Required<ColumnType<any, any>>['sort'];
 
         switch (this.state.sorting.direction) {
             case 'ascending': {
                 return rows.sort((a, b) => sortRows(a[column], b[column]));
             }
             case 'descending': {
-                return rows.sort((a, b) => sortRows(a[column], b[column]) * -1);
+                return rows.sort((a, b) => sortRows(b[column], a[column]));
             }
             default: {
                 return rows;

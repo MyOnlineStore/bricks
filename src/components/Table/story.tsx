@@ -1,14 +1,17 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Table from '.';
 import Text from '../Text';
+import { boolean } from '@storybook/addon-knobs';
+import Button from '../Button';
+import Icon from '../Icon';
 
 type RowType = {
     id: string;
     price: number;
     name: string;
     image: string;
-    test?: boolean;
+    actions: boolean;
 };
 
 type StateType = {
@@ -30,11 +33,11 @@ class Demo extends Component<PropsType, StateType> {
         this.state = {
             hover: false,
             rows: [
-                { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝' },
-                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍' },
-                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇' },
-                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌' },
-                { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋' },
+                { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝', actions: true },
+                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍', actions: true },
+                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇', actions: true },
+                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌', actions: true },
+                { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋', actions: true },
             ],
         };
     }
@@ -66,6 +69,26 @@ class Demo extends Component<PropsType, StateType> {
         );
     };
 
+    private renderActions = (actions: boolean, row: RowType) => {
+        if (actions) {
+            return (
+                <Button.Flat
+                    title="delete"
+                    variant="destructive"
+                    onClick={() =>
+                        this.setState({
+                            rows: this.state.rows.filter(item => item.id !== row.id),
+                        })
+                    }
+                >
+                    <Icon size="medium" icon="trash" />
+                </Button.Flat>
+            );
+        }
+
+        return <Fragment />;
+    };
+
     public render() {
         return (
             <Table<RowType>
@@ -73,7 +96,7 @@ class Demo extends Component<PropsType, StateType> {
                     image: { header: 'Image', order: 1 },
                     name: {
                         header: 'Name',
-                        order: 2,
+                        order: 1,
                         align: 'start',
                         sort: this.props.sortable ? this.sortText : undefined,
                     },
@@ -84,10 +107,14 @@ class Demo extends Component<PropsType, StateType> {
                     },
                     price: {
                         header: 'Price',
-                        align: 'end',
-                        order: 3,
+                        order: 2,
                         sort: this.props.sortable ? this.sortPrice : undefined,
                         render: this.props.custom ? this.renderPrice : undefined,
+                    },
+                    actions: {
+                        order: 3,
+                        align: 'end',
+                        render: this.renderActions,
                     },
                 }}
                 rows={this.state.rows}
@@ -98,22 +125,11 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-storiesOf('Table', module)
-    .add('Default', () => {
-        return <Demo draggable={false} selectable={false} sortable={false} custom={false} />;
-    })
-    .add('Draggable', () => {
-        return <Demo draggable={true} selectable={false} sortable={false} custom={false} />;
-    })
-    .add('Selectable', () => {
-        return <Demo draggable={false} selectable={true} sortable={false} custom={false} />;
-    })
-    .add('Sortable', () => {
-        return <Demo draggable={false} selectable={false} sortable={true} custom={false} />;
-    })
-    .add('Sortable and Selectable', () => {
-        return <Demo draggable={false} selectable={true} sortable={true} custom={false} />;
-    })
-    .add('Custom rendered cells', () => {
-        return <Demo draggable={false} selectable={false} sortable={false} custom={true} />;
-    });
+storiesOf('Table', module).add('Default', () => (
+    <Demo
+        draggable={boolean('draggable', true)}
+        selectable={boolean('selectable', true)}
+        sortable={boolean('sortable', true)}
+        custom={boolean('custom', true)}
+    />
+));
