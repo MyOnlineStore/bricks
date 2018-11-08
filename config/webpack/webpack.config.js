@@ -2,17 +2,18 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const entry = require('../../scripts/entry');
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/index.ts',
+    entry,
     stats: {
         assets: true,
         modules: false,
         children: false,
     },
     output: {
-        filename: 'index.js',
+        filename: '[name].bundle.js',
         path: __dirname + '/../../dist',
         library: 'bricks',
         libraryTarget: 'umd',
