@@ -18,7 +18,7 @@ exports[`PriceTag should not break when an incorrect price is provided 1`] = `
     <span
       className="c0"
     >
-      0,[object Object] €
+       
     </span>
   </styled.span>
 </PriceTag>
@@ -85,7 +85,7 @@ exports[`PriceTag should render an action price 1`] = `
     <span
       className="c0"
     >
-      € 1.020,[object Object]
+       
     </span>
   </styled.span>
 </PriceTag>
@@ -110,7 +110,8 @@ exports[`PriceTag should render with a dashed fraction 1`] = `
     <span
       className="c0"
     >
-      € 10,[object Object]
+       
+      -
     </span>
   </styled.span>
 </PriceTag>
@@ -135,7 +136,10 @@ exports[`PriceTag should render with a fraction in superscript 1`] = `
     <span
       className="c0"
     >
-      € 1.020,[object Object]
+       
+      <sup
+        key="fraction"
+      />
     </span>
   </styled.span>
 </PriceTag>
@@ -161,10 +165,9 @@ exports[`PriceTag should render with a hidden currency and superscript franction
     <span
       className="c0"
     >
-      1.020,
-      <sup>
-        00
-      </sup>
+      <sup
+        key="fraction"
+      />
     </span>
   </styled.span>
 </PriceTag>
@@ -189,7 +192,7 @@ exports[`PriceTag should render with a hidden fraction on a round value 1`] = `
     <span
       className="c0"
     >
-      € 10[object Object]
+       
     </span>
   </styled.span>
 </PriceTag>
@@ -215,7 +218,8 @@ exports[`PriceTag should render with showDash and superscript on a round value 1
     <span
       className="c0"
     >
-      € 0,[object Object]
+       
+      -
     </span>
   </styled.span>
 </PriceTag>

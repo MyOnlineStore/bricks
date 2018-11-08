@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyledType } from '../../utility/styled';
 import StyledPriceTag from './style';
+import formatFraction from './formatters/formatFraction';
+import formatCurrency from './formatters/formatCurrency';
 
 type PropsType = StyledType & {
     hideCurrency?: boolean;
@@ -13,6 +15,19 @@ type PropsType = StyledType & {
     currency: string;
 };
 
+type PartTypeType =
+    | 'currency'
+    | 'decimal'
+    | 'fraction'
+    | 'group'
+    | 'infinity'
+    | 'integer'
+    | 'literal'
+    | 'minusSign'
+    | 'nan'
+    | 'plusSign'
+    | 'percentSign';
+
 type StateType = {
     price: string;
     fraction: string;
@@ -22,12 +37,17 @@ type StateType = {
 };
 
 type PartType = {
-    type: string;
+    type: PartTypeType;
     value: string;
 };
 
 type NumberFormatter = Intl.NumberFormat & {
     formatToParts(value: number): Array<PartType>;
+};
+
+type StatsType = {
+    isRound: boolean;
+    isFree: boolean;
 };
 
 class PriceTag extends Component<PropsType, StateType> {
@@ -45,6 +65,12 @@ class PriceTag extends Component<PropsType, StateType> {
         };
     }
 
+    private isRound = (part: PartType): boolean => part.type === 'fraction' && parseInt(part.value, 10) === 0;
+
+    private isFree = (part: PartType): boolean => {
+        return (part.type === 'integer' || part.type === 'fraction') && parseInt(part.value, 10) !== 0;
+    };
+
     private setFormatter(locale: string, currency: string): void {
         this.formatter = new Intl.NumberFormat(locale, { style: 'currency', currency }) as NumberFormatter;
     }
@@ -56,6 +82,11 @@ class PriceTag extends Component<PropsType, StateType> {
         return !isNaN(parsed) ? parseFloat(parsed.toFixed(2)) : 0;
     }
 
+    private deriveStatsFromPart = (initialStats: StatsType, part: PartType): StatsType => ({
+        isRound: this.isRound(part) ? true : initialStats.isRound,
+        isFree: this.isFree(part) ? false : initialStats.isFree,
+    });
+
     private format(value: string): string {
         this.setState({ fraction: '' });
 
@@ -63,16 +94,19 @@ class PriceTag extends Component<PropsType, StateType> {
             .formatToParts(this.parse(value))
             .filter((part, index, parts) => {
                 const { value } = part;
+                const stats = parts.reduce(this.deriveStatsFromPart, { isRound: false });
+
                 switch (part.type) {
                     case 'currency': {
                         const currencyAlignment = index === parts.length - 1 ? 'right' : 'left';
-                        if (this.state.currencyAlignment !== currencyAlignment || this.state.currency !== part.value)
+                        if (this.state.currencyAlignment !== currencyAlignment || this.state.currency !== part.value) {
                             this.setState({ currency: value, currencyAlignment });
+                        }
 
                         return false;
                     }
                     case 'decimal': {
-                        if (this.props.fractionFormat === 'none') return false;
+                        if (this.props.fractionFormat === 'none' && stats.isRound) return false;
 
                         this.setState({ decimalSeperator: value });
 
@@ -92,47 +126,26 @@ class PriceTag extends Component<PropsType, StateType> {
             .reduce((combined: string, { value }: PartType): string => `${combined}${value}`, '');
     }
 
-    private renderFreeLabel(): string {
-        const isFree = Math.ceil(parseInt(this.state.price, 0) + parseInt(this.state.fraction, 0)) === 0;
+    private renderFreeLabel = (isFree: boolean, label?: string): string => (isFree && label !== undefined ? label : '');
 
-        return isFree && this.props.freeLabel !== undefined ? this.props.freeLabel : '';
-    }
+    private renderPrice(isRound: boolean): JSX.Element | string {
+        const fraction = formatFraction(this.state.fraction, this.props, isRound);
 
-    private renderPrice(): JSX.Element | string {
-        const isRound = new RegExp('^[0]*$').test(this.state.fraction);
+        const price = (
+            <>
+                {this.state.price}
+                {fraction}
+            </>
+        );
 
-        const fraction = (): JSX.Element => {
-            if (isRound && this.props.fractionFormat === 'none') return <span />;
-            if (isRound && this.props.fractionFormat === 'dash') return <span>-</span>;
-            if (this.props.superScriptFraction) return <sup>{this.state.fraction}</sup>;
+        const priceElement = formatCurrency(
+            this.props.hideCurrency !== undefined ? this.props.hideCurrency : false,
+            this.state.currencyAlignment,
+            this.state.currency,
+            price,
+        );
 
-            return <span>{this.state.fraction}</span>;
-        };
-
-        const priceElement = (): JSX.Element => {
-            if (!this.props.hideCurrency) {
-                return (
-                    <>
-                        {this.state.currencyAlignment === 'left'
-                            ? `${this.state.currency} ${this.state.price}${fraction()}`
-                            : `${this.state.price}${fraction()} ${this.state.currency}`}
-                    </>
-                );
-            }
-
-            return (
-                <>
-                    {this.state.price}
-                    {fraction()}
-                </>
-            );
-        };
-
-        return priceElement();
-    }
-
-    public componentDidMount(): void {
-        this.setState({ price: this.format(this.props.value) });
+        return priceElement;
     }
 
     public componentDidUpdate(prevProps: PropsType): void {
@@ -143,13 +156,25 @@ class PriceTag extends Component<PropsType, StateType> {
     }
 
     public render(): JSX.Element {
+        const formatter = new Intl.NumberFormat(this.props.locale, {
+            style: 'currency',
+            currency: this.props.currency,
+        }) as NumberFormatter;
+
+        const parts = formatter.formatToParts(this.parse(this.props.value));
+
+        const stats = parts.reduce(this.deriveStatsFromPart, {
+            isRound: false,
+            isFree: true,
+        });
+
         return (
             <StyledPriceTag strikethrough={this.props.strikethrough}>
-                {this.renderFreeLabel() || this.renderPrice()}
+                {this.renderFreeLabel(stats.isFree, this.props.freeLabel) || this.renderPrice(stats.isRound)}
             </StyledPriceTag>
         );
     }
 }
 
 export default PriceTag;
-export { PropsType, PartType };
+export { PropsType, PartType, StateType };

@@ -15,10 +15,10 @@ describe('PriceTag', () => {
     it('should render a base price', () => {
         const component = mountWithTheme(<PriceTag locale="de-DE" currency="EUR" value="10,20" />);
 
-        component.setProps({ value: '10,45' });
+        component.setProps({ value: '9,45' });
         component.update();
 
-        expect(component.text()).toContain('10,45');
+        expect(component.text()).toContain('9,45');
     });
 
     it('should not break when an incorrect price is provided', () => {

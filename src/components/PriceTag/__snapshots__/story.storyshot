@@ -7,7 +7,12 @@ exports[`Storyshots PriceTag Default 1`] = `
   <span
     className="sc-kjoXOD dUQYME"
   >
-    $ 1.[object Object]
+    
+     
+    
+    <sup>
+      
+    </sup>
   </span>
 </p>
 `;
