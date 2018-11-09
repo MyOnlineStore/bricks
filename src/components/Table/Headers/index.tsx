@@ -90,6 +90,38 @@ class Headers extends Component<PropsType, StateType> {
         });
     };
 
+    private renderHeader = (key: string): JSX.Element => {
+        const column = this.props.columns[key];
+        const alignment = column.align ? column.align : 'start';
+
+        return (
+            <StyledHeader
+                align={alignment}
+                key={key}
+                onClick={
+                    this.props.onSort !== undefined && this.state.columns[key].sorting !== undefined
+                        ? () => this.cycleSorting(key)
+                        : undefined
+                }
+            >
+                <Box
+                    alignItems="center"
+                    justifyContent={alignment !== 'center' ? (`flex-${alignment}` as 'flex-start') : alignment}
+                >
+                    {(typeof column.header === 'string' && <Text strong>{column.header}</Text>) || column.header}
+                    {this.state.columns[key].sorting !== undefined && (
+                        <Text severity={this.state.columns[key].sorting === 'none' ? 'info' : undefined}>
+                            <Icon
+                                icon={SortingIcons[this.state.columns[key].sorting as SortDirectionType]}
+                                size="medium"
+                            />
+                        </Text>
+                    )}
+                </Box>
+            </StyledHeader>
+        );
+    };
+
     public render() {
         return (
             <thead>
@@ -116,55 +148,7 @@ class Headers extends Component<PropsType, StateType> {
 
                             return (this.props.columns[a].order as number) - (this.props.columns[b].order as number);
                         })
-                        .map(
-                            (key): JSX.Element => {
-                                const column = this.props.columns[key];
-                                const alignment = column.align ? column.align : 'start';
-
-                                return (
-                                    <StyledHeader
-                                        align={alignment}
-                                        key={key}
-                                        onClick={
-                                            this.props.onSort !== undefined &&
-                                            this.state.columns[key].sorting !== undefined
-                                                ? () => this.cycleSorting(key)
-                                                : undefined
-                                        }
-                                    >
-                                        <Box
-                                            alignItems="center"
-                                            justifyContent={
-                                                alignment !== 'center'
-                                                    ? (`flex-${alignment}` as 'flex-start')
-                                                    : alignment
-                                            }
-                                        >
-                                            {(typeof column.header === 'string' && (
-                                                <Text strong>{column.header}</Text>
-                                            )) ||
-                                                column.header}
-                                            {this.state.columns[key].sorting !== undefined && (
-                                                <Text
-                                                    severity={
-                                                        this.state.columns[key].sorting === 'none' ? 'info' : undefined
-                                                    }
-                                                >
-                                                    <Icon
-                                                        icon={
-                                                            SortingIcons[
-                                                                this.state.columns[key].sorting as SortDirectionType
-                                                            ]
-                                                        }
-                                                        size="medium"
-                                                    />
-                                                </Text>
-                                            )}
-                                        </Box>
-                                    </StyledHeader>
-                                );
-                            },
-                        )}
+                        .map(this.renderHeader)}
                 </tr>
             </thead>
         );
