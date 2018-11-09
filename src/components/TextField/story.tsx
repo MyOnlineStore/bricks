@@ -45,6 +45,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
                 <TextField.Number
                     name="min value"
                     disableNegative={boolean('disable negative numbers', false)}
+                    disabled={boolean('disabled', false)}
                     value={this.state.numberValue}
                     onChange={(value: number): void => this.setState({ numberValue: value })}
                 />
