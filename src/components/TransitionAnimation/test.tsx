@@ -8,72 +8,73 @@ import slideUp from './animations/slideUp';
 import slideDown from './animations/slideDown';
 import slideLeft from './animations/slideLeft';
 import slideRight from './animations/slideRight';
+import StyledAnimation from './style';
 
 describe('TransitionAnimation', () => {
     it('should use the fade animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation={'fade'}>
-                <div>children</div>
+                <div>child</div>
             </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fadeIn .3s both');
+        (expect(componentIn.find(StyledAnimation)) as any).toHaveStyleRule('animation', 'iOVxKt .3s both');
         /* tslint:enable */
     });
 
     it('should use the slide up animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation="slideUp">
-                <div>children</div>
+                <div>child</div>
             </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        (expect(componentIn.find(StyledAnimation)) as any).toHaveStyleRule('animation', 'BwXBh .3s both');
         /* tslint:enable */
     });
 
     it('should use the slide down animation', () => {
         const componentIn = shallow(
             <TransitionAnimation show animation="slideDown">
-                <div>children</div>
+                <div>child</div>
             </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'bNLAFK .3s both');
         /* tslint:enable */
     });
 
     it('should use the slide left animation', () => {
         const componentIn = shallow(
             <TransitionAnimation show animation="slideLeft">
-                <div>children</div>
+                <div>child</div>
             </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'boXKTL .3s both');
         /* tslint:enable */
     });
 
     it('should use the slide right animation', () => {
         const componentIn = shallow(
             <TransitionAnimation show animation="slideRight">
-                <div>children</div>
+                <div>child</div>
             </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fdjYoj .3s both');
         /* tslint:enable */
     });
 
     it('should stay mounted', () => {
         const component = mount(
             <TransitionAnimation show={false} animation="zoom" stayMounted>
-                <div>children</div>
+                <div>child</div>
             </TransitionAnimation>,
         );
 

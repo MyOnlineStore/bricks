@@ -1,30 +1,25 @@
 import { AnimationStateType } from '../style';
+import { keyframes } from 'styled-components';
 
-const fade = (state: AnimationStateType): string => {
+const fadeIn = keyframes`
+    from { opacity: 0 }
+    to { opacity: 1 }
+`;
+
+const fadeOut = keyframes`
+    from { opacity: 1 }
+    to { opacity: 0 }
+`;
+
+export default (state: AnimationStateType): string => {
     switch (state) {
         case 'exiting':
-            return `
-            @keyframes fadeOut {
-                0% { opacity: 1; }
-                100% { opacity: 0; }
-            }
-
-            animation: fadeOut .3s both;
-        `;
+            return `animation: ${fadeOut} .3s both`;
         case 'exited':
-            return `
-            opacity: 0;
-        `;
+            return 'opacity: 0';
         default:
-            return `
-            @keyframes fadeIn {
-                0% { opacity: 0; }
-                100% { opacity: 1; }
-            }
-
-            animation: fadeIn .3s both;
-        `;
+            return `animation: ${fadeIn} .3s both`;
     }
 };
 
-export default fade;
+export { fadeIn };
