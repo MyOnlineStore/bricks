@@ -1,784 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Table Custom rendered cells 1`] = `
-<table
-  className="sc-dNLxif fhtdae"
->
-  <thead>
-    <tr>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Product ID
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Image
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Name
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH hYWGDM"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH hYEfgS"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Price
-          </p>
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651323
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🥝
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Kiwi
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb eBfTxs"
-          >
-            0.8
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651320
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍍
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Pineapple
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb gJBvus"
-          >
-            3.5
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651322
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍇
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Grapes
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb gJBvus"
-          >
-            2.3
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651321
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍌
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Banana
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb gJBvus"
-          >
-            1.2
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651324
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍋
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Lemon
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb eBfTxs"
-          >
-            0.7
-          </p>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
 exports[`Storyshots Table Default 1`] = `
-<table
-  className="sc-dNLxif fhtdae"
->
-  <thead>
-    <tr>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Product ID
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Image
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Name
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH hYWGDM"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH hYEfgS"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Price
-          </p>
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651323
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🥝
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Kiwi
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.8
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651320
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍍
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Pineapple
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            3.5
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651322
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍇
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Grapes
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            2.3
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651321
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍌
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Banana
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            1.2
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651324
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍋
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Lemon
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.7
-          </p>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`Storyshots Table Draggable 1`] = `
 <div>
   <table
     className="sc-dNLxif fhtdae"
@@ -789,8 +11,8 @@ exports[`Storyshots Table Draggable 1`] = `
           className="sc-bbmXgH sCVJi"
         />
         <th
-          className="sc-bbmXgH sCVJi"
-          onClick={undefined}
+          className="sc-bbmXgH fZvdJH"
+          onClick={[Function]}
         >
           <div
             className="sc-bwzfXH eLVXDi"
@@ -799,6 +21,20 @@ exports[`Storyshots Table Draggable 1`] = `
               className="sc-bxivhb jKBUfU"
             >
               Product ID
+            </p>
+            <p
+              className="sc-bxivhb cswGnm"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
             </p>
           </div>
         </th>
@@ -817,8 +53,8 @@ exports[`Storyshots Table Draggable 1`] = `
           </div>
         </th>
         <th
-          className="sc-bbmXgH sCVJi"
-          onClick={undefined}
+          className="sc-bbmXgH fZvdJH"
+          onClick={[Function]}
         >
           <div
             className="sc-bwzfXH eLVXDi"
@@ -828,6 +64,48 @@ exports[`Storyshots Table Draggable 1`] = `
             >
               Name
             </p>
+            <p
+              className="sc-bxivhb cswGnm"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </p>
+          </div>
+        </th>
+        <th
+          className="sc-bbmXgH fZvdJH"
+          onClick={[Function]}
+        >
+          <div
+            className="sc-bwzfXH eLVXDi"
+          >
+            <p
+              className="sc-bxivhb jKBUfU"
+            >
+              Price
+            </p>
+            <p
+              className="sc-bxivhb cswGnm"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </p>
           </div>
         </th>
         <th
@@ -836,13 +114,7 @@ exports[`Storyshots Table Draggable 1`] = `
         >
           <div
             className="sc-bwzfXH hYEfgS"
-          >
-            <p
-              className="sc-bxivhb jKBUfU"
-            >
-              Price
-            </p>
-          </div>
+          />
         </th>
       </tr>
     </thead>
@@ -918,6 +190,21 @@ exports[`Storyshots Table Draggable 1`] = `
           </div>
         </td>
         <td
+          className="sc-jqCOkK clJpkq"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="sc-bwzfXH jXZncb"
+          >
+            <p
+              className="sc-bxivhb iyjEP"
+            >
+              0.8
+            </p>
+          </div>
+        </td>
+        <td
           className="sc-jqCOkK dBFlhR"
           onBlur={undefined}
           onFocus={undefined}
@@ -925,11 +212,25 @@ exports[`Storyshots Table Draggable 1`] = `
           <div
             className="sc-bwzfXH eFkGjS"
           >
-            <p
-              className="sc-bxivhb iyjEP"
+            <button
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
+              disabled={undefined}
+              id={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
             >
-              0.8
-            </p>
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
           </div>
         </td>
       </tr>
@@ -1004,6 +305,21 @@ exports[`Storyshots Table Draggable 1`] = `
           </div>
         </td>
         <td
+          className="sc-jqCOkK clJpkq"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="sc-bwzfXH jXZncb"
+          >
+            <p
+              className="sc-bxivhb iyjEP"
+            >
+              3.5
+            </p>
+          </div>
+        </td>
+        <td
           className="sc-jqCOkK dBFlhR"
           onBlur={undefined}
           onFocus={undefined}
@@ -1011,11 +327,25 @@ exports[`Storyshots Table Draggable 1`] = `
           <div
             className="sc-bwzfXH eFkGjS"
           >
-            <p
-              className="sc-bxivhb iyjEP"
+            <button
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
+              disabled={undefined}
+              id={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
             >
-              3.5
-            </p>
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
           </div>
         </td>
       </tr>
@@ -1090,6 +420,21 @@ exports[`Storyshots Table Draggable 1`] = `
           </div>
         </td>
         <td
+          className="sc-jqCOkK clJpkq"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="sc-bwzfXH jXZncb"
+          >
+            <p
+              className="sc-bxivhb iyjEP"
+            >
+              2.3
+            </p>
+          </div>
+        </td>
+        <td
           className="sc-jqCOkK dBFlhR"
           onBlur={undefined}
           onFocus={undefined}
@@ -1097,11 +442,25 @@ exports[`Storyshots Table Draggable 1`] = `
           <div
             className="sc-bwzfXH eFkGjS"
           >
-            <p
-              className="sc-bxivhb iyjEP"
+            <button
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
+              disabled={undefined}
+              id={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
             >
-              2.3
-            </p>
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
           </div>
         </td>
       </tr>
@@ -1176,6 +535,21 @@ exports[`Storyshots Table Draggable 1`] = `
           </div>
         </td>
         <td
+          className="sc-jqCOkK clJpkq"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="sc-bwzfXH jXZncb"
+          >
+            <p
+              className="sc-bxivhb iyjEP"
+            >
+              1.2
+            </p>
+          </div>
+        </td>
+        <td
           className="sc-jqCOkK dBFlhR"
           onBlur={undefined}
           onFocus={undefined}
@@ -1183,11 +557,25 @@ exports[`Storyshots Table Draggable 1`] = `
           <div
             className="sc-bwzfXH eFkGjS"
           >
-            <p
-              className="sc-bxivhb iyjEP"
+            <button
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
+              disabled={undefined}
+              id={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
             >
-              1.2
-            </p>
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
           </div>
         </td>
       </tr>
@@ -1262,12 +650,12 @@ exports[`Storyshots Table Draggable 1`] = `
           </div>
         </td>
         <td
-          className="sc-jqCOkK dBFlhR"
+          className="sc-jqCOkK clJpkq"
           onBlur={undefined}
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH jXZncb"
           >
             <p
               className="sc-bxivhb iyjEP"
@@ -1276,1567 +664,37 @@ exports[`Storyshots Table Draggable 1`] = `
             </p>
           </div>
         </td>
+        <td
+          className="sc-jqCOkK dBFlhR"
+          onBlur={undefined}
+          onFocus={undefined}
+        >
+          <div
+            className="sc-bwzfXH eFkGjS"
+          >
+            <button
+              className="sc-gqjmRU cgYUcH sc-htoDjs ifkBJX"
+              disabled={undefined}
+              id={undefined}
+              onClick={[Function]}
+              title="delete"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="sc-iwsKbI jSMqMr"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+                role="img"
+              />
+            </button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
-`;
-
-exports[`Storyshots Table Selectable 1`] = `
-<table
-  className="sc-dNLxif fhtdae"
->
-  <thead>
-    <tr>
-      <th
-        className="sc-bbmXgH sCVJi"
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Product ID
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Image
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Name
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH hYWGDM"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH hYEfgS"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Price
-          </p>
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651323
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🥝
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Kiwi
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.8
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651320
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍍
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Pineapple
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            3.5
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651322
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍇
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Grapes
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            2.3
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651321
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍌
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Banana
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            1.2
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651324
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍋
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Lemon
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.7
-          </p>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`Storyshots Table Sortable 1`] = `
-<table
-  className="sc-dNLxif fhtdae"
->
-  <thead>
-    <tr>
-      <th
-        className="sc-bbmXgH fZvdJH"
-        onClick={[Function]}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Product ID
-          </p>
-          <p
-            className="sc-bxivhb cswGnm"
-          >
-            <span
-              aria-hidden={true}
-              className="sc-iwsKbI jSMqMr"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Image
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH fZvdJH"
-        onClick={[Function]}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Name
-          </p>
-          <p
-            className="sc-bxivhb cswGnm"
-          >
-            <span
-              aria-hidden={true}
-              className="sc-iwsKbI jSMqMr"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH Yfocx"
-        onClick={[Function]}
-      >
-        <div
-          className="sc-bwzfXH hYEfgS"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Price
-          </p>
-          <p
-            className="sc-bxivhb cswGnm"
-          >
-            <span
-              aria-hidden={true}
-              className="sc-iwsKbI jSMqMr"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651323
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🥝
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Kiwi
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.8
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651320
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍍
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Pineapple
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            3.5
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651322
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍇
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Grapes
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            2.3
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651321
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍌
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Banana
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            1.2
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651324
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍋
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Lemon
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.7
-          </p>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`Storyshots Table Sortable and Selectable 1`] = `
-<table
-  className="sc-dNLxif fhtdae"
->
-  <thead>
-    <tr>
-      <th
-        className="sc-bbmXgH sCVJi"
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH fZvdJH"
-        onClick={[Function]}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Product ID
-          </p>
-          <p
-            className="sc-bxivhb cswGnm"
-          >
-            <span
-              aria-hidden={true}
-              className="sc-iwsKbI jSMqMr"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH sCVJi"
-        onClick={undefined}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Image
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH fZvdJH"
-        onClick={[Function]}
-      >
-        <div
-          className="sc-bwzfXH eLVXDi"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Name
-          </p>
-          <p
-            className="sc-bxivhb cswGnm"
-          >
-            <span
-              aria-hidden={true}
-              className="sc-iwsKbI jSMqMr"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </div>
-      </th>
-      <th
-        className="sc-bbmXgH Yfocx"
-        onClick={[Function]}
-      >
-        <div
-          className="sc-bwzfXH hYEfgS"
-        >
-          <p
-            className="sc-bxivhb jKBUfU"
-          >
-            Price
-          </p>
-          <p
-            className="sc-bxivhb cswGnm"
-          >
-            <span
-              aria-hidden={true}
-              className="sc-iwsKbI jSMqMr"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "test-file-stub",
-                }
-              }
-              role="img"
-            />
-          </p>
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651323
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🥝
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Kiwi
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.8
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651320
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍍
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Pineapple
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            3.5
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651322
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍇
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Grapes
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            2.3
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651321
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍌
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Banana
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            1.2
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="sc-uJMKN jYflQD"
-    >
-      <td
-        className="sc-jqCOkK OmRDH"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-cSHVUG bIfjPJ"
-          disabled={undefined}
-          onClick={[Function]}
-        >
-          <div
-            className="sc-bwzfXH hBZDfE"
-          />
-          <input
-            checked={false}
-            className="sc-jzJRlG gxbNVW"
-            id={undefined}
-            name=""
-            onBlur={[Function]}
-            onFocus={[Function]}
-            readOnly={true}
-            type="checkbox"
-            value=""
-          />
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            61651324
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            🍋
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK clJpkq"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH jXZncb"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            Lemon
-          </p>
-        </div>
-      </td>
-      <td
-        className="sc-jqCOkK dBFlhR"
-        onBlur={undefined}
-        onFocus={undefined}
-      >
-        <div
-          className="sc-bwzfXH eFkGjS"
-        >
-          <p
-            className="sc-bxivhb iyjEP"
-          >
-            0.7
-          </p>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
 `;

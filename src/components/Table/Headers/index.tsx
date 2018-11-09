@@ -38,25 +38,32 @@ type StateType = {
     };
 };
 
+const mapPropsToState = (props: PropsType, state?: StateType): StateType => {
+    const columns: StateType['columns'] = {};
+
+    const mapColumn = (column: string) => {
+        if (props.columns[column].sort === undefined) return undefined;
+
+        return state !== undefined && state.columns[column].sorting !== undefined
+            ? state.columns[column].sorting
+            : 'none';
+    };
+
+    Object.keys(props.columns).forEach(column => {
+        columns[column] = { sorting: mapColumn(column) };
+    });
+
+    return {
+        ...state,
+        columns,
+    };
+};
+
 class Headers extends Component<PropsType, StateType> {
-    public static getDerivedStateFromProps(props: PropsType, state: StateType | null): StateType {
-        const columns: StateType['columns'] = {};
+    public constructor(props: PropsType) {
+        super(props);
 
-        const mapColumn = (column: string) => {
-            if (props.columns[column].sort === undefined) return undefined;
-
-            return state !== null && state.columns[column].sorting !== undefined
-                ? state.columns[column].sorting
-                : 'none';
-        };
-
-        Object.keys(props.columns).forEach(column => {
-            columns[column] = { sorting: mapColumn(column) };
-        });
-
-        return {
-            columns,
-        };
+        this.state = mapPropsToState(props, undefined);
     }
 
     private cycleSorting = (key: string): void => {
@@ -121,6 +128,14 @@ class Headers extends Component<PropsType, StateType> {
             </StyledHeader>
         );
     };
+
+    public componentDidUpdate(prevProps: PropsType, prevState: StateType) {
+        const newState = mapPropsToState(this.props, this.state);
+
+        if (JSON.stringify(newState) !== JSON.stringify(mapPropsToState(prevProps, prevState))) {
+            this.setState(mapPropsToState(this.props, this.state));
+        }
+    }
 
     public render() {
         return (

@@ -128,8 +128,8 @@ class Demo extends Component<PropsType, StateType> {
 storiesOf('Table', module).add('Default', () => (
     <Demo
         draggable={boolean('draggable', true)}
-        selectable={boolean('selectable', true)}
+        selectable={boolean('selectable', false)}
         sortable={boolean('sortable', true)}
-        custom={boolean('custom', true)}
+        custom={boolean('custom', false)}
     />
 ));
