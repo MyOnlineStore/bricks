@@ -355,7 +355,7 @@ const theme: ThemeType = {
             backgroundColor: green.base,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 5px,${silver.darker1} 5px,${
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${silver.darker1} 5px,${
                 silver.darker1
             } 10px )`,
         },
@@ -784,9 +784,7 @@ const theme: ThemeType = {
 
         disabled: {
             color: grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 10px,${silver.darker1} 10px,${
-                silver.darker1
-            } 20px )`,
+            background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
         },
     },
     TextField: {
@@ -817,9 +815,8 @@ const theme: ThemeType = {
 
         disabled: {
             color: grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 10px,${
-                silver.base
-            } 10px,${silver.base} 20px )`,
+
+            background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
         },
     },
     Tile: {
@@ -845,7 +842,7 @@ const theme: ThemeType = {
             background: green.base,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${silver.base},${silver.base} 5px,${silver.darker1} 5px,${
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${silver.darker1} 5px,${
                 silver.darker1
             } 10px )`,
         },

@@ -14,25 +14,32 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ ajvZf"
+          className="sc-eNQAEJ hdXQwO"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
           onFocusCapture={[Function]}
         >
-          <input
-            className="sc-dxgOiQ cNbhAj"
-            disabled={false}
-            id={undefined}
-            name="minimum"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            type="number"
-            value="5"
-          />
           <div
-            className="sc-ckVGcZ kdxLRP"
+            className="sc-bwzfXH grkVqn"
+          >
+            <input
+              className="sc-dxgOiQ dxkTXN"
+              disabled={false}
+              id={undefined}
+              name="minimum"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value="5"
+            />
+            <div
+              className="sc-bwzfXH iOPxsx"
+            />
+          </div>
+          <div
+            className="sc-ckVGcZ bUDAVg"
             disabled={false}
           >
             <span
@@ -47,25 +54,32 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ ajvZf"
+          className="sc-eNQAEJ hdXQwO"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
           onFocusCapture={[Function]}
         >
-          <input
-            className="sc-dxgOiQ cNbhAj"
-            disabled={false}
-            id={undefined}
-            name="maximum"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            type="number"
-            value="15"
-          />
           <div
-            className="sc-ckVGcZ kdxLRP"
+            className="sc-bwzfXH grkVqn"
+          >
+            <input
+              className="sc-dxgOiQ dxkTXN"
+              disabled={false}
+              id={undefined}
+              name="maximum"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="number"
+              value="15"
+            />
+            <div
+              className="sc-bwzfXH iOPxsx"
+            />
+          </div>
+          <div
+            className="sc-ckVGcZ bUDAVg"
             disabled={false}
           >
             <span

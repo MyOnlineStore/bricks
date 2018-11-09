@@ -51,13 +51,25 @@ type InputProps = {
 const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
+    margin: 0;
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
     font-size: inherit;
     padding: 6px 12px;
     line-height: 1.572;
     outline: none;
-    ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextField.disabled.color}` : '')}
+
+    ${({ theme, disabled }): string =>
+        disabled
+            ? `
+            color: ${theme.TextField.disabled.color}
+            -moz-appearance: textfield;
+
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+        }`
+            : ''}
 `;
 
 const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
@@ -68,8 +80,7 @@ const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
-    color: ${({ theme, disabled }): string =>
-        disabled ? theme.TextField.disabled.color : theme.TextField.idle.affix.color}
+    color: ${({ theme }): string => theme.TextField.idle.affix.color};
 
     &:first-child {
         border-right: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
@@ -78,6 +89,7 @@ const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
     &:last-child {
         border-left: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
     }
+}
 `;
 
 const StyledAffix = styled.span`
@@ -109,6 +121,8 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     * {
         cursor: text;
     }
+
+}
 `;
 
 export { StyledWrapper, StyledInput, TextFieldThemeType, StyledAffix, StyledAffixWrapper };
