@@ -51,6 +51,7 @@ type InputProps = {
 const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
     width: 100%;
     border: none;
+    margin: 0;
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
     font-size: inherit;

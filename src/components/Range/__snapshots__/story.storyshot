@@ -24,7 +24,7 @@ exports[`Storyshots Range Default 1`] = `
             className="sc-bwzfXH grkVqn"
           >
             <input
-              className="sc-dxgOiQ hbfiTq"
+              className="sc-dxgOiQ dxkTXN"
               disabled={false}
               id={undefined}
               name="minimum"
@@ -64,7 +64,7 @@ exports[`Storyshots Range Default 1`] = `
             className="sc-bwzfXH grkVqn"
           >
             <input
-              className="sc-dxgOiQ hbfiTq"
+              className="sc-dxgOiQ dxkTXN"
               disabled={false}
               id={undefined}
               name="maximum"

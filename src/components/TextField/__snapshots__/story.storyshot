@@ -22,7 +22,7 @@ exports[`Storyshots TextField Default 1`] = `
     className="sc-bwzfXH grkVqn"
   >
     <input
-      className="sc-dxgOiQ hbfiTq"
+      className="sc-dxgOiQ dxkTXN"
       disabled={false}
       id={undefined}
       name="firstname"
@@ -72,7 +72,7 @@ Array [
       className="sc-bwzfXH grkVqn"
     >
       <input
-        className="sc-dxgOiQ hbfiTq"
+        className="sc-dxgOiQ dxkTXN"
         disabled={false}
         id={undefined}
         name="first name"
@@ -144,7 +144,7 @@ Array [
       className="sc-bwzfXH grkVqn"
     >
       <input
-        className="sc-dxgOiQ hbfiTq"
+        className="sc-dxgOiQ dxkTXN"
         disabled={false}
         id={undefined}
         name="firstname"
@@ -215,7 +215,7 @@ exports[`Storyshots TextField With Number formatting 1`] = `
     className="sc-bwzfXH grkVqn"
   >
     <input
-      className="sc-dxgOiQ hbfiTq"
+      className="sc-dxgOiQ dxkTXN"
       disabled={false}
       id={undefined}
       name="min value"
