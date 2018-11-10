@@ -72,27 +72,21 @@ const PriceTag: SFC<PropsType> = (props): JSX.Element => {
     }) as NumberFormatter;
 
     const parts = formatter.formatToParts(parse(props.value, '.'));
-    let currencyAlignment = 'left';
-    let currency;
-
     const stats = parts.reduce(deriveStatsFromPart, {
         isRound: false,
         isFree: true,
     });
 
-    const price = parts.map((part, index) => {
+    const price = parts.map(part => {
         switch (part.type) {
             case 'fraction':
                 return formatFraction(part.value, props, stats.isRound);
             case 'currency':
-                currencyAlignment = index === parts.length - 1 ? 'right' : 'left';
-                currency = formatCurrency(part.value, stats.isFree, props);
-
-                return false;
+                return formatCurrency(part.value, stats.isFree, props);
             case 'decimal':
                 return formatDecimalSeperator(part.value, props, stats.isRound);
             case 'literal':
-                return false;
+                return props.hideCurrency && props.hideCurrency === true ? false : part.value;
             default:
                 return part.value;
         }
@@ -100,15 +94,7 @@ const PriceTag: SFC<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledPriceTag strikethrough={props.strikethrough}>
-            {currencyAlignment === 'left' ? (
-                <>
-                    {currency} {stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price}
-                </>
-            ) : (
-                <>
-                    {stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price} {currency}
-                </>
-            )}
+            <>{stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price}</>
         </StyledPriceTag>
     );
 };

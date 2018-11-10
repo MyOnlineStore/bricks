@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropsType } from '..';
 
-export default (
+const formatFraction = (
     value: string,
     { fractionFormat, superScriptFraction }: PropsType,
     isRound: boolean,
@@ -14,3 +14,5 @@ export default (
 
     return value;
 };
+
+export default formatFraction;
