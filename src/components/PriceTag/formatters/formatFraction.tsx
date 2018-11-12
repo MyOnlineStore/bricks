@@ -1,5 +1,5 @@
 import React from 'react';
-import { PropsType } from '..';
+import { PropsType } from '../';
 
 const formatFraction = (
     value: string,

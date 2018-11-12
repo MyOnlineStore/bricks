@@ -17,8 +17,3 @@ global.getSelection = jest.fn().mockReturnValue({
 });
 
 global.Intl = intl;
-
-const anchorRef = {
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-};
