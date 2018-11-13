@@ -1,7 +1,7 @@
 import React from 'react';
 import Badge from '.';
 import toJson from 'enzyme-to-json';
-import { shallowWithTheme } from '../../utility/styled/testing';
+import { shallowWithTheme } from '../../utility/_styled/testing';
 
 describe('Badge', () => {
     it('should render the variety of severities and use error when no severity is chosen', () => {

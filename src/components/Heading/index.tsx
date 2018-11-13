@@ -1,7 +1,7 @@
 import React, { SFC } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
-import styled, { StyledType } from '../../utility/styled';
+import styled, { StyledType } from '../../utility/_styled';
 
 type HeadingHierarchyThemeType = {
     fontFamily: string;

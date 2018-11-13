@@ -1,6 +1,6 @@
 import React from 'react';
 import MessageStream from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import Button from '../Button';
 
 describe('MessageStream', () => {

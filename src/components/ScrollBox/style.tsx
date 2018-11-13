@@ -1,7 +1,7 @@
 import { default as _R } from 'react';
 import { StyledComponentClass as _S, css } from 'styled-components';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled, { withProps } from '../../utility/_styled';
 
 /* tslint:disable */
 const styles = require('simplebar/dist/simplebar.min.css').toString();

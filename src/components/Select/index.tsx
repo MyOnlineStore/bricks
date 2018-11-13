@@ -7,7 +7,7 @@ import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './s
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import { Button } from '../../index';
+import Button from '../../components/Button';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ScrollBar from 'simplebar';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import StyledScrollBox, { StyledBottom, StyledTop, StyledWrapper } from './style';
 
 type PropsType = StyledType & {

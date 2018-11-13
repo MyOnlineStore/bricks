@@ -13,8 +13,8 @@ module.exports = {
         children: false,
     },
     output: {
-        filename: '[name].bundle.js',
-        path: __dirname + '/../../dist',
+        filename: '[name].js',
+        path: __dirname + '/../../dist/',
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 
 describe('Link', () => {
     it('should render a link with children', () => {

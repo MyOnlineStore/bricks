@@ -1,6 +1,6 @@
 import React from 'react';
 import TextArea from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import { StyledTextArea } from './style';
 
 describe('TextArea', () => {

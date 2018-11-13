@@ -1,4 +1,4 @@
-import { shallowWithTheme } from '../../utility/styled/testing';
+import { shallowWithTheme } from '../../utility/_styled/testing';
 import React from 'react';
 import Raised from '.';
 import MosTheme from '../../themes/MosTheme/MosTheme.theme';

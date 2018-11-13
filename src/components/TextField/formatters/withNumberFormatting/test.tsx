@@ -1,7 +1,7 @@
 import React from 'react';
 import withNumberFormatting from './';
 import TextField from '../..';
-import { mountWithTheme } from '../../../../utility/styled/testing';
+import { mountWithTheme } from '../../../../utility/_styled/testing';
 
 describe('Range', () => {
     it('should handle change', () => {

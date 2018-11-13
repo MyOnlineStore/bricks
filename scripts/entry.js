@@ -1,25 +1,43 @@
 const { lstatSync, readdirSync } = require('fs');
 const { join } = require('path');
 
+const noExport = new RegExp('^_.*');
 const isDirectory = source => lstatSync(source).isDirectory();
 const getDirectories = source =>
     readdirSync(source)
         .map(name => join(source, name))
         .filter(isDirectory);
 
-const componentEntryPoints = getDirectories(`${__dirname}/../src/components`).map((component, index) => {
-    const name = component.substring(component.lastIndexOf('/') + 1);
-    const entryPoint = './src/components/' + name;
+const srcFolders = getDirectories(__dirname + '/../src')
+    .map(directory => {
+        const folder = directory.substring(directory.lastIndexOf('/') + 1);
 
-    return {
-        name,
-        entryPoint,
-    };
+        return noExport.test(folder) ? null : folder;
+    })
+    .filter(Boolean);
+
+let allEntryPoints = {};
+
+srcFolders.forEach(folder => {
+    const entryPoints = createEntryPointsFromFolder(folder);
+
+    entryPoints.forEach(entryPoint => {
+        allEntryPoints[entryPoint.name] = entryPoint.entryPoint;
+    });
 });
 
-let entryPoints = {};
-componentEntryPoints.forEach(component => {
-    entryPoints[component.name] = component.entryPoint;
-});
+function createEntryPointsFromFolder(folder) {
+    return getDirectories(`${__dirname}/../src/${folder}`)
+        .map(directory => {
+            const name = directory.substring(directory.lastIndexOf('/') + 1);
+            const entryPoint = `./src/${folder}/${name}`;
 
-module.exports = entryPoints;
+            return noExport.test(name) ? null : { name, entryPoint };
+        })
+        .filter(Boolean);
+}
+
+allEntryPoints.ThemeType = './src/types/ThemeType.ts';
+
+module.exports = allEntryPoints;
+

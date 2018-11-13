@@ -1,5 +1,5 @@
 import React, { SFC } from 'react';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
 import Box from '../Box';

@@ -1,8 +1,8 @@
 import toJson from 'enzyme-to-json';
 import React from 'react';
 import Text from '.';
-import { shallowWithTheme } from '../../utility/styled/testing';
 import MosTheme from '../../themes/MosTheme/MosTheme.theme';
+import { shallowWithTheme } from '../../utility/_styled/testing';
 
 describe('Text', () => {
     it('should render text with default styling', () => {

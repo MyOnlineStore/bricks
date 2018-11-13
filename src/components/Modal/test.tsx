@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import BreakpointProvider from '../BreakpointProvider';
 import { PropsType } from '../BreakpointProvider/';
 import StyledModal, { StyledModalWrapper } from './style';

@@ -1,6 +1,6 @@
 import React, { StatelessComponent } from 'react';
 import ThemeType from '../../types/ThemeType';
-import { ThemeProvider } from '../../utility/styled';
+import { ThemeProvider } from '../../utility/_styled';
 
 type PropsType = {
     theme: ThemeType;

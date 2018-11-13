@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 
 describe('TextField', () => {

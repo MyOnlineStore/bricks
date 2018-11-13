@@ -2,7 +2,7 @@ import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import { PropsType } from '.';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled, { withProps } from '../../utility/_styled';
 
 type BoxPropsType = PropsType & {
     flexWrap?: PropsType['wrap'];

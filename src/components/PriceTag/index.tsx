@@ -1,4 +1,4 @@
-/// <reference path="../../../src/declarations/global.d.ts" />
+/// <reference path="../../../src/_declarations/global.d.ts" />
 import React, { SFC } from 'react';
 import StyledPriceTag from './style';
 import formatFraction from './formatters/formatFraction';

@@ -1,5 +1,5 @@
 import React, { SFC } from 'react';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import { StyledSpan, StyledParagraph } from './style';
 import SeverityType from '../../types/SeverityType';
 

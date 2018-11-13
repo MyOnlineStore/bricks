@@ -1,5 +1,5 @@
 import React, { StatelessComponent } from 'react';
-import { ThemeProvider } from '../../utility/styled';
+import { ThemeProvider } from '../../utility/_styled';
 import theme from './MosTheme.theme';
 
 const MosTheme: StatelessComponent = (props): JSX.Element => {
