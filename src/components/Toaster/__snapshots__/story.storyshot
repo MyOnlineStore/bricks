@@ -2,7 +2,7 @@
 
 exports[`Storyshots Toaster Default 1`] = `
 <div
-  className="sc-iRbamj kFMQVa"
+  className="sc-iRbamj csmlRs"
 >
   <div
     style={
@@ -90,7 +90,7 @@ exports[`Storyshots Toaster Default 1`] = `
 
 exports[`Storyshots Toaster With action button 1`] = `
 <div
-  className="sc-iRbamj kFMQVa"
+  className="sc-iRbamj csmlRs"
 >
   <div
     style={

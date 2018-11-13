@@ -8,91 +8,79 @@ import slideUp from './animations/slideUp';
 import slideDown from './animations/slideDown';
 import slideLeft from './animations/slideLeft';
 import slideRight from './animations/slideRight';
-import StyledAnimation from './style';
-import 'styled-components-test-utils/lib/jest';
-import { fadeIn } from '../TransitionAnimation/animations/fade';
-import ReactTestRenderer from 'react-test-renderer';
-import { shallowWithTheme } from '../../utility/styled/testing';
-import toJson from 'enzyme-to-json';
 
 describe('TransitionAnimation', () => {
-    // it('toHaveKeyframeRule', () => {
-    //     expect(fadeIn).toHaveKeyframeRule('0%', 'opacity', '0');
-    // });
-
-    // it('should use the fade animation', () => {
-    //     const componentIn = shallowWithTheme(
-    //         <TransitionAnimation show animation={'fade'}>
-    //             <div>child</div>
-    //         </TransitionAnimation>,
-    //     );
-
-    //     /* tslint:disable */
-    //     (expect(componentIn) as any).toHaveKeyframeRule('0%', 'opacity', '0');
-    //     // (expect(toJson(componentIn)) as any).toHaveKeyframeRule('0%', 'opacity', '0');
-    //     // (expect(componentIn.find(StyledAnimation)) as any).toHaveKeyframeRule('0%', 'opacity', '0');
-    //     /* tslint:enable */
-    // });
-
-    it('should use the slide up animation', () => {
-        const componentIn = mount(
-            <TransitionAnimation show animation="slideUp">
-                <div>child</div>
+    it('should use the fade animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation={'fade'}>
+                <div>children</div>
             </TransitionAnimation>,
         );
 
         /* tslint:disable */
-        (expect(componentIn) as any).toHaveStyleRule('animation', 'BwXBh .3s both');
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fadeIn .3s both');
         /* tslint:enable */
     });
 
-    // it('should use the slide down animation', () => {
-    //     const componentIn = shallow(
-    //         <TransitionAnimation show animation="slideDown">
-    //             <div>child</div>
-    //         </TransitionAnimation>,
-    //     );
+    it('should use the slide up animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideUp">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
 
-    //     /* tslint:disable */
-    //     (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'bNLAFK .3s both');
-    //     /* tslint:enable */
-    // });
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
 
-    // it('should use the slide left animation', () => {
-    //     const componentIn = shallow(
-    //         <TransitionAnimation show animation="slideLeft">
-    //             <div>child</div>
-    //         </TransitionAnimation>,
-    //     );
+    it('should use the slide down animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideDown">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
 
-    //     /* tslint:disable */
-    //     (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'boXKTL .3s both');
-    //     /* tslint:enable */
-    // });
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
 
-    // it('should use the slide right animation', () => {
-    //     const componentIn = shallow(
-    //         <TransitionAnimation show animation="slideRight">
-    //             <div>child</div>
-    //         </TransitionAnimation>,
-    //     );
+    it('should use the slide left animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideLeft">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
 
-    //     /* tslint:disable */
-    //     (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fdjYoj .3s both');
-    //     /* tslint:enable */
-    // });
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
 
-    // it('should stay mounted', () => {
-    //     const component = mount(
-    //         <TransitionAnimation show={false} animation="zoom" stayMounted>
-    //             <div>child</div>
-    //         </TransitionAnimation>,
-    //     );
+    it('should use the slide right animation', () => {
+        const componentIn = shallow(
+            <TransitionAnimation show animation="slideRight">
+                <div>children</div>
+            </TransitionAnimation>,
+        );
 
-    //     expect(component.find(Transition).prop('mountOnEnter')).toBe(false);
-    //     expect(component.find(Transition).prop('unmountOnExit')).toBe(false);
-    // });
-// });
+        /* tslint:disable */
+        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
+        /* tslint:enable */
+    });
+
+    it('should stay mounted', () => {
+        const component = mount(
+            <TransitionAnimation show={false} animation="zoom" stayMounted>
+                <div>children</div>
+            </TransitionAnimation>,
+        );
+
+        expect(component.find(Transition).prop('mountOnEnter')).toBe(false);
+        expect(component.find(Transition).prop('unmountOnExit')).toBe(false);
+    });
+});
 
 describe('TransitionAnimation/animations', () => {
     it('should zoom in/out', () => {
