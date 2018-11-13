@@ -1,37 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TransitionAnimation/animations should fade in/out 1`] = `"animation: iOVxKt .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should fade in/out 1`] = `"animation: kGzMVL .3s both"`;
 
-exports[`TransitionAnimation/animations should fade in/out 2`] = `"animation: iDYaZf .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should fade in/out 2`] = `"animation: iDYaZf .3s both"`;
 
-exports[`TransitionAnimation/animations should fade in/out 3`] = `"opacity: 0"`;
+exports[`TransitionAnimation TransitionAnimation/animations should fade in/out 3`] = `"opacity: 0"`;
 
-exports[`TransitionAnimation/animations should slide down 1`] = `"animation: bNLAFK .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide down 1`] = `"animation: bNLAFK .3s both"`;
 
-exports[`TransitionAnimation/animations should slide down 2`] = `"animation: bZZvfL .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide down 2`] = `"animation: bZZvfL .3s both"`;
 
-exports[`TransitionAnimation/animations should slide down 3`] = `"transform: translate3d(0, 0, 0)"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide down 3`] = `"transform: translate3d(0, 0, 0)"`;
 
-exports[`TransitionAnimation/animations should slide left 1`] = `"animation: boXKTL .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide left 1`] = `"animation: boXKTL .3s both"`;
 
-exports[`TransitionAnimation/animations should slide left 2`] = `"animation: fRXDAD .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide left 2`] = `"animation: fRXDAD .3s both"`;
 
-exports[`TransitionAnimation/animations should slide left 3`] = `"transform: translate3d(0, 0, 0)"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide left 3`] = `"transform: translate3d(0, 0, 0)"`;
 
-exports[`TransitionAnimation/animations should slide right 1`] = `"animation: fdjYoj .3s both;"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide right 1`] = `"animation: fdjYoj .3s both;"`;
 
-exports[`TransitionAnimation/animations should slide right 2`] = `"animation: bQmOhN .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide right 2`] = `"animation: bQmOhN .3s both"`;
 
-exports[`TransitionAnimation/animations should slide right 3`] = `"transform: translate3d(0, 0, 0)"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide right 3`] = `"transform: translate3d(0, 0, 0)"`;
 
-exports[`TransitionAnimation/animations should slide up 1`] = `"animation: BwXBh .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide up 1`] = `"animation: BwXBh .3s both"`;
 
-exports[`TransitionAnimation/animations should slide up 2`] = `"animation: kouSfT .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide up 2`] = `"animation: kouSfT .3s both"`;
 
-exports[`TransitionAnimation/animations should slide up 3`] = `"transform: translate3d(0, 0, 0)"`;
+exports[`TransitionAnimation TransitionAnimation/animations should slide up 3`] = `"transform: translate3d(0, 0, 0)"`;
 
-exports[`TransitionAnimation/animations should zoom in/out 1`] = `"animation: iohvFw .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should zoom in/out 1`] = `"animation: iohvFw .3s both"`;
 
-exports[`TransitionAnimation/animations should zoom in/out 2`] = `"animation: bXZqyN .3s both"`;
+exports[`TransitionAnimation TransitionAnimation/animations should zoom in/out 2`] = `"animation: bXZqyN .3s both"`;
 
-exports[`TransitionAnimation/animations should zoom in/out 3`] = `"opacity: 0; transform: scale3d(.5, .5, .5)"`;
+exports[`TransitionAnimation TransitionAnimation/animations should zoom in/out 3`] = `"opacity: 0; transform: scale3d(.5, .5, .5)"`;
