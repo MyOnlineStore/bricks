@@ -42,6 +42,10 @@ class TextField extends Component<PropsType, StateType> {
         this.state = { focus: false };
     }
 
+    public forceFocus = (): void => {
+        this.setState({ focus: true }, () => this.inputRef.focus());
+    };
+
     public handleFocus = (): void => {
         this.setState({ focus: true }, () => this.inputRef.focus());
         if (this.props.onFocus !== undefined) this.props.onFocus();
@@ -65,7 +69,7 @@ class TextField extends Component<PropsType, StateType> {
                     severity={this.props.feedback ? this.props.feedback.severity : 'success'}
                 >
                     {this.props.prefix && (
-                        <StyledAffixWrapper onClick={this.handleFocus} disabled={this.props.disabled}>
+                        <StyledAffixWrapper onClick={this.forceFocus} disabled={this.props.disabled}>
                             <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
