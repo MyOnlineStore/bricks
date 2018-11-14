@@ -3,19 +3,19 @@
 exports[`Storyshots ScrollBox Default 1`] = `
 Array [
   <div
-    className="sc-cHGsZl cclTPC"
+    className="sc-TOsTZ jnPRix"
   >
     <div
       className="sc-bwzfXH chAuJL"
     >
       <div
-        className="sc-brqgnP jwrNlU"
+        className="sc-cMljjf dUfgXO"
       >
         <div
-          className="sc-cMljjf krgCXT"
+          className="sc-jAaTju iVnhyn"
         >
           <div
-            className="sc-jAaTju fzRTCD"
+            className="sc-jDwBTQ bqIkRG"
           />
           <div
             className="sc-bwzfXH gAalro"
@@ -71,7 +71,7 @@ Array [
             </p>
           </div>
           <div
-            className="sc-jDwBTQ cXRqdb"
+            className="sc-gPEVay gkJgPo"
           />
         </div>
       </div>

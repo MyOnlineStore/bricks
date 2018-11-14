@@ -2,7 +2,7 @@
 
 exports[`Storyshots RadioButtonGroup Default 1`] = `
 <div
-  className="sc-caSCKo hFCFuy"
+  className="sc-gisBJw hkZRoH"
 >
   <div
     className="sc-bwzfXH ewkCPx"
@@ -11,7 +11,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       className="sc-bwzfXH hurwPi"
     >
       <div
-        className="sc-kgoBCf BEYlJ"
+        className="sc-kGXeez iBFgVY"
         onClick={[Function]}
       >
         <div
@@ -19,12 +19,12 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={true}
-            className="sc-kpOJdX kyHwpB"
+            className="sc-dxgOiQ cmdPra"
             disabled={undefined}
           >
             <input
               checked={true}
-              className="sc-kGXeez sKBUe"
+              className="sc-kpOJdX hZrIxJ"
               id={undefined}
               name="demo"
               onBlur={[Function]}
@@ -54,7 +54,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       className="sc-bwzfXH jQPdWH"
     >
       <div
-        className="sc-kgoBCf BEYlJ"
+        className="sc-kGXeez iBFgVY"
         onClick={[Function]}
       >
         <div
@@ -62,12 +62,12 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={false}
-            className="sc-kpOJdX iNOmBO"
+            className="sc-dxgOiQ cZHqqG"
             disabled={undefined}
           >
             <input
               checked={false}
-              className="sc-kGXeez sKBUe"
+              className="sc-kpOJdX hZrIxJ"
               id={undefined}
               name="demo"
               onBlur={[Function]}
@@ -97,7 +97,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       className="sc-bwzfXH jQPdWH"
     >
       <div
-        className="sc-kgoBCf BEYlJ"
+        className="sc-kGXeez iBFgVY"
         onClick={[Function]}
       >
         <div
@@ -105,12 +105,12 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
         >
           <div
             checked={false}
-            className="sc-kpOJdX iNOmBO"
+            className="sc-dxgOiQ cZHqqG"
             disabled={undefined}
           >
             <input
               checked={false}
-              className="sc-kGXeez sKBUe"
+              className="sc-kpOJdX hZrIxJ"
               id={undefined}
               name="demo"
               onBlur={[Function]}

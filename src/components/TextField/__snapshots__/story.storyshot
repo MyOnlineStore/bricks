@@ -2,18 +2,18 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-  className="sc-eNQAEJ hdXQwO"
+  className="sc-hMqMXs lcVHiK"
   disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
   onFocusCapture={[Function]}
 >
   <div
-    className="sc-ckVGcZ bUDAVg"
+    className="sc-jKJlTe kuDUsE"
     disabled={false}
   >
     <span
-      className="sc-jKJlTe eFYypy"
+      className="sc-eNQAEJ hiLfdP"
     >
       Username
     </span>
@@ -22,7 +22,7 @@ exports[`Storyshots TextField Default 1`] = `
     className="sc-bwzfXH grkVqn"
   >
     <input
-      className="sc-dxgOiQ dxkTXN"
+      className="sc-ckVGcZ gBhdDx"
       disabled={false}
       id={undefined}
       name="firstname"
@@ -37,11 +37,11 @@ exports[`Storyshots TextField Default 1`] = `
     />
   </div>
   <div
-    className="sc-ckVGcZ bUDAVg"
+    className="sc-jKJlTe kuDUsE"
     disabled={false}
   >
     <span
-      className="sc-jKJlTe eFYypy"
+      className="sc-eNQAEJ hiLfdP"
     >
       $
     </span>
@@ -52,18 +52,18 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-    className="sc-eNQAEJ hdXQwO"
+    className="sc-hMqMXs lcVHiK"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-ckVGcZ bUDAVg"
+      className="sc-jKJlTe kuDUsE"
       disabled={false}
     >
       <span
-        className="sc-jKJlTe eFYypy"
+        className="sc-eNQAEJ hiLfdP"
       >
         $
       </span>
@@ -72,7 +72,7 @@ Array [
       className="sc-bwzfXH grkVqn"
     >
       <input
-        className="sc-dxgOiQ dxkTXN"
+        className="sc-ckVGcZ gBhdDx"
         disabled={false}
         id={undefined}
         name="first name"
@@ -124,18 +124,18 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-    className="sc-eNQAEJ hdXQwO"
+    className="sc-hMqMXs lcVHiK"
     disabled={false}
     onBlurCapture={[Function]}
     onClick={[Function]}
     onFocusCapture={[Function]}
   >
     <div
-      className="sc-ckVGcZ bUDAVg"
+      className="sc-jKJlTe kuDUsE"
       disabled={false}
     >
       <span
-        className="sc-jKJlTe eFYypy"
+        className="sc-eNQAEJ hiLfdP"
       >
         Username
       </span>
@@ -144,7 +144,7 @@ Array [
       className="sc-bwzfXH grkVqn"
     >
       <input
-        className="sc-dxgOiQ dxkTXN"
+        className="sc-ckVGcZ gBhdDx"
         disabled={false}
         id={undefined}
         name="firstname"
@@ -159,11 +159,11 @@ Array [
       />
     </div>
     <div
-      className="sc-ckVGcZ bUDAVg"
+      className="sc-jKJlTe kuDUsE"
       disabled={false}
     >
       <span
-        className="sc-jKJlTe eFYypy"
+        className="sc-eNQAEJ hiLfdP"
       >
         $
       </span>
@@ -205,7 +205,7 @@ Array [
 
 exports[`Storyshots TextField With Number formatting 1`] = `
 <div
-  className="sc-eNQAEJ hdXQwO"
+  className="sc-hMqMXs lcVHiK"
   disabled={false}
   onBlurCapture={[Function]}
   onClick={[Function]}
@@ -215,7 +215,7 @@ exports[`Storyshots TextField With Number formatting 1`] = `
     className="sc-bwzfXH grkVqn"
   >
     <input
-      className="sc-dxgOiQ dxkTXN"
+      className="sc-ckVGcZ gBhdDx"
       disabled={false}
       id={undefined}
       name="min value"

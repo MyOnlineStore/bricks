@@ -9,7 +9,7 @@ exports[`Storyshots Popover Default 1`] = `
   >
     <div>
       <div
-        className="sc-jhAzac gaRQRf"
+        className="sc-fBuWsC lnEvtg"
       >
         <button
           className="sc-htoDjs fAnDzT"
@@ -38,7 +38,7 @@ exports[`Storyshots Popover Internal state on click 1`] = `
   >
     <div>
       <div
-        className="sc-jhAzac gaRQRf"
+        className="sc-fBuWsC lnEvtg"
       >
         <button
           className="sc-htoDjs fAnDzT"
@@ -67,7 +67,7 @@ exports[`Storyshots Popover Internal state on hover 1`] = `
   >
     <div>
       <div
-        className="sc-jhAzac gaRQRf"
+        className="sc-fBuWsC lnEvtg"
       >
         <button
           className="sc-htoDjs fAnDzT"

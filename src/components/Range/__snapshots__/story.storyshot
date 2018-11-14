@@ -14,7 +14,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ hdXQwO"
+          className="sc-hMqMXs lcVHiK"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
@@ -24,7 +24,7 @@ exports[`Storyshots Range Default 1`] = `
             className="sc-bwzfXH grkVqn"
           >
             <input
-              className="sc-dxgOiQ dxkTXN"
+              className="sc-ckVGcZ gBhdDx"
               disabled={false}
               id={undefined}
               name="minimum"
@@ -39,11 +39,11 @@ exports[`Storyshots Range Default 1`] = `
             />
           </div>
           <div
-            className="sc-ckVGcZ bUDAVg"
+            className="sc-jKJlTe kuDUsE"
             disabled={false}
           >
             <span
-              className="sc-jKJlTe eFYypy"
+              className="sc-eNQAEJ hiLfdP"
             >
               cm
             </span>
@@ -54,7 +54,7 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH jtHmcE"
       >
         <div
-          className="sc-eNQAEJ hdXQwO"
+          className="sc-hMqMXs lcVHiK"
           disabled={false}
           onBlurCapture={[Function]}
           onClick={[Function]}
@@ -64,7 +64,7 @@ exports[`Storyshots Range Default 1`] = `
             className="sc-bwzfXH grkVqn"
           >
             <input
-              className="sc-dxgOiQ dxkTXN"
+              className="sc-ckVGcZ gBhdDx"
               disabled={false}
               id={undefined}
               name="maximum"
@@ -79,11 +79,11 @@ exports[`Storyshots Range Default 1`] = `
             />
           </div>
           <div
-            className="sc-ckVGcZ bUDAVg"
+            className="sc-jKJlTe kuDUsE"
             disabled={false}
           >
             <span
-              className="sc-jKJlTe eFYypy"
+              className="sc-eNQAEJ hiLfdP"
             >
               cm
             </span>
@@ -93,7 +93,7 @@ exports[`Storyshots Range Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-kjoXOD idZrPy"
+    className="sc-cHGsZl cCKPXt"
     disabled={false}
   >
     <div />

@@ -2,10 +2,10 @@
 
 exports[`Storyshots Modal Default 1`] = `
 <div
-  className="sc-iRbamj kHmIFW"
+  className="sc-jlyJG gBxUkk"
 >
   <div
-    className="sc-gPEVay iwzqGY"
+    className="sc-iRbamj csmlRs"
   >
     <div
       style={
@@ -15,7 +15,7 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-        className="sc-jlyJG fPCoSz"
+        className="sc-gipzik kNtMSr"
       >
         <div
           className="sc-bwzfXH jTCciZ"
@@ -53,13 +53,13 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-brqgnP jwrNlU"
+          className="sc-cMljjf dUfgXO"
         >
           <div
-            className="sc-cMljjf krgCXT"
+            className="sc-jAaTju iVnhyn"
           >
             <div
-              className="sc-jAaTju fzRTCD"
+              className="sc-jDwBTQ bqIkRG"
             />
             <div
               className="sc-bwzfXH fiOUi"
@@ -90,7 +90,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
               </p>
             </div>
             <div
-              className="sc-jDwBTQ cXRqdb"
+              className="sc-gPEVay gkJgPo"
             />
           </div>
         </div>
@@ -154,10 +154,10 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
 
 exports[`Storyshots Modal Without closeAction 1`] = `
 <div
-  className="sc-iRbamj kHmIFW"
+  className="sc-jlyJG gBxUkk"
 >
   <div
-    className="sc-gPEVay iwzqGY"
+    className="sc-iRbamj csmlRs"
   >
     <div
       style={
@@ -167,7 +167,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
       }
     >
       <div
-        className="sc-jlyJG fPCoSz"
+        className="sc-gipzik kNtMSr"
       >
         <div
           className="sc-bwzfXH jTCciZ"
@@ -180,13 +180,13 @@ exports[`Storyshots Modal Without closeAction 1`] = `
           </div>
         </div>
         <div
-          className="sc-brqgnP jwrNlU"
+          className="sc-cMljjf dUfgXO"
         >
           <div
-            className="sc-cMljjf krgCXT"
+            className="sc-jAaTju iVnhyn"
           >
             <div
-              className="sc-jAaTju fzRTCD"
+              className="sc-jDwBTQ bqIkRG"
             />
             <div
               className="sc-bwzfXH fiOUi"
@@ -217,7 +217,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
               </p>
             </div>
             <div
-              className="sc-jDwBTQ cXRqdb"
+              className="sc-gPEVay gkJgPo"
             />
           </div>
         </div>

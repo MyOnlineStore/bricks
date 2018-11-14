@@ -41,6 +41,7 @@ class Checkbox extends Component<PropsType, StateType> {
 
         return (
             <StyledCheckboxSkin
+                className="checkbox"
                 checkedState={this.props.checked}
                 onClick={(event): void => this.changeHandler(event)}
                 elementFocus={this.state.focus}
