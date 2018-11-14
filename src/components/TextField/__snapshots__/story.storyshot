@@ -4,13 +4,11 @@ exports[`Storyshots TextField Default 1`] = `
 <div
   className="sc-hMqMXs lcVHiK"
   disabled={false}
-  onBlurCapture={[Function]}
-  onClick={[Function]}
-  onFocusCapture={[Function]}
 >
   <div
     className="sc-jKJlTe kuDUsE"
     disabled={false}
+    onClick={[Function]}
   >
     <span
       className="sc-eNQAEJ hiLfdP"
@@ -39,6 +37,7 @@ exports[`Storyshots TextField Default 1`] = `
   <div
     className="sc-jKJlTe kuDUsE"
     disabled={false}
+    onClick={[Function]}
   >
     <span
       className="sc-eNQAEJ hiLfdP"
@@ -54,13 +53,11 @@ Array [
   <div
     className="sc-hMqMXs lcVHiK"
     disabled={false}
-    onBlurCapture={[Function]}
-    onClick={[Function]}
-    onFocusCapture={[Function]}
   >
     <div
       className="sc-jKJlTe kuDUsE"
       disabled={false}
+      onClick={[Function]}
     >
       <span
         className="sc-eNQAEJ hiLfdP"
@@ -126,13 +123,11 @@ Array [
   <div
     className="sc-hMqMXs lcVHiK"
     disabled={false}
-    onBlurCapture={[Function]}
-    onClick={[Function]}
-    onFocusCapture={[Function]}
   >
     <div
       className="sc-jKJlTe kuDUsE"
       disabled={false}
+      onClick={[Function]}
     >
       <span
         className="sc-eNQAEJ hiLfdP"
@@ -161,6 +156,7 @@ Array [
     <div
       className="sc-jKJlTe kuDUsE"
       disabled={false}
+      onClick={[Function]}
     >
       <span
         className="sc-eNQAEJ hiLfdP"
@@ -207,9 +203,6 @@ exports[`Storyshots TextField With Number formatting 1`] = `
 <div
   className="sc-hMqMXs lcVHiK"
   disabled={false}
-  onBlurCapture={[Function]}
-  onClick={[Function]}
-  onFocusCapture={[Function]}
 >
   <div
     className="sc-bwzfXH grkVqn"

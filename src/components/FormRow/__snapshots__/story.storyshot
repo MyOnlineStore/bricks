@@ -36,13 +36,11 @@ exports[`Storyshots FormRow Default 1`] = `
             <div
               className="sc-hMqMXs lcVHiK"
               disabled={undefined}
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
             >
               <div
                 className="sc-jKJlTe kuDUsE"
                 disabled={undefined}
+                onClick={[Function]}
               >
                 <span
                   className="sc-eNQAEJ hiLfdP"
@@ -76,13 +74,11 @@ exports[`Storyshots FormRow Default 1`] = `
             <div
               className="sc-hMqMXs lcVHiK"
               disabled={undefined}
-              onBlurCapture={[Function]}
-              onClick={[Function]}
-              onFocusCapture={[Function]}
             >
               <div
                 className="sc-jKJlTe kuDUsE"
                 disabled={undefined}
+                onClick={[Function]}
               >
                 <span
                   className="sc-eNQAEJ hiLfdP"
@@ -117,13 +113,11 @@ exports[`Storyshots FormRow Default 1`] = `
           <div
             className="sc-hMqMXs lcVHiK"
             disabled={undefined}
-            onBlurCapture={[Function]}
-            onClick={[Function]}
-            onFocusCapture={[Function]}
           >
             <div
               className="sc-jKJlTe kuDUsE"
               disabled={undefined}
+              onClick={[Function]}
             >
               <span
                 className="sc-eNQAEJ hiLfdP"
@@ -185,13 +179,11 @@ exports[`Storyshots FormRow Default 1`] = `
           <div
             className="sc-hMqMXs lcVHiK"
             disabled={undefined}
-            onBlurCapture={[Function]}
-            onClick={[Function]}
-            onFocusCapture={[Function]}
           >
             <div
               className="sc-jKJlTe kuDUsE"
               disabled={undefined}
+              onClick={[Function]}
             >
               <span
                 className="sc-eNQAEJ hiLfdP"
@@ -225,13 +217,11 @@ exports[`Storyshots FormRow Default 1`] = `
           <div
             className="sc-hMqMXs lcVHiK"
             disabled={undefined}
-            onBlurCapture={[Function]}
-            onClick={[Function]}
-            onFocusCapture={[Function]}
           >
             <div
               className="sc-jKJlTe kuDUsE"
               disabled={undefined}
+              onClick={[Function]}
             >
               <span
                 className="sc-eNQAEJ hiLfdP"
@@ -450,13 +440,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           <div
             className="sc-hMqMXs lcVHiK"
             disabled={undefined}
-            onBlurCapture={[Function]}
-            onClick={[Function]}
-            onFocusCapture={[Function]}
           >
             <div
               className="sc-jKJlTe kuDUsE"
               disabled={undefined}
+              onClick={[Function]}
             >
               <span
                 className="sc-eNQAEJ hiLfdP"
@@ -513,13 +501,11 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
           <div
             className="sc-hMqMXs lcVHiK"
             disabled={undefined}
-            onBlurCapture={[Function]}
-            onClick={[Function]}
-            onFocusCapture={[Function]}
           >
             <div
               className="sc-jKJlTe kuDUsE"
               disabled={undefined}
+              onClick={[Function]}
             >
               <span
                 className="sc-eNQAEJ hiLfdP"

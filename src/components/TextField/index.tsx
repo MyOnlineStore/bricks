@@ -7,7 +7,6 @@ import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './s
 import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters/withCurrencyFormatting';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
-import BreakpointProvider from '../BreakpointProvider';
 
 type PropsType = {
     value: string;
@@ -64,12 +63,9 @@ class TextField extends Component<PropsType, StateType> {
                     focus={this.state.focus}
                     disabled={this.props.disabled}
                     severity={this.props.feedback ? this.props.feedback.severity : 'success'}
-                    onFocusCapture={this.handleFocus}
-                    onBlurCapture={this.handleBlur}
-                    onClick={this.handleFocus}
                 >
                     {this.props.prefix && (
-                        <StyledAffixWrapper disabled={this.props.disabled}>
+                        <StyledAffixWrapper onClick={this.handleFocus} disabled={this.props.disabled}>
                             <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
@@ -93,7 +89,7 @@ class TextField extends Component<PropsType, StateType> {
                         </Box>
                     </Box>
                     {this.props.suffix && (
-                        <StyledAffixWrapper disabled={this.props.disabled}>
+                        <StyledAffixWrapper onClick={this.handleFocus} disabled={this.props.disabled}>
                             <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
