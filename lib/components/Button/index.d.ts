@@ -1,0 +1,20 @@
+import { SFC } from 'react';
+import { MediumPropsType } from '../Icon';
+declare type PropsType = {
+    className?: string;
+    compact?: boolean;
+    title: string;
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
+    target?: HTMLAnchorElement['target'];
+    href?: string;
+    disabled?: boolean;
+    flat?: boolean;
+    color?: string;
+    icon?: MediumPropsType['icon'];
+    iconAlign?: 'right' | 'left';
+    id?: string;
+    action?(): void;
+};
+declare const Button: SFC<PropsType>;
+export default Button;
+export { PropsType };

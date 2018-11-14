@@ -29,15 +29,12 @@ srcFolders.forEach(folder => {
 function createEntryPointsFromFolder(folder) {
     return getDirectories(`${__dirname}/../src/${folder}`)
         .map(directory => {
-            const name = directory.substring(directory.lastIndexOf('/') + 1);
-            const entryPoint = `./src/${folder}/${name}`;
+            const name = folder + '/' + directory.substring(directory.lastIndexOf('/') + 1) + '/';
+            const entryPoint = `./src/${name}`;
 
             return noExport.test(name) ? null : { name, entryPoint };
         })
         .filter(Boolean);
 }
 
-allEntryPoints.ThemeType = './src/types/ThemeType.ts';
-
 module.exports = allEntryPoints;
-

@@ -4,7 +4,7 @@ import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
-import { SeverityIcons } from '../../types/SeverityType';
+import { SeverityIcons } from '../../types/_SeverityType';
 
 type PropsType = StyledType & {
     severity: keyof typeof SeverityIcons;

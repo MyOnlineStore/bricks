@@ -1,7 +1,7 @@
 import React, { SFC } from 'react';
 import { StyledType } from '../../utility/_styled';
 import { StyledSpan, StyledParagraph } from './style';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 
 type PropsType = StyledType & {
     variant?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';

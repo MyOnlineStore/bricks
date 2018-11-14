@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationDir": "../../",
     "sourceMap": true,
     "noImplicitAny": true,
     "noErrorTruncation": true,
@@ -11,7 +12,7 @@
     "allowJs": false,
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "strictNullChecks": true,
+    "strictNullChecks": true
   },
   "include": [
     "../../src/**/*"

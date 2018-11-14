@@ -1,7 +1,7 @@
 import React, { Component, ChangeEvent } from 'react';
 import StyledTextArea, { StyledTextAreaWrapper } from './style';
 import InlineNotification from '../InlineNotification';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 

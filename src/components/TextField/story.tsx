@@ -2,7 +2,7 @@ import { button, select, text, boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import TextField from '.';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 
 type DemoPropsType = {
     withFeedback: boolean;

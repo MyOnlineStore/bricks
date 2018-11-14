@@ -13,8 +13,12 @@ module.exports = {
         children: false,
     },
     output: {
-        filename: '[name].js',
-        path: __dirname + '/../../dist/',
+        /* 
+        "filename: [name]index.js" is a workaround to name all output files: 'index.js'. 
+        When you just fill in 'index.js' without the prefix '[name]', webpack will throw an error: "Multiple assets emit to the same filename index.js"
+        */
+        filename: '[name]index.js',
+        path: __dirname + '/../../lib',
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
@@ -94,3 +98,5 @@ module.exports = {
         }),
     ],
 };
+
+

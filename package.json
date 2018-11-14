@@ -34,8 +34,8 @@
     "@types/jest": "^22.0.1",
     "@types/node": "^9.3.0",
     "@types/react": "^16.3.11",
-    "@types/react-dom": "^16.0.5",
     "@types/react-beautiful-dnd": "^7.1.0",
+    "@types/react-dom": "^16.0.5",
     "@types/react-test-renderer": "^16.0.1",
     "@types/react-transition-group": "^2.0.9",
     "@types/simplebar": "^2.4.1",
@@ -90,7 +90,7 @@
     "dev": "npm run watch",
     "test": "jest --config=./config/jest/jest.config.json",
     "test-coverage": "jest --config=./config/jest/jest.config.json --coverage --runInBand --bail",
-    "build": "rimraf ./dist && webpack --config ./config/webpack/webpack.config.js",
+    "build": "rimraf ./lib && webpack --config ./config/webpack/webpack.config.js",
     "lint-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "lint": "tslint --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -c ./config/storybook",
@@ -99,7 +99,8 @@
     "build-storybook": "build-storybook -c ./config/storybook -o .out",
     "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./src/**/*.{ts,tsx}",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "generate-aliases": "generate-export-aliases"
   },
   "files": [
     "dist"

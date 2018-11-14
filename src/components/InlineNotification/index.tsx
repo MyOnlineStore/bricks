@@ -1,5 +1,5 @@
 import React, { SFC, Children } from 'react';
-import SeverityType, { SeverityIcons } from '../../types/SeverityType';
+import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
 import Icon, { MediumIcons } from '../Icon';
 import Text from '../Text';
 import Box from '../Box';
