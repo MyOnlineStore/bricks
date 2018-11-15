@@ -1,4 +1,4 @@
-import React, { Fragment, SFC } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
@@ -35,7 +35,7 @@ const mapVariant = (severity: MessagePropsType['severity']): ButtonPropsType['va
     }
 };
 
-const Message: SFC<MessagePropsType> = (props): JSX.Element => {
+const Message: FunctionComponent<MessagePropsType> = (props): JSX.Element => {
     const variant = mapVariant(props.severity);
 
     return (
@@ -76,7 +76,7 @@ const Message: SFC<MessagePropsType> = (props): JSX.Element => {
     );
 };
 
-const MessageStream: SFC<PropsType> = (props): JSX.Element => (
+const MessageStream: FunctionComponent<PropsType> = (props): JSX.Element => (
     <StyledMessageStream>
         {props.messages.map((message: MessagePropsType, index: number): JSX.Element => (
             <Fragment key={`${message.date}-${message.title}`}>
