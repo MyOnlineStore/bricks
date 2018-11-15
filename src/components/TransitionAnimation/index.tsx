@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Transition } from 'react-transition-group';
 import StyledAnimation, { StyledPropsType } from './style';
 
@@ -8,7 +8,7 @@ type PropsType = {
     stayMounted?: boolean;
 };
 
-const TransitionAnimation: SFC<PropsType> = (props): JSX.Element => {
+const TransitionAnimation: FunctionComponent<PropsType> = (props): JSX.Element => {
     const unmount = props.stayMounted !== undefined ? !props.stayMounted : true;
 
     return (

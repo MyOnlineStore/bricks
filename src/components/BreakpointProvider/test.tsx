@@ -1,4 +1,4 @@
-/// <reference path="../../declarations/global.d.ts" />
+/// <reference path="../../_declarations/global.d.ts" />
 import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';

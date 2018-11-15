@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import Box from '../../Box';
 import trbl from '../../../utility/trbl';
 import StyledOption from './style';
@@ -18,7 +18,7 @@ type StateType = {
     hovering: boolean;
 };
 
-const Option: SFC<PropsType> = (props): JSX.Element => {
+const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
     const clickAction = (): void => {
         props.onClick();
     };
