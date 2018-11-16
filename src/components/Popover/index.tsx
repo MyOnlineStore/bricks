@@ -52,7 +52,9 @@ class Popover extends Component<PropsType, StateType> {
         }
     };
 
-    private togglePopover = (): void => this.setState({ isOpen: false });
+    private togglePopover = (): void => {
+        this.setState({ isOpen: !this.state.isOpen });
+    };
 
     private handleClickOutside = (event: Event): void => {
         if (
