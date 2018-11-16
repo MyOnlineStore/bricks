@@ -89,12 +89,18 @@ describe('Popover', () => {
     });
 
     it('should close when clicked outside the popover window', () => {
+        const clickMock = jest.fn();
         const callbackMap: { [key: string]: Function } = {};
 
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
         const component = mountWithTheme(
-            <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,
+            <Popover
+                isOpen={true}
+                distance={6}
+                onClickOutside={clickMock}
+                renderContent={(): string => 'Mock content'}
+            />,
         );
 
         callbackMap.mousedown({
@@ -103,7 +109,7 @@ describe('Popover', () => {
 
         component.update();
 
-        expect(component.state('isOpen')).toBe(false);
+        expect(clickMock).toHaveBeenCalled();
     });
 
     it('should not break when clicked outside the closed popover', () => {
