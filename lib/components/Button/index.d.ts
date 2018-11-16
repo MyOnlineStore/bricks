@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { MediumPropsType } from '../Icon';
 declare type PropsType = {
     className?: string;
@@ -15,6 +15,6 @@ declare type PropsType = {
     id?: string;
     action?(): void;
 };
-declare const Button: SFC<PropsType>;
+declare const Button: FunctionComponent<PropsType>;
 export default Button;
 export { PropsType };

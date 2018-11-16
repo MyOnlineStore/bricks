@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { RaisedPropsType } from './style';
-declare const RaisedElement: SFC<RaisedPropsType>;
+declare const RaisedElement: FunctionComponent<RaisedPropsType>;
 export default RaisedElement;

@@ -1,4 +1,4 @@
-import { SFC, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 declare type PropsType = {
     alignments: Array<'left' | 'center' | 'right'>;
     headers: Array<ReactNode>;
@@ -7,6 +7,6 @@ declare type PropsType = {
     checked: boolean | 'indeterminate';
     onCheck(checked: boolean): void;
 };
-declare const Header: SFC<PropsType>;
+declare const Header: FunctionComponent<PropsType>;
 export default Header;
 export { PropsType };

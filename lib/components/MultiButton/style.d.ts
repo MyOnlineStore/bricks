@@ -39,10 +39,10 @@ declare type MultiButtonThemeType = {
 declare type StyledMultiButtonPropsType = {
     isOpen: boolean;
 };
-declare const StyledMultiButton: _S<import("../Button").PropsType, _T, Pick<import("../Button").PropsType, "title" | "className" | "id" | "color" | "action" | "disabled" | "href" | "target" | "compact" | "flat" | "variant" | "icon" | "iconAlign"> & {
+declare const StyledMultiButton: _S<import("../../../../../../../Users/nicokoelewijn/www/bricks/src/components/Button").PropsType, _T, Pick<import("../../../../../../../Users/nicokoelewijn/www/bricks/src/components/Button").PropsType, "title" | "className" | "id" | "color" | "action" | "disabled" | "href" | "target" | "flat" | "compact" | "variant" | "icon" | "iconAlign"> & {
     theme?: _T | undefined;
 }>;
-declare const StyledChevronButton: _S<import("../Button").PropsType, _T, Pick<import("../Button").PropsType, "title" | "className" | "id" | "color" | "action" | "disabled" | "href" | "target" | "compact" | "flat" | "variant" | "icon" | "iconAlign"> & {
+declare const StyledChevronButton: _S<import("../../../../../../../Users/nicokoelewijn/www/bricks/src/components/Button").PropsType, _T, Pick<import("../../../../../../../Users/nicokoelewijn/www/bricks/src/components/Button").PropsType, "title" | "className" | "id" | "color" | "action" | "disabled" | "href" | "target" | "flat" | "compact" | "variant" | "icon" | "iconAlign"> & {
     theme?: _T | undefined;
 }>;
 declare const StyledWrapper: _S<StyledMultiButtonPropsType & _R.HTMLProps<HTMLDivElement>, _T, StyledMultiButtonPropsType & _R.HTMLProps<HTMLDivElement>>;

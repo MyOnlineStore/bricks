@@ -21,8 +21,8 @@ declare const StyledDiv: _S<_R.ClassAttributes<HTMLDivElement> & _R.HTMLAttribut
     inline?: boolean | undefined;
     height?: string | undefined;
     width?: string | undefined;
-    margin?: import("../../utility/trbl").TrblType | undefined;
-    padding?: import("../../utility/trbl").TrblType | undefined;
+    margin?: import("../../../../../../../Users/nicokoelewijn/www/bricks/src/utility/trbl").TrblType | undefined;
+    padding?: import("../../../../../../../Users/nicokoelewijn/www/bricks/src/utility/trbl").TrblType | undefined;
     maxHeight?: string | undefined;
     minHeight?: string | undefined;
     maxWidth?: string | undefined;
@@ -56,8 +56,8 @@ declare const StyledDiv: _S<_R.ClassAttributes<HTMLDivElement> & _R.HTMLAttribut
     inline?: boolean | undefined;
     height?: string | undefined;
     width?: string | undefined;
-    margin?: import("../../utility/trbl").TrblType | undefined;
-    padding?: import("../../utility/trbl").TrblType | undefined;
+    margin?: import("../../../../../../../Users/nicokoelewijn/www/bricks/src/utility/trbl").TrblType | undefined;
+    padding?: import("../../../../../../../Users/nicokoelewijn/www/bricks/src/utility/trbl").TrblType | undefined;
     maxHeight?: string | undefined;
     minHeight?: string | undefined;
     maxWidth?: string | undefined;
@@ -92,8 +92,8 @@ declare const StyledSpan: _S<_R.DetailedHTMLProps<_R.HTMLAttributes<HTMLSpanElem
     inline?: boolean | undefined;
     height?: string | undefined;
     width?: string | undefined;
-    margin?: import("../../utility/trbl").TrblType | undefined;
-    padding?: import("../../utility/trbl").TrblType | undefined;
+    margin?: import("../../../../../../../Users/nicokoelewijn/www/bricks/src/utility/trbl").TrblType | undefined;
+    padding?: import("../../../../../../../Users/nicokoelewijn/www/bricks/src/utility/trbl").TrblType | undefined;
     maxHeight?: string | undefined;
     minHeight?: string | undefined;
     maxWidth?: string | undefined;

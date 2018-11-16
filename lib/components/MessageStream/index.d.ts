@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/_styled';
 export declare type MessagePropsType = StyledType & {
     severity: 'success' | 'info' | 'warning' | 'error';
@@ -12,7 +12,7 @@ export declare type MessagePropsType = StyledType & {
 declare type PropsType = StyledType & {
     messages: Array<MessagePropsType>;
 };
-declare const Message: SFC<MessagePropsType>;
-declare const MessageStream: SFC<PropsType>;
+declare const Message: FunctionComponent<MessagePropsType>;
+declare const MessageStream: FunctionComponent<PropsType>;
 export default MessageStream;
 export { PropsType, Message };

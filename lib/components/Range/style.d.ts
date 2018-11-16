@@ -31,6 +31,6 @@ declare type wrapperProps = {
     disabled: boolean;
     focus: boolean;
 };
-declare const StyledWrapper: _S<wrapperProps & _R.HTMLProps<HTMLDivElement>, import("../../types/ThemeType").default, wrapperProps & _R.HTMLProps<HTMLDivElement>>;
+declare const StyledWrapper: _S<wrapperProps & _R.HTMLProps<HTMLDivElement>, import("../../../../../../../Users/nicokoelewijn/www/bricks/src/types/ThemeType").default, wrapperProps & _R.HTMLProps<HTMLDivElement>>;
 export default StyledWrapper;
 export { RangeThemeType };

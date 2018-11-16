@@ -1,8 +1,8 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 declare type TextPropsType = {
     lines: number;
     baseWidth?: number;
 };
-declare const Text: SFC<TextPropsType>;
+declare const Text: FunctionComponent<TextPropsType>;
 export default Text;
 export { TextPropsType };

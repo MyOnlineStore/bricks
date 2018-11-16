@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { DraggableProvided } from 'react-beautiful-dnd';
 declare type PropsType = {
     align: 'left' | 'center' | 'right';
@@ -8,6 +8,6 @@ declare type PropsType = {
     onFocus?(): void;
     onBlur?(): void;
 };
-declare const TableCell: SFC<PropsType>;
+declare const TableCell: FunctionComponent<PropsType>;
 export default TableCell;
 export { PropsType };

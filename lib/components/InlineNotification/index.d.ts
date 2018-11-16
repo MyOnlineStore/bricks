@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import SeverityType from '../../types/_SeverityType';
 import { MediumIcons } from '../Icon';
 declare type PropsType = {
@@ -6,6 +6,6 @@ declare type PropsType = {
     message?: string;
     severity: SeverityType;
 };
-declare const InlineNotification: SFC<PropsType>;
+declare const InlineNotification: FunctionComponent<PropsType>;
 export default InlineNotification;
 export { PropsType };

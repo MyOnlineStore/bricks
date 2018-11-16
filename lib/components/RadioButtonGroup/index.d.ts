@@ -1,3 +1,3 @@
-import { SFC } from 'react';
-declare const RadioButtonGroup: SFC;
+import { FunctionComponent } from 'react';
+declare const RadioButtonGroup: FunctionComponent;
 export default RadioButtonGroup;

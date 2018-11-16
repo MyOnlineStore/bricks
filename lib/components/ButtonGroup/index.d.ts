@@ -1,3 +1,3 @@
-import { SFC } from 'react';
-declare const ButtonGroup: SFC;
+import { FunctionComponent } from 'react';
+declare const ButtonGroup: FunctionComponent;
 export default ButtonGroup;

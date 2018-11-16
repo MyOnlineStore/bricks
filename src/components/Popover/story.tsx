@@ -33,16 +33,11 @@ const DemoContent: FunctionComponent = (): JSX.Element => {
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
-        this.state = {
-            isOpen: false,
-        };
+
+        this.state = { isOpen: false };
     }
 
-    private toggle = (): void => {
-        this.setState({
-            isOpen: !this.state.isOpen,
-        });
-    };
+    private toggle = (): void => this.setState({ isOpen: !this.state.isOpen });
 
     public render(): JSX.Element {
         return (
@@ -50,11 +45,13 @@ class Demo extends Component<PropsType, StateType> {
                 <Box margin={trbl(48)}>
                     <Popover
                         isOpen={this.state.isOpen}
+                        onClickOutside={this.toggle}
                         placement={this.props.placement}
                         fixed={this.props.fixed}
                         offset={this.props.offset}
                         distance={this.props.distance}
                         renderContent={(): JSX.Element => <DemoContent />}
+                        triggerOn={'click'}
                     >
                         <Button variant="primary" title="Toggle" onClick={this.toggle} />
                     </Popover>

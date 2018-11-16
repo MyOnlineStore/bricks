@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/_styled';
 import SeverityType from '../../types/_SeverityType';
 declare type PropsType = StyledType & {
@@ -10,6 +10,6 @@ declare type PropsType = StyledType & {
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     severity?: SeverityType;
 };
-declare const Text: SFC<PropsType>;
+declare const Text: FunctionComponent<PropsType>;
 export default Text;
 export { PropsType };

@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { TrblType } from '../../utility/trbl';
 declare type PropsType = JSX.IntrinsicElements['div'] & {
     justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around' | 'space-evenly';
@@ -26,6 +26,6 @@ declare type PropsType = JSX.IntrinsicElements['div'] & {
     bottom?: string;
     left?: string;
 };
-declare const Box: SFC<PropsType>;
+declare const Box: FunctionComponent<PropsType>;
 export { PropsType };
 export default Box;

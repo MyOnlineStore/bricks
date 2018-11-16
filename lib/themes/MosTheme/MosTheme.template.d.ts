@@ -1,3 +1,3 @@
-import { StatelessComponent } from 'react';
-declare const MosTheme: StatelessComponent;
+import { FunctionComponent } from 'react';
+declare const MosTheme: FunctionComponent;
 export default MosTheme;

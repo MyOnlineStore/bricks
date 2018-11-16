@@ -1,10 +1,10 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 declare type PropsType = {
     enable?: boolean;
 };
-declare const ContrastThemeProvider: SFC<{
+declare const ContrastThemeProvider: FunctionComponent<{
     enable?: boolean;
 }>;
-declare const Contrast: SFC<PropsType>;
+declare const Contrast: FunctionComponent<PropsType>;
 export default Contrast;
 export { ContrastThemeProvider, PropsType };

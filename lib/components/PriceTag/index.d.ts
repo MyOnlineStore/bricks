@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/_styled';
 declare type PartTypeType = 'currency' | 'decimal' | 'fraction' | 'group' | 'infinity' | 'integer' | 'literal' | 'minusSign' | 'nan' | 'plusSign' | 'percentSign';
 declare type PartType = {
@@ -14,6 +14,6 @@ declare type PropsType = StyledType & {
     freeLabel?: string;
     displayType?: 'base' | 'action' | 'default';
 };
-declare const PriceTag: SFC<PropsType>;
+declare const PriceTag: FunctionComponent<PropsType>;
 export default PriceTag;
 export { PropsType, PartTypeType, PartType };

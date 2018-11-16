@@ -1,4 +1,4 @@
-import { SFC } from 'react';
+import { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/_styled';
 import { LargeIcons, MediumIcons, SmallIcons } from './types';
 declare type BasePropsType = StyledType & {
@@ -17,6 +17,6 @@ declare type LargePropsType = BasePropsType & {
     icon: keyof typeof LargeIcons;
 };
 declare type PropsType = SmallPropsType | MediumPropsType | LargePropsType;
-declare const Icon: SFC<PropsType>;
+declare const Icon: FunctionComponent<PropsType>;
 export default Icon;
 export { PropsType, SmallIcons, MediumIcons, LargeIcons, BasePropsType, SmallPropsType, MediumPropsType, LargePropsType, };
