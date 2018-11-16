@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import { StyledInput, StyledWrapper } from './style';
+import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -32,6 +32,14 @@ describe('TextField', () => {
         const component = mountWithTheme(<TextField value="" name="firstName" onChange={jest.fn()} />);
 
         component.find(StyledInput).simulate('focus');
+
+        expect(component.find(StyledWrapper).prop('focus')).toBe(true);
+    });
+
+    it('should render an active state when focussed by clicking an affix', () => {
+        const component = mountWithTheme(<TextField value="" suffix="hi" name="firstName" onChange={jest.fn()} />);
+
+        component.find(StyledAffixWrapper).simulate('click');
 
         expect(component.find(StyledWrapper).prop('focus')).toBe(true);
     });

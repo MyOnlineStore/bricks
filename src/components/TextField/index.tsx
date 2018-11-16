@@ -26,9 +26,7 @@ type PropsType = {
     onFocus?(): void;
 };
 
-type StateType = {
-    focus: boolean;
-};
+type StateType = { focus: boolean };
 
 class TextField extends Component<PropsType, StateType> {
     public static Currency: WithCurrencyFormattingType = withCurrencyFormatting(TextField);
@@ -42,9 +40,7 @@ class TextField extends Component<PropsType, StateType> {
         this.state = { focus: false };
     }
 
-    public forceFocus = (): void => {
-        this.setState({ focus: true }, () => this.inputRef.focus());
-    };
+    public forceFocus = (): void => this.setState({ focus: true }, () => this.inputRef.focus());
 
     public handleFocus = (): void => {
         this.setState({ focus: true }, () => this.inputRef.focus());
@@ -93,7 +89,7 @@ class TextField extends Component<PropsType, StateType> {
                         </Box>
                     </Box>
                     {this.props.suffix && (
-                        <StyledAffixWrapper onClick={this.handleFocus} disabled={this.props.disabled}>
+                        <StyledAffixWrapper onClick={this.forceFocus} disabled={this.props.disabled}>
                             <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
