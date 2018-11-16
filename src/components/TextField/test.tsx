@@ -36,7 +36,7 @@ describe('TextField', () => {
         expect(component.find(StyledWrapper).prop('focus')).toBe(true);
     });
 
-    it('should render an active state when focussed by clicking an affix', () => {
+    it('should render a focus state after clicking an affix', () => {
         const component = mountWithTheme(<TextField value="" suffix="hi" name="firstName" onChange={jest.fn()} />);
 
         component.find(StyledAffixWrapper).simulate('click');
