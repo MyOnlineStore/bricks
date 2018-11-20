@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover should render with defaults 1`] = `
-<style__PopoverWindow
+<styled.div
   innerRef={null}
   style={Object {}}
 >
-  <style__PopoverContent>
+  <styled.div>
     Mock content
-  </style__PopoverContent>
-  <style__PopoverBackground />
+  </styled.div>
+  <styled.div />
   <styled.div
     innerRef={null}
     placement=""
@@ -19,7 +19,7 @@ exports[`Popover should render with defaults 1`] = `
     shadow={true}
     style={Object {}}
   />
-</style__PopoverWindow>
+</styled.div>
 `;
 
 exports[`Popover should render with defaults 2`] = `

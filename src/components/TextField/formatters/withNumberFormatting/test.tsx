@@ -17,7 +17,7 @@ describe('Range', () => {
     it('should not break on a NaN', () => {
         const changeMock = jest.fn();
         const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(<NumberField name="" value={19.12} onChange={changeMock} />);
+        const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
 
         component.find('input').simulate('change', { target: { value: NaN } });
         component.find('input').simulate('blur');

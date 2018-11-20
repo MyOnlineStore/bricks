@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { SFC } from 'react';
 import StyledToaster, { StyledToasterWrapper } from './style';
 import Button from '../Button';
 import Box from '../Box';
@@ -23,7 +23,7 @@ type PropsType = {
 
 type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
 
-const Toaster: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Toaster: SFC<PropsType> = (props): JSX.Element => {
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     const closeAction = (): void => {

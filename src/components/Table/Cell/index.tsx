@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { SFC } from 'react';
 import { DraggableProvided } from 'react-beautiful-dnd';
 import StyledCell from './style';
 
@@ -11,7 +11,7 @@ type PropsType = {
     onBlur?(): void;
 };
 
-const TableCell: FunctionComponent<PropsType> = ({ align, provided, width, onFocus, onBlur, children }): JSX.Element => {
+const TableCell: SFC<PropsType> = ({ align, provided, width, onFocus, onBlur, children }): JSX.Element => {
     const extraProps = provided !== undefined ? provided : {};
 
     /* tslint:disable:no-unbound-method */

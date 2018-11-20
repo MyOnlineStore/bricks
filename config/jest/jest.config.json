@@ -19,7 +19,6 @@
     },
     "rootDir": "../../",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "testURL": "http://localhost/",
     "moduleFileExtensions": [
         "ts",
         "tsx",

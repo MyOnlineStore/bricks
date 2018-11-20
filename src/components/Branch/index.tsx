@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, Children } from 'react';
+import { SFC, ReactNode, Children } from 'react';
 
 type PropsType = {
     condition: boolean;
@@ -6,7 +6,7 @@ type PropsType = {
     ifFalse?(children: ReactNode): JSX.Element;
 };
 
-const Branch: FunctionComponent<PropsType> = ({ condition, ifTrue, ifFalse, children }): JSX.Element | null => {
+const Branch: SFC<PropsType> = ({ condition, ifTrue, ifFalse, children }): JSX.Element | null => {
     if (condition) {
         return ifTrue(children);
     }
