@@ -1,6 +1,6 @@
 import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { Component } from 'react';
 import Toaster, { PropsType } from '.';
 
 storiesOf('Toaster', module).add('Default', () => (
@@ -31,3 +31,28 @@ storiesOf('Toaster', module).add('With action button', () => (
         )}
     />
 ));
+
+class Demo extends Component<{}, { isOpen: boolean }> {
+    public constructor(props: PropsType) {
+        super(props);
+
+        this.state = { isOpen: true };
+    }
+
+    private closeHandler = (): void => this.setState({ isOpen: false });
+
+    public render(): JSX.Element {
+        return (
+            <Toaster
+                autoDismiss
+                severity="success"
+                isOpen={this.state.isOpen}
+                closeAction={(): void => this.closeHandler()}
+                title="Thought provoking we must stand."
+                message="You can read this now, but soon you won't."
+            />
+        );
+    }
+}
+
+storiesOf('Toaster', module).add('With auto dismiss', () => <Demo />);

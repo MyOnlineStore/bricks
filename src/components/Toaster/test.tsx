@@ -3,6 +3,8 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import Toaster from './';
 import Button from '../Button';
 
+jest.useFakeTimers();
+
 describe('Toaster', () => {
     it('should be possible to close the toaster using the close button', () => {
         const clickMock = jest.fn();
@@ -16,6 +18,26 @@ describe('Toaster', () => {
         closeButton.simulate('click');
 
         expect(clickMock).toHaveBeenCalled();
+    });
+
+    it('should be possible to automatically dismis', () => {
+        const closeMock = jest.fn();
+
+        mountWithTheme(
+            <Toaster
+                autoDismiss
+                isOpen={true}
+                severity="success"
+                buttonTitle="Bar?"
+                title="Foo"
+                closeAction={closeMock}
+            />,
+        );
+
+        jest.advanceTimersByTime(5999);
+        expect(closeMock).not.toHaveBeenCalled();
+        jest.advanceTimersByTime(1);
+        expect(closeMock).toHaveBeenCalled();
     });
 
     it('should not break when no close is provided', () => {
