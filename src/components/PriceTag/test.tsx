@@ -1,6 +1,6 @@
 import React from 'react';
 import PriceTag from '.';
-import { mountWithTheme, shallowWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme, shallowWithTheme } from '../../utility/_styled/testing';
 import { mosTheme } from '../../themes/MosTheme';
 
 describe('PriceTag', () => {

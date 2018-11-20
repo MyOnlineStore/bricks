@@ -1,7 +1,7 @@
 import toJson from 'enzyme-to-json';
 import React from 'react';
 import Heading from '.';
-import { shallowWithTheme } from '../../utility/styled/testing';
+import { shallowWithTheme } from '../../utility/_styled/testing';
 import MosTheme from '../../themes/MosTheme/MosTheme.theme';
 
 describe('Heading', () => {
