@@ -173,7 +173,7 @@ describe('Table', () => {
             .simulate('click', { shiftKey: true });
 
         expect(selectedRows.length).toEqual(3);
-        expect(getSelection().removeAllRanges).toHaveBeenCalled();
+        expect(global.getSelection().removeAllRanges).toHaveBeenCalled();
     });
 
     it('should select multiple checkboxes when shift-select from bottom to top', () => {
