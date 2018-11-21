@@ -1,4 +1,4 @@
-/// <reference path="../../../../../src/declarations/global.d.ts" />
+/// <reference path="../../../../../src/_declarations/global.d.ts" />
 import { PropsType as TextFieldPropsType } from '../../';
 import React, { Component, ComponentClass, ComponentType, ChangeEvent } from 'react';
 

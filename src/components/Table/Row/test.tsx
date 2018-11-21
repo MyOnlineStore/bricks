@@ -1,5 +1,5 @@
 import React from 'react';
-import Row from '.';
+import Rows from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
 import StyledCell from '../Cell/style';
 import StyledRow from './style';

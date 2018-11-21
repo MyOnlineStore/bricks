@@ -172,7 +172,7 @@ describe('Table', () => {
             .at(4)
             .simulate('click', { shiftKey: true });
 
-        expect(selectedRows.length).toEqual(2);
+        expect(selectedRows.length).toEqual(3);
         /* tslint:disable */
         expect(getSelection().removeAllRanges).toHaveBeenCalled();
         /* tslint:enable */
@@ -411,6 +411,12 @@ describe('Table', () => {
                 ]}
             />,
         );
+
+        component
+            .find('thead')
+            .find('th')
+            .first()
+            .simulate('click');
 
         component
             .find('thead')
