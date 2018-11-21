@@ -6,7 +6,6 @@
 /.phpstorm_helpers
 /node_modules
 /reports
-/lib
 /.out
 .cache
 /public
