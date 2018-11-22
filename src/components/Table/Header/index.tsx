@@ -1,4 +1,4 @@
-import React, { SFC, ReactNode } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import StyledHeader from './style';
 import Text from '../../Text';
 import Box from '../../Box';
@@ -14,7 +14,7 @@ type PropsType = {
     onCheck(checked: boolean): void;
 };
 
-const Header: SFC<PropsType> = ({ alignments, checked, draggable, onCheck, selectable, headers }): JSX.Element => {
+const Header: FunctionComponent<PropsType> = ({ alignments, checked, draggable, onCheck, selectable, headers }): JSX.Element => {
     return (
         <thead>
             <tr>

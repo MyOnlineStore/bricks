@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/styled';
 import { StyledSpan, StyledParagraph } from './style';
 import SeverityType from '../../types/SeverityType';
@@ -13,7 +13,7 @@ type PropsType = StyledType & {
     severity?: SeverityType;
 };
 
-const Text: SFC<PropsType> = (props): JSX.Element => {
+const Text: FunctionComponent<PropsType> = (props): JSX.Element => {
     const Element = props.inline !== undefined && props.inline ? StyledSpan : StyledParagraph;
 
     return (

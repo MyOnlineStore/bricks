@@ -3,7 +3,7 @@ import withNumberFormatting from './';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/styled/testing';
 
-describe('Range', () => {
+describe('withNumberFormatting', () => {
     it('should handle change', () => {
         const changeMock = jest.fn();
         const NumberField = withNumberFormatting(TextField);
@@ -14,15 +14,15 @@ describe('Range', () => {
         expect(changeMock).toHaveBeenCalledWith(20);
     });
 
-    it('should not break on a NaN', () => {
+    it('should only allow numeric values as input', () => {
         const changeMock = jest.fn();
         const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(<NumberField name="" value={19.12} onChange={changeMock} />);
+        const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
 
-        component.find('input').simulate('change', { target: { value: NaN } });
+        component.find('input').simulate('change', { target: { value: 'eee' } });
         component.find('input').simulate('blur');
 
-        expect(component.find('input').prop('value')).toEqual('0');
+        expect(component.find('input').prop('value')).toEqual('19');
     });
 
     it('should not allow negative numbers when negativeDisabled is true', () => {

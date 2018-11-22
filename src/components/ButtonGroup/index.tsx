@@ -1,9 +1,9 @@
-import React, { Children, SFC } from 'react';
+import React, { Children, FunctionComponent } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
 
-const ButtonGroup: SFC = (props): JSX.Element => {
+const ButtonGroup: FunctionComponent = (props): JSX.Element => {
     return (
         <BreakpointProvider
             breakpoints={{

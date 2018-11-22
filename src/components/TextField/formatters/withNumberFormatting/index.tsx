@@ -31,7 +31,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             };
         }
 
-        private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
+        private handleChange = (value: string): void => {
             const parsedValue = parseInt(value, 10);
 
             if (isNaN(parsedValue)) {
@@ -47,7 +47,9 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             if (this.state.value.length === 0) {
                 this.setState({ value: '0' });
             }
-            if (this.props.onBlur !== undefined) this.props.onBlur();
+            if (this.props.onBlur !== undefined) {
+                this.props.onBlur();
+            }
         };
 
         public render(): JSX.Element {

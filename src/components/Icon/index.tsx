@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/styled';
 import StyledIcon from './style';
 import { LargeIcons, MediumIcons, SmallIcons } from './types';
@@ -24,7 +24,7 @@ type LargePropsType = BasePropsType & {
 
 type PropsType = SmallPropsType | MediumPropsType | LargePropsType;
 
-const Icon: SFC<PropsType> = (props): JSX.Element => {
+const Icon: FunctionComponent<PropsType> = (props): JSX.Element => {
     const icon = ((props: PropsType): SmallIcons | MediumIcons | LargeIcons => {
         switch (props.size) {
             case 'large':

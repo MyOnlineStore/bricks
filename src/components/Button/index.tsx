@@ -1,4 +1,4 @@
-import React, { Children, SFC } from 'react';
+import React, { Children, FunctionComponent } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 import Icon, { MediumPropsType } from '../Icon';
 import Box from '../Box';
@@ -26,7 +26,7 @@ type ButtonContentsType = {
     title: PropsType['title'];
 };
 
-const ButtonContents: SFC<ButtonContentsType> = (props): JSX.Element => (
+const ButtonContents: FunctionComponent<ButtonContentsType> = (props): JSX.Element => (
     <>
         {props.icon &&
             props.iconAlign !== 'right' && (
@@ -44,7 +44,7 @@ const ButtonContents: SFC<ButtonContentsType> = (props): JSX.Element => (
     </>
 );
 
-const Button: SFC<PropsType> = (props): JSX.Element => {
+const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {

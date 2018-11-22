@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
@@ -14,7 +14,7 @@ type EmptyStatePropsType = {
     message: string;
 };
 
-const EmptyStateElement: SFC<EmptyStatePropsType> = (props): JSX.Element => (
+const EmptyStateElement: FunctionComponent<EmptyStatePropsType> = (props): JSX.Element => (
     <Box direction="column" alignItems="center" justifyContent="space-around">
         <Illustration illustration={'cactus'} />
         <Box padding={trbl(18, 0, 0, 0)}>

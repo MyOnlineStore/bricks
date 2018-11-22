@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import { object, select, number } from '@storybook/addon-knobs';
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import MultiButton, { PlacementType } from '.';
 import Box from '../Box';
 import trbl from '../../utility/trbl';
@@ -31,7 +31,7 @@ const options = [
     },
 ];
 
-const Demo: SFC = (): JSX.Element => {
+const Demo: FunctionComponent = (): JSX.Element => {
     /* tslint:disable */
     return (
         <Box height="90vh" justifyContent="center" alignItems="center">

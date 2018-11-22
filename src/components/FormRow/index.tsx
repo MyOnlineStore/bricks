@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import Box from '../Box';
 import trbl from '../../utility/trbl';
 import { StyledFormRow } from './style';
@@ -8,7 +8,7 @@ type PropsType = {
     field: JSX.Element;
 };
 
-const FormRow: SFC<PropsType> = (props): JSX.Element => {
+const FormRow: FunctionComponent<PropsType> = (props): JSX.Element => {
     return (
         <StyledFormRow>
             <Box basis={'180px'} grow={1} maxWidth={'241px'} margin={trbl(18, 9, 0, 0)} justifyContent="stretch" wrap>

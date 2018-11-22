@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import Skeleton from '.';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import Text from '../Text';
@@ -10,7 +10,7 @@ type DemoPropsType = {
     element: string;
 };
 
-const Demo: SFC<DemoPropsType> = ({ element, loading }): JSX.Element => {
+const Demo: FunctionComponent<DemoPropsType> = ({ element, loading }): JSX.Element => {
     if (element === 'Text') {
         if (loading) {
             return <Skeleton.Text lines={number('lines', 3)} baseWidth={number('baseWidth', 80)} />;

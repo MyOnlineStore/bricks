@@ -1,4 +1,4 @@
-import React, { Children, SFC } from 'react';
+import React, { Children, FunctionComponent } from 'react';
 import StyledLink, { StyledButton } from './style';
 
 type PropsType = {
@@ -8,7 +8,7 @@ type PropsType = {
     action?(): void;
 };
 
-const Link: SFC<PropsType> = (props): JSX.Element => {
+const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
