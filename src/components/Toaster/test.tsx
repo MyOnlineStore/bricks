@@ -20,7 +20,7 @@ describe('Toaster', () => {
         expect(clickMock).toHaveBeenCalled();
     });
 
-    it('should be possible to automatically dismiss', () => {
+    it('should automatically close when autoDismiss is true', () => {
         const closeMock = jest.fn();
 
         mountWithTheme(
