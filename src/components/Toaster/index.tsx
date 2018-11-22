@@ -63,13 +63,14 @@ class Toaster extends Component<PropsType> {
                                         </Box>
                                     )}
                                     <Box
+                                        style={{ display: breakpoint === 'small' ? 'block' : '' }}
                                         direction={breakpoint === 'small' ? 'column' : 'row'}
                                         justifyContent="center"
                                         alignContent="center"
                                     >
                                         <Box
-                                            direction="column"
                                             margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}
+                                            style={{ display: 'block' }}
                                         >
                                             <Text strong>{this.props.title}</Text>
                                             <Text>{this.props.message}</Text>

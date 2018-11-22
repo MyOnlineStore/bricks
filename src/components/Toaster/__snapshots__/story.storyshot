@@ -40,9 +40,19 @@ exports[`Storyshots Toaster Default 1`] = `
           </div>
           <div
             className="sc-bwzfXH kKctzU"
+            style={
+              Object {
+                "display": "",
+              }
+            }
           >
             <div
-              className="sc-bwzfXH gaQYSB"
+              className="sc-bwzfXH coslWR"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
             >
               <p
                 className="sc-bxivhb ildJSL"
@@ -128,9 +138,19 @@ exports[`Storyshots Toaster With action button 1`] = `
           </div>
           <div
             className="sc-bwzfXH kKctzU"
+            style={
+              Object {
+                "display": "",
+              }
+            }
           >
             <div
-              className="sc-bwzfXH gaQYSB"
+              className="sc-bwzfXH coslWR"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
             >
               <p
                 className="sc-bxivhb ildJSL"
@@ -232,9 +252,19 @@ exports[`Storyshots Toaster With auto dismiss 1`] = `
           </div>
           <div
             className="sc-bwzfXH kKctzU"
+            style={
+              Object {
+                "display": "",
+              }
+            }
           >
             <div
-              className="sc-bwzfXH gaQYSB"
+              className="sc-bwzfXH coslWR"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
             >
               <p
                 className="sc-bxivhb ildJSL"
