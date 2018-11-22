@@ -42,7 +42,7 @@ class Toaster extends Component<PropsType> {
     };
 
     public componentDidMount = (): void => {
-        if (this.props.autoDismiss === true) setTimeout((): void => this.closeAction(), 6000);
+        if (this.props.autoDismiss) setTimeout((): void => this.closeAction(), 6000);
     };
 
     public render(): JSX.Element {
