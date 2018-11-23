@@ -2,7 +2,7 @@
 
 exports[`Storyshots Select Custom rendering 1`] = `
 <div
-  className="sc-ksYbfQ ciLspu"
+  className="sc-ksYbfQ bRUtDX"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
@@ -291,7 +291,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
 
 exports[`Storyshots Select Default 1`] = `
 <div
-  className="sc-ksYbfQ ciLspu"
+  className="sc-ksYbfQ bRUtDX"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}

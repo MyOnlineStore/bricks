@@ -56,6 +56,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     box-shadow: none;
+    z-index: 1;
 
     &:before {
         content: '';
@@ -82,11 +83,11 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }
 
     ${({ theme, isDisabled, isOpen }): string => {
-        return !isDisabled  || !isOpen
-        ? `&:focus {
+        return !isDisabled || !isOpen
+            ? `&:focus {
             box-shadow: ${theme.Select.wrapper.focus.boxShadow};
         }`
-        : '';
+            : '';
     }}
 `;
 
