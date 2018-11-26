@@ -2,43 +2,47 @@
 
 exports[`Storyshots Separated Default 1`] = `
 <div
-  className="sc-bwzfXH giIUNa"
+  className="sc-cIShpX cgTGrC"
 >
   <div
-    className="sc-bwzfXH eFFYiK"
+    className="sc-bwzfXH giIUNa"
   >
-    <p
-      className="sc-bxivhb kFVWeI"
+    <div
+      className="sc-bwzfXH eFFYiK"
     >
-      This is the first item
-    </p>
-  </div>
-  <div
-    className="sc-bwzfXH iWLjXm"
-  >
-    <p
-      className="sc-bxivhb kFVWeI"
+      <p
+        className="sc-bxivhb kFVWeI"
+      >
+        This is the first item
+      </p>
+    </div>
+    <div
+      className="sc-bwzfXH iWLjXm"
     >
-      This is the second item
-    </p>
-  </div>
-  <div
-    className="sc-bwzfXH iWLjXm"
-  >
-    <p
-      className="sc-bxivhb kFVWeI"
+      <p
+        className="sc-bxivhb kFVWeI"
+      >
+        This is the second item
+      </p>
+    </div>
+    <div
+      className="sc-bwzfXH iWLjXm"
     >
-      This is the third item
-    </p>
-  </div>
-  <div
-    className="sc-bwzfXH iWLjXm"
-  >
-    <p
-      className="sc-bxivhb kFVWeI"
+      <p
+        className="sc-bxivhb kFVWeI"
+      >
+        This is the third item
+      </p>
+    </div>
+    <div
+      className="sc-bwzfXH iWLjXm"
     >
-      This is the fourth item
-    </p>
+      <p
+        className="sc-bxivhb kFVWeI"
+      >
+        This is the fourth item
+      </p>
+    </div>
   </div>
 </div>
 `;
