@@ -29,6 +29,7 @@ export { default as Raised } from './components/Raised';
 export { default as Range } from './components/Range';
 export { default as ScrollBox } from './components/ScrollBox';
 export { default as Select } from './components/Select';
+export { default as Separated } from './components/Separated';
 export { default as Skeleton } from './components/Skeleton';
 export { default as Spacer } from './components/Spacer';
 export { default as ThemeType } from './types/ThemeType';

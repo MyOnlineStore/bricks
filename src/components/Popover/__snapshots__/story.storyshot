@@ -2,10 +2,10 @@
 
 exports[`Storyshots Popover External state 1`] = `
 <div
-  className="sc-bwzfXH fnbwCb"
+  className="sc-bwzfXH fHBnpF"
 >
   <div
-    className="sc-bwzfXH kOFNQl"
+    className="sc-bwzfXH dqFBiw"
   >
     <div>
       <div
@@ -31,10 +31,10 @@ exports[`Storyshots Popover External state 1`] = `
 
 exports[`Storyshots Popover Internal state on click 1`] = `
 <div
-  className="sc-bwzfXH fnbwCb"
+  className="sc-bwzfXH fHBnpF"
 >
   <div
-    className="sc-bwzfXH kOFNQl"
+    className="sc-bwzfXH dqFBiw"
   >
     <div>
       <div
@@ -60,10 +60,10 @@ exports[`Storyshots Popover Internal state on click 1`] = `
 
 exports[`Storyshots Popover Internal state on hover 1`] = `
 <div
-  className="sc-bwzfXH fnbwCb"
+  className="sc-bwzfXH fHBnpF"
 >
   <div
-    className="sc-bwzfXH kOFNQl"
+    className="sc-bwzfXH dqFBiw"
   >
     <div>
       <div

@@ -34,16 +34,16 @@ Array [
     />
   </div>,
   <div
-    className="sc-bwzfXH gKGSfm"
+    className="sc-bwzfXH enAvAo"
   >
     <p
       className="sc-bxivhb gWsGB"
     >
       <span
-        className="sc-htpNat frObKr"
+        className="sc-htpNat dHjTEh"
       >
         <span
-          className="sc-htpNat hKonPW"
+          className="sc-htpNat fyOzxh"
         >
           <span
             aria-hidden={true}
@@ -57,7 +57,7 @@ Array [
           />
         </span>
         <span
-          className="sc-htpNat frObKr"
+          className="sc-htpNat dHjTEh"
         >
           This is a feedback message
         </span>

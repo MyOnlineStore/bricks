@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots RadioButtonGroup Default 1`] = `
+exports[`Storyshots RadioButtonGroup ⚠️ Default 1`] = `
 <div
   className="sc-gisBJw hkZRoH"
 >
   <div
-    className="sc-bwzfXH ewkCPx"
+    className="sc-bwzfXH hdcnas"
   >
     <div
-      className="sc-bwzfXH hurwPi"
+      className="sc-bwzfXH PqnMZ"
     >
       <div
         className="sc-kGXeez iBFgVY"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH gJbmkn"
+          className="sc-bwzfXH MBtgg"
         >
           <div
             checked={true}
@@ -39,7 +39,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           className="sc-bxivhb kFVWeI"
         >
           <span
-            className="sc-htpNat ivSMHx"
+            className="sc-htpNat jqVwBu"
           >
             <label
               htmlFor="demo"
@@ -51,14 +51,14 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH jQPdWH"
+      className="sc-bwzfXH iqaekC"
     >
       <div
         className="sc-kGXeez iBFgVY"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH gJbmkn"
+          className="sc-bwzfXH MBtgg"
         >
           <div
             checked={false}
@@ -82,7 +82,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           className="sc-bxivhb kFVWeI"
         >
           <span
-            className="sc-htpNat ivSMHx"
+            className="sc-htpNat jqVwBu"
           >
             <label
               htmlFor="demo"
@@ -94,14 +94,14 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH jQPdWH"
+      className="sc-bwzfXH iqaekC"
     >
       <div
         className="sc-kGXeez iBFgVY"
         onClick={[Function]}
       >
         <div
-          className="sc-bwzfXH gJbmkn"
+          className="sc-bwzfXH MBtgg"
         >
           <div
             checked={false}
@@ -125,7 +125,7 @@ exports[`Storyshots RadioButtonGroup Default 1`] = `
           className="sc-bxivhb kFVWeI"
         >
           <span
-            className="sc-htpNat ivSMHx"
+            className="sc-htpNat jqVwBu"
           >
             <label
               htmlFor="demo"

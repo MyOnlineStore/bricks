@@ -2,23 +2,23 @@
 
 exports[`Storyshots Range Default 1`] = `
 <div
-  className="sc-bwzfXH bQfpwP"
+  className="sc-bwzfXH rqWTF"
 >
   <div
-    className="sc-bwzfXH eoNmRC"
+    className="sc-bwzfXH fuOcud"
   >
     <div
-      className="sc-bwzfXH jccLEp"
+      className="sc-bwzfXH EAjtE"
     >
       <div
-        className="sc-bwzfXH jtHmcE"
+        className="sc-bwzfXH iOjVOY"
       >
         <div
           className="sc-hMqMXs lcVHiK"
           disabled={false}
         >
           <div
-            className="sc-bwzfXH grkVqn"
+            className="sc-bwzfXH bZlivr"
           >
             <input
               className="sc-ckVGcZ gBhdDx"
@@ -32,7 +32,7 @@ exports[`Storyshots Range Default 1`] = `
               value="5"
             />
             <div
-              className="sc-bwzfXH iOPxsx"
+              className="sc-bwzfXH eiolfU"
             />
           </div>
           <div
@@ -49,14 +49,14 @@ exports[`Storyshots Range Default 1`] = `
         </div>
       </div>
       <div
-        className="sc-bwzfXH jtHmcE"
+        className="sc-bwzfXH iOjVOY"
       >
         <div
           className="sc-hMqMXs lcVHiK"
           disabled={false}
         >
           <div
-            className="sc-bwzfXH grkVqn"
+            className="sc-bwzfXH bZlivr"
           >
             <input
               className="sc-ckVGcZ gBhdDx"
@@ -70,7 +70,7 @@ exports[`Storyshots Range Default 1`] = `
               value="15"
             />
             <div
-              className="sc-bwzfXH iOPxsx"
+              className="sc-bwzfXH eiolfU"
             />
           </div>
           <div

@@ -15,13 +15,13 @@ exports[`Storyshots Toaster Default 1`] = `
       className="sc-hEsumM fWopcp"
     >
       <div
-        className="sc-bwzfXH cbcpsK"
+        className="sc-bwzfXH bYUsuW"
       >
         <div
           className="sc-ktHwxA uqqxR"
         >
           <div
-            className="sc-bwzfXH jQmHZh"
+            className="sc-bwzfXH fdKFCl"
           >
             <span
               className="sc-ifAKCX chsNTs"
@@ -39,7 +39,7 @@ exports[`Storyshots Toaster Default 1`] = `
             </span>
           </div>
           <div
-            className="sc-bwzfXH kKctzU"
+            className="sc-bwzfXH itqPTc"
             style={
               Object {
                 "display": "",
@@ -47,7 +47,7 @@ exports[`Storyshots Toaster Default 1`] = `
             }
           >
             <div
-              className="sc-bwzfXH coslWR"
+              className="sc-bwzfXH FVtfR"
               style={
                 Object {
                   "display": "block",
@@ -67,7 +67,7 @@ exports[`Storyshots Toaster Default 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH bQfpwP"
+            className="sc-bwzfXH rqWTF"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -113,13 +113,13 @@ exports[`Storyshots Toaster With action button 1`] = `
       className="sc-hEsumM fWopcp"
     >
       <div
-        className="sc-bwzfXH cbcpsK"
+        className="sc-bwzfXH bYUsuW"
       >
         <div
           className="sc-ktHwxA jmlPUn"
         >
           <div
-            className="sc-bwzfXH jQmHZh"
+            className="sc-bwzfXH fdKFCl"
           >
             <span
               className="sc-ifAKCX hURNXo"
@@ -137,7 +137,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             </span>
           </div>
           <div
-            className="sc-bwzfXH kKctzU"
+            className="sc-bwzfXH itqPTc"
             style={
               Object {
                 "display": "",
@@ -145,7 +145,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             }
           >
             <div
-              className="sc-bwzfXH coslWR"
+              className="sc-bwzfXH FVtfR"
               style={
                 Object {
                   "display": "block",
@@ -164,7 +164,7 @@ exports[`Storyshots Toaster With action button 1`] = `
               </p>
             </div>
             <div
-              className="sc-bwzfXH kWLDUa"
+              className="sc-bwzfXH dlLzqZ"
             >
               <button
                 className="sc-htoDjs gCmkyb"
@@ -181,7 +181,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH bQfpwP"
+            className="sc-bwzfXH rqWTF"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -227,13 +227,13 @@ exports[`Storyshots Toaster With auto dismiss 1`] = `
       className="sc-hEsumM fWopcp"
     >
       <div
-        className="sc-bwzfXH cbcpsK"
+        className="sc-bwzfXH bYUsuW"
       >
         <div
           className="sc-ktHwxA cFzZDw"
         >
           <div
-            className="sc-bwzfXH jQmHZh"
+            className="sc-bwzfXH fdKFCl"
           >
             <span
               className="sc-ifAKCX bhMPgu"
@@ -251,7 +251,7 @@ exports[`Storyshots Toaster With auto dismiss 1`] = `
             </span>
           </div>
           <div
-            className="sc-bwzfXH kKctzU"
+            className="sc-bwzfXH itqPTc"
             style={
               Object {
                 "display": "",
@@ -259,7 +259,7 @@ exports[`Storyshots Toaster With auto dismiss 1`] = `
             }
           >
             <div
-              className="sc-bwzfXH coslWR"
+              className="sc-bwzfXH FVtfR"
               style={
                 Object {
                   "display": "block",
@@ -279,7 +279,7 @@ exports[`Storyshots Toaster With auto dismiss 1`] = `
             </div>
           </div>
           <div
-            className="sc-bwzfXH bQfpwP"
+            className="sc-bwzfXH rqWTF"
           >
             <button
               className="sc-htoDjs flaPve"

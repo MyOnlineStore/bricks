@@ -17,7 +17,7 @@ exports[`Storyshots TextField Default 1`] = `
     </span>
   </div>
   <div
-    className="sc-bwzfXH grkVqn"
+    className="sc-bwzfXH bZlivr"
   >
     <input
       className="sc-ckVGcZ gBhdDx"
@@ -31,7 +31,7 @@ exports[`Storyshots TextField Default 1`] = `
       value=""
     />
     <div
-      className="sc-bwzfXH iOPxsx"
+      className="sc-bwzfXH eiolfU"
     />
   </div>
   <div
@@ -66,7 +66,7 @@ Array [
       </span>
     </div>
     <div
-      className="sc-bwzfXH grkVqn"
+      className="sc-bwzfXH bZlivr"
     >
       <input
         className="sc-ckVGcZ gBhdDx"
@@ -80,21 +80,21 @@ Array [
         value="10.00"
       />
       <div
-        className="sc-bwzfXH iOPxsx"
+        className="sc-bwzfXH eiolfU"
       />
     </div>
   </div>,
   <div
-    className="sc-bwzfXH gKGSfm"
+    className="sc-bwzfXH enAvAo"
   >
     <p
       className="sc-bxivhb bfQmQc"
     >
       <span
-        className="sc-htpNat frObKr"
+        className="sc-htpNat dHjTEh"
       >
         <span
-          className="sc-htpNat hKonPW"
+          className="sc-htpNat fyOzxh"
         >
           <span
             aria-hidden={true}
@@ -108,7 +108,7 @@ Array [
           />
         </span>
         <span
-          className="sc-htpNat frObKr"
+          className="sc-htpNat dHjTEh"
         >
           The reported value of this field is: 10
         </span>
@@ -136,7 +136,7 @@ Array [
       </span>
     </div>
     <div
-      className="sc-bwzfXH grkVqn"
+      className="sc-bwzfXH bZlivr"
     >
       <input
         className="sc-ckVGcZ gBhdDx"
@@ -150,7 +150,7 @@ Array [
         value=""
       />
       <div
-        className="sc-bwzfXH iOPxsx"
+        className="sc-bwzfXH eiolfU"
       />
     </div>
     <div
@@ -166,16 +166,16 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-bwzfXH gKGSfm"
+    className="sc-bwzfXH enAvAo"
   >
     <p
       className="sc-bxivhb gWsGB"
     >
       <span
-        className="sc-htpNat frObKr"
+        className="sc-htpNat dHjTEh"
       >
         <span
-          className="sc-htpNat hKonPW"
+          className="sc-htpNat fyOzxh"
         >
           <span
             aria-hidden={true}
@@ -189,7 +189,7 @@ Array [
           />
         </span>
         <span
-          className="sc-htpNat frObKr"
+          className="sc-htpNat dHjTEh"
         >
           This is a feedback message
         </span>
@@ -205,7 +205,7 @@ exports[`Storyshots TextField With Number formatting 1`] = `
   disabled={false}
 >
   <div
-    className="sc-bwzfXH grkVqn"
+    className="sc-bwzfXH bZlivr"
   >
     <input
       className="sc-ckVGcZ gBhdDx"
@@ -219,7 +219,7 @@ exports[`Storyshots TextField With Number formatting 1`] = `
       value="10"
     />
     <div
-      className="sc-bwzfXH iOPxsx"
+      className="sc-bwzfXH eiolfU"
     />
   </div>
 </div>

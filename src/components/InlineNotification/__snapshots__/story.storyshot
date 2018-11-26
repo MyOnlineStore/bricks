@@ -5,10 +5,10 @@ exports[`Storyshots InlineNotification Default 1`] = `
   className="sc-bxivhb gWsGB"
 >
   <span
-    className="sc-htpNat frObKr"
+    className="sc-htpNat dHjTEh"
   >
     <span
-      className="sc-htpNat hKonPW"
+      className="sc-htpNat fyOzxh"
     >
       <span
         aria-hidden={true}
@@ -22,7 +22,7 @@ exports[`Storyshots InlineNotification Default 1`] = `
       />
     </span>
     <span
-      className="sc-htpNat frObKr"
+      className="sc-htpNat dHjTEh"
     >
       Something is wrong!
     </span>
@@ -35,10 +35,10 @@ exports[`Storyshots InlineNotification With children 1`] = `
   className="sc-bxivhb bfQmQc"
 >
   <span
-    className="sc-htpNat frObKr"
+    className="sc-htpNat dHjTEh"
   >
     <span
-      className="sc-htpNat hKonPW"
+      className="sc-htpNat fyOzxh"
     >
       <span
         aria-hidden={true}
@@ -52,7 +52,7 @@ exports[`Storyshots InlineNotification With children 1`] = `
       />
     </span>
     <span
-      className="sc-htpNat frObKr"
+      className="sc-htpNat dHjTEh"
     >
       Are you having trouble? Check out 
       <a
@@ -74,10 +74,10 @@ exports[`Storyshots InlineNotification With overwritten Icon 1`] = `
   className="sc-bxivhb gWsGB"
 >
   <span
-    className="sc-htpNat frObKr"
+    className="sc-htpNat dHjTEh"
   >
     <span
-      className="sc-htpNat hKonPW"
+      className="sc-htpNat fyOzxh"
     >
       <span
         aria-hidden={true}
@@ -91,7 +91,7 @@ exports[`Storyshots InlineNotification With overwritten Icon 1`] = `
       />
     </span>
     <span
-      className="sc-htpNat frObKr"
+      className="sc-htpNat dHjTEh"
     >
       Something is wrong!
     </span>

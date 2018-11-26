@@ -76,7 +76,7 @@ describe('Select', () => {
 
         component.simulate('focus');
 
-        /* tslint:disable:no-any */
+        // tslint:disable-next-line:no-any
         (expect(component.find(StyledInput)) as any).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.wrapper.focus.borderColor}`,
@@ -84,11 +84,11 @@ describe('Select', () => {
 
         component.simulate('blur');
 
+        // tslint:disable-next-line:no-any
         (expect(component.find(StyledInput)) as any).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.input.borderColor}`,
         );
-        /* tslint:enable:no-any */
     });
 
     it('should open the arrowDown or arrowUp is pressed and close when escape is pressed', () => {

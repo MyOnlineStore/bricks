@@ -18,7 +18,7 @@ exports[`Storyshots Modal Default 1`] = `
         className="sc-gipzik kNtMSr"
       >
         <div
-          className="sc-bwzfXH jTCciZ"
+          className="sc-bwzfXH PFWgi"
         >
           <div
             className="sc-fjdhpX jskuQK"
@@ -27,7 +27,7 @@ exports[`Storyshots Modal Default 1`] = `
             Would you like me to be your role modal?
           </div>
           <div
-            className="sc-bwzfXH ghdkBw"
+            className="sc-bwzfXH hiMtnc"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -62,7 +62,7 @@ exports[`Storyshots Modal Default 1`] = `
               className="sc-jDwBTQ bqIkRG"
             />
             <div
-              className="sc-bwzfXH fiOUi"
+              className="sc-bwzfXH lkXbup"
             >
               <p
                 className="sc-bxivhb kFVWeI"
@@ -98,7 +98,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
           className="sc-gZMcBi huJyDB"
         >
           <div
-            className="sc-bwzfXH hWtStI"
+            className="sc-bwzfXH bQUPIj"
           >
             <div
               style={
@@ -108,10 +108,10 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
               }
             >
               <div
-                className="sc-bwzfXH KPFhn"
+                className="sc-bwzfXH lalwsM"
               >
                 <div
-                  className="sc-bwzfXH jHAPPC"
+                  className="sc-bwzfXH hwWvSq"
                 >
                   <button
                     className="sc-htoDjs fAnDzT"
@@ -127,7 +127,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   </button>
                 </div>
                 <div
-                  className="sc-bwzfXH jHAPPC"
+                  className="sc-bwzfXH hwWvSq"
                 >
                   <button
                     className="sc-htoDjs gKbNMP"
@@ -170,7 +170,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
         className="sc-gipzik kNtMSr"
       >
         <div
-          className="sc-bwzfXH jTCciZ"
+          className="sc-bwzfXH PFWgi"
         >
           <div
             className="sc-fjdhpX jskuQK"
@@ -189,7 +189,7 @@ exports[`Storyshots Modal Without closeAction 1`] = `
               className="sc-jDwBTQ bqIkRG"
             />
             <div
-              className="sc-bwzfXH fiOUi"
+              className="sc-bwzfXH lkXbup"
             >
               <p
                 className="sc-bxivhb kFVWeI"
@@ -225,7 +225,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
           className="sc-gZMcBi huJyDB"
         >
           <div
-            className="sc-bwzfXH hWtStI"
+            className="sc-bwzfXH bQUPIj"
           >
             <div
               style={
@@ -235,10 +235,10 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
               }
             >
               <div
-                className="sc-bwzfXH KPFhn"
+                className="sc-bwzfXH lalwsM"
               >
                 <div
-                  className="sc-bwzfXH jHAPPC"
+                  className="sc-bwzfXH hwWvSq"
                 >
                   <button
                     className="sc-htoDjs fAnDzT"
@@ -254,7 +254,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   </button>
                 </div>
                 <div
-                  className="sc-bwzfXH jHAPPC"
+                  className="sc-bwzfXH hwWvSq"
                 >
                   <button
                     className="sc-htoDjs gKbNMP"

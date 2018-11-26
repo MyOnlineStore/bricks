@@ -14,7 +14,7 @@ exports[`Storyshots Table Default 1`] = `
           className="sc-gGBfsJ iDxcWn"
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb ildJSL"
@@ -37,7 +37,7 @@ exports[`Storyshots Table Default 1`] = `
           className="sc-gGBfsJ iDxcWn"
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb ildJSL"
@@ -50,7 +50,7 @@ exports[`Storyshots Table Default 1`] = `
           className="sc-gGBfsJ ktnWVM"
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb ildJSL"
@@ -63,7 +63,7 @@ exports[`Storyshots Table Default 1`] = `
           className="sc-gGBfsJ bMrbd"
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <p
               className="sc-bxivhb ildJSL"
@@ -106,7 +106,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -121,7 +121,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -136,7 +136,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -151,7 +151,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -229,7 +229,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -244,7 +244,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -259,7 +259,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -274,7 +274,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -352,7 +352,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -367,7 +367,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -382,7 +382,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -397,7 +397,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -475,7 +475,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -490,7 +490,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -505,7 +505,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -520,7 +520,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -598,7 +598,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -613,7 +613,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -628,7 +628,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -643,7 +643,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -721,7 +721,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -736,7 +736,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -751,7 +751,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -766,7 +766,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -844,7 +844,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -859,7 +859,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -874,7 +874,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -889,7 +889,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -967,7 +967,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -982,7 +982,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -997,7 +997,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1012,7 +1012,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -1090,7 +1090,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1105,7 +1105,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1120,7 +1120,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1135,7 +1135,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"
@@ -1213,7 +1213,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1228,7 +1228,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH jXZncb"
+            className="sc-bwzfXH SGYTL"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1243,7 +1243,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH keAoja"
+            className="sc-bwzfXH eblgjE"
           >
             <p
               className="sc-bxivhb kFVWeI"
@@ -1258,7 +1258,7 @@ exports[`Storyshots Table Default 1`] = `
           onFocus={undefined}
         >
           <div
-            className="sc-bwzfXH eFkGjS"
+            className="sc-bwzfXH gbTPhR"
           >
             <button
               className="sc-htoDjs flaPve"

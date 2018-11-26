@@ -30,10 +30,26 @@ const StyledDiv = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
     justify-content: ${({ justifyContent }): string => (justifyContent !== undefined ? justifyContent : '')};
     align-items: ${({ alignItems }): string => (alignItems !== undefined ? alignItems : '')};
     align-content: ${({ alignContent }): string => (alignContent !== undefined ? alignContent : '')};
-    margin: ${({ margin }): string =>
-        margin !== undefined ? `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}` : ''};
-    padding: ${({ padding }): string =>
-        padding !== undefined ? `${padding.top} ${padding.right} ${padding.bottom} ${padding.left}` : ''};
+    ${({ margin }): string => {
+        if (margin === undefined) return '';
+
+        return `
+            margin-top: ${margin.top};
+            margin-right: ${margin.right};
+            margin-bottom: ${margin.bottom};
+            margin-left: ${margin.left};
+        `;
+    }};
+    ${({ padding }): string => {
+        if (padding === undefined) return '';
+
+        return `
+            padding-top: ${padding.top};
+            padding-right: ${padding.right};
+            padding-bottom: ${padding.bottom};
+            padding-left: ${padding.left};
+        `;
+    }};
     flex-grow: ${({ grow }): number => (grow ? grow : 0)};
     flex-shrink: ${({ shrink }): number => (shrink !== undefined ? shrink : 1)};
     flex-basis: ${({ basis }): string => (basis ? basis : 'auto')};

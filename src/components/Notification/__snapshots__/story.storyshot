@@ -5,10 +5,10 @@ exports[`Storyshots Notification Error 1`] = `
   className="sc-kAzzGY dCBEuI"
 >
   <div
-    className="sc-bwzfXH fLxzVU"
+    className="sc-bwzfXH hvyIDc"
   >
     <div
-      className="sc-bwzfXH gJbmkn"
+      className="sc-bwzfXH MBtgg"
     >
       <span
         aria-hidden={true}
@@ -31,10 +31,10 @@ exports[`Storyshots Notification Info 1`] = `
   className="sc-kAzzGY iXGhyW"
 >
   <div
-    className="sc-bwzfXH fLxzVU"
+    className="sc-bwzfXH hvyIDc"
   >
     <div
-      className="sc-bwzfXH gJbmkn"
+      className="sc-bwzfXH MBtgg"
     >
       <span
         aria-hidden={true}
@@ -57,10 +57,10 @@ exports[`Storyshots Notification Success 1`] = `
   className="sc-kAzzGY dJXWDj"
 >
   <div
-    className="sc-bwzfXH fLxzVU"
+    className="sc-bwzfXH hvyIDc"
   >
     <div
-      className="sc-bwzfXH gJbmkn"
+      className="sc-bwzfXH MBtgg"
     >
       <span
         aria-hidden={true}
@@ -83,10 +83,10 @@ exports[`Storyshots Notification Warning 1`] = `
   className="sc-kAzzGY jDXFMi"
 >
   <div
-    className="sc-bwzfXH fLxzVU"
+    className="sc-bwzfXH hvyIDc"
   >
     <div
-      className="sc-bwzfXH gJbmkn"
+      className="sc-bwzfXH MBtgg"
     >
       <span
         aria-hidden={true}
@@ -109,10 +109,10 @@ exports[`Storyshots Notification With a custom icon 1`] = `
   className="sc-kAzzGY jDXFMi"
 >
   <div
-    className="sc-bwzfXH fLxzVU"
+    className="sc-bwzfXH hvyIDc"
   >
     <div
-      className="sc-bwzfXH gJbmkn"
+      className="sc-bwzfXH MBtgg"
     >
       <span
         aria-hidden={true}

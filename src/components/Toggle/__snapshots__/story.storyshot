@@ -6,10 +6,10 @@ exports[`Storyshots Toggle Default 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-bwzfXH cAZkVZ"
+    className="sc-bwzfXH eKPcjO"
   >
     <div
-      className="sc-bwzfXH bDluOe"
+      className="sc-bwzfXH jgMMpy"
     >
       <div
         checked={false}
@@ -31,7 +31,7 @@ exports[`Storyshots Toggle Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-bwzfXH fmiztD"
+      className="sc-bwzfXH jxKSjn"
     >
       <p
         className="sc-bxivhb kFVWeI"

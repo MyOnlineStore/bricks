@@ -5,7 +5,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
   className="sc-gZMcBi huJyDB"
 >
   <div
-    className="sc-bwzfXH iXkNPI"
+    className="sc-bwzfXH gMUFIw"
   >
     <div
       style={
@@ -15,10 +15,10 @@ exports[`Storyshots Button On a contrast area 1`] = `
       }
     >
       <div
-        className="sc-bwzfXH KPFhn"
+        className="sc-bwzfXH lalwsM"
       >
         <div
-          className="sc-bwzfXH jHAPPC"
+          className="sc-bwzfXH hwWvSq"
         >
           <button
             className="sc-htoDjs cHdbOr"
@@ -34,7 +34,7 @@ exports[`Storyshots Button On a contrast area 1`] = `
           </button>
         </div>
         <div
-          className="sc-bwzfXH jHAPPC"
+          className="sc-bwzfXH hwWvSq"
         >
           <button
             className="sc-htoDjs fNOjyC"
@@ -77,7 +77,7 @@ exports[`Storyshots Button With an icon 1`] = `
 >
   Press any key to continue
   <span
-    className="sc-htpNat hNxYQo"
+    className="sc-htpNat cBWndZ"
   >
     <span
       aria-hidden={true}
