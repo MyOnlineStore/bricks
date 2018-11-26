@@ -1,4 +1,4 @@
-import React, { SFC, Children } from 'react';
+import React, { FunctionComponent, Children } from 'react';
 import Box from '../Box';
 import trbl, { TrblType } from '../../utility/trbl';
 
@@ -19,7 +19,7 @@ const calculateMargin = (count: number, index: number, before?: boolean, after?:
     return trbl(margin, 0, 0, 0);
 };
 
-const Separated: SFC<PropsType> = ({ children, before, after }): JSX.Element => {
+const Separated: FunctionComponent<PropsType> = ({ children, before, after }): JSX.Element => {
     const count = Children.count(children);
 
     return (
