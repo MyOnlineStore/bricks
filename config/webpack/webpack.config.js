@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const entry = require('../../scripts/entry');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -74,14 +75,11 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
-    externals: {
-        '@types/react': '@types/react',
-        '@types/react-dom': '@types/react-dom',
-        react: 'react',
-        'react-dom': 'react-dom',
-        'styled-components': 'styled-components',
-    },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'env/',
+            minChunks: 2,
+        }),
         new UglifyJSPlugin({
             sourceMap: true,
         }),
@@ -96,7 +94,6 @@ module.exports = {
             openAnalyzer: false,
             reportFilename: '../reports/webpack/statistics-tree.html',
         }),
+        new PeerDepsExternalsPlugin(),
     ],
 };
-
-
