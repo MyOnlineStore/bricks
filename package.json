@@ -14,7 +14,6 @@
     "components"
   ],
   "dependencies": {
-    "declaration-bundler-webpack-plugin": "^1.0.3",
     "deepmerge": "^2.1.0",
     "react-beautiful-dnd": "^8.0.3",
     "react-input-range": "^1.3.0",
@@ -99,8 +98,7 @@
     "build-storybook": "build-storybook -c ./config/storybook -o .out",
     "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./src/**/*.{ts,tsx}",
-    "prepare": "npm run build",
-    "generate-aliases": "generate-export-aliases"
+    "prepare": "npm run build"
   },
   "files": [
     "dist"
