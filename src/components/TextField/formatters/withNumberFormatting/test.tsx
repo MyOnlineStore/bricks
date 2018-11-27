@@ -14,15 +14,19 @@ describe('withNumberFormatting', () => {
         expect(changeMock).toHaveBeenCalledWith(20);
     });
 
-    it('should only allow numeric values as input', () => {
-        const changeMock = jest.fn();
+    it('should restore the savedValue on blur when the input is not numeric', () => {
+        /* tslint:disable */
+        const changeMock = jest.fn(() => {
+            component.setProps({ value: NaN });
+        });
+        /*tslint:enable */
         const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
+        const component = mountWithTheme(<NumberField name="" value={123} onChange={changeMock} />);
 
-        component.find('input').simulate('change', { target: { value: 'eee' } });
+        component.find('input').simulate('change', { target: { value: 'abcd' } });
         component.find('input').simulate('blur');
 
-        expect(component.find('input').prop('value')).toEqual('19');
+        expect(component.find('input').prop('value')).toEqual('123');
     });
 
     it('should not allow negative numbers when negativeDisabled is true', () => {
