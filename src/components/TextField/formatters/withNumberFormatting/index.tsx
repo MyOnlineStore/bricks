@@ -11,8 +11,7 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
 
 type StateType = {
     value: string;
-    savedValue: string;
-    inputLength: number;
+    savedValue: number;
 };
 
 type WithNumberFormattingType = ComponentClass<PropsType>;
@@ -24,14 +23,13 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
             this.state = {
                 value: `${this.props.value}`,
-                savedValue: `${this.props.value}`,
-                inputLength: 0,
+                savedValue: this.props.value,
             };
         }
 
         public static getDerivedStateFromProps(nextProps: PropsType, prevState: StateType): StateType {
-            if (isNaN(nextProps.value)) {
-                return { ...prevState, value: prevState.value === '' ? '' : prevState.savedValue };
+            if (nextProps.value === prevState.savedValue) {
+                return { ...prevState, value: prevState.value === '' ? '' : prevState.savedValue.toString() };
             }
 
             return {
@@ -44,7 +42,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             const parsedValue = parseInt(value, 10);
             if (isNaN(parsedValue)) {
                 this.setState({ value: '' });
-                this.props.onChange(NaN);
+                this.props.onChange(this.state.savedValue);
             } else if (parsedValue < 0 && this.props.disableNegative) {
                 this.props.onChange(0);
             } else {
@@ -60,7 +58,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
                 this.props.onBlur();
             }
 
-            if (!isNaN(this.props.value)) this.setState({ savedValue: `${this.props.value}` });
+            if (this.props.value !== this.state.savedValue) this.setState({ savedValue: this.props.value });
         };
 
         public render(): JSX.Element {

@@ -17,7 +17,7 @@ describe('withNumberFormatting', () => {
     it('should restore the savedValue on blur when the input is not numeric', () => {
         /* tslint:disable */
         const changeMock = jest.fn(() => {
-            component.setProps({ value: NaN });
+            component.setProps({ value: 123 });
         });
         /*tslint:enable */
         const NumberField = withNumberFormatting(TextField);
