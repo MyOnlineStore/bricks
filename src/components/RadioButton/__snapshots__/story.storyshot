@@ -10,7 +10,7 @@ exports[`Storyshots RadioButton Default 1`] = `
   >
     <div
       checked={true}
-      className="sc-dxgOiQ cmdPra"
+      className="sc-dxgOiQ gVutUx"
       disabled={false}
     >
       <input

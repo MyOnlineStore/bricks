@@ -93,7 +93,6 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
                     transform: translate(-50%,-50%);
                     content: '';
                     background-color: ${theme.RadioButton.idle.backgroundColor};
-                    z-index: 99999;
                 }`
             : ''}
 `;

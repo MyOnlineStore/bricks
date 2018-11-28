@@ -289,7 +289,7 @@ exports[`Storyshots FormRow Default 1`] = `
             >
               <div
                 checked={true}
-                className="sc-dxgOiQ cmdPra"
+                className="sc-dxgOiQ gVutUx"
                 disabled={undefined}
               >
                 <input
@@ -568,7 +568,7 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
             >
               <div
                 checked={true}
-                className="sc-dxgOiQ cmdPra"
+                className="sc-dxgOiQ gVutUx"
                 disabled={undefined}
               >
                 <input
