@@ -44,8 +44,12 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
                 this.setState({ value: '' });
                 this.props.onChange(this.state.savedValue);
             } else if (parsedValue < 0 && this.props.disableNegative) {
+                this.setState({ savedValue: 0 });
                 this.props.onChange(0);
             } else {
+                if (parsedValue !== this.state.savedValue || this.state.value.length === 0) {
+                    this.setState({ value: '0', savedValue: parsedValue });
+                }
                 this.props.onChange(parsedValue);
             }
         };
@@ -57,8 +61,6 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             if (this.props.onBlur !== undefined) {
                 this.props.onBlur();
             }
-
-            if (this.props.value !== this.state.savedValue) this.setState({ savedValue: this.props.value });
         };
 
         public render(): JSX.Element {

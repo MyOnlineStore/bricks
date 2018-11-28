@@ -39,4 +39,28 @@ describe('withNumberFormatting', () => {
 
         expect(changeMock).toHaveBeenCalledWith(0);
     });
+
+    it('should save the input on every change', () => {
+        /* tslint:disable */
+        const changeMock = jest.fn(value => {
+            component.setProps({ value });
+        });
+        /*tslint:enable */
+        const NumberField = withNumberFormatting(TextField);
+        const component = mountWithTheme(
+            <NumberField
+                name=""
+                value={123}
+                onChange={(value: number): void => {
+                    changeMock(value);
+                }}
+            />,
+        );
+
+        component.find('input').simulate('change', { target: { value: '12' } });
+        expect(component.state('savedValue')).toEqual(12);
+
+        component.find('input').simulate('change', { target: { value: '1' } });
+        expect(component.state('savedValue')).toEqual(1);
+    });
 });
