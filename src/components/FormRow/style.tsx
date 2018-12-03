@@ -7,10 +7,6 @@ const StyledFormRow = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
-
-    & .checkbox {
-        margin-top: 12px;
-    }
 `;
 
 export { StyledFormRow };

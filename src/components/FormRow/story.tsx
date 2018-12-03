@@ -9,6 +9,7 @@ import Box from '../Box';
 import TextField from '../TextField';
 import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
+import Separated from '../Separated';
 
 type PropsType = {
     descriptions: boolean;
@@ -268,12 +269,18 @@ class DemoComponent extends Component<PropsType, StateType> {
                             </label>
                         }
                         field={
-                            <Checkbox
-                                onChange={(): void => this.setState({ checked: !this.state.checked })}
-                                value="bar"
-                                checked={this.state.checked}
-                                name="foo"
-                            />
+                            <Separated before>
+                                <Checkbox
+                                    onChange={(): void =>
+                                        this.setState({
+                                            checked: !this.state.checked,
+                                        })
+                                    }
+                                    value="bar"
+                                    checked={this.state.checked}
+                                    name="foo"
+                                />
+                            </Separated>
                         }
                     />
                 </form>
