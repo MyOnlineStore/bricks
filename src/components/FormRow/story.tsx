@@ -269,7 +269,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                             </label>
                         }
                         field={
-                            <Separated before>
+                            <Box margin={trbl(0, 12, 0, 0)}>
                                 <Checkbox
                                     onChange={(): void =>
                                         this.setState({
@@ -280,7 +280,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                     checked={this.state.checked}
                                     name="foo"
                                 />
-                            </Separated>
+                            </Box>
                         }
                     />
                 </form>

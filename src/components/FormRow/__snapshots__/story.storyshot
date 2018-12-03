@@ -766,31 +766,27 @@ exports[`Storyshots FormRow No Descriptions 1`] = `
       className="sc-bwzfXH ftkQQi"
     >
       <div
-        className="sc-bwzfXH giIUNa"
+        className="sc-bwzfXH MBtgg"
       >
         <div
-          className="sc-bwzfXH iWLjXm"
+          className="sc-jTzLTM jQiTLj"
+          disabled={undefined}
+          onClick={[Function]}
         >
           <div
-            className="sc-jTzLTM jQiTLj"
-            disabled={undefined}
-            onClick={[Function]}
-          >
-            <div
-              className="sc-bwzfXH kFiCyG"
-            />
-            <input
-              checked={false}
-              className="sc-VigVT jXADSx"
-              id={undefined}
-              name="foo"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              readOnly={true}
-              type="checkbox"
-              value="bar"
-            />
-          </div>
+            className="sc-bwzfXH kFiCyG"
+          />
+          <input
+            checked={false}
+            className="sc-VigVT jXADSx"
+            id={undefined}
+            name="foo"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            readOnly={true}
+            type="checkbox"
+            value="bar"
+          />
         </div>
       </div>
     </div>
