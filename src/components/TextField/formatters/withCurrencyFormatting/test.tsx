@@ -249,28 +249,4 @@ describe('withCurrencyFormatting', () => {
 
         expect(component.find('input').prop('value')).toEqual('-19.12');
     });
-
-    it('should change a negative value to positive when the disableNegative prop is changed from false to true', () => {
-        const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
-
-        const component = mountWithTheme(
-            <CurrencyField
-                disableNegative={false}
-                name=""
-                value={-19.12}
-                locale="nl-NL"
-                currency="EUR"
-                onChange={changeMock}
-            />,
-        );
-
-        component.setProps({
-            disableNegative: true,
-        });
-        
-        component.update();
-
-        expect(component.find('input').prop('value')).toEqual('19.12');
-    });
 });
