@@ -9,7 +9,6 @@ import Box from '../Box';
 import TextField from '../TextField';
 import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
-import Separated from '../Separated';
 
 type PropsType = {
     descriptions: boolean;
@@ -23,7 +22,6 @@ type StateType = {
     city: string;
     country: string;
     toggled: boolean;
-
     checked: boolean;
 };
 
