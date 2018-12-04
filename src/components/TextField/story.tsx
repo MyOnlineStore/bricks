@@ -30,6 +30,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
                 <TextField.Currency
                     name="first name"
                     disabled={boolean('disabled', false)}
+                    disableNegative={boolean('disableNegative', false)}
                     currency={this.props.currency ? this.props.currency : 'USD'}
                     feedback={{
                         severity: 'info',
