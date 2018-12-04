@@ -56,9 +56,11 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         private parse(direction: 'in', value: string): string;
         private parse(direction: 'out', value: string): number;
         private parse(direction: 'in' | 'out', value: string): string | number {
-            const stripped = this.props.disableNegative
-                ? value.replace(new RegExp(`[^0-9${this.state.decimalSeperator}]`, 'g'), '')
-                : value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
+            const negatedValues = this.props.disableNegative
+                ? `[^0-9${this.state.decimalSeperator}]`
+                : `[^\-0-9${this.state.decimalSeperator}]`;
+
+            const stripped = value.replace(new RegExp(negatedValues, 'g'), '');
 
             if (direction === 'out') {
                 const parsed = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
