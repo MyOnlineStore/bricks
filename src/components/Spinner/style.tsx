@@ -2,12 +2,13 @@ import _R from 'react';
 import { StyledComponentClass as _S, keyframes } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
-import { SpinnerPropsType } from '.';
+import { PropsType } from '.';
 
 const rotate = keyframes`
     0%{
         transform:rotate(0)
-    }100%{
+    }
+    100% {
         transform:rotate(360deg)
     }
 `;
@@ -15,7 +16,8 @@ const rotate = keyframes`
 const circleAnimation = keyframes`
     0% {
         stroke-dashoffset:600;
-    }100%{
+    }
+    100% {
         stroke-dashoffset:0;
     }
 `;
@@ -25,7 +27,7 @@ const StyledSpinner = styled.div`
     height: 100%;
 `;
 
-const SpinnerSvg = withProps<SpinnerPropsType>(styled.svg)`
+const SpinnerSvg = withProps<PropsType>(styled.svg)`
 
     stroke: ${({ color }): string => color};
     fill: transparent;
@@ -43,4 +45,4 @@ const SpinnerCircle = styled.circle`
 `;
 
 export default StyledSpinner;
-export { SpinnerPropsType, SpinnerSvg, SpinnerCircle };
+export { PropsType, SpinnerSvg, SpinnerCircle };
