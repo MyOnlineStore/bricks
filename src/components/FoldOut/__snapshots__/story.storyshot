@@ -3,7 +3,7 @@
 exports[`Storyshots FoldOut With a toggle 1`] = `
 <div>
   <div
-    className="sc-chPdSV kiPOer"
+    className="sc-kpOJdX hMPesZ"
   >
     <div>
       <div
@@ -42,7 +42,7 @@ exports[`Storyshots FoldOut With a toggle 1`] = `
     </div>
   </div>
   <button
-    className="sc-htoDjs eHXLyg"
+    className="sc-htoDjs cszbrJ"
     color={undefined}
     disabled={undefined}
     icon={undefined}

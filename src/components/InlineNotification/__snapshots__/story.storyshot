@@ -56,7 +56,7 @@ exports[`Storyshots InlineNotification With children 1`] = `
     >
       Are you having trouble? Check out 
       <a
-        className="sc-hSdWYo MukmX"
+        className="sc-jWBwVP xxeXK"
         href="http://google.com"
         target={undefined}
         title="some resource"

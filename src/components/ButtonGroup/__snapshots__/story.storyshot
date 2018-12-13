@@ -2,7 +2,7 @@
 
 exports[`Storyshots ButtonGroup Default 1`] = `
 <div
-  className="sc-gqjmRU cDLrsf"
+  className="sc-fjdhpX jIPJGs"
 >
   <div
     style={
@@ -18,7 +18,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         className="sc-bwzfXH hwWvSq"
       >
         <button
-          className="sc-htoDjs fAnDzT"
+          className="sc-htoDjs kwPcoU"
           color={undefined}
           disabled={undefined}
           icon={undefined}
@@ -34,7 +34,7 @@ exports[`Storyshots ButtonGroup Default 1`] = `
         className="sc-bwzfXH hwWvSq"
       >
         <button
-          className="sc-htoDjs eHXLyg"
+          className="sc-htoDjs cszbrJ"
           color={undefined}
           disabled={undefined}
           icon={undefined}

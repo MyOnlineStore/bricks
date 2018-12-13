@@ -9,10 +9,10 @@ exports[`Storyshots Popover External state 1`] = `
   >
     <div>
       <div
-        className="sc-fBuWsC lnEvtg"
+        className="sc-eqIVtm gAxNdd"
       >
         <button
-          className="sc-htoDjs fAnDzT"
+          className="sc-htoDjs kwPcoU"
           color={undefined}
           disabled={undefined}
           icon={undefined}
@@ -38,10 +38,10 @@ exports[`Storyshots Popover Internal state on click 1`] = `
   >
     <div>
       <div
-        className="sc-fBuWsC lnEvtg"
+        className="sc-eqIVtm gAxNdd"
       >
         <button
-          className="sc-htoDjs fAnDzT"
+          className="sc-htoDjs kwPcoU"
           color={undefined}
           disabled={undefined}
           icon={undefined}
@@ -67,10 +67,10 @@ exports[`Storyshots Popover Internal state on hover 1`] = `
   >
     <div>
       <div
-        className="sc-fBuWsC lnEvtg"
+        className="sc-eqIVtm gAxNdd"
       >
         <button
-          className="sc-htoDjs fAnDzT"
+          className="sc-htoDjs kwPcoU"
           color={undefined}
           disabled={undefined}
           icon={undefined}

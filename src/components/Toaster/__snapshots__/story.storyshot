@@ -2,7 +2,7 @@
 
 exports[`Storyshots Toaster Default 1`] = `
 <div
-  className="sc-iRbamj csmlRs"
+  className="sc-csuQGl bUWxJa"
 >
   <div
     style={
@@ -70,7 +70,7 @@ exports[`Storyshots Toaster Default 1`] = `
             className="sc-bwzfXH rqWTF"
           >
             <button
-              className="sc-htoDjs flaPve"
+              className="sc-htoDjs cPnyBV"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -100,7 +100,7 @@ exports[`Storyshots Toaster Default 1`] = `
 
 exports[`Storyshots Toaster With action button 1`] = `
 <div
-  className="sc-iRbamj csmlRs"
+  className="sc-csuQGl bUWxJa"
 >
   <div
     style={
@@ -167,7 +167,7 @@ exports[`Storyshots Toaster With action button 1`] = `
               className="sc-bwzfXH dlLzqZ"
             >
               <button
-                className="sc-htoDjs gCmkyb"
+                className="sc-htoDjs kMZTGW"
                 color={undefined}
                 disabled={undefined}
                 icon={undefined}
@@ -184,7 +184,7 @@ exports[`Storyshots Toaster With action button 1`] = `
             className="sc-bwzfXH rqWTF"
           >
             <button
-              className="sc-htoDjs flaPve"
+              className="sc-htoDjs cPnyBV"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -214,7 +214,7 @@ exports[`Storyshots Toaster With action button 1`] = `
 
 exports[`Storyshots Toaster With auto dismiss 1`] = `
 <div
-  className="sc-iRbamj csmlRs"
+  className="sc-csuQGl bUWxJa"
 >
   <div
     style={
@@ -282,7 +282,7 @@ exports[`Storyshots Toaster With auto dismiss 1`] = `
             className="sc-bwzfXH rqWTF"
           >
             <button
-              className="sc-htoDjs flaPve"
+              className="sc-htoDjs cPnyBV"
               color={undefined}
               disabled={undefined}
               icon={undefined}

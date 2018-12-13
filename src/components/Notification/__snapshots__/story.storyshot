@@ -2,7 +2,7 @@
 
 exports[`Storyshots Notification Error 1`] = `
 <div
-  className="sc-kAzzGY dCBEuI"
+  className="sc-kGXeez ezojPW"
 >
   <div
     className="sc-bwzfXH hvyIDc"
@@ -28,7 +28,7 @@ exports[`Storyshots Notification Error 1`] = `
 
 exports[`Storyshots Notification Info 1`] = `
 <div
-  className="sc-kAzzGY iXGhyW"
+  className="sc-kGXeez khwEWe"
 >
   <div
     className="sc-bwzfXH hvyIDc"
@@ -54,7 +54,7 @@ exports[`Storyshots Notification Info 1`] = `
 
 exports[`Storyshots Notification Success 1`] = `
 <div
-  className="sc-kAzzGY dJXWDj"
+  className="sc-kGXeez kFRTlH"
 >
   <div
     className="sc-bwzfXH hvyIDc"
@@ -80,7 +80,7 @@ exports[`Storyshots Notification Success 1`] = `
 
 exports[`Storyshots Notification Warning 1`] = `
 <div
-  className="sc-kAzzGY jDXFMi"
+  className="sc-kGXeez cSpjwu"
 >
   <div
     className="sc-bwzfXH hvyIDc"
@@ -106,7 +106,7 @@ exports[`Storyshots Notification Warning 1`] = `
 
 exports[`Storyshots Notification With a custom icon 1`] = `
 <div
-  className="sc-kAzzGY jDXFMi"
+  className="sc-kGXeez cSpjwu"
 >
   <div
     className="sc-bwzfXH hvyIDc"

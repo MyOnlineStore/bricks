@@ -2,7 +2,7 @@
 
 exports[`Storyshots RadioButton Default 1`] = `
 <div
-  className="sc-kGXeez iBFgVY"
+  className="sc-ckVGcZ hcopzR"
   onClick={[Function]}
 >
   <div
@@ -10,12 +10,12 @@ exports[`Storyshots RadioButton Default 1`] = `
   >
     <div
       checked={true}
-      className="sc-dxgOiQ gVutUx"
+      className="sc-eNQAEJ iqNSAE"
       disabled={false}
     >
       <input
         checked={true}
-        className="sc-kpOJdX hZrIxJ"
+        className="sc-jKJlTe dOXyfY"
         id={undefined}
         name="demo"
         onBlur={[Function]}

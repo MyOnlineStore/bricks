@@ -9,7 +9,7 @@ exports[`Storyshots EmptyState Default 1`] = `
   >
     <div
       aria-hidden={true}
-      className="sc-jzJRlG VdiAW"
+      className="sc-chPdSV amzEV"
       dangerouslySetInnerHTML={
         Object {
           "__html": "test-file-stub",
@@ -21,7 +21,7 @@ exports[`Storyshots EmptyState Default 1`] = `
       className="sc-bwzfXH cyysQM"
     >
       <div
-        className="sc-fjdhpX gUNTtb"
+        className="sc-kAzzGY rMxXQ"
         role="heading"
       >
         No filters applied
@@ -49,7 +49,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
   >
     <div
       aria-hidden={true}
-      className="sc-jzJRlG VdiAW"
+      className="sc-chPdSV amzEV"
       dangerouslySetInnerHTML={
         Object {
           "__html": "test-file-stub",
@@ -61,7 +61,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       className="sc-bwzfXH cyysQM"
     >
       <div
-        className="sc-fjdhpX gUNTtb"
+        className="sc-kAzzGY rMxXQ"
         role="heading"
       >
         No filters applied
@@ -77,7 +77,7 @@ exports[`Storyshots EmptyState With button (as children) 1`] = `
       </p>
     </div>
     <button
-      className="sc-htoDjs fAnDzT"
+      className="sc-htoDjs kwPcoU"
       color={undefined}
       disabled={undefined}
       icon={undefined}

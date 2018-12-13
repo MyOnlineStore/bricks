@@ -2,11 +2,13 @@ import React, { Children, FunctionComponent } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 import Icon, { MediumPropsType } from '../Icon';
 import Box from '../Box';
+import theme from '../../themes/MosTheme/MosTheme.theme';
 import trbl from '../../utility/trbl';
-
+import Spinner from '../Spinner';
 type PropsType = {
     className?: string;
     compact?: boolean;
+    loading?: boolean;
     title: string;
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     target?: HTMLAnchorElement['target'];
@@ -46,14 +48,18 @@ const ButtonContents: FunctionComponent<ButtonContentsType> = (props): JSX.Eleme
 
 const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
-
+    const subVariant = props.flat ? 'flat' : 'regular';
     const clickAction = (): void => {
-        if (props.action !== undefined && props.disabled !== true) props.action();
+        if (props.action !== undefined && props.disabled !== true && props.loading !== true) {
+            props.action();
+        }
     };
 
     if (isLink) {
         return (
             <StyledAnchor
+                loading={props.loading}
+                color={props.loading ? 'transparent' : 'currentColor'}
                 variant={props.variant}
                 compact={props.compact}
                 title={props.title}
@@ -64,15 +70,18 @@ const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
                 flat={props.flat}
                 id={props.id}
             >
-                <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
-                    {props.children}
-                </ButtonContents>
+                {(props.loading && <Spinner color={'currentColor'} />) || (
+                    <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
+                        {props.children}
+                    </ButtonContents>
+                )}
             </StyledAnchor>
         );
     }
 
     return (
         <StyledButton
+            loading={props.loading}
             variant={props.variant}
             compact={props.compact}
             title={props.title}
@@ -81,10 +90,27 @@ const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
             type="button"
             disabled={props.disabled}
             flat={props.flat}
-            color={props.color}
+            color={props.loading ? 'transparent' : props.color}
             icon={props.icon}
             id={props.id}
         >
+            {props.loading && (
+                <Box
+                    grow={0}
+                    shrink={0}
+                    basis="35px"
+                    justifyContent="center"
+                    alignItems="center"
+                    position="absolute"
+                    left="0"
+                    top="0"
+                    right="0"
+                    bottom="0"
+                    padding={trbl(6)}
+                >
+                    <Spinner color={theme.Button[props.variant][subVariant].idle.color} />
+                </Box>
+            )}
             <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
                 {props.children}
             </ButtonContents>
