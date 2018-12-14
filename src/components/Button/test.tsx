@@ -31,25 +31,6 @@ describe('Button', () => {
         expect(clickMock).not.toHaveBeenCalled();
     });
 
-    // it('should update button text when loading starts', () => {
-    //     const linkComponent = mountWithTheme(
-    //         <Button href="#" compact title="Foo Bar?" variant="warning">
-    //             Foo Bar
-    //         </Button>,
-    //     );
-    //     const buttonComponent = mountWithTheme(
-    //         <Button title="Foo Bar?" compact variant="warning">
-    //             Foo Bar
-    //         </Button>,
-    //     );
-    //     expect(linkComponent.find('a').text()).toEqual('Foo Bar');
-    //     expect(buttonComponent.find('button').text()).toEqual('Foo Bar');
-    //     linkComponent.setProps({ loading: true });
-    //     buttonComponent.setProps({ loading: true });
-    //     expect(linkComponent.find('a').text()).not.toEqual('Foo Bar');
-    //     expect(buttonComponent.find('button').text()).not.toEqual('Foo Bar');
-    // });
-
     it('should render a flat component', () => {
         const component = mountWithTheme(
             <Button icon={'checkmark'} iconAlign="right" href="#" title="Foo Bar?" flat variant="primary">
