@@ -1,12 +1,14 @@
 import React, { Children, FunctionComponent } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 import Icon, { MediumPropsType } from '../Icon';
+import ThemeType from '../../types/ThemeType';
+import { withTheme } from 'styled-components';
 import Box from '../Box';
-import theme from '../../themes/MosTheme/MosTheme.theme';
 import trbl from '../../utility/trbl';
 import Spinner from '../Spinner';
 
 type PropsType = {
+    theme: ThemeType;
     className?: string;
     compact?: boolean;
     loading?: boolean;
@@ -50,6 +52,7 @@ const ButtonContents: FunctionComponent<ButtonContentsType> = (props): JSX.Eleme
 const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
     const subVariant = props.flat ? 'flat' : 'regular';
+
     const clickAction = (): void => {
         if (props.action !== undefined && props.disabled !== true && props.loading !== true) {
             props.action();
@@ -97,9 +100,6 @@ const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
         >
             {props.loading && (
                 <Box
-                    grow={0}
-                    shrink={0}
-                    basis="35px"
                     justifyContent="center"
                     alignItems="center"
                     position="absolute"
@@ -109,7 +109,7 @@ const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
                     bottom="0"
                     padding={trbl(6)}
                 >
-                    <Spinner color={theme.Button[props.variant][subVariant].idle.color} />
+                    <Spinner color={props.theme.Button[props.variant][subVariant].idle.color} />
                 </Box>
             )}
             <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
@@ -119,5 +119,5 @@ const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
     );
 };
 
-export default Button;
+export default withTheme(Button);
 export { PropsType };
