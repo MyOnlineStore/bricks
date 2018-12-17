@@ -5,6 +5,7 @@ import Box from '../Box';
 import theme from '../../themes/MosTheme/MosTheme.theme';
 import trbl from '../../utility/trbl';
 import Spinner from '../Spinner';
+
 type PropsType = {
     className?: string;
     compact?: boolean;
