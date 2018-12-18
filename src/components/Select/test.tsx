@@ -435,4 +435,17 @@ describe('Select', () => {
 
         expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
     });
+
+    it('should handle a simulated change event', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(<Select onChange={changeMock} value="" emptyText="" options={options} />);
+
+        component.simulate('change', {
+            target: {
+                value: options[0].value,
+            },
+        });
+
+        expect(changeMock).toHaveBeenCalledWith(options[0].value);
+    });
 });
