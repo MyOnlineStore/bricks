@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef } from 'react';
+import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef, FormEvent } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
@@ -105,6 +105,11 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         this.setState({ isOpen: false, optionPointer: -1 });
     };
 
+    private handleChangeEvent = (event: FormEvent<HTMLDivElement>): void => {
+        // tslint:disable-next-line
+        this.handleChange((event as any).target.value);
+    };
+
     private handleInput = (input: string): void => {
         this.setState({ input, optionPointer: -1 });
     };
@@ -178,6 +183,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 isDisabled={this.props.disabled}
                 isOpen={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
+                onChange={this.handleChangeEvent}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 tabIndex={this.props.disabled ? -1 : 0}
