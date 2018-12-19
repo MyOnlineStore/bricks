@@ -33,6 +33,25 @@ storiesOf('Button', module)
             />
         );
     })
+    .add('With text (anchor)', () => {
+        return (
+            <Button
+                variant={
+                    select(
+                        'variant',
+                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
+                        'primary',
+                    ) as PropsType['variant']
+                }
+                href="http://www.google.com"
+                title={text('title', 'Click me')}
+                disabled={boolean('disabled', false)}
+                compact={boolean('compact', false)}
+                loading={boolean('loading', false)}
+                flat={boolean('flat', false)}
+            />
+        );
+    })
     .add('With an icon', () => {
         return (
             <Button

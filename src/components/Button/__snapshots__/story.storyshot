@@ -93,6 +93,20 @@ exports[`Storyshots Button With an icon 1`] = `
 </button>
 `;
 
+exports[`Storyshots Button With text (anchor) 1`] = `
+<a
+  className="sc-dnqmqq jnujwA"
+  color={undefined}
+  disabled={false}
+  href="http://www.google.com"
+  id={undefined}
+  target={undefined}
+  title="Click me"
+>
+  Click me
+</a>
+`;
+
 exports[`Storyshots Button With text 1`] = `
 <button
   className="sc-htoDjs kwPcoU"

@@ -63,22 +63,34 @@ const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
         return (
             <StyledAnchor
                 loading={props.loading}
-                color={props.loading ? 'transparent' : 'currentColor'}
                 variant={props.variant}
                 compact={props.compact}
                 title={props.title}
                 className={props.className}
                 href={props.href}
                 target={props.target}
+                color={props.loading ? 'transparent' : props.color}
                 disabled={props.disabled}
                 flat={props.flat}
                 id={props.id}
             >
-                {(props.loading && <Spinner color={'currentColor'} />) || (
-                    <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
-                        {props.children}
-                    </ButtonContents>
+                {props.loading && (
+                    <Box
+                        justifyContent="center"
+                        alignItems="center"
+                        position="absolute"
+                        left="0"
+                        top="0"
+                        right="0"
+                        bottom="0"
+                        padding={trbl(6)}
+                    >
+                        <Spinner color={props.theme.Button[props.variant][subVariant].idle.color} />
+                    </Box>
                 )}
+                <ButtonContents title={props.title} icon={props.icon} iconAlign={props.iconAlign}>
+                    {props.children}
+                </ButtonContents>
             </StyledAnchor>
         );
     }

@@ -5,10 +5,10 @@ import Text from '../Text';
 import Icon from '../Icon';
 import Option from './Option';
 import trbl from '../../utility/trbl';
-import ThemeType from '../../types/ThemeType';
 import { withTheme } from 'styled-components';
-import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
+import ThemeType from '../../types/ThemeType';
 import { createPortal } from 'react-dom';
+import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { PropsType as ButtonPropsType } from '../Button';
 
 type OmittedKeys = 'action' | 'href' | 'flat' | 'compact' | 'title';
