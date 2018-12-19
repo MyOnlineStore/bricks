@@ -4,23 +4,21 @@
 -- or --
 resolves #[resolved issue number]
 
-proposed release: [`major`|`minor`|`patch`]
+**Breaking changes** 🔥
+- Component `Foo` has been removed.
+- Component `Bar` no longer supports prop `x`, you should use prop `y` from now on.
+- Component `FooBar` has been redesigned.
+
+**Backwards compatible additions** ✨
+- Component `Foo` now also supports an optional `size` props to increase it's size.
+- The new component `Bar` has been added.
+
+**Bugfixes/Changed internals** 🎈
+- Component `Foo` now uses the correct icon.
+- Refactored some components.
 
 **Checklist** 🛡
-- [ ] I have exported my addition from `src/index.ts` (check if not applicable)
-- [ ] Appropriate tests have been added for my functionality (check if not applicable)
-- [ ] A designer has seen and approved my changes (check if not applicable)
-- [ ] I have tested my addition in all supported browsers and for responsiveness (Chrome, Firefox, Safari, Edge, IE11 and mobile browsers)
-
-
-**Adds** ✨
-- Feature `foo`
-
-**Changes** 🌀
-- Feature `foo` to support `bar`
-
-**Removes** 👋
-- depracted `foop` method
-
-**Breaking changes** 🔥
-- Feature `foo` no longer supports `foo` and needs to be converted to `foop`
+- [ ] I have exported my addition from `src/index.ts` (check if not applicable).
+- [ ] Appropriate tests have been added for my functionality (check if not applicable).
+- [ ] A designer has seen and approved my changes (check if not applicable).
+- [ ] I have tested my addition in all supported browsers and for responsiveness (Chrome, Firefox, Safari, Edge, IE11 and mobile browsers).
