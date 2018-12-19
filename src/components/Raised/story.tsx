@@ -1,5 +1,5 @@
 import React from 'react';
-import { select } from '@storybook/addon-knobs/react';
+import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import Box from '../Box';
 import Raised, { RaisedPropsType } from './style';

@@ -1,9 +1,9 @@
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+    mode: 'production',
     devtool: 'source-map',
     entry: './src/index.ts',
     stats: {
@@ -77,9 +77,6 @@ module.exports = {
         'styled-components': 'styled-components',
     },
     plugins: [
-        new UglifyJSPlugin({
-            sourceMap: true,
-        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),

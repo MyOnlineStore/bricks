@@ -1,6 +1,6 @@
 import { configure, addDecorator } from '@storybook/react';
 import themeDecorator from './decorators/themeDecorator';
-import { withKnobs } from '@storybook/addon-knobs/react';
+import { withKnobs } from '@storybook/addon-knobs';
 import { setOptions } from '@storybook/addon-options';
 
 setOptions({
@@ -12,12 +12,10 @@ setOptions({
 addDecorator(themeDecorator);
 addDecorator(withKnobs);
 
-function requireAll(requireContext) {
-    return requireContext.keys().map(requireContext);
-}
+const req = require.context('../../src', true, /story\.(DontTest\.)?tsx?$/);
 
 function loadStories() {
-    requireAll(require.context('../../src', true, /story\.(DontTest\.)?tsx?$/));
+    req.keys().forEach(filename => req(filename));
 }
 
 configure(loadStories, module);
