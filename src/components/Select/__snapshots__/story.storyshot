@@ -4,6 +4,7 @@ exports[`Storyshots Select Custom rendering 1`] = `
 <div
   className="sc-ksYbfQ bRUtDX"
   onBlur={[Function]}
+  onChange={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
   tabIndex={0}
@@ -293,6 +294,7 @@ exports[`Storyshots Select Default 1`] = `
 <div
   className="sc-ksYbfQ bRUtDX"
   onBlur={[Function]}
+  onChange={[Function]}
   onFocus={[Function]}
   onKeyDownCapture={[Function]}
   tabIndex={0}
