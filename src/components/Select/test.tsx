@@ -448,4 +448,23 @@ describe('Select', () => {
 
         expect(changeMock).toHaveBeenCalledWith(options[0].value);
     });
+
+    it('should not change the selected value when the input value changes', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(<Select onChange={changeMock} value="" emptyText="" options={options} />);
+
+        component
+            .find(StyledInput)
+            .find(Box)
+            .at(1)
+            .simulate('click');
+
+        component.find('input[type="text"]').simulate('change', {
+            target: {
+                value: 'Foo',
+            },
+        });
+
+        expect(changeMock).toHaveBeenCalledTimes(0);
+    });
 });
