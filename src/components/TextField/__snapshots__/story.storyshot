@@ -2,16 +2,16 @@
 
 exports[`Storyshots TextField Default 1`] = `
 <div
-  className="sc-hMqMXs lcVHiK"
+  className="sc-iAyFgw SgyWC"
   disabled={false}
 >
   <div
-    className="sc-jKJlTe kuDUsE"
+    className="sc-kEYyzF btdASU"
     disabled={false}
     onClick={[Function]}
   >
     <span
-      className="sc-eNQAEJ hiLfdP"
+      className="sc-kkGfuU kDzdeU"
     >
       Username
     </span>
@@ -20,7 +20,7 @@ exports[`Storyshots TextField Default 1`] = `
     className="sc-bwzfXH bZlivr"
   >
     <input
-      className="sc-ckVGcZ gBhdDx"
+      className="sc-hMqMXs gUWwGk"
       disabled={false}
       id={undefined}
       name="firstname"
@@ -35,12 +35,12 @@ exports[`Storyshots TextField Default 1`] = `
     />
   </div>
   <div
-    className="sc-jKJlTe kuDUsE"
+    className="sc-kEYyzF btdASU"
     disabled={false}
     onClick={[Function]}
   >
     <span
-      className="sc-eNQAEJ hiLfdP"
+      className="sc-kkGfuU kDzdeU"
     >
       $
     </span>
@@ -51,16 +51,16 @@ exports[`Storyshots TextField Default 1`] = `
 exports[`Storyshots TextField With Currency formatting 1`] = `
 Array [
   <div
-    className="sc-hMqMXs lcVHiK"
+    className="sc-iAyFgw SgyWC"
     disabled={false}
   >
     <div
-      className="sc-jKJlTe kuDUsE"
+      className="sc-kEYyzF btdASU"
       disabled={false}
       onClick={[Function]}
     >
       <span
-        className="sc-eNQAEJ hiLfdP"
+        className="sc-kkGfuU kDzdeU"
       >
         $
       </span>
@@ -69,7 +69,7 @@ Array [
       className="sc-bwzfXH bZlivr"
     >
       <input
-        className="sc-ckVGcZ gBhdDx"
+        className="sc-hMqMXs gUWwGk"
         disabled={false}
         id={undefined}
         name="first name"
@@ -121,16 +121,16 @@ Array [
 exports[`Storyshots TextField With Feedback 1`] = `
 Array [
   <div
-    className="sc-hMqMXs lcVHiK"
+    className="sc-iAyFgw SgyWC"
     disabled={false}
   >
     <div
-      className="sc-jKJlTe kuDUsE"
+      className="sc-kEYyzF btdASU"
       disabled={false}
       onClick={[Function]}
     >
       <span
-        className="sc-eNQAEJ hiLfdP"
+        className="sc-kkGfuU kDzdeU"
       >
         Username
       </span>
@@ -139,7 +139,7 @@ Array [
       className="sc-bwzfXH bZlivr"
     >
       <input
-        className="sc-ckVGcZ gBhdDx"
+        className="sc-hMqMXs gUWwGk"
         disabled={false}
         id={undefined}
         name="firstname"
@@ -154,12 +154,12 @@ Array [
       />
     </div>
     <div
-      className="sc-jKJlTe kuDUsE"
+      className="sc-kEYyzF btdASU"
       disabled={false}
       onClick={[Function]}
     >
       <span
-        className="sc-eNQAEJ hiLfdP"
+        className="sc-kkGfuU kDzdeU"
       >
         $
       </span>
@@ -201,14 +201,14 @@ Array [
 
 exports[`Storyshots TextField With Number formatting 1`] = `
 <div
-  className="sc-hMqMXs lcVHiK"
+  className="sc-iAyFgw SgyWC"
   disabled={false}
 >
   <div
     className="sc-bwzfXH bZlivr"
   >
     <input
-      className="sc-ckVGcZ gBhdDx"
+      className="sc-hMqMXs gUWwGk"
       disabled={false}
       id={undefined}
       name="min value"

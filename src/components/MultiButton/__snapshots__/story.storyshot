@@ -9,13 +9,13 @@ exports[`Storyshots MultiButton Default 1`] = `
   >
     <div>
       <div
-        className="sc-hzDkRC gbbQih"
+        className="sc-fMiknA iFqQZY"
       >
         <div
           className="sc-bwzfXH eKPcjO"
         >
           <button
-            className="sc-Rmtcm dhDgko sc-htoDjs eHXLyg"
+            className="sc-jhAzac hKxugw sc-htoDjs cszbrJ"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -31,7 +31,7 @@ exports[`Storyshots MultiButton Default 1`] = `
             </span>
           </button>
           <button
-            className="sc-bRBYWo iBpAcT sc-htoDjs bcNitD"
+            className="sc-fBuWsC hQPLTh sc-htoDjs SEAik"
             color={undefined}
             disabled={undefined}
             icon={undefined}

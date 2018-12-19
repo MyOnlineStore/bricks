@@ -815,7 +815,6 @@ const theme: ThemeType = {
 
         disabled: {
             color: grey.lighter2,
-
             background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
         },
     },

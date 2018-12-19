@@ -7,15 +7,15 @@ exports[`Storyshots Spinner Default 1`] = `
   <div
     aria-busy="true"
     aria-live="polite"
-    className="sc-jqCOkK jXhULd"
+    className="sc-gZMcBi iCFVFI"
   >
     <svg
-      className="sc-uJMKN bPGFDg"
+      className="sc-gqjmRU kIyXrV"
       color="#5bd16a"
       viewBox="0 0 150 150"
     >
       <circle
-        className="sc-bbmXgH cAlCsG"
+        className="sc-VigVT gAcjar"
         cx="75"
         cy="75"
         r="60"

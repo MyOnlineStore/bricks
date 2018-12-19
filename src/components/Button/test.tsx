@@ -14,6 +14,23 @@ describe('Button', () => {
         expect(component.find('a').text()).toEqual('Foo Bar');
     });
 
+    it('should not call the passed action on click when loading', () => {
+        const clickMock = jest.fn();
+        const linkComponent = mountWithTheme(
+            <Button href="#" icon={'checkmark'} loading title="Foo Bar?" action={clickMock} variant="warning">
+                Foo Bar
+            </Button>,
+        );
+        const buttonComponent = mountWithTheme(
+            <Button loading icon={'checkmark'} title="Foo Bar?" action={clickMock} variant="warning">
+                Foo Bar
+            </Button>,
+        );
+        linkComponent.simulate('click');
+        buttonComponent.simulate('click');
+        expect(clickMock).not.toHaveBeenCalled();
+    });
+
     it('should render a flat component', () => {
         const component = mountWithTheme(
             <Button icon={'checkmark'} iconAlign="right" href="#" title="Foo Bar?" flat variant="primary">

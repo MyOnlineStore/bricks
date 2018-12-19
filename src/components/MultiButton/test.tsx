@@ -41,12 +41,12 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.state('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
         expect(component.find(StyledWindow).length).toBe(1);
 
         arrowButton.simulate('click');
 
-        expect(component.state('isOpen')).toEqual(false);
+        expect(component.find(StyledWindow).length).toBe(0);
     });
 
     it('should close on click outside', () => {
@@ -59,7 +59,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.state('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
 
         callbackMap.mousedown({
             target: component.first().getDOMNode(),
@@ -68,7 +68,7 @@ describe('MultiButton', () => {
         component.update();
 
         // click inside
-        expect(component.state('isOpen')).toBe(true);
+        expect(component.find(StyledWindow).prop('isOpen')).toBe(true);
 
         // click outside
         callbackMap.mousedown({
@@ -77,7 +77,7 @@ describe('MultiButton', () => {
 
         component.update();
 
-        expect(component.state('isOpen')).toBe(false);
+        expect(component.find(StyledWindow).length).toBe(0);
     });
 
     it('adds and removes eventListeners', () => {
@@ -97,7 +97,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.state('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
 
         expect(component.find(Option)).toHaveLength(3);
     });
@@ -191,7 +191,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.state('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
         const option = component.find(Option).at(1);
 
         option.simulate('click');

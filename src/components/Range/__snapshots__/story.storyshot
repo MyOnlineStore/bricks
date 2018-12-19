@@ -14,14 +14,14 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH iOjVOY"
       >
         <div
-          className="sc-hMqMXs lcVHiK"
+          className="sc-iAyFgw SgyWC"
           disabled={false}
         >
           <div
             className="sc-bwzfXH bZlivr"
           >
             <input
-              className="sc-ckVGcZ gBhdDx"
+              className="sc-hMqMXs gUWwGk"
               disabled={false}
               id={undefined}
               name="minimum"
@@ -36,12 +36,12 @@ exports[`Storyshots Range Default 1`] = `
             />
           </div>
           <div
-            className="sc-jKJlTe kuDUsE"
+            className="sc-kEYyzF btdASU"
             disabled={false}
             onClick={[Function]}
           >
             <span
-              className="sc-eNQAEJ hiLfdP"
+              className="sc-kkGfuU kDzdeU"
             >
               cm
             </span>
@@ -52,14 +52,14 @@ exports[`Storyshots Range Default 1`] = `
         className="sc-bwzfXH iOjVOY"
       >
         <div
-          className="sc-hMqMXs lcVHiK"
+          className="sc-iAyFgw SgyWC"
           disabled={false}
         >
           <div
             className="sc-bwzfXH bZlivr"
           >
             <input
-              className="sc-ckVGcZ gBhdDx"
+              className="sc-hMqMXs gUWwGk"
               disabled={false}
               id={undefined}
               name="maximum"
@@ -74,12 +74,12 @@ exports[`Storyshots Range Default 1`] = `
             />
           </div>
           <div
-            className="sc-jKJlTe kuDUsE"
+            className="sc-kEYyzF btdASU"
             disabled={false}
             onClick={[Function]}
           >
             <span
-              className="sc-eNQAEJ hiLfdP"
+              className="sc-kkGfuU kDzdeU"
             >
               cm
             </span>
@@ -89,7 +89,7 @@ exports[`Storyshots Range Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-cHGsZl cCKPXt"
+    className="sc-cJSrbW ZzMzn"
     disabled={false}
   >
     <div />

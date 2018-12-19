@@ -2,10 +2,10 @@
 
 exports[`Storyshots Modal Default 1`] = `
 <div
-  className="sc-jlyJG gBxUkk"
+  className="sc-Rmtcm psENA"
 >
   <div
-    className="sc-iRbamj csmlRs"
+    className="sc-csuQGl bUWxJa"
   >
     <div
       style={
@@ -15,13 +15,13 @@ exports[`Storyshots Modal Default 1`] = `
       }
     >
       <div
-        className="sc-gipzik kNtMSr"
+        className="sc-bRBYWo crvFYk"
       >
         <div
           className="sc-bwzfXH PFWgi"
         >
           <div
-            className="sc-fjdhpX jskuQK"
+            className="sc-kAzzGY khqJpA"
             role="heading"
           >
             Would you like me to be your role modal?
@@ -30,7 +30,7 @@ exports[`Storyshots Modal Default 1`] = `
             className="sc-bwzfXH hiMtnc"
           >
             <button
-              className="sc-htoDjs flaPve"
+              className="sc-htoDjs cPnyBV"
               color={undefined}
               disabled={undefined}
               icon={undefined}
@@ -53,13 +53,13 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <div
-          className="sc-cMljjf dUfgXO"
+          className="sc-gPEVay jzUlKR"
         >
           <div
-            className="sc-jAaTju iVnhyn"
+            className="sc-iRbamj iHxIYy"
           >
             <div
-              className="sc-jDwBTQ bqIkRG"
+              className="sc-jlyJG gtxcUz"
             />
             <div
               className="sc-bwzfXH lkXbup"
@@ -90,12 +90,12 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
               </p>
             </div>
             <div
-              className="sc-gPEVay gkJgPo"
+              className="sc-gipzik hhjjOC"
             />
           </div>
         </div>
         <div
-          className="sc-gZMcBi huJyDB"
+          className="sc-jTzLTM hDWBpv"
         >
           <div
             className="sc-bwzfXH bQUPIj"
@@ -114,7 +114,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH hwWvSq"
                 >
                   <button
-                    className="sc-htoDjs fAnDzT"
+                    className="sc-htoDjs kwPcoU"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
@@ -130,7 +130,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH hwWvSq"
                 >
                   <button
-                    className="sc-htoDjs gKbNMP"
+                    className="sc-htoDjs jDujXu"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
@@ -154,10 +154,10 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
 
 exports[`Storyshots Modal Without closeAction 1`] = `
 <div
-  className="sc-jlyJG gBxUkk"
+  className="sc-Rmtcm psENA"
 >
   <div
-    className="sc-iRbamj csmlRs"
+    className="sc-csuQGl bUWxJa"
   >
     <div
       style={
@@ -167,26 +167,26 @@ exports[`Storyshots Modal Without closeAction 1`] = `
       }
     >
       <div
-        className="sc-gipzik kNtMSr"
+        className="sc-bRBYWo crvFYk"
       >
         <div
           className="sc-bwzfXH PFWgi"
         >
           <div
-            className="sc-fjdhpX jskuQK"
+            className="sc-kAzzGY khqJpA"
             role="heading"
           >
             Would you like me to be your role modal?
           </div>
         </div>
         <div
-          className="sc-cMljjf dUfgXO"
+          className="sc-gPEVay jzUlKR"
         >
           <div
-            className="sc-jAaTju iVnhyn"
+            className="sc-iRbamj iHxIYy"
           >
             <div
-              className="sc-jDwBTQ bqIkRG"
+              className="sc-jlyJG gtxcUz"
             />
             <div
               className="sc-bwzfXH lkXbup"
@@ -217,12 +217,12 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
               </p>
             </div>
             <div
-              className="sc-gPEVay gkJgPo"
+              className="sc-gipzik hhjjOC"
             />
           </div>
         </div>
         <div
-          className="sc-gZMcBi huJyDB"
+          className="sc-jTzLTM hDWBpv"
         >
           <div
             className="sc-bwzfXH bQUPIj"
@@ -241,7 +241,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH hwWvSq"
                 >
                   <button
-                    className="sc-htoDjs fAnDzT"
+                    className="sc-htoDjs kwPcoU"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}
@@ -257,7 +257,7 @@ pharetra. Duis sed magna vel odio ullamcorper gravida eu et nibh.
                   className="sc-bwzfXH hwWvSq"
                 >
                   <button
-                    className="sc-htoDjs gKbNMP"
+                    className="sc-htoDjs jDujXu"
                     color={undefined}
                     disabled={undefined}
                     icon={undefined}

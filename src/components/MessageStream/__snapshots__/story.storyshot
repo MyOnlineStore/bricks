@@ -2,14 +2,14 @@
 
 exports[`Storyshots MessageStream Default 1`] = `
 <div
-  className="sc-cvbbAY gRnXOq"
+  className="sc-cMljjf eBmXXx"
 >
   <div
-    className="sc-brqgnP bChKpe"
+    className="sc-jDwBTQ eBdZCR"
     title="Sit Inceptos Magna"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH iKZUyf"
@@ -43,14 +43,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-jWBwVP citdJs"
+    className="sc-jAaTju blOunj"
   />
   <div
-    className="sc-brqgnP jgbAyr"
+    className="sc-jDwBTQ hlMgCf"
     title="Aenean Dapibus Vulputate Tortor Magna"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH iKZUyf"
@@ -85,14 +85,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-jWBwVP citdJs"
+    className="sc-jAaTju blOunj"
   />
   <div
-    className="sc-brqgnP bChKpe"
+    className="sc-jDwBTQ eBdZCR"
     title="Vestibulum Dapibus"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH iKZUyf"
@@ -126,7 +126,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH bdZMtH"
         >
           <button
-            className="sc-htoDjs fAnDzT"
+            className="sc-htoDjs kwPcoU"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -142,14 +142,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-jWBwVP citdJs"
+    className="sc-jAaTju blOunj"
   />
   <div
-    className="sc-brqgnP eidfQB"
+    className="sc-jDwBTQ jGFytU"
     title="Parturient Euismod Mollis Fringilla"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH iKZUyf"
@@ -184,7 +184,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH bdZMtH"
         >
           <button
-            className="sc-htoDjs cXnPMg"
+            className="sc-htoDjs jKYFpg"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -200,14 +200,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-jWBwVP citdJs"
+    className="sc-jAaTju blOunj"
   />
   <div
-    className="sc-brqgnP hCjuov"
+    className="sc-jDwBTQ dWehKh"
     title="Tortor Cursus"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH iKZUyf"
@@ -241,7 +241,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH bdZMtH"
         >
           <button
-            className="sc-htoDjs gCmkyb"
+            className="sc-htoDjs kMZTGW"
             color={undefined}
             disabled={undefined}
             icon={undefined}
@@ -257,14 +257,14 @@ exports[`Storyshots MessageStream Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-jWBwVP citdJs"
+    className="sc-jAaTju blOunj"
   />
   <div
-    className="sc-brqgnP jgbAyr"
+    className="sc-jDwBTQ hlMgCf"
     title="Euismod Dolor Consectetur"
   >
     <div
-      className="sc-gZMcBi huJyDB"
+      className="sc-jTzLTM hDWBpv"
     >
       <div
         className="sc-bwzfXH iKZUyf"
@@ -296,7 +296,7 @@ exports[`Storyshots MessageStream Default 1`] = `
           className="sc-bwzfXH bdZMtH"
         >
           <button
-            className="sc-htoDjs cHdbOr"
+            className="sc-htoDjs kebeYM"
             color={undefined}
             disabled={undefined}
             icon={undefined}
