@@ -205,9 +205,10 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     type="text"
                                     placeholder={this.props.placeholder}
                                     value={this.state.input}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>): void =>
-                                        this.handleInput(event.target.value)
-                                    }
+                                    onChange={(event: ChangeEvent<HTMLInputElement>): void => {
+                                        event.stopPropagation();
+                                        this.handleInput(event.target.value);
+                                    }}
                                 />
                             </Box>
                         )) ||
