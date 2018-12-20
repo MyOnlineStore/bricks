@@ -41,7 +41,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
 
             this.state = {
                 cursorPosition: 0,
-                value: `${props.value}`,
+                value: `${props.value / Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits)}`,
                 currency: '',
                 currencyAlignment: 'left',
                 decimalSeperator: '.',
@@ -106,26 +106,33 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             }
         }
 
-        private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
-            this.props.onChange(this.parse('out', value));
-            const target = event.target;
-            const selectionStart = target.selectionStart as number;
-            const newInputLength = this.parse('in', value).length;
+        private handleChange = (value: string, event?: ChangeEvent<HTMLInputElement>): void => {
+            const valueInCents =
+                this.parse('out', value) * Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits);
 
-            this.setState({
-                inputLength: target.value.length,
-            });
+            this.props.onChange(valueInCents);
 
-            this.setState({ value: this.parse('in', value) }, () => {
-                target.selectionEnd = this.state.inputLength === newInputLength ? selectionStart : selectionStart - 1;
-            });
+            if (event) {
+                const target = event.target;
+                const selectionStart = target.selectionStart as number;
+                const newInputLength = this.parse('in', value).length;
+
+                this.setState({
+                    inputLength: target.value.length,
+                });
+
+                this.setState({ value: this.parse('in', value) }, () => {
+                    target.selectionEnd =
+                        this.state.inputLength === newInputLength ? selectionStart : selectionStart - 1;
+                });
+            }
         };
 
         private handleBlur = (): void => {
             if (this.state.value.length !== 0) {
                 this.setState({ value: this.format(this.state.value) });
             } else {
-                this.props.onChange(this.parse('out', '0'));
+                this.handleChange('0');
                 this.setState({ value: this.format('0') });
             }
         };
@@ -141,9 +148,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
                 prevProps.disableNegative !== this.props.disableNegative
             ) {
                 this.setFormatter(this.props.locale, this.props.currency);
-                this.setState({ value: this.format(this.state.value) }, () =>
-                    this.props.onChange(parseInt(this.state.value, 0)),
-                );
+                this.setState({ value: this.format(this.state.value) }, () => this.handleChange(this.state.value));
             }
         }
 
