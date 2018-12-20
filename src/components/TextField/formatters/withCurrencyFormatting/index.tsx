@@ -8,6 +8,7 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     locale: string;
     currency: string;
     disableNegative?: boolean;
+    minor?: boolean;
     onChange(value: number): void;
 };
 
@@ -41,7 +42,9 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
 
             this.state = {
                 cursorPosition: 0,
-                value: `${props.value / Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits)}`,
+                value: !this.props.minor
+                    ? `${props.value}`
+                    : `${props.value / Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits)}`,
                 currency: '',
                 currencyAlignment: 'left',
                 decimalSeperator: '.',
@@ -107,10 +110,11 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         }
 
         private handleChange = (value: string, event?: ChangeEvent<HTMLInputElement>): void => {
-            const valueInCents =
-                this.parse('out', value) * Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits);
-
-            this.props.onChange(valueInCents);
+            this.props.minor
+                ? this.props.onChange(
+                      this.parse('out', value) * Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits),
+                  )
+                : this.props.onChange(this.parse('out', value));
 
             if (event) {
                 const target = event.target;
@@ -145,7 +149,8 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             if (
                 prevProps.currency !== this.props.currency ||
                 prevProps.locale !== this.props.locale ||
-                prevProps.disableNegative !== this.props.disableNegative
+                prevProps.disableNegative !== this.props.disableNegative ||
+                prevProps.minor !== this.props.minor
             ) {
                 this.setFormatter(this.props.locale, this.props.currency);
                 this.setState({ value: this.format(this.state.value) }, () => this.handleChange(this.state.value));
