@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { StyledType } from '../../utility/styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
@@ -10,11 +10,13 @@ import Icon from '../Icon';
 import ScrollBox from '../ScrollBox';
 import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
+import ButtonGroup from '../ButtonGroup';
 
 type PropsType = StyledType & {
     show: boolean;
     title: string;
     size?: 'small' | 'medium' | 'large';
+    buttons?: Array<ReactNode>;
     closeAction?(): void;
     renderFixed?(): JSX.Element;
 };
@@ -46,6 +48,9 @@ class Modal extends Component<PropsType> {
         document.removeEventListener('mousedown', this.handleClickOutside, false);
     }
 
+    /**
+     * @deprecated using renderFixed to pass a buttonGroup is deprecated from version 1.0. Use the buttons prop to send an array of buttons instead.
+     */
     public render(): JSX.Element {
         return (
             <StyledModalWrapper
@@ -65,7 +70,7 @@ class Modal extends Component<PropsType> {
                             >
                                 <Box
                                     shrink={0}
-                                    margin={breakpoint === 'small' ? trbl(24) : trbl(24, 36)}
+                                    margin={breakpoint === 'small' ? trbl(18) : trbl(24, 36)}
                                     alignItems="flex-start"
                                     alignContent="center"
                                     justifyContent="space-between"
@@ -92,14 +97,34 @@ class Modal extends Component<PropsType> {
                                     )}
                                 </Box>
                                 <ScrollBox>
-                                    <Box padding={breakpoint === 'small' ? trbl(0, 24, 24, 24) : trbl(0, 36, 36, 36)}>
+                                    <Box padding={breakpoint === 'small' ? trbl(0, 18, 18, 18) : trbl(0, 36, 36, 36)}>
                                         {this.props.children}
                                     </Box>
                                 </ScrollBox>
                                 {this.props.renderFixed && (
                                     <Contrast>
-                                        <Box direction="column" alignItems="stretch" shrink={0} padding={trbl(24, 36)}>
+                                        <Box
+                                            direction="column"
+                                            alignItems="stretch"
+                                            shrink={0}
+                                            padding={breakpoint === 'small' ? trbl(18) : trbl(18, 36)}
+                                        >
+                                            { console.warn('Using "renderFixed" in modals will be deprecated in v1.0!') }
                                             {this.props.renderFixed()}
+                                        </Box>
+                                    </Contrast>
+                                )}
+                                {this.props.buttons && (
+                                    <Contrast>
+                                        <Box
+                                            direction="column"
+                                            alignItems="stretch"
+                                            shrink={0}
+                                            padding={breakpoint === 'small' ? trbl(18) : trbl(18, 36)}
+                                        >
+                                            <ButtonGroup useLargeButtons={breakpoint === 'small'}>
+                                                {this.props.buttons}
+                                            </ButtonGroup>
                                         </Box>
                                     </Contrast>
                                 )}
