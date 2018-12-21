@@ -250,7 +250,7 @@ describe('withCurrencyFormatting', () => {
         expect(component.find('input').prop('value')).toEqual('-19.12');
     });
 
-    it("should divide the value property by ten to the power of the maximum fraction digits, when the 'minor' property is true", () => {
+    it('should use the value in minor units, when the "minor" prop is set', () => {
         const CurrencyField = withCurrencyFormatting(TextField);
         // Work-around because the Intl polyfil doesn't support resolvedOptions()
         CurrencyField.prototype.setFormatter = () => {
@@ -265,7 +265,6 @@ describe('withCurrencyFormatting', () => {
 
         const component = mountWithTheme(
             <CurrencyField
-                disableNegative={false}
                 name=""
                 value={2554}
                 locale="nl-NL"
@@ -284,5 +283,6 @@ describe('withCurrencyFormatting', () => {
         });
 
         expect(component.find('input').prop('value')).toEqual('1908');
+        expect(changeMock).toHaveBeenCalledWith(190800);
     });
 });
