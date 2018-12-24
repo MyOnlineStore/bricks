@@ -48,9 +48,6 @@ class Modal extends Component<PropsType> {
         document.removeEventListener('mousedown', this.handleClickOutside, false);
     }
 
-    /**
-     * @deprecated using renderFixed to pass a buttonGroup is deprecated from version 1.0. Use the buttons prop to send an array of buttons instead.
-     */
     public render(): JSX.Element {
         return (
             <StyledModalWrapper
@@ -101,7 +98,7 @@ class Modal extends Component<PropsType> {
                                         {this.props.children}
                                     </Box>
                                 </ScrollBox>
-                                {this.props.renderFixed && (
+                                {this.props.renderFixed || this.props.buttons && (
                                     <Contrast>
                                         <Box
                                             direction="column"
@@ -109,22 +106,14 @@ class Modal extends Component<PropsType> {
                                             shrink={0}
                                             padding={breakpoint === 'small' ? trbl(18) : trbl(18, 36)}
                                         >
-                                            { console.warn('Using "renderFixed" in modals will be deprecated in v1.0!') }
-                                            {this.props.renderFixed()}
-                                        </Box>
-                                    </Contrast>
-                                )}
-                                {this.props.buttons && (
-                                    <Contrast>
-                                        <Box
-                                            direction="column"
-                                            alignItems="stretch"
-                                            shrink={0}
-                                            padding={breakpoint === 'small' ? trbl(18) : trbl(18, 36)}
-                                        >
-                                            <ButtonGroup useLargeButtons={breakpoint === 'small'}>
-                                                {this.props.buttons}
-                                            </ButtonGroup>
+                                            {this.props.renderFixed && (
+                                                this.props.renderFixed
+                                            )}
+                                            {this.props.buttons && (
+                                                <ButtonGroup stacked={breakpoint === 'small'}>
+                                                    {this.props.buttons}
+                                                </ButtonGroup>
+                                            )}
                                         </Box>
                                     </Contrast>
                                 )}

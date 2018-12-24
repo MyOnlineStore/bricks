@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Modal from '.';
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
 import Text from '../Text';
 
 const demoContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,

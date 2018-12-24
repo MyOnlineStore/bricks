@@ -4,7 +4,7 @@ import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
 
 type PropsType = {
-    useLargeButtons?: boolean;
+    stacked?: boolean;
 };
 
 const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
@@ -17,7 +17,7 @@ const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
             }}
         >
             {(breakpoint): JSX.Element => {
-                const direction = props.useLargeButtons || (props.useLargeButtons === undefined && breakpoint === 'small') ? 'column' : 'row-reverse';
+                const direction = props.stacked || (props.stacked === undefined && breakpoint === 'small') ? 'column' : 'row-reverse';
 
                 return (
                     <Box direction={direction} justifyContent="flex-start" alignItems="stretch" wrap margin={trbl(-6)}>
