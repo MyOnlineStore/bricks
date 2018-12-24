@@ -11,16 +11,19 @@ import Text from '../Text';
 type PropsType = {
     title: string;
     message: string;
-    stacked?: boolean;
+    orientation?: 'vertical' | 'horizontal';
+    size?: 'small';
 };
 
 const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
-    if (props.stacked) {
+    const hierarchy = props.size === 'small' ? 3 : 1;
+
+    if (props.orientation === 'horizontal') {
         return (
             <Box direction="row" alignItems="center" justifyContent="space-around">
                 <Illustration illustration={'cactus'} />
                 <Box direction="column" width="100%" margin={trbl(0, 0, 0, 24)}>
-                    <Heading hierarchy={3}>{props.title}</Heading>
+                    <Heading hierarchy={hierarchy}>{props.title}</Heading>
                     <Box margin={trbl(9, 0, 24, 0)}>
                         <Text descriptive>{props.message}</Text>
                     </Box>
@@ -34,7 +37,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
         <Box direction="column" alignItems="center" justifyContent="space-around">
             <Illustration illustration={'cactus'} />
             <Box padding={trbl(18, 0, 0, 0)}>
-                <Heading hierarchy={1} textAlign="center">
+                <Heading hierarchy={hierarchy} textAlign="center">
                     {props.title}
                 </Heading>
             </Box>

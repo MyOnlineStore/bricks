@@ -26,7 +26,7 @@ storiesOf('EmptyState', module)
 
         return (
             <Box justifyContent="space-around">
-                <EmptyState title={title} message={message} stacked>
+                <EmptyState title={title} message={message} orientation="horizontal" size="small">
                     <Button variant="primary" title={`${buttonTitle}`} />
                 </EmptyState>
             </Box>
