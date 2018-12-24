@@ -249,4 +249,40 @@ describe('withCurrencyFormatting', () => {
 
         expect(component.find('input').prop('value')).toEqual('-19.12');
     });
+
+    it('should use the value in minor units, when the "minor" prop is set', () => {
+        const CurrencyField = withCurrencyFormatting(TextField);
+        // Work-around because the Intl polyfil doesn't support resolvedOptions()
+        CurrencyField.prototype.setFormatter = () => {
+            CurrencyField.prototype.formatter = {
+                resolvedOptions: () => ({
+                    maximumFractionDigits: 2,
+                }),
+            };
+        };
+
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <CurrencyField
+                name=""
+                value={2554}
+                locale="nl-NL"
+                currency="EUR"
+                onChange={changeMock}
+                minor
+            />,
+        );
+
+        expect(component.find('input').prop('value')).toEqual('25.54');
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '1908',
+            },
+        });
+
+        expect(component.find('input').prop('value')).toEqual('1908');
+        expect(changeMock).toHaveBeenCalledWith(190800);
+    });
 });

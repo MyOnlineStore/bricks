@@ -39,6 +39,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
                     locale={this.props.locale ? this.props.locale : 'en-US'}
                     value={this.state.numberValue}
                     onChange={(value: number): void => this.setState({ numberValue: value })}
+                    minor={boolean('minor', false)}
                 />
             );
         } else if (this.props.formatter === 'withNumber') {
