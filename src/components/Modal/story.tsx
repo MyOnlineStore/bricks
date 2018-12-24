@@ -35,7 +35,7 @@ storiesOf('Modal', module)
                 closeAction={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
                 buttons={[
                     <Button key="activate" variant="primary" title="Activate" />,
-                    <Button key="close" variant="plain" title="Close" />
+                    <Button key="close" variant="plain" title="Close" />,
                 ]}
             >
                 <Text>{text('contents', demoContent)}</Text>
@@ -50,7 +50,7 @@ storiesOf('Modal', module)
                 title={text('title', 'Would you like me to be your role modal?')}
                 buttons={[
                     <Button key="activate" variant="primary" title="Activate" />,
-                    <Button key="close" variant="plain" title="Close" />
+                    <Button key="close" variant="plain" title="Close" />,
                 ]}
             >
                 <Text>{text('contents', demoContent)}</Text>
