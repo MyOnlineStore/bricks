@@ -44,7 +44,7 @@ const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
         );
     }
 
-    const direction = props.stacked === true ? 'column' : 'row-reverse';
+    const direction = props.stacked ? 'column' : 'row-reverse';
 
     return (
         <Box direction={direction} justifyContent="flex-start" alignItems="stretch" wrap margin={trbl(-6)}>
