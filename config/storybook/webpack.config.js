@@ -2,6 +2,8 @@ const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = (baseConfig, env, config) => {
+    config.mode = 'development';
+
     config.devServer = {
         quiet: true,
         host: '0.0.0.0',
