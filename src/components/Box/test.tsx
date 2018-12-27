@@ -55,10 +55,32 @@ describe('Box', () => {
         /* tslint:enable */
     });
 
+    it('should be able to use a tuple as shorthand for margin', () => {
+        const component = shallow(<Box margin={[24, 0, 'auto']} />);
+
+        /* tslint:disable */
+        (expect(component) as any).toHaveStyleRule('margin-top', '24px');
+        (expect(component) as any).toHaveStyleRule('margin-right', '0px');
+        (expect(component) as any).toHaveStyleRule('margin-bottom', 'auto');
+        (expect(component) as any).toHaveStyleRule('margin-left', '0px');
+        /* tslint:enable */
+    });
+
     it('can have padding', () => {
         const component = shallow(<Box padding={trbl(24, 0, 'auto')} />);
 
         /*tslint:disable */
+        (expect(component) as any).toHaveStyleRule('padding-top', '24px');
+        (expect(component) as any).toHaveStyleRule('padding-right', '0px');
+        (expect(component) as any).toHaveStyleRule('padding-bottom', 'auto');
+        (expect(component) as any).toHaveStyleRule('padding-left', '0px');
+        /* tslint:enable */
+    });
+
+    it('should be able to use a tuple as shorthand for padding', () => {
+        const component = shallow(<Box padding={[24, 0, 'auto']} />);
+
+        /* tslint:disable */
         (expect(component) as any).toHaveStyleRule('padding-top', '24px');
         (expect(component) as any).toHaveStyleRule('padding-right', '0px');
         (expect(component) as any).toHaveStyleRule('padding-bottom', 'auto');

@@ -3,6 +3,7 @@ import { StyledComponentClass as _S } from 'styled-components';
 import { PropsType } from '.';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/styled';
+import { TrblType } from '../../utility/trbl';
 
 type BoxPropsType = PropsType & {
     flexWrap?: PropsType['wrap'];
@@ -14,6 +15,8 @@ type BoxPropsType = PropsType & {
     elementMinWidth?: PropsType['minWidth'];
     flexDirection?: PropsType['direction'];
     flexOrder?: PropsType['order'];
+    margin?: TrblType;
+    padding?: TrblType;
 };
 
 const StyledDiv = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
