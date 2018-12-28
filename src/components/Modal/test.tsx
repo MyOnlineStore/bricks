@@ -17,6 +17,37 @@ jest.mock('../BreakpointProvider', () =>
 );
 
 describe('Modal', () => {
+    it('should render with renderFixed', () => {
+        const component = mountWithTheme(
+            <Modal
+                show={true}
+                renderFixed={(): JSX.Element => <div data-testid="bar">renderFixed element</div>}
+                title="Foo"
+            />,
+        );
+
+        expect(component.find('div[data-testid="bar"]').length).toBe(1);
+    });
+
+    it('should render with a buttons prop', () => {
+        const component = mountWithTheme(
+            <Modal
+                show={true}
+                buttons={[
+                    <button key="b1" data-testid="button">
+                        button 1
+                    </button>,
+                    <button key="b2" data-testid="button">
+                        button 2
+                    </button>,
+                ]}
+                title="Foo"
+            />,
+        );
+
+        expect(component.find('button[data-testid="button"]').length).toBe(2);
+    });
+
     it('should render with a small breakpoint', () => {
         (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
             (props: PropsType): JSX.Element => {
