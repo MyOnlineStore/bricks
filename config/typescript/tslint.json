@@ -134,15 +134,7 @@
   
       "triple-equals": true,
       "type-literal-delimiter": true,
-      "typedef": [
-        true,
-        "call-signature",
-        "arrow-call-signature",
-        "parameter",
-        "member-variable-declaration",
-        "property-declaration"
-      ],
-  
+ 
       "trailing-comma": true,
   
       "unified-signatures": true,

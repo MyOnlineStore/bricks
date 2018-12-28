@@ -2,7 +2,7 @@ import { boolean, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import TransitionAnimation, { PropsType } from '.';
-import styled from '../../utility/styled';
+import styled from '../../utility/_styled';
 import Box from '../Box';
 import Heading from '../Heading';
 

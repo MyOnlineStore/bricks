@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
-import { SeverityIcons } from '../../types/SeverityType';
+import { SeverityIcons } from '../../types/_SeverityType';
 
 type PropsType = StyledType & {
     severity: keyof typeof SeverityIcons;
@@ -17,8 +17,8 @@ const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledNotification severity={props.severity}>
-            <Box margin={trbl(12)} alignItems={'flex-start'} >
-                <Box margin={trbl(0,12,0,0)}>
+            <Box margin={trbl(12)} alignItems={'flex-start'}>
+                <Box margin={trbl(0, 12, 0, 0)}>
                     <Icon size="medium" icon={icon} />
                 </Box>
                 {props.message}

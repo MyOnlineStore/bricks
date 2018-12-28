@@ -54,7 +54,7 @@ class DemoComponent extends Component<{}, StateType> {
                     </Box>
                 </FoldOut>
                 <Button
-                    action={(): void =>
+                    onClick={(): void =>
                         this.setState({
                             isOpen: !this.state.isOpen,
                         })

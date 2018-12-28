@@ -31,7 +31,6 @@ export { default as ScrollBox } from './components/ScrollBox';
 export { default as Select } from './components/Select';
 export { default as Separated } from './components/Separated';
 export { default as Skeleton } from './components/Skeleton';
-export { default as Spacer } from './components/Spacer';
 export { default as Spinner } from './components/Spinner';
 export { default as ThemeType } from './types/ThemeType';
 export { default as Table } from './components/Table';

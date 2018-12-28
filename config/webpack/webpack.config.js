@@ -2,18 +2,24 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const entry = require('../../scripts/entry');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/index.ts',
+    entry,
     stats: {
         assets: true,
         modules: false,
         children: false,
     },
     output: {
-        filename: 'index.js',
-        path: __dirname + '/../../dist',
+        /* 
+        "filename: [name]index.js" is a workaround to name all output files: 'index.js'. 
+        When you just fill in 'index.js' without the prefix '[name]', webpack will throw an error: "Multiple assets emit to the same filename index.js"
+        */
+        filename: '[name]index.js',
+        path: __dirname + '/../../lib',
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
@@ -69,14 +75,11 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
-    externals: {
-        '@types/react': '@types/react',
-        '@types/react-dom': '@types/react-dom',
-        react: 'react',
-        'react-dom': 'react-dom',
-        'styled-components': 'styled-components',
-    },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'env/',
+            minChunks: 2,
+        }),
         new UglifyJSPlugin({
             sourceMap: true,
         }),
@@ -91,5 +94,6 @@ module.exports = {
             openAnalyzer: false,
             reportFilename: '../reports/webpack/statistics-tree.html',
         }),
+        new PeerDepsExternalsPlugin(),
     ],
 };

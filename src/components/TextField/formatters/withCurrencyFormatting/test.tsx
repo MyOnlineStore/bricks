@@ -1,7 +1,7 @@
 import React from 'react';
 import withCurrencyFormatting from './';
 import TextField from '../..';
-import { mountWithTheme } from '../../../../utility/styled/testing';
+import { mountWithTheme } from '../../../../utility/_styled/testing';
 
 describe('withCurrencyFormatting', () => {
     it('should format currency input', () => {

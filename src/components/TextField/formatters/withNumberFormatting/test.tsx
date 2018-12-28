@@ -1,7 +1,7 @@
 import React from 'react';
 import withNumberFormatting from './';
 import TextField from '../..';
-import { mountWithTheme } from '../../../../utility/styled/testing';
+import { mountWithTheme } from '../../../../utility/_styled/testing';
 
 describe('withNumberFormatting', () => {
     it('should handle change', () => {
@@ -21,7 +21,7 @@ describe('withNumberFormatting', () => {
         });
         /*tslint:enable */
         const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(<NumberField name="" value={123} onChange={changeMock} />);
+        const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
 
         component.find('input').simulate('change', { target: { value: 'abcd' } });
         component.find('input').simulate('blur');

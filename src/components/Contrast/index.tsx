@@ -1,7 +1,7 @@
 import deepmerge from 'deepmerge';
 import React, { FunctionComponent } from 'react';
 import ThemeType from '../../types/ThemeType';
-import { ThemeProvider } from '../../utility/styled';
+import { ThemeProvider } from '../../utility/_styled';
 import StyledContrast from './style';
 
 type PropsType = {

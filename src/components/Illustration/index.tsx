@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import { StyledIllustration } from './style';
 import { Illustrations } from './types';
 

@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from 'react';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
@@ -81,15 +81,13 @@ class Modal extends Component<PropsType> {
                                             alignItems="center"
                                             grow={0}
                                         >
-                                            <Button
-                                                variant="plain"
-                                                flat
+                                            <Button.Flat
+                                                variant="primary"
                                                 title="close"
-                                                action={this.props.closeAction}
-                                                compact
+                                                onClick={this.props.closeAction}
                                             >
                                                 <Icon size="small" icon="close" />
-                                            </Button>
+                                            </Button.Flat>
                                         </Box>
                                     )}
                                 </Box>

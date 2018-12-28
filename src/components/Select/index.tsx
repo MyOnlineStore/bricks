@@ -7,7 +7,7 @@ import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './s
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import { Button } from '../../index';
+import Button from '../../components/Button';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 
@@ -219,26 +219,24 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             )) || (
                                 <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
-                                        <Text descriptive>
+                                        <Text severity="info">
                                             <StyledPlaceholder>{this.props.placeholder}</StyledPlaceholder>
                                         </Text>
                                     )}
                                 </Box>
                             )}
-                        <Button
-                            compact
-                            flat
-                            variant="secondary"
+                        <Button.Flat
                             title={this.state.isOpen ? 'close' : 'open'}
-                            action={this.state.isOpen ? this.close : this.open}
+                            onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
+                            variant="primary"
                         >
                             <Icon
                                 icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
                                 size="small"
                                 color={this.props.disabled ? this.props.theme.Select.disabled.chevron : undefined}
                             />
-                        </Button>
+                        </Button.Flat>
                     </Box>
                 </StyledInput>
                 {createPortal(
@@ -265,9 +263,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     </Box>
                                 )) ||
                                     this.filterOptions().map((option, index) => {
-                                        const optionState = {
-                                            isSelected: option.value === this.props.value,
-                                        };
+                                        const optionState = { isSelected: option.value === this.props.value };
 
                                         return (
                                             <Option

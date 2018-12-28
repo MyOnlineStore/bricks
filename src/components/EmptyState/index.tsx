@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
-import styled from '../../utility/styled';
+import styled from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Heading from '../Heading';
@@ -23,7 +23,7 @@ const EmptyStateElement: FunctionComponent<EmptyStatePropsType> = (props): JSX.E
             </Heading>
         </Box>
         <Box margin={trbl(12, 0, 24, 0)}>
-            <Text textAlign="center" descriptive>
+            <Text textAlign="center" severity="info">
                 {props.message}
             </Text>
         </Box>

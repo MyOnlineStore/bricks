@@ -1,11 +1,11 @@
 import React from 'react';
 import MessageStream from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import Button from '../Button';
 
 describe('MessageStream', () => {
-    it('should fire the message action on button click', () => {
-        const actionMock = jest.fn();
+    it('should fire the message onClick on button click', () => {
+        const onClickMock = jest.fn();
 
         const component = mountWithTheme(
             <MessageStream
@@ -15,7 +15,7 @@ describe('MessageStream', () => {
                         title: 'foo bar',
                         buttonLabel: 'bar',
                         severity: 'success',
-                        action: actionMock,
+                        onClick: onClickMock,
                     },
                 ]}
             />,
@@ -23,6 +23,6 @@ describe('MessageStream', () => {
 
         component.find(Button).simulate('click');
 
-        expect(actionMock).toHaveBeenCalled();
+        expect(onClickMock).toHaveBeenCalled();
     });
 });

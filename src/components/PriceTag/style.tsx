@@ -1,43 +1,27 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import { PropsType } from '.';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
-
-type VariantType = {
-    color: string;
-    fontFamily: string;
-    fontSize: string;
-    fontWeight: string;
-};
+import styled, { withProps } from '../../utility/_styled';
 
 type PriceTagThemeType = {
-    default: VariantType;
-    action: VariantType;
-    base: VariantType;
+    strikethroughColor: string;
 };
 
 type PriceTagPropsType = {
-    displayType?: PropsType['displayType'];
+    strikethrough?: boolean;
 };
 
 const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span)`
-    ${({ theme, displayType }): string => {
-        const identifier = displayType !== undefined ? displayType : 'default';
-
+    ${({ theme, strikethrough }): string => {
         return `
             position: relative;
-            color: ${theme.PriceTag[identifier].color};
-            font-family: ${theme.PriceTag[identifier].fontFamily};
-            font-size: ${theme.PriceTag[identifier].fontSize};
-            font-weight: ${theme.PriceTag[identifier].fontWeight};
 
             sup {
                 font-size: .7em;
             }
 
             ${
-                displayType !== undefined && displayType === 'base'
+                strikethrough === true
                     ? `&::after {
                     content: '';
                     width: 100%;
@@ -46,7 +30,7 @@ const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span
                     top: 50%;
                     margin-top: -2px;
                     position: absolute;
-                    background: ${theme.PriceTag[identifier].color};
+                    background: ${theme.PriceTag.strikethroughColor};
                     opacity: .7;
                     transform: rotate(-8deg);
                 }`
@@ -57,4 +41,4 @@ const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span
 `;
 
 export default StyledPriceTag;
-export { PriceTagThemeType, VariantType };
+export { PriceTagThemeType };

@@ -1,8 +1,8 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
-import SeverityType from '../../types/SeverityType';
+import styled, { withProps } from '../../utility/_styled';
+import SeverityType from '../../types/_SeverityType';
 
 type TextAreaWrapperPropsType = {
     disabled?: boolean;
@@ -46,7 +46,7 @@ const StyledTextAreaWrapper = withProps<TextAreaWrapperPropsType>(styled.div)`
         disabled ? theme.TextArea.disabled.background : theme.TextArea.idle.common.background};
 
     &:focus-within {
-        ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity].color}`};
+        ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity]}`};
         ${({ disabled, severity, theme }): string =>
             !disabled ? `box-shadow: ${theme.TextArea.severity[severity].boxShadow}` : ''};
     }

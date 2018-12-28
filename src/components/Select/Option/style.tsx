@@ -1,5 +1,5 @@
 import _R from 'react';
-import styled, { withProps } from '../../../../src/utility/styled';
+import styled, { withProps } from '../../../../src/utility/_styled';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../../types/ThemeType';
 

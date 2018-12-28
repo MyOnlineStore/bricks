@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 import { select, text, boolean, number } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import TextArea from '.';

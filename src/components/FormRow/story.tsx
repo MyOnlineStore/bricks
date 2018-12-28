@@ -48,8 +48,10 @@ class DemoComponent extends Component<PropsType, StateType> {
                     <FormRow
                         label={
                             <label>
-                                <Text>What is your name?</Text>
-                                <Text descriptive>
+                                <Box>
+                                    <Text>What is your name?</Text>
+                                </Box>
+                                <Text severity="info">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -90,8 +92,10 @@ class DemoComponent extends Component<PropsType, StateType> {
                     <FormRow
                         label={
                             <label>
-                                <Text>Where do you live?</Text>
-                                <Text descriptive>
+                                <Box>
+                                    <Text>Where do you live?</Text>
+                                </Box>
+                                <Text severity="info">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -122,8 +126,10 @@ class DemoComponent extends Component<PropsType, StateType> {
                     <FormRow
                         label={
                             <label>
-                                <Text>Can a boolean only be either true or false?</Text>
-                                <Text descriptive>
+                                <Box>
+                                    <Text>Can a boolean only be either true or false?</Text>
+                                </Box>
+                                <Text severity="info">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.

@@ -1,8 +1,8 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
-import SeverityType from '../../types/SeverityType';
+import styled, { withProps } from '../../utility/_styled';
+import SeverityType from '../../types/_SeverityType';
 
 type BadgePropsType = {
     severity?: SeverityType;
@@ -22,6 +22,8 @@ type BadgeThemeType = {
 
 type VariantStyleType = {
     backgroundColor: string;
+    color: string;
+    fontFamily: string;
 };
 
 const StyledBadge = withProps<BadgePropsType>(styled.div)`
@@ -31,8 +33,14 @@ const StyledBadge = withProps<BadgePropsType>(styled.div)`
     min-height: 18px;
     padding: 3px 6px;
     border-radius: 9px;
-    background: ${({ theme, severity }): string => !severity ? theme.Badge.severity.error.backgroundColor : theme.Badge.severity[severity].backgroundColor};
-    font-family: ${({ theme }): string => theme.Text.default.fontFamily};
+    ${({ theme, severity }): string => {
+        const badgeSeverity = severity === undefined ? 'error' : severity;
+
+        return `
+            background: ${theme.Badge.severity[badgeSeverity].backgroundColor};
+            font-family: ${theme.Badge.severity[badgeSeverity].fontFamily};
+        `;
+    }};
     font-size: 12px;
     line-height: 1;
     color: ${({ theme }): string => theme.Badge.default.color};

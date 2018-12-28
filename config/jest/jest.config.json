@@ -19,6 +19,7 @@
     },
     "rootDir": "../../",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testURL": "http://localhost/",
     "moduleFileExtensions": [
         "ts",
         "tsx",
@@ -46,7 +47,7 @@
         "!src/**/*.d.ts",
         "!src/**/*.DontTest.tsx",
         "!src/index.ts",
-        "!src/utility/styled/*",
+        "!src/utility/_styled/*",
         "!src/utility/SubscriptionContext/index.tsx"
     ],
     "setupTestFrameworkScriptFile": "./config/jest/setupFramework.tsx",

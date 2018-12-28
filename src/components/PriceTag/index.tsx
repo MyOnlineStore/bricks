@@ -1,36 +1,19 @@
+/// <reference path="../../../src/_declarations/global.d.ts" />
 import React, { FunctionComponent } from 'react';
-import { StyledType } from '../../utility/styled';
+import StyledPriceTag from './style';
+import formatFraction from './formatters/formatFraction';
 import formatCurrency from './formatters/formatCurrency';
 import formatDecimalSeperator from './formatters/formatDecimalSeperator';
-import formatFraction from './formatters/formatFraction';
-import StyledPriceTag from './style';
 
-type PartTypeType =
-    | 'currency'
-    | 'decimal'
-    | 'fraction'
-    | 'group'
-    | 'infinity'
-    | 'integer'
-    | 'literal'
-    | 'minusSign'
-    | 'nan'
-    | 'plusSign'
-    | 'percentSign';
-
-type PartType = {
-    type: PartTypeType;
-    value: string;
-};
-
-type PropsType = StyledType & {
+type PropsType = {
     hideCurrency?: boolean;
     superScriptFraction?: boolean;
-    showDash?: boolean;
-    hideZeros?: boolean;
-    parts: Array<PartType>;
+    value: number;
     freeLabel?: string;
-    displayType?: 'base' | 'action' | 'default';
+    strikethrough?: boolean;
+    fractionFormat?: 'none' | 'dash';
+    locale: string;
+    currency: string;
 };
 
 type StatsType = {
@@ -38,23 +21,30 @@ type StatsType = {
     isFree: boolean;
 };
 
-const isFree = (part: PartType): boolean =>
-    (part.type === 'integer' || part.type === 'fraction') && parseInt(part.value, 10) !== 0;
+const isRound = (part: Intl.PartType): boolean => part.type === 'fraction' && parseInt(part.value, 10) === 0;
 
-const isRound = (part: PartType): boolean => part.type === 'fraction' && parseInt(part.value, 10) === 0;
+const isFree = (part: Intl.PartType): boolean => {
+    return (part.type === 'integer' || part.type === 'fraction') && parseInt(part.value, 10) !== 0;
+};
 
-const deriveStatsFromPart = (initialStats: StatsType, part: PartType): StatsType => ({
+const deriveStatsFromPart = (initialStats: StatsType, part: Intl.PartType): StatsType => ({
     isRound: isRound(part) ? true : initialStats.isRound,
     isFree: isFree(part) ? false : initialStats.isFree,
 });
 
 const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const stats = props.parts.reduce(deriveStatsFromPart, {
+    const formatter = new Intl.NumberFormat(props.locale, {
+        style: 'currency',
+        currency: props.currency,
+    });
+
+    const parts = formatter.formatToParts(props.value);
+    const stats = parts.reduce(deriveStatsFromPart, {
         isRound: false,
         isFree: true,
     });
 
-    const price = props.parts.map(part => {
+    const price = parts.map(part => {
         switch (part.type) {
             case 'fraction':
                 return formatFraction(part.value, props, stats.isRound);
@@ -62,17 +52,19 @@ const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
                 return formatCurrency(part.value, props);
             case 'decimal':
                 return formatDecimalSeperator(part.value, props, stats.isRound);
+            case 'literal':
+                return props.hideCurrency && props.hideCurrency === true ? undefined : part.value;
             default:
                 return part.value;
         }
     });
 
     return (
-        <StyledPriceTag displayType={props.displayType}>
+        <StyledPriceTag strikethrough={props.strikethrough}>
             {stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price}
         </StyledPriceTag>
     );
 };
 
 export default PriceTag;
-export { PropsType, PartTypeType, PartType };
+export { PropsType };

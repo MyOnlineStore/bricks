@@ -1,8 +1,8 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/styled';
-import calculateRandomPercentage from '../../../utility/calculateRandomPercentage';
+import styled, { withProps } from '../../../utility/_styled';
+import calculateRandomPercentage from '../../../utility/_calculateRandomPercentage';
 import getSkeletonStyles from '../style';
 
 type PropsType = {

@@ -1,25 +1,28 @@
 import React from 'react';
-import Row from '.';
-import { mountWithTheme } from '../../../utility/styled/testing';
+import Rows from '.';
+import { mountWithTheme } from '../../../utility/_styled/testing';
 import StyledCell from '../Cell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
 
-describe('Table Row', () => {
+describe('Table Rows', () => {
     it('should handle mouse focus and blur when draggable', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row
-                        identifier="row-1"
+                    <Rows
+                        row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
+                        columns={{
+                            id: { header: 'Product ID' },
+                            name: { header: 'name' },
+                            price: { header: 'Price' },
+                        }}
+                        selected={false}
                         selectable
-                        checked={false}
                         draggable
-                        alignments={[]}
-                        cells={['A1', 'B1', 'C1']}
                         index={1}
-                        onCheck={(): void => undefined}
+                        onSelection={(): void => undefined}
                     />
                 </tbody>
             </table>,
@@ -51,15 +54,18 @@ describe('Table Row', () => {
         const component = mountWithTheme(
             <table>
                 <tbody>
-                    <Row
-                        identifier="row-1"
+                    <Rows
+                        row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
+                        columns={{
+                            id: { header: 'Product ID' },
+                            name: { header: 'name' },
+                            price: { header: 'Price' },
+                        }}
+                        selected={false}
                         selectable
-                        checked={false}
-                        alignments={[]}
-                        cells={['A1', 'B1', 'C1']}
                         draggable
                         index={1}
-                        onCheck={(): void => undefined}
+                        onSelection={(): void => undefined}
                     />
                 </tbody>
             </table>,

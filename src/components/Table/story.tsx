@@ -1,32 +1,30 @@
-import { boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
-import React, { Component, ReactNode } from 'react';
-import { DropResult } from 'react-beautiful-dnd';
+import React, { Component, Fragment } from 'react';
 import Table from '.';
-import Icon from '../Icon';
-import Button from '../Button';
 import Text from '../Text';
+import { boolean } from '@storybook/addon-knobs';
+import Button from '../Button';
+import Icon from '../Icon';
+
+type RowType = {
+    id: string;
+    price: number;
+    name: string;
+    image: string;
+    actions: boolean;
+};
 
 type StateType = {
     hover: boolean;
-    rows: Array<{ id: string; checked?: boolean; cells: Array<ReactNode> }>;
+    rows: Array<RowType>;
 };
 
 type PropsType = {
     draggable: boolean;
     selectable: boolean;
+    sortable: boolean;
+    custom: boolean;
 };
-
-const actions = (
-    <>
-        <Button title="edit" flat compact variant="secondary">
-            <Icon icon="pencil" size="medium" />
-        </Button>
-        <Button title="delete" flat compact variant="destructive">
-            <Icon icon="trash" size="medium" />
-        </Button>
-    </>
-);
 
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
@@ -35,57 +33,103 @@ class Demo extends Component<PropsType, StateType> {
         this.state = {
             hover: false,
             rows: [
-                { id: 'row-1', checked: true, cells: ['A1', 'B1', 'C1', actions] },
-                { id: 'row-2', checked: false, cells: ['A2', 'B2', 'C2', actions] },
-                { id: 'row-3', checked: true, cells: ['A3', 'B3', 'C3', actions] },
-                { id: 'row-4', checked: false, cells: ['A4', 'B4', 'C4', actions] },
-                { id: 'row-5', checked: true, cells: ['A5', 'B5', 'C5', actions] },
-                { id: 'row-6', checked: false, cells: ['A6', 'B6', 'C6', actions] },
-                { id: 'row-7', checked: true, cells: ['A7', 'B7', 'C7', actions] },
-                { id: 'row-8', checked: false, cells: ['A8', 'B8', 'C8', actions] },
-                { id: 'row-9', checked: false, cells: ['A9', 'B9', 'C9', actions] },
-                { id: 'row-10', cells: ['A10', 'B10', 'C10', actions] },
+                { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝', actions: true },
+                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍', actions: true },
+                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇', actions: true },
+                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌', actions: true },
+                { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋', actions: true },
             ],
         };
     }
 
-    private reorder = (list: StateType['rows'], startIndex: number, endIndex: number): StateType['rows'] => {
-        const [removed] = list.splice(startIndex, 1);
-        list.splice(endIndex, 0, removed);
+    private sortText = (a: string, b: string) => {
+        const valueA = a.toUpperCase();
+        const valueB = b.toUpperCase();
 
-        return list;
+        if (valueA < valueB) return -1;
+        if (valueA > valueB) return 1;
+
+        return 0;
     };
 
-    public onDragEnd = (result: DropResult): void => {
-        if (result.destination) {
-            const items = this.reorder(this.state.rows, result.source.index, result.destination.index);
-            this.setState({ rows: items });
-        }
-    };
+    private sortPrice = (a: number, b: number) => a - b;
 
-    public render(): JSX.Element {
+    private renderPrice = (price: number) => {
+        if (price < 1)
+            return (
+                <Text strong severity="success">
+                    {price}
+                </Text>
+            );
+
         return (
-            <Table
-                alignments={['left', 'left', 'center', 'right']}
-                headers={[
-                    <Text key="header-a" strong>
-                        <Icon icon="heartO" size="medium" />
-                        &nbsp;&nbsp;Custom Header A
-                    </Text>,
-                    'Header B',
-                    'Header C',
-                    'Actions',
-                ]}
-                onDragEnd={this.onDragEnd}
-                selectable={this.props.selectable}
-                draggable={this.props.draggable}
+            <Text strong severity="error">
+                {price}
+            </Text>
+        );
+    };
+
+    private renderActions = (actions: boolean, row: RowType) => {
+        if (actions) {
+            return (
+                <Button.Flat
+                    title="delete"
+                    variant="destructive"
+                    onClick={() =>
+                        this.setState({
+                            rows: this.state.rows.filter(item => item.id !== row.id),
+                        })
+                    }
+                >
+                    <Icon size="medium" icon="trash" />
+                </Button.Flat>
+            );
+        }
+
+        return <Fragment />;
+    };
+
+    public render() {
+        return (
+            <Table<RowType>
+                columns={{
+                    image: { header: 'Image', order: 1 },
+                    name: {
+                        header: 'Name',
+                        order: 1,
+                        align: 'start',
+                        sort: this.props.sortable ? this.sortText : undefined,
+                    },
+                    id: {
+                        header: 'Product ID',
+                        order: 0,
+                        sort: this.props.sortable ? this.sortText : undefined,
+                    },
+                    price: {
+                        header: 'Price',
+                        order: 2,
+                        sort: this.props.sortable ? this.sortPrice : undefined,
+                        render: this.props.custom ? this.renderPrice : undefined,
+                    },
+                    actions: {
+                        order: 3,
+                        align: 'end',
+                        render: this.renderActions,
+                    },
+                }}
                 rows={this.state.rows}
-                onSelection={(rows): void => this.setState({ rows })}
+                onDragEnd={this.props.draggable ? (rows): void => this.setState({ rows }) : undefined}
+                onSelection={this.props.selectable ? (rows): void => this.setState({ rows }) : undefined}
             />
         );
     }
 }
 
-storiesOf('Table', module).add('Default', () => {
-    return <Demo selectable={boolean('selectable', false)} draggable={boolean('draggable', true)} />;
-});
+storiesOf('Table', module).add('Default', () => (
+    <Demo
+        draggable={boolean('draggable', true)}
+        selectable={boolean('selectable', false)}
+        sortable={boolean('sortable', true)}
+        custom={boolean('custom', false)}
+    />
+));

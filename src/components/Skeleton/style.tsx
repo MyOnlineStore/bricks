@@ -1,6 +1,5 @@
 import { StyledComponentClass as _S, keyframes } from 'styled-components';
-import _T from '../../types/ThemeType';
-import { ThemeType } from '../../index';
+import ThemeType from '../../types/ThemeType';
 
 type SkeletonThemeType = {
     common: {
@@ -8,9 +7,6 @@ type SkeletonThemeType = {
         borderRadius: string;
     };
     Text: {
-        fontSize: string;
-    };
-    Button: {
         fontSize: string;
     };
 };

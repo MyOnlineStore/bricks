@@ -1,8 +1,8 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled, { withProps } from '../../utility/_styled';
 
 type TextFieldThemeType = {
     idle: {
@@ -113,7 +113,7 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     ${({ focus, disabled, severity, theme }): string =>
         focus && !disabled
             ? `
-            border: solid 1px ${theme.Text.severity[severity].color}
+            border: solid 1px ${theme.Text.severity[severity]}
             box-shadow: ${theme.TextField.severity[severity].boxShadow}
             `
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};

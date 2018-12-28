@@ -1,6 +1,6 @@
 import { default as _R } from 'react';
 import { StyledComponentClass as _S, css } from 'styled-components';
-import styled, { withProps } from '../../utility/styled';
+import styled, { withProps } from '../../utility/_styled';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();

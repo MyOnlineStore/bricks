@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from '.';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import BreakpointProvider from '../BreakpointProvider';
 import { PropsType } from '../BreakpointProvider/';
 import StyledModal, { StyledModalWrapper } from './style';
@@ -77,7 +77,7 @@ describe('Modal', () => {
     it('should be possible to close the modal view using the close button', () => {
         const clickMock = jest.fn();
         const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
-        const closeButton = component.find(Button).first();
+        const closeButton = component.find(Button.Flat).first();
 
         closeButton.simulate('click');
 

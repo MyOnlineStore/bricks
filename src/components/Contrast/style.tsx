@@ -1,8 +1,8 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import RecursivePartialType from '../../types/RecursivePartialType';
+import RecursivePartialType from '../../types/_RecursivePartialType';
 import ThemeType from '../../types/ThemeType';
-import styled from '../../utility/styled';
+import styled from '../../utility/_styled';
 
 type ContrastThemeType = {
     overides: RecursivePartialType<ThemeType>;

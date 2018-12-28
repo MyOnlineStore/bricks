@@ -1,5 +1,6 @@
-import React, { Component, ComponentClass, ComponentType, ChangeEvent } from 'react';
+/// <reference path="../../../../../src/_declarations/global.d.ts" />
 import { PropsType as TextFieldPropsType } from '../../';
+import React, { Component, ComponentClass, ComponentType, ChangeEvent } from 'react';
 
 type OmittedKeys = 'onChange' | 'value';
 
@@ -21,21 +22,11 @@ type StateType = {
     inputLength: number;
 };
 
-type PartType = {
-    type: string;
-    value: string;
-};
-
-type NumberFormatter = Intl.NumberFormat & {
-    formatToParts(value: number): Array<PartType>;
-};
-
 type WithCurrencyFormattingType = ComponentClass<PropsType>;
 
 const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): ComponentClass<PropsType> => {
     class WithCurrencyFormatting extends Component<PropsType, StateType> {
-        private formatter: NumberFormatter;
-
+        private formatter: Intl.NumberFormat;
         public constructor(props: PropsType) {
             super(props);
             this.setFormatter(props.locale, props.currency);
@@ -53,7 +44,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         }
 
         private setFormatter(locale: string, currency: string): void {
-            this.formatter = new Intl.NumberFormat(locale, { style: 'currency', currency }) as NumberFormatter;
+            this.formatter = new Intl.NumberFormat(locale, { style: 'currency', currency });
         }
 
         private parse(direction: 'in', value: string): string;
@@ -103,7 +94,7 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
                                 return true;
                         }
                     })
-                    .reduce((combined: string, { value }: PartType): string => `${combined}${value}`, '');
+                    .reduce((combined: string, { value }: Intl.PartType): string => `${combined}${value}`, '');
             } catch (error) {
                 return value;
             }

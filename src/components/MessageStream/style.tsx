@@ -1,8 +1,8 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled, { withProps } from '../../utility/_styled';
 
 type VariantStyleType = {
     borderColor: string;

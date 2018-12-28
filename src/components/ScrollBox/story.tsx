@@ -2,7 +2,7 @@ import { boolean, number } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import ScrollBox from '.';
-import styled from '../../utility/styled';
+import styled from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Heading from '../Heading';

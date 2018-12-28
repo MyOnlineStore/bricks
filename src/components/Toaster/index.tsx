@@ -4,7 +4,7 @@ import Button from '../Button';
 import Box from '../Box';
 import Icon, { MediumIcons } from '../Icon';
 import Text from '../Text';
-import SeverityType, { SeverityIcons } from '../../types/SeverityType';
+import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
 import trbl from '../../utility/trbl';
 import TransitionAnimation from '../TransitionAnimation';
 import BreakpointProvider from '../BreakpointProvider';
@@ -19,22 +19,21 @@ type PropsType = {
     severity: SeverityType;
     autoDismiss?: boolean;
     closeAction?(): void;
-    action?(): void;
+    onClick?(): void;
 };
 
 type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
 
 class Toaster extends Component<PropsType> {
-    private action = (): void => {
-        if (this.props.action !== undefined) this.props.action();
-    };
-
-    private closeAction = (): void => {
+    private handleClose = (): void => {
         if (this.props.closeAction !== undefined) this.props.closeAction();
     };
 
-    private getVariant = (): ButtonVariant => {
-        if (this.props.buttonSeverity !== undefined) return this.props.buttonSeverity;
+    private handleClick = (): void => {
+        if (this.props.onClick !== undefined) this.props.onClick();
+    };
+
+    private expectedVariant = (): ButtonVariant => {
         if (this.props.severity === 'error') return 'destructive';
         if (this.props.severity === 'warning') return 'warning';
 
@@ -42,10 +41,10 @@ class Toaster extends Component<PropsType> {
     };
 
     public componentDidMount = (): void => {
-        if (this.props.autoDismiss) setTimeout((): void => this.closeAction(), 6000);
+        if (this.props.autoDismiss) setTimeout((): void => this.handleClose(), 6000);
     };
 
-    public render(): JSX.Element {
+    public render() {
         const icon = this.props.icon !== undefined ? this.props.icon : SeverityIcons[this.props.severity];
 
         return (
@@ -63,14 +62,13 @@ class Toaster extends Component<PropsType> {
                                         </Box>
                                     )}
                                     <Box
-                                        style={{ display: breakpoint === 'small' ? 'block' : '' }}
                                         direction={breakpoint === 'small' ? 'column' : 'row'}
                                         justifyContent="center"
                                         alignContent="center"
                                     >
                                         <Box
+                                            direction="column"
                                             margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}
-                                            style={{ display: 'block' }}
                                         >
                                             <Text strong>{this.props.title}</Text>
                                             <Text>{this.props.message}</Text>
@@ -84,16 +82,20 @@ class Toaster extends Component<PropsType> {
                                             >
                                                 <Button
                                                     title={this.props.buttonTitle}
-                                                    action={this.action}
-                                                    variant={this.getVariant()}
+                                                    onClick={this.handleClick}
+                                                    variant={
+                                                        this.props.buttonSeverity
+                                                            ? this.props.buttonSeverity
+                                                            : this.expectedVariant()
+                                                    }
                                                 />
                                             </Box>
                                         )}
                                     </Box>
                                     <Box direction="column">
-                                        <Button variant="plain" flat title="close" action={this.closeAction} compact>
+                                        <Button.Flat title="close" onClick={this.handleClose} variant="primary">
                                             <Icon size="small" icon="close" />
-                                        </Button>
+                                        </Button.Flat>
                                     </Box>
                                 </StyledToaster>
                             </Box>
@@ -106,4 +108,4 @@ class Toaster extends Component<PropsType> {
 }
 
 export default Toaster;
-export { PropsType };
+export { PropsType, ButtonVariant };

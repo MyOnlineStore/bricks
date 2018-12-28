@@ -13,6 +13,7 @@ type PropsType = {
     distance?: number;
     stretch?: boolean;
     triggerOn?: 'click' | 'hover';
+    onClickOutside?(): void;
     renderContent(): JSX.Element | string;
 };
 
@@ -63,7 +64,8 @@ class Popover extends Component<PropsType, StateType> {
             !this.anchorRef.contains(event.target as Node) &&
             !this.popoverRef.contains(event.target as Node)
         ) {
-            this.togglePopover();
+            if (this.props.onClickOutside !== undefined) this.props.onClickOutside();
+            else this.togglePopover();
         }
     };
 

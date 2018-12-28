@@ -10,14 +10,14 @@ const options = [
         label: 'Default action',
         default: true,
         description: 'Unparalleled step-changes dynamically enable senior industry leaders for our market foci.',
-        action: (): void => {
+        onClick: (): void => {
             alert('Default action');
         },
     },
     {
         label: 'Alternative action 1',
         description: 'In the deliverable space, industry is virtually impacting its holistic verticals.',
-        action: (): void => {
+        onClick: (): void => {
             alert('Alternative action 1');
         },
     },
@@ -25,7 +25,7 @@ const options = [
         label: 'Alternative action 2',
         description:
             'Key players will take ownership of their big datas by iteratively integrating long-term capabilities.',
-        action: (): void => {
+        onClick: (): void => {
             alert('Alternative action 2');
         },
     },

@@ -1,16 +1,15 @@
 import React, { FunctionComponent } from 'react';
-import { StyledType } from '../../utility/styled';
+import { StyledType } from '../../utility/_styled';
 import { StyledSpan, StyledParagraph } from './style';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 
 type PropsType = StyledType & {
+    variant?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
+    severity?: SeverityType;
+    textAlign?: 'left' | 'right' | 'center' | 'justify';
     compact?: boolean;
-    descriptive?: boolean;
     strong?: boolean;
     inline?: boolean;
-    variant?: 'small' | 'base' | 'large';
-    textAlign?: 'left' | 'right' | 'center' | 'justify';
-    severity?: SeverityType;
 };
 
 const Text: FunctionComponent<PropsType> = (props): JSX.Element => {
@@ -19,11 +18,11 @@ const Text: FunctionComponent<PropsType> = (props): JSX.Element => {
     return (
         <Element
             variant={props.variant}
-            descriptive={props.descriptive}
-            strong={props.strong}
-            compact={props.compact}
-            textAlign={props.textAlign}
             severity={props.severity}
+            textAlign={props.textAlign}
+            compact={props.compact}
+            strong={props.strong}
+            inline={props.inline}
         >
             {props.children}
         </Element>

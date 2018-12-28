@@ -1,10 +1,11 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/styled';
+import styled, { withProps } from '../../../utility/_styled';
 
 type PropsType = {
-    align: 'left' | 'center' | 'right';
+    align: 'start' | 'center' | 'end';
+    onClick?(): void;
 };
 
 const StyledHeader = withProps<PropsType>(styled.th)`
@@ -12,6 +13,13 @@ const StyledHeader = withProps<PropsType>(styled.th)`
     text-align: ${({ align }): string => align}};
     background: ${({ theme }): string => theme.Table.cell.default.backgroundColor};
     border-bottom: ${({ theme }): string => `solid 1px ${theme.Table.cell.default.borderColor}`};
+    ${({ onClick }): string =>
+        onClick !== undefined
+            ? `
+                cursor: pointer;
+                user-select: none;
+            `
+            : ''}
 `;
 
 export default StyledHeader;

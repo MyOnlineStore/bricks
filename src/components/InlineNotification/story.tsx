@@ -2,7 +2,7 @@ import { select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import InlineNotification from '.';
-import SeverityType from '../../types/SeverityType';
+import SeverityType from '../../types/_SeverityType';
 import Link from '../Link';
 
 storiesOf('InlineNotification', module)

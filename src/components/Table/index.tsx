@@ -3,38 +3,45 @@ import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledTable from './style';
 import Row from './Row';
 import Branch from '../Branch';
-import Header from './Header';
+import Headers from './Headers';
 
-type PropsType = {
-    rows: Array<RowType>;
-    headers?: Array<ReactNode>;
-    alignments?: Array<'left' | 'center' | 'right'>;
-    draggable?: boolean;
-    selectable?: boolean;
-    onDragEnd?(result: DropResult): void;
-    onSelection?(rows: Array<RowType>): void;
+type SortDirectionType = 'ascending' | 'descending' | 'none';
+
+type BaseRowType = {
+    id: string;
+    selected?: boolean;
+    // tslint:disable-next-line
+    [key: string]: string | number | boolean | undefined;
 };
 
-type RowType = { id: string; checked?: boolean; cells: Array<ReactNode> };
+type ColumnType<GenericCellType, GenericRowType> = {
+    order?: number;
+    header?: ReactNode;
+    align?: 'start' | 'center' | 'end';
+    sort?(cellA: GenericCellType, cellB: GenericCellType): number;
+    render?(cell: GenericCellType, row: GenericRowType): JSX.Element;
+};
+
+type PropsType<GenericRowType extends BaseRowType> = {
+    rows: Array<GenericRowType>;
+    columns: {
+        [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<
+            GenericRowType[GenericColumnType],
+            GenericRowType
+        >
+    };
+    onSelection?(rows: Array<GenericRowType>): void;
+    onDragEnd?(rows: Array<GenericRowType>, dropResult: DropResult): void;
+};
 
 type StateType = {
     selectionStart: number;
     toggleAction: boolean;
+    sorting?: { column: string; direction: SortDirectionType };
 };
 
-const mapAlignment = (alignment: 'left' | 'center' | 'right'): 'flex-end' | 'center' | 'flex-start' => {
-    switch (alignment) {
-        case 'right':
-            return 'flex-end';
-        case 'center':
-            return 'center';
-        default:
-            return 'flex-start';
-    }
-};
-
-class Table extends Component<PropsType, StateType> {
-    public constructor(props: PropsType) {
+class Table<GenericRowType extends BaseRowType> extends Component<PropsType<GenericRowType>, StateType> {
+    public constructor(props: PropsType<GenericRowType>) {
         super(props);
 
         this.state = {
@@ -44,58 +51,108 @@ class Table extends Component<PropsType, StateType> {
     }
 
     private dragEndHandler = (result: DropResult): void => {
-        (this.props.onDragEnd as Function)(result);
+        if (this.props.onDragEnd !== undefined && result.destination) {
+            const rows = this.props.rows;
+            const [removed] = rows.splice(result.source.index, 1);
+
+            rows.splice(result.destination.index, 0, removed);
+
+            this.props.onDragEnd(rows, result);
+        }
     };
 
-    private handleCheck(event: MouseEvent<HTMLDivElement>, toggleAction: boolean, id: string): void {
-        if (this.props.onSelection !== undefined) {
-            const { rows, onSelection } = this.props;
-            const selectionStart = rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
+    private handleSelection(event: MouseEvent<HTMLDivElement>, toggleAction: boolean, id: string): void {
+        const selectionEnd = this.props.rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
 
-            if (event.shiftKey) {
-                window.getSelection().removeAllRanges();
-                onSelection(
-                    rows.map((row, key): RowType => {
-                        return (key > this.state.selectionStart && key < selectionStart) ||
-                            (key < this.state.selectionStart && key > selectionStart) ||
-                            row.id === id
-                            ? { ...row, checked: this.state.toggleAction }
-                            : row;
-                    }),
-                );
-            } else {
-                this.setState({ selectionStart, toggleAction });
-                onSelection(rows.map(row => (row.id === id ? { ...row, checked: toggleAction } : row)));
-            }
+        if (event.shiftKey) {
+            window.getSelection().removeAllRanges();
+
+            const selection = this.props.rows.map(
+                (row, key): GenericRowType => {
+                    if (
+                        (key >= this.state.selectionStart && key <= selectionEnd) ||
+                        (key <= this.state.selectionStart && key >= selectionEnd)
+                    ) {
+                        // tslint:disable-next-line
+                        return { ...(row as any), selected: this.state.toggleAction };
+                    }
+
+                    return row;
+                },
+            );
+
+            (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(selection);
+        } else {
+            this.setState({ selectionStart: selectionEnd, toggleAction });
+
+            const selection = this.props.rows.map(
+                // tslint:disable-next-line
+                row => (row.id === id ? { ...(row as any), selected: toggleAction } : row),
+            );
+
+            (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(selection);
         }
     }
 
-    private handleHeaderCheck(checked: boolean): void {
-        if (this.props.onSelection !== undefined) {
-            this.props.onSelection(this.props.rows.map(row => ({ ...row, checked })));
-        }
+    private handleHeaderCheck(selected: boolean): void {
+        (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(
+            // tslint:disable-next-line
+            this.props.rows.map(row => ({ ...(row as any), selected })),
+        );
     }
 
-    private getHeaderState(): boolean | 'indeterminate' {
-        const { rows } = this.props;
-        const checkedItems = rows.filter(row => row.checked === true);
+    private getHeaderState() {
+        const selectedItems = this.props.rows.filter(row => row.selected);
 
-        switch (checkedItems.length) {
+        switch (selectedItems.length) {
             case 0:
                 return false;
-            case rows.length:
+            case this.props.rows.length:
                 return true;
             default:
                 return 'indeterminate';
         }
     }
 
-    public render(): JSX.Element {
-        const { headers, rows } = this.props;
+    private handleSort = (column: string, direction: SortDirectionType) => {
+        this.setState({
+            sorting: {
+                column,
+                direction,
+            },
+        });
+    };
 
-        const alignments = this.props.alignments !== undefined ? this.props.alignments : [];
-        const isDraggable = this.props.draggable !== undefined ? this.props.draggable : false;
-        const isSelectable = this.props.selectable !== undefined ? this.props.selectable : false;
+    private sortRows = (): Array<GenericRowType> => {
+        // tslint:disable-next-line
+        if (this.state.sorting === undefined || this.props.columns[this.state.sorting.column].sort === undefined) {
+            return this.props.rows;
+        }
+
+        const sortingColumn = this.props.columns[this.state.sorting.column];
+        const rows = [...this.props.rows];
+        const column = this.state.sorting.column;
+
+        // tslint:disable-next-line
+        const sortRows = sortingColumn.sort as Required<ColumnType<any, any>>['sort'];
+
+        switch (this.state.sorting.direction) {
+            case 'ascending': {
+                return rows.sort((a, b) => sortRows(a[column], b[column]));
+            }
+            case 'descending': {
+                return rows.sort((a, b) => sortRows(b[column], a[column]));
+            }
+            default: {
+                return rows;
+            }
+        }
+    };
+
+    public render() {
+        const isDraggable = this.props.onDragEnd !== undefined;
+        const isSelectable = this.props.onSelection !== undefined;
+        const rows = this.sortRows();
 
         return (
             <Branch
@@ -109,30 +166,26 @@ class Table extends Component<PropsType, StateType> {
                 )}
                 ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
             >
-                {headers !== undefined && (
-                    <Header
-                        onCheck={(checked): void => this.handleHeaderCheck(checked)}
-                        checked={this.getHeaderState()}
-                        alignments={alignments}
-                        draggable={isDraggable}
-                        headers={headers}
-                        selectable={isSelectable}
-                    />
-                )}
-
+                <Headers
+                    checked={this.getHeaderState()}
+                    draggable={isDraggable}
+                    selectable={isSelectable}
+                    columns={this.props.columns}
+                    onCheck={(selected): void => this.handleHeaderCheck(selected)}
+                    onSort={this.handleSort}
+                />
                 <tbody>
-                    {rows.map(({ id, checked, cells }, rowIndex) => (
+                    {rows.map((row, rowIndex) => (
                         <Row
-                            key={id}
-                            alignments={alignments}
-                            cells={cells}
+                            key={row.id}
+                            columns={this.props.columns}
+                            row={row}
                             draggable={isDraggable}
                             selectable={isSelectable}
-                            checked={checked !== undefined ? checked : false}
+                            selected={row.selected !== undefined ? row.selected : false}
                             index={rowIndex}
-                            identifier={id}
-                            onCheck={(event, toggleAction): void => {
-                                this.handleCheck(event, toggleAction, id);
+                            onSelection={(event, toggleAction): void => {
+                                this.handleSelection(event, toggleAction, row.id);
                             }}
                         />
                     ))}
@@ -143,4 +196,4 @@ class Table extends Component<PropsType, StateType> {
 }
 
 export default Table;
-export { PropsType, DragDropContext, mapAlignment };
+export { PropsType, DragDropContext, ColumnType, BaseRowType, SortDirectionType };

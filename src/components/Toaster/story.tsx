@@ -19,7 +19,7 @@ storiesOf('Toaster', module).add('Default', () => (
 storiesOf('Toaster', module).add('With action button', () => (
     <Toaster
         icon="cash"
-        action={(): boolean => confirm('I love pressing F5, its so refreshing')}
+        onClick={(): boolean => confirm('I love pressing F5, its so refreshing')}
         isOpen={boolean('show', true)}
         severity={select('severity', ['success', 'warning', 'error', 'info'], 'error') as PropsType['severity']}
         closeAction={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}

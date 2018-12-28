@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import Skeleton from '.';
 import StyledTextSkeleton from './Text/style';
 
@@ -7,14 +7,6 @@ describe('Skeleton', () => {
     it('should not crash when no baseWidth is set on the Text variant', () => {
         const fn = (): void => {
             mountWithTheme(<Skeleton.Text lines={1} />);
-        };
-
-        expect(fn).not.toThrow();
-    });
-
-    it('should not crash when no width is set on the Button variant', () => {
-        const fn = (): void => {
-            mountWithTheme(<Skeleton.Button />);
         };
 
         expect(fn).not.toThrow();

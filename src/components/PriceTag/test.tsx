@@ -1,180 +1,80 @@
-import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import PriceTag from '.';
-import MosTheme from '../../themes/MosTheme';
+import { mountWithTheme, shallowWithTheme } from '../../utility/_styled/testing';
+import { mosTheme } from '../../themes/MosTheme';
 
 describe('PriceTag', () => {
     it('should render with a hidden currency', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '20' },
-                    ]}
-                    hideCurrency
-                />
-            </MosTheme>,
-        ).find(PriceTag);
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} hideCurrency />);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component.text()).not.toContain('€');
     });
 
     it('should render a base price', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '20' },
-                    ]}
-                    displayType="base"
-                />
-            </MosTheme>,
-        ).find(PriceTag);
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} />);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component.text()).toEqual('€ 10,20');
+    });
+
+    it('should position currency correctly ', () => {
+        const component = mountWithTheme(<PriceTag locale="de-DE" currency="EUR" value={10.2} />);
+
+        expect(component.text()).toEqual('10,20 €');
+    });
+
+    it('should show fraction correctly ', () => {
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="JPY" value={10.2} />);
+
+        expect(component.text()).toEqual('JP¥ 10');
+    });
+
+    it('should render a free label', () => {
+        const component = mountWithTheme(<PriceTag locale="de-DE" freeLabel="free stuff" currency="EUR" value={0} />);
+
+        expect(component.text()).toContain('free stuff');
     });
 
     it('should render an action price', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '20' },
-                    ]}
-                    displayType="action"
-                />
-            </MosTheme>,
-        ).find(PriceTag);
-
-        expect(toJson(component)).toMatchSnapshot();
+        const priceTag = shallowWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} strikethrough />);
+        /* tslint:disable */
+        (expect(priceTag) as any).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
+            modifier: '::after',
+        });
+        /* tslint:enable */
     });
 
-    it('should render with a hidden currency and superscript franction', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '20' },
-                    ]}
-                    superScriptFraction
-                    hideCurrency
-                />
-            </MosTheme>,
-        ).find(PriceTag);
-
-        expect(toJson(component)).toMatchSnapshot();
+    it('should render with a superscript franction', () => {
+        const priceTag = shallowWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} superScriptFraction />);
+        /* tslint:disable */
+        (expect(priceTag) as any).toHaveStyleRule('font-size', '.7em', { modifier: 'sup' });
+        /* tslint:enable */
     });
 
     it('should render with a dashed fraction', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '00' },
-                    ]}
-                    showDash
-                />
-            </MosTheme>,
-        ).find(PriceTag);
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.0} fractionFormat="dash" />);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component.text()).toContain('-');
     });
 
     it('should render with a hidden fraction on a round value', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '00' },
-                    ]}
-                    hideZeros
-                />
-            </MosTheme>,
-        ).find(PriceTag);
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.0} fractionFormat="none" />);
 
-        expect(toJson(component)).toMatchSnapshot();
-    });
-
-    it('should render with a fraction in superscript', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '20' },
-                    ]}
-                    superScriptFraction
-                />
-            </MosTheme>,
-        ).find(PriceTag);
-
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component.text()).toEqual('€ 10');
     });
 
     it('should render with showDash and superscript on a round value', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '10' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '00' },
-                    ]}
-                    showDash
-                    superScriptFraction
-                />
-            </MosTheme>,
-        ).find(PriceTag);
+        const component = mountWithTheme(
+            <PriceTag locale="nl-NL" currency="EUR" value={0.0} fractionFormat="dash" superScriptFraction />,
+        );
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component.text()).toContain('0,-');
     });
 
-    it('should render a label with the price is 0', () => {
-        const component = mount(
-            <MosTheme>
-                <PriceTag
-                    parts={[
-                        { type: 'currency', value: '€' },
-                        { type: 'literal', value: ' ' },
-                        { type: 'integer', value: '0' },
-                        { type: 'decimal', value: ',' },
-                        { type: 'fraction', value: '00' },
-                    ]}
-                    freeLabel="free"
-                />
-            </MosTheme>,
-        ).find(PriceTag);
+    it('should render a label when the price is 0', () => {
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={0} freeLabel="free" />).find(
+            PriceTag,
+        );
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component.text()).toContain('free');
     });
 });
