@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { TrblType } from '../../utility/trbl';
+import trbl, { TrblType } from '../../utility/trbl';
 import { StyledDiv, StyledSpan } from './style';
+import { OffsetShorthandType } from '../../types/OffsetType';
 
 type PropsType = JSX.IntrinsicElements['div'] & {
     justifyContent?:
@@ -17,8 +18,8 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     inline?: boolean;
     height?: string;
     width?: string;
-    margin?: TrblType;
-    padding?: TrblType;
+    margin?: TrblType | OffsetShorthandType;
+    padding?: TrblType | OffsetShorthandType;
     maxHeight?: string;
     minHeight?: string;
     maxWidth?: string;
@@ -48,8 +49,13 @@ const Box: FunctionComponent<PropsType> = (props): JSX.Element => {
         maxWidth,
         minWidth,
         ref,
+        margin,
+        padding,
         ...filteredProps
     } = props;
+
+    const shorthandMargin = Array.isArray(margin) ? trbl(...margin) : margin;
+    const shorthandPadding = Array.isArray(padding) ? trbl(...padding) : padding;
 
     const newProps = {
         ...filteredProps,
@@ -62,6 +68,8 @@ const Box: FunctionComponent<PropsType> = (props): JSX.Element => {
         elementMinWidth: minWidth,
         flexDirection: direction,
         flexOrder: order,
+        margin: shorthandMargin,
+        padding: shorthandPadding,
     };
 
     return props.inline ? (
