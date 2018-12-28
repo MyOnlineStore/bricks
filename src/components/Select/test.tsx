@@ -76,7 +76,7 @@ describe('Select', () => {
 
         component.simulate('focus');
 
-        /* tslint:disable:no-any */
+        // tslint:disable-next-line:no-any
         (expect(component.find(StyledInput)) as any).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.wrapper.focus.borderColor}`,
@@ -84,11 +84,11 @@ describe('Select', () => {
 
         component.simulate('blur');
 
+        // tslint:disable-next-line:no-any
         (expect(component.find(StyledInput)) as any).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.input.borderColor}`,
         );
-        /* tslint:enable:no-any */
     });
 
     it('should open the arrowDown or arrowUp is pressed and close when escape is pressed', () => {
@@ -434,5 +434,37 @@ describe('Select', () => {
         component.update();
 
         expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
+    });
+
+    it('should handle a simulated change event', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(<Select onChange={changeMock} value="" emptyText="" options={options} />);
+
+        component.simulate('change', {
+            target: {
+                value: options[0].value,
+            },
+        });
+
+        expect(changeMock).toHaveBeenCalledWith(options[0].value);
+    });
+
+    it('should not change the selected value when the input value changes', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(<Select onChange={changeMock} value="" emptyText="" options={options} />);
+
+        component
+            .find(StyledInput)
+            .find(Box)
+            .at(1)
+            .simulate('click');
+
+        component.find('input[type="text"]').simulate('change', {
+            target: {
+                value: 'Foo',
+            },
+        });
+
+        expect(changeMock).toHaveBeenCalledTimes(0);
     });
 });

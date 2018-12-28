@@ -61,4 +61,4 @@ class DemoComponent extends Component<{}, StateType> {
     }
 }
 
-storiesOf('RadioButtonGroup', module).add('Default', () => <DemoComponent />);
+storiesOf('RadioButtonGroup ⚠️', module).add('Default', () => <DemoComponent />);

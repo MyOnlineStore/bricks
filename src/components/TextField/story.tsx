@@ -30,6 +30,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
                 <TextField.Currency
                     name="first name"
                     disabled={boolean('disabled', false)}
+                    disableNegative={boolean('disableNegative', false)}
                     currency={this.props.currency ? this.props.currency : 'USD'}
                     feedback={{
                         severity: 'info',
@@ -38,6 +39,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
                     locale={this.props.locale ? this.props.locale : 'en-US'}
                     value={this.state.numberValue}
                     onChange={(value: number): void => this.setState({ numberValue: value })}
+                    minor={boolean('minor', false)}
                 />
             );
         } else if (this.props.formatter === 'withNumber') {

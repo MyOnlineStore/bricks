@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
@@ -12,13 +12,13 @@ type PropsType = StyledType & {
     icon?: keyof typeof MediumIcons;
 };
 
-const Notification: SFC<PropsType> = (props): JSX.Element => {
+const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (
         <StyledNotification severity={props.severity}>
-            <Box margin={trbl(12)} alignItems={'flex-start'} >
-                <Box margin={trbl(0,12,0,0)}>
+            <Box margin={trbl(12)} alignItems={'flex-start'}>
+                <Box margin={trbl(0, 12, 0, 0)}>
                     <Icon size="medium" icon={icon} />
                 </Box>
                 {props.message}

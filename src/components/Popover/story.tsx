@@ -1,6 +1,6 @@
 import { boolean, number, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
-import React, { Component, SFC } from 'react';
+import React, { Component, FunctionComponent } from 'react';
 import Popover, { PlacementType } from '.';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
@@ -18,7 +18,7 @@ type StateType = {
     isOpen: boolean;
 };
 
-const DemoContent: SFC = (): JSX.Element => {
+const DemoContent: FunctionComponent = (): JSX.Element => {
     return (
         <Box margin={trbl(24)}>
             <Text>
@@ -62,7 +62,7 @@ class Demo extends Component<PropsType, StateType> {
 }
 
 storiesOf('Popover', module)
-    .add('Default', () => (
+    .add('External state', () => (
         /* tslint:disable */
         <Demo
             placement={

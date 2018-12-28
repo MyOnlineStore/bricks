@@ -25,7 +25,7 @@ const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
     position: fixed;
     height: 100%;
     width: 100%;
-    padding: 12px;
+    padding: 9px;
     top: 0;
     left: 0;
     box-sizing: border-box;

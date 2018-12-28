@@ -5,16 +5,24 @@ import styled, { withProps } from '../../utility/_styled';
 import BareButton, { PropsType as BareButtonPropsType } from './BareButton';
 
 type ButtonPropsType = BareButtonPropsType & {
+    loading?: boolean;
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     compact?: boolean;
     disabled?: boolean;
 };
 
 const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
-    ${({ theme, variant, compact, disabled }): string => {
+    ${({ theme, variant, compact, disabled, loading }): string => {
+        const color = (() => {
+            if (loading) return 'transparent';
+            if (disabled) return theme.Button.Default.disabled.color;
+
+            return theme.Button.Default[variant].idle.color;
+        })();
+
         return `
             padding: 11px ${compact ? ' 12px' : '24px'};
-            color: ${disabled ? theme.Button.Default.disabled.color : theme.Button.Default[variant].idle.color};
+            color: ${color};
             background-color: ${theme.Button.Default[variant].idle.backgroundColor};
             border-radius: ${theme.Button.common.borderRadius};
             box-shadow: ${theme.Button.Default[variant].idle.boxShadow}

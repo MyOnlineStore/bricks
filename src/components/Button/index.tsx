@@ -7,6 +7,7 @@ import StyledDefault from './styleDefault';
 type PropsType = {
     className?: string;
     compact?: boolean;
+    loading?: boolean;
     title: string;
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     target?: HTMLAnchorElement['target'];

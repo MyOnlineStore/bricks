@@ -1,5 +1,5 @@
 /// <reference path="../../../src/_declarations/global.d.ts" />
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import StyledPriceTag from './style';
 import formatFraction from './formatters/formatFraction';
 import formatCurrency from './formatters/formatCurrency';
@@ -32,7 +32,7 @@ const deriveStatsFromPart = (initialStats: StatsType, part: Intl.PartType): Stat
     isFree: isFree(part) ? false : initialStats.isFree,
 });
 
-const PriceTag: SFC<PropsType> = (props): JSX.Element => {
+const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
     const formatter = new Intl.NumberFormat(props.locale, {
         style: 'currency',
         currency: props.currency,

@@ -22,7 +22,6 @@ type StateType = {
     city: string;
     country: string;
     toggled: boolean;
-
     checked: boolean;
 };
 
@@ -274,12 +273,18 @@ class DemoComponent extends Component<PropsType, StateType> {
                             </label>
                         }
                         field={
-                            <Checkbox
-                                onChange={(): void => this.setState({ checked: !this.state.checked })}
-                                value="bar"
-                                checked={this.state.checked}
-                                name="foo"
-                            />
+                            <Box margin={trbl(0, 12, 0, 0)}>
+                                <Checkbox
+                                    onChange={(): void =>
+                                        this.setState({
+                                            checked: !this.state.checked,
+                                        })
+                                    }
+                                    value="bar"
+                                    checked={this.state.checked}
+                                    name="foo"
+                                />
+                            </Box>
                         }
                     />
                 </form>

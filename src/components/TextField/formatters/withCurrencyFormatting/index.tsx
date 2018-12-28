@@ -8,6 +8,8 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     value: number;
     locale: string;
     currency: string;
+    disableNegative?: boolean;
+    minor?: boolean;
     onChange(value: number): void;
 };
 
@@ -31,7 +33,9 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
 
             this.state = {
                 cursorPosition: 0,
-                value: `${props.value}`,
+                value: !this.props.minor
+                    ? `${props.value}`
+                    : `${props.value / Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits)}`,
                 currency: '',
                 currencyAlignment: 'left',
                 decimalSeperator: '.',
@@ -46,7 +50,11 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         private parse(direction: 'in', value: string): string;
         private parse(direction: 'out', value: string): number;
         private parse(direction: 'in' | 'out', value: string): string | number {
-            const stripped = value.replace(new RegExp(`[^0-9${this.state.decimalSeperator}]`, 'g'), '');
+            const negatedValues = this.props.disableNegative
+                ? `[^0-9${this.state.decimalSeperator}]`
+                : `[^\-0-9${this.state.decimalSeperator}]`;
+
+            const stripped = value.replace(new RegExp(negatedValues, 'g'), '');
 
             if (direction === 'out') {
                 const parsed = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
@@ -92,24 +100,34 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
             }
         }
 
-        private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
-            this.props.onChange(this.parse('out', value));
-            const target = event.target;
-            const selectionStart = target.selectionStart as number;
-            const newInputLength = this.parse('in', value).length;
+        private handleChange = (value: string, event?: ChangeEvent<HTMLInputElement>): void => {
+            this.props.minor
+                ? this.props.onChange(
+                      this.parse('out', value) * Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits),
+                  )
+                : this.props.onChange(this.parse('out', value));
 
-            this.setState({ inputLength: target.value.length });
+            if (event) {
+                const target = event.target;
+                const selectionStart = target.selectionStart as number;
+                const newInputLength = this.parse('in', value).length;
 
-            this.setState({ value: this.parse('in', value) }, () => {
-                target.selectionEnd = this.state.inputLength === newInputLength ? selectionStart : selectionStart - 1;
-            });
+                this.setState({
+                    inputLength: target.value.length,
+                });
+
+                this.setState({ value: this.parse('in', value) }, () => {
+                    target.selectionEnd =
+                        this.state.inputLength === newInputLength ? selectionStart : selectionStart - 1;
+                });
+            }
         };
 
         private handleBlur = (): void => {
             if (this.state.value.length !== 0) {
                 this.setState({ value: this.format(this.state.value) });
             } else {
-                this.props.onChange(this.parse('out', '0'));
+                this.handleChange('0');
                 this.setState({ value: this.format('0') });
             }
         };
@@ -119,9 +137,14 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         };
 
         public componentDidUpdate(prevProps: PropsType): void {
-            if (prevProps.currency !== this.props.currency || prevProps.locale !== this.props.locale) {
+            if (
+                prevProps.currency !== this.props.currency ||
+                prevProps.locale !== this.props.locale ||
+                prevProps.disableNegative !== this.props.disableNegative ||
+                prevProps.minor !== this.props.minor
+            ) {
                 this.setFormatter(this.props.locale, this.props.currency);
-                this.setState({ value: this.format(this.state.value) });
+                this.setState({ value: this.format(this.state.value) }, () => this.handleChange(this.state.value));
             }
         }
 

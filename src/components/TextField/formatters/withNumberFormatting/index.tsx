@@ -11,6 +11,7 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
 
 type StateType = {
     value: string;
+    savedValue: number;
 };
 
 type WithNumberFormattingType = ComponentClass<PropsType>;
@@ -22,23 +23,33 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
             this.state = {
                 value: `${this.props.value}`,
+                savedValue: this.props.value,
             };
         }
 
         public static getDerivedStateFromProps(nextProps: PropsType, prevState: StateType): StateType {
+            if (nextProps.value === prevState.savedValue) {
+                return { ...prevState, value: prevState.value === '' ? '' : prevState.savedValue.toString() };
+            }
+
             return {
+                ...prevState,
                 value: `${nextProps.value}`,
             };
         }
 
-        private handleChange = (value: string, event: ChangeEvent<HTMLInputElement>): void => {
+        private handleChange = (value: string): void => {
             const parsedValue = parseInt(value, 10);
-
             if (isNaN(parsedValue)) {
                 this.setState({ value: '' });
+                this.props.onChange(this.state.savedValue);
             } else if (parsedValue < 0 && this.props.disableNegative) {
+                this.setState({ savedValue: 0 });
                 this.props.onChange(0);
             } else {
+                if (parsedValue !== this.state.savedValue || this.state.value.length === 0) {
+                    this.setState({ value: '0', savedValue: parsedValue });
+                }
                 this.props.onChange(parsedValue);
             }
         };
@@ -47,7 +58,9 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             if (this.state.value.length === 0) {
                 this.setState({ value: '0' });
             }
-            if (this.props.onBlur !== undefined) this.props.onBlur();
+            if (this.props.onBlur !== undefined) {
+                this.props.onBlur();
+            }
         };
 
         public render(): JSX.Element {

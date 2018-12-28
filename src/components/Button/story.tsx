@@ -2,7 +2,7 @@ import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import { ButtonPropsType as PlainPropsType } from './styleFlat';
+import { PropsType as PlainPropsType } from './styleFlat';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -26,6 +26,7 @@ storiesOf('Button', module)
                         'primary',
                     ) as PropsType['variant']
                 }
+                loading={boolean('loading', false)}
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
                 compact={boolean('compact', false)}
@@ -42,6 +43,7 @@ storiesOf('Button', module)
                         'destructive',
                     ) as PropsType['variant']
                 }
+                loading={boolean('loading', false)}
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
                 href="http://www.google.com"
@@ -51,11 +53,12 @@ storiesOf('Button', module)
         );
     })
     .add('Call to Action', () => {
-        return <Button.Cta title={text('title', 'Click me')} />;
+        return <Button.Cta loading={boolean('loading', false)} title={text('title', 'Click me')} />;
     })
     .add('Flat', () => {
         return (
             <Button.Flat
+                loading={boolean('loading', false)}
                 variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
                 title="Click me"
             >
@@ -66,6 +69,7 @@ storiesOf('Button', module)
     .add('With an icon', () => {
         return (
             <Button.Cta
+                loading={boolean('loading', false)}
                 title={text('title', 'Press any key to continue')}
                 icon={select('Icon', mediumIconKeys, 'keyboard') as PropsType['icon']}
                 iconAlign={select('Align icon', ['left', 'right'], 'left') as PropsType['iconAlign']}

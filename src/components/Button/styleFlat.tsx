@@ -4,11 +4,11 @@ import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/_styled';
 import BareButton, { PropsType as BareButtonPropsType } from './BareButton';
 
-type ButtonPropsType = BareButtonPropsType & {
+type PropsType = BareButtonPropsType & {
     variant: 'primary' | 'destructive';
 };
 
-const StyledFlat = withProps<ButtonPropsType>(styled(BareButton))`
+const StyledFlat = withProps<PropsType>(styled(BareButton))`
     ${({ theme, variant }): string => {
         return `
             padding: 11px 12px;
@@ -30,4 +30,4 @@ const StyledFlat = withProps<ButtonPropsType>(styled(BareButton))`
 `;
 
 export default StyledFlat;
-export { ButtonPropsType };
+export { PropsType };

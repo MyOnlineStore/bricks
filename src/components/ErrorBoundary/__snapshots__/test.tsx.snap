@@ -32,7 +32,10 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  margin: 12px 12px 12px 12px;
+  margin-top: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -54,7 +57,10 @@ exports[`ErrorBoundary should catch an error and report it 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0px 12px 0px 0px;
+  margin-top: 0px;
+  margin-right: 12px;
+  margin-bottom: 0px;
+  margin-left: 0px;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;

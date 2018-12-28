@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import Box, { PropsType } from '.';
-import trbl, { PxCoordinateType } from '../../utility/trbl';
+import trbl from '../../utility/trbl';
+import { OffsetType } from '../../types/OffsetType';
 import Text from '../Text';
 
 const Wrapper = styled.div`
@@ -36,8 +37,8 @@ storiesOf('Box', module).add('Default', () => {
         items.push(
             <Box
                 key={i}
-                margin={trbl(select('margin', [0, 6, 12], 0, 'Child') as PxCoordinateType)}
-                padding={trbl(select('padding', [0, 6, 12], 0, 'Child') as PxCoordinateType)}
+                margin={trbl(select('margin', [0, 6, 12], 0, 'Child') as OffsetType)}
+                padding={trbl(select('padding', [0, 6, 12], 0, 'Child') as OffsetType)}
                 grow={number('grow', 1, {}, 'Child')}
                 shrink={number('shrink', 1, {}, 'Child')}
                 basis={text('basis', 'auto', 'Child')}
@@ -67,8 +68,8 @@ storiesOf('Box', module).add('Default', () => {
     return (
         <Wrapper>
             <Box
-                margin={trbl(select('margin', [-12, -6, 0, 6, 12], 0, 'Parent') as PxCoordinateType)}
-                padding={trbl(select('padding', [-12, -6, 0, 6, 12], 0, 'Parent') as PxCoordinateType)}
+                margin={trbl(select('margin', [-12, -6, 0, 6, 12], 0, 'Parent') as OffsetType)}
+                padding={trbl(select('padding', [-12, -6, 0, 6, 12], 0, 'Parent') as OffsetType)}
                 justifyContent={
                     select('justifyContent', justifyOptions, justifyOptions[0], 'Parent') as PropsType['justifyContent']
                 }

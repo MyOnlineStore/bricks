@@ -16,7 +16,7 @@ const StyledButton = styled.button`
     text-decoration: none;
     justify-content: center;
     transform: translateZ(0) translate3d(0, 0, 0);
-    transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
+    transition: transform 0.1s, background 0.3s, box-shadow 0.1s, border 0.3s;
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};

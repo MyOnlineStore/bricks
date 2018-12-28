@@ -3,10 +3,12 @@ import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import trbl from '../../utility/trbl';
 import Option from './Option';
-import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
+import trbl from '../../utility/trbl';
+import { withTheme } from 'styled-components';
+import ThemeType from '../../types/ThemeType';
 import { createPortal } from 'react-dom';
+import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { PropsType as ButtonPropsType } from '../Button';
 
 type OmittedKeys = 'onClick' | 'href' | 'compact' | 'title';
@@ -21,6 +23,7 @@ type OptionsType = {
 };
 
 type PropsType = Pick<ButtonPropsType, Exclude<keyof ButtonPropsType, OmittedKeys>> & {
+    theme: ThemeType;
     placement?: PlacementType;
     options: Array<OptionsType>;
     offset?: number;
@@ -214,5 +217,5 @@ class MultiButton extends Component<PropsType, StateType> {
     }
 }
 
-export default MultiButton;
+export default withTheme(MultiButton);
 export { PropsType, PlacementType };

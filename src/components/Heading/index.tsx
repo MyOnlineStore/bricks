@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { StyledType } from '../../utility/_styled';
@@ -31,7 +31,7 @@ type PropsType = StyledType & {
     light?: boolean;
 };
 
-const HeadingElement: SFC<PropsType> = (props): JSX.Element => {
+const HeadingElement: FunctionComponent<PropsType> = (props): JSX.Element => {
     const Element = props.element !== undefined ? `${props.element}` : 'div';
 
     return (

@@ -23,6 +23,14 @@ describe('Button', () => {
         expect(clickMock).not.toHaveBeenCalled();
     });
 
+    it('should not call the passed action on click when loading', () => {
+        const clickMock = jest.fn();
+        const component = mountWithTheme(<Button loading title="Foo" onClick={clickMock} variant="warning" />);
+
+        component.simulate('click');
+        expect(clickMock).not.toHaveBeenCalled();
+    });
+
     it('should call the passed action on click', () => {
         const clickMock = jest.fn();
 
