@@ -28,7 +28,7 @@ exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] 
       }
     }
   >
-    <Button
+    <Styled(ButtonBase)
       title="Test"
       variant="primary"
     />
@@ -46,7 +46,7 @@ exports[`ButtonGroup renders with a Button and a FlatButton in a large node 1`] 
       }
     }
   >
-    <Button
+    <Styled(ButtonBase)
       title="Test"
       variant="secondary"
     />
@@ -82,7 +82,7 @@ exports[`ButtonGroup renders with a single Button in a small node 1`] = `
       }
     }
   >
-    <Button
+    <Styled(ButtonBase)
       title="Test"
       variant="primary"
     />

@@ -6,7 +6,6 @@ import BreakpointProvider from '../BreakpointProvider';
 import { IconButton } from '../Button';
 import Contrast from '../Contrast';
 import Heading from '../Heading';
-import Icon from '../Icon';
 import ScrollBox from '../ScrollBox';
 import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
