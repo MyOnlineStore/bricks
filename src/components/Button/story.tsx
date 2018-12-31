@@ -32,16 +32,6 @@ storiesOf('Button', module)
             />
         );
     })
-    .add('IconButton', () => {
-        return (
-            <IconButton
-                icon="cart"
-                loading={boolean('loading', false)}
-                variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
-                title="Click me"
-            />
-        );
-    })
     .add('With an icon', () => {
         return (
             <Button
@@ -66,5 +56,15 @@ storiesOf('Button', module)
                     </ButtonGroup>
                 </Box>
             </Contrast>
+        );
+    })
+    .add('IconButton', () => {
+        return (
+            <IconButton
+                icon="cart"
+                loading={boolean('loading', false)}
+                variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
+                title="Click me"
+            />
         );
     });

@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 
 type PropsType = {
@@ -31,6 +31,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 className={props.className}
                 disabled={props.disabled}
                 id={props.id}
+                loading={props.loading}
             >
                 {props.children}
             </StyledAnchor>
@@ -45,6 +46,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             type="button"
             disabled={props.disabled}
             id={props.id}
+            loading={props.loading}
         >
             {props.children}
         </StyledButton>

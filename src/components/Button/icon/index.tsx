@@ -43,12 +43,13 @@ const IconButton = withProps<PropsType>(styled(BareButton)).attrs({
     transform: none;
 
     &:hover {
-        ${({ loading }) => (!loading ? 'transform: scale(1.1)' : '')};
-        ${({ variant, theme }) => (variant === 'destructive' ? `color: ${theme.Button.Flat.destructive.color}` : '')};
+        ${({ loading }) => (!loading ? 'transform: scale(1.1);' : '')};
+        ${({ variant, theme, loading }) =>
+            variant === 'destructive' && !loading ? `color: ${theme.Button.Flat.destructive.color}` : ''};
     }
 
     &:active {
-        ${({ loading }) => (!loading ? 'transform: translateY(2px)' : '')};
+        ${({ loading }) => (!loading ? 'transform: scale(0.9);' : '')};
     }
 `;
 

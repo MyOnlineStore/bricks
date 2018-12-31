@@ -47,6 +47,22 @@ const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
     },
 })`
     ${({ theme, variant, compact, disabled, loading }): string => {
+        const hover = `
+            background-color: ${theme.Button.Default[variant].hover.backgroundColor};
+            box-shadow: ${theme.Button.Default[variant].hover.boxShadow};
+        `;
+
+        const active = `
+            transform: translateY(2px);
+            background-color: ${theme.Button.Default[variant].active.backgroundColor};
+            box-shadow: ${theme.Button.Default[variant].active.boxShadow};
+        `;
+
+        const focus = `
+            background-color: ${theme.Button.Default[variant].focus.backgroundColor};
+            box-shadow: ${theme.Button.Default[variant].focus.boxShadow};
+        `;
+
         return `
             padding: 11px ${compact ? ' 12px' : '24px'};
             color: ${disabled ? theme.Button.Default.disabled.color : theme.Button.Default[variant].idle.color};
@@ -56,18 +72,15 @@ const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
             ${variant === 'plain' ? `text-decoration: ${theme.Button.Default.plain.idle.textDecoration}` : ''}
 
             &:hover {
-                background-color: ${theme.Button.Default[variant].hover.backgroundColor};
-                box-shadow: ${theme.Button.Default[variant].hover.boxShadow}
+                ${!loading ? hover : ''}
             }
 
             &:focus {
-                background-color: ${theme.Button.Default[variant].focus.backgroundColor};
-                box-shadow: ${theme.Button.Default[variant].focus.boxShadow};
+                ${focus}
             }
 
             &:active {
-                background-color: ${theme.Button.Default[variant].active.backgroundColor};
-                box-shadow: ${theme.Button.Default[variant].active.boxShadow};
+                ${!loading ? active : ''}
             }
 
             &::before {
