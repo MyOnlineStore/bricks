@@ -1,7 +1,8 @@
 import React from 'react';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Toaster from '.';
-import Button, { IconButton } from '../Button';
+import Button from '../Button';
+import IconButton from '../IconButton';
 
 jest.useFakeTimers();
 

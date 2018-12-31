@@ -4,6 +4,7 @@ export { default as Breadcrumbs } from './components/Breadcrumbs';
 export { default as Box } from './components/Box';
 export { default as BreakpointProvider } from './components/BreakpointProvider';
 export { default as Button } from './components/Button';
+export { default as IconButton } from './components/IconButton';
 export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Contrast } from './components/Contrast';

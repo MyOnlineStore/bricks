@@ -2,7 +2,7 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import IconButton, { PropsType as PlainPropsType } from './icon';
+import IconButton, { PropsType as PlainPropsType } from '../IconButton';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -56,15 +56,5 @@ storiesOf('Button', module)
                     </ButtonGroup>
                 </Box>
             </Contrast>
-        );
-    })
-    .add('IconButton', () => {
-        return (
-            <IconButton
-                icon="cart"
-                loading={boolean('loading', false)}
-                variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
-                title="Click me"
-            />
         );
     });

@@ -3,8 +3,7 @@ import React, { Component, Fragment } from 'react';
 import Table from '.';
 import Text from '../Text';
 import { boolean } from '@storybook/addon-knobs';
-import { IconButton } from '../Button';
-import Icon from '../Icon';
+import IconButton from '../IconButton';
 
 type RowType = {
     id: string;

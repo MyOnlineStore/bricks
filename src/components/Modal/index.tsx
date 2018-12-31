@@ -3,7 +3,7 @@ import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
-import { IconButton } from '../Button';
+import IconButton from '../IconButton';
 import Contrast from '../Contrast';
 import Heading from '../Heading';
 import ScrollBox from '../ScrollBox';

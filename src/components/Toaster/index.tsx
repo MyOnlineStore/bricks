@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import StyledToaster, { StyledToasterWrapper } from './style';
-import Button, { IconButton } from '../Button';
+import Button from '../Button';
+import IconButton from '../IconButton';
 import Box from '../Box';
 import Icon, { MediumIcons } from '../Icon';
 import Text from '../Text';

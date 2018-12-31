@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyledComponentClass as _S, withTheme } from 'styled-components';
-import styled, { withProps } from '../../../utility/_styled';
-import BareButton, { PropsType as BareButtonPropsType } from '../base';
-import ThemeType from '../../../types/ThemeType';
-import Icon from '../../Icon';
-import Spinner from '../../Spinner';
-import Box from '../../Box';
-import { MediumIcons } from '../../Icon/types';
+import styled, { withProps } from '../../utility/_styled';
+import BareButton, { PropsType as BareButtonPropsType } from '../Button/base';
+import ThemeType from '../../types/ThemeType';
+import Icon from '../Icon';
+import Spinner from '../Spinner';
+import Box from '../Box';
+import { MediumIcons } from '../Icon/types';
 
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
