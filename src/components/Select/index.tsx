@@ -7,7 +7,7 @@ import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './s
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import Button from '../../components/Button';
+import FlatButton from '../../components/Button';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 
@@ -225,7 +225,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     )}
                                 </Box>
                             )}
-                        <Button.Flat
+                        <FlatButton
                             title={this.state.isOpen ? 'close' : 'open'}
                             onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
@@ -236,7 +236,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 size="small"
                                 color={this.props.disabled ? this.props.theme.Select.disabled.chevron : undefined}
                             />
-                        </Button.Flat>
+                        </FlatButton>
                     </Box>
                 </StyledInput>
                 {createPortal(

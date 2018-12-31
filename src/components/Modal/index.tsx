@@ -3,7 +3,7 @@ import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
-import Button from '../Button';
+import { IconButton } from '../Button';
 import Contrast from '../Contrast';
 import Heading from '../Heading';
 import Icon from '../Icon';
@@ -81,13 +81,12 @@ class Modal extends Component<PropsType> {
                                             alignItems="center"
                                             grow={0}
                                         >
-                                            <Button.Flat
+                                            <IconButton
+                                                icon="close"
                                                 variant="primary"
                                                 title="close"
                                                 onClick={this.props.closeAction}
-                                            >
-                                                <Icon size="small" icon="close" />
-                                            </Button.Flat>
+                                            />
                                         </Box>
                                     )}
                                 </Box>

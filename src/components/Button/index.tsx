@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
 import { MediumPropsType } from '../Icon';
-import StyledCta from './styleCta';
-import StyledFlat from './styleFlat';
-import StyledDefault from './styleDefault';
+import IconButton from './icon';
+import Button from './default';
 
 type PropsType = {
     className?: string;
@@ -19,14 +17,5 @@ type PropsType = {
     onClick?(): void;
 };
 
-class Button extends Component<PropsType> {
-    public static Cta: typeof StyledCta = StyledCta;
-    public static Flat: typeof StyledFlat = StyledFlat;
-
-    public render(): JSX.Element {
-        return <StyledDefault {...this.props} />;
-    }
-}
-
 export default Button;
-export { PropsType };
+export { PropsType, IconButton };

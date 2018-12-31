@@ -1,28 +1,55 @@
-import _R from 'react';
+import React, { Children, ReactNode } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
-import BareButton, { PropsType as BareButtonPropsType } from './BareButton';
+import _T from '../../../types/ThemeType';
+import styled, { withProps } from '../../../utility/_styled';
+import BareButton, { PropsType as BareButtonPropsType } from '../base';
+import Icon, { MediumPropsType } from '../../Icon';
+import Box from '../../Box';
+import Spinner from '../../Spinner';
 
-type ButtonPropsType = BareButtonPropsType & {
+type PropsType = BareButtonPropsType & {
     loading?: boolean;
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     compact?: boolean;
     disabled?: boolean;
+    icon?: MediumPropsType['icon'];
+    children?: ReactNode;
 };
 
-const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
+const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
+    children: (props: PropsType): JSX.Element => {
+        const color = props.loading ? 'transparent' : undefined;
+
+        return (
+            <>
+                {props.loading && (
+                    <Box
+                        justifyContent="center"
+                        alignItems="center"
+                        position="absolute"
+                        left="0"
+                        top="0"
+                        right="0"
+                        bottom="0"
+                        padding={[6]}
+                    >
+                        <Spinner />
+                    </Box>
+                )}
+                {props.icon && (
+                    <Box inline padding={[0, 6, 0, 0]}>
+                        <Icon size="medium" icon={props.icon} color={color} />
+                    </Box>
+                )}
+                <span style={{ color }}>{Children.count(props.children) > 0 ? props.children : props.title}</span>
+            </>
+        );
+    },
+})`
     ${({ theme, variant, compact, disabled, loading }): string => {
-        const color = (() => {
-            if (loading) return 'transparent';
-            if (disabled) return theme.Button.Default.disabled.color;
-
-            return theme.Button.Default[variant].idle.color;
-        })();
-
         return `
             padding: 11px ${compact ? ' 12px' : '24px'};
-            color: ${color};
+            color: ${disabled ? theme.Button.Default.disabled.color : theme.Button.Default[variant].idle.color};
             background-color: ${theme.Button.Default[variant].idle.backgroundColor};
             border-radius: ${theme.Button.common.borderRadius};
             box-shadow: ${theme.Button.Default[variant].idle.boxShadow}
@@ -84,4 +111,4 @@ const StyledDefault = withProps<ButtonPropsType>(styled(BareButton))`
     }};
 `;
 
-export default StyledDefault;
+export default DefaultButton;

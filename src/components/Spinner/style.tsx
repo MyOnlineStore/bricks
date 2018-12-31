@@ -30,7 +30,7 @@ const StyledSpinner = styled.div`
 const SpinnerSvg = withProps<PropsType>(styled.svg)`
     width: 100%;
     height: 100%;
-    stroke: ${({ color }): string => color};
+    stroke: ${({ color }): string => (color ? color : 'currentColor')};
     fill: transparent;
     stroke-dashoffset: 600;
     stroke-dasharray: 300;

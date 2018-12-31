@@ -61,13 +61,7 @@ describe('Button', () => {
         const fn = (): void => {
             const component = mount(
                 <MosTheme>
-                    <Button
-                        icon={'checkmark'}
-                        iconAlign="right"
-                        title="button2 title"
-                        variant="primary"
-                        onClick={undefined}
-                    />
+                    <Button icon={'checkmark'} title="button2 title" variant="primary" onClick={undefined} />
                 </MosTheme>,
             );
 

@@ -6,13 +6,15 @@ import BreakpointProvider from '../BreakpointProvider';
 import { PropsType } from '../BreakpointProvider/';
 import StyledModal, { StyledModalWrapper } from './style';
 import TransitionAnimation from '../TransitionAnimation';
-import Button from '../Button';
+import FlatButton from '../Button';
 
 jest.mock('../ScrollBox', () => jest.fn().mockImplementation((_: PropsType): string => 'div'));
 
-jest.mock('../BreakpointProvider', () =>
-    jest.fn().mockImplementation((props: PropsType): JSX.Element => props.children('large')),
-);
+jest.mock('../BreakpointProvider', () => {
+    return jest.fn().mockImplementation((props: PropsType): JSX.Element => {
+        return props.children('large');
+    });
+});
 
 describe('Modal', () => {
     it('should render with renderFixed', () => {
@@ -85,7 +87,7 @@ describe('Modal', () => {
     it('should be possible to close the modal view using the close button', () => {
         const clickMock = jest.fn();
         const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
-        const closeButton = component.find(Button.Flat).first();
+        const closeButton = component.find(FlatButton).first();
 
         closeButton.simulate('click');
 

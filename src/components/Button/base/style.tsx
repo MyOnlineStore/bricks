@@ -1,14 +1,15 @@
 import _R from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../../types/ThemeType';
-import styled from '../../../utility/_styled';
+import styled, { withProps } from '../../../utility/_styled';
+import { PropsType } from '.';
 
-const StyledButton = styled.button`
+const StyledButton = withProps<PropsType>(styled.button)`
     border: none;
     display: inline-flex;
     outline: none;
     line-height: 1;
-    cursor: pointer;
+    cursor: ${({ loading }) => (loading ? 'default' : 'pointer')};
     appearance: none;
     user-select: none;
     position: relative;
@@ -44,10 +45,6 @@ const StyledButton = styled.button`
         &::before {
             opacity: 1;
         }
-    }
-
-    &:active {
-        transform: translateY(2px);
     }
 `;
 
