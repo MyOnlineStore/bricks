@@ -11,18 +11,18 @@ import Text from '../Text';
 type PropsType = {
     title: string;
     message: string;
-    orientation?: 'vertical' | 'horizontal';
+    horizontal?: boolean;
     size?: 'small';
 };
 
 const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     const hierarchy = props.size === 'small' ? 3 : 1;
 
-    if (props.orientation === 'horizontal') {
+    if (props.horizontal) {
         return (
             <Box direction="row" alignItems="center" justifyContent="space-around">
                 <Illustration illustration={'cactus'} />
-                <Box direction="column" width="100%" margin={trbl(0, 0, 0, 24)}>
+                <Box direction="column" width="100%" margin={[0, 0, 0, 24]}>
                     <Heading hierarchy={hierarchy}>{props.title}</Heading>
                     <Box margin={trbl(9, 0, 24, 0)}>
                         <Text descriptive>{props.message}</Text>
