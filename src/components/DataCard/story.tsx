@@ -1,92 +1,135 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component, ReactNode } from 'react';
+import React, { Component, Fragment } from 'react';
 import DataCard from '.';
-import { Button, Icon, Badge } from '../..';
+import Text from '../Text';
+import { boolean } from '@storybook/addon-knobs';
+import Button from '../Button';
+import Icon from '../Icon';
 
-type StateType = {
-    rows: Array<{ id: string; checked?: boolean; cells: Array<ReactNode> }>;
+type RowType = {
+    id: string;
+    price: number;
+    name: string;
+    image: string;
+    actions: boolean;
 };
 
-type PropsType = {};
+type StateType = {
+    hover: boolean;
+    rows: Array<RowType>;
+};
 
-const actions = (
-    <>
-        <Button title="edit" flat compact variant="secondary">
-            <Icon icon="pencil" size="medium" />
-        </Button>
-        <Button title="delete" flat compact variant="destructive">
-            <Icon icon="trash" size="medium" />
-        </Button>
-    </>
-);
+type PropsType = {
+    draggable: boolean;
+    selectable: boolean;
+    sortable: boolean;
+    custom: boolean;
+};
 
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
         this.state = {
+            hover: false,
             rows: [
-                {
-                    id: 'article-1',
-                    checked: true,
-                    cells: [
-                        <img key="img" src="https://www.stevensegallery.com/100/100" />,
-                        'Tijger | dubbelzijdig',
-                        '€ 1,85',
-                        'Onbeperkt',
-                        'Mis deze waanzinnige actie niet!',
-                        actions,
-                    ],
-                },
-                {
-                    id: 'article-2',
-                    checked: false,
-                    cells: [
-                        <img key="img" src="https://www.stevensegallery.com/100/100" />,
-                        'Een fijne avondmaaltijd',
-                        '€ 19,95',
-                        <Badge key="s" severity="info">
-                            1 stuks
-                        </Badge>,
-                        undefined,
-                        actions,
-                    ],
-                },
-                {
-                    id: 'article-3',
-                    checked: true,
-                    cells: [
-                        <img key="img" src="https://www.stevensegallery.com/100/100" />,
-                        'USB om rusland mee af te luisteren',
-                        '€ 39,00',
-                        undefined,
-                        undefined,
-                        actions,
-                    ],
-                },
-                {
-                    id: 'article-4',
-                    checked: false,
-                    cells: [
-                        <img key="img" src="https://www.stevensegallery.com/100/100" />,
-                        'Een hele bijzondere klok voor de tijd te lezen maar eigenlijk is het gewoon stiekem een telefoon',
-                        '€ 2,45',
-                        <Badge key="s" severity="error">
-                            0 stuks
-                        </Badge>,
-                        undefined,
-                        actions,
-                    ],
-                },
+                { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝', actions: true },
+                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍', actions: true },
+                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇', actions: true },
+                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌', actions: true },
+                { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋', actions: true },
             ],
         };
     }
 
-    public render(): JSX.Element {
-        return <DataCard rows={this.state.rows} headers={['Afbeelding', 'Artikel', 'Prijs', 'Voorraad', 'Sticker']} />;
+    private sortText = (a: string, b: string) => {
+        const valueA = a.toUpperCase();
+        const valueB = b.toUpperCase();
+
+        if (valueA < valueB) return -1;
+        if (valueA > valueB) return 1;
+
+        return 0;
+    };
+
+    private sortPrice = (a: number, b: number) => a - b;
+
+    private renderPrice = (price: number) => {
+        if (price < 1)
+            return (
+                <Text strong severity="success">
+                    {price}
+                </Text>
+            );
+
+        return (
+            <Text strong severity="error">
+                {price}
+            </Text>
+        );
+    };
+
+    private renderActions = (actions: boolean, row: RowType) => {
+        if (actions) {
+            return (
+                <Button.Flat
+                    title="delete"
+                    variant="destructive"
+                    onClick={() =>
+                        this.setState({
+                            rows: this.state.rows.filter(item => item.id !== row.id),
+                        })
+                    }
+                >
+                    <Icon size="medium" icon="trash" />
+                </Button.Flat>
+            );
+        }
+
+        return <Fragment />;
+    };
+
+    public render() {
+        return (
+            <DataCard<RowType>
+                columns={{
+                    image: { header: 'Image', order: 1 },
+                    name: {
+                        header: 'Name',
+                        order: 1,
+                        align: 'start',
+                        sort: this.props.sortable ? this.sortText : undefined,
+                    },
+                    id: {
+                        header: 'Product ID',
+                        order: 0,
+                        sort: this.props.sortable ? this.sortText : undefined,
+                    },
+                    price: {
+                        header: 'Price',
+                        order: 2,
+                        sort: this.props.sortable ? this.sortPrice : undefined,
+                        render: this.props.custom ? this.renderPrice : undefined,
+                    },
+                    actions: {
+                        order: 3,
+                        align: 'end',
+                        render: this.renderActions,
+                    },
+                }}
+                rows={this.state.rows}
+                onDragEnd={this.props.draggable ? (rows): void => this.setState({ rows }) : undefined}
+                onSelection={this.props.selectable ? (rows): void => this.setState({ rows }) : undefined}
+            />
+        );
     }
 }
 
-storiesOf('DataCard', module).add('Default', () => {
-    return <Demo />;
-});
+storiesOf('DataCard', module).add('Default', () => (
+    <Demo
+        draggable={boolean('draggable', true)}
+        selectable={boolean('selectable', false)}
+        sortable={boolean('sortable', true)}
+        custom={boolean('custom', false)}
+    />
+));
