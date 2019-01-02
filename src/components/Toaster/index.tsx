@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import StyledToaster, { StyledToasterWrapper } from './style';
 import Button from '../Button';
 import Box from '../Box';
@@ -72,8 +72,14 @@ class Toaster extends Component<PropsType> {
                                             margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}
                                             style={{ display: 'block' }}
                                         >
-                                            <Text strong>{this.props.title}</Text>
-                                            <Text>{this.props.message}</Text>
+                                            <Text strong>
+                                                <span dangerouslySetInnerHTML={{ __html: this.props.title }} />
+                                            </Text>
+                                            {this.props.message && (
+                                                <Text>
+                                                    <span dangerouslySetInnerHTML={{ __html: this.props.message }} />
+                                                </Text>
+                                            )}
                                         </Box>
                                         {this.props.buttonTitle && (
                                             <Box
