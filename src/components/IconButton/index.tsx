@@ -8,6 +8,16 @@ import Spinner from '../Spinner';
 import Box from '../Box';
 import { MediumIcons } from '../Icon/types';
 
+type IconButtonThemeType = {
+    primary: {
+        color: string;
+        backgroundColor: string;
+    };
+    destructive: {
+        color: string;
+    };
+};
+
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
     icon: keyof typeof MediumIcons;
@@ -38,14 +48,14 @@ const IconButton = withProps<PropsType>(styled(BareButton)).attrs({
     },
 })`
     padding: 9px;
-    color: ${({ theme }) => theme.Button.Flat.primary.color};
-    background-color: ${({ theme }) => theme.Button.Flat.primary.backgroundColor};
+    color: ${({ theme }) => theme.IconButton.primary.color};
+    background-color: ${({ theme }) => theme.IconButton.primary.backgroundColor};
     transform: none;
 
     &:hover {
         ${({ loading }) => (!loading ? 'transform: scale(1.1);' : '')};
         ${({ variant, theme, loading }) =>
-            variant === 'destructive' && !loading ? `color: ${theme.Button.Flat.destructive.color}` : ''};
+            variant === 'destructive' && !loading ? `color: ${theme.IconButton.destructive.color}` : ''};
     }
 
     &:active {
@@ -54,4 +64,4 @@ const IconButton = withProps<PropsType>(styled(BareButton)).attrs({
 `;
 
 export default withTheme(IconButton);
-export { PropsType };
+export { PropsType, IconButtonThemeType };

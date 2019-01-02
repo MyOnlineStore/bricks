@@ -20,56 +20,25 @@ type ButtonThemeType = {
         fontSize: string;
         textDecoration: string;
     };
-    Default: {
-        primary: ComponentStateTypes;
-        secondary: ComponentStateTypes;
-        warning: ComponentStateTypes;
-        destructive: ComponentStateTypes;
-        plain: {
-            hover: DefaultTypes;
-            focus: DefaultTypes;
-            active: DefaultTypes;
-            idle: {
-                backgroundColor: string;
-                color: string;
-                boxShadow: string;
-                textDecoration: string;
-            };
-        };
-        disabled: {
+    primary: ComponentStateTypes;
+    secondary: ComponentStateTypes;
+    warning: ComponentStateTypes;
+    destructive: ComponentStateTypes;
+    plain: {
+        hover: DefaultTypes;
+        focus: DefaultTypes;
+        active: DefaultTypes;
+        idle: {
             backgroundColor: string;
             color: string;
-            stripingColor: string;
+            boxShadow: string;
+            textDecoration: string;
         };
     };
-
-    Cta: {
-        borderRadius: string;
-        boxShadow: string;
-
-        color: string;
+    disabled: {
         backgroundColor: string;
-        hover: {
-            backgroundColor: string;
-            boxShadow: string;
-        };
-        focus: {
-            backgroundColor: string;
-            boxShadow: string;
-        };
-        active: {
-            boxShadow: string;
-            backgroundColor: string;
-        };
-    };
-    Flat: {
-        primary: {
-            color: string;
-            backgroundColor: string;
-        };
-        destructive: {
-            color: string;
-        };
+        color: string;
+        stripingColor: string;
     };
 };
 

@@ -113,151 +113,121 @@ const theme: ThemeType = {
             fontSize: fontSize.base,
             textDecoration: 'none',
         },
-        Default: {
-            primary: {
-                idle: {
-                    backgroundColor: green.darker1,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                hover: {
-                    backgroundColor: green.darker2,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: green.darker1,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
-                },
-                active: {
-                    backgroundColor: green.darker2,
-                    color: silver.lighter1,
-                    boxShadow: 'none',
-                },
+        primary: {
+            idle: {
+                backgroundColor: green.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
-            secondary: {
-                idle: {
-                    backgroundColor: silver.base,
-                    color: grey.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                hover: {
-                    backgroundColor: silver.darker1,
-                    color: grey.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: silver.base,
-                    color: grey.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
-                },
-                active: {
-                    backgroundColor: silver.darker1,
-                    color: grey.lighter1,
-                    boxShadow: 'none',
-                },
-            },
-            warning: {
-                idle: {
-                    backgroundColor: yellow.darker1,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                hover: {
-                    backgroundColor: yellow.darker2,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: yellow.darker1,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
-                },
-                active: {
-                    backgroundColor: yellow.darker2,
-                    color: silver.lighter1,
-                    boxShadow: 'none',
-                },
-            },
-            destructive: {
-                idle: {
-                    backgroundColor: red.base,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                hover: {
-                    backgroundColor: red.darker1,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: red.base,
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25)',
-                },
-                active: {
-                    backgroundColor: red.darker1,
-                    color: silver.lighter1,
-                    boxShadow: 'none',
-                },
-            },
-            plain: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.base,
-                    boxShadow: 'none',
-                    textDecoration: 'underline',
-                },
-                hover: {
-                    backgroundColor: silver.base,
-                    color: grey.base,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                },
-                focus: {
-                    backgroundColor: silver.base,
-                    color: grey.base,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
-                },
-                active: {
-                    backgroundColor: silver.base,
-                    color: grey.base,
-                    boxShadow: 'none',
-                },
-            },
-            disabled: {
-                color: grey.lighter2,
-                backgroundColor: silver.darker2,
-                stripingColor: 'rgba(0,0,0,0.04)',
-            },
-        },
-        Flat: {
-            primary: {
-                color: grey.darker1,
-                backgroundColor: 'transparent',
-            },
-            destructive: {
-                color: red.base,
-            },
-        },
-        Cta: {
-            borderRadius: '24px',
-            backgroundColor: green.darker1,
-            color: silver.lighter1,
-            boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-
             hover: {
                 backgroundColor: green.darker2,
+                color: silver.lighter1,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
                 backgroundColor: green.darker1,
+                color: silver.lighter1,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
             },
             active: {
                 backgroundColor: green.darker2,
+                color: silver.lighter1,
                 boxShadow: 'none',
             },
+        },
+        secondary: {
+            idle: {
+                backgroundColor: silver.base,
+                color: grey.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            hover: {
+                backgroundColor: silver.darker1,
+                color: grey.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: silver.base,
+                color: grey.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
+            },
+            active: {
+                backgroundColor: silver.darker1,
+                color: grey.lighter1,
+                boxShadow: 'none',
+            },
+        },
+        warning: {
+            idle: {
+                backgroundColor: yellow.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            hover: {
+                backgroundColor: yellow.darker2,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: yellow.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
+            },
+            active: {
+                backgroundColor: yellow.darker2,
+                color: silver.lighter1,
+                boxShadow: 'none',
+            },
+        },
+        destructive: {
+            idle: {
+                backgroundColor: red.base,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            hover: {
+                backgroundColor: red.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: red.base,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25)',
+            },
+            active: {
+                backgroundColor: red.darker1,
+                color: silver.lighter1,
+                boxShadow: 'none',
+            },
+        },
+        plain: {
+            idle: {
+                backgroundColor: 'transparent',
+                color: grey.base,
+                boxShadow: 'none',
+                textDecoration: 'underline',
+            },
+            hover: {
+                backgroundColor: silver.base,
+                color: grey.base,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: silver.base,
+                color: grey.base,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
+            },
+            active: {
+                backgroundColor: silver.base,
+                color: grey.base,
+                boxShadow: 'none',
+            },
+        },
+        disabled: {
+            color: grey.lighter2,
+            backgroundColor: silver.darker2,
+            stripingColor: 'rgba(0,0,0,0.04)',
         },
     },
     Checkbox: {
@@ -292,33 +262,31 @@ const theme: ThemeType = {
         },
         overides: {
             Button: {
-                Default: {
-                    secondary: {
-                        idle: {
-                            backgroundColor: silver.darker1,
-                        },
-                        active: {
-                            backgroundColor: silver.darker2,
-                        },
-                        hover: {
-                            backgroundColor: silver.darker2,
-                        },
-                        focus: {
-                            backgroundColor: silver.darker1,
-                            boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
-                        },
+                secondary: {
+                    idle: {
+                        backgroundColor: silver.darker1,
                     },
-                    plain: {
-                        active: {
-                            backgroundColor: silver.darker1,
-                        },
-                        hover: {
-                            backgroundColor: silver.darker1,
-                        },
-                        focus: {
-                            backgroundColor: silver.darker1,
-                            boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
-                        },
+                    active: {
+                        backgroundColor: silver.darker2,
+                    },
+                    hover: {
+                        backgroundColor: silver.darker2,
+                    },
+                    focus: {
+                        backgroundColor: silver.darker1,
+                        boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
+                    },
+                },
+                plain: {
+                    active: {
+                        backgroundColor: silver.darker1,
+                    },
+                    hover: {
+                        backgroundColor: silver.darker1,
+                    },
+                    focus: {
+                        backgroundColor: silver.darker1,
+                        boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
                     },
                 },
             },
@@ -384,6 +352,15 @@ const theme: ThemeType = {
             },
             lineHeight: '18px',
             color: grey.base,
+        },
+    },
+    IconButton: {
+        primary: {
+            color: grey.darker1,
+            backgroundColor: 'transparent',
+        },
+        destructive: {
+            color: red.base,
         },
     },
     Illustration: {

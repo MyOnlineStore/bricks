@@ -2,7 +2,6 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import IconButton, { PropsType as PlainPropsType } from '../IconButton';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';

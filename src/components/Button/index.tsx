@@ -16,7 +16,7 @@ type PropsType = BareButtonPropsType & {
     children?: ReactNode;
 };
 
-const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
+const Button = withProps<PropsType>(styled(BareButton)).attrs({
     children: (props: PropsType): JSX.Element => {
         const color = props.loading ? 'transparent' : undefined;
 
@@ -48,28 +48,28 @@ const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
 })`
     ${({ theme, variant, compact, disabled, loading }): string => {
         const hover = `
-            background-color: ${theme.Button.Default[variant].hover.backgroundColor};
-            box-shadow: ${theme.Button.Default[variant].hover.boxShadow};
+            background-color: ${theme.Button[variant].hover.backgroundColor};
+            box-shadow: ${theme.Button[variant].hover.boxShadow};
         `;
 
         const active = `
             transform: translateY(2px);
-            background-color: ${theme.Button.Default[variant].active.backgroundColor};
-            box-shadow: ${theme.Button.Default[variant].active.boxShadow};
+            background-color: ${theme.Button[variant].active.backgroundColor};
+            box-shadow: ${theme.Button[variant].active.boxShadow};
         `;
 
         const focus = `
-            background-color: ${theme.Button.Default[variant].focus.backgroundColor};
-            box-shadow: ${theme.Button.Default[variant].focus.boxShadow};
+            background-color: ${theme.Button[variant].focus.backgroundColor};
+            box-shadow: ${theme.Button[variant].focus.boxShadow};
         `;
 
         return `
             padding: 11px ${compact ? ' 12px' : '24px'};
-            color: ${disabled ? theme.Button.Default.disabled.color : theme.Button.Default[variant].idle.color};
-            background-color: ${theme.Button.Default[variant].idle.backgroundColor};
+            color: ${disabled ? theme.Button.disabled.color : theme.Button[variant].idle.color};
+            background-color: ${theme.Button[variant].idle.backgroundColor};
             border-radius: ${theme.Button.common.borderRadius};
-            box-shadow: ${theme.Button.Default[variant].idle.boxShadow}
-            ${variant === 'plain' ? `text-decoration: ${theme.Button.Default.plain.idle.textDecoration}` : ''}
+            box-shadow: ${theme.Button[variant].idle.boxShadow}
+            ${variant === 'plain' ? `text-decoration: ${theme.Button.plain.idle.textDecoration}` : ''}
 
             &:hover {
                 ${!loading ? hover : ''}
@@ -93,27 +93,27 @@ const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
                 z-index: -2;
                 content: '';
                 opacity: ${disabled ? 1 : 0};
-                ${disabled ? `color: ${theme.Button.Default.disabled.color}` : 0};
+                ${disabled ? `color: ${theme.Button.disabled.color}` : 0};
                 transition: opacity 0.3s;
-                background: ${theme.Button.Default.disabled.backgroundColor}
+                background: ${theme.Button.disabled.backgroundColor}
                     repeating-linear-gradient(
                         -45deg,
-                        ${theme.Button.Default.disabled.stripingColor},
-                        ${theme.Button.Default.disabled.stripingColor} 10px,
+                        ${theme.Button.disabled.stripingColor},
+                        ${theme.Button.disabled.stripingColor} 10px,
                         transparent 10px,
                         transparent 20px
                     );
-                box-shadow: ${theme.Button.Default[variant].idle.boxShadow};
+                box-shadow: ${theme.Button[variant].idle.boxShadow};
                 border-radius: ${theme.Button.common.borderRadius};
             }
 
             &:disabled {
-                background: ${theme.Button.Default.disabled.backgroundColor};
+                background: ${theme.Button.disabled.backgroundColor};
                 border-color: transparent;
                 cursor: default;
                 opacity: 0.7;
                 transform: none;
-                color: ${theme.Button.Default.disabled.color};
+                color: ${theme.Button.disabled.color};
                 box-shadow: none;
 
                 &::before {
@@ -124,5 +124,5 @@ const DefaultButton = withProps<PropsType>(styled(BareButton)).attrs({
     }};
 `;
 
-export default DefaultButton;
+export default Button;
 export { PropsType };

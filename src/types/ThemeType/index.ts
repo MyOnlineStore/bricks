@@ -25,6 +25,7 @@ import { ToggleThemeType } from '../../components/Toggle/style';
 import { SelectThemeType } from '../../components/Select/style';
 import { SkeletonThemeType } from '../../components/Skeleton/style';
 import { BreadcrumbsThemeType } from '../../components/Breadcrumbs/style';
+import { IconButtonThemeType } from '../../components/IconButton';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -37,6 +38,7 @@ type ThemeType = {
     Modal: ModalThemeType;
     MultiButton: MultiButtonThemeType;
     Notification: NotificationThemeType;
+    IconButton: IconButtonThemeType;
     Illustration: IllustrationThemeType;
     Link: LinkThemeType;
     Popover: PopoverThemeType;
