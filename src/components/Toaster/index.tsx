@@ -101,7 +101,7 @@ class Toaster extends Component<PropsType> {
                                     </Box>
                                     <Box direction="column">
                                         <IconButton
-                                            icon="gear"
+                                            icon="close"
                                             title="close"
                                             onClick={this.handleClose}
                                             variant="primary"
