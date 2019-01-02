@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
-import trbl from '../../utility/trbl';
 import Box from '../Box';
-import Heading from '../Heading';
-import Illustration from '../Illustration';
+import Heading, { HierarchyType } from '../Heading';
+import Illustration, { Illustrations } from '../Illustration';
 
 import Text from '../Text';
 
@@ -12,19 +11,23 @@ type PropsType = {
     title: string;
     message: string;
     horizontal?: boolean;
-    size?: 'small';
+    hierarchy?: HierarchyType;
+    illustration?: keyof typeof Illustrations;
 };
 
 const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const hierarchy = props.size === 'small' ? 3 : 1;
+    const hierarchy = props.hierarchy ? props.hierarchy : 1;
+    const illustration = props.illustration ? props.illustration : 'cactus';
 
     if (props.horizontal) {
         return (
             <Box direction="row" alignItems="center" justifyContent="space-around">
-                <Illustration illustration={'cactus'} />
-                <Box direction="column" width="100%" margin={[0, 0, 0, 24]}>
+                <Box basis="120px" shrink={0} grow={25}>
+                    <Illustration illustration={illustration} />
+                </Box>
+                <Box direction="column" grow={75} margin={[0, 0, 0, 24]}>
                     <Heading hierarchy={hierarchy}>{props.title}</Heading>
-                    <Box margin={trbl(9, 0, 24, 0)}>
+                    <Box margin={[9, 0, 24, 0]}>
                         <Text descriptive>{props.message}</Text>
                     </Box>
                     <Box>{props.children}</Box>
@@ -35,13 +38,13 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <Box direction="column" alignItems="center" justifyContent="space-around">
-            <Illustration illustration={'cactus'} />
-            <Box padding={trbl(18, 0, 0, 0)}>
+            <Illustration illustration={illustration} />
+            <Box padding={[18, 0, 0, 0]}>
                 <Heading hierarchy={hierarchy} textAlign="center">
                     {props.title}
                 </Heading>
             </Box>
-            <Box margin={trbl(12, 0, 24, 0)}>
+            <Box margin={[12, 0, 24, 0]}>
                 <Text textAlign="center" descriptive>
                     {props.message}
                 </Text>
