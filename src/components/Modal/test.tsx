@@ -8,12 +8,10 @@ import StyledModal, { StyledModalWrapper } from './style';
 import TransitionAnimation from '../TransitionAnimation';
 import Button from '../Button';
 
-jest.mock('../ScrollBox', () => jest.fn().mockImplementation((props: PropsType): string => 'div'));
+jest.mock('../ScrollBox', () => jest.fn().mockImplementation((_: PropsType): string => 'div'));
 
 jest.mock('../BreakpointProvider', () =>
-    jest.fn().mockImplementation((props: PropsType): JSX.Element => {
-        return props.children('large');
-    }),
+    jest.fn().mockImplementation((props: PropsType): JSX.Element => props.children('large')),
 );
 
 describe('Modal', () => {
@@ -27,6 +25,15 @@ describe('Modal', () => {
         );
 
         expect(component.find('div[data-testid="bar"]').length).toBe(1);
+    });
+
+    it('calls componentWillUnmount when unmounting the component', () => {
+        const component = mountWithTheme(<Modal show={true} title="Foo" />);
+        const componentWillUnmount = jest.spyOn(component, 'unmount');
+
+        component.unmount();
+
+        expect(componentWillUnmount).toHaveBeenCalled();
     });
 
     it('should render with a buttons prop', () => {

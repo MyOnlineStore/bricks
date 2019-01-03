@@ -759,10 +759,10 @@ const theme: ThemeType = {
             fontSize: fontSize.larger1,
         },
         severity: {
-            error: { color: red.darker2 },
-            success: { color: green.darker2 },
-            info: { color: grey.lighter3 },
-            warning: { color: yellow.darker2 },
+            error: { color: red.base },
+            success: { color: green.darker1 },
+            info: { color: grey.lighter2 },
+            warning: { color: yellow.darker1 },
         },
     },
     TextArea: {
