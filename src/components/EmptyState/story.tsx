@@ -1,10 +1,9 @@
-import { text, boolean, number, select } from '@storybook/addon-knobs/react';
+import { text, boolean } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import EmptyState, { PropsType } from '.';
 import Box from '../Box';
 import Button from '../Button';
-import { HierarchyType } from '../Heading';
 
 storiesOf('EmptyState', module)
     .add('Default', () => {
@@ -13,12 +12,7 @@ storiesOf('EmptyState', module)
 
         return (
             <Box justifyContent="space-around">
-                <EmptyState
-                    title={title}
-                    horizontal={boolean('Horizontal', false)}
-                    hierarchy={select('Hierarchy', [1, 2, 3, 4, 5, 6], 1) as HierarchyType}
-                    message={message}
-                />
+                <EmptyState title={title} horizontal={boolean('Horizontal', false)} message={message} />
             </Box>
         );
     })
@@ -34,7 +28,6 @@ storiesOf('EmptyState', module)
                     title={title}
                     message={message}
                     horizontal={boolean('horizontal', true)}
-                    hierarchy={select('Hierarchy', [1, 2, 3, 4, 5, 6], 1) as HierarchyType}
                 >
                     <Button variant="primary" title={`${buttonTitle}`} />
                 </EmptyState>

@@ -1,37 +1,66 @@
-import React, { FunctionComponent, Children } from 'react';
+import React, { FunctionComponent, Children, ReactNode } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import Box from '../Box';
-import Heading, { HierarchyType } from '../Heading';
+import Heading from '../Heading';
 import Illustration, { Illustrations } from '../Illustration';
 
 import Text from '../Text';
 
 type PropsType = {
-    title: string;
-    message: string;
+    illustration?: keyof typeof Illustrations | ReactNode;
+    title: string | ReactNode;
+    message: string | ReactNode;
     horizontal?: boolean;
-    hierarchy?: HierarchyType;
-    illustration?: keyof typeof Illustrations;
+    button?: ReactNode;
 };
 
 const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const hierarchy = props.hierarchy ? props.hierarchy : 1;
-    const illustration = props.illustration ? props.illustration : 'cactus';
     const hasChildren = Children.count(props.children) > 0;
+    const textAlign = props.horizontal ? 'left' : 'center';
+
+    const title =
+        typeof props.title === 'string' ? (
+            <Heading textAlign={textAlign} hierarchy={1}>
+                {props.title}
+            </Heading>
+        ) : (
+            props.title
+        );
+
+    const illustration =
+        typeof props.illustration === 'string' || props.illustration === undefined ? (
+            <Illustration
+                illustration={props.illustration ? (props.illustration as keyof typeof Illustrations) : 'cactus'}
+            />
+        ) : (
+            props.illustration
+        );
+
+    const message =
+        typeof props.message === 'string' ? (
+            <Text descriptive textAlign={textAlign}>
+                {props.message}
+            </Text>
+        ) : (
+            props.message
+        );
 
     if (props.horizontal) {
         return (
             <Box direction="row" alignItems="center" justifyContent="space-around">
                 <Box basis="120px" shrink={0} grow={25}>
-                    <Illustration illustration={illustration} />
+                    {illustration}
                 </Box>
                 <Box direction="column" grow={75} margin={[0, 0, 0, 24]}>
-                    <Heading hierarchy={hierarchy}>{props.title}</Heading>
-                    <Box margin={[9, 0, 0, 0]}>
-                        <Text descriptive>{props.message}</Text>
-                    </Box>
-                    {hasChildren && <Box margin={[24, 0, 0, 0]}>{props.children}</Box>}
+                    {title}
+                    <Box margin={[9, 0, 0, 0]}>{message}</Box>
+                    {hasChildren && (
+                        <Box margin={[24, 0, 0, 0]}>
+                            {props.children}
+                            {props.button && props.button}
+                        </Box>
+                    )}
                 </Box>
             </Box>
         );
@@ -39,18 +68,15 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <Box direction="column" alignItems="center" justifyContent="space-around">
-            <Illustration illustration={illustration} />
-            <Box padding={[18, 0, 0, 0]}>
-                <Heading hierarchy={hierarchy} textAlign="center">
-                    {props.title}
-                </Heading>
-            </Box>
-            <Box margin={[12, 0, 0, 0]}>
-                <Text textAlign="center" descriptive>
-                    {props.message}
-                </Text>
-            </Box>
-            {hasChildren && <Box margin={[24, 0, 0, 0]}>{props.children}</Box>}
+            {illustration}
+            <Box padding={[18, 0, 0, 0]}>{title}</Box>
+            <Box margin={[12, 0, 0, 0]}>{message}</Box>
+            {hasChildren && (
+                <Box margin={[24, 0, 0, 0]}>
+                    {props.children}
+                    {props.button && props.button}
+                </Box>
+            )}
         </Box>
     );
 };
