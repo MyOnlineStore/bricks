@@ -682,10 +682,10 @@ const theme: ThemeType = {
             fontWeight: fontWeight.bold,
         },
         severity: {
-            error: severity.error,
-            success: severity.success,
-            info: severity.info,
-            warning: severity.warning,
+            error: red.base,
+            success: green.darker1,
+            info: grey.lighter2,
+            warning: yellow.darker1,
         },
     },
     TextArea: {

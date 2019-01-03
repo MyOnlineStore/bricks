@@ -9,8 +9,10 @@ type IllustrationThemeType = {
 
 const StyledIllustration = styled.div`
     svg {
-        height: ${({ theme }): string => theme.Illustration.size};
-        width: ${({ theme }): string => theme.Illustration.size};
+        height: 100%;
+        width: 100%;
+        max-height: ${({ theme }): string => theme.Illustration.size};
+        max-width: ${({ theme }): string => theme.Illustration.size};
     }
 `;
 
