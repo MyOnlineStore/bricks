@@ -27,13 +27,14 @@ describe('Modal', () => {
         expect(component.find('div[data-testid="bar"]').length).toBe(1);
     });
 
-    it('calls componentWillUnmount when unmounting the component', () => {
+    it('cleans up event listeners when unmounting', () => {
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
-        const componentWillUnmount = jest.spyOn(component, 'unmount');
 
         component.unmount();
 
-        expect(componentWillUnmount).toHaveBeenCalled();
+        /* tslint:disable */
+        expect(global.removeEventListener).toBeCalled();
+        /* tslint:enable */
     });
 
     it('should render with a buttons prop', () => {
