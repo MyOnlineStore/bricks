@@ -24,7 +24,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     const textAlign = props.horizontal ? 'left' : 'center';
 
     const title = branchString(props.title, value => (
-        <Heading textAlign={textAlign} hierarchy={1}>
+        <Heading textAlign={textAlign} hierarchy={2}>
             {value}
         </Heading>
     ));
