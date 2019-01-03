@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, Children } from 'react';
 import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import Box from '../Box';
@@ -18,6 +18,7 @@ type PropsType = {
 const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     const hierarchy = props.hierarchy ? props.hierarchy : 1;
     const illustration = props.illustration ? props.illustration : 'cactus';
+    const hasChildren = Children.count(props.children) > 0;
 
     if (props.horizontal) {
         return (
@@ -27,10 +28,10 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
                 </Box>
                 <Box direction="column" grow={75} margin={[0, 0, 0, 24]}>
                     <Heading hierarchy={hierarchy}>{props.title}</Heading>
-                    <Box margin={[9, 0, 24, 0]}>
+                    <Box margin={[9, 0, 0, 0]}>
                         <Text descriptive>{props.message}</Text>
                     </Box>
-                    <Box>{props.children}</Box>
+                    {hasChildren && <Box margin={[24, 0, 0, 0]}>{props.children}</Box>}
                 </Box>
             </Box>
         );
@@ -44,12 +45,12 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
                     {props.title}
                 </Heading>
             </Box>
-            <Box margin={[12, 0, 24, 0]}>
+            <Box margin={[12, 0, 0, 0]}>
                 <Text textAlign="center" descriptive>
                     {props.message}
                 </Text>
             </Box>
-            {props.children}
+            {hasChildren && <Box margin={[24, 0, 0, 0]}>{props.children}</Box>}
         </Box>
     );
 };
