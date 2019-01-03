@@ -15,35 +15,33 @@ type PropsType = {
     button?: ReactNode;
 };
 
+const branchString = (value: string | ReactNode, node: (value: string) => ReactNode): ReactNode => {
+    return typeof value === 'string' ? node(value) : value;
+};
+
 const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     const hasChildren = Children.count(props.children) > 0;
     const textAlign = props.horizontal ? 'left' : 'center';
 
-    const title =
-        typeof props.title === 'string' ? (
-            <Heading textAlign={textAlign} hierarchy={1}>
-                {props.title}
-            </Heading>
-        ) : (
-            props.title
-        );
+    const title = branchString(props.title, value => (
+        <Heading textAlign={textAlign} hierarchy={1}>
+            {value}
+        </Heading>
+    ));
+
+    const message = branchString(props.message, value => (
+        <Text descriptive textAlign={textAlign}>
+            {value}
+        </Text>
+    ));
 
     const illustration =
-        typeof props.illustration === 'string' || props.illustration === undefined ? (
-            <Illustration
-                illustration={props.illustration ? (props.illustration as keyof typeof Illustrations) : 'cactus'}
-            />
+        props.illustration !== undefined ? (
+            branchString(props.illustration, value => (
+                <Illustration illustration={value as keyof typeof Illustrations} />
+            ))
         ) : (
-            props.illustration
-        );
-
-    const message =
-        typeof props.message === 'string' ? (
-            <Text descriptive textAlign={textAlign}>
-                {props.message}
-            </Text>
-        ) : (
-            props.message
+            <Illustration illustration={'cactus'} />
         );
 
     if (props.horizontal) {
