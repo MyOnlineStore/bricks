@@ -96,9 +96,9 @@
     "build": "rimraf ./dist && webpack --config ./config/webpack/webpack.config.js",
     "lint-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "lint": "tslint --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
-    "watch": "start-storybook -p 9001 -c ./config/storybook",
+    "watch": "start-storybook -p 9001 -c ./config/storybook -s ./config/storybook/public",
     "deploy-storybook": "storybook-to-ghpages -o /public",
-    "build-storybook": "build-storybook -c ./config/storybook -o /public",
+    "build-storybook": "build-storybook -c ./config/storybook -o /public -s ./config/storybook/public",
     "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./src/**/*.{ts,tsx}",
     "prepare": "npm run build"
