@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Build and export the app
-RUN npm run build-now
+RUN npm run build-storybook

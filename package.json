@@ -96,9 +96,8 @@
     "lint-fix": "tslint --fix --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "lint": "tslint --project ./config/typescript/tsconfig.json --config ./config/typescript/tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -c ./config/storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "build-now": "build-storybook -c ./config/storybook -o /public",
-    "build-storybook": "build-storybook -c ./config/storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages -o /public",
+    "build-storybook": "build-storybook -c ./config/storybook -o /public",
     "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./src/**/*.{ts,tsx}",
     "prepare": "npm run build"
