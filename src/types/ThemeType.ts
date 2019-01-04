@@ -1,4 +1,5 @@
 import { BadgeThemeType } from '../components/Badge';
+import { BreadcrumbsThemeType } from '../components/Breadcrumbs/style';
 import { ButtonThemeType } from '../components/Button/style';
 import { CheckboxThemeType } from '../components/Checkbox/style';
 import { ContrastThemeType } from '../components/Contrast/style';
@@ -28,6 +29,7 @@ import { SkeletonThemeType } from '../components/Skeleton/style';
 type ThemeType = {
     Badge: BadgeThemeType;
     Button: ButtonThemeType;
+    Breadcrumbs: BreadcrumbsThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
     Heading: HeadingThemeType;
