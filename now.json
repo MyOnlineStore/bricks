@@ -1,3 +1,7 @@
 {
-    "type": "static"
+    "version": 1,
+    "type": "static",
+    "github": {
+        "silent": true
+    }
 }

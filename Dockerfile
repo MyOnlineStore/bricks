@@ -1,17 +1,13 @@
-# This is the Dockerfile required to automatically deploy a static version of bricks to now.sh on every push to the Github repo 
-
-FROM mhart/alpine-node:10
-
-# Set the default working directory
+FROM mhart/alpine-node:10.10 as base
 WORKDIR /usr/src
 
-# Install dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
+COPY package-lock.json package.json ./
+RUN npm i --no-save
 
-# Copy the relevant files to the working directory
 COPY . .
-
-# Build and export the app
 RUN npm run build-storybook
+
+FROM mhart/alpine-node:10.10
+WORKDIR /public
+
+COPY --from=base /usr/src/public /public
