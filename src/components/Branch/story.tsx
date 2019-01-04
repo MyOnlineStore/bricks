@@ -1,4 +1,4 @@
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean } from '@storybook/addon-knobs';
 import Branch from '.';
 import { storiesOf } from '@storybook/react';
 import React from 'react';

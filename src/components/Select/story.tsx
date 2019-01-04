@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Select, { OptionStateType } from '.';
-import { object, text, boolean } from '@storybook/addon-knobs/react';
+import { object, text, boolean } from '@storybook/addon-knobs';
 import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
