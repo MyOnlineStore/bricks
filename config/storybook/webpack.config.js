@@ -1,58 +1,62 @@
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
-module.exports = (baseConfig, env) => {
-    const config = genDefaultConfig(baseConfig, env);
+module.exports = (baseConfig, env, config) => {
+    config.mode = 'development';
 
-    return {
-        ...config,
-        node: {
-            fs: 'empty',
+    config.devServer = {
+        quiet: true,
+        host: '0.0.0.0',
+        stats: {
+            chunks: false,
+            assets: false,
+            modules: false,
+            version: false,
+            hash: false,
+            entrypoints: false,
+            builtAt: false,
         },
-        devtool: 'source-map',
-        resolve: {
-            extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-        },
-        devServer: {
-            quiet: true,
-            host: '0.0.0.0',
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.tsx?$/,
-                    loader: 'ts-loader',
-                    options: {
-                        configFile: __dirname + '/../typescript/tsconfig.json',
-                    },
-                },
-                {
-                    test: /^.*(?<!\.color)\.svg$/,
-                    loader: 'svg-inline-loader',
-                    options: {
-                        removeTags: true,
-                        removingTags: ['title', 'desc', 'defs', 'style'],
-                    },
-                },
-                {
-                    test: /\.color\.svg$/,
-                    loader: 'svg-inline-loader',
-                    options: {
-                        removeTags: false,
-                    },
-                },
-                {
-                    test: /\.css$/,
-                    use: 'css-loader',
-                },
-                {
-                    enforce: 'pre',
-                    test: /\.js$/,
-                    loader: 'source-map-loader',
-                },
-            ],
-        },
-        plugins: [...config.plugins, new FriendlyErrorsWebpackPlugin()],
     };
+
+    config.devtool = 'source-map';
+
+    config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx', '.json');
+
+    // loaders
+    config.module.rules = [
+        {
+            test: /\.tsx?$/,
+            loader: 'ts-loader',
+            options: {
+                configFile: __dirname + '/../typescript/tsconfig.json',
+            },
+        },
+        {
+            test: /\.css$/,
+            use: 'css-loader',
+        },
+        {
+            test: /^.*(?<!\.color)\.svg$/,
+            loader: 'svg-inline-loader',
+            options: {
+                removeTags: true,
+                removingTags: ['title', 'desc', 'defs', 'style'],
+                removingTagAttrs: ['class'],
+            },
+        },
+        {
+            test: /\.color\.svg$/,
+            loader: 'svg-inline-loader',
+            options: {
+                classPrefix: true,
+                removeTags: false,
+            },
+        },
+        { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+    ];
+    // plugins
+
+    config.plugins.push(new FriendlyErrorsWebpackPlugin());
+
+    return config;
 };

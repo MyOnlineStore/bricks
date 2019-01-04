@@ -1,4 +1,4 @@
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { Component, ReactNode } from 'react';
 import { DropResult } from 'react-beautiful-dnd';

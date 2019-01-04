@@ -1,4 +1,4 @@
-import { boolean, select, text } from '@storybook/addon-knobs/react';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';

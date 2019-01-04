@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "sourceMap": true,
+    "outDir": "../../dist",
     "noImplicitAny": true,
     "noErrorTruncation": true,
     "allowSyntheticDefaultImports": true,

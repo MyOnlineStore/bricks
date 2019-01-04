@@ -1,10 +1,11 @@
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackBar = require('webpackbar');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 module.exports = {
-    devtool: 'source-map',
+    mode: 'production',
     entry: './src/index.ts',
     stats: {
         assets: true,
@@ -20,6 +21,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json'],
+        modules: ['node_modules'],
     },
     module: {
         rules: [
@@ -27,14 +29,7 @@ module.exports = {
                 test: /\.tsx?$/,
                 loader: 'babel-loader',
                 options: {
-                    plugins: [
-                        [
-                            'babel-plugin-styled-components',
-                            {
-                                ssr: true,
-                            },
-                        ],
-                    ],
+                    plugins: [['babel-plugin-styled-components']],
                 },
             },
             {
@@ -69,20 +64,12 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
-    externals: {
-        '@types/react': '@types/react',
-        '@types/react-dom': '@types/react-dom',
-        react: 'react',
-        'react-dom': 'react-dom',
-        'styled-components': 'styled-components',
-    },
     plugins: [
-        new UglifyJSPlugin({
-            sourceMap: true,
-        }),
+        new PeerDepsExternalsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
+        new WebpackBar(),
         new Visualizer({
             filename: '../reports/webpack/statistics-circle.html',
         }),
