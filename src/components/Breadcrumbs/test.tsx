@@ -19,6 +19,8 @@ describe('Breadcrumbs', () => {
                 .first()
                 .text(),
         ).toEqual('dashboard');
+
+        expect(component.find(StyledBreadcrumb).length).toBe(3);
     });
 
     it('should not render an anchor tag if no url is provided', () => {
