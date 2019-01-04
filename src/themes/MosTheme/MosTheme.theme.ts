@@ -75,6 +75,14 @@ const theme: ThemeType = {
             },
         },
     },
+    Breadcrumbs: {
+        default: {
+            color: grey.base,
+        },
+        link: {
+            color: grey.lighter2,
+        },
+    },
     Button: {
         common: {
             borderRadius: roundness.base,
