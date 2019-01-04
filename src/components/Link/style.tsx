@@ -1,6 +1,6 @@
 import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
+import { css, StyledComponentClass as _S } from 'styled-components';
+import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/_styled';
 
 type LinkThemeType = {
@@ -14,16 +14,22 @@ type LinkThemeType = {
     };
 };
 
-const StyledLink = styled.a`
-    color: ${({ theme }): string => theme.Link.default.color};
-    text-decoration: ${({ theme }): string => theme.Link.default.textDecoration};
+type ThemePropsType = { theme: ThemeType };
+
+const LinkStyles = css`
+    color: ${({ theme }: ThemePropsType): string => theme.Link.default.color};
+    text-decoration: ${({ theme }: ThemePropsType): string => theme.Link.default.textDecoration};
     transition: color 100ms;
     background-color: transparent;
 
     &:hover {
-        color: ${({ theme }): string => theme.Link.hover.color};
+        color: ${({ theme }: ThemePropsType): string => theme.Link.hover.color};
         background-color: transparent;
     }
+`;
+
+const StyledLink = styled.a`
+    ${LinkStyles};
 `;
 
 const StyledButton = styled.button`
@@ -44,4 +50,4 @@ const StyledButton = styled.button`
 `;
 
 export default StyledLink;
-export { LinkThemeType, StyledButton };
+export { LinkThemeType, StyledButton, LinkStyles };

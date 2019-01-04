@@ -3,6 +3,8 @@ import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { StyledType } from '../../utility/_styled';
 
+type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;
+
 type HeadingHierarchyThemeType = {
     fontFamily: string;
     fontSize: string;
@@ -25,7 +27,7 @@ type HeadingThemeType = StyledType & {
 };
 
 type PropsType = StyledType & {
-    hierarchy?: 1 | 2 | 3 | 4 | 5 | 6;
+    hierarchy?: HierarchyType;
     element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     light?: boolean;
@@ -69,4 +71,4 @@ const StyledHeading = styled(HeadingElement)`
 `;
 
 export default StyledHeading;
-export { PropsType, HeadingThemeType, HeadingHierarchyThemeType };
+export { PropsType, HeadingThemeType, HeadingHierarchyThemeType, HierarchyType };

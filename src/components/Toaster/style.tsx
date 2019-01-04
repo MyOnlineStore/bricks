@@ -3,6 +3,7 @@ import { StyledComponentClass as _S } from 'styled-components';
 import _T from '../../types/ThemeType';
 import styled, { withProps } from '../../utility/_styled';
 import SeverityType from '../../types/_SeverityType';
+import { LinkStyles } from '../Link/style';
 
 type ToasterPropsType = {
     severity: SeverityType;
@@ -40,7 +41,11 @@ const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
     box-shadow: 0 3px 48px rgba(0,0,0,0.3);
     border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
     background-color: ${({ theme }): string => theme.Toaster.backgroundColor}
-    border-left: ${({ severity, theme }): string => `4px solid ${theme.Toaster.severity[severity]};`}
+    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity]};`}
+
+    a {
+       ${LinkStyles}
+    }
 `;
 
 export default StyledToaster;

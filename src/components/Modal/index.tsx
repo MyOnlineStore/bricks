@@ -67,7 +67,7 @@ class Modal extends Component<PropsType> {
                             >
                                 <Box
                                     shrink={0}
-                                    margin={breakpoint === 'small' ? trbl(18) : trbl(24, 36)}
+                                    margin={breakpoint === 'small' ? trbl(18) : trbl(36)}
                                     alignItems="flex-start"
                                     alignContent="center"
                                     justifyContent="space-between"
@@ -102,7 +102,7 @@ class Modal extends Component<PropsType> {
                                             direction="column"
                                             alignItems="stretch"
                                             shrink={0}
-                                            padding={breakpoint === 'small' ? trbl(18) : trbl(18, 36)}
+                                            padding={breakpoint === 'small' ? trbl(24) : trbl(24, 36)}
                                         >
                                             {this.props.renderFixed && this.props.renderFixed()}
                                             {this.props.buttons && (
