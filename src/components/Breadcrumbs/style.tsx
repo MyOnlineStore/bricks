@@ -6,7 +6,7 @@ type BreadcrumbsThemeType = {
     default: {
         color: string;
     };
-    last: {
+    link: {
         color: string;
     };
 };
@@ -20,10 +20,10 @@ const StyledBreadcrumbs = styled.ul`
 const StyledBreadcrumb = styled.li`
     white-space: nowrap;
     display: flex;
-    color: ${({ theme }): string => theme.Breadcrumbs.last.color};
+    color: ${({ theme }): string => theme.Breadcrumbs.default.color};
 
     a {
-        color: ${({ theme }): string => theme.Breadcrumbs.default.color};
+        color: ${({ theme }): string => theme.Breadcrumbs.link.color};
     }
 `;
 
