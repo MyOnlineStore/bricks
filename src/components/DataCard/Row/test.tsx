@@ -18,9 +18,9 @@ describe('Table Rows', () => {
                             name: { header: 'name' },
                             price: { header: 'Price' },
                         }}
-                        selected={false}
-                        selectable
                         draggable
+                        selectable
+                        selected={true}
                         index={1}
                         onSelection={(): void => undefined}
                     />
@@ -61,9 +61,9 @@ describe('Table Rows', () => {
                             name: { header: 'name' },
                             price: { header: 'Price' },
                         }}
-                        selected={false}
-                        selectable
                         draggable
+                        selectable
+                        selected={true}
                         index={1}
                         onSelection={(): void => undefined}
                     />

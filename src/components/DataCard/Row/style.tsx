@@ -7,23 +7,29 @@ import StyledCell from '../Cell/style';
 type StyledRowProps = {
     ref?: HTMLElement;
     dragging?: boolean;
+    selected?: boolean;
     focus?: boolean;
 };
 
-const StyledRow = withProps<StyledRowProps>(styled.tr)`
-    background-color: ${({ theme }): string => theme.Table.row.default.backgroundColor};
-    transition: background-color 300ms;
-    text-align: left;
-    border-spacing: 0 1px;
-    box-sizing: border-box;
-    position: relative;
-    box-shadow: ${({ dragging, theme }): string =>
-        dragging ? theme.Table.row.dragging.boxShadow : '0 0 0 rgba(0,0,0,0)'};
-    outline: ${({ focus, theme }): string => (focus ? `solid 4px ${theme.Table.row.focus.borderColor}` : '')};
+const StyledRow = withProps<StyledRowProps>(styled.div)`
+    transition: background-color 300ms, border 300ms;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(33, 37, 43, .15);
+    margin-bottom: 24px;
+    ${({ selected }): string => {
+        if (selected) {
+            // the background-color must remain a solid color, to improve legabilty while dragging
+            return `
+                background-color: #EFFBF1;
+                border: 1px solid #5BD16A;
+            `;
+        }
 
-    &:hover {
-        background-color: ${({ theme }): string => theme.Table.row.hover.backgroundColor};
-    }
+        return `
+            background-color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+        `;
+    }}
 
     ${StyledCell} {
         ${({ dragging }): string => {

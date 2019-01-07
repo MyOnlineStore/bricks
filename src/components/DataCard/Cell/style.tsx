@@ -14,11 +14,13 @@ enum Alignments {
     'end' = 'right',
 }
 
-const StyledCell = withProps<CellPropsType>(styled.td)`
-    width: ${({ elementWidth }): string => (elementWidth ? elementWidth : 'inherit')};
-    border-bottom: ${({ theme }): string => `1px solid ${theme.Table.cell.default.borderColor}`};
-    padding: 12px;
+const StyledCell = withProps<CellPropsType>(styled.tr)`
     text-align: ${({ align }): string => Alignments[align]}};
+    vertical-align: top;
+
+    .value {
+        padding-left: 20px;
+    }
 
     &:focus {
         outline: none;

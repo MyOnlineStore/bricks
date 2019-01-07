@@ -1,17 +1,21 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component, Fragment } from 'react';
+import React, { Component, ReactNode } from 'react';
 import DataCard from '.';
 import Text from '../Text';
 import { boolean } from '@storybook/addon-knobs';
 import Button from '../Button';
 import Icon from '../Icon';
+import StyledBadge from '../Badge';
 
 type RowType = {
+    selected?: boolean;
     id: string;
     price: number;
     name: string;
-    image: string;
-    actions: boolean;
+    image: string | ReactNode;
+    badge?: string;
+    extra?: string;
+    buttons?: Array<ReactNode>;
 };
 
 type StateType = {
@@ -33,11 +37,47 @@ class Demo extends Component<PropsType, StateType> {
         this.state = {
             hover: false,
             rows: [
-                { id: '61651323', price: 0.8, name: 'Kiwi', image: '🥝', actions: true },
-                { id: '61651320', price: 3.5, name: 'Pineapple', image: '🍍', actions: true },
-                { id: '61651322', price: 2.3, name: 'Grapes', image: '🍇', actions: true },
-                { id: '61651321', price: 1.2, name: 'Banana', image: '🍌', actions: true },
-                { id: '61651324', price: 0.7, name: 'Lemon', image: '🍋', actions: true },
+                {
+                    selected: true,
+                    id: '61651323',
+                    price: 0.8,
+                    name: 'Kiwi',
+                    image: <img src="http://www.stevensegallery.com/100/100" height="80" />,
+                    badge: 'special offer',
+                    extra: 'value with no label/header',
+                    buttons: this.renderActions(1),
+                },
+
+                {
+                    id: '61651320',
+                    price: 3.5,
+                    name: 'Pineapple',
+                    image: <img src="http://www.stevensegallery.com/105/105" height="80" />,
+                    badge: 'halp?',
+
+                    buttons: this.renderActions(2),
+                },
+                {
+                    selected: true,
+                    id: '61651322',
+                    price: 2.45,
+                    name: 'Grapes',
+                    image: <img src="http://www.stevensegallery.com/102/102" height="80" />,
+                },
+                {
+                    id: '61651321',
+                    price: 1.2,
+                    name: 'Banana',
+                    image: <img src="http://www.stevensegallery.com/103/103" height="80" />,
+                    buttons: this.renderActions(4),
+                },
+                {
+                    id: '61651324',
+                    price: 0.7,
+                    name: 'Lemon',
+                    image: <img src="http://www.stevensegallery.com/104/104" height="80" />,
+                    buttons: this.renderActions(5),
+                },
             ],
         };
     }
@@ -55,45 +95,51 @@ class Demo extends Component<PropsType, StateType> {
     private sortPrice = (a: number, b: number) => a - b;
 
     private renderPrice = (price: number) => {
-        if (price < 1)
+        if (price < 1) {
             return (
-                <Text strong severity="success">
-                    {price}
+                <Text strong severity="success" variant="large">
+                    € {price}
                 </Text>
             );
+        }
 
         return (
-            <Text strong severity="error">
-                {price}
+            <Text strong severity="error" variant="large">
+                € {price}
             </Text>
         );
     };
 
-    private renderActions = (actions: boolean, row: RowType) => {
-        if (actions) {
-            return (
-                <Button.Flat
-                    title="delete"
-                    variant="destructive"
-                    onClick={() =>
-                        this.setState({
-                            rows: this.state.rows.filter(item => item.id !== row.id),
-                        })
-                    }
-                >
-                    <Icon size="medium" icon="trash" />
-                </Button.Flat>
-            );
-        }
+    private renderBadge = (badge: string) => {
+        return <StyledBadge severity="info">{badge}</StyledBadge>;
+    };
 
-        return <Fragment />;
+    private renderImage = (image: string | ReactNode) => {
+        return <>{image}</>;
+    };
+
+    private renderActions = (id: number) => {
+        return [
+            // tslint:disable:jsx-wrap-multiline
+            <Button.Flat key="1" title="edit" variant="primary" onClick={() => alert(`Edit id: ${id}`)}>
+                <Icon size="medium" icon="gear" />
+            </Button.Flat>,
+            <Button.Flat key="2" title="delete" variant="destructive" onClick={() => alert(`Delete id: ${id}`)}>
+                <Icon size="medium" icon="trash" />
+            </Button.Flat>,
+            // tslint:enable:jsx-wrap-multiline
+        ];
     };
 
     public render() {
         return (
             <DataCard<RowType>
                 columns={{
-                    image: { header: 'Image', order: 1 },
+                    image: {
+                        header: 'Image',
+                        order: 1,
+                        render: this.renderImage,
+                    },
                     name: {
                         header: 'Name',
                         order: 1,
@@ -111,10 +157,18 @@ class Demo extends Component<PropsType, StateType> {
                         sort: this.props.sortable ? this.sortPrice : undefined,
                         render: this.props.custom ? this.renderPrice : undefined,
                     },
-                    actions: {
+                    badge: {
+                        header: 'Sticker',
                         order: 3,
+                        render: this.renderBadge,
+                    },
+                    extra: {
+                        header: '',
+                        order: 4,
+                    },
+                    buttons: {
+                        order: 5,
                         align: 'end',
-                        render: this.renderActions,
                     },
                 }}
                 rows={this.state.rows}
@@ -128,8 +182,8 @@ class Demo extends Component<PropsType, StateType> {
 storiesOf('DataCard', module).add('Default', () => (
     <Demo
         draggable={boolean('draggable', true)}
-        selectable={boolean('selectable', false)}
+        selectable={boolean('selectable', true)}
         sortable={boolean('sortable', true)}
-        custom={boolean('custom', false)}
+        custom={boolean('custom', true)}
     />
 ));

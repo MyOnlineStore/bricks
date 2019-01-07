@@ -35,17 +35,7 @@ type DataCardThemeType = {
     };
 };
 
-const StyledDataCard = styled.datacard`
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: separate;
-    overflow: auto;
-    min-width: 100%;
-
-    & tr:last-of-type td {
-        border-bottom: 1px solid transparent;
-    }
-`;
+const StyledDataCard = styled.div``;
 
 export default StyledDataCard;
 export { StyledDataCard, DataCardThemeType };

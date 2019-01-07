@@ -1,24 +1,24 @@
-import React, { Component, MouseEvent } from 'react';
-import { Draggable } from 'react-beautiful-dnd';
-import Icon from '../../Icon';
+import React, { Component, ReactNode } from 'react';
 import Cell from '../Cell';
 import Text from '../../Text';
-import StyledRow from './style';
-import { ContrastThemeProvider } from '../../Contrast';
 import Box from '../../Box';
-import Checkbox from '../../Checkbox';
-import Branch from '../../Branch';
 import { ColumnType, BaseRowType } from '..';
+import StyledRow from './style';
+import Checkbox from '../../Checkbox';
+import Icon from '../../Icon';
+import Branch from '../../Branch';
+import { Draggable, DraggableProvided } from 'react-beautiful-dnd';
+import { ContrastThemeProvider } from '../../Contrast';
 
 type PropsType = {
     // tslint:disable-next-line
-    columns: { [key: string]: ColumnType<string | number | boolean | undefined, any> };
+    columns: { [key: string]: ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, any> };
     row: BaseRowType;
     draggable: boolean;
     selected: boolean;
     selectable: boolean;
     index: number;
-    onSelection(event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
+    onSelection(event: React.MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
 };
 
 type StateType = {
@@ -52,11 +52,91 @@ class Row extends Component<PropsType, StateType> {
         this.setState({ hasHover: false });
     };
 
+    public renderRow(provided: DraggableProvided | undefined): JSX.Element {
+        return (
+            <Box>
+                <Box padding={[12, 24, 12, 12]} basis="auto" grow={1}>
+                    <table>
+                        <tbody>
+                            {Object.keys(this.props.columns)
+                                .sort((a, b) => {
+                                    if (
+                                        this.props.columns[a].order === undefined ||
+                                        this.props.columns[b].order === undefined
+                                    ) {
+                                        return -1;
+                                    }
+
+                                    return (
+                                        (this.props.columns[a].order as number) -
+                                        (this.props.columns[b].order as number)
+                                    );
+                                })
+                                .map(key => {
+                                    const column = this.props.columns[key];
+                                    const cell = this.props.row[key];
+                                    const align = column.align ? column.align : 'start';
+
+                                    if (cell !== undefined) {
+                                        return (
+                                            <Cell
+                                                label={this.props.columns[key].header}
+                                                align={align}
+                                                key={`${this.props.row.id}-${key}`}
+                                            >
+                                                <Box justifyContent="flex-start">
+                                                    {(column.render !== undefined &&
+                                                        column.render(cell, this.props.row)) ||
+                                                        ((typeof cell === 'string' || typeof cell === 'number') && (
+                                                            <Text strong>{cell}</Text>
+                                                        ))}
+                                                </Box>
+                                            </Cell>
+                                        );
+                                    }
+                                })}
+                        </tbody>
+                    </table>
+                </Box>
+                <Box direction="column" width="50px" alignItems="center" padding={[12, 6]} grow={0}>
+                    {this.props.selectable && (
+                        <Box className="actionItem" padding={[6]}>
+                            <Checkbox
+                                name=""
+                                value=""
+                                checked={this.props.selected !== undefined ? this.props.selected : false}
+                                onChange={({ checked, event }): void =>
+                                    this.props.onSelection(event, checked as boolean)
+                                }
+                            />
+                        </Box>
+                    )}
+                    {this.props.draggable && provided && (
+                        <Box className="actionItem" padding={[6]} {...provided.dragHandleProps}>
+                            <Text severity={!this.state.hasHover ? 'info' : undefined}>
+                                <Icon size="medium" icon="bars" />
+                            </Text>
+                        </Box>
+                    )}
+                    {this.props.row.buttons !== undefined && (
+                        <>
+                            {this.props.row.buttons.map((button, index) => (
+                                <Box className="actionItem" key={`button_${index}`}>
+                                    {button}
+                                </Box>
+                            ))}
+                        </>
+                    )}
+                </Box>
+            </Box>
+        );
+    }
+
     public render(): JSX.Element {
         return (
             <Branch
                 condition={this.props.draggable}
-                ifTrue={(children): JSX.Element => {
+                ifTrue={(): JSX.Element => {
                     return (
                         <Draggable draggableId={this.props.row.id} index={this.props.index}>
                             {(provided, snapshot): JSX.Element => {
@@ -65,24 +145,14 @@ class Row extends Component<PropsType, StateType> {
                                     <ContrastThemeProvider enable={this.state.hasHover}>
                                         <StyledRow
                                             dragging={snapshot.isDragging}
+                                            selected={this.props.selected}
                                             focus={this.state.hasFocus}
                                             onMouseEnter={this.handleMouseEnter}
                                             onMouseLeave={this.handleMouseLeave}
                                             innerRef={provided.innerRef}
                                             {...provided.draggableProps}
                                         >
-                                            <Cell
-                                                align="start"
-                                                width="18px"
-                                                provided={provided.dragHandleProps}
-                                                onBlur={this.handleBlur}
-                                                onFocus={this.handleFocus}
-                                            >
-                                                <Text severity={!this.state.hasHover ? 'info' : undefined}>
-                                                    <Icon size="medium" icon="bars" />
-                                                </Text>
-                                            </Cell>
-                                            {children}
+                                            {this.renderRow(provided)}
                                         </StyledRow>
                                     </ContrastThemeProvider>
                                 );
@@ -91,42 +161,8 @@ class Row extends Component<PropsType, StateType> {
                         </Draggable>
                     );
                 }}
-                ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
-            >
-                {this.props.selectable && (
-                    <Cell align="start" width={'18px'}>
-                        <Checkbox
-                            name=""
-                            value=""
-                            checked={this.props.selected}
-                            onChange={({ checked, event }): void => this.props.onSelection(event, checked as boolean)}
-                        />
-                    </Cell>
-                )}
-
-                {Object.keys(this.props.columns)
-                    .sort((a, b) => {
-                        if (this.props.columns[a].order === undefined || this.props.columns[b].order === undefined) {
-                            return -1;
-                        }
-
-                        return (this.props.columns[a].order as number) - (this.props.columns[b].order as number);
-                    })
-                    .map(key => {
-                        const column = this.props.columns[key];
-                        const cell = this.props.row[key];
-                        const align = column.align ? column.align : 'start';
-
-                        return (
-                            <Cell align={align} key={`${this.props.row.id}-${key}`}>
-                                <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
-                                    {(column.render !== undefined && column.render(cell, this.props.row)) ||
-                                        ((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>)}
-                                </Box>
-                            </Cell>
-                        );
-                    })}
-            </Branch>
+                ifFalse={(): JSX.Element => <StyledRow>{this.renderRow(undefined)}</StyledRow>}
+            />
         );
     }
 }

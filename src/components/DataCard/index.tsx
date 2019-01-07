@@ -3,15 +3,15 @@ import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledDataCard from './style';
 import Row from './Row';
 import Branch from '../Branch';
-import Headers from './Headers';
 
 type SortDirectionType = 'ascending' | 'descending' | 'none';
 
 type BaseRowType = {
     id: string;
     selected?: boolean;
+    buttons?: Array<ReactNode>;
     // tslint:disable-next-line
-    [key: string]: string | number | boolean | undefined;
+    [key: string]: string | number | boolean | undefined | Array<ReactNode> | ReactNode;
 };
 
 type ColumnType<GenericCellType, GenericRowType> = {
@@ -92,35 +92,6 @@ class DataCard<GenericRowType extends BaseRowType> extends Component<PropsType<G
         }
     }
 
-    private handleHeaderCheck(selected: boolean): void {
-        (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(
-            // tslint:disable-next-line
-            this.props.rows.map(row => ({ ...(row as any), selected })),
-        );
-    }
-
-    private getHeaderState() {
-        const selectedItems = this.props.rows.filter(row => row.selected);
-
-        switch (selectedItems.length) {
-            case 0:
-                return false;
-            case this.props.rows.length:
-                return true;
-            default:
-                return 'indeterminate';
-        }
-    }
-
-    private handleSort = (column: string, direction: SortDirectionType) => {
-        this.setState({
-            sorting: {
-                column,
-                direction,
-            },
-        });
-    };
-
     private sortRows = (): Array<GenericRowType> => {
         // tslint:disable-next-line
         if (this.state.sorting === undefined || this.props.columns[this.state.sorting.column].sort === undefined) {
@@ -166,30 +137,20 @@ class DataCard<GenericRowType extends BaseRowType> extends Component<PropsType<G
                 )}
                 ifFalse={(children): JSX.Element => <StyledDataCard>{children}</StyledDataCard>}
             >
-                <Headers
-                    checked={this.getHeaderState()}
-                    draggable={isDraggable}
-                    selectable={isSelectable}
-                    columns={this.props.columns}
-                    onCheck={(selected): void => this.handleHeaderCheck(selected)}
-                    onSort={this.handleSort}
-                />
-                <tbody>
-                    {rows.map((row, rowIndex) => (
-                        <Row
-                            key={row.id}
-                            columns={this.props.columns}
-                            row={row}
-                            draggable={isDraggable}
-                            selectable={isSelectable}
-                            selected={row.selected !== undefined ? row.selected : false}
-                            index={rowIndex}
-                            onSelection={(event, toggleAction): void => {
-                                this.handleSelection(event, toggleAction, row.id);
-                            }}
-                        />
-                    ))}
-                </tbody>
+                {rows.map((row, rowIndex) => (
+                    <Row
+                        key={row.id}
+                        columns={this.props.columns}
+                        row={row}
+                        selectable={isSelectable}
+                        selected={row.selected !== undefined ? row.selected : false}
+                        draggable={isDraggable}
+                        index={rowIndex}
+                        onSelection={(event, toggleAction): void => {
+                            this.handleSelection(event, toggleAction, row.id);
+                        }}
+                    />
+                ))}
             </Branch>
         );
     }
