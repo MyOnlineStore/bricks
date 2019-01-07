@@ -6,7 +6,7 @@
   },
   "homepage": "https://github.com/MyOnlineStore/bricks#readme",
   "name": "@myonlinestore/bricks",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "bricks",
   "main": "dist/index.js",
   "types": "dist/src/index.d.ts",
