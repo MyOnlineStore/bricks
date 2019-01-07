@@ -3,6 +3,7 @@ const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackBar = require('webpackbar');
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     mode: 'production',
@@ -15,7 +16,7 @@ module.exports = {
     },
     output: {
         filename: 'index.js',
-        path: __dirname + '/../../dist',
+        path: path.join(__dirname, 'dist'),
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
@@ -38,7 +39,6 @@ module.exports = {
                 loader: 'ts-loader',
                 options: {
                     onlyCompileBundledFiles: true,
-                    configFile: __dirname + '/../typescript/tsconfig.json',
                 },
             },
             {
@@ -71,12 +71,12 @@ module.exports = {
         }),
         new WebpackBar(),
         new Visualizer({
-            filename: '../reports/webpack/statistics-circle.html',
+            filename: 'reports/webpack/statistics-circle.html',
         }),
         new BundleAnalyzerPlugin({
             analyzerMode: 'static',
             openAnalyzer: false,
-            reportFilename: '../reports/webpack/statistics-tree.html',
+            reportFilename: 'reports/webpack/statistics-tree.html',
         }),
     ],
 };
