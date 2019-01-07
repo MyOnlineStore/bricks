@@ -864,3 +864,4 @@ const theme: ThemeType = {
 };
 
 export default theme;
+export { bodyFont, headingFont, fontSize, green, silver, grey, red, yellow, roundness };
