@@ -7,6 +7,7 @@ const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: './src/index.ts',
+    devtool: 'source-map',
     stats: {
         assets: true,
         modules: false,
@@ -61,7 +62,6 @@ module.exports = {
                     removeTags: false,
                 },
             },
-            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
     plugins: [

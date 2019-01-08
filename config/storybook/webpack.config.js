@@ -52,7 +52,6 @@ module.exports = (baseConfig, env, config) => {
                 removeTags: false,
             },
         },
-        { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ];
     // plugins
 
