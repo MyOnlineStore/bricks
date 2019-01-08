@@ -21,6 +21,7 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     clearMocks: true,
     coverageDirectory: 'reports/jest',
+    snapshotSerializers: ['enzyme-to-json/serializer'],
     coverageThreshold: {
         src: {
             branches: 80,

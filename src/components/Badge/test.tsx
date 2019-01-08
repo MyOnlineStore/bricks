@@ -1,6 +1,5 @@
 import React from 'react';
 import Badge from '.';
-import toJson from 'enzyme-to-json';
 import { shallowWithTheme } from '../../utility/styled/testing';
 
 describe('Badge', () => {
@@ -8,7 +7,7 @@ describe('Badge', () => {
         const badge = shallowWithTheme(<Badge />);
 
         /* tslint:disable */
-        (expect(toJson(badge)) as any).toHaveStyleRule('background', '#ed2157');
+        (expect(badge) as any).toHaveStyleRule('background', '#ed2157');
         /* tslint:enable */
     });
 
@@ -19,10 +18,10 @@ describe('Badge', () => {
         const infoBadge = shallowWithTheme(<Badge severity="info" />);
 
         /* tslint:disable */
-        (expect(toJson(successBadge)) as any).toHaveStyleRule('background', '#5bd16a');
-        (expect(toJson(warningBadge)) as any).toHaveStyleRule('background', '#fcc200');
-        (expect(toJson(errorBadge)) as any).toHaveStyleRule('background', '#ed2157');
-        (expect(toJson(infoBadge)) as any).toHaveStyleRule('background', '#88979d');
+        (expect(successBadge) as any).toHaveStyleRule('background', '#5bd16a');
+        (expect(warningBadge) as any).toHaveStyleRule('background', '#fcc200');
+        (expect(errorBadge) as any).toHaveStyleRule('background', '#ed2157');
+        (expect(infoBadge) as any).toHaveStyleRule('background', '#88979d');
         /* tslint:enable */
     });
 });
