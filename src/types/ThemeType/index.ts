@@ -1,5 +1,5 @@
 import { BadgeThemeType } from '../../components/Badge';
-import { ButtonThemeType } from '../../components/Button/style';
+import { ButtonThemeType } from '../../components/Button';
 import { CheckboxThemeType } from '../../components/Checkbox/style';
 import { ContrastThemeType } from '../../components/Contrast/style';
 import { HeadingThemeType } from '../../components/Heading';

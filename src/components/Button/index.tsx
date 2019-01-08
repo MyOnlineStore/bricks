@@ -7,6 +7,50 @@ import Icon, { MediumPropsType } from '../Icon';
 import Box from '../Box';
 import Spinner from '../Spinner';
 
+type DefaultTypes = {
+    backgroundColor: string;
+    color: string;
+    boxShadow: string;
+};
+
+type ComponentStateTypes = {
+    idle: DefaultTypes;
+    hover: DefaultTypes;
+    focus: DefaultTypes;
+    active: DefaultTypes;
+};
+
+type ButtonThemeType = {
+    common: {
+        borderRadius: string;
+        borderWidth: string;
+        fontWeight: string;
+        fontFamily: string;
+        fontSize: string;
+        textDecoration: string;
+    };
+    primary: ComponentStateTypes;
+    secondary: ComponentStateTypes;
+    warning: ComponentStateTypes;
+    destructive: ComponentStateTypes;
+    plain: {
+        hover: DefaultTypes;
+        focus: DefaultTypes;
+        active: DefaultTypes;
+        idle: {
+            backgroundColor: string;
+            color: string;
+            boxShadow: string;
+            textDecoration: string;
+        };
+    };
+    disabled: {
+        backgroundColor: string;
+        color: string;
+        stripingColor: string;
+    };
+};
+
 type PropsType = BareButtonPropsType & {
     loading?: boolean;
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
@@ -84,17 +128,8 @@ const Button = withProps<PropsType>(styled(BareButton)).attrs({
             }
 
             &::before {
-                position: absolute;
-                display: block;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                z-index: -2;
-                content: '';
                 opacity: ${disabled ? 1 : 0};
                 ${disabled ? `color: ${theme.Button.disabled.color}` : 0};
-                transition: opacity 0.3s;
                 background: ${theme.Button.disabled.backgroundColor}
                     repeating-linear-gradient(
                         -45deg,
@@ -109,20 +144,11 @@ const Button = withProps<PropsType>(styled(BareButton)).attrs({
 
             &:disabled {
                 background: ${theme.Button.disabled.backgroundColor};
-                border-color: transparent;
-                cursor: default;
-                opacity: 0.7;
-                transform: none;
                 color: ${theme.Button.disabled.color};
-                box-shadow: none;
-
-                &::before {
-                    opacity: 1;
-                }
             }
             `;
     }};
 `;
 
 export default Button;
-export { PropsType };
+export { PropsType, ButtonThemeType };
