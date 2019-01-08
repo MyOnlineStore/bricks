@@ -260,7 +260,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}
                             >
                                 {(this.filterOptions().length === 0 && (
-                                    <Box padding={trbl(12)}>
+                                    <Box padding={trbl(12, 18)}>
                                         <Text>{this.props.emptyText}</Text>
                                     </Box>
                                 )) ||

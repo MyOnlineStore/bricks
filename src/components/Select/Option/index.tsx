@@ -31,7 +31,7 @@ const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
         <StyledOption isTargeted={props.isTargeted} onClick={clickAction} onMouseEnter={hoverAction}>
             <Box padding={trbl(6, 18)}>
                 {(props.content !== undefined && props.content) || (
-                    <Box padding={trbl(6, 18)} alignItems="center" inline>
+                    <Box padding={trbl(6, 0)} alignItems="center" inline>
                         {props.isSelected && (
                             <Box margin={trbl(0, 6, 0, 0)} inline>
                                 <Text descriptive={props.isSelected}>
