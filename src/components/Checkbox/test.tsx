@@ -3,6 +3,7 @@ import Checkbox from '.';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
+import 'jest-styled-components';
 
 describe('Checkbox', () => {
     it('should have theme background when checked', () => {
@@ -10,12 +11,10 @@ describe('Checkbox', () => {
             <Checkbox onChange={(): void => undefined} name="demo" checked={true} value="bar" />,
         );
 
-        /* tslint:disable */
-        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
             'background-color',
             mosTheme.Checkbox.checked.backgroundColor,
         );
-        /* tslint:enable */
     });
 
     it('should show a box-shadow on focus', () => {
@@ -25,12 +24,7 @@ describe('Checkbox', () => {
 
         checkbox.find(StyledCheckbox).simulate('focus');
 
-        /* tslint:disable */
-        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
-            'box-shadow',
-            mosTheme.Checkbox.focus.boxShadow,
-        );
-        /* tslint:enable */
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule('box-shadow', mosTheme.Checkbox.focus.boxShadow);
     });
 
     it('should be able to change checked value', () => {
@@ -54,35 +48,32 @@ describe('Checkbox', () => {
         const checkbox = mountWithTheme(
             <Checkbox onChange={(): void => undefined} name="demo" disabled={true} checked={true} value="bar" />,
         );
-        /* tslint:disable */
-        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
             'background',
             mosTheme.Checkbox.checkedDisabled.background,
         );
-        /* tslint:enable */
     });
 
     it('should show an unchecked and disabled state', () => {
         const checkbox = mountWithTheme(
             <Checkbox onChange={(): void => undefined} name="demo" disabled={true} checked={false} value="bar" />,
         );
-        /* tslint:disable */
-        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
             'background',
             mosTheme.Checkbox.idleDisabled.background,
         );
-        /* tslint:enable */
     });
 
     it('should show an error state', () => {
         const checkbox = mountWithTheme(
             <Checkbox onChange={(): void => undefined} name="demo" error={true} checked={false} value="bar" />,
         );
-        /* tslint:disable */
-        (expect(checkbox.find(StyledCheckboxSkin)) as any).toHaveStyleRule(
+
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
             'border',
             `1px solid ${mosTheme.Checkbox.error.borderColor}`,
         );
-        /* tslint:enable */
     });
 });

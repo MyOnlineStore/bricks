@@ -1,14 +1,13 @@
 import React from 'react';
 import Badge from '.';
 import { shallowWithTheme } from '../../utility/styled/testing';
+import 'jest-styled-components';
 
 describe('Badge', () => {
     it('should render the variety of severities and use error when no severity is chosen', () => {
         const badge = shallowWithTheme(<Badge />);
 
-        /* tslint:disable */
-        (expect(badge) as any).toHaveStyleRule('background', '#ed2157');
-        /* tslint:enable */
+        expect(badge).toHaveStyleRule('background', '#ed2157');
     });
 
     it('should render the Badge with different colors according to severities', () => {
@@ -17,11 +16,9 @@ describe('Badge', () => {
         const errorBadge = shallowWithTheme(<Badge severity="error" />);
         const infoBadge = shallowWithTheme(<Badge severity="info" />);
 
-        /* tslint:disable */
-        (expect(successBadge) as any).toHaveStyleRule('background', '#5bd16a');
-        (expect(warningBadge) as any).toHaveStyleRule('background', '#fcc200');
-        (expect(errorBadge) as any).toHaveStyleRule('background', '#ed2157');
-        (expect(infoBadge) as any).toHaveStyleRule('background', '#88979d');
-        /* tslint:enable */
+        expect(successBadge).toHaveStyleRule('background', '#5bd16a');
+        expect(warningBadge).toHaveStyleRule('background', '#fcc200');
+        expect(errorBadge).toHaveStyleRule('background', '#ed2157');
+        expect(infoBadge).toHaveStyleRule('background', '#88979d');
     });
 });

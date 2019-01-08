@@ -2,6 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import PriceTag from '.';
 import MosTheme from '../../themes/MosTheme';
+import 'jest-styled-components';
 
 describe('PriceTag', () => {
     it('should render with a hidden currency', () => {

@@ -5,6 +5,7 @@ import StyledCell from '../Cell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
+import 'jest-styled-components';
 
 describe('Table Row', () => {
     it('should handle mouse focus and blur when draggable', () => {
@@ -30,21 +31,17 @@ describe('Table Row', () => {
             .first()
             .simulate('focus');
 
-        /* tslint:disable */
-        (expect(component.find(StyledRow)) as any).toHaveStyleRule(
+        expect(component.find(StyledRow)).toHaveStyleRule(
             'outline',
             `solid 4px ${mosTheme.Table.row.focus.borderColor}`,
         );
-        /* tslint:enable */
 
         component
             .find(StyledCell)
             .first()
             .simulate('blur');
 
-        /* tslint:disable */
-        (expect(component.find(StyledRow)) as any).not.toHaveStyleRule('outline');
-        /* tslint:enable */
+        expect(component.find(StyledRow)).not.toHaveStyleRule('outline', expect.any(String));
     });
 
     it('should handle mouse enter and leave', () => {
