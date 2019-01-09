@@ -4,8 +4,9 @@ import DataCard from '.';
 import Text from '../Text';
 import { boolean } from '@storybook/addon-knobs';
 import Button from '../Button';
-import Icon from '../Icon';
+import Icon, { MediumIcons } from '../Icon';
 import StyledBadge from '../Badge';
+import SeverityType from '../../types/_SeverityType';
 
 type RowType = {
     selected?: boolean;
@@ -16,6 +17,13 @@ type RowType = {
     badge?: string;
     extra?: string;
     buttons?: Array<ReactNode>;
+    statusIcons?: Array<StatusIconType>;
+};
+
+type StatusIconType = {
+    label: string;
+    severity?: SeverityType;
+    icon: keyof typeof MediumIcons;
 };
 
 type StateType = {
@@ -38,7 +46,6 @@ class Demo extends Component<PropsType, StateType> {
             hover: false,
             rows: [
                 {
-                    selected: true,
                     id: '61651323',
                     price: 0.8,
                     name: 'Kiwi',
@@ -46,16 +53,19 @@ class Demo extends Component<PropsType, StateType> {
                     badge: 'special offer',
                     extra: 'value with no label/header',
                     buttons: this.renderActions(1),
+                    statusIcons: [
+                        { label: 'Invisible in webshop', icon: 'eyeSlash', severity: 'warning' },
+                        { label: 'Random Icon', icon: 'bookmark' },
+                    ],
                 },
-
                 {
                     id: '61651320',
                     price: 3.5,
                     name: 'Pineapple',
                     image: <img src="http://www.stevensegallery.com/105/105" height="80" />,
                     badge: 'halp?',
-
                     buttons: this.renderActions(2),
+                    statusIcons: [{ label: 'Locked item', icon: 'locked', severity: 'error' }],
                 },
                 {
                     selected: true,
@@ -83,6 +93,10 @@ class Demo extends Component<PropsType, StateType> {
     }
 
     private sortText = (a: string, b: string) => {
+        if (a === undefined || b === undefined) {
+            return -1;
+        }
+
         const valueA = a.toUpperCase();
         const valueB = b.toUpperCase();
 
@@ -161,14 +175,11 @@ class Demo extends Component<PropsType, StateType> {
                         header: 'Sticker',
                         order: 3,
                         render: this.renderBadge,
+                        sort: this.props.sortable ? this.sortText : undefined,
                     },
                     extra: {
                         header: '',
                         order: 4,
-                    },
-                    buttons: {
-                        order: 5,
-                        align: 'end',
                     },
                 }}
                 rows={this.state.rows}

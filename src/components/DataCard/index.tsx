@@ -2,7 +2,10 @@ import React, { ReactNode, Component, MouseEvent } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import StyledDataCard from './style';
 import Row from './Row';
+import Headers from './Headers';
 import Branch from '../Branch';
+import { MediumIcons } from './../Icon/types';
+import SeverityType from '../../types/_SeverityType';
 
 type SortDirectionType = 'ascending' | 'descending' | 'none';
 
@@ -10,13 +13,20 @@ type BaseRowType = {
     id: string;
     selected?: boolean;
     buttons?: Array<ReactNode>;
+    statusIcons?: Array<StatusIconType>;
     // tslint:disable-next-line
     [key: string]: string | number | boolean | undefined | Array<ReactNode> | ReactNode;
 };
 
+type StatusIconType = {
+    label: string;
+    severity?: SeverityType;
+    icon: keyof typeof MediumIcons;
+};
+
 type ColumnType<GenericCellType, GenericRowType> = {
     order?: number;
-    header?: ReactNode;
+    header?: ReactNode | string | number | any;
     align?: 'start' | 'center' | 'end';
     sort?(cellA: GenericCellType, cellB: GenericCellType): number;
     render?(cell: GenericCellType, row: GenericRowType): JSX.Element;
@@ -67,17 +77,19 @@ class DataCard<GenericRowType extends BaseRowType> extends Component<PropsType<G
         if (event.shiftKey) {
             window.getSelection().removeAllRanges();
 
-            const selection = this.props.rows.map((row, key): GenericRowType => {
-                if (
-                    (key >= this.state.selectionStart && key <= selectionEnd) ||
-                    (key <= this.state.selectionStart && key >= selectionEnd)
-                ) {
-                    // tslint:disable-next-line
-                    return { ...(row as any), selected: this.state.toggleAction };
-                }
+            const selection = this.props.rows.map(
+                (row, key): GenericRowType => {
+                    if (
+                        (key >= this.state.selectionStart && key <= selectionEnd) ||
+                        (key <= this.state.selectionStart && key >= selectionEnd)
+                    ) {
+                        // tslint:disable-next-line
+                        return { ...(row as any), selected: this.state.toggleAction };
+                    }
 
-                return row;
-            });
+                    return row;
+                },
+            );
 
             (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(selection);
         } else {
@@ -91,6 +103,15 @@ class DataCard<GenericRowType extends BaseRowType> extends Component<PropsType<G
             (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(selection);
         }
     }
+
+    private handleSort = (column: string, direction: SortDirectionType) => {
+        this.setState({
+            sorting: {
+                column,
+                direction,
+            },
+        });
+    };
 
     private sortRows = (): Array<GenericRowType> => {
         // tslint:disable-next-line
@@ -118,6 +139,26 @@ class DataCard<GenericRowType extends BaseRowType> extends Component<PropsType<G
         }
     };
 
+    private handleHeaderCheck(selected: boolean): void {
+        (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(
+            // tslint:disable-next-line
+            this.props.rows.map(row => ({ ...(row as any), selected })),
+        );
+    }
+
+    private getHeaderState() {
+        const selectedItems = this.props.rows.filter(row => row.selected);
+
+        switch (selectedItems.length) {
+            case 0:
+                return false;
+            case this.props.rows.length:
+                return true;
+            default:
+                return 'indeterminate';
+        }
+    }
+
     public render() {
         const isDraggable = this.props.onDragEnd !== undefined;
         const isSelectable = this.props.onSelection !== undefined;
@@ -137,6 +178,14 @@ class DataCard<GenericRowType extends BaseRowType> extends Component<PropsType<G
                 )}
                 ifFalse={(children): JSX.Element => <StyledDataCard>{children}</StyledDataCard>}
             >
+                <Headers
+                    checked={this.getHeaderState()}
+                    draggable={isDraggable}
+                    selectable={isSelectable}
+                    columns={this.props.columns}
+                    onCheck={(selected): void => this.handleHeaderCheck(selected)}
+                    onSort={this.handleSort}
+                />
                 {rows.map((row, rowIndex) => (
                     <Row
                         key={row.id}

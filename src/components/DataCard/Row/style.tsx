@@ -16,6 +16,7 @@ const StyledRow = withProps<StyledRowProps>(styled.div)`
     border-radius: 3px;
     box-shadow: 0 2px 10px 0 rgba(33, 37, 43, .15);
     margin-bottom: 24px;
+
     ${({ selected }): string => {
         if (selected) {
             // the background-color must remain a solid color, to improve legabilty while dragging
