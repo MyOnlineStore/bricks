@@ -1,4 +1,4 @@
-import { boolean, number } from '@storybook/addon-knobs/react';
+import { boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import ScrollBox from '.';

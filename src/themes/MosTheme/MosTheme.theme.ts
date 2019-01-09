@@ -96,6 +96,14 @@ const theme: ThemeType = {
             },
         },
     },
+    Breadcrumbs: {
+        default: {
+            color: grey.base,
+        },
+        link: {
+            color: grey.lighter2,
+        },
+    },
     Button: {
         common: {
             borderRadius: roundness.base,
@@ -785,3 +793,4 @@ const theme: ThemeType = {
 };
 
 export default theme;
+export { bodyFont, headingFont, fontSize, green, silver, grey, red, yellow, roundness };

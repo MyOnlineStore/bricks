@@ -53,7 +53,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <Box direction="column" grow={75} margin={[0, 0, 0, 24]}>
                     {title}
                     <Box margin={[9, 0, 0, 0]}>{message}</Box>
-                    {hasChildren && (
+                    {(hasChildren || props.button) && (
                         <Box margin={[24, 0, 0, 0]}>
                             {props.children}
                             {props.button && props.button}
@@ -69,7 +69,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
             {illustration}
             <Box padding={[18, 0, 0, 0]}>{title}</Box>
             <Box margin={[12, 0, 0, 0]}>{message}</Box>
-            {hasChildren && (
+            {(hasChildren || props.button) && (
                 <Box margin={[24, 0, 0, 0]}>
                     {props.children}
                     {props.button && props.button}
