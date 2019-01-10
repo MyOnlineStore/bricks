@@ -451,7 +451,7 @@ const theme: ThemeType = {
             },
             hierarchy4: {
                 color: grey.base,
-                fontFamily: bodyFont,
+                fontFamily: headingFont,
                 fontSize: '20px',
                 fontWeight: '400',
                 lineHeight: '1.25',
