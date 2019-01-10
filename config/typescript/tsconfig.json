@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "../../",
+    "declarationDir": "../../lib",
     "sourceMap": true,
     "noImplicitAny": true,
     "noErrorTruncation": true,

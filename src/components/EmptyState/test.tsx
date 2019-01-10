@@ -5,6 +5,7 @@ import Heading from '../Heading';
 import Text from '../Text';
 import Illustration from '../Illustration';
 import Box from '../Box';
+import Button from '../Button';
 
 describe('EmptyState', () => {
     it('should render its children', () => {
@@ -36,6 +37,13 @@ describe('EmptyState', () => {
         const component = mountWithTheme(<EmptyState title="foo" message="bar" illustration={illustration} />);
 
         expect(component.find(Illustration).matchesElement(illustration)).toBe(true);
+    });
+
+    it('should render the passed through button', () => {
+        const button = <Button variant="primary" title="foo" href="" />;
+        const component = mountWithTheme(<EmptyState title="foo" message="bar" button={button} />);
+
+        expect(component.find(Button).matchesElement(button)).toBe(true);
     });
 
     it('should render in a vertical fashion', () => {

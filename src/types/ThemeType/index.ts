@@ -24,9 +24,11 @@ import { ToasterThemeType } from '../../components/Toaster/style';
 import { ToggleThemeType } from '../../components/Toggle/style';
 import { SelectThemeType } from '../../components/Select/style';
 import { SkeletonThemeType } from '../../components/Skeleton/style';
+import { BreadcrumbsThemeType } from '../../components/Breadcrumbs/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
+    Breadcrumbs: BreadcrumbsThemeType;
     Button: ButtonThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
