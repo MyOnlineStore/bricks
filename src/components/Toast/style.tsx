@@ -5,16 +5,16 @@ import styled, { withProps } from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 import { LinkStyles } from '../Link/style';
 
-type ToasterPropsType = {
+type ToastPropsType = {
     severity: SeverityType;
 };
 
-type ToasterThemeType = {
+type ToastThemeType = {
     borderRadius: string;
     backgroundColor: string;
 };
 
-const StyledToasterWrapper = styled.div`
+const StyledToastWrapper = styled.div`
     position: fixed;
     left: 0;
     right: 0;
@@ -25,7 +25,7 @@ const StyledToasterWrapper = styled.div`
     align-items: flex-start;
 `;
 
-const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
+const StyledToast = withProps<ToastPropsType, HTMLDivElement>(styled.div)`
     display: flex;
     transition: opacity 100ms, box-shadow 100ms;
     box-sizing: border-box;
@@ -42,5 +42,5 @@ const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
     }
 `;
 
-export default StyledToaster;
-export { ToasterPropsType, StyledToasterWrapper, ToasterThemeType };
+export default StyledToast;
+export { ToastPropsType, StyledToastWrapper, ToastThemeType };
