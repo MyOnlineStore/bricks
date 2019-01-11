@@ -1,28 +1,42 @@
 import React, { ReactNode, Component, MouseEvent } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
-import StyledTable from './style';
-import Row from './Row';
+import StyledTable from './tableStyle';
+import StyledDataCard from './datacardStyle';
+import TableRow from './TableRow';
+import TableHeaders from './TableHeaders';
+import CompactHeaders from './CompactHeaders';
 import Branch from '../Branch';
-import Headers from './Headers';
+import { MediumIcons } from './../Icon/types';
+import SeverityType from '../../types/_SeverityType';
+import DataCard from './DataCard';
 
 type SortDirectionType = 'ascending' | 'descending' | 'none';
 
 type BaseRowType = {
     id: string;
     selected?: boolean;
+    buttons?: Array<ReactNode>;
+    statusIcons?: Array<StatusIconType>;
     // tslint:disable-next-line
-    [key: string]: string | number | boolean | undefined;
+    [key: string]: string | number | boolean | undefined | Array<ReactNode> | ReactNode;
+};
+
+type StatusIconType = {
+    label: string;
+    severity?: SeverityType;
+    icon: keyof typeof MediumIcons;
 };
 
 type ColumnType<GenericCellType, GenericRowType> = {
     order?: number;
-    header?: ReactNode;
+    header?: ReactNode | string | number | any;
     align?: 'start' | 'center' | 'end';
     sort?(cellA: GenericCellType, cellB: GenericCellType): number;
     render?(cell: GenericCellType, row: GenericRowType): JSX.Element;
 };
 
 type PropsType<GenericRowType extends BaseRowType> = {
+    view?: 'table' | 'datacard';
     rows: Array<GenericRowType>;
     columns: {
         [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<
@@ -149,47 +163,92 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         }
     };
 
+    public renderRow(row: BaseRowType, rowIndex: number, isSelectable: boolean, isDraggable: boolean) {
+        const rowProps = {
+            key: row.id,
+            columns: this.props.columns,
+            row,
+            selectable: isSelectable,
+            selected: row.selected !== undefined ? row.selected : false,
+            draggable: isDraggable,
+            index: rowIndex,
+        };
+
+        if (this.props.view === 'table') {
+            return (
+                <TableRow
+                    {...rowProps}
+                    onSelection={(event, toggleAction): void => {
+                        this.handleSelection(event, toggleAction, row.id);
+                    }}
+                />
+            );
+        }
+
+        return (
+            <DataCard
+                {...rowProps}
+                onSelection={(event, toggleAction): void => {
+                    this.handleSelection(event, toggleAction, row.id);
+                }}
+            />
+        );
+    }
+
     public render() {
         const isDraggable = this.props.onDragEnd !== undefined;
         const isSelectable = this.props.onSelection !== undefined;
         const rows = this.sortRows();
 
+        const headerProps = {
+            draggable: isDraggable,
+            selectable: isSelectable,
+            columns: this.props.columns,
+            onCheck: (selected: boolean): void => this.handleHeaderCheck(selected),
+            onSort: this.handleSort,
+        };
+
         return (
             <Branch
-                condition={isDraggable}
+                condition={this.props.view === 'table'}
                 ifTrue={(children): JSX.Element => (
-                    <DragDropContext onDragEnd={this.dragEndHandler}>
-                        <Droppable droppableId="droppable">
-                            {({ innerRef }): JSX.Element => <StyledTable ref={innerRef}>{children}</StyledTable>}
-                        </Droppable>
-                    </DragDropContext>
+                    <Branch
+                        condition={isDraggable}
+                        ifTrue={(children): JSX.Element => (
+                            <DragDropContext onDragEnd={this.dragEndHandler}>
+                                <Droppable droppableId="droppable">
+                                    {({ innerRef }): JSX.Element => (
+                                        <StyledTable ref={innerRef}>{children}</StyledTable>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
+                        )}
+                        ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
+                    >
+                        <TableHeaders checked={this.getHeaderState()} {...headerProps} />
+                        <tbody>{children}</tbody>
+                    </Branch>
                 )}
-                ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
+                ifFalse={(children): JSX.Element => (
+                    <Branch
+                        condition={isDraggable}
+                        ifTrue={(children): JSX.Element => (
+                            <DragDropContext onDragEnd={this.dragEndHandler}>
+                                <Droppable droppableId="droppable">
+                                    {({ innerRef }): JSX.Element => (
+                                        <StyledDataCard ref={innerRef}>{children}</StyledDataCard>
+                                    )}
+                                </Droppable>
+                            </DragDropContext>
+                        )}
+                        ifFalse={(children): JSX.Element => <StyledDataCard>{children}</StyledDataCard>}
+                    >
+                        <CompactHeaders checked={this.getHeaderState()} {...headerProps} />
+                        {children}
+                    </Branch>
+                )}
             >
-                <Headers
-                    checked={this.getHeaderState()}
-                    draggable={isDraggable}
-                    selectable={isSelectable}
-                    columns={this.props.columns}
-                    onCheck={(selected): void => this.handleHeaderCheck(selected)}
-                    onSort={this.handleSort}
-                />
-                <tbody>
-                    {rows.map((row, rowIndex) => (
-                        <Row
-                            key={row.id}
-                            columns={this.props.columns}
-                            row={row}
-                            draggable={isDraggable}
-                            selectable={isSelectable}
-                            selected={row.selected !== undefined ? row.selected : false}
-                            index={rowIndex}
-                            onSelection={(event, toggleAction): void => {
-                                this.handleSelection(event, toggleAction, row.id);
-                            }}
-                        />
-                    ))}
-                </tbody>
+                {rows.map((row, rowIndex) => this.renderRow(row, rowIndex, isSelectable, isDraggable))}
             </Branch>
         );
     }

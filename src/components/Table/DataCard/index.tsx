@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from 'react';
-import Cell from '../Cell';
+import Cell from '../DataCardCell';
 import Text from '../../Text';
 import Box from '../../Box';
 import { ColumnType, BaseRowType } from '..';

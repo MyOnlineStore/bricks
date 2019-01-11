@@ -1,10 +1,11 @@
 import React from 'react';
 import Rows from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
-import StyledCell from '../Cell/style';
+import StyledCell from '../TableCell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
+import 'jest-styled-components';
 
 describe('Table Rows', () => {
     it('should handle mouse focus and blur when draggable', () => {
@@ -18,9 +19,9 @@ describe('Table Rows', () => {
                             name: { header: 'name' },
                             price: { header: 'Price' },
                         }}
-                        draggable
+                        selected={false}
                         selectable
-                        selected={true}
+                        draggable
                         index={1}
                         onSelection={(): void => undefined}
                     />
@@ -33,21 +34,17 @@ describe('Table Rows', () => {
             .first()
             .simulate('focus');
 
-        /* tslint:disable */
-        (expect(component.find(StyledRow)) as any).toHaveStyleRule(
+        expect(component.find(StyledRow)).toHaveStyleRule(
             'outline',
             `solid 4px ${mosTheme.Table.row.focus.borderColor}`,
         );
-        /* tslint:enable */
 
         component
             .find(StyledCell)
             .first()
             .simulate('blur');
 
-        /* tslint:disable */
-        (expect(component.find(StyledRow)) as any).not.toHaveStyleRule('outline');
-        /* tslint:enable */
+        expect(component.find(StyledRow)).not.toHaveStyleRule('outline', expect.any(String));
     });
 
     it('should handle mouse enter and leave', () => {
@@ -61,9 +58,9 @@ describe('Table Rows', () => {
                             name: { header: 'name' },
                             price: { header: 'Price' },
                         }}
-                        draggable
+                        selected={false}
                         selectable
-                        selected={true}
+                        draggable
                         index={1}
                         onSelection={(): void => undefined}
                     />
