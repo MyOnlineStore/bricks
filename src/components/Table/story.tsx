@@ -3,8 +3,7 @@ import React, { Component, Fragment } from 'react';
 import Table from '.';
 import Text from '../Text';
 import { boolean } from '@storybook/addon-knobs';
-import Button from '../Button';
-import Icon from '../Icon';
+import IconButton from '../IconButton';
 
 type RowType = {
     id: string;
@@ -72,7 +71,8 @@ class Demo extends Component<PropsType, StateType> {
     private renderActions = (actions: boolean, row: RowType) => {
         if (actions) {
             return (
-                <Button.Flat
+                <IconButton
+                    icon="trash"
                     title="delete"
                     variant="destructive"
                     onClick={() =>
@@ -80,9 +80,7 @@ class Demo extends Component<PropsType, StateType> {
                             rows: this.state.rows.filter(item => item.id !== row.id),
                         })
                     }
-                >
-                    <Icon size="medium" icon="trash" />
-                </Button.Flat>
+                />
             );
         }
 

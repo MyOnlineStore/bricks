@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import StyledToaster, { StyledToasterWrapper } from './style';
 import Button from '../Button';
+import IconButton from '../IconButton';
 import Box from '../Box';
 import Icon, { MediumIcons } from '../Icon';
 import Text from '../Text';
@@ -99,9 +100,12 @@ class Toaster extends Component<PropsType> {
                                         )}
                                     </Box>
                                     <Box direction="column">
-                                        <Button.Flat title="close" onClick={this.handleClose} variant="primary">
-                                            <Icon size="small" icon="close" />
-                                        </Button.Flat>
+                                        <IconButton
+                                            icon="close"
+                                            title="close"
+                                            onClick={this.handleClose}
+                                            variant="primary"
+                                        />
                                     </Box>
                                 </StyledToaster>
                             </Box>

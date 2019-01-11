@@ -2,6 +2,7 @@ import React from 'react';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Toaster from '.';
 import Button from '../Button';
+import IconButton from '../IconButton';
 
 jest.useFakeTimers();
 
@@ -13,7 +14,7 @@ describe('Toaster', () => {
             <Toaster isOpen={true} severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
         );
 
-        const closeButton = component.find(Button.Flat).first();
+        const closeButton = component.find(IconButton).first();
 
         closeButton.simulate('click');
 
@@ -42,7 +43,7 @@ describe('Toaster', () => {
 
     it('should not break when no close is provided', () => {
         const component = mountWithTheme(<Toaster isOpen={true} severity={'info'} title="Foo" />);
-        const closeButton = component.find(Button.Flat).first();
+        const closeButton = component.find(IconButton).first();
 
         const fn = (): void => {
             closeButton.simulate('click');
