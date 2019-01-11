@@ -20,6 +20,7 @@ type PropsType = {
     };
     // tsline:enable
     row: BaseRowType;
+    buttonsColumn: boolean;
     draggable: boolean;
     selected: boolean;
     selectable: boolean;
@@ -137,6 +138,7 @@ class Row extends Component<PropsType, StateType> {
                             </Cell>
                         );
                     })}
+                {this.props.buttonsColumn && <Cell align="end">{this.props.row.buttons}</Cell>}
             </Branch>
         );
     }

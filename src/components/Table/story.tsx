@@ -54,7 +54,6 @@ class Demo extends Component<PropsType, StateType> {
                     name: 'Kiwi',
                     image: <img src="http://www.stevensegallery.com/100/100" height="80" />,
                     badge: 'special offer',
-                    extra: 'value with no label/header',
                     buttons: this.renderActions(1),
                     statusIcons: [
                         { label: 'Invisible in webshop', icon: 'eyeSlash', severity: 'warning' },
@@ -63,7 +62,7 @@ class Demo extends Component<PropsType, StateType> {
                 },
                 {
                     id: '61651320',
-                    price: 3.5,
+                    price: -3.5,
                     name: 'Pineapple',
                     image: <img src="http://www.stevensegallery.com/105/105" height="80" />,
                     badge: 'halp?',
@@ -86,7 +85,7 @@ class Demo extends Component<PropsType, StateType> {
                 },
                 {
                     id: '61651324',
-                    price: 0.7,
+                    price: -0.7,
                     name: 'Lemon',
                     image: <img src="http://www.stevensegallery.com/104/104" height="80" />,
                     buttons: this.renderActions(5),
@@ -108,22 +107,19 @@ class Demo extends Component<PropsType, StateType> {
     private sortPrice = (a: number, b: number) => a - b;
 
     private renderPrice = (price: number) => {
-        if (price < 1)
-            return (
-                <Text strong severity="success">
-                    {price}
-                </Text>
-            );
-
         return (
-            <Text strong severity="error">
-                {price}
+            <Text strong severity={price > 0 ? 'success' : 'error'}>
+                € {price.toFixed(2)}
             </Text>
         );
     };
 
     private renderBadge = (badge: string) => {
-        return <StyledBadge severity="info">{badge}</StyledBadge>;
+        if (badge) {
+            return <StyledBadge severity="info">{badge}</StyledBadge>;
+        }
+
+        return <></>;
     };
 
     private renderImage = (image: string | ReactNode) => {
@@ -150,30 +146,26 @@ class Demo extends Component<PropsType, StateType> {
                     },
                     name: {
                         header: 'Name',
-                        order: 1,
+                        order: 2,
                         align: 'start',
                         sort: this.props.sortable ? this.sortText : undefined,
                     },
                     id: {
                         header: 'Product ID',
-                        order: 0,
+                        order: 3,
                         sort: this.props.sortable ? this.sortText : undefined,
                     },
                     price: {
                         header: 'Price',
-                        order: 2,
+                        order: 4,
                         sort: this.props.sortable ? this.sortPrice : undefined,
                         render: this.props.custom ? this.renderPrice : undefined,
                     },
                     badge: {
                         header: 'Sticker',
-                        order: 3,
-                        render: this.renderBadge,
+                        order: 6,
                         sort: this.props.sortable ? this.sortText : undefined,
-                    },
-                    extra: {
-                        header: '',
-                        order: 4,
+                        render: this.props.custom ? this.renderBadge : undefined,
                     },
                 }}
                 rows={this.state.rows}
@@ -189,9 +181,9 @@ storiesOf('Table', module)
     .add('Default', () => (
         <Demo
             draggable={boolean('draggable', true)}
-            selectable={boolean('selectable', false)}
+            selectable={boolean('selectable', true)}
             sortable={boolean('sortable', true)}
-            custom={boolean('custom', false)}
+            custom={boolean('custom', true)}
             view={select('view', ['datacard', 'table'], 'table') as PropsType['view']}
         />
     ))
@@ -201,9 +193,9 @@ storiesOf('Table', module)
                 return (
                     <Demo
                         draggable={boolean('draggable', true)}
-                        selectable={boolean('selectable', false)}
+                        selectable={boolean('selectable', true)}
                         sortable={boolean('sortable', true)}
-                        custom={boolean('custom', false)}
+                        custom={boolean('custom', true)}
                         view={breakpoint !== 'large' ? 'datacard' : 'table'}
                     />
                 );

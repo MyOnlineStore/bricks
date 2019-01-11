@@ -114,7 +114,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         );
     }
 
-    private getHeaderState() {
+    private getHeaderState(): boolean | 'indeterminate' {
         const selectedItems = this.props.rows.filter(row => row.selected);
 
         switch (selectedItems.length) {
@@ -162,42 +162,11 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         }
     };
 
-    public renderRow(row: BaseRowType, rowIndex: number, isSelectable: boolean, isDraggable: boolean) {
-        const rowProps = {
-            key: row.id,
-            columns: this.props.columns,
-            row,
-            selectable: isSelectable,
-            selected: row.selected !== undefined ? row.selected : false,
-            draggable: isDraggable,
-            index: rowIndex,
-        };
-
-        if (this.props.view === 'table') {
-            return (
-                <Row
-                    {...rowProps}
-                    onSelection={(event, toggleAction): void => {
-                        this.handleSelection(event, toggleAction, row.id);
-                    }}
-                />
-            );
-        }
-
-        return (
-            <Card
-                {...rowProps}
-                onSelection={(event, toggleAction): void => {
-                    this.handleSelection(event, toggleAction, row.id);
-                }}
-            />
-        );
-    }
-
     public render() {
         const isDraggable = this.props.onDragEnd !== undefined;
         const isSelectable = this.props.onSelection !== undefined;
         const rows = this.sortRows();
+        const hasButtonsColumn = this.props.rows.filter(row => row.buttons).length > 0;
 
         const headerProps = {
             draggable: isDraggable,
@@ -205,6 +174,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
             columns: this.props.columns,
             onCheck: (selected: boolean): void => this.handleHeaderCheck(selected),
             onSort: this.handleSort,
+            checked: this.getHeaderState(),
         };
 
         return (
@@ -224,7 +194,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         )}
                         ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
                     >
-                        <TableHeaders checked={this.getHeaderState()} {...headerProps} />
+                        <TableHeaders buttonsColumn={hasButtonsColumn} {...headerProps} />
                         <tbody>{children}</tbody>
                     </Branch>
                 )}
@@ -240,12 +210,30 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         )}
                         ifFalse={(children): JSX.Element => <div>{children}</div>}
                     >
-                        <CompactHeaders checked={this.getHeaderState()} {...headerProps} />
+                        <CompactHeaders {...headerProps} />
                         {children}
                     </Branch>
                 )}
             >
-                {rows.map((row, rowIndex) => this.renderRow(row, rowIndex, isSelectable, isDraggable))}
+                {rows.map((row, rowIndex) => {
+                    const props = {
+                        columns: this.props.columns,
+                        row,
+                        selectable: isSelectable,
+                        selected: row.selected !== undefined ? row.selected : false,
+                        draggable: isDraggable,
+                        index: rowIndex,
+                        onSelection: (event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void => {
+                            this.handleSelection(event, toggleAction, row.id);
+                        },
+                    };
+
+                    if (this.props.view === 'table') {
+                        return <Row key={row.id} buttonsColumn={hasButtonsColumn} {...props} />;
+                    }
+
+                    return <Card key={row.id} {...props} />;
+                })}
             </Branch>
         );
     }
