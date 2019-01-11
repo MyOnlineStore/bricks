@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent, ReactNode } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import Icon from '../../Icon';
-import TableCell from '../TableCell';
+import Cell from '../Cell';
 import Text from '../../Text';
 import StyledRow from './style';
 import { ContrastThemeProvider } from '../../Contrast';
@@ -11,13 +11,14 @@ import Branch from '../../Branch';
 import { ColumnType, BaseRowType } from '..';
 
 type PropsType = {
-    // tslint:disable-next-line
+    // tslint:disable
     columns: {
         [key: string]: ColumnType<
             string | number | boolean | undefined | Array<ReactNode> | ReactNode | Array<StatusIconType>,
             any
         >;
     };
+    // tsline:enable
     row: BaseRowType;
     draggable: boolean;
     selected: boolean;
@@ -81,7 +82,7 @@ class Row extends Component<PropsType, StateType> {
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                         >
-                                            <TableCell
+                                            <Cell
                                                 align="start"
                                                 width="18px"
                                                 provided={provided.dragHandleProps}
@@ -91,7 +92,7 @@ class Row extends Component<PropsType, StateType> {
                                                 <Text severity={!this.state.hasHover ? 'info' : undefined}>
                                                     <Icon size="medium" icon="bars" />
                                                 </Text>
-                                            </TableCell>
+                                            </Cell>
                                             {children}
                                         </StyledRow>
                                     </ContrastThemeProvider>
@@ -104,14 +105,14 @@ class Row extends Component<PropsType, StateType> {
                 ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
             >
                 {this.props.selectable && (
-                    <TableCell align="start" width={'18px'}>
+                    <Cell align="start" width={'18px'}>
                         <Checkbox
                             name=""
                             value=""
                             checked={this.props.selected}
                             onChange={({ checked, event }): void => this.props.onSelection(event, checked as boolean)}
                         />
-                    </TableCell>
+                    </Cell>
                 )}
 
                 {Object.keys(this.props.columns)
@@ -128,12 +129,12 @@ class Row extends Component<PropsType, StateType> {
                         const align = column.align ? column.align : 'start';
 
                         return (
-                            <TableCell align={align} key={`${this.props.row.id}-${key}`}>
+                            <Cell align={align} key={`${this.props.row.id}-${key}`}>
                                 <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
                                     {(column.render !== undefined && column.render(cell, this.props.row)) ||
                                         ((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>)}
                                 </Box>
-                            </TableCell>
+                            </Cell>
                         );
                     })}
             </Branch>

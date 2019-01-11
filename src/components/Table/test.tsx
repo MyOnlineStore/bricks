@@ -4,7 +4,7 @@ import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
-import Cell from './TableCell';
+import Cell from './Cell';
 import Checkbox from '../Checkbox';
 import Icon from '../Icon';
 import Box from '../Box';

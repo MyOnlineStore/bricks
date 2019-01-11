@@ -1,9 +1,8 @@
 import React, { Component, ReactNode } from 'react';
-import Cell from '../DataCardCell';
 import Text from '../../Text';
 import Box from '../../Box';
 import { ColumnType, BaseRowType } from '..';
-import StyledRow from './style';
+import StyledCard from './style';
 import Checkbox from '../../Checkbox';
 import Icon from '../../Icon';
 import Branch from '../../Branch';
@@ -90,19 +89,18 @@ class Row extends Component<PropsType, StateType> {
 
                                     if (cell !== undefined) {
                                         return (
-                                            <Cell
-                                                label={this.props.columns[key].header}
-                                                align={align}
-                                                key={`${this.props.row.id}-${key}`}
-                                            >
-                                                <Box justifyContent="flex-start">
+                                            <tr>
+                                                <td className="label">
+                                                    <Text>{this.props.columns[key].header}</Text>
+                                                </td>
+                                                <td className="value">
                                                     {(column.render !== undefined &&
                                                         column.render(cell, this.props.row)) ||
                                                         ((typeof cell === 'string' || typeof cell === 'number') && (
                                                             <Text>{cell}</Text>
                                                         ))}
-                                                </Box>
-                                            </Cell>
+                                                </td>
+                                            </tr>
                                         );
                                     }
                                 })}
@@ -158,7 +156,7 @@ class Row extends Component<PropsType, StateType> {
                                 /* tslint:disable:no-unbound-method */
                                 return (
                                     <ContrastThemeProvider enable={this.state.hasHover}>
-                                        <StyledRow
+                                        <StyledCard
                                             dragging={snapshot.isDragging}
                                             selected={this.props.selected}
                                             focus={this.state.hasFocus}
@@ -168,7 +166,7 @@ class Row extends Component<PropsType, StateType> {
                                             {...provided.draggableProps}
                                         >
                                             {this.renderRow(provided)}
-                                        </StyledRow>
+                                        </StyledCard>
                                     </ContrastThemeProvider>
                                 );
                                 /* tslint:enabled:no-unbound-method */
@@ -176,7 +174,7 @@ class Row extends Component<PropsType, StateType> {
                         </Draggable>
                     );
                 }}
-                ifFalse={(): JSX.Element => <StyledRow>{this.renderRow(undefined)}</StyledRow>}
+                ifFalse={(): JSX.Element => <StyledCard>{this.renderRow(undefined)}</StyledCard>}
             />
         );
     }

@@ -1,14 +1,13 @@
 import React, { ReactNode, Component, MouseEvent } from 'react';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
-import StyledTable from './tableStyle';
-import StyledDataCard from './datacardStyle';
-import TableRow from './TableRow';
+import StyledTable from './style';
+import Card from './Card';
+import Row from './Row';
 import TableHeaders from './TableHeaders';
 import CompactHeaders from './CompactHeaders';
 import Branch from '../Branch';
 import { MediumIcons } from './../Icon/types';
 import SeverityType from '../../types/_SeverityType';
-import DataCard from './DataCard';
 
 type SortDirectionType = 'ascending' | 'descending' | 'none';
 
@@ -176,7 +175,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
 
         if (this.props.view === 'table') {
             return (
-                <TableRow
+                <Row
                     {...rowProps}
                     onSelection={(event, toggleAction): void => {
                         this.handleSelection(event, toggleAction, row.id);
@@ -186,7 +185,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         }
 
         return (
-            <DataCard
+            <Card
                 {...rowProps}
                 onSelection={(event, toggleAction): void => {
                     this.handleSelection(event, toggleAction, row.id);
@@ -218,7 +217,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                             <DragDropContext onDragEnd={this.dragEndHandler}>
                                 <Droppable droppableId="droppable">
                                     {({ innerRef }): JSX.Element => (
-                                        <StyledTable ref={innerRef}>{children}</StyledTable>
+                                        <StyledTable innerRef={innerRef}>{children}</StyledTable>
                                     )}
                                 </Droppable>
                             </DragDropContext>
@@ -235,13 +234,11 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         ifTrue={(children): JSX.Element => (
                             <DragDropContext onDragEnd={this.dragEndHandler}>
                                 <Droppable droppableId="droppable">
-                                    {({ innerRef }): JSX.Element => (
-                                        <StyledDataCard ref={innerRef}>{children}</StyledDataCard>
-                                    )}
+                                    {({ innerRef }): JSX.Element => <div ref={innerRef}>{children}</div>}
                                 </Droppable>
                             </DragDropContext>
                         )}
-                        ifFalse={(children): JSX.Element => <StyledDataCard>{children}</StyledDataCard>}
+                        ifFalse={(children): JSX.Element => <div>{children}</div>}
                     >
                         <CompactHeaders checked={this.getHeaderState()} {...headerProps} />
                         {children}

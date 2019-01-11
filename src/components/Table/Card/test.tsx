@@ -1,7 +1,6 @@
 import React from 'react';
 import Rows from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
-import StyledCell from '../DataCardCell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
@@ -27,27 +26,6 @@ describe('Table Rows', () => {
                 </tbody>
             </table>,
         );
-
-        component
-            .find(StyledCell)
-            .first()
-            .simulate('focus');
-
-        /* tslint:disable */
-        (expect(component.find(StyledRow)) as any).toHaveStyleRule(
-            'outline',
-            `solid 4px ${mosTheme.Table.row.focus.borderColor}`,
-        );
-        /* tslint:enable */
-
-        component
-            .find(StyledCell)
-            .first()
-            .simulate('blur');
-
-        /* tslint:disable */
-        (expect(component.find(StyledRow)) as any).not.toHaveStyleRule('outline');
-        /* tslint:enable */
     });
 
     it('should handle mouse enter and leave', () => {

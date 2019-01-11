@@ -1,7 +1,7 @@
 import React from 'react';
 import Rows from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
-import StyledCell from '../TableCell/style';
+import StyledCell from '../Cell/style';
 import StyledRow from './style';
 import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
