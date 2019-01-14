@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "sourceMap": true,
-    "outDir": "../../dist/src",
+    "outDir": "dist/src",
     "noImplicitAny": true,
     "noErrorTruncation": true,
     "allowSyntheticDefaultImports": true,
@@ -15,9 +15,9 @@
     "strictNullChecks": true,
   },
   "include": [
-    "../../src/**/*"
+    "src/**/*"
   ],
   "exclude": [
-    "../../node_modules"
+    "node_modules"
   ]
 }

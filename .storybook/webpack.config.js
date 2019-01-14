@@ -28,7 +28,7 @@ module.exports = (baseConfig, env, config) => {
             test: /\.tsx?$/,
             loader: 'ts-loader',
             options: {
-                configFile: __dirname + '/../typescript/tsconfig.json',
+                configFile: path.join(__dirname, '/../tsconfig.json'),
             },
         },
         {

@@ -1,4 +1,4 @@
-/// <reference path="../../src/declarations/global.d.ts" />
+/// <reference path="src/declarations/global.d.ts" />
 
 import intl from 'intl';
 
@@ -17,8 +17,3 @@ global.getSelection = jest.fn().mockReturnValue({
 });
 
 global.Intl = intl;
-
-const anchorRef = {
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-};

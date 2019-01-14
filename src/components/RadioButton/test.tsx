@@ -3,6 +3,7 @@ import RadioButton from '.';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
 import StyledRadioButton, { StyledRadioButtonSkin } from './style';
+import 'jest-styled-components';
 
 describe('RadioButton', () => {
     it('should not have box-shadow when not checked', () => {
@@ -10,9 +11,7 @@ describe('RadioButton', () => {
             <RadioButton name="demo" label="foo" checked={false} value="bar" onChange={(): void => undefined} />,
         );
 
-        /* tslint:disable */
-        (expect(radioButton.find(StyledRadioButton)) as any).not.toHaveStyleRule('box-shadow', '#fff');
-        /* tslint:enable */
+        expect(radioButton.find(StyledRadioButton)).not.toHaveStyleRule('box-shadow', '#fff');
     });
 
     it('should be able to change checked value', () => {
@@ -37,12 +36,10 @@ describe('RadioButton', () => {
 
         radioButton.find(StyledRadioButton).simulate('focus');
 
-        /* tslint:disable */
-        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+        expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
             'box-shadow',
             `${mosTheme.RadioButton.focus.boxShadow}`,
         );
-        /* tslint:enable */
     });
 
     it('should show a checked and disabled state', () => {
@@ -56,12 +53,11 @@ describe('RadioButton', () => {
                 onChange={(): void => undefined}
             />,
         );
-        /* tslint:disable */
-        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+
+        expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
             'background',
             mosTheme.RadioButton.activeDisabled.background,
         );
-        /* tslint:enable */
     });
 
     it('should show an unchecked and disabled state', () => {
@@ -75,12 +71,11 @@ describe('RadioButton', () => {
                 onChange={(): void => undefined}
             />,
         );
-        /* tslint:disable */
-        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+
+        expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
             'background',
             mosTheme.RadioButton.idleDisabled.background,
         );
-        /* tslint:enable */
     });
 
     it('should show an error state', () => {
@@ -94,11 +89,10 @@ describe('RadioButton', () => {
                 onChange={(): void => undefined}
             />,
         );
-        /* tslint:disable */
-        (expect(radioButton.find(StyledRadioButtonSkin)) as any).toHaveStyleRule(
+
+        expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
             'border',
             `1px solid ${mosTheme.RadioButton.error.borderColor}`,
         );
-        /* tslint:enable */
     });
 });

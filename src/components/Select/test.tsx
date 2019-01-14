@@ -6,6 +6,7 @@ import Box from '../Box';
 import Option from './Option';
 import Text from '../Text';
 import { mosTheme } from '../../themes/MosTheme';
+import 'jest-styled-components';
 
 const options = [
     {
@@ -76,19 +77,14 @@ describe('Select', () => {
 
         component.simulate('focus');
 
-        // tslint:disable-next-line:no-any
-        (expect(component.find(StyledInput)) as any).toHaveStyleRule(
+        expect(component.find(StyledInput)).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.wrapper.focus.borderColor}`,
         );
 
         component.simulate('blur');
 
-        // tslint:disable-next-line:no-any
-        (expect(component.find(StyledInput)) as any).toHaveStyleRule(
-            'border',
-            `solid 1px ${mosTheme.Select.input.borderColor}`,
-        );
+        expect(component.find(StyledInput)).toHaveStyleRule('border', `solid 1px ${mosTheme.Select.input.borderColor}`);
     });
 
     it('should open the arrowDown or arrowUp is pressed and close when escape is pressed', () => {

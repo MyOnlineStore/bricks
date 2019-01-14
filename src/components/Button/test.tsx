@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '.';
 import MosTheme from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
+import 'jest-styled-components';
 
 describe('Button', () => {
     it('should render a link with children', () => {
@@ -38,9 +39,7 @@ describe('Button', () => {
             </Button>,
         );
 
-        /* tslint:disable */
-        (expect(component) as any).toHaveStyleRule('background-color', 'transparent');
-        /* tslint:enable */
+        expect(component).toHaveStyleRule('background-color', 'transparent');
     });
 
     it('should call the passed action on click', () => {
@@ -92,8 +91,6 @@ describe('Button', () => {
             </MosTheme>,
         );
 
-        /* tslint:disable */
-        (expect(component.find(Button)) as any).toHaveStyleRule('padding', '11px 12px');
-        /* tslint:enable */
+        expect(component.find(Button)).toHaveStyleRule('padding', '11px 12px');
     });
 });

@@ -1,8 +1,8 @@
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import PriceTag from '.';
 import MosTheme from '../../themes/MosTheme';
+import 'jest-styled-components';
 
 describe('PriceTag', () => {
     it('should render with a hidden currency', () => {
@@ -21,7 +21,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render a base price', () => {
@@ -40,7 +40,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render an action price', () => {
@@ -59,7 +59,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render with a hidden currency and superscript franction', () => {
@@ -79,7 +79,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render with a dashed fraction', () => {
@@ -98,7 +98,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render with a hidden fraction on a round value', () => {
@@ -117,7 +117,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render with a fraction in superscript', () => {
@@ -136,7 +136,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render with showDash and superscript on a round value', () => {
@@ -156,7 +156,7 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('should render a label with the price is 0', () => {
@@ -175,6 +175,6 @@ describe('PriceTag', () => {
             </MosTheme>,
         ).find(PriceTag);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 });
