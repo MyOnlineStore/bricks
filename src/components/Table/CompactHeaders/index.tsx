@@ -68,29 +68,17 @@ class Headers extends Component<PropsType, StateType> {
         this.state = mapPropsToState(props, undefined);
     }
 
-    private cycleSorting = (key: string): void => {
-        const nextStep = SortingSteps[this.state.columns[key].sorting as SortDirectionType];
+    private cycleSorting = (key: string, direction: SortDirectionType): void => {
         const columns: StateType['columns'] = {};
 
-        (this.props.onSort as Required<PropsType>['onSort'])(key, nextStep);
+        (this.props.onSort as Required<PropsType>['onSort'])(key, direction);
 
         Object.keys(this.state.columns).forEach(column => {
             const currentColumn = this.state.columns[column];
 
-            const sorting = (() => {
-                switch (currentColumn.sorting) {
-                    case 'ascending':
-                        return 'none';
-                    case 'descending':
-                        return 'none';
-                    default:
-                        return currentColumn.sorting;
-                }
-            })();
-
             columns[column] = {
                 ...currentColumn,
-                sorting: column === key ? nextStep : sorting,
+                sorting: column === key ? direction : 'none',
             };
         });
 
@@ -102,7 +90,7 @@ class Headers extends Component<PropsType, StateType> {
 
     public handleChange = (key: string): void => {
         if (this.props.onSort !== undefined && this.state.columns[key].sorting !== undefined) {
-            this.cycleSorting(key);
+            this.cycleSorting(key, 'ascending');
         }
     };
 
