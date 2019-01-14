@@ -41,7 +41,7 @@ describe('EmptyState', () => {
 
     it('should render the passed through button', () => {
         const button = <Button variant="primary" title="foo" href="" />;
-        const component = mountWithTheme(<EmptyState title="foo" message="bar" button={() => button} />);
+        const component = mountWithTheme(<EmptyState title="foo" message="bar" button={button} />);
 
         expect(component.find(Button).matchesElement(button)).toBe(true);
     });
