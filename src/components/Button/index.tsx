@@ -5,17 +5,17 @@ import Icon, { MediumPropsType } from '../Icon';
 import Box from '../Box';
 import Spinner from '../Spinner';
 
-type DefaultTypes = {
+type CommonType = {
     backgroundColor: string;
     color: string;
     boxShadow: string;
 };
 
 type ComponentStateTypes = {
-    idle: DefaultTypes;
-    hover: DefaultTypes;
-    focus: DefaultTypes;
-    active: DefaultTypes;
+    idle: CommonType;
+    hover: CommonType;
+    focus: CommonType;
+    active: CommonType;
 };
 
 type ButtonThemeType = {
@@ -32,9 +32,9 @@ type ButtonThemeType = {
     warning: ComponentStateTypes;
     destructive: ComponentStateTypes;
     plain: {
-        hover: DefaultTypes;
-        focus: DefaultTypes;
-        active: DefaultTypes;
+        hover: CommonType;
+        focus: CommonType;
+        active: CommonType;
         idle: {
             backgroundColor: string;
             color: string;

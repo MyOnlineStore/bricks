@@ -18,13 +18,13 @@ const renderOptions = {
 
 describe('FoldOut', () => {
     it('should have a height when open', () => {
-        const foldOut = renderer.create(<FoldOut isOpen />, renderOptions).toJSON();
+        const foldOut = renderer.create(<FoldOut open />, renderOptions).toJSON();
 
         expect(foldOut).toHaveStyleRule('height', '900px');
     });
 
     it('should have no height when closed', () => {
-        const foldOut = renderer.create(<FoldOut isOpen={false} />, renderOptions).toJSON();
+        const foldOut = renderer.create(<FoldOut open={false} />, renderOptions).toJSON();
 
         expect(foldOut).toHaveStyleRule('height', '0');
     });
@@ -34,7 +34,7 @@ describe('FoldOut', () => {
             throw TypeError;
         });
 
-        const foldOut = renderer.create(<FoldOut isOpen />, renderOptions).toJSON();
+        const foldOut = renderer.create(<FoldOut open />, renderOptions).toJSON();
 
         expect(foldOut).toHaveStyleRule('height', 'auto');
         // tslint:disable-next-line

@@ -7,7 +7,7 @@ type PlacementType = PopperChildrenProps['placement'];
 
 type PropsType = {
     placement?: PlacementType;
-    isOpen?: boolean;
+    show?: boolean;
     fixed?: boolean;
     offset?: number;
     distance?: number;
@@ -32,8 +32,8 @@ class Popover extends Component<PropsType, StateType> {
     }
 
     public static getDerivedStateFromProps(props: PropsType, state: StateType): Partial<StateType> {
-        if (props.isOpen !== undefined && props.isOpen !== state.isOpen) {
-            return { isOpen: props.isOpen };
+        if (props.show !== undefined && props.show !== state.isOpen) {
+            return { isOpen: props.show };
         }
 
         return state;
@@ -70,7 +70,7 @@ class Popover extends Component<PropsType, StateType> {
     };
 
     public componentDidMount(): void {
-        if (this.props.isOpen === undefined && this.anchorRef) {
+        if (this.props.show === undefined && this.anchorRef) {
             this.anchorRef.addEventListener(
                 this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
                 this.togglePopover,

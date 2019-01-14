@@ -70,9 +70,6 @@ const severity = {
 
 const theme: ThemeType = {
     Badge: {
-        default: {
-            color: silver.lighter1,
-        },
         severity: {
             success: {
                 backgroundColor: green.darker1,

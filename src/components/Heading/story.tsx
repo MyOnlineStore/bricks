@@ -5,12 +5,14 @@ import Heading, { PropsType } from '.';
 
 storiesOf('Heading', module).add('Default', () => {
     const hierarchy = select('Hierarchy', [1, 2, 3, 4, 5, 6], 1) as PropsType['hierarchy'];
+    const as = select('As', ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'], 'h1') as PropsType['as'];
     const textAlign = select('Text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign'];
     const light = boolean('light', false) as PropsType['light'];
 
     return (
-        <Heading hierarchy={hierarchy} textAlign={textAlign} light={light}>
-            Happy selling!
+        <Heading hierarchy={hierarchy} as={as} textAlign={textAlign} light={light}>
+            This is an {as !== undefined ? `${as}` : 'div'} element, with{' '}
+            {hierarchy !== undefined ? `h${hierarchy}` : 'h1'} styling.
         </Heading>
     );
 });

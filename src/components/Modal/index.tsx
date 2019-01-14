@@ -15,7 +15,7 @@ type PropsType = {
     title: string;
     size?: 'small' | 'medium' | 'large';
     buttons?: Array<ReactNode>;
-    closeAction?(): void;
+    onClose?(): void;
     renderFixed?(): JSX.Element;
 };
 
@@ -33,12 +33,12 @@ class Modal extends Component<PropsType> {
         if (
             this.styledModalWrapperRef.current !== null &&
             this.styledModalRef.current !== null &&
-            this.props.closeAction !== undefined &&
+            this.props.onClose !== undefined &&
             this.props.show &&
             this.styledModalWrapperRef.current.contains(event.target as Node) &&
             !this.styledModalRef.current.contains(event.target as Node)
         ) {
-            this.props.closeAction();
+            this.props.onClose();
         }
     };
 
@@ -68,7 +68,7 @@ class Modal extends Component<PropsType> {
                                     justifyContent="space-between"
                                 >
                                     <Heading hierarchy={2}>{this.props.title}</Heading>
-                                    {this.props.closeAction !== undefined && (
+                                    {this.props.onClose !== undefined && (
                                         <Box
                                             margin={trbl(-12, -12, -6, 0)}
                                             alignContent="center"
@@ -80,7 +80,7 @@ class Modal extends Component<PropsType> {
                                                 icon="close"
                                                 variant="primary"
                                                 title="close"
-                                                onClick={this.props.closeAction}
+                                                onClick={this.props.onClose}
                                             />
                                         </Box>
                                     )}

@@ -10,7 +10,7 @@ storiesOf('ErrorBoundary', module).add('Default', () => {
     return (
         <ErrorBoundary
             message="This is an error"
-            hasError={hasError === 'true'}
+            error={hasError === 'true'}
             reportError={(): void => {
                 // report error
             }}

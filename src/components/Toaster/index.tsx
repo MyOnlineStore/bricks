@@ -13,13 +13,13 @@ import BreakpointProvider from '../BreakpointProvider';
 type PropsType = {
     title: string;
     icon?: keyof typeof MediumIcons;
-    isOpen: boolean;
+    show: boolean;
     message?: string;
     buttonTitle?: string;
     buttonSeverity?: ButtonVariant;
     severity: SeverityType;
     autoDismiss?: boolean;
-    closeAction?(): void;
+    onClose?(): void;
     onClick?(): void;
 };
 
@@ -27,7 +27,7 @@ type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plai
 
 class Toaster extends Component<PropsType> {
     private handleClose = (): void => {
-        if (this.props.closeAction !== undefined) this.props.closeAction();
+        if (this.props.onClose !== undefined) this.props.onClose();
     };
 
     private handleClick = (): void => {
@@ -49,7 +49,7 @@ class Toaster extends Component<PropsType> {
         const icon = this.props.icon !== undefined ? this.props.icon : SeverityIcons[this.props.severity];
 
         return (
-            <TransitionAnimation show={this.props.isOpen} animation="zoom">
+            <TransitionAnimation show={this.props.show} animation="zoom">
                 <BreakpointProvider breakpoints={{ small: 0, medium: 375, large: 800 }}>
                     {(breakpoint): JSX.Element => (
                         <StyledToasterWrapper>

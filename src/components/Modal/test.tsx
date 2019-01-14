@@ -87,7 +87,7 @@ describe('Modal', () => {
 
     it('should be possible to close the modal view using the close button', () => {
         const clickMock = jest.fn();
-        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
+        const component = mountWithTheme(<Modal show={true} title="Foo" onClose={clickMock} />);
         const closeButton = component.find(IconButton).first();
 
         closeButton.simulate('click');
@@ -106,7 +106,7 @@ describe('Modal', () => {
             mapMouseEvent[event] = callback;
         });
 
-        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(
+        const component = mountWithTheme(<Modal show={true} title="Foo" onClose={clickMock} />).find(
             StyledModalWrapper,
         );
 
@@ -128,7 +128,7 @@ describe('Modal', () => {
             mapMouseEvent[event] = callback;
         });
 
-        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(StyledModal);
+        const component = mountWithTheme(<Modal show={true} title="Foo" onClose={clickMock} />).find(StyledModal);
 
         mapMouseEvent.mousedown({
             target: component.getDOMNode(),
@@ -137,7 +137,7 @@ describe('Modal', () => {
         expect(clickMock).not.toHaveBeenCalled();
     });
 
-    it('should not break when no closeAction is provided', () => {
+    it('should not break when no onCloe is provided', () => {
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
         const wrapper = component.find(StyledModalWrapper).first();
 
