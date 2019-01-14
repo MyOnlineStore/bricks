@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import ButtonGroup from '.';
 import BreakpointProvider from '../BreakpointProvider';
@@ -21,7 +20,7 @@ describe('ButtonGroup', () => {
             </ButtonGroup>,
         ).dive();
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 
     it('renders with a single Button in a small node', () => {
@@ -37,6 +36,6 @@ describe('ButtonGroup', () => {
             </ButtonGroup>,
         ).dive();
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 });

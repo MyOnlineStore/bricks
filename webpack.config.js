@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const entry = require('../../scripts/entry');
+const entry = require('./scripts/entry');
 const WebpackBar = require('webpackbar');
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     entry,
@@ -20,7 +21,7 @@ module.exports = {
         When you just fill in 'index.js' without the prefix '[name]', webpack will throw an error: "Multiple assets emit to the same filename index.js"
         */
         filename: '[name]index.js',
-        path: __dirname + '/../../lib',
+        path: path.join(__dirname, 'lib'),
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
@@ -43,7 +44,6 @@ module.exports = {
                 loader: 'ts-loader',
                 options: {
                     onlyCompileBundledFiles: true,
-                    configFile: __dirname + '/../typescript/tsconfig.json',
                 },
             },
             {
@@ -82,12 +82,12 @@ module.exports = {
         }),
         new WebpackBar(),
         new Visualizer({
-            filename: '../reports/webpack/statistics-circle.html',
+            filename: 'reports/webpack/statistics-circle.html',
         }),
         new BundleAnalyzerPlugin({
             analyzerMode: 'static',
             openAnalyzer: false,
-            reportFilename: '../reports/webpack/statistics-tree.html',
+            reportFilename: 'reports/webpack/statistics-tree.html',
         }),
         new PeerDepsExternalsPlugin(),
     ],

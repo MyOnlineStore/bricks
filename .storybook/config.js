@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { setOptions } from '@storybook/addon-options';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { themes } from '@storybook/components';
-import { grey, silver, bodyFont, fontSize } from '../../src/themes/MosTheme/MosTheme.theme';
+import { grey, silver, bodyFont, fontSize } from '../src/themes/MosTheme/MosTheme.theme';
 import { configureViewport } from '@storybook/addon-viewport';
 
 setOptions({
@@ -43,7 +43,7 @@ addDecorator(
     ]),
 );
 
-const req = require.context('../../src', true, /story\.(DontTest\.)?tsx?$/);
+const req = require.context('../src', true, /story\.(DontTest\.)?tsx?$/);
 
 function loadStories() {
     req.keys().forEach(filename => req(filename));

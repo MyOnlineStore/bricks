@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "../../lib",
+    "declarationDir": "lib",
     "sourceMap": true,
+    "outDir": "lib/src",
     "noImplicitAny": true,
     "noErrorTruncation": true,
     "allowSyntheticDefaultImports": true,
@@ -15,9 +16,9 @@
     "strictNullChecks": true
   },
   "include": [
-    "../../src/**/*"
+    "src/**/*"
   ],
   "exclude": [
-    "../../node_modules"
+    "node_modules"
   ]
 }

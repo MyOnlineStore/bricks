@@ -36,8 +36,7 @@ describe('FoldOut', () => {
         const foldOut = renderer.create(<FoldOut isOpen />, renderOptions).toJSON();
 
         expect(foldOut).toMatchSnapshot();
-        /* tslint:disable */
+        // tslint:disable-next-line
         expect(console.warn).toHaveBeenCalled();
-        /* tslint:enable */
     });
 });

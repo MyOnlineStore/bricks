@@ -1,14 +1,14 @@
-import toJson from 'enzyme-to-json';
 import React from 'react';
 import Text from '.';
-import MosTheme from '../../themes/MosTheme/MosTheme.theme';
 import { shallowWithTheme } from '../../utility/_styled/testing';
+import 'jest-styled-components';
+import { mosTheme } from '../../themes/MosTheme';
 
 describe('Text', () => {
     it('should render text with default styling', () => {
         const component = shallowWithTheme(<Text>Default text</Text>);
 
-        expect(toJson(component.dive())).toMatchSnapshot();
+        expect(component.dive()).toMatchSnapshot();
     });
 
     it('should render text with different variants', () => {
@@ -18,22 +18,11 @@ describe('Text', () => {
         const extraLargeText = shallowWithTheme(<Text variant="extraLarge">extraLarge text</Text>);
         const displayText = shallowWithTheme(<Text variant="display">Display text</Text>);
 
-        /* tslint:disable */
-        (expect(toJson(smallText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.small.fontSize);
-        (expect(toJson(regularText.dive())) as any).toHaveStyleRule(
-            'font-size',
-            MosTheme.Text.variant.regular.fontSize,
-        );
-        (expect(toJson(largeText.dive())) as any).toHaveStyleRule('font-size', MosTheme.Text.variant.large.fontSize);
-        (expect(toJson(extraLargeText.dive())) as any).toHaveStyleRule(
-            'font-size',
-            MosTheme.Text.variant.extraLarge.fontSize,
-        );
-        (expect(toJson(displayText.dive())) as any).toHaveStyleRule(
-            'font-size',
-            MosTheme.Text.variant.display.fontSize,
-        );
-        /* tslint:enable */
+        expect(smallText.dive()).toHaveStyleRule('font-size', mosTheme.Text.variant.small.fontSize);
+        expect(regularText.dive()).toHaveStyleRule('font-size', mosTheme.Text.variant.regular.fontSize);
+        expect(largeText.dive()).toHaveStyleRule('font-size', mosTheme.Text.variant.large.fontSize);
+        expect(extraLargeText.dive()).toHaveStyleRule('font-size', mosTheme.Text.variant.extraLarge.fontSize);
+        expect(displayText.dive()).toHaveStyleRule('font-size', mosTheme.Text.variant.display.fontSize);
     });
 
     it('should render text with different severities', () => {
@@ -43,13 +32,11 @@ describe('Text', () => {
         const infoText = shallowWithTheme(<Text severity="info">Descriptive text</Text>);
         const warningText = shallowWithTheme(<Text severity="warning">Descriptive text</Text>);
 
-        /* tslint:disable */
-        (expect(toJson(defaultText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.default.color);
-        (expect(toJson(errorText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.error);
-        (expect(toJson(successText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.success);
-        (expect(toJson(infoText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.info);
-        (expect(toJson(warningText.dive())) as any).toHaveStyleRule('color', MosTheme.Text.severity.warning);
-        /* tslint:enable */
+        expect(defaultText.dive()).toHaveStyleRule('color', mosTheme.Text.default.color);
+        expect(errorText.dive()).toHaveStyleRule('color', mosTheme.Text.severity.error);
+        expect(successText.dive()).toHaveStyleRule('color', mosTheme.Text.severity.success);
+        expect(infoText.dive()).toHaveStyleRule('color', mosTheme.Text.severity.info);
+        expect(warningText.dive()).toHaveStyleRule('color', mosTheme.Text.severity.warning);
     });
 
     it('should render text with compact styling', () => {
@@ -60,24 +47,17 @@ describe('Text', () => {
             </Text>,
         );
 
-        /* tslint:disable */
-        (expect(toJson(defaultCompact.dive())) as any).toHaveStyleRule(
+        expect(defaultCompact.dive()).toHaveStyleRule('line-height', mosTheme.Text.variant.regular.lineHeight.compact);
+        expect(extraLargeCompact.dive()).toHaveStyleRule(
             'line-height',
-            MosTheme.Text.variant.regular.lineHeight.compact,
+            mosTheme.Text.variant.extraLarge.lineHeight.compact,
         );
-        (expect(toJson(extraLargeCompact.dive())) as any).toHaveStyleRule(
-            'line-height',
-            MosTheme.Text.variant.extraLarge.lineHeight.compact,
-        );
-        /* tslint:enable */
     });
 
     it('should render text with strong styling', () => {
         const component = shallowWithTheme(<Text strong>Strong text</Text>);
 
-        /* tslint:disable */
-        (expect(toJson(component.dive())) as any).toHaveStyleRule('font-weight', MosTheme.Text.strong.fontWeight);
-        /* tslint:enable */
+        expect(component.dive()).toHaveStyleRule('font-weight', mosTheme.Text.strong.fontWeight);
     });
 
     it('should render a span when inline is set to true', () => {

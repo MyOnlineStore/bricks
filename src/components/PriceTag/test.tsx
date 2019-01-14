@@ -2,6 +2,7 @@ import React from 'react';
 import PriceTag from '.';
 import { mountWithTheme, shallowWithTheme } from '../../utility/_styled/testing';
 import { mosTheme } from '../../themes/MosTheme';
+import 'jest-styled-components';
 
 describe('PriceTag', () => {
     it('should render with a hidden currency', () => {
@@ -36,18 +37,16 @@ describe('PriceTag', () => {
 
     it('should render an action price', () => {
         const priceTag = shallowWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} strikethrough />);
-        /* tslint:disable */
-        (expect(priceTag) as any).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
+
+        expect(priceTag).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
             modifier: '::after',
         });
-        /* tslint:enable */
     });
 
     it('should render with a superscript franction', () => {
         const priceTag = shallowWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} superScriptFraction />);
-        /* tslint:disable */
-        (expect(priceTag) as any).toHaveStyleRule('font-size', '.7em', { modifier: 'sup' });
-        /* tslint:enable */
+
+        expect(priceTag).toHaveStyleRule('font-size', '.7em', { modifier: 'sup' });
     });
 
     it('should render with a dashed fraction', () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Branch from '.';
-import toJson from 'enzyme-to-json';
 
 describe('Branch', () => {
     it('should use true path', () => {
@@ -89,7 +88,7 @@ describe('Branch', () => {
     it('should not render anything when no components or false path are provided and the condition is false', () => {
         const component = shallow(<Branch condition={false} ifTrue={(): JSX.Element => <span>true</span>} />);
 
-        expect(toJson(component)).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
         expect(component.at(0).text()).toEqual('');
     });
 });
