@@ -8,6 +8,7 @@ import slideUp from './animations/slideUp';
 import slideDown from './animations/slideDown';
 import slideLeft from './animations/slideLeft';
 import slideRight from './animations/slideRight';
+import 'jest-styled-components';
 
 describe('TransitionAnimation', () => {
     it('should use the fade animation', () => {
@@ -17,9 +18,7 @@ describe('TransitionAnimation', () => {
             </TransitionAnimation>,
         );
 
-        /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'fadeIn .3s both');
-        /* tslint:enable */
+        expect(componentIn.dive()).toHaveStyleRule('animation', 'fadeIn .3s both');
     });
 
     it('should use the slide up animation', () => {
@@ -29,9 +28,7 @@ describe('TransitionAnimation', () => {
             </TransitionAnimation>,
         );
 
-        /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
-        /* tslint:enable */
+        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should use the slide down animation', () => {
@@ -41,9 +38,7 @@ describe('TransitionAnimation', () => {
             </TransitionAnimation>,
         );
 
-        /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
-        /* tslint:enable */
+        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should use the slide left animation', () => {
@@ -53,9 +48,7 @@ describe('TransitionAnimation', () => {
             </TransitionAnimation>,
         );
 
-        /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
-        /* tslint:enable */
+        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should use the slide right animation', () => {
@@ -65,9 +58,7 @@ describe('TransitionAnimation', () => {
             </TransitionAnimation>,
         );
 
-        /* tslint:disable */
-        (expect(componentIn.dive()) as any).toHaveStyleRule('animation', 'slideIn .3s both');
-        /* tslint:enable */
+        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should stay mounted', () => {

@@ -5,6 +5,7 @@ import ScrollBox from '.';
 import MosTheme from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import { StyledBottom, StyledTop } from './style';
+import 'jest-styled-components';
 
 let scrollBarOptions = {};
 
@@ -43,9 +44,7 @@ describe('ScrollBox', () => {
 
         const shadow = component.find(StyledTop);
 
-        /* tslint:disable */
-        (expect(shadow) as any).toHaveStyleRule('opacity', '1');
-        /* tslint:enable */
+        expect(shadow).toHaveStyleRule('opacity', '1');
     });
 
     it('should show a bottom shadow when scrolling up', () => {
@@ -73,9 +72,7 @@ describe('ScrollBox', () => {
 
         const shadow = component.find(StyledBottom);
 
-        /* tslint:disable */
-        (expect(shadow) as any).toHaveStyleRule('opacity', '1');
-        /* tslint:enable */
+        expect(shadow).toHaveStyleRule('opacity', '1');
     });
 
     it('should hide the scrollbar when autoHideScrollBar is set', () => {

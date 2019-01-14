@@ -4,6 +4,7 @@ import Icon from '../Icon';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Styledtoggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
+import 'jest-styled-components';
 
 describe('Toggle', () => {
     it('should render the correct background styling when disabled and unchecked', () => {
@@ -19,12 +20,10 @@ describe('Toggle', () => {
             />,
         );
 
-        /* tslint:disable */
-        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
             'background',
             mosTheme.Toggle.idleDisabled.background,
         );
-        /* tslint:enable */
     });
 
     it('should render the correct background styling when disabled and checked', () => {
@@ -40,12 +39,10 @@ describe('Toggle', () => {
             />,
         );
 
-        /* tslint:disable */
-        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
             'background',
             mosTheme.Toggle.checkedDisabled.background,
         );
-        /* tslint:enable */
     });
 
     it('should render the correct background styling when unchecked', () => {
@@ -61,12 +58,7 @@ describe('Toggle', () => {
             />,
         );
 
-        /* tslint:disable */
-        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
-            'background',
-            mosTheme.Toggle.idle.background,
-        );
-        /* tslint:enable */
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule('background', mosTheme.Toggle.idle.background);
     });
 
     it('should render the correct background styling when checked', () => {
@@ -82,12 +74,10 @@ describe('Toggle', () => {
             />,
         );
 
-        /* tslint:disable */
-        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
             'background',
             mosTheme.Toggle.checked.background,
         );
-        /* tslint:enable */
     });
 
     it('should have a red border when error-state is active', () => {
@@ -102,12 +92,7 @@ describe('Toggle', () => {
             />,
         );
 
-        /* tslint:disable */
-        (expect(toggleNotChecked.find(StyledToggleSkin)) as any).toHaveStyleRule(
-            'border',
-            mosTheme.Toggle.error.border,
-        );
-        /* tslint:enable */
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule('border', mosTheme.Toggle.error.border);
     });
 
     it('should have a box-shadow on focus and remove the box-shadow on blur', () => {
@@ -117,18 +102,11 @@ describe('Toggle', () => {
 
         toggle.find(Styledtoggle).simulate('focus');
 
-        /* tslint:disable */
-        (expect(toggle.find(StyledToggleSkin)) as any).toHaveStyleRule('box-shadow', mosTheme.Toggle.focus.boxShadow);
-        /* tslint:enable */
+        expect(toggle.find(StyledToggleSkin)).toHaveStyleRule('box-shadow', mosTheme.Toggle.focus.boxShadow);
 
         toggle.find(Styledtoggle).simulate('blur');
 
-        /* tslint:disable */
-        (expect(toggle.find(StyledToggleSkin)) as any).not.toHaveStyleRule(
-            'box-shadow',
-            mosTheme.Toggle.focus.boxShadow,
-        );
-        /* tslint:enable */
+        expect(toggle.find(StyledToggleSkin)).not.toHaveStyleRule('box-shadow', mosTheme.Toggle.focus.boxShadow);
     });
 
     it('should be able to change checked value by clicking the wrapper', () => {
@@ -184,5 +162,4 @@ describe('Toggle', () => {
 
         expect(toggle.find('p').length).toBe(1);
     });
-
 });
