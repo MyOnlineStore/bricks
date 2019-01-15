@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import BreakpointProvider from '../BreakpointProvider';
@@ -112,7 +111,7 @@ describe('Modal', () => {
         );
 
         mapMouseEvent.mousedown({
-            target: ReactDOM.findDOMNode(component.instance()),
+            target: component.getDOMNode(),
         });
 
         expect(clickMock).toHaveBeenCalled();
@@ -132,7 +131,7 @@ describe('Modal', () => {
         const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(StyledModal);
 
         mapMouseEvent.mousedown({
-            target: ReactDOM.findDOMNode(component.instance()),
+            target: component.getDOMNode(),
         });
 
         expect(clickMock).not.toHaveBeenCalled();

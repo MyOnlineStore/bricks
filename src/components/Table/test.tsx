@@ -422,7 +422,7 @@ describe('Table', () => {
             .first()
             .simulate('click');
 
-        const rowLength = component.prop<Array<Object>>('rows').length;
+        const rowLength = component.find(Table).prop<Array<Object>>('rows').length;
 
         for (let index = 0; index < rowLength; index++) {
             expect(
@@ -474,7 +474,7 @@ describe('Table', () => {
             .first()
             .simulate('click');
 
-        const rows = component.prop<Array<{ value: number }>>('rows');
+        const rows = component.find(Table).prop<Array<{ value: number }>>('rows');
 
         for (let index = 0; index < rows.length; index++) {
             expect(
@@ -516,7 +516,7 @@ describe('Table', () => {
             .at(1)
             .simulate('click');
 
-        const rows = component.prop<Array<{ value: number; price: number }>>('rows');
+        const rows = component.find(Table).prop<Array<{ value: number; price: number }>>('rows');
 
         for (let index = 0; index < rows.length; index++) {
             expect(

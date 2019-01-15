@@ -1,5 +1,6 @@
 import { keyframes } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
+import { css } from '../../utility/_styled';
 
 type SkeletonThemeType = {
     common: {
@@ -21,7 +22,7 @@ const wipe = keyframes`
     }
 `;
 
-const getSkeletonStyles = (theme: ThemeType): string => `
+const getSkeletonStyles = (theme: ThemeType) => css`
     user-select: none;
     color: transparent;
     background-color: ${theme.Skeleton.common.backgroundColor};
