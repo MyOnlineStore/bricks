@@ -1,5 +1,3 @@
-import { default as _R } from 'react';
-import _T from '../../types/ThemeType';
 import styled from '../../utility/_styled';
 import fade from './animations/fade';
 import zoom from './animations/zoom';

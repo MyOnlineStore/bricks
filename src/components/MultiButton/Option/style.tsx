@@ -1,5 +1,4 @@
 import styled from '../../../../src/utility/_styled';
-import _T from '../../../types/ThemeType';
 
 type PropsType = {
     isSelected: boolean;

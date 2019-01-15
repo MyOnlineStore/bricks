@@ -1,4 +1,3 @@
-import { default as _R } from 'react';
 import styled, { css } from '../../utility/_styled';
 
 /* tslint:disable */

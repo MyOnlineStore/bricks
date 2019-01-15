@@ -1,4 +1,3 @@
-import { default as _R } from 'react';
 import styled from 'styled-components';
 import { ContentProps } from '.';
 

@@ -1,4 +1,3 @@
-import _R from 'react';
 import styled from '../../utility/_styled';
 
 type BreadcrumbsThemeType = {
