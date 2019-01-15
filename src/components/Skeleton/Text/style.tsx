@@ -7,7 +7,7 @@ type PropsType = {
 };
 
 const StyledTextSkeleton = styled.div<PropsType>`
-    ${({ theme }): string => getSkeletonStyles(theme)}
+    ${({ theme }) => getSkeletonStyles(theme)}
     color: transparent;
     display: inline-block;
     height: ${({ theme }): string => theme.Skeleton.Text.fontSize};

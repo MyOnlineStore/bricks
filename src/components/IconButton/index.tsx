@@ -24,7 +24,7 @@ type PropsType = BareButtonPropsType & {
     variant: 'primary' | 'destructive';
 };
 
-const IconButton = styled(BareButton).attrs(props => {
+const IconButton = styled(BareButton).attrs((props: PropsType) => {
     const children = (
         <>
             {props.loading && (
