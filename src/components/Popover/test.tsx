@@ -2,12 +2,12 @@
 import React from 'react';
 import { Popper } from 'react-popper';
 import Popover from '.';
-import { shallowWithTheme, mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme, mountWithTheme } from '../../utility/_styled/testing';
 import TransitionAnimation from '../TransitionAnimation';
 
 describe('Popover', () => {
     it('should render with defaults', () => {
-        const component = shallowWithTheme(<Popover isOpen={true} renderContent={(): string => 'Mock content'} />);
+        const component = mountWithTheme(<Popover isOpen={true} renderContent={(): string => 'Mock content'} />);
 
         const popper = component.find(Popper);
 
@@ -16,7 +16,7 @@ describe('Popover', () => {
     });
 
     it('should render closed', () => {
-        const component = shallowWithTheme(<Popover isOpen={false} renderContent={(): string => 'Mock content'} />);
+        const component = mountWithTheme(<Popover isOpen={false} renderContent={(): string => 'Mock content'} />);
 
         const transition = component.find(TransitionAnimation);
 
@@ -24,7 +24,7 @@ describe('Popover', () => {
     });
 
     it('should render with a fixed postition', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Popover isOpen={true} placement="left" fixed={true} renderContent={(): string => 'Mock content'} />,
         );
 
@@ -34,7 +34,7 @@ describe('Popover', () => {
     });
 
     it('should render with a custom distance and offset', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Popover isOpen={true} offset={20} distance={6} renderContent={(): string => 'Mock content'} />,
         );
 
@@ -51,7 +51,7 @@ describe('Popover', () => {
     });
 
     it('should render with only a custom offset', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Popover isOpen={true} offset={20} renderContent={(): string => 'Mock content'} />,
         );
 
@@ -68,7 +68,7 @@ describe('Popover', () => {
     });
 
     it('should render with only a custom distance', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,
         );
 

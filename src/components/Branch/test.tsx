@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Branch from '.';
 
 describe('Branch', () => {
     it('should use true path', () => {
-        const component = shallow(
+        const component = mount(
             <Branch
                 condition={true}
                 ifTrue={(children): JSX.Element => (
@@ -33,7 +33,7 @@ describe('Branch', () => {
     });
 
     it('should use the false path', () => {
-        const component = shallow(
+        const component = mount(
             <Branch
                 condition={false}
                 ifTrue={(children): JSX.Element => (
@@ -68,7 +68,7 @@ describe('Branch', () => {
     });
 
     it('should no-op when no false path is provided and the condition is false', () => {
-        const component = shallow(
+        const component = mount(
             <Branch
                 condition={false}
                 ifTrue={(children): JSX.Element => (
@@ -86,9 +86,9 @@ describe('Branch', () => {
     });
 
     it('should not render anything when no components or false path are provided and the condition is false', () => {
-        const component = shallow(<Branch condition={false} ifTrue={(): JSX.Element => <span>true</span>} />);
+        const component = mount(<Branch condition={false} ifTrue={(): JSX.Element => <span>true</span>} />);
 
-        expect(component).toMatchSnapshot();
-        expect(component.at(0).text()).toEqual('');
+        // tslint:disable-next-line
+        expect(component.first().text()).toEqual(null);
     });
 });

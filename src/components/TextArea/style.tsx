@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 import SeverityType from '../../types/_SeverityType';
 
 type TextAreaWrapperPropsType = {
@@ -36,7 +33,7 @@ type TextAreaThemeType = {
     };
 };
 
-const StyledTextAreaWrapper = withProps<TextAreaWrapperPropsType>(styled.div)`
+const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     width: 100%;
     padding: 6px 12px;
     box-sizing: border-box;
@@ -52,7 +49,7 @@ const StyledTextAreaWrapper = withProps<TextAreaWrapperPropsType>(styled.div)`
     }
 `;
 
-const StyledTextArea = withProps<TextAreaPropsType>(styled.textarea)`
+const StyledTextArea = styled.textarea<TextAreaPropsType>`
     padding: 0;
     width: 100%;
     border: none;
@@ -67,4 +64,4 @@ const StyledTextArea = withProps<TextAreaPropsType>(styled.textarea)`
 `;
 
 export default StyledTextArea;
-export { TextAreaPropsType, StyledTextArea, StyledTextAreaWrapper, TextAreaThemeType };
+export { StyledTextArea, StyledTextAreaWrapper, TextAreaThemeType };

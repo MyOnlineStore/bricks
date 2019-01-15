@@ -3,7 +3,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import StyledToggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
+import StyledToggle, { StyledToggleSkin } from './style';
 
 type StateType = {
     focus: boolean;
@@ -51,37 +51,35 @@ class Toggle extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <StyledToggleWrapper onClick={this.handleChange}>
-                <Box>
-                    <Box margin={trbl(12, 12, 0, 0)}>
-                        <StyledToggleSkin
-                            elementFocus={this.state.focus}
-                            disabled={this.props.disabled}
+            <Box onClick={this.handleChange}>
+                <Box margin={trbl(12, 12, 0, 0)}>
+                    <StyledToggleSkin
+                        elementFocus={this.state.focus}
+                        disabled={this.props.disabled}
+                        checked={this.props.checked}
+                        error={this.props.error ? this.props.error : false}
+                    >
+                        <StyledToggle
+                            id={this.props.id}
+                            onFocus={this.toggleFocus}
+                            onBlur={this.toggleFocus}
+                            name={this.props.name}
+                            value={this.props.value}
                             checked={this.props.checked}
+                            disabled={this.props.disabled ? this.props.disabled : false}
                             error={this.props.error ? this.props.error : false}
-                        >
-                            <StyledToggle
-                                id={this.props.id}
-                                onFocus={this.toggleFocus}
-                                onBlur={this.toggleFocus}
-                                name={this.props.name}
-                                value={this.props.value}
-                                checked={this.props.checked}
-                                disabled={this.props.disabled ? this.props.disabled : false}
-                                error={this.props.error ? this.props.error : false}
-                                type="checkbox"
-                                onChange={this.handleChange}
-                            />
-                        </StyledToggleSkin>
-                    </Box>
-                    <Box margin={trbl(9, 0, 0, 0)}>
-                        <Text severity={this.props.disabled ? 'info' : undefined}>
-                            {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon="locked" />}{' '}
-                            {this.props.label}
-                        </Text>
-                    </Box>
+                            type="checkbox"
+                            onChange={this.handleChange}
+                        />
+                    </StyledToggleSkin>
                 </Box>
-            </StyledToggleWrapper>
+                <Box margin={trbl(9, 0, 0, 0)}>
+                    <Text severity={this.props.disabled ? 'info' : undefined}>
+                        {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon="locked" />}{' '}
+                        {this.props.label}
+                    </Text>
+                </Box>
+            </Box>
         );
     }
 }

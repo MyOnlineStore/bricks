@@ -1,10 +1,7 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 import SeverityType from '../../types/_SeverityType';
 
-type BadgePropsType = {
+type PropsType = {
     severity?: SeverityType;
 };
 
@@ -26,7 +23,7 @@ type VariantStyleType = {
     fontFamily: string;
 };
 
-const StyledBadge = withProps<BadgePropsType>(styled.div)`
+const StyledBadge = styled.div<PropsType>`
     display: inline-block;
     box-sizing: border-box;
     min-width: 18px;
@@ -48,4 +45,4 @@ const StyledBadge = withProps<BadgePropsType>(styled.div)`
 `;
 
 export default StyledBadge;
-export { BadgePropsType, BadgeThemeType };
+export { PropsType, BadgeThemeType };

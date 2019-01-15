@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from '.';
-import { mountWithTheme, shallowWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
@@ -317,9 +317,9 @@ describe('Select', () => {
     });
 
     it('should handle a selected option', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value={options[1].value} emptyText="empty" options={options} />,
-        ).dive();
+        );
 
         expect(component.find(StyledInput).findWhere(node => node.text() === options[1].label).length).toBe(1);
     });

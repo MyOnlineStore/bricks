@@ -1,17 +1,14 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type PriceTagThemeType = {
     strikethroughColor: string;
 };
 
-type PriceTagPropsType = {
+type PropsType = {
     strikethrough?: boolean;
 };
 
-const StyledPriceTag = withProps<PriceTagPropsType, HTMLSpanElement>(styled.span)`
+const StyledPriceTag = styled.span<PropsType>`
     ${({ theme, strikethrough }): string => {
         return `
             position: relative;

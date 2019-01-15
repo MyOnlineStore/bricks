@@ -160,7 +160,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                 ifTrue={(children): JSX.Element => (
                     <DragDropContext onDragEnd={this.dragEndHandler}>
                         <Droppable droppableId="droppable">
-                            {({ innerRef }): JSX.Element => <StyledTable innerRef={innerRef}>{children}</StyledTable>}
+                            {({ innerRef }): JSX.Element => <StyledTable ref={innerRef}>{children}</StyledTable>}
                         </Droppable>
                     </DragDropContext>
                 )}

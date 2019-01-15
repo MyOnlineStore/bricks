@@ -1,8 +1,5 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import { PlacementType } from '.';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type PopoverThemeType = {
     background: string;
@@ -13,7 +10,7 @@ type PopoverAnchorPropsType = {
     stretch?: boolean;
 };
 
-const PopoverAnchor = withProps<PopoverAnchorPropsType, HTMLDivElement>(styled.div)`
+const PopoverAnchor = styled.div<PopoverAnchorPropsType>`
     ${({ stretch }): string =>
         stretch
             ? `
@@ -52,7 +49,7 @@ type PopoverArrowPropsType = {
     shadow?: boolean;
 };
 
-const PopoverArrow = withProps<PopoverArrowPropsType, HTMLDivElement>(styled.div)`
+const PopoverArrow = styled.div<PopoverArrowPropsType>`
     position: absolute;
     width: 16px;
     height: 16px;
@@ -90,12 +87,12 @@ const PopoverArrow = withProps<PopoverArrowPropsType, HTMLDivElement>(styled.div
                 `;
         }
     }} ${({ theme, shadow }): string =>
-    shadow
-        ? `
+        shadow
+            ? `
             box-shadow: 0 1px 12px rgba(0 , 0, 0, .2);
             z-index: 1;
         `
-        : `
+            : `
             background: ${theme.Popover.background};
             z-index: 3;
         `};

@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/_styled';
+import styled from '../../../utility/_styled';
 import calculateRandomPercentage from '../../../utility/_calculateRandomPercentage';
 import getSkeletonStyles from '../style';
 
@@ -9,7 +6,7 @@ type PropsType = {
     baseWidth?: number;
 };
 
-const StyledTextSkeleton = withProps<PropsType>(styled.div)`
+const StyledTextSkeleton = styled.div<PropsType>`
     ${({ theme }): string => getSkeletonStyles(theme)}
     color: transparent;
     display: inline-block;

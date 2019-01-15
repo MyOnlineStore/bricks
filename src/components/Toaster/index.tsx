@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import StyledToaster, { StyledToasterWrapper } from './style';
 import Button from '../Button';
 import IconButton from '../IconButton';
@@ -57,7 +57,7 @@ class Toaster extends Component<PropsType> {
                                 <StyledToaster severity={this.props.severity}>
                                     {breakpoint !== 'small' && (
                                         <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
-                                            <Text inline severity={this.props.severity}>
+                                            <Text as="span" severity={this.props.severity}>
                                                 <Icon size="medium" icon={icon} />
                                             </Text>
                                         </Box>

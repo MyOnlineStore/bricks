@@ -1,5 +1,4 @@
 import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import styled from '../../utility/_styled';
 
 type BreadcrumbsThemeType = {

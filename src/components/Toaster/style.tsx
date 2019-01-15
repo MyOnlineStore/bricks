@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 import SeverityType from '../../types/_SeverityType';
 import { LinkStyles } from '../Link/style';
 
@@ -31,7 +28,7 @@ const StyledToasterWrapper = styled.div`
     align-items: flex-start;
 `;
 
-const StyledToaster = withProps<ToasterPropsType, HTMLDivElement>(styled.div)`
+const StyledToaster = styled.div<ToasterPropsType>`
     display: flex;
     transition: opacity 100ms, box-shadow 100ms;
     box-sizing: border-box;

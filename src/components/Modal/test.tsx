@@ -11,9 +11,11 @@ import IconButton from '../IconButton';
 jest.mock('../ScrollBox', () => jest.fn().mockImplementation((): string => 'div'));
 
 jest.mock('../BreakpointProvider', () => {
-    return jest.fn().mockImplementation((props: PropsType): JSX.Element => {
-        return props.children('large');
-    });
+    return jest.fn().mockImplementation(
+        (props: PropsType): JSX.Element => {
+            return props.children('large');
+        },
+    );
 });
 
 describe('Modal', () => {

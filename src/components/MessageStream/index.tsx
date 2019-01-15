@@ -1,5 +1,4 @@
 import React, { Fragment, FunctionComponent } from 'react';
-import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Button, { PropsType as ButtonPropsType } from '../Button';
@@ -7,7 +6,7 @@ import Contrast from '../Contrast';
 import Text from '../Text';
 import StyledMessageStream, { MessageSeparator, StyledMessage } from './style';
 
-export type MessagePropsType = StyledType & {
+export type MessagePropsType = {
     severity: 'success' | 'info' | 'warning' | 'error';
     title: string;
     message: string;
@@ -17,7 +16,7 @@ export type MessagePropsType = StyledType & {
     onClick?(): void;
 };
 
-type PropsType = StyledType & {
+type PropsType = {
     messages: Array<MessagePropsType>;
 };
 

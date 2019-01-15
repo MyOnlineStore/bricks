@@ -1,10 +1,7 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/_styled';
+import styled from '../../../utility/_styled';
 import { PropsType } from '.';
 
-const StyledButton = withProps<PropsType>(styled.button)`
+const StyledButton = styled.button<PropsType>`
     border: none;
     display: inline-flex;
     outline: none;

@@ -1,5 +1,5 @@
 import { default as _R } from 'react';
-import styled, { StyledComponentClass as _S } from 'styled-components';
+import styled from 'styled-components';
 import { ContentProps } from '.';
 
 const StyledFoldOut = styled.div`

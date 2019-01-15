@@ -378,7 +378,7 @@ describe('Table', () => {
             .first()
             .simulate('click');
 
-        for (let index = 0; index < component.prop<Array<Object>>('rows').length; index++) {
+        for (let index = 0; index < component.find(Table).prop<Array<Object>>('rows').length; index++) {
             expect(
                 component
                     .find('tbody')

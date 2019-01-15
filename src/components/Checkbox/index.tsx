@@ -42,7 +42,7 @@ class Checkbox extends Component<PropsType, StateType> {
         return (
             <StyledCheckboxSkin
                 checkedState={this.props.checked}
-                onClick={(event): void => this.changeHandler(event)}
+                onClick={(event: MouseEvent<HTMLDivElement>): void => this.changeHandler(event)}
                 elementFocus={this.state.focus}
                 disabled={this.props.disabled}
                 error={this.props.error}

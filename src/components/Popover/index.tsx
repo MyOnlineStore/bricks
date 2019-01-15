@@ -106,7 +106,7 @@ class Popover extends Component<PropsType, StateType> {
                                     if (ref) this.anchorRef = ref;
                                 }}
                             >
-                                <PopoverAnchor innerRef={ref} stretch={this.props.stretch}>
+                                <PopoverAnchor ref={ref} stretch={this.props.stretch}>
                                     {this.props.children}
                                 </PopoverAnchor>
                             </div>
@@ -131,11 +131,11 @@ class Popover extends Component<PropsType, StateType> {
                                 }}
                             >
                                 {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
-                                    <PopoverWindow innerRef={ref} style={style}>
+                                    <PopoverWindow ref={ref} style={style}>
                                         <PopoverContent>{this.props.renderContent()}</PopoverContent>
                                         <PopoverBackground />
                                         <PopoverArrow
-                                            innerRef={arrowProps.ref}
+                                            ref={arrowProps.ref}
                                             style={arrowProps.style}
                                             placement={placement}
                                         />

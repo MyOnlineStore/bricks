@@ -3,7 +3,7 @@ import Toggle from '.';
 import Icon from '../Icon';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/_styled/testing';
-import Styledtoggle, { StyledToggleSkin, StyledToggleWrapper } from './style';
+import Styledtoggle, { StyledToggleSkin } from './style';
 import 'jest-styled-components';
 
 describe('Toggle', () => {
@@ -116,7 +116,7 @@ describe('Toggle', () => {
             <Toggle onChange={mockHandler} name="demo" label="foo" checked={false} value="bar" />,
         );
 
-        toggle.find(StyledToggleWrapper).simulate('click');
+        toggle.simulate('click');
 
         expect(mockHandler).toHaveBeenCalledWith({
             checked: true,
@@ -130,7 +130,7 @@ describe('Toggle', () => {
             <Toggle onChange={mockHandler} name="demo" disabled={true} label="foo" checked={true} value="bar" />,
         );
 
-        toggle.find(StyledToggleWrapper).simulate('click');
+        toggle.simulate('click');
 
         expect(mockHandler).not.toHaveBeenCalled();
     });

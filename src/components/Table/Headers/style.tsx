@@ -1,25 +1,17 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/_styled';
+import styled from '../../../utility/_styled';
 
 type PropsType = {
-    align: 'start' | 'center' | 'end';
+    headerAlign: 'start' | 'center' | 'end';
     onClick?(): void;
 };
 
-const StyledHeader = withProps<PropsType>(styled.th)`
+const StyledHeader = styled.th<PropsType>`
     padding: 12px;
-    text-align: ${({ align }): string => align}};
     background: ${({ theme }): string => theme.Table.cell.default.backgroundColor};
+    text-align: ${({ headerAlign }): string => headerAlign}};
     border-bottom: ${({ theme }): string => `solid 1px ${theme.Table.cell.default.borderColor}`};
-    ${({ onClick }): string =>
-        onClick !== undefined
-            ? `
-                cursor: pointer;
-                user-select: none;
-            `
-            : ''}
+    cursor: ${({ onClick }): string => (onClick !== undefined ? 'pointer' : 'default')};
+    user-select: ${({ onClick }): string => (onClick !== undefined ? 'none' : 'default')};
 `;
 
 export default StyledHeader;

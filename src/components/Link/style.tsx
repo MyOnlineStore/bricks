@@ -1,5 +1,4 @@
-import _R from 'react';
-import { css, StyledComponentClass as _S } from 'styled-components';
+import { css } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/_styled';
 

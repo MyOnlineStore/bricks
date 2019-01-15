@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type RadioButtonPropsType = {
     checked: boolean;
@@ -44,14 +41,14 @@ const StyledRadioWrapper = styled.div`
     display: flex;
 `;
 
-const StyledRadioButton = withProps<RadioButtonPropsType, HTMLInputElement>(styled.input)`
+const StyledRadioButton = styled.input<RadioButtonPropsType>`
     position: relative;
     opacity: 0;
     height: 0;
     width: 0;
 `;
 
-const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement>(styled.div)`
+const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
     width: 16px;
     height: 16px;
     border-radius: 100%;
@@ -68,10 +65,11 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
 
         return '';
     }};
-    border: 1px solid ${({ theme, checked, error }): string =>
-        error
-            ? theme.RadioButton.error.borderColor
-            : checked
+    border: 1px solid
+        ${({ theme, checked, error }): string =>
+            error
+                ? theme.RadioButton.error.borderColor
+                : checked
                 ? theme.RadioButton.active.borderColor
                 : theme.RadioButton.idle.borderColor};
 

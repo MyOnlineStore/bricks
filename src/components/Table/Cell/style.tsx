@@ -1,10 +1,7 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/_styled';
+import styled from '../../../utility/_styled';
 
-type CellPropsType = {
-    align: 'start' | 'center' | 'end';
+type PropsType = {
+    cellAlign: 'start' | 'center' | 'end';
     elementWidth?: string;
 };
 
@@ -14,11 +11,11 @@ enum Alignments {
     'end' = 'right',
 }
 
-const StyledCell = withProps<CellPropsType>(styled.td)`
+const StyledCell = styled.td<PropsType>`
     width: ${({ elementWidth }): string => (elementWidth ? elementWidth : 'inherit')};
     border-bottom: ${({ theme }): string => `1px solid ${theme.Table.cell.default.borderColor}`};
     padding: 12px;
-    text-align: ${({ align }): string => Alignments[align]}};
+    text-align: ${({ cellAlign }): string => Alignments[cellAlign]}};
 
     &:focus {
         outline: none;
@@ -26,4 +23,3 @@ const StyledCell = withProps<CellPropsType>(styled.td)`
 `;
 
 export default StyledCell;
-export { CellPropsType };

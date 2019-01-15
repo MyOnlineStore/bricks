@@ -1,5 +1,4 @@
-import React, { Component, ReactNode } from 'react';
-import { StyledType } from '../../utility/_styled';
+import React, { Component, ReactNode, RefObject, createRef } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
@@ -11,7 +10,7 @@ import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
 import ButtonGroup from '../ButtonGroup';
 
-type PropsType = StyledType & {
+type PropsType = {
     show: boolean;
     title: string;
     size?: 'small' | 'medium' | 'large';
@@ -21,19 +20,23 @@ type PropsType = StyledType & {
 };
 
 class Modal extends Component<PropsType> {
-    private styledModalRef: HTMLDivElement;
-    private styledModalWrapperRef: HTMLDivElement;
+    private styledModalRef: RefObject<HTMLDivElement>;
+    private styledModalWrapperRef: RefObject<HTMLDivElement>;
 
     public constructor(props: PropsType) {
         super(props);
+        this.styledModalRef = createRef();
+        this.styledModalWrapperRef = createRef();
     }
 
     public handleClickOutside = (event: Event): void => {
         if (
+            this.styledModalWrapperRef.current !== null &&
+            this.styledModalRef.current !== null &&
             this.props.closeAction !== undefined &&
             this.props.show &&
-            this.styledModalWrapperRef.contains(event.target as Node) &&
-            !this.styledModalRef.contains(event.target as Node)
+            this.styledModalWrapperRef.current.contains(event.target as Node) &&
+            !this.styledModalRef.current.contains(event.target as Node)
         ) {
             this.props.closeAction();
         }
@@ -49,20 +52,13 @@ class Modal extends Component<PropsType> {
 
     public render(): JSX.Element {
         return (
-            <StyledModalWrapper
-                show={this.props.show}
-                innerRef={(ref): void => {
-                    this.styledModalWrapperRef = ref;
-                }}
-            >
+            <StyledModalWrapper show={this.props.show} ref={this.styledModalWrapperRef}>
                 <TransitionAnimation key={0} show={this.props.show} animation="zoom">
                     <BreakpointProvider breakpoints={{ small: 0, medium: 320, large: 1200 }}>
                         {(breakpoint): JSX.Element => (
                             <StyledModal
                                 modalSize={this.props.size !== undefined ? this.props.size : 'large'}
-                                innerRef={(ref): void => {
-                                    this.styledModalRef = ref;
-                                }}
+                                ref={this.styledModalRef}
                             >
                                 <Box
                                     shrink={0}

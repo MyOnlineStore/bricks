@@ -1,7 +1,4 @@
-import styled, { withProps } from '../../../src/utility/_styled';
-import _T from '../../types/ThemeType';
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
+import styled from '../../../src/utility/_styled';
 
 type SelectThemeType = {
     common: {
@@ -36,7 +33,7 @@ type SelectThemeType = {
     };
 };
 
-type WrapperProps = {
+type WrapperPropsType = {
     isOpen: boolean;
     isDisabled?: boolean;
 };
@@ -47,7 +44,7 @@ const StyledPlaceholder = styled.span`
     color: ${({ theme }): string => theme.Select.disabled.color};
 `;
 
-const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
+const StyledWrapper = styled.div<WrapperPropsType>`
     transition: all .3s;
     width: 100%;
     outline: none;
@@ -91,13 +88,13 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }}
     `;
 
-type WindowProps = {
+type WindowPropsType = {
     isOpen: boolean;
     rect?: ClientRect;
     inputHeight?: number;
 };
 
-const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
+const StyledWindow = styled.div<WindowPropsType>`
     box-sizing: border-box;
     position: fixed;
     max-height: 240px;
@@ -117,18 +114,19 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
     z-index: 1000;
 `;
 
-type InputProps = {
+type InputPropsType = {
     isOpen: boolean;
     hasFocus: boolean;
     disabled: boolean;
 };
 
-const StyledInput = withProps<InputProps>(styled.div)`
-    transition: all .3s;
+const StyledInput = styled.div<InputPropsType>`
+    transition: all 0.3s;
     box-sizing: border-box;
     width: 100%;
-    border: solid 1px ${({ theme, hasFocus, isOpen }): string =>
-        hasFocus && !isOpen ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
+    border: solid 1px
+        ${({ theme, hasFocus, isOpen }): string =>
+            hasFocus && !isOpen ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.Select.disabled.background : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
