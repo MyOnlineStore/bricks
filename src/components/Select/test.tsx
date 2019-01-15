@@ -418,7 +418,7 @@ describe('Select', () => {
             .at(1)
             .simulate('click');
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
+        expect(component.find(StyledWindow).prop('open')).toEqual(false);
     });
 
     it('should close the Option-Select window when the component gets disabled', () => {
@@ -448,7 +448,7 @@ describe('Select', () => {
         component.setProps({ disabled: true });
         component.update();
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
+        expect(component.find(StyledWindow).prop('open')).toEqual(false);
     });
 
     it('should handle a simulated change event', () => {
