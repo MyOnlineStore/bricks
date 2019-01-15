@@ -153,7 +153,7 @@ class MultiButton extends Component<PropsType, StateType> {
                 <Reference>
                     {({ ref }: ReferenceChildrenProps): JSX.Element => (
                         <div ref={this.buttonRef}>
-                            <StyledWrapper ref={ref} isOpen={this.state.isOpen}>
+                            <StyledWrapper ref={ref} open={this.state.isOpen}>
                                 {this.renderButtons()}
                             </StyledWrapper>
                         </div>
@@ -171,7 +171,7 @@ class MultiButton extends Component<PropsType, StateType> {
                                 }}
                             >
                                 {({ ref, style }: PopperChildrenProps): JSX.Element => (
-                                    <StyledWindow isOpen={this.state.isOpen} ref={ref} style={style}>
+                                    <StyledWindow open={this.state.isOpen} ref={ref} style={style}>
                                         {this.props.options.length > 0 &&
                                             this.props.options.map((option, index) => (
                                                 <Option

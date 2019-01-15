@@ -187,8 +187,8 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         return (
             <StyledWrapper
                 ref={this.wrapperRef}
-                isDisabled={this.props.disabled}
-                isOpen={this.state.isOpen}
+                disabled={this.props.disabled}
+                open={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
                 onChange={this.handleChangeEvent}
                 onFocus={this.handleFocus}
@@ -196,7 +196,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 tabIndex={this.props.disabled ? -1 : 0}
             >
                 <StyledInput
-                    isOpen={this.state.isOpen}
+                    open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     ref={this.inputWrapperRef}
@@ -249,7 +249,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 {createPortal(
                     <StyledWindow
                         ref={this.windowRef}
-                        isOpen={this.state.isOpen}
+                        open={this.state.isOpen}
                         rect={
                             this.wrapperRef.current !== null
                                 ? this.wrapperRef.current.getBoundingClientRect()

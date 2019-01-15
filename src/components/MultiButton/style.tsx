@@ -38,7 +38,7 @@ type MultiButtonThemeType = {
 };
 
 type PropsType = {
-    isOpen: boolean;
+    open: boolean;
 };
 
 const StyledMultiButton = styled(Button)`
@@ -78,7 +78,7 @@ const StyledChevronButton = styled(Button)`
 
 const StyledWrapper = styled.div<PropsType>`
     border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius}
-    box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.common.active.boxShadow : '')};
+    box-shadow: ${({ open, theme }): string => (open ? theme.MultiButton.button.common.active.boxShadow : '')};
     transform: translateZ(0) translate3d(0, 0, 0);
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
     outline: none;

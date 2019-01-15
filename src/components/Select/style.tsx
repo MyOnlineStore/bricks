@@ -34,8 +34,8 @@ type SelectThemeType = {
 };
 
 type WrapperPropsType = {
-    isOpen: boolean;
-    isDisabled?: boolean;
+    open: boolean;
+    disabled?: boolean;
 };
 
 const INNER_OFFSET: number = 6;
@@ -59,28 +59,28 @@ const StyledWrapper = styled.div<WrapperPropsType>`
         content: '';
         z-index: -1;
         border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-        ${({ isOpen }): string =>
-            isOpen
+        ${({ open }): string =>
+            open
                 ? `
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 `
                 : ''}
-        border: ${({ theme, isOpen }): string =>
-            isOpen
+        border: ${({ theme, open }): string =>
+            open
                 ? `solid 1px ${theme.Select.wrapper.common.borderColor}`
                 : `solid 0px ${theme.Select.common.secondaryColor}`};
         border-bottom: none;
         background: ${({ theme }): string => theme.Select.common.secondaryColor};
         position: absolute;
-        top: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
-        left: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
-        right: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
-        bottom: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
+        top: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        left: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        right: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        bottom: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
     }
 
-    ${({ theme, isDisabled, isOpen }): string => {
-        return !isDisabled || !isOpen
+    ${({ theme, disabled, open }): string => {
+        return !disabled || !open
             ? `&:focus {
                 box-shadow: ${theme.Select.wrapper.focus.boxShadow};
             }`
@@ -89,7 +89,7 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     `;
 
 type WindowPropsType = {
-    isOpen: boolean;
+    open: boolean;
     rect?: ClientRect;
     inputHeight?: number;
 };
@@ -102,20 +102,20 @@ const StyledWindow = styled.div<WindowPropsType>`
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
-    padding-top: ${({ isOpen }): string => (isOpen ? '6px' : '0')};
+    padding-top: ${({ open }): string => (open ? '6px' : '0')};
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
-    border: ${({ theme, isOpen }): string =>
-        isOpen ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
+    border: ${({ theme, open }): string =>
+        open ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
     border-top: none;
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    ${({ isOpen }): string => (!isOpen ? 'cursor: pointer' : '')};
+    ${({ open }): string => (!open ? 'cursor: pointer' : '')};
     z-index: 1000;
 `;
 
 type InputPropsType = {
-    isOpen: boolean;
+    open: boolean;
     hasFocus: boolean;
     disabled: boolean;
 };
@@ -125,8 +125,8 @@ const StyledInput = styled.div<InputPropsType>`
     box-sizing: border-box;
     width: 100%;
     border: solid 1px
-        ${({ theme, hasFocus, isOpen }): string =>
-            hasFocus && !isOpen ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
+        ${({ theme, hasFocus, open }): string =>
+            hasFocus && !open ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.Select.disabled.background : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};

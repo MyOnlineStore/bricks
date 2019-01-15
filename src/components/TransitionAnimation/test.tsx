@@ -1,4 +1,4 @@
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import { Transition } from 'react-transition-group';
 import TransitionAnimation from '.';
