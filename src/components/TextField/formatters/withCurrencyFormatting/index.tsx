@@ -1,5 +1,6 @@
 import React, { Component, ComponentClass, ComponentType, ChangeEvent } from 'react';
 import { PropsType as TextFieldPropsType } from '../../';
+import { Decimal } from 'decimal.js';
 
 type OmittedKeys = 'onChange' | 'value';
 
@@ -112,7 +113,9 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         private handleChange = (value: string, event?: ChangeEvent<HTMLInputElement>): void => {
             this.props.minor
                 ? this.props.onChange(
-                      this.parse('out', value) * Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits),
+                      new Decimal(this.parse('out', value))
+                          .times(Math.pow(10, this.formatter.resolvedOptions().maximumFractionDigits))
+                          .toNumber(),
                   )
                 : this.props.onChange(this.parse('out', value));
 
