@@ -7,7 +7,7 @@ import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './s
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import FlatButton from '../../components/Button';
+import IconButton from '../../components/IconButton';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 
@@ -232,18 +232,13 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     )}
                                 </Box>
                             )}
-                        <FlatButton
+                        <IconButton
+                            icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
                             title={this.state.isOpen ? 'close' : 'open'}
                             onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
                             variant="primary"
-                        >
-                            <Icon
-                                icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
-                                size="small"
-                                color={this.props.disabled ? this.props.theme.Select.disabled.chevron : undefined}
-                            />
-                        </FlatButton>
+                        />
                     </Box>
                 </StyledInput>
                 {createPortal(
