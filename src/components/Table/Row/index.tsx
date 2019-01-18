@@ -76,6 +76,7 @@ class Row extends Component<PropsType, StateType> {
                                 return (
                                     <ContrastThemeProvider enable={this.state.hasHover}>
                                         <StyledRow
+                                            selected={this.props.selected}
                                             dragging={snapshot.isDragging}
                                             focus={this.state.hasFocus}
                                             onMouseEnter={this.handleMouseEnter}
@@ -103,7 +104,7 @@ class Row extends Component<PropsType, StateType> {
                         </Draggable>
                     );
                 }}
-                ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
+                ifFalse={(children): JSX.Element => <StyledRow selected={this.props.selected}>{children}</StyledRow>}
             >
                 {this.props.selectable && (
                     <Cell align="start" width={'18px'}>
@@ -138,7 +139,11 @@ class Row extends Component<PropsType, StateType> {
                             </Cell>
                         );
                     })}
-                {this.props.buttonsColumn && <Cell align="end">{this.props.row.buttons}</Cell>}
+                {this.props.buttonsColumn && (
+                    <Cell align="end" width="fit">
+                        {this.props.row.buttons}
+                    </Cell>
+                )}
             </Branch>
         );
     }

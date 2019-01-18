@@ -30,6 +30,7 @@ type ColumnType<GenericCellType, GenericRowType> = {
     order?: number;
     header?: ReactNode | string | number | any;
     align?: 'start' | 'center' | 'end';
+    width?: string;
     sort?(cellA: GenericCellType, cellB: GenericCellType): number;
     render?(cell: GenericCellType, row: GenericRowType): JSX.Element;
 };
@@ -167,20 +168,38 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         const isSelectable = this.props.onSelection !== undefined;
         const rows = this.sortRows();
         const hasButtonsColumn = this.props.rows.filter(row => row.buttons).length > 0;
+        const view = this.props.view !== undefined ? this.props.view : 'table';
 
         const headerProps = {
             draggable: isDraggable,
             selectable: isSelectable,
             columns: this.props.columns,
+            preSort: this.state.sorting,
+            checked: this.getHeaderState(),
             onCheck: (selected: boolean): void => this.handleHeaderCheck(selected),
             onSort: this.handleSort,
-            checked: this.getHeaderState(),
         };
 
         return (
             <Branch
-                condition={this.props.view === 'table'}
+                condition={view === 'datacard'}
                 ifTrue={(children): JSX.Element => (
+                    <Branch
+                        condition={isDraggable}
+                        ifTrue={(children): JSX.Element => (
+                            <DragDropContext onDragEnd={this.dragEndHandler}>
+                                <Droppable droppableId="droppable">
+                                    {({ innerRef }): JSX.Element => <div ref={innerRef}>{children}</div>}
+                                </Droppable>
+                            </DragDropContext>
+                        )}
+                        ifFalse={(children): JSX.Element => <div>{children}</div>}
+                    >
+                        <CompactHeaders {...headerProps} />
+                        {children}
+                    </Branch>
+                )}
+                ifFalse={(children): JSX.Element => (
                     <Branch
                         condition={isDraggable}
                         ifTrue={(children): JSX.Element => (
@@ -198,22 +217,6 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         <tbody>{children}</tbody>
                     </Branch>
                 )}
-                ifFalse={(children): JSX.Element => (
-                    <Branch
-                        condition={isDraggable}
-                        ifTrue={(children): JSX.Element => (
-                            <DragDropContext onDragEnd={this.dragEndHandler}>
-                                <Droppable droppableId="droppable">
-                                    {({ innerRef }): JSX.Element => <div ref={innerRef}>{children}</div>}
-                                </Droppable>
-                            </DragDropContext>
-                        )}
-                        ifFalse={(children): JSX.Element => <div>{children}</div>}
-                    >
-                        <CompactHeaders {...headerProps} />
-                        {children}
-                    </Branch>
-                )}
             >
                 {rows.map((row, rowIndex) => {
                     const props = {
@@ -228,11 +231,11 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         },
                     };
 
-                    if (this.props.view === 'table') {
-                        return <Row key={row.id} buttonsColumn={hasButtonsColumn} {...props} />;
+                    if (view === 'datacard') {
+                        return <Card key={row.id} {...props} />;
                     }
 
-                    return <Card key={row.id} {...props} />;
+                    return <Row key={row.id} buttonsColumn={hasButtonsColumn} {...props} />;
                 })}
             </Branch>
         );

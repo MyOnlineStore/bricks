@@ -5,13 +5,17 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Cell from './Cell';
+import Card from './Card';
 import Checkbox from '../Checkbox';
 import Icon from '../Icon';
 import Box from '../Box';
+import Select from '../Select';
+import Button from '../Button';
+import Row from './Row';
 
 describe('Table', () => {
     it('should render the correct amount of cells', () => {
-        const component = mountWithTheme(
+        const table = mountWithTheme(
             <Table
                 columns={{
                     id: { header: 'Product ID' },
@@ -27,7 +31,83 @@ describe('Table', () => {
             />,
         );
 
-        expect(component.find(Cell).length).toBe(12);
+        expect(table.find(Cell).length).toBe(12);
+    });
+
+    it('should render the correct amount of cards', () => {
+        const table = mountWithTheme(
+            <Table
+                view={'datacard'}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
+                rows={[
+                    { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                    { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                    { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                ]}
+            />,
+        );
+
+        expect(table.find(Card).length).toBe(4);
+    });
+
+    it('should render a column with buttons when buttons are provided', () => {
+        const table = mountWithTheme(
+            <Table
+                view={'table'}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
+                rows={[
+                    {
+                        id: '61651320',
+                        price: 19.12,
+                        name: 'foo0',
+                        image: 'imageurl',
+                        buttons: [
+                            <Button key={'button1'} title={'button1'} variant={'primary'} />,
+                            <Button key={'button2'} title={'button2'} variant={'primary'} />,
+                        ],
+                    },
+                ]}
+            />,
+        );
+
+        expect(
+            table
+                .find(Row)
+                .first()
+                .find(Cell)
+                .last()
+                .find(Button).length,
+        ).toBe(2);
+    });
+
+    it('should render a CompactHeader with a Select when there are column with sort', () => {
+        const table = mountWithTheme(
+            <Table
+                view={'datacard'}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price', sort: (a: number, b: number) => a - b },
+                }}
+                rows={[
+                    { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                    { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                    { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                ]}
+            />,
+        );
+
+        expect(table.find(Select).length).toBe(1);
     });
 
     it('should render without onDrag', () => {

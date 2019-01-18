@@ -9,7 +9,6 @@ type TableThemeType = {
             backgroundColor: string;
             borderColor: string;
         };
-
         hover: {
             backgroundColor: string;
         };
@@ -19,6 +18,10 @@ type TableThemeType = {
         };
         dragging: {
             boxShadow: string;
+        };
+        selected: {
+            backgroundColor: string;
+            borderColor: string;
         };
     };
     cell: {

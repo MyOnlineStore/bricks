@@ -12,10 +12,7 @@ import { ContrastThemeProvider } from '../../Contrast';
 type PropsType = {
     // tslint:disable
     columns: {
-        [key: string]: ColumnType<
-            string | number | boolean | undefined | Array<ReactNode> | ReactNode | Array<StatusIconType>,
-            any
-        >;
+        [key: string]: ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, any>;
     };
     // tsline:enable
     row: BaseRowType;
@@ -26,17 +23,12 @@ type PropsType = {
     onSelection(event: React.MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
 };
 
-type StatusIconType = {
-    label: string;
-    icon: string;
-};
-
 type StateType = {
     hasFocus: boolean;
     hasHover: boolean;
 };
 
-class Row extends Component<PropsType, StateType> {
+class Card extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
 
@@ -82,14 +74,14 @@ class Row extends Component<PropsType, StateType> {
                                         (this.props.columns[b].order as number)
                                     );
                                 })
-                                .map(key => {
+                                .map((key, index) => {
                                     const column = this.props.columns[key];
                                     const cell = this.props.row[key];
                                     const align = column.align ? column.align : 'start';
 
                                     if (cell !== undefined) {
                                         return (
-                                            <tr>
+                                            <tr key={`row_${index}`}>
                                                 <td className="label">
                                                     <Text>{this.props.columns[key].header}</Text>
                                                 </td>
@@ -107,17 +99,6 @@ class Row extends Component<PropsType, StateType> {
                         </tbody>
                     </table>
                 </Box>
-                {this.props.row.statusIcons !== undefined && (
-                    <Box direction="column" width="50px" alignItems="center" padding={[9, 6]} grow={0}>
-                        {this.props.row.statusIcons.map((icon, index) => (
-                            <Box className="statusIcon" padding={[6]} title={icon.label}>
-                                <Text severity={!icon.severity ? 'info' : icon.severity}>
-                                    <Icon size="medium" icon={icon.icon} />
-                                </Text>
-                            </Box>
-                        ))}
-                    </Box>
-                )}
                 <Box direction="column" width="50px" alignItems="center" padding={[12, 6]} grow={0}>
                     {this.props.selectable && (
                         <Box padding={[6]}>
@@ -180,5 +161,5 @@ class Row extends Component<PropsType, StateType> {
     }
 }
 
-export default Row;
+export default Card;
 export { PropsType, StateType };

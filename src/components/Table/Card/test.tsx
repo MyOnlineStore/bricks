@@ -1,52 +1,47 @@
 import React from 'react';
-import Rows from '.';
+import Card from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
 import StyledRow from './style';
-import { mosTheme } from '../../../themes/MosTheme';
 import { ContrastThemeProvider } from '../../Contrast';
 
-describe('Table Rows', () => {
+describe('Cards', () => {
     it('should handle mouse focus and blur when draggable', () => {
         const component = mountWithTheme(
-            <table>
-                <tbody>
-                    <Rows
-                        row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
-                        columns={{
-                            id: { header: 'Product ID' },
-                            name: { header: 'name' },
-                            price: { header: 'Price' },
-                        }}
-                        draggable
-                        selectable
-                        selected={true}
-                        index={1}
-                        onSelection={(): void => undefined}
-                    />
-                </tbody>
-            </table>,
+            <div>
+                <Card
+                    row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
+                    columns={{
+                        id: { header: 'Product ID' },
+                        name: { header: 'name' },
+                        price: { header: 'Price' },
+                    }}
+                    draggable
+                    selectable
+                    selected={true}
+                    index={1}
+                    onSelection={(): void => undefined}
+                />
+            </div>,
         );
     });
 
     it('should handle mouse enter and leave', () => {
         const component = mountWithTheme(
-            <table>
-                <tbody>
-                    <Rows
-                        row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
-                        columns={{
-                            id: { header: 'Product ID' },
-                            name: { header: 'name' },
-                            price: { header: 'Price' },
-                        }}
-                        draggable
-                        selectable
-                        selected={true}
-                        index={1}
-                        onSelection={(): void => undefined}
-                    />
-                </tbody>
-            </table>,
+            <div>
+                <Card
+                    row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
+                    columns={{
+                        id: { header: 'Product ID' },
+                        name: { header: 'name' },
+                        price: { header: 'Price' },
+                    }}
+                    draggable
+                    selectable
+                    selected={true}
+                    index={1}
+                    onSelection={(): void => undefined}
+                />
+            </div>,
         );
 
         component.find(StyledRow).simulate('mouseEnter');

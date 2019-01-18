@@ -9,6 +9,8 @@ import Icon, { MediumIcons } from '../Icon';
 import StyledBadge from '../Badge';
 import SeverityType from '../../types/_SeverityType';
 import BreakpointProvider from '../BreakpointProvider';
+import Box from '../Box';
+import { isString } from 'util';
 
 type RowType = {
     selected?: boolean;
@@ -20,6 +22,7 @@ type RowType = {
     extra?: string;
     buttons?: Array<ReactNode>;
     statusIcons?: Array<StatusIconType>;
+    extraData?: Array<{ label: string; price: number }>;
 };
 
 type StatusIconType = {
@@ -52,7 +55,7 @@ class Demo extends Component<PropsType, StateType> {
                     id: '61651323',
                     price: 0.8,
                     name: 'Kiwi',
-                    image: <img src="http://www.stevensegallery.com/100/100" height="80" />,
+                    image: <img src="https://via.placeholder.com/50" width="50" />,
                     badge: 'special offer',
                     buttons: this.renderActions(1),
                     statusIcons: [
@@ -64,8 +67,8 @@ class Demo extends Component<PropsType, StateType> {
                     id: '61651320',
                     price: -3.5,
                     name: 'Pineapple',
-                    image: <img src="http://www.stevensegallery.com/105/105" height="80" />,
-                    badge: 'halp?',
+                    image: <img src="https://via.placeholder.com/50" width="50" />,
+                    badge: 'new!',
                     buttons: this.renderActions(2),
                     statusIcons: [{ label: 'Locked item', icon: 'locked', severity: 'error' }],
                 },
@@ -74,20 +77,27 @@ class Demo extends Component<PropsType, StateType> {
                     id: '61651322',
                     price: 2.45,
                     name: 'Grapes',
-                    image: <img src="http://www.stevensegallery.com/102/102" height="80" />,
+                    image: <img src="https://via.placeholder.com/50" width="50" />,
                 },
                 {
+                    selected: true,
                     id: '61651321',
                     price: 1.2,
                     name: 'Banana',
-                    image: <img src="http://www.stevensegallery.com/103/103" height="80" />,
+                    image: <img src="https://via.placeholder.com/50" width="50" />,
                     buttons: this.renderActions(4),
+                    extraData: [
+                        { label: 'Configuration value row', price: 0.9 },
+                        { label: 'Configuration value row', price: 1.5 },
+                        { label: 'Discount', price: -5 },
+                        { label: 'Shipping costs', price: 6.95 },
+                    ],
                 },
                 {
                     id: '61651324',
                     price: -0.7,
                     name: 'Lemon',
-                    image: <img src="http://www.stevensegallery.com/104/104" height="80" />,
+                    image: <img src="https://via.placeholder.com/50" width="50" />,
                     buttons: this.renderActions(5),
                 },
             ],
@@ -95,6 +105,10 @@ class Demo extends Component<PropsType, StateType> {
     }
 
     private sortText = (a: string, b: string) => {
+        if (!isString(a) || !isString(b)) {
+            return 0;
+        }
+
         const valueA = a.toUpperCase();
         const valueB = b.toUpperCase();
 
@@ -122,6 +136,42 @@ class Demo extends Component<PropsType, StateType> {
         return <></>;
     };
 
+    private renderName = (name: string | ReactNode, row: RowType) => {
+        return (
+            <Box justifyContent="space-between" alignItems="center" width="100%" key={`${row.id}_icons`}>
+                <Box direction="column" width="100%">
+                    <Text variant="large" strong>
+                        {name}
+                    </Text>
+                    {row.extraData &&
+                        row.extraData.map(configRow => (
+                            <Box justifyContent="space-between" alignItems="center" width="100%">
+                                <Box>
+                                    <Text>{configRow.label}</Text>
+                                </Box>
+                                <Box>
+                                    <Text>€ {configRow.price.toFixed(2)}</Text>
+                                </Box>
+                            </Box>
+                        ))}
+                </Box>
+                {row.statusIcons !== undefined ? (
+                    <Box grow={0}>
+                        {row.statusIcons.map((icon: StatusIconType) => (
+                            <Box className="statusIcon" padding={[6]} title={icon.label}>
+                                <Text severity={!icon.severity ? 'info' : icon.severity}>
+                                    <Icon size="medium" icon={icon.icon} />
+                                </Text>
+                            </Box>
+                        ))}
+                    </Box>
+                ) : (
+                    <></>
+                )}
+            </Box>
+        );
+    };
+
     private renderImage = (image: string | ReactNode) => {
         return <>{image}</>;
     };
@@ -143,29 +193,36 @@ class Demo extends Component<PropsType, StateType> {
                         header: 'Image',
                         order: 1,
                         render: this.renderImage,
+                        width: '50px',
                     },
                     name: {
-                        header: 'Name',
+                        header: 'Product',
                         order: 2,
                         align: 'start',
                         sort: this.props.sortable ? this.sortText : undefined,
+                        render: this.props.custom ? this.renderName : undefined,
                     },
                     id: {
-                        header: 'Product ID',
+                        header: 'ID',
                         order: 3,
+                        width: '100px',
                         sort: this.props.sortable ? this.sortText : undefined,
-                    },
-                    price: {
-                        header: 'Price',
-                        order: 4,
-                        sort: this.props.sortable ? this.sortPrice : undefined,
-                        render: this.props.custom ? this.renderPrice : undefined,
                     },
                     badge: {
                         header: 'Sticker',
-                        order: 6,
+                        width: '80px',
+                        align: 'center',
+                        order: 4,
                         sort: this.props.sortable ? this.sortText : undefined,
                         render: this.props.custom ? this.renderBadge : undefined,
+                    },
+                    price: {
+                        header: 'Price',
+                        width: '80px',
+                        align: 'end',
+                        order: 5,
+                        sort: this.props.sortable ? this.sortPrice : undefined,
+                        render: this.props.custom ? this.renderPrice : undefined,
                     },
                 }}
                 rows={this.state.rows}
@@ -184,7 +241,6 @@ storiesOf('Table', module)
             selectable={boolean('selectable', true)}
             sortable={boolean('sortable', true)}
             custom={boolean('custom', true)}
-            view={select('view', ['datacard', 'table'], 'table') as PropsType['view']}
         />
     ))
     .add('Responsive', () => (

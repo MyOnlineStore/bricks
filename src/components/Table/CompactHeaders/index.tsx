@@ -16,6 +16,10 @@ type PropsType = {
     checked: boolean | 'indeterminate';
     draggable: boolean;
     selectable: boolean;
+    preSort?: {
+        column: string;
+        direction: SortDirectionType;
+    };
     onCheck(checked: boolean): void;
     onSort?(column: string, direction: SortDirectionType): void;
 };
@@ -25,7 +29,6 @@ type ColumnStateType = {
 };
 
 type StateType = {
-    currentSorting: string;
     columns: {
         [key: string]: ColumnStateType;
     };
@@ -42,14 +45,6 @@ const mapPropsToState = (props: PropsType, state?: StateType): StateType => {
             : 'none';
     };
 
-    const getCurrentSorting = (columns: StateType['columns']) => {
-        const active = Object.keys(columns).filter(key => {
-            return columns[key].sorting !== undefined && columns[key].sorting !== 'none';
-        });
-
-        return active[0] === undefined ? '' : active[0];
-    };
-
     Object.keys(props.columns).forEach(column => {
         columns[column] = { sorting: mapColumn(column) };
     });
@@ -57,7 +52,6 @@ const mapPropsToState = (props: PropsType, state?: StateType): StateType => {
     return {
         ...state,
         columns,
-        currentSorting: getCurrentSorting(columns),
     };
 };
 
@@ -68,7 +62,26 @@ class Headers extends Component<PropsType, StateType> {
         this.state = mapPropsToState(props, undefined);
     }
 
-    private cycleSorting = (key: string, direction: SortDirectionType): void => {
+    private getCurrentSorting = (columns: StateType['columns']): string => {
+        const active = Object.keys(columns).filter(key => {
+            return columns[key].sorting !== undefined && columns[key].sorting !== 'none';
+        });
+
+        const activeKey = active[0];
+        if (activeKey !== undefined) {
+            const activeDirection = columns[activeKey].sorting;
+
+            return `${activeKey}_${activeDirection}`;
+        }
+
+        if (this.props.preSort !== undefined && this.props.preSort.direction !== 'none') {
+            return `${this.props.preSort.column}_${this.props.preSort.direction}`;
+        }
+
+        return '';
+    };
+
+    private applySorting = (key: string, direction: SortDirectionType): void => {
         const columns: StateType['columns'] = {};
 
         (this.props.onSort as Required<PropsType>['onSort'])(key, direction);
@@ -83,14 +96,21 @@ class Headers extends Component<PropsType, StateType> {
         });
 
         this.setState({
-            currentSorting: key,
             columns,
         });
     };
 
     public handleChange = (key: string): void => {
-        if (this.props.onSort !== undefined && this.state.columns[key].sorting !== undefined) {
-            this.cycleSorting(key, 'ascending');
+        let direction: SortDirectionType = 'descending';
+        let actualKey = key.substr(0, key.length - 11);
+
+        if (key.indexOf('_ascending') > 0) {
+            direction = 'ascending';
+            actualKey = key.substr(0, key.length - 10);
+        }
+
+        if (this.props.onSort !== undefined && this.state.columns[actualKey].sorting !== undefined) {
+            this.applySorting(actualKey, direction);
         }
     };
 
@@ -115,23 +135,31 @@ class Headers extends Component<PropsType, StateType> {
                 return this.props.columns[key].header !== undefined && this.state.columns[key].sorting !== undefined;
             })
             .map((key: string) => {
-                return {
-                    value: key,
-                    label: this.props.columns[key].header,
-                };
+                return [
+                    {
+                        value: `${key}_ascending`,
+                        label: `${this.props.columns[key].header} A-Z`,
+                    },
+                    {
+                        value: `${key}_descending`,
+                        label: `${this.props.columns[key].header} Z-A`,
+                    },
+                ];
             });
 
         return (
             <Box padding={[12, 0]} alignItems="center" justifyContent="space-between">
-                <Box>
-                    <Select
-                        placeholder="Sort by..."
-                        value={this.state.currentSorting}
-                        emptyText=""
-                        options={headers}
-                        onChange={this.handleChange}
-                    />
-                </Box>
+                {headers.length > 0 && (
+                    <Box>
+                        <Select
+                            placeholder="Sort by..."
+                            value={this.getCurrentSorting(this.state.columns)}
+                            emptyText=""
+                            options={headers.reduce((a, b) => a.concat(b))}
+                            onChange={this.handleChange}
+                        />
+                    </Box>
+                )}
                 {this.props.selectable && (
                     <Box padding={[0, 18]}>
                         <Checkbox

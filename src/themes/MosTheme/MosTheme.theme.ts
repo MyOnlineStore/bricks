@@ -601,6 +601,10 @@ const theme: ThemeType = {
             dragging: {
                 boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
             },
+            selected: {
+                backgroundColor: '#EFFBF1',
+                borderColor: green.darker1,
+            },
         },
     },
     Text: {

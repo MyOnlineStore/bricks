@@ -16,20 +16,33 @@ const StyledCard = withProps<StyledRowProps>(styled.div)`
     box-shadow: 0 2px 10px 0 rgba(33, 37, 43, .15);
     margin-bottom: 24px;
 
+    table {
+        width: 100%;
+    }
+
     tr {
-        vertical-align: top;
+        vertical-align: middle;
+    }
+
+    td {
+        padding: 3px 0px;
     }
 
     td.label {
         padding-right: 20px;
+        white-space: nowrap;
     }
 
-    ${({ selected }): string => {
+    td.value {
+        width: 100%;
+    }
+
+    ${({ selected, theme }): string => {
         if (selected) {
             // the background-color must remain a solid color, to improve legabilty while dragging
             return `
-                background-color: #EFFBF1;
-                border: 1px solid #5BD16A;
+                background-color: ${theme.Table.row.selected.backgroundColor};
+                border: 1px solid ${theme.Table.row.selected.borderColor};
             `;
         }
 
