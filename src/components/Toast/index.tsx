@@ -18,6 +18,7 @@ type PropsType = {
     buttonSeverity?: ButtonVariant;
     severity: SeverityType;
     autoDismiss?: boolean;
+    onExited?(): void;
     closeAction?(): void;
     action?(): void;
 };
@@ -41,6 +42,10 @@ class Toast extends Component<PropsType> {
         return 'primary';
     };
 
+    private handleExit = (): void => {
+        if (this.props.onExited) this.props.onExited();
+    };
+
     public componentDidMount = (): void => {
         if (this.props.autoDismiss) setTimeout((): void => this.closeAction(), 6000);
     };
@@ -49,7 +54,7 @@ class Toast extends Component<PropsType> {
         const icon = this.props.icon !== undefined ? this.props.icon : SeverityIcons[this.props.severity];
 
         return (
-            <TransitionAnimation show={this.props.isOpen} animation="zoom">
+            <TransitionAnimation show={this.props.isOpen} animation="zoom" onExited={this.handleExit}>
                 <BreakpointProvider breakpoints={{ small: 0, medium: 375, large: 800 }}>
                     {(breakpoint): JSX.Element => (
                         <StyledToastWrapper>

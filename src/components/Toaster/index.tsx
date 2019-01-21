@@ -9,7 +9,7 @@ type PropsType = {
 };
 
 type StateType = {
-    toasts: Array<ToastType & { id: number }>;
+    toasts: Array<ToastType & { id: number; isOpen: boolean }>;
 };
 
 declare global {
@@ -42,6 +42,21 @@ class Toaster extends Component<PropsType, StateType> {
 
     private closeToast = (id: number): void => {
         this.setState({
+            toasts: this.state.toasts.map(toast => {
+                if (toast.id === id) {
+                    return {
+                        ...toast,
+                        isOpen: false,
+                    };
+                }
+
+                return toast;
+            }),
+        });
+    };
+
+    private removeToast = (id: number): void => {
+        this.setState({
             toasts: this.state.toasts.filter(toast => toast.id !== id),
         });
     };
@@ -63,8 +78,9 @@ class Toaster extends Component<PropsType, StateType> {
             toasts: [
                 ...this.state.toasts,
                 {
-                    id: this.getToastId(),
                     ...toast,
+                    id: this.getToastId(),
+                    isOpen: true,
                 },
             ],
         });
@@ -81,8 +97,9 @@ class Toaster extends Component<PropsType, StateType> {
                         <Toast
                             key={toast.id}
                             autoDismiss={autoDismiss}
-                            isOpen
+                            isOpen={toast.isOpen}
                             {...toastProps}
+                            onExited={(): void => this.removeToast(toast.id)}
                             closeAction={(): void => {
                                 if (closeAction !== undefined) closeAction();
                                 this.closeToast(id);
