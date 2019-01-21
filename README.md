@@ -4,9 +4,7 @@
 
 # Bricks
 
-## Setup
-
-### Use it:
+## Use it:
 Install it using: `npm install @myonlinestore/bricks`.
 
 All components are named exports. For instance:
@@ -16,46 +14,8 @@ import { Button } from '@myonlinestore/bricks';
 <Button />
 ```
 
-### Run it:
+## Run it:
 
 - clone the repo
 - run `npm install`
 - run either `npm run watch` to start the dev-server running on localhost:9001 or run `npm run build` to build a dist to be used with `npm link`
-
-## Code conventions
-
-### Props 
-Props should be short. No prefixes just the essence of what it does like `show` or `error`. Just like html attributes. 
-
-```
-👍 error='Oops an error occurred'
-----
-👎 hasError='Oops an error occurred'
-```
-
-
-### Function names and state props
-Functions and state should describe what's happening and when it's happening. Therefore the name should start with the moment of execution like  `or`, `after`, `while` etc. The next part should be what, the action its executing. 
-
-```
-👍 onClose()
-----
-👎 closeAction()
-```
-
-### Types
-Types should end with the `Type` suffix. This makes them easy to identify as such in usage.
-
-```
-👍 type ButtonVariantType = {...}
-----
-👎 type ButtonVariant = {...}
-```
-
-### Variables 
-We try to keep the documentation to a minimum. Therefore the variables should provide context to what it does and indirectly explain what is happening in the code. So no single letter variables 🙂
-```
-👍 const windowToggle = true
-----
-👎 const t = true
-```
