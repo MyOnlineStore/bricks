@@ -28,14 +28,14 @@ import { Button } from '@myonlinestore/bricks';
 Props should be short. No prefixes just the essence of what it does like `show` or `error`. Just like html attributes. 
 
 ```
-👍 error='Oops an error occured'
+👍 error='Oops an error occurred'
 ----
-👎 hasError='Oops an error occured'
+👎 hasError='Oops an error occurred'
 ```
 
 
 ### Function names and state props
-Functions and state should describe what's happening an when it's happening. Therefore the name should start with the moment of execution like  `or`, `after`, `while` etc. The next part should be what, the action it's executing. 
+Functions and state should describe what's happening and when it's happening. Therefore the name should start with the moment of execution like  `or`, `after`, `while` etc. The next part should be what, the action its executing. 
 
 ```
 👍 onClose()
