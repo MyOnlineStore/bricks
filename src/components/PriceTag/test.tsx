@@ -1,6 +1,6 @@
 import React from 'react';
 import PriceTag from '.';
-import { mountWithTheme, shallowWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 
@@ -36,7 +36,7 @@ describe('PriceTag', () => {
     });
 
     it('should render an action price', () => {
-        const priceTag = shallowWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} strikethrough />);
+        const priceTag = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} strikethrough />);
 
         expect(priceTag).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
             modifier: '::after',
@@ -44,7 +44,7 @@ describe('PriceTag', () => {
     });
 
     it('should render with a superscript franction', () => {
-        const priceTag = shallowWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} superScriptFraction />);
+        const priceTag = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} superScriptFraction />);
 
         expect(priceTag).toHaveStyleRule('font-size', '.7em', { modifier: 'sup' });
     });

@@ -1,16 +1,12 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/_styled';
+import styled from '../../../utility/_styled';
 import StyledCell from '../Cell/style';
 
-type StyledRowProps = {
-    ref?: HTMLElement;
+type PropsType = {
     dragging?: boolean;
     focus?: boolean;
 };
 
-const StyledRow = withProps<StyledRowProps>(styled.tr)`
+const StyledRow = styled.tr<PropsType>`
     background-color: ${({ theme }): string => theme.Table.row.default.backgroundColor};
     transition: background-color 300ms;
     text-align: left;
@@ -33,4 +29,4 @@ const StyledRow = withProps<StyledRowProps>(styled.tr)`
 `;
 
 export default StyledRow;
-export { StyledRowProps };
+export { PropsType };

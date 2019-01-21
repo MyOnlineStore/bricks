@@ -7,7 +7,7 @@ import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './s
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import FlatButton from '../../components/Button';
+import IconButton from '../../components/IconButton';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 
@@ -42,13 +42,16 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
 
 class Select<GenericOptionType extends OptionBaseType> extends Component<PropsType<GenericOptionType>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
-    private inputWrapperRef: HTMLDivElement;
-    private wrapperRef: HTMLDivElement;
-    private windowRef: HTMLDivElement;
+    private inputWrapperRef: RefObject<HTMLDivElement>;
+    private wrapperRef: RefObject<HTMLDivElement>;
+    private windowRef: RefObject<HTMLDivElement>;
 
     public constructor(props: PropsType<GenericOptionType>) {
         super(props);
         this.inputRef = createRef();
+        this.inputWrapperRef = createRef();
+        this.wrapperRef = createRef();
+        this.windowRef = createRef();
 
         this.state = {
             hasFocus: false,
@@ -95,7 +98,12 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private handleClickOutside = (event: MouseEvent): void => {
-        if (!this.wrapperRef.contains(event.target as Node) && !this.windowRef.contains(event.target as Node)) {
+        if (
+            this.wrapperRef.current !== null &&
+            this.windowRef.current !== null &&
+            !this.wrapperRef.current.contains(event.target as Node) &&
+            !this.windowRef.current.contains(event.target as Node)
+        ) {
             this.close();
         }
     };
@@ -148,14 +156,15 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             this.inputRef.current.focus();
         }
 
-        const inputHeight = this.inputWrapperRef.getBoundingClientRect().height;
+        const inputHeight =
+            this.inputWrapperRef.current !== null ? this.inputWrapperRef.current.getBoundingClientRect().height : 0;
 
         if (inputHeight !== prevState.inputHeight) {
             this.setState({ inputHeight });
         }
 
-        if (prevState.isOpen && !this.state.isOpen) {
-            this.wrapperRef.focus();
+        if (prevState.isOpen && !this.state.isOpen && this.wrapperRef.current !== null) {
+            this.wrapperRef.current.focus();
         }
     }
 
@@ -177,11 +186,9 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
         return (
             <StyledWrapper
-                innerRef={(ref): void => {
-                    this.wrapperRef = ref;
-                }}
-                isDisabled={this.props.disabled}
-                isOpen={this.state.isOpen}
+                ref={this.wrapperRef}
+                disabled={this.props.disabled}
+                open={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
                 onChange={this.handleChangeEvent}
                 onFocus={this.handleFocus}
@@ -189,10 +196,10 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 tabIndex={this.props.disabled ? -1 : 0}
             >
                 <StyledInput
-                    isOpen={this.state.isOpen}
+                    open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
-                    innerRef={(ref): void => (this.inputWrapperRef = ref)}
+                    ref={this.inputWrapperRef}
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
@@ -225,29 +232,22 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     )}
                                 </Box>
                             )}
-                        <FlatButton
+                        <IconButton
+                            icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
                             title={this.state.isOpen ? 'close' : 'open'}
                             onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
                             variant="primary"
-                        >
-                            <Icon
-                                icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
-                                size="small"
-                                color={this.props.disabled ? this.props.theme.Select.disabled.chevron : undefined}
-                            />
-                        </FlatButton>
+                        />
                     </Box>
                 </StyledInput>
                 {createPortal(
                     <StyledWindow
-                        innerRef={(ref): void => {
-                            this.windowRef = ref;
-                        }}
-                        isOpen={this.state.isOpen}
+                        ref={this.windowRef}
+                        open={this.state.isOpen}
                         rect={
-                            (this.wrapperRef as HTMLDivElement | undefined) !== undefined
-                                ? this.wrapperRef.getBoundingClientRect()
+                            this.wrapperRef.current !== null
+                                ? this.wrapperRef.current.getBoundingClientRect()
                                 : undefined
                         }
                         inputHeight={this.state.inputHeight}

@@ -39,7 +39,6 @@ describe('ErrorBoundary', () => {
             </MosTheme>,
         ).toJSON();
 
-        expect(boundary).toMatchSnapshot();
         expect(mockReport).toHaveBeenCalled();
     });
 });

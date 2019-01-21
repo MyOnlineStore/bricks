@@ -2,6 +2,8 @@ import React from 'react';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Range from '.';
 import InputRange from 'react-input-range';
+import MosTheme from '../../themes/MosTheme';
+import { mount } from 'enzyme';
 
 describe('Range', () => {
     it('should not change value when disabled', () => {
@@ -43,14 +45,16 @@ describe('Range', () => {
     it('should be able to change value with slider', () => {
         /* tslint:disable */
         const onChangeMock = jest.fn();
-        (InputRange as any).mockImplementationOnce((props: any): JSX.Element => {
-            props.onChange({
-                min: 3,
-                max: 4,
-            });
+        (InputRange as any).mockImplementationOnce(
+            (props: any): JSX.Element => {
+                props.onChange({
+                    min: 3,
+                    max: 4,
+                });
 
-            return <div />;
-        });
+                return <div />;
+            },
+        );
 
         mountWithTheme(<Range value={{ min: 2, max: 5 }} minLimit={1} onChange={onChangeMock} maxLimit={10} />);
 
@@ -64,14 +68,16 @@ describe('Range', () => {
     it('should be able to change value with slider 2', () => {
         /* tslint:disable */
         const onChangeMock = jest.fn();
-        (InputRange as any).mockImplementationOnce((props: any): JSX.Element => {
-            props.onChange({
-                min: 3,
-                max: 4,
-            });
+        (InputRange as any).mockImplementationOnce(
+            (props: any): JSX.Element => {
+                props.onChange({
+                    min: 3,
+                    max: 4,
+                });
 
-            return <div />;
-        });
+                return <div />;
+            },
+        );
 
         mountWithTheme(<Range value={{ min: 2, max: 5 }} minLimit={1} maxLimit={10} />);
 
@@ -171,9 +177,15 @@ describe('Range', () => {
     });
 
     it('should update TextField values when props change', () => {
-        const component = mountWithTheme(
-            <Range value={{ min: 6, max: 8 }} minLimit={1} maxLimit={10} onChange={(): void => undefined} />,
-        );
+        const Root = (props: { value: { min: number; max: number } }) => {
+            return (
+                <MosTheme>
+                    <Range value={props.value} minLimit={1} maxLimit={10} onChange={(): void => undefined} />
+                </MosTheme>
+            );
+        };
+
+        const component = mount(<Root value={{ min: 6, max: 8 }} />);
 
         const firstInputPreUpdate = component.find('input').filterWhere(item => item.prop('value') === '6').length;
         const secondInputPreUpdate = component.find('input').filterWhere(item => item.prop('value') === '8').length;

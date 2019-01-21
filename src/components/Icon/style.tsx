@@ -1,14 +1,11 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type IconPropsType = {
     elementSize: 'small' | 'medium' | 'large';
     elementColor?: string;
 };
 
-const StyledIcon = withProps<IconPropsType>(styled.span)`
+const StyledIcon = styled.span<IconPropsType>`
     display: inline-block;
     position: relative;
     vertical-align: middle;

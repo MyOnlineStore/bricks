@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Component } from 'react';
+import React, { ChangeEvent, Component, RefObject } from 'react';
 import SeverityType from '../../types/_SeverityType';
 import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
@@ -31,8 +31,7 @@ type StateType = { focus: boolean };
 class TextField extends Component<PropsType, StateType> {
     public static Currency: WithCurrencyFormattingType = withCurrencyFormatting(TextField);
     public static Number: WithNumberFormattingType = withNumberFormatting(TextField);
-
-    private inputRef: HTMLInputElement;
+    private inputRef: HTMLInputElement | null;
 
     public constructor(props: PropsType) {
         super(props);
@@ -40,10 +39,17 @@ class TextField extends Component<PropsType, StateType> {
         this.state = { focus: false };
     }
 
-    public forceFocus = (): void => this.setState({ focus: true }, () => this.inputRef.focus());
+    public forceFocus = (): void => {
+        this.setState({ focus: true }, () => {
+            if (this.inputRef !== null) this.inputRef.focus();
+        });
+    };
 
     public handleFocus = (): void => {
-        this.setState({ focus: true }, () => this.inputRef.focus());
+        this.setState({ focus: true }, () => {
+            if (this.inputRef !== null) this.inputRef.focus();
+        });
+
         if (this.props.onFocus !== undefined) this.props.onFocus();
     };
 
@@ -79,9 +85,9 @@ class TextField extends Component<PropsType, StateType> {
                             onChange={this.onChange}
                             onFocus={this.handleFocus}
                             onBlur={this.handleBlur}
-                            innerRef={(ref): void => {
+                            ref={(ref): void => {
                                 this.inputRef = ref;
-                                if (this.props.extractRef !== undefined) this.props.extractRef(ref);
+                                if (ref !== null && this.props.extractRef !== undefined) this.props.extractRef(ref);
                             }}
                         />
                         <Box position="absolute" right="8px" top="8px">
@@ -94,16 +100,15 @@ class TextField extends Component<PropsType, StateType> {
                         </StyledAffixWrapper>
                     )}
                 </StyledWrapper>
-                {this.props.feedback &&
-                    this.props.feedback.message !== '' && (
-                        <Box margin={trbl(6, 0, 0, 12)}>
-                            <InlineNotification
-                                icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
-                                message={this.props.feedback.message}
-                                severity={this.props.feedback.severity}
-                            />
-                        </Box>
-                    )}
+                {this.props.feedback && this.props.feedback.message !== '' && (
+                    <Box margin={trbl(6, 0, 0, 12)}>
+                        <InlineNotification
+                            icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
+                            message={this.props.feedback.message}
+                            severity={this.props.feedback.severity}
+                        />
+                    </Box>
+                )}
             </>
         );
     }

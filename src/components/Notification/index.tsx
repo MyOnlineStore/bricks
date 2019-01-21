@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import { StyledType } from '../../utility/_styled';
 import trbl from '../../utility/trbl';
 import Icon, { MediumIcons } from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
 import { SeverityIcons } from '../../types/_SeverityType';
 
-type PropsType = StyledType & {
+type PropsType = {
     severity: keyof typeof SeverityIcons;
     message: string;
     icon?: keyof typeof MediumIcons;

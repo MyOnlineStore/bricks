@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import withCurrencyFormatting from './';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/_styled/testing';
+import MosTheme from '../../../../themes/MosTheme';
+import { mount } from 'enzyme';
 
 describe('withCurrencyFormatting', () => {
     it('should format currency input', () => {
@@ -165,9 +167,19 @@ describe('withCurrencyFormatting', () => {
         const changeMock = jest.fn();
         const CurrencyField = withCurrencyFormatting(TextField);
 
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
+        const Root: FunctionComponent<{ locale: string; currency: string }> = props => (
+            <MosTheme>
+                <CurrencyField
+                    name=""
+                    value={19.12}
+                    locale={props.locale}
+                    currency={props.currency}
+                    onChange={changeMock}
+                />
+            </MosTheme>
         );
+
+        const component = mount(<Root locale="en-GB" currency="USD" />);
 
         component.setProps({
             locale: 'nl-NL',
@@ -175,6 +187,7 @@ describe('withCurrencyFormatting', () => {
         });
 
         component.find('input').simulate('blur');
+
         expect(component.find('input').prop('value')).toEqual('19,12');
         expect(component.find(TextField).prop('prefix')).toEqual('€');
     });
@@ -264,14 +277,7 @@ describe('withCurrencyFormatting', () => {
         const changeMock = jest.fn();
 
         const component = mountWithTheme(
-            <CurrencyField
-                name=""
-                value={2554}
-                locale="nl-NL"
-                currency="EUR"
-                onChange={changeMock}
-                minor
-            />,
+            <CurrencyField name="" value={2554} locale="nl-NL" currency="EUR" onChange={changeMock} minor />,
         );
 
         expect(component.find('input').prop('value')).toEqual('25.54');

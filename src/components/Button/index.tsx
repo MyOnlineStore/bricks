@@ -1,7 +1,5 @@
 import React, { Children, ReactNode } from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 import BareButton, { PropsType as BareButtonPropsType } from './base';
 import Icon, { MediumPropsType } from '../Icon';
 import Box from '../Box';
@@ -60,36 +58,38 @@ type PropsType = BareButtonPropsType & {
     children?: ReactNode;
 };
 
-const Button = withProps<PropsType>(styled(BareButton)).attrs({
-    children: (props: PropsType): JSX.Element => {
-        const color = props.loading ? 'transparent' : undefined;
+const Button = styled(BareButton).attrs((props: PropsType) => {
+    const color = props.loading ? 'transparent' : undefined;
 
-        return (
-            <>
-                {props.loading && (
-                    <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        position="absolute"
-                        left="0"
-                        top="0"
-                        right="0"
-                        bottom="0"
-                        padding={[6]}
-                    >
-                        <Spinner />
-                    </Box>
-                )}
-                {props.icon && (
-                    <Box inline padding={[0, 6, 0, 0]}>
-                        <Icon size="medium" icon={props.icon} color={color} />
-                    </Box>
-                )}
-                <span style={{ color }}>{Children.count(props.children) > 0 ? props.children : props.title}</span>
-            </>
-        );
-    },
-})`
+    const children: ReactNode = (
+        <>
+            {props.loading && (
+                <Box
+                    justifyContent="center"
+                    alignItems="center"
+                    position="absolute"
+                    left="0"
+                    top="0"
+                    right="0"
+                    bottom="0"
+                    padding={[6]}
+                >
+                    <Spinner />
+                </Box>
+            )}
+            {props.icon && (
+                <Box inline padding={[0, 6, 0, 0]}>
+                    <Icon size="medium" icon={props.icon} color={color} />
+                </Box>
+            )}
+            <span style={{ color }}>{Children.count(props.children) > 0 ? props.children : props.title}</span>
+        </>
+    );
+
+    return {
+        children,
+    };
+})<PropsType>`
     ${({ theme, variant, compact, disabled, loading }): string => {
         const hover = `
             background-color: ${theme.Button[variant].hover.backgroundColor};

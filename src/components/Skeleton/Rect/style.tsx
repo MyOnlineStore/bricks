@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S, keyframes } from 'styled-components';
-import _T from '../../../types/ThemeType';
-import styled, { withProps } from '../../../utility/_styled';
+import styled, { keyframes } from '../../../utility/_styled';
 
 type RectPropsType = {
     width?: string;
@@ -18,7 +15,7 @@ const wipe = keyframes`
     }
 `;
 
-const StyledRectSkeleton = withProps<RectPropsType>(styled.div)`
+const StyledRectSkeleton = styled.div<RectPropsType>`
     position: relative;
     overflow: hidden;
     color: transparent;

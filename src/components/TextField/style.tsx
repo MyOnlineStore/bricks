@@ -1,8 +1,5 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import SeverityType from '../../types/_SeverityType';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type TextFieldThemeType = {
     idle: {
@@ -34,21 +31,21 @@ type TextFieldThemeType = {
     };
 };
 
-type AffixProps = {
+type AffixPropsType = {
     disabled?: boolean;
 };
 
-type WrapperProps = {
+type WrapperPropsType = {
     focus: boolean;
     disabled?: boolean;
     severity: SeverityType;
 };
 
-type InputProps = {
+type InputPropsType = {
     disabled?: boolean;
 };
 
-const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
+const StyledInput = styled.input<InputPropsType>`
     width: 100%;
     border: none;
     margin: 0;
@@ -72,7 +69,7 @@ const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
             : ''}
 `;
 
-const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
+const StyledAffixWrapper = styled.div<AffixPropsType>`
     display: flex;
     padding: 0 12px;
     user-select: none;
@@ -99,7 +96,7 @@ const StyledAffix = styled.span`
     overflow: hidden;
 `;
 
-const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
+const StyledWrapper = styled.div<WrapperPropsType>`
     transition: border-color 100ms, box-shadow 100ms;
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};

@@ -1,13 +1,10 @@
-import _R from 'react';
-import styled, { withProps } from '../../../../src/utility/_styled';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../../types/ThemeType';
+import styled from '../../../../src/utility/_styled';
 
-type OptionPropsType = {
+type PropsType = {
     isTargeted: boolean;
 };
 
-const StyledOption = withProps<OptionPropsType, HTMLDivElement>(styled.div)`
+const StyledOption = styled.div<PropsType>`
     cursor: pointer;
     background: ${({ theme, isTargeted }): string => (isTargeted ? theme.Select.common.secondaryColor : '')};
 `;

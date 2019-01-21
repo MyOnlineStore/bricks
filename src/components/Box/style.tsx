@@ -1,9 +1,6 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import { PropsType } from '.';
-import _T from '../../types/ThemeType';
 import { TrblType } from '../../utility/trbl';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type BoxPropsType = PropsType & {
     flexWrap?: PropsType['wrap'];
@@ -19,7 +16,7 @@ type BoxPropsType = PropsType & {
     padding?: TrblType;
 };
 
-const StyledDiv = withProps<BoxPropsType, HTMLDivElement>(styled.div)`
+const StyledDiv = styled.div<BoxPropsType>`
     box-sizing: border-box;
     display: ${({ inline }): string => (inline ? 'inline-flex' : 'flex')};
     height: ${({ elementHeight }): string => (elementHeight !== undefined ? elementHeight : '')};

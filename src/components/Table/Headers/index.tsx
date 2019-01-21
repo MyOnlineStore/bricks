@@ -103,7 +103,7 @@ class Headers extends Component<PropsType, StateType> {
 
         return (
             <StyledHeader
-                align={alignment}
+                headerAlign={alignment}
                 key={key}
                 onClick={
                     this.props.onSort !== undefined && this.state.columns[key].sorting !== undefined
@@ -141,9 +141,9 @@ class Headers extends Component<PropsType, StateType> {
         return (
             <thead>
                 <tr>
-                    {this.props.draggable && <StyledHeader align="start" />}
+                    {this.props.draggable && <StyledHeader headerAlign="start" />}
                     {this.props.selectable && (
-                        <StyledHeader align="start">
+                        <StyledHeader headerAlign="start">
                             <Checkbox
                                 checked={this.props.checked}
                                 name=""

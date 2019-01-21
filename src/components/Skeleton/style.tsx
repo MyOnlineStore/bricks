@@ -1,5 +1,6 @@
-import { StyledComponentClass as _S, keyframes } from 'styled-components';
+import { keyframes } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
+import { css } from '../../utility/_styled';
 
 type SkeletonThemeType = {
     common: {
@@ -21,8 +22,7 @@ const wipe = keyframes`
     }
 `;
 
-/* tslint:disable */
-const getSkeletonStyles = (theme: ThemeType): string => `
+const getSkeletonStyles = (theme: ThemeType) => css`
     user-select: none;
     color: transparent;
     background-color: ${theme.Skeleton.common.backgroundColor};
@@ -32,7 +32,6 @@ const getSkeletonStyles = (theme: ThemeType): string => `
     animation: 3s infinite ${wipe};
     border-radius: ${theme.Skeleton.common.borderRadius};
 `;
-/* tslint:enable */
 
 export default getSkeletonStyles;
 export { SkeletonThemeType };

@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type StyledToggleType = {
     checked: boolean;
@@ -12,6 +9,7 @@ type StyledToggleType = {
 type StyledToggleSkinType = {
     checked: boolean;
     error: boolean;
+    disabled?: boolean;
     elementFocus: boolean;
 };
 
@@ -41,13 +39,13 @@ type ToggleThemeType = {
     };
 };
 
-const StyledToggle = withProps<StyledToggleType, HTMLInputElement>(styled.input)`
+const StyledToggle = styled.input<StyledToggleType>`
     opacity: 0;
     height: 0;
     width: 0;
 `;
 
-const StyledToggleSkin = withProps<StyledToggleSkinType, HTMLDivElement>(styled.div)`
+const StyledToggleSkin = styled.div<StyledToggleSkinType>`
     width: 48px;
     height: 18px;
     border-radius: 10px;
@@ -100,9 +98,5 @@ const StyledToggleSkin = withProps<StyledToggleSkinType, HTMLDivElement>(styled.
     }
     `;
 
-const StyledToggleWrapper = styled.div`
-    display: flex;
-`;
-
 export default StyledToggle;
-export { StyledToggleWrapper, ToggleThemeType, StyledToggleSkin, StyledToggleType };
+export { ToggleThemeType, StyledToggleSkin };

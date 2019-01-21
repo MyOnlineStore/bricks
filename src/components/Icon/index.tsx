@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { StyledType } from '../../utility/_styled';
 import StyledIcon from './style';
 import { LargeIcons, MediumIcons, SmallIcons } from './types';
 
-type BasePropsType = StyledType & {
+type BasePropsType = {
     color?: string;
 };
 

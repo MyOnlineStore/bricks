@@ -1,12 +1,13 @@
 import React from 'react';
 import Select from '.';
-import { mountWithTheme, shallowWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/_styled/testing';
 import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
 import Text from '../Text';
-import { mosTheme } from '../../themes/MosTheme';
+import MosTheme, { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
+import { mount } from 'enzyme';
 
 const options = [
     {
@@ -56,13 +57,13 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'Tab',
             preventDefault: preventDefaultMock,
         });
@@ -75,14 +76,14 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('focus');
+        component.find(Select).simulate('focus');
 
         expect(component.find(StyledInput)).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.wrapper.focus.borderColor}`,
         );
 
-        component.simulate('blur');
+        component.find(Select).simulate('blur');
 
         expect(component.find(StyledInput)).toHaveStyleRule('border', `solid 1px ${mosTheme.Select.input.borderColor}`);
     });
@@ -92,13 +93,13 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', { key: 'ArrowDown' });
+        component.find(Select).simulate('keyDown', { key: 'ArrowDown' });
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
 
-        component.simulate('keyDown', { key: 'Escape' });
+        component.find(Select).simulate('keyDown', { key: 'Escape' });
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'none');
 
-        component.simulate('keyDown', { key: 'ArrowUp' });
+        component.find(Select).simulate('keyDown', { key: 'ArrowUp' });
         expect(component.find('[data-test="bricks-select-collapse"]').prop('style')).toHaveProperty('display', 'block');
     });
 
@@ -107,7 +108,7 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
@@ -134,7 +135,7 @@ describe('Select', () => {
             />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
@@ -202,7 +203,7 @@ describe('Select', () => {
             <Select onChange={changeHandler} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
@@ -221,15 +222,15 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
@@ -240,7 +241,7 @@ describe('Select', () => {
                 .prop('isTargeted'),
         ).toBe(true);
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
@@ -259,19 +260,19 @@ describe('Select', () => {
             <Select onChange={(): void => undefined} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowUp',
         });
 
@@ -282,7 +283,7 @@ describe('Select', () => {
                 .prop('isTargeted'),
         ).toBe(true);
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowUp',
         });
 
@@ -301,15 +302,15 @@ describe('Select', () => {
             <Select onChange={changeHandler} value="" emptyText="empty" options={options} />,
         );
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: ' ',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        component.simulate('keyDown', {
+        component.find(Select).simulate('keyDown', {
             key: 'Enter',
         });
 
@@ -317,11 +318,16 @@ describe('Select', () => {
     });
 
     it('should handle a selected option', () => {
-        const component = shallowWithTheme(
+        const component = mountWithTheme(
             <Select onChange={(): void => undefined} value={options[1].value} emptyText="empty" options={options} />,
-        ).dive();
+        );
 
-        expect(component.find(StyledInput).findWhere(node => node.text() === options[1].label).length).toBe(1);
+        expect(
+            component
+                .find(StyledInput)
+                .findWhere(node => node.text() === options[1].label && node.type() === 'p')
+                .hostNodes().length,
+        ).toBe(1);
     });
 
     it('should render an alternative option rendering', () => {
@@ -412,13 +418,26 @@ describe('Select', () => {
             .at(1)
             .simulate('click');
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
+        expect(component.find(StyledWindow).prop('open')).toEqual(false);
     });
 
     it('should close the Option-Select window when the component gets disabled', () => {
-        const component = mountWithTheme(
-            <Select onChange={(): void => undefined} value="" emptyText="" options={options} />,
-        );
+        const Root = (props: { disabled?: boolean }) => {
+            return (
+                <MosTheme>
+                    <Select
+                        onChange={(): void => undefined}
+                        value=""
+                        emptyText=""
+                        options={options}
+                        disabled={props.disabled}
+                    />
+                    ,
+                </MosTheme>
+            );
+        };
+
+        const component = mount(<Root />);
 
         component
             .find(StyledInput)
@@ -429,14 +448,14 @@ describe('Select', () => {
         component.setProps({ disabled: true });
         component.update();
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(false);
+        expect(component.find(StyledWindow).prop('open')).toEqual(false);
     });
 
     it('should handle a simulated change event', () => {
         const changeMock = jest.fn();
         const component = mountWithTheme(<Select onChange={changeMock} value="" emptyText="" options={options} />);
 
-        component.simulate('change', {
+        component.find(Select).simulate('change', {
             target: {
                 value: options[0].value,
             },

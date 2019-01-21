@@ -13,7 +13,9 @@ const contrastTheme = (theme: ThemeType): ThemeType => {
 };
 
 const ContrastThemeProvider: FunctionComponent<{ enable?: boolean }> = ({ enable, children }): JSX.Element => (
-    <ThemeProvider theme={!enable ? (theme): ThemeType => theme : contrastTheme}>{children}</ThemeProvider>
+    <ThemeProvider theme={!enable ? (theme): ThemeType => theme : contrastTheme}>
+        <>{children}</>
+    </ThemeProvider>
 );
 
 const Contrast: FunctionComponent<PropsType> = (props): JSX.Element => (

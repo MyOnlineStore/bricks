@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ResizeObserver from 'resize-observer-polyfill';
 import FoldOut from '../FoldOut';
+import 'jest-styled-components';
 
 /* tslint:disable */
 (console.warn as any).mockImplementation(() => {});
@@ -19,13 +20,13 @@ describe('FoldOut', () => {
     it('should have a height when open', () => {
         const foldOut = renderer.create(<FoldOut isOpen />, renderOptions).toJSON();
 
-        expect(foldOut).toMatchSnapshot();
+        expect(foldOut).toHaveStyleRule('height', '900px');
     });
 
     it('should have no height when closed', () => {
         const foldOut = renderer.create(<FoldOut isOpen={false} />, renderOptions).toJSON();
 
-        expect(foldOut).toMatchSnapshot();
+        expect(foldOut).toHaveStyleRule('height', '0');
     });
 
     it('should use the fallback and warn once ResizeObserver is not available or throws', () => {
@@ -35,7 +36,7 @@ describe('FoldOut', () => {
 
         const foldOut = renderer.create(<FoldOut isOpen />, renderOptions).toJSON();
 
-        expect(foldOut).toMatchSnapshot();
+        expect(foldOut).toHaveStyleRule('height', 'auto');
         // tslint:disable-next-line
         expect(console.warn).toHaveBeenCalled();
     });

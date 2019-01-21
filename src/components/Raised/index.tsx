@@ -1,11 +1,27 @@
-import React, { FunctionComponent } from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import StyledRaised, { RaisedPropsType } from './style';
+import styled from '../../utility/_styled';
 
-const RaisedElement: FunctionComponent<RaisedPropsType> = (props): JSX.Element => (
-    <StyledRaised level={props.level}>
-        {props.children}
-    </StyledRaised>
-);
+type RaisedLevelThemeType = {
+    boxShadow: string;
+};
 
-export default RaisedElement;
+type RaisedThemeType = {
+    level0: RaisedLevelThemeType;
+    level1: RaisedLevelThemeType;
+    level2: RaisedLevelThemeType;
+    [key: string]: RaisedLevelThemeType;
+};
+
+type PropsType = {
+    level: 0 | 1 | 2;
+};
+
+const Raised = styled.div<PropsType>`
+    box-shadow: ${({ level, theme }): string => (level ? theme.Raised[`level${level}`].boxShadow : 'none')};
+    transition: box-shadow 300ms;
+    border-radius: 3px 3px 3px 3px;
+    padding: 36px;
+    width: 100%;
+`;
+
+export default Raised;
+export { RaisedLevelThemeType, RaisedThemeType, PropsType };

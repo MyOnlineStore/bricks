@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 import Button from '../Button';
 
 type MultiButtonThemeType = {
@@ -40,8 +37,8 @@ type MultiButtonThemeType = {
     };
 };
 
-type StyledMultiButtonPropsType = {
-    isOpen: boolean;
+type PropsType = {
+    open: boolean;
 };
 
 const StyledMultiButton = styled(Button)`
@@ -79,9 +76,9 @@ const StyledChevronButton = styled(Button)`
     }
 `;
 
-const StyledWrapper = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styled.div)`
+const StyledWrapper = styled.div<PropsType>`
     border-radius: ${({ theme }): string => theme.MultiButton.window.borderRadius}
-    box-shadow: ${({ isOpen, theme }): string => (isOpen ? theme.MultiButton.button.common.active.boxShadow : '')};
+    box-shadow: ${({ open, theme }): string => (open ? theme.MultiButton.button.common.active.boxShadow : '')};
     transform: translateZ(0) translate3d(0, 0, 0);
     transition: transform 0.1s, background 0.3s, color 0.3s, box-shadow 0.1s, border 0.3s;
     outline: none;
@@ -95,7 +92,7 @@ const StyledWrapper = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styl
     }
 `;
 
-const StyledWindow = withProps<StyledMultiButtonPropsType, HTMLDivElement>(styled.div)`
+const StyledWindow = styled.div<PropsType>`
     box-sizing: border-box;
     background: ${({ theme }): string => theme.MultiButton.window.backgroundColor}
     overflow: hidden;

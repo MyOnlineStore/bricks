@@ -7,7 +7,9 @@ type PropsType = {
 };
 
 const MerchantTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
-    <ThemeProvider theme={props.theme}>{props.children}</ThemeProvider>
+    <ThemeProvider theme={props.theme}>
+        <>{props.children}</>
+    </ThemeProvider>
 );
 
 export default MerchantTheme;

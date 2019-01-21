@@ -1,8 +1,5 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import SeverityType from '../../types/_SeverityType';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/_styled';
+import styled from '../../utility/_styled';
 
 type VariantStyleType = {
     borderColor: string;
@@ -31,11 +28,11 @@ const MessageSeparator = styled.div`
     border-bottom: 1px solid ${({ theme }): string => theme.MessageStream.common.borderColor};
 `;
 
-type MessagePropsType = {
+type PropsType = {
     severity: SeverityType;
 };
 
-const StyledMessage = withProps<MessagePropsType, HTMLDivElement>(styled.div)`
+const StyledMessage = styled.div<PropsType>`
     position: relative;
 
     ${({ theme, severity }): string => `

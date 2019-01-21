@@ -1,7 +1,4 @@
-import styled, { withProps } from '../../../src/utility/_styled';
-import _T from '../../types/ThemeType';
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
+import styled from '../../../src/utility/_styled';
 
 type SelectThemeType = {
     common: {
@@ -36,9 +33,9 @@ type SelectThemeType = {
     };
 };
 
-type WrapperProps = {
-    isOpen: boolean;
-    isDisabled?: boolean;
+type WrapperPropsType = {
+    open: boolean;
+    disabled?: boolean;
 };
 
 const INNER_OFFSET: number = 6;
@@ -47,7 +44,7 @@ const StyledPlaceholder = styled.span`
     color: ${({ theme }): string => theme.Select.disabled.color};
 `;
 
-const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
+const StyledWrapper = styled.div<WrapperPropsType>`
     transition: all .3s;
     width: 100%;
     outline: none;
@@ -62,28 +59,28 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
         content: '';
         z-index: -1;
         border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-        ${({ isOpen }): string =>
-            isOpen
+        ${({ open }): string =>
+            open
                 ? `
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 `
                 : ''}
-        border: ${({ theme, isOpen }): string =>
-            isOpen
+        border: ${({ theme, open }): string =>
+            open
                 ? `solid 1px ${theme.Select.wrapper.common.borderColor}`
                 : `solid 0px ${theme.Select.common.secondaryColor}`};
         border-bottom: none;
         background: ${({ theme }): string => theme.Select.common.secondaryColor};
         position: absolute;
-        top: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
-        left: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
-        right: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
-        bottom: ${({ isOpen }): string => (isOpen ? `-${INNER_OFFSET}px` : '0')};
+        top: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        left: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        right: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        bottom: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
     }
 
-    ${({ theme, isDisabled, isOpen }): string => {
-        return !isDisabled || !isOpen
+    ${({ theme, disabled, open }): string => {
+        return !disabled || !open
             ? `&:focus {
                 box-shadow: ${theme.Select.wrapper.focus.boxShadow};
             }`
@@ -91,13 +88,13 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     }}
     `;
 
-type WindowProps = {
-    isOpen: boolean;
+type WindowPropsType = {
+    open: boolean;
     rect?: ClientRect;
     inputHeight?: number;
 };
 
-const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
+const StyledWindow = styled.div<WindowPropsType>`
     box-sizing: border-box;
     position: fixed;
     max-height: 240px;
@@ -105,30 +102,31 @@ const StyledWindow = withProps<WindowProps, HTMLDivElement>(styled.div)`
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
-    padding-top: ${({ isOpen }): string => (isOpen ? '6px' : '0')};
+    padding-top: ${({ open }): string => (open ? '6px' : '0')};
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
-    border: ${({ theme, isOpen }): string =>
-        isOpen ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
+    border: ${({ theme, open }): string =>
+        open ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
     border-top: none;
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    ${({ isOpen }): string => (!isOpen ? 'cursor: pointer' : '')};
+    ${({ open }): string => (!open ? 'cursor: pointer' : '')};
     z-index: 1000;
 `;
 
-type InputProps = {
-    isOpen: boolean;
+type InputPropsType = {
+    open: boolean;
     hasFocus: boolean;
     disabled: boolean;
 };
 
-const StyledInput = withProps<InputProps>(styled.div)`
-    transition: all .3s;
+const StyledInput = styled.div<InputPropsType>`
+    transition: all 0.3s;
     box-sizing: border-box;
     width: 100%;
-    border: solid 1px ${({ theme, hasFocus, isOpen }): string =>
-        hasFocus && !isOpen ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
+    border: solid 1px
+        ${({ theme, hasFocus, open }): string =>
+            hasFocus && !open ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.Select.disabled.background : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};

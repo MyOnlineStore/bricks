@@ -1,6 +1,4 @@
 import React, { FunctionComponent, Children, ReactNode } from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
 import Box from '../Box';
 import Heading from '../Heading';
 import Illustration, { Illustrations } from '../Illustration';

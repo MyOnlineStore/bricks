@@ -6,6 +6,7 @@ import Spinner from '.';
 
 storiesOf('Spinner', module).add('Default', () => {
     const size = text('wrapper size', '100px');
+
     const StyledDiv = styled.div`
         width: ${size};
         height: ${size};

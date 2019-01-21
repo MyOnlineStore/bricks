@@ -15,13 +15,10 @@ describe('withNumberFormatting', () => {
     });
 
     it('should restore the savedValue on blur when the input is not numeric', () => {
-        /* tslint:disable */
-        const changeMock = jest.fn(() => {
-            component.setProps({ value: 123 });
-        });
-        /*tslint:enable */
+        const changeMock = jest.fn();
+
         const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
+        const component = mountWithTheme(<NumberField name="" value={123} onChange={changeMock} />);
 
         component.find('input').simulate('change', { target: { value: 'abcd' } });
         component.find('input').simulate('blur');
@@ -38,29 +35,5 @@ describe('withNumberFormatting', () => {
         component.find('input').simulate('blur');
 
         expect(changeMock).toHaveBeenCalledWith(0);
-    });
-
-    it('should save the input on every change', () => {
-        /* tslint:disable */
-        const changeMock = jest.fn(value => {
-            component.setProps({ value });
-        });
-        /*tslint:enable */
-        const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(
-            <NumberField
-                name=""
-                value={123}
-                onChange={(value: number): void => {
-                    changeMock(value);
-                }}
-            />,
-        );
-
-        component.find('input').simulate('change', { target: { value: '12' } });
-        expect(component.state('savedValue')).toEqual(12);
-
-        component.find('input').simulate('change', { target: { value: '1' } });
-        expect(component.state('savedValue')).toEqual(1);
     });
 });
