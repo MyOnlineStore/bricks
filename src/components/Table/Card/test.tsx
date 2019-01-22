@@ -3,28 +3,9 @@ import Card from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
 import StyledRow from './style';
 import { ContrastThemeProvider } from '../../Contrast';
+import StyledCard from './style';
 
 describe('Cards', () => {
-    it('should handle mouse focus and blur when draggable', () => {
-        const component = mountWithTheme(
-            <div>
-                <Card
-                    row={{ id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' }}
-                    columns={{
-                        id: { header: 'Product ID' },
-                        name: { header: 'name' },
-                        price: { header: 'Price' },
-                    }}
-                    draggable
-                    selectable
-                    selected={true}
-                    index={1}
-                    onSelection={(): void => undefined}
-                />
-            </div>,
-        );
-    });
-
     it('should handle mouse enter and leave', () => {
         const component = mountWithTheme(
             <div>

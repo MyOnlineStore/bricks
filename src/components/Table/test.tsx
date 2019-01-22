@@ -37,7 +37,7 @@ describe('Table', () => {
     it('should render the correct amount of cards', () => {
         const table = mountWithTheme(
             <Table
-                view={'datacard'}
+                as="datacard"
                 columns={{
                     id: { header: 'Product ID' },
                     name: { header: 'name' },
@@ -58,7 +58,7 @@ describe('Table', () => {
     it('should render a column with buttons when buttons are provided', () => {
         const table = mountWithTheme(
             <Table
-                view={'table'}
+                as="table"
                 columns={{
                     id: { header: 'Product ID' },
                     name: { header: 'name' },
@@ -92,7 +92,7 @@ describe('Table', () => {
     it('should render a CompactHeader with a Select when there are column with sort', () => {
         const table = mountWithTheme(
             <Table
-                view={'datacard'}
+                as={'datacard'}
                 columns={{
                     id: { header: 'Product ID' },
                     name: { header: 'name' },

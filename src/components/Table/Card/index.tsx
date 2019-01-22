@@ -8,13 +8,15 @@ import Icon from '../../Icon';
 import Branch from '../../Branch';
 import { Draggable, DraggableProvided } from 'react-beautiful-dnd';
 import { ContrastThemeProvider } from '../../Contrast';
+import StyledTable from '../style';
+import StyledRow from '../Row/style';
+import StyledCell from '../Cell/style';
 
 type PropsType = {
-    // tslint:disable
+    // tslint:disable-next-line
     columns: {
         [key: string]: ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, any>;
     };
-    // tsline:enable
     row: BaseRowType;
     draggable: boolean;
     selected: boolean;
@@ -58,7 +60,7 @@ class Card extends Component<PropsType, StateType> {
         return (
             <Box>
                 <Box padding={[12, 24, 12, 12]} basis="auto" grow={1}>
-                    <table>
+                    <StyledTable>
                         <tbody>
                             {Object.keys(this.props.columns)
                                 .sort((a, b) => {
@@ -77,27 +79,26 @@ class Card extends Component<PropsType, StateType> {
                                 .map((key, index) => {
                                     const column = this.props.columns[key];
                                     const cell = this.props.row[key];
-                                    const align = column.align ? column.align : 'start';
 
                                     if (cell !== undefined) {
                                         return (
-                                            <tr key={`row_${index}`}>
-                                                <td className="label">
-                                                    <Text>{this.props.columns[key].header}</Text>
-                                                </td>
-                                                <td className="value">
+                                            <StyledRow key={`row_${index}`}>
+                                                <StyledCell align="start">
+                                                    <Text strong>{this.props.columns[key].header}</Text>
+                                                </StyledCell>
+                                                <StyledCell align="start">
                                                     {(column.render !== undefined &&
                                                         column.render(cell, this.props.row)) ||
                                                         ((typeof cell === 'string' || typeof cell === 'number') && (
                                                             <Text>{cell}</Text>
                                                         ))}
-                                                </td>
-                                            </tr>
+                                                </StyledCell>
+                                            </StyledRow>
                                         );
                                     }
                                 })}
                         </tbody>
-                    </table>
+                    </StyledTable>
                 </Box>
                 <Box direction="column" width="50px" alignItems="center" padding={[12, 6]} grow={0}>
                     {this.props.selectable && (

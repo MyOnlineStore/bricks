@@ -4,12 +4,6 @@ import Checkbox from '../../Checkbox';
 import { ColumnType, SortDirectionType } from '..';
 import Select from '../../Select';
 
-enum SortingSteps {
-    'none' = 'ascending',
-    'ascending' = 'descending',
-    'descending' = 'none',
-}
-
 type PropsType = {
     // tslint:disable-next-line
     columns: { [key: string]: ColumnType<any, any> };
@@ -101,13 +95,8 @@ class Headers extends Component<PropsType, StateType> {
     };
 
     public handleChange = (key: string): void => {
-        let direction: SortDirectionType = 'descending';
-        let actualKey = key.substr(0, key.length - 11);
-
-        if (key.indexOf('_ascending') > 0) {
-            direction = 'ascending';
-            actualKey = key.substr(0, key.length - 10);
-        }
+        const direction: SortDirectionType = key.indexOf('_ascending') > 0 ? 'ascending' : 'descending';
+        const actualKey = direction === 'ascending' ? key.substr(0, key.length - 10) : key.substr(0, key.length - 11);
 
         if (this.props.onSort !== undefined && this.state.columns[actualKey].sorting !== undefined) {
             this.applySorting(actualKey, direction);

@@ -13,7 +13,7 @@ enum Alignments {
 
 const StyledCell = styled.td<PropsType>`
     width: ${({ elementWidth }): string => (elementWidth && elementWidth !== 'fit' ? elementWidth : 'inherit')};
-    ${({ elementWidth }): string => (elementWidth === 'fit' ? 'white-space: nowrap;' : '')}
+    ${({ elementWidth }): string => (elementWidth === 'fit' ? 'white-space: nowrap; width: 1px;' : '')}
     border-bottom: ${({ theme }): string => `1px solid ${theme.Table.cell.default.borderColor}`};
     padding: 12px;
     text-align: ${({ cellAlign }): string => Alignments[cellAlign]}};

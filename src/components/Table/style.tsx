@@ -4,6 +4,12 @@ type TableThemeType = {
     default: {
         backgroundColor: string;
     };
+    card: {
+        boxShadow: string;
+        backgroundColor: string;
+        borderRadius: string;
+        spacing: string;
+    };
     row: {
         default: {
             backgroundColor: string;

@@ -578,6 +578,12 @@ const theme: ThemeType = {
         default: {
             backgroundColor: silver.darker1,
         },
+        card: {
+            boxShadow: '0 2px 10px 0 rgba(33, 37, 43, .15)',
+            backgroundColor: silver.lighter1,
+            borderRadius: roundness.base,
+            spacing: '24px',
+        },
         cell: {
             default: {
                 backgroundColor: silver.lighter1,

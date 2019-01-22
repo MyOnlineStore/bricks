@@ -15,15 +15,8 @@ type BaseRowType = {
     id: string;
     selected?: boolean;
     buttons?: Array<ReactNode>;
-    statusIcons?: Array<StatusIconType>;
     // tslint:disable-next-line
     [key: string]: string | number | boolean | undefined | Array<ReactNode> | ReactNode;
-};
-
-type StatusIconType = {
-    label: string;
-    severity?: SeverityType;
-    icon: keyof typeof MediumIcons;
 };
 
 type ColumnType<GenericCellType, GenericRowType> = {
@@ -36,7 +29,7 @@ type ColumnType<GenericCellType, GenericRowType> = {
 };
 
 type PropsType<GenericRowType extends BaseRowType> = {
-    view?: 'table' | 'datacard';
+    as?: 'table' | 'datacard';
     rows: Array<GenericRowType>;
     columns: {
         [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<
@@ -168,7 +161,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         const isSelectable = this.props.onSelection !== undefined;
         const rows = this.sortRows();
         const hasButtonsColumn = this.props.rows.filter(row => row.buttons).length > 0;
-        const view = this.props.view !== undefined ? this.props.view : 'table';
+        const as = this.props.as !== undefined ? this.props.as : 'table';
 
         const headerProps = {
             draggable: isDraggable,
@@ -182,7 +175,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
 
         return (
             <Branch
-                condition={view === 'datacard'}
+                condition={as === 'datacard'}
                 ifTrue={(children): JSX.Element => (
                     <Branch
                         condition={isDraggable}
@@ -231,7 +224,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         },
                     };
 
-                    if (view === 'datacard') {
+                    if (as === 'datacard') {
                         return <Card key={row.id} {...props} />;
                     }
 
