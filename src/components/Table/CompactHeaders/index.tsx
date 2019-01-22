@@ -3,6 +3,8 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { ColumnType, SortDirectionType } from '..';
 import Select from '../../Select';
+import Text from '../../Text';
+import Icon from '../../Icon';
 
 type PropsType = {
     // tslint:disable-next-line
@@ -127,11 +129,13 @@ class Headers extends Component<PropsType, StateType> {
                 return [
                     {
                         value: `${key}_ascending`,
-                        label: `${this.props.columns[key].header} A-Z`,
+                        label: `${this.props.columns[key].header}`,
+                        icon: <Icon size="medium" icon="caretUp" />,
                     },
                     {
                         value: `${key}_descending`,
-                        label: `${this.props.columns[key].header} Z-A`,
+                        label: `${this.props.columns[key].header}`,
+                        icon: <Icon size="medium" icon="caretDown" />,
                     },
                 ];
             });
@@ -146,6 +150,11 @@ class Headers extends Component<PropsType, StateType> {
                             emptyText=""
                             options={headers.reduce((a, b) => a.concat(b))}
                             onChange={this.handleChange}
+                            renderOption={(option: any): JSX.Element => (
+                                <>
+                                    {option.label} {option.icon}
+                                </>
+                            )}
                         />
                     </Box>
                 )}
