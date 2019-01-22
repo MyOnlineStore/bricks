@@ -18,7 +18,7 @@ describe('Toaster', () => {
         expect(component.find(Toast).length).toBe(1);
     });
 
-    it('should render a Toast when notified', () => {
+    it('should close a rendered Toast', () => {
         const component = mountWithTheme(<Toaster />);
 
         window.toaster.notify({
@@ -38,6 +38,6 @@ describe('Toaster', () => {
 
         component.update();
 
-        expect(component.find(Toast).length).toBe(0);
+        expect(component.find(Toast).prop('isOpen')).toBe(false);
     });
 });
