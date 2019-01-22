@@ -10,8 +10,11 @@ import Checkbox from '../Checkbox';
 import Icon from '../Icon';
 import Box from '../Box';
 import Select from '../Select';
+import Option from '../Select/Option';
 import Button from '../Button';
 import Row from './Row';
+import StyledCell from './Cell/style';
+import CompactHeaders from './CompactHeaders';
 
 describe('Table', () => {
     it('should render the correct amount of cells', () => {
@@ -430,6 +433,52 @@ describe('Table', () => {
         const checkedRows = mockHandler.mock.calls[0].filter(row => (row as any).checked);
 
         expect(checkedRows.length).toBe(0);
+    });
+
+    it('should sort rows when a column is given a sorting function and the select in the CompactHeader is clicked', () => {
+        const component = mountWithTheme(
+            <Table
+                as="datacard"
+                columns={{
+                    value: {
+                        header: 'label',
+                        sort(a: number, b: number) {
+                            return a - b;
+                        },
+                    },
+                }}
+                rows={[
+                    { id: '1', value: 1 },
+                    { id: '0', value: 0 },
+                    { id: '4', value: 4 },
+                    { id: '3', value: 3 },
+                    { id: '2', value: 2 },
+                ]}
+            />,
+        );
+
+        component
+            .find(CompactHeaders)
+            .find(Select)
+            .simulate('keyDown', {
+                key: ' ',
+            });
+
+        component
+            .find(Option)
+            .first()
+            .simulate('click');
+
+        for (let index = 0; index < component.prop<Array<Object>>('rows').length; index++) {
+            expect(
+                component
+                    .find(Card)
+                    .at(index)
+                    .find(StyledCell)
+                    .at(1)
+                    .text(),
+            ).toEqual(`${index}`);
+        }
     });
 
     it('should sort rows ascendingly when a column is given a sorting function and is clicked', () => {
