@@ -14,6 +14,7 @@ describe('Toaster', () => {
             severity: 'success',
         });
 
+        // tslint:disable-next-line
         expect(console.error).toHaveBeenCalled();
     });
 
