@@ -7,10 +7,13 @@ const headingFont = 'Melbourne,sans-serif';
 
 const fontSize = {
     smaller1: '12px',
-    base: '14px',
-    larger1: '22px',
-    larger2: '28px',
-    larger3: '36px',
+    base: '15px',
+    larger1: '18px',
+    larger2: '21px',
+    larger3: '24px',
+    larger4: '27px',
+    larger5: '30px',
+    larger6: '36px',
 };
 
 const fontWeight = {
@@ -293,61 +296,43 @@ const theme: ThemeType = {
         hierarchy1: {
             fontFamily: headingFont,
             fontSize: '36px',
-            fontWeight: {
-                light: fontWeight.light,
-                default: fontWeight.bold,
-            },
+            fontWeight: fontWeight.regular,
             lineHeight: '45px',
             color: grey.base,
         },
         hierarchy2: {
             fontFamily: headingFont,
             fontSize: '30px',
-            fontWeight: {
-                light: fontWeight.light,
-                default: fontWeight.bold,
-            },
+            fontWeight: fontWeight.regular,
             lineHeight: '36px',
             color: grey.base,
         },
         hierarchy3: {
             fontFamily: headingFont,
-            fontSize: '24px',
-            fontWeight: {
-                light: fontWeight.light,
-                default: fontWeight.bold,
-            },
-            lineHeight: '30px',
+            fontSize: '27px',
+            fontWeight: fontWeight.regular,
             color: grey.base,
+            lineHeight: '33px',
         },
         hierarchy4: {
             fontFamily: headingFont,
-            fontSize: '21px',
-            fontWeight: {
-                light: fontWeight.light,
-                default: fontWeight.bold,
-            },
-            lineHeight: '27px',
+            fontSize: '24px',
+            fontWeight: fontWeight.regular,
+            lineHeight: '30px',
             color: grey.base,
         },
         hierarchy5: {
             fontFamily: headingFont,
-            fontSize: '18px',
-            fontWeight: {
-                light: fontWeight.bold,
-                default: fontWeight.bold,
-            },
-            lineHeight: '21px',
+            fontSize: '21px',
+            fontWeight: fontWeight.regular,
+            lineHeight: '27px',
             color: grey.base,
         },
         hierarchy6: {
-            fontFamily: bodyFont,
-            fontSize: '15px',
-            fontWeight: {
-                light: fontWeight.regular,
-                default: fontWeight.regular,
-            },
-            lineHeight: '18px',
+            fontFamily: headingFont,
+            fontSize: '18px',
+            fontWeight: fontWeight.regular,
+            lineHeight: '21px',
             color: grey.base,
         },
     },
@@ -616,8 +601,8 @@ const theme: ThemeType = {
         variant: {
             small: {
                 fontFamily: bodyFont,
-                fontSize: '12px',
-                fontWeight: fontWeight.light,
+                fontSize: fontSize.smaller1,
+                fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '18px',
                     compact: '15px',
@@ -625,8 +610,8 @@ const theme: ThemeType = {
             },
             regular: {
                 fontFamily: bodyFont,
-                fontSize: '15px',
-                fontWeight: fontWeight.light,
+                fontSize: fontSize.base,
+                fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '21px',
                     compact: '18px',
@@ -635,7 +620,7 @@ const theme: ThemeType = {
             large: {
                 fontFamily: bodyFont,
                 fontSize: '18px',
-                fontWeight: fontWeight.light,
+                fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '27px',
                     compact: '21px',
@@ -644,7 +629,7 @@ const theme: ThemeType = {
             extraLarge: {
                 fontFamily: bodyFont,
                 fontSize: '21px',
-                fontWeight: fontWeight.light,
+                fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '30px',
                     compact: '27px',
@@ -653,7 +638,7 @@ const theme: ThemeType = {
             display: {
                 fontFamily: headingFont,
                 fontSize: '60px',
-                fontWeight: fontWeight.bold,
+                fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '75px',
                     compact: '75px',

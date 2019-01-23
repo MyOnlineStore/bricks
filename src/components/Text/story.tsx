@@ -37,7 +37,7 @@ storiesOf('Text', module).add('Default', () => (
         severity={
             select('severity', [undefined, 'error', 'success', 'info', 'warning'], undefined) as PropsType['severity']
         }
-        textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'center') as PropsType['textAlign']}
+        textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign']}
         compact={boolean('compact', false)}
         strong={boolean('strong', false)}
     >
