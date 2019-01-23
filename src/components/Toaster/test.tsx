@@ -1,94 +1,56 @@
 import React from 'react';
+import Toaster from '.';
+import Toast from '../Toast';
 import { mountWithTheme } from '../../utility/styled/testing';
-import Toaster from './';
 import Button from '../Button';
 
-jest.useFakeTimers();
+// tslint:disable-next-line
+(console as any).error.mockImplementationOnce(() => undefined);
 
 describe('Toaster', () => {
-    it('should be possible to close the toaster using the close button', () => {
-        const clickMock = jest.fn();
+    it('should show an error when notify is called before mount', () => {
+        window.toaster.notify({
+            title: 'foo',
+            severity: 'success',
+        });
 
-        const component = mountWithTheme(
-            <Toaster isOpen={true} severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
-        );
-
-        const closeButton = component.find(Button).at(1);
-
-        closeButton.simulate('click');
-
-        expect(clickMock).toHaveBeenCalled();
+        // tslint:disable-next-line
+        expect(console.error).toHaveBeenCalled();
     });
 
-    it('should automatically close when autoDismiss is true', () => {
-        const closeMock = jest.fn();
+    it('should render a Toast when notified', () => {
+        const component = mountWithTheme(<Toaster />);
 
-        mountWithTheme(
-            <Toaster
-                autoDismiss
-                isOpen={true}
-                severity="success"
-                buttonTitle="Bar?"
-                title="Foo"
-                closeAction={closeMock}
-            />,
-        );
+        window.toaster.notify({
+            title: 'foo',
+            severity: 'success',
+        });
 
-        jest.advanceTimersByTime(5999);
-        expect(closeMock).not.toHaveBeenCalled();
-        jest.advanceTimersByTime(1);
-        expect(closeMock).toHaveBeenCalled();
+        component.update();
+
+        expect(component.find(Toast).length).toBe(1);
     });
 
-    it('should not break when no close is provided', () => {
-        const component = mountWithTheme(<Toaster isOpen={true} severity={'info'} title="Foo" />);
-        const closeButton = component.find(Button).first();
+    it('should close a rendered Toast', () => {
+        const component = mountWithTheme(<Toaster />);
 
-        const fn = (): void => {
-            closeButton.simulate('click');
-        };
+        window.toaster.notify({
+            title: 'foo',
+            severity: 'success',
+        });
 
-        expect(fn).not.toThrow();
-    });
+        component.update();
 
-    it('should not break when no action is provided', () => {
-        const component = mountWithTheme(
-            <Toaster
-                isOpen={true}
-                severity={'warning'}
-                buttonSeverity={'destructive'}
-                buttonTitle="Bar?"
-                action={undefined}
-                title="Foo"
-            />,
-        );
+        expect(component.find(Toast).length).toBe(1);
 
-        const closeButton = component.find(Button).first();
+        component
+            .find(Toast)
+            .find(Button)
+            .last()
+            .simulate('click');
 
-        const fn = (): void => {
-            closeButton.simulate('click');
-        };
+        component.update();
 
-        expect(fn).not.toThrow();
-    });
-
-    it('should be possible to trigger the button', () => {
-        const clickMock = jest.fn();
-
-        const component = mountWithTheme(
-            <Toaster
-                isOpen={true}
-                severity="warning"
-                title="Foo"
-                buttonTitle="Bar?"
-                closeAction={undefined}
-                action={clickMock}
-            />,
-        );
-
-        const closeButton = component.find(Button).first();
-        closeButton.simulate('click');
-
-        expect(clickMock).toHaveBeenCalled();
+        expect(component.find(Toast).prop('isOpen')).toBe(false);
     });
 });
