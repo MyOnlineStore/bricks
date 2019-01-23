@@ -2,7 +2,7 @@
 
 
 ### Props 
-Props should named like html attributes. Just the essence of what it does like `show` or `error`. Only function props should have prefixes.
+Props should be named like html attributes. Just the essence of what it does like `show` or `error`. Only function props should have prefixes.
 
 ```tsx
 👍 <Checkbox error={this.props.error}>
