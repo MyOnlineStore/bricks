@@ -292,50 +292,50 @@ const theme: ThemeType = {
             },
         },
     },
-    Heading: {
-        hierarchy1: {
+    Heading: [
+        {
             fontFamily: headingFont,
-            fontSize: '36px',
+            fontSize: fontSize.larger6,
             fontWeight: fontWeight.regular,
             lineHeight: '45px',
             color: grey.base,
         },
-        hierarchy2: {
+        {
             fontFamily: headingFont,
-            fontSize: '30px',
+            fontSize: fontSize.larger5,
             fontWeight: fontWeight.regular,
             lineHeight: '36px',
             color: grey.base,
         },
-        hierarchy3: {
+        {
             fontFamily: headingFont,
-            fontSize: '27px',
+            fontSize: fontSize.larger4,
             fontWeight: fontWeight.regular,
             color: grey.base,
             lineHeight: '33px',
         },
-        hierarchy4: {
+        {
             fontFamily: headingFont,
-            fontSize: '24px',
+            fontSize: fontSize.larger3,
             fontWeight: fontWeight.regular,
             lineHeight: '30px',
             color: grey.base,
         },
-        hierarchy5: {
+        {
             fontFamily: headingFont,
-            fontSize: '21px',
+            fontSize: fontSize.larger2,
             fontWeight: fontWeight.regular,
             lineHeight: '27px',
             color: grey.base,
         },
-        hierarchy6: {
+        {
             fontFamily: headingFont,
-            fontSize: '18px',
+            fontSize: fontSize.larger1,
             fontWeight: fontWeight.regular,
             lineHeight: '21px',
             color: grey.base,
         },
-    },
+    ],
     IconButton: {
         primary: {
             color: grey.darker1,
@@ -619,7 +619,7 @@ const theme: ThemeType = {
             },
             large: {
                 fontFamily: bodyFont,
-                fontSize: '18px',
+                fontSize: fontSize.larger1,
                 fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '27px',
@@ -628,7 +628,7 @@ const theme: ThemeType = {
             },
             extraLarge: {
                 fontFamily: bodyFont,
-                fontSize: '21px',
+                fontSize: fontSize.larger2,
                 fontWeight: fontWeight.regular,
                 lineHeight: {
                     default: '30px',
