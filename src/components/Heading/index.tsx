@@ -6,47 +6,40 @@ type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;
 type HeadingHierarchyThemeType = {
     fontFamily: string;
     fontSize: string;
-    fontWeight: {
-        light: string;
-        default: string;
-    };
+    fontWeight: string;
     lineHeight: string;
     color: string;
 };
 
-type HeadingThemeType = {
-    hierarchy1: HeadingHierarchyThemeType;
-    hierarchy2: HeadingHierarchyThemeType;
-    hierarchy3: HeadingHierarchyThemeType;
-    hierarchy4: HeadingHierarchyThemeType;
-    hierarchy5: HeadingHierarchyThemeType;
-    hierarchy6: HeadingHierarchyThemeType;
-    [key: string]: HeadingHierarchyThemeType;
-};
+type HeadingThemeType = [
+    HeadingHierarchyThemeType,
+    HeadingHierarchyThemeType,
+    HeadingHierarchyThemeType,
+    HeadingHierarchyThemeType,
+    HeadingHierarchyThemeType,
+    HeadingHierarchyThemeType
+];
 
 type PropsType = {
     hierarchy?: HierarchyType;
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
-    light?: boolean;
 };
 
 const Heading = styled.div.attrs(() => ({ role: 'heading' }))<PropsType>`
     color: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.hierarchy1.color : theme.Heading[`hierarchy${hierarchy}`].color};
+        !hierarchy ? theme.Heading[0].color : theme.Heading[hierarchy - 1].color};
     font-family: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.hierarchy1.fontFamily : theme.Heading[`hierarchy${hierarchy}`].fontFamily};
+        !hierarchy ? theme.Heading[0].fontFamily : theme.Heading[hierarchy - 1].fontFamily};
     font-size: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.hierarchy1.fontSize : theme.Heading[`hierarchy${hierarchy}`].fontSize};
-    font-weight: ${({ light, hierarchy, theme }): string => {
-        if (light && hierarchy) return theme.Heading[`hierarchy${hierarchy}`].fontWeight.light;
-        if (!light && hierarchy) return theme.Heading[`hierarchy${hierarchy}`].fontWeight.default;
-        if (light && !hierarchy) return theme.Heading.hierarchy1.fontWeight.light;
+        !hierarchy ? theme.Heading[0].fontSize : theme.Heading[hierarchy - 1].fontSize};
+    font-weight: ${({ hierarchy, theme }): string => {
+        if (hierarchy) return theme.Heading[hierarchy - 1].fontWeight;
 
-        return theme.Heading.hierarchy1.fontWeight.default;
+        return theme.Heading[0].fontWeight;
     }};
     line-height: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.hierarchy1.lineHeight : theme.Heading[`hierarchy${hierarchy}`].lineHeight};
+        !hierarchy ? theme.Heading[0].lineHeight : theme.Heading[hierarchy - 1].lineHeight};
 
     text-align: ${({ textAlign }): string => (textAlign !== undefined ? textAlign : '')};
     margin: 0;
