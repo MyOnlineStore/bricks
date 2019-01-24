@@ -5,9 +5,9 @@ import Toaster, { PropsType } from '.';
 
 storiesOf('Toaster', module).add('Default', () => (
     <Toaster
-        isOpen={boolean('show', true)}
+        show={boolean('show', true)}
         severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}
-        closeAction={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}
+        onClose={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}
         title={text('title', 'Thought provoking we must stand.')}
         message={text(
             'description',
@@ -20,9 +20,9 @@ storiesOf('Toaster', module).add('With action button', () => (
     <Toaster
         icon="cash"
         onClick={(): boolean => confirm('I love pressing F5, its so refreshing')}
-        isOpen={boolean('show', true)}
+        show={boolean('show', true)}
         severity={select('severity', ['success', 'warning', 'error', 'info'], 'error') as PropsType['severity']}
-        closeAction={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}
+        onClose={(): boolean => confirm('Do you want to close the toaster? \nYou must choose, but choose wisely')}
         buttonTitle={text('Button title', 'Hello')}
         title={text('title', 'Overcome injustice.')}
         message={text(
@@ -46,8 +46,8 @@ class Demo extends Component<{}, { isOpen: boolean }> {
             <Toaster
                 autoDismiss
                 severity="success"
-                isOpen={this.state.isOpen}
-                closeAction={(): void => this.closeHandler()}
+                show={this.state.isOpen}
+                onClose={(): void => this.closeHandler()}
                 title="Thought provoking we must stand."
                 message="You can read this now, but soon you won't."
             />

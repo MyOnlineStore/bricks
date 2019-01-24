@@ -7,7 +7,7 @@ import TransitionAnimation from '../TransitionAnimation';
 
 describe('Popover', () => {
     it('should render with defaults', () => {
-        const component = mountWithTheme(<Popover isOpen={true} renderContent={(): string => 'Mock content'} />);
+        const component = mountWithTheme(<Popover show={true} renderContent={(): string => 'Mock content'} />);
 
         const popper = component.find(Popper);
 
@@ -16,8 +16,7 @@ describe('Popover', () => {
     });
 
     it('should render closed', () => {
-        const component = mountWithTheme(<Popover isOpen={false} renderContent={(): string => 'Mock content'} />);
-
+        const component = mountWithTheme(<Popover show={false} renderContent={(): string => 'Mock content'} />);
         const transition = component.find(TransitionAnimation);
 
         expect(transition.prop('show')).toEqual(false);
@@ -25,7 +24,7 @@ describe('Popover', () => {
 
     it('should render with a fixed postition', () => {
         const component = mountWithTheme(
-            <Popover isOpen={true} placement="left" fixed={true} renderContent={(): string => 'Mock content'} />,
+            <Popover show placement="left" fixed={true} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
@@ -35,7 +34,7 @@ describe('Popover', () => {
 
     it('should render with a custom distance and offset', () => {
         const component = mountWithTheme(
-            <Popover isOpen={true} offset={20} distance={6} renderContent={(): string => 'Mock content'} />,
+            <Popover show offset={20} distance={6} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
@@ -52,7 +51,7 @@ describe('Popover', () => {
 
     it('should render with only a custom offset', () => {
         const component = mountWithTheme(
-            <Popover isOpen={true} offset={20} renderContent={(): string => 'Mock content'} />,
+            <Popover show offset={20} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
@@ -69,7 +68,7 @@ describe('Popover', () => {
 
     it('should render with only a custom distance', () => {
         const component = mountWithTheme(
-            <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,
+            <Popover show distance={6} renderContent={(): string => 'Mock content'} />,
         );
 
         const popper = component.find(Popper);
@@ -92,7 +91,7 @@ describe('Popover', () => {
 
         const component = mountWithTheme(
             <Popover
-                isOpen={true}
+                show={true}
                 distance={6}
                 onClickOutside={clickMock}
                 renderContent={(): string => 'Mock content'}
@@ -114,7 +113,7 @@ describe('Popover', () => {
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
         const component = mountWithTheme(
-            <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,
+            <Popover show={true} distance={6} renderContent={(): string => 'Mock content'} />,
         );
 
         callbackMap.mousedown({
@@ -131,7 +130,7 @@ describe('Popover', () => {
             document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
             const component = mountWithTheme(
-                <Popover isOpen={false} distance={6} renderContent={(): string => 'Mock content'} />,
+                <Popover show={false} distance={6} renderContent={(): string => 'Mock content'} />,
             );
 
             callbackMap.mousedown({ target: document.createElement('div') });
@@ -144,7 +143,7 @@ describe('Popover', () => {
 
     it('adds and removes eventListeners', () => {
         const component = mountWithTheme(
-            <Popover isOpen={true} distance={6} renderContent={(): string => 'Mock content'} />,
+            <Popover show={true} distance={6} renderContent={(): string => 'Mock content'} />,
         );
         component.unmount();
 

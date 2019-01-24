@@ -2,7 +2,7 @@ import React, { Component, ErrorInfo } from 'react';
 import Notification from '../Notification';
 
 type PropsType = {
-    hasError?: boolean;
+    error?: boolean;
     message: string;
     reportError(error: Error, errorInfo: ErrorInfo): void;
 };
@@ -16,7 +16,7 @@ class ErrorBoundary extends Component<PropsType, StateType> {
         super(props);
 
         this.state = {
-            hasError: this.props.hasError !== undefined ? this.props.hasError : false,
+            hasError: this.props.error !== undefined ? this.props.error : false,
         };
     }
 
@@ -29,7 +29,7 @@ class ErrorBoundary extends Component<PropsType, StateType> {
     }
 
     public render(): JSX.Element {
-        return this.state.hasError || (this.props.hasError !== undefined && this.props.hasError) ? (
+        return this.state.hasError || (this.props.error !== undefined && this.props.error) ? (
             <Notification severity="error" message={this.props.message} />
         ) : (
             <div>{this.props.children}</div>

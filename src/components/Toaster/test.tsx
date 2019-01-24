@@ -11,7 +11,7 @@ describe('Toaster', () => {
         const clickMock = jest.fn();
 
         const component = mountWithTheme(
-            <Toaster isOpen={true} severity="success" buttonTitle="Bar?" title="Foo" closeAction={clickMock} />,
+            <Toaster show={true} severity="success" buttonTitle="Bar?" title="Foo" onClose={clickMock} />,
         );
 
         const closeButton = component.find(IconButton).first();
@@ -25,14 +25,7 @@ describe('Toaster', () => {
         const closeMock = jest.fn();
 
         mountWithTheme(
-            <Toaster
-                autoDismiss
-                isOpen={true}
-                severity="success"
-                buttonTitle="Bar?"
-                title="Foo"
-                closeAction={closeMock}
-            />,
+            <Toaster autoDismiss show={true} severity="success" buttonTitle="Bar?" title="Foo" onClose={closeMock} />,
         );
 
         jest.advanceTimersByTime(5999);
@@ -42,7 +35,7 @@ describe('Toaster', () => {
     });
 
     it('should not break when no close is provided', () => {
-        const component = mountWithTheme(<Toaster isOpen={true} severity={'info'} title="Foo" />);
+        const component = mountWithTheme(<Toaster show={true} severity={'info'} title="Foo" />);
         const closeButton = component.find(IconButton).first();
 
         const fn = (): void => {
@@ -55,7 +48,7 @@ describe('Toaster', () => {
     it('should not break when no onClick is provided', () => {
         const component = mountWithTheme(
             <Toaster
-                isOpen={true}
+                show={true}
                 severity={'warning'}
                 buttonSeverity={'destructive'}
                 buttonTitle="Bar?"
@@ -78,11 +71,11 @@ describe('Toaster', () => {
 
         const component = mountWithTheme(
             <Toaster
-                isOpen={true}
+                show={true}
                 severity="warning"
                 title="Foo"
                 buttonTitle="Bar?"
-                closeAction={undefined}
+                onClose={undefined}
                 onClick={clickMock}
             />,
         );

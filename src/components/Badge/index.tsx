@@ -6,9 +6,6 @@ type PropsType = {
 };
 
 type BadgeThemeType = {
-    default: {
-        color: string;
-    };
     severity: {
         error: VariantStyleType;
         success: VariantStyleType;
@@ -40,7 +37,7 @@ const StyledBadge = styled.div<PropsType>`
     }};
     font-size: 12px;
     line-height: 1;
-    color: ${({ theme }): string => theme.Badge.default.color};
+    color: ${({ theme }): string => theme.Badge.severity.error.color};
     white-space: nowrap;
 `;
 

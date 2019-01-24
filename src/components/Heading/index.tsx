@@ -26,6 +26,7 @@ type HeadingThemeType = {
 
 type PropsType = {
     hierarchy?: HierarchyType;
+    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     light?: boolean;
 };

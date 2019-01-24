@@ -32,7 +32,7 @@ storiesOf('Modal', module)
                 show={boolean('show', true)}
                 size={select('size', ['small', 'medium', 'large'], 'large')}
                 title={text('title', 'Would you like me to be your role modal?')}
-                closeAction={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
+                onClose={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
                 buttons={[
                     <Button key="activate" variant="primary" title="Activate" />,
                     <Button key="close" variant="plain" title="Close" />,
@@ -42,7 +42,7 @@ storiesOf('Modal', module)
             </Modal>
         );
     })
-    .add('Without closeAction', () => {
+    .add('Without onClose', () => {
         return (
             <Modal
                 show={boolean('show', true)}

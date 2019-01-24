@@ -44,7 +44,7 @@ class Demo extends Component<PropsType, StateType> {
             <Box height="90vh" justifyContent="center" alignItems="center">
                 <Box margin={trbl(48)}>
                     <Popover
-                        isOpen={this.state.isOpen}
+                        show={this.state.isOpen}
                         onClickOutside={this.toggle}
                         placement={this.props.placement}
                         fixed={this.props.fixed}
