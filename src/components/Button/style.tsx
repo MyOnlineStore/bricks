@@ -15,6 +15,7 @@ type FlatButtonStylesType = {
     idle: FlatButtonVariantStylesType;
     active: FlatButtonVariantStylesType;
     hover: FlatButtonVariantStylesType;
+    focus: FlatButtonVariantStylesType;
 };
 
 type ButtonVariantStylesType = {
@@ -123,11 +124,17 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
 
             &:focus {
                 ${
+                    !loading
+                        ? `
+                            color: ${color ? color : theme.Button[variant][subVariant].focus.color};
+                            background-color: ${theme.Button[variant][subVariant].focus.backgroundColor};
+                            text-decoration: ${theme.Button[variant][subVariant].focus.textDecoration};
+                        `
+                        : ''
+                }
+                ${
                     !flat && !loading
                         ? `
-                            color: ${color ? color : theme.Button[variant].regular.focus.color};
-                            background-color: ${theme.Button[variant].regular.focus.backgroundColor};
-                            text-decoration: ${theme.Button[variant].regular.focus.textDecoration};
                             border-color: ${theme.Button[variant].regular.focus.borderColor};
                             box-shadow: ${theme.Button[variant].regular.focus.boxShadow};
                         `

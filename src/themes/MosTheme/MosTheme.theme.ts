@@ -138,6 +138,11 @@ const theme: ThemeType = {
                     color: grey.darker1,
                     textDecoration: 'none',
                 },
+                focus: {
+                    backgroundColor: 'transparent',
+                    color: grey.darker1,
+                    textDecoration: 'none',
+                },
             },
         },
         secondary: {
@@ -178,6 +183,11 @@ const theme: ThemeType = {
                     textDecoration: 'none',
                 },
                 hover: {
+                    backgroundColor: 'transparent',
+                    color: grey.darker1,
+                    textDecoration: 'none',
+                },
+                focus: {
                     backgroundColor: 'transparent',
                     color: grey.darker1,
                     textDecoration: 'none',
@@ -231,6 +241,11 @@ const theme: ThemeType = {
                     color: grey.darker1,
                     textDecoration: 'none',
                 },
+                focus: {
+                    backgroundColor: 'transparent',
+                    color: grey.darker1,
+                    textDecoration: 'none',
+                },
                 active: {
                     backgroundColor: 'transparent',
                     color: grey.darker1,
@@ -280,6 +295,11 @@ const theme: ThemeType = {
                     color: red.base,
                     textDecoration: 'none',
                 },
+                focus: {
+                    backgroundColor: 'transparent',
+                    color: grey.darker1,
+                    textDecoration: 'none',
+                },
                 active: {
                     backgroundColor: 'transparent',
                     color: red.base,
@@ -325,6 +345,11 @@ const theme: ThemeType = {
                     textDecoration: 'none',
                 },
                 hover: {
+                    backgroundColor: 'transparent',
+                    color: grey.darker1,
+                    textDecoration: 'none',
+                },
+                focus: {
                     backgroundColor: 'transparent',
                     color: grey.darker1,
                     textDecoration: 'none',
