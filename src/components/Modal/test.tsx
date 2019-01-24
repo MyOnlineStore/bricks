@@ -137,7 +137,7 @@ describe('Modal', () => {
         expect(clickMock).not.toHaveBeenCalled();
     });
 
-    it('should not break when no onCloe is provided', () => {
+    it('should not break when no onClose is provided', () => {
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
         const wrapper = component.find(StyledModalWrapper).first();
 
