@@ -38,26 +38,4 @@ describe('Heading', () => {
         expect(h6Light).toHaveStyleRule('font-weight', MosTheme.Heading.hierarchy6.fontWeight.light);
         expect(defaultLight).toHaveStyleRule('font-weight', MosTheme.Heading.hierarchy1.fontWeight.light);
     });
-
-    it('should render a Heading component with different elements', () => {
-        const divHeading = mountWithTheme(<Heading as="div" />);
-        const spanHeading = mountWithTheme(<Heading as="span" />);
-        const pHeading = mountWithTheme(<Heading as="p" />);
-        const h1Heading = mountWithTheme(<Heading as="h1" />);
-        const h2Heading = mountWithTheme(<Heading as="h2" />);
-        const h3Heading = mountWithTheme(<Heading as="h3" />);
-        const h4Heading = mountWithTheme(<Heading as="h4" />);
-        const h5Heading = mountWithTheme(<Heading as="h5" />);
-        const h6Heading = mountWithTheme(<Heading as="h6" />);
-
-        expect(divHeading.type).toBe('div');
-        expect(spanHeading.type).toBe('span');
-        expect(pHeading.type).toBe('p');
-        expect(h1Heading.type).toBe('h1');
-        expect(h2Heading.type).toBe('h2');
-        expect(h3Heading.type).toBe('h3');
-        expect(h4Heading.type).toBe('h4');
-        expect(h5Heading.type).toBe('h5');
-        expect(h6Heading.type).toBe('h6');
-    });
 });
