@@ -27,18 +27,19 @@ type PropsType = {
 };
 
 const Heading = styled.div.attrs(() => ({ role: 'heading' }))<PropsType>`
-    color: ${({ hierarchy, theme }): string => (!hierarchy ? theme.Heading[0].color : theme.Heading[hierarchy].color)};
+    color: ${({ hierarchy, theme }): string =>
+        !hierarchy ? theme.Heading[0].color : theme.Heading[hierarchy - 1].color};
     font-family: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading[0].fontFamily : theme.Heading[hierarchy].fontFamily};
+        !hierarchy ? theme.Heading[0].fontFamily : theme.Heading[hierarchy - 1].fontFamily};
     font-size: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading[0].fontSize : theme.Heading[hierarchy].fontSize};
+        !hierarchy ? theme.Heading[0].fontSize : theme.Heading[hierarchy - 1].fontSize};
     font-weight: ${({ hierarchy, theme }): string => {
-        if (hierarchy) return theme.Heading[hierarchy].fontWeight;
+        if (hierarchy) return theme.Heading[hierarchy - 1].fontWeight;
 
         return theme.Heading[0].fontWeight;
     }};
     line-height: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading[0].lineHeight : theme.Heading[hierarchy].lineHeight};
+        !hierarchy ? theme.Heading[0].lineHeight : theme.Heading[hierarchy - 1].lineHeight};
 
     text-align: ${({ textAlign }): string => (textAlign !== undefined ? textAlign : '')};
     margin: 0;
