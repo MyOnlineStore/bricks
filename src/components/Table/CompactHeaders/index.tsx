@@ -151,9 +151,9 @@ class Headers extends Component<PropsType, StateType> {
                             options={headers.reduce((a, b) => a.concat(b))}
                             onChange={this.handleChange}
                             renderOption={(option: any): JSX.Element => (
-                                <>
+                                <Text>
                                     {option.label} {option.icon}
-                                </>
+                                </Text>
                             )}
                         />
                     </Box>

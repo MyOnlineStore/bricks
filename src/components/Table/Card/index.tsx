@@ -120,8 +120,16 @@ class Card extends Component<PropsType, StateType> {
                             </Text>
                         </Box>
                     )}
-                    {this.props.row.buttons !== undefined &&
-                        this.props.row.buttons.map((button, index) => <Box key={`button_${index}`}>{button}</Box>)}
+                    {Object.keys(this.props.columns).map(key => {
+                        if (key === 'buttons') {
+                            const column = this.props.columns[key];
+                            const cell = this.props.row[key];
+
+                            if (column.render !== undefined && column.render(cell, this.props.row)) {
+                                return <Box direction="column">{column.render(cell, this.props.row)}</Box>;
+                            }
+                        }
+                    })}
                 </Box>
             </Box>
         );

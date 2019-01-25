@@ -24,7 +24,6 @@ type PropsType = {
     checked: boolean | 'indeterminate';
     draggable: boolean;
     selectable: boolean;
-    buttonsColumn: boolean;
     preSort?: {
         column: string;
         direction: SortDirectionType;
@@ -178,11 +177,6 @@ class Headers extends Component<PropsType, StateType> {
                             return (this.props.columns[a].order as number) - (this.props.columns[b].order as number);
                         })
                         .map(this.renderHeader)}
-                    {this.props.buttonsColumn && (
-                        <StyledHeader headerAlign="end" width="fit">
-                            <Box justifyContent="flex-end" />
-                        </StyledHeader>
-                    )}
                 </tr>
             </thead>
         );

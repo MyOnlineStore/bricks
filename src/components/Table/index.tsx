@@ -14,7 +14,6 @@ type SortDirectionType = 'ascending' | 'descending' | 'none';
 type BaseRowType = {
     id: string;
     selected?: boolean;
-    buttons?: Array<ReactNode>;
     // tslint:disable-next-line
     [key: string]: string | number | boolean | undefined | Array<ReactNode> | ReactNode;
 };
@@ -29,7 +28,7 @@ type ColumnType<GenericCellType, GenericRowType> = {
 };
 
 type PropsType<GenericRowType extends BaseRowType> = {
-    as?: 'table' | 'datacard';
+    as?: 'table' | 'card';
     rows: Array<GenericRowType>;
     columns: {
         [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<
@@ -160,7 +159,6 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         const isDraggable = this.props.onDragEnd !== undefined;
         const isSelectable = this.props.onSelection !== undefined;
         const rows = this.sortRows();
-        const hasButtonsColumn = this.props.rows.filter(row => row.buttons).length > 0;
         const as = this.props.as !== undefined ? this.props.as : 'table';
 
         const headerProps = {
@@ -175,7 +173,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
 
         return (
             <Branch
-                condition={as === 'datacard'}
+                condition={as === 'card'}
                 ifTrue={(children): JSX.Element => (
                     <Branch
                         condition={isDraggable}
@@ -206,7 +204,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         )}
                         ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
                     >
-                        <TableHeaders buttonsColumn={hasButtonsColumn} {...headerProps} />
+                        <TableHeaders {...headerProps} />
                         <tbody>{children}</tbody>
                     </Branch>
                 )}
@@ -224,11 +222,11 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         },
                     };
 
-                    if (as === 'datacard') {
+                    if (as === 'card') {
                         return <Card key={row.id} {...props} />;
                     }
 
-                    return <Row key={row.id} buttonsColumn={hasButtonsColumn} {...props} />;
+                    return <Row key={row.id} {...props} />;
                 })}
             </Branch>
         );

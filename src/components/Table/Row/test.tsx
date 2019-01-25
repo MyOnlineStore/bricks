@@ -23,7 +23,6 @@ describe('Table Rows', () => {
                         selectable
                         draggable
                         index={1}
-                        buttonsColumn={true}
                         onSelection={(): void => undefined}
                     />
                 </tbody>
@@ -63,7 +62,6 @@ describe('Table Rows', () => {
                         selectable
                         draggable
                         index={1}
-                        buttonsColumn={true}
                         onSelection={(): void => undefined}
                     />
                 </tbody>

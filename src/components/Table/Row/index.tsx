@@ -20,7 +20,6 @@ type PropsType = {
     };
     // tsline:enable
     row: BaseRowType;
-    buttonsColumn: boolean;
     draggable: boolean;
     selected: boolean;
     selectable: boolean;
@@ -128,10 +127,14 @@ class Row extends Component<PropsType, StateType> {
                     .map(key => {
                         const column = this.props.columns[key];
                         const cell = this.props.row[key];
-                        const align = column.align ? column.align : 'start';
+                        const align = key === 'buttons' ? 'end' : column.align ? column.align : 'start';
 
                         return (
-                            <Cell align={align} key={`${this.props.row.id}-${key}`}>
+                            <Cell
+                                align={align}
+                                width={key === 'buttons' ? 'fit' : ''}
+                                key={`${this.props.row.id}-${key}`}
+                            >
                                 <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
                                     {(column.render !== undefined && column.render(cell, this.props.row)) ||
                                         ((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>)}
@@ -139,11 +142,6 @@ class Row extends Component<PropsType, StateType> {
                             </Cell>
                         );
                     })}
-                {this.props.buttonsColumn && (
-                    <Cell align="end" width="fit">
-                        {this.props.row.buttons}
-                    </Cell>
-                )}
             </Branch>
         );
     }

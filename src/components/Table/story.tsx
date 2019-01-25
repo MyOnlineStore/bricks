@@ -15,7 +15,7 @@ type RowType = {
     id: string;
     price: number;
     name: string;
-    image: string | ReactNode;
+    image: string;
     badge?: string;
     extra?: string;
     buttons?: Array<ReactNode>;
@@ -39,7 +39,7 @@ type PropsType = {
     selectable: boolean;
     sortable: boolean;
     custom: boolean;
-    as?: 'datacard' | 'table';
+    as?: 'card' | 'table';
 };
 
 class Demo extends Component<PropsType, StateType> {
@@ -52,40 +52,36 @@ class Demo extends Component<PropsType, StateType> {
                 {
                     id: '61651323',
                     price: 0.8,
-                    name: 'Kiwi',
-                    image: <img src="https://via.placeholder.com/50" width="50" />,
+                    name: 'Strawberry',
+                    image: 'https://picsum.photos/60/60?image=1080',
                     badge: 'special offer',
-                    buttons: this.renderActions(1),
                 },
                 {
                     id: '61651320',
                     price: -3.5,
                     name: 'Pineapple',
-                    image: <img src="https://via.placeholder.com/50" width="50" />,
+                    image: 'https://picsum.photos/60/60?image=824',
                     badge: 'new!',
-                    buttons: this.renderActions(2),
                 },
                 {
                     selected: true,
                     id: '61651322',
                     price: 2.45,
-                    name: 'Grapes',
-                    image: <img src="https://via.placeholder.com/50" width="50" />,
+                    name: 'Coffee',
+                    image: 'https://picsum.photos/60/60?image=766',
                 },
                 {
                     selected: true,
                     id: '61651321',
                     price: 1.2,
-                    name: 'Banana',
-                    image: <img src="https://via.placeholder.com/50" width="50" />,
-                    buttons: this.renderActions(4),
+                    name: 'Flower',
+                    image: 'https://picsum.photos/60/60?image=696',
                 },
                 {
                     id: '61651324',
                     price: -0.7,
-                    name: 'Lemon',
-                    image: <img src="https://via.placeholder.com/50" width="50" />,
-                    buttons: this.renderActions(5),
+                    name: 'Grapes',
+                    image: 'https://picsum.photos/60/60?image=674',
                 },
             ],
         };
@@ -119,15 +115,29 @@ class Demo extends Component<PropsType, StateType> {
         return <></>;
     };
 
-    private renderImage = (image: string | ReactNode) => {
-        return <>{image}</>;
+    private renderImage = (image: string) => {
+        return <img src={image} width={60} height={60} />;
     };
 
-    private renderActions = (id: number) => {
-        return [
-            <IconButton icon="gear" title="edit" variant="primary" onClick={() => alert(`Edit id: ${id}`)} />,
-            <IconButton icon="trash" title="delete" variant="destructive" onClick={() => alert(`Edit id: ${id}`)} />,
-        ];
+    private renderActions = (value: any, row: RowType) => {
+        return (
+            <>
+                {row.id !== '61651322' && (
+                    <IconButton
+                        icon="gear"
+                        title="edit"
+                        variant="primary"
+                        onClick={() => alert(`Edit id: ${row.id}`)}
+                    />
+                )}
+                <IconButton
+                    icon="trash"
+                    title="delete"
+                    variant="destructive"
+                    onClick={() => alert(`Edit id: ${row.id}`)}
+                />
+            </>
+        );
     };
 
     public render() {
@@ -140,10 +150,13 @@ class Demo extends Component<PropsType, StateType> {
                         render: this.renderImage,
                         width: '50px',
                     },
+                    buttons: {
+                        order: 6,
+                        render: this.renderActions,
+                    },
                     name: {
                         header: 'Product',
                         order: 2,
-                        align: 'start',
                         sort: this.props.sortable ? this.sortText : undefined,
                     },
                     id: {
@@ -154,7 +167,7 @@ class Demo extends Component<PropsType, StateType> {
                     },
                     badge: {
                         header: 'Sticker',
-                        width: '80px',
+                        width: '90px',
                         align: 'center',
                         order: 4,
                         sort: this.props.sortable ? this.sortText : undefined,
@@ -162,7 +175,7 @@ class Demo extends Component<PropsType, StateType> {
                     },
                     price: {
                         header: 'Price',
-                        width: '80px',
+                        width: '90px',
                         align: 'end',
                         order: 5,
                         sort: this.props.sortable ? this.sortPrice : undefined,
@@ -196,7 +209,7 @@ storiesOf('Table', module)
                         selectable={boolean('selectable', true)}
                         sortable={boolean('sortable', true)}
                         custom={boolean('custom', true)}
-                        as={breakpoint !== 'large' ? 'datacard' : 'table'}
+                        as={breakpoint !== 'large' ? 'card' : 'table'}
                     />
                 );
             }}
