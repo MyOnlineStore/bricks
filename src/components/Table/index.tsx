@@ -15,7 +15,7 @@ type BaseRowType = {
     id: string;
     selected?: boolean;
     // tslint:disable-next-line
-    [key: string]: string | number | boolean | undefined | Array<ReactNode> | ReactNode;
+    [key: string]: string | number | boolean | undefined | ReactNode;
 };
 
 type ColumnType<GenericCellType, GenericRowType> = {

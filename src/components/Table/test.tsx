@@ -58,40 +58,6 @@ describe('Table', () => {
         expect(table.find(Card).length).toBe(4);
     });
 
-    it('should render a column with buttons when buttons are provided', () => {
-        const table = mountWithTheme(
-            <Table
-                as="table"
-                columns={{
-                    id: { header: 'Product ID' },
-                    name: { header: 'name' },
-                    price: { header: 'Price' },
-                }}
-                rows={[
-                    {
-                        id: '61651320',
-                        price: 19.12,
-                        name: 'foo0',
-                        image: 'imageurl',
-                        buttons: [
-                            <Button key={'button1'} title={'button1'} variant={'primary'} />,
-                            <Button key={'button2'} title={'button2'} variant={'primary'} />,
-                        ],
-                    },
-                ]}
-            />,
-        );
-
-        expect(
-            table
-                .find(Row)
-                .first()
-                .find(Cell)
-                .last()
-                .find(Button).length,
-        ).toBe(2);
-    });
-
     it('should render a CompactHeader with a Select when there are column with sort', () => {
         const table = mountWithTheme(
             <Table

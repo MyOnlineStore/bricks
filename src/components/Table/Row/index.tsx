@@ -13,10 +13,7 @@ import { ColumnType, BaseRowType } from '..';
 type PropsType = {
     // tslint:disable
     columns: {
-        [key: string]: ColumnType<
-            string | number | boolean | undefined | Array<ReactNode> | ReactNode | Array<StatusIconType>,
-            any
-        >;
+        [key: string]: ColumnType<string | number | boolean | undefined | ReactNode, any>;
     };
     // tsline:enable
     row: BaseRowType;
@@ -25,11 +22,6 @@ type PropsType = {
     selectable: boolean;
     index: number;
     onSelection(event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void;
-};
-
-type StatusIconType = {
-    label: string;
-    icon: string;
 };
 
 type StateType = {

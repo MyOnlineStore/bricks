@@ -17,16 +17,7 @@ type RowType = {
     name: string;
     image: string;
     badge?: string;
-    extra?: string;
-    buttons?: Array<ReactNode>;
-    statusIcons?: Array<StatusIconType>;
-    extraData?: Array<{ label: string; price: number }>;
-};
-
-type StatusIconType = {
-    label: string;
-    severity?: SeverityType;
-    icon: keyof typeof MediumIcons;
+    buttons?: string;
 };
 
 type StateType = {
