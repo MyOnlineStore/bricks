@@ -23,9 +23,6 @@ const StyledRow = styled.tr<PropsType>`
     }
 
     ${StyledCell} {
-        ${({ selected, theme }): string =>
-            selected ? `background-color: ${theme.Table.row.selected.backgroundColor};` : ''}
-
         ${({ dragging }): string => {
             // this is a hack to force (IE11 mostly) td's to wrap text in combination with flex-box
             return dragging !== true ? 'max-width: 100%' : '';

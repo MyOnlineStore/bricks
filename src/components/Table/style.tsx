@@ -25,10 +25,6 @@ type TableThemeType = {
         dragging: {
             boxShadow: string;
         };
-        selected: {
-            backgroundColor: string;
-            borderColor: string;
-        };
     };
     cell: {
         default: {
