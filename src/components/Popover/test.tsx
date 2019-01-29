@@ -1,6 +1,6 @@
 /// <reference path="../../declarations/global.d.ts" />
 import React from 'react';
-import { Popper, Reference } from 'react-popper';
+import { Popper } from 'react-popper';
 import Popover from '.';
 import { shallowWithTheme, mountWithTheme } from '../../utility/styled/testing';
 import TransitionAnimation from '../TransitionAnimation';

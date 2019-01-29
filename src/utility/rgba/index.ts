@@ -2,11 +2,12 @@ type ArgumentsType = [string] | [string, number] | [number, number, number] | [n
 
 export const hexToRGB = (hex: string): string => {
     const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    hex = hex
-        .replace(/[^0-9A-F]/gi, '')
-        .replace(shorthandRegex, (m: string, r: string, g: string, b: string): string => {
+    hex = hex.replace(/[^0-9A-F]/gi, '').replace(
+        shorthandRegex,
+        (_: string, r: string, g: string, b: string): string => {
             return r + r + g + g + b + b;
-        });
+        },
+    );
     const bigint = parseInt(hex, 16);
     const r = (bigint >> 16) & 255;
     const g = (bigint >> 8) & 255;

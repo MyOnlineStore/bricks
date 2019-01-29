@@ -72,10 +72,10 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
         error
             ? theme.RadioButton.error.borderColor
             : checked
-                ? theme.RadioButton.active.borderColor
-                : theme.RadioButton.idle.borderColor};
+            ? theme.RadioButton.active.borderColor
+            : theme.RadioButton.idle.borderColor};
 
-    box-shadow: ${({ theme, elementFocus, checked, disabled }): string =>
+    box-shadow: ${({ theme, elementFocus }): string =>
         `
         ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow}
     `};
