@@ -4,13 +4,13 @@ import _T from '../../../types/ThemeType';
 import styled from '../../../utility/_styled';
 import StyledCell from '../Cell/style';
 
-type StyledCardProps = {
+type StyledCardPropsType = {
     dragging?: boolean;
     selected?: boolean;
     focus?: boolean;
 };
 
-const StyledCard = styled.div<StyledCardProps>`
+const StyledCard = styled.div<StyledCardPropsType>`
     transition: background-color 300ms, border 300ms;
     border-radius: ${({ theme }): string => theme.Table.card.borderRadius};
     box-shadow: ${({ theme }): string => theme.Table.card.boxShadow};
@@ -29,4 +29,4 @@ const StyledCard = styled.div<StyledCardProps>`
 `;
 
 export default StyledCard;
-export { StyledCardProps };
+export { StyledCardPropsType };
