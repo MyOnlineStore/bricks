@@ -197,7 +197,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                             <DragDropContext onDragEnd={this.dragEndHandler}>
                                 <Droppable droppableId="droppable">
                                     {({ innerRef }): JSX.Element => (
-                                        <StyledTable innerRef={innerRef}>{children}</StyledTable>
+                                        <StyledTable ref={innerRef}>{children}</StyledTable>
                                     )}
                                 </Droppable>
                             </DragDropContext>

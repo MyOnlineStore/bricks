@@ -83,10 +83,10 @@ class Card extends Component<PropsType, StateType> {
                                     if (cell !== undefined) {
                                         return (
                                             <StyledRow key={`row_${index}`}>
-                                                <StyledCell align="start">
+                                                <StyledCell cellAlign="start">
                                                     <Text strong>{this.props.columns[key].header}</Text>
                                                 </StyledCell>
-                                                <StyledCell align="start">
+                                                <StyledCell cellAlign="start">
                                                     {(column.render !== undefined &&
                                                         column.render(cell, this.props.row)) ||
                                                         ((typeof cell === 'string' || typeof cell === 'number') && (
@@ -147,7 +147,7 @@ class Card extends Component<PropsType, StateType> {
                                             focus={this.state.hasFocus}
                                             onMouseEnter={this.handleMouseEnter}
                                             onMouseLeave={this.handleMouseLeave}
-                                            innerRef={provided.innerRef}
+                                            ref={provided.innerRef}
                                             {...provided.draggableProps}
                                         >
                                             {this.renderRow(provided)}
