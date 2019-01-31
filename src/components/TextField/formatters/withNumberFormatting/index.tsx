@@ -1,4 +1,4 @@
-import React, { Component, ComponentClass, ComponentType, ChangeEvent } from 'react';
+import React, { Component, ComponentClass, ComponentType } from 'react';
 import { PropsType as TextFieldPropsType } from '../../';
 
 type OmittedKeys = 'onChange' | 'value' | 'type';

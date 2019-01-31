@@ -6,6 +6,8 @@
     "outDir": "lib/src",
     "noImplicitAny": true,
     "noErrorTruncation": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
     "module": "es6",
     "target": "es5",

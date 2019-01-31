@@ -55,6 +55,7 @@ const StyledInput = styled.input<InputPropsType>`
     padding: 6px 12px;
     line-height: 1.572;
     outline: none;
+    min-width: 12px;
 
     ${({ theme, disabled }): string =>
         disabled

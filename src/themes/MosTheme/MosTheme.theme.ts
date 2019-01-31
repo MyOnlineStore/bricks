@@ -711,7 +711,7 @@ const theme: ThemeType = {
     Tile: {
         borderColor: silver.darker4,
     },
-    Toaster: {
+    Toast: {
         borderRadius: roundness.base,
         backgroundColor: silver.lighter1,
         severity: {

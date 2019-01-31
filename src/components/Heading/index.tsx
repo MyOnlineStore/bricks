@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 import styled from '../../utility/_styled';
 
 type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;

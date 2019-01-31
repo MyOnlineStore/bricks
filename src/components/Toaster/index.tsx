@@ -1,121 +1,131 @@
 import React, { Component } from 'react';
-import StyledToaster, { StyledToasterWrapper } from './style';
-import Button from '../Button';
-import IconButton from '../IconButton';
-import Box from '../Box';
-import Icon, { MediumIcons } from '../Icon';
-import Text from '../Text';
-import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
-import trbl from '../../utility/trbl';
-import TransitionAnimation from '../TransitionAnimation';
-import BreakpointProvider from '../BreakpointProvider';
+import Toast, { PropsType as ToastPropsType } from '../Toast';
+import { createPortal } from 'react-dom';
+
+type ToastType = Pick<ToastPropsType, Exclude<keyof ToastPropsType, 'show'>>;
 
 type PropsType = {
-    title: string;
-    icon?: keyof typeof MediumIcons;
-    show: boolean;
-    message?: string;
-    buttonTitle?: string;
-    buttonSeverity?: ButtonVariant;
-    severity: SeverityType;
-    autoDismiss?: boolean;
-    onClose?(): void;
-    onClick?(): void;
+    portalId?: string;
 };
 
-type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
+type StateType = {
+    toasts: Array<ToastType & { id: number; isOpen: boolean }>;
+};
 
-class Toaster extends Component<PropsType> {
-    private handleClose = (): void => {
-        if (this.props.onClose !== undefined) this.props.onClose();
+declare global {
+    interface Window {
+        toaster: {
+            notify(toast: ToastType): void;
+        };
+    }
+}
+
+if (window) {
+    window.toaster = {
+        notify: (): void => {
+            console.error(
+                '[Bricks]: <Toaster /> not mounted yet. Make sure the Toaster is mounted before calling notify.',
+            );
+        },
+    };
+}
+
+class Toaster extends Component<PropsType, StateType> {
+    private static portalId: string = '__toaster-container';
+    private toastId: number = 0;
+
+    public constructor(props: PropsType) {
+        super(props);
+
+        this.state = {
+            toasts: [],
+        };
+    }
+
+    private closeToast = (id: number): void => {
+        this.setState({
+            toasts: this.state.toasts.map(toast => {
+                if (toast.id === id) {
+                    return {
+                        ...toast,
+                        isOpen: false,
+                    };
+                }
+
+                return toast;
+            }),
+        });
     };
 
-    private handleClick = (): void => {
-        if (this.props.onClick !== undefined) this.props.onClick();
+    private removeToast = (id: number): void => {
+        this.setState({
+            toasts: this.state.toasts.filter(toast => toast.id !== id),
+        });
     };
 
-    private expectedVariant = (): ButtonVariant => {
-        if (this.props.severity === 'error') return 'destructive';
-        if (this.props.severity === 'warning') return 'warning';
+    private getToastId = (): number => {
+        this.toastId++;
 
-        return 'primary';
+        return this.toastId;
     };
 
-    public componentDidMount = (): void => {
-        if (this.props.autoDismiss) setTimeout((): void => this.handleClose(), 6000);
+    public componentDidMount(): void {
+        window.toaster = {
+            notify: this.notify,
+        };
+    }
+
+    public notify = (toast: ToastType): void => {
+        this.setState({
+            toasts: [
+                ...this.state.toasts,
+                {
+                    ...toast,
+                    id: this.getToastId(),
+                    isOpen: true,
+                },
+            ],
+        });
     };
 
-    public render() {
-        const icon = this.props.icon !== undefined ? this.props.icon : SeverityIcons[this.props.severity];
+    public render(): JSX.Element {
+        const toasts = (
+            <>
+                {this.state.toasts.map(toast => {
+                    const { id, onClose, ...toastProps } = toast;
+                    const autoDismiss = toastProps.severity !== 'error';
 
-        return (
-            <TransitionAnimation show={this.props.show} animation="zoom">
-                <BreakpointProvider breakpoints={{ small: 0, medium: 375, large: 800 }}>
-                    {(breakpoint): JSX.Element => (
-                        <StyledToasterWrapper>
-                            <Box margin={trbl(6, 24)}>
-                                <StyledToaster severity={this.props.severity}>
-                                    {breakpoint !== 'small' && (
-                                        <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
-                                            <Text as="span" severity={this.props.severity}>
-                                                <Icon size="medium" icon={icon} />
-                                            </Text>
-                                        </Box>
-                                    )}
-                                    <Box
-                                        direction={breakpoint === 'small' ? 'column' : 'row'}
-                                        justifyContent="center"
-                                        alignContent="center"
-                                    >
-                                        <Box
-                                            direction="column"
-                                            margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}
-                                        >
-                                            <Text strong>
-                                                <span dangerouslySetInnerHTML={{ __html: this.props.title }} />
-                                            </Text>
-                                            {this.props.message && (
-                                                <Text>
-                                                    <span dangerouslySetInnerHTML={{ __html: this.props.message }} />
-                                                </Text>
-                                            )}
-                                        </Box>
-                                        {this.props.buttonTitle && (
-                                            <Box
-                                                direction="column"
-                                                justifyContent="center"
-                                                margin={breakpoint === 'small' ? trbl(0, 12, 12, 12) : trbl(0, 12)}
-                                                alignItems="flex-start"
-                                            >
-                                                <Button
-                                                    title={this.props.buttonTitle}
-                                                    onClick={this.handleClick}
-                                                    variant={
-                                                        this.props.buttonSeverity
-                                                            ? this.props.buttonSeverity
-                                                            : this.expectedVariant()
-                                                    }
-                                                />
-                                            </Box>
-                                        )}
-                                    </Box>
-                                    <Box direction="column">
-                                        <IconButton
-                                            icon="close"
-                                            title="close"
-                                            onClick={this.handleClose}
-                                            variant="primary"
-                                        />
-                                    </Box>
-                                </StyledToaster>
-                            </Box>
-                        </StyledToasterWrapper>
-                    )}
-                </BreakpointProvider>
-            </TransitionAnimation>
+                    return (
+                        <Toast
+                            key={toast.id}
+                            autoDismiss={autoDismiss}
+                            show={toast.isOpen}
+                            {...toastProps}
+                            onExited={(): void => this.removeToast(toast.id)}
+                            onClose={(): void => {
+                                if (onClose!== undefined) onClose();
+                                this.closeToast(id);
+                            }}
+                        />
+                    );
+                })}
+            </>
         );
+
+        const portalId = this.props.portalId ? this.props.portalId : Toaster.portalId;
+        const container = document.getElementById(portalId);
+
+        if (!container) {
+            const newContainer = document.createElement('div');
+
+            newContainer.id = portalId;
+            document.body.prepend(newContainer);
+
+            return createPortal(toasts, newContainer);
+        }
+
+        return createPortal(toasts, container);
     }
 }
 
 export default Toaster;
-export { PropsType, ButtonVariant };

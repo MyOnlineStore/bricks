@@ -1,4 +1,4 @@
-import { button, select, text, boolean } from '@storybook/addon-knobs';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import TextField from '.';

@@ -1,4 +1,3 @@
-import { mount } from 'enzyme';
 import React from 'react';
 import ButtonGroup from '.';
 import BreakpointProvider from '../BreakpointProvider';
