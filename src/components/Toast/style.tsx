@@ -2,11 +2,11 @@ import styled from '../../utility/_styled';
 import SeverityType from '../../types/_SeverityType';
 import { LinkStyles } from '../Link/style';
 
-type ToasterPropsType = {
+type ToastPropsType = {
     severity: SeverityType;
 };
 
-type ToasterThemeType = {
+type ToastThemeType = {
     borderRadius: string;
     backgroundColor: string;
     severity: {
@@ -17,7 +17,7 @@ type ToasterThemeType = {
     };
 };
 
-const StyledToasterWrapper = styled.div`
+const StyledToastWrapper = styled.div`
     position: fixed;
     left: 0;
     right: 0;
@@ -28,7 +28,7 @@ const StyledToasterWrapper = styled.div`
     align-items: flex-start;
 `;
 
-const StyledToaster = styled.div<ToasterPropsType>`
+const StyledToast = styled.div<ToastPropsType>`
     display: flex;
     transition: opacity 100ms, box-shadow 100ms;
     box-sizing: border-box;
@@ -36,8 +36,8 @@ const StyledToaster = styled.div<ToasterPropsType>`
     align-items: center;
     margin-top: 36px;
     box-shadow: 0 3px 48px rgba(0,0,0,0.3);
-    border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
-    background-color: ${({ theme }): string => theme.Toaster.backgroundColor}
+    border-radius: ${({ theme }): string => theme.Toast.borderRadius};
+    background-color: ${({ theme }): string => theme.Toast.backgroundColor};
     border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity]};`}
 
     a {
@@ -45,5 +45,5 @@ const StyledToaster = styled.div<ToasterPropsType>`
     }
 `;
 
-export default StyledToaster;
-export { ToasterPropsType, StyledToasterWrapper, ToasterThemeType };
+export default StyledToast;
+export { ToastPropsType, StyledToastWrapper, ToastThemeType };
