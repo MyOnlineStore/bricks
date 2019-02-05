@@ -35,8 +35,14 @@ srcFolders.forEach(folder => {
     const entryPoints = createEntryPointsFromFolder(folder);
 
     entryPoints.forEach(entryPoint => {
-        allEntryPoints[entryPoint.name] = entryPoint.entryPoint;
+        allEntryPoints[`${entryPoint.name}index`] = entryPoint.entryPoint;
     });
 });
+
+readdirSync(`${__dirname}/../src/assets/icons`).forEach(file => {
+    allEntryPoints[`assets/icons/${file}`] = file;
+});
+
+console.log(allEntryPoints);
 
 module.exports = allEntryPoints;

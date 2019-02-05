@@ -5,7 +5,6 @@ import ThemeType from '../../types/ThemeType';
 import Icon from '../Icon';
 import Spinner from '../Spinner';
 import Box from '../Box';
-import { MediumIcons } from '../Icon/types';
 import { withTheme } from 'styled-components';
 
 type CommonType = {
@@ -24,7 +23,7 @@ type IconButtonThemeType = {
 
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
-    icon: keyof typeof MediumIcons;
+    icon: string;
     variant?: 'primary' | 'destructive';
 };
 

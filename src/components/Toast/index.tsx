@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StyledToast, { StyledToastWrapper } from './style';
 import Button from '../Button';
 import Box from '../Box';
-import Icon, { MediumIcons } from '../Icon';
+import Icon from '../Icon';
 import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
 import trbl from '../../utility/trbl';
@@ -12,7 +12,7 @@ import IconButton from '../IconButton';
 
 type PropsType = {
     title: string;
-    icon?: keyof typeof MediumIcons;
+    icon?: string;
     show: boolean;
     message?: string;
     buttonTitle?: string;
@@ -64,7 +64,7 @@ class Toast extends Component<PropsType> {
                                     {breakpoint !== 'small' && (
                                         <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
                                             <Text as="span" severity={this.props.severity}>
-                                                <Icon size="medium" icon={icon} />
+                                                <Icon size="medium" icon={icon as string} />
                                             </Text>
                                         </Box>
                                     )}
@@ -103,7 +103,12 @@ class Toast extends Component<PropsType> {
                                         )}
                                     </Box>
                                     <Box direction="column">
-                                        <IconButton variant="primary" icon="close" title="close" onClick={this.closeAction} />
+                                        <IconButton
+                                            variant="primary"
+                                            icon="close"
+                                            title="close"
+                                            onClick={this.closeAction}
+                                        />
                                     </Box>
                                 </StyledToast>
                             </Box>
