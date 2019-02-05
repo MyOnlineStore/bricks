@@ -91,7 +91,7 @@ const StyledButton = withProps<ButtonPropsType>(styled.button)`
     position: relative;
     text-decoration: none;
     display: inline-block;
-    transform: translateZ(0) translate3d(0, 0, 0);
+    transform: none;
     transition: transform 0.1s, background 0.3s, box-shadow 0.1s, border 0.3s;
     padding: ${({ compact }): string => (compact ? '11px 12px' : '11px 24px')};
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
