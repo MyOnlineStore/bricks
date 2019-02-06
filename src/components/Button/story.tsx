@@ -43,7 +43,8 @@ storiesOf('Button', module)
                         'primary',
                     ) as PropsType['variant']
                 }
-                href="http://www.google.com"
+                href="#"
+                target="_self"
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
                 compact={boolean('compact', false)}
