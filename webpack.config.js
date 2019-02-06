@@ -11,9 +11,10 @@ module.exports = {
     mode: 'production',
     devtool: 'source-map',
     stats: {
-        assets: true,
+        assets: false,
         modules: false,
         children: false,
+        entrypoints: false,
     },
     output: {
         filename: '[name].js',
@@ -67,8 +68,14 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            name: 'env/',
-            minChunks: 2,
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'env',
+                    chunks: 'initial',
+                    minChunks: 2,
+                },
+            },
         },
     },
     plugins: [

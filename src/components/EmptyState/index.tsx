@@ -1,12 +1,12 @@
 import React, { FunctionComponent, Children, ReactNode } from 'react';
 import Box from '../Box';
 import Heading from '../Heading';
-import Illustration, { Illustrations } from '../Illustration';
+import Illustration from '../Illustration';
 
 import Text from '../Text';
 
 type PropsType = {
-    illustration?: keyof typeof Illustrations | ReactNode;
+    illustration?: string;
     title: string | ReactNode;
     message: string | ReactNode;
     horizontal?: boolean;
@@ -35,9 +35,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     const illustration =
         props.illustration !== undefined ? (
-            branchString(props.illustration, value => (
-                <Illustration illustration={value as keyof typeof Illustrations} />
-            ))
+            <Illustration illustration={props.illustration} />
         ) : (
             <Illustration illustration={'cactus'} />
         );

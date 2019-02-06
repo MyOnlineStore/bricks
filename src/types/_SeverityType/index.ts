@@ -2,10 +2,10 @@ type SeverityType = 'error' | 'warning' | 'success' | 'info';
 
 // tslint:disable
 enum SeverityIcons {
-    error = require('../../assets/icons/dangerCircle.svg'),
-    warning = require('../../assets/icons/dangerCircle.svg'),
-    info = require('../../assets/icons/infoCircle.svg'),
-    success = require('../../assets/icons/checkmarkCircle.svg'),
+    error = require('../../assets/icons/danger-circle.svg'),
+    warning = require('../../assets/icons/danger-circle.svg'),
+    info = require('../../assets/icons/info-circle.svg'),
+    success = require('../../assets/icons/checkmark-circle.svg'),
 }
 // tslint:enable
 

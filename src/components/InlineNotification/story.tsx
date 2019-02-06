@@ -5,7 +5,7 @@ import InlineNotification from '.';
 import SeverityType from '../../types/_SeverityType';
 import Link from '../Link';
 import bell from '../../assets/icons/bell.svg';
-import infoCircle from '../../assets/icons/infoCircle.svg';
+import infoCircle from '../../assets/icons/info-circle.svg';
 
 storiesOf('InlineNotification', module)
     .add('Default', () => (

@@ -27,7 +27,7 @@ const srcFolders = getDirectories(__dirname + '/../src')
 
         return noExport.test(folder) ? null : folder;
     })
-    .filter(item => item !== null);
+    .filter(item => item !== null && item !== 'assets');
 
 let allEntryPoints = {};
 
@@ -40,9 +40,11 @@ srcFolders.forEach(folder => {
 });
 
 readdirSync(`${__dirname}/../src/assets/icons`).forEach(file => {
-    allEntryPoints[`assets/icons/${file}`] = file;
+    allEntryPoints[`icons/${file}`] = `${__dirname}/../src/assets/icons/${file}`;
 });
 
-console.log(allEntryPoints);
+readdirSync(`${__dirname}/../src/assets/illustrations`).forEach(file => {
+    allEntryPoints[`illustrations/${file}`] = `${__dirname}/../src/assets/illustrations/${file}`;
+});
 
 module.exports = allEntryPoints;
