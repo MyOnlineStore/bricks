@@ -14,7 +14,8 @@ storiesOf('IconButton', module).add('Default', () => {
         <IconButton
             icon={select('icon', mediumIconKeys, 'cart') as PropsType['icon']}
             loading={boolean('loading', false)}
-            variant={select('variant', ['default', 'destructive'], 'default') as PlainPropsType['variant']}
+            disabled={boolean('disabled', false)}
+            variant={select('variant', ['primary', 'destructive'], 'primary') as PlainPropsType['variant']}
             title={text('title', 'Click me')}
         />
     );

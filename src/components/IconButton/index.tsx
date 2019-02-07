@@ -8,14 +8,21 @@ import Box from '../Box';
 import { MediumIcons } from '../Icon/types';
 import { withTheme } from 'styled-components';
 
+type CommonType = {
+    backgroundColor: string;
+    color: string;
+};
+
+type ComponentStateTypes = {
+    idle: CommonType;
+    hover: CommonType;
+    focus: CommonType;
+    active: CommonType;
+};
+
 type IconButtonThemeType = {
-    primary: {
-        color: string;
-        backgroundColor: string;
-    };
-    destructive: {
-        color: string;
-    };
+    primary: ComponentStateTypes;
+    destructive: ComponentStateTypes;
 };
 
 type PropsType = BareButtonPropsType & {
@@ -47,20 +54,48 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
 
     return { children };
 })<PropsType>`
-    padding: 9px;
-    color: ${({ theme }) => theme.IconButton.primary.color};
-    background-color: ${({ theme }) => theme.IconButton.primary.backgroundColor};
-    transform: none;
+    ${({ theme, variant, loading }): string => {
+        const idle = `
+            transform: none;
+            background-color: ${theme.IconButton[variant].idle.backgroundColor};
+            color: ${theme.IconButton[variant].idle.color};
+        `;
 
-    &:hover {
-        ${({ loading }) => (!loading ? 'transform: scale(1.1);' : '')};
-        ${({ variant, theme, loading }) =>
-            variant === 'destructive' && !loading ? `color: ${theme.IconButton.destructive.color}` : ''};
-    }
+        const hover = `
+            transform: scale(1.1);
+            background-color: ${theme.IconButton[variant].hover.backgroundColor};
+            color: ${theme.IconButton[variant].hover.color};
+        `;
 
-    &:active {
-        ${({ loading }) => (!loading ? 'transform: scale(0.9);' : '')};
-    }
+        const active = `
+            transform: scale(0.9);
+            background-color: ${theme.IconButton[variant].active.backgroundColor};
+            color: ${theme.IconButton[variant].active.color};
+        `;
+
+        const focus = `
+            transform: scale(1.1);
+            background-color: ${theme.IconButton[variant].focus.backgroundColor};
+            color: ${theme.IconButton[variant].focus.color};
+        `;
+
+        return `
+            ${idle}
+            padding: 9px;
+
+            &:hover {
+                ${!loading ? hover : idle}
+            }
+
+            &:focus {
+                ${!loading ? focus : idle}
+            }
+
+            &:active {
+                ${!loading ? active : idle}
+            }
+    `;
+    }}
 `;
 
 export default withTheme(IconButton);

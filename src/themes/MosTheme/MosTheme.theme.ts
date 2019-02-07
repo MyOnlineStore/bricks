@@ -338,11 +338,40 @@ const theme: ThemeType = {
     ],
     IconButton: {
         primary: {
-            color: grey.darker1,
-            backgroundColor: 'transparent',
+            idle: {
+                backgroundColor: 'transparent',
+                color: grey.base,
+            },
+            hover: {
+                backgroundColor: 'transparent',
+                color: grey.darker1,
+            },
+            focus: {
+                backgroundColor: 'transparent',
+                color: grey.darker1,
+            },
+            active: {
+                backgroundColor: 'transparent',
+                color: grey.darker1,
+            },
         },
         destructive: {
-            color: red.base,
+            idle: {
+                backgroundColor: 'transparent',
+                color: red.base,
+            },
+            hover: {
+                backgroundColor: 'transparent',
+                color: red.base,
+            },
+            focus: {
+                backgroundColor: 'transparent',
+                color: red.base,
+            },
+            active: {
+                backgroundColor: 'transparent',
+                color: red.base,
+            },
         },
     },
     Illustration: {
