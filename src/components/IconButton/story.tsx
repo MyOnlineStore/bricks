@@ -2,7 +2,7 @@ import { boolean, select, text } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import IconButton, { PropsType as PlainPropsType } from '../IconButton';
+import IconButton from '../IconButton';
 import { MediumIcons } from '../Icon/types';
 
 /* tslint:disable */
@@ -15,7 +15,7 @@ storiesOf('IconButton', module).add('Default', () => {
             icon={select('icon', mediumIconKeys, 'cart') as PropsType['icon']}
             loading={boolean('loading', false)}
             disabled={boolean('disabled', false)}
-            variant={select('variant', ['primary', 'destructive'], 'primary') as PlainPropsType['variant']}
+            variant={select('variant', ['primary', 'destructive'], 'primary')}
             title={text('title', 'Click me')}
         />
     );
