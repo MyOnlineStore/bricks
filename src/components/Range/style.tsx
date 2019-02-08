@@ -73,8 +73,8 @@ const StyledWrapper = withProps<wrapperProps, HTMLDivElement>(styled.div)`
             background: ${({ theme }): string => theme.Range.default.slider.background};
             border: ${({ theme }): string => theme.Range.default.slider.border};
             margin-top: -14px;
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             transition: none;
         }
 
