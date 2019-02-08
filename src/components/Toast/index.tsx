@@ -9,6 +9,7 @@ import trbl from '../../utility/trbl';
 import TransitionAnimation from '../TransitionAnimation';
 import BreakpointProvider from '../BreakpointProvider';
 import IconButton from '../IconButton';
+import close from '../../assets/icons/close.svg';
 
 type PropsType = {
     title: string;
@@ -105,7 +106,7 @@ class Toast extends Component<PropsType> {
                                     <Box direction="column">
                                         <IconButton
                                             variant="primary"
-                                            icon="close"
+                                            icon={close}
                                             title="close"
                                             onClick={this.closeAction}
                                         />

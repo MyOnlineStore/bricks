@@ -10,6 +10,9 @@ import Icon from '../Icon';
 import IconButton from '../../components/IconButton';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
+import search from '../../assets/icons/search.svg';
+import chevronDown from '../../assets/icons/chevron-down.svg';
+import chevronUp from '../../assets/icons/chevron-up.svg';
 
 type OptionBaseType = {
     value: string;
@@ -205,7 +208,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                         {(this.state.isOpen && (
                             <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
                                 <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                    <Icon icon="search" size="small" color={'#d2d7e0'} />
+                                    <Icon icon={search} size="small" color={'#d2d7e0'} />
                                 </Box>
                                 <input
                                     ref={this.inputRef}
@@ -233,7 +236,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 </Box>
                             )}
                         <IconButton
-                            icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'}
+                            icon={this.state.isOpen ? chevronUp : chevronDown}
                             title={this.state.isOpen ? 'close' : 'open'}
                             onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}

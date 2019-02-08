@@ -9,6 +9,7 @@ import ScrollBox from '../ScrollBox';
 import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
 import ButtonGroup from '../ButtonGroup';
+import close from '../../assets/icons/close.svg';
 
 type PropsType = {
     show: boolean;
@@ -77,7 +78,7 @@ class Modal extends Component<PropsType> {
                                             grow={0}
                                         >
                                             <IconButton
-                                                icon="close"
+                                                icon={close}
                                                 variant="primary"
                                                 title="close"
                                                 onClick={this.props.onClose}

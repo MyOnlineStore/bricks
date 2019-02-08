@@ -5,12 +5,15 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { ColumnType, SortDirectionType } from '..';
 import Icon from '../../Icon';
+import caretVertical from '../../../assets/icons/caret-vertical.svg';
+import caretDown from '../../../assets/icons/caret-down.svg';
+import caretUp from '../../../assets/icons/caret-up.svg';
 
-enum SortingIcons {
-    'none' = 'caretVertical',
-    'ascending' = 'caretDown',
-    'descending' = 'caretUp',
-}
+const sortingIcons = {
+    none: caretVertical,
+    ascending: caretDown,
+    descending: caretUp,
+};
 
 enum SortingSteps {
     'none' = 'ascending',
@@ -141,7 +144,12 @@ class Headers extends Component<PropsType, StateType> {
                     {this.state.columns[key].sorting !== undefined && (
                         <Text severity={this.state.columns[key].sorting === 'none' ? 'info' : undefined}>
                             <Icon
-                                icon={SortingIcons[this.state.columns[key].sorting as SortDirectionType]}
+                                title={`sorting: ${
+                                    this.state.columns[key].sorting !== undefined
+                                        ? this.state.columns[key].sorting
+                                        : 'unsorted'
+                                }`}
+                                icon={sortingIcons[this.state.columns[key].sorting as SortDirectionType]}
                                 size="medium"
                             />
                         </Text>

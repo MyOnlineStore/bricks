@@ -4,6 +4,8 @@ import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/_SeverityType';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
+import questionCircle from '../../assets/icons/question-circle.svg';
+import dangerCircle from '../../assets/icons/danger-circle.svg';
 
 type PropsType = {
     rows?: number;
@@ -44,7 +46,7 @@ class TextArea extends Component<PropsType> {
                 {this.props.feedback && (
                     <Box margin={trbl(6, 0, 0, 12)}>
                         <InlineNotification
-                            icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
+                            icon={this.props.feedback.severity === 'info' ? questionCircle : dangerCircle}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

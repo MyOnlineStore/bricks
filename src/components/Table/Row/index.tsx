@@ -9,6 +9,7 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import Branch from '../../Branch';
 import { ColumnType, BaseRowType } from '..';
+import bars from '../../../assets/icons/bars.svg';
 
 type PropsType = {
     // tslint:disable
@@ -83,7 +84,7 @@ class Row extends Component<PropsType, StateType> {
                                                 onFocus={this.handleFocus}
                                             >
                                                 <Text severity={!this.state.hasHover ? 'info' : undefined}>
-                                                    <Icon size="medium" icon="bars" />
+                                                    <Icon size="medium" icon={bars} />
                                                 </Text>
                                             </Cell>
                                             {children}

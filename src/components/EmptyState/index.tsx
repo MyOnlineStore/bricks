@@ -2,7 +2,7 @@ import React, { FunctionComponent, Children, ReactNode } from 'react';
 import Box from '../Box';
 import Heading from '../Heading';
 import Illustration from '../Illustration';
-
+import cactus from '../../assets/illustrations/cactus.color.svg';
 import Text from '../Text';
 
 type PropsType = {
@@ -37,7 +37,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
         props.illustration !== undefined ? (
             <Illustration illustration={props.illustration} />
         ) : (
-            <Illustration illustration={'cactus'} />
+            <Illustration illustration={cactus} />
         );
 
     if (props.horizontal) {
