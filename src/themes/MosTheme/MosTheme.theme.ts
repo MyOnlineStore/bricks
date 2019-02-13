@@ -338,11 +338,20 @@ const theme: ThemeType = {
     ],
     IconButton: {
         primary: {
-            color: grey.darker1,
-            backgroundColor: 'transparent',
+            idle: {
+                color: grey.lighter1,
+            },
+            hover: {
+                color: grey.base,
+            },
         },
         destructive: {
-            color: red.base,
+            idle: {
+                color: grey.lighter1,
+            },
+            hover: {
+                color: red.base,
+            },
         },
     },
     Illustration: {

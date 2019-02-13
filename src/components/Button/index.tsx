@@ -91,40 +91,47 @@ const Button = styled(BareButton).attrs((props: PropsType) => {
     };
 })<PropsType>`
     ${({ theme, variant, compact, disabled, loading }): string => {
+        const idle = `
+            background-color: ${theme.Button[variant].idle.backgroundColor};
+            box-shadow: ${theme.Button[variant].idle.boxShadow};
+            color: ${theme.Button[variant].idle.color};
+        `;
+
         const hover = `
             background-color: ${theme.Button[variant].hover.backgroundColor};
             box-shadow: ${theme.Button[variant].hover.boxShadow};
+            color: ${theme.Button[variant].hover.color};
         `;
 
         const active = `
             transform: translateY(2px);
             background-color: ${theme.Button[variant].active.backgroundColor};
             box-shadow: ${theme.Button[variant].active.boxShadow};
+            color: ${theme.Button[variant].active.color};
         `;
 
         const focus = `
             background-color: ${theme.Button[variant].focus.backgroundColor};
             box-shadow: ${theme.Button[variant].focus.boxShadow};
+            color: ${theme.Button[variant].focus.color};
         `;
 
         return `
+            ${idle}
             padding: 11px ${compact ? ' 12px' : '24px'};
-            color: ${disabled ? theme.Button.disabled.color : theme.Button[variant].idle.color};
-            background-color: ${theme.Button[variant].idle.backgroundColor};
             border-radius: ${theme.Button.common.borderRadius};
-            box-shadow: ${theme.Button[variant].idle.boxShadow}
             ${variant === 'plain' ? `text-decoration: ${theme.Button.plain.idle.textDecoration}` : ''}
 
             &:hover {
-                ${!loading ? hover : ''}
+                ${!loading && !disabled ? hover : idle}
             }
 
             &:focus {
-                ${focus}
+                ${!loading && !disabled ? focus : idle}
             }
 
             &:active {
-                ${!loading ? active : ''}
+                ${!loading && !disabled ? active : idle}
             }
 
             &::before {
