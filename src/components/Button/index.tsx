@@ -123,15 +123,15 @@ const Button = styled(BareButton).attrs((props: PropsType) => {
             ${variant === 'plain' ? `text-decoration: ${theme.Button.plain.idle.textDecoration}` : ''}
 
             &:hover {
-                ${!loading ? hover : idle}
+                ${!loading && !disabled ? hover : idle}
             }
 
             &:focus {
-                ${!loading ? focus : idle}
+                ${!loading && !disabled ? focus : idle}
             }
 
             &:active {
-                ${!loading ? active : idle}
+                ${!loading && !disabled ? active : idle}
             }
 
             &::before {

@@ -51,7 +51,7 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
 
     return { children };
 })<PropsType>`
-    ${({ theme, variant, loading }): string => {
+    ${({ theme, variant, loading, disabled }): string => {
         const buttonVariant = variant ? variant : 'primary';
 
         const idle = `
@@ -83,15 +83,15 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
             padding: 9px;
 
             &:hover {
-                ${!loading ? hover : idle}
+                ${!loading && !disabled ? hover : idle}
             }
 
             &:focus {
-                ${!loading ? focus : idle}
+                ${!loading && !disabled ? focus : idle}
             }
 
             &:active {
-                ${!loading ? active : idle}
+                ${!loading && !disabled ? active : idle}
             }
     `;
     }}
