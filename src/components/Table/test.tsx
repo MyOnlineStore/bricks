@@ -402,26 +402,24 @@ describe('Table', () => {
     });
 
     it('should sort rows when a column is given a sorting function and the select in the CompactHeader is clicked', () => {
-        const component = mountWithTheme(
-            <Table
-                as="card"
-                columns={{
-                    value: {
-                        header: 'label',
-                        sort(a: number, b: number) {
-                            return a - b;
-                        },
-                    },
-                }}
-                rows={[
-                    { id: '1', value: 1 },
-                    { id: '0', value: 0 },
-                    { id: '4', value: 4 },
-                    { id: '3', value: 3 },
-                    { id: '2', value: 2 },
-                ]}
-            />,
-        );
+        const rows = [
+            { id: '1', value: 1 },
+            { id: '0', value: 0 },
+            { id: '4', value: 4 },
+            { id: '3', value: 3 },
+            { id: '2', value: 2 },
+        ];
+
+        const columns = {
+            value: {
+                header: 'label',
+                sort(a: number, b: number) {
+                    return a - b;
+                },
+            },
+        };
+
+        const component = mountWithTheme(<Table as="card" columns={columns} rows={rows} />);
 
         component
             .find(CompactHeaders)
@@ -430,12 +428,14 @@ describe('Table', () => {
                 key: ' ',
             });
 
+        expect(component.find(Option).length).toBe(Object.keys(columns).length * 2);
+
         component
             .find(Option)
             .first()
             .simulate('click');
 
-        for (let index = 0; index < component.prop<Array<Object>>('rows').length; index++) {
+        for (let index = 0; index < rows.length; index++) {
             expect(
                 component
                     .find(Card)
