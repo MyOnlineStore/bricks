@@ -11,8 +11,6 @@ import Icon from '../Icon';
 import Box from '../Box';
 import Select from '../Select';
 import Option from '../Select/Option';
-import Button from '../Button';
-import Row from './Row';
 import StyledCell from './Cell/style';
 import CompactHeaders from './CompactHeaders';
 

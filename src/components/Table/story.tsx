@@ -1,12 +1,10 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component, Fragment, ReactNode } from 'react';
+import React, { Component } from 'react';
 import Table from '.';
 import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
-import { MediumIcons } from '../Icon';
 import StyledBadge from '../Badge';
-import SeverityType from '../../types/_SeverityType';
 import BreakpointProvider from '../BreakpointProvider';
 import { isString } from 'util';
 
@@ -116,14 +114,14 @@ class Demo extends Component<PropsType, StateType> {
                 {row.id !== '61651322' && (
                     <IconButton
                         icon="gear"
-                        title="edit"
+                        title={`Edit ${value}`}
                         variant="primary"
                         onClick={() => alert(`Edit id: ${row.id}`)}
                     />
                 )}
                 <IconButton
                     icon="trash"
-                    title="delete"
+                    title={`Delete ${value}`}
                     variant="destructive"
                     onClick={() => alert(`Edit id: ${row.id}`)}
                 />

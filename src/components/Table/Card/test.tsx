@@ -3,7 +3,6 @@ import Card from '.';
 import { mountWithTheme } from '../../../utility/_styled/testing';
 import StyledRow from './style';
 import { ContrastThemeProvider } from '../../Contrast';
-import StyledCard from './style';
 
 describe('Cards', () => {
     it('should handle mouse enter and leave', () => {
