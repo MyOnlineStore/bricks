@@ -9,15 +9,12 @@ import { MediumIcons } from '../Icon/types';
 import { withTheme } from 'styled-components';
 
 type CommonType = {
-    backgroundColor: string;
     color: string;
 };
 
 type ComponentStateTypes = {
     idle: CommonType;
     hover: CommonType;
-    focus: CommonType;
-    active: CommonType;
 };
 
 type IconButtonThemeType = {
@@ -28,7 +25,7 @@ type IconButtonThemeType = {
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
     icon: keyof typeof MediumIcons;
-    variant: 'primary' | 'destructive';
+    variant?: 'primary' | 'destructive';
 };
 
 const IconButton = styled(BareButton).attrs((props: PropsType) => {
@@ -55,28 +52,30 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
     return { children };
 })<PropsType>`
     ${({ theme, variant, loading }): string => {
+        const buttonVariant = variant ? variant : 'primary';
+
         const idle = `
             transform: none;
-            background-color: ${theme.IconButton[variant].idle.backgroundColor};
-            color: ${theme.IconButton[variant].idle.color};
+            background-color: transparent;
+            color: ${theme.IconButton[buttonVariant].idle.color};
         `;
 
         const hover = `
             transform: scale(1.1);
-            background-color: ${theme.IconButton[variant].hover.backgroundColor};
-            color: ${theme.IconButton[variant].hover.color};
+            background-color: transparent;
+            color: ${theme.IconButton[buttonVariant].hover.color};
         `;
 
         const active = `
             transform: scale(0.9);
-            background-color: ${theme.IconButton[variant].active.backgroundColor};
-            color: ${theme.IconButton[variant].active.color};
+            background-color: transparent;
+            color: ${theme.IconButton[buttonVariant].hover.color};
         `;
 
         const focus = `
             transform: scale(1.1);
-            background-color: ${theme.IconButton[variant].focus.backgroundColor};
-            color: ${theme.IconButton[variant].focus.color};
+            background-color: transparent;
+            color: ${theme.IconButton[buttonVariant].hover.color};
         `;
 
         return `
