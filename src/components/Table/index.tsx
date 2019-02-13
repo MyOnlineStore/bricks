@@ -6,8 +6,6 @@ import Row from './Row';
 import TableHeaders from './TableHeaders';
 import CompactHeaders from './CompactHeaders';
 import Branch from '../Branch';
-import { MediumIcons } from './../Icon/types';
-import SeverityType from '../../types/_SeverityType';
 
 type SortDirectionType = 'ascending' | 'descending' | 'none';
 
