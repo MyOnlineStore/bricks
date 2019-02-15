@@ -15,7 +15,9 @@ import StyledCell from '../Cell/style';
 type PropsType = {
     // tslint:disable-next-line
     columns: {
-        [key: string]: ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, BaseRowType>;
+        [key: string]:
+            | ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, BaseRowType>
+            | undefined;
     };
     row: BaseRowType;
     draggable: boolean;
@@ -64,27 +66,28 @@ class Card extends Component<PropsType, StateType> {
                         <tbody>
                             {Object.keys(this.props.columns)
                                 .sort((a, b) => {
+                                    const columnA = this.props.columns[a];
+                                    const columnB = this.props.columns[b];
+
                                     if (
-                                        this.props.columns[a].order === undefined ||
-                                        this.props.columns[b].order === undefined
+                                        columnA === undefined ||
+                                        columnA.order === undefined ||
+                                        (columnB === undefined || columnB.order === undefined)
                                     ) {
                                         return -1;
                                     }
 
-                                    return (
-                                        (this.props.columns[a].order as number) -
-                                        (this.props.columns[b].order as number)
-                                    );
+                                    return (columnA.order as number) - (columnB.order as number);
                                 })
                                 .map((key, index) => {
                                     const column = this.props.columns[key];
                                     const cell = this.props.row[key];
 
-                                    if (cell !== undefined) {
+                                    if (cell !== undefined && column !== undefined) {
                                         return (
                                             <StyledRow key={`row_${index}`}>
                                                 <StyledCell cellAlign="start">
-                                                    <Text strong>{this.props.columns[key].header}</Text>
+                                                    <Text strong>{column.header}</Text>
                                                 </StyledCell>
                                                 <StyledCell cellAlign="start">
                                                     {(column.render !== undefined &&
@@ -120,7 +123,7 @@ class Card extends Component<PropsType, StateType> {
                             </Text>
                         </Box>
                     )}
-                    {this.props.columns.buttons === Object && this.props.columns.buttons.render !== undefined && (
+                    {this.props.columns.buttons !== undefined && this.props.columns.buttons.render !== undefined && (
                         <Box direction="column">
                             {this.props.columns.buttons.render(this.props.row.buttons, this.props.row)}
                         </Box>
