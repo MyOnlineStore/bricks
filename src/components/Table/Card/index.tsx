@@ -77,7 +77,7 @@ class Card extends Component<PropsType, StateType> {
                                         return -1;
                                     }
 
-                                    return (columnA.order as number) - (columnB.order as number);
+                                    return columnA.order - columnB.order;
                                 })
                                 .map((key, index) => {
                                     const column = this.props.columns[key];
