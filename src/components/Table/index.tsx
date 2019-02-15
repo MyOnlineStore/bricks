@@ -18,7 +18,7 @@ type BaseRowType = {
 
 type ColumnType<GenericCellType, GenericRowType> = {
     order?: number;
-    header?: ReactNode | string | number | any;
+    header?: ReactNode | string | number;
     align?: 'start' | 'center' | 'end';
     width?: string;
     sort?(cellA: GenericCellType, cellB: GenericCellType): number;

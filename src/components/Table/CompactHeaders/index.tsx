@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { ColumnType, SortDirectionType } from '..';
@@ -63,8 +63,8 @@ class Headers extends Component<PropsType, StateType> {
             return columns[key].sorting !== undefined && columns[key].sorting !== 'none';
         });
 
-        const activeKey = active[0];
-        if (activeKey !== undefined) {
+        if (active.length > 0) {
+            const activeKey = active[0];
             const activeDirection = columns[activeKey].sorting;
 
             return `${activeKey}_${activeDirection}`;
@@ -150,7 +150,7 @@ class Headers extends Component<PropsType, StateType> {
                             emptyText=""
                             options={headers.reduce((a, b) => a.concat(b))}
                             onChange={this.handleChange}
-                            renderOption={(option: any): JSX.Element => (
+                            renderOption={(option: { value: string; label: string; icon: ReactNode }): JSX.Element => (
                                 <Text>
                                     {option.label} {option.icon}
                                 </Text>

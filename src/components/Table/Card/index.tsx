@@ -15,7 +15,7 @@ import StyledCell from '../Cell/style';
 type PropsType = {
     // tslint:disable-next-line
     columns: {
-        [key: string]: ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, any>;
+        [key: string]: ColumnType<string | number | boolean | undefined | Array<ReactNode> | ReactNode, BaseRowType>;
     };
     row: BaseRowType;
     draggable: boolean;
@@ -106,7 +106,7 @@ class Card extends Component<PropsType, StateType> {
                             <Checkbox
                                 name=""
                                 value=""
-                                checked={this.props.selected !== undefined ? this.props.selected : false}
+                                checked={this.props.selected}
                                 onChange={({ checked, event }): void =>
                                     this.props.onSelection(event, checked as boolean)
                                 }
@@ -120,7 +120,7 @@ class Card extends Component<PropsType, StateType> {
                             </Text>
                         </Box>
                     )}
-                    {this.props.columns.buttons !== undefined && this.props.columns.buttons.render !== undefined && (
+                    {this.props.columns.buttons === Object && this.props.columns.buttons.render !== undefined && (
                         <Box direction="column">
                             {this.props.columns.buttons.render(this.props.row.buttons, this.props.row)}
                         </Box>

@@ -108,7 +108,7 @@ class Demo extends Component<PropsType, StateType> {
         return <img src={image} width={60} height={60} />;
     };
 
-    private renderActions = (value: any, row: RowType) => {
+    private renderActions = (value: string, row: RowType) => {
         return (
             <>
                 {row.id !== '61651322' && (
