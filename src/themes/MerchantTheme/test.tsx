@@ -36,6 +36,7 @@ describe('MerchantTheme', () => {
         },
     };
 
+    // tslint:disable-next-line
     const context = (shallow(<MerchantTheme theme={theme as ThemeType} />) as any)
         .dive()
         .instance()
