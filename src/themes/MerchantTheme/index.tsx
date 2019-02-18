@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import ThemeType from '../../types/ThemeType';
 import { ThemeProvider } from '../../utility/styled';
-import { default as MosTheme } from '../MosTheme/MosTheme.theme';
+import { default as mosTheme } from '../MosTheme/MosTheme.theme';
 import deepmerge from 'deepmerge';
 
 type PropsType = {
@@ -9,7 +9,7 @@ type PropsType = {
 };
 
 const customTheme = (theme: ThemeType): ThemeType => {
-    return deepmerge(MosTheme, theme);
+    return deepmerge(mosTheme, theme);
 };
 
 const MerchantTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
