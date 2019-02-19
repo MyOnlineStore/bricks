@@ -23,6 +23,7 @@ const StyledToastWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    pointer-events: none;
 `;
 
 const StyledToast = withProps<ToastPropsType, HTMLDivElement>(styled.div)`
