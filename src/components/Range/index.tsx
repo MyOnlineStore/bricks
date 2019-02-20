@@ -155,11 +155,16 @@ class Range extends Component<PropsType, StateType> {
                         value={this.props.value}
                         disabled={this.props.disabled}
                         onChange={(values): void => {
-                            this.setState({
-                                inputFocus: false,
-                                inputValues: values as RangeType,
-                            });
-                            if (this.props.onChange !== undefined) this.props.onChange(values as RangeType);
+                            if (
+                                isWithinRange(this.props.minLimit, this.getMaxLowValue(), (values as RangeType).min) &&
+                                isWithinRange(this.getMinHighValue(), this.props.maxLimit, (values as RangeType).max)
+                            ) {
+                                this.setState({
+                                    inputFocus: false,
+                                    inputValues: values as RangeType,
+                                });
+                                if (this.props.onChange !== undefined) this.props.onChange(values as RangeType);
+                            }
                         }}
                         minValue={this.props.minLimit}
                         maxValue={this.props.maxLimit}
