@@ -23,6 +23,7 @@ const StyledToastWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    pointer-events: none;
 `;
 
 const StyledToast = withProps<ToastPropsType, HTMLDivElement>(styled.div)`
@@ -36,6 +37,7 @@ const StyledToast = withProps<ToastPropsType, HTMLDivElement>(styled.div)`
     border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
     background-color: ${({ theme }): string => theme.Toaster.backgroundColor}
     border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity].color};`}
+    pointer-events: auto;
 
     a {
        ${LinkStyles}
