@@ -1,4 +1,4 @@
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Checkbox from '.';
@@ -11,5 +11,6 @@ storiesOf('Checkbox', module).add('Default', () => (
         disabled={boolean('disabled', false)}
         error={boolean('error', false)}
         name="foo"
+        label={text('label', undefined)}
     />
 ));

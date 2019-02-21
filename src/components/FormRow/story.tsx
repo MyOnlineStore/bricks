@@ -9,6 +9,7 @@ import Box from '../Box';
 import TextField from '../TextField';
 import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
+import Separated from '../Separated';
 
 type PropsType = {
     descriptions: boolean;
@@ -22,7 +23,9 @@ type StateType = {
     city: string;
     country: string;
     toggled: boolean;
+    cheese: boolean;
     checked: boolean;
+    bacon: boolean;
 };
 
 class DemoComponent extends Component<PropsType, StateType> {
@@ -37,6 +40,8 @@ class DemoComponent extends Component<PropsType, StateType> {
             city: '',
             country: '',
             toggled: false,
+            bacon: false,
+            cheese: true,
             checked: false,
         };
     }
@@ -131,7 +136,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                             </label>
                         }
                         field={
-                            <RadioButtonGroup>
+                            <Separated before after>
                                 <RadioButton
                                     name="bool"
                                     label="True"
@@ -159,7 +164,37 @@ class DemoComponent extends Component<PropsType, StateType> {
                                         this.setState({ selected: value });
                                     }}
                                 />
-                            </RadioButtonGroup>
+                            </Separated>
+                        }
+                    />
+                    <FormRow
+                        label={
+                            <>
+                                <Text>Options</Text>
+                                <Text descriptive>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
+                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
+                                </Text>
+                            </>
+                        }
+                        field={
+                            <Separated before after>
+                                <Checkbox
+                                    name="cheese"
+                                    value="cheese"
+                                    label="Extra cheese"
+                                    checked={this.state.cheese}
+                                    onChange={({ checked }): void => this.setState({ cheese: checked as boolean })}
+                                />
+                                <Checkbox
+                                    name="bacon"
+                                    value="bacon"
+                                    label="Extra bacon"
+                                    checked={this.state.bacon}
+                                    onChange={({ checked }): void => this.setState({ bacon: checked as boolean })}
+                                />
+                            </Separated>
                         }
                     />
                 </form>
