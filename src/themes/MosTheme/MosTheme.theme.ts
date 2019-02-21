@@ -1,4 +1,5 @@
 import ThemeType from '../../types/ThemeType';
+import rgba from '../../utility/rgba';
 
 /* tslint:disable:max-file-line-count */
 
@@ -127,7 +128,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: green.darker1,
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(green.base, 0.4)}`,
             },
             active: {
                 backgroundColor: green.darker2,
@@ -149,7 +150,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: silver.base,
                 color: grey.lighter1,
-                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(grey.base, 0.08)}`,
             },
             active: {
                 backgroundColor: silver.darker1,
@@ -171,7 +172,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: yellow.darker1,
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px rgba(252,194,0,0.25)',
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(yellow.darker1, 0.25)}`,
             },
             active: {
                 backgroundColor: yellow.darker2,
@@ -193,7 +194,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: red.base,
                 color: silver.lighter1,
-                boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25)',
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px ${rgba(red.base, 0.25)}`,
             },
             active: {
                 backgroundColor: red.darker1,
@@ -216,7 +217,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: silver.base,
                 color: grey.base,
-                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(grey.base, 0.08)}`,
             },
             active: {
                 backgroundColor: silver.base,
@@ -237,7 +238,7 @@ const theme: ThemeType = {
             borderRadius: roundness.base,
         },
         focus: {
-            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         checked: {
             borderColor: green.darker2,
@@ -249,8 +250,10 @@ const theme: ThemeType = {
             } 10px )`,
         },
         checkedDisabled: {
-            background:
-                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
+            background: `repeating-linear-gradient( -45deg,${rgba(green.darker2, 0.6)},${rgba(
+                green.darker2,
+                0.6,
+            )} 5px,${rgba(green.base, 0.5)} 5px,${rgba(green.base, 0.5)} 10px )`,
         },
         error: {
             borderColor: red.base,
@@ -404,7 +407,7 @@ const theme: ThemeType = {
         button: {
             common: {
                 active: {
-                    boxShadow: 'inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px rgba(136,151,157,0.20)',
+                    boxShadow: `inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px ${rgba(grey.lighter2, 0.2)}`,
                 },
                 borderRadius: roundness.base,
             },
@@ -466,7 +469,7 @@ const theme: ThemeType = {
             } 10px )`,
         },
         focus: {
-            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         active: {
             boxShadow: `0px 0px 0px 5.5px ${green.base}`,
@@ -474,9 +477,11 @@ const theme: ThemeType = {
             background: green.base,
         },
         activeDisabled: {
-            boxShadow: '0px 0px 0px 5.5px rgba(107,222,120,0.50)',
-            background:
-                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
+            boxShadow: `0px 0px 0px 5.5px ${rgba(green.base, 0.5)}`,
+            background: `repeating-linear-gradient( -45deg,${rgba(green.darker2, 0.6)},${rgba(
+                green.darker2,
+                0.6,
+            )} 5px,${rgba(green.base, 0.5)} 5px,${rgba(green.base, 0.5)} 10px )`,
         },
         error: {
             borderColor: red.base,
@@ -487,10 +492,10 @@ const theme: ThemeType = {
             boxShadow: 'none',
         },
         level1: {
-            boxShadow: '0 2px 10px 0 rgba(33,37,43,0.15)',
+            boxShadow: `0 2px 10px 0 ${rgba(grey.darker1, 0.15)}`,
         },
         level2: {
-            boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
+            boxShadow: `0 6px 48px 0 ${rgba(grey.darker1, 0.3)}`,
         },
     },
     Range: {
@@ -502,7 +507,7 @@ const theme: ThemeType = {
             active: {
                 background: green.base,
                 border: `solid 1px ${green.darker2}`,
-                boxShadow: '0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px rgba(107, 222, 120, 0.4)',
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(green.base, 0.4)}`,
             },
             slider: {
                 background: silver.lighter1,
@@ -539,7 +544,7 @@ const theme: ThemeType = {
             },
             focus: {
                 borderColor: green.darker2,
-                boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
             },
         },
         input: {
@@ -596,16 +601,16 @@ const theme: ThemeType = {
         row: {
             default: {
                 backgroundColor: silver.lighter1,
-                borderColor: 'rgba(107,222,120,0)',
+                borderColor: `${rgba(green.base, 0)}`,
             },
             hover: {
                 backgroundColor: silver.base,
             },
             focus: {
-                borderColor: 'rgba(107,222,120,0.4)',
+                borderColor: `${rgba(green.base, 0.4)}`,
             },
             dragging: {
-                boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
+                boxShadow: `0 6px 48px 0 ${rgba(grey.darker1, 0.3)}`,
             },
         },
     },
@@ -681,10 +686,10 @@ const theme: ThemeType = {
             },
         },
         severity: {
-            error: { boxShadow: '0 0 0 4px rgba(200,23,70,0.4)' },
-            success: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            info: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            warning: { boxShadow: '0 0 0 4px rgba(237,177,7,0.4)' },
+            error: { boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}` },
+            success: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
+            info: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
+            warning: { boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}` },
         },
 
         disabled: {
@@ -712,10 +717,10 @@ const theme: ThemeType = {
         },
 
         severity: {
-            error: { boxShadow: '0 0 0 4px rgba(200,23,70,0.4)' },
-            success: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            info: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            warning: { boxShadow: '0 0 0 4px rgba(237,177,7,0.4)' },
+            error: { boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}` },
+            success: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
+            info: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
+            warning: { boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}` },
         },
 
         disabled: {
@@ -745,7 +750,7 @@ const theme: ThemeType = {
             background: silver.base,
         },
         focus: {
-            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         checked: {
             border: `1px solid ${green.darker2}`,
@@ -757,8 +762,10 @@ const theme: ThemeType = {
             } 10px )`,
         },
         checkedDisabled: {
-            background:
-                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
+            background: `repeating-linear-gradient( -45deg,${rgba(green.darker2, 0.6)},${rgba(
+                green.darker2,
+                0.6,
+            )} 5px,${rgba(green.base, 0.5)} 5px,${rgba(green.base, 0.5)} 10px )`,
         },
         error: {
             border: `1px solid ${red.base}`,
