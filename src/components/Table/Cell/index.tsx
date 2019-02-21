@@ -11,14 +11,7 @@ type PropsType = {
     onBlur?(): void;
 };
 
-const TableCell: FunctionComponent<PropsType> = ({
-    align,
-    provided,
-    width,
-    onFocus,
-    onBlur,
-    children,
-}): JSX.Element => {
+const Cell: FunctionComponent<PropsType> = ({ align, provided, width, onFocus, onBlur, children }): JSX.Element => {
     const extraProps = provided !== undefined ? provided : {};
 
     /* tslint:disable:no-unbound-method */
@@ -30,5 +23,5 @@ const TableCell: FunctionComponent<PropsType> = ({
     /* tslint:enable:no-unbound-method */
 };
 
-export default TableCell;
+export default Cell;
 export { PropsType };

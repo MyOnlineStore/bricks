@@ -1,4 +1,4 @@
-import React, { Component, MouseEvent } from 'react';
+import React, { Component, MouseEvent, ReactNode } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import Icon from '../../Icon';
 import Cell from '../Cell';
@@ -11,8 +11,11 @@ import Branch from '../../Branch';
 import { ColumnType, BaseRowType } from '..';
 
 type PropsType = {
-    // tslint:disable-next-line
-    columns: { [key: string]: ColumnType<string | number | boolean | undefined, any> };
+    // tslint:disable
+    columns: {
+        [key: string]: ColumnType<string | number | boolean | undefined | ReactNode, any>;
+    };
+    // tsline:enable
     row: BaseRowType;
     draggable: boolean;
     selected: boolean;
@@ -64,6 +67,7 @@ class Row extends Component<PropsType, StateType> {
                                 return (
                                     <ContrastThemeProvider enable={this.state.hasHover}>
                                         <StyledRow
+                                            selected={this.props.selected}
                                             dragging={snapshot.isDragging}
                                             focus={this.state.hasFocus}
                                             onMouseEnter={this.handleMouseEnter}
@@ -91,7 +95,7 @@ class Row extends Component<PropsType, StateType> {
                         </Draggable>
                     );
                 }}
-                ifFalse={(children): JSX.Element => <StyledRow>{children}</StyledRow>}
+                ifFalse={(children): JSX.Element => <StyledRow selected={this.props.selected}>{children}</StyledRow>}
             >
                 {this.props.selectable && (
                     <Cell align="start" width={'18px'}>
@@ -115,10 +119,14 @@ class Row extends Component<PropsType, StateType> {
                     .map(key => {
                         const column = this.props.columns[key];
                         const cell = this.props.row[key];
-                        const align = column.align ? column.align : 'start';
+                        const align = key === 'buttons' ? 'end' : column.align ? column.align : 'start';
 
                         return (
-                            <Cell align={align} key={`${this.props.row.id}-${key}`}>
+                            <Cell
+                                align={align}
+                                width={key === 'buttons' ? 'fit' : ''}
+                                key={`${this.props.row.id}-${key}`}
+                            >
                                 <Box justifyContent={align !== 'center' ? (`flex-${align}` as 'flex-start') : align}>
                                     {(column.render !== undefined && column.render(cell, this.props.row)) ||
                                         ((typeof cell === 'string' || typeof cell === 'number') && <Text>{cell}</Text>)}

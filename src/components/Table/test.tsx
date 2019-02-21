@@ -5,13 +5,18 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Cell from './Cell';
+import Card from './Card';
 import Checkbox from '../Checkbox';
 import Icon from '../Icon';
 import Box from '../Box';
+import Select from '../Select';
+import Option from '../Select/Option';
+import StyledCell from './Cell/style';
+import CompactHeaders from './CompactHeaders';
 
 describe('Table', () => {
     it('should render the correct amount of cells', () => {
-        const component = mountWithTheme(
+        const table = mountWithTheme(
             <Table
                 columns={{
                     id: { header: 'Product ID' },
@@ -27,7 +32,49 @@ describe('Table', () => {
             />,
         );
 
-        expect(component.find(Cell).length).toBe(12);
+        expect(table.find(Cell).length).toBe(12);
+    });
+
+    it('should render the correct amount of cards', () => {
+        const table = mountWithTheme(
+            <Table
+                as="card"
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
+                rows={[
+                    { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                    { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                    { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                ]}
+            />,
+        );
+
+        expect(table.find(Card).length).toBe(4);
+    });
+
+    it('should render a CompactHeader with a Select when there are column with sort', () => {
+        const table = mountWithTheme(
+            <Table
+                as={'card'}
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price', sort: (a: number, b: number) => a - b },
+                }}
+                rows={[
+                    { id: '61651320', price: 19.12, name: 'foo0', image: 'imageurl' },
+                    { id: '61651321', price: 19.2, name: 'foo1', image: 'imageurl' },
+                    { id: '61651322', price: 21.12, name: 'foo2', image: 'imageurl' },
+                    { id: '61651323', price: 22.12, name: 'foo3', image: 'imageurl' },
+                ]}
+            />,
+        );
+
+        expect(table.find(Select).length).toBe(1);
     });
 
     it('should render without onDrag', () => {
@@ -350,6 +397,52 @@ describe('Table', () => {
         const checkedRows = mockHandler.mock.calls[0].filter(row => (row as any).checked);
 
         expect(checkedRows.length).toBe(0);
+    });
+
+    it('should sort rows when a column is given a sorting function and the select in the CompactHeader is clicked', () => {
+        const rows = [
+            { id: '1', value: 1 },
+            { id: '0', value: 0 },
+            { id: '4', value: 4 },
+            { id: '3', value: 3 },
+            { id: '2', value: 2 },
+        ];
+
+        const columns = {
+            value: {
+                header: 'label',
+                sort(a: number, b: number) {
+                    return a - b;
+                },
+            },
+        };
+
+        const component = mountWithTheme(<Table as="card" columns={columns} rows={rows} />);
+
+        component
+            .find(CompactHeaders)
+            .find(Select)
+            .simulate('keyDown', {
+                key: ' ',
+            });
+
+        expect(component.find(Option).length).toBe(Object.keys(columns).length * 2);
+
+        component
+            .find(Option)
+            .first()
+            .simulate('click');
+
+        for (let index = 0; index < rows.length; index++) {
+            expect(
+                component
+                    .find(Card)
+                    .at(index)
+                    .find(StyledCell)
+                    .at(1)
+                    .text(),
+            ).toEqual(`${index}`);
+        }
     });
 
     it('should sort rows ascendingly when a column is given a sorting function and is clicked', () => {

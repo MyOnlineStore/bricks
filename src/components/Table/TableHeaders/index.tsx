@@ -24,6 +24,10 @@ type PropsType = {
     checked: boolean | 'indeterminate';
     draggable: boolean;
     selectable: boolean;
+    preSort?: {
+        column: string;
+        direction: SortDirectionType;
+    };
     onCheck(checked: boolean): void;
     onSort?(column: string, direction: SortDirectionType): void;
 };
@@ -52,6 +56,14 @@ const mapPropsToState = (props: PropsType, state?: StateType): StateType => {
     Object.keys(props.columns).forEach(column => {
         columns[column] = { sorting: mapColumn(column) };
     });
+
+    const columnsWithSorting = Object.keys(columns).filter(key => {
+        return columns[key].sorting !== 'none' && columns[key].sorting !== undefined;
+    });
+
+    if (!columnsWithSorting.length && props.preSort !== undefined) {
+        columns[props.preSort.column] = { sorting: props.preSort.direction };
+    }
 
     return {
         ...state,
@@ -104,6 +116,7 @@ class Headers extends Component<PropsType, StateType> {
         return (
             <StyledHeader
                 headerAlign={alignment}
+                width={column.width}
                 key={key}
                 onClick={
                     this.props.onSort !== undefined && this.state.columns[key].sorting !== undefined
