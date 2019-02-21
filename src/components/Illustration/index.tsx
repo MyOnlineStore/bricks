@@ -1,15 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { StyledIllustration } from './style';
 
-type IllustrationPropsType = {
+type PropsType = {
     illustration: string;
 };
 
-const IllustrationElement: FunctionComponent<IllustrationPropsType> = (props): JSX.Element => (
-    // tslint:disable:no-any
+const IllustrationElement: FunctionComponent<PropsType> = (props): JSX.Element => (
     <StyledIllustration aria-hidden role="img" dangerouslySetInnerHTML={{ __html: props.illustration }} />
-    // tslint:enable
 );
 
 export default IllustrationElement;
-export { IllustrationPropsType };
