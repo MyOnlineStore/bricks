@@ -123,6 +123,15 @@ class Headers extends Component<PropsType, StateType> {
                         ? () => this.cycleSorting(key)
                         : undefined
                 }
+                onKeyDown={(event: React.KeyboardEvent) => {
+                    if (
+                        this.props.onSort !== undefined &&
+                        this.state.columns[key].sorting !== undefined &&
+                        event.key === 'Enter'
+                    )
+                        this.cycleSorting(key);
+                }}
+                tabIndex={0}
             >
                 <Box
                     alignItems="center"
