@@ -16,8 +16,7 @@ type PropsType = {
     name: string;
     label?: string;
     id?: string;
-    // tslint:disable-next-line:no-any
-    onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<any> }): void;
+    onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
 };
 
 class Checkbox extends Component<PropsType, StateType> {
@@ -28,8 +27,7 @@ class Checkbox extends Component<PropsType, StateType> {
         };
     }
 
-    // tslint:disable-next-line:no-any
-    public changeHandler = (event: MouseEvent<any>): void => {
+    public changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
         this.props.onChange({
             checked: !(this.props.checked === true),
             event,
