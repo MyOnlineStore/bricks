@@ -44,11 +44,10 @@ class Checkbox extends Component<PropsType, StateType> {
         const htmlChecked = this.props.checked === true;
 
         return (
-            <Box>
+            <Box onClick={this.changeHandler}>
                 <Box shrink={0}>
                     <StyledCheckboxSkin
                         checkedState={this.props.checked}
-                        onClick={(event): void => this.changeHandler(event)}
                         elementFocus={this.state.focus}
                         disabled={this.props.disabled}
                         error={this.props.error}
@@ -72,9 +71,7 @@ class Checkbox extends Component<PropsType, StateType> {
                 {this.props.label !== undefined && (
                     <Box margin={[-3, 0, 0, 12]}>
                         <Text>
-                            <label onClick={this.changeHandler} htmlFor={this.props.name}>
-                                {this.props.label}
-                            </label>
+                            <label htmlFor={this.props.name}>{this.props.label}</label>
                         </Text>
                     </Box>
                 )}
