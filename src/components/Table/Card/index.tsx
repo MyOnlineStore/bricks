@@ -86,7 +86,7 @@ class Card extends Component<PropsType, StateType> {
 
                                     if (cell !== undefined && column !== undefined) {
                                         return (
-                                            <StyledRow key={`row_${index}`}>
+                                            <StyledRow key={`row_${index}`} hover={false}>
                                                 <StyledCell cellAlign="start">
                                                     <Text strong>{column.header}</Text>
                                                 </StyledCell>

@@ -2,6 +2,7 @@ import styled from '../../../utility/_styled';
 import StyledCell from '../Cell/style';
 
 type PropsType = {
+    hover?: boolean;
     dragging?: boolean;
     selected?: boolean;
     focus?: boolean;
@@ -19,7 +20,8 @@ const StyledRow = styled.tr<PropsType>`
     outline: ${({ focus, theme }): string => (focus ? `solid 4px ${theme.Table.row.focus.borderColor}` : '')};
 
     &:hover {
-        background-color: ${({ theme }): string => theme.Table.row.hover.backgroundColor};
+        background-color: ${({ hover, theme }): string =>
+            hover !== false ? theme.Table.row.hover.backgroundColor : '#FFFFFF'};
     }
 
     ${StyledCell} {
