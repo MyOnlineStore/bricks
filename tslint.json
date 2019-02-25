@@ -108,7 +108,6 @@
       "no-use-before-declare": true,
       "no-var-keyword": true,
       "no-nested-ternary": true, 
-      "object-literal-key-quotes": [true, "consistent-as-needed"],
       "object-literal-shorthand": true,
       "one-line": true,
       "only-arrow-functions": true,

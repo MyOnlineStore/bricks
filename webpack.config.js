@@ -11,16 +11,13 @@ module.exports = {
     mode: 'production',
     devtool: 'source-map',
     stats: {
-        assets: true,
+        assets: false,
         modules: false,
         children: false,
+        entrypoints: false,
     },
     output: {
-        /* 
-        "filename: [name]index.js" is a workaround to name all output files: 'index.js'. 
-        When you just fill in 'index.js' without the prefix '[name]', webpack will throw an error: "Multiple assets emit to the same filename index.js"
-        */
-        filename: '[name]index.js',
+        filename: '[name].js',
         path: path.join(__dirname, 'lib'),
         library: 'bricks',
         libraryTarget: 'umd',
@@ -71,8 +68,14 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            name: 'env/',
-            minChunks: 2,
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'env',
+                    chunks: 'initial',
+                    minChunks: 2,
+                },
+            },
         },
     },
     plugins: [

@@ -3,7 +3,6 @@ import EmptyState from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Heading from '../Heading';
 import Text from '../Text';
-import Illustration from '../Illustration';
 import Box from '../Box';
 import Button from '../Button';
 
@@ -30,13 +29,6 @@ describe('EmptyState', () => {
         const component = mountWithTheme(<EmptyState title="foo" message={message} />);
 
         expect(component.find(Text).matchesElement(message)).toBe(true);
-    });
-
-    it('should render the passed through illustration', () => {
-        const illustration = <Illustration illustration="balloon" />;
-        const component = mountWithTheme(<EmptyState title="foo" message="bar" illustration={illustration} />);
-
-        expect(component.find(Illustration).matchesElement(illustration)).toBe(true);
     });
 
     it('should render the passed through button', () => {

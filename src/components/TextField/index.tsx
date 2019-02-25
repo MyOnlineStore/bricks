@@ -7,6 +7,8 @@ import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './s
 import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters/withCurrencyFormatting';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
+import questionCircle from '../../assets/icons/question-circle.svg';
+import dangerCircle from '../../assets/icons/danger-circle.svg';
 
 type PropsType = {
     value: string;
@@ -103,7 +105,7 @@ class TextField extends Component<PropsType, StateType> {
                 {this.props.feedback && this.props.feedback.message !== '' && (
                     <Box margin={trbl(6, 0, 0, 12)}>
                         <InlineNotification
-                            icon={this.props.feedback.severity === 'info' ? 'questionCircle' : 'dangerCircle'}
+                            icon={this.props.feedback.severity === 'info' ? questionCircle : dangerCircle}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

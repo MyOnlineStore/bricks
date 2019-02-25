@@ -5,7 +5,6 @@ import ThemeType from '../../types/ThemeType';
 import Icon from '../Icon';
 import Spinner from '../Spinner';
 import Box from '../Box';
-import { MediumIcons } from '../Icon/types';
 import { withTheme } from 'styled-components';
 
 type CommonType = {
@@ -24,7 +23,8 @@ type IconButtonThemeType = {
 
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
-    icon: keyof typeof MediumIcons;
+    icon: string;
+    iconSize?: 'small' | 'medium';
     variant?: 'primary' | 'destructive';
 };
 
@@ -45,7 +45,11 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
                     <Spinner />
                 </Box>
             )}
-            <Icon color={props.loading ? 'transparent' : undefined} size="medium" icon={props.icon} />
+            <Icon
+                color={props.loading ? 'transparent' : undefined}
+                size={props.iconSize ? props.iconSize : 'medium'}
+                icon={props.icon}
+            />
         </>
     );
 

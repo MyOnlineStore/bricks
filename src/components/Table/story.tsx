@@ -7,7 +7,8 @@ import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
 import BreakpointProvider from '../BreakpointProvider';
 import { isString } from 'util';
-
+import trash from '../../assets/icons/trash.svg';
+import gear from '../../assets/icons/gear.svg';
 type RowType = {
     selected?: boolean;
     id: string;
@@ -113,14 +114,14 @@ class Demo extends Component<PropsType, StateType> {
             <>
                 {row.id !== '61651322' && (
                     <IconButton
-                        icon="gear"
+                        icon={gear}
                         title={`Edit ${value}`}
                         variant="primary"
                         onClick={() => alert(`Edit id: ${row.id}`)}
                     />
                 )}
                 <IconButton
-                    icon="trash"
+                    icon={trash}
                     title={`Delete ${value}`}
                     variant="destructive"
                     onClick={() => alert(`Edit id: ${row.id}`)}

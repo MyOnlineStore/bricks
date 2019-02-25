@@ -7,11 +7,7 @@ import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Contrast from '../Contrast';
 import Box from '../Box';
-import { MediumIcons } from '../Icon/types';
-
-/* tslint:disable */
-const mediumIconKeys = Object.keys(MediumIcons).filter(key => MediumIcons[key as any].match('<svg'));
-/* tslint:enable */
+import cart from '../../assets/icons/cart.svg';
 
 storiesOf('Button', module)
     .add('Default', () => {
@@ -37,7 +33,7 @@ storiesOf('Button', module)
                 variant="primary"
                 loading={boolean('loading', false)}
                 title={text('title', 'Add to cart')}
-                icon={select('Icon', mediumIconKeys, 'cart') as PropsType['icon']}
+                icon={cart}
                 disabled={boolean('disabled', false)}
             />
         );

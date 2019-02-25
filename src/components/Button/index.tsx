@@ -1,7 +1,7 @@
 import React, { Children, ReactNode } from 'react';
 import styled from '../../utility/_styled';
 import BareButton, { PropsType as BareButtonPropsType } from './base';
-import Icon, { MediumPropsType } from '../Icon';
+import Icon from '../Icon';
 import Box from '../Box';
 import Spinner from '../Spinner';
 
@@ -54,7 +54,7 @@ type PropsType = BareButtonPropsType & {
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     compact?: boolean;
     disabled?: boolean;
-    icon?: MediumPropsType['icon'];
+    icon?: string;
     children?: ReactNode;
 };
 

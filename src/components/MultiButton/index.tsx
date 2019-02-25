@@ -4,12 +4,14 @@ import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
 import Option from './Option';
-import trbl from '../../utility/trbl';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { createPortal } from 'react-dom';
 import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { PropsType as ButtonPropsType } from '../Button';
+import chevronDown from '../../assets/icons/chevron-down.svg';
+import chevronUp from '../../assets/icons/chevron-up.svg';
+import checkmark from '../../assets/icons/checkmark.svg';
 
 type OmittedKeys = 'onClick' | 'href' | 'compact' | 'title';
 
@@ -103,12 +105,12 @@ class MultiButton extends Component<PropsType, StateType> {
                 </StyledMultiButton>
                 <StyledChevronButton
                     compact
-                    title={'chevron'}
+                    title={'open'}
                     variant={this.props.variant}
                     onClick={this.state.isOpen ? this.close : this.open}
                 >
                     <Box inline>
-                        <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                        <Icon size="small" icon={this.state.isOpen ? chevronUp : chevronDown} />
                     </Box>
                 </StyledChevronButton>
             </Box>
@@ -182,9 +184,9 @@ class MultiButton extends Component<PropsType, StateType> {
                                                     }}
                                                 >
                                                     <Box alignItems={'center'}>
-                                                        <Box margin={trbl(0, 12, 0, 0)}>
+                                                        <Box margin={[0, 12, 0, 0]}>
                                                             {index === this.state.selectedIndex && (
-                                                                <Icon size="medium" icon="checkmark" />
+                                                                <Icon size="medium" icon={checkmark} />
                                                             )}
                                                             {index !== this.state.selectedIndex && (
                                                                 <Box width={'18px'} />

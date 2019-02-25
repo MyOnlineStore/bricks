@@ -655,8 +655,8 @@ describe('Table', () => {
                 .find('th')
                 .at(0)
                 .find(Icon)
-                .prop('icon'),
-        ).toBe('caretDown');
+                .prop('title'),
+        ).toBe('sorting: ascending');
 
         component
             .find('thead')
@@ -670,8 +670,8 @@ describe('Table', () => {
                 .find('th')
                 .at(0)
                 .find(Icon)
-                .prop('icon'),
-        ).toBe('caretVertical');
+                .prop('title'),
+        ).toBe('sorting: none');
     });
 
     it('should be able to align a column in the center', () => {

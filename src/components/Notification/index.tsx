@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import trbl from '../../utility/trbl';
-import Icon, { MediumIcons } from '../Icon';
+import Icon from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
 import { SeverityIcons } from '../../types/_SeverityType';
@@ -8,7 +8,7 @@ import { SeverityIcons } from '../../types/_SeverityType';
 type PropsType = {
     severity: keyof typeof SeverityIcons;
     message: string;
-    icon?: keyof typeof MediumIcons;
+    icon?: string;
 };
 
 const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
@@ -18,7 +18,7 @@ const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
         <StyledNotification severity={props.severity}>
             <Box margin={trbl(12)} alignItems={'flex-start'}>
                 <Box margin={trbl(0, 12, 0, 0)}>
-                    <Icon size="medium" icon={icon} />
+                    <Icon size="medium" icon={icon as string} />
                 </Box>
                 {props.message}
             </Box>
