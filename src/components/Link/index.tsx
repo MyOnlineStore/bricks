@@ -5,7 +5,7 @@ type PropsType = {
     href?: string;
     title: string;
     target?: '_blank' | '_self';
-    'data-test-id'?: string;
+    'data-testid'?: string;
     onClick?(): void;
 };
 
@@ -24,7 +24,7 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
                 title={props.title}
                 target={props.target}
                 href={props.href}
-                data-test-id={props['data-test-id']}
+                data-testid={props['data-testid']}
             >
                 {Children.count(props.children) > 0 ? props.children : props.title}
             </StyledLink>
@@ -32,7 +32,7 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
     }
 
     return (
-        <StyledButton type="button" onClick={clickAction} title={props.title} data-test-id={props['data-test-id']}>
+        <StyledButton type="button" onClick={clickAction} title={props.title} data-testid={props['data-testid']}>
             {Children.count(props.children) > 0 ? props.children : props.title}
         </StyledButton>
     );

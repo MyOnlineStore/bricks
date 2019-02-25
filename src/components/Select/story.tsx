@@ -80,6 +80,7 @@ class Demo extends Component<PropsType, StateType> {
                 emptyText={text('emptyText', 'No results')}
                 onChange={this.handleChange}
                 disabled={boolean('disabled', false)}
+                data-testid="foo"
                 options={object('options', options)}
             />
         );

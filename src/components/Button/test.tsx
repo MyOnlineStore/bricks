@@ -4,7 +4,6 @@ import Button from '.';
 import MosTheme from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import 'jest-styled-components';
-import console = require('console');
 
 describe('Button', () => {
     it('should render a link with children', () => {
@@ -87,10 +86,10 @@ describe('Button', () => {
     it('should be testable with a test-id', () => {
         const component = mount(
             <MosTheme>
-                <Button variant="primary" title="button title" data-test-id="foo" />
+                <Button variant="primary" title="button title" data-testid="foo" />
             </MosTheme>,
         );
 
-        expect(component.find('[data-test-id="foo"]').hostNodes().length).toBe(1);
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
     });
 });

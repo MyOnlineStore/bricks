@@ -11,6 +11,7 @@ type PropsType = {
     isSelected: boolean;
     isTargeted: boolean;
     content?: JSX.Element;
+    'data-testid'?: string;
     onClick(): void;
     onMouseEnter(): void;
 };
@@ -34,6 +35,7 @@ const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
             onClick={clickAction}
             onMouseEnter={hoverAction}
             aria-selected={props.isSelected}
+            data-testid={props['data-testid']}
         >
             <Box padding={trbl(6, 18)}>
                 {(props.content !== undefined && props.content) || (
