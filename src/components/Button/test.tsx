@@ -4,6 +4,7 @@ import Button from '.';
 import MosTheme from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import 'jest-styled-components';
+import console = require('console');
 
 describe('Button', () => {
     it('should render a link with children', () => {
@@ -81,5 +82,15 @@ describe('Button', () => {
         );
 
         expect(component.find(Button)).toHaveStyleRule('padding', '11px 12px');
+    });
+
+    it('should be testable with a test-id', () => {
+        const component = mount(
+            <MosTheme>
+                <Button variant="primary" title="button title" data-test-id="foo" />
+            </MosTheme>,
+        );
+
+        expect(component.find('[data-test-id="foo"]').hostNodes().length).toBe(1);
     });
 });
