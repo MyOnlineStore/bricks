@@ -24,6 +24,7 @@ type IconButtonThemeType = {
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
     icon: string;
+    iconSize?: 'small' | 'medium';
     variant?: 'primary' | 'destructive';
 };
 
@@ -44,7 +45,11 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
                     <Spinner />
                 </Box>
             )}
-            <Icon color={props.loading ? 'transparent' : undefined} size="medium" icon={props.icon} />
+            <Icon
+                color={props.loading ? 'transparent' : undefined}
+                size={props.iconSize ? props.iconSize : 'medium'}
+                icon={props.icon}
+            />
         </>
     );
 

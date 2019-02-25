@@ -11,8 +11,8 @@ import IconButton from '../../components/IconButton';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import search from '../../assets/icons/search.svg';
-import chevronDown from '../../assets/icons/chevron-down.svg';
-import chevronUp from '../../assets/icons/chevron-up.svg';
+import chevronDown from '../../assets/icons/chevron-down-small.svg';
+import chevronUp from '../../assets/icons/chevron-up-small.svg';
 
 type OptionBaseType = {
     value: string;
@@ -237,6 +237,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             )}
                         <IconButton
                             icon={this.state.isOpen ? chevronUp : chevronDown}
+                            iconSize="small"
                             title={this.state.isOpen ? 'close' : 'open'}
                             onClick={this.state.isOpen ? this.close : this.open}
                             disabled={this.props.disabled}
