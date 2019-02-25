@@ -31,4 +31,11 @@ describe('Link', () => {
 
         expect(fn).not.toThrow();
     });
+
+    it('should be testable with a test-id', () => {
+        const clickMock = jest.fn();
+        const component = mountWithTheme(<Link title="title" onClick={clickMock} data-test-id="foo" />);
+
+        expect(component.find('[data-test-id="foo"]').hostNodes().length).toBe(1);
+    });
 });
