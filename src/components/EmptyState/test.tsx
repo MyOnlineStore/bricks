@@ -59,4 +59,10 @@ describe('EmptyState', () => {
                 .prop('direction'),
         ).toEqual('row');
     });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(<EmptyState title="foo" message="bar" data-testid="empty" />);
+
+        expect(component.find('[data-testid="empty"]').hostNodes()).toHaveLength(1);
+    });
 });

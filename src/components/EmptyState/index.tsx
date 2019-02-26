@@ -11,6 +11,7 @@ type PropsType = {
     message: string | ReactNode;
     horizontal?: boolean;
     button?: ReactNode;
+    'data-testid'?: string;
 };
 
 const branchString = (value: string | ReactNode, node: (value: string) => ReactNode): ReactNode => {
@@ -42,7 +43,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     if (props.horizontal) {
         return (
-            <Box direction="row" alignItems="center" justifyContent="space-around">
+            <Box direction="row" alignItems="center" justifyContent="space-around" data-testid={props['data-testid']}>
                 <Box basis="120px" shrink={0} grow={25}>
                     {illustration}
                 </Box>
