@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import FoldOut from '.';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Button from '../Button';
 import Box from '../Box';
 import Text from '../Text';

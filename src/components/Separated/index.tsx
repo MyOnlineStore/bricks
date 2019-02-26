@@ -1,6 +1,6 @@
 import React, { FunctionComponent, Children } from 'react';
 import Box from '../Box';
-import trbl, { TrblType } from '../../utility/trbl';
+import trbl, { TrblType } from '../../utility/_trbl';
 
 type PropsType = {
     by?: 'margin';

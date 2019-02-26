@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components';
 import Box, { PropsType } from '.';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import { OffsetType } from '../../types/OffsetType';
 import Text from '../Text';
 

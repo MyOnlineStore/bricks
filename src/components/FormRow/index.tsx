@@ -1,6 +1,6 @@
 import React, { ReactNode, FunctionComponent } from 'react';
 import Box from '../Box';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import { StyledFormRow } from './style';
 
 type PropsType = {

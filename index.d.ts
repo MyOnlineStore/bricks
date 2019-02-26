@@ -44,5 +44,5 @@ export { default as Toaster } from './components/Toast';
 export { default as ToasterManager } from './components/Toaster';
 export { default as Toggle } from './components/Toggle';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
-export { default as trbl } from './utility/trbl';
+export { default as trbl } from './utility/_trbl';
 export { default as rgba } from './utility/rgba';

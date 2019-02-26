@@ -2,7 +2,7 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Contrast from '../Contrast';

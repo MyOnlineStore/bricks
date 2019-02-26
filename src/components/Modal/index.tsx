@@ -1,5 +1,5 @@
 import React, { Component, ReactNode, RefObject, createRef } from 'react';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import BreakpointProvider from '../BreakpointProvider';
 import IconButton from '../IconButton';

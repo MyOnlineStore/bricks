@@ -2,7 +2,7 @@ import { color } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Icon from '.';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import Text from '../Text';
 

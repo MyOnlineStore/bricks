@@ -5,7 +5,7 @@ import Box from '../Box';
 import Icon from '../Icon';
 import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import TransitionAnimation from '../TransitionAnimation';
 import BreakpointProvider from '../BreakpointProvider';
 import IconButton from '../IconButton';

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Box from '../../Box';
-import trbl from '../../../utility/trbl';
+import trbl from '../../../utility/_trbl';
 import StyledOption from './style';
 
 type PropsType = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
