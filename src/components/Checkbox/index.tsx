@@ -16,6 +16,7 @@ type PropsType = {
     value: string;
     name: string;
     id?: string;
+    'data-testid'?: string;
     onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
 };
 
@@ -48,6 +49,7 @@ class Checkbox extends Component<PropsType, StateType> {
                 elementFocus={this.state.focus}
                 disabled={this.props.disabled}
                 error={this.props.error}
+                data-testid={this.props['data-testid']}
             >
                 <Box justifyContent="center" alignItems="center" height="100%">
                     {this.props.checked === true && <Icon size="small" color="#fff" icon={checkmark} />}

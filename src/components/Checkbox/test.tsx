@@ -76,4 +76,12 @@ describe('Checkbox', () => {
             `1px solid ${mosTheme.Checkbox.error.borderColor}`,
         );
     });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(
+            <Checkbox checked onChange={jest.fn()} name="demo" value="A" data-testid="checkbox" />,
+        );
+
+        expect(component.find('[data-testid="checkbox"]').hostNodes()).toHaveLength(1);
+    });
 });
