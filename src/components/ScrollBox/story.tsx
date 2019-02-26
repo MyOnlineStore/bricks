@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import ScrollBox from '.';
 import styled from '../../utility/_styled';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import Heading from '../Heading';
 import Text from '../Text';

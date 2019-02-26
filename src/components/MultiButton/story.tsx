@@ -3,7 +3,7 @@ import { object, select, number } from '@storybook/addon-knobs';
 import React, { FunctionComponent } from 'react';
 import MultiButton, { PlacementType } from '.';
 import Box from '../Box';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 
 const options = [
     {

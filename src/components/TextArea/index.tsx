@@ -2,7 +2,7 @@ import React, { Component, ChangeEvent } from 'react';
 import StyledTextArea, { StyledTextAreaWrapper } from './style';
 import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/_SeverityType';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';

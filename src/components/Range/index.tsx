@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputRange, { Range as RangeType } from 'react-input-range';
 import StyledWrapper from './style';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import TextField from '../TextField';
 

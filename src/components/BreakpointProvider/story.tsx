@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
     padding: 24px;
 `;
 
-storiesOf('BreakpointProvider', module).add('Default', () => {
+storiesOf('BreakpointProvider ⚠️', module).add('Default', () => {
     const breakpoints = {
         small: 0,
         medium: 300,

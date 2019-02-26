@@ -1,5 +1,5 @@
 import { PropsType } from '.';
-import { TrblType } from '../../utility/trbl';
+import { TrblType } from '../../utility/_trbl';
 import styled from '../../utility/_styled';
 
 type BoxPropsType = PropsType & {

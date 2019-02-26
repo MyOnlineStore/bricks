@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import Checkbox from '../Checkbox';
 import FormRow from '.';
 import RadioButton from '../RadioButton';
-import RadioButtonGroup from '../RadioButtonGroup';
 import Text from '../Text';
 import Box from '../Box';
 import TextField from '../TextField';
 import Toggle from '../Toggle';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
+import Separated from '../Separated';
 
 type PropsType = {
     descriptions: boolean;
@@ -137,7 +137,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                             </label>
                         }
                         field={
-                            <RadioButtonGroup>
+                            <Separated before after>
                                 <RadioButton
                                     name="bool"
                                     label="True"
@@ -165,7 +165,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                         this.setState({ selected: value });
                                     }}
                                 />
-                            </RadioButtonGroup>
+                            </Separated>
                         }
                     />
                 </form>
@@ -218,7 +218,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                             </label>
                         }
                         field={
-                            <RadioButtonGroup>
+                            <Separated before after>
                                 <RadioButton
                                     name="bool"
                                     label="True"
@@ -246,7 +246,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                         this.setState({ selected: value });
                                     }}
                                 />
-                            </RadioButtonGroup>
+                            </Separated>
                         }
                     />
                     <FormRow

@@ -3,7 +3,7 @@ import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
 import Icon from '../Icon';
 import Text from '../Text';
 import Box from '../Box';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 
 type PropsType = {
     icon?: string;

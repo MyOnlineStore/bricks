@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Contrast from '.';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Button from '../Button';
 import Box from '../Box';
 

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import trbl from '../../utility/trbl';
+import trbl from '../../utility/_trbl';
 import Icon from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
