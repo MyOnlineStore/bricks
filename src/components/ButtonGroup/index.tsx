@@ -3,7 +3,7 @@ import Box from '../Box';
 
 type PropsType = {
     stacked?: boolean;
-    'data-tesid'?: string;
+    'data-testid'?: string;
 };
 
 const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
@@ -16,7 +16,7 @@ const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
             alignItems="stretch"
             wrap
             margin={[-6]}
-            data-testid={props['data-tesid']}
+            data-testid={props['data-testid']}
         >
             {Children.map(
                 props.children,

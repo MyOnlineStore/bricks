@@ -25,6 +25,6 @@ describe('Badge', () => {
     it('should be testable with a testid', () => {
         const component = mountWithTheme(<Badge data-testid="badge" />);
 
-        expect(component.find('[data-testid="box"]').hostNodes()).toHaveLength(1);
+        expect(component.find('[data-testid="badge"]').hostNodes()).toHaveLength(1);
     });
 });
