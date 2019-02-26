@@ -40,4 +40,10 @@ describe('ButtonGroup', () => {
 
         expect(component.find(Button).length).toBe(1);
     });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(<ButtonGroup data-testid="buttongroup" />);
+
+        expect(component.find('[data-testid="buttongroup"]').hostNodes()).toHaveLength(1);
+    });
 });

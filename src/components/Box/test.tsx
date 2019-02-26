@@ -142,4 +142,10 @@ describe('Box', () => {
 
         expect(component).toHaveStyleRule('min-width', '50px');
     });
+
+    it('should be testable with a testid', () => {
+        const component = mount(<Box data-testid="box" />);
+
+        expect(component.find('[data-testid="box"]').hostNodes()).toHaveLength(1);
+    });
 });

@@ -20,7 +20,7 @@ type VariantStyleType = {
     fontFamily: string;
 };
 
-const StyledBadge = styled.div<PropsType>`
+const Badge = styled.div<PropsType>`
     display: inline-block;
     box-sizing: border-box;
     min-width: 18px;
@@ -41,5 +41,5 @@ const StyledBadge = styled.div<PropsType>`
     white-space: nowrap;
 `;
 
-export default StyledBadge;
+export default Badge;
 export { PropsType, BadgeThemeType };

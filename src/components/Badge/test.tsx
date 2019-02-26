@@ -21,4 +21,10 @@ describe('Badge', () => {
         expect(errorBadge).toHaveStyleRule('background', '#ed2157');
         expect(infoBadge).toHaveStyleRule('background', '#88979d');
     });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(<Badge data-testid="badge" />);
+
+        expect(component.find('[data-testid="box"]').hostNodes()).toHaveLength(1);
+    });
 });
