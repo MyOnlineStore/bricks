@@ -59,6 +59,7 @@ class RadioButton extends Component<PropsType, StateType> {
                             name={this.props.name}
                             value={this.props.value}
                             id={this.props.id}
+                            aria-labelledby={this.props.name}
                         />
                     </StyledRadioButtonSkin>
                 </Box>
@@ -69,7 +70,9 @@ class RadioButton extends Component<PropsType, StateType> {
                                 <Icon size="medium" icon="locked" />{' '}
                             </Box>
                         )}
-                        <label htmlFor={this.props.name}>{this.props.label}</label>
+                        <label id={this.props.name} htmlFor={this.props.name}>
+                            {this.props.label}
+                        </label>
                     </Box>
                 </Text>
             </StyledRadioWrapper>

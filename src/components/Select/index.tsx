@@ -197,12 +197,15 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 tabIndex={this.props.disabled ? -1 : 0}
+                role="search"
             >
                 <StyledInput
                     open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     ref={this.inputWrapperRef}
+                    role="button"
+                    aira-expanded={this.state.isOpen}
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
