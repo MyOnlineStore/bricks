@@ -21,7 +21,7 @@ const StyledRow = styled.tr<PropsType>`
 
     &:hover {
         background-color: ${({ hover, theme }): string =>
-            hover !== false ? theme.Table.row.hover.backgroundColor : '#FFFFFF'};
+            hover !== false ? theme.Table.row.hover.backgroundColor : theme.Table.row.default.backgroundColor};
     }
 
     ${StyledCell} {
