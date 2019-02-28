@@ -29,7 +29,12 @@ const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
     };
 
     return (
-        <StyledOption isTargeted={props.isTargeted} onClick={clickAction} onMouseEnter={hoverAction}>
+        <StyledOption
+            isTargeted={props.isTargeted}
+            onClick={clickAction}
+            onMouseEnter={hoverAction}
+            aria-selected={props.isSelected}
+        >
             <Box padding={trbl(6, 18)}>
                 {(props.content !== undefined && props.content) || (
                     <Box padding={trbl(6, 0)} alignItems="center" inline>

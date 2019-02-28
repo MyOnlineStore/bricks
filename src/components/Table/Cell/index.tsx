@@ -16,7 +16,14 @@ const Cell: FunctionComponent<PropsType> = ({ align, provided, width, onFocus, o
 
     /* tslint:disable:no-unbound-method */
     return (
-        <StyledCell cellAlign={align} {...extraProps} elementWidth={width} onFocus={onFocus} onBlur={onBlur}>
+        <StyledCell
+            cellAlign={align}
+            {...extraProps}
+            elementWidth={width}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            role="cell"
+        >
             {children}
         </StyledCell>
     );

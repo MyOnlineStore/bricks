@@ -43,12 +43,20 @@ class Modal extends Component<PropsType> {
         }
     };
 
+    public handleKeyDown = (event: KeyboardEvent): void => {
+        if (this.props.onClose !== undefined && (event.key === 'Escape' || event.key === 'Esc')) {
+            this.props.onClose();
+        }
+    };
+
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside, false);
+        document.addEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
     }
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside, false);
+        document.removeEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
     }
 
     public render(): JSX.Element {
@@ -60,6 +68,9 @@ class Modal extends Component<PropsType> {
                             <StyledModal
                                 modalSize={this.props.size !== undefined ? this.props.size : 'large'}
                                 ref={this.styledModalRef}
+                                role="dialog"
+                                aria-model={true}
+                                aria-label={this.props.title}
                             >
                                 <Box
                                     shrink={0}

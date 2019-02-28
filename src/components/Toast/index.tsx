@@ -61,7 +61,11 @@ class Toast extends Component<PropsType> {
                     {(breakpoint): JSX.Element => (
                         <StyledToastWrapper>
                             <Box margin={trbl(6, 24)}>
-                                <StyledToast severity={this.props.severity}>
+                                <StyledToast
+                                    severity={this.props.severity}
+                                    role="alertdialog"
+                                    aria-label={this.props.title}
+                                >
                                     {breakpoint !== 'small' && (
                                         <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
                                             <Text as="span" severity={this.props.severity}>

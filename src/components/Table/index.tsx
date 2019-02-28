@@ -170,63 +170,65 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
         };
 
         return (
-            <Branch
-                condition={as === 'card'}
-                ifTrue={(children): JSX.Element => (
-                    <Branch
-                        condition={isDraggable}
-                        ifTrue={(children): JSX.Element => (
-                            <DragDropContext onDragEnd={this.dragEndHandler}>
-                                <Droppable droppableId="droppable">
-                                    {({ innerRef }): JSX.Element => <div ref={innerRef}>{children}</div>}
-                                </Droppable>
-                            </DragDropContext>
-                        )}
-                        ifFalse={(children): JSX.Element => <div>{children}</div>}
-                    >
-                        <CompactHeaders {...headerProps} />
-                        {children}
-                    </Branch>
-                )}
-                ifFalse={(children): JSX.Element => (
-                    <Branch
-                        condition={isDraggable}
-                        ifTrue={(children): JSX.Element => (
-                            <DragDropContext onDragEnd={this.dragEndHandler}>
-                                <Droppable droppableId="droppable">
-                                    {({ innerRef }): JSX.Element => (
-                                        <StyledTable ref={innerRef}>{children}</StyledTable>
-                                    )}
-                                </Droppable>
-                            </DragDropContext>
-                        )}
-                        ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
-                    >
-                        <TableHeaders {...headerProps} />
-                        <tbody>{children}</tbody>
-                    </Branch>
-                )}
-            >
-                {rows.map((row, rowIndex) => {
-                    const props = {
-                        columns: this.props.columns,
-                        row,
-                        selectable: isSelectable,
-                        selected: row.selected !== undefined ? row.selected : false,
-                        draggable: isDraggable,
-                        index: rowIndex,
-                        onSelection: (event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void => {
-                            this.handleSelection(event, toggleAction, row.id);
-                        },
-                    };
+            <div role="table">
+                <Branch
+                    condition={as === 'card'}
+                    ifTrue={(children): JSX.Element => (
+                        <Branch
+                            condition={isDraggable}
+                            ifTrue={(children): JSX.Element => (
+                                <DragDropContext onDragEnd={this.dragEndHandler}>
+                                    <Droppable droppableId="droppable">
+                                        {({ innerRef }): JSX.Element => <div ref={innerRef}>{children}</div>}
+                                    </Droppable>
+                                </DragDropContext>
+                            )}
+                            ifFalse={(children): JSX.Element => <div>{children}</div>}
+                        >
+                            <CompactHeaders {...headerProps} />
+                            {children}
+                        </Branch>
+                    )}
+                    ifFalse={(children): JSX.Element => (
+                        <Branch
+                            condition={isDraggable}
+                            ifTrue={(children): JSX.Element => (
+                                <DragDropContext onDragEnd={this.dragEndHandler}>
+                                    <Droppable droppableId="droppable">
+                                        {({ innerRef }): JSX.Element => (
+                                            <StyledTable ref={innerRef}>{children}</StyledTable>
+                                        )}
+                                    </Droppable>
+                                </DragDropContext>
+                            )}
+                            ifFalse={(children): JSX.Element => <StyledTable>{children}</StyledTable>}
+                        >
+                            <TableHeaders {...headerProps} />
+                            <tbody>{children}</tbody>
+                        </Branch>
+                    )}
+                >
+                    {rows.map((row, rowIndex) => {
+                        const props = {
+                            columns: this.props.columns,
+                            row,
+                            selectable: isSelectable,
+                            selected: row.selected !== undefined ? row.selected : false,
+                            draggable: isDraggable,
+                            index: rowIndex,
+                            onSelection: (event: MouseEvent<HTMLDivElement>, toggleAction: boolean): void => {
+                                this.handleSelection(event, toggleAction, row.id);
+                            },
+                        };
 
-                    if (as === 'card') {
-                        return <Card key={row.id} {...props} />;
-                    }
+                        if (as === 'card') {
+                            return <Card key={row.id} {...props} />;
+                        }
 
-                    return <Row key={row.id} {...props} />;
-                })}
-            </Branch>
+                        return <Row key={row.id} {...props} />;
+                    })}
+                </Branch>
+            </div>
         );
     }
 }

@@ -68,6 +68,7 @@ class Row extends Component<PropsType, StateType> {
                                 return (
                                     <ContrastThemeProvider enable={this.state.hasHover}>
                                         <StyledRow
+                                            role="row"
                                             selected={this.props.selected}
                                             dragging={snapshot.isDragging}
                                             focus={this.state.hasFocus}

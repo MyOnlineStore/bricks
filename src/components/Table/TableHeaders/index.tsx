@@ -118,6 +118,8 @@ class Headers extends Component<PropsType, StateType> {
 
         return (
             <StyledHeader
+                role="columnheader"
+                aria-sort={this.state.columns[key].sorting}
                 headerAlign={alignment}
                 width={column.width}
                 key={key}

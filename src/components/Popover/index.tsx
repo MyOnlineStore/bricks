@@ -69,6 +69,12 @@ class Popover extends Component<PropsType, StateType> {
         }
     };
 
+    private handleKeyDown = (event: KeyboardEvent): void => {
+        if (this.state.isOpen && (event.key === 'Escape' || event.key === 'Esc')) {
+            this.togglePopover();
+        }
+    };
+
     public componentDidMount(): void {
         if (this.props.show === undefined && this.anchorRef) {
             this.anchorRef.addEventListener(
@@ -82,6 +88,7 @@ class Popover extends Component<PropsType, StateType> {
         }
 
         document.addEventListener('mousedown', this.handleClickOutside, false);
+        document.addEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
     }
 
     public componentWillUnmount(): void {
@@ -93,6 +100,9 @@ class Popover extends Component<PropsType, StateType> {
         if (this.props.triggerOn === 'hover') {
             this.anchorRef.removeEventListener('mouseleave', this.togglePopover, false);
         }
+
+        document.removeEventListener('mousedown', this.handleClickOutside, false);
+        document.removeEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
     }
 
     public render(): JSX.Element {
@@ -106,7 +116,12 @@ class Popover extends Component<PropsType, StateType> {
                                     if (ref) this.anchorRef = ref;
                                 }}
                             >
-                                <PopoverAnchor ref={ref} stretch={this.props.stretch}>
+                                <PopoverAnchor
+                                    ref={ref}
+                                    stretch={this.props.stretch}
+                                    role="button"
+                                    aria-expanded={this.state.isOpen}
+                                >
                                     {this.props.children}
                                 </PopoverAnchor>
                             </div>

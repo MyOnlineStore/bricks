@@ -17,7 +17,7 @@ type BreadcrumbType = {
 
 const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => {
     const renderBreadcrumb = (breadcrumb: BreadcrumbType, index: number): JSX.Element => (
-        <StyledBreadcrumb key={index}>
+        <StyledBreadcrumb key={index} aria-label="Breadcrumb">
             <Text>
                 {(breadcrumb.url === undefined && breadcrumb.name) || (
                     <Link title={breadcrumb.name} href={breadcrumb.url}>
@@ -35,7 +35,11 @@ const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => {
         </StyledBreadcrumb>
     );
 
-    return <StyledBreadcrumbs>{props.breadcrumbs.map(renderBreadcrumb)}</StyledBreadcrumbs>;
+    return (
+        <nav aria-label="Breadcrumb">
+            <StyledBreadcrumbs>{props.breadcrumbs.map(renderBreadcrumb)}</StyledBreadcrumbs>
+        </nav>
+    );
 };
 
 export default Breadcrumbs;

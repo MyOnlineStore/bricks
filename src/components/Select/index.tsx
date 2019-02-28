@@ -197,12 +197,18 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 tabIndex={this.props.disabled ? -1 : 0}
+                role="combobox"
+                aria-label={'select'}
+                aria-expanded={this.state.isOpen}
             >
                 <StyledInput
                     open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     ref={this.inputWrapperRef}
+                    role="searchbox"
+                    aria-autocomplete="list"
+                    aria-controls={this.state.isOpen ? 'select-window' : undefined}
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
@@ -247,6 +253,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 </StyledInput>
                 {createPortal(
                     <StyledWindow
+                        id={'select-window'}
                         ref={this.windowRef}
                         open={this.state.isOpen}
                         rect={
@@ -255,6 +262,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 : undefined
                         }
                         inputHeight={this.state.inputHeight}
+                        role="listbox"
                     >
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                             <div

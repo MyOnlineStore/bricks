@@ -141,7 +141,7 @@ class Headers extends Component<PropsType, StateType> {
             });
 
         return (
-            <Box padding={[12, 0]} alignItems="center" justifyContent="space-between">
+            <Box padding={[12, 0]} alignItems="center" justifyContent="space-between" role="columnHeader">
                 {headers.length > 0 && (
                     <Box>
                         <Select
