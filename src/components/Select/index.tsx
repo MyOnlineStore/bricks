@@ -250,7 +250,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     {this.props.renderSelected(selectedOption as GenericOptionType)}
                                 </Box>
                             )) || (
-                                <Box alignItems="center" padding={trbl(6, 12)} grow={1} onClick={this.open}>
+                                <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
                                         <Text severity="info">
                                             <StyledPlaceholder
