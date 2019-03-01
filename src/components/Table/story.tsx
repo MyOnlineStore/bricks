@@ -5,10 +5,11 @@ import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
-import BreakpointProvider from '../BreakpointProvider';
 import { isString } from 'util';
 import trash from '../../assets/icons/trash.svg';
 import gear from '../../assets/icons/gear.svg';
+import Measure from 'react-measure';
+
 type RowType = {
     selected?: boolean;
     id: string;
@@ -191,17 +192,19 @@ storiesOf('Table', module)
         />
     ))
     .add('Responsive', () => (
-        <BreakpointProvider breakpoints={{ small: 0, medium: 300, large: 600 }}>
-            {(breakpoint): JSX.Element => {
+        <Measure bounds>
+            {({ measureRef, contentRect }) => {
                 return (
-                    <Demo
-                        draggable={boolean('draggable', true)}
-                        selectable={boolean('selectable', true)}
-                        sortable={boolean('sortable', true)}
-                        custom={boolean('custom', true)}
-                        as={breakpoint !== 'large' ? 'card' : 'table'}
-                    />
+                    <div ref={measureRef}>
+                        <Demo
+                            draggable={boolean('draggable', true)}
+                            selectable={boolean('selectable', true)}
+                            sortable={boolean('sortable', true)}
+                            custom={boolean('custom', true)}
+                            as={contentRect.bounds && contentRect.bounds.width < 600 ? 'card' : 'table'}
+                        />
+                    </div>
                 );
             }}
-        </BreakpointProvider>
+        </Measure>
     ));

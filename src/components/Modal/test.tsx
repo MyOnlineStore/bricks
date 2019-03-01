@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import Modal from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
-import BreakpointProvider from '../BreakpointProvider';
-import { PropsType } from '../BreakpointProvider/';
 import StyledModal, { StyledModalWrapper } from './style';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';
+import Measure from 'react-measure';
 
 jest.mock('../ScrollBox', () => jest.fn().mockImplementation((): string => 'div'));
 
-jest.mock('../BreakpointProvider', () => {
+jest.mock('react-measure', () => {
     return jest.fn().mockImplementation(
-        (props: PropsType): JSX.Element => {
-            return props.children('large');
-        },
+        // tslint:disable-next-line:no-any
+        (props: any) => props.children({ measureRef: () => undefined, contentRect: { bounds: { width: 300 } } }),
     );
 });
 
@@ -60,9 +58,10 @@ describe('Modal', () => {
     });
 
     it('should render with a small breakpoint', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
-            (props: PropsType): JSX.Element => {
-                return props.children('small');
+        (Measure as jest.Mock<Measure>).mockImplementationOnce(
+            // tslint:disable-next-line:no-any
+            (props: any): JSX.Element => {
+                return props.children({ measureRef: createRef(), contentRect: { bounds: { width: 300 } } });
             },
         );
 
@@ -73,10 +72,11 @@ describe('Modal', () => {
         expect(component.find(StyledModal).length).toBe(1);
     });
 
-    it('should render with a medium breakpoint', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
-            (props: PropsType): JSX.Element => {
-                return props.children('medium');
+    it('should render with a large breakpoint', () => {
+        (Measure as jest.Mock<Measure>).mockImplementationOnce(
+            // tslint:disable-next-line:no-any
+            (props: any): JSX.Element => {
+                return props.children({ measureRef: createRef(), contentRect: { bounds: { width: 1000 } } });
             },
         );
 
