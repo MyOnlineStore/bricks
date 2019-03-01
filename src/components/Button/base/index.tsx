@@ -11,6 +11,7 @@ type PropsType = {
     disabled?: boolean;
     id?: string;
     loading?: boolean;
+    'data-testid'?: string;
     onClick?(): void;
 };
 
@@ -32,6 +33,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 disabled={props.disabled}
                 id={props.id}
                 loading={props.loading}
+                data-testid={props['data-testid']}
             >
                 {props.children}
             </StyledAnchor>
@@ -47,6 +49,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             disabled={props.disabled}
             id={props.id}
             loading={props.loading}
+            data-testid={props['data-testid']}
         >
             {props.children}
         </StyledButton>

@@ -82,4 +82,14 @@ describe('Button', () => {
 
         expect(component.find(Button)).toHaveStyleRule('padding', '11px 12px');
     });
+
+    it('should be testable with a test-id', () => {
+        const component = mount(
+            <MosTheme>
+                <Button variant="primary" title="button title" data-testid="foo" />
+            </MosTheme>,
+        );
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
 });

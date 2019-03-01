@@ -8,6 +8,7 @@ import chrevronRight from '../../assets/icons/chevron-right-small.svg';
 
 type PropsType = {
     breadcrumbs: Array<BreadcrumbType>;
+    'data-testid'?: string;
 };
 
 type BreadcrumbType = {
@@ -15,31 +16,34 @@ type BreadcrumbType = {
     name: string;
 };
 
-const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const renderBreadcrumb = (breadcrumb: BreadcrumbType, index: number): JSX.Element => (
-        <StyledBreadcrumb key={index} aria-label="Breadcrumb">
-            <Text>
-                {(breadcrumb.url === undefined && breadcrumb.name) || (
-                    <Link title={breadcrumb.name} href={breadcrumb.url}>
-                        {breadcrumb.name}
-                    </Link>
-                )}
-            </Text>
-            {index < props.breadcrumbs.length - 1 && (
-                <Box margin={[0, 9]}>
-                    <Text severity="info">
-                        <Icon icon={chrevronRight} size="small" />
-                    </Text>
-                </Box>
+const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => (
+    <nav aria-label="Breadcrumb">
+        <StyledBreadcrumbs data-testid={props['data-testid']}>
+            {props.breadcrumbs.map(
+                (breadcrumb, index): JSX.Element => (
+                    <StyledBreadcrumb
+                        key={index}
+                        data-testid={props['data-testid'] ? `${props['data-testid']}-crumb-${index}` : undefined}
+                    >
+                        <Text>
+                            {(breadcrumb.url === undefined && <span aria-current="page">{breadcrumb.name}</span>) || (
+                                <Link title={breadcrumb.name} href={breadcrumb.url}>
+                                    {breadcrumb.name}
+                                </Link>
+                            )}
+                        </Text>
+                        {index < props.breadcrumbs.length - 1 && (
+                            <Box margin={[0, 9]}>
+                                <Text severity="info">
+                                    <Icon icon={chrevronRight} size="small" />
+                                </Text>
+                            </Box>
+                        )}
+                    </StyledBreadcrumb>
+                ),
             )}
-        </StyledBreadcrumb>
-    );
-
-    return (
-        <nav aria-label="Breadcrumb">
-            <StyledBreadcrumbs>{props.breadcrumbs.map(renderBreadcrumb)}</StyledBreadcrumbs>
-        </nav>
-    );
-};
+        </StyledBreadcrumbs>
+    </nav>
+);
 
 export default Breadcrumbs;
