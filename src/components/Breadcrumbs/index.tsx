@@ -26,7 +26,7 @@ const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => (
                         data-testid={props['data-testid'] ? `${props['data-testid']}-crumb-${index}` : undefined}
                     >
                         <Text>
-                            {(breadcrumb.url === undefined && <span aria-current="page">breadcrumb.name</span>) || (
+                            {(breadcrumb.url === undefined && <span aria-current="page">{breadcrumb.name}</span>) || (
                                 <Link title={breadcrumb.name} href={breadcrumb.url}>
                                     {breadcrumb.name}
                                 </Link>

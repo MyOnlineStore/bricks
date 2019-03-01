@@ -200,27 +200,21 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 tabIndex={this.props.disabled ? -1 : 0}
-<<<<<<< HEAD
                 role="combobox"
                 aria-label={'select'}
                 aria-expanded={this.state.isOpen}
-=======
                 data-testid={this.props['data-testid']}
->>>>>>> a551f43... Added id to Select
             >
                 <StyledInput
                     open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     ref={this.inputWrapperRef}
-<<<<<<< HEAD
                     role="searchbox"
                     aria-autocomplete="list"
                     aria-controls={this.state.isOpen ? 'select-window' : undefined}
-=======
                     data-testid={this.props['data-testid'] ? `${this.props['data-testid']}-input` : undefined}
                     onClick={!this.state.isOpen ? this.open : undefined}
->>>>>>> a551f43... Added id to Select
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && (
@@ -287,15 +281,12 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 : undefined
                         }
                         inputHeight={this.state.inputHeight}
-<<<<<<< HEAD
                         role="listbox"
-=======
                         data-testid={
                             this.props['data-testid']
                                 ? `${this.props['data-testid']}-window${this.state.isOpen ? '-open' : '-closed'}`
                                 : undefined
                         }
->>>>>>> a551f43... Added id to Select
                     >
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                             <div style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}>
