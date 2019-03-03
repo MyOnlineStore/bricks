@@ -1,5 +1,3 @@
-import React from 'react';
-
 /* tslint:disable */
 
 const measureRef = jest.fn();
