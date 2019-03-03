@@ -1,19 +1,17 @@
-import React, { createRef } from 'react';
+import React from 'react';
 import Modal from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import StyledModal, { StyledModalWrapper } from './style';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';
 import Measure from 'react-measure';
+import ButtonGroup from '../ButtonGroup';
+import Button from '../Button';
+import createMeasureMock from '../../../__mocks__/react-measure';
 
 jest.mock('../ScrollBox', () => jest.fn().mockImplementation((): string => 'div'));
 
-jest.mock('react-measure', () => {
-    return jest.fn().mockImplementation(
-        // tslint:disable-next-line:no-any
-        (props: any) => props.children({ measureRef: () => undefined, contentRect: { bounds: { width: 300 } } }),
-    );
-});
+jest.mock('react-measure');
 
 describe('Modal', () => {
     it('should render with renderFixed', () => {
@@ -57,29 +55,34 @@ describe('Modal', () => {
         expect(component.find('button[data-testid="button"]').length).toBe(2);
     });
 
-    it('should render with a small breakpoint', () => {
-        (Measure as jest.Mock<Measure>).mockImplementationOnce(
-            // tslint:disable-next-line:no-any
-            (props: any): JSX.Element => {
-                return props.children({ measureRef: createRef(), contentRect: { bounds: { width: 300 } } });
-            },
-        );
+    it('should render buttons stacked with a small breakpoint', () => {
+        (Measure as jest.Mock<Measure>).mockImplementationOnce(props => {
+            return props.children({
+                measureRef: jest.fn(),
+                contentRect: {
+                    bounds: {
+                        width: 300,
+                    },
+                },
+            });
+        });
 
         const component = mountWithTheme(
-            <Modal size="small" show={true} renderFixed={(): JSX.Element => <div>bar</div>} title="Foo" />,
+            <Modal
+                size="small"
+                show={true}
+                buttons={[
+                    <Button key="foo" variant="primary" title="foo" />,
+                    <Button key="bar" variant="primary" title="bar" />,
+                ]}
+                title="Foo"
+            />,
         );
 
-        expect(component.find(StyledModal).length).toBe(1);
+        expect(component.find(ButtonGroup).prop('stacked')).toBe(true);
     });
 
     it('should render with a large breakpoint', () => {
-        (Measure as jest.Mock<Measure>).mockImplementationOnce(
-            // tslint:disable-next-line:no-any
-            (props: any): JSX.Element => {
-                return props.children({ measureRef: createRef(), contentRect: { bounds: { width: 1000 } } });
-            },
-        );
-
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
 
         expect(component.find(StyledModal).length).toBe(1);

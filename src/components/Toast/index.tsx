@@ -59,13 +59,13 @@ class Toast extends Component<PropsType> {
             <TransitionAnimation show={this.props.show} animation="zoom" onExited={this.handleExit}>
                 <Measure bounds>
                     {({ measureRef, contentRect }) => {
-                        const breakpoint = contentRect.bounds && contentRect.bounds.width > 375 ? 'large' : 'small';
+                        const isSmall = contentRect.bounds && contentRect.bounds.width < 375;
 
                         return (
                             <StyledToastWrapper ref={measureRef} role="alertdialog" aria-label={this.props.title}>
                                 <Box margin={trbl(6, 24)}>
                                     <StyledToast severity={this.props.severity}>
-                                        {breakpoint !== 'small' && (
+                                        {isSmall && (
                                             <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
                                                 <Text as="span" severity={this.props.severity}>
                                                     <Icon size="medium" icon={icon as string} />
@@ -73,13 +73,13 @@ class Toast extends Component<PropsType> {
                                             </Box>
                                         )}
                                         <Box
-                                            style={{ display: breakpoint === 'small' ? 'block' : '' }}
-                                            direction={breakpoint === 'small' ? 'column' : 'row'}
+                                            style={{ display: isSmall ? 'block' : '' }}
+                                            direction={isSmall ? 'column' : 'row'}
                                             justifyContent="center"
                                             alignContent="center"
                                         >
                                             <Box
-                                                margin={breakpoint === 'small' ? trbl(12) : trbl(18, 12)}
+                                                margin={isSmall ? trbl(12) : trbl(18, 12)}
                                                 style={{ display: 'block' }}
                                             >
                                                 <Text strong>
@@ -97,7 +97,7 @@ class Toast extends Component<PropsType> {
                                                 <Box
                                                     direction="column"
                                                     justifyContent="center"
-                                                    margin={breakpoint === 'small' ? trbl(0, 12, 12, 12) : trbl(0, 12)}
+                                                    margin={isSmall ? trbl(0, 12, 12, 12) : trbl(0, 12)}
                                                     alignItems="flex-start"
                                                 >
                                                     <Button
