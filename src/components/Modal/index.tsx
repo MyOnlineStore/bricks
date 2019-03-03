@@ -1,5 +1,4 @@
 import React, { Component, ReactNode, RefObject, createRef } from 'react';
-import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import IconButton from '../IconButton';
 import Contrast from '../Contrast';
@@ -64,7 +63,7 @@ class Modal extends Component<PropsType> {
                 <TransitionAnimation key={0} show={this.props.show} animation="zoom">
                     <Measure bounds>
                         {({ measureRef, contentRect }) => {
-                            const breakpoint = contentRect.bounds && contentRect.bounds.width < 320 ? 'small' : 'large';
+                            const isSmall = contentRect.bounds && contentRect.bounds.width < 320;
 
                             return (
                                 <StyledModal
@@ -79,7 +78,7 @@ class Modal extends Component<PropsType> {
                                 >
                                     <Box
                                         shrink={0}
-                                        margin={breakpoint === 'small' ? trbl(18) : trbl(36)}
+                                        margin={isSmall ? [18] : [36]}
                                         alignItems="flex-start"
                                         alignContent="center"
                                         justifyContent="space-between"
@@ -87,7 +86,7 @@ class Modal extends Component<PropsType> {
                                         <Heading hierarchy={2}>{this.props.title}</Heading>
                                         {this.props.onClose !== undefined && (
                                             <Box
-                                                margin={trbl(-12, -12, -6, 0)}
+                                                margin={[-12, -12, -6, 0]}
                                                 alignContent="center"
                                                 justifyContent="flex-end"
                                                 alignItems="center"
@@ -103,9 +102,7 @@ class Modal extends Component<PropsType> {
                                         )}
                                     </Box>
                                     <ScrollBox>
-                                        <Box
-                                            padding={breakpoint === 'small' ? trbl(0, 18, 18, 18) : trbl(0, 36, 36, 36)}
-                                        >
+                                        <Box padding={isSmall ? [0, 18, 18, 18] : [0, 36, 36, 36]}>
                                             {this.props.children}
                                         </Box>
                                     </ScrollBox>
@@ -115,13 +112,11 @@ class Modal extends Component<PropsType> {
                                                 direction="column"
                                                 alignItems="stretch"
                                                 shrink={0}
-                                                padding={breakpoint === 'small' ? trbl(24) : trbl(24, 36)}
+                                                padding={isSmall ? [24] : [24, 36]}
                                             >
                                                 {this.props.renderFixed && this.props.renderFixed()}
                                                 {this.props.buttons && (
-                                                    <ButtonGroup stacked={breakpoint === 'small'}>
-                                                        {this.props.buttons}
-                                                    </ButtonGroup>
+                                                    <ButtonGroup stacked={isSmall}>{this.props.buttons}</ButtonGroup>
                                                 )}
                                             </Box>
                                         </Contrast>
