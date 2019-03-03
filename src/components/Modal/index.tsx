@@ -73,7 +73,7 @@ class Modal extends Component<PropsType> {
                                         measureRef(node);
                                     }}
                                     role="dialog"
-                                    aria-modal={true}
+                                    aria-modal
                                     aria-label={this.props.title}
                                 >
                                     <Box
