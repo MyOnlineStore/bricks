@@ -7,7 +7,6 @@ import IconButton from '../IconButton';
 import Measure from 'react-measure';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
-import createMeasureMock from '../../../__mocks__/react-measure';
 
 jest.mock('../ScrollBox', () => jest.fn().mockImplementation((): string => 'div'));
 
