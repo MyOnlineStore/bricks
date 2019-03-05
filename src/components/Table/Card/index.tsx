@@ -11,6 +11,7 @@ import { ContrastThemeProvider } from '../../Contrast';
 import StyledTable from '../style';
 import StyledRow from '../Row/style';
 import StyledCell from '../Cell/style';
+import bars from '../../../assets/icons/bars.svg';
 
 type PropsType = {
     // tslint:disable-next-line
@@ -119,7 +120,7 @@ class Card extends Component<PropsType, StateType> {
                     {this.props.draggable && provided && (
                         <Box padding={[6]} {...provided.dragHandleProps}>
                             <Text severity={!this.state.hasHover ? 'info' : undefined}>
-                                <Icon size="medium" icon="bars" />
+                                <Icon size="medium" icon={bars} />
                             </Text>
                         </Box>
                     )}

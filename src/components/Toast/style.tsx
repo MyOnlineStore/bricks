@@ -26,6 +26,7 @@ const StyledToastWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    pointer-events: none;
 `;
 
 const StyledToast = styled.div<ToastPropsType>`
@@ -35,13 +36,14 @@ const StyledToast = styled.div<ToastPropsType>`
     max-width: 792px;
     align-items: center;
     margin-top: 36px;
-    box-shadow: 0 3px 48px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 48px rgba(0, 0, 0, 0.3);
     border-radius: ${({ theme }): string => theme.Toast.borderRadius};
     background-color: ${({ theme }): string => theme.Toast.backgroundColor};
-    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity]};`}
+    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity]}`};
+    pointer-events: auto;
 
     a {
-       ${LinkStyles}
+        ${LinkStyles}
     }
 `;
 

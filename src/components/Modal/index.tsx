@@ -69,7 +69,7 @@ class Modal extends Component<PropsType> {
                                 modalSize={this.props.size !== undefined ? this.props.size : 'large'}
                                 ref={this.styledModalRef}
                                 role="dialog"
-                                aria-model={true}
+                                aria-modal={true}
                                 aria-label={this.props.title}
                             >
                                 <Box
