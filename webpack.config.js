@@ -10,6 +10,7 @@ module.exports = {
     entry,
     mode: 'production',
     devtool: 'source-map',
+    target: 'node', // required for SSR
     stats: {
         assets: false,
         modules: false,
@@ -65,18 +66,6 @@ module.exports = {
                 },
             },
         ],
-    },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'env',
-                    chunks: 'initial',
-                    minChunks: 2,
-                },
-            },
-        },
     },
     plugins: [
         new PeerDepsExternalsPlugin(),
