@@ -3,8 +3,8 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const fs = require('fs');
 const webpack = require('webpack');
 
-module.exports = (baseConfig, env, config) => {
-    config.mode = 'development';
+module.exports = ({ config, mode }) => {
+    config.mode = mode.toLowerCase();
 
     config.devServer = {
         quiet: true,
@@ -55,8 +55,8 @@ module.exports = (baseConfig, env, config) => {
             },
         },
     ];
-    // plugins
 
+    // plugins
     config.plugins.push(
         new FriendlyErrorsWebpackPlugin(),
         new webpack.DefinePlugin({
@@ -64,5 +64,6 @@ module.exports = (baseConfig, env, config) => {
             ILLUSTRATION_FILES: JSON.stringify(fs.readdirSync(path.join('src', 'assets', 'illustrations'))),
         }),
     );
+
     return config;
 };

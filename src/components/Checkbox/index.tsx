@@ -30,14 +30,14 @@ class Checkbox extends Component<PropsType, StateType> {
         };
     }
 
-    public changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
+    private changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
         this.props.onChange({
             checked: !(this.props.checked === true),
             event,
         });
     };
 
-    public toggleFocus = (): void => {
+    private toggleFocus = (): void => {
         this.setState({ focus: !this.state.focus });
     };
 
@@ -82,4 +82,3 @@ class Checkbox extends Component<PropsType, StateType> {
 }
 
 export default Checkbox;
-export { PropsType, StateType };
