@@ -53,7 +53,10 @@ class Toast extends Component<PropsType> {
     };
 
     public render(): JSX.Element {
-        const icon = this.props.icon !== undefined ? this.props.icon : SeverityIcons[this.props.severity];
+        const icon =
+            this.props.icon !== undefined
+                ? this.props.icon
+                : ((SeverityIcons[this.props.severity] as unknown) as string);
 
         return (
             <TransitionAnimation show={this.props.show} animation="zoom" onExited={this.handleExit}>
@@ -65,10 +68,10 @@ class Toast extends Component<PropsType> {
                             <StyledToastWrapper ref={measureRef} role="alertdialog" aria-label={this.props.title}>
                                 <Box margin={trbl(6, 24)}>
                                     <StyledToast severity={this.props.severity}>
-                                        {isSmall && (
+                                        {!isSmall && (
                                             <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
                                                 <Text as="span" severity={this.props.severity}>
-                                                    <Icon size="medium" icon={icon as string} />
+                                                    <Icon size="medium" icon={icon} />
                                                 </Text>
                                             </Box>
                                         )}
