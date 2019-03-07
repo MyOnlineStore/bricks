@@ -15,11 +15,10 @@ const FoldOut: FC<PropsType> = props => (
     <Measure bounds>
         {({ measureRef, contentRect }) => (
             <StyledFoldOut
-                ref={measureRef}
                 isOpen={props.open}
                 contentHeight={contentRect.bounds ? contentRect.bounds.height : undefined}
             >
-                {props.children}
+                <div ref={measureRef}>{props.children}</div>
             </StyledFoldOut>
         )}
     </Measure>
