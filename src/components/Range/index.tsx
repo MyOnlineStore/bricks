@@ -98,7 +98,7 @@ class Range extends Component<PropsType, StateType> {
     };
 
     // tslint:disable-next-line
-    private handleChange = debounce(16, (values: RangeType): void => {
+    private handleChange = debounce(16, true, (values: RangeType): void => {
         this.setState({ inputFocus: false, inputValues: values });
 
         if (this.props.onChange !== undefined) this.props.onChange(values);
