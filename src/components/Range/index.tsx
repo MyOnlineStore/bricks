@@ -4,6 +4,7 @@ import StyledWrapper from './style';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import TextField from '../TextField';
+import memoize from 'memoize-one';
 
 type PropsType = {
     value: RangeType;
@@ -24,13 +25,16 @@ const isWithinRange = (min: number, max: number, value: number): boolean => {
     return value <= max && value >= min;
 };
 
+const floorMinValue = memoize(Math.floor);
+const ceilMaxValue = memoize(Math.ceil);
+
 class Range extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
         this.state = {
             inputValues: {
-                min: Math.floor(this.props.minLimit),
-                max: Math.ceil(this.props.maxLimit),
+                min: floorMinValue(this.props.value.min),
+                max: ceilMaxValue(this.props.value.max),
             },
             inputFocus: false,
             hasError: { min: false, max: false },
@@ -109,17 +113,8 @@ class Range extends Component<PropsType, StateType> {
 
     public componentDidUpdate(prevProps: PropsType): void {
         if (prevProps.value !== this.props.value) {
-            const min =
-                this.props.value.min !== prevProps.value.min && this.props.value.min % 1 > 0
-                    ? Math.floor(this.props.value.min)
-                    : this.props.value.min;
-            const max =
-                this.props.value.max !== prevProps.value.max && this.props.value.max % 1 > 0
-                    ? Math.ceil(this.props.value.max)
-                    : this.props.value.max;
-
             this.setState({
-                inputValues: { min, max },
+                inputValues: { min: floorMinValue(this.props.value.min), max: ceilMaxValue(this.props.value.max) },
             });
         }
     }
@@ -164,7 +159,7 @@ class Range extends Component<PropsType, StateType> {
                     disabled={this.props.disabled ? this.props.disabled : false}
                 >
                     <InputRange
-                        value={{ min: Math.floor(this.props.value.min), max: Math.ceil(this.props.value.max) }}
+                        value={{ min: floorMinValue(this.props.value.min), max: ceilMaxValue(this.props.value.max) }}
                         disabled={this.props.disabled}
                         onChange={(values): void => {
                             this.setState({
