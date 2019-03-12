@@ -109,16 +109,13 @@ class Range extends Component<PropsType, StateType> {
 
     public componentDidUpdate(prevProps: PropsType): void {
         if (prevProps.value !== this.props.value) {
+            const newMin = this.props.value.min;
+            const newMax = this.props.value.max;
+
             this.setState({
                 inputValues: {
-                    min:
-                        this.props.value.min !== prevProps.value.min && this.props.value.min % 1 > 0
-                            ? Math.floor(this.props.value.min)
-                            : this.props.value.min,
-                    max:
-                        this.props.value.max !== prevProps.value.max && this.props.value.max % 1 > 0
-                            ? Math.ceil(this.props.value.max)
-                            : this.props.value.max,
+                    min: newMin !== prevProps.value.min && newMin % 1 > 0 ? Math.floor(newMin) : newMin,
+                    max: newMax !== prevProps.value.max && newMax % 1 > 0 ? Math.ceil(newMax) : newMax,
                 },
             });
         }
