@@ -19,10 +19,7 @@ class Demo extends Component<{}, { value: RangeType }> {
                 disabled={boolean('disabled', false)}
                 minLimit={number('minValue', 2)}
                 maxLimit={number('maxValue', 25)}
-                onChange={(value: RangeType): void => {
-                    console.log('called');
-                    this.setState({ value });
-                }}
+                onChange={(value: RangeType): void => this.setState({ value })}
             />
         );
     }
