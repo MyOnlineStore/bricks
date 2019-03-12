@@ -4,6 +4,7 @@ import StyledWrapper from './style';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import TextField from '../TextField';
+import { debounce } from 'throttle-debounce';
 
 type PropsType = {
     value: RangeType;
@@ -96,6 +97,13 @@ class Range extends Component<PropsType, StateType> {
         if (this.props.onChange !== undefined) this.props.onChange(inputValues());
     };
 
+    // tslint:disable-next-line
+    private handleChange = debounce(16, (values: RangeType): void => {
+        this.setState({ inputFocus: false, inputValues: values });
+
+        if (this.props.onChange !== undefined) this.props.onChange(values);
+    });
+
     private getMaxLowValue(): number {
         return this.state.inputValues.max - 1;
     }
@@ -154,13 +162,7 @@ class Range extends Component<PropsType, StateType> {
                     <InputRange
                         value={this.props.value}
                         disabled={this.props.disabled}
-                        onChange={(values): void => {
-                            this.setState({
-                                inputFocus: false,
-                                inputValues: values as RangeType,
-                            });
-                            if (this.props.onChange !== undefined) this.props.onChange(values as RangeType);
-                        }}
+                        onChange={this.handleChange}
                         minValue={this.props.minLimit}
                         maxValue={this.props.maxLimit}
                     />
