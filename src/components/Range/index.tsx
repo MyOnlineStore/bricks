@@ -4,6 +4,7 @@ import StyledWrapper from './style';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import TextField from '../TextField';
+import memoize from 'memoize-one';
 
 type PropsType = {
     value: RangeType;
@@ -24,11 +25,17 @@ const isWithinRange = (min: number, max: number, value: number): boolean => {
     return value <= max && value >= min;
 };
 
+const floorMinValue = memoize(Math.floor.bind(Math));
+const ceilMaxValue = memoize(Math.ceil.bind(Math));
+
 class Range extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
         super(props);
         this.state = {
-            inputValues: props.value,
+            inputValues: {
+                min: floorMinValue(this.props.value.min),
+                max: ceilMaxValue(this.props.value.max),
+            },
             inputFocus: false,
             hasError: { min: false, max: false },
         };
@@ -107,7 +114,7 @@ class Range extends Component<PropsType, StateType> {
     public componentDidUpdate(prevProps: PropsType): void {
         if (prevProps.value !== this.props.value) {
             this.setState({
-                inputValues: this.props.value,
+                inputValues: { min: floorMinValue(this.props.value.min), max: ceilMaxValue(this.props.value.max) },
             });
         }
     }
@@ -152,7 +159,7 @@ class Range extends Component<PropsType, StateType> {
                     disabled={this.props.disabled ? this.props.disabled : false}
                 >
                     <InputRange
-                        value={this.props.value}
+                        value={{ min: floorMinValue(this.props.value.min), max: ceilMaxValue(this.props.value.max) }}
                         disabled={this.props.disabled}
                         onChange={(values): void => {
                             this.setState({
@@ -161,8 +168,8 @@ class Range extends Component<PropsType, StateType> {
                             });
                             if (this.props.onChange !== undefined) this.props.onChange(values as RangeType);
                         }}
-                        minValue={this.props.minLimit}
-                        maxValue={this.props.maxLimit}
+                        minValue={Math.floor(this.props.minLimit)}
+                        maxValue={Math.ceil(this.props.maxLimit)}
                     />
                 </StyledWrapper>
             </Box>

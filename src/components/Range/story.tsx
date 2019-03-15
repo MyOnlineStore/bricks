@@ -8,7 +8,7 @@ class Demo extends Component<{}, { value: RangeType }> {
     public constructor(props: {}) {
         super(props);
 
-        this.state = { value: { min: 5, max: 15 } };
+        this.state = { value: { min: 5, max: 12 } };
     }
 
     public render(): JSX.Element {
@@ -17,8 +17,8 @@ class Demo extends Component<{}, { value: RangeType }> {
                 value={this.state.value}
                 label="cm"
                 disabled={boolean('disabled', false)}
-                minLimit={number('minValue', 2)}
-                maxLimit={number('maxValue', 25)}
+                minLimit={number('minValue', 1.75)}
+                maxLimit={number('maxValue', 15.13)}
                 onChange={(value: RangeType): void => this.setState({ value })}
             />
         );
