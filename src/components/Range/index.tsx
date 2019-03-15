@@ -25,8 +25,8 @@ const isWithinRange = (min: number, max: number, value: number): boolean => {
     return value <= max && value >= min;
 };
 
-const floorMinValue = memoize(Math.floor);
-const ceilMaxValue = memoize(Math.ceil);
+const floorMinValue = memoize(Math.floor.bind(Math));
+const ceilMaxValue = memoize(Math.ceil.bind(Math));
 
 class Range extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
