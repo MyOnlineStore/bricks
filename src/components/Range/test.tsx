@@ -194,7 +194,7 @@ describe('Range', () => {
         expect(secondInputPostUpdate).toBe(1);
     });
 
-    it('should round min and max values to nearest whole number', () => {
+    it('should floor and ceil the minLimit and maxLimit respectively', () => {
         const changeMock = jest.fn();
         const component = mountWithTheme(
             <Range value={{ min: 2, max: 5 }} minLimit={1.75} maxLimit={15.13} onChange={changeMock} />,
