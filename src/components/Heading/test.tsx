@@ -13,11 +13,11 @@ describe('Heading', () => {
         const h5 = mountWithTheme(<Heading hierarchy={5} />);
         const h6 = mountWithTheme(<Heading hierarchy={6} />);
 
-        expect(h1).toHaveStyleRule('font-size', MosTheme.Heading[0].fontSize);
-        expect(h2).toHaveStyleRule('font-size', MosTheme.Heading[1].fontSize);
-        expect(h3).toHaveStyleRule('font-size', MosTheme.Heading[2].fontSize);
-        expect(h4).toHaveStyleRule('font-size', MosTheme.Heading[3].fontSize);
-        expect(h5).toHaveStyleRule('font-size', MosTheme.Heading[4].fontSize);
-        expect(h6).toHaveStyleRule('font-size', MosTheme.Heading[5].fontSize);
+        expect(h1).toHaveStyleRule('font-size', MosTheme.Heading[1].fontSize);
+        expect(h2).toHaveStyleRule('font-size', MosTheme.Heading[2].fontSize);
+        expect(h3).toHaveStyleRule('font-size', MosTheme.Heading[3].fontSize);
+        expect(h4).toHaveStyleRule('font-size', MosTheme.Heading[4].fontSize);
+        expect(h5).toHaveStyleRule('font-size', MosTheme.Heading[5].fontSize);
+        expect(h6).toHaveStyleRule('font-size', MosTheme.Heading[6].fontSize);
     });
 });
