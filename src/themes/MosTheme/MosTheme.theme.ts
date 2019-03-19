@@ -295,50 +295,50 @@ const theme: ThemeType = {
             },
         },
     },
-    Heading: [
-        {
+    Heading: {
+        1: {
             fontFamily: headingFont,
             fontSize: fontSize.larger6,
             fontWeight: fontWeight.regular,
             lineHeight: '45px',
             color: grey.base,
         },
-        {
+        2: {
             fontFamily: headingFont,
             fontSize: fontSize.larger5,
             fontWeight: fontWeight.regular,
             lineHeight: '36px',
             color: grey.base,
         },
-        {
+        3: {
             fontFamily: headingFont,
             fontSize: fontSize.larger4,
             fontWeight: fontWeight.regular,
             color: grey.base,
             lineHeight: '33px',
         },
-        {
+        4: {
             fontFamily: headingFont,
             fontSize: fontSize.larger3,
             fontWeight: fontWeight.regular,
             lineHeight: '30px',
             color: grey.base,
         },
-        {
+        5: {
             fontFamily: headingFont,
             fontSize: fontSize.larger2,
             fontWeight: fontWeight.regular,
             lineHeight: '27px',
             color: grey.base,
         },
-        {
+        6: {
             fontFamily: headingFont,
             fontSize: fontSize.larger1,
             fontWeight: fontWeight.regular,
             lineHeight: '21px',
             color: grey.base,
         },
-    ],
+    },
     IconButton: {
         primary: {
             idle: {
