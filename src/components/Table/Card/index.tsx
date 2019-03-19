@@ -7,7 +7,6 @@ import Checkbox from '../../Checkbox';
 import Icon from '../../Icon';
 import Branch from '../../Branch';
 import { Draggable, DraggableProvided } from 'react-beautiful-dnd';
-import { ContrastThemeProvider } from '../../Contrast';
 import StyledTable from '../style';
 import StyledRow from '../Row/style';
 import StyledCell from '../Cell/style';
@@ -86,7 +85,7 @@ class Card extends Component<PropsType, StateType> {
 
                                     if (cell !== undefined && column !== undefined) {
                                         return (
-                                            <StyledRow key={`row_${index}`}>
+                                            <StyledRow key={`row_${index}`} hover={false}>
                                                 <StyledCell cellAlign="start">
                                                     <Text strong>{column.header}</Text>
                                                 </StyledCell>
@@ -144,19 +143,17 @@ class Card extends Component<PropsType, StateType> {
                             {(provided, snapshot): JSX.Element => {
                                 /* tslint:disable:no-unbound-method */
                                 return (
-                                    <ContrastThemeProvider enable={this.state.hasHover}>
-                                        <StyledCard
-                                            dragging={snapshot.isDragging}
-                                            selected={this.props.selected}
-                                            focus={this.state.hasFocus}
-                                            onMouseEnter={this.handleMouseEnter}
-                                            onMouseLeave={this.handleMouseLeave}
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                        >
-                                            {this.renderRow(provided)}
-                                        </StyledCard>
-                                    </ContrastThemeProvider>
+                                    <StyledCard
+                                        dragging={snapshot.isDragging}
+                                        selected={this.props.selected}
+                                        focus={this.state.hasFocus}
+                                        onMouseEnter={this.handleMouseEnter}
+                                        onMouseLeave={this.handleMouseLeave}
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                    >
+                                        {this.renderRow(provided)}
+                                    </StyledCard>
                                 );
                                 /* tslint:enabled:no-unbound-method */
                             }}
