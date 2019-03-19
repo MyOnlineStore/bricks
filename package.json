@@ -15,8 +15,7 @@
   ],
   "bundlesize": [
     {
-      "path": "./lib/**/*.js",
-      "maxSize": "3 kB"
+      "path": "./lib/**/*.js"
     }
   ],
   "dependencies": {
@@ -59,7 +58,7 @@
     "@types/uuid": "^3.4.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.10.0",
-    "bundlesize": "^0.17.1",
+    "bundlesize": "^0.15.3",
     "css-loader": "^2.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
