@@ -15,7 +15,8 @@
   ],
   "bundlesize": [
     {
-      "path": "./lib/**/*.js"
+      "path": "./lib/**/*.js",
+      "maxSize": "3 kB"
     }
   ],
   "dependencies": {
