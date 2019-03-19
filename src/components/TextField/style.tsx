@@ -52,6 +52,7 @@ const StyledInput = styled.input<InputPropsType>`
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
     color: ${({ theme }): string => theme.TextField.idle.common.color};
+    font-family: inherit;
     font-size: inherit;
     padding: 6px 12px;
     line-height: 1.572;

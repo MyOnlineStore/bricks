@@ -241,6 +241,7 @@ const theme: ThemeType = {
             boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         checked: {
+            checkmarkColor: silver.lighter1,
             borderColor: green.darker2,
             backgroundColor: green.base,
         },
