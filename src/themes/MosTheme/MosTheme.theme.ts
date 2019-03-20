@@ -684,6 +684,7 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
+                color: grey.lighter3,
                 background: silver.lighter1,
             },
         },

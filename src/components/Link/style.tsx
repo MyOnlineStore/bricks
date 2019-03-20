@@ -20,6 +20,7 @@ const LinkStyles = css`
     text-decoration: ${({ theme }: ThemePropsType): string => theme.Link.default.textDecoration};
     transition: color 100ms;
     background-color: transparent;
+    font-family: inherit;
 
     &:hover {
         color: ${({ theme }: ThemePropsType): string => theme.Link.hover.color};
@@ -38,6 +39,7 @@ const StyledButton = styled.button`
     transition: color 100ms;
     display: inline;
     border: none;
+    font-family: inherit;
     font-size: ${({ theme }): string => theme.Link.default.fontSize};
     background-color: transparent;
     padding: 0;
