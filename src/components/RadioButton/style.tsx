@@ -16,6 +16,7 @@ type RadioButtonThemeType = {
         boxShadow: string;
         borderColor: string;
         backgroundColor: string;
+        checkmarkColor: string;
     };
     idleDisabled: {
         background: string;
@@ -70,8 +71,8 @@ const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
             error
                 ? theme.RadioButton.error.borderColor
                 : checked
-                    ? theme.RadioButton.active.borderColor
-                    : theme.RadioButton.idle.borderColor};
+                ? theme.RadioButton.active.borderColor
+                : theme.RadioButton.idle.borderColor};
 
     box-shadow: ${({ theme, elementFocus }): string =>
         `
@@ -90,7 +91,7 @@ const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
                     top: 50%;
                     transform: translate(-50%,-50%);
                     content: '';
-                    background-color: ${theme.RadioButton.idle.backgroundColor};
+                    background-color: ${theme.RadioButton.idle.checkmarkColor};
                 }`
             : ''}
 `;

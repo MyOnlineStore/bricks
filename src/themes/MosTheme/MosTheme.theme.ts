@@ -463,6 +463,7 @@ const theme: ThemeType = {
             backgroundColor: silver.base,
             borderColor: silver.darker4,
             boxShadow: '0px 0px 0px 5.5px transparent',
+            checkmarkColor: silver.base,
         },
         idleDisabled: {
             background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 5px,${silver.base} 5px,${
