@@ -241,6 +241,7 @@ const theme: ThemeType = {
             boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         checked: {
+            checkmarkColor: silver.lighter1,
             borderColor: green.darker2,
             backgroundColor: green.base,
         },
@@ -462,6 +463,7 @@ const theme: ThemeType = {
             backgroundColor: silver.base,
             borderColor: silver.darker4,
             boxShadow: '0px 0px 0px 5.5px transparent',
+            checkmarkColor: silver.base,
         },
         idleDisabled: {
             background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 5px,${silver.base} 5px,${
@@ -682,6 +684,7 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
+                color: grey.lighter3,
                 background: silver.lighter1,
             },
         },
@@ -704,7 +707,7 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
-                color: grey.lighter3,
+                color: grey.base,
                 background: silver.lighter1,
             },
             affix: {
