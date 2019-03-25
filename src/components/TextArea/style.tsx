@@ -18,6 +18,7 @@ type TextAreaThemeType = {
             borderColor: string;
             fontSize: string;
             fontFamily: string;
+            color: string;
             background: string;
         };
     };
@@ -82,6 +83,7 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
     transition: border-color 100ms, box-shadow 100ms;
     font-size: ${({ theme }): string => theme.TextArea.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextArea.idle.common.fontFamily};
+    color: ${({ theme }): string => theme.TextArea.idle.common.color};
     ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextArea.disabled.color}` : '')}
     ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
 `;
