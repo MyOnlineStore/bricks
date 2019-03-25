@@ -1,4 +1,5 @@
 import styled, { css } from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 /* tslint:disable */
 const styles = require('simplebar/dist/simplebar.min.css').toString();
@@ -74,5 +75,15 @@ const StyledBottom = styled.div<EffectPropsType>`
     z-index: 1;
 `;
 
+const composeScrollBoxTheme = (themeTools: ThemeTools): ScrollBoxThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        scrollbar: {
+            background: colors.grey.base,
+        },
+    };
+};
+
 export default StyledScrollBox;
-export { StyledWrapper, ScrollBoxThemeType, StyledBottom, StyledTop };
+export { StyledWrapper, ScrollBoxThemeType, StyledBottom, StyledTop, composeScrollBoxTheme };

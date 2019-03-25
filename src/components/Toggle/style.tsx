@@ -1,4 +1,6 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import rgba from '../../utility/rgba';
 
 type StyledToggleType = {
     checked: boolean;
@@ -98,5 +100,40 @@ const StyledToggleSkin = styled.div<StyledToggleSkinType>`
     }
     `;
 
+const composeToggleTheme = (themeTools: ThemeTools): ToggleThemeType => {
+    const { colors, forms } = themeTools.themeSettings;
+
+    return {
+        general: {
+            background: forms.background,
+        },
+        idle: {
+            border: `1px solid ${forms.borderColor}`,
+            background: forms.background,
+        },
+        focus: {
+            boxShadow: `0 0 0 4px ${rgba(forms.focusBorderColor, 0.4)}`,
+        },
+        checked: {
+            border: `1px solid ${forms.activeBorderColor}`,
+            background: forms.activeColor,
+        },
+        idleDisabled: {
+            background: `repeating-linear-gradient( -45deg,${colors.silver.base},${colors.silver.base} 5px,${
+                colors.silver.darker1
+            } 5px,${colors.silver.darker1} 10px )`,
+        },
+        checkedDisabled: {
+            background: `repeating-linear-gradient( -45deg,${rgba(colors.primary.darker2, 0.6)},${rgba(
+                colors.primary.darker2,
+                0.6,
+            )} 5px,${rgba(colors.primary.base, 0.5)} 5px,${rgba(colors.primary.base, 0.5)} 10px )`,
+        },
+        error: {
+            border: `1px solid ${colors.severity.error}`,
+        },
+    };
+};
+
 export default StyledToggle;
-export { ToggleThemeType, StyledToggleSkin };
+export { ToggleThemeType, StyledToggleSkin, composeToggleTheme };

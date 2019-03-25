@@ -1,4 +1,6 @@
-import styled from '../../utility/styled';
+import styled from '../../../src/utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import rgba from '../../utility/rgba';
 
 type SelectThemeType = {
     common: {
@@ -148,4 +150,43 @@ const StyledInput = styled.div<InputPropsType>`
     }
 `;
 
-export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType, StyledPlaceholder };
+const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        common: {
+            backgroundColor: colors.silver.lighter1,
+            secondaryColor: colors.silver.base,
+            borderRadius: themeTools.calculateRoundness(20),
+        },
+        wrapper: {
+            common: {
+                borderColor: colors.silver.darker4,
+            },
+            focus: {
+                borderColor: colors.primary.base,
+                boxShadow: `0 0 0 4px ${rgba(colors.primary.base, 0.4)}`,
+            },
+        },
+        input: {
+            background: colors.silver.lighter1,
+            borderColor: colors.silver.darker4,
+            color: colors.primary.base,
+            fontFamily: text.primaryFont,
+            fontSize: text.fontSize.base,
+            fontWeight: '400',
+        },
+        placeholder: {
+            color: colors.silver.darker4,
+        },
+        disabled: {
+            chevron: colors.grey.lighter2,
+            color: colors.grey.lighter2,
+            background: `${colors.silver.base} repeating-linear-gradient( -45deg, ${colors.silver.base}, ${
+                colors.silver.base
+            } 10px, transparent 10px, transparent 20px )`,
+        },
+    };
+};
+
+export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType, StyledPlaceholder, composeSelectTheme };

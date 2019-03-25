@@ -1,5 +1,7 @@
 import SeverityType from '../../types/SeverityType';
 import styled from '../../utility/styled';
+import rgba from '../../utility/rgba';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type TextFieldThemeType = {
     idle: {
@@ -149,4 +151,53 @@ const StyledWrapper = styled.div<WrapperPropsType>`
 }
 `;
 
-export { StyledWrapper, StyledInput, TextFieldThemeType, StyledAffix, StyledAffixWrapper };
+const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
+    const { colors, text, forms } = themeTools.themeSettings;
+
+    return {
+        idle: {
+            common: {
+                borderRadius: forms.borderRadius,
+                borderColor: forms.borderColor,
+                fontSize: text.fontSize.base,
+                fontFamily: text.primaryFont,
+                color: forms.color,
+                background: forms.background,
+            },
+            affix: {
+                color: forms.colorContrast,
+                background: forms.backgroundContrast,
+            },
+        },
+        focus: {
+            borderColor: forms.focusBorderColor,
+            boxShadow: forms.focusBorderColor,
+        },
+        severity: {
+            error: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.error, 0.4)}`,
+                borderColor: colors.severity.error,
+            },
+            success: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.success, 0.4)}`,
+                borderColor: colors.severity.success,
+            },
+            info: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.info, 0.4)}`,
+                borderColor: colors.severity.info,
+            },
+            warning: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.warning, 0.4)}`,
+                borderColor: colors.severity.warning,
+            },
+        },
+        disabled: {
+            color: colors.grey.lighter2,
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,${colors.silver.base} 10px,${
+                colors.silver.base
+            } 20px )`,
+        },
+    };
+};
+
+export { StyledWrapper, StyledInput, TextFieldThemeType, StyledAffix, StyledAffixWrapper, composeTextFieldTheme };

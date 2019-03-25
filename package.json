@@ -20,7 +20,8 @@
       "path": "./dist/**/*.js"
     }
   ],
-  "dependencies": {
+  "dependencies": {    
+    "chroma-js": "^2.0.3",
     "decimal.js": "^10.0.2",
     "deepmerge": "^2.1.0",
     "memoize-one": "^5.0.0",
@@ -41,6 +42,7 @@
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "@storybook/storybook-deployer": "^2.8.1",
+    "@types/chroma-js": "^1.4.1",
     "@types/decimal.js": "^7.4.0",
     "@types/deepmerge": "^2.1.0",
     "@types/enzyme": "^3.1.15",

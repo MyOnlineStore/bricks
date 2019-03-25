@@ -1,4 +1,5 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type BreadcrumbsThemeType = {
     default: {
@@ -25,5 +26,18 @@ const StyledBreadcrumb = styled.li`
     }
 `;
 
+const composeBreadcrumbsTheme = (themeTools: ThemeTools): BreadcrumbsThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        default: {
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        link: {
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+    };
+};
+
 export default StyledBreadcrumbs;
-export { StyledBreadcrumb, BreadcrumbsThemeType };
+export { StyledBreadcrumb, BreadcrumbsThemeType, composeBreadcrumbsTheme };

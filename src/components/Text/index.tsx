@@ -1,5 +1,6 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type TextVariantStyleType = {
     fontFamily: string;
@@ -73,5 +74,71 @@ const Text = styled.p<PropsType>`
     -moz-osx-font-smoothing: grayscale;
 `;
 
+const composeTextTheme = (themeTools: ThemeTools): TextThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        default: {
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        variant: {
+            small: {
+                fontFamily: text.primaryFont,
+                fontSize: text.fontSize.smaller1,
+                fontWeight: text.fontWeight.regular,
+                lineHeight: {
+                    default: text.lineHeight.small,
+                    compact: '15px',
+                },
+            },
+            regular: {
+                fontFamily: text.primaryFont,
+                fontSize: text.fontSize.base,
+                fontWeight: text.fontWeight.regular,
+                lineHeight: {
+                    default: text.lineHeight.medium,
+                    compact: '18px',
+                },
+            },
+            large: {
+                fontFamily: text.primaryFont,
+                fontSize: text.fontSize.larger1,
+                fontWeight: text.fontWeight.regular,
+                lineHeight: {
+                    default: text.lineHeight.large,
+                    compact: '21px',
+                },
+            },
+            extraLarge: {
+                fontFamily: text.primaryFont,
+                fontSize: text.fontSize.larger2,
+                fontWeight: text.fontWeight.regular,
+                lineHeight: {
+                    default: text.lineHeight.extralarge,
+                    compact: '27px',
+                },
+            },
+            display: {
+                fontFamily: text.secondaryFont,
+                fontSize: text.fontSize.display,
+                fontWeight: text.fontWeight.regular,
+                lineHeight: {
+                    default: text.lineHeight.display,
+                    compact: '75px',
+                },
+            },
+        },
+        strong: {
+            fontWeight: text.fontWeight.bold,
+        },
+        severity: {
+            error: colors.severity.error,
+            success: colors.severity.success,
+            info: colors.severity.info,
+            warning: colors.severity.warning,
+        },
+    };
+};
+
 export default Text;
-export { TextThemeType, TextVariantStyleType, PropsType };
+export { TextThemeType, TextVariantStyleType, PropsType, composeTextTheme };

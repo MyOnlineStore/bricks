@@ -6,6 +6,7 @@ import Icon from '../Icon';
 import Spinner from '../Spinner';
 import Box from '../Box';
 import { withTheme } from 'styled-components';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type CommonType = {
     color: string;
@@ -101,5 +102,28 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
     }}
 `;
 
+const composeIconButtonTheme = (themeTools: ThemeTools): IconButtonThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        primary: {
+            idle: {
+                color: colors.grey.lighter1,
+            },
+            hover: {
+                color: colors.grey.base,
+            },
+        },
+        destructive: {
+            idle: {
+                color: colors.grey.lighter1,
+            },
+            hover: {
+                color: colors.secondary.base,
+            },
+        },
+    };
+};
+
 export default withTheme(IconButton);
-export { PropsType, IconButtonThemeType };
+export { PropsType, IconButtonThemeType, composeIconButtonTheme };

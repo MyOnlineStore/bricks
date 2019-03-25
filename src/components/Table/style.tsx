@@ -1,4 +1,6 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import rgba from '../../utility/rgba';
 
 type TableThemeType = {
     default: {
@@ -50,5 +52,45 @@ const StyledTable = styled.table`
     }
 `;
 
+const composeTableTheme = (themeTools: ThemeTools): TableThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        default: {
+            backgroundColor: colors.background,
+        },
+        card: {
+            boxShadow: '0 2px 10px 0 rgba(33, 37, 43, .15)',
+            backgroundColor: colors.contrastBackground,
+            borderRadius: themeTools.calculateRoundness(20),
+            spacing: '24px',
+        },
+        cell: {
+            default: {
+                backgroundColor: colors.background,
+                borderColor: colors.silver.darker4,
+            },
+            header: {
+                backgroundColor: colors.silver.darker1,
+            },
+        },
+        row: {
+            default: {
+                backgroundColor: colors.background,
+                borderColor: `${rgba(colors.primary.base, 0)}`,
+            },
+            hover: {
+                backgroundColor: colors.contrastBackground,
+            },
+            focus: {
+                borderColor: `${rgba(colors.primary.base, 0.4)}`,
+            },
+            dragging: {
+                boxShadow: `0 6px 48px 0 ${rgba(colors.grey.darker1, 0.3)}`,
+            },
+        },
+    };
+};
+
 export default StyledTable;
-export { StyledTable, TableThemeType };
+export { StyledTable, TableThemeType, composeTableTheme };

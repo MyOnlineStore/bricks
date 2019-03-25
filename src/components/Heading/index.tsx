@@ -1,4 +1,5 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -45,5 +46,54 @@ const Heading = styled.div.attrs(() => ({ role: 'heading' }))<PropsType>`
     -moz-osx-font-smoothing: grayscale;
 `;
 
+const composeHeadingTheme = (themeTools: ThemeTools): HeadingThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        1: {
+            fontFamily: text.secondaryFont,
+            fontSize: text.fontSize.larger6,
+            fontWeight: text.fontWeight.regular,
+            lineHeight: text.lineHeight.larger6,
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        2: {
+            fontFamily: text.secondaryFont,
+            fontSize: text.fontSize.larger5,
+            fontWeight: text.fontWeight.regular,
+            lineHeight: text.lineHeight.larger5,
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        3: {
+            fontFamily: text.secondaryFont,
+            fontSize: text.fontSize.larger4,
+            fontWeight: text.fontWeight.regular,
+            lineHeight: text.lineHeight.larger4,
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        4: {
+            fontFamily: text.secondaryFont,
+            fontSize: text.fontSize.larger3,
+            fontWeight: text.fontWeight.regular,
+            lineHeight: text.lineHeight.larger3,
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        5: {
+            fontFamily: text.secondaryFont,
+            fontSize: text.fontSize.larger2,
+            fontWeight: text.fontWeight.regular,
+            lineHeight: text.lineHeight.larger2,
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+        6: {
+            fontFamily: text.secondaryFont,
+            fontSize: text.fontSize.larger1,
+            fontWeight: text.fontWeight.regular,
+            lineHeight: text.lineHeight.larger1,
+            color: themeTools.calculateContrastTextColor(colors.background),
+        },
+    };
+};
+
 export default Heading;
-export { PropsType, HeadingThemeType, HeadingHierarchyThemeType, HierarchyType };
+export { PropsType, HeadingThemeType, HeadingHierarchyThemeType, HierarchyType, composeHeadingTheme };

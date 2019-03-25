@@ -1,5 +1,7 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import rgba from '../../utility/rgba';
 
 type TextAreaWrapperPropsType = {
     disabled?: boolean;
@@ -88,5 +90,50 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
     ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
 `;
 
+const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
+    const { colors, text, forms } = themeTools.themeSettings;
+
+    return {
+        idle: {
+            common: {
+                borderRadius: themeTools.calculateRoundness(20),
+                borderColor: forms.borderColor,
+                fontSize: text.fontSize.base,
+                fontFamily: text.primaryFont,
+                color: forms.color,
+                background: forms.background,
+            },
+        },
+        focus: {
+            borderColor: forms.borderColor,
+            boxShadow: forms.focusBorderColor,
+        },
+        severity: {
+            error: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.error, 0.4)}`,
+                borderColor: colors.severity.error,
+            },
+            success: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.success, 0.4)}`,
+                borderColor: colors.severity.success,
+            },
+            info: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.info, 0.4)}`,
+                borderColor: colors.severity.info,
+            },
+            warning: {
+                boxShadow: `0 0 0 4px ${rgba(colors.severity.warning, 0.4)}`,
+                borderColor: colors.severity.warning,
+            },
+        },
+        disabled: {
+            color: colors.grey.lighter2,
+            background: `repeating-linear-gradient( -45deg,${colors.silver.base},${colors.silver.base} 10px,${
+                colors.silver.base
+            } 10px,${colors.silver.base} 20px)`,
+        },
+    };
+};
+
 export default StyledTextArea;
-export { StyledTextArea, StyledTextAreaWrapper, TextAreaThemeType };
+export { StyledTextArea, StyledTextAreaWrapper, TextAreaThemeType, composeTextAreaTheme };

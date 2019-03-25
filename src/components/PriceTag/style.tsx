@@ -1,4 +1,5 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type PriceTagThemeType = {
     strikethroughColor: string;
@@ -37,5 +38,13 @@ const StyledPriceTag = styled.span<PropsType>`
     }};
 `;
 
+const composePriceTagTheme = (themeTools: ThemeTools): PriceTagThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        strikethroughColor: colors.grey.lighter2,
+    };
+};
+
 export default StyledPriceTag;
-export { PriceTagThemeType };
+export { PriceTagThemeType, composePriceTagTheme };

@@ -1,4 +1,6 @@
 import styled from '../../utility/styled';
+import rgba from '../../utility/rgba';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type StyledCheckboxSkinType = {
     checkedState: boolean | 'indeterminate';
@@ -78,4 +80,42 @@ const StyledCheckboxSkin = styled.div<StyledCheckboxSkinType>`
             : theme.Checkbox.idle.borderColor};
 `;
 
-export { StyledCheckbox, StyledCheckboxSkin, CheckboxThemeType };
+const composeCheckboxTheme = (themeTools: ThemeTools): CheckboxThemeType => {
+    const { colors, forms } = themeTools.themeSettings;
+
+    return {
+        idle: {
+            borderColor: forms.borderColor,
+            backgroundColor: forms.background,
+            borderRadius: themeTools.calculateRoundness(5),
+        },
+        focus: {
+            boxShadow: `0 0 0 4px ${rgba(forms.activeColor, 0.4)}`,
+        },
+        checked: {
+            checkmarkColor: themeTools.calculateContrastColor(
+                forms.activeColor,
+                colors.grey.darker1,
+                colors.silver.lighter1,
+            ),
+            borderColor: forms.activeBorderColor,
+            backgroundColor: forms.activeColor,
+        },
+        idleDisabled: {
+            background: `repeating-linear-gradient( -45deg,${forms.background},${forms.background} 5px,${
+                forms.background
+            } 5px,${colors.silver.darker1} 10px )`,
+        },
+        checkedDisabled: {
+            background: `repeating-linear-gradient( -45deg,${rgba(forms.activeColor, 0.6)},${rgba(
+                forms.activeColor,
+                0.6,
+            )} 5px,${rgba(forms.activeColor, 0.5)} 5px,${rgba(forms.activeColor, 0.5)} 10px )`,
+        },
+        error: {
+            borderColor: colors.severity.error,
+        },
+    };
+};
+
+export { StyledCheckbox, StyledCheckboxSkin, CheckboxThemeType, composeCheckboxTheme };
