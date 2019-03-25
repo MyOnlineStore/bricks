@@ -13,6 +13,11 @@
     "react",
     "components"
   ],
+  "bundlesize": [
+    {
+      "path": "./lib/**/*.js"
+    }
+  ],
   "dependencies": {
     "decimal.js": "^10.0.2",
     "deepmerge": "^2.1.0",
@@ -53,6 +58,7 @@
     "@types/uuid": "^3.4.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.10.0",
+    "bundlesize": "^0.15.3",
     "css-loader": "^2.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
@@ -66,8 +72,8 @@
     "progress-bar-webpack-plugin": "^1.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-test-renderer": "^16.3.2",
     "react-measure": "^2.2.4",
+    "react-test-renderer": "^16.3.2",
     "react-transition-group": "^2.3.1",
     "rimraf": "^2.6.2",
     "styled-components": "^4.1.3",
@@ -96,7 +102,7 @@
     "dev": "npm run watch",
     "test": "jest",
     "test-coverage": "jest --coverage --runInBand --bail",
-    "build": "rimraf ./lib && webpack",
+    "build": "rimraf ./lib && webpack && bundlesize",
     "lint-fix": "npm run lint -- --fix",
     "lint": "tslint --project tsconfig.json -c tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -s .storybook/public",
