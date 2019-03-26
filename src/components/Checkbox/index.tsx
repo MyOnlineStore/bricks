@@ -1,4 +1,4 @@
-import React, { Component, MouseEvent } from 'react';
+import React, { Component } from 'react';
 import Icon from '../Icon';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 import Box from '../Box';
@@ -19,7 +19,7 @@ type PropsType = {
     label?: string;
     id?: string;
     'data-testid'?: string;
-    onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
+    onChange(change: { checked: boolean | 'indeterminate'; event: React.MouseEvent<HTMLDivElement> }): void;
 };
 
 class Checkbox extends Component<PropsType, StateType> {
@@ -30,7 +30,7 @@ class Checkbox extends Component<PropsType, StateType> {
         };
     }
 
-    public changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
+    public changeHandler = (event: React.MouseEvent<HTMLDivElement>): void => {
         this.props.onChange({
             checked: !(this.props.checked === true),
             event,
