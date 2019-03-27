@@ -21,10 +21,22 @@ type TextFieldThemeType = {
         boxShadow: string;
     };
     severity: {
-        error: { boxShadow: string };
-        success: { boxShadow: string };
-        info: { boxShadow: string };
-        warning: { boxShadow: string };
+        error: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        success: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        info: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        warning: {
+            borderColor: string;
+            boxShadow: string;
+        };
     };
     disabled: {
         color: string;
@@ -112,7 +124,9 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     ${({ focus, disabled, severity, theme }): string =>
         focus && !disabled
             ? `
-            border: solid 1px ${severity ? theme.Text.severity[severity] : theme.TextField.focus.borderColor};
+            border: solid 1px ${
+                severity ? theme.TextField.severity[severity].borderColor : theme.TextField.focus.borderColor
+            };
             box-shadow: ${severity ? theme.TextField.severity[severity].boxShadow : theme.TextField.focus.boxShadow};
             `
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
