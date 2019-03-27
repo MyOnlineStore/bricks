@@ -31,7 +31,7 @@ class TextArea extends Component<PropsType> {
             <>
                 <StyledTextAreaWrapper
                     disabled={this.props.disabled}
-                    severity={this.props.feedback ? this.props.feedback.severity : 'success'}
+                    severity={this.props.feedback ? this.props.feedback.severity : undefined}
                 >
                     <StyledTextArea
                         value={this.props.value}
