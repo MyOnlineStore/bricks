@@ -26,10 +26,22 @@ type TextAreaThemeType = {
         boxShadow: string;
     };
     severity: {
-        error: { boxShadow: string };
-        success: { boxShadow: string };
-        info: { boxShadow: string };
-        warning: { boxShadow: string };
+        error: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        success: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        info: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        warning: {
+            borderColor: string;
+            boxShadow: string;
+        };
     };
     disabled: {
         color: string;
@@ -48,7 +60,9 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
 
     &:focus-within {
         ${({ severity, theme }): string =>
-            `border: solid 1px ${severity ? theme.Text.severity[severity] : theme.TextArea.focus.borderColor}`};
+            `border: solid 1px ${
+                severity ? theme.TextArea.severity[severity].borderColor : theme.TextArea.focus.borderColor
+            }`};
         ${({ disabled, severity, theme }): string =>
             !disabled
                 ? `box-shadow: ${

@@ -689,11 +689,24 @@ const theme: ThemeType = {
             borderColor: green.darker2,
             boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
+
         severity: {
-            error: { boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}` },
-            success: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
-            info: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
-            warning: { boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}` },
+            error: {
+                borderColor: severity.error,
+                boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}`,
+            },
+            success: {
+                borderColor: severity.success,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            info: {
+                borderColor: green.base,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            warning: {
+                borderColor: severity.warning,
+                boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}`,
+            },
         },
 
         disabled: {
@@ -722,10 +735,22 @@ const theme: ThemeType = {
         },
 
         severity: {
-            error: { boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}` },
-            success: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
-            info: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
-            warning: { boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}` },
+            error: {
+                borderColor: severity.error,
+                boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}`,
+            },
+            success: {
+                borderColor: severity.success,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            info: {
+                borderColor: green.base,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            warning: {
+                borderColor: severity.warning,
+                boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}`,
+            },
         },
 
         disabled: {
