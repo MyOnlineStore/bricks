@@ -685,6 +685,10 @@ const theme: ThemeType = {
                 background: silver.lighter1,
             },
         },
+        focus: {
+            borderColor: green.darker2,
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+        },
         severity: {
             error: { boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}` },
             success: { boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}` },
@@ -714,6 +718,7 @@ const theme: ThemeType = {
         },
         focus: {
             borderColor: green.darker2,
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
 
         severity: {
