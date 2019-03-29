@@ -17,6 +17,7 @@ type CheckboxThemeType = {
         boxShadow: string;
     };
     checked: {
+        checkmarkColor: string;
         backgroundColor: string;
         borderColor: string;
     };
@@ -44,6 +45,10 @@ const StyledCheckboxSkin = styled.div<StyledCheckboxSkinType>`
     position: relative;
     outline: none;
     transition: box-shadow 100ms, border 100ms, background-color 100ms;
+
+    svg {
+        fill: ${({ theme }): string => theme.Checkbox.checked.checkmarkColor};
+    }
 
     ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Checkbox.focus.boxShadow};` : '')}
 
