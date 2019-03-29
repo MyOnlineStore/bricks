@@ -3,7 +3,7 @@ import SeverityType from '../../types/_SeverityType';
 
 type TextAreaWrapperPropsType = {
     disabled?: boolean;
-    severity: SeverityType;
+    severity?: SeverityType;
 };
 
 type TextAreaPropsType = {
@@ -22,11 +22,27 @@ type TextAreaThemeType = {
             background: string;
         };
     };
+    focus: {
+        borderColor: string;
+        boxShadow: string;
+    };
     severity: {
-        error: { boxShadow: string };
-        success: { boxShadow: string };
-        info: { boxShadow: string };
-        warning: { boxShadow: string };
+        error: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        success: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        info: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        warning: {
+            borderColor: string;
+            boxShadow: string;
+        };
     };
     disabled: {
         color: string;
@@ -38,15 +54,22 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     width: 100%;
     padding: 6px 12px;
     box-sizing: border-box;
-    border: solid 1px ${({ theme }): string => theme.TextArea.idle.common.borderColor}
+    border: solid 1px ${({ theme }): string => theme.TextArea.idle.common.borderColor};
     border-radius: ${({ theme }): string => theme.TextArea.idle.common.borderRadius};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextArea.disabled.background : theme.TextArea.idle.common.background};
 
     &:focus-within {
-        ${({ severity, theme }): string => `border: solid 1px ${theme.Text.severity[severity]}`};
+        ${({ severity, theme }): string =>
+            `border: solid 1px ${
+                severity ? theme.TextArea.severity[severity].borderColor : theme.TextArea.focus.borderColor
+            }`};
         ${({ disabled, severity, theme }): string =>
-            !disabled ? `box-shadow: ${theme.TextArea.severity[severity].boxShadow}` : ''};
+            !disabled
+                ? `box-shadow: ${
+                      severity ? theme.TextArea.severity[severity].boxShadow : theme.TextArea.focus.boxShadow
+                  }`
+                : ''};
     }
 `;
 

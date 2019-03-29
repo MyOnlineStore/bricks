@@ -18,12 +18,25 @@ type TextFieldThemeType = {
     };
     focus: {
         borderColor: string;
+        boxShadow: string;
     };
     severity: {
-        error: { boxShadow: string };
-        success: { boxShadow: string };
-        info: { boxShadow: string };
-        warning: { boxShadow: string };
+        error: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        success: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        info: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        warning: {
+            borderColor: string;
+            boxShadow: string;
+        };
     };
     disabled: {
         color: string;
@@ -38,7 +51,7 @@ type AffixPropsType = {
 type WrapperPropsType = {
     focus: boolean;
     disabled?: boolean;
-    severity: SeverityType;
+    severity?: SeverityType;
 };
 
 type InputPropsType = {
@@ -62,7 +75,7 @@ const StyledInput = styled.input<InputPropsType>`
     ${({ theme, disabled }): string =>
         disabled
             ? `
-            color: ${theme.TextField.disabled.color}
+            color: ${theme.TextField.disabled.color};
             -moz-appearance: textfield;
 
             &::-webkit-inner-spin-button {
@@ -113,8 +126,10 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     ${({ focus, disabled, severity, theme }): string =>
         focus && !disabled
             ? `
-            border: solid 1px ${theme.Text.severity[severity]}
-            box-shadow: ${theme.TextField.severity[severity].boxShadow}
+            border: solid 1px ${
+                severity ? theme.TextField.severity[severity].borderColor : theme.TextField.focus.borderColor
+            };
+            box-shadow: ${severity ? theme.TextField.severity[severity].boxShadow : theme.TextField.focus.boxShadow};
             `
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
 

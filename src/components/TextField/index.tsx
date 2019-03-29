@@ -70,7 +70,7 @@ class TextField extends Component<PropsType, StateType> {
                 <StyledWrapper
                     focus={this.state.focus}
                     disabled={this.props.disabled}
-                    severity={this.props.feedback ? this.props.feedback.severity : 'success'}
+                    severity={this.props.feedback ? this.props.feedback.severity : undefined}
                 >
                     {this.props.prefix && (
                         <StyledAffixWrapper onClick={this.forceFocus} disabled={this.props.disabled}>
