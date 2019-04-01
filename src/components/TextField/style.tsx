@@ -14,6 +14,9 @@ type TextFieldThemeType = {
             color: string;
             background: string;
         };
+        placeholder: {
+            color: string;
+        };
         affix: {
             color: string;
             background: string;
@@ -59,9 +62,11 @@ const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
     line-height: 1.572;
     outline: none;
     min-width: 12px;
+    color: ${({ theme, disabled }): string =>
+        disabled ? theme.TextField.disabled.color : theme.TextField.idle.common.color};
 
     &::placeholder {
-        color: #88979D;
+        color: ${({ theme }): string => theme.TextField.idle.placeholder.color};
     }
 
     ${({ theme, disabled }): string =>
