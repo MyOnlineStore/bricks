@@ -58,6 +58,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
             <TextField
                 prefix={text('Prefix', 'Username')}
                 suffix={text('Suffix', '$')}
+                placeholder={text('Placeholder', 'This is a placeholder')}
                 value={this.state.stringValue}
                 disabled={boolean('disabled', false)}
                 name="firstname"

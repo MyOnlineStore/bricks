@@ -20,6 +20,7 @@ type PropsType = {
     prefix?: string;
     suffix?: string;
     disabled?: boolean;
+    placeholder?: string;
     extractRef?(ref: HTMLInputElement): void;
     onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
@@ -72,6 +73,7 @@ class TextField extends Component<PropsType, StateType> {
                     <Box position="relative" width="100%">
                         <StyledInput
                             type={this.props.type ? this.props.type : 'text'}
+                            placeholder={this.props.placeholder}
                             name={this.props.name}
                             disabled={this.props.disabled}
                             value={this.props.value}
