@@ -60,6 +60,10 @@ const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
     outline: none;
     min-width: 12px;
 
+    &::placeholder {
+        color: #88979D;
+    }
+
     ${({ theme, disabled }): string =>
         disabled
             ? `
