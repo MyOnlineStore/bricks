@@ -802,8 +802,11 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
-                color: grey.lighter3,
+                color: grey.base,
                 background: silver.lighter1,
+            },
+            placeholder: {
+                color: grey.lighter2,
             },
             affix: {
                 color: grey.lighter1,
