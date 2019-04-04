@@ -4,30 +4,33 @@ import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/styled/testing';
 
 describe('withCurrencyFormatting', () => {
-    it('should format currency input', () => {
-        const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
+    describe.each`
+        locale     | currency | prefix | value      | suffix
+        ${'en-US'} | ${'USD'} | ${'$'} | ${'19.12'} | ${''}
+        ${'nl-NL'} | ${'EUR'} | ${'€'} | ${'19,12'} | ${''}
+        ${'de-DE'} | ${'EUR'} | ${''}  | ${'19,12'} | ${'€'}
+        ${'en_US'} | ${'USD'} | ${'$'} | ${'19.12'} | ${''}
+        ${'nl_NL'} | ${'EUR'} | ${'€'} | ${'19,12'} | ${''}
+        ${'de_DE'} | ${'EUR'} | ${''}  | ${'19,12'} | ${'€'}
+    `('$locale + $currency', ({ locale, currency, prefix, value, suffix }) => {
+        it(`should format into: ${prefix}${value}${suffix}`, () => {
+            const changeMock = jest.fn();
+            const CurrencyField = withCurrencyFormatting(TextField);
 
-        const usdUS = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
-        );
+            const component = mountWithTheme(
+                <CurrencyField name="" value={19.12} locale={locale} currency={currency} onChange={changeMock} />,
+            );
 
-        const eurNL = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="nl-NL" currency="EUR" onChange={changeMock} />,
-        );
+            expect(component.find('input').prop('value')).toEqual(value);
 
-        const eurDE = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="de-DE" currency="EUR" onChange={changeMock} />,
-        );
+            if (suffix !== '') {
+                expect(component.find(TextField).prop('suffix')).toEqual(suffix);
+            }
 
-        expect(usdUS.find('input').prop('value')).toEqual('19.12');
-        expect(usdUS.find(TextField).prop('prefix')).toEqual('$');
-
-        expect(eurNL.find('input').prop('value')).toEqual('19,12');
-        expect(eurNL.find(TextField).prop('prefix')).toEqual('€');
-
-        expect(eurDE.find('input').prop('value')).toEqual('19,12');
-        expect(eurDE.find(TextField).prop('suffix')).toEqual('€');
+            if (prefix !== '') {
+                expect(component.find(TextField).prop('prefix')).toEqual(prefix);
+            }
+        });
     });
 
     it('should handle a change', () => {
@@ -264,14 +267,7 @@ describe('withCurrencyFormatting', () => {
         const changeMock = jest.fn();
 
         const component = mountWithTheme(
-            <CurrencyField
-                name=""
-                value={2554}
-                locale="nl-NL"
-                currency="EUR"
-                onChange={changeMock}
-                minor
-            />,
+            <CurrencyField name="" value={2554} locale="nl-NL" currency="EUR" onChange={changeMock} minor />,
         );
 
         expect(component.find('input').prop('value')).toEqual('25.54');
