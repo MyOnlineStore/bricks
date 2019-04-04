@@ -99,7 +99,7 @@
     "test-coverage": "jest --coverage --runInBand --bail",
     "build": "rimraf ./dist && webpack",
     "lint-fix": "npm run lint -- --fix",
-    "lint": "tslint --project tsconfig.json ./src/**/*.{ts,tsx}",
+    "lint": "tslint --project tsconfig.json ./src/**/*.{ts,tsx} -e ./src/**/test.tsx",
     "watch": "start-storybook -p 9001 -s .storybook/public",
     "deploy-storybook": "storybook-to-ghpages -o /public",
     "build-storybook": "build-storybook -o /public -s .storybook/public",
