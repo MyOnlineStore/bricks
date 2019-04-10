@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import Box from '../../Box';
 import trbl from '../../../utility/_trbl';
 import StyledOption from './style';
@@ -12,7 +12,7 @@ type StateType = {
     hovering: boolean;
 };
 
-const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Option: FC<PropsType> = (props): JSX.Element => {
     /* tslint:disable:no-invalid-this */
     const onClick = props.onClick.bind(this);
     /* tslint:enable:no-invalid-this */

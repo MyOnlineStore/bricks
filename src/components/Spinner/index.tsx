@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import StyledSpinner, { SpinnerSvg, SpinnerCircle } from './style';
 
 type PropsType = {
     color?: string;
 };
 
-const Spinner: FunctionComponent<PropsType> = (props): JSX.Element => (
+const Spinner: FC<PropsType> = (props): JSX.Element => (
     <StyledSpinner aria-busy="true" aria-live="polite">
         <SpinnerSvg
             // @ts-ignore

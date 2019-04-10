@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import trbl from '../../utility/_trbl';
 import Icon from '../Icon';
 import Box from '../Box';
@@ -11,7 +11,7 @@ type PropsType = {
     icon?: string;
 };
 
-const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Notification: FC<PropsType> = (props): JSX.Element => {
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (

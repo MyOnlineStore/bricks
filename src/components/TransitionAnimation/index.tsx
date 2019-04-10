@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import { Transition } from 'react-transition-group';
 import StyledAnimation, { StyledPropsType } from './style';
 
@@ -9,7 +9,7 @@ type PropsType = {
     onExited?(): void;
 };
 
-const TransitionAnimation: FunctionComponent<PropsType> = (props): JSX.Element => {
+const TransitionAnimation: FC<PropsType> = (props): JSX.Element => {
     const unmount = props.stayMounted !== undefined ? !props.stayMounted : true;
 
     const handleExit = (): void => {

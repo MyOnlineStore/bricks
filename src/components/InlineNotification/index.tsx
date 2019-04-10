@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Children } from 'react';
+import React, { FC, Children } from 'react';
 import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
 import Icon from '../Icon';
 import Text from '../Text';
@@ -11,7 +11,7 @@ type PropsType = {
     severity: SeverityType;
 };
 
-const InlineNotification: FunctionComponent<PropsType> = (props): JSX.Element => {
+const InlineNotification: FC<PropsType> = (props): JSX.Element => {
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Children, ReactNode } from 'react';
+import React, { FC, Children, ReactNode } from 'react';
 import Box from '../Box';
 import Heading from '../Heading';
 import Illustration from '../Illustration';
@@ -18,7 +18,7 @@ const branchString = (value: string | ReactNode, node: (value: string) => ReactN
     return typeof value === 'string' ? node(value) : value;
 };
 
-const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
+const EmptyState: FC<PropsType> = (props): JSX.Element => {
     const hasChildren = Children.count(props.children) > 0;
     const textAlign = props.horizontal ? 'left' : 'center';
 

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 
 type PropsType = {
@@ -15,7 +15,7 @@ type PropsType = {
     onClick?(): void;
 };
 
-const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
+const ButtonBase: FC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {

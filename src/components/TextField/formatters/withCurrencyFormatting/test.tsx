@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import withCurrencyFormatting from './';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/_styled/testing';
@@ -167,7 +167,7 @@ describe('withCurrencyFormatting', () => {
         const changeMock = jest.fn();
         const CurrencyField = withCurrencyFormatting(TextField);
 
-        const Root: FunctionComponent<{ locale: string; currency: string }> = props => (
+        const Root: FC<{ locale: string; currency: string }> = props => (
             <MosTheme>
                 <CurrencyField
                     name=""

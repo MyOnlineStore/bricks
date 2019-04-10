@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent } from 'react';
+import React, { Children, FC } from 'react';
 import Box from '../Box';
 
 type PropsType = {
@@ -6,7 +6,7 @@ type PropsType = {
     'data-testid'?: string;
 };
 
-const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
+const ButtonGroup: FC<PropsType> = (props): JSX.Element => {
     const direction = props.stacked ? 'column' : 'row-reverse';
 
     return (

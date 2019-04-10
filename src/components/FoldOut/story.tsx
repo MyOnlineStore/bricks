@@ -1,14 +1,9 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { FC, useState } from 'react';
 import FoldOut from '.';
-import trbl from '../../utility/_trbl';
 import Button from '../Button';
 import Box from '../Box';
 import Text from '../Text';
-
-type StateType = {
-    isOpen: boolean;
-};
 
 const demoContent = `
     Now this is the story all about how
@@ -36,37 +31,21 @@ const demoContent = `
     To sit on my throne as the prince of Bel-air
 `;
 
-class DemoComponent extends Component<{}, StateType> {
-    public constructor(props: {}) {
-        super(props);
+const Demo: FC<{}> = () => {
+    const [isOpen, setOpen] = useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
-    }
+    return (
+        <>
+            <FoldOut open={isOpen}>
+                <Box padding={[0, 0, 12]}>
+                    <Text>{demoContent}</Text>
+                </Box>
+            </FoldOut>
+            <Button onClick={(): void => setOpen(!isOpen)} title="open FoldOut" variant="secondary">
+                Toggle
+            </Button>
+        </>
+    );
+};
 
-    public render(): JSX.Element {
-        return (
-            <div>
-                <FoldOut open={this.state.isOpen}>
-                    <Box padding={trbl(0, 0, 12)}>
-                        <Text>{demoContent}</Text>
-                    </Box>
-                </FoldOut>
-                <Button
-                    onClick={(): void =>
-                        this.setState({
-                            isOpen: !this.state.isOpen,
-                        })
-                    }
-                    title="open FoldOut"
-                    variant="secondary"
-                >
-                    Toggle
-                </Button>
-            </div>
-        );
-    }
-}
-
-storiesOf('FoldOut', module).add('With a toggle', () => <DemoComponent />);
+storiesOf('FoldOut', module).add('With a toggle', () => <Demo />);

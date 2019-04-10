@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent } from 'react';
+import React, { Children, FC } from 'react';
 import StyledLink, { StyledButton } from './style';
 
 type PropsType = {
@@ -9,7 +9,7 @@ type PropsType = {
     onClick?(): void;
 };
 
-const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Link: FC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
@@ -20,12 +20,7 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     if (isLink) {
         return (
-            <StyledLink
-                title={props.title}
-                target={props.target}
-                href={props.href}
-                data-testid={props['data-testid']}
-            >
+            <StyledLink title={props.title} target={props.target} href={props.href} data-testid={props['data-testid']}>
                 {Children.count(props.children) > 0 ? props.children : props.title}
             </StyledLink>
         );

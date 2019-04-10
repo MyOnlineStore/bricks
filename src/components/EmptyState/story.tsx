@@ -25,7 +25,6 @@ storiesOf('EmptyState', module)
         return (
             <Box justifyContent="space-around">
                 <EmptyState
-                    // illustration={select('illustration', { Balloon: balloon, Cactus: cactus }, cactus)}
                     illustration={balloon}
                     title={title}
                     message={message}

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import ThemeType from '../../types/ThemeType';
 import { ThemeProvider } from '../../utility/_styled';
 import mosTheme from '../MosTheme/MosTheme.theme';
@@ -13,7 +13,7 @@ const customTheme = (theme: RecursivePartialType<ThemeType>): ThemeType => {
     return deepmerge(mosTheme, theme) as ThemeType;
 };
 
-const MerchantTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
+const MerchantTheme: FC<PropsType> = (props): JSX.Element => (
     <ThemeProvider theme={customTheme(props.theme)}>
         <>{props.children}</>
     </ThemeProvider>

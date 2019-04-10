@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import trbl, { TrblType } from '../../utility/_trbl';
 import { StyledDiv, StyledSpan } from './style';
 import { OffsetShorthandType } from '../../types/OffsetType';
@@ -37,7 +37,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     left?: string;
 };
 
-const Box: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Box: FC<PropsType> = (props): JSX.Element => {
     const {
         order,
         direction,

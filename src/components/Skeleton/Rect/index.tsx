@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import StyledRectSkeleton from './style';
 
 type PropsType = {
@@ -6,7 +6,7 @@ type PropsType = {
     height?: string;
 };
 
-const Rect: FunctionComponent<PropsType> = (props): JSX.Element => (
+const Rect: FC<PropsType> = (props): JSX.Element => (
     <StyledRectSkeleton aria-hidden {...props}>
         _
     </StyledRectSkeleton>

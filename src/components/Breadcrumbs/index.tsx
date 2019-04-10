@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import StyledBreadcrumbs, { StyledBreadcrumb } from './style';
 import Link from '../Link';
 import Box from '../Box';
@@ -16,7 +16,7 @@ type BreadcrumbType = {
     name: string;
 };
 
-const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => (
+const Breadcrumbs: FC<PropsType> = (props): JSX.Element => (
     <nav aria-label="Breadcrumb">
         <StyledBreadcrumbs data-testid={props['data-testid']}>
             {props.breadcrumbs.map(

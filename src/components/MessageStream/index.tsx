@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FC } from 'react';
 import trbl from '../../utility/_trbl';
 import Box from '../Box';
 import Button, { PropsType as ButtonPropsType } from '../Button';
@@ -34,7 +34,7 @@ const mapVariant = (severity: MessagePropsType['severity']): ButtonPropsType['va
     }
 };
 
-const Message: FunctionComponent<MessagePropsType> = (props): JSX.Element => {
+const Message: FC<MessagePropsType> = (props): JSX.Element => {
     const variant = mapVariant(props.severity);
 
     return (
@@ -75,7 +75,7 @@ const Message: FunctionComponent<MessagePropsType> = (props): JSX.Element => {
     );
 };
 
-const MessageStream: FunctionComponent<PropsType> = (props): JSX.Element => (
+const MessageStream: FC<PropsType> = (props): JSX.Element => (
     <StyledMessageStream>
         {props.messages.map(
             (message: MessagePropsType, index: number): JSX.Element => (

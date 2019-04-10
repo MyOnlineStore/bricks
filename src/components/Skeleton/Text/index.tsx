@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FC } from 'react';
 import StyledTextSkeleton from './style';
 
 type TextPropsType = {
@@ -6,7 +6,7 @@ type TextPropsType = {
     baseWidth?: number;
 };
 
-const Text: FunctionComponent<TextPropsType> = ({ lines, baseWidth }): JSX.Element => {
+const Text: FC<TextPropsType> = ({ lines, baseWidth }): JSX.Element => {
     const generatedLines: Array<JSX.Element> = [];
 
     if (baseWidth !== undefined) baseWidth = baseWidth < 6 ? 6 : baseWidth;

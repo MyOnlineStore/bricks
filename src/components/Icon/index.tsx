@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import StyledIcon from './style';
 
 type PropsType = {
@@ -8,7 +8,7 @@ type PropsType = {
     title?: string;
 };
 
-const Icon: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Icon: FC<PropsType> = (props): JSX.Element => {
     return (
         <StyledIcon
             aria-hidden
