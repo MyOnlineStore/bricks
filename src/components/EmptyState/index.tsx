@@ -34,6 +34,17 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
         </Text>
     ));
 
+    const renderButtonOrChildren = (): JSX.Element | void => {
+        if (hasChildren || props.button) {
+            return (
+                <Box margin={[24, 0, 0, 0]}>
+                    {props.children}
+                    {props.button && props.button}
+                </Box>
+            );
+        }
+    };
+
     const illustration =
         props.illustration !== undefined ? (
             <Illustration illustration={props.illustration} />
@@ -50,12 +61,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <Box direction="column" grow={75} margin={[0, 0, 0, 24]}>
                     {title}
                     <Box margin={[9, 0, 0, 0]}>{message}</Box>
-                    {(hasChildren || props.button) && (
-                        <Box margin={[24, 0, 0, 0]}>
-                            {props.children}
-                            {props.button && props.button}
-                        </Box>
-                    )}
+                    {renderButtonOrChildren()}
                 </Box>
             </Box>
         );
@@ -66,12 +72,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
             {illustration}
             <Box padding={[18, 0, 0, 0]}>{title}</Box>
             <Box margin={[12, 0, 0, 0]}>{message}</Box>
-            {(hasChildren || props.button) && (
-                <Box margin={[24, 0, 0, 0]}>
-                    {props.children}
-                    {props.button && props.button}
-                </Box>
-            )}
+            {renderButtonOrChildren()}
         </Box>
     );
 };

@@ -8,7 +8,7 @@ import 'jest-styled-components';
 describe('Checkbox', () => {
     it('should have theme background when checked', () => {
         const checkbox = mountWithTheme(
-            <Checkbox onChange={(): void => undefined} name="demo" checked={true} value="bar" />,
+            <Checkbox onChange={(): void => undefined} label="foo" name="demo" checked={true} value="bar" />,
         );
 
         expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(

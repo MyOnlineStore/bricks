@@ -2,9 +2,11 @@ import React from 'react';
 import EmptyState from '.';
 import { mountWithTheme } from '../../utility/_styled/testing';
 import Heading from '../Heading';
+import balloon from '../../assets/illustrations/balloon.color.svg';
 import Text from '../Text';
 import Box from '../Box';
 import Button from '../Button';
+import IllustrationElement from '../Illustration';
 
 describe('EmptyState', () => {
     it('should render its children', () => {
@@ -15,6 +17,11 @@ describe('EmptyState', () => {
         );
 
         expect(component.find('[data-testid="foo"]').length).toBe(1);
+    });
+
+    it('should to render an illustration other than the default', () => {
+        const component = mountWithTheme(<EmptyState illustration={balloon} message="123" title="foo" />);
+        expect(component.find(IllustrationElement).prop('illustration')).not.toEqual(undefined);
     });
 
     it('should render the passed through title', () => {
@@ -32,7 +39,7 @@ describe('EmptyState', () => {
     });
 
     it('should render the passed through button', () => {
-        const button = <Button variant="primary" title="foo" href="" />;
+        const button = <Button variant="primary" title="foo" href="#" />;
         const component = mountWithTheme(<EmptyState title="foo" message="bar" button={button} />);
 
         expect(component.find(Button).matchesElement(button)).toBe(true);
