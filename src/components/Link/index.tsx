@@ -1,5 +1,6 @@
 import React, { Children, FC } from 'react';
 import StyledLink, { StyledButton } from './style';
+import Branch from '../Branch';
 
 type PropsType = {
     href?: string;
@@ -18,18 +19,34 @@ const Link: FC<PropsType> = (props): JSX.Element => {
         }
     };
 
-    if (isLink) {
-        return (
-            <StyledLink title={props.title} target={props.target} href={props.href} data-testid={props['data-testid']}>
-                {Children.count(props.children) > 0 ? props.children : props.title}
-            </StyledLink>
-        );
-    }
+    const renderChildrenOrTitle = (): JSX.Element => {
+        return Children.count(props.children) > 0 ? <>{props.children}</> : <>{props.title}</>;
+    };
 
     return (
-        <StyledButton type="button" onClick={clickAction} title={props.title} data-testid={props['data-testid']}>
-            {Children.count(props.children) > 0 ? props.children : props.title}
-        </StyledButton>
+        <Branch
+            condition={isLink}
+            ifTrue={(): JSX.Element => (
+                <StyledLink
+                    title={props.title}
+                    target={props.target}
+                    href={props.href}
+                    data-testid={props['data-testid']}
+                >
+                    {renderChildrenOrTitle()}
+                </StyledLink>
+            )}
+            ifFalse={(): JSX.Element => (
+                <StyledButton
+                    type="button"
+                    onClick={clickAction}
+                    title={props.title}
+                    data-testid={props['data-testid']}
+                >
+                    {renderChildrenOrTitle()}
+                </StyledButton>
+            )}
+        />
     );
 };
 

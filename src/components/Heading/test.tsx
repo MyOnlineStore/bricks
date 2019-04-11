@@ -20,4 +20,9 @@ describe('Heading', () => {
         expect(h5).toHaveStyleRule('font-size', MosTheme.Heading[5].fontSize);
         expect(h6).toHaveStyleRule('font-size', MosTheme.Heading[6].fontSize);
     });
+
+    it('should render a default Heading', () => {
+        const h1 = mountWithTheme(<Heading />);
+        expect(h1).toHaveStyleRule('font-size', MosTheme.Heading[1].fontSize);
+    });
 });
