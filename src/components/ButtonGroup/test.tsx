@@ -24,11 +24,9 @@ describe('ButtonGroup', () => {
     });
 
     it('renders with a single Button in a small node', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
-            (props: PropsType): JSX.Element => {
-                return props.children('small');
-            },
-        );
+        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(props => {
+            return props.children('small');
+        });
 
         const component = shallow(
             <ButtonGroup>
