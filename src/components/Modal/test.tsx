@@ -57,11 +57,9 @@ describe('Modal', () => {
     });
 
     it('should render with a small breakpoint', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
-            (props: PropsType): JSX.Element => {
-                return props.children('small');
-            },
-        );
+        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(props => {
+            return props.children('small');
+        });
 
         const component = mountWithTheme(
             <Modal size="small" show={true} renderFixed={(): JSX.Element => <div>bar</div>} title="Foo" />,
@@ -71,11 +69,9 @@ describe('Modal', () => {
     });
 
     it('should render with a medium breakpoint', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(
-            (props: PropsType): JSX.Element => {
-                return props.children('medium');
-            },
-        );
+        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(props => {
+            return props.children('medium');
+        });
 
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
 

@@ -50,7 +50,7 @@ describe('MultiButton', () => {
     });
 
     it('should close on click outside', () => {
-        const callbackMap: { [key: string]: Function } = {};
+        const callbackMap: any = {};
 
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 

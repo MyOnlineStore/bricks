@@ -160,7 +160,7 @@ describe('Select', () => {
     });
 
     it('should close when clicked outside of window', () => {
-        const callbackMap: { [key: string]: Function } = {};
+        const callbackMap: any = {};
 
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 

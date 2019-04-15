@@ -85,7 +85,7 @@ describe('Popover', () => {
     });
 
     it('should not close when clicked outside the popover window when isOpen is set', () => {
-        const callbackMap: { [key: string]: Function } = {};
+        const callbackMap: any = {};
 
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
@@ -103,7 +103,7 @@ describe('Popover', () => {
     });
 
     it('should close when clicked outside the popover window when isOpen is not set', () => {
-        const callbackMap: { [key: string]: Function } = {};
+        const callbackMap: any = {};
 
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
@@ -124,7 +124,7 @@ describe('Popover', () => {
 
     it('should not break when clicked outside the closed popover', () => {
         const fn = (): void => {
-            const callbackMap: { [key: string]: Function } = {};
+            const callbackMap: any = {};
 
             document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
