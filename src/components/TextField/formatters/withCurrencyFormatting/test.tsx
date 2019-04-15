@@ -178,6 +178,7 @@ describe('withCurrencyFormatting', () => {
         });
 
         component.find('input').simulate('blur');
+
         expect(component.find('input').prop('value')).toEqual('19,12');
         expect(component.find(TextField).prop('prefix')).toEqual('€');
     });
