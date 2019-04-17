@@ -16,6 +16,7 @@ enum SmallIcons {
     minus = require('./assets/minus-small.svg'),
     plusCircle = require('./assets/plus-circle-small.svg'),
     plus = require('./assets/plus-small.svg'),
+    questionCircle = require('./assets/question-circle-small.svg'),
     search = require('./assets/search-small.svg'),
 }
 
