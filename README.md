@@ -14,7 +14,7 @@ All components are named exports. For instance:
 ```typescript
 import { Button } from '@myonlinestore/bricks';
 
-<Button />
+<Button title="Click me!" variant="primary" />
 ```
 
 #### ThemeProvider
