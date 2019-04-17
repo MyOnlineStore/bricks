@@ -2,7 +2,7 @@
 import React from 'react';
 import { Popper } from 'react-popper';
 import Popover from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import TransitionAnimation from '../TransitionAnimation';
 
 describe('Popover', () => {

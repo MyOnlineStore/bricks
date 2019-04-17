@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import ThemeType from '../../types/ThemeType';
-import { ThemeProvider } from '../../utility/_styled';
+import { ThemeProvider } from '../../utility/styled';
 import mosTheme from '../MosTheme/MosTheme.theme';
 import deepmerge from 'deepmerge';
-import RecursivePartialType from '../../types/_RecursivePartialType';
+import RecursivePartialType from '../../types/RecursivePartialType';
 
 type PropsType = {
     theme: RecursivePartialType<ThemeType>;

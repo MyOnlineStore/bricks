@@ -1,6 +1,6 @@
 import React from 'react';
 import EmptyState from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Heading from '../Heading';
 import Text from '../Text';
 import Box from '../Box';

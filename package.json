@@ -1,13 +1,16 @@
 {
   "author": "MyOnlineStore",
   "license": "GPL-3.0",
+  "sideEffects": false,
   "bugs": {
     "url": "https://github.com/MyOnlineStore/bricks/issues"
   },
   "homepage": "https://github.com/MyOnlineStore/bricks#readme",
   "name": "@myonlinestore/bricks",
-  "version": "1.0.0-canary.0",
+  "version": "1.0.0-canary.1",
   "description": "bricks",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
     "MyOnlineStore",
     "react",
@@ -15,7 +18,7 @@
   ],
   "bundlesize": [
     {
-      "path": "./lib/**/*.js"
+      "path": "./dist/**/*.js"
     }
   ],
   "dependencies": {
@@ -30,8 +33,10 @@
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "@babel/runtime": "^7.2.0",
     "@storybook/addon-backgrounds": "^4.1.4",
     "@storybook/addon-knobs": "^4.1.2",
@@ -60,6 +65,7 @@
     "@types/uuid": "^3.4.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-minify": "^0.5.0",
     "bundlesize": "^0.15.3",
     "css-loader": "^2.0.1",
     "enzyme": "^3.7.0",
@@ -104,7 +110,7 @@
     "dev": "npm run watch",
     "test": "jest",
     "test-coverage": "jest --coverage --runInBand --bail",
-    "build": "rimraf ./lib && webpack && bundlesize",
+    "build": "rimraf ./dist && webpack && bundlesize",
     "lint-fix": "npm run lint -- --fix",
     "lint": "tslint --project tsconfig.json -c tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -s .storybook/public",
@@ -115,7 +121,7 @@
     "prepare": "npm run build"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",

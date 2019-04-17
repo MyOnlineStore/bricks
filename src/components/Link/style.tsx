@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 
 type LinkThemeType = {
     default: {

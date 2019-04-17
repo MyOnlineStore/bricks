@@ -2,7 +2,7 @@ import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import InlineNotification from '.';
-import SeverityType from '../../types/_SeverityType';
+import SeverityType from '../../types/SeverityType';
 import Link from '../Link';
 import bell from '../../assets/icons/bell.svg';
 import infoCircle from '../../assets/icons/info-circle.svg';

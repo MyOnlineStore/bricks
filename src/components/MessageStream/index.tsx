@@ -1,5 +1,5 @@
 import React, { Fragment, FunctionComponent } from 'react';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Button, { PropsType as ButtonPropsType } from '../Button';
 import Contrast from '../Contrast';

@@ -1,4 +1,4 @@
-import styled, { css } from '../../utility/_styled';
+import styled, { css } from '../../utility/styled';
 
 /* tslint:disable */
 const styles = require('simplebar/dist/simplebar.min.css').toString();

@@ -2,7 +2,7 @@ import React from 'react';
 import MultiButton from '.';
 import Option from './Option';
 import { Popper } from 'react-popper';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledChevronButton, StyledMultiButton, StyledWindow } from './style';
 
 const options = [

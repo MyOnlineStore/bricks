@@ -1,7 +1,7 @@
 import React from 'react';
 import FoldOut from '../FoldOut';
 import 'jest-styled-components';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 
 jest.mock('react-measure', () => {
     return jest.fn().mockImplementation(

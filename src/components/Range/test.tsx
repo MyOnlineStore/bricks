@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Range from '.';
 import InputRange from 'react-input-range';
 import MosTheme from '../../themes/MosTheme';

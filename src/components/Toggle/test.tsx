@@ -2,7 +2,7 @@ import React from 'react';
 import Toggle from '.';
 import Icon from '../Icon';
 import { mosTheme } from '../../themes/MosTheme';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Styledtoggle, { StyledToggleSkin } from './style';
 import 'jest-styled-components';
 

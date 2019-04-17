@@ -5,7 +5,7 @@ import ScrollBox from '../ScrollBox';
 import Option from './Option';
 import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
 import Text from '../Text';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import IconButton from '../../components/IconButton';
 import { withTheme } from 'styled-components';

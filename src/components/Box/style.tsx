@@ -1,6 +1,6 @@
 import { PropsType } from '.';
-import { TrblType } from '../../utility/_trbl';
-import styled from '../../utility/_styled';
+import { TrblType } from '../../utility/trbl';
+import styled from '../../utility/styled';
 
 type BoxPropsType = PropsType & {
     flexWrap?: PropsType['wrap'];

@@ -7,7 +7,7 @@ import Text from '../Text';
 import Box from '../Box';
 import TextField from '../TextField';
 import Toggle from '../Toggle';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 import Separated from '../Separated';
 import { text } from '@storybook/addon-knobs';
 

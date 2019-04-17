@@ -3,7 +3,7 @@
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Cell from './Cell';
 import Card from './Card';
 import Checkbox from '../Checkbox';

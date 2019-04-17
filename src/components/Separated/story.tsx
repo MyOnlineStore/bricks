@@ -3,7 +3,7 @@ import React from 'react';
 import Seperated from '.';
 import Text from '../Text';
 import { boolean } from '@storybook/addon-knobs';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 
 const Wrap = styled.div`
     max-width: 640px;

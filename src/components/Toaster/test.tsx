@@ -1,7 +1,7 @@
 import React from 'react';
 import Toaster from '.';
 import Toast from '../Toast';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import IconButton from '../IconButton';
 
 // tslint:disable-next-line

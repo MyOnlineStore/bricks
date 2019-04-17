@@ -1,4 +1,4 @@
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 
 const StyledFormRow = styled.div`
     display: flex;

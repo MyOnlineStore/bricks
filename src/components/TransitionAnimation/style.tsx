@@ -1,4 +1,4 @@
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 import fade from './animations/fade';
 import zoom from './animations/zoom';
 import slideUp from './animations/slideUp';

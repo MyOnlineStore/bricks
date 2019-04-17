@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { ThemeProvider } from '../../utility/_styled';
+import { ThemeProvider } from '../../utility/styled';
 import theme from './MosTheme.theme';
 
 const MosTheme: FunctionComponent = (props): JSX.Element => {

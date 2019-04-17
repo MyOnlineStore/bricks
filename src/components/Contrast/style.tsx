@@ -1,6 +1,6 @@
-import RecursivePartialType from '../../types/_RecursivePartialType';
+import RecursivePartialType from '../../types/RecursivePartialType';
 import ThemeType from '../../types/ThemeType';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 
 type ContrastThemeType = {
     overides: RecursivePartialType<ThemeType>;

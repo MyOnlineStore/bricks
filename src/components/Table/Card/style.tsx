@@ -1,7 +1,7 @@
 import _R from 'react';
 import { StyledComponentBase as _S } from 'styled-components';
 import _T from '../../../types/ThemeType';
-import styled from '../../../utility/_styled';
+import styled from '../../../utility/styled';
 import StyledCell from '../Cell/style';
 
 type StyledCardPropsType = {

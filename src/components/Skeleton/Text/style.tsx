@@ -1,5 +1,5 @@
-import styled from '../../../utility/_styled';
-import calculateRandomPercentage from '../../../utility/_calculateRandomPercentage';
+import styled from '../../../utility/styled';
+import calculateRandomPercentage from '../../../utility/calculateRandomPercentage';
 import getSkeletonStyles from '../style';
 
 type PropsType = {

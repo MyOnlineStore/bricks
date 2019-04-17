@@ -1,4 +1,4 @@
-import styled, { css } from '../../utility/_styled';
+import styled, { css } from '../../utility/styled';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();

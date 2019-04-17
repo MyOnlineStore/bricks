@@ -1,5 +1,5 @@
 import React, { Children, ReactNode } from 'react';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 import Icon from '../Icon';
 import BareButton, { PropsType as BaseButtonPropsType } from './base';
 import Box from '../Box';
