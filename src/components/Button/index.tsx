@@ -1,10 +1,9 @@
-import React, { Children, FunctionComponent } from 'react';
+import React, { Children, FC } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 import Icon, { MediumPropsType } from '../Icon';
 import ThemeType from '../../types/ThemeType';
 import { withTheme } from 'styled-components';
 import Box from '../Box';
-import trbl from '../../utility/trbl';
 import Spinner from '../Spinner';
 
 type PropsType = {
@@ -35,7 +34,7 @@ type ButtonContentsType = {
     title: PropsType['title'];
 };
 
-const ButtonContents: FunctionComponent<ButtonContentsType> = (props): JSX.Element => (
+const ButtonContents: FC<ButtonContentsType> = (props): JSX.Element => (
     <>
         {props.loading && (
             <Box
@@ -46,28 +45,36 @@ const ButtonContents: FunctionComponent<ButtonContentsType> = (props): JSX.Eleme
                 top="0"
                 right="0"
                 bottom="0"
-                padding={trbl(6)}
+                padding={[6]}
             >
                 <Spinner color={props.theme.Button[props.variant][props.subVariant].idle.color} />
             </Box>
         )}
         {props.icon &&
+            props.title === '' && (
+                <Box inline>
+                    <Icon icon={props.icon} size={'medium'} />
+                </Box>
+            )}
+        {props.icon &&
+            props.title !== '' &&
             props.iconAlign !== 'right' && (
-                <Box inline padding={trbl(0, 6, 0, 0)}>
+                <Box inline padding={[0, 6, 0, 0]}>
                     <Icon icon={props.icon} size={'medium'} />
                 </Box>
             )}
         {Children.count(props.children) > 0 ? props.children : props.title}
         {props.icon &&
+            props.title !== '' &&
             props.iconAlign === 'right' && (
-                <Box inline padding={trbl(0, 0, 0, 6)}>
+                <Box inline padding={[0, 0, 0, 6]}>
                     <Icon icon={props.icon} size={'medium'} />
                 </Box>
             )}
     </>
 );
 
-const Button: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Button: FC<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
