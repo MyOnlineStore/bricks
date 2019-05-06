@@ -10,6 +10,7 @@ import TextField from '../TextField';
 import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
 import Separated from '../Separated';
+import { text } from '@storybook/addon-knobs';
 
 type PropsType = {
     descriptions: boolean;
@@ -326,5 +327,17 @@ storiesOf('FormRow', module)
     .add('Default', () => <DemoComponent descriptions={true} />)
     .add('No Descriptions', () => <DemoComponent descriptions={false} />)
     .add('With badge', () => (
-        <FormRow label={<Text>Label</Text>} badge={<Text severity="success">PRO</Text>} field={<Text>Field</Text>} />
+        <FormRow
+            label={<Text>{text('label', 'Label text')}</Text>}
+            badge={
+                <Text variant="small" severity="success">
+                    {text('badge', 'PRO')}
+                </Text>
+            }
+            field={
+                <Box direction="row" alignItems="center">
+                    <Toggle checked={true} name="storyToggle" value={'true'} onChange={(): string => 'void'} />
+                </Box>
+            }
+        />
     ));
