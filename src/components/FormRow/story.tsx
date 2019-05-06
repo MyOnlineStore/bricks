@@ -324,4 +324,7 @@ class DemoComponent extends Component<PropsType, StateType> {
 
 storiesOf('FormRow', module)
     .add('Default', () => <DemoComponent descriptions={true} />)
-    .add('No Descriptions', () => <DemoComponent descriptions={false} />);
+    .add('No Descriptions', () => <DemoComponent descriptions={false} />)
+    .add('With badge', () => (
+        <FormRow label={<Text>Label</Text>} badge={<Text severity="success">PRO</Text>} field={<Text>Field</Text>} />
+    ));
