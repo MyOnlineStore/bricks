@@ -58,6 +58,6 @@ describe('TextField', () => {
         const component = mountWithTheme(
             <TextField value="" suffix="hi" name="firstName" placeholder="foo" onChange={jest.fn()} />,
         );
-        expect(component.prop('placeholder')).toEqual('foo');
+        expect(component.find(StyledInput).prop('placeholder')).toEqual('foo');
     });
 });

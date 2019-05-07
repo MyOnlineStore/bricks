@@ -50,9 +50,7 @@ describe('Popover', () => {
     });
 
     it('should render with only a custom offset', () => {
-        const component = mountWithTheme(
-            <Popover show offset={20} renderContent={(): string => 'Mock content'} />,
-        );
+        const component = mountWithTheme(<Popover show offset={20} renderContent={(): string => 'Mock content'} />);
 
         const popper = component.find(Popper);
 
@@ -67,9 +65,7 @@ describe('Popover', () => {
     });
 
     it('should render with only a custom distance', () => {
-        const component = mountWithTheme(
-            <Popover show distance={6} renderContent={(): string => 'Mock content'} />,
-        );
+        const component = mountWithTheme(<Popover show distance={6} renderContent={(): string => 'Mock content'} />);
 
         const popper = component.find(Popper);
 
@@ -85,7 +81,7 @@ describe('Popover', () => {
 
     it('should close when clicked outside the popover window', () => {
         const clickMock = jest.fn();
-        const callbackMap: { [key: string]: Function } = {};
+        const callbackMap: any = {};
 
         document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
@@ -109,7 +105,7 @@ describe('Popover', () => {
 
     it('should not break when clicked outside the closed popover', () => {
         const fn = (): void => {
-            const callbackMap: { [key: string]: Function } = {};
+            const callbackMap: any = {};
 
             document.addEventListener = jest.fn((event, callback) => (callbackMap[event] = callback));
 
