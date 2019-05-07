@@ -45,7 +45,10 @@ const withCurrencyFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Com
         }
 
         private setFormatter(locale: string, currency: string): void {
-            this.formatter = new Intl.NumberFormat(locale, { style: 'currency', currency });
+            this.formatter = new Intl.NumberFormat(locale.replace('_', '-'), {
+                style: 'currency',
+                currency,
+            });
         }
 
         private parse(direction: 'in', value: string): string;

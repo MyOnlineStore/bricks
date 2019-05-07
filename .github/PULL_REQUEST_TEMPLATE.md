@@ -20,5 +20,5 @@ resolves #[resolved issue number]
 **Checklist** 🛡
 - [ ] I have exported my addition from `src/index.ts` (check if not applicable).
 - [ ] Appropriate tests have been added for my functionality (check if not applicable).
-- [ ] A designer has seen and approved my changes (tag `@LuukHorsmans` for a design review when applicable).
+- [ ] A designer has seen and approved my changes (tag `@LuukHorsmans` or `@RianneSchaekens` for a design review when applicable).
 - [ ] I have tested my addition in all supported browsers and for responsiveness (Chrome, Firefox, Safari, Edge, IE11 and mobile browsers).

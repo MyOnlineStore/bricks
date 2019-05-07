@@ -201,4 +201,16 @@ describe('Range', () => {
         expect(firstInputPostUpdate).toBe(1);
         expect(secondInputPostUpdate).toBe(1);
     });
+
+    it('should floor and ceil the minLimit and maxLimit respectively', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(
+            <Range value={{ min: 2, max: 5 }} minLimit={1.75} maxLimit={15.13} onChange={changeMock} />,
+        );
+
+        const rangeSlider = component.find(InputRange);
+
+        expect(rangeSlider.props().minValue).toBe(1);
+        expect(rangeSlider.props().maxValue).toBe(16);
+    });
 });

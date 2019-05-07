@@ -58,6 +58,7 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
             <TextField
                 prefix={text('Prefix', 'Username')}
                 suffix={text('Suffix', '$')}
+                placeholder={text('Placeholder', 'This is a placeholder')}
                 value={this.state.stringValue}
                 disabled={boolean('disabled', false)}
                 name="firstname"
@@ -92,6 +93,6 @@ storiesOf('TextField', module).add('With Currency formatting', () => (
         formatter="withCurrency"
         withFeedback={false}
         currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
-        locale={select('locale', ['en-US', 'nl-NL', 'de-DE', 'jp-JP'], 'en-US')}
+        locale={select('locale', ['en-US', 'nl-NL', 'de-DE', 'jp-JP', 'en_US', 'nl_NL', 'de_DE', 'jp_JP'], 'en-US')}
     />
 ));
