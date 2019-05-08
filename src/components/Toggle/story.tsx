@@ -26,6 +26,7 @@ class Demo extends Component<{}, StateType> {
                 value="foot"
                 checked={boolean('checked', this.state.checked)}
                 disabled={boolean('disabled', false)}
+                unavailable={boolean('unavailable', false)}
                 disabledIcon={boolean('disabled icon', true)}
                 error={boolean('error', false)}
                 label={text('label', 'Turn me on!')}
