@@ -49,7 +49,7 @@ const StyledModal = styled.div<ModalPropsType>`
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    max-height: calc(300px + 300 * (100vh - 300px) / 350);
+    max-height: calc(300px + 300 * (100vh - 300px) / 400);
     background: ${({ theme }): string => theme.Modal.backgroundColor};
     border-radius: ${({ theme }): string => theme.Modal.borderRadius};
 
