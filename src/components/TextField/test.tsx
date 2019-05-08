@@ -53,4 +53,11 @@ describe('TextField', () => {
 
         expect(changeMock).toHaveBeenCalled();
     });
+
+    it('should show a placeholder', () => {
+        const component = mountWithTheme(
+            <TextField value="" suffix="hi" name="firstName" placeholder="foo" onChange={jest.fn()} />,
+        );
+        expect(component.find(StyledInput).prop('placeholder')).toEqual('foo');
+    });
 });

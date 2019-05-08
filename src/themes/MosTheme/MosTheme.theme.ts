@@ -727,6 +727,9 @@ const theme: ThemeType = {
                 color: grey.base,
                 background: silver.lighter1,
             },
+            placeholder: {
+                color: grey.lighter2,
+            },
             affix: {
                 color: grey.lighter1,
                 background: silver.base,

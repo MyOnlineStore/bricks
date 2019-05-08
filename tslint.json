@@ -1,5 +1,10 @@
 {
     "extends": ["tslint-react"],
+    "linterOptions": { 
+        "exclude": [
+            "./src/**/test.tsx"
+        ]
+    },
     "rules": {
       "align": true,
       "array-type": [true, "generic"],

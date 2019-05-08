@@ -394,7 +394,7 @@ describe('Table', () => {
             .simulate('click');
 
         // tslint:disable-next-line
-        const checkedRows = mockHandler.mock.calls[0].filter(row => (row as any).checked);
+        const checkedRows = mockHandler.mock.calls[0].filter((row: any): any => row.checked);
 
         expect(checkedRows.length).toBe(0);
     });
