@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import trbl, { TrblType } from '../../utility/_trbl';
+import trbl, { TrblType } from '../../utility/trbl';
 import { StyledDiv, StyledSpan } from './style';
 import { OffsetShorthandType } from '../../types/OffsetType';
 

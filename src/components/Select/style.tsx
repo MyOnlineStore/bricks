@@ -1,4 +1,4 @@
-import styled from '../../../src/utility/_styled';
+import styled from '../../utility/styled';
 
 type SelectThemeType = {
     common: {

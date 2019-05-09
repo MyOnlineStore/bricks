@@ -2,8 +2,8 @@ import { boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import ScrollBox from '.';
-import styled from '../../utility/_styled';
-import trbl from '../../utility/_trbl';
+import styled from '../../utility/styled';
+import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Heading from '../Heading';
 import Text from '../Text';
@@ -95,8 +95,10 @@ class Demo extends Component<{}, DemoStateType> {
                     <Heading>Scroll event</Heading>
                 </Box>
                 <Text>
-                    scrollTop: {this.state.scrollTop}px<br />
-                    scrollBottom: {this.state.scrollBottom}px<br />
+                    scrollTop: {this.state.scrollTop}px
+                    <br />
+                    scrollBottom: {this.state.scrollBottom}px
+                    <br />
                     scrollDirection: {this.state.scrollDirection}
                 </Text>
             </>

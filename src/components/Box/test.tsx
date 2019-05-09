@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import Box from '.';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 import 'jest-styled-components';
 
 describe('Box', () => {

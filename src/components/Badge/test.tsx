@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import 'jest-styled-components';
 
 describe('Badge', () => {

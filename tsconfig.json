@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "lib",
+    "declarationDir": "dist",
     "sourceMap": true,
-    "outDir": "lib/src",
+    "outDir": "dist/src",
     "noImplicitAny": true,
     "noErrorTruncation": true,
     "noUnusedLocals": true,

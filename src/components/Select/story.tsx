@@ -4,7 +4,7 @@ import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs';
 import Box from '../Box';
 import Text from '../Text';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 
 type DemoOptionType = {

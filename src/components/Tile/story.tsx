@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Box from '../Box';
 import Tile from '.';
 import Heading from '../Heading';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 
 storiesOf('Tile', module).add('Default', () => {
     return (

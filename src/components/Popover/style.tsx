@@ -1,5 +1,5 @@
 import { PlacementType } from '.';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 
 type PopoverThemeType = {
     background: string;

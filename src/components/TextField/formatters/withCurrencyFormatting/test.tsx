@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import withCurrencyFormatting from './';
 import TextField from '../..';
-import { mountWithTheme } from '../../../../utility/_styled/testing';
+import { mountWithTheme } from '../../../../utility/styled/testing';
 import MosTheme from '../../../../themes/MosTheme';
 import { mount } from 'enzyme';
 

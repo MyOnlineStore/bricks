@@ -1,5 +1,5 @@
-import SeverityType from '../../types/_SeverityType';
-import styled from '../../utility/_styled';
+import SeverityType from '../../types/SeverityType';
+import styled from '../../utility/styled';
 
 type TextFieldThemeType = {
     idle: {

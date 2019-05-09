@@ -1,5 +1,5 @@
-import styled from '../../utility/_styled';
-import SeverityType from '../../types/_SeverityType';
+import styled from '../../utility/styled';
+import SeverityType from '../../types/SeverityType';
 
 type PropsType = {
     severity?: SeverityType;

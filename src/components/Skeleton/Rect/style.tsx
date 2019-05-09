@@ -1,4 +1,4 @@
-import styled, { keyframes } from '../../../utility/_styled';
+import styled, { keyframes } from '../../../utility/styled';
 
 type RectPropsType = {
     width?: string;

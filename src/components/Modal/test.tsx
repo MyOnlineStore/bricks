@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import StyledModal, { StyledModalWrapper } from './style';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';

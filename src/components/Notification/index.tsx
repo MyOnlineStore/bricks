@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
-import { SeverityIcons } from '../../types/_SeverityType';
+import { SeverityIcons } from '../../types/SeverityType';
 
 type PropsType = {
     severity: keyof typeof SeverityIcons;

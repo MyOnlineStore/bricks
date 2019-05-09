@@ -1,6 +1,6 @@
 import { color, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 import React from 'react';
 import Spinner from '.';
 

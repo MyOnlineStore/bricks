@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const entry = require('./scripts/entry');
 const WebpackBar = require('webpackbar');
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry,
+    entry: {
+        index: './src/index.ts',
+    },
     mode: 'production',
     devtool: 'source-map',
     target: 'node', // required for SSR
@@ -15,11 +16,10 @@ module.exports = {
         assets: false,
         modules: false,
         children: false,
-        entrypoints: false,
     },
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, 'lib'),
+        path: path.join(__dirname, 'dist'),
         library: 'bricks',
         libraryTarget: 'umd',
         umdNamedDefine: true,
@@ -81,6 +81,5 @@ module.exports = {
             openAnalyzer: false,
             reportFilename: 'reports/webpack/statistics-tree.html',
         }),
-        new PeerDepsExternalsPlugin(),
     ],
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';

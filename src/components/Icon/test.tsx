@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Icon from '../Icon';
 import StyledIcon from './style';
 import 'jest-styled-components';

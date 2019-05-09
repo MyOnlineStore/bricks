@@ -1,6 +1,6 @@
 import { keyframes } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import { css } from '../../utility/_styled';
+import { css } from '../../utility/styled';
 
 type SkeletonThemeType = {
     common: {

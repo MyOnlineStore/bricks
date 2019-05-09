@@ -1,6 +1,6 @@
 import React from 'react';
 import Heading from '.';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import MosTheme from '../../themes/MosTheme/MosTheme.theme';
 import 'jest-styled-components';
 

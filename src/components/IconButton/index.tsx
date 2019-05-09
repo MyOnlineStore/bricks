@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 import BareButton, { PropsType as BareButtonPropsType } from '../Button/base';
 import ThemeType from '../../types/ThemeType';
 import Icon from '../Icon';

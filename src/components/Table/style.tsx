@@ -1,4 +1,4 @@
-import styled from '../../utility/_styled';
+import styled from '../../utility/styled';
 
 type TableThemeType = {
     default: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mountWithTheme } from '../../utility/_styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import Toast from './';
 import IconButton from '../IconButton';
 import Button from '../Button';
@@ -25,14 +25,7 @@ describe('Toast', () => {
         const closeMock = jest.fn();
 
         mountWithTheme(
-            <Toast
-                autoDismiss
-                show
-                severity="success"
-                buttonTitle="Bar?"
-                title="Foo"
-                onClose={closeMock}
-            />,
+            <Toast autoDismiss show severity="success" buttonTitle="Bar?" title="Foo" onClose={closeMock} />,
         );
 
         jest.advanceTimersByTime(5999);
@@ -78,14 +71,7 @@ describe('Toast', () => {
         const clickMock = jest.fn();
 
         const component = mountWithTheme(
-            <Toast
-                show
-                severity="warning"
-                title="Foo"
-                buttonTitle="Bar?"
-                onClose={undefined}
-                onClick={clickMock}
-            />,
+            <Toast show severity="warning" title="Foo" buttonTitle="Bar?" onClose={undefined} onClick={clickMock} />,
         );
 
         const closeButton = component.find(Button);

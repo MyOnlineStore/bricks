@@ -1,9 +1,9 @@
 import React, { FunctionComponent, Children } from 'react';
-import SeverityType, { SeverityIcons } from '../../types/_SeverityType';
+import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import Icon from '../Icon';
 import Text from '../Text';
 import Box from '../Box';
-import trbl from '../../utility/_trbl';
+import trbl from '../../utility/trbl';
 
 type PropsType = {
     icon?: string;
