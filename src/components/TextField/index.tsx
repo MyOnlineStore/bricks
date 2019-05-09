@@ -7,6 +7,7 @@ import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './s
 import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters/withCurrencyFormatting';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
+import lockedIcon from '../../assets/icons/locked.svg';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';
 
@@ -95,7 +96,7 @@ class TextField extends Component<PropsType, StateType> {
                             }}
                         />
                         <Box position="absolute" right="8px" top="8px">
-                            {this.props.disabled && <Icon icon="locked" color="#A6AAB3" size="medium" />}
+                            {this.props.disabled && <Icon icon={lockedIcon} color="#A6AAB3" size="medium" />}
                         </Box>
                     </Box>
                     {this.props.suffix && (

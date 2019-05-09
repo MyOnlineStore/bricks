@@ -3,6 +3,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
+import lockedIcon from '../../assets/icons/locked.svg';
 import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
 
 type StateType = {
@@ -67,7 +68,7 @@ class RadioButton extends Component<PropsType, StateType> {
                     <Box inline direction="row" align-items="center">
                         {this.props.disabled && (
                             <Box inline margin={trbl(0, 12, 0, 0)}>
-                                <Icon size="medium" icon="locked" />{' '}
+                                <Icon size="medium" icon={lockedIcon} />{' '}
                             </Box>
                         )}
                         <label id={this.props.name} htmlFor={this.props.name}>

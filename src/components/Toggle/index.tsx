@@ -3,6 +3,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
+import lockedIcon from '../../assets/icons/locked.svg';
 import StyledToggle, { StyledToggleSkin } from './style';
 
 type StateType = {
@@ -76,7 +77,7 @@ class Toggle extends Component<PropsType, StateType> {
                 </Box>
                 <Box margin={trbl(9, 0, 0, 0)}>
                     <Text severity={this.props.disabled || this.props.unavailable ? 'info' : undefined}>
-                        {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon="locked" />}{' '}
+                        {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon={lockedIcon} />}{' '}
                         {this.props.label}
                     </Text>
                 </Box>
