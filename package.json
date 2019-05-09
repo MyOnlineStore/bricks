@@ -1,7 +1,6 @@
 {
   "author": "MyOnlineStore",
   "license": "GPL-3.0",
-  "sideEffects": false,
   "bugs": {
     "url": "https://github.com/MyOnlineStore/bricks/issues"
   },
