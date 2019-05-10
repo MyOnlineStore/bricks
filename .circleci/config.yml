@@ -69,20 +69,14 @@ jobs:
           paths:
             - dist
 
-  publish-npm:
+  deploy-storybook:
     <<: *defaults
     steps:
       - attach_workspace:
           at: .
       - run:
-          name: Authenticating user
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-      - run:
-          name: Publishing to NPM
-          command: |
-            if ! npm publish; then
-              echo command returned true
-            fi
+          name: Deploying Storybook to GitHub Pages
+          command: npm run deploy-storybook -- --ci
 
   cleanup:
     <<: *defaults
@@ -173,7 +167,7 @@ workflows:
               only: /^[0-9]+\.[0-9]+\.[0-9]$/
           requires:
             - setup
-      - publish-npm:
+      - deploy-storybook:
           filters:
             branches:
               only:
