@@ -6,6 +6,7 @@ import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
+import checkmarkIcon from '../../assets/icons/checkmark.svg';
 
 type DemoOptionType = {
     image: string;
@@ -119,7 +120,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <Text severity={optionState.isSelected ? 'info' : undefined}>
                     {optionState.isSelected && (
                         <Text as="span" severity="info">
-                            <Icon size="small" icon="checkmark" />
+                            <Icon size="small" icon={checkmarkIcon} />
                             &nbsp;&nbsp;
                         </Text>
                     )}

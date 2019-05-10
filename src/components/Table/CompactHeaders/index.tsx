@@ -5,6 +5,8 @@ import { ColumnType, SortDirectionType } from '..';
 import Select from '../../Select';
 import Text from '../../Text';
 import Icon from '../../Icon';
+import caretUpIcon from '../../../assets/icons/caret-up.svg';
+import caretDownIcon from '../../../assets/icons/caret-down.svg';
 
 type PropsType = {
     // tslint:disable-next-line
@@ -130,12 +132,12 @@ class Headers extends Component<PropsType, StateType> {
                     {
                         value: `${key}_ascending`,
                         label: `${this.props.columns[key].header}`,
-                        icon: <Icon size="medium" icon="caretUp" />,
+                        icon: <Icon size="medium" icon={caretUpIcon} />,
                     },
                     {
                         value: `${key}_descending`,
                         label: `${this.props.columns[key].header}`,
-                        icon: <Icon size="medium" icon="caretDown" />,
+                        icon: <Icon size="medium" icon={caretDownIcon} />,
                     },
                 ];
             });
