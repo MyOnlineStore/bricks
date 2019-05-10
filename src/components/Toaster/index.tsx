@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Toast, { PropsType as ToastPropsType } from '../Toast';
 import { createPortal } from 'react-dom';
 
-type ToastType = Pick<ToastPropsType, Exclude<keyof ToastPropsType, 'isOpen'>>;
+type ToastType = Pick<ToastPropsType, Exclude<keyof ToastPropsType, 'show'>>;
 
 type PropsType = {
     portalId?: string;
@@ -92,18 +92,18 @@ class Toaster extends Component<PropsType, StateType> {
         const toasts = (
             <>
                 {this.state.toasts.map(toast => {
-                    const { id, closeAction, ...toastProps } = toast;
+                    const { id, onClose, ...toastProps } = toast;
                     const autoDismiss = toastProps.severity !== 'error';
 
                     return (
                         <Toast
                             key={toast.id}
                             autoDismiss={autoDismiss}
-                            isOpen={toast.isOpen}
+                            show={toast.isOpen}
                             {...toastProps}
                             onExited={(): void => this.removeToast(toast.id)}
-                            closeAction={(): void => {
-                                if (closeAction !== undefined) closeAction();
+                            onClose={(): void => {
+                                if (onClose!== undefined) onClose();
                                 this.closeToast(id);
                             }}
                         />

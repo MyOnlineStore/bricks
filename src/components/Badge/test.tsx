@@ -1,24 +1,30 @@
 import React from 'react';
 import Badge from '.';
-import { shallowWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import 'jest-styled-components';
 
 describe('Badge', () => {
     it('should render the variety of severities and use error when no severity is chosen', () => {
-        const badge = shallowWithTheme(<Badge />);
+        const badge = mountWithTheme(<Badge />);
 
         expect(badge).toHaveStyleRule('background', '#ed2157');
     });
 
     it('should render the Badge with different colors according to severities', () => {
-        const successBadge = shallowWithTheme(<Badge severity="success" />);
-        const warningBadge = shallowWithTheme(<Badge severity="warning" />);
-        const errorBadge = shallowWithTheme(<Badge severity="error" />);
-        const infoBadge = shallowWithTheme(<Badge severity="info" />);
+        const successBadge = mountWithTheme(<Badge severity="success" />);
+        const warningBadge = mountWithTheme(<Badge severity="warning" />);
+        const errorBadge = mountWithTheme(<Badge severity="error" />);
+        const infoBadge = mountWithTheme(<Badge severity="info" />);
 
         expect(successBadge).toHaveStyleRule('background', '#5bd16a');
         expect(warningBadge).toHaveStyleRule('background', '#fcc200');
         expect(errorBadge).toHaveStyleRule('background', '#ed2157');
         expect(infoBadge).toHaveStyleRule('background', '#88979d');
+    });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(<Badge data-testid="badge" />);
+
+        expect(component.find('[data-testid="badge"]').hostNodes()).toHaveLength(1);
     });
 });

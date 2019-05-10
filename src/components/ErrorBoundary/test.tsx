@@ -31,7 +31,7 @@ describe('ErrorBoundary', () => {
             throw new Error('Mock Error');
         };
 
-        const boundary = Renderer.create(
+        Renderer.create(
             <MosTheme>
                 <ErrorBoundary message="This has an error" reportError={mockReport}>
                     <ThrowingComponent />
@@ -39,7 +39,6 @@ describe('ErrorBoundary', () => {
             </MosTheme>,
         ).toJSON();
 
-        expect(boundary).toMatchSnapshot();
         expect(mockReport).toHaveBeenCalled();
     });
 });

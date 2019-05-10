@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import React, { ReactNode, FunctionComponent } from 'react';
 import Box from '../Box';
 import trbl from '../../utility/trbl';
 import { StyledFormRow } from './style';
 
 type PropsType = {
-    label: JSX.Element;
-    badge?: JSX.Element;
-    field: JSX.Element;
+    label: ReactNode;
+    badge?: ReactNode;
+    field: ReactNode;
 };
 
 const FormRow: FunctionComponent<PropsType> = (props): JSX.Element => {

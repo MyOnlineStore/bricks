@@ -1,12 +1,12 @@
 import React, { FunctionComponent, Children } from 'react';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
-import Icon, { MediumIcons } from '../Icon';
+import Icon from '../Icon';
 import Text from '../Text';
 import Box from '../Box';
 import trbl from '../../utility/trbl';
 
 type PropsType = {
-    icon?: keyof typeof MediumIcons;
+    icon?: string;
     message?: string;
     severity: SeverityType;
 };
@@ -18,7 +18,7 @@ const InlineNotification: FunctionComponent<PropsType> = (props): JSX.Element =>
         <Text variant="small" severity={props.severity}>
             <Box inline>
                 <Box inline margin={trbl(0, 6, 0, 0)}>
-                    <Icon size="medium" icon={icon} />
+                    <Icon size="medium" icon={icon as string} />
                 </Box>
                 <Box inline>{(Children.count(props.children) > 0 && props.children) || props.message}</Box>
             </Box>

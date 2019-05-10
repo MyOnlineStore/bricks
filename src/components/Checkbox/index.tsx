@@ -2,6 +2,8 @@ import React, { Component, MouseEvent } from 'react';
 import Icon from '../Icon';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 import Box from '../Box';
+import checkmark from '../../assets/icons/checkmark-small.svg';
+import minus from '../../assets/icons/minus.svg';
 import Text from '../Text';
 
 type StateType = {
@@ -16,6 +18,7 @@ type PropsType = {
     name: string;
     label?: string;
     id?: string;
+    'data-testid'?: string;
     onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
 };
 
@@ -27,7 +30,7 @@ class Checkbox extends Component<PropsType, StateType> {
         };
     }
 
-    public changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
+    private changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
         this.props.onChange({
             checked: !(this.props.checked === true),
             event,
@@ -42,7 +45,7 @@ class Checkbox extends Component<PropsType, StateType> {
         const htmlChecked = this.props.checked === true;
 
         return (
-            <Box onClick={this.changeHandler}>
+            <Box onClick={this.changeHandler} data-testid={this.props['data-testid']}>
                 <Box shrink={0}>
                     <StyledCheckboxSkin
                         checkedState={this.props.checked}
@@ -51,8 +54,8 @@ class Checkbox extends Component<PropsType, StateType> {
                         error={this.props.error}
                     >
                         <Box justifyContent="center" alignItems="center" height="100%">
-                            {this.props.checked === true && <Icon size="small" color="#fff" icon="checkmark" />}
-                            {this.props.checked === 'indeterminate' && <Icon size="small" color="#fff" icon="minus" />}
+                            {this.props.checked === true && <Icon size="small" color="#fff" icon={checkmark} />}
+                            {this.props.checked === 'indeterminate' && <Icon size="small" color="#fff" icon={minus} />}
                         </Box>
                         <StyledCheckbox
                             onFocus={this.toggleFocus}

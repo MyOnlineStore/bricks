@@ -1,8 +1,5 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import SeverityType from '../../types/SeverityType';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled from '../../utility/styled';
 
 type VariantStyleType = {
     backgroundColor: string;
@@ -21,11 +18,11 @@ type NotificationThemeType = {
     warning: VariantStyleType;
 };
 
-type NotificationPropsType = {
+type PropsType = {
     severity: SeverityType;
 };
 
-const StyledNotification = withProps<NotificationPropsType, HTMLDivElement>(styled.div)`
+const StyledNotification = styled.div<PropsType>`
     border-width: 1px;
     border-style: solid;
     font-family: ${({ theme }): string => theme.Notification.common.fontFamily};
@@ -39,4 +36,4 @@ const StyledNotification = withProps<NotificationPropsType, HTMLDivElement>(styl
 `;
 
 export default StyledNotification;
-export { NotificationThemeType, VariantStyleType };
+export { NotificationThemeType };

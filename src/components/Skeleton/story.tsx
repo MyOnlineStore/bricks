@@ -3,7 +3,6 @@ import React, { FunctionComponent } from 'react';
 import Skeleton from '.';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import Text from '../Text';
-import Button from '../Button';
 import EmptyState from '../EmptyState';
 type DemoPropsType = {
     loading?: boolean;
@@ -23,12 +22,6 @@ const Demo: FunctionComponent<DemoPropsType> = ({ element, loading }): JSX.Eleme
                 <Text>thinking to further the overall value proposition.</Text>
             </>
         );
-    } else if (element === 'Button') {
-        if (loading) {
-            return <Skeleton.Button width={number('width', 139)} />;
-        }
-
-        return <Button title="The button has loaded" variant="primary" />;
     } else {
         if (loading) {
             return <Skeleton.Rect width={text('width', '800px')} height={text('height', '600px')} />;
@@ -40,4 +33,3 @@ const Demo: FunctionComponent<DemoPropsType> = ({ element, loading }): JSX.Eleme
 
 storiesOf('Skeleton', module).add('Text', () => <Demo element="Text" loading={boolean('loading', true)} />);
 storiesOf('Skeleton', module).add('Rect', () => <Demo element="Rect" loading={boolean('loading', true)} />);
-storiesOf('Skeleton', module).add('Button ⚠️', () => <Demo element="Button" loading={boolean('loading', true)} />);

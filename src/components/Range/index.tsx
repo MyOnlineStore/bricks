@@ -170,6 +170,7 @@ class Range extends Component<PropsType, StateType> {
                         }}
                         minValue={Math.floor(this.props.minLimit)}
                         maxValue={Math.ceil(this.props.maxLimit)}
+                        aria-label={this.props.label ? this.props.label : 'range'}
                     />
                 </StyledWrapper>
             </Box>

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationDir": "dist",
     "sourceMap": true,
     "outDir": "dist/src",
     "noImplicitAny": true,
@@ -14,7 +15,7 @@
     "allowJs": false,
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "strictNullChecks": true,
+    "strictNullChecks": true
   },
   "include": [
     "src/**/*"

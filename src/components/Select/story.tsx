@@ -6,6 +6,7 @@ import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
+import checkmarkIcon from '../../assets/icons/checkmark.svg';
 
 type DemoOptionType = {
     image: string;
@@ -80,6 +81,7 @@ class Demo extends Component<PropsType, StateType> {
                 emptyText={text('emptyText', 'No results')}
                 onChange={this.handleChange}
                 disabled={boolean('disabled', false)}
+                data-testid="foo"
                 options={object('options', options)}
             />
         );
@@ -95,14 +97,14 @@ const renderSelected = (option: DemoOptionType): JSX.Element => {
                 </Box>
                 <Box direction="column">
                     <Text>{option.label}</Text>
-                    <Text descriptive>{option.description}</Text>
+                    <Text severity="info">{option.description}</Text>
                 </Box>
             </Box>
         );
     } else {
         return (
             <Box direction="row" alignItems="center">
-                <Text descriptive>{'Make a selection'}</Text>
+                <Text severity="info">{'Make a selection'}</Text>
             </Box>
         );
     }
@@ -115,16 +117,16 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <img src={option.image} />
             </Box>
             <Box direction="column">
-                <Text descriptive={optionState.isSelected}>
+                <Text severity={optionState.isSelected ? 'info' : undefined}>
                     {optionState.isSelected && (
-                        <Text inline descriptive>
-                            <Icon size="small" icon="checkmark" />
+                        <Text as="span" severity="info">
+                            <Icon size="small" icon={checkmarkIcon} />
                             &nbsp;&nbsp;
                         </Text>
                     )}
                     {option.label}
                 </Text>
-                <Text descriptive>{option.description}</Text>
+                <Text severity="info">{option.description}</Text>
             </Box>
         </Box>
     );

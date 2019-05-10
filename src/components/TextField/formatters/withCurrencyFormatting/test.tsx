@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import withCurrencyFormatting from './';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/styled/testing';
+import MosTheme from '../../../../themes/MosTheme';
+import { mount } from 'enzyme';
 
 describe('withCurrencyFormatting', () => {
     describe.each`
@@ -168,9 +170,19 @@ describe('withCurrencyFormatting', () => {
         const changeMock = jest.fn();
         const CurrencyField = withCurrencyFormatting(TextField);
 
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
+        const Root: FunctionComponent<{ locale: string; currency: string }> = props => (
+            <MosTheme>
+                <CurrencyField
+                    name=""
+                    value={19.12}
+                    locale={props.locale}
+                    currency={props.currency}
+                    onChange={changeMock}
+                />
+            </MosTheme>
         );
+
+        const component = mount(<Root locale="en-GB" currency="USD" />);
 
         component.setProps({
             locale: 'nl-NL',

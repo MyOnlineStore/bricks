@@ -1,18 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import BreakpointProvider from '../BreakpointProvider';
-import { PropsType } from '../BreakpointProvider/';
 import StyledModal, { StyledModalWrapper } from './style';
 import TransitionAnimation from '../TransitionAnimation';
+import IconButton from '../IconButton';
+import Measure from 'react-measure';
+import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
 
-jest.mock('../ScrollBox', () => jest.fn().mockImplementation((_: PropsType): string => 'div'));
+jest.mock('../ScrollBox', () => jest.fn().mockImplementation((): string => 'div'));
 
-jest.mock('../BreakpointProvider', () =>
-    jest.fn().mockImplementation((props: PropsType): JSX.Element => props.children('large')),
-);
+jest.mock('react-measure');
 
 describe('Modal', () => {
     it('should render with renderFixed', () => {
@@ -56,23 +54,34 @@ describe('Modal', () => {
         expect(component.find('button[data-testid="button"]').length).toBe(2);
     });
 
-    it('should render with a small breakpoint', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(props => {
-            return props.children('small');
+    it('should render buttons stacked with a small breakpoint', () => {
+        (Measure as jest.Mock<Measure>).mockImplementationOnce(props => {
+            return props.children({
+                measureRef: jest.fn(),
+                contentRect: {
+                    bounds: {
+                        width: 300,
+                    },
+                },
+            });
         });
 
         const component = mountWithTheme(
-            <Modal size="small" show={true} renderFixed={(): JSX.Element => <div>bar</div>} title="Foo" />,
+            <Modal
+                size="small"
+                show={true}
+                buttons={[
+                    <Button key="foo" variant="primary" title="foo" />,
+                    <Button key="bar" variant="primary" title="bar" />,
+                ]}
+                title="Foo"
+            />,
         );
 
-        expect(component.find(StyledModal).length).toBe(1);
+        expect(component.find(ButtonGroup).prop('stacked')).toBe(true);
     });
 
-    it('should render with a medium breakpoint', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(props => {
-            return props.children('medium');
-        });
-
+    it('should render with a large breakpoint', () => {
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
 
         expect(component.find(StyledModal).length).toBe(1);
@@ -80,8 +89,8 @@ describe('Modal', () => {
 
     it('should be possible to close the modal view using the close button', () => {
         const clickMock = jest.fn();
-        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />);
-        const closeButton = component.find(Button).first();
+        const component = mountWithTheme(<Modal show={true} title="Foo" onClose={clickMock} />);
+        const closeButton = component.find(IconButton).first();
 
         closeButton.simulate('click');
 
@@ -99,12 +108,12 @@ describe('Modal', () => {
             mapMouseEvent[event] = callback;
         });
 
-        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(
+        const component = mountWithTheme(<Modal show={true} title="Foo" onClose={clickMock} />).find(
             StyledModalWrapper,
         );
 
         mapMouseEvent.mousedown({
-            target: ReactDOM.findDOMNode(component.instance()),
+            target: component.getDOMNode(),
         });
 
         expect(clickMock).toHaveBeenCalled();
@@ -121,16 +130,16 @@ describe('Modal', () => {
             mapMouseEvent[event] = callback;
         });
 
-        const component = mountWithTheme(<Modal show={true} title="Foo" closeAction={clickMock} />).find(StyledModal);
+        const component = mountWithTheme(<Modal show={true} title="Foo" onClose={clickMock} />).find(StyledModal);
 
         mapMouseEvent.mousedown({
-            target: ReactDOM.findDOMNode(component.instance()),
+            target: component.getDOMNode(),
         });
 
         expect(clickMock).not.toHaveBeenCalled();
     });
 
-    it('should not break when no closeAction is provided', () => {
+    it('should not break when no onClose is provided', () => {
         const component = mountWithTheme(<Modal show={true} title="Foo" />);
         const wrapper = component.find(StyledModalWrapper).first();
 

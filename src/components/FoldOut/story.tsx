@@ -48,13 +48,13 @@ class DemoComponent extends Component<{}, StateType> {
     public render(): JSX.Element {
         return (
             <div>
-                <FoldOut isOpen={this.state.isOpen}>
+                <FoldOut open={this.state.isOpen}>
                     <Box padding={trbl(0, 0, 12)}>
                         <Text>{demoContent}</Text>
                     </Box>
                 </FoldOut>
                 <Button
-                    action={(): void =>
+                    onClick={(): void =>
                         this.setState({
                             isOpen: !this.state.isOpen,
                         })

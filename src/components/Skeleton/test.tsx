@@ -12,14 +12,6 @@ describe('Skeleton', () => {
         expect(fn).not.toThrow();
     });
 
-    it('should not crash when no width is set on the Button variant', () => {
-        const fn = (): void => {
-            mountWithTheme(<Skeleton.Button />);
-        };
-
-        expect(fn).not.toThrow();
-    });
-
     it('should not crash when no props are set on the Rect variant', () => {
         const fn = (): void => {
             mountWithTheme(<Skeleton.Rect />);

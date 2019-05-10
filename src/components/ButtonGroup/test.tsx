@@ -1,39 +1,33 @@
-import { shallow } from 'enzyme';
 import React from 'react';
 import ButtonGroup from '.';
-import BreakpointProvider from '../BreakpointProvider';
-import { PropsType } from '../BreakpointProvider/';
 import Button from '../Button';
-
-jest.mock('../BreakpointProvider', () =>
-    jest.fn().mockImplementation((props: PropsType): JSX.Element => {
-        return props.children('large');
-    }),
-);
+import { mountWithTheme } from '../../utility/styled/testing';
 
 describe('ButtonGroup', () => {
-    it('renders with a Button and a FlatButton in a large node', () => {
-        const component = shallow(
+    it('renders the correct amount of Buttons', () => {
+        const component = mountWithTheme(
             <ButtonGroup>
                 <Button title="Test" variant="primary" />
                 <Button title="Test" variant="secondary" />
             </ButtonGroup>,
-        ).dive();
+        );
 
-        expect(component).toMatchSnapshot();
+        expect(component.find(Button).length).toBe(2);
     });
 
-    it('renders with a single Button in a small node', () => {
-        (BreakpointProvider as jest.Mock<BreakpointProvider>).mockImplementationOnce(props => {
-            return props.children('small');
-        });
-
-        const component = shallow(
-            <ButtonGroup>
+    it('renders the correct amount of Buttons when stacked', () => {
+        const component = mountWithTheme(
+            <ButtonGroup stacked>
                 <Button title="Test" variant="primary" />
             </ButtonGroup>,
-        ).dive();
+        );
 
-        expect(component).toMatchSnapshot();
+        expect(component.find(Button).length).toBe(1);
+    });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(<ButtonGroup data-testid="buttongroup" />);
+
+        expect(component.find('[data-testid="buttongroup"]').hostNodes()).toHaveLength(1);
     });
 });

@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled from '../../utility/styled';
 
 type StyledCheckboxSkinType = {
     checkedState: boolean | 'indeterminate';
@@ -20,6 +17,7 @@ type CheckboxThemeType = {
         boxShadow: string;
     };
     checked: {
+        checkmarkColor: string;
         backgroundColor: string;
         borderColor: string;
     };
@@ -34,19 +32,23 @@ type CheckboxThemeType = {
     };
 };
 
-const StyledCheckbox = withProps<{}, HTMLInputElement>(styled.input)`
+const StyledCheckbox = styled.input`
     opacity: 0;
     height: 0;
     width: 0;
 `;
 
-const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(styled.div)`
+const StyledCheckboxSkin = styled.div<StyledCheckboxSkinType>`
     width: 16px;
     height: 16px;
     border-radius: ${({ theme }): string => theme.Checkbox.idle.borderRadius};
     position: relative;
     outline: none;
     transition: box-shadow 100ms, border 100ms, background-color 100ms;
+
+    svg {
+        fill: ${({ theme }): string => theme.Checkbox.checked.checkmarkColor};
+    }
 
     ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Checkbox.focus.boxShadow};` : '')}
 
@@ -72,8 +74,8 @@ const StyledCheckboxSkin = withProps<StyledCheckboxSkinType, HTMLDivElement>(sty
         error
             ? theme.Checkbox.error.borderColor
             : checkedState
-                ? theme.Checkbox.checked.borderColor
-                : theme.Checkbox.idle.borderColor};
+            ? theme.Checkbox.checked.borderColor
+            : theme.Checkbox.idle.borderColor};
 `;
 
 export { StyledCheckbox, StyledCheckboxSkin, CheckboxThemeType };

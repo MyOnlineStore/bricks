@@ -1,4 +1,4 @@
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import { Transition } from 'react-transition-group';
 import TransitionAnimation from '.';
@@ -12,53 +12,53 @@ import 'jest-styled-components';
 
 describe('TransitionAnimation', () => {
     it('should use the fade animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation={'fade'}>
                 <div>children</div>
             </TransitionAnimation>,
         );
 
-        expect(componentIn.dive()).toHaveStyleRule('animation', 'fadeIn .3s both');
+        expect(componentIn).toHaveStyleRule('animation', 'fadeIn .3s both');
     });
 
     it('should use the slide up animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation="slideUp">
                 <div>children</div>
             </TransitionAnimation>,
         );
 
-        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
+        expect(componentIn).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should use the slide down animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation="slideDown">
                 <div>children</div>
             </TransitionAnimation>,
         );
 
-        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
+        expect(componentIn).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should use the slide left animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation="slideLeft">
                 <div>children</div>
             </TransitionAnimation>,
         );
 
-        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
+        expect(componentIn).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should use the slide right animation', () => {
-        const componentIn = shallow(
+        const componentIn = mount(
             <TransitionAnimation show animation="slideRight">
                 <div>children</div>
             </TransitionAnimation>,
         );
 
-        expect(componentIn.dive()).toHaveStyleRule('animation', 'slideIn .3s both');
+        expect(componentIn).toHaveStyleRule('animation', 'slideIn .3s both');
     });
 
     it('should stay mounted', () => {

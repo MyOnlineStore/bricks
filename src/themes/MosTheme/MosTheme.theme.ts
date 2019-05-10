@@ -1,4 +1,5 @@
 import ThemeType from '../../types/ThemeType';
+import rgba from '../../utility/rgba';
 
 /* tslint:disable:max-file-line-count */
 
@@ -7,10 +8,19 @@ const headingFont = 'Melbourne,sans-serif';
 
 const fontSize = {
     smaller1: '12px',
-    base: '14px',
-    larger1: '22px',
-    larger2: '28px',
-    larger3: '36px',
+    base: '15px',
+    larger1: '18px',
+    larger2: '21px',
+    larger3: '24px',
+    larger4: '27px',
+    larger5: '30px',
+    larger6: '36px',
+};
+
+const fontWeight = {
+    light: '300',
+    regular: '400',
+    bold: '700',
 };
 
 const green = {
@@ -55,23 +65,35 @@ const roundness = {
     base: '3px',
 };
 
+const severity = {
+    error: red.darker2,
+    success: green.darker2,
+    info: grey.lighter3,
+    warning: yellow.darker2,
+};
+
 const theme: ThemeType = {
     Badge: {
-        default: {
-            color: silver.lighter1,
-        },
         severity: {
             success: {
                 backgroundColor: green.darker1,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
             warning: {
                 backgroundColor: yellow.darker1,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
             error: {
                 backgroundColor: red.base,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
             info: {
                 backgroundColor: grey.lighter2,
+                color: silver.lighter1,
+                fontFamily: bodyFont,
             },
         },
     },
@@ -87,266 +109,126 @@ const theme: ThemeType = {
         common: {
             borderRadius: roundness.base,
             borderWidth: '0',
-            fontSize: fontSize.base,
             fontWeight: '400',
             fontFamily: bodyFont,
+            fontSize: fontSize.base,
+            textDecoration: 'none',
         },
         primary: {
-            regular: {
-                idle: {
-                    backgroundColor: green.darker1,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: green.darker2,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                focus: {
-                    backgroundColor: green.darker1,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(107,222,120,0.4)',
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: green.darker2,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: 'none',
-                    textDecoration: 'none',
-                },
+            idle: {
+                backgroundColor: green.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
+            hover: {
+                backgroundColor: green.darker2,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: green.darker1,
+                color: silver.lighter1,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            active: {
+                backgroundColor: green.darker2,
+                color: silver.lighter1,
+                boxShadow: 'none',
             },
         },
         secondary: {
-            regular: {
-                idle: {
-                    backgroundColor: silver.base,
-                    borderColor: 'transparent',
-                    color: grey.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: silver.darker1,
-                    borderColor: 'transparent',
-                    color: grey.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                focus: {
-                    backgroundColor: silver.base,
-                    borderColor: 'transparent',
-                    color: grey.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: silver.darker1,
-                    borderColor: 'transparent',
-                    color: grey.lighter1,
-                    boxShadow: 'none',
-                    textDecoration: 'none',
-                },
+            idle: {
+                backgroundColor: silver.base,
+                color: grey.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
+            hover: {
+                backgroundColor: silver.darker1,
+                color: grey.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: silver.base,
+                color: grey.lighter1,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(grey.base, 0.08)}`,
+            },
+            active: {
+                backgroundColor: silver.darker1,
+                color: grey.lighter1,
+                boxShadow: 'none',
             },
         },
         warning: {
-            regular: {
-                idle: {
-                    backgroundColor: yellow.darker1,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: yellow.darker2,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                focus: {
-                    backgroundColor: yellow.darker1,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(252,194,0,0.25)',
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: yellow.darker2,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: 'none',
-                    textDecoration: 'none',
-                },
+            idle: {
+                backgroundColor: yellow.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
+            hover: {
+                backgroundColor: yellow.darker2,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: yellow.darker1,
+                color: silver.lighter1,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(yellow.darker1, 0.25)}`,
+            },
+            active: {
+                backgroundColor: yellow.darker2,
+                color: silver.lighter1,
+                boxShadow: 'none',
             },
         },
         destructive: {
-            regular: {
-                idle: {
-                    backgroundColor: red.base,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: red.darker1,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'none',
-                },
-                focus: {
-                    backgroundColor: red.base,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px rgba(237,33,87,0.25)',
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: red.darker1,
-                    borderColor: 'transparent',
-                    color: silver.lighter1,
-                    boxShadow: 'none',
-                    textDecoration: 'none',
-                },
+            idle: {
+                backgroundColor: red.base,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: red.base,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: red.base,
-                    textDecoration: 'none',
-                },
+            hover: {
+                backgroundColor: red.darker1,
+                color: silver.lighter1,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: red.base,
+                color: silver.lighter1,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px ${rgba(red.base, 0.25)}`,
+            },
+            active: {
+                backgroundColor: red.darker1,
+                color: silver.lighter1,
+                boxShadow: 'none',
             },
         },
         plain: {
-            regular: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    borderColor: 'transparent',
-                    color: grey.base,
-                    boxShadow: 'none',
-                    textDecoration: 'underline',
-                },
-                hover: {
-                    backgroundColor: silver.base,
-                    borderColor: 'transparent',
-                    color: grey.base,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
-                    textDecoration: 'underline',
-                },
-                focus: {
-                    backgroundColor: silver.base,
-                    borderColor: 'transparent',
-                    color: grey.base,
-                    boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px rgba(51,55,64,0.08)',
-                    textDecoration: 'underline',
-                },
-                active: {
-                    backgroundColor: silver.base,
-                    borderColor: 'transparent',
-                    color: grey.base,
-                    boxShadow: 'none',
-                    textDecoration: 'underline',
-                },
+            idle: {
+                backgroundColor: 'transparent',
+                color: grey.base,
+                boxShadow: 'none',
+                textDecoration: 'underline',
             },
-            flat: {
-                idle: {
-                    backgroundColor: 'transparent',
-                    color: grey.lighter1,
-                    textDecoration: 'none',
-                },
-                hover: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
-                active: {
-                    backgroundColor: 'transparent',
-                    color: grey.darker1,
-                    textDecoration: 'none',
-                },
+            hover: {
+                backgroundColor: silver.base,
+                color: grey.base,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: silver.base,
+                color: grey.base,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(grey.base, 0.08)}`,
+            },
+            active: {
+                backgroundColor: silver.base,
+                color: grey.base,
+                boxShadow: 'none',
             },
         },
         disabled: {
-            regular: {
-                color: grey.lighter2,
-                backgroundColor: silver.darker2,
-                stripingColor: 'rgba(0,0,0,0.04)',
-            },
-            flat: {
-                color: grey.lighter2,
-                backgroundColor: 'transparent',
-                textDecoration: 'none',
-            },
+            color: grey.lighter2,
+            backgroundColor: silver.darker2,
+            stripingColor: 'rgba(0,0,0,0.04)',
         },
     },
     Checkbox: {
@@ -356,9 +238,10 @@ const theme: ThemeType = {
             borderRadius: roundness.base,
         },
         focus: {
-            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         checked: {
+            checkmarkColor: silver.lighter1,
             borderColor: green.darker2,
             backgroundColor: green.base,
         },
@@ -368,8 +251,10 @@ const theme: ThemeType = {
             } 10px )`,
         },
         checkedDisabled: {
-            background:
-                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
+            background: `repeating-linear-gradient( -45deg,${rgba(green.darker2, 0.6)},${rgba(
+                green.darker2,
+                0.6,
+            )} 5px,${rgba(green.base, 0.5)} 5px,${rgba(green.base, 0.5)} 10px )`,
         },
         error: {
             borderColor: red.base,
@@ -382,96 +267,94 @@ const theme: ThemeType = {
         overides: {
             Button: {
                 secondary: {
-                    regular: {
-                        idle: {
-                            backgroundColor: silver.darker1,
-                        },
-                        active: {
-                            backgroundColor: silver.darker2,
-                        },
-                        hover: {
-                            backgroundColor: silver.darker2,
-                        },
-                        focus: {
-                            backgroundColor: silver.darker1,
-                            boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
-                        },
+                    idle: {
+                        backgroundColor: silver.darker1,
+                    },
+                    active: {
+                        backgroundColor: silver.darker2,
+                    },
+                    hover: {
+                        backgroundColor: silver.darker2,
+                    },
+                    focus: {
+                        backgroundColor: silver.darker1,
+                        boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
                     },
                 },
                 plain: {
-                    regular: {
-                        active: {
-                            backgroundColor: silver.darker1,
-                        },
-                        hover: {
-                            backgroundColor: silver.darker1,
-                        },
-                        focus: {
-                            backgroundColor: silver.darker1,
-                            boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
-                        },
+                    active: {
+                        backgroundColor: silver.darker1,
+                    },
+                    hover: {
+                        backgroundColor: silver.darker1,
+                    },
+                    focus: {
+                        backgroundColor: silver.darker1,
+                        boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${silver.darker2}`,
                     },
                 },
             },
         },
     },
     Heading: {
-        default: {
+        1: {
+            fontFamily: headingFont,
+            fontSize: fontSize.larger6,
+            fontWeight: fontWeight.regular,
+            lineHeight: '45px',
             color: grey.base,
+        },
+        2: {
+            fontFamily: headingFont,
+            fontSize: fontSize.larger5,
+            fontWeight: fontWeight.regular,
+            lineHeight: '36px',
+            color: grey.base,
+        },
+        3: {
+            fontFamily: headingFont,
+            fontSize: fontSize.larger4,
+            fontWeight: fontWeight.regular,
+            color: grey.base,
+            lineHeight: '33px',
+        },
+        4: {
+            fontFamily: headingFont,
+            fontSize: fontSize.larger3,
+            fontWeight: fontWeight.regular,
+            lineHeight: '30px',
+            color: grey.base,
+        },
+        5: {
             fontFamily: headingFont,
             fontSize: fontSize.larger2,
-            fontWeight: '400',
-            lineHeight: '1.5',
-            textTransform: 'none',
+            fontWeight: fontWeight.regular,
+            lineHeight: '27px',
+            color: grey.base,
         },
-        hierarchy: {
-            hierarchy1: {
-                color: grey.base,
-                fontFamily: headingFont,
-                fontSize: fontSize.larger3,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+        6: {
+            fontFamily: headingFont,
+            fontSize: fontSize.larger1,
+            fontWeight: fontWeight.regular,
+            lineHeight: '21px',
+            color: grey.base,
+        },
+    },
+    IconButton: {
+        primary: {
+            idle: {
+                color: grey.lighter1,
             },
-            hierarchy2: {
+            hover: {
                 color: grey.base,
-                fontFamily: headingFont,
-                fontSize: fontSize.larger2,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
             },
-            hierarchy3: {
-                color: grey.base,
-                fontFamily: headingFont,
-                fontSize: fontSize.larger1,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
+        },
+        destructive: {
+            idle: {
+                color: grey.lighter1,
             },
-            hierarchy4: {
-                color: grey.base,
-                fontFamily: headingFont,
-                fontSize: '20px',
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
-            },
-            hierarchy5: {
-                color: grey.base,
-                fontFamily: bodyFont,
-                fontSize: '18px',
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'none',
-            },
-            hierarchy6: {
-                color: grey.base,
-                fontFamily: bodyFont,
-                fontSize: fontSize.base,
-                fontWeight: '400',
-                lineHeight: '1.25',
-                textTransform: 'uppercase',
+            hover: {
+                color: red.base,
             },
         },
     },
@@ -525,7 +408,7 @@ const theme: ThemeType = {
         button: {
             common: {
                 active: {
-                    boxShadow: 'inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px rgba(136,151,157,0.20)',
+                    boxShadow: `inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px ${rgba(grey.lighter2, 0.2)}`,
                 },
                 borderRadius: roundness.base,
             },
@@ -580,6 +463,7 @@ const theme: ThemeType = {
             backgroundColor: silver.base,
             borderColor: silver.darker4,
             boxShadow: '0px 0px 0px 5.5px transparent',
+            checkmarkColor: silver.base,
         },
         idleDisabled: {
             background: `repeating-linear-gradient( -45deg,${silver.darker1},${silver.darker1} 5px,${silver.base} 5px,${
@@ -587,7 +471,7 @@ const theme: ThemeType = {
             } 10px )`,
         },
         focus: {
-            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         active: {
             boxShadow: `0px 0px 0px 5.5px ${green.base}`,
@@ -595,9 +479,11 @@ const theme: ThemeType = {
             background: green.base,
         },
         activeDisabled: {
-            boxShadow: '0px 0px 0px 5.5px rgba(107,222,120,0.50)',
-            background:
-                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
+            boxShadow: `0px 0px 0px 5.5px ${rgba(green.base, 0.5)}`,
+            background: `repeating-linear-gradient( -45deg,${rgba(green.darker2, 0.6)},${rgba(
+                green.darker2,
+                0.6,
+            )} 5px,${rgba(green.base, 0.5)} 5px,${rgba(green.base, 0.5)} 10px )`,
         },
         error: {
             borderColor: red.base,
@@ -608,10 +494,10 @@ const theme: ThemeType = {
             boxShadow: 'none',
         },
         level1: {
-            boxShadow: '0 2px 10px 0 rgba(33,37,43,0.15)',
+            boxShadow: `0 2px 10px 0 ${rgba(grey.darker1, 0.15)}`,
         },
         level2: {
-            boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
+            boxShadow: `0 6px 48px 0 ${rgba(grey.darker1, 0.3)}`,
         },
     },
     Range: {
@@ -623,7 +509,7 @@ const theme: ThemeType = {
             active: {
                 background: green.base,
                 border: `solid 1px ${green.darker2}`,
-                boxShadow: '0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px rgba(107, 222, 120, 0.4)',
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(green.base, 0.4)}`,
             },
             slider: {
                 background: silver.lighter1,
@@ -646,24 +532,7 @@ const theme: ThemeType = {
         borderRadius: roundness.base,
     },
     PriceTag: {
-        default: {
-            color: grey.base,
-            fontFamily: bodyFont,
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-        },
-        action: {
-            fontSize: fontSize.larger2,
-            fontWeight: '400',
-            color: green.base,
-            fontFamily: bodyFont,
-        },
-        base: {
-            fontSize: fontSize.larger1,
-            fontWeight: '400',
-            color: grey.lighter2,
-            fontFamily: bodyFont,
-        },
+        strikethroughColor: grey.lighter2,
     },
     Select: {
         common: {
@@ -677,7 +546,7 @@ const theme: ThemeType = {
             },
             focus: {
                 borderColor: green.darker2,
-                boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
             },
         },
         input: {
@@ -706,9 +575,6 @@ const theme: ThemeType = {
         Text: {
             fontSize: fontSize.base,
         },
-        Button: {
-            fontSize: fontSize.base,
-        },
     },
     ScrollBox: {
         scrollbar: {
@@ -718,6 +584,12 @@ const theme: ThemeType = {
     Table: {
         default: {
             backgroundColor: silver.darker1,
+        },
+        card: {
+            boxShadow: '0 2px 10px 0 rgba(33, 37, 43, .15)',
+            backgroundColor: silver.lighter1,
+            borderRadius: roundness.base,
+            spacing: '24px',
         },
         cell: {
             default: {
@@ -731,46 +603,78 @@ const theme: ThemeType = {
         row: {
             default: {
                 backgroundColor: silver.lighter1,
-                borderColor: 'rgba(107,222,120,0)',
+                borderColor: `${rgba(green.base, 0)}`,
             },
             hover: {
                 backgroundColor: silver.base,
             },
             focus: {
-                borderColor: 'rgba(107,222,120,0.4)',
+                borderColor: `${rgba(green.base, 0.4)}`,
             },
             dragging: {
-                boxShadow: '0 6px 48px 0 rgba(33,37,43,0.30)',
+                boxShadow: `0 6px 48px 0 ${rgba(grey.darker1, 0.3)}`,
             },
         },
     },
     Text: {
         default: {
             color: grey.base,
-            fontFamily: bodyFont,
-            fontSize: fontSize.base,
-            fontWeight: '400',
         },
-        descriptive: {
-            color: grey.lighter2,
+        variant: {
+            small: {
+                fontFamily: bodyFont,
+                fontSize: fontSize.smaller1,
+                fontWeight: fontWeight.regular,
+                lineHeight: {
+                    default: '18px',
+                    compact: '15px',
+                },
+            },
+            regular: {
+                fontFamily: bodyFont,
+                fontSize: fontSize.base,
+                fontWeight: fontWeight.regular,
+                lineHeight: {
+                    default: '21px',
+                    compact: '18px',
+                },
+            },
+            large: {
+                fontFamily: bodyFont,
+                fontSize: fontSize.larger1,
+                fontWeight: fontWeight.regular,
+                lineHeight: {
+                    default: '27px',
+                    compact: '21px',
+                },
+            },
+            extraLarge: {
+                fontFamily: bodyFont,
+                fontSize: fontSize.larger2,
+                fontWeight: fontWeight.regular,
+                lineHeight: {
+                    default: '30px',
+                    compact: '27px',
+                },
+            },
+            display: {
+                fontFamily: headingFont,
+                fontSize: '60px',
+                fontWeight: fontWeight.regular,
+                lineHeight: {
+                    default: '75px',
+                    compact: '75px',
+                },
+            },
         },
         strong: {
-            fontWeight: '700',
-        },
-        small: {
-            fontSize: fontSize.smaller1,
-        },
-        base: {
-            fontSize: fontSize.base,
-        },
-        large: {
-            fontSize: fontSize.larger1,
+            fontWeight: fontWeight.bold,
         },
         severity: {
-            error: { color: red.base },
-            success: { color: green.darker1 },
-            info: { color: grey.lighter2 },
-            warning: { color: yellow.darker1 },
+            error: red.base,
+            success: green.darker1,
+            info: grey.lighter2,
+            warning: yellow.darker1,
         },
     },
     TextArea: {
@@ -780,14 +684,32 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
+                color: grey.lighter3,
                 background: silver.lighter1,
             },
         },
+        focus: {
+            borderColor: green.darker2,
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+        },
+
         severity: {
-            error: { boxShadow: '0 0 0 4px rgba(200,23,70,0.4)' },
-            success: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            info: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            warning: { boxShadow: '0 0 0 4px rgba(237,177,7,0.4)' },
+            error: {
+                borderColor: severity.error,
+                boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}`,
+            },
+            success: {
+                borderColor: severity.success,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            info: {
+                borderColor: green.base,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            warning: {
+                borderColor: severity.warning,
+                boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}`,
+            },
         },
 
         disabled: {
@@ -815,13 +737,26 @@ const theme: ThemeType = {
         },
         focus: {
             borderColor: green.darker2,
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
 
         severity: {
-            error: { boxShadow: '0 0 0 4px rgba(200,23,70,0.4)' },
-            success: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            info: { boxShadow: '0 0 0 4px rgba(107,222,120,0.4)' },
-            warning: { boxShadow: '0 0 0 4px rgba(237,177,7,0.4)' },
+            error: {
+                borderColor: severity.error,
+                boxShadow: `0 0 0 4px ${rgba(red.darker1, 0.4)}`,
+            },
+            success: {
+                borderColor: severity.success,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            info: {
+                borderColor: green.base,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+            warning: {
+                borderColor: severity.warning,
+                boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}`,
+            },
         },
 
         disabled: {
@@ -832,9 +767,15 @@ const theme: ThemeType = {
     Tile: {
         borderColor: silver.darker4,
     },
-    Toaster: {
+    Toast: {
         borderRadius: roundness.base,
         backgroundColor: silver.lighter1,
+        severity: {
+            error: severity.error,
+            success: severity.success,
+            info: severity.info,
+            warning: severity.warning,
+        },
     },
     Toggle: {
         general: {
@@ -845,7 +786,7 @@ const theme: ThemeType = {
             background: silver.base,
         },
         focus: {
-            boxShadow: '0 0 0 4px rgba(107,222,120,0.4)',
+            boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
         checked: {
             border: `1px solid ${green.darker2}`,
@@ -857,8 +798,10 @@ const theme: ThemeType = {
             } 10px )`,
         },
         checkedDisabled: {
-            background:
-                'repeating-linear-gradient( -45deg,rgba(76,197,91,0.60),rgba(76,197,91,0.60) 5px,rgba(107,222,120,0.50) 5px,rgba(107,222,120,0.50) 10px )',
+            background: `repeating-linear-gradient( -45deg,${rgba(green.darker2, 0.6)},${rgba(
+                green.darker2,
+                0.6,
+            )} 5px,${rgba(green.base, 0.5)} 5px,${rgba(green.base, 0.5)} 10px )`,
         },
         error: {
             border: `1px solid ${red.base}`,

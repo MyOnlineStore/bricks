@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Branch should not render anything when no components or false path are provided and the condition is false 1`] = `""`;

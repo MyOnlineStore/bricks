@@ -1,36 +1,54 @@
 import React from 'react';
 import Text from '.';
-import { shallowWithTheme } from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 import 'jest-styled-components';
+import { mosTheme } from '../../themes/MosTheme';
 
 describe('Text', () => {
-    it('should render text with default styling', () => {
-        const component = shallowWithTheme(<Text>Default text</Text>);
+    it('should render text with different variants', () => {
+        const smallText = mountWithTheme(<Text variant="small">Small text</Text>);
+        const regularText = mountWithTheme(<Text variant="regular">Regular text</Text>);
+        const largeText = mountWithTheme(<Text variant="large">Large text</Text>);
+        const extraLargeText = mountWithTheme(<Text variant="extraLarge">extraLarge text</Text>);
+        const displayText = mountWithTheme(<Text variant="display">Display text</Text>);
 
-        expect(component.dive()).toMatchSnapshot();
+        expect(smallText).toHaveStyleRule('font-size', mosTheme.Text.variant.small.fontSize);
+        expect(regularText).toHaveStyleRule('font-size', mosTheme.Text.variant.regular.fontSize);
+        expect(largeText).toHaveStyleRule('font-size', mosTheme.Text.variant.large.fontSize);
+        expect(extraLargeText).toHaveStyleRule('font-size', mosTheme.Text.variant.extraLarge.fontSize);
+        expect(displayText).toHaveStyleRule('font-size', mosTheme.Text.variant.display.fontSize);
     });
 
-    it('should render text with strong styling', () => {
-        const component = shallowWithTheme(<Text strong>Strong text</Text>);
+    it('should render text with different severities', () => {
+        const defaultText = mountWithTheme(<Text>Descriptive text</Text>);
+        const errorText = mountWithTheme(<Text severity="error">Descriptive text</Text>);
+        const successText = mountWithTheme(<Text severity="success">Descriptive text</Text>);
+        const infoText = mountWithTheme(<Text severity="info">Descriptive text</Text>);
+        const warningText = mountWithTheme(<Text severity="warning">Descriptive text</Text>);
 
-        expect(component.dive()).toHaveStyleRule('font-weight', '700');
-    });
-
-    it('should render text with descriptive styling', () => {
-        const component = shallowWithTheme(<Text descriptive>Descriptive text</Text>);
-
-        expect(component.dive()).toHaveStyleRule('color', '#88979d');
+        expect(defaultText).toHaveStyleRule('color', mosTheme.Text.default.color);
+        expect(errorText).toHaveStyleRule('color', mosTheme.Text.severity.error);
+        expect(successText).toHaveStyleRule('color', mosTheme.Text.severity.success);
+        expect(infoText).toHaveStyleRule('color', mosTheme.Text.severity.info);
+        expect(warningText).toHaveStyleRule('color', mosTheme.Text.severity.warning);
     });
 
     it('should render text with compact styling', () => {
-        const component = shallowWithTheme(<Text compact>Descriptive text</Text>);
+        const defaultCompact = mountWithTheme(<Text compact>Descriptive text</Text>);
 
-        expect(component.dive()).toHaveStyleRule('line-height', '1.25');
+        const extraLargeCompact = mountWithTheme(
+            <Text variant="extraLarge" compact>
+                Descriptive text
+            </Text>,
+        );
+
+        expect(defaultCompact).toHaveStyleRule('line-height', mosTheme.Text.variant.regular.lineHeight.compact);
+        expect(extraLargeCompact).toHaveStyleRule('line-height', mosTheme.Text.variant.extraLarge.lineHeight.compact);
     });
 
-    it('should render a span when inline is set to true', () => {
-        const component = shallowWithTheme(<Text inline>Descriptive text</Text>);
+    it('should render text with strong styling', () => {
+        const component = mountWithTheme(<Text strong>Strong text</Text>);
 
-        expect(component.dive().find('span').length).toBe(1);
+        expect(component).toHaveStyleRule('font-weight', mosTheme.Text.strong.fontWeight);
     });
 });

@@ -1,30 +1,20 @@
-import { boolean, number, select, text } from '@storybook/addon-knobs';
+import { boolean, select, text, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import PriceTag, { PropsType } from '.';
+import PriceTag from '.';
+import Text from '../Text';
 
 storiesOf('PriceTag', module).add('Default', () => (
-    <PriceTag
-        parts={
-            [
-                { type: 'currency', value: '€' },
-                { type: 'literal', value: ' ' },
-                { type: 'integer', value: number('integer', 12) },
-                {
-                    type: 'decimal',
-                    value: select('decimal', [',', '.'], ','),
-                },
-                {
-                    type: 'fraction',
-                    value: select('fraction', ['00', '34'], '00'),
-                },
-            ] as PropsType['parts']
-        }
-        hideCurrency={boolean('hideCurrency', false)}
-        superScriptFraction={boolean('superScriptFraction', false)}
-        showDash={boolean('showDash', false)}
-        hideZeros={boolean('hideZeros', false)}
-        displayType={select('displayType', ['action', 'base', 'default'], 'default') as PropsType['displayType']}
-        freeLabel={text('freeLabel', 'free!')}
-    />
+    <Text>
+        <PriceTag
+            value={number('price', 1.0)}
+            freeLabel={text('freeLabel', 'free!')}
+            currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
+            locale={select('locale', ['en-US', 'nl-NL', 'de-DE', 'jp-JP'], 'en-US')}
+            fractionFormat={select('fractionFormat', [undefined, 'dash', 'none'], undefined)}
+            hideCurrency={boolean('hideCurrency', false)}
+            superScriptFraction={boolean('superScriptFraction', false)}
+            strikethrough={boolean('strikethrough', false)}
+        />
+    </Text>
 ));

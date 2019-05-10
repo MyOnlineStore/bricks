@@ -26,7 +26,7 @@ const messagesMock: Array<MessagePropsType> = [
         buttonLabel: 'Click me',
         date: 'Yesterday 12:00',
         read: false,
-        action: (): void => {
+        onClick: (): void => {
             alert('Clicked!');
         },
     },
@@ -38,7 +38,7 @@ const messagesMock: Array<MessagePropsType> = [
         buttonLabel: 'Click me',
         date: '12-12-2012 12:00',
         read: false,
-        action: (): void => {
+        onClick: (): void => {
             alert('Clicked!');
         },
     },
@@ -49,7 +49,7 @@ const messagesMock: Array<MessagePropsType> = [
         buttonLabel: 'Click me',
         date: '12-12-2012 12:00',
         read: true,
-        action: (): void => {
+        onClick: (): void => {
             alert('Clicked!');
         },
     },
@@ -59,7 +59,7 @@ const messagesMock: Array<MessagePropsType> = [
         message: 'Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.',
         buttonLabel: 'Click me',
         read: true,
-        action: (): void => {
+        onClick: (): void => {
             alert('Clicked!');
         },
     },

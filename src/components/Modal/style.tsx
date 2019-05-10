@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled from '../../utility/styled';
 
 enum ModalSizes {
     small = '480px',
@@ -19,7 +16,7 @@ type ModalWrapperPropsType = {
     show: boolean;
 };
 
-const StyledModalWrapper = withProps<ModalWrapperPropsType>(styled.div)`
+const StyledModalWrapper = styled.div<ModalWrapperPropsType>`
     transition: opacity 100ms;
     background: ${({ theme }): string => theme.Modal.backdropColor};
     position: fixed;
@@ -46,13 +43,13 @@ type ModalPropsType = {
     modalSize: keyof typeof ModalSizes;
 };
 
-const StyledModal = withProps<ModalPropsType>(styled.div)`
+const StyledModal = styled.div<ModalPropsType>`
     max-width: 100%;
     width: ${({ modalSize }): string => ModalSizes[modalSize]};
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    max-height: calc(300px + (600 - 300) * (100vh - 300px) / (900 - 300));
+    max-height: calc(300px + 300 * (100vh - 300px) / 400);
     background: ${({ theme }): string => theme.Modal.backgroundColor};
     border-radius: ${({ theme }): string => theme.Modal.borderRadius};
 

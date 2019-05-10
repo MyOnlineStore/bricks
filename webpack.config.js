@@ -6,16 +6,19 @@ const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+    entry: {
+        index: './src/index.ts',
+    },
     mode: 'production',
-    entry: './src/index.ts',
     devtool: 'source-map',
+    target: 'node', // required for SSR
     stats: {
-        assets: true,
+        assets: false,
         modules: false,
         children: false,
     },
     output: {
-        filename: 'index.js',
+        filename: '[name].js',
         path: path.join(__dirname, 'dist'),
         library: 'bricks',
         libraryTarget: 'umd',

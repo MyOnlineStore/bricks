@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 import { LinkStyles } from '../Link/style';
 
@@ -12,6 +9,12 @@ type ToastPropsType = {
 type ToastThemeType = {
     borderRadius: string;
     backgroundColor: string;
+    severity: {
+        error: string;
+        success: string;
+        info: string;
+        warning: string;
+    };
 };
 
 const StyledToastWrapper = styled.div`
@@ -26,21 +29,21 @@ const StyledToastWrapper = styled.div`
     pointer-events: none;
 `;
 
-const StyledToast = withProps<ToastPropsType, HTMLDivElement>(styled.div)`
+const StyledToast = styled.div<ToastPropsType>`
     display: flex;
     transition: opacity 100ms, box-shadow 100ms;
     box-sizing: border-box;
     max-width: 792px;
     align-items: center;
     margin-top: 36px;
-    box-shadow: 0 3px 48px rgba(0,0,0,0.3);
-    border-radius: ${({ theme }): string => theme.Toaster.borderRadius}
-    background-color: ${({ theme }): string => theme.Toaster.backgroundColor}
-    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity].color};`}
+    box-shadow: 0 3px 48px rgba(0, 0, 0, 0.3);
+    border-radius: ${({ theme }): string => theme.Toast.borderRadius};
+    background-color: ${({ theme }): string => theme.Toast.backgroundColor};
+    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity]}`};
     pointer-events: auto;
 
     a {
-       ${LinkStyles}
+        ${LinkStyles}
     }
 `;
 

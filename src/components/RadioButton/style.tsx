@@ -1,7 +1,4 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled from '../../utility/styled';
 
 type RadioButtonPropsType = {
     checked: boolean;
@@ -19,6 +16,7 @@ type RadioButtonThemeType = {
         boxShadow: string;
         borderColor: string;
         backgroundColor: string;
+        checkmarkColor: string;
     };
     idleDisabled: {
         background: string;
@@ -44,14 +42,14 @@ const StyledRadioWrapper = styled.div`
     display: flex;
 `;
 
-const StyledRadioButton = withProps<RadioButtonPropsType, HTMLInputElement>(styled.input)`
+const StyledRadioButton = styled.input<RadioButtonPropsType>`
     position: relative;
     opacity: 0;
     height: 0;
     width: 0;
 `;
 
-const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement>(styled.div)`
+const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
     width: 16px;
     height: 16px;
     border-radius: 100%;
@@ -68,12 +66,13 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
 
         return '';
     }};
-    border: 1px solid ${({ theme, checked, error }): string =>
-        error
-            ? theme.RadioButton.error.borderColor
-            : checked
-            ? theme.RadioButton.active.borderColor
-            : theme.RadioButton.idle.borderColor};
+    border: 1px solid
+        ${({ theme, checked, error }): string =>
+            error
+                ? theme.RadioButton.error.borderColor
+                : checked
+                ? theme.RadioButton.active.borderColor
+                : theme.RadioButton.idle.borderColor};
 
     box-shadow: ${({ theme, elementFocus }): string =>
         `
@@ -92,7 +91,7 @@ const StyledRadioButtonSkin = withProps<RadioButtonSkinPropsType, HTMLDivElement
                     top: 50%;
                     transform: translate(-50%,-50%);
                     content: '';
-                    background-color: ${theme.RadioButton.idle.backgroundColor};
+                    background-color: ${theme.RadioButton.idle.checkmarkColor};
                 }`
             : ''}
 `;

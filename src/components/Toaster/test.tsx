@@ -2,7 +2,7 @@ import React from 'react';
 import Toaster from '.';
 import Toast from '../Toast';
 import { mountWithTheme } from '../../utility/styled/testing';
-import Button from '../Button';
+import IconButton from '../IconButton';
 
 // tslint:disable-next-line
 (console as any).error.mockImplementationOnce(() => undefined);
@@ -45,8 +45,7 @@ describe('Toaster', () => {
 
         component
             .find(Toast)
-            .find(Button)
-            .last()
+            .find(IconButton)
             .simulate('click');
 
         component.update();

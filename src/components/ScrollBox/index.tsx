@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, createRef, RefObject } from 'react';
 import ScrollBar from 'simplebar';
-import { StyledType } from '../../utility/styled';
 import StyledScrollBox, { StyledBottom, StyledTop, StyledWrapper } from './style';
 
-type PropsType = StyledType & {
+type PropsType = {
     autoHideScrollBar?: boolean;
     showInsetShadow?: boolean;
     onScroll?(eventData: {
@@ -21,7 +20,7 @@ type StateType = {
 
 class ScrollBox extends Component<PropsType, StateType> {
     private scrollbar: ScrollBar;
-    private contentRef: HTMLDivElement | null;
+    private contentRef: RefObject<HTMLDivElement>;
 
     public constructor(props: PropsType) {
         super(props);
@@ -31,6 +30,8 @@ class ScrollBox extends Component<PropsType, StateType> {
             scrollDirection: 'idle',
             showInsetShadow: false,
         };
+
+        this.contentRef = createRef();
     }
 
     private handleScroll = (): void => {
@@ -66,15 +67,17 @@ class ScrollBox extends Component<PropsType, StateType> {
     };
 
     public componentDidMount(): void {
-        this.scrollbar = new ScrollBar(this.contentRef as HTMLDivElement, {
-            autoHide: this.props.autoHideScrollBar !== undefined ? this.props.autoHideScrollBar : true,
-        });
+        if (this.contentRef.current !== null) {
+            this.scrollbar = new ScrollBar(this.contentRef.current, {
+                autoHide: this.props.autoHideScrollBar !== undefined ? this.props.autoHideScrollBar : true,
+            });
 
-        this.scrollbar.getScrollElement().addEventListener('scroll', this.handleScroll);
+            this.scrollbar.getScrollElement().addEventListener('scroll', this.handleScroll);
 
-        this.setState({
-            showInsetShadow: this.hasOverflow(),
-        });
+            this.setState({
+                showInsetShadow: this.hasOverflow(),
+            });
+        }
     }
 
     public componentWillUnmount(): void {
@@ -84,11 +87,7 @@ class ScrollBox extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <StyledWrapper>
-                <StyledScrollBox
-                    innerRef={(ref): void => {
-                        this.contentRef = ref;
-                    }}
-                >
+                <StyledScrollBox ref={this.contentRef}>
                     {this.props.showInsetShadow !== false && (
                         <StyledTop show={this.state.showInsetShadow && this.state.scrollDirection === 'down'} />
                     )}

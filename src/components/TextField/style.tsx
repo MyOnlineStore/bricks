@@ -1,8 +1,5 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
 import SeverityType from '../../types/SeverityType';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled from '../../utility/styled';
 
 type TextFieldThemeType = {
     idle: {
@@ -24,12 +21,25 @@ type TextFieldThemeType = {
     };
     focus: {
         borderColor: string;
+        boxShadow: string;
     };
     severity: {
-        error: { boxShadow: string };
-        success: { boxShadow: string };
-        info: { boxShadow: string };
-        warning: { boxShadow: string };
+        error: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        success: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        info: {
+            borderColor: string;
+            boxShadow: string;
+        };
+        warning: {
+            borderColor: string;
+            boxShadow: string;
+        };
     };
     disabled: {
         color: string;
@@ -37,27 +47,28 @@ type TextFieldThemeType = {
     };
 };
 
-type AffixProps = {
+type AffixPropsType = {
     disabled?: boolean;
 };
 
-type WrapperProps = {
+type WrapperPropsType = {
     focus: boolean;
     disabled?: boolean;
-    severity: SeverityType;
+    severity?: SeverityType;
 };
 
-type InputProps = {
+type InputPropsType = {
     disabled?: boolean;
 };
 
-const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
+const StyledInput = styled.input<InputPropsType>`
     width: 100%;
     border: none;
     margin: 0;
     background: ${({ theme, disabled }): string =>
         disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
-    font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
+    color: ${({ theme }): string => theme.TextField.idle.common.color};
+    font-family: inherit;
     font-size: inherit;
     padding: 6px 12px;
     line-height: 1.572;
@@ -73,7 +84,7 @@ const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
     ${({ theme, disabled }): string =>
         disabled
             ? `
-            color: ${theme.TextField.disabled.color}
+            color: ${theme.TextField.disabled.color};
             -moz-appearance: textfield;
 
             &::-webkit-inner-spin-button {
@@ -83,7 +94,7 @@ const StyledInput = withProps<InputProps, HTMLInputElement>(styled.input)`
             : ''}
 `;
 
-const StyledAffixWrapper = withProps<AffixProps, HTMLDivElement>(styled.div)`
+const StyledAffixWrapper = styled.div<AffixPropsType>`
     display: flex;
     padding: 0 12px;
     user-select: none;
@@ -110,7 +121,7 @@ const StyledAffix = styled.span`
     overflow: hidden;
 `;
 
-const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
+const StyledWrapper = styled.div<WrapperPropsType>`
     transition: border-color 100ms, box-shadow 100ms;
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
@@ -124,8 +135,10 @@ const StyledWrapper = withProps<WrapperProps, HTMLDivElement>(styled.div)`
     ${({ focus, disabled, severity, theme }): string =>
         focus && !disabled
             ? `
-            border: solid 1px ${theme.Text.severity[severity].color}
-            box-shadow: ${theme.TextField.severity[severity].boxShadow}
+            border: solid 1px ${
+                severity ? theme.TextField.severity[severity].borderColor : theme.TextField.focus.borderColor
+            };
+            box-shadow: ${severity ? theme.TextField.severity[severity].boxShadow : theme.TextField.focus.boxShadow};
             `
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
 

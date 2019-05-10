@@ -1,6 +1,4 @@
-import { default as _R } from 'react';
-import { StyledComponentClass as _S, css } from 'styled-components';
-import styled, { withProps } from '../../utility/styled';
+import styled, { css } from '../../utility/styled';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();
@@ -39,20 +37,20 @@ type RangeThemeType = {
     };
 };
 
-type wrapperProps = {
+type PropsType = {
     disabled: boolean;
     focus: boolean;
 };
 
 // prettier-ignore
-const StyledWrapper = withProps<wrapperProps, HTMLDivElement>(styled.div)`
+const StyledWrapper = styled.div`
     ${rangeStyles} padding: 0;
     box-sizing: border-box;
 
     & {
         .input-range__track,
         .input-range__slider-container {
-            ${({ focus }): string => (!focus ? 'transition: none;' : '')})
+            ${({ focus }:PropsType): string => (!focus ? 'transition: none;' : '')})
         }
 
         .input-range__track {

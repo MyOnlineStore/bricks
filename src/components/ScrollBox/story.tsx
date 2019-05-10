@@ -95,8 +95,10 @@ class Demo extends Component<{}, DemoStateType> {
                     <Heading>Scroll event</Heading>
                 </Box>
                 <Text>
-                    scrollTop: {this.state.scrollTop}px<br />
-                    scrollBottom: {this.state.scrollBottom}px<br />
+                    scrollTop: {this.state.scrollTop}px
+                    <br />
+                    scrollBottom: {this.state.scrollBottom}px
+                    <br />
                     scrollDirection: {this.state.scrollDirection}
                 </Text>
             </>

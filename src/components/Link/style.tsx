@@ -1,7 +1,6 @@
-import _R from 'react';
-import { css, StyledComponentClass as _S } from 'styled-components';
-import styled from '../../utility/styled';
+import { css } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
+import styled from '../../utility/styled';
 
 type LinkThemeType = {
     default: {
@@ -21,6 +20,7 @@ const LinkStyles = css`
     text-decoration: ${({ theme }: ThemePropsType): string => theme.Link.default.textDecoration};
     transition: color 100ms;
     background-color: transparent;
+    font-family: inherit;
 
     &:hover {
         color: ${({ theme }: ThemePropsType): string => theme.Link.hover.color};
@@ -29,7 +29,7 @@ const LinkStyles = css`
 `;
 
 const StyledLink = styled.a`
-    ${LinkStyles}
+    ${LinkStyles};
 `;
 
 const StyledButton = styled.button`
@@ -39,6 +39,7 @@ const StyledButton = styled.button`
     transition: color 100ms;
     display: inline;
     border: none;
+    font-family: inherit;
     font-size: ${({ theme }): string => theme.Link.default.fontSize};
     background-color: transparent;
     padding: 0;

@@ -5,66 +5,65 @@ import Icon from '.';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
-import { LargeIcons, MediumIcons, SmallIcons } from './types';
 
-/* tslint:disable */
-const smallIconKeys = Object.keys(SmallIcons).filter(key => SmallIcons[key as any].match('<svg'));
-const mediumIconKeys = Object.keys(MediumIcons).filter(key => MediumIcons[key as any].match('<svg'));
-const largeIconKeys = Object.keys(LargeIcons).filter(key => LargeIcons[key as any].match('<svg'));
-/* tslint:enable */
+const convertToExportName = (filename: string): string => {
+    const stripped = filename.replace('.svg', '');
+
+    const camelCased = stripped.replace(/(?:^\w|[A-Z]|\b\w|\s|[-_]+)/g, (match, index) => {
+        if (!/^[a-z0-9]+$/i.test(match)) return '';
+
+        return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+
+    return `${camelCased}Icon`;
+};
 
 storiesOf('Icon', module)
     .add('Small icons', () => {
         const iconColor = color('fill', '#000');
 
-        /* tslint:disable */
         return (
             <Box wrap margin={trbl(12)}>
-                {smallIconKeys.map(icon => (
+                {ICON_FILES.filter(icon => icon.indexOf('-small') !== -1).map(icon => (
                     <Box basis={'33.333333%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
-                        <Icon color={iconColor} size="small" icon={icon as any} />
+                        <Icon color={iconColor} size="small" icon={require(`../../assets/icons/${icon}`)} />
                         <Box margin={trbl(0, 0, 0, 24)}>
-                            <Text>{icon}</Text>
+                            <Text>{convertToExportName(icon)}</Text>
                         </Box>
                     </Box>
                 ))}
             </Box>
         );
-        /* tslint:enable */
     })
     .add('Medium icons', () => {
         const iconColor = color('fill', '#000');
 
-        /* tslint:disable */
         return (
-            <Box wrap margin={trbl(24)}>
-                {mediumIconKeys.map(icon => (
+            <Box wrap margin={trbl(12)}>
+                {ICON_FILES.filter(icon => icon.indexOf('-large') === -1 && icon.indexOf('-small') === -1).map(icon => (
                     <Box basis={'33.333333%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
-                        <Icon color={iconColor} size="medium" icon={icon as any} />
+                        <Icon color={iconColor} size="medium" icon={require(`../../assets/icons/${icon}`)} />
                         <Box margin={trbl(0, 0, 0, 24)}>
-                            <Text>{icon}</Text>
+                            <Text>{convertToExportName(icon)}</Text>
                         </Box>
                     </Box>
                 ))}
             </Box>
         );
-        /* tslint:enable */
     })
     .add('Large icons', () => {
         const iconColor = color('fill', '#000');
 
-        /* tslint:disable */
         return (
-            <Box wrap margin={trbl(24)}>
-                {largeIconKeys.map(icon => (
-                    <Box basis={'50%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
-                        <Icon color={iconColor} size="large" icon={icon as any} />
+            <Box wrap margin={trbl(12)}>
+                {ICON_FILES.filter(icon => icon.indexOf('-large') !== -1).map(icon => (
+                    <Box basis={'33.333333%'} alignItems={'center'} margin={trbl(12, 0)} key={icon}>
+                        <Icon color={iconColor} size="large" icon={require(`../../assets/icons/${icon}`)} />
                         <Box margin={trbl(0, 0, 0, 24)}>
-                            <Text>{icon}</Text>
+                            <Text>{convertToExportName(icon)}</Text>
                         </Box>
                     </Box>
                 ))}
             </Box>
         );
-        /* tslint:enable */
     });

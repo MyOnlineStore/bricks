@@ -11,7 +11,7 @@ const options = [
         label: 'Default action',
         default: true,
         description: 'Unparalleled step-changes dynamically enable senior industry leaders for our market foci.',
-        action: (): void => {
+        onClick: (): void => {
             alert('Default action');
         },
     },
@@ -19,7 +19,7 @@ const options = [
         value: 'Option 2',
         label: 'Alternative action 1',
         description: 'In the deliverable space, industry is virtually impacting its holistic verticals.',
-        action: (): void => {
+        onClick: (): void => {
             alert('Alternative action 1');
         },
     },
@@ -28,7 +28,7 @@ const options = [
         label: 'Alternative action 2',
         description:
             'Key players will take ownership of their big datas by iteratively integrating long-term capabilities.',
-        action: (): void => {
+        onClick: (): void => {
             alert('Alternative action 2');
         },
     },
@@ -41,7 +41,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('open')).toEqual(true);
         expect(component.find(StyledWindow).length).toBe(1);
 
         arrowButton.simulate('click');
@@ -59,7 +59,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('open')).toEqual(true);
 
         callbackMap.mousedown({
             target: component.first().getDOMNode(),
@@ -68,7 +68,7 @@ describe('MultiButton', () => {
         component.update();
 
         // click inside
-        expect(component.find(StyledWindow).prop('isOpen')).toBe(true);
+        expect(component.find(StyledWindow).prop('open')).toBe(true);
 
         // click outside
         callbackMap.mousedown({
@@ -97,7 +97,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('open')).toEqual(true);
 
         expect(component.find(Option)).toHaveLength(3);
     });
@@ -123,13 +123,13 @@ describe('MultiButton', () => {
                 label: 'Optionmock',
                 description: '',
                 default: true,
-                action: actionMock1,
+                onClick: actionMock1,
             },
             {
                 value: 'Optionmock 2',
                 label: '',
                 description: '',
-                action: actionMock2,
+                onClick: actionMock2,
             },
         ];
 
@@ -150,7 +150,7 @@ describe('MultiButton', () => {
                 value: 'Optionmock',
                 label: 'Optionmock',
                 description: '',
-                action: actionMock1,
+                onClick: actionMock1,
             },
         ];
 
@@ -176,13 +176,13 @@ describe('MultiButton', () => {
                 label: 'Optionmock',
                 description: '',
                 default: true,
-                action: actionMock1,
+                onClick: actionMock1,
             },
             {
                 value: 'Optionmock 2',
                 label: '',
                 description: '',
-                action: actionMock2,
+                onClick: actionMock2,
             },
         ];
 
@@ -191,7 +191,7 @@ describe('MultiButton', () => {
 
         arrowButton.simulate('click');
 
-        expect(component.find(StyledWindow).prop('isOpen')).toEqual(true);
+        expect(component.find(StyledWindow).prop('open')).toEqual(true);
         const option = component.find(Option).at(1);
 
         option.simulate('click');

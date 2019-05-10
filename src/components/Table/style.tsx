@@ -1,18 +1,20 @@
-import _R from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
 import styled from '../../utility/styled';
 
 type TableThemeType = {
     default: {
         backgroundColor: string;
     };
+    card: {
+        boxShadow: string;
+        backgroundColor: string;
+        borderRadius: string;
+        spacing: string;
+    };
     row: {
         default: {
             backgroundColor: string;
             borderColor: string;
         };
-
         hover: {
             backgroundColor: string;
         };

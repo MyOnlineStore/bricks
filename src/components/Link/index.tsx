@@ -5,28 +5,34 @@ type PropsType = {
     href?: string;
     title: string;
     target?: '_blank' | '_self';
-    action?(): void;
+    'data-testid'?: string;
+    onClick?(): void;
 };
 
 const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
     const clickAction = (): void => {
-        if (props.action !== undefined) {
-            props.action();
+        if (props.onClick !== undefined) {
+            props.onClick();
         }
     };
 
     if (isLink) {
         return (
-            <StyledLink title={props.title} target={props.target} href={props.href}>
+            <StyledLink
+                title={props.title}
+                target={props.target}
+                href={props.href}
+                data-testid={props['data-testid']}
+            >
                 {Children.count(props.children) > 0 ? props.children : props.title}
             </StyledLink>
         );
     }
 
     return (
-        <StyledButton type="button" onClick={clickAction} title={props.title}>
+        <StyledButton type="button" onClick={clickAction} title={props.title} data-testid={props['data-testid']}>
             {Children.count(props.children) > 0 ? props.children : props.title}
         </StyledButton>
     );

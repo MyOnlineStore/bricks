@@ -1,75 +1,49 @@
-import React, { FunctionComponent } from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { StyledType } from '../../utility/styled';
+import styled from '../../utility/styled';
 
 type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;
 
 type HeadingHierarchyThemeType = {
-    color: string;
     fontFamily: string;
     fontSize: string;
     fontWeight: string;
     lineHeight: string;
-    textTransform: string;
+    color: string;
 };
 
-type HeadingThemeType = StyledType & {
-    default: {
-        color: string;
-        fontFamily: string;
-        fontSize: string;
-        fontWeight: string;
-        lineHeight: string;
-        textTransform: string;
-    };
-    hierarchy: {
-        hierarchy1: HeadingHierarchyThemeType;
-        hierarchy2: HeadingHierarchyThemeType;
-        hierarchy3: HeadingHierarchyThemeType;
-        hierarchy4: HeadingHierarchyThemeType;
-        hierarchy5: HeadingHierarchyThemeType;
-        hierarchy6: HeadingHierarchyThemeType;
-        [key: string]: HeadingHierarchyThemeType;
-    };
+type HeadingThemeType = {
+    1: HeadingHierarchyThemeType;
+    2: HeadingHierarchyThemeType;
+    3: HeadingHierarchyThemeType;
+    4: HeadingHierarchyThemeType;
+    5: HeadingHierarchyThemeType;
+    6: HeadingHierarchyThemeType;
 };
 
-type PropsType = StyledType & {
+type PropsType = {
     hierarchy?: HierarchyType;
-    element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
+    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
 };
 
-const HeadingElement: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const Element = props.element !== undefined ? `${props.element}` : 'div';
-
-    return (
-        <Element role="heading" className={props.className}>
-            {props.children}
-        </Element>
-    );
-};
-
-const StyledHeading = styled(HeadingElement)`
-    color: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.color : theme.Heading.hierarchy[`hierarchy${hierarchy}`].color};
+const Heading = styled.div.attrs(() => ({ role: 'heading' }))<PropsType>`
+    color: ${({ hierarchy, theme }): string => (!hierarchy ? theme.Heading[1].color : theme.Heading[hierarchy].color)};
     font-family: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.fontFamily : theme.Heading.hierarchy[`hierarchy${hierarchy}`].fontFamily};
+        !hierarchy ? theme.Heading[1].fontFamily : theme.Heading[hierarchy].fontFamily};
     font-size: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.fontSize : theme.Heading.hierarchy[`hierarchy${hierarchy}`].fontSize};
-    font-weight: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.fontWeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].fontWeight};
+        !hierarchy ? theme.Heading[1].fontSize : theme.Heading[hierarchy].fontSize};
+    font-weight: ${({ hierarchy, theme }): string => {
+        if (hierarchy) return theme.Heading[hierarchy].fontWeight;
+
+        return theme.Heading[1].fontWeight;
+    }};
     line-height: ${({ hierarchy, theme }): string =>
-        !hierarchy ? theme.Heading.default.lineHeight : theme.Heading.hierarchy[`hierarchy${hierarchy}`].lineHeight};
-    text-transform: ${({ hierarchy, theme }): string =>
-        !hierarchy
-            ? theme.Heading.default.textTransform
-            : theme.Heading.hierarchy[`hierarchy${hierarchy}`].textTransform}
+        !hierarchy ? theme.Heading[1].lineHeight : theme.Heading[hierarchy].lineHeight};
+
     text-align: ${({ textAlign }): string => (textAlign !== undefined ? textAlign : '')};
     margin: 0;
     -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
 `;
 
-export default StyledHeading;
+export default Heading;
 export { PropsType, HeadingThemeType, HeadingHierarchyThemeType, HierarchyType };

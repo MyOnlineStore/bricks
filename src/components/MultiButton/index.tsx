@@ -4,14 +4,16 @@ import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
 import Option from './Option';
-import trbl from '../../utility/trbl';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { createPortal } from 'react-dom';
 import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { PropsType as ButtonPropsType } from '../Button';
+import chevronDown from '../../assets/icons/chevron-down.svg';
+import chevronUp from '../../assets/icons/chevron-up.svg';
+import checkmark from '../../assets/icons/checkmark.svg';
 
-type OmittedKeys = 'action' | 'href' | 'flat' | 'compact' | 'title';
+type OmittedKeys = 'onClick' | 'href' | 'compact' | 'title';
 
 type PlacementType = PopperChildrenProps['placement'];
 
@@ -19,7 +21,7 @@ type OptionsType = {
     label: string;
     description: string;
     default?: boolean;
-    action(): void;
+    onClick(): void;
 };
 
 type PropsType = Pick<ButtonPropsType, Exclude<keyof ButtonPropsType, OmittedKeys>> & {
@@ -90,25 +92,25 @@ class MultiButton extends Component<PropsType, StateType> {
     private renderButtons = (): JSX.Element => {
         // filter irrelevant buttonprops for JS users
         // @ts-ignore
-        const { href, action, flat, compact, title, ...filteredProps } = this.props;
+        const { onClick, flat, compact, title, ...filteredProps } = this.props;
 
         return (
             <Box wrap={false}>
                 <StyledMultiButton
                     {...filteredProps}
                     title={this.defaultOption.label}
-                    action={(): void => this.defaultOption.action()}
+                    onClick={(): void => this.defaultOption.onClick()}
                 >
                     <Box inline>{this.defaultOption.label}</Box>
                 </StyledMultiButton>
                 <StyledChevronButton
                     compact
-                    title={'chevron'}
+                    title={'open'}
                     variant={this.props.variant}
-                    action={this.state.isOpen ? this.close : this.open}
+                    onClick={this.state.isOpen ? this.close : this.open}
                 >
                     <Box inline>
-                        <Icon size="small" icon={this.state.isOpen ? 'chevronUp' : 'chevronDown'} />
+                        <Icon size="small" icon={this.state.isOpen ? chevronUp : chevronDown} />
                     </Box>
                 </StyledChevronButton>
             </Box>
@@ -141,7 +143,7 @@ class MultiButton extends Component<PropsType, StateType> {
                 selectedIndex: index,
             },
             () => {
-                this.state.selectedOption.action();
+                this.state.selectedOption.onClick();
                 this.close();
             },
         );
@@ -153,7 +155,7 @@ class MultiButton extends Component<PropsType, StateType> {
                 <Reference>
                     {({ ref }: ReferenceChildrenProps): JSX.Element => (
                         <div ref={this.buttonRef}>
-                            <StyledWrapper innerRef={ref} isOpen={this.state.isOpen}>
+                            <StyledWrapper ref={ref} open={this.state.isOpen}>
                                 {this.renderButtons()}
                             </StyledWrapper>
                         </div>
@@ -171,7 +173,7 @@ class MultiButton extends Component<PropsType, StateType> {
                                 }}
                             >
                                 {({ ref, style }: PopperChildrenProps): JSX.Element => (
-                                    <StyledWindow isOpen={this.state.isOpen} innerRef={ref} style={style}>
+                                    <StyledWindow open={this.state.isOpen} ref={ref} style={style}>
                                         {this.props.options.length > 0 &&
                                             this.props.options.map((option, index) => (
                                                 <Option
@@ -182,9 +184,9 @@ class MultiButton extends Component<PropsType, StateType> {
                                                     }}
                                                 >
                                                     <Box alignItems={'center'}>
-                                                        <Box margin={trbl(0, 12, 0, 0)}>
+                                                        <Box margin={[0, 12, 0, 0]}>
                                                             {index === this.state.selectedIndex && (
-                                                                <Icon size="medium" icon="checkmark" />
+                                                                <Icon size="medium" icon={checkmark} />
                                                             )}
                                                             {index !== this.state.selectedIndex && (
                                                                 <Box width={'18px'} />
@@ -192,14 +194,11 @@ class MultiButton extends Component<PropsType, StateType> {
                                                         </Box>
                                                         <div>
                                                             <Text
-                                                                inline
-                                                                descriptive
+                                                                as="span"
+                                                                severity="info"
                                                                 strong={index === this.state.selectedIndex}
                                                             >
-                                                                <Text
-                                                                    descriptive={false}
-                                                                    strong={index === this.state.selectedIndex}
-                                                                >
+                                                                <Text strong={index === this.state.selectedIndex}>
                                                                     {option.label}
                                                                 </Text>
                                                                 <span>{option.description}</span>

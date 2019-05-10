@@ -3,9 +3,8 @@ import EmptyState from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import Heading from '../Heading';
 import Text from '../Text';
-import Illustration from '../Illustration';
 import Box from '../Box';
-import { Button } from '../..';
+import Button from '../Button';
 
 describe('EmptyState', () => {
     it('should render its children', () => {
@@ -30,13 +29,6 @@ describe('EmptyState', () => {
         const component = mountWithTheme(<EmptyState title="foo" message={message} />);
 
         expect(component.find(Text).matchesElement(message)).toBe(true);
-    });
-
-    it('should render the passed through illustration', () => {
-        const illustration = <Illustration illustration="balloon" />;
-        const component = mountWithTheme(<EmptyState title="foo" message="bar" illustration={illustration} />);
-
-        expect(component.find(Illustration).matchesElement(illustration)).toBe(true);
     });
 
     it('should render the passed through button', () => {
@@ -66,5 +58,11 @@ describe('EmptyState', () => {
                 .first()
                 .prop('direction'),
         ).toEqual('row');
+    });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(<EmptyState title="foo" message="bar" data-testid="empty" />);
+
+        expect(component.find('[data-testid="empty"]').hostNodes()).toHaveLength(1);
     });
 });

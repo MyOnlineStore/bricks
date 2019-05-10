@@ -1,18 +1,17 @@
 import React, { FunctionComponent, Children, ReactNode } from 'react';
-import { StyledComponentClass as _S } from 'styled-components';
-import _T from '../../types/ThemeType';
 import Box from '../Box';
 import Heading from '../Heading';
-import Illustration, { Illustrations } from '../Illustration';
-
+import Illustration from '../Illustration';
+import cactus from '../../assets/illustrations/cactus.color.svg';
 import Text from '../Text';
 
 type PropsType = {
-    illustration?: keyof typeof Illustrations | ReactNode;
+    illustration?: string;
     title: string | ReactNode;
     message: string | ReactNode;
     horizontal?: boolean;
     button?: ReactNode;
+    'data-testid'?: string;
 };
 
 const branchString = (value: string | ReactNode, node: (value: string) => ReactNode): ReactNode => {
@@ -30,23 +29,21 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     ));
 
     const message = branchString(props.message, value => (
-        <Text descriptive textAlign={textAlign}>
+        <Text severity="info" textAlign={textAlign}>
             {value}
         </Text>
     ));
 
     const illustration =
         props.illustration !== undefined ? (
-            branchString(props.illustration, value => (
-                <Illustration illustration={value as keyof typeof Illustrations} />
-            ))
+            <Illustration illustration={props.illustration} />
         ) : (
-            <Illustration illustration={'cactus'} />
+            <Illustration illustration={cactus} />
         );
 
     if (props.horizontal) {
         return (
-            <Box direction="row" alignItems="center" justifyContent="space-around">
+            <Box direction="row" alignItems="center" justifyContent="space-around" data-testid={props['data-testid']}>
                 <Box basis="120px" shrink={0} grow={25}>
                     {illustration}
                 </Box>
@@ -65,7 +62,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     }
 
     return (
-        <Box direction="column" alignItems="center" justifyContent="space-around">
+        <Box direction="column" alignItems="center" justifyContent="space-around" data-testid={props['data-testid']}>
             {illustration}
             <Box padding={[18, 0, 0, 0]}>{title}</Box>
             <Box margin={[12, 0, 0, 0]}>{message}</Box>

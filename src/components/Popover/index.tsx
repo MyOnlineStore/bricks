@@ -7,12 +7,13 @@ type PlacementType = PopperChildrenProps['placement'];
 
 type PropsType = {
     placement?: PlacementType;
-    isOpen?: boolean;
+    show?: boolean;
     fixed?: boolean;
     offset?: number;
     distance?: number;
     stretch?: boolean;
     triggerOn?: 'click' | 'hover';
+    onClickOutside?(): void;
     renderContent(): JSX.Element | string;
 };
 
@@ -31,8 +32,8 @@ class Popover extends Component<PropsType, StateType> {
     }
 
     public static getDerivedStateFromProps(props: PropsType, state: StateType): Partial<StateType> {
-        if (props.isOpen !== undefined && props.isOpen !== state.isOpen) {
-            return { isOpen: props.isOpen };
+        if (props.show !== undefined && props.show !== state.isOpen) {
+            return { isOpen: props.show };
         }
 
         return state;
@@ -63,12 +64,19 @@ class Popover extends Component<PropsType, StateType> {
             !this.anchorRef.contains(event.target as Node) &&
             !this.popoverRef.contains(event.target as Node)
         ) {
+            if (this.props.onClickOutside !== undefined) this.props.onClickOutside();
+            else this.togglePopover();
+        }
+    };
+
+    private handleKeyDown = (event: KeyboardEvent): void => {
+        if (this.state.isOpen && (event.key === 'Escape' || event.key === 'Esc')) {
             this.togglePopover();
         }
     };
 
     public componentDidMount(): void {
-        if (this.props.isOpen === undefined && this.anchorRef) {
+        if (this.props.show === undefined && this.anchorRef) {
             this.anchorRef.addEventListener(
                 this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
                 this.togglePopover,
@@ -80,6 +88,7 @@ class Popover extends Component<PropsType, StateType> {
         }
 
         document.addEventListener('mousedown', this.handleClickOutside, false);
+        document.addEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
     }
 
     public componentWillUnmount(): void {
@@ -91,6 +100,9 @@ class Popover extends Component<PropsType, StateType> {
         if (this.props.triggerOn === 'hover') {
             this.anchorRef.removeEventListener('mouseleave', this.togglePopover, false);
         }
+
+        document.removeEventListener('mousedown', this.handleClickOutside, false);
+        document.removeEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
     }
 
     public render(): JSX.Element {
@@ -104,7 +116,12 @@ class Popover extends Component<PropsType, StateType> {
                                     if (ref) this.anchorRef = ref;
                                 }}
                             >
-                                <PopoverAnchor innerRef={ref} stretch={this.props.stretch}>
+                                <PopoverAnchor
+                                    ref={ref}
+                                    stretch={this.props.stretch}
+                                    role="button"
+                                    aria-expanded={this.state.isOpen}
+                                >
                                     {this.props.children}
                                 </PopoverAnchor>
                             </div>
@@ -129,11 +146,11 @@ class Popover extends Component<PropsType, StateType> {
                                 }}
                             >
                                 {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
-                                    <PopoverWindow innerRef={ref} style={style}>
+                                    <PopoverWindow ref={ref} style={style}>
                                         <PopoverContent>{this.props.renderContent()}</PopoverContent>
                                         <PopoverBackground />
                                         <PopoverArrow
-                                            innerRef={arrowProps.ref}
+                                            ref={arrowProps.ref}
                                             style={arrowProps.style}
                                             placement={placement}
                                         />

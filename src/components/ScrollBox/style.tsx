@@ -1,7 +1,4 @@
-import { default as _R } from 'react';
-import { StyledComponentClass as _S, css } from 'styled-components';
-import _T from '../../types/ThemeType';
-import styled, { withProps } from '../../utility/styled';
+import styled, { css } from '../../utility/styled';
 
 /* tslint:disable */
 const styles = require('simplebar/dist/simplebar.min.css').toString();
@@ -13,7 +10,7 @@ type ScrollBoxThemeType = {
     };
 };
 
-type effectPropsType = {
+type EffectPropsType = {
     show: boolean;
 };
 
@@ -53,7 +50,7 @@ const StyledScrollBox = styled.div`
     }
 `;
 
-const StyledTop = withProps<effectPropsType, HTMLDivElement>(styled.div)`
+const StyledTop = styled.div<EffectPropsType>`
     opacity: ${({ show }): string => (show ? '1' : '0')};
     transition: opacity 100ms;
     background: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 100%);
@@ -65,7 +62,7 @@ const StyledTop = withProps<effectPropsType, HTMLDivElement>(styled.div)`
     z-index: 1;
 `;
 
-const StyledBottom = withProps<effectPropsType, HTMLDivElement>(styled.div)`
+const StyledBottom = styled.div<EffectPropsType>`
     opacity: ${({ show }): string => (show ? '1' : '0')};
     transition: opacity 100ms;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 100%);
