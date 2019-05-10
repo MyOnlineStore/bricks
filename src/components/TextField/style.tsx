@@ -168,6 +168,9 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
                 color: forms.colorContrast,
                 background: forms.backgroundContrast,
             },
+            placeholder: {
+                color: forms.color,
+            },
         },
         focus: {
             borderColor: forms.focusBorderColor,
