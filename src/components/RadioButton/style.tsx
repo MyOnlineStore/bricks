@@ -119,7 +119,7 @@ const composeRadioButtonTheme = (themeTools: ThemeTools): RadioButtonThemeType =
             } 5px,${colors.silver.base} 10px )`,
         },
         focus: {
-            boxShadow: `0 0 0 4px ${chroma(forms.activeColor).alpha(0.4)}`,
+            boxShadow: `0 0 0 4px ${chroma(forms.activeBorderColor).alpha(0.4)}`,
         },
         active: {
             boxShadow: `0px 0px 0px 5.5px ${forms.activeColor}`,

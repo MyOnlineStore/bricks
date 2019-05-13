@@ -174,7 +174,7 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
         },
         focus: {
             borderColor: forms.focusBorderColor,
-            boxShadow: forms.focusBorderColor,
+            boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
         },
         severity: {
             error: {

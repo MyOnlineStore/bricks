@@ -105,8 +105,8 @@ const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
             },
         },
         focus: {
-            borderColor: forms.borderColor,
-            boxShadow: forms.focusBorderColor,
+            borderColor: forms.focusBorderColor,
+            boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
         },
         severity: {
             error: {
