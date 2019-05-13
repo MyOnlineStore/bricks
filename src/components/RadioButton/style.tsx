@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
+import chroma from 'chroma-js';
 
 type RadioButtonPropsType = {
     checked: boolean;
@@ -119,7 +119,7 @@ const composeRadioButtonTheme = (themeTools: ThemeTools): RadioButtonThemeType =
             } 5px,${colors.silver.base} 10px )`,
         },
         focus: {
-            boxShadow: `0 0 0 4px ${rgba(forms.activeColor, 0.4)}`,
+            boxShadow: `0 0 0 4px ${chroma(forms.activeColor).alpha(0.4)}`,
         },
         active: {
             boxShadow: `0px 0px 0px 5.5px ${forms.activeColor}`,
@@ -127,11 +127,12 @@ const composeRadioButtonTheme = (themeTools: ThemeTools): RadioButtonThemeType =
             background: forms.activeColor,
         },
         activeDisabled: {
-            boxShadow: `0px 0px 0px 5.5px ${rgba(forms.activeColor, 0.5)}`,
-            background: `repeating-linear-gradient( -45deg,${rgba(forms.activeColor, 0.6)},${rgba(
+            boxShadow: `0px 0px 0px 5.5px ${chroma(forms.activeColor).alpha(0.5)}`,
+            background: `repeating-linear-gradient( -45deg,${chroma(forms.activeColor).alpha(0.6)},${chroma(
                 forms.activeColor,
-                0.6,
-            )} 5px,${rgba(forms.activeColor, 0.5)} 5px,${rgba(forms.activeColor, 0.5)} 10px )`,
+            ).alpha(0.6)} 5px,${chroma(forms.activeColor).alpha(0.5)} 5px,${chroma(forms.activeColor).alpha(
+                0.5,
+            )} 10px )`,
         },
         error: {
             borderColor: colors.severity.error,

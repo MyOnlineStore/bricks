@@ -6,7 +6,6 @@ import Box from '../Box';
 import Spinner from '../Spinner';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 import chroma from 'chroma-js';
-import rgba from '../../utility/rgba';
 
 type CommonType = {
     backgroundColor: string;
@@ -188,7 +187,7 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
                 color: colors.silver.lighter1,
                 boxShadow: `${themeTools.themeSettings.buttonShadow}${
                     themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                }0 0 0 4px ${rgba(colors.primary.base, 0.4)}`,
+                }0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
             },
             active: {
                 backgroundColor: colors.primary.base,
@@ -212,7 +211,7 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
                 color: colors.grey.lighter1,
                 boxShadow: `${themeTools.themeSettings.buttonShadow}${
                     themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                }0 0 0 4px ${rgba(colors.grey.base, 0.08)}`,
+                }0 0 0 4px ${chroma(colors.grey.base).alpha(0.08)}`,
             },
             active: {
                 backgroundColor: colors.silver.darker1,
@@ -223,60 +222,60 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
         warning: {
             idle: {
                 backgroundColor: colors.severity.warning,
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.warning),
                 boxShadow: themeTools.themeSettings.buttonShadow,
             },
             hover: {
                 backgroundColor: chroma(colors.severity.warning)
                     .darken(0.2)
                     .hex(),
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.warning),
                 boxShadow: themeTools.themeSettings.buttonShadow,
             },
             focus: {
                 backgroundColor: chroma(colors.severity.warning)
                     .darken(0.2)
                     .hex(),
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.warning),
                 boxShadow: `${themeTools.themeSettings.buttonShadow}${
                     themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                }0 0 0 4px ${rgba(colors.severity.warning, 0.25)}`,
+                }0 0 0 4px ${chroma(colors.severity.warning).alpha(0.25)}`,
             },
             active: {
                 backgroundColor: chroma(colors.severity.warning)
                     .darken(0.4)
                     .hex(),
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.warning),
                 boxShadow: 'none',
             },
         },
         destructive: {
             idle: {
                 backgroundColor: colors.severity.error,
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.error),
                 boxShadow: themeTools.themeSettings.buttonShadow,
             },
             hover: {
                 backgroundColor: chroma(colors.severity.error)
                     .darken(0.2)
                     .hex(),
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.error),
                 boxShadow: themeTools.themeSettings.buttonShadow,
             },
             focus: {
                 backgroundColor: chroma(colors.severity.error)
                     .darken(0.4)
                     .hex(),
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.error),
                 boxShadow: `${themeTools.themeSettings.buttonShadow}${
                     themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                }0 0 0 4px ${rgba(colors.severity.error, 0.25)}`,
+                }0 0 0 4px ${chroma(colors.severity.error).alpha(0.25)}`,
             },
             active: {
                 backgroundColor: chroma(colors.severity.error)
                     .darken(0.2)
                     .hex(),
-                color: colors.silver.lighter1,
+                color: themeTools.calculateContrastTextColor(colors.severity.error),
                 boxShadow: 'none',
             },
         },
@@ -297,7 +296,7 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
                 color: themeTools.calculateContrastTextColor(colors.background),
                 boxShadow: `${themeTools.themeSettings.buttonShadow}${
                     themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                }0 0 0 4px ${rgba(colors.grey.base, 0.08)}`,
+                }0 0 0 4px ${chroma(colors.grey.base).alpha(0.08)}`,
             },
             active: {
                 backgroundColor: colors.silver.base,

@@ -1,8 +1,8 @@
 import RecursivePartialType from '../../types/RecursivePartialType';
 import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
-import rgba from '../../utility/rgba';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 type ContrastThemeType = {
     overides: RecursivePartialType<ThemeType>;
@@ -38,7 +38,7 @@ const composeContrastTheme = (themeTools: ThemeTools): ContrastThemeType => {
                         backgroundColor: colors.silver.darker1,
                         boxShadow: `${themeTools.themeSettings.buttonShadow}${
                             themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                        }0 0 0 4px ${rgba(colors.grey.base, 0.08)}`,
+                        }0 0 0 4px ${chroma(colors.grey.base).alpha(0.08)}`,
                     },
                 },
                 plain: {
@@ -52,7 +52,7 @@ const composeContrastTheme = (themeTools: ThemeTools): ContrastThemeType => {
                         backgroundColor: 'transparent',
                         boxShadow: `${themeTools.themeSettings.buttonShadow}${
                             themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
-                        }0 0 0 4px ${rgba(colors.grey.base, 0.08)}${colors.silver.darker2}`,
+                        }0 0 0 4px ${chroma(colors.grey.base).alpha(0.08)}${colors.silver.darker2}`,
                     },
                 },
             },

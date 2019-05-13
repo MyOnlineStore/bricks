@@ -166,7 +166,7 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
             <Box direction="column" padding={[24, 0]}>
                 <Separated after>
                     <Notification severity="success" message="Wow, Great job!" />
-                    <Notification severity="error" message="Oops, something wen't wrong. Please try again." />
+                    <Notification severity="error" message="Oops, something went wrong. Please try again." />
                     <Notification severity="warning" message="Careful, this might go wrong." />
                     <Notification severity="info" message="Hello buddy. I am here for you." />
                 </Separated>

@@ -1,6 +1,6 @@
 import styled from '../../../src/utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
+import chroma from 'chroma-js';
 
 type SelectThemeType = {
     common: {
@@ -165,7 +165,7 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
             },
             focus: {
                 borderColor: colors.primary.base,
-                boxShadow: `0 0 0 4px ${rgba(colors.primary.base, 0.4)}`,
+                boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
             },
         },
         input: {

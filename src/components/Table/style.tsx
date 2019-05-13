@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
+import chroma from 'chroma-js';
 
 type TableThemeType = {
     default: {
@@ -77,16 +77,16 @@ const composeTableTheme = (themeTools: ThemeTools): TableThemeType => {
         row: {
             default: {
                 backgroundColor: colors.background,
-                borderColor: `${rgba(colors.primary.base, 0)}`,
+                borderColor: `${chroma(colors.primary.base).alpha(0)}`,
             },
             hover: {
                 backgroundColor: colors.contrastBackground,
             },
             focus: {
-                borderColor: `${rgba(colors.primary.base, 0.4)}`,
+                borderColor: `${chroma(colors.primary.base).alpha(0.4)}`,
             },
             dragging: {
-                boxShadow: `0 6px 48px 0 ${rgba(colors.grey.darker1, 0.3)}`,
+                boxShadow: `0 6px 48px 0 ${chroma(colors.grey.darker1).alpha(0.3)}`,
             },
         },
     };

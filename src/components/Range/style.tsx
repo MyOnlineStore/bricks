@@ -1,6 +1,6 @@
 import styled, { css } from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
+import chroma from 'chroma-js';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();
@@ -101,7 +101,7 @@ const composeRangeTheme = (themeTools: ThemeTools): RangeThemeType => {
             active: {
                 background: colors.primary.base,
                 border: `solid 1px ${forms.borderColor}`,
-                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.primary.base, 0.4)}`,
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
             },
             slider: {
                 background: colors.silver.lighter1,

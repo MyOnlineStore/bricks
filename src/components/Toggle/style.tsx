@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
+import chroma from 'chroma-js';
 
 type StyledToggleType = {
     checked: boolean;
@@ -112,7 +112,7 @@ const composeToggleTheme = (themeTools: ThemeTools): ToggleThemeType => {
             background: forms.background,
         },
         focus: {
-            boxShadow: `0 0 0 4px ${rgba(forms.focusBorderColor, 0.4)}`,
+            boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
         },
         checked: {
             border: `1px solid ${forms.activeBorderColor}`,
@@ -124,10 +124,11 @@ const composeToggleTheme = (themeTools: ThemeTools): ToggleThemeType => {
             } 5px,${colors.silver.darker1} 10px )`,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${rgba(colors.primary.darker2, 0.6)},${rgba(
+            background: `repeating-linear-gradient( -45deg,${chroma(colors.primary.darker2).alpha(0.6)},${chroma(
                 colors.primary.darker2,
-                0.6,
-            )} 5px,${rgba(colors.primary.base, 0.5)} 5px,${rgba(colors.primary.base, 0.5)} 10px )`,
+            ).alpha(0.6)} 5px,${chroma(colors.primary.base).alpha(0.5)} 5px,${chroma(colors.primary.base).alpha(
+                0.5,
+            )} 10px )`,
         },
         error: {
             border: `1px solid ${colors.severity.error}`,

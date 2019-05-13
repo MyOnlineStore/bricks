@@ -30,7 +30,7 @@ storiesOf('MerchantTheme', module).add('Default', () => {
 
     const error = text('Severity: Error', '#CC0000', 'Colors');
     const success = text('Severity: Success', '#31953d', 'Colors');
-    const info = text('Severity: Info', '#4e82bb', 'Colors');
+    const info = text('Severity: Info', '#999999', 'Colors');
     const warning = text('Severity: Warning', '#fcc200', 'Colors');
 
     const roundness = number(

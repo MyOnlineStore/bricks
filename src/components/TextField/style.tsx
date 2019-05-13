@@ -1,7 +1,7 @@
 import SeverityType from '../../types/SeverityType';
 import styled from '../../utility/styled';
-import rgba from '../../utility/rgba';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 type TextFieldThemeType = {
     idle: {
@@ -178,19 +178,19 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
         },
         severity: {
             error: {
-                boxShadow: `0 0 0 4px ${rgba(colors.severity.error, 0.4)}`,
+                boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
                 borderColor: colors.severity.error,
             },
             success: {
-                boxShadow: `0 0 0 4px ${rgba(colors.severity.success, 0.4)}`,
+                boxShadow: `0 0 0 4px ${chroma(colors.severity.success).alpha(0.4)}`,
                 borderColor: colors.severity.success,
             },
             info: {
-                boxShadow: `0 0 0 4px ${rgba(colors.severity.info, 0.4)}`,
+                boxShadow: `0 0 0 4px ${chroma(colors.severity.info).alpha(0.4)}`,
                 borderColor: colors.severity.info,
             },
             warning: {
-                boxShadow: `0 0 0 4px ${rgba(colors.severity.warning, 0.4)}`,
+                boxShadow: `0 0 0 4px ${chroma(colors.severity.warning).alpha(0.4)}`,
                 borderColor: colors.severity.warning,
             },
         },

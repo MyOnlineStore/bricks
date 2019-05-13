@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
-import rgba from '../../utility/rgba';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 type StyledCheckboxSkinType = {
     checkedState: boolean | 'indeterminate';
@@ -82,6 +82,7 @@ const StyledCheckboxSkin = styled.div<StyledCheckboxSkinType>`
 
 const composeCheckboxTheme = (themeTools: ThemeTools): CheckboxThemeType => {
     const { colors, forms } = themeTools.themeSettings;
+    const chromaActiveColor = chroma(forms.activeColor);
 
     return {
         idle: {
@@ -90,7 +91,7 @@ const composeCheckboxTheme = (themeTools: ThemeTools): CheckboxThemeType => {
             borderRadius: themeTools.calculateRoundness(5),
         },
         focus: {
-            boxShadow: `0 0 0 4px ${rgba(forms.activeColor, 0.4)}`,
+            boxShadow: `0 0 0 4px ${chromaActiveColor.alpha(0.4)}`,
         },
         checked: {
             checkmarkColor: themeTools.calculateContrastColor(
@@ -107,10 +108,9 @@ const composeCheckboxTheme = (themeTools: ThemeTools): CheckboxThemeType => {
             } 5px,${colors.silver.darker1} 10px )`,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${rgba(forms.activeColor, 0.6)},${rgba(
-                forms.activeColor,
+            background: `repeating-linear-gradient( -45deg,${chromaActiveColor.alpha(0.6)},${chromaActiveColor.alpha(
                 0.6,
-            )} 5px,${rgba(forms.activeColor, 0.5)} 5px,${rgba(forms.activeColor, 0.5)} 10px )`,
+            )} 5px,${chromaActiveColor.alpha(0.5)} 5px,${chromaActiveColor.alpha(0.5)} 10px )`,
         },
         error: {
             borderColor: colors.severity.error,

@@ -1,7 +1,6 @@
 import styled from '../../utility/styled';
 import Button from '../Button';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
 import chroma from 'chroma-js';
 
 type MultiButtonThemeType = {
@@ -122,7 +121,9 @@ const composeMultiButtonTheme = (themeTools: ThemeTools): MultiButtonThemeType =
         button: {
             common: {
                 active: {
-                    boxShadow: `inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px ${rgba(colors.grey.lighter2, 0.2)}`,
+                    boxShadow: `inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px ${chroma(colors.grey.lighter2).alpha(
+                        0.2,
+                    )}`,
                 },
                 borderRadius: themeTools.calculateRoundness(20),
             },

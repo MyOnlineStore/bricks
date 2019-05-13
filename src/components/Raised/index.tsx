@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-import rgba from '../../utility/rgba';
+import chroma from 'chroma-js';
 
 type RaisedLevelThemeType = {
     boxShadow: string;
@@ -31,10 +31,10 @@ const composeRaisedTheme = (themeTools: ThemeTools): RaisedThemeType => {
             boxShadow: 'none',
         },
         level1: {
-            boxShadow: `0 2px 10px 0 ${rgba(themeTools.themeSettings.colors.grey.darker1, 0.15)}`,
+            boxShadow: `0 2px 10px 0 ${chroma(themeTools.themeSettings.colors.grey.darker1).alpha(0.15)}`,
         },
         level2: {
-            boxShadow: `0 6px 48px 0 ${rgba(themeTools.themeSettings.colors.grey.darker1, 0.3)}`,
+            boxShadow: `0 6px 48px 0 ${chroma(themeTools.themeSettings.colors.grey.darker1).alpha(0.3)}`,
         },
     };
 };
