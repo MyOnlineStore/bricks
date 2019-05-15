@@ -8,16 +8,6 @@ import IconButton from '../IconButton';
 (console as any).error.mockImplementationOnce(() => undefined);
 
 describe('Toaster', () => {
-    it('should show an error when notify is called before mount', () => {
-        window.toaster.notify({
-            title: 'foo',
-            severity: 'success',
-        });
-
-        // tslint:disable-next-line
-        expect(console.error).toHaveBeenCalled();
-    });
-
     it('should render a Toast when notified', () => {
         const component = mountWithTheme(<Toaster />);
 

@@ -20,16 +20,6 @@ declare global {
     }
 }
 
-if (window) {
-    window.toaster = {
-        notify: (): void => {
-            console.error(
-                '[Bricks]: <Toaster /> not mounted yet. Make sure the Toaster is mounted before calling notify.',
-            );
-        },
-    };
-}
-
 class Toaster extends Component<PropsType, StateType> {
     private static portalId: string = '__toaster-container';
     private toastId: number = 0;
@@ -103,7 +93,7 @@ class Toaster extends Component<PropsType, StateType> {
                             {...toastProps}
                             onExited={(): void => this.removeToast(toast.id)}
                             onClose={(): void => {
-                                if (onClose!== undefined) onClose();
+                                if (onClose !== undefined) onClose();
                                 this.closeToast(id);
                             }}
                         />
