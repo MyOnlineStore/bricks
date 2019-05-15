@@ -10,6 +10,7 @@ addParameters({
     options: {
         url: '#',
         name: 'Bricks',
+        panelPosition: 'right',
         theme: create({
             base: 'dark',
             colorPrimary: green.darker2,
