@@ -5,7 +5,6 @@ import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
-import { isString } from 'util';
 import trash from '../../assets/icons/trash.svg';
 import gear from '../../assets/icons/gear.svg';
 import Measure from 'react-measure';
@@ -79,7 +78,8 @@ class Demo extends Component<PropsType, StateType> {
     }
 
     private sortText = (a: string, b: string) => {
-        if (!isString(a) || !isString(b)) {
+        // tslint:disable-next-line:strict-type-predicates
+        if (typeof a !== 'string' || typeof b !== 'string') {
             return 0;
         }
 

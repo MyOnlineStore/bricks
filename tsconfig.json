@@ -15,7 +15,15 @@
     "allowJs": false,
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "types": [
+      "jest",
+      "node"
+    ]  
   },
   "include": [
     "src/**/*"
