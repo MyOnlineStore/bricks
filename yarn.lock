@@ -4141,7 +4141,7 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
-core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7, core-js@^2.6.2, core-js@^2.6.5:
+core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7, core-js@^2.6.5:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
   integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
@@ -8028,11 +8028,6 @@ lodash.isplainobject@^4.0.6:
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
   integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
 
-lodash.memoize@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
-  integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
-
 lodash.mergewith@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
@@ -11062,15 +11057,12 @@ simple-html-tokenizer@^0.1.1:
   resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.1.1.tgz#05c2eec579ffffe145a030ac26cfea61b980fabe"
   integrity sha1-BcLuxXn//+FFoDCsJs/qYbmA+r4=
 
-simplebar@^3.0.0-beta.4:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/simplebar/-/simplebar-3.1.5.tgz#257f2d0836baa250cd2a8841892a10c3c3081b17"
-  integrity sha512-6hPEvcUEbgRWAyldqdd5yd1OcrnxelopEOKwMwOafLc0/Kc3Um2x1US8t+feUAA5ae+lTbrQwcGJvMH+9A23FA==
+simplebar@3.0.0-beta.4:
+  version "3.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/simplebar/-/simplebar-3.0.0-beta.4.tgz#3e4cda0be5fb8141b7556660758ac3a192c3b24e"
+  integrity sha512-Dk2j5YJcyPmr2QGiXcdLQuNupwbdn+p7BryOefI3nHw8NmJZcBVhhvZPauaJwNtbe8t78S2y34DGJLuO5zpY3w==
   dependencies:
     can-use-dom "^0.1.0"
-    core-js "^2.6.2"
-    lodash.debounce "^4.0.8"
-    lodash.memoize "^4.1.2"
     lodash.throttle "^4.1.1"
     resize-observer-polyfill "^1.5.0"
     scrollbarwidth "^0.1.3"
