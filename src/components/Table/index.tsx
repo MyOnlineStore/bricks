@@ -67,9 +67,10 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
 
     private handleSelection(event: MouseEvent<HTMLDivElement>, toggleAction: boolean, id: string): void {
         const selectionEnd = this.props.rows.reduce((combined, item, key) => (item.id === id ? key : combined), -1);
+        const windowSelection = window.getSelection();
 
-        if (event.shiftKey) {
-            window.getSelection().removeAllRanges();
+        if (event.shiftKey && windowSelection !== null) {
+            windowSelection.removeAllRanges();
 
             const selection = this.props.rows.map(
                 (row, key): GenericRowType => {
