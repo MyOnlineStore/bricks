@@ -76,7 +76,7 @@ jobs:
           at: .
       - run:
           name: Deploying Storybook to GitHub Pages
-          command: yarn deploy-storybook -- --ci
+          command: yarn deploy-storybook --ci --host-token-env-variable=GITHUB_TOKEN
 
   cleanup:
     <<: *defaults
