@@ -14,6 +14,24 @@ jobs:
       - attach_workspace:
           at: .
       - checkout
+      - add_known_hosts:
+          run:
+            name: Add known_hosts
+            command: |
+              set -e
+
+              # Workaround old docker images with incorrect $HOME
+              # check https://github.com/docker/docker/issues/2968 for details
+              if [ "${HOME}" = "/" ]
+              then
+                export HOME=$(getent passwd $(id -un) | cut -d: -f6)
+              fi
+
+              mkdir -p ~/.ssh
+
+              echo '
+              github.com ssh-rsa SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8
+              ' >> ~/.ssh/known_hosts
       - restore_cache:
           keys:
             - dev-dependencies-{{ checksum "package.json" }}
@@ -76,7 +94,7 @@ jobs:
           at: .
       - run:
           name: Deploying Storybook to GitHub Pages
-          command: yarn deploy-storybook --ci --host-token-env-variable=GITHUB_TOKEN
+          command: yarn deploy-storybook --ci
 
   cleanup:
     <<: *defaults
