@@ -55,6 +55,7 @@ storiesOf('Box', module).add('Default', () => {
                 right={text('right', '', 'Child')}
                 bottom={text('bottom', '', 'Child')}
                 left={text('left', '', 'Child')}
+                zIndex={number('z-index', 0, {}, 'Child')}
             >
                 <Item>
                     <Box padding={trbl(48)}>

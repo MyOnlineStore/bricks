@@ -148,4 +148,10 @@ describe('Box', () => {
 
         expect(component.find('[data-testid="box"]').hostNodes()).toHaveLength(1);
     });
+
+    it('should have a z-index', () => {
+        const component = mount(<Box zIndex={10} />);
+
+        expect(component).toHaveStyleRule('z-index', '10');
+    });
 });
