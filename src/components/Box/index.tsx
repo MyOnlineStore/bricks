@@ -35,6 +35,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     right?: string;
     bottom?: string;
     left?: string;
+    zIndex?: number;
 };
 
 const Box: FunctionComponent<PropsType> = (props): JSX.Element => {

@@ -60,6 +60,7 @@ const StyledDiv = styled.div<BoxPropsType>`
     ${({ right }): string => (right !== undefined ? `right: ${right}` : '')};
     ${({ bottom }): string => (bottom !== undefined ? `bottom: ${bottom}` : '')};
     ${({ left }): string => (left !== undefined ? `left: ${left}` : '')};
+    ${({ zIndex }): string => (zIndex ? `z-index: ${zIndex}` : '')}
 `;
 
 const StyledSpan = StyledDiv.withComponent('span');
