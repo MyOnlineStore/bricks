@@ -40,6 +40,7 @@ type RadioButtonThemeType = {
 
 const StyledRadioWrapper = styled.div`
     display: flex;
+    align-items: center;
 `;
 
 const StyledRadioButton = styled.input<RadioButtonPropsType>`
