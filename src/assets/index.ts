@@ -273,6 +273,18 @@ export { default as WizardLargeIcon } from './icons/wizard-large.svg';
 export { default as YoutubeIcon } from './icons/youtube.svg';
 export { default as ZoomInIcon } from './icons/zoom-in.svg';
 export { default as ZoomOutIcon } from './icons/zoom-out.svg';
+export { default as FormatIconsAlignCenter } from './icons/format-icons-align-center.svg';
+export { default as FormatIconsAlignLeft } from './icons/format-icons-align-left.svg';
+export { default as FormatIconsAlignRight } from './icons/format-icons-align-right.svg';
+export { default as FormatIconsBackgroundColor } from './icons/format-icons-background-color.svg';
+export { default as FormatIconsBold } from './icons/format-icons-bold.svg';
+export { default as FormatIconsBullet } from './icons/format-icons-bullet.svg';
+export { default as FormatIconsItalic } from './icons/format-icons-italic.svg';
+export { default as FormatIconsLink } from './icons/format-icons-link.svg';
+export { default as FormatIconsListNumber } from './icons/format-icons-list-number.svg';
+export { default as FormatIconsVerticalCenter } from './icons/format-icons-vertical-center.svg';
+export { default as FormatIconsVerticalDown } from './icons/format-icons-vertical-down.svg';
+export { default as FormatIconsVerticalUp } from './icons/format-icons-vertical-top.svg';
 
 // Illustrations
 export { default as balloonColorIllustration } from './illustrations/balloon.color.svg';
