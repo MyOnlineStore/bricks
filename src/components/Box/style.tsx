@@ -55,12 +55,12 @@ const StyledDiv = styled.div<BoxPropsType>`
     flex-basis: ${({ basis }): string => (basis ? basis : 'auto')};
     order: ${({ flexOrder }): number => (flexOrder ? flexOrder : 0)};
     align-self: ${({ alignSelf }): string => (alignSelf ? alignSelf : '')};
-    ${({ position }): string => (position !== undefined ? `position: ${position}` : '')};
-    ${({ top }): string => (top !== undefined ? `top: ${top}` : '')};
-    ${({ right }): string => (right !== undefined ? `right: ${right}` : '')};
-    ${({ bottom }): string => (bottom !== undefined ? `bottom: ${bottom}` : '')};
-    ${({ left }): string => (left !== undefined ? `left: ${left}` : '')};
-    ${({ zIndex }): string => (zIndex ? `z-index: ${zIndex}` : '')}
+    ${({ position }): string => (position !== undefined ? `position: ${position};` : '')}
+    ${({ top }): string => (top !== undefined ? `top: ${top};` : '')}
+    ${({ right }): string => (right !== undefined ? `right: ${right};` : '')}
+    ${({ bottom }): string => (bottom !== undefined ? `bottom: ${bottom};` : '')}
+    ${({ left }): string => (left !== undefined ? `left: ${left};` : '')}
+    ${({ zIndex }): string => (zIndex ? `z-index: ${zIndex};` : '')}
 `;
 
 const StyledSpan = StyledDiv.withComponent('span');
