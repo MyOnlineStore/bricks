@@ -38,4 +38,20 @@ describe('Link', () => {
 
         expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
     });
+
+    it('should pass the event to the onClick callback', () => {
+        // tslint:disable-next-line:no-any
+        let clickEvent: any = {};
+
+        const clickMock = jest.fn(event => {
+            clickEvent = event;
+        });
+
+        const component = mountWithTheme(<Link title="title" onClick={clickMock} data-testid="foo" />);
+
+        component.find(Link).simulate('click');
+
+        expect(clickMock).toHaveBeenCalled();
+        expect(clickEvent.target).not.toBe(undefined);
+    });
 });

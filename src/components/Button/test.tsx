@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import Button from '.';
 import MosTheme from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
@@ -91,5 +91,25 @@ describe('Button', () => {
         );
 
         expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
+
+    it('should pass the event to the onClick callback', () => {
+        // tslint:disable-next-line:no-any
+        let clickEvent: any = {};
+
+        const clickMock = jest.fn(event => {
+            clickEvent = event;
+        });
+
+        const component = mount(
+            <MosTheme>
+                <Button variant="primary" title="button title" onClick={clickMock} />
+            </MosTheme>,
+        );
+
+        component.find(Button).simulate('click');
+
+        expect(clickMock).toHaveBeenCalled();
+        expect(clickEvent.target).not.toBe(undefined);
     });
 });

@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent } from 'react';
+import React, { Children, FunctionComponent, MouseEvent } from 'react';
 import StyledLink, { StyledButton } from './style';
 
 type PropsType = {
@@ -6,15 +6,15 @@ type PropsType = {
     title: string;
     target?: '_blank' | '_self';
     'data-testid'?: string;
-    onClick?(): void;
+    onClick?(event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>): void;
 };
 
 const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
-    const clickAction = (): void => {
+    const clickAction = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>): void => {
         if (props.onClick !== undefined) {
-            props.onClick();
+            props.onClick(event);
         }
     };
 
