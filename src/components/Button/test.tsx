@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import React, { MouseEvent } from 'react';
+import React from 'react';
 import Button from '.';
 import MosTheme from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
