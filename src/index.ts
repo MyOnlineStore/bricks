@@ -18,6 +18,7 @@ export { default as Illustration } from './components/Illustration';
 export { default as InlineNotification } from './components/InlineNotification';
 export { default as Link } from './components/Link';
 export { default as ExperimentalCustomTheme } from './themes/ExperimentalCustomTheme';
+export { default as generateTheme } from './themes/ExperimentalCustomTheme/genTheme';
 export { default as MessageStream } from './components/MessageStream';
 export { default as Modal } from './components/Modal';
 export { default as MosTheme } from './themes/MosTheme';
