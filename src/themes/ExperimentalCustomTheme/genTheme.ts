@@ -2,7 +2,6 @@ import ThemeType from '../../types/ThemeType';
 import deepmerge from 'deepmerge';
 import * as ThemeTypes from './MerchantThemeTypes';
 import RecursivePartialType from '../../types/RecursivePartialType';
-
 import ThemeTools from './ThemeTools';
 import { composeBadgeTheme } from '../../components/Badge';
 import { composeBreadcrumbsTheme } from '../../components/Breadcrumbs/style';
