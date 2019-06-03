@@ -1,5 +1,6 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { create } from '@storybook/theming';
 import themeDecorator from './decorators/themeDecorator';
 import { green, grey, silver, bodyFont } from '../src/themes/MosTheme/MosTheme.theme';

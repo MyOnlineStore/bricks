@@ -28,10 +28,15 @@ module.exports = ({ config, mode }) => {
     config.module.rules = [
         {
             test: /\.tsx?$/,
-            loader: 'ts-loader',
-            options: {
-                configFile: path.join(__dirname, '/../tsconfig.json'),
-            },
+            use: [
+                {
+                    loader: 'ts-loader',
+                    options: {
+                        configFile: path.join(__dirname, '/../tsconfig.json'),
+                    },
+                },
+                require.resolve('react-docgen-typescript-loader')
+            ]
         },
         {
             test: /\.css$/,

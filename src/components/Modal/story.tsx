@@ -1,4 +1,5 @@
 import { boolean, text, select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Modal from '.';
@@ -56,4 +57,10 @@ storiesOf('Modal', module)
                 <Text>{text('contents', demoContent)}</Text>
             </Modal>
         );
-    });
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Modal show={false} size="medium" title="Props table!" />;
+        }),
+    );
