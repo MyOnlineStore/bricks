@@ -13,4 +13,10 @@ const StyledIllustration = styled.div`
     }
 `;
 
-export { IllustrationThemeType, StyledIllustration };
+const composeIllustrationTheme = (): IllustrationThemeType => {
+    return {
+        size: '186px',
+    };
+};
+
+export { IllustrationThemeType, StyledIllustration, composeIllustrationTheme };

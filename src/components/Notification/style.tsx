@@ -1,5 +1,7 @@
 import SeverityType from '../../types/SeverityType';
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 type VariantStyleType = {
     backgroundColor: string;
@@ -35,5 +37,48 @@ const StyledNotification = styled.div<PropsType>`
     `};
 `;
 
+const composeNotificationTheme = (themeTools: ThemeTools): NotificationThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        common: {
+            fontFamily: text.primaryFont,
+            fontSize: text.fontSize.base,
+        },
+        error: {
+            color: colors.severity.error,
+            backgroundColor: chroma(colors.severity.error)
+                .set('hsl.l', 0.93)
+                .hex(),
+            borderColor: colors.severity.error,
+        },
+        warning: {
+            color: chroma(colors.severity.warning)
+                .set('hsl.l', 0.4)
+                .hex(),
+            backgroundColor: chroma(colors.severity.warning)
+                .set('hsl.l', 0.93)
+                .hex(),
+            borderColor: chroma(colors.severity.warning)
+                .set('hsl.l', 0.4)
+                .hex(),
+        },
+        success: {
+            color: colors.severity.success,
+            backgroundColor: chroma(colors.severity.success)
+                .set('hsl.l', 0.93)
+                .hex(),
+            borderColor: colors.severity.success,
+        },
+        info: {
+            color: colors.severity.info,
+            backgroundColor: chroma(colors.severity.info)
+                .set('hsl.l', 0.93)
+                .hex(),
+            borderColor: colors.severity.info,
+        },
+    };
+};
+
 export default StyledNotification;
-export { NotificationThemeType };
+export { NotificationThemeType, composeNotificationTheme };

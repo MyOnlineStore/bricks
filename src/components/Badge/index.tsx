@@ -1,5 +1,6 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type PropsType = {
     severity?: SeverityType;
@@ -41,5 +42,34 @@ const Badge = styled.div<PropsType>`
     white-space: nowrap;
 `;
 
+const composeBadgeTheme = (themeTools: ThemeTools): BadgeThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        severity: {
+            success: {
+                backgroundColor: colors.severity.success,
+                color: themeTools.calculateContrastTextColor(colors.severity.success),
+                fontFamily: text.primaryFont,
+            },
+            warning: {
+                backgroundColor: colors.severity.warning,
+                color: themeTools.calculateContrastTextColor(colors.severity.warning),
+                fontFamily: text.primaryFont,
+            },
+            error: {
+                backgroundColor: colors.severity.error,
+                color: themeTools.calculateContrastTextColor(colors.severity.error),
+                fontFamily: text.primaryFont,
+            },
+            info: {
+                backgroundColor: colors.severity.info,
+                color: themeTools.calculateContrastTextColor(colors.severity.info),
+                fontFamily: text.primaryFont,
+            },
+        },
+    };
+};
+
 export default Badge;
-export { PropsType, BadgeThemeType };
+export { PropsType, BadgeThemeType, composeBadgeTheme };

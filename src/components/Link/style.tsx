@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type LinkThemeType = {
     default: {
@@ -50,5 +51,20 @@ const StyledButton = styled.button`
     }
 `;
 
+const composeLinkTheme = (themeTools: ThemeTools): LinkThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        default: {
+            color: 'inherit',
+            textDecoration: 'underline',
+            fontSize: text.fontSize.base,
+        },
+        hover: {
+            color: colors.primary.base,
+        },
+    };
+};
+
 export default StyledLink;
-export { LinkThemeType, StyledButton, LinkStyles };
+export { LinkThemeType, StyledButton, LinkStyles, composeLinkTheme };

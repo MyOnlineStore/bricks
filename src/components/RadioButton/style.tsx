@@ -1,4 +1,6 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 type RadioButtonPropsType = {
     checked: boolean;
@@ -97,5 +99,46 @@ const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
             : ''}
 `;
 
+const composeRadioButtonTheme = (themeTools: ThemeTools): RadioButtonThemeType => {
+    const { colors, forms } = themeTools.themeSettings;
+
+    return {
+        idle: {
+            backgroundColor: forms.background,
+            borderColor: forms.borderColor,
+            boxShadow: '0px 0px 0px 5.5px transparent',
+            checkmarkColor: themeTools.calculateContrastColor(
+                colors.primary.base,
+                colors.grey.darker1,
+                colors.silver.lighter1,
+            ),
+        },
+        idleDisabled: {
+            background: `repeating-linear-gradient( -45deg,${colors.silver.darker1},${colors.silver.darker1} 5px,${
+                forms.background
+            } 5px,${colors.silver.base} 10px )`,
+        },
+        focus: {
+            boxShadow: `0 0 0 4px ${chroma(forms.activeBorderColor).alpha(0.4)}`,
+        },
+        active: {
+            boxShadow: `0px 0px 0px 5.5px ${forms.activeColor}`,
+            borderColor: forms.activeBorderColor,
+            background: forms.activeColor,
+        },
+        activeDisabled: {
+            boxShadow: `0px 0px 0px 5.5px ${chroma(forms.activeColor).alpha(0.5)}`,
+            background: `repeating-linear-gradient( -45deg,${chroma(forms.activeColor).alpha(0.6)},${chroma(
+                forms.activeColor,
+            ).alpha(0.6)} 5px,${chroma(forms.activeColor).alpha(0.5)} 5px,${chroma(forms.activeColor).alpha(
+                0.5,
+            )} 10px )`,
+        },
+        error: {
+            borderColor: colors.severity.error,
+        },
+    };
+};
+
 export default StyledRadioButton;
-export { StyledRadioButton, StyledRadioButtonSkin, StyledRadioWrapper, RadioButtonThemeType };
+export { StyledRadioButton, StyledRadioButtonSkin, StyledRadioWrapper, RadioButtonThemeType, composeRadioButtonTheme };

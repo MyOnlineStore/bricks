@@ -1,4 +1,5 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type TileThemeType = {
     borderColor: string;
@@ -11,5 +12,13 @@ const StyledTile = styled.div`
     width: 100%;
 `;
 
+const composeTileTheme = (themeTools: ThemeTools): TileThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        borderColor: colors.silver.darker4,
+    };
+};
+
 export default StyledTile;
-export { TileThemeType };
+export { TileThemeType, composeTileTheme };

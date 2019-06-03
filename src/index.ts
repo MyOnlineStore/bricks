@@ -17,7 +17,7 @@ export { default as IconButton } from './components/IconButton';
 export { default as Illustration } from './components/Illustration';
 export { default as InlineNotification } from './components/InlineNotification';
 export { default as Link } from './components/Link';
-export { default as MerchantTheme } from './themes/MerchantTheme';
+export { default as ExperimentalCustomTheme } from './themes/ExperimentalCustomTheme';
 export { default as MessageStream } from './components/MessageStream';
 export { default as Modal } from './components/Modal';
 export { default as MosTheme } from './themes/MosTheme';

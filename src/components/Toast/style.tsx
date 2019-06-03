@@ -1,6 +1,7 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 import { LinkStyles } from '../Link/style';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type ToastPropsType = {
     severity: SeverityType;
@@ -47,5 +48,20 @@ const StyledToast = styled.div<ToastPropsType>`
     }
 `;
 
+const composeToastTheme = (themeTools: ThemeTools): ToastThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        borderRadius: themeTools.calculateRoundness(20),
+        backgroundColor: colors.silver.lighter1,
+        severity: {
+            error: colors.severity.error,
+            success: colors.severity.success,
+            info: colors.severity.info,
+            warning: colors.severity.warning,
+        },
+    };
+};
+
 export default StyledToast;
-export { ToastPropsType, StyledToastWrapper, ToastThemeType };
+export { ToastPropsType, StyledToastWrapper, ToastThemeType, composeToastTheme };

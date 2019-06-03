@@ -1,5 +1,7 @@
 import styled from '../../utility/styled';
 import Button from '../Button';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 type MultiButtonThemeType = {
     window: {
@@ -105,5 +107,56 @@ const StyledWindow = styled.div<PropsType>`
     z-index: 1000;
 `;
 
+const composeMultiButtonTheme = (themeTools: ThemeTools): MultiButtonThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        window: {
+            backgroundColor: colors.silver.lighter1,
+            secondaryColor: colors.silver.base,
+            borderColor: colors.silver.darker3,
+            borderRadius: themeTools.calculateRoundness(20),
+            boxShadow: '0 2px 6px 0 rgba(0,0,0,0.10)',
+        },
+        button: {
+            common: {
+                active: {
+                    boxShadow: `inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px ${chroma(colors.grey.lighter2).alpha(
+                        0.2,
+                    )}`,
+                },
+                borderRadius: themeTools.calculateRoundness(20),
+            },
+            primary: {
+                dividerColor: colors.primary.darker2,
+            },
+            secondary: {
+                dividerColor: chroma(colors.contrastBackground)
+                    .darken(0.4)
+                    .hex(),
+            },
+            warning: {
+                dividerColor: colors.severity.warning,
+            },
+            destructive: {
+                dividerColor: colors.severity.error,
+            },
+            plain: {
+                dividerColor: colors.silver.darker3,
+            },
+            disabled: {
+                dividerColor: colors.silver.darker3,
+            },
+        },
+    };
+};
+
 export default StyledMultiButton;
-export { StyledMultiButton, StyledWrapper, StyledWindow, StyledChevronButton, MultiButtonThemeType };
+export {
+    StyledMultiButton,
+    StyledWrapper,
+    StyledWindow,
+    StyledChevronButton,
+    MultiButtonThemeType,
+    composeMultiButtonTheme,
+};

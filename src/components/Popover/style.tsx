@@ -1,5 +1,6 @@
 import { PlacementType } from '.';
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type PopoverThemeType = {
     background: string;
@@ -98,4 +99,21 @@ const PopoverArrow = styled.div<PopoverArrowPropsType>`
         `};
 `;
 
-export { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow, PopoverThemeType };
+const composePopoverTheme = (themeTools: ThemeTools): PopoverThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        background: colors.silver.lighter1,
+        borderRadius: themeTools.calculateRoundness(20),
+    };
+};
+
+export {
+    PopoverAnchor,
+    PopoverArrow,
+    PopoverBackground,
+    PopoverContent,
+    PopoverWindow,
+    PopoverThemeType,
+    composePopoverTheme,
+};

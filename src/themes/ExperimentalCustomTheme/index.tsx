@@ -13,11 +13,11 @@ const customTheme = (theme: RecursivePartialType<ThemeType>): ThemeType => {
     return deepmerge(mosTheme, theme) as ThemeType;
 };
 
-const MerchantTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
+const ExperimentalCustomTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
     <ThemeProvider theme={customTheme(props.theme)}>
         <>{props.children}</>
     </ThemeProvider>
 );
 
-export default MerchantTheme;
+export default ExperimentalCustomTheme;
 export { PropsType };

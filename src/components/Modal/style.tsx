@@ -1,4 +1,5 @@
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 enum ModalSizes {
     small = '480px',
@@ -58,5 +59,15 @@ const StyledModal = styled.div<ModalPropsType>`
     }
 `;
 
+const composeModalTheme = (themeTools: ThemeTools): ModalThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        backgroundColor: colors.silver.lighter1,
+        backdropColor: 'rgba(0,0,0,0.3)',
+        borderRadius: themeTools.calculateRoundness(20),
+    };
+};
+
 export default StyledModal;
-export { ModalThemeType, StyledModalWrapper };
+export { ModalThemeType, StyledModalWrapper, composeModalTheme };

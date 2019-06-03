@@ -1,6 +1,7 @@
 import { keyframes } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { css } from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type SkeletonThemeType = {
     common: {
@@ -33,5 +34,19 @@ const getSkeletonStyles = (theme: ThemeType) => css`
     border-radius: ${theme.Skeleton.common.borderRadius};
 `;
 
+const composeSkeletonTheme = (themeTools: ThemeTools): SkeletonThemeType => {
+    const { colors, text } = themeTools.themeSettings;
+
+    return {
+        common: {
+            backgroundColor: colors.contrastBackground,
+            borderRadius: themeTools.calculateRoundness(5),
+        },
+        Text: {
+            fontSize: text.fontSize.base,
+        },
+    };
+};
+
 export default getSkeletonStyles;
-export { SkeletonThemeType };
+export { SkeletonThemeType, composeSkeletonTheme };

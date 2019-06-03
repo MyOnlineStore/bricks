@@ -1,4 +1,6 @@
 import styled, { css } from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import chroma from 'chroma-js';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();
@@ -87,5 +89,37 @@ const StyledWrapper = styled.div`
     }
 `;
 
+const composeRangeTheme = (themeTools: ThemeTools): RangeThemeType => {
+    const { colors, forms } = themeTools.themeSettings;
+
+    return {
+        default: {
+            track: {
+                background: colors.silver.base,
+                border: `solid 1px ${forms.borderColor}`,
+            },
+            active: {
+                background: colors.primary.base,
+                border: `solid 1px ${forms.borderColor}`,
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
+            },
+            slider: {
+                background: colors.silver.lighter1,
+                border: `solid 1px ${forms.borderColor}`,
+            },
+        },
+        disabled: {
+            track: {
+                background: colors.silver.base,
+                border: `solid 1px ${forms.borderColor}`,
+            },
+            slider: {
+                background: colors.silver.lighter1,
+                border: `solid 1px ${forms.borderColor}`,
+            },
+        },
+    };
+};
+
 export default StyledWrapper;
-export { RangeThemeType };
+export { RangeThemeType, composeRangeTheme };

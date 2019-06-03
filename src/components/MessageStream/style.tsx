@@ -1,5 +1,6 @@
 import SeverityType from '../../types/SeverityType';
 import styled from '../../utility/styled';
+import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type VariantStyleType = {
     borderColor: string;
@@ -48,5 +49,31 @@ const StyledMessage = styled.div<PropsType>`
     `};
 `;
 
+const composeMessageStreamTheme = (themeTools: ThemeTools): MessageStreamThemeType => {
+    const { colors } = themeTools.themeSettings;
+
+    return {
+        common: {
+            backgroundColor: colors.silver.lighter1,
+            borderColor: colors.silver.darker3,
+        },
+        read: {
+            backgroundColor: colors.silver.base,
+        },
+        success: {
+            borderColor: colors.primary.darker1,
+        },
+        info: {
+            borderColor: colors.silver.darker3,
+        },
+        warning: {
+            borderColor: colors.tertiary.darker1,
+        },
+        error: {
+            borderColor: colors.secondary.base,
+        },
+    };
+};
+
 export default StyledMessageStream;
-export { StyledMessage, MessageSeparator, MessageStreamThemeType, VariantStyleType };
+export { StyledMessage, MessageSeparator, MessageStreamThemeType, VariantStyleType, composeMessageStreamTheme };
