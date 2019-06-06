@@ -1,5 +1,6 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
+import React, { FC } from 'react';
 
 type PropsType = {
     severity?: SeverityType;
@@ -20,7 +21,7 @@ type VariantStyleType = {
     fontFamily: string;
 };
 
-const Badge = styled.div<PropsType>`
+const StyledBadge = styled.div<PropsType>`
     display: inline-block;
     box-sizing: border-box;
     min-width: 18px;
@@ -40,6 +41,10 @@ const Badge = styled.div<PropsType>`
     color: ${({ theme }): string => theme.Badge.severity.error.color};
     white-space: nowrap;
 `;
+
+const Badge: FC<PropsType> = (props): JSX.Element => {
+    return <StyledBadge {...props} />;
+};
 
 export default Badge;
 export { PropsType, BadgeThemeType };
