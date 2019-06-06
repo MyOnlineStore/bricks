@@ -11,13 +11,8 @@ import close from '../../assets/icons/close.svg';
 import Measure from 'react-measure';
 
 type PropsType = {
-    /** Determines whether the modal is visible or not */
     show: boolean;
-
-    /** Title displayed at the top of the modal */
     title: string;
-
-    /** Size of the modal */
     size?: 'small' | 'medium' | 'large';
 
     /** An array of two buttons, usually some form of agree and cancel */

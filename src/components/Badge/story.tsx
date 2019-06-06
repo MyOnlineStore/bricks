@@ -4,8 +4,9 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Badge, { PropsType } from '.';
 
-storiesOf('Badge', module)
-    .add('Default', () => {
+storiesOf('Badge', module).add(
+    'Default & Props',
+    withInfo({ inline: true })(() => {
         return (
             <Badge
                 severity={
@@ -15,10 +16,5 @@ storiesOf('Badge', module)
                 {text('text', '1')}
             </Badge>
         );
-    })
-    .add(
-        'Props table',
-        withInfo({ inline: true })(() => {
-            return <Badge severity="success" />;
-        }),
-    );
+    }),
+);

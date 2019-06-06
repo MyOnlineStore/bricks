@@ -48,7 +48,7 @@ storiesOf('TextArea', module)
     .add('Default', () => <Demo withFeedback={false} />)
     .add('With Feedback', () => <Demo withFeedback />)
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return (
                 <TextArea

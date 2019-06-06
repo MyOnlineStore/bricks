@@ -4,6 +4,7 @@ import React from 'react';
 import Illustration from '.';
 import Box from '../Box';
 import Text from '../Text';
+import balloon from '../../assets/illustrations/balloon.color.svg';
 
 const convertToExportName = (filename: string): string => {
     const stripped = filename.replace('.svg', '');
@@ -29,8 +30,8 @@ storiesOf('Illustration', module)
         </Box>
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
-            return <Illustration illustration={'illustration'} />;
+            return <Illustration illustration={balloon} />;
         }),
     );

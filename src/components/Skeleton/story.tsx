@@ -35,7 +35,7 @@ const Demo: FunctionComponent<DemoPropsType> = ({ element, loading }): JSX.Eleme
 storiesOf('Skeleton', module)
     .add('Text', () => <Demo element="Text" loading={boolean('loading', true)} />)
     .add(
-        'Text Props table',
+        'Text Props',
         withInfo({ inline: true })(() => {
             return <Skeleton.Text lines={1} />;
         }),
@@ -43,7 +43,7 @@ storiesOf('Skeleton', module)
 storiesOf('Skeleton', module)
     .add('Rect', () => <Demo element="Rect" loading={boolean('loading', true)} />)
     .add(
-        'Rect Props table',
+        'Rect Props',
         withInfo({ inline: true })(() => {
             return <Skeleton.Rect width="100px" height="100px" />;
         }),

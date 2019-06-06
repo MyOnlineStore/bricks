@@ -13,6 +13,8 @@ type StateType = {
 type PropsType = {
     checked: boolean;
     disabled?: boolean;
+
+    /** Used to grey out the label when the functionality is unavailable. It is left to the developer to implement onChange as desired in this scenario */
     unavailable?: boolean;
     error?: boolean;
     value: string;

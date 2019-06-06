@@ -2,7 +2,9 @@ import React, { Children, FunctionComponent } from 'react';
 import Box from '../Box';
 
 type PropsType = {
+    /** Forces buttons in group to be displayed in a column */
     stacked?: boolean;
+
     'data-testid'?: string;
 };
 

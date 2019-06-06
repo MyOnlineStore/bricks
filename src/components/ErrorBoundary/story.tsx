@@ -6,7 +6,7 @@ import ErrorBoundary from '.';
 import Text from '../Text';
 
 storiesOf('ErrorBoundary', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => {
         const hasError = select('hasError', ['true', 'false'], 'false');
 

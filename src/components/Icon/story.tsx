@@ -6,6 +6,7 @@ import Icon from '.';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
+import checkmarkIcon from '../../assets/icons/checkmark.svg';
 
 const convertToExportName = (filename: string): string => {
     const stripped = filename.replace('.svg', '');
@@ -71,6 +72,6 @@ storiesOf('Icon', module)
     .add(
         'Props table',
         withInfo({ inline: true })(() => {
-            return <Icon color="#fff" icon="icon" size="small" />;
+            return <Icon color="#fff" icon={checkmarkIcon} size="small" />;
         }),
     );

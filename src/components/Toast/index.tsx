@@ -19,6 +19,8 @@ type PropsType = {
     buttonTitle?: string;
     buttonSeverity?: ButtonVariant;
     severity: SeverityType;
+
+    /** This determines if the toast disappears automatically */
     autoDismiss?: boolean;
     onExited?(): void;
     onClose?(): void;

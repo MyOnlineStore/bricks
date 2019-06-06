@@ -5,7 +5,7 @@ import { object } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Breadcrumbs', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => {
         const crumbs = [
             { url: '#', name: 'dashboard' },

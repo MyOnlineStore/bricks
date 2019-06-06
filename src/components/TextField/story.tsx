@@ -97,7 +97,7 @@ storiesOf('TextField', module)
         />
     ))
     .add(
-        'Default props table',
+        'Default props',
         withInfo({ inline: true })(() => {
             return (
                 <TextField
@@ -111,7 +111,7 @@ storiesOf('TextField', module)
         }),
     )
     .add(
-        'Number Props table',
+        'Number Props',
         withInfo({ inline: true })(() => {
             return (
                 <TextField.Number
@@ -125,7 +125,7 @@ storiesOf('TextField', module)
         }),
     )
     .add(
-        'Currency Props table',
+        'Currency Props',
         withInfo({ inline: true })(() => {
             return (
                 <TextField.Currency

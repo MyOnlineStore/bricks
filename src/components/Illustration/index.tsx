@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { StyledIllustration } from './style';
 
 type PropsType = {
+    /** Should be imported from /src/assets/illustrations/* */
     illustration: string;
 };
 

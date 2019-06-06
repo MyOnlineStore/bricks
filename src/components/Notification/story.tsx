@@ -13,7 +13,7 @@ storiesOf('Notification', module)
         <Notification severity="warning" message="Meh, I am not impressed." icon={mehIcon} />
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Notification severity="success" message="Overview of props" />;
         }),

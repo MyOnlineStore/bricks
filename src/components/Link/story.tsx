@@ -30,7 +30,7 @@ storiesOf('Link', module)
         </Text>
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return (
                 <Link

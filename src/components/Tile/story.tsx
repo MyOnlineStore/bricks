@@ -19,7 +19,7 @@ storiesOf('Tile', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Tile />;
         }),

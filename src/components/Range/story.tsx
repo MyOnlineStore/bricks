@@ -29,7 +29,7 @@ class Demo extends Component<{}, { value: RangeType }> {
 storiesOf('Range', module)
     .add('Default', () => <Demo />)
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Range value={{ min: 0, max: 100 }} label="range" minLimit={0} maxLimit={100} />;
         }),

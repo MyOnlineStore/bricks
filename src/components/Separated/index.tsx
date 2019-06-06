@@ -4,7 +4,11 @@ import trbl, { TrblType } from '../../utility/trbl';
 
 type PropsType = {
     by?: 'margin';
+
+    /** Determines if the margin is used before the first child  */
     before?: boolean;
+
+    /** Determines if the margin is used after the last child */
     after?: boolean;
 };
 

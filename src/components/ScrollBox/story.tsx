@@ -112,7 +112,7 @@ storiesOf('ScrollBox', module)
         return <Demo />;
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <ScrollBox />;
         }),

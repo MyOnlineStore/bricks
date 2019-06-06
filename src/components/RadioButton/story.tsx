@@ -5,7 +5,7 @@ import React from 'react';
 import RadioButton from '../RadioButton';
 
 storiesOf('RadioButton', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => {
         return (
             <RadioButton

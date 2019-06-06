@@ -6,7 +6,7 @@ import React from 'react';
 import Text from '../Text';
 
 storiesOf('Branch', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => {
         return (
             <Branch

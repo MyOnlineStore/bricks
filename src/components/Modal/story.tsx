@@ -59,7 +59,7 @@ storiesOf('Modal', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Modal show={false} size="medium" title="Props table!" />;
         }),

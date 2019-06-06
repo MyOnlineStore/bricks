@@ -22,7 +22,7 @@ storiesOf('Spinner', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Spinner color="#5bd16a" />;
         }),

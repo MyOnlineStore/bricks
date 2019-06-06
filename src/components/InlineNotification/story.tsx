@@ -10,7 +10,7 @@ import infoCircle from '../../assets/icons/info-circle.svg';
 
 storiesOf('InlineNotification', module)
     .add(
-        'Default',
+        'Default & Props',
         withInfo({ inline: true })(() => (
             <InlineNotification
                 message="Something is wrong!"

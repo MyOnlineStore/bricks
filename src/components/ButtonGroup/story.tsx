@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import React from 'react';
 import styled from 'styled-components';
@@ -14,7 +15,7 @@ storiesOf('ButtonGroup', module)
     .add('Default', () => {
         return (
             <Wrap>
-                <ButtonGroup>
+                <ButtonGroup stacked={boolean('Stacked', false)}>
                     <Button variant="primary" title="Primary button">
                         Primary button
                     </Button>
@@ -26,7 +27,7 @@ storiesOf('ButtonGroup', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <ButtonGroup />;
         }),

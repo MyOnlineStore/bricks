@@ -23,7 +23,7 @@ storiesOf('Separated', module)
         </Wrap>
     ))
     .add(
-        'Props Table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Separated before after />;
         }),

@@ -6,7 +6,7 @@ import IconButton, { PropsType } from '../IconButton';
 import bell from '../../assets/icons/bell.svg';
 
 storiesOf('IconButton', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => {
         return (
             <IconButton

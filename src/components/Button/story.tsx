@@ -12,7 +12,7 @@ import cart from '../../assets/icons/cart.svg';
 
 storiesOf('Button', module)
     .add(
-        'Default',
+        'Default & Props',
         withInfo({ inline: true })(() => {
             return (
                 <Button

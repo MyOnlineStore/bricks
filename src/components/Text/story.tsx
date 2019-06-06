@@ -31,7 +31,7 @@ const demoContent = `
 `;
 
 storiesOf('Text', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => (
         <Text
             variant={

@@ -38,7 +38,7 @@ storiesOf('TransitionAnimation', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <TransitionAnimation show={false} animation="zoom" />;
         }),

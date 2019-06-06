@@ -7,13 +7,21 @@ type PlacementType = PopperChildrenProps['placement'];
 
 type PropsType = {
     placement?: PlacementType;
+
+    /** When this is set, the popover is controlled externally (overrules triggerOn) so you are responsible for opening and closing yourself */
     show?: boolean;
     fixed?: boolean;
     offset?: number;
     distance?: number;
     stretch?: boolean;
+
+    /** When this is set, the popover is controlled internally. This prop sets the trigger for it to open/close */
     triggerOn?: 'click' | 'hover';
+
+    /** Define what happens when clicking outside the Popover, for example close the popover when controlling it externally */
     onClickOutside?(): void;
+
+    /** Define what should be rendered inside the Popover */
     renderContent(): JSX.Element | string;
 };
 

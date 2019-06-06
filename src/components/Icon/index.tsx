@@ -4,6 +4,8 @@ import StyledIcon from './style';
 type PropsType = {
     color?: string;
     size: 'small' | 'medium' | 'large';
+
+    /** Needs to be imported from src/assets/icons/* */
     icon: string;
     title?: string;
 };

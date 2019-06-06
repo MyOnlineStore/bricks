@@ -172,7 +172,7 @@ storiesOf('Select', module)
         return <CustomRenderDemo />;
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return (
                 <Select

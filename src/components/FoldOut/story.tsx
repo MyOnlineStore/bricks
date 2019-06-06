@@ -73,7 +73,7 @@ class DemoComponent extends Component<{}, StateType> {
 storiesOf('FoldOut', module)
     .add('With a toggle', () => <DemoComponent />)
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <FoldOut open={false} />;
         }),

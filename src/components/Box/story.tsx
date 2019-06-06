@@ -110,7 +110,7 @@ storiesOf('Box', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Box />;
         }),

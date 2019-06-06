@@ -21,7 +21,7 @@ storiesOf('PriceTag', module)
         </Text>
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <PriceTag value={1.0} locale="nl-NL" currency="EUR" />;
         }),

@@ -216,7 +216,7 @@ storiesOf('Table', module)
         </Measure>
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return (
                 <Table<SmallRowType>

@@ -37,7 +37,7 @@ storiesOf('EmptyState', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <EmptyState title="Emptystate" message="Message" />;
         }),

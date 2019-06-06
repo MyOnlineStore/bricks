@@ -5,7 +5,7 @@ import React from 'react';
 import Heading, { PropsType } from '.';
 
 storiesOf('Heading', module).add(
-    'Default',
+    'Default & Props',
     withInfo({ inline: true })(() => {
         const hierarchy = select('Hierarchy', [1, 2, 3, 4, 5, 6], 1) as PropsType['hierarchy'];
         const as = select('As', ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'], 'h1') as PropsType['as'];

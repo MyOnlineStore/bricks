@@ -19,7 +19,7 @@ storiesOf('Raised', module)
         );
     })
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Raised level={0} />;
         }),

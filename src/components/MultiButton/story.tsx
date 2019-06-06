@@ -79,7 +79,7 @@ const Demo: FunctionComponent = (): JSX.Element => {
 storiesOf('MultiButton', module)
     .add('Default', () => <Demo />)
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return (
                 <MultiButton

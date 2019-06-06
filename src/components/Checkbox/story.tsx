@@ -34,7 +34,7 @@ class Demo extends Component<PropsType, StateType> {
 storiesOf('Checkbox', module)
     .add('Default', () => <Demo />)
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Checkbox checked={true} value="foo" name="bar" onChange={() => 'foobar'} />;
         }),

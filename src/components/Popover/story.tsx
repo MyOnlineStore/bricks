@@ -172,7 +172,7 @@ storiesOf('Popover', module)
         </Box>
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Popover renderContent={() => 'Popover content'} />;
         }),

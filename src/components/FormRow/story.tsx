@@ -350,8 +350,22 @@ storiesOf('FormRow', module)
         />
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
-            return <FormRow label={'Label'} badge={'Badge'} field={'Field'} />;
+            return (
+                <FormRow
+                    label={<Text>{text('label', 'Label text')}</Text>}
+                    badge={
+                        <Text variant="small" severity="success">
+                            {text('badge', 'badge')}
+                        </Text>
+                    }
+                    field={
+                        <Box direction="row" alignItems="center">
+                            <Toggle checked={true} name="storyToggle" value={'true'} onChange={(): string => 'void'} />
+                        </Box>
+                    }
+                />
+            );
         }),
     );

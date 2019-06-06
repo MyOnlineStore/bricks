@@ -20,7 +20,7 @@ storiesOf('Contrast', module)
         </>
     ))
     .add(
-        'Props table',
+        'Props',
         withInfo({ inline: true })(() => {
             return <Contrast />;
         }),

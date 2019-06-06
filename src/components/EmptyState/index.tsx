@@ -6,6 +6,7 @@ import cactus from '../../assets/illustrations/cactus.color.svg';
 import Text from '../Text';
 
 type PropsType = {
+    /** Has to be imported from /src/assets/illustrations/* */
     illustration?: string;
     title: string | ReactNode;
     message: string | ReactNode;
