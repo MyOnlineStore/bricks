@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import React from 'react';
 import MessageStream, { MessagePropsType } from '.';
 
@@ -65,4 +66,7 @@ const messagesMock: Array<MessagePropsType> = [
     },
 ];
 
-storiesOf('MessageStream', module).add('Default', () => <MessageStream messages={messagesMock} />);
+storiesOf('MessageStream', module).add(
+    'Default',
+    withInfo({ inline: true })(() => <MessageStream messages={messagesMock} />),
+);

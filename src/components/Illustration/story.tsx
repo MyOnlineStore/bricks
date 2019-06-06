@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import React from 'react';
 import Illustration from '.';
 import Box from '../Box';
@@ -16,13 +17,20 @@ const convertToExportName = (filename: string): string => {
     return `${camelCased}Illustration`;
 };
 
-storiesOf('Illustration', module).add('default', () => (
-    <Box wrap margin={[12]}>
-        {ILLUSTRATION_FILES.map(illustration => (
-            <Box basis="33.33%" justifyContent="space-around" direction="column" alignItems="center">
-                <Illustration illustration={require(`../../assets/illustrations/${illustration}`)} />
-                <Text>{convertToExportName(illustration)}</Text>
-            </Box>
-        ))}
-    </Box>
-));
+storiesOf('Illustration', module)
+    .add('default', () => (
+        <Box wrap margin={[12]}>
+            {ILLUSTRATION_FILES.map(illustration => (
+                <Box basis="33.33%" justifyContent="space-around" direction="column" alignItems="center">
+                    <Illustration illustration={require(`../../assets/illustrations/${illustration}`)} />
+                    <Text>{convertToExportName(illustration)}</Text>
+                </Box>
+            ))}
+        </Box>
+    ))
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Illustration illustration={'illustration'} />;
+        }),
+    );

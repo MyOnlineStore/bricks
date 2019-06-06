@@ -1,19 +1,27 @@
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import React from 'react';
 import Contrast from '.';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import Box from '../Box';
 
-storiesOf('Contrast', module).add('Default', () => (
-    <>
-        <Contrast>
+storiesOf('Contrast', module)
+    .add('Default', () => (
+        <>
+            <Contrast>
+                <Box padding={trbl(12)}>
+                    <Button variant="secondary" title="Inside Contrast" />
+                </Box>
+            </Contrast>
             <Box padding={trbl(12)}>
-                <Button variant="secondary" title="Inside Contrast" />
+                <Button variant="secondary" title="Outside of Contrast" />
             </Box>
-        </Contrast>
-        <Box padding={trbl(12)}>
-            <Button variant="secondary" title="Outside of Contrast" />
-        </Box>
-    </>
-));
+        </>
+    ))
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Contrast />;
+        }),
+    );

@@ -1,3 +1,5 @@
+// tslint:disable:max-file-line-count
+
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Checkbox from '../Checkbox';
@@ -10,6 +12,7 @@ import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
 import Separated from '../Separated';
 import { text } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 
 type PropsType = {
     descriptions: boolean;
@@ -345,4 +348,10 @@ storiesOf('FormRow', module)
                 </Box>
             }
         />
-    ));
+    ))
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <FormRow label={'Label'} badge={'Badge'} field={'Field'} />;
+        }),
+    );

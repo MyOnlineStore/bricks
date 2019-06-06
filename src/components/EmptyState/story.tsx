@@ -1,4 +1,5 @@
 import { text, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import EmptyState, { PropsType } from '.';
@@ -34,4 +35,10 @@ storiesOf('EmptyState', module)
                 </EmptyState>
             </Box>
         );
-    });
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <EmptyState title="Emptystate" message="Message" />;
+        }),
+    );

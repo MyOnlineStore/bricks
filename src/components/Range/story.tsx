@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { boolean, number } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import Range from '.';
 import { Range as RangeType } from 'react-input-range';
@@ -25,4 +26,11 @@ class Demo extends Component<{}, { value: RangeType }> {
     }
 }
 
-storiesOf('Range', module).add('Default', () => <Demo />);
+storiesOf('Range', module)
+    .add('Default', () => <Demo />)
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Range value={{ min: 0, max: 100 }} label="range" minLimit={0} maxLimit={100} />;
+        }),
+    );

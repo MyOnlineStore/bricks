@@ -1,4 +1,5 @@
 import { color } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Icon from '.';
@@ -66,4 +67,10 @@ storiesOf('Icon', module)
                 ))}
             </Box>
         );
-    });
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Icon color="#fff" icon="icon" size="small" />;
+        }),
+    );

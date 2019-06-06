@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import { object, select, number } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import React, { FunctionComponent } from 'react';
 import MultiButton, { PlacementType } from '.';
 import Box from '../Box';
@@ -75,4 +76,25 @@ const Demo: FunctionComponent = (): JSX.Element => {
     /* tslint:enable */
 };
 
-storiesOf('MultiButton', module).add('Default', () => <Demo />);
+storiesOf('MultiButton', module)
+    .add('Default', () => <Demo />)
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <MultiButton
+                    placement="auto"
+                    variant="primary"
+                    options={[
+                        {
+                            label: 'label',
+                            description: 'description',
+                            onClick: () => {
+                                /** noop */
+                            },
+                        },
+                    ]}
+                />
+            );
+        }),
+    );

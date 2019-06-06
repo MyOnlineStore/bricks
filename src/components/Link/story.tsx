@@ -1,4 +1,5 @@
 import { select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Link, { PropsType } from '.';
@@ -27,4 +28,17 @@ storiesOf('Link', module)
                 <span>Click me!</span>
             </Link>
         </Text>
-    ));
+    ))
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <Link
+                    title="title"
+                    onClick={(): void => {
+                        /* */
+                    }}
+                />
+            );
+        }),
+    );

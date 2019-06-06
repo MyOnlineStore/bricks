@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SeverityType from '../../types/SeverityType';
 import { select, text, boolean, number } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import TextArea from '.';
 
@@ -43,5 +44,21 @@ class Demo extends Component<DemoPropsType, { value: string }> {
     }
 }
 
-storiesOf('TextArea', module).add('Default', () => <Demo withFeedback={false} />);
-storiesOf('TextArea', module).add('With Feedback', () => <Demo withFeedback />);
+storiesOf('TextArea', module)
+    .add('Default', () => <Demo withFeedback={false} />)
+    .add('With Feedback', () => <Demo withFeedback />)
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <TextArea
+                    name="textarea"
+                    rows={3}
+                    value={''}
+                    onChange={() => {
+                        /* noop */
+                    }}
+                />
+            );
+        }),
+    );

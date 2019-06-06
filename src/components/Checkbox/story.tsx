@@ -1,4 +1,5 @@
 import { boolean, text } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Checkbox from '.';
@@ -30,4 +31,11 @@ class Demo extends Component<PropsType, StateType> {
     }
 }
 
-storiesOf('Checkbox', module).add('Default', () => <Demo />);
+storiesOf('Checkbox', module)
+    .add('Default', () => <Demo />)
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Checkbox checked={true} value="foo" name="bar" onChange={() => 'foobar'} />;
+        }),
+    );

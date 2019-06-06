@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import React from 'react';
 import styled from 'styled-components';
 import ButtonGroup from '.';
@@ -9,17 +10,24 @@ const Wrap = styled.div`
     border: solid 3px rgba(255, 36, 94, 0.3);
 `;
 
-storiesOf('ButtonGroup', module).add('Default', () => {
-    return (
-        <Wrap>
-            <ButtonGroup>
-                <Button variant="primary" title="Primary button">
-                    Primary button
-                </Button>
-                <Button variant="secondary" title="Secondary button">
-                    Secondary button
-                </Button>
-            </ButtonGroup>
-        </Wrap>
+storiesOf('ButtonGroup', module)
+    .add('Default', () => {
+        return (
+            <Wrap>
+                <ButtonGroup>
+                    <Button variant="primary" title="Primary button">
+                        Primary button
+                    </Button>
+                    <Button variant="secondary" title="Secondary button">
+                        Secondary button
+                    </Button>
+                </ButtonGroup>
+            </Wrap>
+        );
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <ButtonGroup />;
+        }),
     );
-});

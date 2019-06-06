@@ -4,6 +4,7 @@ import Table from '.';
 import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import StyledBadge from '../Badge';
 import trash from '../../assets/icons/trash.svg';
 import gear from '../../assets/icons/gear.svg';
@@ -17,6 +18,12 @@ type RowType = {
     image: string;
     badge?: string;
     buttons?: string;
+};
+
+type SmallRowType = {
+    id: string;
+    column1: string;
+    column2: string;
 };
 
 type StateType = {
@@ -207,4 +214,28 @@ storiesOf('Table', module)
                 );
             }}
         </Measure>
-    ));
+    ))
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <Table<SmallRowType>
+                    columns={{
+                        column1: {
+                            header: 'Column 1',
+                        },
+                        column2: {
+                            header: 'Column 2',
+                        },
+                    }}
+                    rows={[{ id: 'row1', column1: 'row1', column2: 'row1' }]}
+                    onDragEnd={() => {
+                        /* noop */
+                    }}
+                    onSelection={() => {
+                        /* noop */
+                    }}
+                />
+            );
+        }),
+    );

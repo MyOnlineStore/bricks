@@ -1,4 +1,5 @@
 import { select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import InlineNotification from '.';
@@ -8,12 +9,15 @@ import bell from '../../assets/icons/bell.svg';
 import infoCircle from '../../assets/icons/info-circle.svg';
 
 storiesOf('InlineNotification', module)
-    .add('Default', () => (
-        <InlineNotification
-            message="Something is wrong!"
-            severity={select('severity', ['error', 'warning', 'success', 'info'], 'error') as SeverityType}
-        />
-    ))
+    .add(
+        'Default',
+        withInfo({ inline: true })(() => (
+            <InlineNotification
+                message="Something is wrong!"
+                severity={select('severity', ['error', 'warning', 'success', 'info'], 'error') as SeverityType}
+            />
+        )),
+    )
     .add('With overwritten Icon', () => (
         <InlineNotification
             icon={bell}

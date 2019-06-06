@@ -1,4 +1,5 @@
 import { boolean, select, text, button } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Toast, { PropsType } from '.';
@@ -29,18 +30,21 @@ class Demo extends Component<{}, { isOpen: boolean }> {
 }
 
 storiesOf('Toast', module)
-    .add('Default', () => (
-        <Toast
-            show={boolean('show', true)}
-            severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}
-            onClose={(): boolean => confirm('Do you want to close the Toast? \nYou must choose, but choose wisely')}
-            title={text('title', 'Thought provoking we must stand.')}
-            message={text(
-                'description',
-                'Game-changer problem-solvers; state of play invest, synergy uplift we must stand up ideate social intrapreneurship.',
-            )}
-        />
-    ))
+    .add(
+        'Default',
+        withInfo({ inline: true })(() => (
+            <Toast
+                show={boolean('show', true)}
+                severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}
+                onClose={(): boolean => confirm('Do you want to close the Toast? \nYou must choose, but choose wisely')}
+                title={text('title', 'Thought provoking we must stand.')}
+                message={text(
+                    'description',
+                    'Game-changer problem-solvers; state of play invest, synergy uplift we must stand up ideate social intrapreneurship.',
+                )}
+            />
+        )),
+    )
     .add('With action button', () => (
         <Toast
             icon={cash}

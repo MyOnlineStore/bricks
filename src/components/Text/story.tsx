@@ -1,4 +1,5 @@
 import { boolean, select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Text, { PropsType } from '.';
@@ -29,18 +30,29 @@ const demoContent = `
     To sit on my throne as the prince of Bel-air
 `;
 
-storiesOf('Text', module).add('Default', () => (
-    <Text
-        variant={
-            select('variant', ['small', 'regular', 'large', 'extraLarge', 'display'], 'regular') as PropsType['variant']
-        }
-        severity={
-            select('severity', [undefined, 'error', 'success', 'info', 'warning'], undefined) as PropsType['severity']
-        }
-        textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign']}
-        compact={boolean('compact', false)}
-        strong={boolean('strong', false)}
-    >
-        {demoContent}
-    </Text>
-));
+storiesOf('Text', module).add(
+    'Default',
+    withInfo({ inline: true })(() => (
+        <Text
+            variant={
+                select(
+                    'variant',
+                    ['small', 'regular', 'large', 'extraLarge', 'display'],
+                    'regular',
+                ) as PropsType['variant']
+            }
+            severity={
+                select(
+                    'severity',
+                    [undefined, 'error', 'success', 'info', 'warning'],
+                    undefined,
+                ) as PropsType['severity']
+            }
+            textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign']}
+            compact={boolean('compact', false)}
+            strong={boolean('strong', false)}
+        >
+            {demoContent}
+        </Text>
+    )),
+);

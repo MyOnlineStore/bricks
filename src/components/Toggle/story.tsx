@@ -1,4 +1,5 @@
 import { boolean, text } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Toggle from '.';
@@ -35,4 +36,20 @@ class Demo extends Component<{}, StateType> {
     }
 }
 
-storiesOf('Toggle', module).add('Default', () => <Demo />);
+storiesOf('Toggle', module)
+    .add('Default', () => <Demo />)
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <Toggle
+                    checked
+                    value=""
+                    name="Toggle"
+                    onChange={() => {
+                        /* noop */
+                    }}
+                />
+            );
+        }),
+    );

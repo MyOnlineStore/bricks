@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
@@ -169,4 +170,18 @@ storiesOf('Select', module)
     })
     .add('Custom rendering', () => {
         return <CustomRenderDemo />;
-    });
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <Select
+                    placeholder="Placeholder"
+                    value=""
+                    emptyText="EmptyText"
+                    onChange={() => ''}
+                    options={[{ value: '', label: 'Option 1' }]}
+                />
+            );
+        }),
+    );

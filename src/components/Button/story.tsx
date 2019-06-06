@@ -1,4 +1,5 @@
 import { boolean, select, text } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { PropsType } from '.';
@@ -10,23 +11,26 @@ import Box from '../Box';
 import cart from '../../assets/icons/cart.svg';
 
 storiesOf('Button', module)
-    .add('Default', () => {
-        return (
-            <Button
-                variant={
-                    select(
-                        'variant',
-                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
-                        'primary',
-                    ) as PropsType['variant']
-                }
-                loading={boolean('loading', false)}
-                title={text('title', 'Click me')}
-                disabled={boolean('disabled', false)}
-                compact={boolean('compact', false)}
-            />
-        );
-    })
+    .add(
+        'Default',
+        withInfo({ inline: true })(() => {
+            return (
+                <Button
+                    variant={
+                        select(
+                            'variant',
+                            ['primary', 'secondary', 'warning', 'destructive', 'plain'],
+                            'primary',
+                        ) as PropsType['variant']
+                    }
+                    loading={boolean('loading', false)}
+                    title={text('title', 'Click me')}
+                    disabled={boolean('disabled', false)}
+                    compact={boolean('compact', false)}
+                />
+            );
+        }),
+    )
     .add('With an icon', () => {
         return (
             <Button

@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import React, { Component } from 'react';
 import FoldOut from '.';
 import trbl from '../../utility/trbl';
@@ -69,4 +70,11 @@ class DemoComponent extends Component<{}, StateType> {
     }
 }
 
-storiesOf('FoldOut', module).add('With a toggle', () => <DemoComponent />);
+storiesOf('FoldOut', module)
+    .add('With a toggle', () => <DemoComponent />)
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <FoldOut open={false} />;
+        }),
+    );

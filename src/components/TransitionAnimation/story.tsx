@@ -1,4 +1,5 @@
 import { boolean, select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import TransitionAnimation, { PropsType } from '.';
@@ -13,25 +14,32 @@ const StyledDiv = styled.div`
     text-align: center;
 `;
 
-storiesOf('TransitionAnimation', module).add('Default', () => {
-    const show = boolean('show', true);
+storiesOf('TransitionAnimation', module)
+    .add('Default', () => {
+        const show = boolean('show', true);
 
-    return (
-        <Box direction="column">
-            <TransitionAnimation
-                show={show}
-                animation={
-                    select(
-                        'animation',
-                        ['zoom', 'fade', 'slideDown', 'slideUp', 'slideLeft', 'slideRight'],
-                        'zoom',
-                    ) as PropsType['animation']
-                }
-            >
-                <StyledDiv>
-                    <Heading>Lorem ipsum</Heading>
-                </StyledDiv>
-            </TransitionAnimation>
-        </Box>
+        return (
+            <Box direction="column">
+                <TransitionAnimation
+                    show={show}
+                    animation={
+                        select(
+                            'animation',
+                            ['zoom', 'fade', 'slideDown', 'slideUp', 'slideLeft', 'slideRight'],
+                            'zoom',
+                        ) as PropsType['animation']
+                    }
+                >
+                    <StyledDiv>
+                        <Heading>Lorem ipsum</Heading>
+                    </StyledDiv>
+                </TransitionAnimation>
+            </Box>
+        );
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <TransitionAnimation show={false} animation="zoom" />;
+        }),
     );
-});

@@ -1,4 +1,5 @@
 import { boolean, number } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import ScrollBox from '.';
@@ -106,6 +107,13 @@ class Demo extends Component<{}, DemoStateType> {
     }
 }
 
-storiesOf('ScrollBox', module).add('Default', () => {
-    return <Demo />;
-});
+storiesOf('ScrollBox', module)
+    .add('Default', () => {
+        return <Demo />;
+    })
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <ScrollBox />;
+        }),
+    );

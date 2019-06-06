@@ -1,4 +1,5 @@
 import { boolean, number, select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React, { Component, FunctionComponent } from 'react';
 import Popover, { PlacementType } from '.';
@@ -169,4 +170,10 @@ storiesOf('Popover', module)
                 </Popover>
             </Box>
         </Box>
-    ));
+    ))
+    .add(
+        'Props table',
+        withInfo({ inline: true })(() => {
+            return <Popover renderContent={() => 'Popover content'} />;
+        }),
+    );

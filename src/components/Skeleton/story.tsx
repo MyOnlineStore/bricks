@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React, { FunctionComponent } from 'react';
 import Skeleton from '.';
 import { boolean, number, text } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import Text from '../Text';
 import EmptyState from '../EmptyState';
 type DemoPropsType = {
@@ -31,5 +32,19 @@ const Demo: FunctionComponent<DemoPropsType> = ({ element, loading }): JSX.Eleme
     }
 };
 
-storiesOf('Skeleton', module).add('Text', () => <Demo element="Text" loading={boolean('loading', true)} />);
-storiesOf('Skeleton', module).add('Rect', () => <Demo element="Rect" loading={boolean('loading', true)} />);
+storiesOf('Skeleton', module)
+    .add('Text', () => <Demo element="Text" loading={boolean('loading', true)} />)
+    .add(
+        'Text Props table',
+        withInfo({ inline: true })(() => {
+            return <Skeleton.Text lines={1} />;
+        }),
+    );
+storiesOf('Skeleton', module)
+    .add('Rect', () => <Demo element="Rect" loading={boolean('loading', true)} />)
+    .add(
+        'Rect Props table',
+        withInfo({ inline: true })(() => {
+            return <Skeleton.Rect width="100px" height="100px" />;
+        }),
+    );

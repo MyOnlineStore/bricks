@@ -1,4 +1,5 @@
 import { select, text, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import TextField from '.';
@@ -83,16 +84,59 @@ class Demo extends Component<DemoPropsType, DemoStateType> {
     }
 }
 
-storiesOf('TextField', module).add('Default', () => <Demo withFeedback={false} />);
-storiesOf('TextField', module).add('With Feedback', () => <Demo withFeedback />);
-storiesOf('TextField', module).add('With Number formatting', () => (
-    <Demo withFeedback={false} formatter="withNumber" />
-));
-storiesOf('TextField', module).add('With Currency formatting', () => (
-    <Demo
-        formatter="withCurrency"
-        withFeedback={false}
-        currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
-        locale={select('locale', ['en-US', 'nl-NL', 'de-DE', 'jp-JP', 'en_US', 'nl_NL', 'de_DE', 'jp_JP'], 'en-US')}
-    />
-));
+storiesOf('TextField', module)
+    .add('Default', () => <Demo withFeedback={false} />)
+    .add('With Feedback', () => <Demo withFeedback />)
+    .add('With Number formatting', () => <Demo withFeedback={false} formatter="withNumber" />)
+    .add('With Currency formatting', () => (
+        <Demo
+            formatter="withCurrency"
+            withFeedback={false}
+            currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
+            locale={select('locale', ['en-US', 'nl-NL', 'de-DE', 'jp-JP', 'en_US', 'nl_NL', 'de_DE', 'jp_JP'], 'en-US')}
+        />
+    ))
+    .add(
+        'Default props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <TextField
+                    value={''}
+                    name="name"
+                    onChange={() => {
+                        /* noop */
+                    }}
+                />
+            );
+        }),
+    )
+    .add(
+        'Number Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <TextField.Number
+                    value={0}
+                    name="number name"
+                    onChange={() => {
+                        /* noop */
+                    }}
+                />
+            );
+        }),
+    )
+    .add(
+        'Currency Props table',
+        withInfo({ inline: true })(() => {
+            return (
+                <TextField.Currency
+                    value={1.0}
+                    name="currency name"
+                    locale="nl-NL"
+                    currency="EUR"
+                    onChange={() => {
+                        /*noop */
+                    }}
+                />
+            );
+        }),
+    );
