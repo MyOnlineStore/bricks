@@ -285,6 +285,13 @@ export { default as FormatIconsListNumber } from './icons/format-icons-list-numb
 export { default as FormatIconsVerticalCenter } from './icons/format-icons-vertical-center.svg';
 export { default as FormatIconsVerticalDown } from './icons/format-icons-vertical-down.svg';
 export { default as FormatIconsVerticalUp } from './icons/format-icons-vertical-top.svg';
+export { default as FormatFontsizeSmall } from './icons/format-fontsize-small.svg';
+export { default as FormatFontsizeMedium } from './icons/format-fontsize-medium.svg';
+export { default as FormatFontsizeLarge } from './icons/format-fontsize-large.svg';
+export { default as FormatLetterCase } from './icons/format-letter-case.svg';
+export { default as FormatLetterLowercase } from './icons/format-letter-lowercase.svg';
+export { default as FormatLetterUppercase } from './icons/format-letter-uppercase.svg';
+export { default as FormatUnderline } from './icons/format-underline.svg';
 
 // Illustrations
 export { default as balloonColorIllustration } from './illustrations/balloon.color.svg';
