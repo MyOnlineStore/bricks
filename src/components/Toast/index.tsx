@@ -60,9 +60,9 @@ class Toast extends Component<PropsType> {
 
         return (
             <TransitionAnimation show={this.props.show} animation="zoom" onExited={this.handleExit}>
-                <Measure bounds>
+                <Measure client>
                     {({ measureRef, contentRect }) => {
-                        const isSmall = contentRect.bounds && contentRect.bounds.width < 375;
+                        const isSmall = contentRect.client && contentRect.client.width < 375;
 
                         return (
                             <StyledToastWrapper ref={measureRef} role="alertdialog" aria-label={this.props.title}>
