@@ -59,7 +59,7 @@ describe('Modal', () => {
             return props.children({
                 measureRef: jest.fn(),
                 contentRect: {
-                    bounds: {
+                    client: {
                         width: 300,
                     },
                 },

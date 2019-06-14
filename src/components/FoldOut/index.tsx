@@ -12,11 +12,11 @@ type PropsType = {
 };
 
 const FoldOut: FC<PropsType> = props => (
-    <Measure bounds>
+    <Measure client>
         {({ measureRef, contentRect }) => (
             <StyledFoldOut
                 isOpen={props.open}
-                contentHeight={contentRect.bounds ? contentRect.bounds.height : undefined}
+                contentHeight={contentRect.client ? contentRect.client.height : undefined}
             >
                 <div ref={measureRef}>{props.children}</div>
             </StyledFoldOut>

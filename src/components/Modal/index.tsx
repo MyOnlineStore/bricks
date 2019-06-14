@@ -61,9 +61,9 @@ class Modal extends Component<PropsType> {
         return (
             <StyledModalWrapper show={this.props.show} ref={this.styledModalWrapperRef}>
                 <TransitionAnimation key={0} show={this.props.show} animation="zoom">
-                    <Measure bounds>
+                    <Measure client>
                         {({ measureRef, contentRect }) => {
-                            const isSmall = contentRect.bounds && contentRect.bounds.width < 320;
+                            const isSmall = contentRect.client && contentRect.client.width < 320;
 
                             return (
                                 <StyledModal
