@@ -6,7 +6,7 @@ import { mountWithTheme } from '../../utility/styled/testing';
 jest.mock('react-measure', () => {
     return jest.fn().mockImplementation(
         // tslint:disable-next-line:no-any
-        (props: any) => props.children({ measureRef: () => undefined, contentRect: { bounds: { height: 900 } } }),
+        (props: any) => props.children({ measureRef: () => undefined, contentRect: { client: { height: 900 } } }),
     );
 });
 
