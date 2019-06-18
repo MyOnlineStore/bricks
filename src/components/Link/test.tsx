@@ -52,6 +52,6 @@ describe('Link', () => {
         component.find(Link).simulate('click');
 
         expect(clickMock).toHaveBeenCalled();
-        expect(clickEvent.target).not.toBe(undefined);
+        expect(clickEvent.target).toBeDefined();
     });
 });
