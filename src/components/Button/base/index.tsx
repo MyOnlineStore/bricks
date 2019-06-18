@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, MouseEvent } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 
 type PropsType = {
@@ -12,20 +12,21 @@ type PropsType = {
     id?: string;
     loading?: boolean;
     'data-testid'?: string;
-    onClick?(): void;
+    onClick?(event: MouseEvent<HTMLButtonElement>): void;
 };
 
 const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
 
-    const clickAction = (): void => {
-        if (props.onClick !== undefined && props.disabled !== true && props.loading !== true) props.onClick();
+    const clickAction = (event: MouseEvent<HTMLButtonElement>): void => {
+        if (props.onClick !== undefined && props.disabled !== true && props.loading !== true) {
+            props.onClick(event);
+        }
     };
 
     if (isLink) {
         return (
             <StyledAnchor
-                // @ts-ignore
                 href={props.href}
                 target={props.target}
                 title={props.title}
