@@ -20,9 +20,10 @@ type PropsType = {
 };
 
 const Popover: FC<PropsType> = props => {
-    const [isOpen, setOpen] = useState(!!props.show);
     const anchorRef = useRef<HTMLDivElement | null>(null);
     const popoverRef = useRef<HTMLDivElement | null>(null);
+
+    const [isOpen, setOpen] = useState(!!props.show);
 
     const mapOffset = (props: PropsType): string => {
         switch (true) {
@@ -39,17 +40,17 @@ const Popover: FC<PropsType> = props => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
         if (isOpen && (event.key === 'Escape' || event.key === 'Esc')) {
-            setOpen(!isOpen);
+            if (props.triggerOn !== undefined) setOpen(!isOpen);
         }
     };
 
     const toggleInside = (event: KeyboardEvent) => {
         if (anchorRef.current && anchorRef.current.contains(event.target as Node)) {
-            setOpen(!isOpen);
+            if (props.triggerOn !== undefined) setOpen(!isOpen);
         }
     };
 
-    const toggleOutside = (event: KeyboardEvent) => {
+    const handleClickOutside = (event: KeyboardEvent) => {
         const anchorNode = anchorRef.current;
         const popoverNode = popoverRef.current;
 
@@ -59,8 +60,8 @@ const Popover: FC<PropsType> = props => {
             popoverNode !== null &&
             !popoverNode.contains(event.target as Node)
         ) {
-            console.log('[toggleOutside');
-            setOpen(!isOpen);
+            if (props.onClickOutside !== undefined) props.onClickOutside();
+            if (props.triggerOn !== undefined) setOpen(!isOpen);
         }
     };
 
@@ -82,17 +83,15 @@ const Popover: FC<PropsType> = props => {
 
     useEffect(() => {
         document.addEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', toggleInside);
-        document.addEventListener('mousedown', toggleOutside);
+        document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('keydown', (event: KeyboardEvent) => handleKeyDown(event));
 
         return () => {
             document.removeEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', toggleInside);
-            document.removeEventListener('mousedown', toggleOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', (event: KeyboardEvent) => handleKeyDown(event));
         };
     });
-
-    console.log('isOpen', isOpen);
 
     return (
         <Manager>

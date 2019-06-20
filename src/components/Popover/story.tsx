@@ -41,7 +41,6 @@ const Demo: FC<PropsType> = (props: PropsType) => {
                     offset={props.offset}
                     distance={props.distance}
                     renderContent={() => <DemoContent />}
-                    triggerOn={'click'}
                 >
                     <Button variant="primary" title="Toggle" onClick={toggle} />
                 </Popover>
