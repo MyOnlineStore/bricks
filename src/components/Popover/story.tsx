@@ -9,6 +9,7 @@ import Text from '../Text';
 type PropsType = {
     placement: PlacementType;
     fixed: boolean;
+    overflow: boolean;
     offset: number;
     distance: number;
 };
@@ -35,6 +36,7 @@ const Demo: FC<PropsType> = (props: PropsType) => {
                     show={isOpen}
                     onClickOutside={toggle}
                     placement={props.placement}
+                    overflow={props.overflow}
                     fixed={props.fixed}
                     offset={props.offset}
                     distance={props.distance}
@@ -77,6 +79,7 @@ storiesOf('Popover', module)
             }
             fixed={boolean('fixed', false)}
             offset={number('offset', 0)}
+            overflow={boolean('overflow', false)}
             distance={number('distance', 16)}
         />
         /* tslint:enable */
@@ -155,6 +158,7 @@ storiesOf('Popover', module)
                         ) as PlacementType
                     }
                     fixed={boolean('fixed', false)}
+                    overflow={boolean('overflow', false)}
                     offset={number('offset', 0)}
                     distance={number('distance', 16)}
                 >
