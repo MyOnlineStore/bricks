@@ -96,7 +96,6 @@
       "no-invalid-template-strings": true,
       "no-invalid-this": true,
       "no-misused-new": true,
-      "no-null-keyword": true,
       "no-object-literal-type-assertion": true,
       "no-require-imports": true,
       "no-return-await": true,

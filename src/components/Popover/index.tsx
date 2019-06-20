@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
 import TransitionAnimation from '../TransitionAnimation';
 import { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow } from './style';
@@ -12,34 +12,18 @@ type PropsType = {
     offset?: number;
     distance?: number;
     stretch?: boolean;
+    preventOverflow?: boolean;
     triggerOn?: 'click' | 'hover';
     onClickOutside?(): void;
     renderContent(): JSX.Element | string;
 };
 
-type StateType = {
-    isOpen: boolean;
-};
+const Popover: FC<PropsType> = props => {
+    const anchorRef = useRef<HTMLDivElement | null>(null);
+    const popoverRef = useRef<HTMLDivElement | null>(null);
+    const [isOpen, setOpen] = useState(!!props.show);
 
-class Popover extends Component<PropsType, StateType> {
-    private anchorRef: HTMLDivElement;
-    private popoverRef: HTMLDivElement;
-
-    public constructor(props: PropsType) {
-        super(props);
-
-        this.state = { isOpen: false };
-    }
-
-    public static getDerivedStateFromProps(props: PropsType, state: StateType): Partial<StateType> {
-        if (props.show !== undefined && props.show !== state.isOpen) {
-            return { isOpen: props.show };
-        }
-
-        return state;
-    }
-
-    private mapOffset = (props: PropsType): string => {
+    const mapOffset = (props: PropsType): string => {
         switch (true) {
             case props.offset === undefined && props.distance === undefined:
                 return '0, 16px';
@@ -52,119 +36,118 @@ class Popover extends Component<PropsType, StateType> {
         }
     };
 
-    private togglePopover = (): void => {
-        this.setState({ isOpen: !this.state.isOpen });
+    const handleKeyDown = (event: KeyboardEvent) => {
+        if (isOpen && (event.key === 'Escape' || event.key === 'Esc') && props.triggerOn !== undefined) {
+            setOpen(!isOpen);
+        }
     };
 
-    private handleClickOutside = (event: Event): void => {
+    const handleToggleInside = (event: MouseEvent) => {
+        if (anchorRef.current && anchorRef.current.contains(event.target as Node) && props.triggerOn !== undefined) {
+            setOpen(!isOpen);
+        }
+    };
+
+    const handleClickOutside = (event: KeyboardEvent) => {
+        const anchorNode = anchorRef.current;
+        const popoverNode = popoverRef.current;
+
         if (
-            this.popoverRef &&
-            this.state.isOpen &&
-            this.anchorRef &&
-            !this.anchorRef.contains(event.target as Node) &&
-            !this.popoverRef.contains(event.target as Node)
+            anchorNode !== null &&
+            !anchorNode.contains(event.target as Node) &&
+            popoverNode !== null &&
+            !popoverNode.contains(event.target as Node)
         ) {
-            if (this.props.onClickOutside !== undefined) this.props.onClickOutside();
-            else this.togglePopover();
+            if (props.onClickOutside !== undefined) props.onClickOutside();
+            if (props.triggerOn !== undefined) setOpen(!isOpen);
         }
     };
 
-    private handleKeyDown = (event: KeyboardEvent): void => {
-        if (this.state.isOpen && (event.key === 'Escape' || event.key === 'Esc')) {
-            this.togglePopover();
+    const handleMouseToggle = (event: MouseEvent, value: boolean) => {
+        const anchorNode = anchorRef.current;
+        const popoverNode = popoverRef.current;
+
+        if (
+            (anchorNode !== null && anchorNode.contains(event.target as Node)) ||
+            (popoverNode !== null && popoverNode.contains(event.target as Node))
+        ) {
+            setOpen(value);
         }
     };
 
-    public componentDidMount(): void {
-        if (this.props.show === undefined && this.anchorRef) {
-            this.anchorRef.addEventListener(
-                this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
-                this.togglePopover,
-                false,
-            );
-            if (this.props.triggerOn === 'hover') {
-                this.anchorRef.addEventListener('mouseleave', this.togglePopover, false);
-            }
+    useEffect(() => {
+        const node = anchorRef.current;
+
+        if (node && props.triggerOn === 'hover') {
+            const mouseEnter = (event: MouseEvent) => handleMouseToggle(event, true);
+            const mouseLeave = (event: MouseEvent) => handleMouseToggle(event, false);
+
+            node.addEventListener('mouseenter', mouseEnter);
+
+            node.addEventListener('mouseleave', mouseLeave);
+
+            return () => {
+                node.removeEventListener('mouseenter', mouseEnter);
+                node.removeEventListener('mouseleave', mouseLeave);
+            };
         }
+    }, [anchorRef.current]);
 
-        document.addEventListener('mousedown', this.handleClickOutside, false);
-        document.addEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
-    }
+    useEffect(() => {
+        document.addEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', handleToggleInside);
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
 
-    public componentWillUnmount(): void {
-        this.anchorRef.removeEventListener(
-            this.props.triggerOn === 'click' ? 'click' : 'mouseenter',
-            this.togglePopover,
-            false,
-        );
-        if (this.props.triggerOn === 'hover') {
-            this.anchorRef.removeEventListener('mouseleave', this.togglePopover, false);
-        }
+        return () => {
+            document.removeEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', handleToggleInside);
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    });
 
-        document.removeEventListener('mousedown', this.handleClickOutside, false);
-        document.removeEventListener('keydown', (event: KeyboardEvent) => this.handleKeyDown(event), false);
-    }
-
-    public render(): JSX.Element {
-        return (
-            <>
-                <Manager>
-                    <Reference>
-                        {({ ref }: ReferenceChildrenProps): JSX.Element => (
-                            <div
-                                ref={(ref): void => {
-                                    if (ref) this.anchorRef = ref;
-                                }}
-                            >
-                                <PopoverAnchor
-                                    ref={ref}
-                                    stretch={this.props.stretch}
-                                    role="button"
-                                    aria-expanded={this.state.isOpen}
-                                >
-                                    {this.props.children}
-                                </PopoverAnchor>
-                            </div>
-                        )}
-                    </Reference>
-                    <TransitionAnimation show={this.state.isOpen} animation="fade">
-                        <div
-                            ref={(ref): void => {
-                                if (ref) this.popoverRef = ref;
-                            }}
+    return (
+        <Manager>
+            <Reference>
+                {({ ref }: ReferenceChildrenProps): JSX.Element => (
+                    <div ref={anchorRef}>
+                        <PopoverAnchor
+                            ref={ref}
+                            stretch={props.stretch}
+                            role="button"
+                            aria-expanded={props.show !== undefined ? props.show : isOpen}
                         >
-                            <Popper
-                                positionFixed={this.props.fixed !== undefined ? this.props.fixed : false}
-                                placement={this.props.placement !== undefined ? this.props.placement : 'bottom'}
-                                modifiers={{
-                                    offset: {
-                                        offset: this.mapOffset(this.props),
-                                    },
-                                    flip: {
-                                        enabled: false,
-                                    },
-                                }}
-                            >
-                                {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
-                                    <PopoverWindow ref={ref} style={style}>
-                                        <PopoverContent>{this.props.renderContent()}</PopoverContent>
-                                        <PopoverBackground />
-                                        <PopoverArrow
-                                            ref={arrowProps.ref}
-                                            style={arrowProps.style}
-                                            placement={placement}
-                                        />
-                                        <PopoverArrow shadow style={arrowProps.style} placement={placement} />
-                                    </PopoverWindow>
-                                )}
-                            </Popper>
-                        </div>
-                    </TransitionAnimation>
-                </Manager>
-            </>
-        );
-    }
-}
+                            {props.children}
+                        </PopoverAnchor>
+                    </div>
+                )}
+            </Reference>
+            <TransitionAnimation show={props.show !== undefined ? props.show : isOpen} animation="fade">
+                <div ref={popoverRef}>
+                    <Popper
+                        positionFixed={!!props.fixed}
+                        placement={props.placement !== undefined ? props.placement : 'bottom'}
+                        modifiers={{
+                            offset: { offset: mapOffset(props) },
+                            flip: { enabled: false },
+                            preventOverflow: {
+                                enabled: props.preventOverflow !== undefined ? props.preventOverflow : true,
+                            },
+                        }}
+                    >
+                        {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
+                            <PopoverWindow ref={ref} style={style}>
+                                <PopoverContent>{props.renderContent()}</PopoverContent>
+                                <PopoverBackground />
+                                <PopoverArrow ref={arrowProps.ref} style={arrowProps.style} placement={placement} />
+                                <PopoverArrow shadow style={arrowProps.style} placement={placement} />
+                            </PopoverWindow>
+                        )}
+                    </Popper>
+                </div>
+            </TransitionAnimation>
+        </Manager>
+    );
+};
 
 export default Popover;
 export { PropsType, PlacementType };
