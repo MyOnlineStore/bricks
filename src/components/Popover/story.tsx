@@ -1,8 +1,7 @@
 import { boolean, number, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React, { Component, FunctionComponent } from 'react';
+import React, { FC, useState } from 'react';
 import Popover, { PlacementType } from '.';
-import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Button from '../Button';
 import Text from '../Text';
@@ -14,52 +13,40 @@ type PropsType = {
     distance: number;
 };
 
-type StateType = {
-    isOpen: boolean;
-};
+const DemoContent: FC = () => (
+    <Box margin={[24]}>
+        <Text>
+            Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis
+            interdum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+            mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        </Text>
+    </Box>
+);
 
-const DemoContent: FunctionComponent = (): JSX.Element => {
+const Demo: FC<PropsType> = (props: PropsType) => {
+    const [isOpen, setOpen] = useState(false);
+
+    const toggle = (): void => setOpen(!open);
+
     return (
-        <Box margin={trbl(24)}>
-            <Text>
-                Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus
-                mollis interdum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-            </Text>
+        <Box height="90vh" justifyContent="center" alignItems="center">
+            <Box margin={[48]}>
+                <Popover
+                    show={isOpen}
+                    onClickOutside={toggle}
+                    placement={props.placement}
+                    fixed={props.fixed}
+                    offset={props.offset}
+                    distance={props.distance}
+                    renderContent={() => <DemoContent />}
+                    triggerOn={'click'}
+                >
+                    <Button variant="primary" title="Toggle" onClick={toggle} />
+                </Popover>
+            </Box>
         </Box>
     );
 };
-
-class Demo extends Component<PropsType, StateType> {
-    public constructor(props: PropsType) {
-        super(props);
-
-        this.state = { isOpen: false };
-    }
-
-    private toggle = (): void => this.setState({ isOpen: !this.state.isOpen });
-
-    public render(): JSX.Element {
-        return (
-            <Box height="90vh" justifyContent="center" alignItems="center">
-                <Box margin={trbl(48)}>
-                    <Popover
-                        show={this.state.isOpen}
-                        onClickOutside={this.toggle}
-                        placement={this.props.placement}
-                        fixed={this.props.fixed}
-                        offset={this.props.offset}
-                        distance={this.props.distance}
-                        renderContent={(): JSX.Element => <DemoContent />}
-                        triggerOn={'click'}
-                    >
-                        <Button variant="primary" title="Toggle" onClick={this.toggle} />
-                    </Popover>
-                </Box>
-            </Box>
-        );
-    }
-}
 
 storiesOf('Popover', module)
     .add('External state', () => (
@@ -96,10 +83,15 @@ storiesOf('Popover', module)
     ))
     .add('Internal state on hover', () => (
         <Box height="90vh" justifyContent="center" alignItems="center">
-            <Box margin={trbl(48)}>
+            <Box
+                margin={[48]}
+                style={{ border: '1px solid red', overflowY: 'auto', position: 'relative' }}
+                width="150px"
+                height="150px"
+            >
                 <Popover
                     triggerOn={'hover'}
-                    renderContent={(): JSX.Element => <DemoContent />}
+                    renderContent={() => <DemoContent />}
                     placement={
                         select(
                             'placement',
@@ -124,6 +116,7 @@ storiesOf('Popover', module)
                         ) as PlacementType
                     }
                     fixed={boolean('fixed', false)}
+                    overflow={boolean('overflow', false)}
                     offset={number('offset', 0)}
                     distance={number('distance', 16)}
                 >
@@ -134,10 +127,10 @@ storiesOf('Popover', module)
     ))
     .add('Internal state on click', () => (
         <Box height="90vh" justifyContent="center" alignItems="center">
-            <Box margin={trbl(48)}>
+            <Box margin={[48]}>
                 <Popover
                     triggerOn={'click'}
-                    renderContent={(): JSX.Element => <DemoContent />}
+                    renderContent={() => <DemoContent />}
                     placement={
                         select(
                             'placement',
