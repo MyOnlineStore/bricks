@@ -24,7 +24,7 @@ const DemoContent: FC = () => (
     </Box>
 );
 
-const Demo: FC<PropsType> = (props: PropsType) => {
+const Demo: FC<PropsType> = props => {
     const [isOpen, setOpen] = useState(false);
 
     const toggle = (): void => setOpen(!open);
@@ -51,7 +51,6 @@ const Demo: FC<PropsType> = (props: PropsType) => {
 
 storiesOf('Popover', module)
     .add('External state', () => (
-        /* tslint:disable */
         <Demo
             placement={
                 select(
@@ -81,7 +80,6 @@ storiesOf('Popover', module)
             overflow={boolean('overflow', false)}
             distance={number('distance', 16)}
         />
-        /* tslint:enable */
     ))
     .add('Internal state on hover', () => (
         <Box height="90vh" justifyContent="center" alignItems="center">
@@ -117,8 +115,8 @@ storiesOf('Popover', module)
                             'bottom',
                         ) as PlacementType
                     }
-                    fixed={boolean('fixed', false)}
-                    overflow={boolean('overflow', false)}
+                    fixed={boolean('fixed', true)}
+                    overflow={boolean('overflow', true)}
                     offset={number('offset', 0)}
                     distance={number('distance', 16)}
                 >
