@@ -107,7 +107,7 @@ const Popover: FC<PropsType> = props => {
             <TransitionAnimation show={isOpen} animation="fade">
                 <div ref={popoverRef}>
                     <Popper
-                        positionFixed={true}
+                        positionFixed={!!props.fixed}
                         placement={props.placement !== undefined ? props.placement : 'bottom'}
                         modifiers={{
                             offset: { offset: mapOffset(props) },

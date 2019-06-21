@@ -28,7 +28,6 @@ describe('Popover', () => {
         );
 
         const popper = component.find(Popper);
-
         expect(popper.prop('positionFixed')).toEqual(true);
     });
 
@@ -42,6 +41,9 @@ describe('Popover', () => {
         expect(popper.prop('modifiers')).toEqual({
             offset: {
                 offset: '20px, 6px',
+            },
+            preventOverflow: {
+                enabled: true,
             },
             flip: {
                 enabled: false,
@@ -58,6 +60,9 @@ describe('Popover', () => {
             offset: {
                 offset: '20px, 16px',
             },
+            preventOverflow: {
+                enabled: true,
+            },
             flip: {
                 enabled: false,
             },
@@ -72,6 +77,9 @@ describe('Popover', () => {
         expect(popper.prop('modifiers')).toEqual({
             offset: {
                 offset: '0, 6px',
+            },
+            preventOverflow: {
+                enabled: true,
             },
             flip: {
                 enabled: false,
