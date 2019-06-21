@@ -27,7 +27,7 @@ const DemoContent: FC = () => (
 const Demo: FC<PropsType> = props => {
     const [isOpen, setOpen] = useState(false);
 
-    const toggle = (): void => setOpen(!open);
+    const toggle = (): void => setOpen(!isOpen);
 
     return (
         <Box height="90vh" justifyContent="center" alignItems="center">

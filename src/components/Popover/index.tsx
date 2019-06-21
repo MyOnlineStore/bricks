@@ -37,14 +37,14 @@ const Popover: FC<PropsType> = props => {
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-        if (isOpen && (event.key === 'Escape' || event.key === 'Esc')) {
-            if (props.triggerOn !== undefined) setOpen(!isOpen);
+        if (isOpen && (event.key === 'Escape' || event.key === 'Esc') && props.triggerOn !== undefined) {
+            setOpen(!isOpen);
         }
     };
 
     const handleToggleInside = (event: MouseEvent) => {
-        if (anchorRef.current && anchorRef.current.contains(event.target as Node)) {
-            if (props.triggerOn !== undefined) setOpen(!isOpen);
+        if (anchorRef.current && anchorRef.current.contains(event.target as Node) && props.triggerOn !== undefined) {
+            setOpen(!isOpen);
         }
     };
 
@@ -63,14 +63,14 @@ const Popover: FC<PropsType> = props => {
         }
     };
 
-    const handleMouseToggle = (event: MouseEvent, action: boolean) => {
+    const handleMouseToggle = (event: MouseEvent, value: boolean) => {
         const anchorNode = anchorRef.current;
         const popoverNode = popoverRef.current;
         if (
             (anchorNode !== null && anchorNode.contains(event.target as Node)) ||
             (popoverNode !== null && popoverNode.contains(event.target as Node))
         )
-            setOpen(action);
+            setOpen(value);
     };
 
     useEffect(() => {
@@ -103,8 +103,13 @@ const Popover: FC<PropsType> = props => {
         <Manager>
             <Reference>
                 {({ ref }: ReferenceChildrenProps): JSX.Element => (
-                    <div ref={anchorRef} style={{ display: 'table' }}>
-                        <PopoverAnchor ref={ref} stretch={props.stretch} role="button" aria-expanded={isOpen}>
+                    <div ref={anchorRef}>
+                        <PopoverAnchor
+                            ref={ref}
+                            stretch={props.stretch}
+                            role="button"
+                            aria-expanded={props.show !== undefined ? props.show : isOpen}
+                        >
                             {props.children}
                         </PopoverAnchor>
                     </div>
@@ -118,7 +123,9 @@ const Popover: FC<PropsType> = props => {
                         modifiers={{
                             offset: { offset: mapOffset(props) },
                             flip: { enabled: false },
-                            preventOverflow: { enabled: !!props.preventOverflow },
+                            preventOverflow: {
+                                enabled: props.preventOverflow !== undefined ? props.preventOverflow : true,
+                            },
                         }}
                     >
                         {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
