@@ -13,7 +13,6 @@ type PropsType = {
     distance?: number;
     stretch?: boolean;
     overflow?: boolean;
-    positionFixed?: boolean;
     triggerOn?: 'click' | 'hover';
     onClickOutside?(): void;
     renderContent(): JSX.Element | string;

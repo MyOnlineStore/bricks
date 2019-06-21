@@ -28,6 +28,7 @@ describe('Popover', () => {
         );
 
         const popper = component.find(Popper);
+
         expect(popper.prop('positionFixed')).toEqual(true);
     });
 
