@@ -36,7 +36,7 @@ const Demo: FC<PropsType> = props => {
                     show={isOpen}
                     onClickOutside={toggle}
                     placement={props.placement}
-                    overflow={props.overflow}
+                    preventOverflow={props.overflow}
                     fixed={props.fixed}
                     offset={props.offset}
                     distance={props.distance}
@@ -76,60 +76,46 @@ storiesOf('Popover', module)
                 ) as PlacementType
             }
             fixed={boolean('fixed', false)}
-            offset={number('offset', 0)}
-            overflow={boolean('overflow', false)}
+            overflow={boolean('preventOverflow', false)}
             distance={number('distance', 16)}
+            offset={number('offset', 0)}
         />
     ))
     .add('Internal state on hover', () => (
         <Box height="90vh" justifyContent="center" alignItems="center">
-            <Contrast>
-                <Box
-                    style={{ overflowY: 'auto', position: 'relative' }}
-                    width="300px"
-                    height="300px"
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                margin={[48]}
-                style={{ border: '1px solid red', overflowY: 'auto', position: 'relative' }}
-                width="150px"
-                height="150px"
-            >
-                <Popover
-                    triggerOn={'hover'}
-                    renderContent={() => <DemoContent />}
-                    placement={
-                        select(
-                            'placement',
-                            [
-                                'auto-start',
-                                'auto',
-                                'auto-end',
-                                'top-start',
-                                'top',
-                                'top-end',
-                                'right-start',
-                                'right',
-                                'right-end',
-                                'bottom-end',
-                                'bottom',
-                                'bottom-start',
-                                'left-end',
-                                'left',
-                                'left-start',
-                            ],
+            <Popover
+                triggerOn={'hover'}
+                renderContent={() => <DemoContent />}
+                placement={
+                    select(
+                        'placement',
+                        [
+                            'auto-start',
+                            'auto',
+                            'auto-end',
+                            'top-start',
+                            'top',
+                            'top-end',
+                            'right-start',
+                            'right',
+                            'right-end',
+                            'bottom-end',
                             'bottom',
-                        ) as PlacementType
-                    }
-                    fixed={boolean('fixed', true)}
-                    overflow={boolean('overflow', true)}
-                    offset={number('offset', 0)}
-                    distance={number('distance', 16)}
-                >
-                    <Button variant="primary" title="Hover over me" />
-                </Popover>
-            </Box>
+                            'bottom-start',
+                            'left-end',
+                            'left',
+                            'left-start',
+                        ],
+                        'bottom',
+                    ) as PlacementType
+                }
+                fixed={boolean('fixed', false)}
+                preventOverflow={boolean('preventOverflow', false)}
+                offset={number('offset', 0)}
+                distance={number('distance', 16)}
+            >
+                <Button variant="primary" title="Hover over me" />
+            </Popover>
         </Box>
     ))
     .add('Internal state on click', () => (
@@ -162,7 +148,7 @@ storiesOf('Popover', module)
                         ) as PlacementType
                     }
                     fixed={boolean('fixed', false)}
-                    overflow={boolean('overflow', false)}
+                    preventOverflow={boolean('preventOverflow', false)}
                     offset={number('offset', 0)}
                     distance={number('distance', 16)}
                 >

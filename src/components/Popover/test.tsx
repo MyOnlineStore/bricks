@@ -44,7 +44,7 @@ describe('Popover', () => {
                 offset: '20px, 6px',
             },
             preventOverflow: {
-                enabled: true,
+                enabled: false,
             },
             flip: {
                 enabled: false,
@@ -62,7 +62,7 @@ describe('Popover', () => {
                 offset: '20px, 16px',
             },
             preventOverflow: {
-                enabled: true,
+                enabled: false,
             },
             flip: {
                 enabled: false,
@@ -80,7 +80,7 @@ describe('Popover', () => {
                 offset: '0, 6px',
             },
             preventOverflow: {
-                enabled: true,
+                enabled: false,
             },
             flip: {
                 enabled: false,

@@ -12,7 +12,7 @@ type PropsType = {
     offset?: number;
     distance?: number;
     stretch?: boolean;
-    overflow?: boolean;
+    preventOverflow?: boolean;
     triggerOn?: 'click' | 'hover';
     onClickOutside?(): void;
     renderContent(): JSX.Element | string;
@@ -21,7 +21,6 @@ type PropsType = {
 const Popover: FC<PropsType> = props => {
     const anchorRef = useRef<HTMLDivElement | null>(null);
     const popoverRef = useRef<HTMLDivElement | null>(null);
-
     const [isOpen, setOpen] = useState(!!props.show);
 
     const mapOffset = (props: PropsType): string => {
@@ -43,7 +42,7 @@ const Popover: FC<PropsType> = props => {
         }
     };
 
-    const handleToggleInside = (event: KeyboardEvent) => {
+    const handleToggleInside = (event: MouseEvent) => {
         if (anchorRef.current && anchorRef.current.contains(event.target as Node)) {
             if (props.triggerOn !== undefined) setOpen(!isOpen);
         }
@@ -64,19 +63,26 @@ const Popover: FC<PropsType> = props => {
         }
     };
 
-    const handleMouseOver = () => setOpen(true);
-    const handleMouseOut = () => setOpen(false);
+    const handleMouseToggle = (event: MouseEvent, action: boolean) => {
+        const anchorNode = anchorRef.current;
+        const popoverNode = popoverRef.current;
+        if (
+            (anchorNode !== null && anchorNode.contains(event.target as Node)) ||
+            (popoverNode !== null && popoverNode.contains(event.target as Node))
+        )
+            setOpen(action);
+    };
 
     useEffect(() => {
         const node = anchorRef.current;
 
         if (node && props.triggerOn === 'hover') {
-            node.addEventListener('mouseover', handleMouseOver);
-            node.addEventListener('mouseout', handleMouseOut);
+            node.addEventListener('mouseenter', e => handleMouseToggle(e, true));
+            node.addEventListener('mouseleave', e => handleMouseToggle(e, false));
 
             return () => {
-                node.removeEventListener('mouseover', handleMouseOver);
-                node.removeEventListener('mouseout', handleMouseOut);
+                node.removeEventListener('mouseenter', e => handleMouseToggle(e, true));
+                node.removeEventListener('mouseleave', e => handleMouseToggle(e, false));
             };
         }
     }, [anchorRef.current]);
@@ -104,7 +110,7 @@ const Popover: FC<PropsType> = props => {
                     </div>
                 )}
             </Reference>
-            <TransitionAnimation show={isOpen} animation="fade">
+            <TransitionAnimation show={props.show !== undefined ? props.show : isOpen} animation="fade">
                 <div ref={popoverRef}>
                     <Popper
                         positionFixed={!!props.fixed}
@@ -112,7 +118,7 @@ const Popover: FC<PropsType> = props => {
                         modifiers={{
                             offset: { offset: mapOffset(props) },
                             flip: { enabled: false },
-                            preventOverflow: { enabled: !props.overflow },
+                            preventOverflow: { enabled: !!props.preventOverflow },
                         }}
                     >
                         {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
