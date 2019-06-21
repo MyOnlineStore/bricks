@@ -83,7 +83,14 @@ storiesOf('Popover', module)
     ))
     .add('Internal state on hover', () => (
         <Box height="90vh" justifyContent="center" alignItems="center">
-            <Box
+            <Contrast>
+                <Box
+                    style={{ overflowY: 'auto', position: 'relative' }}
+                    width="300px"
+                    height="300px"
+                    justifyContent="center"
+                    alignItems="center"
+                >
                 margin={[48]}
                 style={{ border: '1px solid red', overflowY: 'auto', position: 'relative' }}
                 width="150px"
