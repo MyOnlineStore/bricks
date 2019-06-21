@@ -43,7 +43,7 @@ const Popover: FC<PropsType> = props => {
         }
     };
 
-    const toggleInside = (event: KeyboardEvent) => {
+    const handleToggleInside = (event: KeyboardEvent) => {
         if (anchorRef.current && anchorRef.current.contains(event.target as Node)) {
             if (props.triggerOn !== undefined) setOpen(!isOpen);
         }
@@ -69,6 +69,7 @@ const Popover: FC<PropsType> = props => {
 
     useEffect(() => {
         const node = anchorRef.current;
+
         if (node && props.triggerOn === 'hover') {
             node.addEventListener('mouseover', handleMouseOver);
             node.addEventListener('mouseout', handleMouseOut);
@@ -78,15 +79,15 @@ const Popover: FC<PropsType> = props => {
                 node.removeEventListener('mouseout', handleMouseOut);
             };
         }
-    }, [anchorRef.current]); // Recall only if ref changes
+    }, [anchorRef.current]);
 
     useEffect(() => {
-        document.addEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', toggleInside);
+        document.addEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', handleToggleInside);
         document.addEventListener('mousedown', handleClickOutside);
         document.addEventListener('keydown', handleKeyDown);
 
         return () => {
-            document.removeEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', toggleInside);
+            document.removeEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', handleToggleInside);
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', handleKeyDown);
         };
@@ -96,7 +97,7 @@ const Popover: FC<PropsType> = props => {
         <Manager>
             <Reference>
                 {({ ref }: ReferenceChildrenProps): JSX.Element => (
-                    <div ref={anchorRef}>
+                    <div ref={anchorRef} style={{ display: 'table' }}>
                         <PopoverAnchor ref={ref} stretch={props.stretch} role="button" aria-expanded={isOpen}>
                             {props.children}
                         </PopoverAnchor>
