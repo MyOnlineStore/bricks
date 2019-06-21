@@ -84,12 +84,12 @@ const Popover: FC<PropsType> = props => {
     useEffect(() => {
         document.addEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', toggleInside);
         document.addEventListener('mousedown', handleClickOutside);
-        document.addEventListener('keydown', (event: KeyboardEvent) => handleKeyDown(event));
+        document.addEventListener('keydown', handleKeyDown);
 
         return () => {
             document.removeEventListener(props.triggerOn === 'click' ? 'click' : 'mouseenter', toggleInside);
             document.removeEventListener('mousedown', handleClickOutside);
-            document.removeEventListener('keydown', (event: KeyboardEvent) => handleKeyDown(event));
+            document.removeEventListener('keydown', handleKeyDown);
         };
     });
 
