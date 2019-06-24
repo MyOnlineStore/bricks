@@ -83,11 +83,12 @@ const Popover: FC<PropsType> = props => {
             const mouseLeave = (event: MouseEvent) => handleMouseToggle(event, false);
 
             node.addEventListener('mouseenter', mouseEnter);
+
             node.addEventListener('mouseleave', mouseLeave);
 
             return () => {
-                node.removeEventListener('mouseenter', () => mouseEnter);
-                node.removeEventListener('mouseleave', () => mouseLeave);
+                node.removeEventListener('mouseenter', mouseEnter);
+                node.removeEventListener('mouseleave', mouseLeave);
             };
         }
     }, [anchorRef.current]);
