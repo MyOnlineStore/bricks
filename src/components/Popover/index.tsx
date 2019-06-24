@@ -66,23 +66,28 @@ const Popover: FC<PropsType> = props => {
     const handleMouseToggle = (event: MouseEvent, value: boolean) => {
         const anchorNode = anchorRef.current;
         const popoverNode = popoverRef.current;
+
         if (
             (anchorNode !== null && anchorNode.contains(event.target as Node)) ||
             (popoverNode !== null && popoverNode.contains(event.target as Node))
-        )
+        ) {
             setOpen(value);
+        }
     };
 
     useEffect(() => {
         const node = anchorRef.current;
 
         if (node && props.triggerOn === 'hover') {
-            node.addEventListener('mouseenter', e => handleMouseToggle(e, true));
-            node.addEventListener('mouseleave', e => handleMouseToggle(e, false));
+            const mouseEnter = (event: MouseEvent) => handleMouseToggle(event, true);
+            const mouseLeave = (event: MouseEvent) => handleMouseToggle(event, false);
+
+            node.addEventListener('mouseenter', mouseEnter);
+            node.addEventListener('mouseleave', mouseLeave);
 
             return () => {
-                node.removeEventListener('mouseenter', e => handleMouseToggle(e, true));
-                node.removeEventListener('mouseleave', e => handleMouseToggle(e, false));
+                node.removeEventListener('mouseenter', () => mouseEnter);
+                node.removeEventListener('mouseleave', () => mouseLeave);
             };
         }
     }, [anchorRef.current]);
