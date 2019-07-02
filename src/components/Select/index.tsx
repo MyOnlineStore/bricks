@@ -3,7 +3,13 @@ import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
 import Option from './Option';
-import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
+import {
+    StyledWrapper,
+    StyledInput,
+    StyledWindow,
+    StyledPlaceholder,
+    INNER_OFFSET as windowInnerOffset,
+} from './style';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
@@ -13,6 +19,7 @@ import ThemeType from '../../types/ThemeType';
 import search from '../../assets/icons/search.svg';
 import chevronDown from '../../assets/icons/chevron-down-small.svg';
 import chevronUp from '../../assets/icons/chevron-up-small.svg';
+import { throttle } from 'throttle-debounce';
 
 type OptionBaseType = {
     value: string;
@@ -91,6 +98,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     private open = (): void => {
         if (!this.props.disabled) {
             this.handleInput('');
+            this.updateWindowTop();
             this.setState({ isOpen: true });
         }
     };
@@ -153,6 +161,27 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         }
     };
 
+    private updateWindowTop = (): void => {
+        if (
+            this.windowRef &&
+            this.windowRef.current &&
+            this.wrapperRef &&
+            this.wrapperRef.current &&
+            this.state.inputHeight
+        ) {
+            const newTop =
+                this.wrapperRef.current.getBoundingClientRect().top + this.state.inputHeight + windowInnerOffset;
+
+            this.windowRef.current.style.top = `${newTop.toString()}px`;
+        }
+    };
+
+    private handleScroll = (): void => {
+        if (this.windowRef && this.windowRef.current && this.state.inputHeight && this.state.isOpen) {
+            window.requestAnimationFrame(() => this.updateWindowTop());
+        }
+    };
+
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
         if (prevState.isOpen && this.props.disabled) {
             this.setState({ isOpen: false });
@@ -176,10 +205,12 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
+        document.addEventListener('scroll', this.handleScroll);
     }
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
+        document.removeEventListener('scroll', throttle(10, this.handleScroll));
     }
 
     public render(): JSX.Element {

@@ -189,4 +189,12 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
     };
 };
 
-export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType, StyledPlaceholder, composeSelectTheme };
+export {
+    StyledWrapper,
+    StyledInput,
+    StyledWindow,
+    SelectThemeType,
+    StyledPlaceholder,
+    composeSelectTheme,
+    INNER_OFFSET,
+};
