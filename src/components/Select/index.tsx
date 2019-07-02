@@ -209,7 +209,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
-        document.removeEventListener('scroll', throttle(10, this.handleScroll));
+        document.removeEventListener('scroll', this.handleScroll);
     }
 
     public render(): JSX.Element {
