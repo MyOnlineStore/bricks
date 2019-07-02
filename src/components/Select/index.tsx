@@ -1,3 +1,4 @@
+//tslint:disable:max-file-line-count
 import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef, FormEvent } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
@@ -176,9 +177,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private handleScroll = (): void => {
-        if (this.windowRef && this.windowRef.current && this.state.inputHeight && this.state.isOpen) {
-            window.requestAnimationFrame(() => this.updateWindowTop());
-        }
+        window.requestAnimationFrame(() => this.updateWindowTop());
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
