@@ -19,7 +19,6 @@ import ThemeType from '../../types/ThemeType';
 import search from '../../assets/icons/search.svg';
 import chevronDown from '../../assets/icons/chevron-down-small.svg';
 import chevronUp from '../../assets/icons/chevron-up-small.svg';
-import { throttle } from 'throttle-debounce';
 
 type OptionBaseType = {
     value: string;
