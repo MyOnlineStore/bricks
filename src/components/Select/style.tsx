@@ -98,7 +98,7 @@ type WindowPropsType = {
 
 const StyledWindow = styled.div<WindowPropsType>`
     box-sizing: border-box;
-    position: fixed;
+    position: absolute;
     max-height: 240px;
     top: ${({ rect, inputHeight }): string =>
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
@@ -189,4 +189,12 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
     };
 };
 
-export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType, StyledPlaceholder, composeSelectTheme };
+export {
+    StyledWrapper,
+    StyledInput,
+    StyledWindow,
+    SelectThemeType,
+    StyledPlaceholder,
+    composeSelectTheme,
+    INNER_OFFSET,
+};
