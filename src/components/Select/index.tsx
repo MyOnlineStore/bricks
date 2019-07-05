@@ -169,8 +169,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             this.wrapperRef.current &&
             this.state.inputHeight
         ) {
-            const newTop =
-                this.wrapperRef.current.getBoundingClientRect().top + this.state.inputHeight + windowInnerOffset;
+            const newTop = this.wrapperRef.current.offsetTop + this.state.inputHeight + windowInnerOffset;
 
             this.windowRef.current.style.top = `${newTop.toString()}px`;
         }
@@ -237,6 +236,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 <StyledInput
                     open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
+                    onFocus={this.updateWindowTop}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     ref={this.inputWrapperRef}
                     role="searchbox"

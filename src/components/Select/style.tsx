@@ -98,7 +98,7 @@ type WindowPropsType = {
 
 const StyledWindow = styled.div<WindowPropsType>`
     box-sizing: border-box;
-    position: fixed;
+    position: absolute;
     max-height: 240px;
     top: ${({ rect, inputHeight }): string =>
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
