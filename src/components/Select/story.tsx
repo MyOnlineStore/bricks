@@ -1,10 +1,9 @@
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Select, { OptionStateType } from '.';
-import { object, text, boolean } from '@storybook/addon-knobs';
+import { object, text, boolean, number } from '@storybook/addon-knobs';
 import Box from '../Box';
 import Text from '../Text';
-import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import checkmarkIcon from '../../assets/icons/checkmark.svg';
 
@@ -83,6 +82,7 @@ class Demo extends Component<PropsType, StateType> {
                 disabled={boolean('disabled', false)}
                 data-testid="foo"
                 options={object('options', options)}
+                zIndex={number('zIndex', 100)}
             />
         );
     }
@@ -92,7 +92,7 @@ const renderSelected = (option: DemoOptionType): JSX.Element => {
     if (option.label !== '') {
         return (
             <Box grow={1} width="100%" direction="row" alignItems="center">
-                <Box margin={trbl(0, 9, 0, 0)}>
+                <Box margin={[0, 9, 0, 0]}>
                     <img width="50" height="50" src={option.image} />
                 </Box>
                 <Box direction="column">
@@ -101,19 +101,19 @@ const renderSelected = (option: DemoOptionType): JSX.Element => {
                 </Box>
             </Box>
         );
-    } else {
-        return (
-            <Box direction="row" alignItems="center">
-                <Text severity="info">{'Make a selection'}</Text>
-            </Box>
-        );
     }
+
+    return (
+        <Box direction="row" alignItems="center">
+            <Text severity="info">{'Make a selection'}</Text>
+        </Box>
+    );
 };
 
 const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX.Element => {
     return (
         <Box grow={1} width="100%" direction="row" alignItems="center">
-            <Box margin={trbl(0, 9, 0, 0)}>
+            <Box margin={[0, 9, 0, 0]}>
                 <img src={option.image} />
             </Box>
             <Box direction="column">

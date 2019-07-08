@@ -47,7 +47,7 @@ const StyledPlaceholder = styled.span`
 `;
 
 const StyledWrapper = styled.div<WrapperPropsType>`
-    transition: all .3s;
+    transition: all 0.3s;
     width: 100%;
     outline: none;
     display: inline-block;
@@ -60,25 +60,26 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     &:before {
         content: '';
         z-index: -1;
-        border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-        ${({ open }): string =>
-            open
-                ? `
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-                `
-                : ''}
-        border: ${({ theme, open }): string =>
-            open
-                ? `solid 1px ${theme.Select.wrapper.common.borderColor}`
-                : `solid 0px ${theme.Select.common.secondaryColor}`};
+        position: absolute;
         border-bottom: none;
         background: ${({ theme }): string => theme.Select.common.secondaryColor};
-        position: absolute;
+        border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
         top: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
         left: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
         right: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
         bottom: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+
+        ${({ open, theme }): string => {
+            if (open) {
+                return `
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border: solid 1px ${theme.Select.wrapper.common.borderColor}
+                `;
+            }
+
+            return `border: solid 0px ${theme.Select.common.secondaryColor}`;
+        }}
     }
 
     ${({ theme, disabled, open }): string => {
@@ -88,10 +89,11 @@ const StyledWrapper = styled.div<WrapperPropsType>`
             }`
             : '';
     }}
-    `;
+`;
 
 type WindowPropsType = {
     open: boolean;
+    zIndex?: number;
     rect?: ClientRect;
     inputHeight?: number;
 };
@@ -113,7 +115,7 @@ const StyledWindow = styled.div<WindowPropsType>`
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     ${({ open }): string => (!open ? 'cursor: pointer' : '')};
-    z-index: 1000;
+    z-index: ${({ zIndex }): number => (zIndex ? zIndex : 1000)};
 `;
 
 type InputPropsType = {
@@ -123,7 +125,7 @@ type InputPropsType = {
 };
 
 const StyledInput = styled.div<InputPropsType>`
-    transition: all 0.3s;
+    transition: all 300ms;
     box-sizing: border-box;
     width: 100%;
     border: solid 1px
@@ -142,7 +144,6 @@ const StyledInput = styled.div<InputPropsType>`
         color: ${({ theme }): string => theme.Select.input.color};
         font-size: ${({ theme }): string => theme.Select.input.fontSize};
         font-family: ${({ theme }): string => theme.Select.input.fontFamily};
-        color: ${({ theme }): string => theme.Select.input.fontFamily};
 
         &::placeholder {
             color: ${({ theme }): string => theme.Select.placeholder.color};

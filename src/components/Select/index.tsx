@@ -5,7 +5,6 @@ import ScrollBox from '../ScrollBox';
 import Option from './Option';
 import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
 import Text from '../Text';
-import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import IconButton from '../../components/IconButton';
 import { withTheme } from 'styled-components';
@@ -38,6 +37,7 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     options: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
+    zIndex?: number;
     'data-testid'?: string;
     onChange(value: string): void;
     renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
@@ -184,9 +184,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public render(): JSX.Element {
         const selectedOption = this.props.options.reduce(
-            (found, option) => {
-                return option.value === this.props.value ? option : found;
-            },
+            (found, option) => (option.value === this.props.value ? option : found),
             { value: '', label: '' },
         );
 
@@ -216,13 +214,14 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                     data-testid={this.props['data-testid'] ? `${this.props['data-testid']}-input` : undefined}
                     onClick={!this.state.isOpen ? this.open : undefined}
                 >
-                    <Box alignItems="stretch">
+                    <Box alignItems="center">
                         {(this.state.isOpen && (
-                            <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
-                                <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
+                            <Box alignItems="center" padding={[6, 12]} grow={1}>
+                                <Box alignItems="center" margin={[0, 6, 0, 0]}>
                                     <Icon icon={search} size="small" color={'#d2d7e0'} />
                                 </Box>
                                 <input
+                                    style={{ width: '100%' }}
                                     ref={this.inputRef}
                                     type="text"
                                     placeholder={this.props.placeholder}
@@ -240,23 +239,28 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             </Box>
                         )) ||
                             (this.props.renderSelected !== undefined && (
-                                <Box padding={trbl(6, 12)} alignItems="center" grow={1}>
+                                <Box padding={[6, 12]} alignItems="center" grow={1}>
                                     {this.props.renderSelected(selectedOption as GenericOptionType)}
                                 </Box>
                             )) || (
-                                <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
+                                <Box alignItems="center" padding={[6, 12]} grow={1}>
                                     {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
-                                        <Text severity="info">
-                                            <StyledPlaceholder
-                                                data-testid={
-                                                    this.props['data-testid']
-                                                        ? `${this.props['data-testid']}-placeholder`
-                                                        : undefined
-                                                }
-                                            >
-                                                {this.props.placeholder}
-                                            </StyledPlaceholder>
-                                        </Text>
+                                        <>
+                                            <Box alignItems="center" margin={[0, 6, 0, 0]}>
+                                                <Icon icon={search} size="small" color={'#d2d7e0'} />
+                                            </Box>
+                                            <Text severity="info">
+                                                <StyledPlaceholder
+                                                    data-testid={
+                                                        this.props['data-testid']
+                                                            ? `${this.props['data-testid']}-placeholder`
+                                                            : undefined
+                                                    }
+                                                >
+                                                    {this.props.placeholder}
+                                                </StyledPlaceholder>
+                                            </Text>
+                                        </>
                                     )}
                                 </Box>
                             )}
@@ -281,6 +285,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 : undefined
                         }
                         inputHeight={this.state.inputHeight}
+                        zIndex={this.props.zIndex}
                         role="listbox"
                         data-testid={
                             this.props['data-testid']
@@ -291,7 +296,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                         <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
                             <div style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}>
                                 {(this.filterOptions().length === 0 && (
-                                    <Box padding={trbl(12, 18)}>
+                                    <Box padding={[12, 18]}>
                                         <Text>{this.props.emptyText}</Text>
                                     </Box>
                                 )) ||
