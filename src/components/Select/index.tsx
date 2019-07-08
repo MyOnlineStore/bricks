@@ -45,6 +45,7 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     options: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
+    topOffset?: number;
     'data-testid'?: string;
     onChange(value: string): void;
     renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
@@ -169,14 +170,18 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             this.wrapperRef.current &&
             this.state.inputHeight
         ) {
-            const newTop = this.wrapperRef.current.offsetTop + this.state.inputHeight + windowInnerOffset;
+            const newTop =
+                this.wrapperRef.current.getBoundingClientRect().top +
+                window.scrollY +
+                this.state.inputHeight +
+                windowInnerOffset;
 
             this.windowRef.current.style.top = `${newTop.toString()}px`;
         }
     };
 
     private handleScroll = (): void => {
-        window.requestAnimationFrame(() => this.updateWindowTop());
+        window.requestAnimationFrame(this.updateWindowTop);
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
@@ -236,7 +241,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 <StyledInput
                     open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
-                    onFocus={this.updateWindowTop}
                     disabled={!this.props.disabled ? false : this.props.disabled}
                     ref={this.inputWrapperRef}
                     role="searchbox"
