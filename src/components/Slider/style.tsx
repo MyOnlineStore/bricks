@@ -1,17 +1,18 @@
 import styled, { css } from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 import chroma from 'chroma-js';
+import Box from '../Box';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();
 /* tslint:enable */
 
 // prettier-ignore
-const rangeStyles = css`
+const sliderStyles = css`
     ${styles}
 `;
 
-type RangeThemeType = {
+type SliderThemeType = {
     default: {
         track: {
             background: string;
@@ -45,8 +46,8 @@ type PropsType = {
 };
 
 // prettier-ignore
-const StyledWrapper = styled.div`
-    ${rangeStyles} padding: 0;
+const StyledWrapper = styled(Box)`
+    ${sliderStyles} padding: 0;
     box-sizing: border-box;
 
     & {
@@ -89,7 +90,7 @@ const StyledWrapper = styled.div`
     }
 `;
 
-const composeRangeTheme = (themeTools: ThemeTools): RangeThemeType => {
+const composeSliderTheme = (themeTools: ThemeTools): SliderThemeType => {
     const { colors, forms } = themeTools.themeSettings;
 
     return {
@@ -122,4 +123,4 @@ const composeRangeTheme = (themeTools: ThemeTools): RangeThemeType => {
 };
 
 export default StyledWrapper;
-export { RangeThemeType, composeRangeTheme };
+export { SliderThemeType, composeSliderTheme };

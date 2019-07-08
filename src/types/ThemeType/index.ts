@@ -14,6 +14,7 @@ import { PriceTagThemeType } from '../../components/PriceTag/style';
 import { RadioButtonThemeType } from '../../components/RadioButton/style';
 import { RaisedThemeType } from '../../components/Raised';
 import { RangeThemeType } from '../../components/Range/style';
+import { SliderThemeType } from '../../components/Slider/style';
 import { ScrollBoxThemeType } from '../../components/ScrollBox/style';
 import { TableThemeType } from '../../components/Table/style';
 import { TextThemeType } from '../../components/Text';
@@ -48,6 +49,7 @@ type ThemeType = {
     ScrollBox: ScrollBoxThemeType;
     Select: SelectThemeType;
     Skeleton: SkeletonThemeType;
+    Slider: SliderThemeType;
     Table: TableThemeType;
     Text: TextThemeType;
     TextArea: TextAreaThemeType;
