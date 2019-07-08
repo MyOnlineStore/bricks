@@ -163,7 +163,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private updateWindowTop = (): void => {
-        console.debug('updating top');
         if (
             this.windowRef &&
             this.windowRef.current &&
@@ -182,7 +181,9 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private handleScroll = (): void => {
-        window.requestAnimationFrame(this.updateWindowTop);
+        if (this.state.isOpen) {
+            window.requestAnimationFrame(this.updateWindowTop);
+        }
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
