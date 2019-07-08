@@ -45,7 +45,7 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     options: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
-    topOffset?: number;
+    scrollTop?: number;
     'data-testid'?: string;
     onChange(value: string): void;
     renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
@@ -163,6 +163,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private updateWindowTop = (): void => {
+        console.debug('updating top');
         if (
             this.windowRef &&
             this.windowRef.current &&
@@ -202,6 +203,10 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
         if (prevState.isOpen && !this.state.isOpen && this.wrapperRef.current !== null) {
             this.wrapperRef.current.focus();
+        }
+
+        if (this.state.isOpen) {
+            window.requestAnimationFrame(this.updateWindowTop);
         }
     }
 
@@ -265,6 +270,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                             ? `${this.props['data-testid']}-input-field`
                                             : undefined
                                     }
+                                    style={{ width: '100%' }}
                                     onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                                         event.stopPropagation();
                                         this.handleInput(event.target.value);

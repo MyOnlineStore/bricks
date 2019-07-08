@@ -59,6 +59,7 @@ type PropsType = {};
 
 type StateType = {
     value: string;
+    scrollTop?: number;
 };
 
 class Demo extends Component<PropsType, StateType> {
@@ -140,6 +141,7 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
 
         this.state = {
             value: '',
+            scrollTop: 0,
         };
     }
 
@@ -150,7 +152,11 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <Box height="200px" margin={[36, 0]}>
-                <ScrollBox>
+                <ScrollBox
+                    onScroll={({ scrollTop }) => {
+                        this.setState({ scrollTop });
+                    }}
+                >
                     <Box direction={'column'}>
                         Our visibility development lifecycle enables unparalleled, end-to-end siloes. Going forward, our
                         innovative prince2 practitioner will deliver value to emerging markets. Our Long-Term Big Data
@@ -190,6 +196,7 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
                             onChange={this.handleChange}
                             disabled={boolean('disabled', false)}
                             options={object('options', options)}
+                            scrollTop={this.state.scrollTop}
                             renderSelected={renderSelected}
                             renderOption={renderOption}
                         />
