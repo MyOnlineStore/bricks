@@ -292,6 +292,17 @@ export { default as FormatLetterCase } from './icons/format-letter-case.svg';
 export { default as FormatLetterLowercase } from './icons/format-letter-lowercase.svg';
 export { default as FormatLetterUppercase } from './icons/format-letter-uppercase.svg';
 export { default as FormatUnderline } from './icons/format-underline.svg';
+export { default as DropIcon } from './icons/drop.svg';
+export { default as EyeAltIcon } from './icons/eye-alt.svg';
+export { default as PaletIcon } from './icons/palet.svg';
+export { default as PencilAltIcon } from './icons/pencil-alt.svg';
+export { default as StretchIcon } from './icons/stretch.svg';
+export { default as BackgroundIcon } from './icons/background.svg';
+export { default as TrashAltIcon } from './icons/trash-alt.svg';
+export { default as ColumnsIcon } from './icons/columns.svg';
+export { default as ImageAltIcon } from './icons/image-alt.svg';
+export { default as LinkAltIcon } from './icons/link-alt.svg';
+export { default as CameraAltIcon } from './icons/camera-alt.svg';
 
 // Illustrations
 export { default as balloonColorIllustration } from './illustrations/balloon.color.svg';
