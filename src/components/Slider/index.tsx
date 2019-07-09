@@ -3,6 +3,7 @@ import InputRange from 'react-input-range';
 import StyledWrapper from './style';
 import TextField from '../TextField';
 import { Box } from '../..';
+import memoize from 'memoize-one';
 
 type PropsType = {
     minLimit: number;
@@ -15,16 +16,18 @@ type PropsType = {
 
 const Slider: FC<PropsType> = props => {
     const [inputFocus, setInputFocus] = useState(false);
-    const [inputValue, setInputValue] = useState(props.value ? props.value : props.minLimit);
+    const roundValue = memoize(Math.round.bind(Math));
+    const [inputValue, setInputValue] = useState(props.value ? props.value : roundValue(props.value));
 
-    const isWithinRange = (min: number, max: number, value: number): boolean => value <= max && value >= min;
-
-    const onBlurValue = () => {
-        if (inputValue > props.maxLimit) {
-            setInputValue(props.maxLimit);
-        } else if (inputValue < props.minLimit) {
-            setInputValue(props.minLimit);
+    const setValidValue = (value: number) => {
+        if (value > props.maxLimit) {
+            setInputValue(roundValue(props.maxLimit));
+        } else if (value < props.minLimit) {
+            setInputValue(roundValue(props.minLimit));
+        } else {
+            setInputValue(roundValue(value));
         }
+        if (props.onChange !== undefined) props.onChange(value);
     };
 
     return (
@@ -34,9 +37,10 @@ const Slider: FC<PropsType> = props => {
                     value={inputValue}
                     disabled={props.disabled}
                     onChange={(value: number) => {
-                        setInputFocus(false);
-                        setInputValue(value);
-                        if (props.onChange !== undefined) props.onChange(value);
+                        if (props.disabled !== true) {
+                            setValidValue(value);
+                            setInputFocus(false);
+                        }
                     }}
                     minValue={Math.floor(props.minLimit)}
                     maxValue={Math.ceil(props.maxLimit)}
@@ -47,13 +51,11 @@ const Slider: FC<PropsType> = props => {
                 <TextField.Number
                     value={inputValue}
                     name="slider-value"
-                    onBlur={onBlurValue}
-                    onChange={setInputValue}
-                    feedback={
-                        !isWithinRange(props.minLimit, props.maxLimit, inputValue)
-                            ? { severity: 'error', message: '' }
-                            : undefined
-                    }
+                    onChange={(value: number) => {
+                        if (props.disabled !== true) {
+                            setValidValue(value);
+                        }
+                    }}
                 />
             </Box>
         </Box>

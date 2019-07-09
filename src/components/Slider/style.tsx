@@ -57,22 +57,22 @@ const StyledWrapper = styled(Box)`
         }
 
         .input-range__track {
-            background: ${({ theme }): string => theme.Range.default.track.background};
+            background: ${({ theme }): string => theme.Slider.default.track.background};
             border: ${({ theme, disabled }): string =>
-                disabled ? theme.Range.disabled.track.border : theme.Range.default.track.border};
+                disabled ? theme.Slider.disabled.track.border : theme.Slider.default.track.border};
             height: 8px;
         }
 
         .input-range__track--active {
-            background: ${({ theme }): string => theme.Range.default.active.background};
+            background: ${({ theme }): string => theme.Slider.default.active.background};
             margin-top: -1px;
             border: ${({ theme, disabled }): string =>
-                disabled ? theme.Range.disabled.track.border : theme.Range.default.active.border};
+                disabled ? theme.Slider.disabled.track.border : theme.Slider.default.active.border};
         }
 
         .input-range__slider {
-            background: ${({ theme }): string => theme.Range.default.slider.background};
-            border: ${({ theme }): string => theme.Range.default.slider.border};
+            background: ${({ theme }): string => theme.Slider.default.slider.background};
+            border: ${({ theme }): string => theme.Slider.default.slider.border};
             margin-top: -14px;
             width: 16px;
             height: 16px;
@@ -81,7 +81,7 @@ const StyledWrapper = styled(Box)`
 
         .input-range__slider:active, .input-range__slider:focus {
             transform: none;
-            ${({ theme, disabled }): string => (!disabled ? `box-shadow: ${theme.Range.default.active.boxShadow}` : '')}
+            ${({ theme, disabled }): string => (!disabled ? `box-shadow: ${theme.Slider.default.active.boxShadow}` : '')}
         }
 
         .input-range__label-container {

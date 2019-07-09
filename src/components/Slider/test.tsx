@@ -18,48 +18,6 @@ describe('Slider', () => {
         expect(changeMock).not.toHaveBeenCalled();
     });
 
-    it('should not crash when no onChange is provided', () => {
-        const changeMock = jest.fn();
-        const component = mountWithTheme(<Slider value={5} minLimit={1} maxLimit={10} />);
-
-        component
-            .find('input')
-            .at(0)
-            .simulate('change', 1)
-            .simulate('blur');
-        expect(changeMock).not.toHaveBeenCalled();
-    });
-
-    it('should be able to change value with slider', () => {
-        const onChangeMock = jest.fn();
-        (InputSlider as any).mockImplementationOnce(
-            (props: any): JSX.Element => {
-                props.onChange(3);
-
-                return <div />;
-            },
-        );
-
-        mountWithTheme(<Slider value={5} minLimit={1} onChange={onChangeMock} maxLimit={10} />);
-
-        expect(onChangeMock).toHaveBeenCalledWith(3);
-    });
-
-    it('should be able to change value with slider 2', () => {
-        const onChangeMock = jest.fn();
-        (InputSlider as any).mockImplementationOnce(
-            (props: any): JSX.Element => {
-                props.onChange(3);
-
-                return <div />;
-            },
-        );
-
-        mountWithTheme(<Slider value={5} minLimit={1} maxLimit={10} />);
-
-        expect(onChangeMock).not.toHaveBeenCalledWith(3);
-    });
-
     it('should be able to handle too large and too small values', () => {
         const changeMock = jest.fn();
         const component = mountWithTheme(<Slider value={10} minLimit={5} maxLimit={15} onChange={changeMock} />);
@@ -81,7 +39,7 @@ describe('Slider', () => {
         expect(component.find(InputSlider).props().value).toBe(15);
     });
 
-    it('should not crash when no onChange is provided 2', () => {
+    it('should not crash when no onChange is provided', () => {
         const fn = (): void => {
             mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onChange={() => undefined} />);
         };
