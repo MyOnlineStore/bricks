@@ -17,6 +17,7 @@ import { composeMultiButtonTheme } from '../../components/MultiButton/style';
 import { composeNotificationTheme } from '../../components/Notification/style';
 import { composeRadioButtonTheme } from '../../components/RadioButton/style';
 import { composeRangeTheme } from '../../components/Range/style';
+import { composeSliderTheme } from '../../components/Slider/style';
 import { composeRaisedTheme } from '../../components/Raised';
 import { composeSelectTheme } from '../../components/Select/style';
 import { composeToggleTheme } from '../../components/Toggle/style';
@@ -88,6 +89,7 @@ const generateThemeObject = (
         PriceTag: composePriceTagTheme(themeTools),
         Select: composeSelectTheme(themeTools),
         Skeleton: composeSkeletonTheme(themeTools),
+        Slider: composeSliderTheme(themeTools),
         ScrollBox: composeScrollBoxTheme(themeTools),
         Table: composeTableTheme(themeTools),
         Text: composeTextTheme(themeTools),

@@ -12,7 +12,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
         | 'space-between'
         | 'space-around'
         | 'space-evenly';
-    alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch';
+    alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
     alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
     inline?: boolean;

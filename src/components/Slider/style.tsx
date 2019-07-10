@@ -1,17 +1,18 @@
 import styled, { css } from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 import chroma from 'chroma-js';
+import Box from '../Box';
 
 /* tslint:disable */
 const styles = require('react-input-range/lib/css/index.css').toString();
 /* tslint:enable */
 
 // prettier-ignore
-const rangeStyles = css`
+const sliderStyles = css`
     ${styles}
 `;
 
-type RangeThemeType = {
+type SliderThemeType = {
     default: {
         track: {
             background: string;
@@ -45,8 +46,8 @@ type PropsType = {
 };
 
 // prettier-ignore
-const StyledWrapper = styled.div`
-    ${rangeStyles} padding: 0;
+const StyledWrapper = styled(Box)`
+    ${sliderStyles} padding: 0;
     box-sizing: border-box;
 
     & {
@@ -56,22 +57,22 @@ const StyledWrapper = styled.div`
         }
 
         .input-range__track {
-            background: ${({ theme }): string => theme.Range.default.track.background};
+            background: ${({ theme }): string => theme.Slider.default.track.background};
             border: ${({ theme, disabled }): string =>
-                disabled ? theme.Range.disabled.track.border : theme.Range.default.track.border};
+                disabled ? theme.Slider.disabled.track.border : theme.Slider.default.track.border};
             height: 8px;
         }
 
         .input-range__track--active {
-            background: ${({ theme }): string => theme.Range.default.active.background};
+            background: ${({ theme }): string => theme.Slider.default.active.background};
             margin-top: -1px;
             border: ${({ theme, disabled }): string =>
-                disabled ? theme.Range.disabled.track.border : theme.Range.default.active.border};
+                disabled ? theme.Slider.disabled.track.border : theme.Slider.default.active.border};
         }
 
         .input-range__slider {
-            background: ${({ theme }): string => theme.Range.default.slider.background};
-            border: ${({ theme }): string => theme.Range.default.slider.border};
+            background: ${({ theme }): string => theme.Slider.default.slider.background};
+            border: ${({ theme }): string => theme.Slider.default.slider.border};
             margin-top: -14px;
             width: 16px;
             height: 16px;
@@ -80,7 +81,7 @@ const StyledWrapper = styled.div`
 
         .input-range__slider:active, .input-range__slider:focus {
             transform: none;
-            ${({ theme, disabled }): string => (!disabled ? `box-shadow: ${theme.Range.default.active.boxShadow}` : '')}
+            ${({ theme, disabled }): string => (!disabled ? `box-shadow: ${theme.Slider.default.active.boxShadow}` : '')}
         }
 
         .input-range__label-container {
@@ -89,7 +90,7 @@ const StyledWrapper = styled.div`
     }
 `;
 
-const composeRangeTheme = (themeTools: ThemeTools): RangeThemeType => {
+const composeSliderTheme = (themeTools: ThemeTools): SliderThemeType => {
     const { colors, forms } = themeTools.themeSettings;
 
     return {
@@ -122,4 +123,4 @@ const composeRangeTheme = (themeTools: ThemeTools): RangeThemeType => {
 };
 
 export default StyledWrapper;
-export { RangeThemeType, composeRangeTheme };
+export { SliderThemeType, composeSliderTheme };
