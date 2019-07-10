@@ -50,6 +50,7 @@ const Slider: FC<PropsType> = props => {
             <Box width="100px" shrink={0} padding={[0, 0, 0, 18]}>
                 <TextField.Number
                     value={inputValue}
+                    disabled={props.disabled}
                     name="slider-value"
                     onChange={(value: number) => {
                         if (props.disabled !== true) {
