@@ -19,15 +19,14 @@ const Slider: FC<PropsType> = props => {
     const roundValue = memoize(Math.round.bind(Math));
     const [inputValue, setInputValue] = useState(props.value ? props.value : roundValue(props.value));
 
-    const setValidValue = (value: number) => {
-        if (value > props.maxLimit) {
-            setInputValue(roundValue(props.maxLimit));
-        } else if (value < props.minLimit) {
-            setInputValue(roundValue(props.minLimit));
-        } else {
-            setInputValue(roundValue(value));
+    const isWithinRange = (min: number, max: number, value: number): boolean => value <= max && value >= min;
+
+    const onBlurValue = () => {
+        if (inputValue > props.maxLimit) {
+            setInputValue(props.maxLimit);
+        } else if (inputValue < props.minLimit) {
+            setInputValue(props.minLimit);
         }
-        if (props.onChange !== undefined) props.onChange(value);
     };
 
     return (
@@ -38,8 +37,9 @@ const Slider: FC<PropsType> = props => {
                     disabled={props.disabled}
                     onChange={(value: number) => {
                         if (props.disabled !== true) {
-                            setValidValue(value);
                             setInputFocus(false);
+                            setInputValue(roundValue(value));
+                            if (props.onChange !== undefined) props.onChange(value);
                         }
                     }}
                     minValue={Math.floor(props.minLimit)}
@@ -52,11 +52,18 @@ const Slider: FC<PropsType> = props => {
                     value={inputValue}
                     disabled={props.disabled}
                     name="slider-value"
+                    onBlur={onBlurValue}
                     onChange={(value: number) => {
                         if (props.disabled !== true) {
-                            setValidValue(value);
+                            setInputValue(roundValue(value));
+                            if (props.onChange !== undefined) props.onChange(value);
                         }
                     }}
+                    feedback={
+                        !isWithinRange(props.minLimit, props.maxLimit, inputValue)
+                            ? { severity: 'error', message: '' }
+                            : undefined
+                    }
                 />
             </Box>
         </Box>
