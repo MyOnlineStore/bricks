@@ -51,6 +51,14 @@ const options = [
 /* tslint:disable:max-file-line-count */
 
 describe('Select', () => {
+    const observeMock = {
+        observe: () => null,
+        disconnect: () => null,
+    };
+    beforeEach(() => {
+        (window as any).IntersectionObserver = () => observeMock;
+    });
+
     it('should open when the spacebar is pressed', () => {
         const component = mountWithTheme(
             <Select
@@ -177,7 +185,7 @@ describe('Select', () => {
 
         component.unmount();
 
-        expect(spy).toHaveBeenCalledTimes(1);
+        expect(spy).toHaveBeenCalledTimes(2);
     });
 
     it('should close when clicked outside of window', () => {
