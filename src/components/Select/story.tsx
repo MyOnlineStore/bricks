@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { Component, createRef, RefObject } from 'react';
 import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs';
 import Box from '../Box';
@@ -7,7 +7,6 @@ import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import checkmarkIcon from '../../assets/icons/checkmark.svg';
-// import ScrollBox from '../ScrollBox';
 
 type DemoOptionType = {
     image: string;
@@ -141,7 +140,6 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
 
         this.state = {
             value: '',
-            scrollTop: 0,
         };
     }
 
@@ -150,13 +148,10 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
     };
 
     public render(): JSX.Element {
+        const containerRef: RefObject<HTMLDivElement> = createRef();
+
         return (
-            <Box height="200px" margin={[36, 0]}>
-                {/* <ScrollBox
-                    onScroll={({ scrollTop }) => {
-                        this.setState({ scrollTop });
-                    }}
-                > */}
+            <div ref={containerRef} style={{ height: '200px', overflow: 'auto' }}>
                 <Box direction={'column'}>
                     Our visibility development lifecycle enables unparalleled, end-to-end siloes. Going forward, our
                     innovative prince2 practitioner will deliver value to emerging markets. Our Long-Term Big Data
@@ -195,9 +190,9 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
                         onChange={this.handleChange}
                         disabled={boolean('disabled', false)}
                         options={object('options', options)}
-                        scrollTop={this.state.scrollTop}
                         renderSelected={renderSelected}
                         renderOption={renderOption}
+                        container={containerRef}
                     />
                     You need to effectively invest your industry leaders to increase your organic growth velocity. Is
                     your stakeholder prepared for mission critical platform growth? In the future, will you be able to
@@ -256,8 +251,7 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
                     innovative big data experts. Best-of-breed game changers ethically enable proactive brands for our
                     core competencies. Efficiencies will come from virtually integrating our standard setters.
                 </Box>
-                {/* </ScrollBox> */}
-            </Box>
+            </div>
         );
     }
 }

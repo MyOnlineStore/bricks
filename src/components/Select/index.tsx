@@ -44,8 +44,8 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     value: string;
     options: Array<GenericOptionType>;
     emptyText: string;
+    container?: RefObject<HTMLDivElement>;
     disabled?: boolean;
-    scrollTop?: number;
     'data-testid'?: string;
     onChange(value: string): void;
     renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
@@ -168,7 +168,11 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             this.windowRef.current &&
             this.wrapperRef &&
             this.wrapperRef.current &&
-            this.state.inputHeight
+            this.state.inputHeight &&
+            this.inputWrapperRef &&
+            this.inputWrapperRef.current &&
+            this.props.container &&
+            this.props.container.current
         ) {
             const newTop =
                 this.wrapperRef.current.getBoundingClientRect().top +
@@ -184,6 +188,17 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         if (this.state.isOpen) {
             window.requestAnimationFrame(this.updateWindowTop);
         }
+    };
+
+    private createObserver = (): void => {
+        const Options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1,
+        };
+
+        const inputObserver = new IntersectionObserver(() => this.close(), Options);
+        if (this.inputWrapperRef && this.inputWrapperRef.current) inputObserver.observe(this.inputWrapperRef.current);
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
@@ -205,20 +220,27 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         if (prevState.isOpen && !this.state.isOpen && this.wrapperRef.current !== null) {
             this.wrapperRef.current.focus();
         }
-
-        if (this.state.isOpen) {
-            window.requestAnimationFrame(this.updateWindowTop);
-        }
     }
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
         document.addEventListener('scroll', this.handleScroll);
+        if (this.props.container) {
+            setTimeout(() => {
+                if (this.props.container && this.props.container.current)
+                    this.props.container.current.addEventListener('scroll', this.handleScroll);
+            }, 100);
+        }
+
+        this.createObserver();
     }
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
         document.removeEventListener('scroll', this.handleScroll);
+        if (this.props.container && this.props.container.current) {
+            this.props.container.current.removeEventListener('scroll', this.handleScroll);
+        }
     }
 
     public render(): JSX.Element {
