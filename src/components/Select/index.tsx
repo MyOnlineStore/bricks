@@ -224,12 +224,14 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
-        document.addEventListener('scroll', this.handleScroll);
+
         if (this.props.container) {
             setTimeout(() => {
                 if (this.props.container && this.props.container.current)
                     this.props.container.current.addEventListener('scroll', this.handleScroll);
             }, 100);
+        } else {
+            document.addEventListener('scroll', this.handleScroll);
         }
 
         this.createObserver();
@@ -237,9 +239,11 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
-        document.removeEventListener('scroll', this.handleScroll);
+
         if (this.props.container && this.props.container.current) {
             this.props.container.current.removeEventListener('scroll', this.handleScroll);
+        } else {
+            document.removeEventListener('scroll', this.handleScroll);
         }
     }
 
