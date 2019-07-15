@@ -47,6 +47,22 @@ describe('Slider', () => {
         expect(fn).not.toThrow();
     });
 
+    it('should not crash when no onFocus is provided', () => {
+        const fn = (): void => {
+            mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onFocus={() => undefined} />);
+        };
+
+        expect(fn).not.toThrow();
+    });
+
+    it('should not crash when no onBlur is provided', () => {
+        const fn = (): void => {
+            mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onBlur={() => undefined} />);
+        };
+
+        expect(fn).not.toThrow();
+    });
+
     it('should floor and ceil the minLimit and maxLimit respectively', () => {
         const changeMock = jest.fn();
         const component = mountWithTheme(<Slider value={5} minLimit={1.75} maxLimit={15.13} onChange={changeMock} />);
