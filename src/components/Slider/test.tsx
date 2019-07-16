@@ -41,7 +41,11 @@ describe('Slider', () => {
 
     it('should not crash when no onChange is provided', () => {
         const fn = (): void => {
-            mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onChange={undefined} />);
+            const component = mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onChange={undefined} />);
+            component
+                .find('input')
+                .first()
+                .simulate('change', { target: { value: '2' } });
         };
 
         expect(fn).not.toThrow();
@@ -49,7 +53,12 @@ describe('Slider', () => {
 
     it('should not crash when no onFocus is provided', () => {
         const fn = (): void => {
-            mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onFocus={undefined} />);
+            const component = mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onFocus={undefined} />);
+
+            component
+                .find('input')
+                .first()
+                .simulate('focus');
         };
 
         expect(fn).not.toThrow();
@@ -57,7 +66,13 @@ describe('Slider', () => {
 
     it('should not crash when no onBlur is provided', () => {
         const fn = (): void => {
-            mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onBlur={undefined} />);
+            const component = mountWithTheme(<Slider value={5} minLimit={2} maxLimit={7} onBlur={undefined} />);
+
+            component
+                .find('input')
+                .first()
+                .simulate('focus')
+                .simulate('blur');
         };
 
         expect(fn).not.toThrow();
