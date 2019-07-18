@@ -22,4 +22,4 @@ resolves #[resolved issue number]
 - [ ] Appropriate tests have been added for my functionality (check if not applicable).
 - [ ] A designer has seen and approved my changes (tag `@LuukHorsmans` or `@RianneSchaekens` for a design review when applicable).
 - [ ] I have tested my addition in all supported browsers and for responsiveness (Chrome, Firefox, Safari, Edge, IE11 and mobile browsers).
-- [ ] The appropriate documentation has been written (check if not applicable).
+- [ ] Appropriate documentation has been written (check if not applicable).
