@@ -18,6 +18,33 @@ type PropsType = {
     renderContent(): JSX.Element | string;
 };
 
+/**
+ * Tooltip component that is positioned around the component it wraps.
+ * This component is based on react-popper, a wrapper around popper.js
+ * [reference](https://github.com/FezVrasta/react-popper)
+ *
+ * @param renderContent
+ * Mandatory prop that contains the contents of the tooltip
+ * @param placement
+ * Defines the location of the tooltip (optional)
+ * @param show
+ * Enables you to manage the visibility of the tooltip
+ * @param fixed
+ * Enable to use the fixed position strategy to position the tooltip
+ * @param offset
+ * Offset the tooltip content-block horzontal or vertical relative to the wrapper element
+ * @param distance
+ * Used to set the distance between the wrapper element and the tooltip
+ * @param stretch
+ * Used to strech the anchor of the tooltip. By enabling this the anchor grows to the size of the parent of the wrapped component
+ * @param preventOverflow
+ * This is used to prevent the tooltip from being positioned outside the boundary
+ * [reference](https://popper.js.org/popper-documentation.html#modifiers..preventOverflow)
+ * @param triggerOn
+ * Used to set they way the tooltip is triggered. Can't be used together with show prop.
+ * @param onClickOutside
+ * Function triggered when the user clicks outside of the tooltip.
+ */
 const Popover: FC<PropsType> = props => {
     const anchorRef = useRef<HTMLDivElement | null>(null);
     const popoverRef = useRef<HTMLDivElement | null>(null);
