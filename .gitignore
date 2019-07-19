@@ -4,7 +4,8 @@
 /.stfolder
 /.vs
 /.phpstorm_helpers
-/node_modules
+node_modules
+.next
 /reports
 /dist
 /lib

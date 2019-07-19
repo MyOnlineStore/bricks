@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.0.2",
+    "@myonlinestore/bricks": "file:../dist"
+  },
+  "scripts": {
+      "build-bricks": "cd ../ && yarn build && cd docs",
+      "start": "yarn build-bricks && next"
+  }
+}
