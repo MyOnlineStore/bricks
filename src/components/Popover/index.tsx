@@ -19,7 +19,7 @@ type PropsType = {
 };
 
 /**
- * Tooltip component that is positioned around the component it's wrapped around.
+ * Tooltip component that is positioned around the component it wraps.
  * This component is based on react-popper, a wrapper around popper.js
  * [reference](https://github.com/FezVrasta/react-popper)
  *
