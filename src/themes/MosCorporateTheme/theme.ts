@@ -66,22 +66,22 @@ const theme: RecursivePartialType<ThemeType> = {
         warning: {
             idle: {
                 backgroundColor: yellow.darker1,
-                color: silver.lighter1,
+                color: grey.base,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
                 backgroundColor: yellow.darker2,
-                color: silver.lighter1,
+                color: grey.base,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
                 backgroundColor: yellow.darker1,
-                color: silver.lighter1,
+                color: grey.base,
                 boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(yellow.darker1, 0.25)}`,
             },
             active: {
                 backgroundColor: yellow.darker2,
-                color: silver.lighter1,
+                color: grey.base,
                 boxShadow: 'none',
             },
         },
