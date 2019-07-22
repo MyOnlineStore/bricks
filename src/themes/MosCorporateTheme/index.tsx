@@ -5,7 +5,7 @@ import mosTheme from '../MosTheme/MosTheme.theme';
 import mosCorporateTheme from './theme';
 import deepmerge from 'deepmerge';
 
-const MosCorporateTheme: FunctionComponent<{}> = (props): JSX.Element => (
+const MosCorporateTheme: FunctionComponent = (props): JSX.Element => (
     <ThemeProvider theme={deepmerge(mosTheme, mosCorporateTheme) as ThemeType}>
         <>{props.children}</>
     </ThemeProvider>

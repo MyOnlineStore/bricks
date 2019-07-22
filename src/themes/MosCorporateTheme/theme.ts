@@ -6,7 +6,7 @@ import { bodyFont, fontSize, green, silver, grey, red, yellow } from '../MosThem
 /* tslint:disable:max-file-line-count */
 
 const roundness = {
-    base: '18px',
+    base: '19px',
 };
 
 const theme: RecursivePartialType<ThemeType> = {
