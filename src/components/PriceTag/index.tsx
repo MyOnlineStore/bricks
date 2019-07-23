@@ -32,13 +32,20 @@ const deriveStatsFromPart = (initialStats: StatsType, part: Intl.PartType): Stat
     isFree: isFree(part) ? false : initialStats.isFree,
 });
 
+/**
+ * This component renders a span with the locale aware version of the price.
+ * It also allows you to render some common design patterns for prices like
+ * superscripting the fraction or hiding the decimal when they equal 0.
+ */
+
 const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const formatter = new Intl.NumberFormat(props.locale, {
+    const formatter = new Intl.NumberFormat(props.locale.replace('_', '-'), {
         style: 'currency',
         currency: props.currency,
     });
 
     const parts = formatter.formatToParts(props.value);
+
     const stats = parts.reduce(deriveStatsFromPart, {
         isRound: false,
         isFree: true,
@@ -53,7 +60,7 @@ const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
             case 'decimal':
                 return formatDecimalSeperator(part.value, props, stats.isRound);
             case 'literal':
-                return props.hideCurrency && props.hideCurrency === true ? undefined : part.value;
+                return props.hideCurrency === true ? '' : part.value;
             default:
                 return part.value;
         }
