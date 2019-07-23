@@ -60,7 +60,7 @@ const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
             case 'decimal':
                 return formatDecimalSeperator(part.value, props, stats.isRound);
             case 'literal':
-                return props.hideCurrency === true ? '' : part.value;
+                return props.hideCurrency === true ? undefined : part.value;
             default:
                 return part.value;
         }
