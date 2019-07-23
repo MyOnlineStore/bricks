@@ -4,18 +4,75 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 
+const currencysymbols = {
+    USD: '$',
+    EUR: '€',
+};
+
+/**
+ * Note: The spaces between the currency symbol and the number aren't actual spaces for some reason.
+ * To add cases to the table, make sure to copy them from already existing cases.
+ */
+
 describe('PriceTag', () => {
-    it('should render with a hidden currency', () => {
-        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} hideCurrency />);
+    describe.each`
+        locale     | currency | outcome
+        ${'en-US'} | ${'USD'} | ${'$10.20'}
+        ${'nl-NL'} | ${'EUR'} | ${'€ 10,20'}
+        ${'de-DE'} | ${'EUR'} | ${'10,20 €'}
+        ${'en_US'} | ${'USD'} | ${'$10.20'}
+        ${'nl_NL'} | ${'EUR'} | ${'€ 10,20'}
+        ${'de_DE'} | ${'EUR'} | ${'10,20 €'}
+    `(
+        '$locale + $currency',
+        ({
+            locale,
+            currency,
+            outcome,
+        }: {
+            locale: string;
+            currency: keyof typeof currencysymbols;
+            outcome: string;
+        }) => {
+            it(`should format into: ${outcome}`, () => {
+                const component = mountWithTheme(<PriceTag locale={locale} currency={currency} value={10.2} />);
 
-        expect(component.text()).not.toContain('€');
-    });
+                expect(component.text()).toEqual(outcome);
+            });
 
-    it('should render a base price', () => {
-        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} />);
+            it('should render with a hidden currency', () => {
+                const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} hideCurrency />);
 
-        expect(component.text()).toEqual('€ 10,20');
-    });
+                expect(component.text()).not.toContain(currencysymbols[currency]);
+            });
+
+            it('should render with a superscript fraction', () => {
+                const priceTag = mountWithTheme(
+                    <PriceTag locale={locale} currency={currency} value={10.2} superScriptFraction />,
+                );
+
+                expect(priceTag).toHaveStyleRule('font-size', '.7em', { modifier: 'sup' });
+            });
+
+            it('should render a free label', () => {
+                const component = mountWithTheme(
+                    <PriceTag locale={locale} freeLabel="free" currency={currency} value={0} />,
+                );
+
+                expect(component.text()).toContain('free');
+            });
+
+            it('should render an action price', () => {
+                const priceTag = mountWithTheme(
+                    <PriceTag locale={locale} currency={currency} value={10.2} strikethrough />,
+                );
+
+                expect(priceTag).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
+                    modifier: '::after',
+                });
+            });
+        },
+    );
 
     it('should position currency correctly ', () => {
         const component = mountWithTheme(<PriceTag locale="de-DE" currency="EUR" value={10.2} />);
@@ -27,26 +84,6 @@ describe('PriceTag', () => {
         const component = mountWithTheme(<PriceTag locale="nl-NL" currency="JPY" value={10.2} />);
 
         expect(component.text()).toEqual('JP¥ 10');
-    });
-
-    it('should render a free label', () => {
-        const component = mountWithTheme(<PriceTag locale="de-DE" freeLabel="free stuff" currency="EUR" value={0} />);
-
-        expect(component.text()).toContain('free stuff');
-    });
-
-    it('should render an action price', () => {
-        const priceTag = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} strikethrough />);
-
-        expect(priceTag).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
-            modifier: '::after',
-        });
-    });
-
-    it('should render with a superscript franction', () => {
-        const priceTag = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={10.2} superScriptFraction />);
-
-        expect(priceTag).toHaveStyleRule('font-size', '.7em', { modifier: 'sup' });
     });
 
     it('should render with a dashed fraction', () => {
