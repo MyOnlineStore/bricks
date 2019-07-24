@@ -1,16 +1,9 @@
-//tslint:disable:max-file-line-count
 import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef, FormEvent } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
 import Option from './Option';
-import {
-    StyledWrapper,
-    StyledInput,
-    StyledWindow,
-    StyledPlaceholder,
-    INNER_OFFSET as windowInnerOffset,
-} from './style';
+import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
@@ -44,7 +37,6 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     value: string;
     options: Array<GenericOptionType>;
     emptyText: string;
-    container?: RefObject<HTMLDivElement>;
     disabled?: boolean;
     'data-testid'?: string;
     onChange(value: string): void;
@@ -99,7 +91,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     private open = (): void => {
         if (!this.props.disabled) {
             this.handleInput('');
-            this.updateWindowTop();
             this.setState({ isOpen: true });
         }
     };
@@ -162,45 +153,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         }
     };
 
-    private updateWindowTop = (): void => {
-        if (
-            this.windowRef &&
-            this.windowRef.current &&
-            this.wrapperRef &&
-            this.wrapperRef.current &&
-            this.state.inputHeight &&
-            this.inputWrapperRef &&
-            this.inputWrapperRef.current &&
-            this.props.container &&
-            this.props.container.current
-        ) {
-            const newTop =
-                this.wrapperRef.current.getBoundingClientRect().top +
-                window.scrollY +
-                this.state.inputHeight +
-                windowInnerOffset;
-
-            this.windowRef.current.style.top = `${newTop.toString()}px`;
-        }
-    };
-
-    private handleScroll = (): void => {
-        if (this.state.isOpen) {
-            window.requestAnimationFrame(this.updateWindowTop);
-        }
-    };
-
-    private createObserver = (): void => {
-        const Options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 1,
-        };
-
-        const inputObserver = new IntersectionObserver(() => this.close(), Options);
-        if (this.inputWrapperRef && this.inputWrapperRef.current) inputObserver.observe(this.inputWrapperRef.current);
-    };
-
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
         if (prevState.isOpen && this.props.disabled) {
             this.setState({ isOpen: false });
@@ -224,27 +176,10 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
-
-        if (this.props.container) {
-            setTimeout(() => {
-                if (this.props.container && this.props.container.current)
-                    this.props.container.current.addEventListener('scroll', this.handleScroll);
-            }, 100);
-        } else {
-            document.addEventListener('scroll', this.handleScroll);
-        }
-
-        this.createObserver();
     }
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
-
-        if (this.props.container && this.props.container.current) {
-            this.props.container.current.removeEventListener('scroll', this.handleScroll);
-        } else {
-            document.removeEventListener('scroll', this.handleScroll);
-        }
     }
 
     public render(): JSX.Element {
@@ -297,7 +232,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                             ? `${this.props['data-testid']}-input-field`
                                             : undefined
                                     }
-                                    style={{ width: '100%' }}
                                     onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                                         event.stopPropagation();
                                         this.handleInput(event.target.value);
