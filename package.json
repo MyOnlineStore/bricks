@@ -108,7 +108,7 @@
     "dev": "npm run watch",
     "test": "jest",
     "test-coverage": "jest --coverage --runInBand --bail",
-    "build": "rimraf ./dist && webpack && bundlesize",
+    "build": "rimraf ./dist && webpack && bundlesize && yarn docs",
     "lint-fix": "npm run lint -- --fix",
     "lint": "tslint --project tsconfig.json -c tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -s .storybook/public",
@@ -116,7 +116,8 @@
     "build-storybook": "build-storybook -o public -s .storybook/public",
     "cs-fix": "prettier --write ./src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./src/**/*.{ts,tsx}",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "docs": "node scripts/copy-readme.js"
   },
   "files": [
     "dist"
