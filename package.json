@@ -108,7 +108,7 @@
     "dev": "npm run watch",
     "test": "jest",
     "test-coverage": "jest --coverage --runInBand --bail",
-    "build": "rimraf ./dist && webpack && bundlesize && yarn docs",
+    "build": "rimraf ./dist && webpack && yarn docs&& bundlesize",
     "lint-fix": "npm run lint -- --fix",
     "lint": "tslint --project tsconfig.json -c tslint.json ./src/**/*.{ts,tsx}",
     "watch": "start-storybook -p 9001 -s .storybook/public",
