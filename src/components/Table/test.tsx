@@ -15,14 +15,6 @@ import StyledCell from './Cell/style';
 import CompactHeaders from './CompactHeaders';
 
 describe('Table', () => {
-    const observeMock = {
-        observe: () => null,
-        disconnect: () => null,
-    };
-    beforeEach(() => {
-        (window as any).IntersectionObserver = () => observeMock;
-    });
-
     it('should render the correct amount of cells', () => {
         const table = mountWithTheme(
             <Table
