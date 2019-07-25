@@ -19,6 +19,8 @@ const StyledButton = styled.button<PropsType>`
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
+    background: none;
+    border: none;
 
     &:disabled {
         cursor: default;

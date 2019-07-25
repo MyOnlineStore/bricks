@@ -53,7 +53,7 @@ describe('Button', () => {
         expect(component.find('a').length).toBe(1);
     });
 
-    it('should no-op on click without an onClick', () => {
+    it('should not break when clicked without an onClick callback', () => {
         const fn = (): void => {
             const component = mount(
                 <MosTheme>
