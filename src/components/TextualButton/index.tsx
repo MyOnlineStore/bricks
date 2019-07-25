@@ -52,7 +52,7 @@ const TextualButton: FC<PropsType> = props => {
                 setHovering(false);
             }}
         >
-            <StyledTextContainer {...props} hover={isHovering}>
+            <StyledTextContainer variant={props.variant} hover={isHovering}>
                 {Children.count(props.children) > 0 ? props.children : props.title}
                 {props.icon && (
                     <>
