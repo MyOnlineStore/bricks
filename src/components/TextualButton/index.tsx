@@ -1,4 +1,4 @@
-import React, { FC, Children } from 'react';
+import React, { FC, Children, useState } from 'react';
 import Base, { PropsType as BasePropsType } from '../Button/base';
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
@@ -24,7 +24,7 @@ const StyledTextualButton = styled(Base)<PropsType>`
     font-weight: ${({ theme, variant }) => theme.TextualButton[variant].fontWeight};
 `;
 
-const StyledTextContainer = styled.span<PropsType>`
+const StyledTextContainer = styled.span<PropsType & { hover: boolean }>`
     position: relative;
 
     &::before {
@@ -35,20 +35,24 @@ const StyledTextContainer = styled.span<PropsType>`
         left: 0;
         width: 100%;
         height: 1px;
-        background: transparent;
-    }
-
-    &:hover {
-        &::before {
-            background: ${({ theme, variant }) => theme.TextualButton[variant].color};
-        }
+        background: ${({ theme, variant, hover }) => (hover ? theme.TextualButton[variant].color : 'transparent')};
     }
 `;
 
 const TextualButton: FC<PropsType> = props => {
+    const [isHovering, setHovering] = useState(false);
+
     return (
-        <StyledTextualButton {...props}>
-            <StyledTextContainer {...props}>
+        <StyledTextualButton
+            {...props}
+            onMouseEnter={() => {
+                setHovering(true);
+            }}
+            onMouseLeave={() => {
+                setHovering(false);
+            }}
+        >
+            <StyledTextContainer {...props} hover={isHovering}>
                 {Children.count(props.children) > 0 ? props.children : props.title}
                 {props.icon && (
                     <>
