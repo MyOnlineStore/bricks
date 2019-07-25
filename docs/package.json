@@ -12,7 +12,7 @@
     "remark-images": "0.8.1"
   },
   "scripts": {
-      "build-bricks": "cd ../ && yarn build && cd docs",
+      "update-bricks": "cd ../ && yarn build && cd docs",
       "update-docs": "cd ../ && yarn docs && cd docs && rimraf node_modules && yarn",
       "start": "next"
   }
