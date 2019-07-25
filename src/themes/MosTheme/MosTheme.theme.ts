@@ -791,6 +791,16 @@ const theme: ThemeType = {
             background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
         },
     },
+    TextualButton: {
+        primary: {
+            color: green.darker2,
+            fontWeight: 600,
+        },
+        secondary: {
+            color: grey.base,
+            fontWeight: 600,
+        },
+    },
     Tile: {
         borderColor: silver.darker4,
     },

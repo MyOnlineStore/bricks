@@ -75,4 +75,4 @@ const Demo: FunctionComponent = (): JSX.Element => {
     /* tslint:enable */
 };
 
-storiesOf('MultiButton', module).add('Default', () => <Demo />);
+storiesOf('Buttons/MultiButton', module).add('Default', () => <Demo />);

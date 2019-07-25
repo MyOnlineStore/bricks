@@ -6,7 +6,7 @@ import Text from '../Text';
 
 const targetOptions = ['_self', '_blank'];
 
-storiesOf('Link', module)
+storiesOf('Buttons/Link', module)
     .add('Default', () => (
         <Text>
             <Link

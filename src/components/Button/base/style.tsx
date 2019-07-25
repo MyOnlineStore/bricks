@@ -6,6 +6,7 @@ const StyledButton = styled.button<PropsType>`
     display: inline-flex;
     outline: none;
     line-height: 1;
+    padding: 0;
     cursor: ${({ loading }) => (loading ? 'default' : 'pointer')};
     appearance: none;
     user-select: none;
@@ -18,19 +19,6 @@ const StyledButton = styled.button<PropsType>`
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
-
-    &::before {
-        content: '';
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -2;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
 
     &:disabled {
         cursor: default;

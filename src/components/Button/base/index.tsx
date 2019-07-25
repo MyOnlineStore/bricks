@@ -3,9 +3,7 @@ import StyledButton, { StyledAnchor } from './style';
 
 type PropsType = {
     className?: string;
-    compact?: boolean;
     title: string;
-    variant?: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     target?: HTMLAnchorElement['target'];
     href?: string;
     disabled?: boolean;
@@ -31,7 +29,6 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 target={props.target}
                 title={props.title}
                 className={props.className}
-                disabled={props.disabled}
                 id={props.id}
                 loading={props.loading}
                 data-testid={props['data-testid']}
