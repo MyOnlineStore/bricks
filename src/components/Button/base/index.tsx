@@ -1,7 +1,7 @@
 import React, { FunctionComponent, MouseEvent, HTMLProps } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 
-type PropsType = {
+export type PropsType = {
     className?: string;
     title: string;
     target?: HTMLAnchorElement['target'];

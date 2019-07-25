@@ -24,7 +24,7 @@ const StyledTextualButton = styled(Base)<PropsType>`
     font-weight: ${({ theme, variant }) => theme.TextualButton[variant].fontWeight};
 `;
 
-const StyledTextContainer = styled.span<PropsType & { hover: boolean }>`
+const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: boolean }>`
     position: relative;
 
     &::before {
