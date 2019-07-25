@@ -79,27 +79,25 @@ const StyledIconButton = styled(BareButton)<Pick<PropsType, 'variant'>>`
 const IconButton: FC<PropsType> = props => {
     return (
         <StyledIconButton {...props}>
-            <>
-                {props.loading && (
-                    <Box
-                        justifyContent="center"
-                        alignItems="center"
-                        position="absolute"
-                        left="0"
-                        top="0"
-                        right="0"
-                        bottom="0"
-                        padding={[9]}
-                    >
-                        <Spinner />
-                    </Box>
-                )}
-                <Icon
-                    color={props.loading ? 'transparent' : undefined}
-                    size={props.iconSize ? props.iconSize : 'medium'}
-                    icon={props.icon}
-                />
-            </>
+            {props.loading && (
+                <Box
+                    justifyContent="center"
+                    alignItems="center"
+                    position="absolute"
+                    left="0"
+                    top="0"
+                    right="0"
+                    bottom="0"
+                    padding={[9]}
+                >
+                    <Spinner />
+                </Box>
+            )}
+            <Icon
+                color={props.loading ? 'transparent' : undefined}
+                size={props.iconSize ? props.iconSize : 'medium'}
+                icon={props.icon}
+            />
         </StyledIconButton>
     );
 };
