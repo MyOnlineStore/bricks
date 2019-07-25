@@ -114,7 +114,7 @@ const StyledButton = styled(Base)<PropsType>`
                 right: 0;
                 bottom: 0;
                 z-index: -2;
-                transition: opacity 0.3s;     
+                transition: opacity 0.3s;
                 opacity: ${disabled ? 1 : 0};
                 ${disabled ? `color: ${theme.Button.disabled.color}` : 0};
                 background: ${theme.Button.disabled.backgroundColor}
