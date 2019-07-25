@@ -20,7 +20,7 @@ storiesOf('Buttons/TextualButton', module)
         return (
             <TextualButton
                 icon={chevron}
-                href="https://google.com"
+                href=""
                 variant={select('variant', ['primary', 'secondary'], 'primary') as PropsType['variant']}
                 title="Click me"
             >

@@ -11,7 +11,7 @@ storiesOf('Buttons/Link', module)
         <Text>
             <Link
                 target={select('target', targetOptions, targetOptions[0]) as PropsType['target']}
-                href="http://www.google.com"
+                href=""
                 title="Google search"
             />
         </Text>
