@@ -5,23 +5,18 @@ import { Box, FoldOut, Link, Text } from '@myonlinestore/bricks';
 const Page: FC = props => {
     return (
         <main>
-            <Box width="100%">
-                <Box basis="300px">
-                    <Nav>
-                        <Box margin={[0, 0, 12, 0]}>
-                            <Text strong variant="large">
-                                Components
-                            </Text>
-                        </Box>
-                        <FoldOut open>
-                            <Text>
-                                <Link href="" title="Button" />
-                            </Text>
-                        </FoldOut>
-                    </Nav>
-                </Box>
-                <Box grow={1} padding={[48, 120 as 0]}>
-                    {props.children}
+            <Box minHeight="100vh">
+                <Box width="100%" alignContent="stretch">
+                    <Box basis="300px">
+                        <Nav>
+                            <Link href="/" title="Home" />
+                            <br />
+                            <Link href="/components" title="Badge" />
+                        </Nav>
+                    </Box>
+                    <Box grow={1} padding={[48, 120 as 0]}>
+                        {props.children}
+                    </Box>
                 </Box>
             </Box>
         </main>

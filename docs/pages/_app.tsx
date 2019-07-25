@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { Box, MosTheme } from '@myonlinestore/bricks';
 import Head from '../components/Head';
+import Page from '../components/Page';
 
 declare module 'react' {
     interface StyleHTMLAttributes<T> extends HTMLAttributes<T> {
@@ -18,9 +19,9 @@ class MyApp extends App {
             <MosTheme>
                 <Container>
                     <Head />
-                    <Box direction="column" wrap={false} minHeight="100vh">
+                    <Page>
                         <Component {...pageProps} />
-                    </Box>
+                    </Page>
                 </Container>
             </MosTheme>
         );
