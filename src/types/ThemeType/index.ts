@@ -27,6 +27,7 @@ import { SelectThemeType } from '../../components/Select/style';
 import { SkeletonThemeType } from '../../components/Skeleton/style';
 import { BreadcrumbsThemeType } from '../../components/Breadcrumbs/style';
 import { IconButtonThemeType } from '../../components/IconButton';
+import { TextualButtonThemeType } from '../../components/TextualButton';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -54,6 +55,7 @@ type ThemeType = {
     Text: TextThemeType;
     TextArea: TextAreaThemeType;
     TextField: TextFieldThemeType;
+    TextualButton: TextualButtonThemeType;
     Tile: TileThemeType;
     Toast: ToastThemeType;
     RadioButton: RadioButtonThemeType;

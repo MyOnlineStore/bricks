@@ -9,7 +9,7 @@ const Wrap = styled.div`
     border: solid 3px rgba(255, 36, 94, 0.3);
 `;
 
-storiesOf('ButtonGroup', module).add('Default', () => {
+storiesOf('Buttons/ButtonGroup', module).add('Default', () => {
     return (
         <Wrap>
             <ButtonGroup>

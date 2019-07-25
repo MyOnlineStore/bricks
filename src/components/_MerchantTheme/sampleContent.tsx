@@ -15,6 +15,8 @@ import Separated from '../Separated';
 import Notification from '../Notification';
 import Badge from '../Badge';
 import * as ThemeSettingsType from '../../themes/ExperimentalCustomTheme/MerchantThemeTypes';
+import TextualButton from '../TextualButton';
+import { ChevronRightIcon } from '../../assets';
 
 type PropsType = {
     themeSettings: ThemeSettingsType.ThemeSettingsType;
@@ -300,24 +302,14 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                 </form>
             </Raised>
             <Box direction="row" justifyContent="space-between" wrap={true} padding={[24, 0]}>
-                <Button title="b" variant="primary">
-                    Primary
-                </Button>
-                <Button title="b" variant="secondary">
-                    Secondary
-                </Button>
-                <Button title="b" variant="warning">
-                    Warning
-                </Button>
-                <Button title="b" variant="destructive">
-                    Destructive
-                </Button>
-                <Button title="b" variant="plain">
-                    Plain
-                </Button>
-                <Button title="b" variant="primary" disabled>
-                    Disabled
-                </Button>
+                <Button title="Primary" variant="primary" />
+                <Button title="Secondary" variant="secondary" />
+                <Button title="Warning" variant="warning" />
+                <Button title="Destructive" variant="destructive" />
+                <Button title="Plain" variant="plain" />
+                <Button title="Disabled" variant="primary" disabled />
+                <TextualButton icon={ChevronRightIcon} title="Primary" variant="primary" />
+                <TextualButton icon={ChevronRightIcon} title="Secondary" variant="secondary" />
             </Box>
             <Contrast>
                 <Box padding={[24]} justifyContent="flex-end" direction="row">

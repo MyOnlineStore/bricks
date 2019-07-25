@@ -9,7 +9,7 @@ import Contrast from '../Contrast';
 import Box from '../Box';
 import cart from '../../assets/icons/cart.svg';
 
-storiesOf('Button', module)
+storiesOf('Buttons/Button', module)
     .add('Default', () => {
         return (
             <Button

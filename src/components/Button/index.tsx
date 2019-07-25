@@ -1,7 +1,7 @@
-import React, { Children, ReactNode } from 'react';
+import React, { ReactNode, FC, Children } from 'react';
 import styled from '../../utility/styled';
 import Icon from '../Icon';
-import BareButton, { PropsType as BaseButtonPropsType } from './base';
+import Base, { PropsType as BasePropsType } from './base';
 import Box from '../Box';
 import Spinner from '../Spinner';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
@@ -51,7 +51,7 @@ type ButtonThemeType = {
     };
 };
 
-type PropsType = BaseButtonPropsType & {
+type PropsType = BasePropsType & {
     loading?: boolean;
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     compact?: boolean;
@@ -60,38 +60,7 @@ type PropsType = BaseButtonPropsType & {
     children?: ReactNode;
 };
 
-const Button = styled(BareButton).attrs((props: PropsType) => {
-    const color = props.loading ? 'transparent' : undefined;
-
-    const children: ReactNode = (
-        <>
-            {props.loading && (
-                <Box
-                    justifyContent="center"
-                    alignItems="center"
-                    position="absolute"
-                    left="0"
-                    top="0"
-                    right="0"
-                    bottom="0"
-                    padding={[6]}
-                >
-                    <Spinner />
-                </Box>
-            )}
-            {props.icon && (
-                <Box inline padding={[0, 6, 0, 0]}>
-                    <Icon size="medium" icon={props.icon} color={color} />
-                </Box>
-            )}
-            <span style={{ color }}>{Children.count(props.children) > 0 ? props.children : props.title}</span>
-        </>
-    );
-
-    return {
-        children,
-    };
-})<PropsType>`
+const StyledButton = styled(Base)<PropsType>`
     ${({ theme, variant, compact, disabled, loading }): string => {
         const idle = `
             background-color: ${theme.Button[variant].idle.backgroundColor};
@@ -137,6 +106,15 @@ const Button = styled(BareButton).attrs((props: PropsType) => {
             }
 
             &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -2;
+                transition: opacity 0.3s;
                 opacity: ${disabled ? 1 : 0};
                 ${disabled ? `color: ${theme.Button.disabled.color}` : 0};
                 background: ${theme.Button.disabled.backgroundColor}
@@ -154,10 +132,46 @@ const Button = styled(BareButton).attrs((props: PropsType) => {
             &:disabled {
                 background: ${theme.Button.disabled.backgroundColor};
                 color: ${theme.Button.disabled.color};
+                border-color: transparent;
+                transform: none;
+                box-shadow: none;
+
+                &::before {
+                    opacity: 1;
+                }
             }
-            `;
+        `;
     }};
 `;
+
+const Button: FC<PropsType> = props => {
+    const color = props.loading ? 'transparent' : undefined;
+
+    return (
+        <StyledButton {...props}>
+            {props.loading && (
+                <Box
+                    justifyContent="center"
+                    alignItems="center"
+                    position="absolute"
+                    left="0"
+                    top="0"
+                    right="0"
+                    bottom="0"
+                    padding={[6]}
+                >
+                    <Spinner />
+                </Box>
+            )}
+            {props.icon && (
+                <Box inline padding={[0, 6, 0, 0]}>
+                    <Icon size="medium" icon={props.icon} color={color} />
+                </Box>
+            )}
+            <span style={{ color }}>{Children.count(props.children) > 0 ? props.children : props.title}</span>
+        </StyledButton>
+    );
+};
 
 const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
     const { colors, text } = themeTools.themeSettings;

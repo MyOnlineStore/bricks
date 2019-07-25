@@ -1,19 +1,16 @@
-import React, { FunctionComponent, MouseEvent } from 'react';
+import React, { FunctionComponent, MouseEvent, HTMLProps } from 'react';
 import StyledButton, { StyledAnchor } from './style';
 
 type PropsType = {
     className?: string;
-    compact?: boolean;
     title: string;
-    variant?: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     target?: HTMLAnchorElement['target'];
     href?: string;
     disabled?: boolean;
     id?: string;
     loading?: boolean;
     'data-testid'?: string;
-    onClick?(event: MouseEvent<HTMLButtonElement>): void;
-};
+} & Partial<Pick<HTMLProps<HTMLButtonElement | HTMLAnchorElement>, 'onClick' | 'onMouseEnter' | 'onMouseLeave'>>;
 
 const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
@@ -31,10 +28,11 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 target={props.target}
                 title={props.title}
                 className={props.className}
-                disabled={props.disabled}
                 id={props.id}
                 loading={props.loading}
                 data-testid={props['data-testid']}
+                onMouseEnter={props.onMouseEnter}
+                onMouseLeave={props.onMouseLeave}
             >
                 {props.children}
             </StyledAnchor>
@@ -43,6 +41,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledButton
+            {...props}
             title={props.title}
             className={props.className}
             onClick={clickAction}

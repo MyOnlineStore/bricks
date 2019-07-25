@@ -4,7 +4,7 @@ import React from 'react';
 import IconButton, { PropsType } from '../IconButton';
 import bell from '../../assets/icons/bell.svg';
 
-storiesOf('IconButton', module).add('Default', () => {
+storiesOf('Buttons/IconButton', module).add('Default', () => {
     return (
         <IconButton
             icon={bell}

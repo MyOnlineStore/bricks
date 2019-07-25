@@ -32,6 +32,7 @@ import { composePopoverTheme } from '../../components/Popover/style';
 import { composeScrollBoxTheme } from '../../components/ScrollBox/style';
 import { composePriceTagTheme } from '../../components/PriceTag/style';
 import { composeIllustrationTheme } from '../../components/Illustration/style';
+import { composeTextualButton } from '../../components/TextualButton';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -95,6 +96,7 @@ const generateThemeObject = (
         Text: composeTextTheme(themeTools),
         TextArea: composeTextAreaTheme(themeTools),
         TextField: composeTextFieldTheme(themeTools),
+        TextualButton: composeTextualButton(themeTools),
         Tile: composeTileTheme(themeTools),
         Toast: composeToastTheme(themeTools),
         Toggle: composeToggleTheme(themeTools),
