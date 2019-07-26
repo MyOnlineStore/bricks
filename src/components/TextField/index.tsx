@@ -24,6 +24,7 @@ type PropsType = {
     suffix?: string;
     disabled?: boolean;
     placeholder?: string;
+    'data-testid'?: string;
     extractRef?(ref: HTMLInputElement): void;
     onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
@@ -81,6 +82,7 @@ class TextField extends Component<PropsType, StateType> {
                     )}
                     <Box position="relative" width="100%">
                         <StyledInput
+                            data-testid={this.props['data-testid']}
                             type={this.props.type ? this.props.type : 'text'}
                             placeholder={this.props.placeholder}
                             name={this.props.name}
@@ -106,7 +108,7 @@ class TextField extends Component<PropsType, StateType> {
                     )}
                 </StyledWrapper>
                 {this.props.feedback && this.props.feedback.message !== '' && (
-                    <Box margin={trbl(6, 0, 0, 12)}>
+                    <Box margin={[6, 0, 0, 12]}>
                         <InlineNotification
                             icon={this.props.feedback.severity === 'info' ? questionCircle : dangerCircle}
                             message={this.props.feedback.message}
