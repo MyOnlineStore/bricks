@@ -1,6 +1,5 @@
 import React, { ChangeEvent, Component } from 'react';
 import SeverityType from '../../types/SeverityType';
-import trbl from '../../utility/trbl';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
