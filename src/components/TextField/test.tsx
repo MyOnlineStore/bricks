@@ -60,4 +60,10 @@ describe('TextField', () => {
         );
         expect(component.find(StyledInput).prop('placeholder')).toEqual('foo');
     });
+
+    it('should be testable with a test-id', () => {
+        const component = mountWithTheme(<TextField data-testid="foo" value="" name="foo" onChange={jest.fn()} />);
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
 });

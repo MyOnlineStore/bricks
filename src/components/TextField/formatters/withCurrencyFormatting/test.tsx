@@ -294,4 +294,19 @@ describe('withCurrencyFormatting', () => {
         expect(component.find('input').prop('value')).toEqual('1908');
         expect(changeMock).toHaveBeenCalledWith(190800);
     });
+
+    it('should be testable with a test-id', () => {
+        const component = mountWithTheme(
+            <TextField.Currency
+                data-testid="foo"
+                locale="nl-NL"
+                currency="EUR"
+                value={0}
+                name="foo"
+                onChange={jest.fn()}
+            />,
+        );
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
 });

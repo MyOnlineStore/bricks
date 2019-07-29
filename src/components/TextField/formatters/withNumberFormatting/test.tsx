@@ -36,4 +36,12 @@ describe('withNumberFormatting', () => {
 
         expect(changeMock).toHaveBeenCalledWith(0);
     });
+
+    it('should be testable with a test-id', () => {
+        const component = mountWithTheme(
+            <TextField.Number data-testid="foo" value={0} name="foo" onChange={jest.fn()} />,
+        );
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
 });
