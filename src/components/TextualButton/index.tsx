@@ -24,7 +24,7 @@ const StyledTextualButton = styled(Base)<PropsType>`
     font-weight: ${({ theme, variant }) => theme.TextualButton[variant].fontWeight};
 `;
 
-const StyledTextContainer = styled.span<PropsType & { hover: boolean }>`
+const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: boolean }>`
     position: relative;
 
     &::before {
@@ -52,7 +52,7 @@ const TextualButton: FC<PropsType> = props => {
                 setHovering(false);
             }}
         >
-            <StyledTextContainer {...props} hover={isHovering}>
+            <StyledTextContainer variant={props.variant} hover={isHovering}>
                 {Children.count(props.children) > 0 ? props.children : props.title}
                 {props.icon && (
                     <>

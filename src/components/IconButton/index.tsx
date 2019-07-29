@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '../../utility/styled';
 import BareButton, { PropsType as BareButtonPropsType } from '../Button/base';
 import ThemeType from '../../types/ThemeType';
@@ -29,33 +29,7 @@ type PropsType = BareButtonPropsType & {
     variant?: 'primary' | 'destructive';
 };
 
-const IconButton = styled(BareButton).attrs((props: PropsType) => {
-    const children = (
-        <>
-            {props.loading && (
-                <Box
-                    justifyContent="center"
-                    alignItems="center"
-                    position="absolute"
-                    left="0"
-                    top="0"
-                    right="0"
-                    bottom="0"
-                    padding={[9]}
-                >
-                    <Spinner />
-                </Box>
-            )}
-            <Icon
-                color={props.loading ? 'transparent' : undefined}
-                size={props.iconSize ? props.iconSize : 'medium'}
-                icon={props.icon}
-            />
-        </>
-    );
-
-    return { children };
-})<PropsType>`
+const StyledIconButton = styled(BareButton)<Pick<PropsType, 'variant'>>`
     ${({ theme, variant, loading, disabled }): string => {
         const buttonVariant = variant ? variant : 'primary';
 
@@ -101,6 +75,32 @@ const IconButton = styled(BareButton).attrs((props: PropsType) => {
     `;
     }}
 `;
+
+const IconButton: FC<PropsType> = props => {
+    return (
+        <StyledIconButton {...props}>
+            {props.loading && (
+                <Box
+                    justifyContent="center"
+                    alignItems="center"
+                    position="absolute"
+                    left="0"
+                    top="0"
+                    right="0"
+                    bottom="0"
+                    padding={[9]}
+                >
+                    <Spinner />
+                </Box>
+            )}
+            <Icon
+                color={props.loading ? 'transparent' : undefined}
+                size={props.iconSize ? props.iconSize : 'medium'}
+                icon={props.icon}
+            />
+        </StyledIconButton>
+    );
+};
 
 const composeIconButtonTheme = (themeTools: ThemeTools): IconButtonThemeType => {
     const { colors } = themeTools.themeSettings;
