@@ -1,9 +1,25 @@
-import { Badge } from '@myonlinestore/bricks';
+---
+name: Badge
+category: Indicators
+---
+
+import { Box, Badge, IconButton, BellIcon } from '@myonlinestore/bricks';
 
 # Badge
 
-"Introduction to the badge component."
+"Clear description of the Badge component"
 
 ## Examples
+"A few real world examples of how you could use the Badge"
 
-<Badge>Badge</Badge>
+<Badge />
+
+## Patterns
+"Describe how the Badge relates to other components."
+
+<Box position="relative">
+    <Box position="absolute" top="-12px" right="-12px">
+        <Badge>4</Badge>
+    </Box>
+    <IconButton icon={BellIcon} title="notifications" />
+</Box>
