@@ -10,6 +10,7 @@ import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
 import Separated from '../Separated';
 import { text } from '@storybook/addon-knobs';
+import { Skeleton } from '../..';
 
 type PropsType = {
     descriptions: boolean;
@@ -344,5 +345,12 @@ storiesOf('FormRow', module)
                     <Toggle checked={true} name="storyToggle" value={'true'} onChange={(): string => 'void'} />
                 </Box>
             }
+        />
+    ))
+    .add('With Skeletons', () => (
+        <FormRow
+            label={<Skeleton.Text lines={1} baseWidth={180} />}
+            // 38px is the height of an TextField field
+            field={<Skeleton.Rect width="100%" height="38px" />}
         />
     ));

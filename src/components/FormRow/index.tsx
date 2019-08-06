@@ -13,8 +13,8 @@ const FormRow: FunctionComponent<PropsType> = (props): JSX.Element => {
     return (
         <StyledFormRow>
             <Box basis={'180px'} direction="row" grow={1} maxWidth="241px" margin={trbl(18, 9, 0, 0)} wrap>
-                <Box wrap={false}>
-                    <Box>{props.label}</Box>
+                <Box grow={1} wrap={false}>
+                    <Box grow={props.badge ? 0 : 1}>{props.label}</Box>
                     <Box margin={[-9, 3]}>{props.badge !== undefined && props.badge}</Box>
                 </Box>
             </Box>
