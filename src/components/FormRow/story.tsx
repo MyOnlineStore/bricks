@@ -1,3 +1,4 @@
+// tslint:disable:max-file-line-count
 import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Checkbox from '../Checkbox';
