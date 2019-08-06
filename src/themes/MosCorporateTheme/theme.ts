@@ -3,8 +3,6 @@ import rgba from '../../utility/rgba';
 import RecursivePartialType from '../../types/RecursivePartialType';
 import { bodyFont, fontSize, green, silver, grey, red, yellow } from '../MosTheme/MosTheme.theme';
 
-/* tslint:disable:max-file-line-count */
-
 const roundness = {
     base: '19px',
 };
