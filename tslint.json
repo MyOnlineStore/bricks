@@ -40,7 +40,6 @@
   
       "max-line-length": [ true, 200 ],
       "max-classes-per-file": [true, 1],
-      "max-file-line-count": [true, 350],
       "member-access": true,
       "member-ordering": [true, {
           "order": [

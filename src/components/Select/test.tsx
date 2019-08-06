@@ -48,8 +48,6 @@ const options = [
     },
 ];
 
-/* tslint:disable:max-file-line-count */
-
 describe('Select', () => {
     it('should open when the spacebar is pressed', () => {
         const component = mountWithTheme(

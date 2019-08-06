@@ -1,5 +1,4 @@
 /// <reference path="../../_declarations/global.d.ts" />
-/* tslint:disable:max-file-line-count */
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import Table from '.';
