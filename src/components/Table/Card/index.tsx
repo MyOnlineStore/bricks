@@ -141,7 +141,6 @@ class Card extends Component<PropsType, StateType> {
                     return (
                         <Draggable draggableId={this.props.row.id} index={this.props.index}>
                             {(provided, snapshot): JSX.Element => {
-                                /* tslint:disable:no-unbound-method */
                                 return (
                                     <StyledCard
                                         dragging={snapshot.isDragging}
@@ -155,7 +154,6 @@ class Card extends Component<PropsType, StateType> {
                                         {this.renderRow(provided)}
                                     </StyledCard>
                                 );
-                                /* tslint:enabled:no-unbound-method */
                             }}
                         </Draggable>
                     );
