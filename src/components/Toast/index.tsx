@@ -17,12 +17,15 @@ type PropsType = {
     show: boolean;
     message?: string;
     buttonTitle?: string;
+    secondaryButtonTitle?: string;
     buttonSeverity?: ButtonVariant;
     severity: SeverityType;
     autoDismiss?: boolean;
+    persistent?: boolean;
     onExited?(): void;
     onClose?(): void;
     onClick?(): void;
+    onClickSecondary?(): void;
 };
 
 type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
@@ -49,7 +52,7 @@ class Toast extends Component<PropsType> {
     };
 
     public componentDidMount = (): void => {
-        if (this.props.autoDismiss) setTimeout((): void => this.closeAction(), 6000);
+        if (this.props.autoDismiss && !this.props.persistent) setTimeout((): void => this.closeAction(), 6000);
     };
 
     public render(): JSX.Element {
@@ -96,6 +99,20 @@ class Toast extends Component<PropsType> {
                                                     </Text>
                                                 )}
                                             </Box>
+                                            {this.props.secondaryButtonTitle && (
+                                                <Box
+                                                    direction="column"
+                                                    justifyContent="center"
+                                                    margin={isSmall ? trbl(0, 12, 12, 12) : trbl(0, 6, 0, 12)}
+                                                    alignItems="flex-start"
+                                                >
+                                                    <Button
+                                                        title={this.props.secondaryButtonTitle}
+                                                        onClick={this.props.onClickSecondary}
+                                                        variant={'secondary'}
+                                                    />
+                                                </Box>
+                                            )}
                                             {this.props.buttonTitle && (
                                                 <Box
                                                     direction="column"
@@ -112,13 +129,15 @@ class Toast extends Component<PropsType> {
                                             )}
                                         </Box>
                                         <Box direction="column" margin={[0, 12, 0, 0]}>
-                                            <IconButton
-                                                variant="primary"
-                                                icon={close}
-                                                iconSize="small"
-                                                title="close"
-                                                onClick={this.closeAction}
-                                            />
+                                            {!this.props.persistent && (
+                                                <IconButton
+                                                    variant="primary"
+                                                    icon={close}
+                                                    iconSize="small"
+                                                    title="close"
+                                                    onClick={this.closeAction}
+                                                />
+                                            )}
                                         </Box>
                                     </StyledToast>
                                 </Box>

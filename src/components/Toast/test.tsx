@@ -52,7 +52,8 @@ describe('Toast', () => {
                 show
                 severity={'warning'}
                 buttonSeverity={'destructive'}
-                buttonTitle="Bar?"
+                buttonTitle="Bar"
+                secondaryButtonTitle="Baz"
                 onClose={undefined}
                 title="Foo"
             />,
@@ -69,15 +70,60 @@ describe('Toast', () => {
 
     it('should be possible to trigger the button', () => {
         const clickMock = jest.fn();
+        const clickMockSecondary = jest.fn();
 
         const component = mountWithTheme(
-            <Toast show severity="warning" title="Foo" buttonTitle="Bar?" onClose={undefined} onClick={clickMock} />,
+            <Toast
+                show
+                severity="warning"
+                title="Foo"
+                buttonTitle="Bar"
+                secondaryButtonTitle="Baz"
+                onClose={undefined}
+                onClick={clickMock}
+                onClickSecondary={clickMockSecondary}
+            />,
         );
 
         const closeButton = component.find(Button);
 
-        closeButton.simulate('click');
+        closeButton.forEach(button => {
+            button.simulate('click');
+        });
 
         expect(clickMock).toHaveBeenCalled();
+        expect(clickMockSecondary).toHaveBeenCalled();
+    });
+
+    it('should not have a closebutton when persistent is true', () => {
+        const clickMock = jest.fn();
+
+        const component = mountWithTheme(
+            <Toast show persistent severity="success" buttonTitle="Bar" title="Foo" onClose={clickMock} />,
+        );
+
+        const closeButton = component.find(IconButton);
+
+        expect(closeButton).toHaveLength(0);
+    });
+
+    it('should render two buttons if a second button title is provided', () => {
+        const clickMock = jest.fn();
+
+        const component = mountWithTheme(
+            <Toast
+                show
+                persistent
+                severity="success"
+                buttonTitle="Bar"
+                secondaryButtonTitle="Baz"
+                title="Foo"
+                onClose={clickMock}
+            />,
+        );
+
+        const buttons = component.find(Button);
+
+        expect(buttons).toHaveLength(2);
     });
 });

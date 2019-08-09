@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Toast, { PropsType } from '.';
 import Toaster from '../Toaster';
 import cash from '../../assets/icons/cash.svg';
+import infoCircle from '../../assets/icons/info-circle.svg';
 
 class Demo extends Component<{}, { isOpen: boolean }> {
     public constructor(props: PropsType) {
@@ -66,4 +67,19 @@ storiesOf('Toast', module)
         });
 
         return <Toaster />;
-    });
+    })
+    .add('Persistent with secondary button', () => (
+        <Toast
+            icon={infoCircle}
+            onClick={(): boolean => confirm('Primary action')}
+            show={boolean('show', true)}
+            severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}
+            onClose={(): boolean => confirm('Do you want to close the Toast? \nYou must choose, but choose wisely')}
+            buttonTitle={text('Button title', 'Accept')}
+            secondaryButtonTitle={text('Secondary title', 'More information')}
+            onClickSecondary={(): boolean => confirm('Secondary action')}
+            persistent={boolean('persistent', true)}
+            title={text('title', 'Overcome injustice.')}
+            message={text('description', 'Please agree or decline this proposition.')}
+        />
+    ));
