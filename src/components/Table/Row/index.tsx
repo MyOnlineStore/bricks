@@ -64,7 +64,6 @@ class Row extends Component<PropsType, StateType> {
                     return (
                         <Draggable draggableId={this.props.row.id} index={this.props.index}>
                             {(provided, snapshot): JSX.Element => {
-                                /* tslint:disable:no-unbound-method */
                                 return (
                                     <ContrastThemeProvider enable={this.state.hasHover}>
                                         <StyledRow
@@ -92,7 +91,6 @@ class Row extends Component<PropsType, StateType> {
                                         </StyledRow>
                                     </ContrastThemeProvider>
                                 );
-                                /* tslint:enabled:no-unbound-method */
                             }}
                         </Draggable>
                     );

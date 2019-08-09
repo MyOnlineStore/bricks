@@ -14,7 +14,6 @@ type PropsType = {
 const Cell: FunctionComponent<PropsType> = ({ align, provided, width, onFocus, onBlur, children }): JSX.Element => {
     const extraProps = provided !== undefined ? provided : {};
 
-    /* tslint:disable:no-unbound-method */
     return (
         <StyledCell
             cellAlign={align}
@@ -27,7 +26,6 @@ const Cell: FunctionComponent<PropsType> = ({ align, provided, width, onFocus, o
             {children}
         </StyledCell>
     );
-    /* tslint:enable:no-unbound-method */
 };
 
 export default Cell;
