@@ -85,9 +85,9 @@ describe('Toast', () => {
             />,
         );
 
-        const closeButton = component.find(Button);
+        const buttons = component.find(Button);
 
-        closeButton.forEach(button => {
+        buttons.forEach(button => {
             button.simulate('click');
         });
 
