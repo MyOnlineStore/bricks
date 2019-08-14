@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonGroup from '.';
 import Button from '../Button';
-import {mountWithTheme} from '../../utility/styled/testing';
+import { mountWithTheme } from '../../utility/styled/testing';
 
 describe('ButtonGroup', () => {
     it('renders the correct amount of Buttons', () => {
