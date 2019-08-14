@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { FC, useState } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
@@ -18,68 +18,62 @@ type PropsType = {
     name: string;
     id?: string;
     label: string;
+    'data-testid'?: string;
     onChange(change: { checked: boolean; value: string }): void;
 };
 
-class RadioButton extends Component<PropsType, StateType> {
-    public constructor(props: PropsType) {
-        super(props);
+const RadioButton: FC<PropsType> = props => {
+    const [isFocussed, setFocus] = useState(false);
 
-        this.state = {
-            focus: false,
-        };
-    }
-
-    public toggleFocus = (): void => {
-        this.setState({ focus: !this.state.focus });
+    const toggleFocus = (): void => {
+        setFocus(!isFocussed);
     };
 
-    public handleChange = (): void => {
-        this.props.onChange({
-            checked: !this.props.checked,
-            value: this.props.value,
+    const handleChange = (): void => {
+        props.onChange({
+            checked: !props.checked,
+            value: props.value,
         });
     };
 
-    public render(): JSX.Element {
-        return (
-            <StyledRadioWrapper onClick={this.handleChange}>
-                <Box margin={this.props.disabled ? trbl(0, 6, 0, 0) : trbl(0, 12, 0, 0)}>
-                    <StyledRadioButtonSkin
-                        elementFocus={this.state.focus}
-                        checked={this.props.checked}
-                        disabled={this.props.disabled}
-                        error={this.props.error}
-                    >
-                        <StyledRadioButton
-                            onFocus={this.toggleFocus}
-                            onBlur={this.toggleFocus}
-                            onChange={this.handleChange}
-                            checked={this.props.checked}
-                            type="radio"
-                            name={this.props.name}
-                            value={this.props.value}
-                            id={this.props.id}
-                            aria-labelledby={this.props.name}
-                        />
-                    </StyledRadioButtonSkin>
+    return (
+        <StyledRadioWrapper onClick={handleChange}>
+            <Box margin={props.disabled ? trbl(0, 6, 0, 0) : trbl(0, 12, 0, 0)}>
+                <StyledRadioButtonSkin
+                    elementFocus={isFocussed}
+                    checked={props.checked}
+                    disabled={props.disabled}
+                    error={props.error}
+                >
+                    <StyledRadioButton
+                        onFocus={toggleFocus}
+                        onBlur={toggleFocus}
+                        onChange={handleChange}
+                        checked={props.checked}
+                        type="radio"
+                        name={props.name}
+                        value={props.value}
+                        id={props.id}
+                        aria-labelledby={props.name}
+                        data-testid={props['data-testid']}
+                    />
+                </StyledRadioButtonSkin>
+            </Box>
+            <Text severity={props.disabled ? 'info' : undefined}>
+                <Box inline direction="row" align-items="center">
+                    {props.disabled && (
+                        <Box inline margin={trbl(0, 12, 0, 0)}>
+                            <Icon size="medium" icon={lockedIcon} />{' '}
+                        </Box>
+                    )}
+                    <label id={props.name} htmlFor={props.name}>
+                        {props.label}
+                    </label>
                 </Box>
-                <Text severity={this.props.disabled ? 'info' : undefined}>
-                    <Box inline direction="row" align-items="center">
-                        {this.props.disabled && (
-                            <Box inline margin={trbl(0, 12, 0, 0)}>
-                                <Icon size="medium" icon={lockedIcon} />{' '}
-                            </Box>
-                        )}
-                        <label id={this.props.name} htmlFor={this.props.name}>
-                            {this.props.label}
-                        </label>
-                    </Box>
-                </Text>
-            </StyledRadioWrapper>
-        );
-    }
-}
+            </Text>
+        </StyledRadioWrapper>
+    );
+};
 
 export default RadioButton;
 export { PropsType, StateType };
