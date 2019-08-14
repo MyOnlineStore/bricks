@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
 import lockedIcon from '../../assets/icons/locked.svg';
-import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
+import StyledRadioButton, {StyledRadioButtonSkin, StyledRadioWrapper} from './style';
 
 type StateType = {
     focus: boolean;
@@ -18,7 +18,8 @@ type PropsType = {
     name: string;
     id?: string;
     label: string;
-    onChange(change: { checked: boolean; value: string }): void;
+    'data-testid'?: string;
+    onChange(change: {checked: boolean; value: string}): void;
 };
 
 class RadioButton extends Component<PropsType, StateType> {
@@ -31,7 +32,7 @@ class RadioButton extends Component<PropsType, StateType> {
     }
 
     public toggleFocus = (): void => {
-        this.setState({ focus: !this.state.focus });
+        this.setState({focus: !this.state.focus});
     };
 
     public handleChange = (): void => {
@@ -61,6 +62,7 @@ class RadioButton extends Component<PropsType, StateType> {
                             value={this.props.value}
                             id={this.props.id}
                             aria-labelledby={this.props.name}
+                            data-testid={this.props['data-testid']}
                         />
                     </StyledRadioButtonSkin>
                 </Box>
@@ -82,4 +84,4 @@ class RadioButton extends Component<PropsType, StateType> {
 }
 
 export default RadioButton;
-export { PropsType, StateType };
+export {PropsType, StateType};

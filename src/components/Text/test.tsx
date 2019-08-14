@@ -51,4 +51,10 @@ describe('Text', () => {
 
         expect(component).toHaveStyleRule('font-weight', mosTheme.Text.strong.fontWeight);
     });
+
+    it('should be testable with a data-testid', () => {
+        const component = mountWithTheme(<Text data-testid="foo">some text</Text>);
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
 });

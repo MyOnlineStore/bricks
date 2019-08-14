@@ -1,8 +1,8 @@
 import React from 'react';
 import RadioButton from '.';
-import { mosTheme } from '../../themes/MosTheme';
-import { mountWithTheme } from '../../utility/styled/testing';
-import StyledRadioButton, { StyledRadioButtonSkin } from './style';
+import {mosTheme} from '../../themes/MosTheme';
+import {mountWithTheme} from '../../utility/styled/testing';
+import StyledRadioButton, {StyledRadioButtonSkin} from './style';
 import 'jest-styled-components';
 
 describe('RadioButton', () => {
@@ -94,5 +94,43 @@ describe('RadioButton', () => {
             'border',
             `1px solid ${mosTheme.RadioButton.error.borderColor}`,
         );
+    });
+
+    it('should be testable with a data-testid', () => {
+        const component = mountWithTheme(
+            <RadioButton checked name="foo" value="foo" label="foo" onChange={jest.fn()} data-testid="foo" />,
+        );
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
+
+    it('should be able to simulate a change', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <RadioButton checked name="foo" value="foo" label="foo" onChange={changeMock} data-testid="foo" />,
+        );
+
+        component
+            .find('[data-testid="foo"]')
+            .hostNodes()
+            .simulate('change');
+
+        expect(changeMock).toHaveBeenCalledWith({checked: false, value: 'foo'});
+    });
+
+    it('should be able to trigger a change by simulating a click', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <RadioButton checked name="foo" value="foo" label="foo" onChange={changeMock} data-testid="foo" />,
+        );
+
+        component
+            .find('[data-testid="foo"]')
+            .hostNodes()
+            .simulate('click');
+
+        expect(changeMock).toHaveBeenCalledWith({checked: false, value: 'foo'});
     });
 });
