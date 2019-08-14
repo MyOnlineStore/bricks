@@ -1,8 +1,8 @@
 import React from 'react';
 import RadioButton from '.';
-import {mosTheme} from '../../themes/MosTheme';
-import {mountWithTheme} from '../../utility/styled/testing';
-import StyledRadioButton, {StyledRadioButtonSkin} from './style';
+import { mosTheme } from '../../themes/MosTheme';
+import { mountWithTheme } from '../../utility/styled/testing';
+import StyledRadioButton, { StyledRadioButtonSkin } from './style';
 import 'jest-styled-components';
 
 describe('RadioButton', () => {
@@ -116,7 +116,7 @@ describe('RadioButton', () => {
             .hostNodes()
             .simulate('change');
 
-        expect(changeMock).toHaveBeenCalledWith({checked: false, value: 'foo'});
+        expect(changeMock).toHaveBeenCalledWith({ checked: false, value: 'foo' });
     });
 
     it('should be able to trigger a change by simulating a click', () => {
@@ -131,6 +131,6 @@ describe('RadioButton', () => {
             .hostNodes()
             .simulate('click');
 
-        expect(changeMock).toHaveBeenCalledWith({checked: false, value: 'foo'});
+        expect(changeMock).toHaveBeenCalledWith({ checked: false, value: 'foo' });
     });
 });
