@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonGroup from '.';
 import Button from '../Button';
-import { mountWithTheme } from '../../utility/styled/testing';
+import {mountWithTheme} from '../../utility/styled/testing';
 
 describe('ButtonGroup', () => {
     it('renders the correct amount of Buttons', () => {
@@ -29,5 +29,51 @@ describe('ButtonGroup', () => {
         const component = mountWithTheme(<ButtonGroup data-testid="buttongroup" />);
 
         expect(component.find('[data-testid="buttongroup"]').hostNodes()).toHaveLength(1);
+    });
+
+    it('should render the buttons in the correct order', () => {
+        const component = mountWithTheme(
+            <ButtonGroup>
+                <Button title="foo" variant="primary" />
+                <Button title="bar" variant="secondary" />
+            </ButtonGroup>,
+        );
+
+        expect(
+            component
+                .find(Button)
+                .last()
+                .prop('variant'),
+        ).toEqual('primary');
+
+        expect(
+            component
+                .find(Button)
+                .first()
+                .prop('variant'),
+        ).toEqual('secondary');
+    });
+
+    it('should render the buttons in the correct order when stacked', () => {
+        const component = mountWithTheme(
+            <ButtonGroup stacked>
+                <Button title="foo" variant="primary" />
+                <Button title="bar" variant="secondary" />
+            </ButtonGroup>,
+        );
+
+        expect(
+            component
+                .find(Button)
+                .first()
+                .prop('variant'),
+        ).toEqual('primary');
+
+        expect(
+            component
+                .find(Button)
+                .last()
+                .prop('variant'),
+        ).toEqual('secondary');
     });
 });
