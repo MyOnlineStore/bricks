@@ -30,4 +30,50 @@ describe('ButtonGroup', () => {
 
         expect(component.find('[data-testid="buttongroup"]').hostNodes()).toHaveLength(1);
     });
+
+    it('should render the buttons in the correct order', () => {
+        const component = mountWithTheme(
+            <ButtonGroup>
+                <Button title="foo" variant="primary" />
+                <Button title="bar" variant="secondary" />
+            </ButtonGroup>,
+        );
+
+        expect(
+            component
+                .find(Button)
+                .last()
+                .prop('variant'),
+        ).toEqual('primary');
+
+        expect(
+            component
+                .find(Button)
+                .first()
+                .prop('variant'),
+        ).toEqual('secondary');
+    });
+
+    it('should render the buttons in the correct order when stacked', () => {
+        const component = mountWithTheme(
+            <ButtonGroup stacked>
+                <Button title="foo" variant="primary" />
+                <Button title="bar" variant="secondary" />
+            </ButtonGroup>,
+        );
+
+        expect(
+            component
+                .find(Button)
+                .first()
+                .prop('variant'),
+        ).toEqual('primary');
+
+        expect(
+            component
+                .find(Button)
+                .last()
+                .prop('variant'),
+        ).toEqual('secondary');
+    });
 });

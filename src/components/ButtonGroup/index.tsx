@@ -6,26 +6,24 @@ type PropsType = {
     'data-testid'?: string;
 };
 
-const ButtonGroup: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const direction = props.stacked ? 'column' : 'row-reverse';
+const ButtonGroup: FunctionComponent<PropsType> = props => {
+    const direction = props.stacked ? 'column' : 'row';
+    const children = props.stacked ? Children.toArray(props.children) : Children.toArray(props.children).reverse();
 
     return (
         <Box
             direction={direction}
-            justifyContent="flex-start"
+            justifyContent={props.stacked ? 'flex-start' : 'flex-end'}
             alignItems="stretch"
             wrap
             margin={[-6]}
             data-testid={props['data-testid']}
         >
-            {Children.map(
-                props.children,
-                (child): JSX.Element => (
-                    <Box direction={direction === 'row-reverse' ? 'row' : 'column'} alignSelf="stretch" margin={[6]}>
-                        {child}
-                    </Box>
-                ),
-            )}
+            {children.map((child, index) => (
+                <Box key={index} direction={direction} alignSelf="stretch" margin={[6]}>
+                    {child}
+                </Box>
+            ))}
         </Box>
     );
 };
