@@ -1,3 +1,8 @@
+/**
+ * Export name should be PascalCase with Icon as suffix
+ * e.g. arrow-down-circle becomes ArrowDownCircleIcon.
+ */
+
 export { default as AccountingLargeIcon } from './icons/accounting-large.svg';
 export { default as ArchiveIcon } from './icons/archive.svg';
 export { default as ArrowDownCircleIcon } from './icons/arrow-down-circle.svg';
