@@ -307,4 +307,3 @@ export { default as CameraAltIcon } from './icons/camera-alt.svg';
 // Illustrations
 export { default as balloonColorIllustration } from './illustrations/balloon.color.svg';
 export { default as cactusColorIllustration } from './illustrations/cactus.color.svg';
-
