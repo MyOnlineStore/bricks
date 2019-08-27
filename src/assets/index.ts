@@ -3,7 +3,7 @@
  * For example: an icon of a pencil should be something like `pencil.svg`, not `edit.svg`.
  *
  * Export name should be PascalCase with Icon as suffix
- * e.g. arrow-down-circle becomes ArrowDownCircleIcon.
+ * e.g. `arrow-down-circle` becomes `ArrowDownCircleIcon`.
  */
 
 export { default as AccountingLargeIcon } from './icons/accounting-large.svg';

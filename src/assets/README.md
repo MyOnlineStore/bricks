@@ -5,4 +5,4 @@ For example: an icon of a pencil should be something like `pencil.svg`, not `edi
 
 ## Exports
 Don’t forget to add an export of the icon to `index.ts`. Export name should be PascalCase with Icon as suffix, 
-e.g. arrow-down-circle becomes ArrowDownCircleIcon.
+e.g. `arrow-down-circle` becomes `ArrowDownCircleIcon`.
