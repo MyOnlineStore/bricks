@@ -3,7 +3,7 @@ import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type PriceTagThemeType = {
     strikethroughColor: string;
-    strikethroughOpactiy: string;
+    strikethroughOpacity: string;
 };
 
 type PropsType = {
@@ -30,7 +30,7 @@ const StyledPriceTag = styled.span<PropsType>`
                     margin-top: -1px;
                     position: absolute;
                     background: ${theme.PriceTag.strikethroughColor};
-                    opacity: ${theme.PriceTag.strikethroughOpactiy};
+                    opacity: ${theme.PriceTag.strikethroughOpacity};
                 }`
                     : ''
             }
@@ -43,7 +43,7 @@ const composePriceTagTheme = (themeTools: ThemeTools): PriceTagThemeType => {
 
     return {
         strikethroughColor: colors.grey.lighter2,
-        strikethroughOpactiy: '.7',
+        strikethroughOpacity: '.7',
     };
 };
 
