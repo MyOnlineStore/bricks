@@ -531,6 +531,7 @@ const theme: ThemeType = {
     },
     PriceTag: {
         strikethroughColor: grey.lighter2,
+        strikethroughOpacity: '.7',
     },
     Select: {
         common: {
