@@ -11,6 +11,7 @@ type PropsType = {
     value: number;
     freeLabel?: string;
     strikethrough?: boolean;
+    strikethroughStyle?: 'diagonal' | 'horizontal';
     fractionFormat?: 'none' | 'dash';
     locale: string;
     currency: string;
@@ -67,7 +68,7 @@ const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
     });
 
     return (
-        <StyledPriceTag strikethrough={props.strikethrough}>
+        <StyledPriceTag strikethrough={props.strikethrough} strikethroughStyle={props.strikethroughStyle}>
             {stats.isFree && props.freeLabel !== undefined ? props.freeLabel : price}
         </StyledPriceTag>
     );

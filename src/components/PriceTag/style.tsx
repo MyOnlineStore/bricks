@@ -7,10 +7,11 @@ type PriceTagThemeType = {
 
 type PropsType = {
     strikethrough?: boolean;
+    strikethroughStyle?: 'diagonal' | 'horizontal';
 };
 
 const StyledPriceTag = styled.span<PropsType>`
-    ${({ theme, strikethrough }): string => {
+    ${({ theme, strikethrough, strikethroughStyle }): string => {
         return `
             position: relative;
 
@@ -26,11 +27,11 @@ const StyledPriceTag = styled.span<PropsType>`
                     height: 2px;
                     left: 0;
                     top: 50%;
-                    margin-top: -2px;
+                    margin-top: ${strikethroughStyle === 'horizontal' ? '-1px' : '-2px'};
                     position: absolute;
                     background: ${theme.PriceTag.strikethroughColor};
                     opacity: .7;
-                    transform: rotate(-8deg);
+                    transform: rotate(${strikethroughStyle === 'horizontal' ? '0deg' : '-8deg'});
                 }`
                     : ''
             }

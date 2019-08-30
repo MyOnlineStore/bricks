@@ -15,6 +15,7 @@ storiesOf('PriceTag', module).add('Default', () => (
             hideCurrency={boolean('hideCurrency', false)}
             superScriptFraction={boolean('superScriptFraction', false)}
             strikethrough={boolean('strikethrough', false)}
+            strikethroughStyle={select('strikethrough style', ['diagonal', 'horizontal'], 'diagonal')}
         />
     </Text>
 ));
