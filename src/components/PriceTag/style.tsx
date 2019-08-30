@@ -3,15 +3,15 @@ import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 type PriceTagThemeType = {
     strikethroughColor: string;
+    strikethroughOpactiy: string;
 };
 
 type PropsType = {
     strikethrough?: boolean;
-    strikethroughStyle?: 'diagonal' | 'horizontal';
 };
 
 const StyledPriceTag = styled.span<PropsType>`
-    ${({ theme, strikethrough, strikethroughStyle }): string => {
+    ${({ theme, strikethrough }): string => {
         return `
             position: relative;
 
@@ -27,11 +27,10 @@ const StyledPriceTag = styled.span<PropsType>`
                     height: 2px;
                     left: 0;
                     top: 50%;
-                    margin-top: ${strikethroughStyle === 'horizontal' ? '-1px' : '-2px'};
+                    margin-top: -1px;
                     position: absolute;
                     background: ${theme.PriceTag.strikethroughColor};
-                    opacity: .7;
-                    transform: rotate(${strikethroughStyle === 'horizontal' ? '0deg' : '-8deg'});
+                    opacity: ${theme.PriceTag.strikethroughOpactiy};
                 }`
                     : ''
             }
@@ -44,6 +43,7 @@ const composePriceTagTheme = (themeTools: ThemeTools): PriceTagThemeType => {
 
     return {
         strikethroughColor: colors.grey.lighter2,
+        strikethroughOpactiy: '.7',
     };
 };
 
