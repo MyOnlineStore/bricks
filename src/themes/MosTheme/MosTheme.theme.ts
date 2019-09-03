@@ -430,6 +430,27 @@ const theme: ThemeType = {
             },
         },
     },
+    NativeSelect: {
+        input: {
+            borderRadius: roundness.base,
+            background: silver.lighter1,
+            borderColor: silver.darker4,
+            color: grey.base,
+            fontFamily: bodyFont,
+            fontSize: fontSize.base,
+            fontWeight: '400',
+            focus: {
+                borderColor: green.darker2,
+                boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
+            },
+        },
+        disabled: {
+            chevron: grey.lighter2,
+            color: grey.lighter2,
+            background:
+                '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )',
+        },
+    },
     Notification: {
         common: {
             fontFamily: bodyFont,

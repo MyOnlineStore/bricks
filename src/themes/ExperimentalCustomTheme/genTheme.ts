@@ -20,6 +20,7 @@ import { composeRangeTheme } from '../../components/Range/style';
 import { composeSliderTheme } from '../../components/Slider/style';
 import { composeRaisedTheme } from '../../components/Raised';
 import { composeSelectTheme } from '../../components/Select/style';
+import { composeNativeSelectTheme } from '../../components/NativeSelect/style';
 import { composeToggleTheme } from '../../components/Toggle/style';
 import { composeTableTheme } from '../../components/Table/style';
 import { composeTextTheme } from '../../components/Text';
@@ -82,6 +83,7 @@ const generateThemeObject = (
         MessageStream: composeMessageStreamTheme(themeTools),
         Modal: composeModalTheme(themeTools),
         MultiButton: composeMultiButtonTheme(themeTools),
+        NativeSelect: composeNativeSelectTheme(themeTools),
         Notification: composeNotificationTheme(themeTools),
         RadioButton: composeRadioButtonTheme(themeTools),
         Raised: composeRaisedTheme(themeTools),
