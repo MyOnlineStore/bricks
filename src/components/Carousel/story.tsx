@@ -9,7 +9,7 @@ const Controlled = () => {
     const [slide, setSlide] = useState(0);
 
     return (
-        <Box direction="column" padding={[24]}>
+        <>
             <Heading>Current slide: {slide}</Heading>
             <Carousel
                 slide={slide}
@@ -39,7 +39,7 @@ const Controlled = () => {
                     }}
                 />
             </Box>
-        </Box>
+        </>
     );
 };
 
@@ -55,4 +55,9 @@ storiesOf('Carousel', module)
             </Carousel>
         );
     })
-    .add('Controlled', () => <Controlled />);
+    .add('Controlled', () => <Controlled />)
+    .add('With a single slide', () => (
+        <Carousel>
+            <img width="100%" src="https://picsum.photos/id/100/1600/900" />
+        </Carousel>
+    ));

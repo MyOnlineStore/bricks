@@ -81,4 +81,19 @@ describe('Carousel', () => {
 
         expect(changeMock).toHaveBeenCalledWith(slides.length - 1);
     });
+
+    it('should not show next and prev buttons when only 1 slide is provided', () => {
+        const changeMock = jest.fn();
+
+        const component = mount(
+            <MosTheme>
+                <Carousel data-testid="carousel" slide={0} onChange={changeMock}>
+                    <span />
+                </Carousel>
+            </MosTheme>,
+        );
+
+        expect(component.find('[data-testid="carousel-prev-button"]').hostNodes().length).toBe(0);
+        expect(component.find('[data-testid="carousel-next-button"]').hostNodes().length).toBe(0);
+    });
 });

@@ -91,20 +91,24 @@ const Carousel: FC<PropsType> = props => {
                     </Slide>
                 );
             })}
-            <SlideButton
-                data-testid={props['data-testid'] ? `${props['data-testid']}-prev-button` : undefined}
-                icon={chevronLeft}
-                direction="prev"
-                title="Show previous slide"
-                onClick={() => slideTo(-1)}
-            />
-            <SlideButton
-                data-testid={props['data-testid'] ? `${props['data-testid']}-next-button` : undefined}
-                icon={chevronRight}
-                direction="next"
-                title="Show next slide"
-                onClick={() => slideTo(1)}
-            />
+            {slides.length > 1 && (
+                <>
+                    <SlideButton
+                        data-testid={props['data-testid'] ? `${props['data-testid']}-prev-button` : undefined}
+                        icon={chevronLeft}
+                        direction="prev"
+                        title="Show previous slide"
+                        onClick={() => slideTo(-1)}
+                    />
+                    <SlideButton
+                        data-testid={props['data-testid'] ? `${props['data-testid']}-next-button` : undefined}
+                        icon={chevronRight}
+                        direction="next"
+                        title="Show next slide"
+                        onClick={() => slideTo(1)}
+                    />
+                </>
+            )}
         </OuterWrapper>
     );
 };
