@@ -4,7 +4,7 @@ import IconButton from '../IconButton';
 import chevronRight from '../../assets/icons/chevron-right.svg';
 import chevronLeft from '../../assets/icons/chevron-left.svg';
 
-const SLIDE_TIMEOUT = 300;
+const SLIDE_TIMEOUT = 400;
 
 const OuterWrapper = styled.div<{ ratio: [number, number] }>`
     position: relative;
