@@ -13,7 +13,7 @@ type PropsType = {
     options: Array<SimpleSelectOptionType>;
     value: SimpleSelectOptionType['value'];
     disabled?: boolean;
-    onChange(value: string): void;
+    onChange(value: string, event: ChangeEvent): void;
 };
 
 const NativeSelect: FC<PropsType> = (props): JSX.Element => {
@@ -30,13 +30,14 @@ const NativeSelect: FC<PropsType> = (props): JSX.Element => {
                 }}
                 onClick={() => setOpen(true)}
                 onChange={(event: ChangeEvent<HTMLSelectElement>): void => {
-                    setOpen(false);
                     event.stopPropagation();
-                    props.onChange(event.target.value);
+                    setOpen(false);
+                    props.onChange(event.target.value, event);
                 }}
+                value={props.value}
             >
-                {props.options.map(option => (
-                    <option value={option.value} selected={option.value === props.value}>
+                {props.options.map((option, index) => (
+                    <option key={`option_${index}`} value={option.value}>
                         {option.label}
                     </option>
                 ))}
