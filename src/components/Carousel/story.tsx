@@ -2,28 +2,37 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Carousel from '.';
 import Button from '../Button';
-import Heading from '../Heading';
 import Box from '../Box';
+import Spinner from '../Spinner';
+import Text from '../Text';
+
+const slides = [
+    <img key="0" width="100%" src="https://picsum.photos/id/100/1600/900" />,
+    <img key="1" width="100%" src="https://picsum.photos/id/101/1600/900" />,
+    <img key="2" width="100%" src="https://picsum.photos/id/102/1600/900" />,
+    <img key="3" width="100%" src="https://picsum.photos/id/103/1600/900" />,
+    <img key="4" width="100%" src="https://picsum.photos/id/104/1600/900" />,
+];
 
 const Controlled = () => {
     const [slide, setSlide] = useState(0);
+    const [isAnimating, setAnimating] = useState(false);
 
     return (
         <>
-            <Heading>Current slide: {slide}</Heading>
             <Carousel
                 slide={slide}
                 onChange={newSlide => {
                     setSlide(newSlide);
+                    setAnimating(true);
+                }}
+                onAfterChange={() => {
+                    setAnimating(false);
                 }}
             >
-                <img width="100%" src="https://picsum.photos/id/100/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/101/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/102/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/103/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/104/1600/900" />
+                {slides}
             </Carousel>
-            <Box margin={[12, 0, 0, 0]} justifyContent="space-between">
+            <Box margin={[12, 0, 0, 0]} alignItems="center" justifyContent="space-between">
                 <Button
                     variant="secondary"
                     title="Back to first slide"
@@ -31,6 +40,15 @@ const Controlled = () => {
                         setSlide(0);
                     }}
                 />
+                {(isAnimating && (
+                    <Box width="24px">
+                        <Spinner />
+                    </Box>
+                )) || (
+                    <Text>
+                        {slide + 1}/{slides.length}
+                    </Text>
+                )}
                 <Button
                     variant="secondary"
                     title="To the final slide"
@@ -45,15 +63,7 @@ const Controlled = () => {
 
 storiesOf('Carousel', module)
     .add('Uncontrolled', () => {
-        return (
-            <Carousel>
-                <img width="100%" src="https://picsum.photos/id/100/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/101/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/102/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/103/1600/900" />
-                <img width="100%" src="https://picsum.photos/id/104/1600/900" />
-            </Carousel>
-        );
+        return <Carousel>{slides}</Carousel>;
     })
     .add('Controlled', () => <Controlled />)
     .add('With a single slide', () => (

@@ -4,6 +4,8 @@ import IconButton from '../IconButton';
 import chevronRight from '../../assets/icons/chevron-right.svg';
 import chevronLeft from '../../assets/icons/chevron-left.svg';
 
+const SLIDE_TIMEOUT = 300;
+
 const OuterWrapper = styled.div<{ ratio: [number, number] }>`
     position: relative;
     overflow: hidden;
@@ -19,7 +21,7 @@ const Slide = styled.div<{ active: boolean; x: string }>`
     z-index: ${({ active }) => (active ? '1' : '')};
     transform: translateX(${({ x }) => x});
     transition-timing-function: ease;
-    transition: transform 0.3s;
+    transition: transform ${SLIDE_TIMEOUT}ms;
 `;
 
 const SlideButton = styled(IconButton)<{ direction: 'prev' | 'next' }>`
@@ -46,9 +48,13 @@ type PropsType = {
      */
     slide?: number;
     /**
-     * Allows you to add a callback. It'll receive the slide that should be shown **next**.
+     * This callback will be fired at the **before** the animation. It receives the destination of the slide first, and the origin as second argument.
      */
-    onChange?(newSlide: number): void;
+    onChange?(destination: number, origin: number): void;
+    /**
+     * This callback fires after the animation is complete, allowing you to do something in the time between the onChange and onAfterChange.
+     */
+    onAfterChange?(): void;
 };
 
 const Carousel: FC<PropsType> = props => {
@@ -57,22 +63,22 @@ const Carousel: FC<PropsType> = props => {
     const slides = Children.toArray(props.children);
 
     const slideTo = (direction: number) => {
-        let newSlide = slide + direction;
+        let destination = slide + direction;
 
-        if (newSlide > slides.length - 1) {
-            newSlide = 0;
+        if (destination > slides.length - 1) {
+            destination = 0;
         }
 
-        if (newSlide < 0) {
-            newSlide = slides.length - 1;
+        if (destination < 0) {
+            destination = slides.length - 1;
         }
 
         if (props.onChange) {
-            props.onChange(newSlide);
+            props.onChange(destination, slide);
         }
 
         if (props.slide === undefined) {
-            setSlide(newSlide);
+            setSlide(destination);
         }
     };
 
@@ -81,6 +87,18 @@ const Carousel: FC<PropsType> = props => {
             setSlide(props.slide);
         }
     }, [props.slide]);
+
+    useEffect(() => {
+        const id = setTimeout(() => {
+            if (props.onAfterChange) {
+                props.onAfterChange();
+            }
+        }, SLIDE_TIMEOUT);
+
+        return () => {
+            clearTimeout(id);
+        };
+    }, [slide]);
 
     return (
         <OuterWrapper ratio={ratio} data-testid={props['data-testid']}>

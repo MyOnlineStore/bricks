@@ -34,14 +34,14 @@ describe('Carousel', () => {
             .hostNodes()
             .simulate('click');
 
-        expect(changeMock).toHaveBeenCalledWith(1);
+        expect(changeMock).toHaveBeenCalledWith(1, 0);
 
         component
             .find('[data-testid="carousel-prev-button"]')
             .hostNodes()
             .simulate('click');
 
-        expect(changeMock).toHaveBeenCalledWith(0);
+        expect(changeMock).toHaveBeenCalledWith(0, 1);
     });
 
     it('should go back to the first slide when pressing next on the last slide', () => {
@@ -60,7 +60,7 @@ describe('Carousel', () => {
             .hostNodes()
             .simulate('click');
 
-        expect(changeMock).toHaveBeenCalledWith(0);
+        expect(changeMock).toHaveBeenCalledWith(0, slides.length - 1);
     });
 
     it('should go to the last slide when pressing prev on the first slide', () => {
@@ -79,7 +79,7 @@ describe('Carousel', () => {
             .hostNodes()
             .simulate('click');
 
-        expect(changeMock).toHaveBeenCalledWith(slides.length - 1);
+        expect(changeMock).toHaveBeenCalledWith(slides.length - 1, 0);
     });
 
     it('should not show next and prev buttons when only 1 slide is provided', () => {
@@ -95,5 +95,28 @@ describe('Carousel', () => {
 
         expect(component.find('[data-testid="carousel-prev-button"]').hostNodes().length).toBe(0);
         expect(component.find('[data-testid="carousel-next-button"]').hostNodes().length).toBe(0);
+    });
+
+    it('should call the onAfterChange callback when a slide is done animating', () => {
+        jest.useFakeTimers();
+
+        const afterChangeMock = jest.fn();
+
+        const component = mount(
+            <MosTheme>
+                <Carousel data-testid="carousel" onAfterChange={afterChangeMock}>
+                    {slides}
+                </Carousel>
+            </MosTheme>,
+        );
+
+        component
+            .find('[data-testid="carousel-next-button"]')
+            .hostNodes()
+            .simulate('click');
+
+        jest.runAllTimers();
+
+        expect(afterChangeMock).toHaveBeenCalled();
     });
 });
