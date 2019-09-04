@@ -34,7 +34,6 @@ const StyledSelect = styled.div<SelectPropsType>`
     transition: all 0.3s;
     box-sizing: border-box;
     width: 100%;
-
     border: solid 1px
         ${({ theme, focus }): string =>
             focus ? theme.NativeSelect.input.focus.borderColor : theme.NativeSelect.input.borderColor};
@@ -43,20 +42,17 @@ const StyledSelect = styled.div<SelectPropsType>`
     border-radius: ${({ theme }): string => theme.NativeSelect.input.borderRadius};
     box-shadow: ${({ theme, focus }): string => (focus ? theme.NativeSelect.input.focus.boxShadow : 'none')};
 
-    select {
-        padding: 6px 12px;
-        line-height: 1.572;
-        width: 100%;
-        appearance: none;
-        outline: none;
-        border: none;
-        background: transparent;
-
-        color: ${({ theme }): string => theme.NativeSelect.input.color};
-        font-size: ${({ theme }): string => theme.NativeSelect.input.fontSize};
-        font-family: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
-        color: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
-    }
+    padding: 6px 12px;
+    line-height: 1.572;
+    width: 100%;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: ${({ theme }): string => theme.NativeSelect.input.color};
+    font-size: ${({ theme }): string => theme.NativeSelect.input.fontSize};
+    font-family: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
+    color: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
 
     ${StyledIcon} {
         position: absolute;

@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import NativeSelect, { SimpleSelectOptionType } from '.';
+import NativeSelect from '.';
 import { boolean } from '@storybook/addon-knobs';
 
-const options: Array<SimpleSelectOptionType> = [
+const options = [
     {
         value: 'A',
         label: 'Option A',
@@ -33,7 +33,7 @@ const options: Array<SimpleSelectOptionType> = [
 type PropsType = {};
 
 const Demo: FC<PropsType> = (): JSX.Element => {
-    const [value, setValue] = useState<SimpleSelectOptionType['value']>('E');
+    const [value, setValue] = useState('E');
 
     return <NativeSelect options={options} value={value} disabled={boolean('disabled', false)} onChange={setValue} />;
 };

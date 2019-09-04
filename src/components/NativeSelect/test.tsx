@@ -1,9 +1,6 @@
 import React from 'react';
 import NativeSelect from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-// import MosTheme, { mosTheme } from '../../themes/MosTheme';
-import 'jest-styled-components';
-// import { mount } from 'enzyme';
 
 const options = [
     {
@@ -33,7 +30,15 @@ const options = [
 ];
 
 describe('Native Select', () => {
-    it('Renders all provided options', () => {
+    it('should be testable with a test-id', () => {
+        const component = mountWithTheme(
+            <NativeSelect onChange={() => {}} value="A" options={options} data-testid="foo" />,
+        );
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
+
+    it('should render all provided options', () => {
         const changeMock = jest.fn();
         const component = mountWithTheme(<NativeSelect onChange={changeMock} value="A" options={options} />);
 
@@ -47,9 +52,7 @@ describe('Native Select', () => {
             clickEvent = event;
         });
 
-        const component = mountWithTheme(
-            <NativeSelect onChange={clickMock} value="A" options={options} data-testid="nativeselect" />,
-        );
+        const component = mountWithTheme(<NativeSelect onChange={clickMock} value="A" options={options} />);
 
         component.find('select').simulate('change', { target: { value: 'B' }, stopPropagation: () => {} });
 
