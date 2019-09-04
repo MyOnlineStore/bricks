@@ -1,5 +1,4 @@
 import React, { FC, Children, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import IconButton from '../IconButton';
 import chevronRight from '../../assets/icons/chevron-right.svg';
@@ -12,12 +11,15 @@ const OuterWrapper = styled.div<{ ratio: [number, number] }>`
     padding-top: ${({ ratio }) => 100 / (ratio[0] / ratio[1])}%;
 `;
 
-const Slide = styled(motion.div)<{ active: boolean }>`
+const Slide = styled.div<{ active: boolean; x: string }>`
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: ${({ active }) => (active ? '1' : '')};
+    transform: translateX(${({ x }) => x});
+    transition-timing-function: ease;
+    transition: transform 0.3s;
 `;
 
 const SlideButton = styled(IconButton)<{ direction: 'prev' | 'next' }>`
@@ -32,6 +34,7 @@ const SlideButton = styled(IconButton)<{ direction: 'prev' | 'next' }>`
 `;
 
 type PropsType = {
+    'data-testid'?: string;
     /**
      * Let's you define the aspect ratio of the slides in the carousel, default: 16,9
      */
@@ -80,26 +83,28 @@ const Carousel: FC<PropsType> = props => {
     }, [props.slide]);
 
     return (
-        <OuterWrapper ratio={ratio}>
+        <OuterWrapper ratio={ratio} data-testid={props['data-testid']}>
             {slides.map((child, index) => {
                 return (
-                    <Slide
-                        key={index}
-                        active={slide === index}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 200,
-                            damping: 200,
-                        }}
-                        initial={false}
-                        animate={{ x: `${(index - slide) * 100}%` }}
-                    >
+                    <Slide x={`${(index - slide) * 100}%`} key={index} active={slide === index}>
                         {child}
                     </Slide>
                 );
             })}
-            <SlideButton icon={chevronLeft} direction="prev" title="Show previous slide" onClick={() => slideTo(-1)} />
-            <SlideButton icon={chevronRight} direction="next" title="Show next slide" onClick={() => slideTo(1)} />
+            <SlideButton
+                data-testid={props['data-testid'] ? `${props['data-testid']}-prev-button` : undefined}
+                icon={chevronLeft}
+                direction="prev"
+                title="Show previous slide"
+                onClick={() => slideTo(-1)}
+            />
+            <SlideButton
+                data-testid={props['data-testid'] ? `${props['data-testid']}-next-button` : undefined}
+                icon={chevronRight}
+                direction="next"
+                title="Show next slide"
+                onClick={() => slideTo(1)}
+            />
         </OuterWrapper>
     );
 };
