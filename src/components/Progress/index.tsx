@@ -16,7 +16,7 @@ type DotsPropsType = {
 };
 
 export const Step = styled.div<DotsPropsType>`
-    transition: ${({ hide }) => (!hide ? 'all 300ms' : '')};
+    transition: all 300ms;
     width: ${({ small, hide }) => {
         if (hide) return '0px';
         if (small) return '8px';
