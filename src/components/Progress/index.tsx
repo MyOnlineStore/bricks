@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
 import Box from '../Box';
+import { Step } from './style';
 
 type PropsType = {
     'data-testid'?: string;
@@ -8,52 +8,6 @@ type PropsType = {
     total: number;
     paginateBy?: number;
 };
-
-type DotsPropsType = {
-    active: boolean;
-    hide: boolean;
-    small: boolean;
-};
-
-export const Step = styled.div<DotsPropsType>`
-    transition: all 300ms;
-    width: ${({ small, hide }) => {
-        if (hide) return '0px';
-        if (small) return '8px';
-
-        return '12px';
-    }};
-    height: 12px;
-    position: relative;
-
-    &::before {
-        transition: transform 300ms;
-        content: '';
-        border-radius: 50%;
-        position: absolute;
-        display: block;
-        transform: scale(
-            ${({ small, hide, active }) => {
-                if (hide) return 0;
-                if (small) return 0.5;
-                if (active) return 1;
-
-                return 0.8;
-            }}
-        );
-        top: calc(50% - 6px);
-        left: calc(50% - 6px);
-        width: 9px;
-        height: 9px;
-        background: ${({ active }) => {
-            if (active) {
-                return 'red';
-            }
-
-            return 'grey';
-        }};
-    }
-`;
 
 const shouldShow = (index: number, props: PropsType): boolean => {
     const end = props.total - 1;

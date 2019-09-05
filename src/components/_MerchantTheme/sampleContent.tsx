@@ -17,6 +17,7 @@ import Badge from '../Badge';
 import * as ThemeSettingsType from '../../themes/ExperimentalCustomTheme/MerchantThemeTypes';
 import TextualButton from '../TextualButton';
 import { ChevronRightIcon } from '../../assets';
+import { Demo } from '../Progress/story';
 
 type PropsType = {
     themeSettings: ThemeSettingsType.ThemeSettingsType;
@@ -311,6 +312,7 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <TextualButton icon={ChevronRightIcon} title="Primary" variant="primary" />
                 <TextualButton icon={ChevronRightIcon} title="Secondary" variant="secondary" />
             </Box>
+            <Demo />
             <Contrast>
                 <Box padding={[24]} justifyContent="flex-end" direction="row">
                     <Button variant="plain" title="cancel">

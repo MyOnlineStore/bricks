@@ -1,30 +1,34 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Progress from '.';
-
-const Demo = () => {
+import Box from '../Box';
+import { IconButton } from '../..';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../assets';
+export const Demo = () => {
     const [current, setCurrent] = useState(0);
     const total = 20;
 
     return (
         <>
             <Progress current={current} total={total} paginateBy={7} />
-            <button
-                disabled={current === 0}
-                onClick={() => {
-                    setCurrent(current - 1);
-                }}
-            >
-                prev
-            </button>
-            <button
-                disabled={current === total - 1}
-                onClick={() => {
-                    setCurrent(current + 1);
-                }}
-            >
-                next
-            </button>
+            <Box margin={[12, 0, 0, 0]}>
+                <IconButton
+                    icon={ChevronLeftIcon}
+                    title="previous slide"
+                    disabled={current === 0}
+                    onClick={() => {
+                        setCurrent(current - 1);
+                    }}
+                />
+                <IconButton
+                    icon={ChevronRightIcon}
+                    title="next slide"
+                    disabled={current === total - 1}
+                    onClick={() => {
+                        setCurrent(current + 1);
+                    }}
+                />
+            </Box>
         </>
     );
 };

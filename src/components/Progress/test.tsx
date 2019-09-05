@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import MosTheme from '../../themes/MosTheme';
-import Progress, { Step } from '.';
+import Progress from '.';
+import { Step } from './style';
 
 describe('Progress', () => {
     beforeEach(() => {

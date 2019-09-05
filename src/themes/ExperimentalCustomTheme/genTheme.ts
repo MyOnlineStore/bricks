@@ -33,6 +33,7 @@ import { composeScrollBoxTheme } from '../../components/ScrollBox/style';
 import { composePriceTagTheme } from '../../components/PriceTag/style';
 import { composeIllustrationTheme } from '../../components/Illustration/style';
 import { composeTextualButton } from '../../components/TextualButton';
+import { composeProgressTheme } from '../../components/Progress/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -100,6 +101,7 @@ const generateThemeObject = (
         Tile: composeTileTheme(themeTools),
         Toast: composeToastTheme(themeTools),
         Toggle: composeToggleTheme(themeTools),
+        Progress: composeProgressTheme(themeTools),
     };
 
     if (themeOverrides) {
