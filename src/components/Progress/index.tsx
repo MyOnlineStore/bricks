@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Box from '../Box';
 
 type PropsType = {
+    'data-testid'?: string;
     current: number;
     total: number;
     paginateBy?: number;
@@ -14,7 +15,7 @@ type DotsPropsType = {
     small: boolean;
 };
 
-const Dot = styled.div<DotsPropsType>`
+export const Step = styled.div<DotsPropsType>`
     transition: ${({ hide }) => (!hide ? 'all 300ms' : '')};
     width: ${({ small, hide }) => {
         if (hide) return '0px';
@@ -90,13 +91,13 @@ const shouldShow = (index: number, props: PropsType): boolean => {
 
 const Progress: FC<PropsType> = props => {
     if (props.paginateBy && props.paginateBy % 2 === 0) {
-        console.error('Progress "paginateBy" props should be an uneven number to avoid visual bugs');
+        console.error('Progress "paginateBy" prop should be an uneven number to avoid visual bugs');
     }
 
-    const dots = [];
+    const steps = [];
 
     for (let index = 0; index < props.total; index++) {
-        dots.push({
+        steps.push({
             id: index,
             hide: !shouldShow(index, props),
             active: index === props.current,
@@ -104,20 +105,26 @@ const Progress: FC<PropsType> = props => {
         });
     }
 
-    const shownDots = dots.filter(dot => !dot.hide);
+    const shownSteps = steps.filter(step => !step.hide);
 
-    const a = dots.map((dot, index, arr) => ({
-        ...dot,
+    const mappedSteps = steps.map((step, index, arr) => ({
+        ...step,
         small:
             index !== 0 &&
             index !== arr.length - 1 &&
-            (index === shownDots[0].id || index === shownDots[shownDots.length - 1].id),
+            (index === shownSteps[0].id || index === shownSteps[shownSteps.length - 1].id),
     }));
 
     return (
-        <Box height="24px" alignItems="center">
-            {a.map(b => (
-                <Dot key={b.id} small={b.small} active={b.active} hide={b.hide} />
+        <Box data-testid={props['data-testid']} height="24px" alignItems="center">
+            {mappedSteps.map(step => (
+                <Step
+                    data-testid={props['data-testid'] ? `${props['data-testid']}-step-${step.id}` : undefined}
+                    key={step.id}
+                    small={step.small}
+                    active={step.active}
+                    hide={step.hide}
+                />
             ))}
         </Box>
     );
