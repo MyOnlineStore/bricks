@@ -843,6 +843,9 @@ const theme: ThemeType = {
         },
     },
     Progress: {
+        common: {
+            dotSize: 9,
+        },
         active: {
             backgroundColor: green.darker1,
         },

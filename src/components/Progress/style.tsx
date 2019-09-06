@@ -2,6 +2,9 @@ import styled from '../../utility/styled';
 import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 
 export type ProgressThemeType = {
+    common: {
+        dotSize: number;
+    };
     active: {
         backgroundColor: string;
     };
@@ -24,7 +27,7 @@ export const Step = styled.div<PropsType>`
 
         return '12px';
     }};
-    height: 12px;
+    height: ${({ theme }) => theme.Progress.common.dotSize + 3}px;
     position: relative;
 
     &::before {
@@ -44,8 +47,8 @@ export const Step = styled.div<PropsType>`
         );
         top: calc(50% - 6px);
         left: calc(50% - 6px);
-        width: 9px;
-        height: 9px;
+        width: ${({ theme }) => theme.Progress.common.dotSize}px;
+        height: ${({ theme }) => theme.Progress.common.dotSize}px;
         background: ${({ theme, active }) => {
             if (active) {
                 return theme.Progress.active.backgroundColor;
@@ -58,6 +61,9 @@ export const Step = styled.div<PropsType>`
 
 export const composeProgressTheme = ({ themeSettings: { colors } }: ThemeTools): ProgressThemeType => {
     return {
+        common: {
+            dotSize: 9,
+        },
         active: {
             backgroundColor: colors.primary.darker1,
         },
