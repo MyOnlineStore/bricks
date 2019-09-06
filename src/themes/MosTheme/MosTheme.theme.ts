@@ -805,7 +805,6 @@ const theme: ThemeType = {
                 boxShadow: `0 0 0 4px ${rgba(yellow.darker2, 0.4)}`,
             },
         },
-
         disabled: {
             color: grey.lighter2,
             background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
@@ -862,6 +861,17 @@ const theme: ThemeType = {
         },
         error: {
             border: `1px solid ${red.base}`,
+        },
+    },
+    Progress: {
+        common: {
+            dotSize: 9,
+        },
+        active: {
+            backgroundColor: green.darker1,
+        },
+        idle: {
+            backgroundColor: silver.darker4,
         },
     },
 };

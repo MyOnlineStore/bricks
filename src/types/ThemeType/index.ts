@@ -29,6 +29,7 @@ import { SkeletonThemeType } from '../../components/Skeleton/style';
 import { BreadcrumbsThemeType } from '../../components/Breadcrumbs/style';
 import { IconButtonThemeType } from '../../components/IconButton';
 import { TextualButtonThemeType } from '../../components/TextualButton';
+import { ProgressThemeType } from '../../components/Progress/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -62,6 +63,7 @@ type ThemeType = {
     Toast: ToastThemeType;
     RadioButton: RadioButtonThemeType;
     Toggle: ToggleThemeType;
+    Progress: ProgressThemeType;
 };
 
 export default ThemeType;

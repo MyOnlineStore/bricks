@@ -30,6 +30,7 @@ export { default as NativeSelect } from './components/NativeSelect';
 export { default as Notification } from './components/Notification';
 export { default as Popover } from './components/Popover';
 export { default as PriceTag } from './components/PriceTag';
+export { default as Progress } from './components/Progress';
 export { default as RadioButton } from './components/RadioButton';
 export { default as Raised } from './components/Raised';
 export { default as Range } from './components/Range';
