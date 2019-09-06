@@ -21,13 +21,13 @@ type PropsType = {
 
 export const Step = styled.div<PropsType>`
     transition: all 300ms;
-    width: ${({ small, hide }) => {
+    width: ${({ theme, small, hide }) => {
         if (hide) return '0px';
-        if (small) return '8px';
+        if (small) return `${theme.Progress.common.dotSize * 1.07}px`;
 
-        return '12px';
+        return `${theme.Progress.common.dotSize * 1.33}px`;
     }};
-    height: ${({ theme }) => theme.Progress.common.dotSize + 3}px;
+    height: ${({ theme }) => theme.Progress.common.dotSize * 1.33}px;
     position: relative;
 
     &::before {
@@ -45,8 +45,8 @@ export const Step = styled.div<PropsType>`
                 return 0.8;
             }}
         );
-        top: calc(50% - 6px);
-        left: calc(50% - 6px);
+        top: calc(50% - ${({ theme }) => theme.Progress.common.dotSize / 2}px);
+        left: calc(50% - ${({ theme }) => theme.Progress.common.dotSize / 2}px);
         width: ${({ theme }) => theme.Progress.common.dotSize}px;
         height: ${({ theme }) => theme.Progress.common.dotSize}px;
         background: ${({ theme, active }) => {
