@@ -4,6 +4,7 @@ import Progress from '.';
 import Box from '../Box';
 import { IconButton } from '../..';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../assets';
+
 export const Demo = () => {
     const [current, setCurrent] = useState(0);
     const total = 20;

@@ -11,6 +11,7 @@ describe('Progress', () => {
             error: jest.fn(),
         };
     });
+
     it('should be testable with a data-testid', () => {
         const component = mount(
             <MosTheme>
@@ -70,7 +71,7 @@ describe('Progress', () => {
     it('should log an error to the console when paginating by an even number', () => {
         mount(
             <MosTheme>
-                <Progress data-testid="progress" current={0} total={10} paginateBy={6} />
+                <Progress data-testid="progress" current={0} total={10} paginateBy={6 as 5} />
             </MosTheme>,
         );
 

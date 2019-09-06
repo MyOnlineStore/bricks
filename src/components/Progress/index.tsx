@@ -6,7 +6,7 @@ type PropsType = {
     'data-testid'?: string;
     current: number;
     total: number;
-    paginateBy?: number;
+    paginateBy?: 3 | 5 | 7 | 9 | 11 | 13 | 15 | 17 | 19 | 21;
 };
 
 const shouldShow = (index: number, props: PropsType): boolean => {
