@@ -154,4 +154,18 @@ describe('Box', () => {
 
         expect(component).toHaveStyleRule('z-index', '10');
     });
+
+    it('should be able to render an inline variant', () => {
+        const component = mount(<Box inline />);
+
+        expect(component.find('span').length).toBe(1);
+    });
+
+    it('should be able to overwrite the rendered html element', () => {
+        const component = mount(<Box as="dt" />);
+        const inlineComponent = mount(<Box inline as="dt" />);
+
+        expect(component.find('dt').length).toBe(1);
+        expect(inlineComponent.find('dt').length).toBe(1);
+    });
 });

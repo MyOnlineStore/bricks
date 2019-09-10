@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import trbl, { TrblType } from '../../utility/trbl';
-import { StyledDiv, StyledSpan } from './style';
+import { StyledBox } from './style';
 import { OffsetShorthandType } from '../../types/OffsetType';
 
 type PropsType = JSX.IntrinsicElements['div'] & {
+    as?: keyof JSX.IntrinsicElements;
     justifyContent?:
         | 'flex-start'
         | 'flex-end'
@@ -38,7 +39,7 @@ type PropsType = JSX.IntrinsicElements['div'] & {
     zIndex?: number;
 };
 
-const Box: FunctionComponent<PropsType> = (props): JSX.Element => {
+const Box: FunctionComponent<PropsType> = props => {
     const {
         order,
         direction,
@@ -73,10 +74,10 @@ const Box: FunctionComponent<PropsType> = (props): JSX.Element => {
         padding: shorthandPadding,
     };
 
-    return props.inline ? (
-        <StyledSpan {...newProps}>{props.children}</StyledSpan>
-    ) : (
-        <StyledDiv {...newProps}>{props.children}</StyledDiv>
+    return (
+        <StyledBox as={props.inline ? ('span' as 'span') : ('div' as 'div')} {...newProps}>
+            {props.children}
+        </StyledBox>
     );
 };
 
