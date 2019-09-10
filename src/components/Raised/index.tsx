@@ -21,8 +21,6 @@ const Raised = styled.div<PropsType>`
     box-shadow: ${({ level, theme }): string => (level ? theme.Raised[`level${level}`].boxShadow : 'none')};
     transition: box-shadow 300ms;
     border-radius: 3px 3px 3px 3px;
-    padding: 36px;
-    width: 100%;
 `;
 
 const composeRaisedTheme = (themeTools: ThemeTools): RaisedThemeType => {
