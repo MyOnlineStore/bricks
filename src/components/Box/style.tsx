@@ -16,7 +16,7 @@ type BoxPropsType = PropsType & {
     padding?: TrblType;
 };
 
-const StyledDiv = styled.div<BoxPropsType>`
+const StyledBox = styled.div<BoxPropsType>`
     box-sizing: border-box;
     display: ${({ inline }): string => (inline ? 'inline-flex' : 'flex')};
     height: ${({ elementHeight }): string => (elementHeight !== undefined ? elementHeight : '')};
@@ -63,6 +63,4 @@ const StyledDiv = styled.div<BoxPropsType>`
     ${({ zIndex }): string => (zIndex ? `z-index: ${zIndex};` : '')}
 `;
 
-const StyledSpan = StyledDiv.withComponent('span');
-
-export { StyledDiv, StyledSpan, BoxPropsType };
+export { StyledBox, BoxPropsType };
