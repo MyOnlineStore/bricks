@@ -65,7 +65,7 @@ export const composeProgressTheme = ({ themeSettings: { colors } }: ThemeTools):
             dotSize: 9,
         },
         active: {
-            backgroundColor: colors.primary.darker1,
+            backgroundColor: colors.primary.base,
         },
         idle: {
             backgroundColor: colors.silver.darker4,
