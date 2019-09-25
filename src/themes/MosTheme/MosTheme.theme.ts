@@ -874,6 +874,15 @@ const theme: ThemeType = {
             backgroundColor: silver.darker4,
         },
     },
+    Pagination: {
+        active: {
+            backgroundColor: green.base,
+            textColor: silver.lighter1,
+        },
+        arrow: {
+            borderColor: silver.darker4,
+        },
+    },
 };
 
 export default theme;

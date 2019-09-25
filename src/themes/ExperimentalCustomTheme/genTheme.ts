@@ -35,6 +35,7 @@ import { composePriceTagTheme } from '../../components/PriceTag/style';
 import { composeIllustrationTheme } from '../../components/Illustration/style';
 import { composeTextualButton } from '../../components/TextualButton';
 import { composeProgressTheme } from '../../components/Progress/style';
+import { composePaginationTheme } from '../../components/Pagination/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -104,6 +105,7 @@ const generateThemeObject = (
         Toast: composeToastTheme(themeTools),
         Toggle: composeToggleTheme(themeTools),
         Progress: composeProgressTheme(themeTools),
+        Pagination: composePaginationTheme(themeTools),
     };
 
     if (themeOverrides) {

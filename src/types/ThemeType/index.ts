@@ -30,6 +30,7 @@ import { BreadcrumbsThemeType } from '../../components/Breadcrumbs/style';
 import { IconButtonThemeType } from '../../components/IconButton';
 import { TextualButtonThemeType } from '../../components/TextualButton';
 import { ProgressThemeType } from '../../components/Progress/style';
+import { PaginationThemeType } from '../../components/Pagination/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
@@ -64,6 +65,7 @@ type ThemeType = {
     RadioButton: RadioButtonThemeType;
     Toggle: ToggleThemeType;
     Progress: ProgressThemeType;
+    Pagination: PaginationThemeType;
 };
 
 export default ThemeType;
