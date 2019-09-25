@@ -6,11 +6,17 @@ import { StyledPaginationDots, StyledPaginationButton } from './style';
 import { Box } from '../..';
 
 type PropsType = {
+    // the amount of pages that has to be displayed
     pageCount: number;
+    // the page number that is currently active and should be highlighted
     activePage: number;
+    // the threshold for splitting the pages into groups
     maxPagesWithoutSplitting?: number;
+    // when splitting the pages into groups, this is the max size of the group. please use odd numbers for symmetry sake
     maxPageGroupSize?: number;
+    // this is the character(s) shown between groups when pages are split
     groupingSpacer?: string;
+    // wrap the clickable elements in this functional component, which recieves a prop pageNumber to built a link with, for example
     LinkWrapper: FC<{ pageNumber: number }>;
 };
 
@@ -27,7 +33,7 @@ const Pagination: FC<PropsType> = ({
     if (pageCount > maxPagesWithoutConcat) {
         if (activePage <= maxPageGroupSize) {
             pageArray = [...Array.from(Array(maxPageGroupSize), (_, x) => x + 1), groupingSpacer, pageCount];
-        } else if (activePage >= 4 && activePage <= pageCount - 3) {
+        } else if (activePage > maxPageGroupSize && activePage <= pageCount - maxPageGroupSize) {
             pageArray = [
                 1,
                 groupingSpacer,
@@ -35,7 +41,7 @@ const Pagination: FC<PropsType> = ({
                 groupingSpacer,
                 pageCount,
             ];
-        } else if (activePage > pageCount - 3) {
+        } else if (activePage > pageCount - maxPageGroupSize) {
             pageArray = [1, groupingSpacer, ...Array.from(Array(maxPageGroupSize), (_, x) => pageCount - x).reverse()];
         }
     }
