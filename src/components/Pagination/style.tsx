@@ -12,15 +12,18 @@ type PaginationThemeType = {
     };
 };
 
-const StyledPaginationItem = styled(Box)<{ active?: boolean; isArrow?: boolean }>`
+const StyledPaginationDots = styled(Box)`
     border-radius: 3px;
-    display: inline-block;
-    padding: ${({ isArrow }) => (isArrow ? '8px 10px' : '8px 12px')};
+    padding: 8px 6px;
+`;
+
+const StyledPaginationButton = styled(Box)<{ active?: boolean; isArrow?: boolean }>`
+    border-radius: 3px;
     ${({ theme, active }) => (active ? `background-color: ${theme.Pagination.active.backgroundColor}` : '')};
     ${({ theme, active }) => (active ? `color: ${theme.Pagination.active.textColor}` : '')};
     border: ${({ theme, isArrow }): string =>
         isArrow ? `1px solid ${theme.Pagination.arrow.borderColor}` : '1px solid transparent'};
-    cursor: pointer;
+    padding: ${({ isArrow }) => (isArrow ? '8px' : '8px 12px')};
 `;
 
 const composePaginationTheme = (themeTools: ThemeTools): PaginationThemeType => {
@@ -37,4 +40,4 @@ const composePaginationTheme = (themeTools: ThemeTools): PaginationThemeType => 
     };
 };
 
-export { PaginationThemeType, StyledPaginationItem, composePaginationTheme };
+export { PaginationThemeType, StyledPaginationDots, StyledPaginationButton, composePaginationTheme };

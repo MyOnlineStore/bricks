@@ -2,54 +2,76 @@ import React, { FC } from 'react';
 import { ChevronRightIcon, ChevronLeftIcon } from '../../assets';
 import Icon from '../Icon';
 import Text from '../Text';
-import { StyledPaginationItem } from './style';
+import { StyledPaginationDots, StyledPaginationButton } from './style';
 import { Box } from '../..';
 
 type PropsType = {
     pageCount: number;
     activePage: number;
+    maxPagesWithoutSplitting?: number;
+    maxPageGroupSize?: number;
+    groupingSpacer?: string;
+    LinkWrapper: FC<{ pageNumber: number }>;
 };
 
-const Pagination: FC<PropsType> = ({ pageCount, activePage }): JSX.Element => {
-    const maxPagesWithoutConcat = 5;
-    const maxPageGroupSize = 3;
-
+const Pagination: FC<PropsType> = ({
+    pageCount = 12,
+    activePage,
+    LinkWrapper,
+    maxPagesWithoutSplitting: maxPagesWithoutConcat = 5,
+    maxPageGroupSize = 3,
+    groupingSpacer = '...',
+}): JSX.Element => {
     let pageArray: Array<string | number> = Array.from(Array(pageCount), (_, x) => x + 1);
 
     if (pageCount > maxPagesWithoutConcat) {
         if (activePage <= maxPageGroupSize) {
-            pageArray = [...Array.from(Array(maxPageGroupSize), (_, x) => x + 1), '...', pageCount];
+            pageArray = [...Array.from(Array(maxPageGroupSize), (_, x) => x + 1), groupingSpacer, pageCount];
         } else if (activePage >= 4 && activePage <= pageCount - 3) {
             pageArray = [
                 1,
-                '...',
+                groupingSpacer,
                 ...Array.from(Array(maxPageGroupSize), (_, x) => activePage - Math.floor(maxPageGroupSize / 2) + x),
-                '...',
+                groupingSpacer,
                 pageCount,
             ];
         } else if (activePage > pageCount - 3) {
-            pageArray = [1, '...', ...Array.from(Array(maxPageGroupSize), (_, x) => pageCount - x).reverse()];
+            pageArray = [1, groupingSpacer, ...Array.from(Array(maxPageGroupSize), (_, x) => pageCount - x).reverse()];
         }
     }
 
     return (
-        <Box>
+        <Box alignItems="center" justifyContent="center">
             {activePage > 1 && (
-                <StyledPaginationItem isArrow>
-                    <Icon icon={ChevronLeftIcon} size="medium" />
-                </StyledPaginationItem>
+                <StyledPaginationButton isArrow>
+                    <LinkWrapper pageNumber={activePage - 1}>
+                        <Icon icon={ChevronLeftIcon} size="medium" />
+                    </LinkWrapper>
+                </StyledPaginationButton>
             )}
             {Array.from(pageArray, (e, i) => {
+                if (e === groupingSpacer) {
+                    return (
+                        <Text>
+                            <StyledPaginationDots key={i}>{e}</StyledPaginationDots>
+                        </Text>
+                    );
+                }
+
                 return (
-                    <StyledPaginationItem key={i} active={activePage === e}>
-                        <Text>{e}</Text>
-                    </StyledPaginationItem>
+                    <Text>
+                        <StyledPaginationButton active={activePage === e}>
+                            <LinkWrapper pageNumber={e as number}>{e}</LinkWrapper>
+                        </StyledPaginationButton>
+                    </Text>
                 );
             })}
             {activePage < pageCount && (
-                <StyledPaginationItem isArrow>
-                    <Icon icon={ChevronRightIcon} size="medium" />
-                </StyledPaginationItem>
+                <StyledPaginationButton isArrow>
+                    <LinkWrapper pageNumber={activePage + 1}>
+                        <Icon icon={ChevronRightIcon} size="medium" />
+                    </LinkWrapper>
+                </StyledPaginationButton>
             )}
         </Box>
     );
