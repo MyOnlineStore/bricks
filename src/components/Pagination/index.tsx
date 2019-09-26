@@ -49,7 +49,7 @@ const Pagination: FC<PropsType> = ({
     return (
         <Box alignItems="center" justifyContent="center">
             {activePage > 1 && (
-                <StyledPaginationButton isArrow>
+                <StyledPaginationButton isArrow data-testid="previous-page-button">
                     <LinkWrapper pageNumber={activePage - 1}>
                         <Icon icon={ChevronLeftIcon} size="medium" />
                     </LinkWrapper>
@@ -58,22 +58,22 @@ const Pagination: FC<PropsType> = ({
             {Array.from(pageArray, (e, i) => {
                 if (e === groupingSpacer) {
                     return (
-                        <Text>
-                            <StyledPaginationDots key={i}>{e}</StyledPaginationDots>
+                        <Text key={i} as="span">
+                            <StyledPaginationDots data-testid="pages-spacer">{e}</StyledPaginationDots>
                         </Text>
                     );
                 }
 
                 return (
-                    <Text>
-                        <StyledPaginationButton active={activePage === e}>
+                    <Text key={i} as="span">
+                        <StyledPaginationButton active={activePage === e} data-testid="page-button">
                             <LinkWrapper pageNumber={e as number}>{e}</LinkWrapper>
                         </StyledPaginationButton>
                     </Text>
                 );
             })}
             {activePage < pageCount && (
-                <StyledPaginationButton isArrow>
+                <StyledPaginationButton isArrow data-testid="next-page-button">
                     <LinkWrapper pageNumber={activePage + 1}>
                         <Icon icon={ChevronRightIcon} size="medium" />
                     </LinkWrapper>

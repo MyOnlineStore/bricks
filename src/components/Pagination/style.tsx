@@ -17,7 +17,7 @@ const StyledPaginationDots = styled(Box)`
     padding: 8px 6px;
 `;
 
-const StyledPaginationButton = styled(Box)<{ active?: boolean; isArrow?: boolean }>`
+const StyledPaginationButton = styled(Box)<{ active?: boolean; isArrow?: boolean; 'data-testid'?: string }>`
     border-radius: 3px;
     ${({ theme, active }) => (active ? `background-color: ${theme.Pagination.active.backgroundColor}` : '')};
     ${({ theme, active }) => (active ? `color: ${theme.Pagination.active.textColor}` : '')};
