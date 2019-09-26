@@ -3,6 +3,7 @@ import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
 import Box from '../Box';
 
 type PaginationThemeType = {
+    borderRadius: string;
     active: {
         backgroundColor: string;
         textColor: string;
@@ -13,12 +14,12 @@ type PaginationThemeType = {
 };
 
 const StyledPaginationDots = styled(Box)`
-    border-radius: 3px;
+    border-radius: ${({ theme }) => theme.Pagination.borderRadius};
     padding: 8px 6px;
 `;
 
 const StyledPaginationButton = styled(Box)<{ active?: boolean; isArrow?: boolean; 'data-testid'?: string }>`
-    border-radius: 3px;
+    border-radius: ${({ theme }) => theme.Pagination.borderRadius};
     ${({ theme, active }) => (active ? `background-color: ${theme.Pagination.active.backgroundColor}` : '')};
     ${({ theme, active }) => (active ? `color: ${theme.Pagination.active.textColor}` : '')};
     border: ${({ theme, isArrow }): string =>
@@ -39,6 +40,7 @@ const composePaginationTheme = (themeTools: ThemeTools): PaginationThemeType => 
     const { colors } = themeTools.themeSettings;
 
     return {
+        borderRadius: themeTools.calculateRoundness(20),
         active: {
             backgroundColor: colors.primary.base,
             textColor: colors.silver.lighter1,

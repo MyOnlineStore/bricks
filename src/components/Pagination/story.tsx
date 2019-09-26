@@ -27,8 +27,8 @@ storiesOf('Pagination', module).add('Default', () => {
             {Array.from(Array(pageCount).keys()).map(e => (
                 <Box margin={[24]}>
                     <Pagination
-                        pageCount={pageCount}
-                        activePage={e + 1}
+                        total={pageCount}
+                        current={e + 1}
                         LinkWrapper={LinkWrapper}
                         groupingSpacer={text('Dots string', '...')}
                         maxPagesWithoutSplitting={number('Max number of pages before splitting', 5)}

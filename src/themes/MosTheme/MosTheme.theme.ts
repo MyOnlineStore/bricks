@@ -875,6 +875,7 @@ const theme: ThemeType = {
         },
     },
     Pagination: {
+        borderRadius: roundness.base,
         active: {
             backgroundColor: green.base,
             textColor: silver.lighter1,
