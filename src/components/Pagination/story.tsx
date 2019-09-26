@@ -3,14 +3,23 @@ import React, { FC } from 'react';
 import Pagination from '.';
 import { number, text } from '@storybook/addon-knobs';
 import Box from '../Box';
+import styled from 'styled-components';
 
 storiesOf('Pagination', module).add('Default', () => {
     const pageCount = number('Number of pages', 12);
 
+    const StyledLink = styled.a`
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+            color: #6bde78;
+        }
+    `;
+
     const LinkWrapper: FC<{ pageNumber: number }> = props => (
-        <a href={`#/goto/page/${props.pageNumber}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-            {props.children}
-        </a>
+        <StyledLink href={`#/goto/page/${props.pageNumber}`}>{props.children}</StyledLink>
     );
 
     return (

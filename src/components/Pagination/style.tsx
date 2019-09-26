@@ -24,6 +24,15 @@ const StyledPaginationButton = styled(Box)<{ active?: boolean; isArrow?: boolean
     border: ${({ theme, isArrow }): string =>
         isArrow ? `1px solid ${theme.Pagination.arrow.borderColor}` : '1px solid transparent'};
     padding: ${({ isArrow }) => (isArrow ? '8px' : '8px 12px')};
+
+    &:hover {
+        border-color: ${({ theme, isArrow }) => (isArrow ? theme.Pagination.active.backgroundColor : '')};
+        background-color: ${({ theme, isArrow }) => (isArrow ? theme.Pagination.active.backgroundColor : '')};
+
+        svg {
+            fill: ${({ theme }) => theme.Pagination.active.textColor};
+        }
+    }
 `;
 
 const composePaginationTheme = (themeTools: ThemeTools): PaginationThemeType => {
