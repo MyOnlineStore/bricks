@@ -82,4 +82,21 @@ storiesOf('Toast', module)
             title={text('title', 'Overcome injustice.')}
             message={text('description', 'Please agree or decline this proposition.')}
         />
-    ));
+    ))
+    .add('Persistent and triggered remotely', () => {
+        button('Trigger a toast', () => {
+            window.toaster.notify({
+                icon: infoCircle,
+                onClick: () => confirm('Primary action'),
+                severity: 'info',
+                buttonTitle: 'Accept',
+                secondaryButtonTitle: 'More information',
+                onClickSecondary: () => confirm('Secondary action'),
+                persistent: true,
+                title: 'Overcome injustice',
+                message: 'Please agree or decline this proposition',
+            });
+        });
+
+        return <Toaster />;
+    });

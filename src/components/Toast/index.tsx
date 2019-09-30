@@ -32,7 +32,14 @@ type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plai
 
 class Toast extends Component<PropsType> {
     private action = (): void => {
-        if (this.props.onClick !== undefined) this.props.onClick();
+        if (this.props.onClick !== undefined) {
+            this.props.onClick();
+
+            // When a toast is persistent, executing the primary action closes it instead of one of the other closing behaviors
+            if (this.props.persistent) {
+                this.closeAction();
+            }
+        }
     };
 
     private closeAction = (): void => {
