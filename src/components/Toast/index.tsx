@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { FC, useEffect } from 'react';
 import StyledToast, { StyledToastWrapper } from './style';
 import Button from '../Button';
 import Box from '../Box';
 import Icon from '../Icon';
 import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
-import trbl from '../../utility/trbl';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';
 import close from '../../assets/icons/close-small.svg';
 import Measure from 'react-measure';
 
 type PropsType = {
+    'data-testid'?: string;
     title: string;
     icon?: string;
     show: boolean;
@@ -30,129 +30,128 @@ type PropsType = {
 
 type ButtonVariant = 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
 
-class Toast extends Component<PropsType> {
-    private action = (): void => {
-        if (this.props.onClick !== undefined) this.props.onClick();
+const Toast: FC<PropsType> = props => {
+    const action = (): void => {
+        if (props.onClick !== undefined) props.onClick();
     };
 
-    private closeAction = (): void => {
-        if (this.props.onClose !== undefined) this.props.onClose();
+    const closeAction = (): void => {
+        if (props.onClose !== undefined) props.onClose();
     };
 
-    private getVariant = (): ButtonVariant => {
-        if (this.props.buttonSeverity !== undefined) return this.props.buttonSeverity;
-        if (this.props.severity === 'error') return 'destructive';
-        if (this.props.severity === 'warning') return 'warning';
+    const getVariant = (): ButtonVariant => {
+        if (props.buttonSeverity !== undefined) return props.buttonSeverity;
+        if (props.severity === 'error') return 'destructive';
+        if (props.severity === 'warning') return 'warning';
 
         return 'primary';
     };
 
-    private handleExit = (): void => {
-        if (this.props.onExited) this.props.onExited();
+    const handleExit = (): void => {
+        if (props.onExited) props.onExited();
     };
 
-    public componentDidMount = (): void => {
-        if (this.props.autoDismiss && !this.props.persistent) setTimeout((): void => this.closeAction(), 6000);
-    };
+    useEffect(() => {
+        if (props.autoDismiss && !props.persistent) {
+            const id = setTimeout((): void => {
+                closeAction();
+            }, 6000);
 
-    public render(): JSX.Element {
-        const icon =
-            this.props.icon !== undefined
-                ? this.props.icon
-                : ((SeverityIcons[this.props.severity] as unknown) as string);
+            return () => clearTimeout(id);
+        }
+    }, []);
 
-        return (
-            <TransitionAnimation show={this.props.show} animation="zoom" onExited={this.handleExit}>
-                <Measure client>
-                    {({ measureRef, contentRect }) => {
-                        const isSmall =
-                            (!this.props.secondaryButtonTitle &&
-                                contentRect.client &&
-                                contentRect.client.width < 375) ||
-                            (this.props.secondaryButtonTitle && contentRect.client && contentRect.client.width < 550);
+    const icon = props.icon !== undefined ? props.icon : ((SeverityIcons[props.severity] as unknown) as string);
 
-                        return (
-                            <StyledToastWrapper ref={measureRef} role="alertdialog" aria-label={this.props.title}>
-                                <Box margin={trbl(6, 24)}>
-                                    <StyledToast severity={this.props.severity}>
-                                        {!isSmall && (
-                                            <Box alignSelf="flex-start" margin={trbl(18, 6, 18, 18)}>
-                                                <Text as="span" severity={this.props.severity}>
-                                                    <Icon size="medium" icon={icon} />
+    return (
+        <TransitionAnimation show={props.show} animation="zoom" onExited={handleExit}>
+            <Measure client>
+                {({ measureRef, contentRect }) => {
+                    const isSmall =
+                        (!props.secondaryButtonTitle && contentRect.client && contentRect.client.width < 375) ||
+                        (props.secondaryButtonTitle && contentRect.client && contentRect.client.width < 550);
+
+                    return (
+                        <StyledToastWrapper
+                            ref={measureRef}
+                            data-testid={props['data-testid']}
+                            role="alertdialog"
+                            aria-label={props.title}
+                        >
+                            <Box margin={[6, 24]}>
+                                <StyledToast severity={props.severity}>
+                                    {!isSmall && (
+                                        <Box alignSelf="flex-start" margin={[18, 6, 18, 18]}>
+                                            <Text as="span" severity={props.severity}>
+                                                <Icon size="medium" icon={icon} />
+                                            </Text>
+                                        </Box>
+                                    )}
+                                    <Box
+                                        style={{ display: isSmall ? 'block' : '' }}
+                                        direction={isSmall ? 'column' : 'row'}
+                                        justifyContent="center"
+                                        alignContent="center"
+                                    >
+                                        <Box margin={isSmall ? [12] : [18, 12]} style={{ display: 'block' }}>
+                                            <Text strong>
+                                                <span dangerouslySetInnerHTML={{ __html: props.title }} />
+                                            </Text>
+                                            {props.message && (
+                                                <Text>
+                                                    <span dangerouslySetInnerHTML={{ __html: props.message }} />
                                                 </Text>
+                                            )}
+                                        </Box>
+                                        {props.secondaryButtonTitle && (
+                                            <Box
+                                                direction="column"
+                                                justifyContent="center"
+                                                margin={isSmall ? [0, 12, 12, 12] : [0, 6, 0, 12]}
+                                                alignItems="flex-start"
+                                            >
+                                                <Button
+                                                    title={props.secondaryButtonTitle}
+                                                    onClick={props.onClickSecondary}
+                                                    variant={'secondary'}
+                                                />
                                             </Box>
                                         )}
-                                        <Box
-                                            style={{ display: isSmall ? 'block' : '' }}
-                                            direction={isSmall ? 'column' : 'row'}
-                                            justifyContent="center"
-                                            alignContent="center"
-                                        >
+                                        {props.buttonTitle && (
                                             <Box
-                                                margin={isSmall ? trbl(12) : trbl(18, 12)}
-                                                style={{ display: 'block' }}
+                                                direction="column"
+                                                justifyContent="center"
+                                                margin={isSmall ? [0, 12, 12, 12] : [0, 12]}
+                                                alignItems="flex-start"
                                             >
-                                                <Text strong>
-                                                    <span dangerouslySetInnerHTML={{ __html: this.props.title }} />
-                                                </Text>
-                                                {this.props.message && (
-                                                    <Text>
-                                                        <span
-                                                            dangerouslySetInnerHTML={{ __html: this.props.message }}
-                                                        />
-                                                    </Text>
-                                                )}
-                                            </Box>
-                                            {this.props.secondaryButtonTitle && (
-                                                <Box
-                                                    direction="column"
-                                                    justifyContent="center"
-                                                    margin={isSmall ? trbl(0, 12, 12, 12) : trbl(0, 6, 0, 12)}
-                                                    alignItems="flex-start"
-                                                >
-                                                    <Button
-                                                        title={this.props.secondaryButtonTitle}
-                                                        onClick={this.props.onClickSecondary}
-                                                        variant={'secondary'}
-                                                    />
-                                                </Box>
-                                            )}
-                                            {this.props.buttonTitle && (
-                                                <Box
-                                                    direction="column"
-                                                    justifyContent="center"
-                                                    margin={isSmall ? trbl(0, 12, 12, 12) : trbl(0, 12)}
-                                                    alignItems="flex-start"
-                                                >
-                                                    <Button
-                                                        title={this.props.buttonTitle}
-                                                        onClick={this.action}
-                                                        variant={this.getVariant()}
-                                                    />
-                                                </Box>
-                                            )}
-                                        </Box>
-                                        <Box direction="column" margin={[0, 12, 0, 0]}>
-                                            {!this.props.persistent && (
-                                                <IconButton
-                                                    variant="primary"
-                                                    icon={close}
-                                                    iconSize="small"
-                                                    title="close"
-                                                    onClick={this.closeAction}
+                                                <Button
+                                                    title={props.buttonTitle}
+                                                    onClick={action}
+                                                    variant={getVariant()}
                                                 />
-                                            )}
-                                        </Box>
-                                    </StyledToast>
-                                </Box>
-                            </StyledToastWrapper>
-                        );
-                    }}
-                </Measure>
-            </TransitionAnimation>
-        );
-    }
-}
+                                            </Box>
+                                        )}
+                                    </Box>
+                                    <Box direction="column" margin={[0, 12, 0, 0]}>
+                                        {!props.persistent && (
+                                            <IconButton
+                                                variant="primary"
+                                                icon={close}
+                                                iconSize="small"
+                                                title="close"
+                                                onClick={closeAction}
+                                            />
+                                        )}
+                                    </Box>
+                                </StyledToast>
+                            </Box>
+                        </StyledToastWrapper>
+                    );
+                }}
+            </Measure>
+        </TransitionAnimation>
+    );
+};
 
 export default Toast;
 export { Toast, PropsType };
