@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef } from 'react';
+import React, { FC, useState, useEffect, useRef, CSSProperties } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
 import TransitionAnimation from '../TransitionAnimation';
 import { PopoverAnchor, PopoverArrow, PopoverBackground, PopoverContent, PopoverWindow } from './style';
@@ -14,6 +14,7 @@ type PropsType = {
     stretch?: boolean;
     preventOverflow?: boolean;
     triggerOn?: 'click' | 'hover';
+    arrowStyle?: CSSProperties;
     onClickOutside?(): void;
     renderContent(): JSX.Element | string;
 };
@@ -40,6 +41,8 @@ type PropsType = {
  * @param preventOverflow
  * This is used to prevent the tooltip from being positioned outside the boundary
  * [reference](https://popper.js.org/popper-documentation.html#modifiers..preventOverflow)
+ * @param arrowStyle
+ * These styles (react css properties) are applied on the arrow of the popover
  * @param triggerOn
  * Used to set they way the tooltip is triggered. Can't be used together with show prop.
  * @param onClickOutside
@@ -165,7 +168,11 @@ const Popover: FC<PropsType> = props => {
                             <PopoverWindow ref={ref} style={style}>
                                 <PopoverContent>{props.renderContent()}</PopoverContent>
                                 <PopoverBackground />
-                                <PopoverArrow ref={arrowProps.ref} style={arrowProps.style} placement={placement} />
+                                <PopoverArrow
+                                    ref={arrowProps.ref}
+                                    style={{ ...arrowProps.style, ...props.arrowStyle }}
+                                    placement={placement}
+                                />
                                 <PopoverArrow shadow style={arrowProps.style} placement={placement} />
                             </PopoverWindow>
                         )}
