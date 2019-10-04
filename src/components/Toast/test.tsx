@@ -126,4 +126,10 @@ describe('Toast', () => {
 
         expect(buttons).toHaveLength(2);
     });
+
+    it('should be testable with a data-testid', () => {
+        const component = mountWithTheme(<Toast data-testid="foo" show severity="success" title="Foo" />);
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
 });
