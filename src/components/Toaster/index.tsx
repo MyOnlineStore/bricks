@@ -9,6 +9,26 @@ type MetaType = any;
 
 type PropsType = {
     portalId?: string;
+    /**
+     * This callback can be used to respond to calls of toaster.notify, An example
+     * for this would to log an error every time a toast is shown with severity "error"
+     *
+     * @example
+     * ```
+     * <Toaster
+     *     onNotify={(toaster, meta) => {
+     *         if (toaster.severity === 'error') {
+     *             log(meta);
+     *         }
+     *     }}
+     * />
+     *
+     * window.toaster.notify({
+     *     severity: 'error',
+     *     title: 'Something went wrong',
+     * }, 'Some error');
+     * ```
+     */
     onNotify?(toast: ToastType, meta?: MetaType): void;
 };
 
