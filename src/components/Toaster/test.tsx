@@ -42,4 +42,20 @@ describe('Toaster', () => {
 
         expect(component.find(Toast).prop('isOpen')).toBe(false);
     });
+
+    it('should fire the onNotify callback when window.notify gets called', () => {
+        const notifyMock = jest.fn();
+        const meta = 'some type of meta-data';
+
+        const toast = {
+            title: 'foo',
+            severity: 'error' as 'error',
+        };
+
+        mountWithTheme(<Toaster onNotify={notifyMock} />);
+
+        window.toaster.notify(toast, meta);
+
+        expect(notifyMock).toHaveBeenCalledWith(toast, meta);
+    });
 });
