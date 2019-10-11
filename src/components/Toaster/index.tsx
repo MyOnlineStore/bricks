@@ -4,8 +4,32 @@ import { createPortal } from 'react-dom';
 
 type ToastType = Pick<ToastPropsType, Exclude<keyof ToastPropsType, 'show'>>;
 
+// tslint:disable-next-line:no-any
+type MetaDataType = any;
+
 type PropsType = {
     portalId?: string;
+    /**
+     * This callback can be used to respond to calls of toaster.notify, An example
+     *  would be to log an error every time a toast is shown with severity "error"
+     *
+     * @example
+     * ```
+     * <Toaster
+     *     onNotify={(toaster, meta) => {
+     *         if (toaster.severity === 'error') {
+     *             log(meta);
+     *         }
+     *     }}
+     * />
+     *
+     * window.toaster.notify({
+     *     severity: 'error',
+     *     title: 'Something went wrong',
+     * }, 'Some error');
+     * ```
+     */
+    onNotify?(toast: ToastType, meta?: MetaDataType): void;
 };
 
 type StateType = {
@@ -15,7 +39,7 @@ type StateType = {
 declare global {
     interface Window {
         toaster: {
-            notify(toast: ToastType): void;
+            notify(toast: ToastType, meta?: MetaDataType): void;
         };
     }
 }
@@ -65,7 +89,7 @@ class Toaster extends Component<PropsType, StateType> {
         };
     }
 
-    public notify = (toast: ToastType): void => {
+    public notify = (toast: ToastType, meta?: MetaDataType): void => {
         this.setState({
             toasts: [
                 ...this.state.toasts,
@@ -76,6 +100,10 @@ class Toaster extends Component<PropsType, StateType> {
                 },
             ],
         });
+
+        if (this.props.onNotify) {
+            this.props.onNotify(toast, meta);
+        }
     };
 
     public render(): JSX.Element {
