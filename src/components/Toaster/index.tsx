@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 type ToastType = Pick<ToastPropsType, Exclude<keyof ToastPropsType, 'show'>>;
 
 // tslint:disable-next-line:no-any
-type MetaType = any;
+type MetaDataType = any;
 
 type PropsType = {
     portalId?: string;
@@ -29,7 +29,7 @@ type PropsType = {
      * }, 'Some error');
      * ```
      */
-    onNotify?(toast: ToastType, meta?: MetaType): void;
+    onNotify?(toast: ToastType, meta?: MetaDataType): void;
 };
 
 type StateType = {
@@ -39,7 +39,7 @@ type StateType = {
 declare global {
     interface Window {
         toaster: {
-            notify(toast: ToastType, meta?: MetaType): void;
+            notify(toast: ToastType, meta?: MetaDataType): void;
         };
     }
 }
@@ -89,7 +89,7 @@ class Toaster extends Component<PropsType, StateType> {
         };
     }
 
-    public notify = (toast: ToastType, meta?: MetaType): void => {
+    public notify = (toast: ToastType, meta?: MetaDataType): void => {
         this.setState({
             toasts: [
                 ...this.state.toasts,
