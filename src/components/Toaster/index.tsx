@@ -11,7 +11,7 @@ type PropsType = {
     portalId?: string;
     /**
      * This callback can be used to respond to calls of toaster.notify, An example
-     * for this would to log an error every time a toast is shown with severity "error"
+     *  would be to log an error every time a toast is shown with severity "error"
      *
      * @example
      * ```
