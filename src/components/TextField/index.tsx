@@ -9,6 +9,7 @@ import Icon from '../Icon';
 import lockedIcon from '../../assets/icons/locked.svg';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';
+import { CloseSmallIcon } from '../../assets';
 
 type PropsType = {
     value: string;
@@ -23,9 +24,10 @@ type PropsType = {
     suffix?: string | ReactNode;
     disabled?: boolean;
     placeholder?: string;
+    showClearButton?: boolean;
     'data-testid'?: string;
     extractRef?(ref: HTMLInputElement): void;
-    onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
+    onChange(value: string, event?: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
     onFocus?(): void;
 };
@@ -100,7 +102,18 @@ class TextField extends Component<PropsType, StateType> {
                                 if (ref !== null && this.props.extractRef !== undefined) this.props.extractRef(ref);
                             }}
                         />
-                        <Box position="absolute" right="8px" top="8px">
+                        <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
+                            {this.props.showClearButton && !this.props.disabled && this.props.value !== '' && (
+                                <div
+                                    onClick={() => {
+                                        this.props.onChange('');
+                                        this.forceFocus();
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <Icon icon={CloseSmallIcon} color="#A6AAB3" size="small" />
+                                </div>
+                            )}
                             {this.props.disabled && <Icon icon={lockedIcon} color="#A6AAB3" size="medium" />}
                         </Box>
                     </Box>
