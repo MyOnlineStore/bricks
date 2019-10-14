@@ -110,6 +110,7 @@ class TextField extends Component<PropsType, StateType> {
                                         this.forceFocus();
                                     }}
                                     style={{ cursor: 'pointer' }}
+                                    data-testid={`${this.props['data-testid']}-clear-button`}
                                 >
                                     <Icon icon={CloseSmallIcon} color="#A6AAB3" size="small" />
                                 </div>
