@@ -7,6 +7,7 @@ import { Checkbox, IconButton, Box } from '../..';
 import { SearchIcon } from '../../assets';
 
 type PropsType = {
+    withClearButton?: boolean;
     withFeedback?: boolean;
     isNumber?: boolean;
     isCurrency?: boolean;
@@ -47,6 +48,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         palceholder: text('Placeholder', 'This is a placeholder'),
         name: 'fieldname',
         disabled: boolean('disabled', false),
+        showClearButton: props.withClearButton,
         feedback: props.withFeedback
             ? {
                   message: text('feedback message', 'This is a feedback message'),
@@ -94,6 +96,8 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
 };
 
 storiesOf('TextField', module).add('Default', () => <Demo />);
+
+storiesOf('TextField', module).add('With clear button', () => <Demo withClearButton />);
 
 storiesOf('TextField', module).add('With Feedback', () => <Demo withFeedback />);
 
