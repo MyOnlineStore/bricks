@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Component } from 'react';
+import React, { ChangeEvent, Component, ReactNode } from 'react';
 import SeverityType from '../../types/SeverityType';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
@@ -19,8 +19,8 @@ type PropsType = {
         severity: SeverityType;
         message: string;
     };
-    prefix?: string;
-    suffix?: string;
+    prefix?: string | ReactNode;
+    suffix?: string | ReactNode;
     disabled?: boolean;
     placeholder?: string;
     'data-testid'?: string;
@@ -75,7 +75,11 @@ class TextField extends Component<PropsType, StateType> {
                     severity={this.props.feedback ? this.props.feedback.severity : undefined}
                 >
                     {this.props.prefix && (
-                        <StyledAffixWrapper onClick={this.forceFocus} disabled={this.props.disabled}>
+                        <StyledAffixWrapper
+                            onClick={typeof this.props.prefix === 'string' ? this.forceFocus : undefined}
+                            disabled={this.props.disabled}
+                            isString={typeof this.props.prefix === 'string' ? true : false}
+                        >
                             <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
@@ -101,7 +105,11 @@ class TextField extends Component<PropsType, StateType> {
                         </Box>
                     </Box>
                     {this.props.suffix && (
-                        <StyledAffixWrapper onClick={this.forceFocus} disabled={this.props.disabled}>
+                        <StyledAffixWrapper
+                            onClick={typeof this.props.suffix === 'string' ? this.forceFocus : undefined}
+                            disabled={this.props.disabled}
+                            isString={typeof this.props.prefix === 'string' ? true : false}
+                        >
                             <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}

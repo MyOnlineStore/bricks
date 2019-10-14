@@ -1,98 +1,104 @@
+import React, { useState, FC } from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
 import TextField from '.';
 import SeverityType from '../../types/SeverityType';
+import { Checkbox, IconButton, Box } from '../..';
+import { SearchIcon } from '../../assets';
 
-type DemoPropsType = {
-    withFeedback: boolean;
-    formatter?: string;
-    currency?: string;
-    locale?: string;
-};
-type DemoStateType = {
-    numberValue: number;
-    stringValue: string;
+type PropsType = {
+    withFeedback?: boolean;
+    isNumber?: boolean;
+    isCurrency?: boolean;
+    hasComponentPrefix?: boolean;
 };
 
-class Demo extends Component<DemoPropsType, DemoStateType> {
-    public ref: HTMLInputElement;
+const Demo: FC<PropsType> = (props): JSX.Element => {
+    const [stringValue, setStringValue] = useState('');
+    const [numberValue, setNumberValue] = useState(10);
+    const [isChecked, setChecked] = useState(true);
 
-    public constructor(props: DemoPropsType) {
-        super(props);
-
-        this.state = { numberValue: 10.0, stringValue: '' };
-    }
-
-    public render(): JSX.Element {
-        if (this.props.formatter === 'withCurrency') {
-            return (
-                <TextField.Currency
-                    name="first name"
-                    disabled={boolean('disabled', false)}
-                    disableNegative={boolean('disableNegative', false)}
-                    currency={this.props.currency ? this.props.currency : 'USD'}
-                    feedback={{
-                        severity: 'info',
-                        message: `The reported value of this field is: ${this.state.numberValue}`,
+    const sharedProps = {
+        prefix: props.hasComponentPrefix ? (
+            <Box padding={[0, 12]}>
+                <Checkbox
+                    checked={isChecked}
+                    value={'1'}
+                    name="TextfieldCheckbox"
+                    onChange={() => {
+                        setChecked(!isChecked);
                     }}
-                    locale={this.props.locale ? this.props.locale : 'en-US'}
-                    value={this.state.numberValue}
-                    onChange={(value: number): void => this.setState({ numberValue: value })}
-                    minor={boolean('minor', false)}
                 />
-            );
-        } else if (this.props.formatter === 'withNumber') {
-            return (
-                <TextField.Number
-                    name="min value"
-                    disableNegative={boolean('disable negative numbers', false)}
-                    disabled={boolean('disabled', false)}
-                    value={this.state.numberValue}
-                    onChange={(value: number): void => this.setState({ numberValue: value })}
-                />
-            );
-        }
-
-        return (
-            <TextField
-                prefix={text('Prefix', 'Username')}
-                suffix={text('Suffix', '$')}
-                placeholder={text('Placeholder', 'This is a placeholder')}
-                value={this.state.stringValue}
-                disabled={boolean('disabled', false)}
-                name="firstname"
-                onChange={(value: string): void => this.setState({ stringValue: value })}
-                extractRef={(ref: HTMLInputElement): void => {
-                    this.ref = ref;
+            </Box>
+        ) : (
+            text('Prefix', 'Username')
+        ),
+        suffix: props.hasComponentPrefix ? (
+            <IconButton
+                title="search"
+                icon={SearchIcon}
+                onClick={() => {
+                    alert(`Search for "${stringValue}"`);
                 }}
-                feedback={
-                    this.props.withFeedback
-                        ? {
-                              message: text('feedback message', 'This is a feedback message'),
-                              severity: select(
-                                  'feedback type',
-                                  ['success', 'warning', 'error', 'info'],
-                                  'error',
-                              ) as SeverityType,
-                          }
-                        : undefined
-                }
+            />
+        ) : (
+            text('Suffix', '$')
+        ),
+        palceholder: text('Placeholder', 'This is a placeholder'),
+        name: 'fieldname',
+        disabled: boolean('disabled', false),
+        feedback: props.withFeedback
+            ? {
+                  message: text('feedback message', 'This is a feedback message'),
+                  severity: select('feedback type', ['success', 'warning', 'error', 'info'], 'error') as SeverityType,
+              }
+            : undefined,
+    };
+
+    const numberProps = {
+        value: numberValue,
+        onChange: setNumberValue,
+        disableNegative: boolean('disable negative numbers', false),
+    };
+
+    const textProps = {
+        value: stringValue,
+        onChange: setStringValue,
+    };
+
+    if (props.isCurrency) {
+        return (
+            <TextField.Currency
+                {...sharedProps}
+                {...numberProps}
+                currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
+                feedback={{
+                    severity: 'info',
+                    message: `The reported value of this field is: ${numberValue}`,
+                }}
+                locale={select(
+                    'locale',
+                    ['en-US', 'nl-NL', 'de-DE', 'jp-JP', 'en_US', 'nl_NL', 'de_DE', 'jp_JP'],
+                    'en-US',
+                )}
+                minor={boolean('minor', false)}
             />
         );
     }
-}
 
-storiesOf('TextField', module).add('Default', () => <Demo withFeedback={false} />);
+    if (props.isNumber) {
+        return <TextField.Number {...sharedProps} {...numberProps} />;
+    }
+
+    return <TextField {...sharedProps} {...textProps} />;
+};
+
+storiesOf('TextField', module).add('Default', () => <Demo />);
+
 storiesOf('TextField', module).add('With Feedback', () => <Demo withFeedback />);
-storiesOf('TextField', module).add('With Number formatting', () => (
-    <Demo withFeedback={false} formatter="withNumber" />
-));
-storiesOf('TextField', module).add('With Currency formatting', () => (
-    <Demo
-        formatter="withCurrency"
-        withFeedback={false}
-        currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
-        locale={select('locale', ['en-US', 'nl-NL', 'de-DE', 'jp-JP', 'en_US', 'nl_NL', 'de_DE', 'jp_JP'], 'en-US')}
-    />
-));
+
+storiesOf('TextField', module).add('With Number formatting', () => <Demo isNumber />);
+
+storiesOf('TextField', module).add('With Currency formatting', () => <Demo isCurrency />);
+
+storiesOf('TextField', module).add('With checkbox prefix', () => <Demo hasComponentPrefix />);

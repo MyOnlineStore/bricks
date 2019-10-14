@@ -51,6 +51,7 @@ type TextFieldThemeType = {
 
 type AffixPropsType = {
     disabled?: boolean;
+    isString?: boolean;
 };
 
 type WrapperPropsType = {
@@ -97,7 +98,7 @@ const StyledInput = styled.input<InputPropsType>`
 
 const StyledAffixWrapper = styled.div<AffixPropsType>`
     display: flex;
-    padding: 0 12px;
+    padding: ${({ isString }): string => (isString ? '0 12px' : '0')};
     user-select: none;
     background-color: ${({ theme }): string => theme.TextField.idle.affix.background};
     align-items: center;
@@ -128,7 +129,6 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
     display: flex;
-    cursor: text;
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
@@ -142,11 +142,6 @@ const StyledWrapper = styled.div<WrapperPropsType>`
             box-shadow: ${severity ? theme.TextField.severity[severity].boxShadow : theme.TextField.focus.boxShadow};
             `
             : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
-
-    * {
-        cursor: text;
-    }
-
 }
 `;
 
