@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
+import { Box } from '../..';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -63,6 +64,21 @@ describe('TextField', () => {
 
     it('should be testable with a test-id', () => {
         const component = mountWithTheme(<TextField data-testid="foo" value="" name="foo" onChange={jest.fn()} />);
+
+        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+    });
+
+    it('should accept a React Node as pre- and suffix', () => {
+        const component = mountWithTheme(
+            <TextField
+                data-testid="foo"
+                prefix={<Box>Foo</Box>}
+                suffix={<Box>Bar</Box>}
+                value=""
+                name="foo"
+                onChange={jest.fn()}
+            />,
+        );
 
         expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
     });
