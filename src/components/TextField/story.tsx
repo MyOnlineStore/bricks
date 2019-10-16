@@ -48,7 +48,11 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         palceholder: text('Placeholder', 'This is a placeholder'),
         name: 'fieldname',
         disabled: boolean('disabled', false),
-        showClearButton: props.withClearButton,
+        onClear: props.withClearButton
+            ? () => {
+                  setStringValue('');
+              }
+            : undefined,
         feedback: props.withFeedback
             ? {
                   message: text('feedback message', 'This is a feedback message'),
