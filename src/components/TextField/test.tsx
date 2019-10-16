@@ -72,14 +72,15 @@ describe('TextField', () => {
         const component = mountWithTheme(
             <TextField
                 data-testid="foo"
-                prefix={<Box>Foo</Box>}
-                suffix={<Box>Bar</Box>}
+                prefix={<Box data-testid="prefix">Foo</Box>}
+                suffix={<Box data-testid="suffix">Bar</Box>}
                 value=""
                 name="foo"
                 onChange={jest.fn()}
             />,
         );
 
-        expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
+        expect(component.find('[data-testid="prefix"]').hostNodes().length).toBe(1);
+        expect(component.find('[data-testid="suffix"]').hostNodes().length).toBe(1);
     });
 });
