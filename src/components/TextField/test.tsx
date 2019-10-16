@@ -83,4 +83,26 @@ describe('TextField', () => {
         expect(component.find('[data-testid="prefix"]').hostNodes().length).toBe(1);
         expect(component.find('[data-testid="suffix"]').hostNodes().length).toBe(1);
     });
+
+    it('should return an empty string in the onChange callback when the clear button is clicked', () => {
+        const changeMock = jest.fn();
+        const clearMock = jest.fn();
+
+        const component = mountWithTheme(
+            <TextField
+                data-testid="foo"
+                value="not-empty-value"
+                name="foo"
+                onChange={changeMock}
+                onClear={clearMock}
+            />,
+        );
+
+        component
+            .find('[data-testid="foo-clear-button"]')
+            .hostNodes()
+            .simulate('click');
+
+        expect(clearMock).toHaveBeenCalled();
+    });
 });

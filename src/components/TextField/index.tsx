@@ -9,6 +9,7 @@ import Icon from '../Icon';
 import lockedIcon from '../../assets/icons/locked.svg';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';
+import { CloseSmallIcon } from '../../assets';
 
 type PropsType = {
     value: string;
@@ -25,12 +26,14 @@ type PropsType = {
     placeholder?: string;
     'data-testid'?: string;
     extractRef?(ref: HTMLInputElement): void;
+    onClear?(): void;
     onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
     onFocus?(): void;
 };
 
 type StateType = { focus: boolean };
+const ICON_COLOR = '#A6AAB3';
 
 class TextField extends Component<PropsType, StateType> {
     public static Currency: WithCurrencyFormattingType = withCurrencyFormatting(TextField);
@@ -100,8 +103,22 @@ class TextField extends Component<PropsType, StateType> {
                                 if (ref !== null && this.props.extractRef !== undefined) this.props.extractRef(ref);
                             }}
                         />
-                        <Box position="absolute" right="8px" top="8px">
-                            {this.props.disabled && <Icon icon={lockedIcon} color="#A6AAB3" size="medium" />}
+                        <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
+                            {this.props.onClear && !this.props.disabled && this.props.value !== '' && (
+                                <div
+                                    onClick={() => {
+                                        if (this.props.onClear) {
+                                            this.props.onClear();
+                                            this.forceFocus();
+                                        }
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                    data-testid={`${this.props['data-testid']}-clear-button`}
+                                >
+                                    <Icon icon={CloseSmallIcon} color={ICON_COLOR} size="small" />
+                                </div>
+                            )}
+                            {this.props.disabled && <Icon icon={lockedIcon} color={ICON_COLOR} size="medium" />}
                         </Box>
                     </Box>
                     {this.props.suffix && (
