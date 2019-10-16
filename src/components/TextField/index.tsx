@@ -24,15 +24,16 @@ type PropsType = {
     suffix?: string | ReactNode;
     disabled?: boolean;
     placeholder?: string;
-    showClearButton?: boolean;
     'data-testid'?: string;
     extractRef?(ref: HTMLInputElement): void;
-    onChange(value: string, event?: ChangeEvent<HTMLInputElement>): void;
+    onClear?(): void;
+    onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
     onFocus?(): void;
 };
 
 type StateType = { focus: boolean };
+const ICON_COLOR = '#A6AAB3';
 
 class TextField extends Component<PropsType, StateType> {
     public static Currency: WithCurrencyFormattingType = withCurrencyFormatting(TextField);
@@ -103,19 +104,21 @@ class TextField extends Component<PropsType, StateType> {
                             }}
                         />
                         <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
-                            {this.props.showClearButton && !this.props.disabled && this.props.value !== '' && (
+                            {this.props.onClear && !this.props.disabled && this.props.value !== '' && (
                                 <div
                                     onClick={() => {
-                                        this.props.onChange('');
-                                        this.forceFocus();
+                                        if (this.props.onClear) {
+                                            this.props.onClear();
+                                            this.forceFocus();
+                                        }
                                     }}
                                     style={{ cursor: 'pointer' }}
                                     data-testid={`${this.props['data-testid']}-clear-button`}
                                 >
-                                    <Icon icon={CloseSmallIcon} color="#A6AAB3" size="small" />
+                                    <Icon icon={CloseSmallIcon} color={ICON_COLOR} size="small" />
                                 </div>
                             )}
-                            {this.props.disabled && <Icon icon={lockedIcon} color="#A6AAB3" size="medium" />}
+                            {this.props.disabled && <Icon icon={lockedIcon} color={ICON_COLOR} size="medium" />}
                         </Box>
                     </Box>
                     {this.props.suffix && (

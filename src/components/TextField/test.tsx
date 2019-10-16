@@ -85,9 +85,16 @@ describe('TextField', () => {
 
     it('should return an empty string in the onChange callback when the clear button is clicked', () => {
         const changeMock = jest.fn();
+        const clearMock = jest.fn();
 
         const component = mountWithTheme(
-            <TextField data-testid="foo" value="not-empty-value" name="foo" onChange={changeMock} showClearButton />,
+            <TextField
+                data-testid="foo"
+                value="not-empty-value"
+                name="foo"
+                onChange={changeMock}
+                onClear={clearMock}
+            />,
         );
 
         component
@@ -95,6 +102,6 @@ describe('TextField', () => {
             .hostNodes()
             .simulate('click');
 
-        expect(changeMock).toHaveBeenCalledWith('');
+        expect(clearMock).toHaveBeenCalled();
     });
 });
