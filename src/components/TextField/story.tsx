@@ -34,16 +34,20 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         ) : (
             text('Prefix', 'Username')
         ),
-        suffix: props.hasComponentPrefix ? (
-            <IconButton
-                title="search"
-                icon={SearchIcon}
-                onClick={() => {
-                    alert(`Search for "${stringValue}"`);
-                }}
-            />
+        suffix: !props.withClearButton ? (
+            props.hasComponentPrefix ? (
+                <IconButton
+                    title="search"
+                    icon={SearchIcon}
+                    onClick={() => {
+                        alert(`Search for "${stringValue}"`);
+                    }}
+                />
+            ) : (
+                text('Suffix', '$')
+            )
         ) : (
-            text('Suffix', '$')
+            undefined
         ),
         palceholder: text('Placeholder', 'This is a placeholder'),
         name: 'fieldname',

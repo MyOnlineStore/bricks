@@ -10,6 +10,7 @@ import lockedIcon from '../../assets/icons/locked.svg';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';
 import { CloseSmallIcon } from '../../assets';
+import { IconButton } from '../..';
 
 type PropsType = {
     value: string;
@@ -103,23 +104,27 @@ class TextField extends Component<PropsType, StateType> {
                                 if (ref !== null && this.props.extractRef !== undefined) this.props.extractRef(ref);
                             }}
                         />
-                        <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
-                            {this.props.onClear && !this.props.disabled && this.props.value !== '' && (
-                                <div
+                        {this.props.onClear && !this.props.disabled && this.props.value !== '' && (
+                            <Box position="absolute" height="100%" right="0" top="0" alignItems="center">
+                                <IconButton
+                                    data-testid={`${this.props['data-testid']}-clear-button`}
+                                    icon={CloseSmallIcon}
+                                    iconSize="small"
+                                    title="Clear field"
                                     onClick={() => {
                                         if (this.props.onClear) {
                                             this.props.onClear();
                                             this.forceFocus();
                                         }
                                     }}
-                                    style={{ cursor: 'pointer' }}
-                                    data-testid={`${this.props['data-testid']}-clear-button`}
-                                >
-                                    <Icon icon={CloseSmallIcon} color={ICON_COLOR} size="small" />
-                                </div>
-                            )}
-                            {this.props.disabled && <Icon icon={lockedIcon} color={ICON_COLOR} size="medium" />}
-                        </Box>
+                                />
+                            </Box>
+                        )}
+                        {this.props.disabled && (
+                            <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
+                                <Icon icon={lockedIcon} color={ICON_COLOR} size="medium" />
+                            </Box>
+                        )}
                     </Box>
                     {this.props.suffix && (
                         <StyledAffixWrapper
