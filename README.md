@@ -9,7 +9,11 @@ Some nice features:
 - Fully typed
 - Testable via `data-testid` attributes
 
-[**Demo**](https://myonlinestore.github.io/bricks)
+## Try it out!
+
+[**Storybook**](https://myonlinestore.github.io/bricks)
+
+[**Playground**](https://codesandbox.io/s/myonlinestorebricks-playground-pymwz)
 
 ## Installation
 
