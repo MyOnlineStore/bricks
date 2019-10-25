@@ -3,13 +3,12 @@ import styled from 'styled-components';
 const Header = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    height: 20vh;
+    margin: auto;
+    width: 100%;
 
-    .inner {
-        align-items: center;
-        width: 900px;
-        justify-content: space-between;
-    }
+    align-items: center;
+    justify-content: space-between;
 
     img {
         max-height: 150px;

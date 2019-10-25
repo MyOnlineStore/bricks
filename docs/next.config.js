@@ -7,6 +7,9 @@ const withMDX = require('@zeit/next-mdx')({
     },
 });
 
-module.exports = withMDX({
+const withImages = require('next-images')
+
+module.exports = withImages(withMDX({
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
-});
+}));
+
