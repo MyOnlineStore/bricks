@@ -6,6 +6,7 @@ import Button from '../Button';
 
 const Wrap = styled.div`
     max-width: 640px;
+    border: solid 3px rgba(255, 36, 94, 0.3);
 `;
 
 storiesOf('Buttons/ButtonGroup', module)

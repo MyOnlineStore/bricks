@@ -5,7 +5,7 @@ import deprecationWarning from '../../utility/deprecationWarning';
 type PropsType = {
     /**
      * @deprecated The stacked prop has been deprecated and will be removed in
-     * the next major version. please use direction="stacked" going forward.
+     * the next major version. Please use direction="stacked" going forward.
      */
     stacked?: boolean;
     direction?: 'rtl' | 'ltr' | 'stacked';
