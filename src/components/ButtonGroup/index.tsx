@@ -1,19 +1,37 @@
 import React, { Children, FunctionComponent } from 'react';
 import Box from '../Box';
+import deprecationWarning from '../../utility/_deprecationWarning';
 
 type PropsType = {
+    /**
+     * @deprecated The stacked prop has been deprecated and will be removed in
+     * the next major version. please use direction="stacked" going forward.
+     */
     stacked?: boolean;
+    direction?: 'rtl' | 'ltr' | 'stacked';
     'data-testid'?: string;
 };
 
 const ButtonGroup: FunctionComponent<PropsType> = props => {
-    const direction = props.stacked ? 'column' : 'row';
-    const children = props.stacked ? Children.toArray(props.children) : Children.toArray(props.children).reverse();
+    if (props.stacked !== undefined) {
+        deprecationWarning(
+            'The stacked prop has been deprecated and will be removed in the next major version. please use direction="stacked" going forward.',
+            'https://github.com/MyOnlineStore/bricks/issues/455',
+        );
+    }
+
+    const isStacked = props.stacked || props.direction === 'stacked';
+    const direction = isStacked ? 'column' : 'row';
+
+    const children =
+        isStacked || props.direction === 'ltr'
+            ? Children.toArray(props.children)
+            : Children.toArray(props.children).reverse();
 
     return (
         <Box
             direction={direction}
-            justifyContent={props.stacked ? 'flex-start' : 'flex-end'}
+            justifyContent={isStacked || props.direction === 'ltr' ? 'flex-start' : 'flex-end'}
             alignItems="stretch"
             wrap
             margin={[-6]}

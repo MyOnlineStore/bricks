@@ -6,7 +6,6 @@ import Button from '../Button';
 
 const Wrap = styled.div`
     max-width: 640px;
-    border: solid 3px rgba(255, 36, 94, 0.3);
 `;
 
 storiesOf('Buttons/ButtonGroup', module)
@@ -24,10 +23,38 @@ storiesOf('Buttons/ButtonGroup', module)
             </Wrap>
         );
     })
+    .add('RTL', () => {
+        return (
+            <Wrap>
+                <ButtonGroup direction="rtl">
+                    <Button variant="primary" title="Primary button">
+                        Primary button
+                    </Button>
+                    <Button variant="secondary" title="Secondary button">
+                        Secondary button
+                    </Button>
+                </ButtonGroup>
+            </Wrap>
+        );
+    })
+    .add('LTR', () => {
+        return (
+            <Wrap>
+                <ButtonGroup direction="ltr">
+                    <Button variant="primary" title="Primary button">
+                        Primary button
+                    </Button>
+                    <Button variant="secondary" title="Secondary button">
+                        Secondary button
+                    </Button>
+                </ButtonGroup>
+            </Wrap>
+        );
+    })
     .add('Stacked', () => {
         return (
             <Wrap>
-                <ButtonGroup stacked>
+                <ButtonGroup direction="stacked">
                     <Button variant="primary" title="Primary button">
                         Primary button
                     </Button>
