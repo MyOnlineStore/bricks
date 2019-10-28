@@ -78,7 +78,7 @@ describe('Modal', () => {
             />,
         );
 
-        expect(component.find(ButtonGroup).prop('stacked')).toBe(true);
+        expect(component.find(ButtonGroup).prop('direction')).toBe('stacked');
     });
 
     it('should render with a large breakpoint', () => {
