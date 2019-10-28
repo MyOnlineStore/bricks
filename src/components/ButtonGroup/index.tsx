@@ -13,6 +13,7 @@ type PropsType = {
 };
 
 const ButtonGroup: FunctionComponent<PropsType> = props => {
+    // tslint:disable-next-line:deprecation
     if (props.stacked !== undefined) {
         deprecationWarning(
             'The stacked prop has been deprecated and will be removed in the next major version. please use direction="stacked" going forward.',
@@ -20,6 +21,7 @@ const ButtonGroup: FunctionComponent<PropsType> = props => {
         );
     }
 
+    // tslint:disable-next-line:deprecation
     const isStacked = props.stacked || props.direction === 'stacked';
     const direction = isStacked ? 'column' : 'row';
 
