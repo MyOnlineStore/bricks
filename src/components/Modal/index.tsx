@@ -116,7 +116,9 @@ class Modal extends Component<PropsType> {
                                             >
                                                 {this.props.renderFixed && this.props.renderFixed()}
                                                 {this.props.buttons && (
-                                                    <ButtonGroup stacked={isSmall}>{this.props.buttons}</ButtonGroup>
+                                                    <ButtonGroup direction={isSmall ? 'stacked' : 'rtl'}>
+                                                        {this.props.buttons}
+                                                    </ButtonGroup>
                                                 )}
                                             </Box>
                                         </Contrast>

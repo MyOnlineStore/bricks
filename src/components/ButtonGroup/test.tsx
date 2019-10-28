@@ -7,8 +7,8 @@ describe('ButtonGroup', () => {
     it('renders the correct amount of Buttons', () => {
         const component = mountWithTheme(
             <ButtonGroup>
-                <Button title="Test" variant="primary" />
-                <Button title="Test" variant="secondary" />
+                <Button title="foo" variant="primary" />
+                <Button title="bar" variant="secondary" />>
             </ButtonGroup>,
         );
 
@@ -17,12 +17,13 @@ describe('ButtonGroup', () => {
 
     it('renders the correct amount of Buttons when stacked', () => {
         const component = mountWithTheme(
-            <ButtonGroup stacked>
-                <Button title="Test" variant="primary" />
+            <ButtonGroup direction="stacked">
+                <Button title="foo" variant="primary" />
+                <Button title="bar" variant="secondary" />
             </ButtonGroup>,
         );
 
-        expect(component.find(Button).length).toBe(1);
+        expect(component.find(Button).length).toBe(2);
     });
 
     it('should be testable with a testid', () => {
@@ -31,49 +32,43 @@ describe('ButtonGroup', () => {
         expect(component.find('[data-testid="buttongroup"]').hostNodes()).toHaveLength(1);
     });
 
-    it('should render the buttons in the correct order', () => {
-        const component = mountWithTheme(
-            <ButtonGroup>
-                <Button title="foo" variant="primary" />
-                <Button title="bar" variant="secondary" />
-            </ButtonGroup>,
-        );
+    it('should show a deprecation warning when the stacked prop is used', () => {
+        (console as any).warn.mockImplementationOnce(() => undefined);
 
-        expect(
-            component
-                .find(Button)
-                .last()
-                .prop('variant'),
-        ).toEqual('primary');
+        mountWithTheme(<ButtonGroup stacked />);
 
-        expect(
-            component
-                .find(Button)
-                .first()
-                .prop('variant'),
-        ).toEqual('secondary');
+        expect(console.warn).toHaveBeenCalledWith(expect.stringContaining('deprecated'));
     });
 
-    it('should render the buttons in the correct order when stacked', () => {
-        const component = mountWithTheme(
-            <ButtonGroup stacked>
-                <Button title="foo" variant="primary" />
-                <Button title="bar" variant="secondary" />
-            </ButtonGroup>,
-        );
+    const buttonSet = ['primary', 'secondary'];
 
-        expect(
-            component
-                .find(Button)
-                .first()
-                .prop('variant'),
-        ).toEqual('primary');
+    describe.each<['stacked' | 'rtl' | 'ltr', Array<string>]>([
+        ['stacked', buttonSet],
+        ['rtl', [...buttonSet].reverse()],
+        ['ltr', buttonSet],
+    ])('direction="%s"', (direction, buttons) => {
+        it(`should render ["primary", "secondary"] in order:\n
+        "${
+            direction === 'stacked'
+                ? buttons.join('"\n            ↓\n        "')
+                : buttons.join(`" ${direction === 'rtl' ? '←' : '→'} "`)
+        }"
+        `, () => {
+            const component = mountWithTheme(
+                <ButtonGroup direction={direction}>
+                    <Button title="foo" variant="primary" />
+                    <Button title="bar" variant="secondary" />
+                </ButtonGroup>,
+            );
 
-        expect(
-            component
-                .find(Button)
-                .last()
-                .prop('variant'),
-        ).toEqual('secondary');
+            buttons.forEach((variant, index) => {
+                expect(
+                    component
+                        .find(Button)
+                        .at(index)
+                        .prop('variant'),
+                ).toEqual(variant);
+            });
+        });
     });
 });
