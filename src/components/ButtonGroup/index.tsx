@@ -1,6 +1,6 @@
 import React, { Children, FunctionComponent } from 'react';
 import Box from '../Box';
-import deprecationWarning from '../../utility/_deprecationWarning';
+import deprecationWarning from '../../utility/deprecationWarning';
 
 type PropsType = {
     /**
