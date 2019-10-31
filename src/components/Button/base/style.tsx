@@ -1,12 +1,12 @@
 import styled from '../../../utility/styled';
 import { PropsType } from '.';
 
-const StyledButton = styled.button<PropsType>`
+const StyledButton = styled.button<PropsType & { 'data-loading': string }>`
     align-items: center;
     appearance: none;
     background: none;
     border: none;
-    cursor: ${({ loading }) => (loading ? 'default' : 'pointer')};
+    cursor: ${props => (props['data-loading'] === 'true' ? 'default' : 'pointer')};
     display: inline-flex;
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};

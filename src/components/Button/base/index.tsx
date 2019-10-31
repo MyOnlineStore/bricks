@@ -30,6 +30,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 className={props.className}
                 id={props.id}
                 data-testid={props['data-testid']}
+                data-loading={props.loading ? 'true' : 'false'}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
             >
@@ -47,6 +48,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             disabled={props.disabled}
             id={props.id}
             data-testid={props['data-testid']}
+            data-loading={props.loading ? 'true' : 'false'}
         >
             {props.children}
         </StyledButton>
