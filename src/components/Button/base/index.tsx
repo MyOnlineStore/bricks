@@ -29,7 +29,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 title={props.title}
                 className={props.className}
                 id={props.id}
-                loading={props.loading}
+                isLoading={props.loading}
                 data-testid={props['data-testid']}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
@@ -41,14 +41,13 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     return (
         <StyledButton
-            {...props}
             title={props.title}
             className={props.className}
             onClick={clickAction}
             type="button"
             disabled={props.disabled}
             id={props.id}
-            loading={props.loading}
+            isLoading={props.loading}
             data-testid={props['data-testid']}
         >
             {props.children}
