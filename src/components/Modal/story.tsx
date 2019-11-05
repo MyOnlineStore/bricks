@@ -56,4 +56,25 @@ storiesOf('Modal', module)
                 <Text>{text('contents', demoContent)}</Text>
             </Modal>
         );
+    })
+    .add('With Media', () => {
+        return (
+            <Modal
+                show={boolean('show', true)}
+                size={select('size', ['small', 'medium', 'large'], 'large')}
+                title={text('title', 'Would you like me to be your role modal?')}
+                buttons={[
+                    <Button key="activate" variant="primary" title="Activate" />,
+                    <Button key="close" variant="plain" title="Close" />,
+                ]}
+                media={
+                    <img
+                        alt="Some image"
+                        src="https://images.unsplash.com/photo-1572915105668-d5b742cb5efd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                    />
+                }
+            >
+                <Text>{text('contents', demoContent)}</Text>
+            </Modal>
+        );
     });
