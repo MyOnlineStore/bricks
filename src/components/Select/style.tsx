@@ -104,7 +104,6 @@ const StyledWindow = styled.div<WindowPropsType>`
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
     width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
-    padding-top: ${({ open }): string => (open ? '6px' : '0')};
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border: ${({ theme, open }): string =>
         open ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
@@ -114,6 +113,7 @@ const StyledWindow = styled.div<WindowPropsType>`
     border-top-right-radius: 0;
     ${({ open }): string => (!open ? 'cursor: pointer' : '')};
     z-index: 1000;
+    overflow: hidden;
 `;
 
 type InputPropsType = {

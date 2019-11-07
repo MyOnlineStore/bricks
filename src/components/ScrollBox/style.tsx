@@ -29,20 +29,8 @@ const StyledWrapper = styled.div`
     overflow: hidden;
 
     ${simplebarStyles}
-`;
 
-const StyledScrollBox = styled.div`
-    position: relative;
-    flex-grow: 1;
-    overflow: hidden;
-
-    .vertical {
-        min-width: 3px;
-        width: 4%
-        max-width: 6px;
-    }
-
-    .vertical .simplebar-scrollbar {
+    [data-simplebar] {
         width: 100%;
     }
 
@@ -85,5 +73,5 @@ const composeScrollBoxTheme = (themeTools: ThemeTools): ScrollBoxThemeType => {
     };
 };
 
-export default StyledScrollBox;
-export { StyledWrapper, ScrollBoxThemeType, StyledBottom, StyledTop, composeScrollBoxTheme };
+export default StyledWrapper;
+export { ScrollBoxThemeType, StyledBottom, StyledTop, composeScrollBoxTheme };

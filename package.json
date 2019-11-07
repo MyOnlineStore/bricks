@@ -28,7 +28,7 @@
     "react-beautiful-dnd": "^8.0.3",
     "react-input-range": "^1.3.0",
     "react-popper": "^1.0.0-beta.6",
-    "simplebar": "3.0.0-beta.4"
+    "simplebar-react": "2.0.6-corejs2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",

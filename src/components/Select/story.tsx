@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component, createRef, RefObject } from 'react';
+import React, { Component, createRef, RefObject, useState } from 'react';
 import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs';
 import Box from '../Box';
@@ -7,6 +7,9 @@ import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import checkmarkIcon from '../../assets/icons/checkmark.svg';
+import Modal from '../Modal';
+import Button from '../Button';
+import { Heading } from '../..';
 
 type DemoOptionType = {
     image: string;
@@ -133,134 +136,96 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
     );
 };
 
-/*tslint:disable*/
-class CustomRenderDemo extends Component<PropsType, StateType> {
-    public constructor(props: PropsType) {
-        super(props);
+const Filler = () => (
+    <Box height="50vw" width="100%" padding={[24]} margin={[24, 0]} style={{ background: '#eee' }}>
+        Filler
+    </Box>
+);
 
-        this.state = {
-            value: '',
-        };
-    }
+const CustomDemo = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectValue, setSelectValue] = useState<{ value: string }>({ value: '' });
+    const containerRef: RefObject<HTMLDivElement> = createRef();
+    const modalRef: RefObject<HTMLDivElement> = createRef();
 
-    public handleChange = (value: string): void => {
-        this.setState({ value });
-    };
-
-    public render(): JSX.Element {
-        const containerRef: RefObject<HTMLDivElement> = createRef();
-
-        return (
-            <div ref={containerRef} style={{ height: '200px', overflow: 'auto' }}>
-                <Box direction={'column'}>
-                    Our visibility development lifecycle enables unparalleled, end-to-end siloes. Going forward, our
-                    innovative prince2 practitioner will deliver value to emerging markets. Our Long-Term Big Data
-                    solution offers milestones a suite of best-of-breed offerings. Change the way you do business -
-                    adopt world-class innovations. You need to intelligently connect your paradigm shifts to increase
-                    your team player velocity. Proactive action points conservatively enable competitive capabilities
-                    for our standpoints. Our business incentivizes agile workflows to globally and iteratively leverage
-                    our value-added best practice. We thrive because of our senior diversity and holistic enterprise
-                    culture. So we can hit the ground running, we will be dynamically reusing every core asset in our
-                    space. Virtually revolutionizing strategically immersive market foci is crucial to our best-in-class
-                    deliverable. Our standard setter development lifecycle enables knowledge transfer, company-wide
-                    stacks. Going forward, our actionable core competency will deliver value to propositions. In the
-                    step-change space, industry is ethically synergising its next-generation stand-ups. We aim to
-                    reliably relay our vertical by proactively facilitating our customer-focused corporate user
-                    experiences. It's critical that we give 110% when effectively monetizing dot-bombs. It's critical
-                    that we give 110% when proactively aligning alignments. Our visibility development lifecycle enables
-                    unparalleled, end-to-end siloes. Going forward, our innovative prince2 practitioner will deliver
-                    value to emerging markets. Our Long-Term Big Data solution offers milestones a suite of
-                    best-of-breed offerings. Change the way you do business - adopt world-class innovations. You need to
-                    intelligently connect your paradigm shifts to increase your team player velocity. Proactive action
-                    points conservatively enable competitive capabilities for our standpoints. Our business incentivizes
-                    agile workflows to globally and iteratively leverage our value-added best practice. We thrive
-                    because of our senior diversity and holistic enterprise culture. So we can hit the ground running,
-                    we will be dynamically reusing every core asset in our space. Virtually revolutionizing
-                    strategically immersive market foci is crucial to our best-in-class deliverable. Our standard setter
-                    development lifecycle enables knowledge transfer, company-wide stacks. Going forward, our actionable
-                    core competency will deliver value to propositions. In the step-change space, industry is ethically
-                    synergising its next-generation stand-ups. We aim to reliably relay our vertical by proactively
-                    facilitating our customer-focused corporate user experiences. It's critical that we give 110% when
-                    effectively monetizing dot-bombs. It's critical that we give 110% when proactively aligning
-                    alignments.
-                    <Select
-                        placeholder={text('placeholder', 'Select a value')}
-                        value={this.state.value}
-                        emptyText={text('emptyText', 'No results')}
-                        onChange={this.handleChange}
-                        disabled={boolean('disabled', false)}
-                        options={object('options', options)}
-                        renderSelected={renderSelected}
-                        renderOption={renderOption}
-                        container={containerRef}
+    return (
+        <Box padding={[24]} width="100%" direction="column" justifyContent="stretch">
+            <div ref={containerRef}>
+                <Box alignItems="center" justifyContent="space-between">
+                    <Heading>Select test</Heading>
+                    <Button
+                        variant="primary"
+                        title="Open modal"
+                        onClick={() => {
+                            setModalIsOpen(!modalIsOpen);
+                        }}
                     />
-                    You need to effectively invest your industry leaders to increase your organic growth velocity. Is
-                    your stakeholder prepared for mission critical platform growth? In the future, will you be able to
-                    ethically transform ballpark figures in your business? Is your cloud prepared for wholesale
-                    architecture growth? Change the way you do business - adopt mobile executive searches. So we can hit
-                    the ground running, we will be globally engineering every driver in our space. So we can hit the
-                    ground running, we will be conservatively offshoring every synergy in our space. In the future, will
-                    you be able to strategically calibrate game changers in your business? We aim to intelligently
-                    virtualise our low hanging fruit by iteratively growing our seamless value-added bandwidths. In the
-                    future, will you be able to virtually right-size capabilities in your business? Efficiencies will
-                    come from reliably strategizing our enterprises. We use our best-in-class brands to dynamically
-                    manage our silo expectations. In the future, will you be able to ethically integrate deliverables in
-                    your business? Going forward, our company-wide stack will deliver value to architectures. It's
-                    critical that we give 110% when effectively impacting innovations. We use our unparalleled executive
-                    searches to reliably manage our stakeholder expectations. Seamless stand-ups are becoming
-                    customer-focused synergy experts. Our Immersive Standpoint solution offers visibilities a suite of
-                    actionable offerings. So we can hit the ground running, we will be globally deep-diving every user
-                    experience in our space. We thrive because of our next-generation driver and world-class agile
-                    workflow culture. In the future, will you be able to dynamically incentivize paradigm shifts in your
-                    business? Our business calibrates action points to virtually and intelligently connect our senior
-                    proposition. Our business leverages milestones to iteratively and conservatively revolutionize our
-                    holistic step-change. We aim to proactively facilitate our bandwidth by strategically growing our
-                    mobile end-to-end team players. Going forward, our wholesale low hanging fruit will deliver value to
-                    capabilities. Mission critical clouds are becoming long-term best practice experts. Going forward,
-                    our competitive organic growth will deliver value to capabilities. In the future, will you be able
-                    to conservatively align platforms in your business? Our business relays enterprises to proactively
-                    and strategically impact our knowledge transfer dot-bomb. Corporate diversities are becoming
-                    innovative big data experts. Best-of-breed game changers ethically enable proactive brands for our
-                    core competencies. Efficiencies will come from virtually integrating our standard setters. You need
-                    to effectively invest your industry leaders to increase your organic growth velocity. Is your
-                    stakeholder prepared for mission critical platform growth? In the future, will you be able to
-                    ethically transform ballpark figures in your business? Is your cloud prepared for wholesale
-                    architecture growth? Change the way you do business - adopt mobile executive searches. So we can hit
-                    the ground running, we will be globally engineering every driver in our space. So we can hit the
-                    ground running, we will be conservatively offshoring every synergy in our space. In the future, will
-                    you be able to strategically calibrate game changers in your business? We aim to intelligently
-                    virtualise our low hanging fruit by iteratively growing our seamless value-added bandwidths. In the
-                    future, will you be able to virtually right-size capabilities in your business? Efficiencies will
-                    come from reliably strategizing our enterprises. We use our best-in-class brands to dynamically
-                    manage our silo expectations. In the future, will you be able to ethically integrate deliverables in
-                    your business? Going forward, our company-wide stack will deliver value to architectures. It's
-                    critical that we give 110% when effectively impacting innovations. We use our unparalleled executive
-                    searches to reliably manage our stakeholder expectations. Seamless stand-ups are becoming
-                    customer-focused synergy experts. Our Immersive Standpoint solution offers visibilities a suite of
-                    actionable offerings. So we can hit the ground running, we will be globally deep-diving every user
-                    experience in our space. We thrive because of our next-generation driver and world-class agile
-                    workflow culture. In the future, will you be able to dynamically incentivize paradigm shifts in your
-                    business? Our business calibrates action points to virtually and intelligently connect our senior
-                    proposition. Our business leverages milestones to iteratively and conservatively revolutionize our
-                    holistic step-change. We aim to proactively facilitate our bandwidth by strategically growing our
-                    mobile end-to-end team players. Going forward, our wholesale low hanging fruit will deliver value to
-                    capabilities. Mission critical clouds are becoming long-term best practice experts. Going forward,
-                    our competitive organic growth will deliver value to capabilities. In the future, will you be able
-                    to conservatively align platforms in your business? Our business relays enterprises to proactively
-                    and strategically impact our knowledge transfer dot-bomb. Corporate diversities are becoming
-                    innovative big data experts. Best-of-breed game changers ethically enable proactive brands for our
-                    core competencies. Efficiencies will come from virtually integrating our standard setters.
                 </Box>
+                <Filler />
+                <Select
+                    placeholder={text('placeholder', 'Select a value')}
+                    value={selectValue.value}
+                    emptyText={text('emptyText', 'No results')}
+                    onChange={value => {
+                        setSelectValue({ value });
+                    }}
+                    disabled={boolean('disabled', false)}
+                    options={object('options', options)}
+                    renderSelected={renderSelected}
+                    renderOption={renderOption}
+                    container={containerRef}
+                />
+                <Filler />
+                <Select
+                    disabled={false}
+                    placeholder="Choose wisely..."
+                    onChange={() => {}}
+                    value=""
+                    options={options}
+                    emptyText="None"
+                    container={containerRef}
+                />
             </div>
-        );
-    }
-}
-/*tslint:enable*/
+            <Modal
+                show={modalIsOpen}
+                title="Select in Modal test"
+                onClose={() => {
+                    setModalIsOpen(false);
+                }}
+                scrollRef={modalRef}
+            >
+                <div style={{ width: '100%' }}>
+                    <Filler />
+                    <Select
+                        disabled={false}
+                        placeholder="Choose wisely..."
+                        onChange={() => {}}
+                        value=""
+                        options={options}
+                        emptyText="None"
+                        container={modalRef}
+                    />
+                    <Filler />
+                    <Select
+                        disabled={false}
+                        placeholder="Choose wisely..."
+                        onChange={() => {}}
+                        value=""
+                        options={options}
+                        emptyText="None"
+                        container={modalRef}
+                    />
+                    <Filler />
+                </div>
+            </Modal>
+        </Box>
+    );
+};
 
 storiesOf('Select', module)
     .add('Default', () => {
         return <Demo />;
     })
     .add('Custom rendering', () => {
-        return <CustomRenderDemo />;
+        return <CustomDemo />;
     });

@@ -57,6 +57,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     private inputWrapperRef: RefObject<HTMLDivElement>;
     private wrapperRef: RefObject<HTMLDivElement>;
     private windowRef: RefObject<HTMLDivElement>;
+    private inputObserver: IntersectionObserver;
 
     public constructor(props: PropsType<GenericOptionType>) {
         super(props);
@@ -197,8 +198,10 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             threshold: 1,
         };
 
-        const inputObserver = new IntersectionObserver(() => this.close(), Options);
-        if (this.inputWrapperRef && this.inputWrapperRef.current) inputObserver.observe(this.inputWrapperRef.current);
+        this.inputObserver = new IntersectionObserver(() => this.close(), Options);
+
+        if (this.inputWrapperRef && this.inputWrapperRef.current)
+            this.inputObserver.observe(this.inputWrapperRef.current);
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
@@ -224,7 +227,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
-
+        console.debug(this.props.container);
         if (this.props.container) {
             setTimeout(() => {
                 if (this.props.container && this.props.container.current)
@@ -239,6 +242,9 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
+
+        if (this.inputWrapperRef && this.inputWrapperRef.current)
+            this.inputObserver.unobserve(this.inputWrapperRef.current);
 
         if (this.props.container && this.props.container.current) {
             this.props.container.current.removeEventListener('scroll', this.handleScroll);

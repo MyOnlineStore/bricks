@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, RefObject, createRef } from 'react';
+import React, { Component, ReactNode, RefObject, createRef, Ref } from 'react';
 import Box from '../Box';
 import IconButton from '../IconButton';
 import Contrast from '../Contrast';
@@ -15,6 +15,7 @@ type PropsType = {
     title: string;
     size?: 'small' | 'medium' | 'large';
     buttons?: Array<ReactNode>;
+    scrollRef?: Ref<Element>;
     onClose?(): void;
     renderFixed?(): JSX.Element;
 };
@@ -101,7 +102,7 @@ class Modal extends Component<PropsType> {
                                             </Box>
                                         )}
                                     </Box>
-                                    <ScrollBox>
+                                    <ScrollBox scrollRef={this.props.scrollRef}>
                                         <Box padding={isSmall ? [0, 18, 18, 18] : [0, 36, 36, 36]}>
                                             {this.props.children}
                                         </Box>
