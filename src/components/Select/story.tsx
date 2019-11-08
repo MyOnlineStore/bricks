@@ -137,7 +137,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
 };
 
 const Filler = () => (
-    <Box height="50vw" width="100%" padding={[24]} margin={[24, 0]} style={{ background: '#eee' }}>
+    <Box height="50vw" padding={[24]} margin={[24, 0]} style={{ background: '#eee' }}>
         Filler
     </Box>
 );
@@ -173,7 +173,6 @@ const CustomDemo = () => {
                     options={object('options', options)}
                     renderSelected={renderSelected}
                     renderOption={renderOption}
-                    container={containerRef}
                 />
                 <Filler />
                 <Select
@@ -183,7 +182,6 @@ const CustomDemo = () => {
                     value=""
                     options={options}
                     emptyText="None"
-                    container={containerRef}
                 />
             </div>
             <Modal
@@ -194,7 +192,7 @@ const CustomDemo = () => {
                 }}
                 scrollRef={modalRef}
             >
-                <div style={{ width: '100%' }}>
+                <div style={{ width: 'calc(100% - 24px)' }}>
                     <Filler />
                     <Select
                         disabled={false}

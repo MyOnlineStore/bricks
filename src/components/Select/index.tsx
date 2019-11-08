@@ -7,9 +7,11 @@ import Option from './Option';
 import {
     StyledWrapper,
     StyledInput,
+    StyledWindowWrapper,
     StyledWindow,
     StyledPlaceholder,
-    INNER_OFFSET as windowInnerOffset,
+    StyledSelect,
+    INNER_OFFSET as windowOffset,
 } from './style';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
@@ -54,7 +56,7 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
 
 class Select<GenericOptionType extends OptionBaseType> extends Component<PropsType<GenericOptionType>, StateType> {
     private readonly inputRef: RefObject<HTMLInputElement>;
-    private inputWrapperRef: RefObject<HTMLDivElement>;
+    private selectRef: RefObject<HTMLDivElement>;
     private wrapperRef: RefObject<HTMLDivElement>;
     private windowRef: RefObject<HTMLDivElement>;
     private inputObserver: IntersectionObserver;
@@ -62,7 +64,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     public constructor(props: PropsType<GenericOptionType>) {
         super(props);
         this.inputRef = createRef();
-        this.inputWrapperRef = createRef();
+        this.selectRef = createRef();
         this.wrapperRef = createRef();
         this.windowRef = createRef();
 
@@ -100,7 +102,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     private open = (): void => {
         if (!this.props.disabled) {
             this.handleInput('');
-            this.updateWindowTop();
+            this.setTopPosition();
             this.setState({ isOpen: true });
         }
     };
@@ -163,31 +165,17 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         }
     };
 
-    private updateWindowTop = (): void => {
-        if (
-            this.windowRef &&
-            this.windowRef.current &&
-            this.wrapperRef &&
-            this.wrapperRef.current &&
-            this.state.inputHeight &&
-            this.inputWrapperRef &&
-            this.inputWrapperRef.current &&
-            this.props.container &&
-            this.props.container.current
-        ) {
-            const newTop =
-                this.wrapperRef.current.getBoundingClientRect().top +
-                window.scrollY +
-                this.state.inputHeight +
-                windowInnerOffset;
+    private setTopPosition = (): void => {
+        if (this.windowRef && this.windowRef.current && this.wrapperRef && this.wrapperRef.current) {
+            const newTop = this.wrapperRef.current.getBoundingClientRect().top - windowOffset;
 
             this.windowRef.current.style.top = `${newTop.toString()}px`;
         }
     };
 
-    private handleScroll = (): void => {
+    private recalculateTop = (): void => {
         if (this.state.isOpen) {
-            window.requestAnimationFrame(this.updateWindowTop);
+            window.requestAnimationFrame(this.setTopPosition);
         }
     };
 
@@ -200,8 +188,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
         this.inputObserver = new IntersectionObserver(() => this.close(), Options);
 
-        if (this.inputWrapperRef && this.inputWrapperRef.current)
-            this.inputObserver.observe(this.inputWrapperRef.current);
+        if (this.selectRef && this.selectRef.current) this.inputObserver.observe(this.selectRef.current);
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
@@ -213,13 +200,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             this.inputRef.current.focus();
         }
 
-        const inputHeight =
-            this.inputWrapperRef.current !== null ? this.inputWrapperRef.current.getBoundingClientRect().height : 0;
-
-        if (inputHeight !== prevState.inputHeight) {
-            this.setState({ inputHeight });
-        }
-
         if (prevState.isOpen && !this.state.isOpen && this.wrapperRef.current !== null) {
             this.wrapperRef.current.focus();
         }
@@ -227,29 +207,31 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
-        console.debug(this.props.container);
+        window.addEventListener('resize', this.recalculateTop);
+
         if (this.props.container) {
             setTimeout(() => {
                 if (this.props.container && this.props.container.current)
-                    this.props.container.current.addEventListener('scroll', this.handleScroll);
+                    this.props.container.current.addEventListener('scroll', this.recalculateTop);
             }, 100);
         } else {
-            document.addEventListener('scroll', this.handleScroll);
+            document.addEventListener('scroll', this.recalculateTop);
         }
 
-        this.createObserver();
+        if (window.innerHeight < 800) this.createObserver();
     }
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
+        window.addEventListener('resize', this.recalculateTop);
 
-        if (this.inputWrapperRef && this.inputWrapperRef.current)
-            this.inputObserver.unobserve(this.inputWrapperRef.current);
+        if (this.inputObserver && this.selectRef && this.selectRef.current)
+            this.inputObserver.unobserve(this.selectRef.current);
 
         if (this.props.container && this.props.container.current) {
-            this.props.container.current.removeEventListener('scroll', this.handleScroll);
+            this.props.container.current.removeEventListener('scroll', this.recalculateTop);
         } else {
-            document.removeEventListener('scroll', this.handleScroll);
+            document.removeEventListener('scroll', this.recalculateTop);
         }
     }
 
@@ -276,129 +258,145 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 aria-expanded={this.state.isOpen}
                 data-testid={this.props['data-testid']}
             >
-                <StyledInput
+                <StyledSelect
                     open={this.state.isOpen}
                     hasFocus={this.state.hasFocus}
                     disabled={!this.props.disabled ? false : this.props.disabled}
-                    ref={this.inputWrapperRef}
-                    role="searchbox"
-                    aria-autocomplete="list"
-                    aria-controls={this.state.isOpen ? 'select-window' : undefined}
-                    data-testid={this.props['data-testid'] ? `${this.props['data-testid']}-input` : undefined}
-                    onClick={!this.state.isOpen ? this.open : undefined}
+                    ref={this.selectRef}
+                    data-testid={this.props['data-testid'] ? `${this.props['data-testid']}-select` : undefined}
+                    onClick={this.open}
                 >
-                    <Box alignItems="stretch">
-                        {(this.state.isOpen && (
-                            <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
-                                <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                    <Icon icon={search} size="small" color={'#d2d7e0'} />
-                                </Box>
-                                <input
-                                    ref={this.inputRef}
-                                    type="text"
-                                    placeholder={this.props.placeholder}
-                                    value={this.state.input}
-                                    data-testid={
-                                        this.props['data-testid']
-                                            ? `${this.props['data-testid']}-input-field`
-                                            : undefined
-                                    }
-                                    style={{ width: '100%' }}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>): void => {
-                                        event.stopPropagation();
-                                        this.handleInput(event.target.value);
-                                    }}
-                                />
-                            </Box>
-                        )) ||
-                            (this.props.renderSelected !== undefined && (
-                                <Box padding={trbl(6, 12)} alignItems="center" grow={1}>
-                                    {this.props.renderSelected(selectedOption as GenericOptionType)}
-                                </Box>
-                            )) || (
-                                <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
-                                    {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
-                                        <Text severity="info">
-                                            <StyledPlaceholder
-                                                data-testid={
-                                                    this.props['data-testid']
-                                                        ? `${this.props['data-testid']}-placeholder`
-                                                        : undefined
-                                                }
-                                            >
-                                                {this.props.placeholder}
-                                            </StyledPlaceholder>
-                                        </Text>
-                                    )}
-                                </Box>
+                    {(this.props.renderSelected !== undefined && (
+                        <Box padding={trbl(6, 12)} alignItems="center" grow={1}>
+                            {this.props.renderSelected(selectedOption as GenericOptionType)}
+                        </Box>
+                    )) || (
+                        <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
+                            {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
+                                <Text severity="info">
+                                    <StyledPlaceholder
+                                        data-testid={
+                                            this.props['data-testid']
+                                                ? `${this.props['data-testid']}-placeholder`
+                                                : undefined
+                                        }
+                                    >
+                                        {this.props.placeholder}
+                                    </StyledPlaceholder>
+                                </Text>
                             )}
-                        <IconButton
-                            icon={this.state.isOpen ? chevronUp : chevronDown}
-                            iconSize="small"
-                            title={this.state.isOpen ? 'close' : 'open'}
-                            onClick={this.state.isOpen ? this.close : this.open}
-                            disabled={this.props.disabled}
-                            variant="primary"
-                        />
-                    </Box>
-                </StyledInput>
+                        </Box>
+                    )}
+                    <IconButton
+                        icon={this.state.isOpen ? chevronUp : chevronDown}
+                        iconSize="small"
+                        title={this.state.isOpen ? 'close' : 'open'}
+                        onClick={this.state.isOpen ? this.close : this.open}
+                        disabled={this.props.disabled}
+                        variant="primary"
+                    />
+                </StyledSelect>
                 {createPortal(
-                    <StyledWindow
+                    <StyledWindowWrapper
                         id={'select-window'}
                         ref={this.windowRef}
                         open={this.state.isOpen}
+                        role="listbox"
                         rect={
                             this.wrapperRef.current !== null
                                 ? this.wrapperRef.current.getBoundingClientRect()
                                 : undefined
                         }
-                        inputHeight={this.state.inputHeight}
-                        role="listbox"
                         data-testid={
                             this.props['data-testid']
                                 ? `${this.props['data-testid']}-window${this.state.isOpen ? '-open' : '-closed'}`
                                 : undefined
                         }
                     >
-                        <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                            <div style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}>
-                                {(this.filterOptions().length === 0 && (
-                                    <Box padding={trbl(12, 18)}>
-                                        <Text>{this.props.emptyText}</Text>
+                        {this.state.isOpen && (
+                            <StyledInput
+                                open={this.state.isOpen}
+                                hasFocus={this.state.hasFocus}
+                                disabled={!this.props.disabled ? false : this.props.disabled}
+                                role="searchbox"
+                                aria-autocomplete="list"
+                                aria-controls={this.state.isOpen ? 'select-window' : undefined}
+                                data-testid={
+                                    this.props['data-testid'] ? `${this.props['data-testid']}-input` : undefined
+                                }
+                            >
+                                <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
+                                    <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
+                                        <Icon icon={search} size="small" color={'#d2d7e0'} />
                                     </Box>
-                                )) ||
-                                    this.filterOptions().map((option, index) => {
-                                        const optionState = { isSelected: option.value === this.props.value };
-                                        const isTargeted = index === this.state.optionPointer;
+                                    <input
+                                        ref={this.inputRef}
+                                        type="text"
+                                        placeholder={this.props.placeholder}
+                                        value={this.state.input}
+                                        data-testid={
+                                            this.props['data-testid']
+                                                ? `${this.props['data-testid']}-input-field`
+                                                : undefined
+                                        }
+                                        style={{ width: '100%' }}
+                                        onChange={(event: ChangeEvent<HTMLInputElement>): void => {
+                                            event.stopPropagation();
+                                            this.handleInput(event.target.value);
+                                        }}
+                                    />
+                                </Box>
+                                <IconButton
+                                    icon={this.state.isOpen ? chevronUp : chevronDown}
+                                    iconSize="small"
+                                    title={this.state.isOpen ? 'close' : 'open'}
+                                    onClick={this.state.isOpen ? this.close : this.open}
+                                    disabled={this.props.disabled}
+                                    variant="primary"
+                                />
+                            </StyledInput>
+                        )}
+                        <StyledWindow>
+                            <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
+                                <div style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}>
+                                    {(this.filterOptions().length === 0 && (
+                                        <Box padding={trbl(12, 18)}>
+                                            <Text>{this.props.emptyText}</Text>
+                                        </Box>
+                                    )) ||
+                                        this.filterOptions().map((option, index) => {
+                                            const optionState = { isSelected: option.value === this.props.value };
+                                            const isTargeted = index === this.state.optionPointer;
 
-                                        return (
-                                            <Option
-                                                label={option.label}
-                                                isSelected={optionState.isSelected}
-                                                isTargeted={isTargeted}
-                                                key={`${option.value}-${option.label}`}
-                                                onMouseEnter={(): void => this.cycleTo(index)}
-                                                onClick={(): void => {
-                                                    this.handleChange(option.value);
-                                                }}
-                                                data-testid={
-                                                    this.props['data-testid']
-                                                        ? `${this.props['data-testid']}-option-${option.value}${
-                                                              isTargeted ? '-targeted' : ''
-                                                          }`
-                                                        : undefined
-                                                }
-                                                content={
-                                                    this.props.renderOption !== undefined
-                                                        ? this.props.renderOption(option, optionState)
-                                                        : undefined
-                                                }
-                                            />
-                                        );
-                                    })}
-                            </div>
-                        </ScrollBox>
-                    </StyledWindow>,
+                                            return (
+                                                <Option
+                                                    label={option.label}
+                                                    isSelected={optionState.isSelected}
+                                                    isTargeted={isTargeted}
+                                                    key={`${option.value}-${option.label}`}
+                                                    onMouseEnter={(): void => this.cycleTo(index)}
+                                                    onClick={(): void => {
+                                                        this.handleChange(option.value);
+                                                    }}
+                                                    data-testid={
+                                                        this.props['data-testid']
+                                                            ? `${this.props['data-testid']}-option-${option.value}${
+                                                                  isTargeted ? '-targeted' : ''
+                                                              }`
+                                                            : undefined
+                                                    }
+                                                    content={
+                                                        this.props.renderOption !== undefined
+                                                            ? this.props.renderOption(option, optionState)
+                                                            : undefined
+                                                    }
+                                                />
+                                            );
+                                        })}
+                                </div>
+                            </ScrollBox>
+                        </StyledWindow>
+                    </StyledWindowWrapper>,
                     document.body,
                 )}
             </StyledWrapper>

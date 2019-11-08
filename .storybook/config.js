@@ -1,6 +1,7 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { create } from '@storybook/theming';
+import 'intersection-observer';
 import themeDecorator from './decorators/themeDecorator';
 import { green, grey, silver, bodyFont } from '../src/themes/MosTheme/MosTheme.theme';
 
@@ -40,7 +41,32 @@ addParameters({
         {
             name: 'transparent',
             // no backticks because IE
-            value: '#fff url(\'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="' + checkerSize + '" height="' + checkerSize + '" viewBox="0 0 ' + checkerSize + ' ' + checkerSize + '"%3E%3Cg fill="%23eaebed" fill-opacity="0.4"%3E%3Cpath fill-rule="evenodd" d="M0 0h' + checkerSize / 2  + 'v' + checkerSize / 2 + 'H0V0zm' + checkerSize / 2 + ' ' + checkerSize / 2  + 'h' + checkerSize / 2  + 'v' + checkerSize / 2 + 'H' + checkerSize / 2 + 'V' + checkerSize / 2 + 'z"/%3E%3C/g%3E%3C/svg%3E\')'
+            value:
+                '#fff url(\'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="' +
+                checkerSize +
+                '" height="' +
+                checkerSize +
+                '" viewBox="0 0 ' +
+                checkerSize +
+                ' ' +
+                checkerSize +
+                '"%3E%3Cg fill="%23eaebed" fill-opacity="0.4"%3E%3Cpath fill-rule="evenodd" d="M0 0h' +
+                checkerSize / 2 +
+                'v' +
+                checkerSize / 2 +
+                'H0V0zm' +
+                checkerSize / 2 +
+                ' ' +
+                checkerSize / 2 +
+                'h' +
+                checkerSize / 2 +
+                'v' +
+                checkerSize / 2 +
+                'H' +
+                checkerSize / 2 +
+                'V' +
+                checkerSize / 2 +
+                'z"/%3E%3C/g%3E%3C/svg%3E\')',
         },
     ],
 });

@@ -57,7 +57,7 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     box-shadow: none;
     z-index: 1;
 
-    &:before {
+    &::before {
         content: '';
         z-index: -1;
         border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
@@ -79,6 +79,7 @@ const StyledWrapper = styled.div<WrapperPropsType>`
         left: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
         right: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
         bottom: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        opacity: ${({ open }) => (open ? '0' : '1')};
     }
 
     ${({ theme, disabled, open }): string => {
@@ -93,26 +94,26 @@ const StyledWrapper = styled.div<WrapperPropsType>`
 type WindowPropsType = {
     open: boolean;
     rect?: ClientRect;
-    inputHeight?: number;
 };
 
-const StyledWindow = styled.div<WindowPropsType>`
-    box-sizing: border-box;
-    position: absolute;
-    max-height: 240px;
-    top: ${({ rect, inputHeight }): string =>
-        rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
+const StyledWindowWrapper = styled.div<WindowPropsType>`
+    position: fixed;
+    top: ${({ rect }): string => (rect !== undefined ? `${rect.top - INNER_OFFSET}px` : '')};
     left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
-    width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
+    width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET * 2 - 2}px` : '')};
     background: ${({ theme }): string => theme.Select.common.backgroundColor};
     border: ${({ theme, open }): string =>
         open ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
-    border-top: none;
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
     ${({ open }): string => (!open ? 'cursor: pointer' : '')};
+    overflow: hidden;
     z-index: 1000;
+`;
+
+const StyledWindow = styled.div`
+    box-sizing: border-box;
+    position: relative;
+    max-height: 240px;
     overflow: hidden;
 `;
 
@@ -122,17 +123,39 @@ type InputPropsType = {
     disabled: boolean;
 };
 
-const StyledInput = styled.div<InputPropsType>`
-    transition: all 0.3s;
+const StyledSelect = styled.div<InputPropsType>`
     box-sizing: border-box;
+    display: flex;
+    justify-content: stretch;
     width: 100%;
     border: solid 1px
-        ${({ theme, hasFocus, open }): string =>
-            hasFocus && !open ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
+        ${({ theme, hasFocus }): string =>
+            hasFocus ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
+    background: ${({ theme, disabled }): string =>
+        disabled ? theme.Select.disabled.background : theme.Select.input.background};
+    border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
+    opacity: ${({ disabled, open }): string => {
+        if (open) return '0';
+        else if (disabled) return '0.7';
+
+        return '1';
+    }};
+`;
+
+const StyledInput = styled.div<InputPropsType>`
+    box-sizing: border-box;
+    display: flex;
+    justify-content: stretch;
+    position: relative;
+    margin: ${INNER_OFFSET}px;
+    border: solid 1px
+        ${({ theme, hasFocus }): string =>
+            hasFocus ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
     background: ${({ theme, disabled }): string =>
         disabled ? theme.Select.disabled.background : theme.Select.input.background};
     border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
     opacity: ${({ disabled }): string => (disabled ? '0.7' : '1')};
+    transition: all 0.3s;
 
     input {
         appearance: none;
@@ -147,6 +170,25 @@ const StyledInput = styled.div<InputPropsType>`
         &::placeholder {
             color: ${({ theme }): string => theme.Select.placeholder.color};
         }
+    }
+
+    &::before {
+        content: '';
+        z-index: -1;
+        border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
+        ${({ open }): string =>
+            open
+                ? `
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                `
+                : ''}
+        background: ${({ theme }): string => theme.Select.common.secondaryColor};
+        position: absolute;
+        top: ${({ open }): string => (open ? `-${INNER_OFFSET + 1}px` : '0')};
+        left: ${({ open }): string => (open ? `-${INNER_OFFSET + 1}px` : '0')};
+        right: ${({ open }): string => (open ? `-${INNER_OFFSET + 1}px` : '0')};
+        bottom: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
     }
 `;
 
@@ -192,6 +234,8 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
 export {
     StyledWrapper,
     StyledInput,
+    StyledSelect,
+    StyledWindowWrapper,
     StyledWindow,
     SelectThemeType,
     StyledPlaceholder,

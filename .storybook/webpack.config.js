@@ -28,6 +28,10 @@ module.exports = ({ config, mode }) => {
     config.module.rules = [
         {
             test: /\.tsx?$/,
+            loader: 'babel-loader',
+        },
+        {
+            test: /\.tsx?$/,
             loader: 'ts-loader',
             options: {
                 configFile: path.join(__dirname, '/../tsconfig.json'),
