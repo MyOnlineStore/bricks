@@ -59,7 +59,8 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     private selectRef: RefObject<HTMLDivElement>;
     private wrapperRef: RefObject<HTMLDivElement>;
     private windowRef: RefObject<HTMLDivElement>;
-    private inputObserver: IntersectionObserver;
+    private selectObserver: IntersectionObserver;
+    private resizeTimestamp: number;
 
     public constructor(props: PropsType<GenericOptionType>) {
         super(props);
@@ -67,6 +68,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         this.selectRef = createRef();
         this.wrapperRef = createRef();
         this.windowRef = createRef();
+        this.resizeTimestamp = 0;
 
         this.state = {
             hasFocus: false,
@@ -179,16 +181,34 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         }
     };
 
+    private checkIntersection = (entries: Array<IntersectionObserverEntry>) => {
+        entries.forEach(entry => {
+            console.debug('time', entry.time);
+            console.debug('resize', this.resizeTimestamp);
+
+            if (
+                !entry.isIntersecting &&
+                !(entry.time - this.resizeTimestamp < 100 && entry.time - this.resizeTimestamp > 0)
+            )
+                this.close();
+        });
+    };
+
+    private logResizeTime = (event: Event) => {
+        console.debug(event);
+        this.resizeTimestamp = event.timeStamp;
+    };
+
     private createObserver = (): void => {
         const Options = {
-            root: null,
+            root: this.props.container ? this.props.container.current : null,
             rootMargin: '0px',
-            threshold: 1,
+            threshold: [0, 1],
         };
 
-        this.inputObserver = new IntersectionObserver(() => this.close(), Options);
+        this.selectObserver = new IntersectionObserver(this.checkIntersection, Options);
 
-        if (this.selectRef && this.selectRef.current) this.inputObserver.observe(this.selectRef.current);
+        if (this.selectRef && this.selectRef.current) this.selectObserver.observe(this.selectRef.current);
     };
 
     public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
@@ -208,6 +228,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     public componentDidMount(): void {
         document.addEventListener('mousedown', this.handleClickOutside);
         window.addEventListener('resize', this.recalculateTop);
+        window.addEventListener('resize', this.logResizeTime);
 
         if (this.props.container) {
             setTimeout(() => {
@@ -218,15 +239,16 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             document.addEventListener('scroll', this.recalculateTop);
         }
 
-        if (window.innerHeight < 800) this.createObserver();
+        this.createObserver();
     }
 
     public componentWillUnmount(): void {
         document.removeEventListener('mousedown', this.handleClickOutside);
-        window.addEventListener('resize', this.recalculateTop);
+        window.removeEventListener('resize', this.recalculateTop);
+        window.removeEventListener('resize', this.logResizeTime);
 
-        if (this.inputObserver && this.selectRef && this.selectRef.current)
-            this.inputObserver.unobserve(this.selectRef.current);
+        if (this.selectObserver && this.selectRef && this.selectRef.current)
+            this.selectObserver.unobserve(this.selectRef.current);
 
         if (this.props.container && this.props.container.current) {
             this.props.container.current.removeEventListener('scroll', this.recalculateTop);
