@@ -8,7 +8,7 @@ type PropsType = {
      * the next major version. Please use direction="stacked" going forward.
      */
     stacked?: boolean;
-    direction?: 'centered' | 'rtl' | 'ltr' | 'stacked';
+    direction?: 'rtl' | 'ltr' | 'stacked';
     'data-testid'?: string;
 };
 
@@ -30,20 +30,10 @@ const ButtonGroup: FunctionComponent<PropsType> = props => {
             ? Children.toArray(props.children)
             : Children.toArray(props.children).reverse();
 
-    let justifyContent: 'flex-end' | 'flex-start' | 'center' = 'flex-end';
-
-    if (isStacked || props.direction === 'ltr') {
-        justifyContent = 'flex-start';
-    }
-
-    if (props.direction === 'centered') {
-        justifyContent = 'center';
-    }
-
     return (
         <Box
             direction={direction}
-            justifyContent={justifyContent}
+            justifyContent={isStacked || props.direction === 'ltr' ? 'flex-start' : 'flex-end'}
             alignItems="stretch"
             wrap
             margin={[-6]}

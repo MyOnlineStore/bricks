@@ -135,6 +135,7 @@ const Modal: FC<PropsType> = props => {
                                     <Box shrink={0} width="100%" direction="column">
                                         <Contrast>
                                             <Box
+                                                data-testid="modal-buttons-container"
                                                 direction="column"
                                                 alignItems={props.centered ? 'center' : 'stretch'}
                                                 shrink={0}

@@ -7,9 +7,10 @@ import IconButton from '../IconButton';
 import Measure from 'react-measure';
 import ButtonGroup from '../ButtonGroup';
 import Button from '../Button';
+import Heading from '../Heading';
+import ScrollBox from '../ScrollBox';
 
-jest.mock('../ScrollBox', () => jest.fn().mockImplementation((): string => 'div'));
-
+jest.mock('../ScrollBox', () => jest.fn().mockImplementation(() => 'div'));
 jest.mock('react-measure');
 
 describe('Modal', () => {
@@ -171,5 +172,30 @@ describe('Modal', () => {
 
         const component = mountWithTheme(<Modal show title="Foo" media={<div data-testid="modal-media">media</div>} />);
         expect(component.find('[data-testid="modal-media"]').length).toBe(1);
+    });
+
+    it('should the heading and the buttons when the centered prop is set', () => {
+        (ScrollBox as jest.Mock).mockImplementationOnce(props => <div>{props.children}</div>);
+        const component = mountWithTheme(
+            <Modal
+                show
+                title="Foo"
+                centered
+                buttons={[
+                    <Button key="foo" variant="primary" title="foo" />,
+                    <Button key="bar" variant="primary" title="bar" />,
+                ]}
+            />,
+        );
+
+        expect(component.find(Heading).prop('textAlign')).toBe('center');
+
+        expect(
+            component
+                .find('[data-testid="modal-buttons-container"]')
+                // We use .first() here instead of .hostNodes because we want to assert a react prop instead of an html attribute
+                .first()
+                .prop('alignItems'),
+        ).toBe('center');
     });
 });
