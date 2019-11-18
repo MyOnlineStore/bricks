@@ -41,6 +41,20 @@ storiesOf('Modal', module)
             </Modal>
         );
     })
+    .add('Centered', () => {
+        return (
+            <Modal
+                centered
+                show={boolean('show', true)}
+                size={select('size', ['small', 'medium', 'large'], 'large')}
+                title={text('title', 'Would you like me to be your role modal?')}
+                onClose={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
+                buttons={[<Button key="activate" variant="primary" title="Activate" />]}
+            >
+                <Text textAlign="center">{text('contents', demoContent)}</Text>
+            </Modal>
+        );
+    })
     .add('Without onClose', () => {
         return (
             <Modal

@@ -17,6 +17,7 @@ type PropsType = {
     size?: 'small' | 'medium' | 'large';
     buttons?: Array<ReactNode>;
     media?: ReactNode;
+    centered?: boolean;
     onClose?(): void;
     renderFixed?(): JSX.Element;
 };
@@ -121,8 +122,10 @@ const Modal: FC<PropsType> = props => {
                                             {!isSplit && props.media && (
                                                 <MediaWrapper fullWidth>{props.media}</MediaWrapper>
                                             )}
-                                            <Box margin={[0, 0, 12, 0]}>
-                                                <Heading hierarchy={2}>{props.title}</Heading>
+                                            <Box margin={[0, 0, 12, 0]} direction="column">
+                                                <Heading textAlign={props.centered ? 'center' : 'left'} hierarchy={2}>
+                                                    {props.title}
+                                                </Heading>
                                             </Box>
                                             {props.children}
                                         </Box>
@@ -132,8 +135,9 @@ const Modal: FC<PropsType> = props => {
                                     <Box shrink={0} width="100%" direction="column">
                                         <Contrast>
                                             <Box
+                                                data-testid="modal-buttons-container"
                                                 direction="column"
-                                                alignItems="stretch"
+                                                alignItems={props.centered ? 'center' : 'stretch'}
                                                 shrink={0}
                                                 padding={isSmall ? [24] : [24, 36]}
                                             >
