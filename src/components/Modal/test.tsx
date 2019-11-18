@@ -156,4 +156,20 @@ describe('Modal', () => {
 
         expect(transitionAnimation.prop('show')).toBe(false);
     });
+
+    it('should render the provided media node', () => {
+        (Measure as jest.Mock<Measure>).mockImplementationOnce(props => {
+            return props.children({
+                measureRef: jest.fn(),
+                contentRect: {
+                    client: {
+                        width: 700,
+                    },
+                },
+            });
+        });
+
+        const component = mountWithTheme(<Modal show title="Foo" media={<div data-testid="modal-media">media</div>} />);
+        expect(component.find('[data-testid="modal-media"]').length).toBe(1);
+    });
 });
