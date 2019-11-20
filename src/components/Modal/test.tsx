@@ -14,6 +14,10 @@ jest.mock('../ScrollBox', () => jest.fn().mockImplementation(() => 'div'));
 jest.mock('react-measure');
 
 describe('Modal', () => {
+    (ScrollBox as jest.Mock).mockImplementation(({ children }) => {
+        return <div>{children}</div>;
+    });
+
     it('should render with renderFixed', () => {
         const component = mountWithTheme(
             <Modal
@@ -174,8 +178,7 @@ describe('Modal', () => {
         expect(component.find('[data-testid="modal-media"]').length).toBe(1);
     });
 
-    it('should the heading and the buttons when the centered prop is set', () => {
-        (ScrollBox as jest.Mock).mockImplementationOnce(props => <div>{props.children}</div>);
+    it('should center the heading and the buttons when the centered prop is set', () => {
         const component = mountWithTheme(
             <Modal
                 show
@@ -197,5 +200,29 @@ describe('Modal', () => {
                 .first()
                 .prop('alignItems'),
         ).toBe('center');
+    });
+
+    it('should be testable with a data-testid', () => {
+        const component = mountWithTheme(
+            <Modal
+                show
+                media={<img src="" />}
+                data-testid="foo"
+                title="Foo"
+                onClose={jest.fn()}
+                buttons={[<button key="0" />]}
+            />,
+        );
+
+        const modal = component.find('[data-testid="foo"]');
+        const ids = ['modal-title', 'modal-media-container', 'modal-close-button', 'modal-buttons-container'];
+
+        expect(modal.hostNodes().length).toEqual(1);
+        // + 1 for 'foo' root test-id
+        expect(modal.find('[data-testid]').hostNodes().length).toEqual(ids.length + 1);
+
+        ids.forEach(id => {
+            expect(modal.find(`[data-testid="${id}"]`).hostNodes().length).toEqual(1);
+        });
     });
 });

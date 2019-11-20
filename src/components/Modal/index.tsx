@@ -12,6 +12,7 @@ import Measure from 'react-measure';
 import styled from 'styled-components';
 
 type PropsType = {
+    'data-testid'?: string;
     show: boolean;
     title: string;
     size?: 'small' | 'medium' | 'large';
@@ -82,6 +83,7 @@ const Modal: FC<PropsType> = props => {
 
                         return (
                             <StyledModal
+                                data-testid={props['data-testid']}
                                 modalSize={props.size !== undefined ? props.size : 'large'}
                                 ref={node => {
                                     styledModalRef.current = node;
@@ -103,6 +105,7 @@ const Modal: FC<PropsType> = props => {
                                         grow={0}
                                     >
                                         <IconButton
+                                            data-testid="modal-close-button"
                                             icon={close}
                                             variant="primary"
                                             title="close"
@@ -120,10 +123,16 @@ const Modal: FC<PropsType> = props => {
                                     <ScrollBox>
                                         <Box direction="column" padding={isSmall ? [18] : [36]}>
                                             {!isSplit && props.media && (
-                                                <MediaWrapper fullWidth>{props.media}</MediaWrapper>
+                                                <MediaWrapper data-testid="modal-media-container" fullWidth>
+                                                    {props.media}
+                                                </MediaWrapper>
                                             )}
                                             <Box margin={[0, 0, 12, 0]} direction="column">
-                                                <Heading textAlign={props.centered ? 'center' : 'left'} hierarchy={2}>
+                                                <Heading
+                                                    data-testid="modal-title"
+                                                    textAlign={props.centered ? 'center' : 'left'}
+                                                    hierarchy={2}
+                                                >
                                                     {props.title}
                                                 </Heading>
                                             </Box>
