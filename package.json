@@ -124,6 +124,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MyOnlineStore/bricks"
+    "url": "https://github.com/MyOnlineStore/bricks"
   }
 }
