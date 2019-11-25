@@ -18,17 +18,31 @@ type PropsType = {
     size?: 'small' | 'medium' | 'large';
     buttons?: Array<ReactNode>;
     media?: ReactNode;
+    mediaBleed?: boolean;
+    mediaOverlap?: number;
     centered?: boolean;
     onClose?(): void;
     renderFixed?(): JSX.Element;
 };
 
-const MediaWrapper = styled.figure<{ fullWidth?: boolean }>`
+const MediaWrapper = styled.figure<{ fullWidth?: boolean; bleed?: boolean; overlap: number }>`
     box-sizing: border-box;
     position: relative;
     display: flex;
-    width: ${({ fullWidth }) => (fullWidth ? '100% ' : 'calc(50% - 48px)')};
-    margin: ${({ fullWidth }) => (fullWidth ? '0 0 24px 0' : '24px')};
+    width: ${({ fullWidth, bleed, overlap }) => {
+        if (fullWidth) {
+            return '100%;';
+        }
+
+        return bleed && overlap ? '50%' : 'calc(50% - 48px)';
+    }};
+    margin: ${({ fullWidth, bleed, overlap }) => {
+        if (bleed) {
+            return `0 0 0 -${overlap}px`;
+        }
+
+        return fullWidth ? '0 0 24px 0' : '24px';
+    }};
     overflow: hidden;
     flex-shrink: 0;
     align-items: center;
@@ -75,6 +89,7 @@ const Modal: FC<PropsType> = props => {
                     {({ measureRef, contentRect }) => {
                         const isSmall = contentRect.client && contentRect.client.width < 320;
 
+                        // isSplit = true : two column layout with content left and media right
                         const isSplit =
                             props.size !== 'small' &&
                             props.media !== undefined &&
@@ -119,11 +134,18 @@ const Modal: FC<PropsType> = props => {
                                     style={{ overflow: 'hidden' }}
                                     direction={!isSplit ? 'column' : 'row-reverse'}
                                 >
-                                    {props.media && isSplit && <MediaWrapper>{props.media}</MediaWrapper>}
+                                    {props.media && isSplit && (
+                                        <MediaWrapper
+                                            bleed={props.mediaBleed}
+                                            overlap={props.mediaOverlap ? props.mediaOverlap : 0}
+                                        >
+                                            {props.media}
+                                        </MediaWrapper>
+                                    )}
                                     <ScrollBox>
                                         <Box direction="column" padding={isSmall ? [18] : [36]}>
                                             {!isSplit && props.media && (
-                                                <MediaWrapper data-testid="modal-media-container" fullWidth>
+                                                <MediaWrapper data-testid="modal-media-container" fullWidth overlap={0}>
                                                     {props.media}
                                                 </MediaWrapper>
                                             )}
