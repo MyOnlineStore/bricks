@@ -4,9 +4,9 @@ import React from 'react';
 import Modal from '.';
 import Button from '../Button';
 import Text from '../Text';
-import yoga from '../../assets/illustrations/yoga.svg';
+import address from '../../assets/illustrations/address.svg';
 
-const Yoga = <div style={{ width: '100%' }} dangerouslySetInnerHTML={{ __html: yoga }} />;
+const Address = <div style={{ width: '100%' }} dangerouslySetInnerHTML={{ __html: address }} />;
 
 const demoContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
 cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
@@ -83,7 +83,9 @@ storiesOf('Modal', module)
                     <Button key="activate" variant="primary" title="Activate" />,
                     <Button key="close" variant="plain" title="Close" />,
                 ]}
-                media={Yoga}
+                media={Address}
+                mediaBleed={boolean('bleed media', true)}
+                mediaOverlap={select('media overlap', [0, 12, 24, 36, 48, 72], 48)}
             >
                 <Text>{text('contents', demoContent)}</Text>
             </Modal>
