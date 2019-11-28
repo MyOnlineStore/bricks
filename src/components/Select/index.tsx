@@ -291,6 +291,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                     data-testid={this.props['data-testid'] ? `${this.props['data-testid']}-select` : undefined}
                     onClick={this.open}
                 >
+                    test
                     {(this.props.renderSelected !== undefined && (
                         <Box padding={trbl(6, 12)} alignItems="center" grow={1}>
                             {this.props.renderSelected(selectedOption as GenericOptionType)}
