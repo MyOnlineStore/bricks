@@ -185,7 +185,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         entries.forEach(entry => {
             if (
                 entry.intersectionRatio < 1 &&
-                // Check if intersection time is after a resize to prevent mobile keyboard overlays (Android) from closing it to quickly
+                // Check if intersection time is well after a resize to prevent mobile keyboard overlays (Android) from closing it to quickly
                 !(entry.time - this.resizeTimestamp < 100 && entry.time - this.resizeTimestamp > 0)
             )
                 this.close();
@@ -200,7 +200,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         const Options = {
             root: this.props.container ? this.props.container.current : null,
             rootMargin: '0px',
-            threshold: [0, 1],
+            threshold: [0.9],
         };
 
         this.selectObserver = new IntersectionObserver(this.checkIntersection, Options);
