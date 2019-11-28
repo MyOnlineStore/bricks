@@ -167,11 +167,17 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         }
     };
 
+    private getTopPosition = (): number => {
+        if (this.wrapperRef && this.wrapperRef.current) {
+            return this.wrapperRef.current.getBoundingClientRect().top - windowOffset;
+        }
+
+        return 0;
+    };
+
     private setTopPosition = (): void => {
         if (this.windowRef && this.windowRef.current && this.wrapperRef && this.wrapperRef.current) {
-            const newTop = this.wrapperRef.current.getBoundingClientRect().top - windowOffset;
-
-            this.windowRef.current.style.top = `${newTop.toString()}px`;
+            this.windowRef.current.style.top = `${this.getTopPosition().toString()}px`;
         }
     };
 
