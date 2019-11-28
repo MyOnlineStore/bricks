@@ -183,11 +183,9 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
 
     private checkIntersection = (entries: Array<IntersectionObserverEntry>) => {
         entries.forEach(entry => {
-            console.debug('time', entry.time);
-            console.debug('resize', this.resizeTimestamp);
-
             if (
-                !entry.isIntersecting &&
+                entry.intersectionRatio < 1 &&
+                // Check if intersection time is after a resize to prevent mobile keyboard overlays (Android) from closing it to quickly
                 !(entry.time - this.resizeTimestamp < 100 && entry.time - this.resizeTimestamp > 0)
             )
                 this.close();
@@ -195,7 +193,6 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
     };
 
     private logResizeTime = (event: Event) => {
-        console.debug(event);
         this.resizeTimestamp = event.timeStamp;
     };
 
