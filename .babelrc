@@ -1,0 +1,17 @@
+{
+  "presets": ["@babel/preset-env","@babel/preset-typescript", "@babel/preset-react"],
+  "plugins": [
+      "babel-plugin-styled-components",
+      "@babel/proposal-class-properties",
+      [
+          "babel-plugin-inline-react-svg",
+          {
+              "svgo": {
+                "removeTags": "true",
+                "removingTags": ["title", "desc", "defs", "style"],
+                "removingTagAttrs": ["class"]
+              }
+          }
+      ]
+  ]
+}
