@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import MosCorporateTheme from '../../themes/MosCorporateTheme';
-import Button from '../Button';
-import Box from '../Box';
+import Button from '../../components/Button';
+import Box from '../../components/Box';
 
 storiesOf('MosCorporateTheme', module).add('Default', () => {
     return (

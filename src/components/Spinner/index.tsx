@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import StyledSpinner, { SpinnerSvg, SpinnerCircle } from './style';
 
-type PropsType = {
+export type PropsType = {
     color?: string;
 };
 
@@ -18,4 +18,3 @@ const Spinner: FunctionComponent<PropsType> = (props): JSX.Element => (
 );
 
 export default Spinner;
-export { PropsType };
