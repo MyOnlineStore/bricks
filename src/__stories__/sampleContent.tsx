@@ -1,25 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-<<<<<<< HEAD:src/components/_CustomTheme/sampleContent.tsx
-import Box from '../Box';
-import Heading from '../Heading';
-import Text from '../Text';
-import Raised from '../Raised';
-import Button from '../Button';
-import Contrast from '../Contrast';
-import FormRow from '../FormRow';
-import Toggle from '../Toggle';
-import TextArea from '../TextArea';
-import RadioButton from '../RadioButton';
-import TextField from '../TextField';
-import Link from '../Link';
-import Separated from '../Separated';
-import Notification from '../Notification';
-import Badge from '../Badge';
-import * as ThemeSettingsType from '../../themes/CustomTheme/CustomThemeTypes';
-import TextualButton from '../TextualButton';
-import { ChevronRightIcon } from '../../assets';
-import { Demo } from '../Progress/story';
-=======
 import Box from '../components/Box';
 import Heading from '../components/Heading';
 import Text from '../components/Text';
@@ -39,7 +18,6 @@ import * as ThemeSettingsType from '../themes/ExperimentalCustomTheme/MerchantTh
 import TextualButton from '../components/TextualButton';
 import { ChevronRightIcon } from '../assets';
 import { Demo } from '../components/Progress/story';
->>>>>>> f55065d... Added seperated bundles:src/__stories__/sampleContent.tsx
 
 type PropsType = {
     themeSettings: ThemeSettingsType.ThemeSettingsType;

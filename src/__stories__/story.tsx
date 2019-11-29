@@ -1,15 +1,9 @@
 import { select, text, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-<<<<<<< HEAD:src/components/_CustomTheme/story.tsx
 import generateThemeObject from '../../themes/CustomTheme/genTheme';
 import { ProvidedThemeOptionsType } from '../../themes/CustomTheme/CustomThemeTypes';
 import CustomTheme from '../../themes/CustomTheme';
-=======
-import generateThemeObject from '../themes/ExperimentalCustomTheme/genTheme';
-import { ProvidedThemeOptionsType } from '../themes/ExperimentalCustomTheme/MerchantThemeTypes';
-import ExperimentalCustomTheme from '../themes/ExperimentalCustomTheme';
->>>>>>> f55065d... Added seperated bundles:src/__stories__/story.tsx
 import SampleContent from './sampleContent';
 
 storiesOf('CustomTheme', module).add('Default', () => {
