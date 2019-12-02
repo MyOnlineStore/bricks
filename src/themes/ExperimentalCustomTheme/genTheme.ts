@@ -30,6 +30,7 @@ import { composeSkeletonTheme } from '../../components/Skeleton/style';
 import { composeToastTheme } from '../../components/Toast/style';
 import { composeTileTheme } from '../../components/Tile';
 import { composePopoverTheme } from '../../components/Popover/style';
+import { composeTooltipTheme } from '../../components/Tooltip/style';
 import { composeScrollBoxTheme } from '../../components/ScrollBox/style';
 import { composePriceTagTheme } from '../../components/PriceTag/style';
 import { composeIllustrationTheme } from '../../components/Illustration/style';
@@ -86,15 +87,16 @@ const generateThemeObject = (
         MultiButton: composeMultiButtonTheme(themeTools),
         NativeSelect: composeNativeSelectTheme(themeTools),
         Notification: composeNotificationTheme(themeTools),
+        Popover: composePopoverTheme(themeTools),
+        PriceTag: composePriceTagTheme(themeTools),
+        Progress: composeProgressTheme(themeTools),
         RadioButton: composeRadioButtonTheme(themeTools),
         Raised: composeRaisedTheme(themeTools),
         Range: composeRangeTheme(themeTools),
-        Popover: composePopoverTheme(themeTools),
-        PriceTag: composePriceTagTheme(themeTools),
+        ScrollBox: composeScrollBoxTheme(themeTools),
         Select: composeSelectTheme(themeTools),
         Skeleton: composeSkeletonTheme(themeTools),
         Slider: composeSliderTheme(themeTools),
-        ScrollBox: composeScrollBoxTheme(themeTools),
         Table: composeTableTheme(themeTools),
         Text: composeTextTheme(themeTools),
         TextArea: composeTextAreaTheme(themeTools),
@@ -103,7 +105,7 @@ const generateThemeObject = (
         Tile: composeTileTheme(themeTools),
         Toast: composeToastTheme(themeTools),
         Toggle: composeToggleTheme(themeTools),
-        Progress: composeProgressTheme(themeTools),
+        Tooltip: composeTooltipTheme(themeTools),
     };
 
     if (themeOverrides) {
