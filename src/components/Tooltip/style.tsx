@@ -35,10 +35,6 @@ const TooltipContent = styled.div`
     }
 `;
 
-const TooltipWindow = styled.div`
-    max-width: 300px;
-`;
-
 type TooltipArrowPropsType = {
     placement: PlacementType;
     shadow?: boolean;
@@ -50,8 +46,40 @@ const TooltipArrow = styled.div<TooltipArrowPropsType>`
     height: 12px;
     color: ${({ theme }): string => theme.Tooltip.color};
     background: ${({ theme }): string => theme.Tooltip.background};
-    top: -6px;
     transform: rotate(45deg);
+
+    ${({ placement }): string => {
+        const pointerSize: number = 12;
+
+        switch (placement) {
+            case 'left':
+            case 'left-start':
+            case 'left-end':
+                return `
+                    right: ${-pointerSize / 2}px;
+                    transform: rotate(45deg);
+                `;
+            case 'right':
+            case 'right-start':
+            case 'right-end':
+                return `
+                    left: ${-pointerSize / 2}px;
+                    transform: rotate(45deg);
+                `;
+            case 'top':
+            case 'top-start':
+            case 'top-end':
+                return `
+                    bottom: ${-pointerSize / 2}px;
+                    transform: rotate(45deg);
+                `;
+            default:
+                return `
+                    top: ${-pointerSize / 2}px;
+                    transform: rotate(45deg);
+                `;
+        }
+    }}
 
     ${({ theme, shadow }): string =>
         shadow
@@ -75,12 +103,4 @@ const composeTooltipTheme = (themeTools: ThemeTools): TooltipThemeType => {
     };
 };
 
-export {
-    TooltipAnchor,
-    TooltipArrow,
-    TooltipBackground,
-    TooltipContent,
-    TooltipWindow,
-    TooltipThemeType,
-    composeTooltipTheme,
-};
+export { TooltipAnchor, TooltipArrow, TooltipBackground, TooltipContent, TooltipThemeType, composeTooltipTheme };
