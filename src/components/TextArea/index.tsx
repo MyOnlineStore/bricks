@@ -4,6 +4,7 @@ import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
+import Text from '../Text';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';
 
@@ -18,12 +19,18 @@ type PropsType = {
         severity: SeverityType;
         message: string;
     };
+    characterLimit?: number;
     onChange(value: string, event: ChangeEvent<HTMLTextAreaElement>): void;
 };
 
 class TextArea extends Component<PropsType> {
     public onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-        if (!this.props.disabled) this.props.onChange(event.target.value, event);
+        if (!this.props.disabled)
+            if (this.props.characterLimit) {
+                this.props.onChange(event.target.value.substring(0, this.props.characterLimit), event);
+            } else {
+                this.props.onChange(event.target.value, event);
+            }
     };
 
     public render(): JSX.Element {
@@ -42,6 +49,11 @@ class TextArea extends Component<PropsType> {
                         resizeable={this.props.resizeable}
                         onChange={this.onChange}
                     />
+                    {this.props.characterLimit && (
+                        <Box justifyContent="flex-end">
+                            <Text severity="info">{`${this.props.value.length} / ${this.props.characterLimit}`}</Text>
+                        </Box>
+                    )}
                 </StyledTextAreaWrapper>
                 {this.props.feedback && (
                     <Box margin={trbl(6, 0, 0, 12)}>

@@ -5,7 +5,8 @@ import { storiesOf } from '@storybook/react';
 import TextArea from '.';
 
 type DemoPropsType = {
-    withFeedback: boolean;
+    withFeedback?: boolean;
+    withCharacterLimit?: boolean;
 };
 
 class Demo extends Component<DemoPropsType, { value: string }> {
@@ -38,10 +39,12 @@ class Demo extends Component<DemoPropsType, { value: string }> {
                           }
                         : undefined
                 }
+                characterLimit={this.props.withCharacterLimit ? number('Character Limit', 140) : undefined}
             />
         );
     }
 }
 
-storiesOf('TextArea', module).add('Default', () => <Demo withFeedback={false} />);
+storiesOf('TextArea', module).add('Default', () => <Demo />);
 storiesOf('TextArea', module).add('With Feedback', () => <Demo withFeedback />);
+storiesOf('TextArea', module).add('With Character Limit', () => <Demo withCharacterLimit />);
