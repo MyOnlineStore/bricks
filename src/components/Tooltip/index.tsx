@@ -76,7 +76,7 @@ const Tooltip: FC<PropsType> = props => {
             (anchorNode !== null && anchorNode.contains(event.target as Node)) ||
             (tooltipNode !== null && tooltipNode.contains(event.target as Node))
         ) {
-            if (props.triggerOn === 'click') setOpen(true);
+            if (props.triggerOn === 'click') setOpen(!isOpen);
         }
     };
 
