@@ -874,6 +874,11 @@ const theme: ThemeType = {
             backgroundColor: silver.darker4,
         },
     },
+    Tooltip: {
+        background: grey.darker1,
+        borderRadius: roundness.base,
+        color: silver.lighter1,
+    },
 };
 
 export default theme;
