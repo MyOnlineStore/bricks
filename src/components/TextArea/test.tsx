@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import TextArea from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledTextArea } from './style';
