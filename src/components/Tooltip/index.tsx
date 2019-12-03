@@ -82,17 +82,26 @@ const Tooltip: FC<PropsType> = props => {
 
     useEffect(() => {
         const node = anchorRef.current;
+        const show = (event: MouseEvent) => handleMouse(event, true);
+        const hide = (event: MouseEvent) => handleMouse(event, false);
 
         if (node && props.triggerOn !== 'click') {
-            const show = (event: MouseEvent) => handleMouse(event, true);
-            const hide = (event: MouseEvent) => handleMouse(event, false);
-
             node.addEventListener('mouseenter', show);
             node.addEventListener('mouseleave', hide);
 
             return () => {
                 node.removeEventListener('mouseenter', show);
                 node.removeEventListener('mouseleave', hide);
+            };
+        }
+
+        if (node) {
+            node.addEventListener('focusin', show);
+            node.addEventListener('focusout', hide);
+
+            return () => {
+                node.removeEventListener('focusin', show);
+                node.removeEventListener('focusout', hide);
             };
         }
     }, [anchorRef.current]);
@@ -138,7 +147,7 @@ const Tooltip: FC<PropsType> = props => {
                         }}
                     >
                         {({ ref, style, placement, arrowProps }: PopperChildrenProps): JSX.Element => (
-                            <div ref={ref} style={style} data-testid="tooltip-anchor-window">
+                            <div ref={ref} role="tooltip" style={style} data-testid="tooltip-anchor-window">
                                 <TooltipContent>
                                     <Text>{props.text}</Text>
                                 </TooltipContent>
