@@ -10,8 +10,7 @@ import IconButton from '../IconButton';
 
 storiesOf('Tooltip', module)
     .add('Internal state on hover', () => (
-        <Box direction="column" justifyContent="center" alignItems="center">
-            <Box height="100vh" style={{ background: '#eee' }} width="100%" />
+        <Box height="90vh" direction="column" justifyContent="center" alignItems="center">
             <Text>
                 <Box justifyContent="center" alignItems="center">
                     Hover over the icon
@@ -24,8 +23,7 @@ storiesOf('Tooltip', module)
         </Box>
     ))
     .add('Internal state on click', () => (
-        <Box direction="column" justifyContent="center" alignItems="center">
-            <Box height="100vh" style={{ background: '#eee' }} width="100%" />
+        <Box height="90vh" direction="column" justifyContent="center" alignItems="center">
             <Text>
                 <Box justifyContent="center" alignItems="center">
                     Copy
@@ -37,8 +35,7 @@ storiesOf('Tooltip', module)
         </Box>
     ))
     .add('External state', () => (
-        <Box direction="column" justifyContent="center" alignItems="center">
-            <Box height="100vh" style={{ background: '#eee' }} width="100%" />
+        <Box height="90vh" direction="column" justifyContent="center" alignItems="center">
             <Text>
                 <Box justifyContent="center" alignItems="center">
                     Copy
