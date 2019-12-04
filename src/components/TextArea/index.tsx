@@ -20,6 +20,7 @@ type PropsType = {
         message: string;
     };
     characterLimit?: number;
+    'data-testid'?: string;
     onChange(value: string, event: ChangeEvent<HTMLTextAreaElement>): void;
 };
 
@@ -41,6 +42,7 @@ class TextArea extends Component<PropsType> {
                     severity={this.props.feedback ? this.props.feedback.severity : undefined}
                 >
                     <StyledTextArea
+                        data-testid={this.props['data-testid']}
                         value={this.props.value}
                         name={this.props.name}
                         id={this.props.id}
@@ -48,9 +50,10 @@ class TextArea extends Component<PropsType> {
                         disabled={this.props.disabled}
                         resizeable={this.props.resizeable}
                         onChange={this.onChange}
+                        characterLimit={this.props.characterLimit}
                     />
                     {this.props.characterLimit && (
-                        <Box justifyContent="flex-end">
+                        <Box justifyContent="flex-end" position="absolute" right="12px" bottom="6px">
                             <Text severity="info">{`${this.props.value.length} / ${this.props.characterLimit}`}</Text>
                         </Box>
                     )}
