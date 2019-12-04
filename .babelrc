@@ -1,17 +1,21 @@
 {
-  "presets": ["@babel/preset-typescript", "@babel/preset-react"],
+  "presets": [
+      ["@babel/preset-env", { "modules": false }],
+      "@babel/preset-typescript",
+      "@babel/preset-react"
+    ],
   "plugins": [
-      "babel-plugin-styled-components",
-      "@babel/proposal-class-properties",
-      [
-          "babel-plugin-inline-react-svg",
-          {
-              "svgo": {
-                "removeTags": "true",
-                "removingTags": ["title", "desc", "defs", "style"],
-                "removingTagAttrs": ["class"]
-              }
-          }
-      ]
+    [
+      "babel-plugin-inline-react-svg",
+      {
+        "svgo": {
+          "removeTags": "true",
+          "removingTags": ["title", "desc", "defs", "style"],
+          "removingTagAttrs": ["class"]
+        }
+      }
+    ],
+    "babel-plugin-styled-components",
+    "@babel/proposal-class-properties"
   ]
 }
