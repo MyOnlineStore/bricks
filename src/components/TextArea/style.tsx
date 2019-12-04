@@ -11,7 +11,6 @@ type TextAreaWrapperPropsType = {
 type TextAreaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
-    characterLimit?: number;
 };
 
 type TextAreaThemeType = {
@@ -54,7 +53,6 @@ type TextAreaThemeType = {
 };
 
 const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
-    position: relative;
     width: 100%;
     padding: 0;
     overflow: hidden;
@@ -78,7 +76,7 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
 `;
 
 const StyledTextArea = styled.textarea<TextAreaPropsType>`
-    padding: ${({ characterLimit }): string => (characterLimit ? '6px 12px 24px' : '6px 12px')};
+    padding: 6px 12px;
     box-sizing: border-box;
     width: 100%;
     border: none;

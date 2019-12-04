@@ -1,4 +1,4 @@
-import React, { Component, ChangeEvent } from 'react';
+import React, { ChangeEvent, FC, useRef } from 'react';
 import StyledTextArea, { StyledTextAreaWrapper } from './style';
 import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/SeverityType';
@@ -24,53 +24,57 @@ type PropsType = {
     onChange(value: string, event: ChangeEvent<HTMLTextAreaElement>): void;
 };
 
-class TextArea extends Component<PropsType> {
-    public onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-        if (!this.props.disabled)
-            if (this.props.characterLimit) {
-                this.props.onChange(event.target.value.substring(0, this.props.characterLimit), event);
+const TextArea: FC<PropsType> = props => {
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+    const onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
+        if (!props.disabled)
+            if (props.characterLimit) {
+                props.onChange(event.target.value.substring(0, props.characterLimit), event);
             } else {
-                this.props.onChange(event.target.value, event);
+                props.onChange(event.target.value, event);
             }
     };
 
-    public render(): JSX.Element {
-        return (
-            <>
-                <StyledTextAreaWrapper
-                    disabled={this.props.disabled}
-                    severity={this.props.feedback ? this.props.feedback.severity : undefined}
-                >
-                    <StyledTextArea
-                        data-testid={this.props['data-testid']}
-                        value={this.props.value}
-                        name={this.props.name}
-                        id={this.props.id}
-                        rows={this.props.rows ? this.props.rows : 3}
-                        disabled={this.props.disabled}
-                        resizeable={this.props.resizeable}
-                        onChange={this.onChange}
-                        characterLimit={this.props.characterLimit}
-                    />
-                    {this.props.characterLimit && (
-                        <Box justifyContent="flex-end" position="absolute" right="12px" bottom="6px">
-                            <Text severity="info">{`${this.props.value.length} / ${this.props.characterLimit}`}</Text>
-                        </Box>
-                    )}
-                </StyledTextAreaWrapper>
-                {this.props.feedback && (
-                    <Box margin={trbl(6, 0, 0, 12)}>
-                        <InlineNotification
-                            icon={this.props.feedback.severity === 'info' ? questionCircle : dangerCircle}
-                            message={this.props.feedback.message}
-                            severity={this.props.feedback.severity}
-                        />
+    const focusField = () => {
+        if (textareaRef.current) textareaRef.current.focus();
+    };
+
+    return (
+        <>
+            <StyledTextAreaWrapper
+                disabled={props.disabled}
+                severity={props.feedback ? props.feedback.severity : undefined}
+            >
+                <StyledTextArea
+                    ref={textareaRef}
+                    data-testid={props['data-testid']}
+                    value={props.value}
+                    name={props.name}
+                    id={props.id}
+                    rows={props.rows ? props.rows : 3}
+                    disabled={props.disabled}
+                    resizeable={props.resizeable}
+                    onChange={onChange}
+                />
+                {props.characterLimit && (
+                    <Box justifyContent="flex-end" padding={[0, 12, 6]} onClick={focusField}>
+                        <Text severity="info">{`${props.value.length} / ${props.characterLimit}`}</Text>
                     </Box>
                 )}
-            </>
-        );
-    }
-}
+            </StyledTextAreaWrapper>
+            {props.feedback && (
+                <Box margin={trbl(6, 0, 0, 12)}>
+                    <InlineNotification
+                        icon={props.feedback.severity === 'info' ? questionCircle : dangerCircle}
+                        message={props.feedback.message}
+                        severity={props.feedback.severity}
+                    />
+                </Box>
+            )}
+        </>
+    );
+};
 
 export default TextArea;
 export { PropsType, StyledTextArea };
