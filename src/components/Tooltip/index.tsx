@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect, useRef } from 'react';
 import { Manager, Popper, PopperChildrenProps, Reference, ReferenceChildrenProps } from 'react-popper';
 import TransitionAnimation from '../TransitionAnimation';
 import Text from '../Text';
-import { TooltipAnchor, TooltipArrow, TooltipBackground, TooltipContent } from './style';
+import { TooltipAnchor, TooltipArrow, TooltipBackground, TooltipContent, TooltipWindow } from './style';
 
 type PlacementType = PopperChildrenProps['placement'];
 
@@ -133,8 +133,8 @@ const Tooltip: FC<PropsType> = props => {
                     </span>
                 )}
             </Reference>
-            <TransitionAnimation show={props.show !== undefined ? props.show : isOpen} animation="fade">
-                <div ref={tooltipRef}>
+            <TooltipWindow ref={tooltipRef}>
+                <TransitionAnimation show={props.show !== undefined ? props.show : isOpen} animation="fade">
                     <Popper
                         positionFixed={true}
                         placement="bottom"
@@ -157,8 +157,8 @@ const Tooltip: FC<PropsType> = props => {
                             </div>
                         )}
                     </Popper>
-                </div>
-            </TransitionAnimation>
+                </TransitionAnimation>
+            </TooltipWindow>
         </Manager>
     );
 };

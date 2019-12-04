@@ -13,6 +13,11 @@ const TooltipAnchor = styled.div`
     cursor: pointer;
 `;
 
+const TooltipWindow = styled.div`
+    postion: relative;
+    z-index: 9999;
+`;
+
 const TooltipBackground = styled.div`
     position: absolute;
     left: 0;
@@ -103,4 +108,12 @@ const composeTooltipTheme = (themeTools: ThemeTools): TooltipThemeType => {
     };
 };
 
-export { TooltipAnchor, TooltipArrow, TooltipBackground, TooltipContent, TooltipThemeType, composeTooltipTheme };
+export {
+    TooltipAnchor,
+    TooltipArrow,
+    TooltipWindow,
+    TooltipBackground,
+    TooltipContent,
+    TooltipThemeType,
+    composeTooltipTheme,
+};
