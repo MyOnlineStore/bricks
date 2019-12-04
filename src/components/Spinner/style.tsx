@@ -1,5 +1,4 @@
 import styled, { keyframes } from '../../utility/styled';
-import { PropsType } from '.';
 
 const rotate = keyframes`
     0%{
@@ -24,7 +23,7 @@ const StyledSpinner = styled.div`
     height: 100%;
 `;
 
-const SpinnerSvg = styled.svg<PropsType>`
+const SpinnerSvg = styled.svg<{ color?: string }>`
     width: 100%;
     height: 100%;
     stroke: ${({ color }): string => (color ? color : 'currentColor')};
@@ -42,4 +41,4 @@ const SpinnerCircle = styled.circle`
 `;
 
 export default StyledSpinner;
-export { PropsType, SpinnerSvg, SpinnerCircle };
+export { SpinnerSvg, SpinnerCircle };
