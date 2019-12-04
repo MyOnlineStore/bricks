@@ -49,6 +49,8 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             id={props.id}
             isLoading={props.loading}
             data-testid={props['data-testid']}
+            onMouseEnter={props.onMouseEnter}
+            onMouseLeave={props.onMouseLeave}
         >
             {props.children}
         </StyledButton>
