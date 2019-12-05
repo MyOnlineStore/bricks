@@ -731,7 +731,7 @@ const theme: ThemeType = {
                 borderColor: silver.darker4,
                 fontSize: fontSize.base,
                 fontFamily: bodyFont,
-                color: grey.lighter3,
+                color: grey.base,
                 background: silver.lighter1,
             },
         },
@@ -739,7 +739,6 @@ const theme: ThemeType = {
             borderColor: green.darker2,
             boxShadow: `0 0 0 4px ${rgba(green.base, 0.4)}`,
         },
-
         severity: {
             error: {
                 borderColor: severity.error,
