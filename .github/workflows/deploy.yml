@@ -1,0 +1,30 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy-storybook:
+    if: github.actor != 'myonlinestore-ci-eu'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking out git repository
+      uses: actions/checkout@v2-beta
+    - name: Configuring GitHub user
+      run: |
+        git config --global user.email no-reply@myonlinestore.com
+        git config --global user.name myonlinestore-ci-eu
+    - name: Setting up Node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Installing dependencies
+      run: yarn --frozen-lockfile --production
+    - name: Running tests
+      run: yarn testAll
+    - name: Deploying storybook to gh-pages
+      run: yarn deploy-storybook --ci
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
