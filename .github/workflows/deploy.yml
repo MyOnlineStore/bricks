@@ -24,10 +24,6 @@ jobs:
       run: yarn --frozen-lockfile
     - name: Running tests
       run: yarn test
-    - name: Installing production dependencies
-      run: |
-        rm -rf ./node_modules
-        yarn --frozen-lock --production
     - name: Deploying storybook to gh-pages
       run: yarn deploy-storybook --ci
       env:
