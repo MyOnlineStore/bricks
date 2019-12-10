@@ -4,6 +4,7 @@ import StyledPriceTag from './style';
 import formatFraction from './formatters/formatFraction';
 import formatCurrency from './formatters/formatCurrency';
 import formatDecimalSeperator from './formatters/formatDecimalSeperator';
+import { Decimal } from 'decimal.js';
 
 type PropsType = {
     hideCurrency?: boolean;
@@ -14,6 +15,7 @@ type PropsType = {
     fractionFormat?: 'none' | 'dash';
     locale: string;
     currency: string;
+    minor?: boolean;
 };
 
 type StatsType = {
@@ -44,7 +46,11 @@ const PriceTag: FunctionComponent<PropsType> = (props): JSX.Element => {
         currency: props.currency,
     });
 
-    const parts = formatter.formatToParts(props.value);
+    const amount = props.minor
+        ? new Decimal(props.value).dividedBy(Math.pow(10, formatter.resolvedOptions().maximumFractionDigits)).toNumber()
+        : props.value;
+
+    const parts = formatter.formatToParts(amount);
 
     const stats = parts.reduce(deriveStatsFromPart, {
         isRound: false,
