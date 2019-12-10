@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checking out git repository
       uses: actions/checkout@v2-beta
+      with:
+        token: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
     - name: Configuring GitHub user
       run: |
         git config --global user.email no-reply@myonlinestore.com
@@ -26,5 +28,3 @@ jobs:
       run: yarn test
     - name: Deploying storybook to gh-pages
       run: yarn deploy-storybook --ci
-      env:
-        GH_TOKEN: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
