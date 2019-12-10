@@ -23,7 +23,7 @@ jobs:
     - name: Installing dependencies
       run: yarn --frozen-lockfile --production
     - name: Running tests
-      run: yarn testAll
+      run: yarn test
     - name: Deploying storybook to gh-pages
       run: yarn deploy-storybook --ci
       env:
