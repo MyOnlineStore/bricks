@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v2-beta
     - name: Configuring GitHub user
       run: |
-        git config --global user.email no-reply@myonlinestore.com
+        git config --global user.email team-tech+myonlinestore-ci-eu@myonlinestore.com
         git config --global user.name myonlinestore-ci-eu
     - name: Setting up Node environment
       uses: actions/setup-node@v1
