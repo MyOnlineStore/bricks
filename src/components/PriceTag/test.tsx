@@ -113,4 +113,10 @@ describe('PriceTag', () => {
 
         expect(component.text()).toContain('free');
     });
+
+    it('should handle minor values', () => {
+        const component = mountWithTheme(<PriceTag locale="nl-NL" currency="EUR" value={1020} minor />).find(PriceTag);
+
+        expect(component.text()).toContain('€ 10,20');
+    });
 });
