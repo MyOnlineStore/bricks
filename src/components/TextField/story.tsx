@@ -5,6 +5,7 @@ import TextField from '.';
 import SeverityType from '../../types/SeverityType';
 import { Checkbox, IconButton, Box } from '../..';
 import { SearchIcon } from '../../assets';
+import { number } from '@storybook/addon-knobs';
 
 type PropsType = {
     withClearButton?: boolean;
@@ -69,6 +70,8 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         value: numberValue,
         onChange: setNumberValue,
         disableNegative: boolean('disable negative numbers', false),
+        minimumFractionDigits: number('minimumFractionDigits', 0),
+        maximumFractionDigits: number('maximumFractionDigits', 2),
     };
 
     const textProps = {
