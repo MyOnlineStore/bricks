@@ -1,7 +1,8 @@
 import ThemeType from '../../types/ThemeType';
 import rgba from '../../utility/rgba';
 import RecursivePartialType from '../../types/RecursivePartialType';
-import { bodyFont, fontSize, green, silver, grey, red, yellow } from '../MosTheme/MosTheme.theme';
+import { bodyFont, fontSize } from '../MosTheme/MosTheme.theme';
+import { colors } from '../MosTheme/colors';
 
 const roundness = {
     base: '19px',
@@ -19,118 +20,118 @@ const theme: RecursivePartialType<ThemeType> = {
         },
         primary: {
             idle: {
-                backgroundColor: green.darker1,
-                color: silver.lighter1,
+                backgroundColor: colors.green400,
+                color: colors.white,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: green.darker2,
-                color: silver.lighter1,
+                backgroundColor: colors.green500,
+                color: colors.white,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: green.darker1,
-                color: silver.lighter1,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(green.base, 0.4)}`,
+                backgroundColor: colors.green400,
+                color: colors.white,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.green300, 0.4)}`,
             },
             active: {
-                backgroundColor: green.darker2,
-                color: silver.lighter1,
+                backgroundColor: colors.green500,
+                color: colors.white,
                 boxShadow: 'none',
             },
         },
         secondary: {
             idle: {
-                backgroundColor: silver.base,
-                color: grey.lighter1,
+                backgroundColor: colors.grey100,
+                color: colors.grey600,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: silver.darker1,
-                color: grey.lighter1,
+                backgroundColor: colors.grey200,
+                color: colors.grey600,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: silver.base,
-                color: grey.lighter1,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(grey.base, 0.08)}`,
+                backgroundColor: colors.grey100,
+                color: colors.grey600,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
             },
             active: {
-                backgroundColor: silver.darker1,
-                color: grey.lighter1,
+                backgroundColor: colors.grey200,
+                color: colors.grey600,
                 boxShadow: 'none',
             },
         },
         warning: {
             idle: {
-                backgroundColor: yellow.darker1,
-                color: grey.base,
+                backgroundColor: colors.yellow500,
+                color: colors.grey800,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: yellow.darker2,
-                color: grey.base,
+                backgroundColor: colors.yellow600,
+                color: colors.grey800,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: yellow.darker1,
-                color: grey.base,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(yellow.darker1, 0.25)}`,
+                backgroundColor: colors.yellow500,
+                color: colors.grey800,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(colors.yellow500, 0.25)}`,
             },
             active: {
-                backgroundColor: yellow.darker2,
-                color: grey.base,
+                backgroundColor: colors.yellow600,
+                color: colors.grey800,
                 boxShadow: 'none',
             },
         },
         destructive: {
             idle: {
-                backgroundColor: red.base,
-                color: silver.lighter1,
+                backgroundColor: colors.red500,
+                color: colors.white,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: red.darker1,
-                color: silver.lighter1,
+                backgroundColor: colors.red600,
+                color: colors.white,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: red.base,
-                color: silver.lighter1,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px ${rgba(red.base, 0.25)}`,
+                backgroundColor: colors.red500,
+                color: colors.white,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px ${rgba(colors.red500, 0.25)}`,
             },
             active: {
-                backgroundColor: red.darker1,
-                color: silver.lighter1,
+                backgroundColor: colors.red600,
+                color: colors.white,
                 boxShadow: 'none',
             },
         },
         plain: {
             idle: {
                 backgroundColor: 'transparent',
-                color: grey.base,
+                color: colors.grey800,
                 boxShadow: 'none',
                 textDecoration: 'underline',
             },
             hover: {
-                backgroundColor: silver.base,
-                color: grey.base,
+                backgroundColor: colors.grey100,
+                color: colors.grey800,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: silver.base,
-                color: grey.base,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(grey.base, 0.08)}`,
+                backgroundColor: colors.grey100,
+                color: colors.grey800,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
             },
             active: {
-                backgroundColor: silver.base,
-                color: grey.base,
+                backgroundColor: colors.grey100,
+                color: colors.grey800,
                 boxShadow: 'none',
             },
         },
         disabled: {
-            color: grey.lighter2,
-            backgroundColor: silver.darker2,
+            color: colors.grey500,
+            backgroundColor: colors.grey200,
             stripingColor: 'rgba(0,0,0,0.04)',
         },
     },
