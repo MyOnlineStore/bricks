@@ -43,6 +43,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
                 style: 'decimal',
                 minimumFractionDigits,
                 maximumFractionDigits,
+                useGrouping: false,
             });
         }
 
@@ -100,6 +101,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
         private handleChange = (value: string): void => {
             const parsedValue = this.parse('out', value);
+            console.debug('STRING', value);
             console.debug('PARSED', parsedValue);
 
             if (isNaN(parsedValue)) {
@@ -112,7 +114,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
                 // if (parsedValue !== this.state.savedValue || this.state.value.length === 0) {
                 //     this.setState({ value: '0', savedValue: parsedValue });
                 // } else {
-                this.setState({ value: this.format(value), savedValue: parsedValue });
+                this.setState({ savedValue: parsedValue });
                 // }
 
                 this.props.onChange(parsedValue);
@@ -120,11 +122,11 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         };
 
         private handleBlur = (): void => {
-            if (this.state.value.length === 0) {
-                this.setState({ value: '0' });
-            } else {
-                this.setState({ value: this.format(this.state.value) });
-            }
+            // if (this.state.value.length === 0) {
+            //     this.setState({ value: '0' });
+            // } else {
+            this.setState({ value: this.format(this.state.value) });
+            // }
 
             if (this.props.onBlur !== undefined) {
                 this.props.onBlur();
@@ -134,7 +136,11 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         public render(): JSX.Element {
             const wrappedProps = {
                 ...this.props,
-                type: this.props.minimumFractionDigits || this.props.maximumFractionDigits ? 'text' : 'number',
+                type:
+                    this.props.minimumFractionDigits ||
+                    (this.props.maximumFractionDigits && this.props.maximumFractionDigits > 0)
+                        ? 'text'
+                        : 'number',
                 value: this.state.value,
                 onChange: this.handleChange,
                 onBlur: this.handleBlur,
