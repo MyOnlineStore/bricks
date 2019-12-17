@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import styled from '../../utility/styled';
 import React from 'react';
 import Spinner from '.';
+import { colors } from '../../themes/MosTheme';
 
 storiesOf('Spinner', module).add('Default', () => {
     const size = text('wrapper size', '100px');
@@ -15,7 +16,7 @@ storiesOf('Spinner', module).add('Default', () => {
 
     return (
         <StyledDiv>
-            <Spinner color={color('fill', '#5bd16a')} />
+            <Spinner color={color('fill', colors.green400)} />
         </StyledDiv>
     );
 });
