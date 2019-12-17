@@ -25,6 +25,7 @@ export { default as MessageStream } from './components/MessageStream';
 export { default as Modal } from './components/Modal';
 export { default as MosCorporateTheme } from './themes/MosCorporateTheme';
 export { default as MosTheme } from './themes/MosTheme';
+export { colors } from './themes/MosTheme/colors';
 export { default as MultiButton } from './components/MultiButton';
 export { default as NativeSelect } from './components/NativeSelect';
 export { default as Notification } from './components/Notification';
