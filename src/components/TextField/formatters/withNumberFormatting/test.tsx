@@ -42,16 +42,16 @@ describe('withNumberFormatting', () => {
         const NumberField = withNumberFormatting(TextField);
 
         const component = mountWithTheme(
-            <NumberField name="" value={12.34} allowFloats locale="nl_NL" onChange={changeMock} />,
+            <NumberField name="" value={10} allowFloats locale="nl_NL" onChange={changeMock} />,
         );
 
         component.update();
 
-        component.find('input').simulate('change', { target: { value: '56,78' } });
+        component.find('input').simulate('change', { target: { value: '12,34' } });
         component.find('input').simulate('blur');
 
-        expect(changeMock).toHaveBeenCalledWith(56.78);
-        expect(component.find('input').prop('value')).toBe('56,78');
+        expect(changeMock).toHaveBeenCalledWith(12.34);
+        expect(component.find('input').prop('value')).toBe('12,34');
     });
 
     it('should render the value with a minimum amount of decimals', () => {
@@ -70,6 +70,12 @@ describe('withNumberFormatting', () => {
         );
 
         expect(component.find('input').prop('value')).toBe('10,00');
+
+        component.find('input').simulate('change', { target: { value: '11' } });
+        component.find('input').simulate('blur');
+
+        expect(changeMock).toHaveBeenCalledWith(11);
+        expect(component.find('input').prop('value')).toBe('11,00');
     });
 
     it('should be testable with a test-id', () => {
