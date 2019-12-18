@@ -16,7 +16,7 @@ type PropsType = {
 
 const Demo: FC<PropsType> = (props): JSX.Element => {
     const [stringValue, setStringValue] = useState('');
-    const [numberValue, setNumberValue] = useState(10.12);
+    const [numberValue, setNumberValue] = useState(10);
     const [isChecked, setChecked] = useState(true);
 
     const sharedProps = {

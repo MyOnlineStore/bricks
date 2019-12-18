@@ -31,7 +31,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             this.state = {
                 value: this.formatter.format(props.value),
                 savedValue: this.props.value,
-                decimalSeperator: '.',
+                decimalSeperator: this.getSeperator(props.value),
             };
         }
 
@@ -56,12 +56,10 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             });
         }
 
-        private setSeperator(value: number): void {
-            this.formatter.formatToParts(value).map(part => {
-                if (part.type === 'decimal') {
-                    this.setState({ decimalSeperator: part.value });
-                }
-            });
+        private getSeperator(value: number): string {
+            const seperator = this.formatter.formatToParts(value).find(part => part.type === 'decimal');
+
+            return seperator ? seperator.value : '.';
         }
 
         private parse(value: string): number {
@@ -91,14 +89,6 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
                 this.props.onBlur();
             }
         };
-
-        public componentDidMount() {
-            this.setSeperator(this.props.value);
-
-            this.setState({
-                value: this.formatter.format(this.state.savedValue),
-            });
-        }
 
         public componentDidUpdate(prevProps: PropsType) {
             if (
