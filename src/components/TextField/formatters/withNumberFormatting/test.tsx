@@ -90,6 +90,28 @@ describe('withNumberFormatting', () => {
         expect(component.find('input').prop('value')).toBe('11,00');
     });
 
+    it('should render the value with a maximum amount of decimals', () => {
+        const changeMock = jest.fn();
+        const NumberField = withNumberFormatting(TextField);
+
+        const component = mountWithTheme(
+            <NumberField
+                name=""
+                value={10}
+                allowFloats
+                maximumFractionDigits={2}
+                locale="nl_NL"
+                onChange={changeMock}
+            />,
+        );
+
+        component.find('input').simulate('change', { target: { value: '12,34567' } });
+        component.find('input').simulate('blur');
+
+        expect(changeMock).toHaveBeenCalledWith(12.35);
+        expect(component.find('input').prop('value')).toBe('12,35');
+    });
+
     it('should be testable with a test-id', () => {
         const component = mountWithTheme(
             <TextField.Number data-testid="foo" value={0} name="foo" onChange={jest.fn()} />,

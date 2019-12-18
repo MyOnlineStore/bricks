@@ -70,8 +70,11 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         private parse(value: string): number {
             if (this.props.allowFloats) {
                 const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
+                const toFixed = parseFloat(stripped.replace(this.state.decimalSeperator, '.')).toFixed(
+                    this.formatter.resolvedOptions().maximumFractionDigits,
+                );
 
-                return parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
+                return parseFloat(toFixed);
             }
 
             return parseFloat(value);
