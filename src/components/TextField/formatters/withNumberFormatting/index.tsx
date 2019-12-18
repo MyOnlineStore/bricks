@@ -40,13 +40,13 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             const defaultMaximumFractionDigits = this.props.allowFloats ? 2 : 0;
 
             const minimumFractionDigits =
-                this.props.minimumFractionDigits && this.props.allowFloats
-                    ? Math.abs(this.props.minimumFractionDigits)
+                this.props.minimumFractionDigits && this.props.allowFloats && this.props.minimumFractionDigits > 0
+                    ? this.props.minimumFractionDigits
                     : 0;
 
             let maximumFractionDigits =
-                this.props.maximumFractionDigits && this.props.allowFloats
-                    ? Math.abs(this.props.maximumFractionDigits)
+                this.props.maximumFractionDigits && this.props.allowFloats && this.props.maximumFractionDigits >= 0
+                    ? this.props.maximumFractionDigits
                     : defaultMaximumFractionDigits;
 
             if (minimumFractionDigits > maximumFractionDigits) maximumFractionDigits = minimumFractionDigits;
@@ -77,6 +77,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             const parsedValue = this.parse(value);
 
             if (isNaN(parsedValue)) {
+                this.setState({ value: '' });
                 this.props.onChange(this.state.savedValue);
             } else if (parsedValue < 0 && this.props.disableNegative) {
                 this.setState({ savedValue: 0, value: '0' });
