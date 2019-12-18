@@ -37,6 +37,41 @@ describe('withNumberFormatting', () => {
         expect(changeMock).toHaveBeenCalledWith(0);
     });
 
+    it('should be able to handle localized float values', () => {
+        const changeMock = jest.fn();
+        const NumberField = withNumberFormatting(TextField);
+
+        const component = mountWithTheme(
+            <NumberField name="" value={12.34} allowFloats locale="nl_NL" onChange={changeMock} />,
+        );
+
+        component.update();
+
+        component.find('input').simulate('change', { target: { value: '56,78' } });
+        component.find('input').simulate('blur');
+
+        expect(changeMock).toHaveBeenCalledWith(56.78);
+        expect(component.find('input').prop('value')).toBe('56,78');
+    });
+
+    it('should render the value with a minimum amount of decimals', () => {
+        const changeMock = jest.fn();
+        const NumberField = withNumberFormatting(TextField);
+
+        const component = mountWithTheme(
+            <NumberField
+                name=""
+                value={10}
+                allowFloats
+                minimumFractionDigits={2}
+                locale="nl_NL"
+                onChange={changeMock}
+            />,
+        );
+
+        expect(component.find('input').prop('value')).toBe('10,00');
+    });
+
     it('should be testable with a test-id', () => {
         const component = mountWithTheme(
             <TextField.Number data-testid="foo" value={0} name="foo" onChange={jest.fn()} />,

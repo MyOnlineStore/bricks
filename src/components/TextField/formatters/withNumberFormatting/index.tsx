@@ -29,7 +29,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             this.setFormatter();
 
             this.state = {
-                value: this.format(this.props.value.toString()),
+                value: this.formatter.format(props.value),
                 savedValue: this.props.value,
                 decimalSeperator: '.',
             };
@@ -38,16 +38,15 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         private setFormatter(): void {
             const locale = this.props.locale ? this.props.locale.replace('_', '-') : 'nl-NL';
             const defaultMaximumFractionDigits = this.props.allowFloats ? 2 : 0;
-
-            let minimumFractionDigits =
+            const minimumFractionDigits =
                 this.props.minimumFractionDigits && this.props.allowFloats ? this.props.minimumFractionDigits : 0;
 
-            const maximumFractionDigits =
+            let maximumFractionDigits =
                 this.props.maximumFractionDigits && this.props.allowFloats
                     ? this.props.maximumFractionDigits
                     : defaultMaximumFractionDigits;
 
-            if (minimumFractionDigits > maximumFractionDigits) minimumFractionDigits = maximumFractionDigits;
+            if (minimumFractionDigits > maximumFractionDigits) maximumFractionDigits = minimumFractionDigits;
 
             this.formatter = new Intl.NumberFormat(locale, {
                 style: 'decimal',
@@ -57,45 +56,26 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             });
         }
 
-        private parse(direction: 'in', value: string): string;
-        private parse(direction: 'out', value: string): number;
-        private parse(direction: 'in' | 'out', value: string): string | number {
-            const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
-
-            if (direction === 'out') {
-                const parsed = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
-
-                return !isNaN(parsed) ? parseFloat(parsed.toFixed(this.props.maximumFractionDigits)) : this.props.value;
-            }
-
-            return stripped;
+        private setSeperator(value: number): void {
+            this.formatter.formatToParts(value).map(part => {
+                if (part.type === 'decimal') {
+                    this.setState({ decimalSeperator: part.value });
+                }
+            });
         }
 
-        private format(value: string): string {
-            try {
-                return this.formatter
-                    .formatToParts(this.parse('out', value))
-                    .filter(part => {
-                        switch (part.type) {
-                            case 'decimal': {
-                                this.setState({ decimalSeperator: part.value });
+        private parse(value: string): number {
+            const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
 
-                                return true;
-                            }
-                            default:
-                                return true;
-                        }
-                    })
-                    .reduce((combined: string, { value }: Intl.PartType): string => `${combined}${value}`, '');
-            } catch (error) {
-                return value;
-            }
+            return parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
         }
 
         private handleChange = (value: string): void => {
-            const parsedValue = this.parse('out', value);
+            const parsedValue = this.parse(value);
 
-            if (parsedValue < 0 && this.props.disableNegative) {
+            if (isNaN(parsedValue)) {
+                this.props.onChange(this.state.savedValue);
+            } else if (parsedValue < 0 && this.props.disableNegative) {
                 this.setState({ savedValue: 0, value: '0' });
                 this.props.onChange(0);
             } else {
@@ -105,7 +85,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         };
 
         private handleBlur = (): void => {
-            this.setState({ value: this.format(this.state.value) });
+            this.setState({ value: this.formatter.format(this.state.savedValue) });
 
             if (this.props.onBlur !== undefined) {
                 this.props.onBlur();
@@ -113,8 +93,10 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         };
 
         public componentDidMount() {
+            this.setSeperator(this.props.value);
+
             this.setState({
-                value: this.format(this.state.value),
+                value: this.formatter.format(this.state.savedValue),
             });
         }
 
@@ -126,11 +108,11 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             ) {
                 this.setFormatter();
 
-                this.setState({ value: this.format(this.state.value) });
+                this.setState({ value: this.formatter.format(this.state.savedValue) });
             }
 
             if (this.props.value !== prevProps.value && this.props.value !== this.state.savedValue) {
-                this.setState({ value: this.format(this.props.value.toString()) });
+                this.setState({ value: this.formatter.format(this.props.value), savedValue: this.props.value });
             }
         }
 
