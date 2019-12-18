@@ -16,7 +16,7 @@ type PropsType = {
 
 const Demo: FC<PropsType> = (props): JSX.Element => {
     const [stringValue, setStringValue] = useState('');
-    const [numberValue, setNumberValue] = useState(10);
+    const [numberValue, setNumberValue] = useState(10.12);
     const [isChecked, setChecked] = useState(true);
 
     const sharedProps = {
@@ -69,6 +69,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         value: numberValue,
         onChange: setNumberValue,
         disableNegative: boolean('disable negative numbers', false),
+        allowFloats: boolean('allowFloats', false),
         minimumFractionDigits: number('minimumFractionDigits', 0),
         maximumFractionDigits: number('maximumFractionDigits', 2),
         locale: select('locale', ['nl_NL', 'en_GB'], 'nl_NL'),

@@ -6,6 +6,7 @@ type OmittedKeys = 'onChange' | 'value' | 'type';
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
     value: number;
     disableNegative?: boolean;
+    allowFloats?: boolean;
     minimumFractionDigits?: number;
     maximumFractionDigits?: number;
     locale?: string;
@@ -25,21 +26,30 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         private formatter: Intl.NumberFormat;
         public constructor(props: PropsType) {
             super(props);
-            this.setFormatter(
-                props.locale ? props.locale : 'en_GB',
-                props.minimumFractionDigits ? props.minimumFractionDigits : 0,
-                props.maximumFractionDigits ? props.maximumFractionDigits : 2,
-            );
+            this.setFormatter();
 
             this.state = {
-                value: `${this.props.value}`,
+                value: this.format(this.props.value.toString()),
                 savedValue: this.props.value,
                 decimalSeperator: '.',
             };
         }
 
-        private setFormatter(locale: string, minimumFractionDigits: number, maximumFractionDigits: number): void {
-            this.formatter = new Intl.NumberFormat(locale.replace('_', '-'), {
+        private setFormatter(): void {
+            const locale = this.props.locale ? this.props.locale.replace('_', '-') : 'nl-NL';
+            const defaultMaximumFractionDigits = this.props.allowFloats ? 2 : 0;
+
+            let minimumFractionDigits =
+                this.props.minimumFractionDigits && this.props.allowFloats ? this.props.minimumFractionDigits : 0;
+
+            const maximumFractionDigits =
+                this.props.maximumFractionDigits && this.props.allowFloats
+                    ? this.props.maximumFractionDigits
+                    : defaultMaximumFractionDigits;
+
+            if (minimumFractionDigits > maximumFractionDigits) minimumFractionDigits = maximumFractionDigits;
+
+            this.formatter = new Intl.NumberFormat(locale, {
                 style: 'decimal',
                 minimumFractionDigits,
                 maximumFractionDigits,
@@ -50,16 +60,12 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         private parse(direction: 'in', value: string): string;
         private parse(direction: 'out', value: string): number;
         private parse(direction: 'in' | 'out', value: string): string | number {
-            const negatedValues = this.props.disableNegative
-                ? `[^0-9${this.state.decimalSeperator}]`
-                : `[^\-0-9${this.state.decimalSeperator}]`;
-
-            const stripped = value.replace(new RegExp(negatedValues, 'g'), '');
+            const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
 
             if (direction === 'out') {
                 const parsed = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
 
-                return !isNaN(parsed) ? parseFloat(parsed.toFixed(2)) : this.props.value;
+                return !isNaN(parsed) ? parseFloat(parsed.toFixed(this.props.maximumFractionDigits)) : this.props.value;
             }
 
             return stripped;
@@ -76,8 +82,6 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
                                 return true;
                             }
-                            case 'literal':
-                                return false;
                             default:
                                 return true;
                         }
@@ -88,59 +92,52 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             }
         }
 
-        // public static getDerivedStateFromProps(nextProps: PropsType, prevState: StateType): StateType {
-        //     if (nextProps.value === prevState.savedValue) {
-        //         return { ...prevState, value: prevState.value === '' ? '' : prevState.savedValue.toString() };
-        //     }
-
-        //     return {
-        //         ...prevState,
-        //         value: `${nextProps.value}`,
-        //     };
-        // }
-
         private handleChange = (value: string): void => {
             const parsedValue = this.parse('out', value);
-            console.debug('STRING', value);
-            console.debug('PARSED', parsedValue);
 
-            if (isNaN(parsedValue)) {
-                this.setState({ value: '' });
-                this.props.onChange(this.state.savedValue);
-            } else if (parsedValue < 0 && this.props.disableNegative) {
-                this.setState({ savedValue: 0 });
+            if (parsedValue < 0 && this.props.disableNegative) {
+                this.setState({ savedValue: 0, value: '0' });
                 this.props.onChange(0);
             } else {
-                // if (parsedValue !== this.state.savedValue || this.state.value.length === 0) {
-                //     this.setState({ value: '0', savedValue: parsedValue });
-                // } else {
-                this.setState({ savedValue: parsedValue });
-                // }
-
+                this.setState({ savedValue: parsedValue, value });
                 this.props.onChange(parsedValue);
             }
         };
 
         private handleBlur = (): void => {
-            // if (this.state.value.length === 0) {
-            //     this.setState({ value: '0' });
-            // } else {
             this.setState({ value: this.format(this.state.value) });
-            // }
 
             if (this.props.onBlur !== undefined) {
                 this.props.onBlur();
             }
         };
 
+        public componentDidMount() {
+            this.setState({
+                value: this.format(this.state.value),
+            });
+        }
+
+        public componentDidUpdate(prevProps: PropsType) {
+            if (
+                this.props.locale !== prevProps.locale ||
+                this.props.minimumFractionDigits !== prevProps.minimumFractionDigits ||
+                this.props.maximumFractionDigits !== prevProps.maximumFractionDigits
+            ) {
+                this.setFormatter();
+
+                this.setState({ value: this.format(this.state.value) });
+            }
+
+            if (this.props.value !== prevProps.value && this.props.value !== this.state.savedValue) {
+                this.setState({ value: this.format(this.props.value.toString()) });
+            }
+        }
+
         public render(): JSX.Element {
             const wrappedProps = {
                 ...this.props,
-                type:
-                    this.props.minimumFractionDigits ||
-                    (this.props.maximumFractionDigits && this.props.maximumFractionDigits > 0)
-                        ? 'text'
-                        : 'number',
+                type: this.props.allowFloats ? 'text' : 'number',
                 value: this.state.value,
                 onChange: this.handleChange,
                 onBlur: this.handleBlur,

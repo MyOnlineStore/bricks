@@ -130,7 +130,7 @@ class TextField extends Component<PropsType, StateType> {
                         <StyledAffixWrapper
                             onClick={typeof this.props.suffix === 'string' ? this.forceFocus : undefined}
                             disabled={this.props.disabled}
-                            isString={typeof this.props.prefix === 'string' ? true : false}
+                            isString={typeof this.props.suffix === 'string' ? true : false}
                         >
                             <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>

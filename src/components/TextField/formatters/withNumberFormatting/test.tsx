@@ -9,7 +9,7 @@ describe('withNumberFormatting', () => {
         const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
 
-        component.find('input').simulate('change', { target: { value: 20 } });
+        component.find('input').simulate('change', { target: { value: '20' } });
 
         expect(changeMock).toHaveBeenCalledWith(20);
     });
@@ -31,7 +31,7 @@ describe('withNumberFormatting', () => {
         const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(<NumberField name="" value={19} disableNegative onChange={changeMock} />);
 
-        component.find('input').simulate('change', { target: { value: -5 } });
+        component.find('input').simulate('change', { target: { value: '-5' } });
         component.find('input').simulate('blur');
 
         expect(changeMock).toHaveBeenCalledWith(0);
