@@ -31,19 +31,22 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             this.state = {
                 value: this.formatter.format(props.value),
                 savedValue: this.props.value,
-                decimalSeperator: this.getSeperator(props.value),
+                decimalSeperator: this.getSeperator(),
             };
         }
 
         private setFormatter(): void {
             const locale = this.props.locale ? this.props.locale.replace('_', '-') : 'nl-NL';
             const defaultMaximumFractionDigits = this.props.allowFloats ? 2 : 0;
+
             const minimumFractionDigits =
-                this.props.minimumFractionDigits && this.props.allowFloats ? this.props.minimumFractionDigits : 0;
+                this.props.minimumFractionDigits && this.props.allowFloats
+                    ? Math.abs(this.props.minimumFractionDigits)
+                    : 0;
 
             let maximumFractionDigits =
                 this.props.maximumFractionDigits && this.props.allowFloats
-                    ? this.props.maximumFractionDigits
+                    ? Math.abs(this.props.maximumFractionDigits)
                     : defaultMaximumFractionDigits;
 
             if (minimumFractionDigits > maximumFractionDigits) maximumFractionDigits = minimumFractionDigits;
@@ -56,8 +59,10 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             });
         }
 
-        private getSeperator(value: number): string {
-            const seperator = this.formatter.formatToParts(value).find(part => part.type === 'decimal');
+        private getSeperator(): string {
+            const seperator = this.formatter.formatToParts(1.1).find(part => {
+                return part.type === 'decimal';
+            });
 
             return seperator ? seperator.value : '.';
         }
@@ -92,13 +97,17 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
         public componentDidUpdate(prevProps: PropsType) {
             if (
+                this.props.allowFloats !== prevProps.allowFloats ||
                 this.props.locale !== prevProps.locale ||
                 this.props.minimumFractionDigits !== prevProps.minimumFractionDigits ||
                 this.props.maximumFractionDigits !== prevProps.maximumFractionDigits
             ) {
                 this.setFormatter();
 
-                this.setState({ value: this.formatter.format(this.state.savedValue) });
+                this.setState({
+                    value: this.formatter.format(this.state.savedValue),
+                    decimalSeperator: this.getSeperator(),
+                });
             }
 
             if (this.props.value !== prevProps.value && this.props.value !== this.state.savedValue) {
