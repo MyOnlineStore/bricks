@@ -68,9 +68,13 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         }
 
         private parse(value: string): number {
-            const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
+            if (this.props.allowFloats) {
+                const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
 
-            return parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
+                return parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
+            }
+
+            return parseFloat(value);
         }
 
         private handleChange = (value: string): void => {

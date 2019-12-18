@@ -54,6 +54,18 @@ describe('withNumberFormatting', () => {
         expect(component.find('input').prop('value')).toBe('12,34');
     });
 
+    it('should not allow float values when allowFloats is false', () => {
+        const changeMock = jest.fn();
+        const NumberField = withNumberFormatting(TextField);
+        const component = mountWithTheme(<NumberField name="" value={10} allowFloats={false} onChange={changeMock} />);
+
+        component.find('input').simulate('change', { target: { value: '12,34' } });
+        component.find('input').simulate('blur');
+
+        expect(changeMock).toHaveBeenCalledWith(12);
+        expect(component.find('input').prop('value')).toBe('12');
+    });
+
     it('should render the value with a minimum amount of decimals', () => {
         const changeMock = jest.fn();
         const NumberField = withNumberFormatting(TextField);
