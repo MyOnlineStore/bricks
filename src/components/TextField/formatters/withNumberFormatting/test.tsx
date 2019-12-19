@@ -42,7 +42,7 @@ describe('withNumberFormatting', () => {
         const NumberField = withNumberFormatting(TextField);
 
         const component = mountWithTheme(
-            <NumberField name="" value={10} allowFloats locale="nl_NL" onChange={changeMock} />,
+            <NumberField name="" value={10} allowDecimals locale="nl_NL" onChange={changeMock} />,
         );
 
         component.update();
@@ -54,10 +54,12 @@ describe('withNumberFormatting', () => {
         expect(component.find('input').prop('value')).toBe('12,34');
     });
 
-    it('should not allow float values when allowFloats is false', () => {
+    it('should not allow float values when allowDecimals is false', () => {
         const changeMock = jest.fn();
         const NumberField = withNumberFormatting(TextField);
-        const component = mountWithTheme(<NumberField name="" value={10} allowFloats={false} onChange={changeMock} />);
+        const component = mountWithTheme(
+            <NumberField name="" value={10} allowDecimals={false} onChange={changeMock} />,
+        );
 
         component.find('input').simulate('change', { target: { value: '12,34' } });
         component.find('input').simulate('blur');
@@ -74,7 +76,7 @@ describe('withNumberFormatting', () => {
             <NumberField
                 name=""
                 value={10}
-                allowFloats
+                allowDecimals
                 minimumFractionDigits={2}
                 locale="nl_NL"
                 onChange={changeMock}
@@ -98,7 +100,7 @@ describe('withNumberFormatting', () => {
             <NumberField
                 name=""
                 value={10}
-                allowFloats
+                allowDecimals
                 maximumFractionDigits={2}
                 locale="nl_NL"
                 onChange={changeMock}

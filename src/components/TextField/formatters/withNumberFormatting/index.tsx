@@ -6,7 +6,7 @@ type OmittedKeys = 'onChange' | 'value' | 'type';
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
     value: number;
     disableNegative?: boolean;
-    allowFloats?: boolean;
+    allowDecimals?: boolean;
     minimumFractionDigits?: number;
     maximumFractionDigits?: number;
     locale?: string;
@@ -37,15 +37,15 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
         private setFormatter(): void {
             const locale = this.props.locale ? this.props.locale.replace('_', '-') : 'nl-NL';
-            const defaultMaximumFractionDigits = this.props.allowFloats ? 2 : 0;
+            const defaultMaximumFractionDigits = this.props.allowDecimals ? 2 : 0;
 
             const minimumFractionDigits =
-                this.props.minimumFractionDigits && this.props.allowFloats && this.props.minimumFractionDigits > 0
+                this.props.minimumFractionDigits && this.props.allowDecimals && this.props.minimumFractionDigits > 0
                     ? this.props.minimumFractionDigits
                     : 0;
 
             let maximumFractionDigits =
-                this.props.maximumFractionDigits && this.props.allowFloats && this.props.maximumFractionDigits >= 0
+                this.props.maximumFractionDigits && this.props.allowDecimals && this.props.maximumFractionDigits >= 0
                     ? this.props.maximumFractionDigits
                     : defaultMaximumFractionDigits;
 
@@ -68,16 +68,14 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         }
 
         private parse(value: string): number {
-            if (this.props.allowFloats) {
+            if (this.props.allowDecimals) {
                 const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
-                const toFixed = parseFloat(stripped.replace(this.state.decimalSeperator, '.')).toFixed(
-                    this.formatter.resolvedOptions().maximumFractionDigits,
-                );
+                const parsedValue = parseFloat(stripped.replace(this.state.decimalSeperator, '.'));
 
-                return parseFloat(toFixed);
+                return parseFloat(parsedValue.toFixed(this.formatter.resolvedOptions().maximumFractionDigits));
             }
 
-            return parseFloat(value);
+            return parseInt(value, 10);
         }
 
         private handleChange = (value: string): void => {
@@ -105,7 +103,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
 
         public componentDidUpdate(prevProps: PropsType) {
             if (
-                this.props.allowFloats !== prevProps.allowFloats ||
+                this.props.allowDecimals !== prevProps.allowDecimals ||
                 this.props.locale !== prevProps.locale ||
                 this.props.minimumFractionDigits !== prevProps.minimumFractionDigits ||
                 this.props.maximumFractionDigits !== prevProps.maximumFractionDigits
@@ -126,7 +124,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
         public render(): JSX.Element {
             const wrappedProps = {
                 ...this.props,
-                type: this.props.allowFloats ? 'text' : 'number',
+                type: this.props.allowDecimals ? 'text' : 'number',
                 value: this.state.value,
                 onChange: this.handleChange,
                 onBlur: this.handleBlur,

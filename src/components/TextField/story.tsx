@@ -69,7 +69,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         value: numberValue,
         onChange: setNumberValue,
         disableNegative: boolean('disable negative numbers', false),
-        allowFloats: boolean('allowFloats', false),
+        allowDecimals: boolean('allowDecimals', false),
         minimumFractionDigits: number('minimumFractionDigits', 0),
         maximumFractionDigits: number('maximumFractionDigits', 2),
         locale: select('locale', ['nl_NL', 'en_GB'], 'nl_NL'),
