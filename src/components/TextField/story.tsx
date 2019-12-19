@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { select, text, boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import TextField from '.';
 import SeverityType from '../../types/SeverityType';
@@ -69,6 +69,10 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         value: numberValue,
         onChange: setNumberValue,
         disableNegative: boolean('disable negative numbers', false),
+        allowDecimals: boolean('allowDecimals', false),
+        minimumFractionDigits: number('minimumFractionDigits', 0),
+        maximumFractionDigits: number('maximumFractionDigits', 2),
+        locale: select('locale', ['nl_NL', 'en_GB'], 'nl_NL'),
     };
 
     const textProps = {
