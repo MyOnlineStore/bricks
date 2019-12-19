@@ -45,8 +45,6 @@ describe('withNumberFormatting', () => {
             <NumberField name="" value={10} allowDecimals locale="nl_NL" onChange={changeMock} />,
         );
 
-        component.update();
-
         component.find('input').simulate('change', { target: { value: '12,34' } });
         component.find('input').simulate('blur');
 
