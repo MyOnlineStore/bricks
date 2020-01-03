@@ -31,10 +31,12 @@ class Checkbox extends Component<PropsType, StateType> {
     }
 
     private changeHandler = (event: MouseEvent<HTMLDivElement>): void => {
-        this.props.onChange({
-            checked: !(this.props.checked === true),
-            event,
-        });
+        if (!this.props.disabled) {
+            this.props.onChange({
+                checked: !(this.props.checked === true),
+                event,
+            });
+        }
     };
 
     public toggleFocus = (): void => {

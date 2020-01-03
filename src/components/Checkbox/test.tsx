@@ -66,6 +66,18 @@ describe('Checkbox', () => {
         );
     });
 
+    it('should not handle the change when disabled', () => {
+        const mockChangeHandler = jest.fn();
+
+        const checkbox = mountWithTheme(
+            <Checkbox onChange={mockChangeHandler} name="demo" disabled={true} checked={false} value="bar" />,
+        );
+
+        checkbox.simulate('click');
+
+        expect(mockChangeHandler).not.toHaveBeenCalled();
+    });
+
     it('should show an error state', () => {
         const checkbox = mountWithTheme(
             <Checkbox onChange={(): void => undefined} name="demo" error={true} checked={false} value="bar" />,
