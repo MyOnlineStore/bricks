@@ -22,7 +22,7 @@ const SideNav: FC<PropsType> = props => {
 
     return (
         <Sidebar>
-            <SidebarLink href="/" title="< Terug" />
+            <SidebarLink href="/" title="< Back" />
             {dirData[0].files.map((file, index) => {
                 const fileNameSlug = file.replace(/\.mdx?$/, '');
                 const fileNameDisplay = (fileNameSlug.charAt(0).toUpperCase() + fileNameSlug.slice(1)).replace(

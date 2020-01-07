@@ -1,11 +1,6 @@
 import React, { FC } from 'react';
 import { Heading, Text, Box, Link } from '@myonlinestore/bricks';
-import styled from 'styled-components';
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: red;
-`;
+import StyledLink from './StyledLink';
 
 type PropsType = {
     depth?: number;

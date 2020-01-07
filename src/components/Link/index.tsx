@@ -3,6 +3,7 @@ import StyledLink, { StyledButton } from './style';
 
 type PropsType = {
     href?: string;
+    className?: string;
     title: string;
     target?: '_blank' | '_self';
     'data-testid'?: string;
@@ -20,14 +21,26 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
 
     if (isLink) {
         return (
-            <StyledLink title={props.title} target={props.target} href={props.href} data-testid={props['data-testid']}>
+            <StyledLink
+                className={props.className}
+                title={props.title}
+                target={props.target}
+                href={props.href}
+                data-testid={props['data-testid']}
+            >
                 {Children.count(props.children) > 0 ? props.children : props.title}
             </StyledLink>
         );
     }
 
     return (
-        <StyledButton type="button" onClick={clickAction} title={props.title} data-testid={props['data-testid']}>
+        <StyledButton
+            className={props.className}
+            type="button"
+            onClick={clickAction}
+            title={props.title}
+            data-testid={props['data-testid']}
+        >
             {Children.count(props.children) > 0 ? props.children : props.title}
         </StyledButton>
     );
