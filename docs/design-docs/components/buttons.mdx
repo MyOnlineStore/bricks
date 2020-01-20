@@ -1,27 +1,68 @@
+import { Button, Box } from '@myonlinestore/bricks';
+
+
 # Buttons
+
+<Box>
+    <Button variant="primary" title="Click me!" />
+</Box>
 
 ## Default buttons
 Buttons make actions instantly visible on a page. Depending on the type of action there are several types of buttons available. The most common are the default buttons. You will find these buttons throughout every part of our interface.
 
-### Shape
+#### Shape
 The default buttons are all based on a rounded rectangle (border-radius: 3px) with a solid -2px inset shadow at the bottom.
 
-### Sizing
-All default buttons are 36px in height and have a padding on both sides of 24px. This makes them vary in width and not in height. The font-size of the button texts are 14px (the same as our default text).
+#### Sizing
+All default buttons are 36px in height and have a padding on both sides of 24px. This makes them vary in width and not in height. The font-size of the button texts are 15px (the same as our default text).
 
-#### Usage and guidelines
-* Is used when open input is required
-* Only ask for information that is needed
-* Is clearly labeled (see labels)
-* Only optional text fields should be clearly marked (Optional)
+##### Usage and guidelines
+* Use complete verbs in buttons. 
+* Use only one primary or destructive button per page
+* Text in buttons should always start with a capital but never be all-caps.
+* Cancel buttons can only be used in combination with a primary button, preferably in a ''no - yes'' or ''cancel - submit'' order.
+* Icon buttons can only contain one icon before the text, never on the right or more than one icon.
+* Destructive and warning state buttons are to be used only for delete or actions which are otherwise hard to recover from.
+* Buttons should be positioned in consistent locations in the interface.
 
-#### Examples
-	Primary | Secondary | Destructive | Warning | Cancel
+##### Examples
+```Primary | Secondary | Destructive | Warning | Cancel```
+
+***
 
 ## Icon buttons
 
-### Icon button with text
+#### Icon button with text
+The icon button with text adds a regular sized icon (18x18px) 12px to the left of the button text. Based on this principle all other styles of the default button can be created.
 
-### Icon button without text
-  
+#### Icon button without text
+Regular sized icons (18x18px) can be used as buttons in certain situations (for example in tables). They grow in size when you hover over them and some might change color (depending on the action involved). A delete option will change into red when hovered. The buttons should have a tooltip that describes the action on this icon on hover.
+
+***
+
 ## CTA buttons
+A rounder and softer button style used for marketing and promotional purposes.
+
+##### Usage and guidelines
+* Used only for marketing and promotional purposes
+
+##### Examples
+```Buy | Upgrade | Start```
+
+***
+
+## Button group
+The ButtonGroup should be used whenever you want to display multiple buttons next to each other. 
+
+##### Usage and guidelines
+* Buttons are separated by 18px
+* Only one of the buttons can be a primary button, the other one is a secondary or cancel button
+* A button group is left-aligned at the end of forms
+* A button group is right-aligned at the end of a modal
+* When the group is left-aligned the primary button is on the left
+* When the group is right-aligned the primary button is on the right
+* When the group is center-aligned the primary button is on the right
+
+##### Examples
+```Primary + Cancel | Multiple Secondaries```
+
