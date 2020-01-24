@@ -7,12 +7,12 @@ import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './s
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import IconButton from '../../components/IconButton';
+import IconButton from '../IconButton';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import search from '../../assets/icons/search.svg';
-import chevronDown from '../../assets/icons/chevron-down-small.svg';
-import chevronUp from '../../assets/icons/chevron-up-small.svg';
+import search from '../../../../assets/icons/search.svg';
+import chevronDown from '../../../../assets/icons/chevron-down-small.svg';
+import chevronUp from '../../../../assets/icons/chevron-up-small.svg';
 
 type OptionBaseType = {
     value: string;

@@ -6,8 +6,8 @@
 /.phpstorm_helpers
 node_modules
 .next
-/reports
-/dist
+reports
+dist
 /lib
 /.out
 .cache

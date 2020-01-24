@@ -6,10 +6,10 @@ import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './s
 import CurrencyField from './formatters/CurrencyField';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
-import lockedIcon from '../../assets/icons/locked.svg';
-import questionCircle from '../../assets/icons/question-circle.svg';
-import dangerCircle from '../../assets/icons/danger-circle.svg';
-import { CloseSmallIcon } from '../../assets';
+import lockedIcon from '../../../../assets/icons/locked.svg';
+import questionCircle from '../../../../assets/icons/question-circle.svg';
+import dangerCircle from '../../../../assets/icons/danger-circle.svg';
+import { CloseSmallIcon } from '../../../../assets/src';
 import IconButton from '../IconButton';
 
 type PropsType = {

@@ -9,9 +9,9 @@ import ThemeType from '../../types/ThemeType';
 import { createPortal } from 'react-dom';
 import { StyledMultiButton, StyledWindow, StyledWrapper, StyledChevronButton } from './style';
 import { PropsType as ButtonPropsType } from '../Button';
-import chevronDown from '../../assets/icons/chevron-down.svg';
-import chevronUp from '../../assets/icons/chevron-up.svg';
-import checkmark from '../../assets/icons/checkmark.svg';
+import chevronDown from '../../../../assets/icons/chevron-down.svg';
+import chevronUp from '../../../../assets/icons/chevron-up.svg';
+import checkmark from '../../../../assets/icons/checkmark.svg';
 
 type OmittedKeys = 'onClick' | 'href' | 'compact' | 'title';
 

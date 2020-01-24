@@ -9,7 +9,7 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import Branch from '../../Branch';
 import { ColumnType, BaseRowType } from '..';
-import bars from '../../../assets/icons/bars.svg';
+import bars from '../../../../../assets/icons/bars.svg';
 
 type PropsType = {
     // tslint:disable

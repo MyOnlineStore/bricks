@@ -10,7 +10,7 @@ import { Draggable, DraggableProvided } from 'react-beautiful-dnd';
 import StyledTable from '../style';
 import StyledRow from '../Row/style';
 import StyledCell from '../Cell/style';
-import bars from '../../../assets/icons/bars.svg';
+import bars from '../../../../../assets/icons/bars.svg';
 
 type PropsType = {
     // tslint:disable-next-line

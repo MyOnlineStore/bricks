@@ -7,7 +7,7 @@ import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Contrast from '../Contrast';
 import Box from '../Box';
-import cart from '../../assets/icons/cart.svg';
+import cart from '../../../../assets/icons/cart.svg';
 
 storiesOf('Buttons/Button', module)
     .add('Default', () => {

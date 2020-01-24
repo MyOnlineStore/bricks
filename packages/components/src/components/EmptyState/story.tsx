@@ -4,7 +4,7 @@ import React from 'react';
 import EmptyState, { PropsType } from '.';
 import Box from '../Box';
 import Button from '../Button';
-import balloon from '../../assets/illustrations/balloon.color.svg';
+import balloon from '../../../../assets/illustrations/balloon.color.svg';
 
 storiesOf('EmptyState', module)
     .add('Default', () => {

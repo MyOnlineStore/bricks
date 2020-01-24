@@ -1,8 +1,8 @@
 import React, { FC, Children, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import IconButton from '../IconButton';
-import chevronRight from '../../assets/icons/chevron-right.svg';
-import chevronLeft from '../../assets/icons/chevron-left.svg';
+import chevronRight from '../../../../assets/icons/chevron-right.svg';
+import chevronLeft from '../../../../assets/icons/chevron-left.svg';
 
 const SLIDE_TIMEOUT = 400;
 

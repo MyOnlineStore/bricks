@@ -5,8 +5,8 @@ import { ColumnType, SortDirectionType } from '..';
 import Select from '../../Select';
 import Text from '../../Text';
 import Icon from '../../Icon';
-import caretUpIcon from '../../../assets/icons/caret-up.svg';
-import caretDownIcon from '../../../assets/icons/caret-down.svg';
+import caretUpIcon from '../../../../../assets/icons/caret-up.svg';
+import caretDownIcon from '../../../../../assets/icons/caret-down.svg';
 
 type PropsType = {
     // tslint:disable-next-line

@@ -2,7 +2,7 @@ import React, { FunctionComponent, Children, ReactNode } from 'react';
 import Box from '../Box';
 import Heading from '../Heading';
 import Illustration from '../Illustration';
-import cactus from '../../assets/illustrations/cactus.color.svg';
+import cactus from '../../../../assets/illustrations/cactus.color.svg';
 import Text from '../Text';
 
 type PropsType = {

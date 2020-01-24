@@ -4,7 +4,7 @@ import Link from '../Link';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import chrevronRight from '../../assets/icons/chevron-right-small.svg';
+import chrevronRight from '../../../../assets/icons/chevron-right-small.svg';
 
 type PropsType = {
     breadcrumbs: Array<BreadcrumbType>;

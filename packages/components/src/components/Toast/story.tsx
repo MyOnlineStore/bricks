@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Toast, { PropsType } from '.';
 import Toaster from '../Toaster';
-import cash from '../../assets/icons/cash.svg';
-import infoCircle from '../../assets/icons/info-circle.svg';
+import cash from '../../../../assets/icons/cash.svg';
+import infoCircle from '../../../../assets/icons/info-circle.svg';
 
 class Demo extends Component<{}, { isOpen: boolean }> {
     public constructor(props: PropsType) {

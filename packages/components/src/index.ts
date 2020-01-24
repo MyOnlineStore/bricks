@@ -1,4 +1,4 @@
-export * from './assets';
+export * from '../../assets/src';
 export { default as Badge } from './components/Badge';
 export { default as Box } from './components/Box';
 export { default as Branch } from './components/Branch';

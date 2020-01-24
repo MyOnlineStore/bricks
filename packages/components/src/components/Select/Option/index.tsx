@@ -4,7 +4,7 @@ import trbl from '../../../utility/trbl';
 import StyledOption from './style';
 import Text from '../../Text';
 import Icon from '../../Icon';
-import checkmark from '../../../assets/icons/checkmark.svg';
+import checkmark from '../../../../../assets/icons/checkmark.svg';
 
 type PropsType = {
     label: string;

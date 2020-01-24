@@ -22,17 +22,10 @@ const getFiles = source => {
 };
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx', '.svg'];
-const components = getDirectories(path.join(__dirname, 'packages', 'components', 'src', 'components'));
-const icons = getFiles(path.join(__dirname, 'packages', 'components', 'src', 'assets', 'icons'));
-const illustrations = getFiles(path.join(__dirname, 'packages', 'components', 'src', 'assets', 'illustrations'));
-
-const input = [...components].reduce((acc, item) => {
-    return { ...acc, [item.name]: item.path };
-}, {});
 
 const config = [
     {
-        input,
+        input: path.join(process.cwd(), 'src', 'index.ts'),
         output: {
             dir: 'dist',
             format: 'esm',
@@ -48,7 +41,7 @@ const config = [
             }),
             commonjs(),
             peerDepsExternals(),
-            terser(),
+            // terser(),
             visualizer({
                 filename: 'reports/stats.html',
             }),

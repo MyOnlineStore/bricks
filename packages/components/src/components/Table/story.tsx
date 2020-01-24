@@ -5,8 +5,8 @@ import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
-import trash from '../../assets/icons/trash.svg';
-import gear from '../../assets/icons/gear.svg';
+import trash from '../../../../assets/icons/trash.svg';
+import gear from '../../../../assets/icons/gear.svg';
 import Measure from 'react-measure';
 
 type RowType = {

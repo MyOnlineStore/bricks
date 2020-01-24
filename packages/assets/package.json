@@ -1,0 +1,13 @@
+{
+  "name": "@myonlinestore/bricks-assets",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "MyOnlineStore",
+  "license": "MIT",
+  "scripts": {
+      "build": "rollup -c ../../rollup.config.js && tsc"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}
