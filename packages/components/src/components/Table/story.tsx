@@ -5,8 +5,7 @@ import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
-import trash from '../../../../assets/icons/trash.svg';
-import gear from '../../../../assets/icons/gear.svg';
+import { TrashIcon, GearIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 
 type RowType = {
@@ -115,14 +114,14 @@ class Demo extends Component<PropsType, StateType> {
             <>
                 {row.id !== '61651322' && (
                     <IconButton
-                        icon={gear}
+                        icon={GearIcon}
                         title={`Edit ${value}`}
                         variant="primary"
                         onClick={() => alert(`Edit id: ${row.id}`)}
                     />
                 )}
                 <IconButton
-                    icon={trash}
+                    icon={TrashIcon}
                     title={`Delete ${value}`}
                     variant="destructive"
                     onClick={() => alert(`Edit id: ${row.id}`)}

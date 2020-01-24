@@ -1,13 +1,13 @@
+import { InfoCircleIcon, DangerCircleIcon, CheckmarkCircleIcon } from '@myonlinestore/bricks-assets';
+
 type SeverityType = 'error' | 'warning' | 'success' | 'info';
 
-// tslint:disable
-enum SeverityIcons {
-    error = require('../../assets/icons/danger-circle.svg'),
-    warning = require('../../assets/icons/danger-circle.svg'),
-    info = require('../../assets/icons/info-circle.svg'),
-    success = require('../../assets/icons/checkmark-circle.svg'),
-}
-// tslint:enable
+const SeverityIcons = {
+    error: DangerCircleIcon,
+    warning: DangerCircleIcon,
+    info: InfoCircleIcon,
+    success: CheckmarkCircleIcon,
+};
 
 export default SeverityType;
 export { SeverityIcons };

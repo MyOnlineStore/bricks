@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import TextualButton, { PropsType } from '.';
-import chevron from '../../../../assets/icons/chevron-right-small.svg';
+import { ChevronIcon } from '@myonlinestore/bricks-assets';
 import { select } from '@storybook/addon-knobs';
 
 storiesOf('Buttons/TextualButton', module)
     .add('Default', () => {
         return (
             <TextualButton
-                icon={chevron}
+                icon={ChevronIcon}
                 variant={select('variant', ['primary', 'secondary'], 'primary') as PropsType['variant']}
                 title="Click me"
             >
@@ -19,7 +19,7 @@ storiesOf('Buttons/TextualButton', module)
     .add('As an anchor', () => {
         return (
             <TextualButton
-                icon={chevron}
+                icon={ChevronIcon}
                 href=""
                 variant={select('variant', ['primary', 'secondary'], 'primary') as PropsType['variant']}
                 title="Click me"

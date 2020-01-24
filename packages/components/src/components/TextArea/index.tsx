@@ -5,8 +5,7 @@ import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
-import questionCircle from '../../../../assets/icons/question-circle.svg';
-import dangerCircle from '../../../../assets/icons/danger-circle.svg';
+import { QuestionCircleIcon, DangerCircleIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     rows?: number;
@@ -66,7 +65,7 @@ const TextArea: FC<PropsType> = props => {
             {props.feedback && (
                 <Box margin={trbl(6, 0, 0, 12)}>
                     <InlineNotification
-                        icon={props.feedback.severity === 'info' ? questionCircle : dangerCircle}
+                        icon={props.feedback.severity === 'info' ? QuestionCircleIcon : DangerCircleIcon}
                         message={props.feedback.message}
                         severity={props.feedback.severity}
                     />

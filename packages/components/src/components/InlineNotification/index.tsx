@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Children } from 'react';
+import React, { FunctionComponent, Children, ComponentType } from 'react';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import Icon from '../Icon';
 import Text from '../Text';
@@ -6,7 +6,7 @@ import Box from '../Box';
 import trbl from '../../utility/trbl';
 
 type PropsType = {
-    icon?: string;
+    icon?: string | ComponentType;
     message?: string;
     severity: SeverityType;
 };

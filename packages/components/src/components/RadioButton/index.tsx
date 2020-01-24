@@ -3,7 +3,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import lockedIcon from '../../../../assets/icons/locked.svg';
+import { LockedIcon } from '@myonlinestore/bricks-assets';
 import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
 
 type StateType = {
@@ -63,7 +63,7 @@ const RadioButton: FC<PropsType> = props => {
                 <Box inline direction="row" align-items="center">
                     {props.disabled && (
                         <Box inline margin={trbl(0, 12, 0, 0)}>
-                            <Icon size="medium" icon={lockedIcon} />{' '}
+                            <Icon size="medium" icon={LockedIcon} />{' '}
                         </Box>
                     )}
                     <label id={props.name} htmlFor={props.name}>

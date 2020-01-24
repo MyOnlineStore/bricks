@@ -5,14 +5,12 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { ColumnType, SortDirectionType } from '..';
 import Icon from '../../Icon';
-import caretVertical from '../../../../../assets/icons/caret-vertical.svg';
-import caretDown from '../../../../../assets/icons/caret-down.svg';
-import caretUp from '../../../../../assets/icons/caret-up.svg';
+import { CaretVerticalIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 
 const sortingIcons = {
-    none: caretVertical,
-    ascending: caretDown,
-    descending: caretUp,
+    none: CaretVerticalIcon,
+    ascending: CaretDownIcon,
+    descending: CaretUpIcon,
 };
 
 enum SortingSteps {

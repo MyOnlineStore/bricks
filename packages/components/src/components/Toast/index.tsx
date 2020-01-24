@@ -7,7 +7,7 @@ import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';
-import close from '../../../../assets/icons/close-small.svg';
+import { CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 
 type PropsType = {
@@ -136,7 +136,7 @@ const Toast: FC<PropsType> = props => {
                                         {!props.persistent && (
                                             <IconButton
                                                 variant="primary"
-                                                icon={close}
+                                                icon={CloseSmallIcon}
                                                 iconSize="small"
                                                 title="close"
                                                 onClick={closeAction}
