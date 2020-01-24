@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ComponentType } from 'react';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import Box from '../Box';
@@ -8,7 +8,7 @@ import { SeverityIcons } from '../../types/SeverityType';
 type PropsType = {
     severity: keyof typeof SeverityIcons;
     message: string;
-    icon?: string;
+    icon?: string | ComponentType;
 };
 
 const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {

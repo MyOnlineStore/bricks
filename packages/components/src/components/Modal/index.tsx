@@ -7,7 +7,7 @@ import ScrollBox from '../ScrollBox';
 import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
 import ButtonGroup from '../ButtonGroup';
-import close from '../../../../assets/icons/close.svg';
+import { CloseIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 import styled from 'styled-components';
 
@@ -121,7 +121,7 @@ const Modal: FC<PropsType> = props => {
                                     >
                                         <IconButton
                                             data-testid="modal-close-button"
-                                            icon={close}
+                                            icon={CloseIcon}
                                             variant="primary"
                                             title="close"
                                             onClick={props.onClose}

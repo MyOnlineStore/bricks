@@ -4,8 +4,7 @@ import React from 'react';
 import InlineNotification from '.';
 import SeverityType from '../../types/SeverityType';
 import Link from '../Link';
-import bell from '../../../../assets/icons/bell.svg';
-import infoCircle from '../../../../assets/icons/info-circle.svg';
+import { BellIcon, InfoCircleIcon } from '@myonlinestore/bricks-assets';
 
 storiesOf('InlineNotification', module)
     .add('Default', () => (
@@ -16,14 +15,14 @@ storiesOf('InlineNotification', module)
     ))
     .add('With overwritten Icon', () => (
         <InlineNotification
-            icon={bell}
+            icon={BellIcon}
             message="Something is wrong!"
             severity={select('severity', ['error', 'warning', 'success', 'info'], 'error') as SeverityType}
         />
     ))
     .add('With children', () => (
         <InlineNotification
-            icon={infoCircle}
+            icon={InfoCircleIcon}
             severity={select('severity', ['error', 'warning', 'success', 'info'], 'info') as SeverityType}
         >
             Are you having trouble? Check out&nbsp;

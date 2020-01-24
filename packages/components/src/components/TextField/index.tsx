@@ -6,10 +6,7 @@ import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './s
 import CurrencyField from './formatters/CurrencyField';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
-import lockedIcon from '../../../../assets/icons/locked.svg';
-import questionCircle from '../../../../assets/icons/question-circle.svg';
-import dangerCircle from '../../../../assets/icons/danger-circle.svg';
-import { CloseSmallIcon } from '../../../../assets/src';
+import { LockedIcon, QuestionCircleIcon, DangerCircleIcon, CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 
 type PropsType = {
@@ -124,7 +121,7 @@ class TextField extends Component<PropsType, StateType> {
                         )}
                         {this.props.disabled && (
                             <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
-                                <Icon icon={lockedIcon} color={ICON_COLOR} size="medium" />
+                                <Icon icon={LockedIcon} color={ICON_COLOR} size="medium" />
                             </Box>
                         )}
                     </Box>
@@ -141,7 +138,7 @@ class TextField extends Component<PropsType, StateType> {
                 {this.props.feedback && this.props.feedback.message !== '' && (
                     <Box margin={[6, 0, 0, 12]}>
                         <InlineNotification
-                            icon={this.props.feedback.severity === 'info' ? questionCircle : dangerCircle}
+                            icon={this.props.feedback.severity === 'info' ? QuestionCircleIcon : DangerCircleIcon}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

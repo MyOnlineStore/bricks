@@ -6,7 +6,7 @@ import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import checkmarkIcon from '../../../../assets/icons/checkmark.svg';
+import { CheckmarkIcon } from '@myonlinestore/bricks-assets';
 
 type DemoOptionType = {
     image: string;
@@ -120,7 +120,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <Text variant={optionState.isSelected ? 'descriptive' : undefined}>
                     {optionState.isSelected && (
                         <Text as="span" variant="descriptive">
-                            <Icon size="small" icon={checkmarkIcon} />
+                            <Icon size="small" icon={CheckmarkIcon} />
                             &nbsp;&nbsp;
                         </Text>
                     )}

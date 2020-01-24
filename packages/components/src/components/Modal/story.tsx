@@ -4,9 +4,13 @@ import React from 'react';
 import Modal from '.';
 import Button from '../Button';
 import Text from '../Text';
-import address from '../../../../assets/illustrations/address.svg';
+import { AddressIllustration } from '@myonlinestore/bricks-assets';
 
-const Address = <div style={{ width: '100%' }} dangerouslySetInnerHTML={{ __html: address }} />;
+const Address = (
+    <div style={{ width: '100%' }}>
+        <AddressIllustration />
+    </div>
+);
 
 const demoContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
 cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Notification from '.';
-import mehIcon from '../../../../assets/icons/meh.svg';
+import { MehIcon } from '@myonlinestore/bricks-assets';
 
 storiesOf('Notification', module)
     .add('Success', () => <Notification severity="success" message="Wow, Great job!" />)
@@ -9,5 +9,5 @@ storiesOf('Notification', module)
     .add('Warning', () => <Notification severity="warning" message="Careful, this might go wrong." />)
     .add('Info', () => <Notification severity="info" message="Oops, something wen't wrong. Please try again." />)
     .add('With a custom icon', () => (
-        <Notification severity="warning" message="Meh, I am not impressed." icon={mehIcon} />
+        <Notification severity="warning" message="Meh, I am not impressed." icon={MehIcon} />
     ));
