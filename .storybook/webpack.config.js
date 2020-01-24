@@ -1,5 +1,4 @@
 const path = require('path');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const fs = require('fs');
 const webpack = require('webpack');
 
@@ -58,10 +57,11 @@ module.exports = ({ config, mode }) => {
 
     // plugins
     config.plugins.push(
-        new FriendlyErrorsWebpackPlugin(),
         new webpack.DefinePlugin({
-            ICON_FILES: JSON.stringify(fs.readdirSync(path.join('src', 'assets', 'icons'))),
-            ILLUSTRATION_FILES: JSON.stringify(fs.readdirSync(path.join('src', 'assets', 'illustrations'))),
+            ICON_FILES: JSON.stringify(fs.readdirSync(path.join('packages', 'components', 'src', 'assets', 'icons'))),
+            ILLUSTRATION_FILES: JSON.stringify(
+                fs.readdirSync(path.join('packages', 'components', 'src', 'assets', 'illustrations')),
+            ),
         }),
     );
 

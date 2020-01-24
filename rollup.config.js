@@ -22,9 +22,9 @@ const getFiles = source => {
 };
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx', '.svg'];
-const components = getDirectories(path.join(__dirname, 'src', 'components'));
-const icons = getFiles(path.join(__dirname, 'src', 'assets', 'icons'));
-const illustrations = getFiles(path.join(__dirname, 'src', 'assets', 'illustrations'));
+const components = getDirectories(path.join(__dirname, 'packages', 'components', 'src', 'components'));
+const icons = getFiles(path.join(__dirname, 'packages', 'components', 'src', 'assets', 'icons'));
+const illustrations = getFiles(path.join(__dirname, 'packages', 'components', 'src', 'assets', 'illustrations'));
 
 const input = [...components].reduce((acc, item) => {
     return { ...acc, [item.name]: item.path };
