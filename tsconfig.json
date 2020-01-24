@@ -3,7 +3,6 @@
     "declaration": true,
     "declarationDir": "dist",
     "sourceMap": true,
-    "outDir": "dist/src",
     "noImplicitAny": true,
     "noErrorTruncation": true,
     "noUnusedLocals": true,

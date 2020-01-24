@@ -5,9 +5,12 @@
   "author": "MyOnlineStore",
   "license": "MIT",
   "scripts": {
-      "build": "rollup -c ../../rollup.config.js && tsc"
+    "build": "rollup -c ../../rollup.config.js"
   },
   "peerDependencies": {
     "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "camelcase": "^5.3.1"
   }
 }
