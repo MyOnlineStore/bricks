@@ -1,8 +1,7 @@
 import React, { FC, Children, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import IconButton from '../IconButton';
-import chevronRight from '../../../../assets/icons/chevron-right.svg';
-import chevronLeft from '../../../../assets/icons/chevron-left.svg';
+import { ChevronRightIcon, ChevronLeftIcon } from '@myonlinestore/bricks-assets';
 
 const SLIDE_TIMEOUT = 400;
 
@@ -113,14 +112,14 @@ const Carousel: FC<PropsType> = props => {
                 <>
                     <SlideButton
                         data-testid={props['data-testid'] ? `${props['data-testid']}-prev-button` : undefined}
-                        icon={chevronLeft}
+                        icon={ChevronLeftIcon}
                         direction="prev"
                         title="Show previous slide"
                         onClick={() => slideTo(-1)}
                     />
                     <SlideButton
                         data-testid={props['data-testid'] ? `${props['data-testid']}-next-button` : undefined}
-                        icon={chevronRight}
+                        icon={ChevronRightIcon}
                         direction="next"
                         title="Show next slide"
                         onClick={() => slideTo(1)}

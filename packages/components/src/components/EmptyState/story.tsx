@@ -4,7 +4,7 @@ import React from 'react';
 import EmptyState, { PropsType } from '.';
 import Box from '../Box';
 import Button from '../Button';
-import balloon from '../../../../assets/illustrations/balloon.color.svg';
+import { BalloonColorIllustration } from '@myonlinestore/bricks-assets';
 
 storiesOf('EmptyState', module)
     .add('Default', () => {
@@ -25,7 +25,7 @@ storiesOf('EmptyState', module)
         return (
             <Box justifyContent="space-around">
                 <EmptyState
-                    illustration={balloon}
+                    illustration={BalloonColorIllustration}
                     title={title}
                     message={message}
                     horizontal={boolean('horizontal', true)}
