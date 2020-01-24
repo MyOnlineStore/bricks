@@ -11,14 +11,18 @@ async function main() {
     const illustrations = fs.readdirSync(path.resolve(__dirname, '..', 'src', 'illustrations'));
 
     let index = `/// <reference path="../env.d.ts" />\n`;
-    let types = ``;
+    let types = `/// <reference types="react" />\nimport { ComponentType } from 'react';\n`;
 
     icons.forEach(file => {
-        index += `\nexport { default as ${transformName(file, 'Icon')} } from './icons/${file}';`;
+        const name = transformName(file, 'Icon');
+        index += `\nexport { default as ${name} } from './icons/${file}';`;
+        types += `\nexport const ${name}: ComponentType`;
     });
 
     illustrations.forEach(file => {
-        index += `\nexport { default as ${transformName(file, 'Illustration')} } from './illustrations/${file}';`;
+        const name = transformName(file, 'Illustration');
+        index += `\nexport { default as ${name} } from './illustrations/${file}';`;
+        types += `\nexport const ${name}: ComponentType`;
     });
 
     index += '\n';
