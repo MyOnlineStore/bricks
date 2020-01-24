@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Progress from '.';
 import Box from '../Box';
 import { IconButton } from '../..';
-import { ChevronLeftIcon, ChevronRightIcon } from '../../assets';
+import { ChevronLeftIcon, ChevronRightIcon } from '../../../../assets/src';
 
 export const Demo = () => {
     const [current, setCurrent] = useState(0);

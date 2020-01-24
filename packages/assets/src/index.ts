@@ -1,3 +1,5 @@
+/// <reference path="../env.d.ts" />
+
 /**
  * Filenames should be a good description of the icon itself, not its action in an application.
  * For example: an icon of a pencil should be something like `pencil.svg`, not `edit.svg`.
@@ -313,5 +315,5 @@ export { default as LinkAltIcon } from './icons/link-alt.svg';
 export { default as CameraAltIcon } from './icons/camera-alt.svg';
 
 // Illustrations
-export { default as balloonColorIllustration } from './illustrations/balloon.color.svg';
-export { default as cactusColorIllustration } from './illustrations/cactus.color.svg';
+export { default as BalloonColorIllustration } from './illustrations/balloon.color.svg';
+export { default as CactusColorIllustration } from './illustrations/cactus.color.svg';

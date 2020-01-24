@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import TextField from '.';
 import SeverityType from '../../types/SeverityType';
 import { Checkbox, IconButton, Box } from '../..';
-import { SearchIcon } from '../../assets';
+import { SearchIcon } from '../../../../assets/src';
 
 type PropsType = {
     withClearButton?: boolean;

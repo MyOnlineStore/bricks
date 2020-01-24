@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Notification from '.';
-import mehIcon from '../../assets/icons/meh.svg';
+import mehIcon from '../../../../assets/icons/meh.svg';
 
 storiesOf('Notification', module)
     .add('Success', () => <Notification severity="success" message="Wow, Great job!" />)

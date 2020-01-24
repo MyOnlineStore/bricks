@@ -5,8 +5,8 @@ import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
-import questionCircle from '../../assets/icons/question-circle.svg';
-import dangerCircle from '../../assets/icons/danger-circle.svg';
+import questionCircle from '../../../../assets/icons/question-circle.svg';
+import dangerCircle from '../../../../assets/icons/danger-circle.svg';
 
 type PropsType = {
     rows?: number;

@@ -3,8 +3,8 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import Icon from '../Icon';
 import StyledIcon from './style';
 import 'jest-styled-components';
-import checkmarkIcon from '../../assets/icons/checkmark.svg';
-import desertIcon from '../../assets/icons/desert-large.svg';
+import checkmarkIcon from '../../../../assets/icons/checkmark.svg';
+import desertIcon from '../../../../assets/icons/desert-large.svg';
 
 describe('Icon', () => {
     it('should have a custom fill', () => {

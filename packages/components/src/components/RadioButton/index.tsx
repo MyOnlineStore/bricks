@@ -3,7 +3,7 @@ import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import lockedIcon from '../../assets/icons/locked.svg';
+import lockedIcon from '../../../../assets/icons/locked.svg';
 import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
 
 type StateType = {

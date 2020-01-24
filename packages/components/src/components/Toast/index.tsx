@@ -7,7 +7,7 @@ import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';
-import close from '../../assets/icons/close-small.svg';
+import close from '../../../../assets/icons/close-small.svg';
 import Measure from 'react-measure';
 
 type PropsType = {

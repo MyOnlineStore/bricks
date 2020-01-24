@@ -30,7 +30,7 @@
     }
   },
   "include": [
-    "packages/**/src/**/*"
+    "packages/**/src/**/*", 
   ],
   "exclude": [
     "node_modules"

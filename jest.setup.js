@@ -1,4 +1,3 @@
-/// <reference path="src/_declarations/global.d.ts" />
 import intl from 'intl';
 
 const orginalError = console.error;

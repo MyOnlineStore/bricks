@@ -2,8 +2,8 @@ import React, { Component, MouseEvent } from 'react';
 import Icon from '../Icon';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 import Box from '../Box';
-import checkmark from '../../assets/icons/checkmark-small.svg';
-import minus from '../../assets/icons/minus.svg';
+import checkmark from '../../../../assets/icons/checkmark-small.svg';
+import minus from '../../../../assets/icons/minus.svg';
 import Text from '../Text';
 
 type StateType = {

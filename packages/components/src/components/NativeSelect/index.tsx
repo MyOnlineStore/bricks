@@ -1,7 +1,7 @@
 import React, { FC, useState, ChangeEvent } from 'react';
 import { StyledSelect } from './style';
-import chevronDown from '../../assets/icons/chevron-down-small.svg';
-import chevronUp from '../../assets/icons/chevron-up-small.svg';
+import chevronDown from '../../../../assets/icons/chevron-down-small.svg';
+import chevronUp from '../../../../assets/icons/chevron-up-small.svg';
 import Icon from '../Icon';
 
 type OptionType = {

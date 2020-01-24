@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import TextualButton, { PropsType } from '.';
-import chevron from '../../assets/icons/chevron-right-small.svg';
+import chevron from '../../../../assets/icons/chevron-right-small.svg';
 import { select } from '@storybook/addon-knobs';
 
 storiesOf('Buttons/TextualButton', module)

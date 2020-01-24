@@ -1,4 +1,3 @@
-/// <reference path="src/_declarations/global.d.ts" />
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import 'jest-styled-components';

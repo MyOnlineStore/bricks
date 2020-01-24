@@ -7,7 +7,7 @@ import ScrollBox from '../ScrollBox';
 import TransitionAnimation from '../TransitionAnimation';
 import StyledModal, { StyledModalWrapper } from './style';
 import ButtonGroup from '../ButtonGroup';
-import close from '../../assets/icons/close.svg';
+import close from '../../../../assets/icons/close.svg';
 import Measure from 'react-measure';
 import styled from 'styled-components';
 

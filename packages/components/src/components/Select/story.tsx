@@ -6,7 +6,7 @@ import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import checkmarkIcon from '../../assets/icons/checkmark.svg';
+import checkmarkIcon from '../../../../assets/icons/checkmark.svg';
 
 type DemoOptionType = {
     image: string;

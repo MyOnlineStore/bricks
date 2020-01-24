@@ -2,7 +2,7 @@ import { boolean, text, select } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import IconButton, { PropsType } from '../IconButton';
-import bell from '../../assets/icons/bell.svg';
+import bell from '../../../../assets/icons/bell.svg';
 
 storiesOf('Buttons/IconButton', module).add('Default', () => {
     return (
