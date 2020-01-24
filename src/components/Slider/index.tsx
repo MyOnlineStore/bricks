@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import InputRange from 'react-input-range';
 import StyledWrapper from './style';
 import TextField from '../TextField';
-import { Box } from '../..';
+import Box from '../Box';
 import memoize from 'memoize-one';
 
 type PropsType = {

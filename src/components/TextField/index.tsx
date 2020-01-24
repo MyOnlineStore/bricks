@@ -10,7 +10,7 @@ import lockedIcon from '../../assets/icons/locked.svg';
 import questionCircle from '../../assets/icons/question-circle.svg';
 import dangerCircle from '../../assets/icons/danger-circle.svg';
 import { CloseSmallIcon } from '../../assets';
-import { IconButton } from '../..';
+import IconButton from '../IconButton';
 
 type PropsType = {
     value: string;
