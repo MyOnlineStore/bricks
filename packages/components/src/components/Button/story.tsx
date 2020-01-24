@@ -7,7 +7,7 @@ import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import Contrast from '../Contrast';
 import Box from '../Box';
-import cart from '../../../../assets/icons/cart.svg';
+import { CartIcon } from '@myonlinestore/bricks-assets';
 
 storiesOf('Buttons/Button', module)
     .add('Default', () => {
@@ -33,7 +33,7 @@ storiesOf('Buttons/Button', module)
                 variant="primary"
                 loading={boolean('loading', false)}
                 title={text('title', 'Add to cart')}
-                icon={cart}
+                icon={CartIcon}
                 disabled={boolean('disabled', false)}
             />
         );

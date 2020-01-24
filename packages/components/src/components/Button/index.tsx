@@ -1,4 +1,4 @@
-import React, { ReactNode, FC, Children } from 'react';
+import React, { ReactNode, FC, Children, ComponentType } from 'react';
 import styled from '../../utility/styled';
 import Icon from '../Icon';
 import Base, { PropsType as BasePropsType } from './base';
@@ -56,7 +56,7 @@ type PropsType = BasePropsType & {
     variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
     compact?: boolean;
     disabled?: boolean;
-    icon?: string;
+    icon?: string | ComponentType;
     children?: ReactNode;
 };
 

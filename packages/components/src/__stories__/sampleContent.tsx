@@ -16,7 +16,7 @@ import Notification from '../components/Notification';
 import Badge from '../components/Badge';
 import * as ThemeSettingsType from '../themes/ExperimentalCustomTheme/MerchantThemeTypes';
 import TextualButton from '../components/TextualButton';
-import { ChevronRightIcon } from '../../../assets/src';
+import { ChevronRightIcon } from '@myonlinestore/bricks-assets';
 import { Demo } from '../components/Progress/story';
 
 type PropsType = {
