@@ -1,0 +1,1 @@
+var s;!function(s){s[s.error=require("../../assets/icons/danger-circle.svg")]="error",s[s.warning=require("../../assets/icons/danger-circle.svg")]="warning",s[s.info=require("../../assets/icons/info-circle.svg")]="info",s[s.success=require("../../assets/icons/checkmark-circle.svg")]="success"}(s||(s={}));export{s as S};

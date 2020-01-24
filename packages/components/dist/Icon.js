@@ -1,0 +1,1 @@
+import"styled-components";import"./index-e7dfce8b.js";import e from"react";import{S as t}from"./style-c8057988.js";export default function(o){return e.createElement(t,{"aria-hidden":!0,role:"img",dangerouslySetInnerHTML:{__html:o.icon},elementSize:o.size,elementColor:o.color,title:o.title})}
