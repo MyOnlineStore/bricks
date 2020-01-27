@@ -16,7 +16,7 @@ type ArticleDataType = {
 //tslint:disable-next-line
 const articleData: ArticleDataType = require('../lib/get-article-data');
 
-const HeaderContainer = styled.div`
+const StyledHeader = styled.div`
     display: flex;
     flex-direction: row;
     height: 20vh;
@@ -33,7 +33,7 @@ const HeaderContainer = styled.div`
 
 const Header: FC = props => {
     return (
-        <HeaderContainer>
+        <StyledHeader>
             <Box alignItems="center">
                 <Box width="240px" padding={[0, 12, 0, 12]} alignItems="center" justifyContent="center">
                     <Link href="/" title="Home">
@@ -50,29 +50,9 @@ const Header: FC = props => {
                             />
                         </HeadingLink>
                     ))}
-
-                    <HeadingLink>
-                        <StyledLink href="/playground" title="Playground" />
-                    </HeadingLink>
                 </Box>
             </Box>
-
-            <Box width="200px">
-                <TextField
-                    value={''}
-                    prefix={
-                        <Box padding={[12]}>
-                            <Icon icon={SearchIcon} size="small" />
-                        </Box>
-                    }
-                    name="search"
-                    placeholder="Zoeken"
-                    onChange={() => {
-                        /*noop*/
-                    }}
-                />
-            </Box>
-        </HeaderContainer>
+        </StyledHeader>
     );
 };
 

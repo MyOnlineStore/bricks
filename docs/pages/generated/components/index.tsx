@@ -1,6 +1,6 @@
 
     import React, { FC } from 'react';
-        import Document from '/Users/henk/Documents/Development/bricks/docs/design-docs/components/index.mdx';
+        import Document from '/Users/henk/Documents/Development/bricks/docs/markdown/components/index.mdx';
         import componentMap from '../../../lib/componentMap';
         import GeneratedPage from '../../../components/GeneratedPage';
 

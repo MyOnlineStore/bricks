@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-// const mdx = require('@mdx-js/mdx');
 
 //Define the docs dir and the dir for the generated pages
-const docsDir = path.join(process.cwd(), './design-docs/');
+const docsDir = path.join(process.cwd(), './markdown/');
 const generatedDir = path.join(process.cwd(), './pages/generated/');
 
 //Make generated dir if it doesn't exist

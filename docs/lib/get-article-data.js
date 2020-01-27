@@ -5,6 +5,7 @@ import preval from 'babel-plugin-preval/macro';
  */
 
 const articleData = preval`
+    console.log('exported articles');
     module.exports = require('./articles-to-pages.js');
 `;
 
