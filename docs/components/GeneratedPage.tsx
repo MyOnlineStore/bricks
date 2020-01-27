@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Box } from '@myonlinestore/bricks';
 import ContentPane from './ContentPane';
-import SideNav from './SideNav';
+import SideNav from '../containers/SideNav';
 
 type PropsType = {
     dirName: string;

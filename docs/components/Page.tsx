@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box } from '@myonlinestore/bricks';
-import Header from './Header';
+import Header from '../containers/Header';
 
 const Page: FC = props => {
     return (
@@ -16,5 +16,3 @@ const Page: FC = props => {
 };
 
 export default Page;
-
-// zwart 25% x=0 y=1 blur=4 spread=0

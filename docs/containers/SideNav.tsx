@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import Sidebar from './Sidebar';
-import SidebarLink from './SidebarLink';
+import Sidebar from '../components/Sidebar';
+import SidebarLink from '../components/SidebarLink';
 
 //tslint:disable-next-line
 const articleData: ArticleDataType = require('../lib/get-article-data');

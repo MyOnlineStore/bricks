@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Box, Link, TextField, Icon, SearchIcon } from '@myonlinestore/bricks';
-import HeadingLink from './HeadingLink';
+import HeadingLink from '../components/HeadingLink';
 import moslogo from '../assets/moslogo.svg';
 import styled from 'styled-components';
-import StyledLink from './StyledLink';
+import StyledLink from '../components/StyledLink';
 
 type ArticleDataType = {
     srcDirs: Array<string>;
