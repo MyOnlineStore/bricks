@@ -1,22 +1,14 @@
 import React, { FC } from 'react';
-import Nav from './Nav';
-import { Box, FoldOut, Link, Text } from '@myonlinestore/bricks';
+import { Box } from '@myonlinestore/bricks';
+import Header from '../containers/Header';
 
 const Page: FC = props => {
     return (
-        <main>
-            <Box minHeight="100vh">
-                <Box width="100%" alignContent="stretch">
-                    <Box basis="300px">
-                        <Nav>
-                            <Link href="/" title="Home" />
-                            <br />
-                            <Link href="/components" title="Badge" />
-                        </Nav>
-                    </Box>
-                    <Box grow={1} padding={[48, 120 as 0]}>
-                        {props.children}
-                    </Box>
+        <main style={{ backgroundColor: '#F8F9FB' }}>
+            <Box minHeight="100vh" direction="column" maxWidth="1200px" margin={['auto']}>
+                <Header />
+                <Box width="100%" minHeight="80vh" alignContent="stretch">
+                    {props.children}
                 </Box>
             </Box>
         </main>

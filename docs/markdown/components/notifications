@@ -1,0 +1,47 @@
+# Notifications
+
+## Toasters (feedback)
+A toaster is a non-disruptive way to display a message to the user. They are always shown at the top of the screen and provide immediate feedback on a user action.
+
+The success- and info toasters will automatically disappear after ±6 seconds. There is no need for the user to interact with these messages. They are dismissible for the really impatient users ;) 
+
+The error- and warning toasters stay visible until the user dismisses them by clicking a button or the close-icon. 
+
+### Parts
+A toaster always exists out of these parts: 
+
+#### Severity indicator
+The color on the left side of the toaster, indicates the severity of the message. 
+Info | Success | Error | Warning
+
+#### Icon
+The icon relates to the severity of the toaster. An info toaster will show an “i-icon” where a warning or error toaster will show a triangle-exclamation-mark-icon.
+
+#### Message
+The message is defined by a title and/or a description which are both as short, clear and descriptive as possible.
+
+##### Usage and guidelines
+* The message must be related to the previous action
+* It’s short and confirmative 
+* Always shown at the top of the page.
+
+## Notification center (Message stream)
+
+In the back office there is a Notification center where we communicate with the merchant. These are messages regarding new functionalities or important updates. Users are notified by a badge at the bell-icon. 
+
+##### Examples
+```Succes | warning | Error | Info```
+
+##### Usage and guidelines
+* A notification is shown with the rollout of new or updated functions.
+
+## Inline notifications 
+Inline notifications are short, in-context messages that tell the user that something has gone wrong with an entry in a form. Use inline notifications so the user knows why an entry is not possible and how it can be resolved. 
+
+##### Usage and guidelines
+* Always includes an icon which helps identify the message for users. (error, info, warning, succes, etc) 
+* Inline error should be brief, but clearly explain what went wrong and how you can fix it. 
+* Inline-notifications are placed underneath the inputfield of the form, so users don’t have to search for new instructions. 
+
+##### Examples
+```Error | warning | Success | Info```

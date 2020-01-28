@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { Box, MosTheme } from '@myonlinestore/bricks';
 import Head from '../components/Head';
 import Page from '../components/Page';
@@ -17,12 +17,10 @@ class MyApp extends App {
 
         return (
             <MosTheme>
-                <Container>
-                    <Head />
-                    <Page>
-                        <Component {...pageProps} />
-                    </Page>
-                </Container>
+                <Head />
+                <Page>
+                    <Component {...pageProps} />
+                </Page>
             </MosTheme>
         );
     }

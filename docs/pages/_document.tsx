@@ -1,7 +1,15 @@
 import Document from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 import { ComponentType } from 'react';
 
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Melbourne';
+    src: url('/static/fonts/melbourne-bold.ttf');
+    src: url('/static/fonts/melbourne-light.ttf');
+    src: url('/static/fonts/melbourne.ttf');
+  }
+`;
 export default class AppDocument extends Document {
     static async getInitialProps(ctx: any) {
         const sheet = new ServerStyleSheet();
@@ -19,6 +27,7 @@ export default class AppDocument extends Document {
                 ...initialProps,
                 styles: (
                     <>
+                        <GlobalStyle />
                         {initialProps.styles}
                         {sheet.getStyleElement()}
                     </>
