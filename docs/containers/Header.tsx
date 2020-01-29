@@ -31,6 +31,10 @@ const StyledHeader = styled.div`
     }
 `;
 
+const HeadingLinkContainer = styled(Box)`
+    margin-left: 120px;
+`;
+
 const Header: FC = props => {
     return (
         <StyledHeader>
@@ -41,7 +45,7 @@ const Header: FC = props => {
                     </Link>
                 </Box>
 
-                <Box style={{ marginLeft: '120px' }}>
+                <HeadingLinkContainer>
                     {articleData.srcDirs.map((category, index) => (
                         <HeadingLink key={index}>
                             <StyledLink
@@ -50,7 +54,7 @@ const Header: FC = props => {
                             />
                         </HeadingLink>
                     ))}
-                </Box>
+                </HeadingLinkContainer>
             </Box>
         </StyledHeader>
     );

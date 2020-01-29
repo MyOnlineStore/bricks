@@ -1,5 +1,12 @@
 import React, { FC } from 'react';
-import { Heading, Text, Box } from '@myonlinestore/bricks';
+import { Heading, Text, Box, colors } from '@myonlinestore/bricks';
+import styled from 'styled-components';
+
+const StyledHr = styled.hr`
+    width: 100%;
+    color: transparent;
+    border-top: 1px solid ${colors.grey300};
+`;
 
 const componentMap: { [key: string]: FC } = {
     h1: props => (
@@ -34,7 +41,7 @@ const componentMap: { [key: string]: FC } = {
     ),
     hr: props => (
         <Box margin={[24, 0]} width="100%">
-            <hr style={{ width: '100%', color: 'transparent', borderTop: '1px solid #D2D7E0' }} />
+            <StyledHr />
         </Box>
     ),
     p: props => <Text severity="info">{props.children}</Text>,
