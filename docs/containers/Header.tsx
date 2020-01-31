@@ -19,27 +19,26 @@ const articleData: ArticleDataType = require('../lib/get-article-data');
 const StyledHeader = styled.div`
     display: flex;
     flex-direction: row;
-    height: 20vh;
-    margin: auto;
+    height: 148px;
+    padding: 48px 0 66px 0;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     img {
         max-height: 150px;
         cursor: pointer;
-        margin: 10px;
     }
 `;
 
 const HeadingLinkContainer = styled(Box)`
-    margin-left: 120px;
+    margin-left: 126px;
 `;
 
 const Header: FC = props => {
     return (
         <StyledHeader>
             <Box alignItems="center">
-                <Box width="240px" padding={[0, 12, 0, 12]} alignItems="center" justifyContent="center">
+                <Box width="180px" alignItems="center" justifyContent="flex-start">
                     <Link href="/" title="Home">
                         <img width="180px" src={moslogo} />
                     </Link>
@@ -47,12 +46,12 @@ const Header: FC = props => {
 
                 <HeadingLinkContainer>
                     {articleData.srcDirs.map((category, index) => (
-                        <HeadingLink key={index}>
-                            <StyledLink
-                                href={`/generated/${category}`}
-                                title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}
-                            />
-                        </HeadingLink>
+                        <HeadingLink
+                            href={`/generated/${category}`}
+                            title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}
+                            category={category}
+                            key={index}
+                        />
                     ))}
                 </HeadingLinkContainer>
             </Box>

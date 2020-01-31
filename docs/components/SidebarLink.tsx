@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Heading, Text, Box, Link } from '@myonlinestore/bricks';
 import StyledLink from './StyledLink';
 import styled from 'styled-components';
@@ -14,14 +14,24 @@ const StyledText = styled(Text)`
     font-family: inherit;
 `;
 
-const SidebarLink: FC<PropsType> = props => (
-    <Box padding={[12, 0]}>
-        <Heading as="h3" hierarchy={3}>
-            <StyledText severity={props.depth === 2 ? 'info' : undefined} as="span">
-                <StyledLink href={props.href} title={props.title} />
-            </StyledText>
-        </Heading>
-    </Box>
-);
+const SidebarLink: FC<PropsType> = props => {
+    const [isStrong, setIsStrong] = useState(false);
+
+    useEffect(() => {
+        if (window.location.pathname === props.href) {
+            setIsStrong(true);
+        }
+    });
+
+    return (
+        <Box padding={[12, 0]}>
+            <Heading as="h3" hierarchy={3}>
+                <StyledText strong={isStrong} severity={props.depth === 2 ? 'info' : undefined} as="span">
+                    <StyledLink href={props.href} title={props.title} />
+                </StyledText>
+            </Heading>
+        </Box>
+    );
+};
 
 export default SidebarLink;
