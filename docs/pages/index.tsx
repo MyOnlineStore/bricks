@@ -38,8 +38,8 @@ const StyledRowTextContainer = styled(Box)<BoxPropsType & RowTextContainerPropsT
 
     h1 {
         font-size: 60px;
-        line-height: 78px;
-        margin-bottom: 15px;
+        line-height: 72px;
+        margin-bottom: 12px;
     }
 
     h2 {
@@ -58,9 +58,19 @@ const IllustratedLinkPane = styled(Box)`
     box-shadow: 0px 1px 4px ${rgba(colors.grey900, 0.15)};
     margin: 0 12px;
     padding: 36px;
+    cursor: pointer;
 
     h3 {
         margin-bottom: 12px;
+    }
+
+    &:hover {
+        box-shadow: 0px 2px 8px ${rgba(colors.grey900, 0.3)};
+    }
+
+    &:active {
+        transform: translateY(2px);
+        box-shadow: 0px 1px 4px ${rgba(colors.grey900, 0.15)};
     }
 `;
 
@@ -133,7 +143,7 @@ const Index = () => {
                 </Box>
                 <Box width="100%" direction="column" alignItems="center">
                     <Box>
-                        <IllustratedLinkPane>
+                        <IllustratedLinkPane onClick={() => (window.location.href = '/generated/design')}>
                             <Box width="50%" direction="column" margin={[6, 0, 0, 0]}>
                                 <Heading as="h3" hierarchy={3}>
                                     Design
@@ -141,7 +151,7 @@ const Index = () => {
                                 <Text>The rules and reasons behind our visual styling.</Text>
                                 <Box margin={[48, 0]}>
                                     <Text>
-                                        <GreenLink title="Read design principles >" href="/design" />
+                                        <GreenLink title="Read design principles >" href="/generated/design" />
                                     </Text>
                                 </Box>
                             </Box>
@@ -149,7 +159,7 @@ const Index = () => {
                                 <img src={homepageDesignIllustration} />
                             </Box>
                         </IllustratedLinkPane>
-                        <IllustratedLinkPane>
+                        <IllustratedLinkPane onClick={() => (window.location.href = '/generated/components')}>
                             <Box width="50%" direction="column" margin={[6, 0, 0, 0]}>
                                 <Heading as="h3" hierarchy={3}>
                                     Components
@@ -157,7 +167,7 @@ const Index = () => {
                                 <Text>How to use components (bricks) as functional building blocks.</Text>
                                 <Box margin={[24, 0, 36, 0]}>
                                     <Text>
-                                        <GreenLink title="Browse components >" href="/design" />
+                                        <GreenLink title="Browse components >" href="/generated/components" />
                                     </Text>
                                 </Box>
                             </Box>
