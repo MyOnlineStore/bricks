@@ -9,30 +9,6 @@ const Head: FC = () => {
                 rel="stylesheet"
             />
             <style
-                dangerouslySetInnerHTML={{
-                    __html: `
-                        @font-face {
-                            font-family: Melbourne;
-                            src: url(static/fonts/melbourne-bold.ttf) format('truetype'),
-                                url(static/fonts/melbourne-bold.eot) format('eot');
-                            font-weight: 700;
-                        }
-                        @font-face {
-                            font-family: Melbourne;
-                            src: url(static/fonts/melbourne.ttf) format('truetype'),
-                                url(static/fonts/melbourne.eot) format('eot');
-                            font-weight: 400;
-                        }
-                        @font-face {
-                            font-family: Melbourne;
-                            src: url(static/fonts/melbourne-light.ttf) format('truetype'),
-                                url(static/fonts/melbourne-light.eot) format('eot');
-                            font-weight: 300;
-                        }
-                    `,
-                }}
-            />
-            <style
                 type="text/css"
                 dangerouslySetInnerHTML={{
                     __html: `

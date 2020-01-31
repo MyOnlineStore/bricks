@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import SidebarLink from '../components/SidebarLink';
 
@@ -29,15 +29,10 @@ const SideNav: FC<PropsType> = props => {
                     '-',
                     ' ',
                 );
+                const href = `/generated/${props.dirName}/${fileNameSlug}`;
 
                 if (fileNameSlug !== 'index')
-                    return (
-                        <SidebarLink
-                            key={index}
-                            href={`/generated/${props.dirName}/${fileNameSlug}`}
-                            title={`${fileNameDisplay}`}
-                        />
-                    );
+                    return <SidebarLink key={index} href={href} title={`${fileNameDisplay}`} />;
             })}
         </Sidebar>
     );

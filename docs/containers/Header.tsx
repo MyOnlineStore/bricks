@@ -46,12 +46,12 @@ const Header: FC = props => {
 
                 <HeadingLinkContainer>
                     {articleData.srcDirs.map((category, index) => (
-                        <HeadingLink key={index}>
-                            <StyledLink
-                                href={`/generated/${category}`}
-                                title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}
-                            />
-                        </HeadingLink>
+                        <HeadingLink
+                            href={`/generated/${category}`}
+                            title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}
+                            category={category}
+                            key={index}
+                        />
                     ))}
                 </HeadingLinkContainer>
             </Box>
