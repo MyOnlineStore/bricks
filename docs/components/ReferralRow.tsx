@@ -19,6 +19,8 @@ const StyledImgCircleContainer = styled.div`
     border-radius: 50%;
     background-color: ${colors.white};
     margin-right: 24px;
+    display: flex;
+    align-items: center;
 
     img {
         width: 70px;
@@ -38,10 +40,7 @@ const ReferralRow: FC<PropsType> = props => {
     return (
         <Box alignItems="center" margin={[12, 0]}>
             <StyledImgCircleContainer>
-                <img
-                    style={props.title === 'Product Owner Meetup' ? { marginTop: '-5px' } : undefined}
-                    src={props.imgSrc}
-                />
+                <img src={props.imgSrc} />
             </StyledImgCircleContainer>
             <Box direction="column">
                 <Heading as="h5" hierarchy={5}>

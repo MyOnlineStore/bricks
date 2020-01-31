@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Heading, colors, rgba, Link, Illustration } from '@myonlinestore/bricks';
+import { Box, Text, Heading, colors, rgba, Link } from '@myonlinestore/bricks';
 import { PropsType as BoxPropsType } from '../../src/components/Box';
 import { StyledContentPane } from '../components/ContentPane';
 import headerBackground from '../assets/homepage-header-background.svg';
