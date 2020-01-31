@@ -155,7 +155,7 @@ const Index = () => {
                                     Components
                                 </Heading>
                                 <Text>How to use components (bricks) as functional building blocks.</Text>
-                                <Box margin={[30, 0, 36, 0]}>
+                                <Box margin={[24, 0, 36, 0]}>
                                     <Text>
                                         <GreenLink title="Browse components >" href="/design" />
                                     </Text>
