@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import TextField from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 import { Box } from '../..';
+import MosTheme from '../../themes/MosTheme';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -104,5 +105,33 @@ describe('TextField', () => {
             .simulate('click');
 
         expect(clearMock).toHaveBeenCalled();
+    });
+
+    it('should apply changes when props change', () => {
+        /**
+         * setProps can only be called on a mounted root, because the TextField requires
+         * a theme to be present, we wrap it and pass all props onto the actual TextField
+         */
+        const Wrapper: FC<{ 'data-testid': string; value: string; name: string; onChange(): void }> = props => {
+            return (
+                <MosTheme>
+                    <TextField {...props} />
+                </MosTheme>
+            );
+        };
+
+        const changeMock = jest.fn();
+        const component = mountWithTheme(<Wrapper data-testid="foo" name="foo" value="foo" onChange={changeMock} />);
+
+        component.setProps({
+            value: 'bar',
+        });
+
+        expect(
+            component
+                .find('[data-testid="foo"]')
+                .hostNodes()
+                .prop('value'),
+        ).toBe('bar');
     });
 });
