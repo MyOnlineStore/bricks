@@ -146,6 +146,8 @@ describe('withNumberFormatting', () => {
             value: 20,
         });
 
+        component.update();
+
         expect(
             component
                 .find('[data-testid="foo"]')

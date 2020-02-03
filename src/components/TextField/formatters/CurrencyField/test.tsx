@@ -1,11 +1,11 @@
 import React, { FunctionComponent, FC } from 'react';
-import withCurrencyFormatting from './';
+import CurrencyField from '.';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/styled/testing';
 import MosTheme from '../../../../themes/MosTheme';
 import { mount } from 'enzyme';
 
-describe('withCurrencyFormatting', () => {
+describe('CurrencyField', () => {
     describe.each`
         locale     | currency | prefix | value      | suffix
         ${'en-US'} | ${'USD'} | ${'$'} | ${'19.12'} | ${''}
@@ -17,7 +17,6 @@ describe('withCurrencyFormatting', () => {
     `('$locale + $currency', ({ locale, currency, prefix, value, suffix }) => {
         it(`should format into: ${prefix}${value}${suffix}`, () => {
             const changeMock = jest.fn();
-            const CurrencyField = withCurrencyFormatting(TextField);
 
             const component = mountWithTheme(
                 <CurrencyField name="" value={19.12} locale={locale} currency={currency} onChange={changeMock} />,
@@ -37,7 +36,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should handle a change', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
@@ -58,7 +56,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should format on blur', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
@@ -82,7 +79,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should handle empty value on blur', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
@@ -104,7 +100,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should handle empty value on blur', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
@@ -126,7 +121,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should not break formatting on a double blur', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField name="" value={19.12} locale="nl-NL" currency="EUR" onChange={changeMock} />,
@@ -151,7 +145,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should no-op on unparseable input', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
@@ -168,7 +161,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should handle a changed locale and currency', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const Root: FunctionComponent<{ locale: string; currency: string }> = props => (
             <MosTheme>
@@ -196,15 +188,14 @@ describe('withCurrencyFormatting', () => {
     });
 
     it('should default to default formatting with a missing formatToParts', () => {
-        /* tslint:disable */
-        (global as any).Intl = {
-            NumberFormat: (): void => undefined,
-        };
-        /* tslint:disable */
+        // /* tslint:disable */
+        // (global as any).Intl = {
+        //     NumberFormat: (): void => undefined,
+        // };
+        // /* tslint:disable */
 
         const fn = () => {
             const changeMock = jest.fn();
-            const CurrencyField = withCurrencyFormatting(TextField);
 
             const component = mountWithTheme(
                 <CurrencyField name="" value={19.12} locale="nl-NL" currency="USD" onChange={changeMock} />,
@@ -220,7 +211,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should not allow negative input when disableNegative prop is true', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField
@@ -244,7 +234,6 @@ describe('withCurrencyFormatting', () => {
 
     it('should allow negative input when disableNegative prop is false', () => {
         const changeMock = jest.fn();
-        const CurrencyField = withCurrencyFormatting(TextField);
 
         const component = mountWithTheme(
             <CurrencyField
@@ -267,20 +256,28 @@ describe('withCurrencyFormatting', () => {
     });
 
     it('should use the value in minor units, when the "minor" prop is set', () => {
-        const CurrencyField = withCurrencyFormatting(TextField);
-        // Work-around because the Intl polyfil doesn't support resolvedOptions()
-        CurrencyField.prototype.setFormatter = () => {
-            CurrencyField.prototype.formatter = {
-                resolvedOptions: () => ({
-                    maximumFractionDigits: 2,
-                }),
-            };
-        };
+        // // Work-around because the Intl polyfil doesn't support resolvedOptions()
+        // Intl.NumberFormat.prototype.resolvedOptions = () => ({
+        //     maximumFractionDigits: 2,
+        // });
+
+        const formatter = new Intl.NumberFormat('nl-NL', {
+            currency: 'EUR',
+            style: 'currency',
+        });
 
         const changeMock = jest.fn();
 
         const component = mountWithTheme(
-            <CurrencyField name="" value={2554} locale="nl-NL" currency="EUR" onChange={changeMock} minor />,
+            <CurrencyField
+                name=""
+                value={2554}
+                locale="nl-NL"
+                currency="EUR"
+                onChange={changeMock}
+                minor
+                formatter={formatter}
+            />,
         );
 
         expect(component.find('input').prop('value')).toEqual('25.54');
@@ -325,7 +322,7 @@ describe('withCurrencyFormatting', () => {
         }> = props => {
             return (
                 <MosTheme>
-                    <TextField.Currency {...props} />
+                    <CurrencyField {...props} />
                 </MosTheme>
             );
         };
@@ -338,6 +335,8 @@ describe('withCurrencyFormatting', () => {
         component.setProps({
             value: 20,
         });
+
+        component.update();
 
         expect(
             component

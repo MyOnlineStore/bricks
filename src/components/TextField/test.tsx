@@ -127,6 +127,8 @@ describe('TextField', () => {
             value: 'bar',
         });
 
+        component.update();
+
         expect(
             component
                 .find('[data-testid="foo"]')

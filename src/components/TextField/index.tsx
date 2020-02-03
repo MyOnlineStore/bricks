@@ -3,7 +3,7 @@ import SeverityType from '../../types/SeverityType';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
-import withCurrencyFormatting, { WithCurrencyFormattingType } from './formatters/withCurrencyFormatting';
+import CurrencyField from './formatters/CurrencyField';
 import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
 import lockedIcon from '../../assets/icons/locked.svg';
@@ -31,13 +31,14 @@ type PropsType = {
     onChange(value: string, event: ChangeEvent<HTMLInputElement>): void;
     onBlur?(): void;
     onFocus?(): void;
+    onClick?(): void;
 };
 
 type StateType = { focus: boolean };
 const ICON_COLOR = '#A6AAB3';
 
 class TextField extends Component<PropsType, StateType> {
-    public static Currency: WithCurrencyFormattingType = withCurrencyFormatting(TextField);
+    public static Currency = CurrencyField;
     public static Number: WithNumberFormattingType = withNumberFormatting(TextField);
     private inputRef: HTMLInputElement | null;
 
@@ -97,6 +98,7 @@ class TextField extends Component<PropsType, StateType> {
                             value={this.props.value}
                             id={this.props.id}
                             onChange={this.onChange}
+                            onClick={this.props.onClick}
                             onFocus={this.handleFocus}
                             onBlur={this.handleBlur}
                             ref={(ref): void => {

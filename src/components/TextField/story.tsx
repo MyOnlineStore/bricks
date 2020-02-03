@@ -19,6 +19,17 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
     const [numberValue, setNumberValue] = useState(10);
     const [isChecked, setChecked] = useState(true);
 
+    // useEffect(() => {
+    //     const id = setTimeout(() => {
+    //         setStringValue(stringValue + 'a');
+    //         setNumberValue(numberValue + 1);
+    //     }, 1000);
+
+    //     return () => {
+    //         clearTimeout(id);
+    //     };
+    // }, [stringValue, numberValue]);
+
     const sharedProps = {
         prefix: props.hasComponentPrefix ? (
             <Box padding={[0, 12]}>
