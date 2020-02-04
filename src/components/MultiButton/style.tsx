@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
 import Button from '../Button';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 
 type MultiButtonThemeType = {
