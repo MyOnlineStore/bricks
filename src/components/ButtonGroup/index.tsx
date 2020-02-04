@@ -7,7 +7,6 @@ type PropsType = {
 };
 
 const ButtonGroup: FunctionComponent<PropsType> = props => {
-    // tslint:disable-next-line:deprecation
     const isStacked = props.direction === 'stacked';
     const direction = isStacked ? 'column' : 'row';
 
