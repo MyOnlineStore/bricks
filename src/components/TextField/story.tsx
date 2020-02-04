@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect } from 'react';
+import React, { useState, FC } from 'react';
 import { select, text, boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import TextField from '.';
@@ -18,17 +18,6 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
     const [stringValue, setStringValue] = useState('');
     const [numberValue, setNumberValue] = useState(10);
     const [isChecked, setChecked] = useState(true);
-
-    useEffect(() => {
-        const id = setTimeout(() => {
-            setStringValue(stringValue + 'a');
-            setNumberValue(numberValue + 1);
-        }, 1000);
-
-        return () => {
-            clearTimeout(id);
-        };
-    }, [stringValue, numberValue]);
 
     const sharedProps = {
         prefix: props.hasComponentPrefix ? (
