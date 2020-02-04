@@ -89,6 +89,7 @@ describe('Branch', () => {
         const component = mount(<Branch condition={false} ifTrue={(): JSX.Element => <span>true</span>} />);
 
         // tslint:disable-next-line
-        expect(component.first().text()).toEqual(null);
+
+        expect(component.children()).toEqual({});
     });
 });
