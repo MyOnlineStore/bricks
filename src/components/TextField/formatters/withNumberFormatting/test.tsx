@@ -3,6 +3,7 @@ import withNumberFormatting from './';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/styled/testing';
 import MosTheme from '../../../../themes/MosTheme';
+import { mount } from 'enzyme';
 
 describe('withNumberFormatting', () => {
     it('should handle change', () => {
@@ -140,7 +141,7 @@ describe('withNumberFormatting', () => {
         };
 
         const changeMock = jest.fn();
-        const component = mountWithTheme(<Wrapper data-testid="foo" name="foo" value={10} onChange={changeMock} />);
+        const component = mount(<Wrapper data-testid="foo" name="foo" value={10} onChange={changeMock} />);
 
         component.setProps({
             value: 20,

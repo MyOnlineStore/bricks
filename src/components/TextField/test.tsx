@@ -4,6 +4,7 @@ import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 import { Box } from '../..';
 import MosTheme from '../../themes/MosTheme';
+import { mount } from 'enzyme';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -121,7 +122,7 @@ describe('TextField', () => {
         };
 
         const changeMock = jest.fn();
-        const component = mountWithTheme(<Wrapper data-testid="foo" name="foo" value="foo" onChange={changeMock} />);
+        const component = mount(<Wrapper data-testid="foo" name="foo" value="foo" onChange={changeMock} />);
 
         component.setProps({
             value: 'bar',
@@ -135,5 +136,18 @@ describe('TextField', () => {
                 .hostNodes()
                 .prop('value'),
         ).toBe('bar');
+    });
+
+    it('should render the components defined as static property', () => {
+        const changeMock = jest.fn();
+
+        const currency = mountWithTheme(
+            <TextField.Currency name="" value={1} onChange={changeMock} locale="nl-NL" currency="EUR" />,
+        );
+
+        const number = mountWithTheme(<TextField.Number name="" value={1} onChange={changeMock} />);
+
+        expect(currency.find('input').length).toBe(1);
+        expect(number.find('input').length).toBe(1);
     });
 });

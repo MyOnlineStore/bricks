@@ -1,4 +1,4 @@
-import React, { FunctionComponent, FC } from 'react';
+import React, { FunctionComponent, FC, useState } from 'react';
 import CurrencyField from '.';
 import TextField from '../..';
 import { mountWithTheme } from '../../../../utility/styled/testing';
@@ -57,9 +57,24 @@ describe('CurrencyField', () => {
     it('should format on blur', () => {
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
-        );
+        const Root = () => {
+            const [value, setValue] = useState(19.12);
+
+            return (
+                <CurrencyField
+                    name=""
+                    value={value}
+                    locale="en-US"
+                    currency="USD"
+                    onChange={value => {
+                        changeMock(value);
+                        setValue(value);
+                    }}
+                />
+            );
+        };
+
+        const component = mountWithTheme(<Root />);
 
         expect(component.find('input').prop('value')).toEqual('19.12');
         expect(component.find(TextField).prop('prefix')).toEqual('$');
@@ -80,9 +95,24 @@ describe('CurrencyField', () => {
     it('should handle empty value on blur', () => {
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
-        );
+        const Root = () => {
+            const [value, setValue] = useState(19.12);
+
+            return (
+                <CurrencyField
+                    name=""
+                    value={value}
+                    locale="en-US"
+                    currency="USD"
+                    onChange={value => {
+                        changeMock(value);
+                        setValue(value);
+                    }}
+                />
+            );
+        };
+
+        const component = mountWithTheme(<Root />);
 
         expect(component.find('input').prop('value')).toEqual('19.12');
         expect(component.find(TextField).prop('prefix')).toEqual('$');
@@ -98,33 +128,27 @@ describe('CurrencyField', () => {
         expect(component.find('input').prop('value')).toEqual('0.00');
     });
 
-    it('should handle empty value on blur', () => {
-        const changeMock = jest.fn();
-
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
-        );
-
-        expect(component.find('input').prop('value')).toEqual('19.12');
-        expect(component.find(TextField).prop('prefix')).toEqual('$');
-
-        component.find('input').simulate('focus');
-
-        component.find('input').simulate('change', {
-            target: { value: '' },
-        });
-
-        component.find('input').simulate('blur');
-
-        expect(component.find('input').prop('value')).toEqual('0.00');
-    });
-
     it('should not break formatting on a double blur', () => {
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="nl-NL" currency="EUR" onChange={changeMock} />,
-        );
+        const Root = () => {
+            const [value, setValue] = useState(19.12);
+
+            return (
+                <CurrencyField
+                    name=""
+                    value={value}
+                    locale="nl-NL"
+                    currency="EUR"
+                    onChange={value => {
+                        changeMock(value);
+                        setValue(value);
+                    }}
+                />
+            );
+        };
+
+        const component = mountWithTheme(<Root />);
 
         component.find('input').simulate('change', {
             target: {
@@ -146,9 +170,24 @@ describe('CurrencyField', () => {
     it('should no-op on unparseable input', () => {
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(
-            <CurrencyField name="" value={19.12} locale="en-US" currency="USD" onChange={changeMock} />,
-        );
+        const Root = () => {
+            const [value, setValue] = useState(19.12);
+
+            return (
+                <CurrencyField
+                    name=""
+                    value={value}
+                    locale="en-US"
+                    currency="USD"
+                    onChange={value => {
+                        changeMock(value);
+                        setValue(value);
+                    }}
+                />
+            );
+        };
+
+        const component = mountWithTheme(<Root />);
 
         component.find('input').simulate('change', {
             target: {
@@ -162,17 +201,24 @@ describe('CurrencyField', () => {
     it('should handle a changed locale and currency', () => {
         const changeMock = jest.fn();
 
-        const Root: FunctionComponent<{ locale: string; currency: string }> = props => (
-            <MosTheme>
-                <CurrencyField
-                    name=""
-                    value={19.12}
-                    locale={props.locale}
-                    currency={props.currency}
-                    onChange={changeMock}
-                />
-            </MosTheme>
-        );
+        const Root: FunctionComponent<{ locale: string; currency: string }> = props => {
+            const [value, setValue] = useState(19.12);
+
+            return (
+                <MosTheme>
+                    <CurrencyField
+                        name=""
+                        value={value}
+                        locale={props.locale}
+                        currency={props.currency}
+                        onChange={value => {
+                            setValue(value);
+                            changeMock(value);
+                        }}
+                    />
+                </MosTheme>
+            );
+        };
 
         const component = mount(<Root locale="en-GB" currency="USD" />);
 
@@ -188,22 +234,40 @@ describe('CurrencyField', () => {
     });
 
     it('should default to default formatting with a missing formatToParts', () => {
-        // /* tslint:disable */
-        // (global as any).Intl = {
-        //     NumberFormat: (): void => undefined,
-        // };
-        // /* tslint:disable */
+        const mockFormatter = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'USD' });
+        // @ts-ignore
+        delete mockFormatter.formatToParts;
+        //@ts-ignore
+        global.console.error.mockImplementationOnce(() => {});
 
         const fn = () => {
             const changeMock = jest.fn();
 
-            const component = mountWithTheme(
-                <CurrencyField name="" value={19.12} locale="nl-NL" currency="USD" onChange={changeMock} />,
-            );
+            const Root: FC = () => {
+                const [value, setValue] = useState(19.12);
+
+                return (
+                    <MosTheme>
+                        <CurrencyField
+                            name=""
+                            value={value}
+                            formatter={mockFormatter}
+                            locale="nl-NL"
+                            currency="USD"
+                            onChange={value => {
+                                setValue(value);
+                                changeMock(value);
+                            }}
+                        />
+                    </MosTheme>
+                );
+            };
+
+            const component = mountWithTheme(<Root />);
 
             component.find('input').simulate('blur');
 
-            expect(component.find('input').prop('value')).toEqual('19.12');
+            expect(component.find('input').prop('value')).toEqual('19,12');
         };
 
         expect(fn).not.toThrow();
@@ -217,7 +281,7 @@ describe('CurrencyField', () => {
                 disableNegative={true}
                 name=""
                 value={19.12}
-                locale="nl-NL"
+                locale="en-GB"
                 currency="EUR"
                 onChange={changeMock}
             />,
@@ -240,7 +304,7 @@ describe('CurrencyField', () => {
                 disableNegative={false}
                 name=""
                 value={19.12}
-                locale="nl-NL"
+                locale="en-GB"
                 currency="EUR"
                 onChange={changeMock}
             />,
@@ -256,29 +320,40 @@ describe('CurrencyField', () => {
     });
 
     it('should use the value in minor units, when the "minor" prop is set', () => {
-        // // Work-around because the Intl polyfil doesn't support resolvedOptions()
-        // Intl.NumberFormat.prototype.resolvedOptions = () => ({
-        //     maximumFractionDigits: 2,
-        // });
+        const locale = 'en-GB';
+        const currency = 'EUR';
 
-        const formatter = new Intl.NumberFormat('nl-NL', {
-            currency: 'EUR',
+        const formatter = new Intl.NumberFormat(locale, {
+            currency,
             style: 'currency',
+        });
+        // @ts-ignore
+        formatter.resolvedOptions = () => ({
+            maximumFractionDigits: 2,
         });
 
         const changeMock = jest.fn();
 
-        const component = mountWithTheme(
-            <CurrencyField
-                name=""
-                value={2554}
-                locale="nl-NL"
-                currency="EUR"
-                onChange={changeMock}
-                minor
-                formatter={formatter}
-            />,
-        );
+        const Root: FC = () => {
+            const [value, setValue] = useState(2554);
+
+            return (
+                <CurrencyField
+                    minor
+                    name=""
+                    value={value}
+                    locale={locale}
+                    currency={currency}
+                    formatter={formatter}
+                    onChange={value => {
+                        setValue(value);
+                        changeMock(value);
+                    }}
+                />
+            );
+        };
+
+        const component = mountWithTheme(<Root />);
 
         expect(component.find('input').prop('value')).toEqual('25.54');
 
@@ -294,14 +369,7 @@ describe('CurrencyField', () => {
 
     it('should be testable with a test-id', () => {
         const component = mountWithTheme(
-            <TextField.Currency
-                data-testid="foo"
-                locale="nl-NL"
-                currency="EUR"
-                value={0}
-                name="foo"
-                onChange={jest.fn()}
-            />,
+            <CurrencyField data-testid="foo" locale="nl-NL" currency="EUR" value={0} name="foo" onChange={jest.fn()} />,
         );
 
         expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
@@ -318,7 +386,7 @@ describe('CurrencyField', () => {
             locale: string;
             currency: string;
             name: string;
-            onChange(): void;
+            onChange(value: number): void;
         }> = props => {
             return (
                 <MosTheme>
@@ -328,7 +396,8 @@ describe('CurrencyField', () => {
         };
 
         const changeMock = jest.fn();
-        const component = mountWithTheme(
+
+        const component = mount(
             <Wrapper data-testid="foo" name="foo" locale="en_GB" currency="EUR" value={10} onChange={changeMock} />,
         );
 

@@ -64,6 +64,14 @@ const CurrencyField: FC<PropsType> = props => {
         return { formatter, decimalSeperator, currencyAlignment, currencySymbol };
     }, [props.currency, props.locale]);
 
+    const toMajor = (value: number) => {
+        return props.minor ? value / Math.pow(10, formatter.resolvedOptions().maximumFractionDigits) : value;
+    };
+
+    const toMinor = (value: number) => {
+        return new Decimal(value).times(Math.pow(10, formatter.resolvedOptions().maximumFractionDigits)).toNumber();
+    };
+
     /**
      * Strip out any non-legal characters
      */
@@ -80,25 +88,20 @@ const CurrencyField: FC<PropsType> = props => {
         const newValue = !isNaN(parsed) ? parseFloat(parsed.toFixed(2)) : props.value;
 
         if (props.minor) {
-            return new Decimal(newValue)
-                .times(Math.pow(10, formatter.resolvedOptions().maximumFractionDigits))
-                .toNumber();
+            return toMinor(newValue);
         }
 
         return newValue;
     };
 
     const numericValueToDisplayValue = (numericValue: number): string => {
-        const value = props.minor
-            ? `${numericValue / Math.pow(10, formatter.resolvedOptions().maximumFractionDigits)}`
-            : numericValue.toString();
+        const value = props.minor ? `${toMajor(numericValue)}` : numericValue.toString();
 
         return filterDisplayValue(value);
     };
-
     const formatNumericValue = (value: number): string => {
         try {
-            return formatter.formatToParts(value).reduce((acc, part) => {
+            return formatter.formatToParts(toMajor(value)).reduce((acc, part) => {
                 if (part.type === 'currency' || part.type === 'literal') {
                     return acc;
                 }
@@ -166,10 +169,18 @@ const CurrencyField: FC<PropsType> = props => {
          * If there is a mismatch on what this component changed itself, and what was passed into
          * the component via props.value, correct the display value
          */
+
         if (!initialRender.current && props.value !== previousValue.current) {
             setDisplayValue(numericValueToDisplayValue(props.value));
         }
     }, [props.value]);
+
+    useEffect(() => {
+        if (!initialRender.current) {
+            setDisplayValue(formatNumericValue(0));
+            props.onChange(0);
+        }
+    }, [props.disableNegative]);
 
     useEffect(() => {
         initialRender.current = false;
@@ -188,9 +199,18 @@ const CurrencyField: FC<PropsType> = props => {
                 const numeric = displayValueToNumericValue(value);
                 setDisplayValue(filterDisplayValue(value));
                 previousValue.current = numeric;
-                props.onChange(numeric);
+
+                if (value === '') {
+                    props.onChange(0);
+                } else {
+                    props.onChange(numeric);
+                }
             }}
             onBlur={() => {
+                if (displayValue === '') {
+                    setDisplayValue(formatNumericValue(0));
+                }
+
                 setDisplayValue(formatNumericValue(props.value));
             }}
             onFocus={() => {
