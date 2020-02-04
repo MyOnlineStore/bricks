@@ -1,10 +1,4 @@
 import styled from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
-
-type PriceTagThemeType = {
-    strikethroughColor: string;
-    strikethroughOpacity: string;
-};
 
 type PropsType = {
     strikethrough?: boolean;
@@ -29,8 +23,8 @@ const StyledPriceTag = styled.span<PropsType>`
                     top: 50%;
                     margin-top: -1px;
                     position: absolute;
-                    background: ${theme.PriceTag.strikethroughColor};
-                    opacity: ${theme.PriceTag.strikethroughOpacity};
+                    background: ${theme.Text.default.color};
+                    opacity: 0.7;
                 }`
                     : ''
             }
@@ -38,14 +32,4 @@ const StyledPriceTag = styled.span<PropsType>`
     }};
 `;
 
-const composePriceTagTheme = (themeTools: ThemeTools): PriceTagThemeType => {
-    const { colors } = themeTools.themeSettings;
-
-    return {
-        strikethroughColor: colors.grey.lighter2,
-        strikethroughOpacity: '.7',
-    };
-};
-
 export default StyledPriceTag;
-export { PriceTagThemeType, composePriceTagTheme };

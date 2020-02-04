@@ -67,7 +67,7 @@ describe('PriceTag', () => {
                     <PriceTag locale={locale} currency={currency} value={10.2} strikethrough />,
                 );
 
-                expect(priceTag).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
+                expect(priceTag).toHaveStyleRule('background', mosTheme.Text.default.color, {
                     modifier: '::after',
                 });
             });
