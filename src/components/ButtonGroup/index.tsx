@@ -1,28 +1,13 @@
 import React, { Children, FunctionComponent } from 'react';
 import Box from '../Box';
-import deprecationWarning from '../../utility/deprecationWarning';
 
 type PropsType = {
-    /**
-     * @deprecated The stacked prop has been deprecated and will be removed in
-     * the next major version. Please use direction="stacked" going forward.
-     */
-    stacked?: boolean;
     direction?: 'rtl' | 'ltr' | 'stacked';
     'data-testid'?: string;
 };
 
 const ButtonGroup: FunctionComponent<PropsType> = props => {
-    // tslint:disable-next-line:deprecation
-    if (props.stacked !== undefined) {
-        deprecationWarning(
-            'The stacked prop has been deprecated and will be removed in the next major version. please use direction="stacked" going forward.',
-            'https://github.com/MyOnlineStore/bricks/issues/455',
-        );
-    }
-
-    // tslint:disable-next-line:deprecation
-    const isStacked = props.stacked || props.direction === 'stacked';
+    const isStacked = props.direction === 'stacked';
     const direction = isStacked ? 'column' : 'row';
 
     const children =
