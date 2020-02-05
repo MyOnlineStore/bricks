@@ -1,7 +1,6 @@
 import React from 'react';
 import PriceTag from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 
 const currencysymbols = {
