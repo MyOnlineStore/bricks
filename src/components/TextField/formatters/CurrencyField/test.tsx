@@ -92,6 +92,18 @@ describe('CurrencyField', () => {
         expect(changeMock).toHaveBeenCalledWith(19000000.12);
     });
 
+    it('should not strip the fraction digits (.00) on focus', () => {
+        const component = mountWithTheme(
+            <CurrencyField name="" value={0} currency="EUR" locale="en-GB" onChange={jest.fn()} />,
+        );
+
+        expect(component.find('input').prop('value')).toEqual('0.00');
+
+        component.find('input').simulate('focus');
+        component.update();
+        expect(component.find('input').prop('value')).toEqual('0.00');
+    });
+
     it('should handle empty value on blur', () => {
         const changeMock = jest.fn();
 

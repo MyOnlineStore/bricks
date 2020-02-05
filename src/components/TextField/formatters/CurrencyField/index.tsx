@@ -85,7 +85,9 @@ const CurrencyField: FC<PropsType> = props => {
     const displayValueToNumericValue = (displayValue: string): number => {
         const stripped = filterDisplayValue(displayValue);
         const parsed = parseFloat(stripped.replace(decimalSeperator, '.'));
-        const newValue = !isNaN(parsed) ? parseFloat(parsed.toFixed(2)) : props.value;
+        const newValue = !isNaN(parsed)
+            ? parseFloat(parsed.toFixed(formatter.resolvedOptions().maximumFractionDigits))
+            : props.value;
 
         if (props.minor) {
             return toMinor(newValue);
@@ -96,6 +98,9 @@ const CurrencyField: FC<PropsType> = props => {
 
     const numericValueToDisplayValue = (numericValue: number): string => {
         const value = props.minor ? `${toMajor(numericValue)}` : numericValue.toString();
+        // const value = props.minor
+        //     ? `${toMajor(numericValue).toFixed(formatter.resolvedOptions().maximumFractionDigits)}`
+        //     : numericValue.toFixed(formatter.resolvedOptions().maximumFractionDigits);
 
         return filterDisplayValue(value);
     };
