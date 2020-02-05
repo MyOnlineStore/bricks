@@ -32,14 +32,6 @@ describe('ButtonGroup', () => {
         expect(component.find('[data-testid="buttongroup"]').hostNodes()).toHaveLength(1);
     });
 
-    it('should show a deprecation warning when the stacked prop is used', () => {
-        (console as any).warn.mockImplementationOnce(() => undefined);
-
-        mountWithTheme(<ButtonGroup stacked />);
-
-        expect(console.warn).toHaveBeenCalledWith(expect.stringContaining('deprecated'));
-    });
-
     const buttonSet = ['primary', 'secondary'];
 
     describe.each<['stacked' | 'rtl' | 'ltr', Array<string>]>([
