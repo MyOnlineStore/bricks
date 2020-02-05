@@ -97,10 +97,9 @@ const CurrencyField: FC<PropsType> = props => {
     };
 
     const numericValueToDisplayValue = (numericValue: number): string => {
-        const value = props.minor ? `${toMajor(numericValue)}` : numericValue.toString();
-        // const value = props.minor
-        //     ? `${toMajor(numericValue).toFixed(formatter.resolvedOptions().maximumFractionDigits)}`
-        //     : numericValue.toFixed(formatter.resolvedOptions().maximumFractionDigits);
+        const value = props.minor
+            ? `${toMajor(numericValue).toFixed(formatter.resolvedOptions().maximumFractionDigits)}`
+            : numericValue.toFixed(formatter.resolvedOptions().maximumFractionDigits);
 
         return filterDisplayValue(value);
     };

@@ -424,6 +424,6 @@ describe('CurrencyField', () => {
                 .find('[data-testid="foo"]')
                 .hostNodes()
                 .prop('value'),
-        ).toBe('20');
+        ).toBe('20.00');
     });
 });
