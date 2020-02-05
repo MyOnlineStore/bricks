@@ -3,7 +3,7 @@ import TextField, { PropsType as TextFieldPropsType } from '../..';
 import React, { FC, useMemo, useState, useEffect, useRef } from 'react';
 import { Decimal } from 'decimal.js';
 
-type OmittedKeys = 'onChange' | 'value';
+type OmittedKeys = 'onChange' | 'value' | 'prefix' | 'suffix';
 
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
     value: number;
@@ -13,6 +13,55 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     minor?: boolean;
     formatter?: Intl.NumberFormat;
     onChange(value: number): void;
+};
+
+/**
+ * Find the position of nth occurence of a char
+ */
+const nthEndPos = (char: string, chars: string, nth: number): number => {
+    const foundIndex = chars.indexOf(char);
+
+    if (foundIndex === -1) {
+        return -1;
+    }
+
+    if (nth === 0) {
+        return chars.length - foundIndex;
+    } else {
+        return nthEndPos(char, chars.substr(foundIndex + 1), nth - 1);
+    }
+};
+
+/**
+ * Because the amount of characters changes after a format, the cursor is
+ * influenced when trying to edit the value. This function corrects the
+ * displacement of the cursor.
+ */
+export const correctCursorPosition = (cursorPosition: number, oldValue: string, newValue: string): number => {
+    /**
+     * No correction needed if no formatting is applied
+     */
+    if (oldValue.length === newValue.length) {
+        return cursorPosition;
+    }
+
+    const char = oldValue[cursorPosition];
+    const nth = oldValue.match(new RegExp(char, 'g'));
+
+    if (nth === null) {
+        return cursorPosition;
+    }
+
+    /**
+     * We decrement nth.length by 1 because string.match also includes the selected char
+     */
+    const newCursor = nthEndPos(char, newValue, nth.length - 1);
+    // console.log({ oldValue, newValue, char, nth, newCursor, cursorPosition });
+    if (newCursor === -1) {
+        return cursorPosition;
+    }
+
+    return newValue.length - newCursor;
 };
 
 const CurrencyField: FC<PropsType> = props => {
@@ -103,6 +152,7 @@ const CurrencyField: FC<PropsType> = props => {
 
         return filterDisplayValue(value);
     };
+
     const formatNumericValue = (value: number): string => {
         try {
             return formatter.formatToParts(toMajor(value)).reduce((acc, part) => {
@@ -115,46 +165,6 @@ const CurrencyField: FC<PropsType> = props => {
         } catch (error) {
             // tslint:disable-next-line: no-use-before-declare
             return displayValue;
-        }
-    };
-
-    /**
-     * Because the amount of characters changes after a format, the cursor is
-     * influenced when trying to edit the value. This function corrects the
-     * displacement of the cursor.
-     */
-    const correctCursorPosition = (newValue: string, oldValue: string) => {
-        if (inputRef.current && inputRef.current.selectionStart) {
-            const selectedChar = oldValue[inputRef.current.selectionStart];
-            const sub = oldValue.substr(0, inputRef.current.selectionStart - 1);
-            const matches = sub.match(new RegExp(selectedChar, 'g'));
-            let preceding = 0;
-
-            if (matches) {
-                preceding = matches.length;
-            }
-
-            let found = 0;
-            let newLocation = 0;
-
-            for (let i = 0; i < newValue.length; i++) {
-                if (newValue[i] === selectedChar) {
-                    if (found === preceding) {
-                        newLocation = i;
-                        break;
-                    }
-
-                    found++;
-                }
-            }
-
-            if (newLocation > 0) {
-                inputRef.current.selectionStart = newLocation + 1;
-                inputRef.current.selectionEnd = newLocation + 1;
-            } else {
-                inputRef.current.selectionStart = newValue.length;
-                inputRef.current.selectionEnd = newValue.length;
-            }
         }
     };
 
@@ -180,7 +190,7 @@ const CurrencyField: FC<PropsType> = props => {
     }, [props.value]);
 
     useEffect(() => {
-        if (!initialRender.current) {
+        if (!initialRender.current && props.value < 0) {
             setDisplayValue(formatNumericValue(0));
             props.onChange(0);
         }
@@ -222,7 +232,16 @@ const CurrencyField: FC<PropsType> = props => {
                 setDisplayValue(unformatted);
             }}
             onClick={() => {
-                correctCursorPosition(displayValue, formatNumericValue(props.value));
+                if (inputRef.current && inputRef.current.selectionStart) {
+                    const newPosition = correctCursorPosition(
+                        inputRef.current.selectionStart,
+                        displayValue,
+                        formatNumericValue(props.value),
+                    );
+
+                    inputRef.current.selectionStart = newPosition;
+                    inputRef.current.selectionEnd = newPosition;
+                }
             }}
         />
     );
