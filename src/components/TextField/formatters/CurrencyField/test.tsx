@@ -13,6 +13,8 @@ describe('correctCursorPosition', () => {
         ${4}      | ${'123.123'}     | ${'123123'}    | ${3}
         ${1}      | ${'123'}         | ${'123'}       | ${1}
         ${0}      | ${'-1000.00'}    | ${'-1000'}     | ${0}
+        ${1}      | ${'101,010.10'}  | ${'101010.10'} | ${1}
+        ${4}      | ${'101,010.10'}  | ${'101010.10'} | ${3}
     `(`$oldString -> $newString`, ({ cursorOld, cursorNew, oldString, newString }) => {
         it(`selected "${oldString[cursorOld]}", position ${cursorOld} -> ${cursorNew}`, () => {
             expect(correctCursorPosition(cursorOld, oldString, newString)).toEqual(cursorNew);
