@@ -1,7 +1,6 @@
 import React from 'react';
 import PriceTag from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 
 const currencysymbols = {
@@ -67,9 +66,7 @@ describe('PriceTag', () => {
                     <PriceTag locale={locale} currency={currency} value={10.2} strikethrough />,
                 );
 
-                expect(priceTag).toHaveStyleRule('background', mosTheme.PriceTag.strikethroughColor, {
-                    modifier: '::after',
-                });
+                expect(priceTag).toHaveStyleRule('text-decoration', 'line-through');
             });
         },
     );

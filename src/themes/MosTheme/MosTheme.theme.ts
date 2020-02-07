@@ -513,10 +513,6 @@ const theme: ThemeType = {
         background: colors.white,
         borderRadius: roundness.base,
     },
-    PriceTag: {
-        strikethroughColor: colors.grey500,
-        strikethroughOpacity: '.7',
-    },
     Select: {
         common: {
             backgroundColor: colors.white,
