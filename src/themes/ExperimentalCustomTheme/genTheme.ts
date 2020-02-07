@@ -32,7 +32,6 @@ import { composeTileTheme } from '../../components/Tile';
 import { composePopoverTheme } from '../../components/Popover/style';
 import { composeTooltipTheme } from '../../components/Tooltip/style';
 import { composeScrollBoxTheme } from '../../components/ScrollBox/style';
-import { composePriceTagTheme } from '../../components/PriceTag/style';
 import { composeIllustrationTheme } from '../../components/Illustration/style';
 import { composeTextualButton } from '../../components/TextualButton';
 import { composeProgressTheme } from '../../components/Progress/style';
@@ -88,7 +87,6 @@ const generateThemeObject = (
         NativeSelect: composeNativeSelectTheme(themeTools),
         Notification: composeNotificationTheme(themeTools),
         Popover: composePopoverTheme(themeTools),
-        PriceTag: composePriceTagTheme(themeTools),
         Progress: composeProgressTheme(themeTools),
         RadioButton: composeRadioButtonTheme(themeTools),
         Raised: composeRaisedTheme(themeTools),
