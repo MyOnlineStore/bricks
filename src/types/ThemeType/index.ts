@@ -13,7 +13,6 @@ import { MultiButtonThemeType } from '../../components/MultiButton/style';
 import { NativeSelectThemeType } from '../../components/NativeSelect/style';
 import { NotificationThemeType } from '../../components/Notification/style';
 import { PopoverThemeType } from '../../components/Popover/style';
-import { PriceTagThemeType } from '../../components/PriceTag/style';
 import { ProgressThemeType } from '../../components/Progress/style';
 import { RadioButtonThemeType } from '../../components/RadioButton/style';
 import { RaisedThemeType } from '../../components/Raised';
@@ -48,7 +47,6 @@ type ThemeType = {
     NativeSelect: NativeSelectThemeType;
     Notification: NotificationThemeType;
     Popover: PopoverThemeType;
-    PriceTag: PriceTagThemeType;
     Progress: ProgressThemeType;
     RadioButton: RadioButtonThemeType;
     Raised: RaisedThemeType;
