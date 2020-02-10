@@ -105,7 +105,7 @@ class TextField extends Component<PropsType, StateType> {
                             <Box position="absolute" height="100%" right="0" top="0" alignItems="center">
                                 <IconButton
                                     data-testid={`${this.props['data-testid']}-clear-button`}
-                                    icon={CloseSmallIcon}
+                                    icon={<CloseSmallIcon />}
                                     iconSize="small"
                                     title="Clear field"
                                     onClick={() => {
@@ -119,7 +119,7 @@ class TextField extends Component<PropsType, StateType> {
                         )}
                         {this.props.disabled && (
                             <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
-                                <Icon icon={LockedIcon} color={ICON_COLOR} size="medium" />
+                                <Icon icon={<LockedIcon />} color={ICON_COLOR} size="medium" />
                             </Box>
                         )}
                     </Box>
@@ -136,7 +136,9 @@ class TextField extends Component<PropsType, StateType> {
                 {this.props.feedback && this.props.feedback.message !== '' && (
                     <Box margin={[6, 0, 0, 12]}>
                         <InlineNotification
-                            icon={this.props.feedback.severity === 'info' ? QuestionCircleIcon : DangerCircleIcon}
+                            icon={
+                                this.props.feedback.severity === 'info' ? <QuestionCircleIcon /> : <DangerCircleIcon />
+                            }
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

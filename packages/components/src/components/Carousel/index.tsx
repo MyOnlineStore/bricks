@@ -112,14 +112,14 @@ const Carousel: FC<PropsType> = props => {
                 <>
                     <SlideButton
                         data-testid={props['data-testid'] ? `${props['data-testid']}-prev-button` : undefined}
-                        icon={ChevronLeftIcon}
+                        icon={<ChevronLeftIcon />}
                         direction="prev"
                         title="Show previous slide"
                         onClick={() => slideTo(-1)}
                     />
                     <SlideButton
                         data-testid={props['data-testid'] ? `${props['data-testid']}-next-button` : undefined}
-                        icon={ChevronRightIcon}
+                        icon={<ChevronRightIcon />}
                         direction="next"
                         title="Show next slide"
                         onClick={() => slideTo(1)}

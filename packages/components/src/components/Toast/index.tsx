@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, ReactNode } from 'react';
 import StyledToast, { StyledToastWrapper } from './style';
 import Button from '../Button';
 import Box from '../Box';
@@ -13,7 +13,7 @@ import Measure from 'react-measure';
 type PropsType = {
     'data-testid'?: string;
     title: string;
-    icon?: string;
+    icon?: ReactNode;
     show: boolean;
     message?: string;
     buttonTitle?: string;
@@ -136,7 +136,7 @@ const Toast: FC<PropsType> = props => {
                                         {!props.persistent && (
                                             <IconButton
                                                 variant="primary"
-                                                icon={CloseSmallIcon}
+                                                icon={<CloseSmallIcon />}
                                                 iconSize="small"
                                                 title="close"
                                                 onClick={closeAction}

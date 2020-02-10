@@ -43,7 +43,7 @@ storiesOf('Toast', module)
     ))
     .add('With action button', () => (
         <Toast
-            icon={CashIcon}
+            icon={<CashIcon />}
             onClick={(): boolean => confirm('I love pressing F5, its so refreshing')}
             show={boolean('show', true)}
             severity={select('severity', ['success', 'warning', 'error', 'info'], 'error') as PropsType['severity']}
@@ -69,7 +69,7 @@ storiesOf('Toast', module)
     })
     .add('Persistent with secondary button', () => (
         <Toast
-            icon={InfoCircleIcon}
+            icon={<InfoCircleIcon />}
             onClick={(): boolean => confirm('Primary action')}
             show={boolean('show', true)}
             severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}

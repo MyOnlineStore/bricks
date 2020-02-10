@@ -35,7 +35,7 @@ const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => (
                         {index < props.breadcrumbs.length - 1 && (
                             <Box margin={[0, 9]}>
                                 <Text severity="info">
-                                    <Icon icon={ChevronRightIcon} size="small" />
+                                    <Icon icon={<ChevronRightIcon />} size="small" />
                                 </Text>
                             </Box>
                         )}

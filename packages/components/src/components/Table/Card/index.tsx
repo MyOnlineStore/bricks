@@ -72,7 +72,7 @@ class Card extends Component<PropsType, StateType> {
                                     if (
                                         columnA === undefined ||
                                         columnA.order === undefined ||
-                                        (columnB === undefined || columnB.order === undefined)
+                                        columnB === undefined || columnB.order === undefined
                                     ) {
                                         return -1;
                                     }
@@ -119,7 +119,7 @@ class Card extends Component<PropsType, StateType> {
                     {this.props.draggable && provided && (
                         <Box padding={[6]} {...provided.dragHandleProps}>
                             <Text severity={!this.state.hasHover ? 'info' : undefined}>
-                                <Icon size="medium" icon={BarsIcon} />
+                                <Icon size="medium" icon={<BarsIcon />} />
                             </Text>
                         </Box>
                     )}

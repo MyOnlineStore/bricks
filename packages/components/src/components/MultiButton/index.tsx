@@ -108,7 +108,7 @@ class MultiButton extends Component<PropsType, StateType> {
                     onClick={this.state.isOpen ? this.close : this.open}
                 >
                     <Box inline>
-                        <Icon size="small" icon={this.state.isOpen ? ChevronUpIcon : ChevronDownIcon} />
+                        <Icon size="small" icon={this.state.isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} />
                     </Box>
                 </StyledChevronButton>
             </Box>
@@ -184,7 +184,7 @@ class MultiButton extends Component<PropsType, StateType> {
                                                     <Box alignItems={'center'}>
                                                         <Box margin={[0, 12, 0, 0]}>
                                                             {index === this.state.selectedIndex && (
-                                                                <Icon size="medium" icon={CheckmarkIcon} />
+                                                                <Icon size="medium" icon={<CheckmarkIcon />} />
                                                             )}
                                                             {index !== this.state.selectedIndex && (
                                                                 <Box width={'18px'} />

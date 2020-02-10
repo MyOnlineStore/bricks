@@ -1,4 +1,4 @@
-import React, { ComponentType, FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styled from '../../utility/styled';
 import BareButton, { PropsType as BareButtonPropsType } from '../Button/base';
 import ThemeType from '../../types/ThemeType';
@@ -24,7 +24,7 @@ type IconButtonThemeType = {
 
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
-    icon: string | ComponentType;
+    icon: ReactNode;
     iconSize?: 'small' | 'medium';
     variant?: 'primary' | 'destructive';
 };

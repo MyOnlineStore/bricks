@@ -75,7 +75,8 @@ const Box: FunctionComponent<PropsType> = props => {
     };
 
     return (
-        <StyledBox as={props.inline ? ('span' as 'span') : ('div' as 'div')} {...newProps}>
+        // tslint:disable-next-line: no-any
+        <StyledBox as={(props.inline ? 'span' : 'div') as any} {...newProps}>
             {props.children}
         </StyledBox>
     );

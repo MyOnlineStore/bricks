@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ComponentType } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import Box from '../Box';
@@ -8,7 +8,7 @@ import { SeverityIcons } from '../../types/SeverityType';
 type PropsType = {
     severity: keyof typeof SeverityIcons;
     message: string;
-    icon?: string | ComponentType;
+    icon?: ReactNode;
 };
 
 const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
@@ -18,7 +18,7 @@ const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
         <StyledNotification severity={props.severity}>
             <Box margin={trbl(12)} alignItems={'flex-start'}>
                 <Box margin={trbl(0, 12, 0, 0)}>
-                    <Icon size="medium" icon={icon as string} />
+                    <Icon size="medium" icon={icon} />
                 </Box>
                 {props.message}
             </Box>

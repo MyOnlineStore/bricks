@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import TextField from '.';
 import SeverityType from '../../types/SeverityType';
 import { Checkbox, IconButton, Box } from '../..';
-import { SearchIcon } from '../../../../assets/src';
+import { SearchIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     withClearButton?: boolean;
@@ -38,7 +38,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
             props.hasComponentPrefix ? (
                 <IconButton
                     title="search"
-                    icon={SearchIcon}
+                    icon={<SearchIcon />}
                     onClick={() => {
                         alert(`Search for "${stringValue}"`);
                     }}

@@ -84,7 +84,7 @@ class Row extends Component<PropsType, StateType> {
                                                 onFocus={this.handleFocus}
                                             >
                                                 <Text severity={!this.state.hasHover ? 'info' : undefined}>
-                                                    <Icon size="medium" icon={BarsIcon} />
+                                                    <Icon size="medium" icon={<BarsIcon />} />
                                                 </Text>
                                             </Cell>
                                             {children}

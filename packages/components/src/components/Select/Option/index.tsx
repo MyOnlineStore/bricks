@@ -43,7 +43,7 @@ const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
                         {props.isSelected && (
                             <Box margin={trbl(0, 6, 0, 0)} inline>
                                 <Text severity={props.isSelected ? 'info' : undefined}>
-                                    <Icon size="medium" icon={CheckmarkIcon} />
+                                    <Icon size="medium" icon={<CheckmarkIcon />} />
                                 </Text>
                             </Box>
                         )}
