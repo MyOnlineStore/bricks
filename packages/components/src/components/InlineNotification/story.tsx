@@ -15,14 +15,14 @@ storiesOf('InlineNotification', module)
     ))
     .add('With overwritten Icon', () => (
         <InlineNotification
-            icon={BellIcon}
+            icon={<BellIcon />}
             message="Something is wrong!"
             severity={select('severity', ['error', 'warning', 'success', 'info'], 'error') as SeverityType}
         />
     ))
     .add('With children', () => (
         <InlineNotification
-            icon={InfoCircleIcon}
+            icon={<InfoCircleIcon />}
             severity={select('severity', ['error', 'warning', 'success', 'info'], 'info') as SeverityType}
         >
             Are you having trouble? Check out&nbsp;

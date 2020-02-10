@@ -120,7 +120,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <Text variant={optionState.isSelected ? 'descriptive' : undefined}>
                     {optionState.isSelected && (
                         <Text as="span" variant="descriptive">
-                            <Icon size="small" icon={CheckmarkIcon} />
+                            <Icon size="small" icon={<CheckmarkIcon />} />
                             &nbsp;&nbsp;
                         </Text>
                     )}

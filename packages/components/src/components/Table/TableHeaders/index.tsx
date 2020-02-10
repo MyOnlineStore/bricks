@@ -8,9 +8,9 @@ import Icon from '../../Icon';
 import { CaretVerticalIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 
 const sortingIcons = {
-    none: CaretVerticalIcon,
-    ascending: CaretDownIcon,
-    descending: CaretUpIcon,
+    none: <CaretVerticalIcon />,
+    ascending: <CaretDownIcon />,
+    descending: <CaretUpIcon />,
 };
 
 enum SortingSteps {

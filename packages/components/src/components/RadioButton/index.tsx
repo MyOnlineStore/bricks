@@ -63,7 +63,7 @@ const RadioButton: FC<PropsType> = props => {
                 <Box inline direction="row" align-items="center">
                     {props.disabled && (
                         <Box inline margin={trbl(0, 12, 0, 0)}>
-                            <Icon size="medium" icon={LockedIcon} />{' '}
+                            <Icon size="medium" icon={<LockedIcon />} />{' '}
                         </Box>
                     )}
                     <label id={props.name} htmlFor={props.name}>

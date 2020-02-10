@@ -131,12 +131,12 @@ class Headers extends Component<PropsType, StateType> {
                     {
                         value: `${key}_ascending`,
                         label: `${this.props.columns[key].header}`,
-                        icon: <Icon size="medium" icon={CaretUpIcon} />,
+                        icon: <Icon size="medium" icon={<CaretUpIcon />} />,
                     },
                     {
                         value: `${key}_descending`,
                         label: `${this.props.columns[key].header}`,
-                        icon: <Icon size="medium" icon={CaretDownIcon} />,
+                        icon: <Icon size="medium" icon={<CaretDownIcon />} />,
                     },
                 ];
             });

@@ -313,8 +313,8 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <Button title="Destructive" variant="destructive" />
                 <Button title="Plain" variant="plain" />
                 <Button title="Disabled" variant="primary" disabled />
-                <TextualButton icon={ChevronRightIcon} title="Primary" variant="primary" />
-                <TextualButton icon={ChevronRightIcon} title="Secondary" variant="secondary" />
+                <TextualButton icon={<ChevronRightIcon />} title="Primary" variant="primary" />
+                <TextualButton icon={<ChevronRightIcon />} title="Secondary" variant="secondary" />
             </Box>
             <Demo />
             <Contrast>

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Progress from '.';
 import Box from '../Box';
 import { IconButton } from '../..';
-import { ChevronLeftIcon, ChevronRightIcon } from '../../../../assets/src';
+import { ChevronLeftIcon, ChevronRightIcon } from '@myonlinestore/bricks-assets';
 
 export const Demo = () => {
     const [current, setCurrent] = useState(0);
@@ -14,7 +14,7 @@ export const Demo = () => {
             <Progress current={current} total={total} paginateBy={7} />
             <Box margin={[12, 0, 0, 0]}>
                 <IconButton
-                    icon={ChevronLeftIcon}
+                    icon={<ChevronLeftIcon />}
                     title="previous slide"
                     disabled={current === 0}
                     onClick={() => {
@@ -22,7 +22,7 @@ export const Demo = () => {
                     }}
                 />
                 <IconButton
-                    icon={ChevronRightIcon}
+                    icon={<ChevronRightIcon />}
                     title="next slide"
                     disabled={current === total - 1}
                     onClick={() => {

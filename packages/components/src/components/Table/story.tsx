@@ -114,14 +114,14 @@ class Demo extends Component<PropsType, StateType> {
             <>
                 {row.id !== '61651322' && (
                     <IconButton
-                        icon={GearIcon}
+                        icon={<GearIcon />}
                         title={`Edit ${value}`}
                         variant="primary"
                         onClick={() => alert(`Edit id: ${row.id}`)}
                     />
                 )}
                 <IconButton
-                    icon={TrashIcon}
+                    icon={<TrashIcon />}
                     title={`Delete ${value}`}
                     variant="destructive"
                     onClick={() => alert(`Edit id: ${row.id}`)}

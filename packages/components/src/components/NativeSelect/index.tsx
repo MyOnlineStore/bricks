@@ -43,7 +43,7 @@ const NativeSelect: FC<PropsType> = (props): JSX.Element => {
                     </option>
                 ))}
             </select>
-            <Icon size="small" icon={isOpen ? ChevronUpIcon : ChevronDownIcon} />
+            <Icon size="small" icon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} />
         </StyledSelect>
     );
 };

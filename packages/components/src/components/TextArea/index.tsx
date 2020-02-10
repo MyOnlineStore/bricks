@@ -65,7 +65,7 @@ const TextArea: FC<PropsType> = props => {
             {props.feedback && (
                 <Box margin={trbl(6, 0, 0, 12)}>
                     <InlineNotification
-                        icon={props.feedback.severity === 'info' ? QuestionCircleIcon : DangerCircleIcon}
+                        icon={props.feedback.severity === 'info' ? <QuestionCircleIcon /> : <DangerCircleIcon />}
                         message={props.feedback.message}
                         severity={props.feedback.severity}
                     />

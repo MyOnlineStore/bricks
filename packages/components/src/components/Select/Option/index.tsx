@@ -42,8 +42,8 @@ const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
                     <Box padding={trbl(6, 0)} alignItems="center" inline>
                         {props.isSelected && (
                             <Box margin={trbl(0, 6, 0, 0)} inline>
-                                <Text variant={props.isSelected ? 'info' : undefined}>
-                                    <Icon size="medium" icon={CheckmarkIcon} />
+                                <Text variant={props.isSelected ? 'descriptive' : undefined}>
+                                    <Icon size="medium" icon={<CheckmarkIcon />} />
                                 </Text>
                             </Box>
                         )}

@@ -9,5 +9,5 @@ storiesOf('Notification', module)
     .add('Warning', () => <Notification severity="warning" message="Careful, this might go wrong." />)
     .add('Info', () => <Notification severity="info" message="Oops, something wen't wrong. Please try again." />)
     .add('With a custom icon', () => (
-        <Notification severity="warning" message="Meh, I am not impressed." icon={MehIcon} />
+        <Notification severity="warning" message="Meh, I am not impressed." icon={<MehIcon />} />
     ));

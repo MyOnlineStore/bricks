@@ -1,7 +1,7 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { create } from '@storybook/theming';
-import themeDecorator from '../packages/components/src/__fixtures__/decorators/themeDecorator';
+import themeDecorator from '../packages/components/src/__fixtures__/themeDecorator';
 import { bodyFont } from '../packages/components/src/themes/MosTheme/MosTheme.theme';
 import { colors } from '../packages/components/src/themes/MosTheme/colors';
 

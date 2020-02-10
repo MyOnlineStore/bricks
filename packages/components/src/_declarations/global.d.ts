@@ -31,6 +31,3 @@ declare namespace Intl {
         formatToParts(value: number): Array<PartType>;
     }
 }
-
-declare const ICON_FILES: Array<string>;
-declare const ILLUSTRATION_FILES: Array<string>;

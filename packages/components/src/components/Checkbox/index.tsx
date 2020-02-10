@@ -55,9 +55,9 @@ class Checkbox extends Component<PropsType, StateType> {
                         error={this.props.error}
                     >
                         <Box justifyContent="center" alignItems="center" height="100%">
-                            {this.props.checked === true && <Icon size="small" color="#fff" icon={CheckmarkIcon} />}
+                            {this.props.checked === true && <Icon size="small" color="#fff" icon={<CheckmarkIcon />} />}
                             {this.props.checked === 'indeterminate' && (
-                                <Icon size="small" color="#fff" icon={MinusIcon} />
+                                <Icon size="small" color="#fff" icon={<MinusIcon />} />
                             )}
                         </Box>
                         <StyledCheckbox

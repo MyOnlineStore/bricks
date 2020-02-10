@@ -33,7 +33,7 @@ storiesOf('Buttons/Button', module)
                 variant="primary"
                 loading={boolean('loading', false)}
                 title={text('title', 'Add to cart')}
-                icon={CartIcon}
+                icon={<CartIcon />}
                 disabled={boolean('disabled', false)}
             />
         );
