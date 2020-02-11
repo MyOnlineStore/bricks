@@ -6,7 +6,7 @@ import { ProvidedThemeOptionsType } from '../../themes/CustomTheme/MerchantTheme
 import CustomTheme from '../../themes/CustomTheme';
 import SampleContent from './sampleContent';
 
-storiesOf('MerchantTheme', module).add('Default', () => {
+storiesOf('CustomTheme', module).add('Default', () => {
     const primaryFont = select(
         'Primary Font',
         ['Roboto Mono', 'Roboto Slab', 'Margarine', 'Indie Flower', 'Anton'],
