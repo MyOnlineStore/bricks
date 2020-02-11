@@ -12,7 +12,9 @@ jest.mock('react-measure', () => {
 
 describe('FoldOut', () => {
     // I can't get the toHaveStyleRule assertions to work here with sc5. They throw "No style rules found on passed Component". Even when using sc5's own test-utils to find them.
-    // Any help to get them to work is appreciated.
+    // This seems to be an issue with babel-plugin-styled-components, see https://github.com/styled-components/jest-styled-components/issues/290.
+    // One of these may fix the issue: https://github.com/styled-components/jest-styled-components/pull/302, https://github.com/styled-components/babel-plugin-styled-components/pull/269
+    // If you find this comments after one of these PRs has been merged, please verify if the issue is resolved and reinstate the tests.
 
     it('should have a height when open', () => {
         const component = mount(<FoldOut open />);
