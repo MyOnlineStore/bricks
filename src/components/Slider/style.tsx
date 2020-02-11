@@ -1,5 +1,5 @@
 import styled, { css } from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 import Box from '../Box';
 

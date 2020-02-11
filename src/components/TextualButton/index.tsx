@@ -1,7 +1,7 @@
 import React, { FC, Children, useState } from 'react';
 import Base, { PropsType as BasePropsType } from '../Button/base';
 import styled from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import { Icon } from '../..';
 
 export type PropsType = BasePropsType & {

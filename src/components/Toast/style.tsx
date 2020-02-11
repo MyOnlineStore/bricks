@@ -1,7 +1,7 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 import { LinkStyles } from '../Link/style';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type ToastPropsType = {
     severity: SeverityType;

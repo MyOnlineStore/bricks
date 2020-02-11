@@ -4,7 +4,7 @@ import Icon from '../Icon';
 import Base, { PropsType as BasePropsType } from './base';
 import Box from '../Box';
 import Spinner from '../Spinner';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 
 type CommonType = {

@@ -1,5 +1,5 @@
 import styled from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;
 
