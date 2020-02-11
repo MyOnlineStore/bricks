@@ -2,7 +2,7 @@ import { select, text, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import generateThemeObject from '../../themes/CustomTheme/genTheme';
-import { ProvidedThemeOptionsType } from '../../themes/CustomTheme/MerchantThemeTypes';
+import { ProvidedThemeOptionsType } from '../../themes/CustomTheme/CustomThemeTypes';
 import CustomTheme from '../../themes/CustomTheme';
 import SampleContent from './sampleContent';
 

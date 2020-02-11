@@ -14,7 +14,7 @@ import Link from '../Link';
 import Separated from '../Separated';
 import Notification from '../Notification';
 import Badge from '../Badge';
-import * as ThemeSettingsType from '../../themes/CustomTheme/MerchantThemeTypes';
+import * as ThemeSettingsType from '../../themes/CustomTheme/CustomThemeTypes';
 import TextualButton from '../TextualButton';
 import { ChevronRightIcon } from '../../assets';
 import { Demo } from '../Progress/story';
