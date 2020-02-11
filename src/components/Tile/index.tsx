@@ -1,5 +1,5 @@
 import styled from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type TileThemeType = {
     borderColor: string;

@@ -45,7 +45,7 @@ import YourApp from './App';
  
 **Custom Theme**
 ```typescript
-import { MerchantTheme, ThemeType } from '@myonlinestore/bricks';
+import { CustomTheme, ThemeType } from '@myonlinestore/bricks';
 import YourApp from './App';
 
 const themeObject: ThemeType = {
@@ -53,9 +53,9 @@ const themeObject: ThemeType = {
     // Example: https://github.com/MyOnlineStore/bricks/blob/master/src/themes/MosTheme/MosTheme.theme.ts
 }
 
-<MerchantTheme theme={themeObject}>
+<CustomTheme theme={themeObject}>
     <YourApp />
-</MerchantTheme>
+</CustomTheme>
 ```
 
 ## Contributing
