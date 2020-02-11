@@ -6,7 +6,7 @@ import Icon from '../Icon';
 import Spinner from '../Spinner';
 import Box from '../Box';
 import { withTheme } from 'styled-components';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type CommonType = {
     color: string;

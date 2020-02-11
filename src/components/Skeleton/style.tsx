@@ -1,7 +1,7 @@
 import { keyframes } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { css } from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type SkeletonThemeType = {
     common: {

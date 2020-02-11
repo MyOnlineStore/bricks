@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import * as ThemeTypes from './MerchantThemeTypes';
+import * as ThemeTypes from './CustomThemeTypes';
 
 class ThemeTools {
     private options: ThemeTypes.ThemeOptionsType;

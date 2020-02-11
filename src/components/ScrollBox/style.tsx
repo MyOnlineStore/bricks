@@ -1,5 +1,5 @@
 import styled, { css } from '../../utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 /* tslint:disable */
 const styles = require('simplebar/dist/simplebar.min.css').toString();

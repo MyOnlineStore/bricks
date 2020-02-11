@@ -1,5 +1,5 @@
 import styled from '../../../src/utility/styled';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 
 type SelectThemeType = {

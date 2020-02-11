@@ -9,15 +9,15 @@ type PropsType = {
     theme: RecursivePartialType<ThemeType>;
 };
 
-const customTheme = (theme: RecursivePartialType<ThemeType>): ThemeType => {
+const mergeThemes = (theme: RecursivePartialType<ThemeType>): ThemeType => {
     return deepmerge(mosTheme, theme) as ThemeType;
 };
 
-const MerchantTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
-    <ThemeProvider theme={customTheme(props.theme)}>
+const CustomTheme: FunctionComponent<PropsType> = (props): JSX.Element => (
+    <ThemeProvider theme={mergeThemes(props.theme)}>
         <>{props.children}</>
     </ThemeProvider>
 );
 
-export default MerchantTheme;
+export default CustomTheme;
 export { PropsType };
