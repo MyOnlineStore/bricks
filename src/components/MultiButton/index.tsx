@@ -195,7 +195,7 @@ class MultiButton extends Component<PropsType, StateType> {
                                                         <div>
                                                             <Text
                                                                 as="span"
-                                                                severity="info"
+                                                                variant="descriptive"
                                                                 strong={index === this.state.selectedIndex}
                                                             >
                                                                 <Text strong={index === this.state.selectedIndex}>
