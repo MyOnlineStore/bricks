@@ -1,12 +1,12 @@
 import { select, text, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import generateThemeObject from '../../themes/ExperimentalCustomTheme/genTheme';
-import { ProvidedThemeOptionsType } from '../../themes/ExperimentalCustomTheme/MerchantThemeTypes';
-import ExperimentalCustomTheme from '../../themes/ExperimentalCustomTheme';
+import generateThemeObject from '../../themes/CustomTheme/genTheme';
+import { ProvidedThemeOptionsType } from '../../themes/CustomTheme/CustomThemeTypes';
+import CustomTheme from '../../themes/CustomTheme';
 import SampleContent from './sampleContent';
 
-storiesOf('MerchantTheme', module).add('Default', () => {
+storiesOf('CustomTheme', module).add('Default', () => {
     const primaryFont = select(
         'Primary Font',
         ['Roboto Mono', 'Roboto Slab', 'Margarine', 'Indie Flower', 'Anton'],
@@ -105,8 +105,8 @@ storiesOf('MerchantTheme', module).add('Default', () => {
     });
 
     return (
-        <ExperimentalCustomTheme theme={theme}>
+        <CustomTheme theme={theme}>
             <SampleContent themeSettings={themeSettings} />
-        </ExperimentalCustomTheme>
+        </CustomTheme>
     );
 });

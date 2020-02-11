@@ -1,6 +1,6 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
-import ThemeTools from '../../themes/ExperimentalCustomTheme/ThemeTools';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type TextVariantStyleType = {
     fontFamily: string;
