@@ -82,7 +82,7 @@ const Toast: FC<PropsType> = props => {
                                 <StyledToast severity={props.severity}>
                                     {!isSmall && (
                                         <Box alignSelf="flex-start" margin={[18, 6, 18, 18]}>
-                                            <Text as="span" severity={props.severity}>
+                                            <Text as="span" variant={props.severity}>
                                                 <Icon size="medium" icon={icon} />
                                             </Text>
                                         </Box>

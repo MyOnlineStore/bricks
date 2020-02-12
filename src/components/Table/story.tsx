@@ -95,7 +95,7 @@ class Demo extends Component<PropsType, StateType> {
     private sortPrice = (a: number, b: number) => a - b;
 
     private renderPrice = (price: number) => {
-        return <Text severity={price > 0 ? 'success' : 'error'}>€ {price.toFixed(2)}</Text>;
+        return <Text variant={price > 0 ? 'success' : 'error'}>€ {price.toFixed(2)}</Text>;
     };
 
     private renderBadge = (badge: string) => {

@@ -144,7 +144,7 @@ class Headers extends Component<PropsType, StateType> {
                 >
                     {(typeof column.header === 'string' && <Text strong>{column.header}</Text>) || column.header}
                     {this.state.columns[key].sorting !== undefined && (
-                        <Text severity={this.state.columns[key].sorting === 'none' ? 'info' : undefined}>
+                        <Text variant={this.state.columns[key].sorting === 'none' ? 'descriptive' : undefined}>
                             <Icon
                                 title={`sorting: ${
                                     this.state.columns[key].sorting !== undefined

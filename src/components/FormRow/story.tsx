@@ -57,7 +57,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 <Box>
                                     <Text>What is your name?</Text>
                                 </Box>
-                                <Text severity="info">
+                                <Text variant="descriptive">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -101,7 +101,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 <Box>
                                     <Text>Where do you live?</Text>
                                 </Box>
-                                <Text severity="info">
+                                <Text variant="descriptive">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -135,7 +135,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 <Box>
                                     <Text>Can a boolean only be either true or false?</Text>
                                 </Box>
-                                <Text severity="info">
+                                <Text variant="descriptive">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -178,7 +178,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                         label={
                             <>
                                 <Text>Options</Text>
-                                <Text severity="info">
+                                <Text variant="descriptive">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
                                     similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
                                     corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
@@ -336,7 +336,7 @@ storiesOf('FormRow', module)
         <FormRow
             label={<Text>{text('label', 'Label text')}</Text>}
             badge={
-                <Text variant="small" severity="success">
+                <Text size="small" variant="success">
                     {text('badge', 'PRO')}
                 </Text>
             }

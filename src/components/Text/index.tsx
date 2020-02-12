@@ -2,7 +2,7 @@ import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
-type TextVariantStyleType = {
+type TextSizeStyleType = {
     fontFamily: string;
     fontSize: string;
     fontWeight: string;
@@ -16,57 +16,58 @@ type TextThemeType = {
     default: {
         color: string;
     };
-    variant: {
-        small: TextVariantStyleType;
-        regular: TextVariantStyleType;
-        large: TextVariantStyleType;
-        extraLarge: TextVariantStyleType;
-        display: TextVariantStyleType;
+    size: {
+        small: TextSizeStyleType;
+        regular: TextSizeStyleType;
+        large: TextSizeStyleType;
+        extraLarge: TextSizeStyleType;
+        display: TextSizeStyleType;
     };
     strong: {
         fontWeight: string;
     };
-    severity: {
+    variant: {
         error: string;
         success: string;
         info: string;
         warning: string;
+        descriptive: string;
     };
 };
 
 type PropsType = {
-    variant?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
-    severity?: SeverityType;
+    size?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
+    variant?: SeverityType | 'descriptive';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     compact?: boolean;
     strong?: boolean;
 };
 
 const Text = styled.p<PropsType>`
-    color: ${({ severity, theme }): string => (severity ? theme.Text.severity[severity] : theme.Text.default.color)};
-    font-family: ${({ variant, theme }): string =>
-        !variant ? theme.Text.variant.regular.fontFamily : theme.Text.variant[variant].fontFamily};
-    font-size: ${({ variant, theme }): string =>
-        !variant ? theme.Text.variant.regular.fontSize : theme.Text.variant[variant].fontSize};
-    font-weight: ${({ variant, strong, theme }): string => {
+    color: ${({ variant, theme }): string => (variant ? theme.Text.variant[variant] : theme.Text.default.color)};
+    font-family: ${({ size, theme }): string =>
+        !size ? theme.Text.size.regular.fontFamily : theme.Text.size[size].fontFamily};
+    font-size: ${({ size, theme }): string =>
+        !size ? theme.Text.size.regular.fontSize : theme.Text.size[size].fontSize};
+    font-weight: ${({ size, strong, theme }): string => {
         if (strong) {
             return theme.Text.strong.fontWeight;
-        } else if (variant && !strong) {
-            return theme.Text.variant[variant].fontWeight;
+        } else if (size && !strong) {
+            return theme.Text.size[size].fontWeight;
         }
 
-        return theme.Text.variant.regular.fontWeight;
+        return theme.Text.size.regular.fontWeight;
     }};
-    line-height: ${({ variant, compact, theme }): string => {
-        if (compact && variant) {
-            return theme.Text.variant[variant].lineHeight.compact;
-        } else if (!compact && variant) {
-            return theme.Text.variant[variant].lineHeight.default;
-        } else if (compact && !variant) {
-            return theme.Text.variant.regular.lineHeight.compact;
+    line-height: ${({ size, compact, theme }): string => {
+        if (compact && size) {
+            return theme.Text.size[size].lineHeight.compact;
+        } else if (!compact && size) {
+            return theme.Text.size[size].lineHeight.default;
+        } else if (compact && !size) {
+            return theme.Text.size.regular.lineHeight.compact;
         }
 
-        return theme.Text.variant.regular.lineHeight.default;
+        return theme.Text.size.regular.lineHeight.default;
     }};
     text-align: ${({ textAlign }): string => (textAlign ? textAlign : '')};
     margin: 0;
@@ -81,7 +82,7 @@ const composeTextTheme = (themeTools: ThemeTools): TextThemeType => {
         default: {
             color: themeTools.calculateContrastTextColor(colors.background),
         },
-        variant: {
+        size: {
             small: {
                 fontFamily: text.primaryFont,
                 fontSize: text.fontSize.smaller1,
@@ -131,14 +132,15 @@ const composeTextTheme = (themeTools: ThemeTools): TextThemeType => {
         strong: {
             fontWeight: text.fontWeight.bold,
         },
-        severity: {
+        variant: {
             error: colors.severity.error,
             success: colors.severity.success,
             info: colors.severity.info,
             warning: colors.severity.warning,
+            descriptive: colors.severity.info,
         },
     };
 };
 
 export default Text;
-export { TextThemeType, TextVariantStyleType, PropsType, composeTextTheme };
+export { TextThemeType, TextSizeStyleType, PropsType, composeTextTheme };
