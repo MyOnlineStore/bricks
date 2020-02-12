@@ -6,6 +6,17 @@
     ],
   "plugins": [
     "babel-plugin-styled-components",
-    "@babel/proposal-class-properties"
+    "@babel/proposal-class-properties",
+    [
+        "babel-plugin-inline-react-svg",
+        {
+          "svgo": {
+            "removeStyleElement": true,
+            "removeTitle": true,
+            "removeDesc": true,
+            "removingAttrs": ["class"]
+          }
+        }
+      ]
   ]
 }

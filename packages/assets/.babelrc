@@ -1,15 +1,3 @@
 {
-    "extends": "../../.babelrc",
-    "plugins": [
-        [
-          "babel-plugin-inline-react-svg",
-          {
-            "svgo": {
-              "removeTags": "true",
-              "removingTags": ["title", "desc", "defs", "style"],
-              "removingTagAttrs": ["class"]
-            }
-          }
-        ]
-    ]
+    "extends": "../../.babelrc"
 }
