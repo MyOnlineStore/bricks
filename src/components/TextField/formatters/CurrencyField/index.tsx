@@ -160,6 +160,7 @@ const CurrencyField: FC<PropsType> = props => {
             }, '');
         } catch (error) {
             console.error(error);
+
             // tslint:disable-next-line: no-use-before-declare
             return displayValue;
         }
