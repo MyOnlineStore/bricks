@@ -12,6 +12,8 @@ if (!fs.existsSync(generatedDir)) {
 
 //Function to create the contents of a generated page file
 const createPage = (path, dirName) => {
+    console.log(`Creating page in path: ${path}`);
+
     return `
     import React, { FC } from 'react';
         import Document from '${path}';
