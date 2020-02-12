@@ -28,7 +28,7 @@
     "update-bricks": "cd ../ && yarn build && cd docs",
     "update-docs": "cd ../ && yarn docs && cd docs && rimraf node_modules && yarn",
     "start": "next",
-    "build": "rimraf ./generated && next build",
+    "build": "rimraf ./pages/generated && next build",
     "export-to-ghpages": "next export -o ./dist && cp ./CNAME ./dist/CNAME"
   }
 }
