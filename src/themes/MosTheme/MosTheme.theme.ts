@@ -626,7 +626,7 @@ const theme: ThemeType = {
         default: {
             color: colors.grey800,
         },
-        variant: {
+        size: {
             small: {
                 fontFamily: bodyFont,
                 fontSize: fontSize.smaller1,
@@ -676,11 +676,12 @@ const theme: ThemeType = {
         strong: {
             fontWeight: fontWeight.bold,
         },
-        severity: {
+        variant: {
             error: colors.red500,
             success: colors.green400,
             info: colors.grey500,
             warning: colors.yellow500,
+            descriptive: colors.grey500,
         },
     },
     TextArea: {

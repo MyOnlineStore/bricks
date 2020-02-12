@@ -44,9 +44,9 @@ const componentMap: { [key: string]: FC } = {
             <StyledHr />
         </Box>
     ),
-    p: props => <Text severity="info">{props.children}</Text>,
+    p: props => <Text variant="descriptive">{props.children}</Text>,
     li: props => (
-        <Text as="span" severity="info">
+        <Text as="span" variant="descriptive">
             <li>{props.children}</li>
         </Text>
     ),

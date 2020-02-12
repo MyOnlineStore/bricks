@@ -59,7 +59,7 @@ const TextArea: FC<PropsType> = props => {
                 />
                 {props.characterLimit && (
                     <Box justifyContent="flex-end" padding={[0, 12, 6]} onClick={focusField} style={{ cursor: 'text' }}>
-                        <Text severity="info">{`${props.value.length} / ${props.characterLimit}`}</Text>
+                        <Text variant="descriptive">{`${props.value.length} / ${props.characterLimit}`}</Text>
                     </Box>
                 )}
             </StyledTextAreaWrapper>

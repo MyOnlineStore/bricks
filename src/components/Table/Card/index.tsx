@@ -118,7 +118,7 @@ class Card extends Component<PropsType, StateType> {
                     )}
                     {this.props.draggable && provided && (
                         <Box padding={[6]} {...provided.dragHandleProps}>
-                            <Text severity={!this.state.hasHover ? 'info' : undefined}>
+                            <Text variant={!this.state.hasHover ? 'descriptive' : undefined}>
                                 <Icon size="medium" icon={bars} />
                             </Text>
                         </Box>

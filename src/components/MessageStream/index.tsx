@@ -46,7 +46,7 @@ const Message: FunctionComponent<MessagePropsType> = (props): JSX.Element => {
                         <Text>
                             <span dangerouslySetInnerHTML={{ __html: props.message }} />
                         </Text>
-                        <Text severity="info">{props.date}</Text>
+                        <Text variant="descriptive">{props.date}</Text>
                     </Box>
                     {props.onClick !== undefined && props.buttonLabel !== undefined && props.buttonLabel.length > 0 ? (
                         <Box
