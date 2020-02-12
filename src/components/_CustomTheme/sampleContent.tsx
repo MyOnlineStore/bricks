@@ -228,7 +228,7 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                                     <Box>
                                         <Text>Can a boolean only be either true or false?</Text>
                                     </Box>
-                                    <Text severity="info">In my opinion a boolean should also be "maybe".</Text>
+                                    <Text variant="descriptive">In my opinion a boolean should also be "maybe".</Text>
                                 </label>
                             }
                             field={

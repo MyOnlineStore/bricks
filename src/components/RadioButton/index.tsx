@@ -59,7 +59,7 @@ const RadioButton: FC<PropsType> = props => {
                     />
                 </StyledRadioButtonSkin>
             </Box>
-            <Text severity={props.disabled ? 'info' : undefined}>
+            <Text variant={props.disabled ? 'info' : undefined}>
                 <Box inline direction="row" align-items="center">
                     {props.disabled && (
                         <Box inline margin={trbl(0, 12, 0, 0)}>

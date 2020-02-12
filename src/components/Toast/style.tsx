@@ -40,7 +40,7 @@ const StyledToast = styled.div<ToastPropsType>`
     box-shadow: 0 3px 48px rgba(0, 0, 0, 0.3);
     border-radius: ${({ theme }): string => theme.Toast.borderRadius};
     background-color: ${({ theme }): string => theme.Toast.backgroundColor};
-    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.severity[severity]}`};
+    border-left: ${({ severity, theme }): string => `4px solid ${theme.Text.variant[severity]}`};
     pointer-events: auto;
 
     a {

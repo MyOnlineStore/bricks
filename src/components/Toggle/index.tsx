@@ -76,7 +76,7 @@ class Toggle extends Component<PropsType, StateType> {
                     </StyledToggleSkin>
                 </Box>
                 <Box margin={trbl(9, 0, 0, 0)}>
-                    <Text severity={this.props.disabled || this.props.unavailable ? 'info' : undefined}>
+                    <Text variant={this.props.disabled || this.props.unavailable ? 'descriptive' : undefined}>
                         {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon={lockedIcon} />}{' '}
                         {this.props.label}
                     </Text>

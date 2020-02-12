@@ -29,7 +29,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
     ));
 
     const message = branchString(props.message, value => (
-        <Text severity="info" textAlign={textAlign}>
+        <Text variant="info" textAlign={textAlign}>
             {value}
         </Text>
     ));
