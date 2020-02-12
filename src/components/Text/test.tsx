@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import { mosTheme } from '../../themes/MosTheme';
 
 describe('Text', () => {
-    it('should render text with different variants', () => {
+    it('should render text with different sizes', () => {
         const smallText = mountWithTheme(<Text size="small">Small text</Text>);
         const regularText = mountWithTheme(<Text size="regular">Regular text</Text>);
         const largeText = mountWithTheme(<Text size="large">Large text</Text>);
@@ -19,7 +19,7 @@ describe('Text', () => {
         expect(displayText).toHaveStyleRule('font-size', mosTheme.Text.size.display.fontSize);
     });
 
-    it('should render text with different severities', () => {
+    it('should render text with different variants', () => {
         const defaultText = mountWithTheme(<Text>Descriptive text</Text>);
         const errorText = mountWithTheme(<Text variant="error">Descriptive text</Text>);
         const successText = mountWithTheme(<Text variant="success">Descriptive text</Text>);
