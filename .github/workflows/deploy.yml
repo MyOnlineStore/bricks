@@ -34,9 +34,9 @@ jobs:
     - name: Installing site dependencies
       run: cd docs && yarn --frozen-lockfile
     - name: Building site
-      run: yarn build
+      run: cd docs && yarn build
     - name: Static export
-      run: yarn export-to-ghpages
+      run: cd docs && yarn export-to-ghpages
     - name: Deploy to github
       uses: peaceiris/actions-gh-pages@v3
       env:
