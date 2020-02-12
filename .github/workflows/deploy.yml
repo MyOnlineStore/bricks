@@ -39,10 +39,9 @@ jobs:
       run: cd docs && yarn export-to-ghpages
     - name: Deploy to github
       uses: peaceiris/actions-gh-pages@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./docs/dist/
       with:
-        username: "myonlinestore-ci-eu"
-        useremail: "team-tech+myonlinestore-ci-eu@myonlinestore.com"
+        github_token: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./docs/dist/
+        user_name: "myonlinestore-ci-eu"
+        user_email: "team-tech+myonlinestore-ci-eu@myonlinestore.com"
