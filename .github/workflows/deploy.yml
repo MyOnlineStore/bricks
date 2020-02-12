@@ -37,6 +37,8 @@ jobs:
       run: cd docs && yarn build
     - name: Static export
       run: cd docs && yarn export-to-ghpages
+    - name: Bypass jekyll
+      run: cd docs && touch ./dist/.nojekyll
     - name: Deploy to github
       uses: peaceiris/actions-gh-pages@v3
       with:
