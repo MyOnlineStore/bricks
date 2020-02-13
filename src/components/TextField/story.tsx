@@ -16,8 +16,9 @@ type PropsType = {
 
 const Demo: FC<PropsType> = (props): JSX.Element => {
     const [stringValue, setStringValue] = useState('');
-    const [numberValue, setNumberValue] = useState(10);
+    const [numberValue, setNumberValue] = useState(19.12);
     const [isChecked, setChecked] = useState(true);
+    const locale = select('locale', ['nl-NL', 'en-GB', 'de-DE'], 'nl-NL');
 
     const sharedProps = {
         prefix: props.hasComponentPrefix ? (
@@ -72,7 +73,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         allowDecimals: boolean('allowDecimals', false),
         minimumFractionDigits: number('minimumFractionDigits', 0),
         maximumFractionDigits: number('maximumFractionDigits', 2),
-        locale: select('locale', ['nl_NL', 'en_GB'], 'nl_NL'),
+        locale,
     };
 
     const textProps = {
@@ -85,16 +86,12 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
             <TextField.Currency
                 {...sharedProps}
                 {...numberProps}
-                currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'USD')}
+                currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'EUR')}
                 feedback={{
                     severity: 'info',
                     message: `The reported value of this field is: ${numberValue}`,
                 }}
-                locale={select(
-                    'locale',
-                    ['en-US', 'nl-NL', 'de-DE', 'jp-JP', 'en_US', 'nl_NL', 'de_DE', 'jp_JP'],
-                    'en-US',
-                )}
+                locale={locale}
                 minor={boolean('minor', false)}
             />
         );

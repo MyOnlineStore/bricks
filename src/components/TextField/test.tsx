@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import TextField from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 import { Box } from '../..';
+import MosTheme from '../../themes/MosTheme';
+import { mount } from 'enzyme';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -104,5 +106,48 @@ describe('TextField', () => {
             .simulate('click');
 
         expect(clearMock).toHaveBeenCalled();
+    });
+
+    it('should apply changes when props change', () => {
+        /**
+         * setProps can only be called on a mounted root, because the TextField requires
+         * a theme to be present, we wrap it and pass all props onto the actual TextField
+         */
+        const Wrapper: FC<{ 'data-testid': string; value: string; name: string; onChange(): void }> = props => {
+            return (
+                <MosTheme>
+                    <TextField {...props} />
+                </MosTheme>
+            );
+        };
+
+        const changeMock = jest.fn();
+        const component = mount(<Wrapper data-testid="foo" name="foo" value="foo" onChange={changeMock} />);
+
+        component.setProps({
+            value: 'bar',
+        });
+
+        component.update();
+
+        expect(
+            component
+                .find('[data-testid="foo"]')
+                .hostNodes()
+                .prop('value'),
+        ).toBe('bar');
+    });
+
+    it('should render the components defined as static property', () => {
+        const changeMock = jest.fn();
+
+        const currency = mountWithTheme(
+            <TextField.Currency name="" value={1} onChange={changeMock} locale="nl-NL" currency="EUR" />,
+        );
+
+        const number = mountWithTheme(<TextField.Number name="" value={1} onChange={changeMock} />);
+
+        expect(currency.find('input').length).toBe(1);
+        expect(number.find('input').length).toBe(1);
     });
 });
