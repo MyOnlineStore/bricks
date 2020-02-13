@@ -21,11 +21,14 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
+    "babel-plugin-styled-components": "^1.8.0",
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "update-bricks": "cd ../ && yarn build && cd docs",
     "update-docs": "cd ../ && yarn docs && cd docs && rimraf node_modules && yarn",
-    "start": "next"
+    "start": "next",
+    "build": "next build",
+    "export-to-ghpages": "rimraf ./dist && next export -o ./dist && cp ./CNAME ./dist/CNAME"
   }
 }

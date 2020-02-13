@@ -217,9 +217,9 @@ const Index = () => {
                             <Box direction="column" width="100%" height="207px">
                                 <ReferralRow
                                     title="Frontend Oss: March Meetup"
-                                    href="https://www.meetup.com/FrontendOss/"
+                                    href="https://www.meetup.com/FrontendOss/events/268599763/"
                                     firstSubtitle="MyOnlineStore"
-                                    secondSubtitle="Mar 20 '20"
+                                    secondSubtitle="Mar 24 '20"
                                     thirdSubtitle="FREE"
                                     imgSrc={frontendBadgeImg}
                                 />

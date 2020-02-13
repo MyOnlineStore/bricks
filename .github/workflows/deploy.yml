@@ -4,27 +4,48 @@ on:
     branches:
       - master
 
+
 jobs:
-  deploy-storybook:
+  deploy-site:
     if: github.actor != 'myonlinestore-ci-eu'
     runs-on: ubuntu-latest
     steps:
     - name: Checking out git repository
       uses: actions/checkout@v2-beta
-    - name: Configuring GitHub user
-      run: |
-        git config --global user.email team-tech+myonlinestore-ci-eu@myonlinestore.com
-        git config --global user.name myonlinestore-ci-eu
     - name: Setting up Node environment
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
         registry-url: 'https://registry.npmjs.org'
-    - name: Installing dependencies
-      run: yarn install --frozen-lockfile
-    - name: Running tests
-      run: yarn test
-    - name: Deploying storybook to gh-pages
-      run: yarn deploy-storybook --ci
-      env:
-        GH_TOKEN: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
+    - name: Get yarn cache
+      id: yarn-cache
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Hydrating cache 
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.yarn-cache.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: Installing bricks dependencies
+      run: yarn --frozen-lockfile
+    - name: Building bricks
+      run: yarn build
+    - name: Generate pages
+      run: cd docs && node lib/articles-to-pages.js
+    - name: Installing site dependencies
+      run: cd docs && yarn --frozen-lockfile
+    - name: Building site
+      run: cd docs && yarn build
+    - name: Static export
+      run: cd docs && yarn export-to-ghpages
+    - name: Bypass jekyll
+      run: cd docs && touch ./dist/.nojekyll
+    - name: Deploy to github
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./docs/dist/
+        user_name: "myonlinestore-ci-eu"
+        user_email: "team-tech+myonlinestore-ci-eu@myonlinestore.com"
