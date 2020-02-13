@@ -169,11 +169,12 @@ const CurrencyField: FC<PropsType> = props => {
                 const newValue = props.minor ? toMinor(numeric) : numeric;
 
                 setDisplayValue(filterDisplayValue(value));
-                previousValue.current = newValue;
 
                 if (value === '') {
+                    previousValue.current = 0;
                     props.onChange(0);
                 } else {
+                    previousValue.current = newValue;
                     props.onChange(
                         parseFloat(
                             parseFloat(`${newValue}`).toFixed(formatter.resolvedOptions().maximumFractionDigits),

@@ -426,4 +426,55 @@ describe(CurrencyField.name, () => {
                 .prop('value'),
         ).toBe('20.00');
     });
+
+    it('should not overwrite input "" with "0.00" while inputting', () => {
+        const changeMock = jest.fn();
+
+        const Root = () => {
+            const [value, setValue] = useState(19.12);
+
+            return (
+                <MosTheme>
+                    <CurrencyField
+                        name=""
+                        value={value}
+                        locale="en-US"
+                        currency="USD"
+                        onChange={value => {
+                            changeMock(value);
+                            setValue(value);
+                        }}
+                    />
+                </MosTheme>
+            );
+        };
+
+        const component = mount(<Root />);
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '1234',
+            },
+        });
+
+        expect(
+            component
+                .find('input')
+                .hostNodes()
+                .prop('value'),
+        ).toEqual('1234');
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '',
+            },
+        });
+
+        expect(
+            component
+                .find('input')
+                .hostNodes()
+                .prop('value'),
+        ).toEqual('');
+    });
 });
