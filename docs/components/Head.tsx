@@ -4,6 +4,7 @@ import NextHead from 'next/head';
 const Head: FC = () => {
     return (
         <NextHead>
+            <title>Bricks | A design system by MyOnlineStore</title>
             <link
                 href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i"
                 rel="stylesheet"
