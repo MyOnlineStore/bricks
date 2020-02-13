@@ -31,6 +31,8 @@ jobs:
       run: yarn --frozen-lockfile
     - name: Building bricks
       run: yarn build
+    - name: Generate pages
+      run: cd docs && node lib/articles-to-pages.js
     - name: Installing site dependencies
       run: cd docs && yarn --frozen-lockfile
     - name: Building site
