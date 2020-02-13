@@ -15,55 +15,6 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     onChange(value: number): void;
 };
 
-/**
- * Find the position of nth occurence of a char
- */
-const nthEndPos = (char: string, chars: string, nth: number): number => {
-    const foundIndex = chars.indexOf(char);
-
-    if (foundIndex === -1) {
-        return -1;
-    }
-
-    if (nth === 0) {
-        return chars.length - foundIndex;
-    } else {
-        return nthEndPos(char, chars.substr(foundIndex + 1), nth - 1);
-    }
-};
-
-/**
- * Because the amount of characters changes after a format, the cursor is
- * influenced when trying to edit the value. This function corrects the
- * displacement of the cursor.
- */
-export const correctCursorPosition = (cursorPosition: number, oldValue: string, newValue: string): number => {
-    /**
-     * No correction needed if no formatting is applied
-     */
-    if (oldValue.length === newValue.length) {
-        return cursorPosition;
-    }
-
-    const char = oldValue[cursorPosition];
-    const nth = oldValue.substr(0, cursorPosition).match(new RegExp(char, 'g'));
-
-    if (nth === null) {
-        return cursorPosition;
-    }
-
-    /**
-     * We decrement nth.length by 1 because string.match also includes the selected char
-     */
-    const newCursor = nthEndPos(char, newValue, nth.length);
-
-    if (newCursor === -1) {
-        return cursorPosition;
-    }
-
-    return newValue.length - newCursor;
-};
-
 const CurrencyField: FC<PropsType> = props => {
     /**
      * Update the formatter every time the currency or locale changes.
@@ -243,16 +194,10 @@ const CurrencyField: FC<PropsType> = props => {
             }}
             onClick={() => {
                 if (inputRef.current && inputRef.current.selectionStart) {
-                    const newPosition = correctCursorPosition(
-                        inputRef.current.selectionStart,
-                        displayValue,
-                        formatDisplayValue(displayValue),
-                    );
-
-                    if (newPosition !== inputRef.current.selectionStart) {
-                        inputRef.current.selectionStart = newPosition;
-                        inputRef.current.selectionEnd = newPosition;
-                    }
+                    inputRef.current.selectionEnd =
+                        displayValue.length === formatDisplayValue(displayValue).length
+                            ? inputRef.current.selectionStart
+                            : inputRef.current.selectionStart - 1;
                 }
             }}
         />
