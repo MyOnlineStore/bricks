@@ -25,7 +25,9 @@
       "path": "./dist/**/*.js"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@myonlinestore/bricks-assets": "^0.0.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.2",
@@ -58,6 +60,7 @@
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.3",
     "husky": "^2.4.1",
+    "intl": "^1.2.5",
     "jest": "^24.7.1",
     "jest-styled-components": "^5.0.0",
     "lerna": "^3.20.2",
