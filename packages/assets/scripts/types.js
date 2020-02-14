@@ -28,6 +28,10 @@ async function main() {
     index += '\n';
     types += '\n';
 
+    if (!fs.existsSync(path.resolve(__dirname, '..', 'dist'))) {
+        fs.mkdirSync(path.resolve(__dirname, '..', 'dist'));
+    }
+
     fs.writeFileSync(path.resolve(__dirname, '..', 'src', 'index.ts'), index);
     fs.writeFileSync(path.resolve(__dirname, '..', 'dist', 'index.d.ts'), types);
 }
