@@ -1,4 +1,4 @@
-import intl from 'intl';
+const intl = require('intl');
 
 const orginalError = console.error;
 const orginalWarn = console.warn;
