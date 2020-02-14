@@ -16,7 +16,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dev-dependencies-{{ checksum "package.json" }}
+            - dev-dependencies-{{ checksum "yarn.lock" }}
             - dev-dependencies-
       - run: 
           name: Installing dependencies
@@ -24,7 +24,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: dev-dependencies-{{ checksum "package.json" }}
+          key: dev-dependencies-{{ checksum "yarn.lock" }}
       - persist_to_workspace:
           root: .
           paths:

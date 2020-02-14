@@ -86,6 +86,9 @@
   "peerDependencies": {},
   "scripts": {
     "lerna": "lerna",
+    "test": "jest",
+    "build": "lerna run build",
+    "test-coverage": "jest --coverage --runInBand --bail",
     "deploy-storybook": "storybook-to-ghpages -o public",
     "build-storybook": "build-storybook -o public -s .storybook/public",
     "dev": "start-storybook -p 9001 -s .storybook/public"
