@@ -7,29 +7,17 @@ import babel from 'rollup-plugin-babel';
 import peerDepsExternals from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 
-const getDirectories = source => {
-    return readdirSync(source, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => ({ source, name: dirent.name, path: `${source}/${dirent.name}` }));
-};
-
-const getFiles = source => {
-    return readdirSync(source, { withFileTypes: true }).map(dirent => ({
-        source,
-        name: dirent.name,
-        path: `${source}/${dirent.name}`,
-    }));
-};
-
 const extensions = ['.js', '.jsx', '.ts', '.tsx', '.svg'];
+const packageName = path.basename(process.cwd());
 
 const config = [
     {
         input: path.join(process.cwd(), 'src', 'index.ts'),
         output: {
             dir: 'dist',
-            format: 'esm',
+            format: 'umd',
             exports: 'named',
+            name: `bricks-${packageName}`,
         },
         plugins: [
             babel({

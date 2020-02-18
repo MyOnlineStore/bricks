@@ -10,7 +10,14 @@
               { "removeStyleElement": true },
               { "removeTitle": true },
               { "removeDesc": true },
-              { "removeAttrs": { "attrs": "class" } }
+              {
+                "removeAttrs": {
+                    "attrs": [
+                        "class",
+                        "data-name"
+                    ]
+                }
+              }
             ]
           }
         }

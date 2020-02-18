@@ -1,16 +1,7 @@
 module.exports = {
     globals: {
         'ts-jest': {
-            babelConfig: {
-                plugins: [
-                    [
-                        'babel-plugin-styled-components',
-                        {
-                            ssr: true,
-                        },
-                    ],
-                ],
-            },
+            babelConfig: true,
         },
     },
     transform: {

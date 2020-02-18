@@ -121,7 +121,7 @@ const Modal: FC<PropsType> = props => {
                                     >
                                         <IconButton
                                             data-testid="modal-close-button"
-                                            icon={CloseIcon}
+                                            icon={<CloseIcon />}
                                             variant="primary"
                                             title="close"
                                             onClick={props.onClose}
