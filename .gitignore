@@ -13,3 +13,4 @@ dist
 .cache
 /public
 reports
+yarn-error.log
