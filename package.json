@@ -55,7 +55,6 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.3",
-    "esm": "^3.2.25",
     "husky": "^2.4.1",
     "intl": "^1.2.5",
     "jest": "^24.7.1",
