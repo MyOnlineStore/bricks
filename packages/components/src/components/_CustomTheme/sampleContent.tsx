@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-<<<<<<< HEAD:src/components/_CustomTheme/sampleContent.tsx
 import Box from '../Box';
 import Heading from '../Heading';
 import Text from '../Text';
@@ -17,29 +16,8 @@ import Notification from '../Notification';
 import Badge from '../Badge';
 import * as ThemeSettingsType from '../../themes/CustomTheme/CustomThemeTypes';
 import TextualButton from '../TextualButton';
-import { ChevronRightIcon } from '../../assets';
+import { ChevronRightIcon } from '@myonlinestore/bricks-assets';
 import { Demo } from '../Progress/story';
-=======
-import Box from '../components/Box';
-import Heading from '../components/Heading';
-import Text from '../components/Text';
-import Raised from '../components/Raised';
-import Button from '../components/Button';
-import Contrast from '../components/Contrast';
-import FormRow from '../components/FormRow';
-import Toggle from '../components/Toggle';
-import TextArea from '../components/TextArea';
-import RadioButton from '../components/RadioButton';
-import TextField from '../components/TextField';
-import Link from '../components/Link';
-import Separated from '../components/Separated';
-import Notification from '../components/Notification';
-import Badge from '../components/Badge';
-import * as ThemeSettingsType from '../themes/ExperimentalCustomTheme/MerchantThemeTypes';
-import TextualButton from '../components/TextualButton';
-import { ChevronRightIcon } from '../assets';
-import { Demo } from '../components/Progress/story';
->>>>>>> f55065d... Added seperated bundles:src/__stories__/sampleContent.tsx
 
 type PropsType = {
     themeSettings: ThemeSettingsType.ThemeSettingsType;
@@ -335,8 +313,8 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <Button title="Destructive" variant="destructive" />
                 <Button title="Plain" variant="plain" />
                 <Button title="Disabled" variant="primary" disabled />
-                <TextualButton icon={ChevronRightIcon} title="Primary" variant="primary" />
-                <TextualButton icon={ChevronRightIcon} title="Secondary" variant="secondary" />
+                <TextualButton icon={<ChevronRightIcon />} title="Primary" variant="primary" />
+                <TextualButton icon={<ChevronRightIcon />} title="Secondary" variant="secondary" />
             </Box>
             <Demo />
             <Contrast>
