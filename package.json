@@ -13,7 +13,6 @@
   "version": "1.19.0",
   "description": "bricks",
   "main": "dist/index.js",
-  "module": "dist/es/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "MyOnlineStore",
