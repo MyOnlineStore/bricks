@@ -16,11 +16,6 @@
     "react",
     "components"
   ],
-  "bundlesize": [
-    {
-      "path": "./dist/**/*.js"
-    }
-  ],
   "dependencies": {
     "chroma-js": "^2.0.3",
     "decimal.js": "^10.0.2",
@@ -46,7 +41,6 @@
     "@types/simplebar": "^2.4.1",
     "@types/styled-components": "^4.1.5",
     "@types/uuid": "^3.4.3",
-    "bundlesize": "^0.15.3",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-is": "^16.12.0",
