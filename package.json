@@ -92,7 +92,7 @@
     "dev": "start-storybook -p 9001 -s .storybook/public",
     "docs": "node scripts/copy-readme.js",
     "lerna": "lerna",
-    "lint-fix": "npm run lint -- --fix",
+    "lint-fix": "yarn lint --fix",
     "lint": "tslint --project tsconfig.json -c tslint.json ./packages/**/src/**/*.{ts,tsx}",
     "test-coverage": "jest --coverage --runInBand --bail",
     "test": "jest"

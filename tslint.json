@@ -122,8 +122,6 @@
       "prefer-switch": true,
       "prefer-template": true,
   
-      "quotemark": [true, "single", "jsx-double", "avoid-template"],
-      
       "radix": true,
       
       "space-before-function-paren": [true, "never"],

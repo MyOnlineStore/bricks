@@ -1,7 +1,6 @@
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { PropsType } from '.';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
@@ -13,13 +12,7 @@ storiesOf('Buttons/Button', module)
     .add('Default', () => {
         return (
             <Button
-                variant={
-                    select(
-                        'variant',
-                        ['primary', 'secondary', 'warning', 'destructive', 'plain'],
-                        'primary',
-                    ) as PropsType['variant']
-                }
+                variant={select('variant', ['primary', 'secondary', 'warning', 'destructive', 'plain'], 'primary')}
                 loading={boolean('loading', false)}
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}

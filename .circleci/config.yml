@@ -29,15 +29,6 @@ jobs:
           root: .
           paths:
             - .
-  linting:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: .
-      - checkout
-      - run:
-          name: Running linter
-          command: yarn lint
   test:
     <<: *defaults
     steps:
@@ -49,6 +40,9 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
+      - run:
+          name: Bootstrapping packages
+          command: yarn lerna bootstrap
       - run:
           name: Running unit tests
           command: |
@@ -67,7 +61,8 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - dist
+            - packages/assets/dist
+            - packages/components/dist
 
   cleanup:
     <<: *defaults
