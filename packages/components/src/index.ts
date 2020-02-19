@@ -45,6 +45,7 @@ export { default as TextArea } from './components/TextArea';
 export { default as TextField } from './components/TextField';
 export { default as TextualButton } from './components/TextualButton';
 export { default as Tile } from './components/Tile';
+export { default as ThemeType } from './types/ThemeType';
 export { default as Toast } from './components/Toast';
 export { default as Toaster } from './components/Toaster';
 export { default as Toggle } from './components/Toggle';
