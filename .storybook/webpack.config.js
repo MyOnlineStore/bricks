@@ -21,10 +21,14 @@ module.exports = ({ config, mode }) => {
 
     config.devtool = 'source-map';
 
-    config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx', '.json');
+    config.resolve.extensions.push('.ts', '.tsx', '.js', '.jsx', '.json', '.css');
 
     // loaders
     config.module.rules = [
+        {
+            test: /\.(tsx|css)?$/,
+            loader: 'babel-loader',
+        },
         {
             test: /\.tsx?$/,
             loader: 'ts-loader',

@@ -1,0 +1,17 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist",
+        "noEmit": false,
+        "emitDeclarationOnly": true,
+        "isolatedModules": false,
+        "incremental": false
+    }, 
+    "exclude": [
+        "**/__fixtures__"
+    ],
+    "include": [
+        "src/index.ts",
+    ]
+}

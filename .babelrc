@@ -6,7 +6,13 @@
     ],
     "plugins": [
       "babel-plugin-styled-components",
-      "@babel/proposal-class-properties"
+      "@babel/proposal-class-properties",
+      [
+        "babel-plugin-inline-import",
+        {
+            "extensions": [".css"]
+        }
+      ]
     ]
   }
   

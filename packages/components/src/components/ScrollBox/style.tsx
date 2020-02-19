@@ -1,9 +1,7 @@
+/// <reference path="../../../env.d.ts" />
 import styled, { css } from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
-
-/* tslint:disable */
-const styles = require('simplebar/dist/simplebar.min.css').toString();
-/* tslint:enable */
+import styles from 'simplebar/dist/simplebar.min.css';
 
 type ScrollBoxThemeType = {
     scrollbar: {

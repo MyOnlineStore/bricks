@@ -1,10 +1,8 @@
+/// <reference path="../../../env.d.ts" />
 import styled, { css } from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
-
-/* tslint:disable */
-const styles = require('react-input-range/lib/css/index.css').toString();
-/* tslint:enable */
+import styles from 'react-input-range/lib/css/index.css';
 
 // prettier-ignore
 const rangeStyles = css`

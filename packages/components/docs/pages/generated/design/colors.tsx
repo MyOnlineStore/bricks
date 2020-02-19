@@ -1,12 +1,12 @@
 
     import React, { FC } from 'react';
-        import Document from '/Users/henk/Documents/Development/bricks/docs/markdown/components/status-indicators.mdx';
+        import Document from '/Volumes/dev/bricks/packages/components/docs/markdown/design/colors.mdx';
         import componentMap from '../../../lib/componentMap';
         import GeneratedPage from '../../../components/GeneratedPage';
 
         const Components: FC = () => {
             return (
-                <GeneratedPage dirName={'components'}>
+                <GeneratedPage dirName={'design'}>
                     <Document components={componentMap} />
                 </GeneratedPage>
             );
