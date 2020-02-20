@@ -12,3 +12,4 @@ node_modules
 /.out
 .cache
 /public
+/docs/pages/generated
