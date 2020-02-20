@@ -20,7 +20,7 @@ jobs:
             - dev-dependencies-
       - run: 
           name: Bootstrapping dependencies
-          command: yarn lerna bootstrap 
+          command: npm whoami && yarn lerna bootstrap 
           environment:
             NODE_AUTH_TOKEN: ${NPM_TOKEN}
       - save_cache:
