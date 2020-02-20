@@ -28,7 +28,9 @@ const config = [
                 extensions,
             }),
             commonjs(),
-            peerDepsExternals(),
+            peerDepsExternals({
+                packageJsonPath: path.join(process.cwd(), 'package.json'),
+            }),
             terser({
                 output: {
                     comments: false,

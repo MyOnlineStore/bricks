@@ -8,17 +8,12 @@ const withMDX = require('@zeit/next-mdx')({
 });
 
 const withImages = require('next-images');
-
-const withCss = require('@zeit/next-css');
-
 const withFonts = require('next-fonts');
 
-module.exports = withCss(
-    withFonts(
-        withImages(
-            withMDX({
-                pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
-            }),
-        ),
+module.exports = withFonts(
+    withImages(
+        withMDX({
+            pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
+        }),
     ),
 );
