@@ -20,9 +20,7 @@ jobs:
             - dev-dependencies-
       - run: 
           name: Bootstrapping dependencies
-          command: npm whoami && yarn lerna bootstrap 
-          environment:
-            NODE_AUTH_TOKEN: ${NPM_TOKEN}
+          command: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc && yarn lerna bootstrap'
       - save_cache:
           paths:
             - node_modules
