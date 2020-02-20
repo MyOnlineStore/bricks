@@ -1,4 +1,4 @@
-import React, { ComponentType, FunctionComponent, Children, ReactNode } from 'react';
+import React, { FunctionComponent, Children, ReactNode } from 'react';
 import Box from '../Box';
 import Heading from '../Heading';
 import Illustration from '../Illustration';
@@ -6,7 +6,7 @@ import { CactusColorIllustration } from '@myonlinestore/bricks-assets';
 import Text from '../Text';
 
 type PropsType = {
-    illustration?: string | ComponentType;
+    illustration?: ReactNode;
     title: string | ReactNode;
     message: string | ReactNode;
     horizontal?: boolean;
@@ -38,7 +38,7 @@ const EmptyState: FunctionComponent<PropsType> = (props): JSX.Element => {
         props.illustration !== undefined ? (
             <Illustration illustration={props.illustration} />
         ) : (
-            <Illustration illustration={CactusColorIllustration} />
+            <Illustration illustration={<CactusColorIllustration />} />
         );
 
     if (props.horizontal) {

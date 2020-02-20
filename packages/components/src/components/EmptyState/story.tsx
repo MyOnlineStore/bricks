@@ -25,7 +25,7 @@ storiesOf('EmptyState', module)
         return (
             <Box justifyContent="space-around">
                 <EmptyState
-                    illustration={BalloonColorIllustration}
+                    illustration={<BalloonColorIllustration />}
                     title={title}
                     message={message}
                     horizontal={boolean('horizontal', true)}
