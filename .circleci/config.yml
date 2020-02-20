@@ -3,6 +3,7 @@ defaults: &defaults
     - image: circleci/node:12.2.0
   environment:
     CC_TEST_REPORTER_ID: 39ff6fab79be04ad2f3f4fe6d57d7665c761a8c0875f5f38c27624ed60ae3a22
+    NODE_AUTH_TOKEN: ${NPM_TOKEN}
   working_directory: ~/repo
 
 version: 2
