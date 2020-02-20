@@ -13,8 +13,4 @@
     "builds": [
         { "src": "packages/components/package.json", "use": "@now/static-build" }
     ],
-    "routes": [
-        { "src": "/bricks/components/(.*)", "dest": "/packages/components/$1", "continue": true },
-        { "src": "/(((?!\\?|#|\\.|_next).)*((?!\\?|/|#|\\.).))", "status": 301, "headers": { "Location": "/$1/" } }
-    ]
 }
