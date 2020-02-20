@@ -19,8 +19,8 @@ jobs:
             - dev-dependencies-{{ checksum "yarn.lock" }}
             - dev-dependencies-
       - run: 
-          name: Bootstrapping dependencies
-          command: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc && yarn lerna bootstrap'
+          name: Installing dependencies
+          command: 'yarn --frozen-lockfile'
       - save_cache:
           paths:
             - node_modules
