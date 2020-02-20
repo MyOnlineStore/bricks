@@ -33,7 +33,7 @@ module.exports = ({ config, mode }) => {
             test: /\.tsx?$/,
             loader: 'ts-loader',
             options: {
-                configFile: path.join(__dirname, '/../tsconfig.json'),
+                configFile: path.join(__dirname, '../tsconfig.json'),
             },
         },
         {

@@ -1,9 +1,9 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { create } from '@storybook/theming';
-import themeDecorator from '../packages/components/src/__fixtures__/themeDecorator';
-import { bodyFont } from '../packages/components/src/themes/MosTheme/MosTheme.theme';
-import { colors } from '../packages/components/src/themes/MosTheme/colors';
+import themeDecorator from '../src/__fixtures__/themeDecorator';
+import { bodyFont } from '../src/themes/MosTheme/MosTheme.theme';
+import { colors } from '../src/themes/MosTheme/colors';
 
 const checkerSize = 24;
 
@@ -74,7 +74,7 @@ addParameters({
 addDecorator(themeDecorator);
 addDecorator(withKnobs);
 
-const req = require.context('../packages', true, /story.tsx$/);
+const req = require.context('../src', true, /story.tsx$/);
 
 function loadStories() {
     req.keys().forEach(function(filename) {

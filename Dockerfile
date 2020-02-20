@@ -5,7 +5,7 @@ COPY yarn.lock package.json ./
 RUN yarn --ignore-scripts
 
 COPY . .
-RUN yarn build-storybook
+RUN cd packages/components && yarn build-storybook
 
 FROM mhart/alpine-node:10.10
 WORKDIR /public

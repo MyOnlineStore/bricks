@@ -83,12 +83,10 @@
   },
   "peerDependencies": {},
   "scripts": {
-    "build-storybook": "build-storybook -o public -s .storybook/public",
     "build": "lerna run build",
     "cs-fix": "prettier --write ./packages/**/src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./packages/**/src/**/*.{ts,tsx}",
-    "deploy-storybook": "storybook-to-ghpages -o public",
-    "dev": "start-storybook -p 9001 -s .storybook/public",
+    "dev:components": "cd packages/components && yarn dev",
     "docs": "node scripts/copy-readme.js",
     "lerna": "lerna",
     "lint-fix": "yarn lint --fix",

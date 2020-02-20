@@ -11,6 +11,6 @@ dist
 /lib
 /.out
 .cache
-/public
+public
 reports
 yarn-error.log
