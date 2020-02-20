@@ -19,8 +19,8 @@ jobs:
             - dev-dependencies-{{ checksum "yarn.lock" }}
             - dev-dependencies-
       - run: 
-          name: Installing dependencies
-          command: yarn install --ignore-scripts
+          name: Bootstrapping dependencies
+          command: yarn lerna bootstrap 
       - save_cache:
           paths:
             - node_modules
@@ -40,9 +40,6 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-      - run:
-          name: Bootstrapping packages
-          command: yarn lerna bootstrap
       - run:
           name: Running unit tests
           command: |
