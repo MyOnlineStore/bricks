@@ -12,5 +12,12 @@
     },
     "builds": [
         { "src": "packages/components/package.json", "use": "@now/static-build" }
+    ],
+    "routes": [
+        {
+            "src": "/bricks/packages/components", 
+            "headers": {"cache-control": "s-maxage=1000"},
+            "dest": "/bricks/packages/components/public/index.html"
+        }
     ]
 }
