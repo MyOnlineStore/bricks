@@ -6,7 +6,7 @@
   },
   "homepage": "https://github.com/MyOnlineStore/bricks#readme",
   "name": "@myonlinestore/bricks",
-  "version": "1.19.0",
+  "version": "2.0.0",
   "description": "bricks",
   "main": "dist/index.js",
   "module": "dist/es/index.js",
@@ -62,7 +62,7 @@
     "build": "rimraf ./dist && yarn types && rollup -c ../../rollup.config.js",
     "docs": "node scripts/copy-readme.js",
     "types": "tsc -p tsconfig.declarations.json",
-    "prepare": "npm run build"
+    "prepare": "yarn build"
   },
   "files": [
     "dist"
