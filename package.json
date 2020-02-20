@@ -57,7 +57,7 @@
     "husky": "^2.4.1",
     "intl": "^1.2.5",
     "jest": "^24.7.1",
-    "jest-styled-components": "^5.0.0",
+    "jest-styled-components": "^7.0.0",
     "lerna": "^3.20.2",
     "prettier": "^1.14.3",
     "react": "^16.8.0",
