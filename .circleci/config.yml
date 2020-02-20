@@ -89,12 +89,6 @@ workflows:
           filters:
             branches:
               ignore: gh-pages
-      - linting:
-          filters:
-            branches:
-              ignore: gh-pages
-          requires:
-            - setup
       - test:
           filters:
             branches:
