@@ -7,7 +7,7 @@ type PropsType = {
     depth?: number;
     href: string;
     title: string;
-    category: string;
+    category?: string;
 };
 
 const StyledText = styled(Text)`
@@ -19,7 +19,7 @@ const HeadingLink: FC<PropsType> = props => {
     const [isStrong, setIsStrong] = useState(false);
 
     useEffect(() => {
-        if (window.location.pathname.includes(props.category)) {
+        if (props.category && window.location.pathname.includes(props.category)) {
             setIsStrong(true);
         }
     });

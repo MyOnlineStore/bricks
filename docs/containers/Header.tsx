@@ -53,6 +53,7 @@ const Header: FC = props => {
                             key={index}
                         />
                     ))}
+                    <HeadingLink href={'https://myonlinestore-bricks.now.sh'} title="Storybook" />
                 </HeadingLinkContainer>
             </Box>
         </StyledHeader>
