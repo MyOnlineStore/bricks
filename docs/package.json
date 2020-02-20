@@ -26,7 +26,7 @@
   },
   "scripts": {
     "update-bricks": "cd ../ && yarn build && cd docs",
-    "update-docs": "cd ../ && yarn docs && cd docs && rimraf node_modules && yarn",
+    "update-docs": "rimraf pages/generated && node lib/articles-to-pages.js",
     "start": "next",
     "build": "next build",
     "export-to-ghpages": "rimraf ./dist && next export -o ./dist && cp ./CNAME ./dist/CNAME"

@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import SidebarLink from '../components/SidebarLink';
+import { Box, ChevronLeftIcon } from '@myonlinestore/bricks';
 
 //tslint:disable-next-line
 const articleData: ArticleDataType = require('../lib/get-article-data');
@@ -22,7 +23,9 @@ const SideNav: FC<PropsType> = props => {
 
     return (
         <Sidebar>
-            <SidebarLink href="/" title="< Back" />
+            <Box padding={[0, 0, 36, 0]}>
+                <SidebarLink icon={ChevronLeftIcon} href="/" title=" Back" />
+            </Box>
             {dirData[0].files.map((file, index) => {
                 const fileNameSlug = file.replace(/\.mdx?$/, '');
                 const fileNameDisplay = (fileNameSlug.charAt(0).toUpperCase() + fileNameSlug.slice(1)).replace(
