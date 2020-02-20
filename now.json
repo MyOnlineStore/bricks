@@ -17,7 +17,7 @@
         {
             "src": "/bricks/packages/components", 
             "headers": {"cache-control": "s-maxage=1000"},
-            "dest": "/bricks/packages/components/public/index.html"
+            "dest": "/packages/components/public"
         }
     ]
 }
