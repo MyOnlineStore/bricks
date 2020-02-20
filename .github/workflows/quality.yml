@@ -28,7 +28,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Installing dependencies
-      run: yarn --frozen-lockfile 
+      run: yarn --frozen-lockfile --registry https://registry.npmjs.org
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Running tests
