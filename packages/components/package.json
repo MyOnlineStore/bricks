@@ -27,7 +27,7 @@
     "simplebar": "3.0.0-beta.4"
   },
   "devDependencies": {
-    "@myonlinestore/bricks-assets": "^0.0.4",
+    "@myonlinestore/bricks-assets": "0.0.4",
     "@types/chroma-js": "^1.4.1",
     "@types/decimal.js": "^7.4.0",
     "@types/deepmerge": "^2.1.0",
