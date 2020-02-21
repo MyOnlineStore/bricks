@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 type SquareProps = {
     background: string;
+    border?: boolean;
 };
 
 const Square = styled.div<SquareProps>`
@@ -17,11 +18,12 @@ const Square = styled.div<SquareProps>`
     display: flex;
     justify-content: center;
     align-items: center;
+    ${({ border }) => (border ? `border: 1px solid ${colors.grey300}` : '')}
 `;
 
 type PropsType = {};
 
-const ColorBoard: FC<PropsType> = () => {
+const VariantColorBoard: FC<PropsType> = () => {
     return (
         <Box direction="column" padding={[12, 0]}>
             <Box>
@@ -83,4 +85,21 @@ const ColorBoard: FC<PropsType> = () => {
     );
 };
 
-export default ColorBoard;
+const MainBrandColorBoard: FC<{}> = () => (
+    <Box>
+        <Square background={colors.green300} />
+        <Square background={colors.grey800} />
+        <Square border background={colors.white} />
+    </Box>
+);
+
+const SecondaryBrandColorBoard: FC<{}> = () => (
+    <Box>
+        <Square border background={colors.grey100} />
+        <Square background={colors.yellow400} />
+        <Square border background={colors.red500} />
+        <Square border background={colors.blue500} />
+    </Box>
+);
+
+export { VariantColorBoard, MainBrandColorBoard, SecondaryBrandColorBoard };
