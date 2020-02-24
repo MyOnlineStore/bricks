@@ -18,7 +18,7 @@
     ],
     "routes": [
         {
-            "src": "/bricks/packages/components/(.*)",
+            "src": "/",
             "headers": {
                 "cache-control": "s-maxage=1000"
             },
