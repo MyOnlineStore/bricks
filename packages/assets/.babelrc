@@ -1,0 +1,36 @@
+{
+    "extends": "../../.babelrc",
+    "plugins": [
+      [
+        "inline-react-svg",
+        {
+          "ignorePattern": ".color.svg",
+          "svgo": {
+            "plugins": [
+              { "removeStyleElement": true },
+              { "removeTitle": true },
+              { "removeDesc": true },
+              {
+                "removeAttrs": {
+                    "attrs": [
+                        "class",
+                        "data-name"
+                    ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      [
+        "inline-react-svg",
+        {
+          "svgo": {
+            "plugins": [{ "removeTitle": true }, { "removeDesc": true }]
+          }
+        },
+        "inline-react-color-svg"
+      ]
+    ]
+  }
+  

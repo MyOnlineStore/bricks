@@ -3,7 +3,6 @@
     "declaration": true,
     "declarationDir": "dist",
     "sourceMap": true,
-    "outDir": "dist/src",
     "noImplicitAny": true,
     "noErrorTruncation": true,
     "noUnusedLocals": true,
@@ -16,6 +15,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strictNullChecks": true,
+    "baseUrl": ".",
     "typeRoots": [
       "./node_modules/@types",
       "./src/types"
@@ -26,7 +26,7 @@
     ],
   },
   "include": [
-    "src/**/*"
+    "packages/**/src/**/*", 
   ],
   "exclude": [
     "node_modules"

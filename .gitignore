@@ -6,10 +6,12 @@
 /.phpstorm_helpers
 node_modules
 .next
-/reports
-/dist
+reports
+dist
 /lib
 /.out
 .cache
-/public
-/docs/pages/generated
+packages/components/docs/pages/generated
+packages/components/public
+reports
+yarn-error.log

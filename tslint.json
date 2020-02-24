@@ -88,7 +88,6 @@
       "no-eval": true,
       "no-floating-promises": true,
       "no-for-in-array": true,
-      "no-implicit-dependencies": [true, "dev"],
       "no-increment-decrement": false,
       "no-inferred-empty-object-type": true,
       "no-internal-module": true,
@@ -123,8 +122,6 @@
       "prefer-switch": true,
       "prefer-template": true,
   
-      "quotemark": [true, "single", "jsx-double", "avoid-template"],
-      
       "radix": true,
       
       "space-before-function-paren": [true, "never"],

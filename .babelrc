@@ -1,0 +1,18 @@
+{
+    "presets": [
+      ["@babel/preset-env", { "modules": false }],
+      "@babel/preset-typescript",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "babel-plugin-styled-components",
+      "@babel/proposal-class-properties",
+      [
+        "babel-plugin-inline-import",
+        {
+            "extensions": [".css"]
+        }
+      ]
+    ]
+  }
+  
