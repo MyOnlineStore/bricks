@@ -1,0 +1,22 @@
+{
+  "name": "@myonlinestore/bricks-assets",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "MyOnlineStore",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/types.js && rollup -c ../../rollup.config.js",
+    "prepare": "yarn build"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "camelcase": "^5.3.1"
+  }
+}
