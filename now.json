@@ -17,14 +17,4 @@
         }
     ],
     "cleanUrls": true,
-    "routes": [
-        {
-            "src": "/bricks/packages/components/",
-            "headers": {
-                "cache-control": "s-maxage=1000"
-            },
-            "dest": "/packages/components/",
-            "continue": true
-        }
-    ]
 }
