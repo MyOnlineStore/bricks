@@ -60,7 +60,6 @@
   },
   "scripts": {
     "build": "rimraf ./dist && yarn types && rollup -c ../../rollup.config.js",
-    "now-build": "MODE='static' build-storybook -o ./public -s .storybook/public",
     "dev": "start-storybook -p 9001 -s .storybook/public",
     "deploy-storybook": "storybook-to-ghpages -o public",
     "docs": "node scripts/copy-readme.js",
