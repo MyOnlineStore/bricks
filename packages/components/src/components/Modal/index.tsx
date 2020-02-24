@@ -10,6 +10,7 @@ import ButtonGroup from '../ButtonGroup';
 import { CloseIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 import styled from 'styled-components';
+import { OffsetType } from '../../types/OffsetType';
 
 type PropsType = {
     'data-testid'?: string;
@@ -88,13 +89,59 @@ const Modal: FC<PropsType> = props => {
                 <Measure client>
                     {({ measureRef, contentRect }) => {
                         const isSmall = contentRect.client && contentRect.client.width < 320;
+                        let headingPadding: [OffsetType, OffsetType, OffsetType, OffsetType] = [30, 60, 6, 36];
 
-                        // isSplit = true : two column layout with content left and media right
+                        if (isSmall) {
+                            headingPadding = [30, 48, 6, 18];
+                        }
+
+                        if (props.centered) {
+                            headingPadding = [30, 60, 6, 60];
+                        }
+
+                        let scrollBoxPadding: [OffsetType] = [36];
+
+                        if (isSmall) {
+                            scrollBoxPadding = [18];
+                        }
+
+                        /** if isSplit is true, the content is divided into a two column layout with text left and media right */
                         const isSplit =
                             props.size !== 'small' &&
                             props.media !== undefined &&
                             contentRect.client &&
                             contentRect.client.width > 480;
+
+                        const closeButton = (
+                            <Box
+                                zIndex={10}
+                                position="absolute"
+                                top="12px"
+                                right={isSmall ? '12px' : '24px'}
+                                alignContent="center"
+                                justifyContent="flex-end"
+                                alignItems="center"
+                                grow={0}
+                            >
+                                <IconButton
+                                    data-testid="modal-close-button"
+                                    icon={<CloseIcon />}
+                                    variant="primary"
+                                    title="close"
+                                    onClick={props.onClose}
+                                />
+                            </Box>
+                        );
+
+                        const heading = (
+                            <Heading
+                                data-testid="modal-title"
+                                textAlign={props.centered ? 'center' : 'left'}
+                                hierarchy={2}
+                            >
+                                {props.title}
+                            </Heading>
+                        );
 
                         return (
                             <StyledModal
@@ -108,26 +155,7 @@ const Modal: FC<PropsType> = props => {
                                 aria-modal
                                 aria-label={props.title}
                             >
-                                {props.onClose !== undefined && (
-                                    <Box
-                                        zIndex={10}
-                                        position="absolute"
-                                        top="12px"
-                                        right="24px"
-                                        alignContent="center"
-                                        justifyContent="flex-end"
-                                        alignItems="center"
-                                        grow={0}
-                                    >
-                                        <IconButton
-                                            data-testid="modal-close-button"
-                                            icon={<CloseIcon />}
-                                            variant="primary"
-                                            title="close"
-                                            onClick={props.onClose}
-                                        />
-                                    </Box>
-                                )}
+                                {props.onClose !== undefined && closeButton}
                                 <Box
                                     shrink={1}
                                     grow={1}
@@ -142,22 +170,23 @@ const Modal: FC<PropsType> = props => {
                                             {props.media}
                                         </MediaWrapper>
                                     )}
+                                    {!isSplit && (
+                                        <Box direction="column" padding={headingPadding}>
+                                            {heading}
+                                        </Box>
+                                    )}
                                     <ScrollBox>
-                                        <Box direction="column" padding={isSmall ? [18] : [36]}>
+                                        <Box direction="column" padding={scrollBoxPadding}>
                                             {!isSplit && props.media && (
                                                 <MediaWrapper data-testid="modal-media-container" fullWidth overlap={0}>
                                                     {props.media}
                                                 </MediaWrapper>
                                             )}
-                                            <Box margin={[0, 0, 12, 0]} direction="column">
-                                                <Heading
-                                                    data-testid="modal-title"
-                                                    textAlign={props.centered ? 'center' : 'left'}
-                                                    hierarchy={2}
-                                                >
-                                                    {props.title}
-                                                </Heading>
-                                            </Box>
+                                            {isSplit && (
+                                                <Box margin={[0, 0, 12, 0]} direction="column">
+                                                    {heading}
+                                                </Box>
+                                            )}
                                             {props.children}
                                         </Box>
                                     </ScrollBox>
