@@ -16,13 +16,14 @@
             "use": "@now/static-build"
         }
     ],
+    "cleanUrls": true,
     "routes": [
         {
-            "src": "/",
+            "src": "/bricks/packages/components/",
             "headers": {
                 "cache-control": "s-maxage=1000"
             },
-            "dest": "/packages/components/$1",
+            "dest": "/packages/components/",
             "continue": true
         }
     ]
