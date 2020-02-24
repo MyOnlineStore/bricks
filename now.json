@@ -5,19 +5,24 @@
         "env": {
             "NPM_TOKEN": "@npm_token",
             "BUILDING_FOR_NOW": "true"
-        }   
+        }
     },
     "github": {
         "silent": true
     },
     "builds": [
-        { "src": "packages/components/package.json", "use": "@now/static-build" }
+        {
+            "src": "packages/components/package.json",
+            "use": "@now/static-build"
+        }
     ],
     "routes": [
         {
-            "src": "/bricks/packages/components", 
-            "headers": {"cache-control": "s-maxage=1000"},
-            "dest": "/packages/components/public"
+            "src": "/bricks/packages/components",
+            "headers": {
+                "cache-control": "s-maxage=1000"
+            },
+            "dest": "/packages/components/$1"
         }
     ]
 }
