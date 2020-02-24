@@ -10,11 +10,5 @@
     "github": {
         "silent": true
     },
-    "builds": [
-        {
-            "src": "packages/components/package.json",
-            "use": "@now/static-build"
-        }
-    ],
     "cleanUrls": true
 }
