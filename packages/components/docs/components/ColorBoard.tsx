@@ -97,8 +97,8 @@ const SecondaryBrandColorBoard: FC<{}> = () => (
     <Box>
         <Square border background={colors.grey100} />
         <Square background={colors.yellow400} />
-        <Square border background={colors.red500} />
-        <Square border background={colors.blue500} />
+        <Square background={colors.red500} />
+        <Square background={colors.blue500} />
     </Box>
 );
 

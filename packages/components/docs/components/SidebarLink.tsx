@@ -1,11 +1,11 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Heading, Text, Box, Link, Icon } from '@myonlinestore/bricks';
+import React, { FC, useEffect, useState, ReactNode } from 'react';
+import { Heading, Text, Box, Icon } from '@myonlinestore/bricks';
 import StyledLink from './StyledLink';
 import styled from 'styled-components';
 
 type PropsType = {
     depth?: number;
-    icon?: string;
+    icon?: ReactNode;
     href: string;
     title: string;
 };
@@ -27,7 +27,7 @@ const SidebarLink: FC<PropsType> = props => {
     return (
         <Box padding={[12, 0]}>
             <Heading as="h5" hierarchy={5}>
-                <StyledText strong={isStrong} severity={props.depth === 2 ? 'info' : undefined} as="span">
+                <StyledText strong={isStrong} variant={props.depth === 2 ? 'descriptive' : undefined} as="span">
                     <StyledLink href={props.href} title={props.title}>
                         {props.icon && <Icon size="small" icon={props.icon} />} {props.title}
                     </StyledLink>
