@@ -16,5 +16,5 @@
             "use": "@now/static-build"
         }
     ],
-    "cleanUrls": true,
+    "cleanUrls": true
 }
