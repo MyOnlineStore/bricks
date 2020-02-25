@@ -1,6 +1,6 @@
 {
   "name": "@myonlinestore/bricks-assets",
-  "version": "0.1.2",
+  "version": "0.1.2-canary.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "MyOnlineStore",
