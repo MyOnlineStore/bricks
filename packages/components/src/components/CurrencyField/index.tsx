@@ -1,5 +1,5 @@
-/// <reference path="../../../../../src/_declarations/global.d.ts" />
-import TextField, { PropsType as TextFieldPropsType } from '../..';
+/// <reference path="../../_declarations/global.d.ts" />
+import TextField, { PropsType as TextFieldPropsType } from '../TextField';
 import React, { FC, useMemo, useState, useEffect, useRef } from 'react';
 import { Decimal } from 'decimal.js';
 
