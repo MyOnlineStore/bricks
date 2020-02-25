@@ -1,8 +1,8 @@
 import React, { FunctionComponent, FC, useState } from 'react';
 import CurrencyField from '.';
-import TextField from '../..';
-import { mountWithTheme } from '../../../../utility/styled/testing';
-import MosTheme from '../../../../themes/MosTheme';
+import TextField from '../TextField';
+import { mountWithTheme } from '../../utility/styled/testing';
+import MosTheme from '../../themes/MosTheme';
 import { mount } from 'enzyme';
 
 describe(CurrencyField.name, () => {

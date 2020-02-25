@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import InputRange from 'react-input-range';
 import StyledWrapper from './style';
-import TextField from '../TextField';
+import NumberField from '../NumberField';
 import Box from '../Box';
 import memoize from 'memoize-one';
 
@@ -70,7 +70,7 @@ const Slider: FC<PropsType> = props => {
             </StyledWrapper>
             {props.hideInputField !== true && (
                 <Box width={props.inputFieldWidth ? props.inputFieldWidth : '100px'} shrink={0} padding={[0, 0, 0, 18]}>
-                    <TextField.Number
+                    <NumberField
                         value={inputValue}
                         disabled={props.disabled}
                         name="slider-value"

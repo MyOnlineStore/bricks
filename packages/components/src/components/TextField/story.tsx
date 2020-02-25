@@ -5,6 +5,8 @@ import TextField from '.';
 import SeverityType from '../../types/SeverityType';
 import { Checkbox, IconButton, Box } from '../..';
 import { SearchIcon } from '@myonlinestore/bricks-assets';
+import CurrencyField from '../CurrencyField';
+import NumberField from '../NumberField';
 
 type PropsType = {
     withClearButton?: boolean;
@@ -83,7 +85,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
 
     if (props.isCurrency) {
         return (
-            <TextField.Currency
+            <CurrencyField
                 {...sharedProps}
                 {...numberProps}
                 currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'EUR')}
@@ -98,7 +100,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
     }
 
     if (props.isNumber) {
-        return <TextField.Number {...sharedProps} {...numberProps} />;
+        return <NumberField {...sharedProps} {...numberProps} />;
     }
 
     return <TextField {...sharedProps} {...textProps} />;

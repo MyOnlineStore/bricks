@@ -3,8 +3,6 @@ import SeverityType from '../../types/SeverityType';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
-import CurrencyField from './formatters/CurrencyField';
-import withNumberFormatting, { WithNumberFormattingType } from './formatters/withNumberFormatting';
 import Icon from '../Icon';
 import { LockedIcon, QuestionCircleIcon, DangerCircleIcon, CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
@@ -35,8 +33,6 @@ type StateType = { focus: boolean };
 const ICON_COLOR = '#A6AAB3';
 
 class TextField extends Component<PropsType, StateType> {
-    public static Currency = CurrencyField;
-    public static Number: WithNumberFormattingType = withNumberFormatting(TextField);
     private inputRef: HTMLInputElement | null;
 
     public constructor(props: PropsType) {

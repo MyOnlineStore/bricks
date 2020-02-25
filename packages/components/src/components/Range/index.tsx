@@ -3,7 +3,7 @@ import InputRange, { Range as RangeType } from 'react-input-range';
 import StyledWrapper from './style';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
-import TextField from '../TextField';
+import NumberField from '../NumberField';
 import memoize from 'memoize-one';
 
 type PropsType = {
@@ -125,7 +125,7 @@ class Range extends Component<PropsType, StateType> {
                 <Box justifyContent="space-between">
                     <Box wrap justifyContent="space-between" width="100%">
                         <Box width="136px" shrink={0} padding={trbl(0, 0, 12, 0)}>
-                            <TextField.Number
+                            <NumberField
                                 feedback={this.state.hasError.min ? { severity: 'error', message: '' } : undefined}
                                 value={this.state.inputValues.min}
                                 suffix={this.props.label}
@@ -139,7 +139,7 @@ class Range extends Component<PropsType, StateType> {
                             />
                         </Box>
                         <Box width="136px" shrink={0} padding={trbl(0, 0, 12, 0)}>
-                            <TextField.Number
+                            <NumberField
                                 onBlur={this.onBlurMaximumValue}
                                 suffix={this.props.label}
                                 value={this.state.inputValues.max}
