@@ -1,5 +1,4 @@
 import path from 'path';
-import { readdirSync } from 'fs';
 import visualizer from 'rollup-plugin-visualizer';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';

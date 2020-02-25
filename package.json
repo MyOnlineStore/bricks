@@ -84,6 +84,7 @@
   "peerDependencies": {},
   "scripts": {
     "build": "lerna run build",
+    "now-build": "cd packages/components && MODE='static' build-storybook -o ../../public -s .storybook/public",
     "cs-fix": "prettier --write ./packages/**/src/**/*.{ts,tsx}",
     "cs": "prettier --list-different ./packages/**/src/**/*.{ts,tsx}",
     "dev:components": "cd packages/components && yarn dev",
