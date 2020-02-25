@@ -66,7 +66,7 @@ Feel free to help us develop Bricks! If you have a new feature suggestion please
 ## Development
 - Clone the repo
 - Run `npm install`
-- Run either `npm run watch` to start the dev-server running on `localhost:9001` or run `npm run build` to build a dist 
+- Run either `npm run dev:components` to start the dev-server running on `localhost:9001` or run `npm run build` to build a dist 
 to be used with `npm link`
 
 ## License
