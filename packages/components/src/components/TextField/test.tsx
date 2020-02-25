@@ -5,6 +5,8 @@ import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 import { Box } from '../..';
 import MosTheme from '../../themes/MosTheme';
 import { mount } from 'enzyme';
+import CurrencyField from '../CurrencyField';
+import NumberField from '../NumberField';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -141,13 +143,13 @@ describe('TextField', () => {
     it('should render the components defined as static property', () => {
         const changeMock = jest.fn();
 
-        const currency = mountWithTheme(
-            <TextField.Currency name="" value={1} onChange={changeMock} locale="nl-NL" currency="EUR" />,
+        const currencyField = mountWithTheme(
+            <CurrencyField name="" value={1} onChange={changeMock} locale="nl-NL" currency="EUR" />,
         );
 
-        const number = mountWithTheme(<TextField.Number name="" value={1} onChange={changeMock} />);
+        const numberField = mountWithTheme(<NumberField name="" value={1} onChange={changeMock} />);
 
-        expect(currency.find('input').length).toBe(1);
-        expect(number.find('input').length).toBe(1);
+        expect(currencyField.find('input').length).toBe(1);
+        expect(numberField.find('input').length).toBe(1);
     });
 });

@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
-import withNumberFormatting from './';
-import TextField from '../..';
-import { mountWithTheme } from '../../../../utility/styled/testing';
-import MosTheme from '../../../../themes/MosTheme';
+import NumberField from '.';
+import { mountWithTheme } from '../../utility/styled/testing';
+import MosTheme from '../../themes/MosTheme';
 import { mount } from 'enzyme';
 
-describe('withNumberFormatting', () => {
+describe(NumberField.name, () => {
     it('should handle change', () => {
         const changeMock = jest.fn();
-        const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(<NumberField name="" value={19} onChange={changeMock} />);
 
         component.find('input').simulate('change', { target: { value: '20' } });
@@ -18,8 +16,6 @@ describe('withNumberFormatting', () => {
 
     it('should restore the savedValue on blur when the input is not numeric', () => {
         const changeMock = jest.fn();
-
-        const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(<NumberField name="" value={123} onChange={changeMock} />);
 
         component.find('input').simulate('change', { target: { value: 'abcd' } });
@@ -30,7 +26,6 @@ describe('withNumberFormatting', () => {
 
     it('should not allow negative numbers when negativeDisabled is true', () => {
         const changeMock = jest.fn();
-        const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(<NumberField name="" value={19} disableNegative onChange={changeMock} />);
 
         component.find('input').simulate('change', { target: { value: '-5' } });
@@ -41,7 +36,6 @@ describe('withNumberFormatting', () => {
 
     it('should be able to handle localized float values', () => {
         const changeMock = jest.fn();
-        const NumberField = withNumberFormatting(TextField);
 
         const component = mountWithTheme(
             <NumberField name="" value={10} allowDecimals locale="nl_NL" onChange={changeMock} />,
@@ -56,7 +50,6 @@ describe('withNumberFormatting', () => {
 
     it('should not allow float values when allowDecimals is false', () => {
         const changeMock = jest.fn();
-        const NumberField = withNumberFormatting(TextField);
         const component = mountWithTheme(
             <NumberField name="" value={10} allowDecimals={false} onChange={changeMock} />,
         );
@@ -70,7 +63,6 @@ describe('withNumberFormatting', () => {
 
     it('should render the value with a minimum amount of decimals', () => {
         const changeMock = jest.fn();
-        const NumberField = withNumberFormatting(TextField);
 
         const component = mountWithTheme(
             <NumberField
@@ -94,7 +86,6 @@ describe('withNumberFormatting', () => {
 
     it('should render the value with a maximum amount of decimals', () => {
         const changeMock = jest.fn();
-        const NumberField = withNumberFormatting(TextField);
 
         const component = mountWithTheme(
             <NumberField
@@ -115,9 +106,7 @@ describe('withNumberFormatting', () => {
     });
 
     it('should be testable with a test-id', () => {
-        const component = mountWithTheme(
-            <TextField.Number data-testid="foo" value={0} name="foo" onChange={jest.fn()} />,
-        );
+        const component = mountWithTheme(<NumberField data-testid="foo" value={0} name="foo" onChange={jest.fn()} />);
 
         expect(component.find('[data-testid="foo"]').hostNodes().length).toBe(1);
     });
@@ -135,7 +124,7 @@ describe('withNumberFormatting', () => {
         }> = props => {
             return (
                 <MosTheme>
-                    <TextField.Number {...props} />
+                    <NumberField {...props} />
                 </MosTheme>
             );
         };

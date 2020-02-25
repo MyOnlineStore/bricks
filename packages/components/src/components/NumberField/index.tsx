@@ -1,5 +1,5 @@
 import React, { Component, ComponentClass, ComponentType } from 'react';
-import { PropsType as TextFieldPropsType } from '../../';
+import TextField, { PropsType as TextFieldPropsType } from '../TextField';
 
 type OmittedKeys = 'onChange' | 'value' | 'type';
 
@@ -137,5 +137,7 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
     return WithNumberFormatting;
 };
 
-export default withNumberFormatting;
+const NumberField = withNumberFormatting(TextField);
+
+export default NumberField;
 export { WithNumberFormattingType };
