@@ -32,20 +32,20 @@ jobs:
     - name: Building bricks
       run: yarn build
     - name: Generate pages
-      run: cd docs && node lib/articles-to-pages.js
+      run: cd packages/components/docs && node lib/articles-to-pages.js
     - name: Installing site dependencies
-      run: cd docs && yarn --frozen-lockfile
+      run: cd packages/components/docs && yarn --frozen-lockfile
     - name: Building site
-      run: cd docs && yarn build
+      run: cd packages/components/docs && yarn build
     - name: Static export
-      run: cd docs && yarn export-to-ghpages
+      run: cd packages/components/docs && yarn export-to-ghpages
     - name: Bypass jekyll
-      run: cd docs && touch ./dist/.nojekyll
+      run: cd packages/components/docs && touch ./dist/.nojekyll
     - name: Deploy to github
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: ./docs/dist/
+        publish_dir: ./packages/components/docs/dist/
         user_name: "myonlinestore-ci-eu"
         user_email: "team-tech+myonlinestore-ci-eu@myonlinestore.com"
