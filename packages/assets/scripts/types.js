@@ -11,12 +11,12 @@ async function main() {
     const illustrations = fs.readdirSync(path.resolve(__dirname, '..', 'src', 'illustrations'));
 
     let index = `/// <reference path="../env.d.ts" />\n`;
-    let types = `/// <reference types="react" />\nimport { ComponentType } from 'react';\n`;
+    let types = `/// <reference types="react" />\nimport { ComponentType, SVGProps } from 'react';\n`;
 
     icons.forEach(file => {
         const name = transformName(file, 'Icon');
         index += `\nexport { default as ${name} } from './icons/${file}';`;
-        types += `\nexport const ${name}: ComponentType`;
+        types += `\nexport const ${name}: ComponentType<SVGProps<SVGSVGElement>>`;
     });
 
     illustrations.forEach(file => {
