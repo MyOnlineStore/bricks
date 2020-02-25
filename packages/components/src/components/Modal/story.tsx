@@ -81,7 +81,7 @@ storiesOf('Modal', module)
                     <Button key="activate" variant="primary" title="Activate" />,
                     <Button key="close" variant="plain" title="Close" />,
                 ]}
-                media={<AddressIllustration width="100%" />}
+                media={<AddressIllustration height="auto" width="100%" />}
                 mediaBleed={boolean('bleed media', true)}
                 mediaOverlap={select('media overlap', [0, 12, 24, 36, 48, 72], 48)}
             >

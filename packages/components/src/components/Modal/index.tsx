@@ -26,6 +26,8 @@ type PropsType = {
     renderFixed?(): JSX.Element;
 };
 
+type PaddingType = [OffsetType, OffsetType, OffsetType, OffsetType];
+
 const MediaWrapper = styled.figure<{ fullWidth?: boolean; bleed?: boolean; overlap: number }>`
     box-sizing: border-box;
     position: relative;
@@ -89,7 +91,20 @@ const Modal: FC<PropsType> = props => {
                 <Measure client>
                     {({ measureRef, contentRect }) => {
                         const isSmall = contentRect.client && contentRect.client.width < 320;
-                        let headingPadding: [OffsetType, OffsetType, OffsetType, OffsetType] = [30, 60, 6, 36];
+
+                        /** if isSplit is true, the content is divided into a two column layout with text left and media right */
+                        const isSplit =
+                            props.size !== 'small' &&
+                            props.media !== undefined &&
+                            contentRect.client &&
+                            contentRect.client.width > 480;
+
+                        /**
+                         * The padding for this component is pretty complex, when the heading is sticky, we should
+                         * reduce the top padding on the content to keep the hierarchy in tact. This has to be combined
+                         * with the fact that we reduce padding on smaller screens.
+                         */
+                        let headingPadding: PaddingType = [30, 60, 6, 36];
 
                         if (isSmall) {
                             headingPadding = [30, 48, 6, 18];
@@ -99,18 +114,21 @@ const Modal: FC<PropsType> = props => {
                             headingPadding = [30, 60, 6, 60];
                         }
 
-                        let scrollBoxPadding: [OffsetType] = [36];
+                        let scrollBoxTopPadding: OffsetType = 6;
 
-                        if (isSmall) {
-                            scrollBoxPadding = [18];
+                        if (isSplit && isSmall) {
+                            scrollBoxTopPadding = 18;
                         }
 
-                        /** if isSplit is true, the content is divided into a two column layout with text left and media right */
-                        const isSplit =
-                            props.size !== 'small' &&
-                            props.media !== undefined &&
-                            contentRect.client &&
-                            contentRect.client.width > 480;
+                        if (isSplit && !isSmall) {
+                            scrollBoxTopPadding = 36;
+                        }
+
+                        let scrollBoxPadding: PaddingType = [scrollBoxTopPadding, 36, 36, 36];
+
+                        if (isSmall) {
+                            scrollBoxPadding = [scrollBoxTopPadding, 18, 18, 18];
+                        }
 
                         const closeButton = (
                             <Box
