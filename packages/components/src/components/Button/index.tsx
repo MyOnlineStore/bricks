@@ -91,7 +91,7 @@ const StyledButton = styled(Base)<PropsType>`
             ${idle}
             padding: 11px ${compact ? ' 12px' : '24px'};
             border-radius: ${theme.Button.common.borderRadius};
-            ${variant === 'plain' ? `text-decoration: ${theme.Button.plain.idle.textDecoration}` : ''}
+            ${variant === 'plain' ? `text-decoration: ${theme.Button.plain.idle.textDecoration};` : ''}
 
             &:hover {
                 ${!loading && !disabled ? hover : idle}
