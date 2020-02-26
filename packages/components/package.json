@@ -6,7 +6,7 @@
   },
   "homepage": "https://github.com/MyOnlineStore/bricks#readme",
   "name": "@myonlinestore/bricks",
-  "version": "2.0.0-major.1",
+  "version": "2.0.0",
   "description": "bricks",
   "main": "dist/index.js",
   "module": "dist/es/index.js",
