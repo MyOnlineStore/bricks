@@ -6,6 +6,7 @@ import StyledContrast from './style';
 
 type PropsType = {
     enable?: boolean;
+    className?: string;
 };
 
 const contrastTheme = (theme: ThemeType): ThemeType => {
@@ -19,7 +20,7 @@ const ContrastThemeProvider: FunctionComponent<{ enable?: boolean }> = ({ enable
 );
 
 const Contrast: FunctionComponent<PropsType> = (props): JSX.Element => (
-    <StyledContrast>
+    <StyledContrast className={props.className}>
         <ContrastThemeProvider enable={props.enable !== false}>{props.children}</ContrastThemeProvider>
     </StyledContrast>
 );
