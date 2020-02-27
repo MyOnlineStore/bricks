@@ -21,6 +21,8 @@ const StyledContrast = styled(Contrast)`
     margin-top: 36px;
     margin-bottom: 36px;
     border-radius: 9px;
+    width: 100%;
+    min-width: 720px;
 `;
 
 const StyledSelectBox = styled(Box)`
@@ -46,13 +48,15 @@ const PreviewPane: FC<PropsType> = props => {
                         <Heading hierarchy={5} as="h5">
                             Examples
                         </Heading>
-                        <StyledSelectBox>
-                            <NativeSelect
-                                value={selectedExample}
-                                onChange={setSelectedExample}
-                                options={props.options}
-                            />
-                        </StyledSelectBox>
+                        {props.examples.length > 1 && (
+                            <StyledSelectBox>
+                                <NativeSelect
+                                    value={selectedExample}
+                                    onChange={setSelectedExample}
+                                    options={props.options}
+                                />
+                            </StyledSelectBox>
+                        )}
                     </Box>
                 </Box>
 

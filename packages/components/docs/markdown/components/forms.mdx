@@ -1,3 +1,7 @@
+import TextFieldsExamplesContainer from '../../containers/examples/TextFieldsExamplesContainer';
+import SelectExamplesContainer from '../../containers/examples/SelectExamplesContainer';
+import FormLabelsExamplesContainer from '../../containers/examples/FormLabelsExamplesContainer';
+
 # Forms
 
 ## Form fields
@@ -12,8 +16,7 @@ An open input field a user can type in that supports multiple formats.
 * Is clearly labeled (see labels)
 * Only optional text fields should be clearly marked (Optional)
 
-#### Examples
-	Text field | Prefix | Suffix | Number | Postal code | E-mail | VAT | Text area	
+<TextFieldsExamplesContainer />
 
 ### Select
 A closed list containing predefined options a user can select.
@@ -24,10 +27,7 @@ A closed list containing predefined options a user can select.
 * Always try to preselect an option or use ‘Select’ / ‘Search’  if there is no logical default option
 * Options are ordered in a way that makes sense for the content or otherwise alphabetically so users can find their option
 
-#### Examples
-	Single select list | Multi-select list | With search option
-
-***
+<SelectExamplesContainer />
 
 ## Form labels
 
@@ -39,10 +39,7 @@ Text to communicate the purpose of a form field.
 * Are positioned above or besides the form field
 * Labels convey information that is critical to use the form field
 
-#### Examples
-	Horizontal | Vertical | Floating
-
-***
+<FormLabelsExamplesContainer />
 
 ### Descriptions
 Subtext that provides additional non-critical information about a form field.
