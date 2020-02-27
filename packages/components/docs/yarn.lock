@@ -929,10 +929,10 @@
   dependencies:
     prop-types "^15.6.1"
 
-"@myonlinestore/bricks-assets@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@myonlinestore/bricks-assets/-/bricks-assets-0.0.4.tgz#e0d9d597c1c1092b359c4c6e7fc89d761e239601"
-  integrity sha512-3uYYz5qUqdhGWXCx/MuU1LNJmBcLm0wtL5ejHqLepnZOneGujb9tDjEBTpc8XS20rfia6QLFqjMDBdAzYqFvzQ==
+"@myonlinestore/bricks-assets@^0.1.1":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@myonlinestore/bricks-assets/-/bricks-assets-0.1.2.tgz#6a4e514e05fd183852be443b36efc228623d011b"
+  integrity sha512-YOJW8ikg8EkqtgmQ2FY8mcX97kKJOk8q2fLpYVrRLbc1t+Etd9Amd/RxUYL1mfxsqxV1MfhAknyJvFChXDEpFw==
 
 "@myonlinestore/bricks@file:../dist":
   version "0.0.0"
