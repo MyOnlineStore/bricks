@@ -6,14 +6,27 @@ import styled from 'styled-components';
 
 type ArticleDataType = {
     srcDirs: Array<string>;
-    articles: {
+    articles: Array<{
         dir: string;
         files: Array<string>;
-    };
+    }>;
 };
 
 //tslint:disable-next-line
 const articleData: ArticleDataType = require('../lib/get-article-data');
+
+const getHref = (category: string) => {
+    // Find the first article in this category and link to it
+    const firstArticle = articleData.articles.find(article => article.dir === category)?.files[0];
+    const firstArticleSlug = firstArticle ? firstArticle.replace(/\.mdx?$/, '') : '';
+
+    return `/generated/${category}/${firstArticleSlug}`;
+};
+
+const getTitle = (category: string) => {
+    // Format the link title
+    return `${category.charAt(0).toUpperCase() + category.slice(1)}`;
+};
 
 const StyledHeader = styled.div`
     display: flex;
@@ -46,8 +59,8 @@ const Header: FC = props => {
                 <HeadingLinkContainer>
                     {articleData.srcDirs.map((category, index) => (
                         <HeadingLink
-                            href={`/generated/${category}`}
-                            title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}
+                            href={`${getHref(category)}`}
+                            title={`${getTitle(category)}`}
                             category={category}
                             key={index}
                         />
