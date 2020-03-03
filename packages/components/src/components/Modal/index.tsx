@@ -104,14 +104,14 @@ const Modal: FC<PropsType> = props => {
                          * reduce the top padding on the content to keep the hierarchy in tact. This has to be combined
                          * with the fact that we reduce padding on smaller screens.
                          */
-                        let headingPadding: PaddingType = [30, 60, 6, 36];
+                        let headingPadding: PaddingType = [30, 60, 18, 36];
 
                         if (isSmall) {
-                            headingPadding = [30, 48, 6, 18];
+                            headingPadding = [30, 48, 18, 18];
                         }
 
                         if (props.centered) {
-                            headingPadding = [30, 60, 6, 60];
+                            headingPadding = [30, 60, 18, 60];
                         }
 
                         let scrollBoxTopPadding: OffsetType = 6;
