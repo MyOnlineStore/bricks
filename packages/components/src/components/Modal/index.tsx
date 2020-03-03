@@ -10,6 +10,7 @@ import ButtonGroup from '../ButtonGroup';
 import { CloseIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 import styled from 'styled-components';
+import { OffsetType } from '../../types/OffsetType';
 
 type PropsType = {
     'data-testid'?: string;
@@ -24,6 +25,8 @@ type PropsType = {
     onClose?(): void;
     renderFixed?(): JSX.Element;
 };
+
+type PaddingType = [OffsetType, OffsetType, OffsetType, OffsetType];
 
 const MediaWrapper = styled.figure<{ fullWidth?: boolean; bleed?: boolean; overlap: number }>`
     box-sizing: border-box;
@@ -89,12 +92,74 @@ const Modal: FC<PropsType> = props => {
                     {({ measureRef, contentRect }) => {
                         const isSmall = contentRect.client && contentRect.client.width < 320;
 
-                        // isSplit = true : two column layout with content left and media right
+                        /** if isSplit is true, the content is divided into a two column layout with text left and media right */
                         const isSplit =
                             props.size !== 'small' &&
                             props.media !== undefined &&
                             contentRect.client &&
                             contentRect.client.width > 480;
+
+                        /**
+                         * The padding for this component is pretty complex, when the heading is sticky, we should
+                         * reduce the top padding on the content to keep the hierarchy in tact. This has to be combined
+                         * with the fact that we reduce padding on smaller screens.
+                         */
+                        let headingPadding: PaddingType = [30, 60, 18, 36];
+
+                        if (isSmall) {
+                            headingPadding = [30, 48, 18, 18];
+                        }
+
+                        if (props.centered) {
+                            headingPadding = [30, 60, 18, 60];
+                        }
+
+                        let scrollBoxTopPadding: OffsetType = 6;
+
+                        if (isSplit && isSmall) {
+                            scrollBoxTopPadding = 18;
+                        }
+
+                        if (isSplit && !isSmall) {
+                            scrollBoxTopPadding = 36;
+                        }
+
+                        let scrollBoxPadding: PaddingType = [scrollBoxTopPadding, 36, 36, 36];
+
+                        if (isSmall) {
+                            scrollBoxPadding = [scrollBoxTopPadding, 18, 18, 18];
+                        }
+
+                        const closeButton = (
+                            <Box
+                                zIndex={10}
+                                position="absolute"
+                                top="12px"
+                                right={isSmall ? '12px' : '24px'}
+                                alignContent="center"
+                                justifyContent="flex-end"
+                                alignItems="center"
+                                grow={0}
+                            >
+                                <IconButton
+                                    data-testid="modal-close-button"
+                                    icon={<CloseIcon />}
+                                    variant="primary"
+                                    title="close"
+                                    onClick={props.onClose}
+                                />
+                            </Box>
+                        );
+
+                        const heading = (
+                            <Heading
+                                data-testid="modal-title"
+                                textAlign={props.centered ? 'center' : 'left'}
+                                hierarchy={2}
+                            >
+                                {props.title}
+                            </Heading>
+                        );
 
                         return (
                             <StyledModal
@@ -108,26 +173,7 @@ const Modal: FC<PropsType> = props => {
                                 aria-modal
                                 aria-label={props.title}
                             >
-                                {props.onClose !== undefined && (
-                                    <Box
-                                        zIndex={10}
-                                        position="absolute"
-                                        top="12px"
-                                        right="24px"
-                                        alignContent="center"
-                                        justifyContent="flex-end"
-                                        alignItems="center"
-                                        grow={0}
-                                    >
-                                        <IconButton
-                                            data-testid="modal-close-button"
-                                            icon={<CloseIcon />}
-                                            variant="primary"
-                                            title="close"
-                                            onClick={props.onClose}
-                                        />
-                                    </Box>
-                                )}
+                                {props.onClose !== undefined && closeButton}
                                 <Box
                                     shrink={1}
                                     grow={1}
@@ -142,22 +188,23 @@ const Modal: FC<PropsType> = props => {
                                             {props.media}
                                         </MediaWrapper>
                                     )}
+                                    {!isSplit && (
+                                        <Box direction="column" padding={headingPadding}>
+                                            {heading}
+                                        </Box>
+                                    )}
                                     <ScrollBox>
-                                        <Box direction="column" padding={isSmall ? [18] : [36]}>
+                                        <Box direction="column" padding={scrollBoxPadding}>
                                             {!isSplit && props.media && (
                                                 <MediaWrapper data-testid="modal-media-container" fullWidth overlap={0}>
                                                     {props.media}
                                                 </MediaWrapper>
                                             )}
-                                            <Box margin={[0, 0, 12, 0]} direction="column">
-                                                <Heading
-                                                    data-testid="modal-title"
-                                                    textAlign={props.centered ? 'center' : 'left'}
-                                                    hierarchy={2}
-                                                >
-                                                    {props.title}
-                                                </Heading>
-                                            </Box>
+                                            {isSplit && (
+                                                <Box margin={[0, 0, 12, 0]} direction="column">
+                                                    {heading}
+                                                </Box>
+                                            )}
                                             {props.children}
                                         </Box>
                                     </ScrollBox>

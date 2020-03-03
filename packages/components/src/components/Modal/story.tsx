@@ -6,12 +6,6 @@ import Button from '../Button';
 import Text from '../Text';
 import { AddressIllustration } from '@myonlinestore/bricks-assets';
 
-const Address = (
-    <div style={{ width: '100%' }}>
-        <AddressIllustration />
-    </div>
-);
-
 const demoContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
 cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
 eu leo. Mauris consequat mauris et eros gravida vestibulum. Phasellus convallis ipsum quis nisl lacinia,
@@ -87,7 +81,7 @@ storiesOf('Modal', module)
                     <Button key="activate" variant="primary" title="Activate" />,
                     <Button key="close" variant="plain" title="Close" />,
                 ]}
-                media={Address}
+                media={<AddressIllustration height="auto" width="100%" />}
                 mediaBleed={boolean('bleed media', true)}
                 mediaOverlap={select('media overlap', [0, 12, 24, 36, 48, 72], 48)}
             >
