@@ -1,3 +1,7 @@
+import InlineErrorExamples from '../../containers/examples/status-indicators/InlineErrorExamples';
+import SpinnerExamples from '../../containers/examples/status-indicators/SpinnerExamples';
+import SkeletonExamples from '../../containers/examples/status-indicators/SkeletonExamples';
+
 # Status indicators
 
 ## Inline error notification
@@ -10,10 +14,7 @@ An icon and a line of text to indicate a status below a form field
 * Shows what went wrong and what a user’s next step can be to fix it
 * It is written in an objective and passive form to never accidentally blame the user. For example: “A phone number is required.” instead of “You forgot to enter your phone number”
 
-##### Examples
-```Error```
-
-***
+<InlineErrorExamples />
 
 ## Spinner
 A rotating line indicating a request has been received and is being processed.
@@ -23,8 +24,7 @@ A rotating line indicating a request has been received and is being processed.
 * Does not take too long, include a time-out where possible
 * Can be used in the font color within actionable components like buttons
 
-##### Examples
-```Default spinner | Button spinner```
+<SpinnerExamples />
 
 ***
 
@@ -34,6 +34,5 @@ A pre-loading state of a page or element that lets users get used to the general
 ##### Usage and guidelines
 * Skeletons are used to display a low fidelity version of the interface before the content is loaded. This improves the way load times are perceived by our merchants. Skeletons give the merchant an indication of what the page will look like when it is fully loaded.
 
-##### Examples
-```Image | Text```
+<SkeletonExamples />
 

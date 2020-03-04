@@ -1,3 +1,8 @@
+import PopoverExamples from '../../containers/examples/overlays/PopoverExamples';
+import TooltipExamples from '../../containers/examples/overlays/TooltipExamples';
+import ModalWithIllustrationExamples from '../../containers/examples/overlays/ModalWithIllustrationExamples';
+import DefaultModalExamples from '../../containers/examples/overlays/DefaultModalExamples';
+
 # Overlays
 
 ## Modals 
@@ -23,51 +28,58 @@ Margins around the illustration are 36px, except for 48px top-margin. There is n
 On a medium modal, the content has a marge of 36px all around and a max-width of 360px. On a large modal, the content is at a max-width of 498px. There is only a 24px between title and body text. The close button at the right top corner has a 36px padding. Furthermore, the buttons have a 24px marge but are spaced at just 18px apart and are aligned to the right of the modal.
 
 ### Takeaways
-A heigh modal, needs a vertical illustration to balance the design out. If you have a modal with little text, make sure you use a horizontal illustration to balance the modal out. 
+A high modal needs a vertical illustration to balance the design out. If you have a modal with little text, make sure you use a horizontal illustration to balance the modal out. 
+
+<ModalWithIllustrationExamples />
 
 ## Without illustration 
 
-Content guidelines
-Title
+### Content guidelines
+#### Title
 Use short titles, preferably existing of a Noun and a verb: 
-English: Add filter / Remove link
-Dutch: Keuzelijst koppelen / Filter toevoegen
+* English: Add filter / Remove link
+* Dutch: Keuzelijst koppelen / Filter toevoegen
+* Or, when you need more words: Deze browser wordt niet meer ondersteund.
 
-Or, when you need more words: Deze browser wordt niet meer ondersteund
-
-Body 
+#### Body 
 Content should be action-led: 
-Be clear in what the user should do and why. Make it brief and understandable. 
-Content should be scannable
-Avoid unnecessary words and keep it short. 
-Actions
+* Be clear in what the user should do and why. Make it brief and understandable. 
+* Content should be scannable
+* Avoid unnecessary words and keep it short. 
+
+#### Actions
 The action required should be clear and predictable, Merchants are able to anticipate what will happen when they click a button. The primary action button should be correlating with the title of the modal. 
-Do's
-Position modals in the center of a screen
-Require that merchants choose an action 
-Use the bottom contrast bar with a button group containing 'cancel + primary' buttons
-Use the right format according to the amount of text you’re communicating. 
 
-Popovers / tooltips 
+#### Do's
+* Position modals in the center of a screen
+* Require that merchants choose an action 
+* Use the bottom contrast bar with a button group containing 'cancel + primary' buttons
+* Use the right format according to the amount of text you’re communicating. 
+
+<DefaultModalExamples />
+
+## Popovers / tooltips 
 Adds additional information in a bubble on a level above content on demand. They show additional information which is less important since they’re hidden until triggered. 
-Usage and guidelines
-Adds additional (less important )information about content behind a touch or click
-Does not contain information necessary to understand or use the content
-Is positioned on a level above the content
-Is positioned near (preferably above) the content
-Can contain headings and multiple lines but should be as short and concise as possible
-Examples
-	Pick-up location information | ??
 
-Tooltips
+##### Usage and guidelines
+* Adds additional (less important )information about content behind a touch or click
+* Does not contain information necessary to understand or use the content
+* Is positioned on a level above the content
+* Is positioned near (preferably above) the content
+* Can contain headings and multiple lines but should be as short and concise as possible
+
+<PopoverExamples />
+
+### Tooltips
 
 Shows a hint about a button or interaction on a level above the content. 
-Usage and guidelines
-Tooltips are always triggered by hover and focus (or touch for touch devices)
-Clarifies what the button or interaction does at a glance
-Is short and concise (1 line)
-Is positioned on a level above the content
-Is positioned near (preferably below) the element that triggers it
-Never contains links or actions
-Examples
-	Default |?
+
+##### Usage and guidelines
+* Tooltips are always triggered by hover and focus (or touch for touch devices)
+* Clarifies what the button or interaction does at a glance
+* Is short and concise (1 line)
+* Is positioned on a level above the content
+* Is positioned near (preferably below) the element that triggers it
+* Never contains links or actions
+
+<TooltipExamples />

@@ -15,12 +15,15 @@ export type ExamplesType = {
 type PropsType = {
     options: Array<OptionType>;
     examples: Array<ExamplesType>;
+    defaultOption?: string;
 };
 
 const StyledContrast = styled(Contrast)`
     margin-top: 36px;
     margin-bottom: 36px;
     border-radius: 9px;
+    width: 100%;
+    min-width: 720px;
 `;
 
 const StyledSelectBox = styled(Box)`
@@ -36,7 +39,9 @@ const StyledContentBox = styled(Box)`
 `;
 
 const PreviewPane: FC<PropsType> = props => {
-    const [selectedExample, setSelectedExample] = useState(props.options[0].value);
+    const [selectedExample, setSelectedExample] = useState(
+        props.defaultOption ? props.defaultOption : props.options[0].value,
+    );
 
     return (
         <StyledContrast>
@@ -46,13 +51,15 @@ const PreviewPane: FC<PropsType> = props => {
                         <Heading hierarchy={5} as="h5">
                             Examples
                         </Heading>
-                        <StyledSelectBox>
-                            <NativeSelect
-                                value={selectedExample}
-                                onChange={setSelectedExample}
-                                options={props.options}
-                            />
-                        </StyledSelectBox>
+                        {props.examples.length > 1 && (
+                            <StyledSelectBox>
+                                <NativeSelect
+                                    value={selectedExample}
+                                    onChange={setSelectedExample}
+                                    options={props.options}
+                                />
+                            </StyledSelectBox>
+                        )}
                     </Box>
                 </Box>
 

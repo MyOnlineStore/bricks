@@ -1,3 +1,13 @@
+import TextFieldsExamples from '../../containers/examples/forms/TextFieldsExamples';
+import SelectExamples from '../../containers/examples/forms/SelectExamples';
+import FormLabelsExamples from '../../containers/examples/forms/FormLabelsExamples';
+import FormDescriptionsExamples from '../../containers/examples/forms/FormDescriptionsExamples';
+import FormTipsExamples from '../../containers/examples/forms/FormTipsExamples';
+import CheckboxExamples from '../../containers/examples/forms/CheckboxExamples';
+import RadiobuttonExamples from '../../containers/examples/forms/RadiobuttonExamples';
+import ToggleExamples from '../../containers/examples/forms/ToggleExamples';
+import SliderRangeExamples from '../../containers/examples/forms/SliderRangeExamples';
+
 # Forms
 
 ## Form fields
@@ -12,8 +22,7 @@ An open input field a user can type in that supports multiple formats.
 * Is clearly labeled (see labels)
 * Only optional text fields should be clearly marked (Optional)
 
-#### Examples
-	Text field | Prefix | Suffix | Number | Postal code | E-mail | VAT | Text area	
+<TextFieldsExamples />
 
 ### Select
 A closed list containing predefined options a user can select.
@@ -24,10 +33,7 @@ A closed list containing predefined options a user can select.
 * Always try to preselect an option or use ‘Select’ / ‘Search’  if there is no logical default option
 * Options are ordered in a way that makes sense for the content or otherwise alphabetically so users can find their option
 
-#### Examples
-	Single select list | Multi-select list | With search option
-
-***
+<SelectExamples />
 
 ## Form labels
 
@@ -39,10 +45,7 @@ Text to communicate the purpose of a form field.
 * Are positioned above or besides the form field
 * Labels convey information that is critical to use the form field
 
-#### Examples
-	Horizontal | Vertical | Floating
-
-***
+<FormLabelsExamples />
 
 ### Descriptions
 Subtext that provides additional non-critical information about a form field.
@@ -51,9 +54,9 @@ Subtext that provides additional non-critical information about a form field.
 * Are always positioned underneath the label
 * Are as short and clear as possible (1-2 lines)
 
-#### Examples
-	Horizontal | Vertical | Floating
+<FormDescriptionsExamples />
   
+
 ### Form tips
 An icon and a line of text that provide additional non-critical information about a form field.
 
@@ -62,10 +65,7 @@ An icon and a line of text that provide additional non-critical information abou
 * Are as short and clear as possible (1-2 lines)
 * Contain non-critical but useful information about a form field
 
-#### Examples
-    Info | 
-
-***
+<FormTipsExamples />
 
 ## Form elements
 
@@ -75,12 +75,11 @@ A box to toggle a state on or off.
 #### Usage and guidelines
 * Checkboxes should only be used when the number of toggled options can vary
 * Clearly label each checkbox
-* Checkbox labels should be short and concise (1-3 words)
+* Checkbox labels should be short and concise (1-4 words)
 * Always make the label and the on-state positive. For example: “Turn on the lights” instead of “Turn off the lights”
 * Checkboxes can be toggled independently and don’t affect each other (with an exception for bulk-actions)
 
-#### Examples
-	Default | List | Terms and Conditions
+<CheckboxExamples />
 
 ### Radio button
 A button to select one single option in a list.
@@ -91,22 +90,20 @@ A button to select one single option in a list.
 * Only one selection is possible in a list of radio buttons
 * One radio button must always be selected
 * Radio buttons in a list should be mutually exclusive
-* Are labeled clearly and concise (1-3 words)
+* Are labeled clearly and concise (1-4 words)
 * Are ordered logically
 
-#### Examples
-	Radio button
+<RadiobuttonExamples />
 
 ### Toggle
 A switch to turn a single option on or off.
 
 #### Usage and guidelines
 * Toggles only contain a single option
-* Are labeled clearly and concise (1-3 words)
+* Are labeled clearly and concise (1-4 words)
 * Always make toggle labels and the on-state positive. For example: “Turn on the lights” instead of “Turn off the lights”
 
-#### Examples
-	Toggle
+<ToggleExamples />
 
 ### Slider/Range
 An input field where users can select a single value or range with min. and max. values by sliding.
@@ -118,7 +115,6 @@ An input field where users can select a single value or range with min. and max.
 * The slider and the text fields update each other when one of them is used
 * Labels are positioned above the slider
 
-#### Examples
-	Slider | Range
+<SliderRangeExamples />
 
 

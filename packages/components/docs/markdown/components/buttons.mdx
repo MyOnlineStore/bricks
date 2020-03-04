@@ -1,10 +1,16 @@
-import ButtonExamplesContainer from '../../containers/examples/ButtonExamplesContainer';
+import ButtonExamples from '../../containers/examples/buttons/ButtonExamples';
+import IconButtonExamples from '../../containers/examples/buttons/IconButtonExamples';
+import CtaButtonExamples from '../../containers/examples/buttons/CtaButtonExamples';
+import ButtonGroupExamples from '../../containers/examples/buttons/ButtonGroupExamples';
 
 
 # Buttons
 
 ## Default buttons
 Buttons make actions instantly visible on a page. Depending on the type of action there are several types of buttons available. The most common are the default buttons. You will find these buttons throughout every part of our interface.
+
+#### Button with icon
+The button with icon adds a regular sized icon (18x18px) 12px to the left of the button text. Based on this principle all other styles of the default button can be created.
 
 #### Shape
 The default buttons are all based on a rounded rectangle (border-radius: 3px) with a solid -2px inset shadow at the bottom.
@@ -21,17 +27,14 @@ All default buttons are 36px in height and have a padding on both sides of 24px.
 * Destructive and warning state buttons are to be used only for delete or actions which are otherwise hard to recover from.
 * Buttons should be positioned in consistent locations in the interface.
 
-<ButtonExamplesContainer />
+<ButtonExamples />
 
 ## Icon buttons
 
-#### Icon button with text
-The icon button with text adds a regular sized icon (18x18px) 12px to the left of the button text. Based on this principle all other styles of the default button can be created.
-
-#### Icon button without text
+#### Icon button
 Regular sized icons (18x18px) can be used as buttons in certain situations (for example in tables). They grow in size when you hover over them and some might change color (depending on the action involved). A delete option will change into red when hovered. The buttons should have a tooltip that describes the action on this icon on hover.
 
-***
+<IconButtonExamples />
 
 ## CTA buttons
 A rounder and softer button style used for marketing and promotional purposes.
@@ -39,10 +42,7 @@ A rounder and softer button style used for marketing and promotional purposes.
 ##### Usage and guidelines
 * Used only for marketing and promotional purposes
 
-##### Examples
-```Buy | Upgrade | Start```
-
-***
+<CtaButtonExamples />
 
 ## Button group
 The ButtonGroup should be used whenever you want to display multiple buttons next to each other. 
@@ -56,6 +56,5 @@ The ButtonGroup should be used whenever you want to display multiple buttons nex
 * When the group is right-aligned the primary button is on the right
 * When the group is center-aligned the primary button is on the right
 
-##### Examples
-```Primary + Cancel | Multiple Secondaries```
+<ButtonGroupExamples />
 
