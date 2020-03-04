@@ -15,6 +15,7 @@ export type ExamplesType = {
 type PropsType = {
     options: Array<OptionType>;
     examples: Array<ExamplesType>;
+    defaultOption?: string;
 };
 
 const StyledContrast = styled(Contrast)`
@@ -38,7 +39,9 @@ const StyledContentBox = styled(Box)`
 `;
 
 const PreviewPane: FC<PropsType> = props => {
-    const [selectedExample, setSelectedExample] = useState(props.options[0].value);
+    const [selectedExample, setSelectedExample] = useState(
+        props.defaultOption ? props.defaultOption : props.options[0].value,
+    );
 
     return (
         <StyledContrast>

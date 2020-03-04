@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { IconButton } from '@myonlinestore/bricks';
 import { BellIcon } from '@myonlinestore/bricks-assets';
 
@@ -19,8 +19,8 @@ const examples = [
     { value: 'destructive', component: <IconButton title="Destructive" variant="destructive" icon={<BellIcon />} /> },
 ];
 
-const IconButtonExamplesContainer: FC<{}> = props => {
+const IconButtonExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default IconButtonExamplesContainer;
+export default IconButtonExamples;

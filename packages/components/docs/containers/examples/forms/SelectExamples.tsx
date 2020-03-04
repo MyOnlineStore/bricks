@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { Select, NativeSelect } from '@myonlinestore/bricks';
 
 type DemoOptionType = {
@@ -90,8 +90,8 @@ const examples = [
     },
 ];
 
-const SelectExamplesContainer: FC<{}> = props => {
+const SelectExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default SelectExamplesContainer;
+export default SelectExamples;

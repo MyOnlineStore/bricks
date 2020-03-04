@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { Button, MosCorporateTheme } from '@myonlinestore/bricks';
 
 const options = [
@@ -32,8 +32,8 @@ const examples = [
     },
 ];
 
-const CtaButtonExamplesContainer: FC<{}> = props => {
+const CtaButtonExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default CtaButtonExamplesContainer;
+export default CtaButtonExamples;

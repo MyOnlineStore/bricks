@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { Badge } from '@myonlinestore/bricks';
 
 const options = [
@@ -16,8 +16,8 @@ const examples = [
     },
 ];
 
-const NumberBadgesExamplesContainer: FC<{}> = props => {
+const NumberBadgesExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default NumberBadgesExamplesContainer;
+export default NumberBadgesExamples;

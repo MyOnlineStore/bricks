@@ -121,7 +121,7 @@ class Range extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Box direction="column">
+            <Box direction="column" width="100%">
                 <Box justifyContent="space-between">
                     <Box wrap justifyContent="space-between" width="100%">
                         <Box width="136px" shrink={0} padding={trbl(0, 0, 12, 0)}>

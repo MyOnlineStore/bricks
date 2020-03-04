@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { Button } from '@myonlinestore/bricks';
 import { CartIcon, CloseIcon } from '@myonlinestore/bricks-assets';
 
@@ -59,8 +59,8 @@ const examples = [
     { value: 'icon-plain', component: <Button title="Cancel" variant="plain" icon={<CloseIcon />} /> },
 ];
 
-const ButtonExamplesContainer: FC<{}> = props => {
+const ButtonExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default ButtonExamplesContainer;
+export default ButtonExamples;

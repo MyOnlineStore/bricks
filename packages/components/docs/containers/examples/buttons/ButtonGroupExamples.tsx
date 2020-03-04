@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { ButtonGroup, Button } from '@myonlinestore/bricks';
 
 const options = [
@@ -9,7 +9,7 @@ const options = [
     },
     {
         value: 'multiple-secondary',
-        label: 'Button Group - Multiple Secondaries',
+        label: 'Button Group - Primary + Secondary + Cancel',
     },
 ];
 
@@ -17,12 +17,12 @@ const examples = [
     {
         value: 'primary-cancel',
         component: (
-            <ButtonGroup>
+            <ButtonGroup direction="ltr">
                 <Button variant="primary" title="Primary button">
                     Primary
                 </Button>
-                <Button variant="secondary" title="Secondary button">
-                    Secondary
+                <Button variant="plain" title="Secondary button">
+                    Cancel
                 </Button>
             </ButtonGroup>
         ),
@@ -30,17 +30,19 @@ const examples = [
     {
         value: 'multiple-secondary',
         component: (
-            <ButtonGroup>
-                <Button variant="secondary" title="Secondary" />
+            <ButtonGroup direction="ltr">
+                <Button variant="primary" title="Primary" />
 
                 <Button variant="secondary" title="Secondary" />
+
+                <Button variant="plain" title="Cancel" />
             </ButtonGroup>
         ),
     },
 ];
 
-const ButtonGroupExamplesContainer: FC<{}> = props => {
+const ButtonGroupExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default ButtonGroupExamplesContainer;
+export default ButtonGroupExamples;

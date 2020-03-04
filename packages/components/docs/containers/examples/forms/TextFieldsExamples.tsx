@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { TextField, NumberField, CurrencyField, TextArea, Box } from '@myonlinestore/bricks';
 
 const DefaultTextField = () => {
@@ -171,8 +171,8 @@ const examples = [
     },
 ];
 
-const TextFieldsExamplesContainer: FC<{}> = props => {
+const TextFieldsExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default TextFieldsExamplesContainer;
+export default TextFieldsExamples;

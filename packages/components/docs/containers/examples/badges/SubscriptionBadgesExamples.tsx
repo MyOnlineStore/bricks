@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PreviewPane from '../../components/PreviewPane';
+import PreviewPane from '../../../components/PreviewPane';
 import { Text } from '@myonlinestore/bricks';
 
 const options = [
@@ -40,8 +40,8 @@ const examples = [
     },
 ];
 
-const SubscriptionBadgesExamplesContainer: FC<{}> = props => {
+const SubscriptionBadgesExamples: FC = () => {
     return <PreviewPane options={options} examples={examples} />;
 };
 
-export default SubscriptionBadgesExamplesContainer;
+export default SubscriptionBadgesExamples;
