@@ -12,18 +12,12 @@ const packageName = path.basename(process.cwd());
 const config = [
     {
         input: path.join(process.cwd(), 'src', 'index.ts'),
-        output: [
-            {
-                file: 'dist/index.js',
-                format: 'umd',
-                exports: 'named',
-                name: `bricks-${packageName}`,
-            },
-            {
-                file: 'dist/index.esm.js',
-                format: 'esm',
-            },
-        ],
+        output: {
+            file: 'dist/index.js',
+            format: 'umd',
+            exports: 'named',
+            name: `bricks-${packageName}`,
+        },
         plugins: [
             babel({
                 extensions,
