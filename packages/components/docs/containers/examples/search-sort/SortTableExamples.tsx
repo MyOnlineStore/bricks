@@ -28,24 +28,9 @@ const sortPrice = (a: number, b: number) => a - b;
 const SortTable = () => {
     const rows = [
         {
-            id: '61651323',
-            price: 0.82,
-            name: 'Strawberry',
-        },
-        {
             id: '61651320',
             price: 3.54,
             name: 'Pineapple',
-        },
-        {
-            id: '61651322',
-            price: 2.45,
-            name: 'Coffee',
-        },
-        {
-            id: '61651321',
-            price: 1.27,
-            name: 'Flower',
         },
         {
             id: '61651324',
@@ -64,7 +49,7 @@ const SortTable = () => {
                 },
                 price: {
                     header: 'Price',
-                    width: '90px',
+                    width: '110px',
                     align: 'end',
                     order: 2,
                     sort: sortPrice,
