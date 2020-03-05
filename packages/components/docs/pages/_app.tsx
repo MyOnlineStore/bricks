@@ -1,8 +1,9 @@
 import React from 'react';
 import App from 'next/app';
-import { Box, MosTheme } from '@myonlinestore/bricks';
+import { MosTheme } from '@myonlinestore/bricks';
 import Head from '../components/Head';
 import Page from '../components/Page';
+import '../styles.css';
 
 declare module 'react' {
     interface StyleHTMLAttributes<T> extends HTMLAttributes<T> {
