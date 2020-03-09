@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 300;
   }
 `;
+
 class MyApp extends App {
     public render() {
         const { Component, pageProps } = this.props;
