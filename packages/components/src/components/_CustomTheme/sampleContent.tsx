@@ -166,7 +166,6 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <Heading hierarchy={3}>Heading 3</Heading>
                 <Heading hierarchy={4}>Heading 4</Heading>
                 <Heading hierarchy={5}>Heading 5</Heading>
-                <Heading hierarchy={6}>Heading 6</Heading>
             </Box>
             <Box direction="column" padding={[24, 0]}>
                 <Separated after>
