@@ -89,7 +89,6 @@ export type ThemeFontSizeType = {
     larger3: string;
     larger4: string;
     larger5: string;
-    larger6: string;
     display: string;
 };
 
@@ -100,7 +99,6 @@ export type ThemeLineHeightType = {
     larger3: string;
     larger4: string;
     larger5: string;
-    larger6: string;
     small: string;
     medium: string;
     large: string;

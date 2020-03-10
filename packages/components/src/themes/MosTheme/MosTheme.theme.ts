@@ -19,7 +19,7 @@ const fontSize = {
 const fontWeight = {
     light: '300',
     regular: '400',
-    bold: '700',
+    bold: '600',
 };
 
 const roundness = {
@@ -207,9 +207,7 @@ const theme: ThemeType = {
             backgroundColor: colors.green300,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${
-                colors.grey200
-            } 10px )`,
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
         },
         checkedDisabled: {
             background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
@@ -262,14 +260,14 @@ const theme: ThemeType = {
             fontFamily: headingFont,
             fontSize: fontSize.larger6,
             fontWeight: fontWeight.regular,
-            lineHeight: '45px',
+            lineHeight: '48px',
             color: colors.grey800,
         },
         2: {
             fontFamily: headingFont,
             fontSize: fontSize.larger5,
             fontWeight: fontWeight.regular,
-            lineHeight: '36px',
+            lineHeight: '39px',
             color: colors.grey800,
         },
         3: {
@@ -277,13 +275,13 @@ const theme: ThemeType = {
             fontSize: fontSize.larger4,
             fontWeight: fontWeight.regular,
             color: colors.grey800,
-            lineHeight: '33px',
+            lineHeight: '36px',
         },
         4: {
             fontFamily: headingFont,
             fontSize: fontSize.larger3,
             fontWeight: fontWeight.regular,
-            lineHeight: '30px',
+            lineHeight: '33px',
             color: colors.grey800,
         },
         5: {
@@ -291,13 +289,6 @@ const theme: ThemeType = {
             fontSize: fontSize.larger2,
             fontWeight: fontWeight.regular,
             lineHeight: '27px',
-            color: colors.grey800,
-        },
-        6: {
-            fontFamily: headingFont,
-            fontSize: fontSize.larger1,
-            fontWeight: fontWeight.regular,
-            lineHeight: '21px',
             color: colors.grey800,
         },
     },
@@ -448,9 +439,7 @@ const theme: ThemeType = {
             checkmarkColor: colors.grey100,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${colors.grey200},${colors.grey200} 5px,${
-                colors.grey100
-            } 5px,${colors.grey100} 10px )`,
+            background: `repeating-linear-gradient( -45deg,${colors.grey200},${colors.grey200} 5px,${colors.grey100} 5px,${colors.grey100} 10px )`,
         },
         focus: {
             boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
@@ -624,7 +613,7 @@ const theme: ThemeType = {
     },
     Text: {
         default: {
-            color: colors.grey800,
+            color: colors.grey600,
         },
         size: {
             small: {
@@ -641,7 +630,7 @@ const theme: ThemeType = {
                 fontSize: fontSize.base,
                 fontWeight: fontWeight.regular,
                 lineHeight: {
-                    default: '21px',
+                    default: '24px',
                     compact: '18px',
                 },
             },
@@ -659,7 +648,7 @@ const theme: ThemeType = {
                 fontSize: fontSize.larger2,
                 fontWeight: fontWeight.regular,
                 lineHeight: {
-                    default: '30px',
+                    default: '33px',
                     compact: '27px',
                 },
             },
@@ -668,7 +657,7 @@ const theme: ThemeType = {
                 fontSize: '60px',
                 fontWeight: fontWeight.regular,
                 lineHeight: {
-                    default: '75px',
+                    default: '78px',
                     compact: '75px',
                 },
             },
@@ -677,11 +666,11 @@ const theme: ThemeType = {
             fontWeight: fontWeight.bold,
         },
         variant: {
-            error: colors.red500,
-            success: colors.green400,
+            error: colors.red600,
+            success: colors.green800,
             info: colors.grey500,
-            warning: colors.yellow500,
-            descriptive: colors.grey500,
+            warning: colors.yellow800,
+            descriptive: colors.grey600,
         },
     },
     TextArea: {
@@ -717,7 +706,6 @@ const theme: ThemeType = {
                 boxShadow: `0 0 0 4px ${rgba(colors.yellow600, 0.4)}`,
             },
         },
-
         disabled: {
             color: colors.grey500,
             background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
@@ -808,9 +796,7 @@ const theme: ThemeType = {
             background: colors.green300,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${
-                colors.grey200
-            } 10px )`,
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
         },
         checkedDisabled: {
             background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
