@@ -58,6 +58,7 @@ const Text = styled.p<PropsType>`
 
         return theme.Text.size.regular.fontWeight;
     }};
+    font-style: ${({ variant }): string => (variant === 'descriptive' ? 'italic' : 'normal')};
     line-height: ${({ size, compact, theme }): string => {
         if (compact && size) {
             return theme.Text.size[size].lineHeight.compact;
