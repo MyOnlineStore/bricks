@@ -1,7 +1,7 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
-type HierarchyType = 1 | 2 | 3 | 4 | 5 | 6;
+type HierarchyType = 1 | 2 | 3 | 4 | 5;
 
 type HeadingHierarchyThemeType = {
     fontFamily: string;
@@ -17,12 +17,11 @@ type HeadingThemeType = {
     3: HeadingHierarchyThemeType;
     4: HeadingHierarchyThemeType;
     5: HeadingHierarchyThemeType;
-    6: HeadingHierarchyThemeType;
 };
 
 type PropsType = {
     hierarchy?: HierarchyType;
-    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span' | 'p';
+    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
 };
 
@@ -52,40 +51,33 @@ const composeHeadingTheme = (themeTools: ThemeTools): HeadingThemeType => {
     return {
         1: {
             fontFamily: text.secondaryFont,
-            fontSize: text.fontSize.larger6,
-            fontWeight: text.fontWeight.regular,
-            lineHeight: text.lineHeight.larger6,
-            color: themeTools.calculateContrastTextColor(colors.background),
-        },
-        2: {
-            fontFamily: text.secondaryFont,
             fontSize: text.fontSize.larger5,
             fontWeight: text.fontWeight.regular,
             lineHeight: text.lineHeight.larger5,
             color: themeTools.calculateContrastTextColor(colors.background),
         },
-        3: {
+        2: {
             fontFamily: text.secondaryFont,
             fontSize: text.fontSize.larger4,
             fontWeight: text.fontWeight.regular,
             lineHeight: text.lineHeight.larger4,
             color: themeTools.calculateContrastTextColor(colors.background),
         },
-        4: {
+        3: {
             fontFamily: text.secondaryFont,
             fontSize: text.fontSize.larger3,
             fontWeight: text.fontWeight.regular,
             lineHeight: text.lineHeight.larger3,
             color: themeTools.calculateContrastTextColor(colors.background),
         },
-        5: {
+        4: {
             fontFamily: text.secondaryFont,
             fontSize: text.fontSize.larger2,
             fontWeight: text.fontWeight.regular,
             lineHeight: text.lineHeight.larger2,
             color: themeTools.calculateContrastTextColor(colors.background),
         },
-        6: {
+        5: {
             fontFamily: text.secondaryFont,
             fontSize: text.fontSize.larger1,
             fontWeight: text.fontWeight.regular,
