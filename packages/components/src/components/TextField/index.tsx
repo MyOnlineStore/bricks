@@ -1,11 +1,12 @@
 import React, { ChangeEvent, Component, ReactNode } from 'react';
-import SeverityType from '../../types/SeverityType';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
-import Icon from '../Icon';
-import { LockedIcon, QuestionCircleIcon, DangerCircleIcon, CloseSmallIcon } from '@myonlinestore/bricks-assets';
+import { DangerCircleIcon, CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
+import SeverityType from '../../types/SeverityType';
+
+export type InputSeverityType = 'error';
 
 type PropsType = {
     value: string;
@@ -30,7 +31,6 @@ type PropsType = {
 };
 
 type StateType = { focus: boolean };
-const ICON_COLOR = '#A6AAB3';
 
 class TextField extends Component<PropsType, StateType> {
     private inputRef: HTMLInputElement | null;
@@ -70,13 +70,15 @@ class TextField extends Component<PropsType, StateType> {
                 <StyledWrapper
                     focus={this.state.focus}
                     disabled={this.props.disabled}
-                    severity={this.props.feedback ? this.props.feedback.severity : undefined}
+                    severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
                 >
                     {this.props.prefix && (
                         <StyledAffixWrapper
                             onClick={typeof this.props.prefix === 'string' ? this.forceFocus : undefined}
                             disabled={this.props.disabled}
                             isString={typeof this.props.prefix === 'string' ? true : false}
+                            severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
+                            focus={this.state.focus}
                         >
                             <StyledAffix>{this.props.prefix}</StyledAffix>
                         </StyledAffixWrapper>
@@ -90,6 +92,8 @@ class TextField extends Component<PropsType, StateType> {
                             disabled={this.props.disabled}
                             value={this.props.value}
                             id={this.props.id}
+                            severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
+                            focus={this.state.focus}
                             onChange={this.onChange}
                             onClick={this.props.onClick}
                             onFocus={this.handleFocus}
@@ -115,28 +119,23 @@ class TextField extends Component<PropsType, StateType> {
                                 />
                             </Box>
                         )}
-                        {this.props.disabled && (
-                            <Box position="absolute" height="100%" right="8px" top="0" alignItems="center">
-                                <Icon icon={<LockedIcon />} color={ICON_COLOR} size="medium" />
-                            </Box>
-                        )}
                     </Box>
                     {this.props.suffix && (
                         <StyledAffixWrapper
                             onClick={typeof this.props.suffix === 'string' ? this.forceFocus : undefined}
                             disabled={this.props.disabled}
                             isString={typeof this.props.suffix === 'string' ? true : false}
+                            severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
+                            focus={this.state.focus}
                         >
                             <StyledAffix>{this.props.suffix}</StyledAffix>
                         </StyledAffixWrapper>
                     )}
                 </StyledWrapper>
                 {this.props.feedback && this.props.feedback.message !== '' && (
-                    <Box margin={[6, 0, 0, 12]}>
+                    <Box margin={[6, 0, 0, 0]}>
                         <InlineNotification
-                            icon={
-                                this.props.feedback.severity === 'info' ? <QuestionCircleIcon /> : <DangerCircleIcon />
-                            }
+                            icon={this.props.feedback.severity === 'error' ? <DangerCircleIcon /> : undefined}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

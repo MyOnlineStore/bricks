@@ -1,7 +1,7 @@
-import SeverityType from '../../types/SeverityType';
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
+import { InputSeverityType } from '.';
 
 type TextFieldThemeType = {
     idle: {
@@ -24,21 +24,13 @@ type TextFieldThemeType = {
     focus: {
         borderColor: string;
         boxShadow: string;
+        placeholder: {
+            color: string;
+        };
     };
     severity: {
         error: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        success: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        info: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        warning: {
+            background: string;
             borderColor: string;
             boxShadow: string;
         };
@@ -46,73 +38,128 @@ type TextFieldThemeType = {
     disabled: {
         color: string;
         background: string;
+        borderColor: string;
+        placeholder: {
+            color: string;
+        };
     };
 };
 
 type AffixPropsType = {
+    focus: boolean;
     disabled?: boolean;
     isString?: boolean;
+    severity?: InputSeverityType;
 };
 
 type WrapperPropsType = {
     focus: boolean;
     disabled?: boolean;
-    severity?: SeverityType;
+    severity?: InputSeverityType;
 };
 
 type InputPropsType = {
+    focus: boolean;
     disabled?: boolean;
+    severity?: InputSeverityType;
 };
 
 const StyledInput = styled.input<InputPropsType>`
     width: 100%;
     border: none;
     margin: 0;
-    background: ${({ theme, disabled }): string =>
-        disabled ? theme.TextField.disabled.background : theme.TextField.idle.common.background};
-    font-family: inherit;
-    font-size: inherit;
+    font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
+    font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     padding: 6px 12px;
-    line-height: 1.572;
+    line-height: 22px; // 21px would give the input a height of 35px instead of 36px
     outline: none;
     min-width: 12px;
-    color: ${({ theme, disabled }): string =>
-        disabled ? theme.TextField.disabled.color : theme.TextField.idle.common.color};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-appearance: textfield;
+
+    ${({ focus, disabled, severity, theme }): string => {
+        if (severity === 'error' && !focus && !disabled) {
+            return `
+                background: ${theme.TextField.severity[severity].background};
+                color: ${theme.TextField.idle.common.color};
+                `;
+        } else if (disabled) {
+            return `
+                background: ${theme.TextField.disabled.background};
+                color: ${theme.TextField.disabled.color};
+                `;
+        } else {
+            return `
+                background: ${theme.TextField.idle.common.background};
+                color: ${theme.TextField.idle.common.color};
+            `;
+        }
+    }}
 
     &::placeholder {
-        color: ${({ theme }): string => theme.TextField.idle.placeholder.color};
+        font-style: italic;
+        opaity: 1;
+        color: ${({ focus, disabled, theme }): string => {
+            if (focus && !disabled) {
+                return theme.TextField.focus.placeholder.color;
+            } else if (disabled) {
+                return theme.TextField.disabled.placeholder.color;
+            } else {
+                return theme.TextField.idle.placeholder.color;
+            }
+        }};
     }
 
-    ${({ theme, disabled }): string =>
-        disabled
-            ? `
-            color: ${theme.TextField.disabled.color};
-            -moz-appearance: textfield;
-
-            &::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-            }
-        }`
-            : ''}
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
 `;
 
 const StyledAffixWrapper = styled.div<AffixPropsType>`
     display: flex;
     padding: ${({ isString }): string => (isString ? '0 12px' : '0')};
     user-select: none;
-    background-color: ${({ theme }): string => theme.TextField.idle.affix.background};
     align-items: center;
     flex-shrink: 0;
     max-width: 40%;
-    color: ${({ theme }): string => theme.TextField.idle.affix.color};
+    background: ${({ theme }): string => theme.TextField.idle.affix.background};
+    border: 0px solid;
+    transition: border-color 100ms, box-shadow 100ms;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     &:first-child {
-        border-right: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
+        border-right-width: 1px;
     }
 
     &:last-child {
-        border-left: solid 1px ${({ theme }): string => theme.TextField.idle.common.borderColor};
+        border-left-width: 1px;
     }
+
+    ${({ focus, disabled, severity, theme }): string => {
+        if (severity === 'error' && !disabled) {
+            return `
+                border-color: ${theme.TextField.severity[severity].borderColor};
+                color: ${theme.TextField.idle.common.color};
+                `;
+        } else if (focus && !disabled) {
+            return `
+                border-color: ${theme.TextField.focus.borderColor};
+                color: ${theme.TextField.idle.affix.color};
+                `;
+        } else if (disabled) {
+            return `
+                border-color: ${theme.TextField.disabled.borderColor};
+                color: ${theme.TextField.disabled.color};
+                `;
+        } else {
+            return `
+                border-color: ${theme.TextField.idle.common.borderColor};
+                color: ${theme.TextField.idle.affix.color};
+            `;
+        }
+    }}
 }
 `;
 
@@ -133,16 +180,34 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     width: 100%;
     box-sizing: border-box;
 
-    ${({ focus, disabled, severity, theme }): string =>
-        focus && !disabled
-            ? `
-            border: solid 1px ${
-                severity ? theme.TextField.severity[severity].borderColor : theme.TextField.focus.borderColor
-            };
-            box-shadow: ${severity ? theme.TextField.severity[severity].boxShadow : theme.TextField.focus.boxShadow};
-            `
-            : `border: solid 1px ${theme.TextField.idle.common.borderColor}`};
-}
+    ${({ focus, disabled, severity, theme }): string => {
+        if (severity && focus && !disabled) {
+            return `
+                border: solid 1px ${theme.TextField.severity[severity].borderColor};
+                box-shadow: ${theme.TextField.severity[severity].boxShadow};
+                `;
+        } else if (severity && !focus && !disabled) {
+            return `
+                border: solid 1px ${theme.TextField.severity[severity].borderColor};
+                box-shadow: none;
+                `;
+        } else if (focus && !disabled) {
+            return `
+                border: solid 1px ${theme.TextField.focus.borderColor};
+                box-shadow: ${theme.TextField.focus.boxShadow};
+                `;
+        } else if (disabled) {
+            return `
+                border: solid 1px ${theme.TextField.disabled.borderColor};
+                box-shadow: none;
+                `;
+        } else {
+            return `
+                border: solid 1px ${theme.TextField.idle.common.borderColor};
+                box-shadow: none;
+            `;
+        }
+    }}
 `;
 
 const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
@@ -163,36 +228,30 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
                 background: forms.backgroundContrast,
             },
             placeholder: {
-                color: forms.color,
+                color: `${chroma(forms.color).alpha(0.6)}`,
             },
         },
         focus: {
             borderColor: forms.focusBorderColor,
             boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
+            placeholder: {
+                color: `${chroma(forms.color).alpha(0.4)}`,
+            },
         },
         severity: {
             error: {
+                background: `${chroma(colors.severity.error).alpha(0.1)}`,
                 boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
                 borderColor: colors.severity.error,
-            },
-            success: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.success).alpha(0.4)}`,
-                borderColor: colors.severity.success,
-            },
-            info: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.info).alpha(0.4)}`,
-                borderColor: colors.severity.info,
-            },
-            warning: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.warning).alpha(0.4)}`,
-                borderColor: colors.severity.warning,
             },
         },
         disabled: {
             color: colors.grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,${colors.silver.base} 10px,${
-                colors.silver.base
-            } 20px )`,
+            background: colors.silver.base,
+            borderColor: colors.severity.error,
+            placeholder: {
+                color: `${chroma(forms.color).alpha(0.4)}`,
+            },
         },
     };
 };

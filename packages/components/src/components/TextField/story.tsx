@@ -2,7 +2,6 @@ import React, { useState, FC } from 'react';
 import { select, text, boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import TextField from '.';
-import SeverityType from '../../types/SeverityType';
 import { Checkbox, IconButton, Box } from '../..';
 import { SearchIcon } from '@myonlinestore/bricks-assets';
 import CurrencyField from '../CurrencyField';
@@ -52,7 +51,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         ) : (
             undefined
         ),
-        palceholder: text('Placeholder', 'This is a placeholder'),
+        placeholder: text('Placeholder', 'This is a placeholder'),
         name: 'fieldname',
         disabled: boolean('disabled', false),
         onClear: props.withClearButton
@@ -63,7 +62,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         feedback: props.withFeedback
             ? {
                   message: text('feedback message', 'This is a feedback message'),
-                  severity: select('feedback type', ['success', 'warning', 'error', 'info'], 'error') as SeverityType,
+                  severity: select('feedback severity', ['error', 'success', 'info', 'warning'], 'error'),
               }
             : undefined,
     };
@@ -89,12 +88,11 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
                 {...sharedProps}
                 {...numberProps}
                 currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'EUR')}
+                minor={boolean('minor', false)}
                 feedback={{
                     severity: 'info',
-                    message: `The reported value of this field is: ${numberValue}`,
+                    message: `${numberValue}`,
                 }}
-                locale={locale}
-                minor={boolean('minor', false)}
             />
         );
     }
