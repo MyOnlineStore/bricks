@@ -22,10 +22,7 @@ const StyledButton = styled.button<PropsType & { isLoading?: boolean }>`
     user-select: none;
 
     &:disabled {
-        border-color: transparent;
-        box-shadow: none;
         cursor: default;
-        opacity: 0.7;
         transform: none;
 
         &::before {

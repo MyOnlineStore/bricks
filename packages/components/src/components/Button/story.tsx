@@ -1,18 +1,18 @@
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import trbl from '../../utility/trbl';
 import Button from '../Button';
-import ButtonGroup from '../ButtonGroup';
-import Contrast from '../Contrast';
-import Box from '../Box';
 import { CartIcon } from '@myonlinestore/bricks-assets';
 
 storiesOf('Buttons/Button', module)
     .add('Default', () => {
         return (
             <Button
-                variant={select('variant', ['primary', 'secondary', 'warning', 'destructive', 'plain'], 'primary')}
+                variant={select(
+                    'variant',
+                    ['primary', 'secondary', 'warning', 'destructive', 'info', 'plain'],
+                    'primary',
+                )}
                 loading={boolean('loading', false)}
                 title={text('title', 'Click me')}
                 disabled={boolean('disabled', false)}
@@ -23,26 +23,15 @@ storiesOf('Buttons/Button', module)
     .add('With an icon', () => {
         return (
             <Button
-                variant="primary"
+                variant={select(
+                    'variant',
+                    ['primary', 'secondary', 'warning', 'destructive', 'info', 'plain'],
+                    'primary',
+                )}
                 loading={boolean('loading', false)}
                 title={text('title', 'Add to cart')}
                 icon={<CartIcon />}
                 disabled={boolean('disabled', false)}
             />
-        );
-    })
-    .add('On a contrast area', () => {
-        return (
-            <Contrast>
-                <Box padding={trbl(12)}>
-                    <ButtonGroup>
-                        <Button
-                            variant="secondary"
-                            title={text('title', 'Click me')}
-                            disabled={boolean('disabled', false)}
-                        />
-                    </ButtonGroup>
-                </Box>
-            </Contrast>
         );
     });
