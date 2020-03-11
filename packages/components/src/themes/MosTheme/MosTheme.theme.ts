@@ -470,27 +470,31 @@ const theme: ThemeType = {
     Range: {
         default: {
             track: {
-                background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                background: colors.white,
+                border: `1px solid ${colors.grey300}`,
             },
             active: {
                 background: colors.green300,
-                border: `solid 1px ${colors.green500}`,
-                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+                border: `1px solid ${colors.green400}`,
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             slider: {
                 background: colors.white,
-                border: `solid 1px ${colors.green500}`,
+                border: `1px solid ${colors.green500}`,
             },
         },
         disabled: {
             track: {
                 background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                border: `1px solid ${colors.grey200}`,
+            },
+            active: {
+                background: colors.grey200,
+                border: `1px solid ${colors.grey300}`,
             },
             slider: {
-                background: colors.white,
-                border: `solid 1px ${colors.grey300}`,
+                background: colors.grey100,
+                border: `1px solid ${colors.grey200}`,
             },
         },
     },
@@ -544,26 +548,26 @@ const theme: ThemeType = {
         default: {
             track: {
                 background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                border: `1px solid ${colors.grey300}`,
             },
             active: {
                 background: colors.green300,
-                border: `solid 1px ${colors.green500}`,
+                border: `1px solid ${colors.green500}`,
                 boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green300, 0.4)}`,
             },
             slider: {
                 background: colors.white,
-                border: `solid 1px ${colors.green500}`,
+                border: `1px solid ${colors.green500}`,
             },
         },
         disabled: {
             track: {
                 background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                border: `1px solid ${colors.grey300}`,
             },
             slider: {
                 background: colors.white,
-                border: `solid 1px ${colors.grey300}`,
+                border: `1px solid ${colors.grey300}`,
             },
         },
     },
