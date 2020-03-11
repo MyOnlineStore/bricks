@@ -12,6 +12,6 @@ describe('Button', () => {
             </MosTheme>,
         );
 
-        expect(component.find(Button)).toHaveStyleRule('padding', '11px 12px');
+        expect(component.find(Button)).toHaveStyleRule('padding', '6px 12px');
     });
 });
