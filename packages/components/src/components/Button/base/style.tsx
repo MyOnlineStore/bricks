@@ -6,13 +6,13 @@ const StyledButton = styled.button<PropsType & { isLoading?: boolean }>`
     appearance: none;
     background: none;
     border: none;
-    cursor: ${({ isLoading }) => (isLoading ? 'default' : 'pointer')};
+    cursor: ${({ isLoading }) => (isLoading ? 'progress' : 'pointer')};
     display: inline-flex;
     font-family: ${({ theme }): string => theme.Button.common.fontFamily};
     font-size: ${({ theme }): string => theme.Button.common.fontSize};
     font-weight: ${({ theme }): string => theme.Button.common.fontWeight};
     justify-content: center;
-    line-height: 1;
+    line-height: 24px;
     outline: none;
     padding: 0;
     position: relative;

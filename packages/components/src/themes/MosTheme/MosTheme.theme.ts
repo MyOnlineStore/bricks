@@ -89,7 +89,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: colors.green400,
                 color: colors.green900,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 3px ${rgba(colors.green100, 0.6)}`,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.green500,
@@ -111,7 +111,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: colors.grey200,
                 color: colors.grey700,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 3px ${rgba(colors.grey200, 0.6)}`,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.grey300,
@@ -133,7 +133,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: colors.blue400,
                 color: colors.blue900,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 3px ${rgba(colors.blue100, 0.6)}`,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.blue100, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.blue500,
@@ -155,7 +155,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: colors.yellow400,
                 color: colors.yellow900,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(colors.yellow100, 0.6)}`,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 4px ${rgba(colors.yellow100, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.yellow500,
@@ -177,7 +177,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: colors.red400,
                 color: colors.red900,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px ${rgba(colors.red100, 0.6)}`,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 4px ${rgba(colors.red100, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.red500,
@@ -200,7 +200,7 @@ const theme: ThemeType = {
             focus: {
                 backgroundColor: 'transparent',
                 color: colors.grey500,
-                boxShadow: `0 0 0 3px ${rgba(colors.grey200, 0.6)}`,
+                boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.grey100,

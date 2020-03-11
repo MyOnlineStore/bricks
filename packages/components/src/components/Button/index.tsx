@@ -103,7 +103,7 @@ const StyledButton = styled(Base)<PropsType>`
 
         return `
             ${idle}
-            padding: 11px ${compact ? ' 12px' : '24px'};
+            padding: 6px ${compact ? ' 12px' : '24px'};
             border-radius: ${theme.Button.common.borderRadius};
             ${variant === 'plain' ? `border: ${theme.Button.plain.idle.border};` : ''}
 
@@ -143,7 +143,7 @@ const StyledButton = styled(Base)<PropsType>`
                         : variant === 'secondary'
                         ? theme.Button.disabled.secondary.backgroundColor
                         : theme.Button.disabled.primary.backgroundColor
-                }};
+                };
                 box-shadow: ${theme.Button[variant].idle.boxShadow};
                 border-radius: ${theme.Button.common.borderRadius};
             }
@@ -168,6 +168,8 @@ const StyledButton = styled(Base)<PropsType>`
                 ${variant === 'plain' ? `border: ${theme.Button.disabled.plain.border};` : ''}
 
                 transform: none;
+
+                cursor: not-allowed;
 
                 &::before {
                     opacity: 1;
