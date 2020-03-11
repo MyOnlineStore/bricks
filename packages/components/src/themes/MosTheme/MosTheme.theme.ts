@@ -195,28 +195,27 @@ const theme: ThemeType = {
     Checkbox: {
         idle: {
             borderColor: colors.grey300,
-            backgroundColor: colors.grey100,
+            backgroundColor: colors.white,
             borderRadius: roundness.base,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
         },
         checked: {
             checkmarkColor: colors.white,
-            borderColor: colors.green500,
+            borderColor: colors.green400,
             backgroundColor: colors.green300,
+            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
+            backgroundColor: colors.grey100,
+            borderColor: colors.grey200,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
-                colors.green500,
-                0.6,
-            )} 5px,${rgba(colors.green300, 0.5)} 5px,${rgba(colors.green300, 0.5)} 10px )`,
+            backgroundColor: colors.grey200,
         },
         error: {
-            borderColor: colors.red500,
+            backgroundColor: rgba(colors.red100, 0.1),
+            borderColor: colors.red600,
+            boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
     },
     Contrast: {

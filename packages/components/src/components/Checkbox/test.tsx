@@ -24,7 +24,7 @@ describe('Checkbox', () => {
 
         checkbox.find(StyledCheckbox).simulate('focus');
 
-        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule('box-shadow', mosTheme.Checkbox.focus.boxShadow);
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule('box-shadow', mosTheme.Checkbox.idle.boxShadow);
     });
 
     it('should be able to change checked value', () => {
@@ -50,8 +50,8 @@ describe('Checkbox', () => {
         );
 
         expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.Checkbox.checkedDisabled.background,
+            'background-color',
+            mosTheme.Checkbox.checkedDisabled.backgroundColor,
         );
     });
 
@@ -61,8 +61,8 @@ describe('Checkbox', () => {
         );
 
         expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.Checkbox.idleDisabled.background,
+            'background-color',
+            mosTheme.Checkbox.idleDisabled.backgroundColor,
         );
     });
 
