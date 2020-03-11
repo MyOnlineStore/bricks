@@ -676,32 +676,31 @@ const theme: ThemeType = {
                 color: colors.grey600,
                 background: colors.white,
             },
+            placeholder: {
+                color: colors.grey400,
+            },
         },
         focus: {
             borderColor: colors.green600,
-            boxShadow: `0 0 0 4px ${rgba(colors.green600, 0.4)}`,
+            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
+            placeholder: {
+                color: colors.grey300,
+            },
         },
         severity: {
             error: {
+                background: `${rgba(colors.red100, 0.1)}`,
                 borderColor: colors.red600,
-                boxShadow: `0 0 0 4px ${rgba(colors.red600, 0.4)}`,
-            },
-            success: {
-                borderColor: colors.green600,
-                boxShadow: `0 0 0 4px ${rgba(colors.green600, 0.4)}`,
-            },
-            info: {
-                borderColor: colors.green600,
-                boxShadow: `0 0 0 4px ${rgba(colors.green600, 0.4)}`,
-            },
-            warning: {
-                borderColor: colors.yellow600,
-                boxShadow: `0 0 0 4px ${rgba(colors.yellow600, 0.4)}`,
+                boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
             },
         },
         disabled: {
-            color: colors.grey500,
-            background: 'repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 10px,#F5F6F7 10px,#F5F6F7 20px )',
+            color: colors.grey300,
+            background: colors.grey100,
+            borderColor: colors.grey200,
+            placeholder: {
+                color: colors.grey300,
+            },
         },
     },
     TextField: {

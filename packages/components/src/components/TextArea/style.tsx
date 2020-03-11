@@ -6,11 +6,13 @@ import chroma from 'chroma-js';
 type TextAreaWrapperPropsType = {
     disabled?: boolean;
     severity?: SeverityType;
+    focus: boolean;
 };
 
 type TextAreaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
+    focus: boolean;
 };
 
 type TextAreaThemeType = {
@@ -23,25 +25,20 @@ type TextAreaThemeType = {
             color: string;
             background: string;
         };
+        placeholder: {
+            color: string;
+        };
     };
     focus: {
         borderColor: string;
         boxShadow: string;
+        placeholder: {
+            color: string;
+        };
     };
     severity: {
         error: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        success: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        info: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        warning: {
+            background: string;
             borderColor: string;
             boxShadow: string;
         };
@@ -49,6 +46,10 @@ type TextAreaThemeType = {
     disabled: {
         color: string;
         background: string;
+        borderColor: string;
+        placeholder: {
+            color: string;
+        };
     };
 };
 
@@ -56,39 +57,78 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     width: 100%;
     padding: 0;
     overflow: hidden;
-    border: solid 1px ${({ theme }): string => theme.TextArea.idle.common.borderColor};
+    border: solid 1px;
     border-radius: ${({ theme }): string => theme.TextArea.idle.common.borderRadius};
-    background: ${({ theme, disabled }): string =>
-        disabled ? theme.TextArea.disabled.background : theme.TextArea.idle.common.background};
+    transition: border-color 100ms, box-shadow 100ms;
 
-    &:focus-within {
-        ${({ severity, theme }): string =>
-            `border: solid 1px ${
-                severity ? theme.TextArea.severity[severity].borderColor : theme.TextArea.focus.borderColor
-            }`};
-        ${({ disabled, severity, theme }): string =>
-            !disabled
-                ? `box-shadow: ${
-                      severity ? theme.TextArea.severity[severity].boxShadow : theme.TextArea.focus.boxShadow
-                  }`
-                : ''};
-    }
+    ${({ focus, disabled, severity, theme }): string => {
+        if (severity === 'error' && !focus && !disabled) {
+            return `
+                background: ${theme.TextArea.severity[severity].background};
+                border-color: ${theme.TextArea.severity[severity].borderColor};
+                box-shadow: none;
+                `;
+        } else if (severity === 'error' && focus && !disabled) {
+            return `
+                background: ${theme.TextArea.idle.common.background};
+                border-color: ${theme.TextArea.severity[severity].borderColor};
+                box-shadow:  ${theme.TextArea.severity[severity].boxShadow};
+                `;
+        } else if (focus && !disabled) {
+            return `
+                background: ${theme.TextArea.idle.common.background};
+                border-color: ${theme.TextArea.focus.borderColor};
+                box-shadow: ${theme.TextArea.focus.boxShadow};
+                `;
+        } else if (disabled) {
+            return `
+                background: ${theme.TextArea.disabled.background};
+                border-color: ${theme.TextArea.disabled.borderColor};
+                box-shadow: none;
+                `;
+        } else {
+            return `
+                background: ${theme.TextArea.idle.common.background};
+                border-color: ${theme.TextArea.idle.common.borderColor};
+                box-shadow: none;
+            `;
+        }
+    }}
 `;
 
 const StyledTextArea = styled.textarea<TextAreaPropsType>`
     padding: 6px 12px;
     box-sizing: border-box;
     width: 100%;
+    background: transparent;
     border: none;
     outline: none;
-    line-height: 1.572;
-    background: transparent;
-    transition: border-color 100ms, box-shadow 100ms;
-    font-size: ${({ theme }): string => theme.TextArea.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextArea.idle.common.fontFamily};
-    color: ${({ theme }): string => theme.TextArea.idle.common.color};
-    ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextArea.disabled.color}` : '')}
-    ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
+    font-size: ${({ theme }): string => theme.TextArea.idle.common.fontSize};
+    line-height: 1.4; // results in 21px with 15px fontSize
+    color: ${({ disabled, theme }): string =>
+        disabled ? theme.TextArea.disabled.color : theme.TextArea.idle.common.color};
+    resize: ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'none' : 'vertical')};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::placeholder {
+        font-style: italic;
+        opaity: 1;
+        color: ${({ focus, disabled, theme }): string => {
+            if (focus && !disabled) {
+                return theme.TextArea.focus.placeholder.color;
+            } else if (disabled) {
+                return theme.TextArea.disabled.placeholder.color;
+            } else {
+                return theme.TextArea.idle.placeholder.color;
+            }
+        }};
+    }
+
+    &::-moz-placeholder {
+        opacity: 1;
+    }
 `;
 
 const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
@@ -104,34 +144,31 @@ const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
                 color: forms.color,
                 background: forms.background,
             },
+            placeholder: {
+                color: `${chroma(forms.color).alpha(0.6)}`,
+            },
         },
         focus: {
             borderColor: forms.focusBorderColor,
             boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
+            placeholder: {
+                color: `${chroma(forms.color).alpha(0.4)}`,
+            },
         },
         severity: {
             error: {
+                background: `${chroma(colors.severity.error).alpha(0.1)}`,
                 boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
                 borderColor: colors.severity.error,
-            },
-            success: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.success).alpha(0.4)}`,
-                borderColor: colors.severity.success,
-            },
-            info: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.info).alpha(0.4)}`,
-                borderColor: colors.severity.info,
-            },
-            warning: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.warning).alpha(0.4)}`,
-                borderColor: colors.severity.warning,
             },
         },
         disabled: {
             color: colors.grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,${colors.silver.base},${colors.silver.base} 10px,${
-                colors.silver.base
-            } 10px,${colors.silver.base} 20px)`,
+            background: colors.silver.base,
+            borderColor: colors.severity.error,
+            placeholder: {
+                color: `${chroma(forms.color).alpha(0.4)}`,
+            },
         },
     };
 };

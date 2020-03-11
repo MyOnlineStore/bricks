@@ -71,7 +71,7 @@ const StyledInput = styled.input<InputPropsType>`
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     padding: 6px 12px;
-    line-height: 22px; // 21px would give the input a height of 35px instead of 36px
+    line-height: 1.4667; // results in 22px which gives the input a height of 36px
     outline: none;
     min-width: 12px;
     -webkit-font-smoothing: antialiased;
@@ -111,8 +111,16 @@ const StyledInput = styled.input<InputPropsType>`
         }};
     }
 
+    &::-moz-placeholder {
+        opacity: 1;
+    }
+
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;
+    }
+
+    &::-ms-clear {
+        display: none;
     }
 `;
 

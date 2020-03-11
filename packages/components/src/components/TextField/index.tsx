@@ -2,7 +2,7 @@ import React, { ChangeEvent, Component, ReactNode } from 'react';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
-import { DangerCircleIcon, CloseSmallIcon } from '@myonlinestore/bricks-assets';
+import { CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 import SeverityType from '../../types/SeverityType';
 
@@ -77,7 +77,9 @@ class TextField extends Component<PropsType, StateType> {
                             onClick={typeof this.props.prefix === 'string' ? this.forceFocus : undefined}
                             disabled={this.props.disabled}
                             isString={typeof this.props.prefix === 'string' ? true : false}
-                            severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
+                            severity={
+                                this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined
+                            }
                             focus={this.state.focus}
                         >
                             <StyledAffix>{this.props.prefix}</StyledAffix>
@@ -92,7 +94,9 @@ class TextField extends Component<PropsType, StateType> {
                             disabled={this.props.disabled}
                             value={this.props.value}
                             id={this.props.id}
-                            severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
+                            severity={
+                                this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined
+                            }
                             focus={this.state.focus}
                             onChange={this.onChange}
                             onClick={this.props.onClick}
@@ -125,7 +129,9 @@ class TextField extends Component<PropsType, StateType> {
                             onClick={typeof this.props.suffix === 'string' ? this.forceFocus : undefined}
                             disabled={this.props.disabled}
                             isString={typeof this.props.suffix === 'string' ? true : false}
-                            severity={this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined}
+                            severity={
+                                this.props.feedback?.severity === 'error' ? this.props.feedback.severity : undefined
+                            }
                             focus={this.state.focus}
                         >
                             <StyledAffix>{this.props.suffix}</StyledAffix>
@@ -135,7 +141,6 @@ class TextField extends Component<PropsType, StateType> {
                 {this.props.feedback && this.props.feedback.message !== '' && (
                     <Box margin={[6, 0, 0, 0]}>
                         <InlineNotification
-                            icon={this.props.feedback.severity === 'error' ? <DangerCircleIcon /> : undefined}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />
