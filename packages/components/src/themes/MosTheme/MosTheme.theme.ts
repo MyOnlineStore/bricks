@@ -778,30 +778,28 @@ const theme: ThemeType = {
     },
     Toggle: {
         general: {
-            background: colors.white,
+            backgroundColor: colors.white,
         },
         idle: {
-            border: `1px solid ${colors.grey300}`,
-            background: colors.grey100,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+            borderColor: colors.grey300,
+            backgroundColor: colors.grey100,
+            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
         },
         checked: {
-            border: `1px solid ${colors.green500}`,
-            background: colors.green300,
+            borderColor: colors.green500,
+            backgroundColor: colors.green300,
+            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
+            backgroundColor: colors.grey100,
+            borderColor: colors.grey200,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
-                colors.green500,
-                0.6,
-            )} 5px,${rgba(colors.green300, 0.5)} 5px,${rgba(colors.green300, 0.5)} 10px )`,
+            backgroundColor: colors.grey200,
         },
         error: {
-            border: `1px solid ${colors.red500}`,
+            borderColor: colors.red600,
+            boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
     },
     Progress: {
