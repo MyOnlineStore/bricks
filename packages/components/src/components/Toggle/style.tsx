@@ -124,8 +124,25 @@ const StyledToggleSkin = styled.div<StyledToggleSkinType>`
         background-color: ${({ theme, disabled }): string =>
             disabled ? theme.Toggle.idleDisabled.backgroundColor : theme.Toggle.general.backgroundColor};
         transform: ${({ checked }): string => (checked ? 'translateX(9px)' : 'translateX(-9px)')};
-        border: 1px solid ${({ theme, error }): string =>
-            error ? theme.Toggle.error.borderColor : theme.Toggle.idle.borderColor};
+        border: 1px solid ${({ theme, error, checked, disabled }): string => {
+            if (error) {
+                return theme.Toggle.error.borderColor;
+            }
+
+            if (checked) {
+                if (checked && disabled) {
+                    return theme.Toggle.idle.borderColor;
+                }
+
+                return theme.Toggle.checked.borderColor;
+            }
+
+            if (disabled) {
+                return theme.Toggle.idleDisabled.borderColor;
+            }
+
+            return theme.Toggle.idle.borderColor;
+        }};
     }
     `;
 

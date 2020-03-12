@@ -790,7 +790,7 @@ const theme: ThemeType = {
         },
         idle: {
             borderColor: colors.grey300,
-            backgroundColor: colors.grey100,
+            backgroundColor: colors.white,
             boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
         },
         checked: {
