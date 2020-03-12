@@ -53,10 +53,11 @@ const StyledRadioButton = styled.input<RadioButtonPropsType>`
 `;
 
 const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
+    cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'pointer')};
 
     background-color: ${({ theme, checked, disabled, error }): string => {
         if (checked) {
