@@ -60,7 +60,7 @@ const StyledWrapper = styled.div`
         .input-range__track {
             background: ${({ theme }): string => theme.Range.default.track.background};
             border: ${({ theme }): string => theme.Range.default.track.border};
-            height: 6px;
+            height: 4px;
         }
 
         .input-range__track--active {
@@ -73,9 +73,9 @@ const StyledWrapper = styled.div`
         .input-range__slider {
             background: ${({ theme }): string => theme.Range.default.slider.background};
             border: ${({ theme }): string => theme.Range.default.slider.border};
-            margin-top: -14px;
-            width: 18px;
-            height: 18px;
+            margin-top: -12px;
+            width: 16px;
+            height: 16px;
             transition: none;
         }
 
