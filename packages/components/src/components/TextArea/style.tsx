@@ -59,7 +59,7 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     overflow: hidden;
     border: solid 1px;
     border-radius: ${({ theme }): string => theme.TextArea.idle.common.borderRadius};
-    transition: border-color 100ms, box-shadow 100ms;
+    transition: border-color 150ms, box-shadow 150ms;
 
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && !focus && !disabled) {
@@ -145,14 +145,14 @@ const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
                 background: forms.background,
             },
             placeholder: {
-                color: `${chroma(forms.color).alpha(0.6)}`,
+                color: colors.grey.lighter1,
             },
         },
         focus: {
             borderColor: forms.focusBorderColor,
             boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
             placeholder: {
-                color: `${chroma(forms.color).alpha(0.4)}`,
+                color: colors.grey.lighter2,
             },
         },
         severity: {
@@ -165,9 +165,9 @@ const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
         disabled: {
             color: colors.grey.lighter2,
             background: colors.silver.base,
-            borderColor: colors.severity.error,
+            borderColor: colors.silver.darker2,
             placeholder: {
-                color: `${chroma(forms.color).alpha(0.4)}`,
+                color: colors.grey.lighter2,
             },
         },
     };

@@ -82,14 +82,14 @@ describe('Select', () => {
 
         expect(component.find('[data-testid="select-input"]')).toHaveStyleRule(
             'border',
-            `solid 1px ${mosTheme.Select.wrapper.focus.borderColor}`,
+            `solid 1px ${mosTheme.Select.select.focus.borderColor}`,
         );
 
         component.find(Select).simulate('blur');
 
         expect(component.find('[data-testid="select-input"]')).toHaveStyleRule(
             'border',
-            `solid 1px ${mosTheme.Select.input.borderColor}`,
+            `solid 1px ${mosTheme.Select.common.borderColor}`,
         );
     });
 
@@ -237,7 +237,10 @@ describe('Select', () => {
     });
 
     it('should target next option when arrow down is pressed and reset after last option', () => {
-        const options = [{ value: 'A', label: 'A' }, { value: 'B', label: 'B' }];
+        const options = [
+            { value: 'A', label: 'A' },
+            { value: 'B', label: 'B' },
+        ];
 
         const component = mountWithTheme(
             <Select
@@ -271,7 +274,10 @@ describe('Select', () => {
     });
 
     it('should target the previous option when arrow up is pressed and target last item on first option', () => {
-        const options = [{ value: 'A', label: 'A' }, { value: 'B', label: 'B' }];
+        const options = [
+            { value: 'A', label: 'A' },
+            { value: 'B', label: 'B' },
+        ];
 
         const component = mountWithTheme(
             <Select

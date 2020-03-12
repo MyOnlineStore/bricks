@@ -497,35 +497,47 @@ const theme: ThemeType = {
     },
     Select: {
         common: {
-            backgroundColor: colors.white,
-            secondaryColor: colors.grey100,
-            borderRadius: roundness.base,
-        },
-        wrapper: {
-            common: {
-                borderColor: colors.grey300,
-            },
-            focus: {
-                borderColor: colors.green500,
-                boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
-            },
-        },
-        input: {
-            background: colors.white,
-            borderColor: colors.grey300,
-            color: colors.grey800,
             fontFamily: bodyFont,
             fontSize: fontSize.base,
-            fontWeight: '400',
+            background: colors.white,
+            borderColor: colors.grey300,
+            borderRadius: roundness.base,
+        },
+        select: {
+            idle: {
+                color: colors.grey600,
+                caret: colors.grey800,
+            },
+            focus: {
+                borderColor: colors.green600,
+                boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
+                caret: colors.grey800,
+            },
+            disabled: {
+                background: colors.grey100,
+                borderColor: colors.grey200,
+                color: colors.grey300,
+                caret: colors.grey300,
+            },
+        },
+        option: {
+            hover: {
+                background: colors.grey100,
+            },
+        },
+        searchWrapper: {
+            background: colors.grey100,
         },
         placeholder: {
-            color: colors.grey300,
-        },
-        disabled: {
-            chevron: colors.grey500,
-            color: colors.grey500,
-            background:
-                '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )',
+            idle: {
+                color: colors.grey400,
+            },
+            focus: {
+                color: colors.grey300,
+            },
+            disabled: {
+                color: colors.grey300,
+            },
         },
     },
     Skeleton: {

@@ -4,34 +4,47 @@ import chroma from 'chroma-js';
 
 type SelectThemeType = {
     common: {
-        backgroundColor: string;
-        secondaryColor: string;
-        borderRadius: string;
-    };
-    input: {
-        borderColor: string;
-        color: string;
         fontFamily: string;
         fontSize: string;
-        fontWeight: string;
         background: string;
+        borderColor: string;
+        borderRadius: string;
     };
-    wrapper: {
-        common: {
-            borderColor: string;
+    select: {
+        idle: {
+            color: string;
+            caret: string;
         };
         focus: {
             borderColor: string;
             boxShadow: string;
+            caret: string;
+        };
+        disabled: {
+            background: string;
+            borderColor: string;
+            color: string;
+            caret: string;
         };
     };
-    placeholder: {
-        color: string;
+    option: {
+        hover: {
+            background: string;
+        };
     };
-    disabled: {
-        chevron: string;
-        color: string;
+    searchWrapper: {
         background: string;
+    };
+    placeholder: {
+        idle: {
+            color: string;
+        };
+        focus: {
+            color: string;
+        };
+        disabled: {
+            color: string;
+        };
     };
 };
 
@@ -42,53 +55,49 @@ type WrapperPropsType = {
 
 const INNER_OFFSET: number = 6;
 
-const StyledPlaceholder = styled.span`
-    color: ${({ theme }): string => theme.Select.disabled.color};
+type PlaceholderProps = {
+    disabled?: boolean;
+};
+
+const StyledPlaceholder = styled.span<PlaceholderProps>`
+    font-family: ${({ theme }) => theme.Select.common.fontFamily};
+    font-size: ${({ theme }) => theme.Select.common.fontSize};
+    font-style: italic;
+    color: ${({ theme, disabled }) =>
+        disabled ? theme.Select.placeholder.disabled.color : theme.Select.placeholder.idle.color};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 `;
 
 const StyledWrapper = styled.div<WrapperPropsType>`
-    transition: all .3s;
+    transition: all 150ms;
     width: 100%;
     outline: none;
     display: inline-block;
     position: relative;
-    background: ${({ theme }): string => theme.Select.common.backgroundColor};
-    border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-    box-shadow: none;
     z-index: 1;
 
-    &:before {
+    &::before {
         content: '';
         z-index: -1;
-        border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-        ${({ open }): string =>
+        border-radius: ${({ theme }) => theme.Select.common.borderRadius};
+        ${({ open }) =>
             open
                 ? `
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 `
                 : ''}
-        border: ${({ theme, open }): string =>
-            open
-                ? `solid 1px ${theme.Select.wrapper.common.borderColor}`
-                : `solid 0px ${theme.Select.common.secondaryColor}`};
-        border-bottom: none;
-        background: ${({ theme }): string => theme.Select.common.secondaryColor};
+        border: solid ${({ theme }) => theme.Select.common.borderColor};
+        border-width: ${({ open }) => (open ? `1px 1px 0` : `0`)};
+        background: ${({ theme }) => theme.Select.searchWrapper.background};
         position: absolute;
-        top: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
-        left: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
-        right: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
-        bottom: ${({ open }): string => (open ? `-${INNER_OFFSET}px` : '0')};
+        top: ${({ open }) => (open ? `-${INNER_OFFSET}px` : '0')};
+        left: ${({ open }) => (open ? `-${INNER_OFFSET}px` : '0')};
+        right: ${({ open }) => (open ? `-${INNER_OFFSET}px` : '0')};
+        bottom: ${({ open }) => (open ? `-${INNER_OFFSET}px` : '0')};
     }
-
-    ${({ theme, disabled, open }): string => {
-        return !disabled || !open
-            ? `&:focus {
-                box-shadow: ${theme.Select.wrapper.focus.boxShadow};
-            }`
-            : '';
-    }}
-    `;
+`;
 
 type WindowPropsType = {
     open: boolean;
@@ -100,93 +109,150 @@ const StyledWindow = styled.div<WindowPropsType>`
     box-sizing: border-box;
     position: fixed;
     max-height: 240px;
-    top: ${({ rect, inputHeight }): string =>
+    top: ${({ rect, inputHeight }) =>
         rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
-    left: ${({ rect }): string => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
-    width: ${({ rect }): string => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
-    padding-top: ${({ open }): string => (open ? '6px' : '0')};
-    background: ${({ theme }): string => theme.Select.common.backgroundColor};
-    border: ${({ theme, open }): string =>
-        open ? `solid 1px ${theme.Select.wrapper.common.borderColor}` : 'solid 0px transparent'};
+    left: ${({ rect }) => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
+    width: ${({ rect }) => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
+    padding-top: ${({ open }) => (open ? '6px' : '0')};
+    background: ${({ theme }) => theme.Select.common.background};
+    border: ${({ theme, open }) => (open ? `solid 1px ${theme.Select.common.borderColor}` : 'solid 0px transparent')};
     border-top: none;
-    border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
+    border-radius: ${({ theme }) => theme.Select.common.borderRadius};
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    ${({ open }): string => (!open ? 'cursor: pointer' : '')};
+    ${({ open }) => (!open ? 'cursor: pointer' : '')};
     z-index: 1000;
 `;
 
 type InputPropsType = {
     open: boolean;
-    hasFocus: boolean;
+    focus: boolean;
     disabled: boolean;
 };
 
 const StyledInput = styled.div<InputPropsType>`
-    transition: all 0.3s;
+    transition: all 150ms;
     box-sizing: border-box;
     width: 100%;
-    border: solid 1px
-        ${({ theme, hasFocus, open }): string =>
-            hasFocus && !open ? theme.Select.wrapper.focus.borderColor : theme.Select.input.borderColor};
-    background: ${({ theme, disabled }): string =>
-        disabled ? theme.Select.disabled.background : theme.Select.input.background};
-    border-radius: ${({ theme }): string => theme.Select.common.borderRadius};
-    opacity: ${({ disabled }): string => (disabled ? '0.7' : '1')};
+    border-radius: ${({ theme }) => theme.Select.common.borderRadius};
+    line-height: 1.4667; // results in 22px which gives the input a height of 36px
+
+    ${({ theme, focus, open, disabled }) => {
+        if (focus && !open && !disabled) {
+            return `
+                background: ${theme.Select.common.background};
+                border: ${`1px solid ${theme.Select.select.focus.borderColor}`};
+                box-shadow: ${theme.Select.select.focus.boxShadow};
+            `;
+        } else if (disabled) {
+            return `
+                background: ${theme.Select.select.disabled.background};
+                border: ${`1px solid ${theme.Select.select.disabled.borderColor}`};
+                box-shadow: none;
+            `;
+        } else {
+            return `
+                background: ${theme.Select.common.background};
+                border: ${`1px solid ${theme.Select.common.borderColor}`};
+                box-shadow: none;
+            `;
+        }
+    }}
 
     input {
         appearance: none;
         outline: none;
         border: none;
-        flex-grow: 1;
-        color: ${({ theme }): string => theme.Select.input.color};
-        font-size: ${({ theme }): string => theme.Select.input.fontSize};
-        font-family: ${({ theme }): string => theme.Select.input.fontFamily};
-        color: ${({ theme }): string => theme.Select.input.fontFamily};
+        padding: 0;
+        background: transparent;
+        font-size: ${({ theme }) => theme.Select.common.fontSize};
+        font-family: ${({ theme }) => theme.Select.common.fontFamily};
+        color: ${({ theme }) => theme.Select.select.idle.color};
+        line-height: 1.4667; // results in 22px which gives the input a height of 36px
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 
         &::placeholder {
-            color: ${({ theme }): string => theme.Select.placeholder.color};
+            font-style: italic;
+            color: ${({ theme }) => theme.Select.placeholder.focus.color};
+            opacity: 1;
+        }
+
+        &::-moz-placeholder {
+            opacity: 1;
         }
     }
 `;
 
+type SelectionProps = {
+    disabled?: boolean;
+};
+
+const StyledSelection = styled.div<SelectionProps>`
+    font-family: ${({ theme }) => theme.Select.common.fontFamily};
+    font-size: ${({ theme }) => theme.Select.common.fontSize};
+    color: ${({ theme, disabled }) => (disabled ? theme.Select.select.disabled.color : theme.Select.select.idle.color)};
+    line-height: 1.4667; // results in 22px which gives the input a height of 36px
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+`;
+
 const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
-    const { colors, text } = themeTools.themeSettings;
+    const { colors, text, forms } = themeTools.themeSettings;
 
     return {
         common: {
-            backgroundColor: colors.silver.lighter1,
-            secondaryColor: colors.silver.base,
+            fontFamily: text.primaryFont,
+            fontSize: text.fontSize.base,
+            background: forms.background,
+            borderColor: forms.borderColor,
             borderRadius: themeTools.calculateRoundness(20),
         },
-        wrapper: {
-            common: {
-                borderColor: colors.silver.darker4,
+        select: {
+            idle: {
+                color: forms.color,
+                caret: forms.color,
             },
             focus: {
                 borderColor: colors.primary.base,
                 boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
+                caret: forms.color,
+            },
+            disabled: {
+                background: colors.silver.base,
+                borderColor: colors.silver.darker2,
+                color: colors.grey.lighter2,
+                caret: colors.grey.lighter2,
             },
         },
-        input: {
-            background: colors.silver.lighter1,
-            borderColor: colors.silver.darker4,
-            color: colors.primary.base,
-            fontFamily: text.primaryFont,
-            fontSize: text.fontSize.base,
-            fontWeight: '400',
+        option: {
+            hover: {
+                background: colors.silver.base,
+            },
+        },
+        searchWrapper: {
+            background: colors.silver.base,
         },
         placeholder: {
-            color: colors.silver.darker4,
-        },
-        disabled: {
-            chevron: colors.grey.lighter2,
-            color: colors.grey.lighter2,
-            background: `${colors.silver.base} repeating-linear-gradient( -45deg, ${colors.silver.base}, ${
-                colors.silver.base
-            } 10px, transparent 10px, transparent 20px )`,
+            idle: {
+                color: colors.grey.lighter1,
+            },
+            focus: {
+                color: colors.grey.lighter2,
+            },
+            disabled: {
+                color: colors.grey.lighter2,
+            },
         },
     };
 };
 
-export { StyledWrapper, StyledInput, StyledWindow, SelectThemeType, StyledPlaceholder, composeSelectTheme };
+export {
+    StyledWrapper,
+    StyledInput,
+    StyledWindow,
+    SelectThemeType,
+    StyledPlaceholder,
+    StyledSelection,
+    composeSelectTheme,
+};

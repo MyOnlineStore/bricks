@@ -133,7 +133,7 @@ const StyledAffixWrapper = styled.div<AffixPropsType>`
     max-width: 40%;
     background: ${({ theme }): string => theme.TextField.idle.affix.background};
     border: 0px solid;
-    transition: border-color 100ms, box-shadow 100ms;
+    transition: border-color 150ms, box-shadow 150ms;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -179,7 +179,7 @@ const StyledAffix = styled.span`
 `;
 
 const StyledWrapper = styled.div<WrapperPropsType>`
-    transition: border-color 100ms, box-shadow 100ms;
+    transition: border-color 150ms, box-shadow 150ms;
     font-size: ${({ theme }): string => theme.TextField.idle.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.idle.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.idle.common.borderRadius};
@@ -236,14 +236,14 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
                 background: forms.backgroundContrast,
             },
             placeholder: {
-                color: `${chroma(forms.color).alpha(0.6)}`,
+                color: colors.grey.lighter1,
             },
         },
         focus: {
             borderColor: forms.focusBorderColor,
             boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
             placeholder: {
-                color: `${chroma(forms.color).alpha(0.4)}`,
+                color: colors.grey.lighter2,
             },
         },
         severity: {
@@ -258,7 +258,7 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
             background: colors.silver.base,
             borderColor: colors.severity.error,
             placeholder: {
-                color: `${chroma(forms.color).alpha(0.4)}`,
+                color: colors.grey.lighter2,
             },
         },
     };
