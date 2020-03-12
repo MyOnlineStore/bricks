@@ -9,7 +9,7 @@ import TextField from '../TextField';
 import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
 import Separated from '../Separated';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { Skeleton } from '../..';
 
 type PropsType = {
@@ -48,22 +48,17 @@ class DemoComponent extends Component<PropsType, StateType> {
     }
 
     public render(): JSX.Element {
+        const disabled = boolean('disabled', false);
+
         if (this.props.descriptions) {
             return (
                 <form>
                     <FormRow
-                        label={
-                            <label>
-                                <Box>
-                                    <Text>What is your name?</Text>
-                                </Box>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </label>
-                        }
+                        label={<label>What is your name?</label>}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
+                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
                         field={
                             <Box wrap width="100%">
                                 <Box>
@@ -96,18 +91,11 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Box>
-                                    <Text>Where do you live?</Text>
-                                </Box>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </label>
-                        }
+                        label={<label>Where do you live?</label>}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
+                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
                         field={
                             <Box wrap width="100%">
                                 <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
@@ -130,18 +118,11 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Box>
-                                    <Text>Can a boolean only be either true or false?</Text>
-                                </Box>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </label>
-                        }
+                        label={<label>Can a boolean only be either true or false?</label>}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
+                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
                         field={
                             <Separated before after>
                                 <RadioButton
@@ -175,16 +156,11 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <>
-                                <Text>Options</Text>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </>
-                        }
+                        label={'Options'}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
+                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
                         field={
                             <Separated before after>
                                 <Checkbox
@@ -210,11 +186,8 @@ class DemoComponent extends Component<PropsType, StateType> {
             return (
                 <form>
                     <FormRow
-                        label={
-                            <label>
-                                <Text>What is your name?</Text>
-                            </label>
-                        }
+                        label={<label>What is your name?</label>}
+                        disabled={disabled}
                         field={
                             <Box wrap width="100%">
                                 <Box margin={trbl(0, 9, 0, 0)} width="100%" justifyContent="stretch" grow={1}>
@@ -229,11 +202,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Where do you live?</Text>
-                            </label>
-                        }
+                        label={<label>Where do you live?</label>}
+                        disabled={disabled}
                         field={
                             <Box wrap width="100%">
                                 <Box margin={trbl(0, 9, 0, 0)} width="100%" justifyContent="stretch" grow={1}>
@@ -248,11 +218,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Can a boolean only be true or false?</Text>
-                            </label>
-                        }
+                        label={<label>Can a boolean only be true or false?</label>}
+                        disabled={disabled}
                         field={
                             <Separated before after>
                                 <RadioButton
@@ -286,11 +253,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Do you like toggles?</Text>
-                            </label>
-                        }
+                        label={<label>Do you like toggles?</label>}
+                        disabled={disabled}
                         field={
                             <Toggle
                                 name="toggle"
@@ -303,11 +267,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Do you like checkboxes</Text>
-                            </label>
-                        }
+                        label={<label>Do you like checkboxes</label>}
+                        disabled={disabled}
                         field={
                             <Separated before after>
                                 <Checkbox

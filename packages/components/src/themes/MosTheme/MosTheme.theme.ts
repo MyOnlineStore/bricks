@@ -255,6 +255,11 @@ const theme: ThemeType = {
             },
         },
     },
+    FormRow: {
+        disabled: {
+            color: colors.grey400,
+        },
+    },
     Heading: {
         1: {
             fontFamily: headingFont,
