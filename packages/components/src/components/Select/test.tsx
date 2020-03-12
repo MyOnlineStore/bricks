@@ -347,12 +347,9 @@ describe('Select', () => {
             />,
         );
 
-        expect(
-            component
-                .find('[data-testid="select-input"]')
-                .hostNodes()
-                .findWhere(node => node.text() === options[1].label && node.type() === 'p'),
-        ).toHaveLength(1);
+        const selectedOption = component.find('[data-testid="select-input-selection"]').hostNodes();
+
+        expect(selectedOption.text()).toBe(options[1].label);
     });
 
     it('should render an alternative option rendering', () => {

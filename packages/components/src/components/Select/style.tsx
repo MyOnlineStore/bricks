@@ -141,19 +141,19 @@ const StyledInput = styled.div<InputPropsType>`
         if (focus && !open && !disabled) {
             return `
                 background: ${theme.Select.common.background};
-                border: ${`1px solid ${theme.Select.select.focus.borderColor}`};
+                border: ${`solid 1px ${theme.Select.select.focus.borderColor}`};
                 box-shadow: ${theme.Select.select.focus.boxShadow};
             `;
         } else if (disabled) {
             return `
                 background: ${theme.Select.select.disabled.background};
-                border: ${`1px solid ${theme.Select.select.disabled.borderColor}`};
+                border: ${`solid 1px ${theme.Select.select.disabled.borderColor}`};
                 box-shadow: none;
             `;
         } else {
             return `
                 background: ${theme.Select.common.background};
-                border: ${`1px solid ${theme.Select.common.borderColor}`};
+                border: ${`solid 1px ${theme.Select.common.borderColor}`};
                 box-shadow: none;
             `;
         }

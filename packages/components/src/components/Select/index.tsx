@@ -245,7 +245,14 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                             )) || (
                                 <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
                                     {(this.props.value !== '' && (
-                                        <StyledSelection disabled={this.props.disabled}>
+                                        <StyledSelection
+                                            data-testid={
+                                                this.props['data-testid']
+                                                    ? `${this.props['data-testid']}-input-selection`
+                                                    : undefined
+                                            }
+                                            disabled={this.props.disabled}
+                                        >
                                             {selectedOption.label}
                                         </StyledSelection>
                                     )) || (
