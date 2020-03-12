@@ -55,7 +55,7 @@ const StyledToggleSkin = styled.div<StyledToggleSkinType>`
     position: relative;
     transition: all 100ms;
     box-sizing: border-box;
-    cursor: pointer;
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
     ${({ theme, elementFocus, disabled, error, checked }): string => {
         if (elementFocus && !disabled) {
