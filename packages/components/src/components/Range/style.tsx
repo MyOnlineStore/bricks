@@ -90,17 +90,20 @@ const StyledWrapper = styled.div`
 
         .input-range--disabled {
             .input-range__track {
+                cursor: not-allowed;
                 border: ${({ theme }) => theme.Range.disabled.track.border};
                 background: ${({ theme }) => theme.Range.disabled.track.background};
             }
 
             .input-range__track--active {
+                cursor: not-allowed;
                 background: ${({ theme }): string => theme.Range.disabled.active.background};
                 border: ${({ theme }): string =>
                     theme.Range.disabled.active.border};
             }
 
             .input-range__slider {
+                cursor: not-allowed;
                 border: ${({ theme }) => theme.Range.disabled.slider.border};
                 background: ${({ theme }) => theme.Range.disabled.slider.background};
             }

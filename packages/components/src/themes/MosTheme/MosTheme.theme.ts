@@ -571,7 +571,7 @@ const theme: ThemeType = {
             },
             slider: {
                 background: colors.grey100,
-                border: `1px solid ${colors.grey200}`,
+                border: `1px solid ${colors.grey300}`,
             },
         },
     },

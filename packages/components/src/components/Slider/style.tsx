@@ -72,9 +72,9 @@ const StyledWrapper = styled(Box)`
         .input-range__slider {
             background: ${({ theme }): string => theme.Slider.default.slider.background};
             border: ${({ theme }): string => theme.Slider.default.slider.border};
-            margin-top: -14px;
-            width: 18px;
-            height: 18px;
+            margin-top: -12px;
+            width: 16px;
+            height: 16px;
             transition: none;
         }
 
@@ -89,17 +89,20 @@ const StyledWrapper = styled(Box)`
 
         .input-range--disabled {
             .input-range__track {
+                cursor: not-allowed;
                 border: ${({ theme }) => theme.Slider.disabled.track.border};
                 background: ${({ theme }) => theme.Slider.disabled.track.background};
             }
 
             .input-range__track--active {
+                cursor: not-allowed;
                 background: ${({ theme }): string => theme.Slider.disabled.active.background};
                 border: ${({ theme }): string =>
                     theme.Slider.disabled.active.border};
             }
 
             .input-range__slider {
+                cursor: not-allowed;
                 border: ${({ theme }) => theme.Slider.disabled.slider.border};
                 background: ${({ theme }) => theme.Slider.disabled.slider.background};
             }
