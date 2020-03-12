@@ -44,12 +44,13 @@ const StyledCheckbox = styled.input`
 `;
 
 const StyledCheckboxSkin = styled.div<StyledCheckboxSkinType>`
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: ${({ theme }): string => theme.Checkbox.idle.borderRadius};
     position: relative;
     outline: none;
     transition: box-shadow 100ms, border 100ms, background-color 100ms;
+    cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'pointer')};
 
     svg {
         fill: ${({ theme }): string => theme.Checkbox.checked.checkmarkColor};
