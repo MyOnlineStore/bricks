@@ -57,36 +57,14 @@ class DemoComponent extends Component<PropsType, StateType> {
                         label={<label>What is your name?</label>}
                         disabled={disabled}
                         description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
+                            similique sint quae exercitationem molestiae aspernatur cum. `}
                         field={
                             <Box wrap width="100%">
-                                <Box>
-                                    <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1} width="40%">
-                                        <TextField
-                                            prefix="Initials"
-                                            name="Initials"
-                                            value={this.state.initials}
-                                            onChange={(initials: string): void => this.setState({ initials })}
-                                        />
-                                    </Box>
-                                    <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1} width="60%">
-                                        <TextField
-                                            prefix="First name"
-                                            name="First name"
-                                            value={this.state.firstname}
-                                            onChange={(firstname: string): void => this.setState({ firstname })}
-                                        />
-                                    </Box>
-                                </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        prefix="Surname"
-                                        name="Surname"
-                                        value={this.state.surname}
-                                        onChange={(surname: string): void => this.setState({ surname })}
-                                    />
-                                </Box>
+                                <TextField
+                                    name="Initials"
+                                    value={this.state.initials}
+                                    onChange={(initials: string): void => this.setState({ initials })}
+                                />
                             </Box>
                         }
                     />
@@ -94,26 +72,14 @@ class DemoComponent extends Component<PropsType, StateType> {
                         label={<label>Where do you live?</label>}
                         disabled={disabled}
                         description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
+                            similique sint quae exercitationem molestiae aspernatur cum. `}
                         field={
                             <Box wrap width="100%">
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        name="Country"
-                                        prefix="Country"
-                                        value={this.state.country}
-                                        onChange={(country: string): void => this.setState({ country })}
-                                    />
-                                </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        name="City"
-                                        prefix="City"
-                                        value={this.state.city}
-                                        onChange={(city: string): void => this.setState({ city })}
-                                    />
-                                </Box>
+                                <TextField
+                                    name="Country"
+                                    value={this.state.country}
+                                    onChange={(country: string): void => this.setState({ country })}
+                                />
                             </Box>
                         }
                     />
@@ -159,8 +125,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                         label={'Options'}
                         disabled={disabled}
                         description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
+                            similique sint quae exercitationem molestiae aspernatur cum. `}
                         field={
                             <Separated before after>
                                 <Checkbox
@@ -295,7 +260,7 @@ storiesOf('FormRow', module)
     .add('No Descriptions', () => <DemoComponent descriptions={false} />)
     .add('With badge', () => (
         <FormRow
-            label={<Text>{text('label', 'Label text')}</Text>}
+            label={text('label', 'Label text')}
             badge={
                 <Text size="small" variant="success">
                     {text('badge', 'PRO')}

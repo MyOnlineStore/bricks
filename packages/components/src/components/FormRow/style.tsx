@@ -13,6 +13,7 @@ type StyledDisabledTextType = TextPropsType & {
 };
 
 const StyledDisabledText = styled(Text)<StyledDisabledTextType>`
+    width: 100%;
     ${({ theme, disabled }): string => (disabled ? `color: ${theme.FormRow.disabled.color}` : '')}
 `;
 
