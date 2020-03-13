@@ -275,7 +275,11 @@ storiesOf('FormRow', module)
     ))
     .add('With Skeletons', () => (
         <FormRow
-            label={<Skeleton.Text lines={1} baseWidth={180} />}
+            label={
+                <Box width="100%" inline margin={[0, 12, 0, 0]}>
+                    <Skeleton.Text lines={1} baseWidth={180} />
+                </Box>
+            }
             // 38px is the height of an TextField field
             field={<Skeleton.Rect width="100%" height="38px" />}
         />
