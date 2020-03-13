@@ -51,7 +51,7 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     overflow: hidden;
     border: solid 1px;
     border-radius: ${({ theme }): string => theme.TextArea.common.borderRadius};
-    transition: border-color 150ms, box-shadow 150ms;
+    transition: border-color 150ms, box-shadow 150ms, background 150ms;
 
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && !focus && !disabled) {

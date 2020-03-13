@@ -130,7 +130,7 @@ type InputPropsType = {
 };
 
 const StyledInput = styled.div<InputPropsType>`
-    transition: all 150ms;
+    transition: border-color 150ms, box-shadow 150ms, background 150ms;
     box-sizing: border-box;
     width: 100%;
     border-radius: ${({ theme }) => theme.Select.common.borderRadius};

@@ -173,7 +173,7 @@ const StyledAffix = styled.span`
 `;
 
 const StyledWrapper = styled.div<WrapperPropsType>`
-    transition: border-color 150ms, box-shadow 150ms;
+    transition: border-color 150ms, box-shadow 150ms, background 150ms;
     font-size: ${({ theme }): string => theme.TextField.common.fontSize};
     font-family: ${({ theme }): string => theme.TextField.common.fontFamily};
     border-radius: ${({ theme }): string => theme.TextField.common.borderRadius};

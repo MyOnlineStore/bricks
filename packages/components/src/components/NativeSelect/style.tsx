@@ -34,7 +34,7 @@ type SelectPropsType = {
 
 const StyledSelect = styled.div<SelectPropsType>`
     position: relative;
-    transition: all 0.3s;
+    transition: border-color 150ms, box-shadow 150ms, background 150ms;
     box-sizing: border-box;
     width: 100%;
     border-radius: ${({ theme }): string => theme.NativeSelect.common.borderRadius};
