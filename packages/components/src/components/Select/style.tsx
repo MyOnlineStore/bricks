@@ -1,6 +1,7 @@
 import styled from '../../../src/utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
+import Icon from '../Icon';
 
 type SelectThemeType = {
     common: {
@@ -18,7 +19,6 @@ type SelectThemeType = {
         focus: {
             borderColor: string;
             boxShadow: string;
-            caret: string;
         };
         disabled: {
             background: string;
@@ -97,6 +97,14 @@ const StyledWrapper = styled.div<WrapperPropsType>`
         right: ${({ open }) => (open ? `-${INNER_OFFSET}px` : '0')};
         bottom: ${({ open }) => (open ? `-${INNER_OFFSET}px` : '0')};
     }
+`;
+
+const StyledCaret = styled(Icon)`
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    transform: translateY(-50%);
+    z-index: 2;
 `;
 
 type WindowPropsType = {
@@ -216,7 +224,6 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
             focus: {
                 borderColor: colors.primary.base,
                 boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
-                caret: forms.color,
             },
             disabled: {
                 background: colors.silver.base,
@@ -254,5 +261,6 @@ export {
     SelectThemeType,
     StyledPlaceholder,
     StyledSelection,
+    StyledCaret,
     composeSelectTheme,
 };

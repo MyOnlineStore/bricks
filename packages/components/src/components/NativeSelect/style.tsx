@@ -4,23 +4,24 @@ import chroma from 'chroma-js';
 import StyledIcon from '../Icon/style';
 
 type NativeSelectThemeType = {
-    input: {
+    idle: {
         borderRadius: string;
         borderColor: string;
         color: string;
         fontFamily: string;
         fontSize: string;
-        fontWeight: string;
         background: string;
-        focus: {
-            borderColor: string;
-            boxShadow: string;
-        };
+        caret: string;
+    };
+    focus: {
+        borderColor: string;
+        boxShadow: string;
     };
     disabled: {
-        chevron: string;
+        caret: string;
         color: string;
         background: string;
+        borderColor: string;
     };
 };
 
@@ -34,13 +35,29 @@ const StyledSelect = styled.div<SelectPropsType>`
     transition: all 0.3s;
     box-sizing: border-box;
     width: 100%;
-    border: solid 1px
-        ${({ theme, focus }): string =>
-            focus ? theme.NativeSelect.input.focus.borderColor : theme.NativeSelect.input.borderColor};
-    background: ${({ theme, disabled }): string =>
-        disabled ? theme.NativeSelect.disabled.background : theme.NativeSelect.input.background};
-    border-radius: ${({ theme }): string => theme.NativeSelect.input.borderRadius};
-    box-shadow: ${({ theme, focus }): string => (focus ? theme.NativeSelect.input.focus.boxShadow : 'none')};
+    border-radius: ${({ theme }): string => theme.NativeSelect.idle.borderRadius};
+
+    ${({ theme, focus, disabled }) => {
+        if (focus && !disabled) {
+            return `
+                background: ${theme.NativeSelect.idle.background};
+                border: ${`solid 1px ${theme.NativeSelect.focus.borderColor}`};
+                box-shadow: ${theme.NativeSelect.focus.boxShadow};
+            `;
+        } else if (disabled) {
+            return `
+                background: ${theme.NativeSelect.disabled.background};
+                border: ${`solid 1px ${theme.NativeSelect.disabled.borderColor}`};
+                box-shadow: none;
+            `;
+        } else {
+            return `
+                background: ${theme.NativeSelect.idle.background};
+                border: ${`solid 1px ${theme.NativeSelect.idle.borderColor}`};
+                box-shadow: none;
+            `;
+        }
+    }}
 
     select {
         padding: 6px 12px;
@@ -50,43 +67,42 @@ const StyledSelect = styled.div<SelectPropsType>`
         outline: none;
         border: none;
         background: transparent;
-        color: ${({ theme }): string => theme.NativeSelect.input.color};
-        font-size: ${({ theme }): string => theme.NativeSelect.input.fontSize};
-        font-family: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
-        color: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
+        font-size: ${({ theme }) => theme.NativeSelect.idle.fontSize};
+        font-family: ${({ theme }) => theme.NativeSelect.idle.fontFamily};
+        color: ${({ theme, disabled }) =>
+            disabled ? theme.NativeSelect.disabled.color : theme.NativeSelect.idle.color};
     }
 
     ${StyledIcon} {
         position: absolute;
         top: 50%;
-        right: 12px;
+        right: 9px;
         transform: translateY(-50%);
     }
 `;
 
 const composeNativeSelectTheme = (themeTools: ThemeTools): NativeSelectThemeType => {
-    const { colors, text } = themeTools.themeSettings;
+    const { colors, forms, text } = themeTools.themeSettings;
 
     return {
-        input: {
+        idle: {
             borderRadius: themeTools.calculateRoundness(20),
-            background: colors.silver.lighter1,
-            borderColor: colors.silver.darker4,
-            color: colors.primary.base,
+            background: forms.background,
+            borderColor: forms.borderColor,
+            color: forms.color,
             fontFamily: text.primaryFont,
             fontSize: text.fontSize.base,
-            fontWeight: '400',
-            focus: {
-                borderColor: colors.primary.base,
-                boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
-            },
+            caret: forms.color,
+        },
+        focus: {
+            borderColor: colors.primary.base,
+            boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
         },
         disabled: {
-            chevron: colors.grey.lighter2,
+            caret: colors.grey.lighter2,
             color: colors.grey.lighter2,
-            background: `${colors.silver.base} repeating-linear-gradient( -45deg, ${colors.silver.base}, ${
-                colors.silver.base
-            } 10px, transparent 10px, transparent 20px )`,
+            background: colors.silver.base,
+            borderColor: colors.silver.darker2,
         },
     };
 };

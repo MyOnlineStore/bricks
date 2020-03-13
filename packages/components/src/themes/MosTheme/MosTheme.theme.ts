@@ -378,24 +378,24 @@ const theme: ThemeType = {
         },
     },
     NativeSelect: {
-        input: {
+        idle: {
             borderRadius: roundness.base,
             background: colors.white,
             borderColor: colors.grey300,
-            color: colors.grey800,
+            color: colors.grey600,
             fontFamily: bodyFont,
             fontSize: fontSize.base,
-            fontWeight: '400',
-            focus: {
-                borderColor: colors.green500,
-                boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
-            },
+            caret: colors.grey800,
+        },
+        focus: {
+            borderColor: colors.green600,
+            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
         },
         disabled: {
-            chevron: colors.grey500,
-            color: colors.grey500,
-            background:
-                '#f5f6f7 repeating-linear-gradient( -45deg, #f0f1f2, #f0f1f2 10px, transparent 10px, transparent 20px )',
+            background: colors.grey100,
+            borderColor: colors.grey200,
+            color: colors.grey300,
+            caret: colors.grey300,
         },
     },
     Notification: {
@@ -511,7 +511,6 @@ const theme: ThemeType = {
             focus: {
                 borderColor: colors.green600,
                 boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
-                caret: colors.grey800,
             },
             disabled: {
                 background: colors.grey100,

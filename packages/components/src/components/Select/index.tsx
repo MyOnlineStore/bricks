@@ -3,14 +3,13 @@ import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
 import Option from './Option';
-import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder, StyledSelection } from './style';
+import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder, StyledSelection, StyledCaret } from './style';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { SearchIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
-import { OffsetType } from '../../types/OffsetType';
 import { colors } from '../../themes/MosTheme';
 
 type OptionBaseType = {
@@ -269,18 +268,16 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     )}
                                 </Box>
                             )}
-                        <Box padding={[8 as OffsetType]}>
-                            <Icon
-                                icon={this.state.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
-                                size="medium"
-                                color={
-                                    this.props.disabled
-                                        ? this.props.theme.Select.select.disabled.caret
-                                        : this.props.theme.Select.select.idle.caret
-                                }
-                                title={this.state.isOpen ? 'close' : 'open'}
-                            />
-                        </Box>
+                        <StyledCaret
+                            icon={this.state.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
+                            size="medium"
+                            color={
+                                this.props.disabled
+                                    ? this.props.theme.Select.select.disabled.caret
+                                    : this.props.theme.Select.select.idle.caret
+                            }
+                            title={this.state.isOpen ? 'close' : 'open'}
+                        />
                     </Box>
                 </StyledInput>
                 {createPortal(
