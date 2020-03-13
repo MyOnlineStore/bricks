@@ -48,7 +48,11 @@ const NativeSelect: FC<PropsType> = (props): JSX.Element => {
             </select>
             <Icon
                 size="medium"
-                color={props.disabled ? props.theme.NativeSelect.disabled.caret : props.theme.NativeSelect.idle.caret}
+                color={
+                    props.disabled
+                        ? props.theme.NativeSelect.disabled.caretColor
+                        : props.theme.NativeSelect.idle.caretColor
+                }
                 icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
             />
         </StyledSelect>

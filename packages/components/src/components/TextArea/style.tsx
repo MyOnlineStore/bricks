@@ -16,40 +16,32 @@ type TextAreaPropsType = {
 };
 
 type TextAreaThemeType = {
+    common: {
+        borderRadius: string;
+        fontSize: string;
+        fontFamily: string;
+    };
     idle: {
-        common: {
-            borderRadius: string;
-            borderColor: string;
-            fontSize: string;
-            fontFamily: string;
-            color: string;
-            background: string;
-        };
-        placeholder: {
-            color: string;
-        };
+        color: string;
+        borderColor: string;
+        background: string;
+        placeholderColor: string;
     };
     focus: {
         borderColor: string;
         boxShadow: string;
-        placeholder: {
-            color: string;
-        };
+        placeholderColor: string;
     };
-    severity: {
-        error: {
-            background: string;
-            borderColor: string;
-            boxShadow: string;
-        };
+    error: {
+        background: string;
+        borderColor: string;
+        boxShadow: string;
     };
     disabled: {
         color: string;
         background: string;
         borderColor: string;
-        placeholder: {
-            color: string;
-        };
+        placeholderColor: string;
     };
 };
 
@@ -58,25 +50,25 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     padding: 0;
     overflow: hidden;
     border: solid 1px;
-    border-radius: ${({ theme }): string => theme.TextArea.idle.common.borderRadius};
+    border-radius: ${({ theme }): string => theme.TextArea.common.borderRadius};
     transition: border-color 150ms, box-shadow 150ms;
 
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && !focus && !disabled) {
             return `
-                background: ${theme.TextArea.severity[severity].background};
-                border-color: ${theme.TextArea.severity[severity].borderColor};
+                background: ${theme.TextArea.error.background};
+                border-color: ${theme.TextArea.error.borderColor};
                 box-shadow: none;
                 `;
         } else if (severity === 'error' && focus && !disabled) {
             return `
-                background: ${theme.TextArea.idle.common.background};
-                border-color: ${theme.TextArea.severity[severity].borderColor};
-                box-shadow:  ${theme.TextArea.severity[severity].boxShadow};
+                background: ${theme.TextArea.idle.background};
+                border-color: ${theme.TextArea.error.borderColor};
+                box-shadow:  ${theme.TextArea.error.boxShadow};
                 `;
         } else if (focus && !disabled) {
             return `
-                background: ${theme.TextArea.idle.common.background};
+                background: ${theme.TextArea.idle.background};
                 border-color: ${theme.TextArea.focus.borderColor};
                 box-shadow: ${theme.TextArea.focus.boxShadow};
                 `;
@@ -88,8 +80,8 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
                 `;
         } else {
             return `
-                background: ${theme.TextArea.idle.common.background};
-                border-color: ${theme.TextArea.idle.common.borderColor};
+                background: ${theme.TextArea.idle.background};
+                border-color: ${theme.TextArea.idle.borderColor};
                 box-shadow: none;
             `;
         }
@@ -103,11 +95,10 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
     background: transparent;
     border: none;
     outline: none;
-    font-family: ${({ theme }): string => theme.TextArea.idle.common.fontFamily};
-    font-size: ${({ theme }): string => theme.TextArea.idle.common.fontSize};
+    font-family: ${({ theme }): string => theme.TextArea.common.fontFamily};
+    font-size: ${({ theme }): string => theme.TextArea.common.fontSize};
     line-height: 1.4; // results in 21px with 15px fontSize
-    color: ${({ disabled, theme }): string =>
-        disabled ? theme.TextArea.disabled.color : theme.TextArea.idle.common.color};
+    color: ${({ disabled, theme }): string => (disabled ? theme.TextArea.disabled.color : theme.TextArea.idle.color)};
     resize: ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'none' : 'vertical')};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -117,11 +108,11 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
         opaity: 1;
         color: ${({ focus, disabled, theme }): string => {
             if (focus && !disabled) {
-                return theme.TextArea.focus.placeholder.color;
+                return theme.TextArea.focus.placeholderColor;
             } else if (disabled) {
-                return theme.TextArea.disabled.placeholder.color;
+                return theme.TextArea.disabled.placeholderColor;
             } else {
-                return theme.TextArea.idle.placeholder.color;
+                return theme.TextArea.idle.placeholderColor;
             }
         }};
     }
@@ -135,40 +126,32 @@ const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
     const { colors, text, forms } = themeTools.themeSettings;
 
     return {
+        common: {
+            borderRadius: themeTools.calculateRoundness(20),
+            fontSize: text.fontSize.base,
+            fontFamily: text.primaryFont,
+        },
         idle: {
-            common: {
-                borderRadius: themeTools.calculateRoundness(20),
-                borderColor: forms.borderColor,
-                fontSize: text.fontSize.base,
-                fontFamily: text.primaryFont,
-                color: forms.color,
-                background: forms.background,
-            },
-            placeholder: {
-                color: colors.grey.lighter1,
-            },
+            background: forms.background,
+            borderColor: forms.borderColor,
+            color: forms.color,
+            placeholderColor: colors.grey.lighter1,
         },
         focus: {
             borderColor: forms.focusBorderColor,
             boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
-            placeholder: {
-                color: colors.grey.lighter2,
-            },
+            placeholderColor: colors.grey.lighter2,
         },
-        severity: {
-            error: {
-                background: `${chroma(colors.severity.error).alpha(0.1)}`,
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
-                borderColor: colors.severity.error,
-            },
+        error: {
+            background: `${chroma(colors.severity.error).alpha(0.1)}`,
+            boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
+            borderColor: colors.severity.error,
         },
         disabled: {
             color: colors.grey.lighter2,
             background: colors.silver.base,
             borderColor: colors.silver.darker2,
-            placeholder: {
-                color: colors.grey.lighter2,
-            },
+            placeholderColor: colors.grey.lighter2,
         },
     };
 };

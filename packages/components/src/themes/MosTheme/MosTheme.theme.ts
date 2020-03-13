@@ -378,14 +378,16 @@ const theme: ThemeType = {
         },
     },
     NativeSelect: {
-        idle: {
+        common: {
             borderRadius: roundness.base,
+            fontFamily: bodyFont,
+            fontSize: fontSize.base,
+        },
+        idle: {
             background: colors.white,
             borderColor: colors.grey300,
             color: colors.grey600,
-            fontFamily: bodyFont,
-            fontSize: fontSize.base,
-            caret: colors.grey800,
+            caretColor: colors.grey800,
         },
         focus: {
             borderColor: colors.green600,
@@ -395,7 +397,7 @@ const theme: ThemeType = {
             background: colors.grey100,
             borderColor: colors.grey200,
             color: colors.grey300,
-            caret: colors.grey300,
+            caretColor: colors.grey300,
         },
     },
     Notification: {
@@ -506,17 +508,20 @@ const theme: ThemeType = {
         select: {
             idle: {
                 color: colors.grey600,
-                caret: colors.grey800,
+                caretColor: colors.grey800,
+                placeholderColor: colors.grey400,
             },
             focus: {
                 borderColor: colors.green600,
                 boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
+                placeholderColor: colors.grey300,
             },
             disabled: {
                 background: colors.grey100,
                 borderColor: colors.grey200,
                 color: colors.grey300,
-                caret: colors.grey300,
+                caretColor: colors.grey300,
+                placeholderColor: colors.grey300,
             },
         },
         option: {
@@ -526,17 +531,6 @@ const theme: ThemeType = {
         },
         searchWrapper: {
             background: colors.grey100,
-        },
-        placeholder: {
-            idle: {
-                color: colors.grey400,
-            },
-            focus: {
-                color: colors.grey300,
-            },
-            disabled: {
-                color: colors.grey300,
-            },
         },
     },
     Skeleton: {
@@ -678,80 +672,66 @@ const theme: ThemeType = {
         },
     },
     TextArea: {
+        common: {
+            borderRadius: roundness.base,
+            fontSize: fontSize.base,
+            fontFamily: bodyFont,
+        },
         idle: {
-            common: {
-                borderRadius: roundness.base,
-                borderColor: colors.grey300,
-                fontSize: fontSize.base,
-                fontFamily: bodyFont,
-                color: colors.grey600,
-                background: colors.white,
-            },
-            placeholder: {
-                color: colors.grey400,
-            },
+            borderColor: colors.grey300,
+            background: colors.white,
+            color: colors.grey600,
+            placeholderColor: colors.grey400,
         },
         focus: {
             borderColor: colors.green600,
             boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
-            placeholder: {
-                color: colors.grey300,
-            },
+            placeholderColor: colors.grey300,
         },
-        severity: {
-            error: {
-                background: `${rgba(colors.red100, 0.1)}`,
-                borderColor: colors.red600,
-                boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
-            },
+        error: {
+            background: `${rgba(colors.red100, 0.1)}`,
+            borderColor: colors.red600,
+            boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
         disabled: {
             color: colors.grey300,
             background: colors.grey100,
             borderColor: colors.grey200,
-            placeholder: {
-                color: colors.grey300,
-            },
+            placeholderColor: colors.grey300,
         },
     },
     TextField: {
-        idle: {
-            common: {
-                borderRadius: roundness.base,
-                borderColor: colors.grey300,
-                fontSize: fontSize.base,
-                fontFamily: bodyFont,
-                color: colors.grey600,
+        common: {
+            borderRadius: roundness.base,
+            fontSize: fontSize.base,
+            fontFamily: bodyFont,
+        },
+        affix: {
+            color: colors.grey600,
+            background: colors.grey100,
+        },
+        input: {
+            idle: {
                 background: colors.white,
-            },
-            placeholder: {
-                color: colors.grey400,
-            },
-            affix: {
+                borderColor: colors.grey300,
                 color: colors.grey600,
-                background: colors.grey100,
+                placeholderColor: colors.grey400,
             },
-        },
-        focus: {
-            borderColor: colors.green600,
-            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
-            placeholder: {
-                color: colors.grey300,
+            focus: {
+                borderColor: colors.green600,
+                boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
+                placeholderColor: colors.grey300,
             },
-        },
-        severity: {
             error: {
                 background: `${rgba(colors.red100, 0.1)}`,
                 borderColor: colors.red600,
                 boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
             },
-        },
-        disabled: {
-            color: colors.grey300,
-            background: colors.grey100,
-            borderColor: colors.grey200,
-            placeholder: {
+            disabled: {
                 color: colors.grey300,
+                background: colors.grey100,
+                borderColor: colors.grey200,
+                placeholderColor: colors.grey300,
             },
         },
     },

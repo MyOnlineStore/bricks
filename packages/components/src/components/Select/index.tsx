@@ -268,16 +268,18 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                     )}
                                 </Box>
                             )}
-                        <StyledCaret
-                            icon={this.state.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
-                            size="medium"
-                            color={
-                                this.props.disabled
-                                    ? this.props.theme.Select.select.disabled.caret
-                                    : this.props.theme.Select.select.idle.caret
-                            }
-                            title={this.state.isOpen ? 'close' : 'open'}
-                        />
+                        <StyledCaret>
+                            <Icon
+                                icon={this.state.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
+                                size="medium"
+                                color={
+                                    this.props.disabled
+                                        ? this.props.theme.Select.select.disabled.caretColor
+                                        : this.props.theme.Select.select.idle.caretColor
+                                }
+                                title={this.state.isOpen ? 'close' : 'open'}
+                            />
+                        </StyledCaret>
                     </Box>
                 </StyledInput>
                 {createPortal(

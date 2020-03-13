@@ -1,7 +1,6 @@
 import styled from '../../../src/utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
-import Icon from '../Icon';
 
 type SelectThemeType = {
     common: {
@@ -14,17 +13,20 @@ type SelectThemeType = {
     select: {
         idle: {
             color: string;
-            caret: string;
+            caretColor: string;
+            placeholderColor: string;
         };
         focus: {
             borderColor: string;
             boxShadow: string;
+            placeholderColor: string;
         };
         disabled: {
             background: string;
             borderColor: string;
             color: string;
-            caret: string;
+            caretColor: string;
+            placeholderColor: string;
         };
     };
     option: {
@@ -34,17 +36,6 @@ type SelectThemeType = {
     };
     searchWrapper: {
         background: string;
-    };
-    placeholder: {
-        idle: {
-            color: string;
-        };
-        focus: {
-            color: string;
-        };
-        disabled: {
-            color: string;
-        };
     };
 };
 
@@ -64,7 +55,7 @@ const StyledPlaceholder = styled.span<PlaceholderProps>`
     font-size: ${({ theme }) => theme.Select.common.fontSize};
     font-style: italic;
     color: ${({ theme, disabled }) =>
-        disabled ? theme.Select.placeholder.disabled.color : theme.Select.placeholder.idle.color};
+        disabled ? theme.Select.select.disabled.placeholderColor : theme.Select.select.idle.placeholderColor};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 `;
@@ -99,7 +90,7 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     }
 `;
 
-const StyledCaret = styled(Icon)`
+const StyledCaret = styled.div`
     position: absolute;
     top: 50%;
     right: 9px;
@@ -182,7 +173,7 @@ const StyledInput = styled.div<InputPropsType>`
 
         &::placeholder {
             font-style: italic;
-            color: ${({ theme }) => theme.Select.placeholder.focus.color};
+            color: ${({ theme }) => theme.Select.select.focus.placeholderColor};
             opacity: 1;
         }
 
@@ -219,17 +210,20 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
         select: {
             idle: {
                 color: forms.color,
-                caret: forms.color,
+                caretColor: forms.color,
+                placeholderColor: colors.grey.lighter1,
             },
             focus: {
                 borderColor: colors.primary.base,
                 boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
+                placeholderColor: colors.grey.lighter2,
             },
             disabled: {
                 background: colors.silver.base,
                 borderColor: colors.silver.darker2,
                 color: colors.grey.lighter2,
-                caret: colors.grey.lighter2,
+                caretColor: colors.grey.lighter2,
+                placeholderColor: colors.grey.lighter2,
             },
         },
         option: {
@@ -239,17 +233,6 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
         },
         searchWrapper: {
             background: colors.silver.base,
-        },
-        placeholder: {
-            idle: {
-                color: colors.grey.lighter1,
-            },
-            focus: {
-                color: colors.grey.lighter2,
-            },
-            disabled: {
-                color: colors.grey.lighter2,
-            },
         },
     };
 };
