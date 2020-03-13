@@ -78,118 +78,153 @@ const theme: ThemeType = {
         primary: {
             idle: {
                 backgroundColor: colors.green400,
-                color: colors.white,
+                color: colors.green900,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
                 backgroundColor: colors.green500,
-                color: colors.white,
+                color: colors.green900,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
                 backgroundColor: colors.green400,
-                color: colors.white,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+                color: colors.green900,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.green500,
-                color: colors.white,
+                color: colors.green900,
                 boxShadow: 'none',
             },
         },
         secondary: {
             idle: {
-                backgroundColor: colors.grey100,
-                color: colors.grey600,
+                backgroundColor: colors.grey200,
+                color: colors.grey700,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: colors.grey200,
-                color: colors.grey600,
+                backgroundColor: colors.grey300,
+                color: colors.grey700,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: colors.grey100,
-                color: colors.grey600,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
+                backgroundColor: colors.grey200,
+                color: colors.grey700,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
             },
             active: {
-                backgroundColor: colors.grey200,
-                color: colors.grey600,
+                backgroundColor: colors.grey300,
+                color: colors.grey700,
+                boxShadow: 'none',
+            },
+        },
+        info: {
+            idle: {
+                backgroundColor: colors.blue400,
+                color: colors.blue900,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            hover: {
+                backgroundColor: colors.blue500,
+                color: colors.blue900,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: colors.blue400,
+                color: colors.blue900,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.blue100, 0.875)}`,
+            },
+            active: {
+                backgroundColor: colors.blue500,
+                color: colors.blue900,
                 boxShadow: 'none',
             },
         },
         warning: {
             idle: {
-                backgroundColor: colors.yellow500,
-                color: colors.white,
+                backgroundColor: colors.yellow400,
+                color: colors.yellow900,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: colors.yellow600,
-                color: colors.white,
+                backgroundColor: colors.yellow500,
+                color: colors.yellow900,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: colors.yellow500,
-                color: colors.white,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 3px ${rgba(colors.yellow500, 0.25)}`,
+                backgroundColor: colors.yellow400,
+                color: colors.yellow900,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset, 0 0 0 4px ${rgba(colors.yellow100, 0.875)}`,
             },
             active: {
-                backgroundColor: colors.yellow600,
-                color: colors.white,
+                backgroundColor: colors.yellow500,
+                color: colors.yellow900,
                 boxShadow: 'none',
             },
         },
         destructive: {
             idle: {
-                backgroundColor: colors.red500,
-                color: colors.white,
+                backgroundColor: colors.red400,
+                color: colors.red900,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             hover: {
-                backgroundColor: colors.red600,
-                color: colors.white,
+                backgroundColor: colors.red500,
+                color: colors.red900,
                 boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
             },
             focus: {
-                backgroundColor: colors.red500,
-                color: colors.white,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 3px ${rgba(colors.red500, 0.25)}`,
+                backgroundColor: colors.red400,
+                color: colors.red900,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset,0 0 0 4px ${rgba(colors.red100, 0.875)}`,
             },
             active: {
-                backgroundColor: colors.red600,
-                color: colors.white,
+                backgroundColor: colors.red500,
+                color: colors.red900,
                 boxShadow: 'none',
             },
         },
         plain: {
             idle: {
                 backgroundColor: 'transparent',
-                color: colors.grey800,
+                color: colors.grey500,
                 boxShadow: 'none',
-                textDecoration: 'underline',
+                border: `1px solid ${colors.grey300}`,
             },
             hover: {
                 backgroundColor: colors.grey100,
-                color: colors.grey800,
-                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+                color: colors.grey500,
+                boxShadow: 'none',
             },
             focus: {
-                backgroundColor: colors.grey100,
-                color: colors.grey800,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
+                backgroundColor: 'transparent',
+                color: colors.grey500,
+                boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
             },
             active: {
                 backgroundColor: colors.grey100,
-                color: colors.grey800,
+                color: colors.grey500,
                 boxShadow: 'none',
             },
         },
         disabled: {
-            color: colors.grey500,
-            backgroundColor: colors.grey200,
-            stripingColor: 'rgba(0,0,0,0.04)',
+            primary: {
+                color: colors.grey400,
+                backgroundColor: colors.grey300,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset`,
+            },
+            secondary: {
+                color: colors.grey300,
+                backgroundColor: colors.grey100,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset`,
+            },
+            plain: {
+                color: colors.grey300,
+                backgroundColor: 'transparent',
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset`,
+                border: `1px solid ${colors.grey200}`,
+            },
         },
     },
     Checkbox: {
@@ -223,37 +258,7 @@ const theme: ThemeType = {
         default: {
             background: colors.grey100,
         },
-        overides: {
-            Button: {
-                secondary: {
-                    idle: {
-                        backgroundColor: colors.grey200,
-                    },
-                    active: {
-                        backgroundColor: colors.grey200,
-                    },
-                    hover: {
-                        backgroundColor: colors.grey200,
-                    },
-                    focus: {
-                        backgroundColor: colors.grey200,
-                        boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${colors.grey200}`,
-                    },
-                },
-                plain: {
-                    active: {
-                        backgroundColor: colors.grey200,
-                    },
-                    hover: {
-                        backgroundColor: colors.grey200,
-                    },
-                    focus: {
-                        backgroundColor: colors.grey200,
-                        boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${colors.grey200}`,
-                    },
-                },
-            },
-        },
+        overides: {},
     },
     Heading: {
         1: {
@@ -348,41 +353,6 @@ const theme: ThemeType = {
         backgroundColor: colors.white,
         backdropColor: 'rgba(0,0,0,0.3)',
         borderRadius: roundness.base,
-    },
-    MultiButton: {
-        window: {
-            backgroundColor: colors.white,
-            secondaryColor: colors.grey100,
-            borderColor: colors.grey300,
-            borderRadius: roundness.base,
-            boxShadow: '0 2px 6px 0 rgba(0,0,0,0.10)',
-        },
-        button: {
-            common: {
-                active: {
-                    boxShadow: `inset 0 -2px 0 0 rgba(0,0,0,0.20), 0 0 0 2px ${rgba(colors.grey500, 0.2)}`,
-                },
-                borderRadius: roundness.base,
-            },
-            primary: {
-                dividerColor: colors.green500,
-            },
-            secondary: {
-                dividerColor: colors.grey300,
-            },
-            warning: {
-                dividerColor: colors.yellow600,
-            },
-            destructive: {
-                dividerColor: colors.red700,
-            },
-            plain: {
-                dividerColor: colors.grey300,
-            },
-            disabled: {
-                dividerColor: colors.grey300,
-            },
-        },
     },
     NativeSelect: {
         input: {

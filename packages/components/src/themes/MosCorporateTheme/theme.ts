@@ -62,6 +62,28 @@ const theme: RecursivePartialType<ThemeType> = {
                 boxShadow: 'none',
             },
         },
+        info: {
+            idle: {
+                backgroundColor: colors.grey100,
+                color: colors.grey600,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            hover: {
+                backgroundColor: colors.grey200,
+                color: colors.grey600,
+                boxShadow: '0 -2px 0 rgba(0,0,0,0.2) inset',
+            },
+            focus: {
+                backgroundColor: colors.grey100,
+                color: colors.grey600,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
+            },
+            active: {
+                backgroundColor: colors.grey200,
+                color: colors.grey600,
+                boxShadow: 'none',
+            },
+        },
         warning: {
             idle: {
                 backgroundColor: colors.yellow500,
@@ -111,7 +133,7 @@ const theme: RecursivePartialType<ThemeType> = {
                 backgroundColor: 'transparent',
                 color: colors.grey800,
                 boxShadow: 'none',
-                textDecoration: 'underline',
+                border: `1px solid ${colors.grey300}`,
             },
             hover: {
                 backgroundColor: colors.grey100,
@@ -121,7 +143,7 @@ const theme: RecursivePartialType<ThemeType> = {
             focus: {
                 backgroundColor: colors.grey100,
                 color: colors.grey800,
-                boxShadow: `0 -2px 0 rgba(0,0,0,0.2) inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
+                boxShadow: `inset,0 0 0 4px ${rgba(colors.grey800, 0.08)}`,
             },
             active: {
                 backgroundColor: colors.grey100,
@@ -130,9 +152,22 @@ const theme: RecursivePartialType<ThemeType> = {
             },
         },
         disabled: {
-            color: colors.grey500,
-            backgroundColor: colors.grey200,
-            stripingColor: 'rgba(0,0,0,0.04)',
+            primary: {
+                color: colors.grey400,
+                backgroundColor: colors.grey300,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset`,
+            },
+            secondary: {
+                color: colors.grey400,
+                backgroundColor: colors.grey300,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset`,
+            },
+            plain: {
+                color: colors.grey400,
+                backgroundColor: colors.grey300,
+                boxShadow: `0 -2px 0 rgba(0,0,0,0.1) inset`,
+                border: `1px solid ${colors.grey200}`,
+            },
         },
     },
 };
