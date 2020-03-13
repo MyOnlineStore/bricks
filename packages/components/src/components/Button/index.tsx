@@ -33,6 +33,7 @@ type ButtonThemeType = {
     secondary: ComponentStateTypes;
     warning: ComponentStateTypes;
     destructive: ComponentStateTypes;
+    info: ComponentStateTypes;
     plain: {
         hover: CommonType;
         focus: CommonType;
@@ -41,19 +42,32 @@ type ButtonThemeType = {
             backgroundColor: string;
             color: string;
             boxShadow: string;
-            textDecoration: string;
+            border: string;
         };
     };
     disabled: {
-        backgroundColor: string;
-        color: string;
-        stripingColor: string;
+        primary: {
+            backgroundColor: string;
+            color: string;
+            boxShadow: string;
+        };
+        secondary: {
+            backgroundColor: string;
+            color: string;
+            boxShadow: string;
+        };
+        plain: {
+            backgroundColor: string;
+            color: string;
+            boxShadow: string;
+            border: string;
+        };
     };
 };
 
 type PropsType = BasePropsType & {
     loading?: boolean;
-    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'plain';
+    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'info' | 'plain';
     compact?: boolean;
     disabled?: boolean;
     icon?: ReactNode;
@@ -89,9 +103,9 @@ const StyledButton = styled(Base)<PropsType>`
 
         return `
             ${idle}
-            padding: 11px ${compact ? ' 12px' : '24px'};
+            padding: 6px ${compact ? ' 12px' : '24px'};
             border-radius: ${theme.Button.common.borderRadius};
-            ${variant === 'plain' ? `text-decoration: ${theme.Button.plain.idle.textDecoration};` : ''}
+            ${variant === 'plain' ? `border: ${theme.Button.plain.idle.border};` : ''}
 
             &:hover {
                 ${!loading && !disabled ? hover : idle}
@@ -116,29 +130,61 @@ const StyledButton = styled(Base)<PropsType>`
                 z-index: -2;
                 transition: opacity 0.3s;
                 opacity: ${disabled ? 1 : 0};
-                ${disabled ? `color: ${theme.Button.disabled.color}` : 0};
-                background: ${theme.Button.disabled.backgroundColor}
-                    repeating-linear-gradient(
-                        -45deg,
-                        ${theme.Button.disabled.stripingColor},
-                        ${theme.Button.disabled.stripingColor} 10px,
-                        transparent 10px,
-                        transparent 20px
-                    );
                 box-shadow: ${theme.Button[variant].idle.boxShadow};
                 border-radius: ${theme.Button.common.borderRadius};
             }
 
             &:disabled {
-                background: ${theme.Button.disabled.backgroundColor};
-                color: ${theme.Button.disabled.color};
-                border-color: transparent;
+                ${variant === 'plain' ? `border: ${theme.Button.disabled.plain.border};` : ''}
+
                 transform: none;
-                box-shadow: none;
+                cursor: not-allowed;
 
                 &::before {
                     opacity: 1;
                 }
+            }
+        `;
+    }};
+
+    ${({ theme, variant }): string => {
+        if (variant === 'plain') {
+            return `
+                &::before {
+                    color: ${theme.Button.disabled.plain.color};
+                    background: ${theme.Button.disabled.plain.backgroundColor};
+                }
+
+                &:disabled {
+                    color: ${theme.Button.disabled.plain.color};
+                    background: ${theme.Button.disabled.plain.backgroundColor};
+                }
+            `;
+        }
+
+        if (variant === 'secondary') {
+            return `
+                &::before {
+                    color: ${theme.Button.disabled.secondary.color};
+                    background: ${theme.Button.disabled.secondary.backgroundColor};
+                }
+
+                &:disabled {
+                    color: ${theme.Button.disabled.secondary.color};
+                    background: ${theme.Button.disabled.secondary.backgroundColor};
+                }
+            `;
+        }
+
+        return `
+            &::before {
+                color: ${theme.Button.disabled.primary.color};
+                background: ${theme.Button.disabled.primary.backgroundColor};
+            }
+
+            &:disabled {
+                color: ${theme.Button.disabled.primary.color};
+                background: ${theme.Button.disabled.primary.backgroundColor};
             }
         `;
     }};
@@ -233,6 +279,30 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
                 boxShadow: 'none',
             },
         },
+        info: {
+            idle: {
+                backgroundColor: colors.contrastBackground,
+                color: themeTools.calculateContrastTextColor(colors.contrastBackground),
+                boxShadow: themeTools.themeSettings.buttonShadow,
+            },
+            hover: {
+                backgroundColor: themeTools.calculateOffsetColor(colors.contrastBackground, 0.18, 0.4),
+                color: themeTools.calculateContrastTextColor(colors.contrastBackground),
+                boxShadow: themeTools.themeSettings.buttonShadow,
+            },
+            focus: {
+                backgroundColor: colors.silver.base,
+                color: colors.grey.lighter1,
+                boxShadow: `${themeTools.themeSettings.buttonShadow}${
+                    themeTools.themeSettings.buttonStyle === 'flat' ? '' : ','
+                }0 0 0 4px ${chroma(colors.grey.base).alpha(0.08)}`,
+            },
+            active: {
+                backgroundColor: colors.silver.darker1,
+                color: colors.grey.lighter1,
+                boxShadow: 'none',
+            },
+        },
         warning: {
             idle: {
                 backgroundColor: colors.severity.warning,
@@ -298,7 +368,7 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
                 backgroundColor: 'transparent',
                 color: themeTools.calculateContrastTextColor(colors.background),
                 boxShadow: 'none',
-                textDecoration: 'underline',
+                border: `1px solid ${colors.silver.darker2}`,
             },
             hover: {
                 backgroundColor: 'transparent',
@@ -319,9 +389,22 @@ const composeButtonTheme = (themeTools: ThemeTools): ButtonThemeType => {
             },
         },
         disabled: {
-            color: themeTools.calculateContrastTextColor(colors.contrastBackground),
-            backgroundColor: colors.contrastBackground,
-            stripingColor: 'rgba(0,0,0,0.04)',
+            primary: {
+                color: themeTools.calculateContrastTextColor(colors.contrastBackground),
+                backgroundColor: colors.contrastBackground,
+                boxShadow: themeTools.themeSettings.buttonShadow,
+            },
+            secondary: {
+                color: themeTools.calculateContrastTextColor(colors.contrastBackground),
+                backgroundColor: colors.contrastBackground,
+                boxShadow: themeTools.themeSettings.buttonShadow,
+            },
+            plain: {
+                color: themeTools.calculateContrastTextColor(colors.contrastBackground),
+                backgroundColor: colors.contrastBackground,
+                boxShadow: 'none',
+                border: `1px solid ${colors.silver.lighter1}`,
+            },
         },
     };
 };
