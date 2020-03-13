@@ -13,7 +13,6 @@ import { composeIconButtonTheme } from '../../components/IconButton';
 import { composeLinkTheme } from '../../components/Link/style';
 import { composeMessageStreamTheme } from '../../components/MessageStream/style';
 import { composeModalTheme } from '../../components/Modal/style';
-import { composeMultiButtonTheme } from '../../components/MultiButton/style';
 import { composeNotificationTheme } from '../../components/Notification/style';
 import { composeRadioButtonTheme } from '../../components/RadioButton/style';
 import { composeRangeTheme } from '../../components/Range/style';
@@ -83,7 +82,6 @@ const generateThemeObject = (
         Link: composeLinkTheme(themeTools),
         MessageStream: composeMessageStreamTheme(themeTools),
         Modal: composeModalTheme(themeTools),
-        MultiButton: composeMultiButtonTheme(themeTools),
         NativeSelect: composeNativeSelectTheme(themeTools),
         Notification: composeNotificationTheme(themeTools),
         Popover: composePopoverTheme(themeTools),

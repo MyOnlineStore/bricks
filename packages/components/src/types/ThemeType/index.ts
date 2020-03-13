@@ -9,7 +9,6 @@ import { IllustrationThemeType } from '../../components/Illustration/style';
 import { LinkThemeType } from '../../components/Link/style';
 import { MessageStreamThemeType } from '../../components/MessageStream/style';
 import { ModalThemeType } from '../../components/Modal/style';
-import { MultiButtonThemeType } from '../../components/MultiButton/style';
 import { NativeSelectThemeType } from '../../components/NativeSelect/style';
 import { NotificationThemeType } from '../../components/Notification/style';
 import { PopoverThemeType } from '../../components/Popover/style';
@@ -43,7 +42,6 @@ type ThemeType = {
     Link: LinkThemeType;
     MessageStream: MessageStreamThemeType;
     Modal: ModalThemeType;
-    MultiButton: MultiButtonThemeType;
     NativeSelect: NativeSelectThemeType;
     Notification: NotificationThemeType;
     Popover: PopoverThemeType;
