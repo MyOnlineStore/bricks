@@ -11,6 +11,7 @@ import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { SearchIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import { colors } from '../../themes/MosTheme';
+import { OffsetType } from '../../types/OffsetType';
 
 type OptionBaseType = {
     value: string;
@@ -216,7 +217,8 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 >
                     <Box alignItems="stretch">
                         {(this.state.isOpen && !this.props.disabled && (
-                            <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
+                            // 1px less padding to compensate for the border
+                            <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
                                 <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
                                     <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
                                 </Box>
@@ -237,12 +239,14 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 />
                             </Box>
                         )) ||
-                            (this.props.renderSelected !== undefined && (
-                                <Box padding={trbl(6, 12)} alignItems="center" grow={1}>
+                            (this.props.renderSelected !== undefined && selectedOption.value !== '' && (
+                                // 1px less padding to compensate for the border
+                                <Box padding={[5 as OffsetType, 11 as OffsetType]} alignItems="center" grow={1}>
                                     {this.props.renderSelected(selectedOption as GenericOptionType)}
                                 </Box>
                             )) || (
-                                <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
+                                // 1px less padding to compensate for the border
+                                <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
                                     {(this.props.value !== '' && (
                                         <StyledSelection
                                             data-testid={

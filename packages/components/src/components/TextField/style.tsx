@@ -65,8 +65,8 @@ const StyledInput = styled.input<InputPropsType>`
     margin: 0;
     font-family: ${({ theme }): string => theme.TextField.common.fontFamily};
     font-size: ${({ theme }): string => theme.TextField.common.fontSize};
-    padding: 6px 12px;
-    line-height: 1.4667; // results in 22px which gives the input a height of 36px
+    padding: 5px 11px;
+    line-height: 1.6; // results in 24px which gives the input a height of 36px
     outline: none;
     min-width: 12px;
     -webkit-font-smoothing: antialiased;
@@ -81,6 +81,7 @@ const StyledInput = styled.input<InputPropsType>`
         } else if (disabled) {
             return `
                 color: ${theme.TextField.input.disabled.color};
+                cursor: not-allowed;
                 `;
         } else {
             return `
@@ -118,7 +119,8 @@ const StyledInput = styled.input<InputPropsType>`
 
 const StyledAffixWrapper = styled.div<AffixPropsType>`
     display: flex;
-    padding: ${({ isString }): string => (isString ? '0 12px' : '0')};
+    padding: ${({ isString }): string => (isString ? '5px 11px' : '0')};
+    line-height: 24px;
     user-select: none;
     align-items: center;
     flex-shrink: 0;
@@ -204,6 +206,7 @@ const StyledWrapper = styled.div<WrapperPropsType>`
                 background: ${theme.TextField.input.disabled.background};
                 border: solid 1px ${theme.TextField.input.disabled.borderColor};
                 box-shadow: none;
+                cursor: not-allowed;
                 `;
         } else {
             return `

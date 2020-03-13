@@ -69,7 +69,7 @@ const TextArea: FC<PropsType> = props => {
                 )}
             </StyledTextAreaWrapper>
             {props.feedback && props.feedback.message !== '' && (
-                <Box margin={trbl(6, 0, 0, 0)}>
+                <Box margin={trbl(3, 0, 0, 0)}>
                     <InlineNotification message={props.feedback.message} severity={props.feedback.severity} />
                 </Box>
             )}

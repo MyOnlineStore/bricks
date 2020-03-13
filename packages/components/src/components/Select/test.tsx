@@ -368,13 +368,13 @@ describe('Select', () => {
         expect(renderOption).toHaveBeenCalledTimes(options.length);
     });
 
-    it('should render an alternative input rendering', () => {
+    it('should render an alternative input rendering when an option is selected', () => {
         const renderSelected = jest.fn();
 
         mountWithTheme(
             <Select
                 onChange={(): void => undefined}
-                value=""
+                value="A"
                 emptyText="empty"
                 options={options}
                 renderSelected={renderSelected}

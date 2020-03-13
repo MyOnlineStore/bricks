@@ -134,7 +134,7 @@ const StyledInput = styled.div<InputPropsType>`
     box-sizing: border-box;
     width: 100%;
     border-radius: ${({ theme }) => theme.Select.common.borderRadius};
-    line-height: 1.4667; // results in 22px which gives the input a height of 36px
+    line-height: 1.6; // results in 24px with 15px fontSize
 
     ${({ theme, focus, open, disabled }) => {
         if (focus && !open && !disabled) {
@@ -148,6 +148,7 @@ const StyledInput = styled.div<InputPropsType>`
                 background: ${theme.Select.select.disabled.background};
                 border: ${`solid 1px ${theme.Select.select.disabled.borderColor}`};
                 box-shadow: none;
+                cursor: not-allowed;
             `;
         } else {
             return `
@@ -167,7 +168,7 @@ const StyledInput = styled.div<InputPropsType>`
         font-size: ${({ theme }) => theme.Select.common.fontSize};
         font-family: ${({ theme }) => theme.Select.common.fontFamily};
         color: ${({ theme }) => theme.Select.select.idle.color};
-        line-height: 1.4667; // results in 22px which gives the input a height of 36px
+        line-height: 1.6; // results in 24px with 15px fontSize
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
@@ -191,7 +192,7 @@ const StyledSelection = styled.div<SelectionProps>`
     font-family: ${({ theme }) => theme.Select.common.fontFamily};
     font-size: ${({ theme }) => theme.Select.common.fontSize};
     color: ${({ theme, disabled }) => (disabled ? theme.Select.select.disabled.color : theme.Select.select.idle.color)};
-    line-height: 1.4667; // results in 22px which gives the input a height of 36px
+    line-height: 1.6; // results in 24px with 15px fontSize
     transition: color 150ms;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

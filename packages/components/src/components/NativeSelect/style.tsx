@@ -51,6 +51,7 @@ const StyledSelect = styled.div<SelectPropsType>`
                 background: ${theme.NativeSelect.disabled.background};
                 border: ${`solid 1px ${theme.NativeSelect.disabled.borderColor}`};
                 box-shadow: none;
+                cursor: not-allowed;
             `;
         } else {
             return `
@@ -62,8 +63,8 @@ const StyledSelect = styled.div<SelectPropsType>`
     }}
 
     select {
-        padding: 6px 12px;
-        line-height: 1.4667; // results in 22px which gives the input a height of 36px;
+        padding: 5px 11px;
+        line-height: 1.6; // results in 24px with 15px fontSize
         width: 100%;
         appearance: none;
         outline: none;
@@ -81,7 +82,7 @@ const StyledSelect = styled.div<SelectPropsType>`
     ${StyledIcon} {
         position: absolute;
         top: 50%;
-        right: 9px;
+        right: 8px;
         transform: translateY(-50%);
     }
 `;

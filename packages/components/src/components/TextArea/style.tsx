@@ -77,6 +77,7 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
                 background: ${theme.TextArea.disabled.background};
                 border-color: ${theme.TextArea.disabled.borderColor};
                 box-shadow: none;
+                cursor: not-allowed;
                 `;
         } else {
             return `
@@ -89,7 +90,7 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
 `;
 
 const StyledTextArea = styled.textarea<TextAreaPropsType>`
-    padding: 6px 12px;
+    padding: 5px 11px;
     box-sizing: border-box;
     width: 100%;
     background: transparent;
@@ -97,7 +98,7 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
     outline: none;
     font-family: ${({ theme }): string => theme.TextArea.common.fontFamily};
     font-size: ${({ theme }): string => theme.TextArea.common.fontSize};
-    line-height: 1.4; // results in 21px with 15px fontSize
+    line-height: 1.6; // results in 24px with 15px fontSize
     color: ${({ disabled, theme }): string => (disabled ? theme.TextArea.disabled.color : theme.TextArea.idle.color)};
     resize: ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'none' : 'vertical')};
     transition: color 150ms;
@@ -121,6 +122,8 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
     &::-moz-placeholder {
         opacity: 1;
     }
+
+    ${({ disabled }) => (disabled ? 'cursor: not-allowed;' : '')}
 `;
 
 const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {

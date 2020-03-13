@@ -4,7 +4,7 @@ import trbl from '../../../utility/trbl';
 import StyledOption from './style';
 import Text from '../../Text';
 import Icon from '../../Icon';
-import { CheckmarkIcon } from '@myonlinestore/bricks-assets';
+import { CheckmarkSmallIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     label: string;
@@ -43,7 +43,7 @@ const Option: FunctionComponent<PropsType> = (props): JSX.Element => {
                         {props.isSelected && (
                             <Box margin={trbl(0, 6, 0, 0)} inline>
                                 <Text variant={props.isSelected ? 'descriptive' : undefined}>
-                                    <Icon size="medium" icon={<CheckmarkIcon />} />
+                                    <Icon size="small" icon={<CheckmarkSmallIcon />} />
                                 </Text>
                             </Box>
                         )}

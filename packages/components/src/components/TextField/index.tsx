@@ -139,7 +139,7 @@ class TextField extends Component<PropsType, StateType> {
                     )}
                 </StyledWrapper>
                 {this.props.feedback && this.props.feedback.message !== '' && (
-                    <Box margin={[6, 0, 0, 0]}>
+                    <Box margin={[3, 0, 0, 0]}>
                         <InlineNotification
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
