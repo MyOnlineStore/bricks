@@ -130,50 +130,61 @@ const StyledButton = styled(Base)<PropsType>`
                 z-index: -2;
                 transition: opacity 0.3s;
                 opacity: ${disabled ? 1 : 0};
-                ${
-                    variant === 'plain'
-                        ? `color: ${theme.Button.disabled.plain.color};`
-                        : variant === 'secondary'
-                        ? `color: ${theme.Button.disabled.secondary.color};`
-                        : `color: ${theme.Button.disabled.primary.color};`
-                }
-                background: ${
-                    variant === 'plain'
-                        ? theme.Button.disabled.plain.backgroundColor
-                        : variant === 'secondary'
-                        ? theme.Button.disabled.secondary.backgroundColor
-                        : theme.Button.disabled.primary.backgroundColor
-                };
                 box-shadow: ${theme.Button[variant].idle.boxShadow};
                 border-radius: ${theme.Button.common.borderRadius};
             }
 
             &:disabled {
-                background: ${
-                    variant === 'plain'
-                        ? theme.Button.disabled.plain.backgroundColor
-                        : variant === 'secondary'
-                        ? theme.Button.disabled.secondary.backgroundColor
-                        : theme.Button.disabled.primary.backgroundColor
-                };
-
-                color: ${
-                    variant === 'plain'
-                        ? theme.Button.disabled.plain.color
-                        : variant === 'secondary'
-                        ? theme.Button.disabled.secondary.color
-                        : theme.Button.disabled.primary.color
-                };
-
                 ${variant === 'plain' ? `border: ${theme.Button.disabled.plain.border};` : ''}
 
                 transform: none;
-
                 cursor: not-allowed;
 
                 &::before {
                     opacity: 1;
                 }
+            }
+        `;
+    }};
+
+    ${({ theme, variant }): string => {
+        if (variant === 'plain') {
+            return `
+                &::before {
+                    color: ${theme.Button.disabled.plain.color};
+                    background: ${theme.Button.disabled.plain.backgroundColor};
+                }
+
+                &:disabled {
+                    color: ${theme.Button.disabled.plain.color};
+                    background: ${theme.Button.disabled.plain.backgroundColor};
+                }
+            `;
+        }
+
+        if (variant === 'secondary') {
+            return `
+                &::before {
+                    color: ${theme.Button.disabled.secondary.color};
+                    background: ${theme.Button.disabled.secondary.backgroundColor};
+                }
+
+                &:disabled {
+                    color: ${theme.Button.disabled.secondary.color};
+                    background: ${theme.Button.disabled.secondary.backgroundColor};
+                }
+            `;
+        }
+
+        return `
+            &::before {
+                color: ${theme.Button.disabled.primary.color};
+                background: ${theme.Button.disabled.primary.backgroundColor};
+            }
+
+            &:disabled {
+                color: ${theme.Button.disabled.primary.color};
+                background: ${theme.Button.disabled.primary.backgroundColor};
             }
         `;
     }};
