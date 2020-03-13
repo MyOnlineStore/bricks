@@ -100,6 +100,7 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
     line-height: 1.4; // results in 21px with 15px fontSize
     color: ${({ disabled, theme }): string => (disabled ? theme.TextArea.disabled.color : theme.TextArea.idle.color)};
     resize: ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'none' : 'vertical')};
+    transition: color 150ms;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 

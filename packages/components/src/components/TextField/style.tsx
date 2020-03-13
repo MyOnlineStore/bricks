@@ -61,6 +61,7 @@ type InputPropsType = {
 const StyledInput = styled.input<InputPropsType>`
     width: 100%;
     border: none;
+    background: transparent;
     margin: 0;
     font-family: ${({ theme }): string => theme.TextField.common.fontFamily};
     font-size: ${({ theme }): string => theme.TextField.common.fontSize};
@@ -75,17 +76,14 @@ const StyledInput = styled.input<InputPropsType>`
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && !focus && !disabled) {
             return `
-                background: ${theme.TextField.input.error.background};
                 color: ${theme.TextField.input.idle.color};
                 `;
         } else if (disabled) {
             return `
-                background: ${theme.TextField.input.disabled.background};
                 color: ${theme.TextField.input.disabled.color};
                 `;
         } else {
             return `
-                background: ${theme.TextField.input.idle.background};
                 color: ${theme.TextField.input.idle.color};
             `;
         }
@@ -127,7 +125,7 @@ const StyledAffixWrapper = styled.div<AffixPropsType>`
     max-width: 40%;
     background: ${({ theme }): string => theme.TextField.affix.background};
     border: 0px solid;
-    transition: border-color 150ms, box-shadow 150ms;
+    transition: border-color 150ms, color 150ms;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -185,26 +183,31 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && focus && !disabled) {
             return `
+                background: ${theme.TextField.input.error.background};
                 border: solid 1px ${theme.TextField.input.error.borderColor};
                 box-shadow: ${theme.TextField.input.error.boxShadow};
                 `;
         } else if (severity === 'error' && !focus && !disabled) {
             return `
+                background: ${theme.TextField.input.error.background};
                 border: solid 1px ${theme.TextField.input.error.borderColor};
                 box-shadow: none;
                 `;
         } else if (focus && !disabled) {
             return `
+                background: ${theme.TextField.input.idle.background};
                 border: solid 1px ${theme.TextField.input.focus.borderColor};
                 box-shadow: ${theme.TextField.input.focus.boxShadow};
                 `;
         } else if (disabled) {
             return `
+                background: ${theme.TextField.input.disabled.background};
                 border: solid 1px ${theme.TextField.input.disabled.borderColor};
                 box-shadow: none;
                 `;
         } else {
             return `
+                background: ${theme.TextField.input.idle.background};
                 border: solid 1px ${theme.TextField.input.idle.borderColor};
                 box-shadow: none;
             `;

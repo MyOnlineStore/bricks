@@ -192,6 +192,7 @@ const StyledSelection = styled.div<SelectionProps>`
     font-size: ${({ theme }) => theme.Select.common.fontSize};
     color: ${({ theme, disabled }) => (disabled ? theme.Select.select.disabled.color : theme.Select.select.idle.color)};
     line-height: 1.4667; // results in 22px which gives the input a height of 36px
+    transition: color 150ms;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 `;

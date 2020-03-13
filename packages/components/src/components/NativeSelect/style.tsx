@@ -73,6 +73,7 @@ const StyledSelect = styled.div<SelectPropsType>`
         font-family: ${({ theme }) => theme.NativeSelect.common.fontFamily};
         color: ${({ theme, disabled }) =>
             disabled ? theme.NativeSelect.disabled.color : theme.NativeSelect.idle.color};
+        transition: color 150ms;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
