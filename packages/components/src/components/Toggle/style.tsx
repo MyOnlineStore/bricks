@@ -134,7 +134,7 @@ const StyledToggleSkin = styled.div<StyledToggleSkinType>`
                     return theme.Toggle.idle.borderColor;
                 }
 
-                return theme.Toggle.checked.borderColor;
+                return theme.Toggle.idle.borderColor;
             }
 
             if (disabled) {

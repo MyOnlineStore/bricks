@@ -197,7 +197,7 @@ const theme: ThemeType = {
             borderColor: colors.grey300,
             backgroundColor: colors.white,
             borderRadius: roundness.base,
-            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
+            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.6)}`,
         },
         checked: {
             checkmarkColor: colors.white,
@@ -434,8 +434,8 @@ const theme: ThemeType = {
         idle: {
             backgroundColor: colors.white,
             borderColor: colors.grey300,
-            boxShadow: `0px 0px 0px 4px ${rgba(colors.grey200, 0.875)}`,
-            checkmarkColor: colors.grey100,
+            boxShadow: `0px 0px 0px 4px ${rgba(colors.grey200, 0.6)}`,
+            checkmarkColor: colors.white,
         },
         idleDisabled: {
             backgroundColor: colors.grey100,
@@ -447,12 +447,12 @@ const theme: ThemeType = {
             backgroundColor: colors.green300,
         },
         activeDisabled: {
-            boxShadow: `0px 0px 0px 5.5px ${rgba(colors.green300, 0.5)}`,
+            boxShadow: `0px 0px 0px 4px ${rgba(colors.green300, 0.5)}`,
             backgroundColor: colors.grey200,
         },
         error: {
             borderColor: colors.red600,
-            backgroundColor: colors.red100,
+            backgroundColor: rgba(colors.red100, 0.1),
             boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
     },
@@ -791,10 +791,10 @@ const theme: ThemeType = {
         idle: {
             borderColor: colors.grey300,
             backgroundColor: colors.white,
-            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.875)}`,
+            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.6)}`,
         },
         checked: {
-            borderColor: colors.green500,
+            borderColor: colors.green400,
             backgroundColor: colors.green300,
             boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
         },

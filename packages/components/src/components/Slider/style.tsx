@@ -60,7 +60,7 @@ const StyledWrapper = styled(Box)`
         .input-range__track {
             background: ${({ theme }): string => theme.Slider.default.track.background};
             border: ${({ theme }): string => theme.Slider.default.track.border};
-            height: 6px;
+            height: 4px;
         }
 
         .input-range__track--active {
