@@ -1,6 +1,6 @@
 import React, { FC, useState, ChangeEvent } from 'react';
 import { StyledSelect } from './style';
-import { ChevronDownIcon, ChevronUpIcon } from '@myonlinestore/bricks-assets';
+import { CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import Icon from '../Icon';
 
 type OptionType = {
@@ -43,7 +43,7 @@ const NativeSelect: FC<PropsType> = (props): JSX.Element => {
                     </option>
                 ))}
             </select>
-            <Icon size="small" icon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />} />
+            <Icon size="medium" icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />} />
         </StyledSelect>
     );
 };

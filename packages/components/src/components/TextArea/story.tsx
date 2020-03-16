@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SeverityType from '../../types/SeverityType';
 import { select, text, boolean, number } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import TextArea from '.';
@@ -26,16 +25,13 @@ class Demo extends Component<DemoPropsType, { value: string }> {
                 value={this.state.value}
                 disabled={boolean('disabled', false)}
                 resizeable={boolean('resizeable', false)}
+                placeholder={text('placeholder', 'This is a placeholder')}
                 onChange={(value: string): void => this.setState({ value })}
                 feedback={
                     this.props.withFeedback
                         ? {
                               message: text('feedback message', 'This is a feedback message'),
-                              severity: select(
-                                  'feedback type',
-                                  ['success', 'warning', 'error', 'info'],
-                                  'error',
-                              ) as SeverityType,
+                              severity: select('feedback type', ['success', 'warning', 'error', 'info'], 'error'),
                           }
                         : undefined
                 }

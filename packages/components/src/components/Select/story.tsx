@@ -89,25 +89,17 @@ class Demo extends Component<PropsType, StateType> {
 }
 
 const renderSelected = (option: DemoOptionType): JSX.Element => {
-    if (option.label !== '') {
-        return (
-            <Box grow={1} width="100%" direction="row" alignItems="center">
-                <Box margin={trbl(0, 9, 0, 0)}>
-                    <img width="50" height="50" src={option.image} />
-                </Box>
-                <Box direction="column">
-                    <Text>{option.label}</Text>
-                    <Text variant="descriptive">{option.description}</Text>
-                </Box>
+    return (
+        <Box grow={1} width="100%" direction="row" alignItems="center">
+            <Box margin={trbl(0, 9, 0, 0)}>
+                <img width="50" height="50" src={option.image} />
             </Box>
-        );
-    } else {
-        return (
-            <Box direction="row" alignItems="center">
-                <Text variant="descriptive">{'Make a selection'}</Text>
+            <Box direction="column">
+                <Text>{option.label}</Text>
+                <Text variant="descriptive">{option.description}</Text>
             </Box>
-        );
-    }
+        </Box>
+    );
 };
 
 const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX.Element => {

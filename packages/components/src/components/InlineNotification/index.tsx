@@ -15,8 +15,8 @@ const InlineNotification: FunctionComponent<PropsType> = (props): JSX.Element =>
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (
-        <Text size="small" variant={props.severity}>
-            <Box inline>
+        <Text variant={props.severity}>
+            <Box inline alignItems="center">
                 <Box inline margin={trbl(0, 6, 0, 0)}>
                     <Icon size="medium" icon={icon} />
                 </Box>
