@@ -21,22 +21,22 @@ type RadioButtonThemeType = {
         checkmarkColor: string;
     };
     idleDisabled: {
-        background: string;
+        backgroundColor: string;
+        borderColor: string;
     };
     active: {
         boxShadow: string;
         borderColor: string;
-        background: string;
+        backgroundColor: string;
     };
     activeDisabled: {
         boxShadow: string;
-        background: string;
-    };
-    focus: {
-        boxShadow: string;
+        backgroundColor: string;
     };
     error: {
         borderColor: string;
+        boxShadow: string;
+        backgroundColor: string;
     };
 };
 
@@ -57,30 +57,65 @@ const StyledRadioButtonSkin = styled.div<RadioButtonSkinPropsType>`
     height: 16px;
     border-radius: 100%;
     transition: box-shadow 100ms, border 100ms;
-    background-color: ${({ theme }): string => theme.RadioButton.idle.backgroundColor};
-    background: ${({ theme, checked, disabled }): string => {
-        if (checked && disabled) {
-            return theme.RadioButton.activeDisabled.background;
-        } else if (!checked && disabled) {
-            return theme.RadioButton.idleDisabled.background;
-        } else if (checked) {
-            return theme.RadioButton.active.background;
+    cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'pointer')};
+
+    background-color: ${({ theme, checked, disabled, error }): string => {
+        if (checked) {
+            if (checked && disabled) {
+                return theme.RadioButton.activeDisabled.backgroundColor;
+            }
+
+            return theme.RadioButton.active.backgroundColor;
+        }
+
+        if (disabled) {
+            return theme.RadioButton.idleDisabled.backgroundColor;
+        }
+
+        if (error) {
+            return theme.RadioButton.error.backgroundColor;
+        }
+
+        return theme.RadioButton.idle.backgroundColor;
+    }};
+
+    border: 1px solid
+        ${({ theme, checked, disabled, error }): string => {
+            if (error) {
+                return theme.RadioButton.error.borderColor;
+            }
+
+            if (checked) {
+                if (disabled && checked) {
+                    return theme.RadioButton.idle.borderColor;
+                }
+
+                return theme.RadioButton.active.borderColor;
+            }
+
+            if (disabled) {
+                return theme.RadioButton.idleDisabled.borderColor;
+            }
+
+            return theme.RadioButton.idle.borderColor;
+        }};
+
+    ${({ theme, elementFocus, disabled, checked, error }): string => {
+        if (elementFocus && !disabled) {
+            if (error) {
+                return `box-shadow: ${theme.RadioButton.error.boxShadow}`;
+            }
+
+            if (checked) {
+                return `box-shadow: ${theme.RadioButton.active.boxShadow}`;
+            }
+
+            return `box-shadow: ${theme.RadioButton.idle.boxShadow}`;
         }
 
         return '';
     }};
-    border: 1px solid
-        ${({ theme, checked, error }): string =>
-            error
-                ? theme.RadioButton.error.borderColor
-                : checked
-                ? theme.RadioButton.active.borderColor
-                : theme.RadioButton.idle.borderColor};
 
-    box-shadow: ${({ theme, elementFocus }): string =>
-        `
-        ${elementFocus ? theme.RadioButton.focus.boxShadow : theme.RadioButton.idle.boxShadow}
-    `};
     position: relative;
 
     ${({ theme, checked }): string =>
@@ -106,7 +141,7 @@ const composeRadioButtonTheme = (themeTools: ThemeTools): RadioButtonThemeType =
         idle: {
             backgroundColor: forms.background,
             borderColor: forms.borderColor,
-            boxShadow: '0px 0px 0px 5.5px transparent',
+            boxShadow: `0px 0px 0px 4px ${chroma(forms.borderColor).alpha(0.1)}`,
             checkmarkColor: themeTools.calculateContrastColor(
                 colors.primary.base,
                 colors.grey.darker1,
@@ -114,28 +149,22 @@ const composeRadioButtonTheme = (themeTools: ThemeTools): RadioButtonThemeType =
             ),
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${colors.silver.darker1},${colors.silver.darker1} 5px,${
-                forms.background
-            } 5px,${colors.silver.base} 10px )`,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${chroma(forms.activeBorderColor).alpha(0.4)}`,
+            backgroundColor: colors.silver.darker1,
+            borderColor: forms.borderColor,
         },
         active: {
             boxShadow: `0px 0px 0px 5.5px ${forms.activeColor}`,
             borderColor: forms.activeBorderColor,
-            background: forms.activeColor,
+            backgroundColor: forms.activeColor,
         },
         activeDisabled: {
             boxShadow: `0px 0px 0px 5.5px ${chroma(forms.activeColor).alpha(0.5)}`,
-            background: `repeating-linear-gradient( -45deg,${chroma(forms.activeColor).alpha(0.6)},${chroma(
-                forms.activeColor,
-            ).alpha(0.6)} 5px,${chroma(forms.activeColor).alpha(0.5)} 5px,${chroma(forms.activeColor).alpha(
-                0.5,
-            )} 10px )`,
+            backgroundColor: `${chroma(forms.activeColor).alpha(0.6)}`,
         },
         error: {
             borderColor: colors.severity.error,
+            backgroundColor: `${chroma(colors.severity.error).alpha(0.2)}`,
+            boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.2)}`,
         },
     };
 };

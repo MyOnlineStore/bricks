@@ -30,6 +30,10 @@ type SliderThemeType = {
             background: string;
             border: string;
         };
+        active: {
+            background: string;
+            border: string;
+        };
         slider: {
             background: string;
             border: string;
@@ -55,22 +59,20 @@ const StyledWrapper = styled(Box)`
 
         .input-range__track {
             background: ${({ theme }): string => theme.Slider.default.track.background};
-            border: ${({ theme, disabled }): string =>
-                disabled ? theme.Slider.disabled.track.border : theme.Slider.default.track.border};
-            height: 8px;
+            border: ${({ theme }): string => theme.Slider.default.track.border};
+            height: 4px;
         }
 
         .input-range__track--active {
             background: ${({ theme }): string => theme.Slider.default.active.background};
             margin-top: -1px;
-            border: ${({ theme, disabled }): string =>
-                disabled ? theme.Slider.disabled.track.border : theme.Slider.default.active.border};
+            border: ${({ theme }): string => theme.Slider.default.active.border};
         }
 
         .input-range__slider {
             background: ${({ theme }): string => theme.Slider.default.slider.background};
             border: ${({ theme }): string => theme.Slider.default.slider.border};
-            margin-top: -14px;
+            margin-top: -12px;
             width: 16px;
             height: 16px;
             transition: none;
@@ -84,6 +86,27 @@ const StyledWrapper = styled(Box)`
         .input-range__label-container {
             display: none;
         }
+
+        .input-range--disabled {
+            .input-range__track {
+                cursor: not-allowed;
+                border: ${({ theme }) => theme.Slider.disabled.track.border};
+                background: ${({ theme }) => theme.Slider.disabled.track.background};
+            }
+
+            .input-range__track--active {
+                cursor: not-allowed;
+                background: ${({ theme }): string => theme.Slider.disabled.active.background};
+                border: ${({ theme }): string =>
+                    theme.Slider.disabled.active.border};
+            }
+
+            .input-range__slider {
+                cursor: not-allowed;
+                border: ${({ theme }) => theme.Slider.disabled.slider.border};
+                background: ${({ theme }) => theme.Slider.disabled.slider.background};
+            }
+        }
     }
 `;
 
@@ -94,26 +117,30 @@ const composeSliderTheme = (themeTools: ThemeTools): SliderThemeType => {
         default: {
             track: {
                 background: colors.silver.base,
-                border: `solid 1px ${forms.borderColor}`,
+                border: `1px solid ${forms.borderColor}`,
             },
             active: {
                 background: colors.primary.base,
-                border: `solid 1px ${forms.borderColor}`,
+                border: `1px solid ${forms.borderColor}`,
                 boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
             },
             slider: {
                 background: colors.silver.lighter1,
-                border: `solid 1px ${forms.borderColor}`,
+                border: `1px solid ${forms.borderColor}`,
             },
         },
         disabled: {
             track: {
                 background: colors.silver.base,
-                border: `solid 1px ${forms.borderColor}`,
+                border: `1px solid ${forms.borderColor}`,
+            },
+            active: {
+                background: colors.silver.darker1,
+                border: `1px solid ${forms.borderColor}`,
             },
             slider: {
                 background: colors.silver.lighter1,
-                border: `solid 1px ${forms.borderColor}`,
+                border: `1px solid ${forms.borderColor}`,
             },
         },
     };

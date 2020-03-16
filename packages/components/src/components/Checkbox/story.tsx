@@ -24,7 +24,7 @@ class Demo extends Component<PropsType, StateType> {
                 disabled={boolean('disabled', false)}
                 error={boolean('error', false)}
                 name="foo"
-                label={text('label', '')}
+                label={text('label', 'Label')}
             />
         );
     }
