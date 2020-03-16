@@ -31,6 +31,7 @@ export { default as NumberField } from './components/NumberField';
 export { default as Popover } from './components/Popover';
 export { default as PriceTag } from './components/PriceTag';
 export { default as Progress } from './components/Progress';
+export { default as PromotionBadge } from './components/PromotionBadge';
 export { default as RadioButton } from './components/RadioButton';
 export { default as Raised } from './components/Raised';
 export { default as Range } from './components/Range';
