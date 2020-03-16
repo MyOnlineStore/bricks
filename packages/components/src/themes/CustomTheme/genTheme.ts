@@ -34,6 +34,7 @@ import { composeScrollBoxTheme } from '../../components/ScrollBox/style';
 import { composeIllustrationTheme } from '../../components/Illustration/style';
 import { composeTextualButton } from '../../components/TextualButton';
 import { composeProgressTheme } from '../../components/Progress/style';
+import { composeFormRowTheme } from '../../components/FormRow/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -76,6 +77,7 @@ const generateThemeObject = (
         Button: composeButtonTheme(themeTools),
         Checkbox: composeCheckboxTheme(themeTools),
         Contrast: composeContrastTheme(themeTools),
+        FormRow: composeFormRowTheme(themeTools),
         Heading: composeHeadingTheme(themeTools),
         IconButton: composeIconButtonTheme(themeTools),
         Illustration: composeIllustrationTheme(),
