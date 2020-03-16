@@ -6,9 +6,15 @@ import Badge, { PropsType } from '.';
 storiesOf('Badge', module).add('Default', () => {
     return (
         <Badge
-            severity={select('severity', ['success', 'warning', 'error', 'info'], 'success') as PropsType['severity']}
+            variant={
+                select(
+                    'severity',
+                    ['primary', 'secondary', 'warning', 'error', 'info'],
+                    'primary',
+                ) as PropsType['variant']
+            }
         >
-            {text('text', '1')}
+            {text('text', 'Badger')}
         </Badge>
     );
 });
