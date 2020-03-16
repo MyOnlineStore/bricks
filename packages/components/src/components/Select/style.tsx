@@ -126,7 +126,7 @@ const StyledWindow = styled.div<WindowPropsType>`
 type InputPropsType = {
     open: boolean;
     focus: boolean;
-    disabled: boolean;
+    disabled?: boolean;
 };
 
 const StyledInput = styled.div<InputPropsType>`
@@ -140,20 +140,20 @@ const StyledInput = styled.div<InputPropsType>`
         if (focus && !open && !disabled) {
             return `
                 background: ${theme.Select.common.background};
-                border: ${`solid 1px ${theme.Select.select.focus.borderColor}`};
+                border: solid 1px ${theme.Select.select.focus.borderColor};
                 box-shadow: ${theme.Select.select.focus.boxShadow};
             `;
         } else if (disabled) {
             return `
                 background: ${theme.Select.select.disabled.background};
-                border: ${`solid 1px ${theme.Select.select.disabled.borderColor}`};
+                border: solid 1px ${theme.Select.select.disabled.borderColor};
                 box-shadow: none;
                 cursor: not-allowed;
             `;
         } else {
             return `
                 background: ${theme.Select.common.background};
-                border: ${`solid 1px ${theme.Select.common.borderColor}`};
+                border: solid 1px ${theme.Select.common.borderColor};
                 box-shadow: none;
             `;
         }
@@ -175,10 +175,6 @@ const StyledInput = styled.div<InputPropsType>`
         &::placeholder {
             font-style: italic;
             color: ${({ theme }) => theme.Select.select.focus.placeholderColor};
-            opacity: 1;
-        }
-
-        &::-moz-placeholder {
             opacity: 1;
         }
     }

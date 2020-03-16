@@ -2,8 +2,6 @@ import React, { FC, useState, ChangeEvent } from 'react';
 import { StyledSelect } from './style';
 import { CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import Icon from '../Icon';
-import { withTheme } from 'styled-components';
-import ThemeType from '../../types/ThemeType';
 
 type OptionType = {
     value: string;
@@ -14,7 +12,6 @@ type PropsType = {
     options: Array<OptionType>;
     value: OptionType['value'];
     disabled?: boolean;
-    theme: ThemeType;
     'data-testid'?: string;
     onChange(value: string, event: ChangeEvent): void;
 };
@@ -46,17 +43,9 @@ const NativeSelect: FC<PropsType> = (props): JSX.Element => {
                     </option>
                 ))}
             </select>
-            <Icon
-                size="medium"
-                color={
-                    props.disabled
-                        ? props.theme.NativeSelect.disabled.caretColor
-                        : props.theme.NativeSelect.idle.caretColor
-                }
-                icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
-            />
+            <Icon size="medium" icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />} />
         </StyledSelect>
     );
 };
 
-export default withTheme(NativeSelect);
+export default NativeSelect;

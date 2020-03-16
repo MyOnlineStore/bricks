@@ -43,20 +43,20 @@ const StyledSelect = styled.div<SelectPropsType>`
         if (focus && !disabled) {
             return `
                 background: ${theme.NativeSelect.idle.background};
-                border: ${`solid 1px ${theme.NativeSelect.focus.borderColor}`};
+                border: solid 1px ${theme.NativeSelect.focus.borderColor};
                 box-shadow: ${theme.NativeSelect.focus.boxShadow};
             `;
         } else if (disabled) {
             return `
                 background: ${theme.NativeSelect.disabled.background};
-                border: ${`solid 1px ${theme.NativeSelect.disabled.borderColor}`};
+                border: solid 1px ${theme.NativeSelect.disabled.borderColor};
                 box-shadow: none;
                 cursor: not-allowed;
             `;
         } else {
             return `
                 background: ${theme.NativeSelect.idle.background};
-                border: ${`solid 1px ${theme.NativeSelect.idle.borderColor}`};
+                border: solid 1px ${theme.NativeSelect.idle.borderColor};
                 box-shadow: none;
             `;
         }
@@ -84,6 +84,11 @@ const StyledSelect = styled.div<SelectPropsType>`
         top: 50%;
         right: 8px;
         transform: translateY(-50%);
+
+        svg {
+            fill: ${({ theme, disabled }) =>
+                disabled ? theme.NativeSelect.disabled.caretColor : theme.NativeSelect.idle.caretColor};
+        }
     }
 `;
 

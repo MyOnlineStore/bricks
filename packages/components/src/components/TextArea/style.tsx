@@ -107,7 +107,7 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
 
     &::placeholder {
         font-style: italic;
-        opaity: 1;
+        opacity: 1;
         color: ${({ focus, disabled, theme }): string => {
             if (focus && !disabled) {
                 return theme.TextArea.focus.placeholderColor;
@@ -117,10 +117,6 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
                 return theme.TextArea.idle.placeholderColor;
             }
         }};
-    }
-
-    &::-moz-placeholder {
-        opacity: 1;
     }
 
     ${({ disabled }) => (disabled ? 'cursor: not-allowed;' : '')}

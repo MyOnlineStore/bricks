@@ -92,7 +92,7 @@ const StyledInput = styled.input<InputPropsType>`
 
     &::placeholder {
         font-style: italic;
-        opaity: 1;
+        opacity: 1;
         color: ${({ focus, disabled, theme }): string => {
             if (focus && !disabled) {
                 return theme.TextField.input.focus.placeholderColor;
@@ -102,10 +102,6 @@ const StyledInput = styled.input<InputPropsType>`
                 return theme.TextField.input.idle.placeholderColor;
             }
         }};
-    }
-
-    &::-moz-placeholder {
-        opacity: 1;
     }
 
     &::-webkit-inner-spin-button {

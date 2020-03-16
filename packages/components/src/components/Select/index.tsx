@@ -192,7 +192,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
         return (
             <StyledWrapper
                 ref={this.wrapperRef}
-                disabled={!this.props.disabled ? false : this.props.disabled}
+                disabled={this.props.disabled}
                 open={this.state.isOpen}
                 onKeyDownCapture={this.handleKeyPress}
                 onChange={this.handleChangeEvent}
@@ -207,7 +207,7 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                 <StyledInput
                     open={this.state.isOpen}
                     focus={this.state.hasFocus}
-                    disabled={!this.props.disabled ? false : this.props.disabled}
+                    disabled={this.props.disabled}
                     ref={this.inputWrapperRef}
                     role="searchbox"
                     aria-autocomplete="list"
