@@ -28,27 +28,30 @@ const roundness = {
 
 const theme: ThemeType = {
     Badge: {
-        severity: {
-            success: {
-                backgroundColor: colors.green400,
-                color: colors.white,
-                fontFamily: bodyFont,
-            },
-            warning: {
-                backgroundColor: colors.yellow500,
-                color: colors.white,
-                fontFamily: bodyFont,
-            },
-            error: {
-                backgroundColor: colors.red500,
-                color: colors.white,
-                fontFamily: bodyFont,
-            },
-            info: {
-                backgroundColor: colors.grey500,
-                color: colors.white,
-                fontFamily: bodyFont,
-            },
+        primary: {
+            backgroundColor: colors.green100,
+            color: colors.green800,
+            fontFamily: bodyFont,
+        },
+        secondary: {
+            backgroundColor: colors.grey200,
+            color: colors.grey700,
+            fontFamily: bodyFont,
+        },
+        warning: {
+            backgroundColor: colors.yellow100,
+            color: colors.yellow800,
+            fontFamily: bodyFont,
+        },
+        error: {
+            backgroundColor: colors.red100,
+            color: colors.red700,
+            fontFamily: bodyFont,
+        },
+        info: {
+            backgroundColor: colors.blue100,
+            color: colors.blue700,
+            fontFamily: bodyFont,
         },
     },
     Breadcrumbs: {
@@ -257,6 +260,30 @@ const theme: ThemeType = {
             color: colors.grey400,
         },
     },
+    Counter: {
+        severity: {
+            success: {
+                backgroundColor: colors.green400,
+                color: colors.white,
+                fontFamily: bodyFont,
+            },
+            warning: {
+                backgroundColor: colors.yellow500,
+                color: colors.white,
+                fontFamily: bodyFont,
+            },
+            error: {
+                backgroundColor: colors.red500,
+                color: colors.white,
+                fontFamily: bodyFont,
+            },
+            info: {
+                backgroundColor: colors.grey500,
+                color: colors.white,
+                fontFamily: bodyFont,
+            },
+        },
+    },
     Heading: {
         1: {
             fontFamily: headingFont,
@@ -398,6 +425,24 @@ const theme: ThemeType = {
             color: colors.blue700,
             backgroundColor: colors.blue100,
             borderColor: colors.blue500,
+        },
+    },
+    PromotionBadge: {
+        pro: {
+            color: colors.green500,
+            fontFamily: bodyFont,
+        },
+        premium: {
+            color: colors.grey500,
+            fontFamily: bodyFont,
+        },
+        grow: {
+            color: colors.yellow500,
+            fontFamily: bodyFont,
+        },
+        new: {
+            color: colors.blue500,
+            fontFamily: bodyFont,
         },
     },
     RadioButton: {
