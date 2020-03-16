@@ -27,7 +27,6 @@ const StyledPromotionBadge = styled.div<PropsType>`
         `;
     }};
     font-size: 12px;
-    font-weight: 200;
     line-height: 1.5;
 `;
 
