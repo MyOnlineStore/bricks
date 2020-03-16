@@ -4,23 +4,26 @@ import chroma from 'chroma-js';
 import StyledIcon from '../Icon/style';
 
 type NativeSelectThemeType = {
-    input: {
-        borderRadius: string;
-        borderColor: string;
-        color: string;
+    common: {
         fontFamily: string;
         fontSize: string;
-        fontWeight: string;
-        background: string;
-        focus: {
-            borderColor: string;
-            boxShadow: string;
-        };
+        borderRadius: string;
     };
-    disabled: {
-        chevron: string;
+    idle: {
+        borderColor: string;
         color: string;
         background: string;
+        caretColor: string;
+    };
+    focus: {
+        borderColor: string;
+        boxShadow: string;
+    };
+    disabled: {
+        color: string;
+        background: string;
+        borderColor: string;
+        caretColor: string;
     };
 };
 
@@ -31,62 +34,88 @@ type SelectPropsType = {
 
 const StyledSelect = styled.div<SelectPropsType>`
     position: relative;
-    transition: all 0.3s;
+    transition: border-color 150ms, box-shadow 150ms, background 150ms;
     box-sizing: border-box;
     width: 100%;
-    border: solid 1px
-        ${({ theme, focus }): string =>
-            focus ? theme.NativeSelect.input.focus.borderColor : theme.NativeSelect.input.borderColor};
-    background: ${({ theme, disabled }): string =>
-        disabled ? theme.NativeSelect.disabled.background : theme.NativeSelect.input.background};
-    border-radius: ${({ theme }): string => theme.NativeSelect.input.borderRadius};
-    box-shadow: ${({ theme, focus }): string => (focus ? theme.NativeSelect.input.focus.boxShadow : 'none')};
+    border-radius: ${({ theme }): string => theme.NativeSelect.common.borderRadius};
+
+    ${({ theme, focus, disabled }) => {
+        if (focus && !disabled) {
+            return `
+                background: ${theme.NativeSelect.idle.background};
+                border: solid 1px ${theme.NativeSelect.focus.borderColor};
+                box-shadow: ${theme.NativeSelect.focus.boxShadow};
+            `;
+        } else if (disabled) {
+            return `
+                background: ${theme.NativeSelect.disabled.background};
+                border: solid 1px ${theme.NativeSelect.disabled.borderColor};
+                box-shadow: none;
+                cursor: not-allowed;
+            `;
+        } else {
+            return `
+                background: ${theme.NativeSelect.idle.background};
+                border: solid 1px ${theme.NativeSelect.idle.borderColor};
+                box-shadow: none;
+            `;
+        }
+    }}
 
     select {
-        padding: 6px 12px;
-        line-height: 1.572;
+        padding: 5px 11px;
+        line-height: 1.6; // results in 24px with 15px fontSize
         width: 100%;
         appearance: none;
         outline: none;
         border: none;
         background: transparent;
-        color: ${({ theme }): string => theme.NativeSelect.input.color};
-        font-size: ${({ theme }): string => theme.NativeSelect.input.fontSize};
-        font-family: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
-        color: ${({ theme }): string => theme.NativeSelect.input.fontFamily};
+        font-size: ${({ theme }) => theme.NativeSelect.common.fontSize};
+        font-family: ${({ theme }) => theme.NativeSelect.common.fontFamily};
+        color: ${({ theme, disabled }) =>
+            disabled ? theme.NativeSelect.disabled.color : theme.NativeSelect.idle.color};
+        transition: color 150ms;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     ${StyledIcon} {
         position: absolute;
         top: 50%;
-        right: 12px;
+        right: 8px;
         transform: translateY(-50%);
+
+        svg {
+            fill: ${({ theme, disabled }) =>
+                disabled ? theme.NativeSelect.disabled.caretColor : theme.NativeSelect.idle.caretColor};
+        }
     }
 `;
 
 const composeNativeSelectTheme = (themeTools: ThemeTools): NativeSelectThemeType => {
-    const { colors, text } = themeTools.themeSettings;
+    const { colors, forms, text } = themeTools.themeSettings;
 
     return {
-        input: {
+        common: {
             borderRadius: themeTools.calculateRoundness(20),
-            background: colors.silver.lighter1,
-            borderColor: colors.silver.darker4,
-            color: colors.primary.base,
             fontFamily: text.primaryFont,
             fontSize: text.fontSize.base,
-            fontWeight: '400',
-            focus: {
-                borderColor: colors.primary.base,
-                boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
-            },
+        },
+        idle: {
+            background: forms.background,
+            borderColor: forms.borderColor,
+            color: forms.color,
+            caretColor: forms.color,
+        },
+        focus: {
+            borderColor: colors.primary.base,
+            boxShadow: `0 0 0 4px ${chroma(colors.primary.base).alpha(0.4)}`,
         },
         disabled: {
-            chevron: colors.grey.lighter2,
+            caretColor: colors.grey.lighter2,
             color: colors.grey.lighter2,
-            background: `${colors.silver.base} repeating-linear-gradient( -45deg, ${colors.silver.base}, ${
-                colors.silver.base
-            } 10px, transparent 10px, transparent 20px )`,
+            background: colors.silver.base,
+            borderColor: colors.silver.darker2,
         },
     };
 };

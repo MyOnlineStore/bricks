@@ -6,49 +6,42 @@ import chroma from 'chroma-js';
 type TextAreaWrapperPropsType = {
     disabled?: boolean;
     severity?: SeverityType;
+    focus: boolean;
 };
 
 type TextAreaPropsType = {
     resizeable?: boolean;
     disabled?: boolean;
+    focus: boolean;
 };
 
 type TextAreaThemeType = {
+    common: {
+        borderRadius: string;
+        fontSize: string;
+        fontFamily: string;
+    };
     idle: {
-        common: {
-            borderRadius: string;
-            borderColor: string;
-            fontSize: string;
-            fontFamily: string;
-            color: string;
-            background: string;
-        };
+        color: string;
+        borderColor: string;
+        background: string;
+        placeholderColor: string;
     };
     focus: {
         borderColor: string;
         boxShadow: string;
+        placeholderColor: string;
     };
-    severity: {
-        error: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        success: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        info: {
-            borderColor: string;
-            boxShadow: string;
-        };
-        warning: {
-            borderColor: string;
-            boxShadow: string;
-        };
+    error: {
+        background: string;
+        borderColor: string;
+        boxShadow: string;
     };
     disabled: {
         color: string;
         background: string;
+        borderColor: string;
+        placeholderColor: string;
     };
 };
 
@@ -56,82 +49,109 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
     width: 100%;
     padding: 0;
     overflow: hidden;
-    border: solid 1px ${({ theme }): string => theme.TextArea.idle.common.borderColor};
-    border-radius: ${({ theme }): string => theme.TextArea.idle.common.borderRadius};
-    background: ${({ theme, disabled }): string =>
-        disabled ? theme.TextArea.disabled.background : theme.TextArea.idle.common.background};
+    border: solid 1px;
+    border-radius: ${({ theme }): string => theme.TextArea.common.borderRadius};
+    transition: border-color 150ms, box-shadow 150ms, background 150ms;
 
-    &:focus-within {
-        ${({ severity, theme }): string =>
-            `border: solid 1px ${
-                severity ? theme.TextArea.severity[severity].borderColor : theme.TextArea.focus.borderColor
-            }`};
-        ${({ disabled, severity, theme }): string =>
-            !disabled
-                ? `box-shadow: ${
-                      severity ? theme.TextArea.severity[severity].boxShadow : theme.TextArea.focus.boxShadow
-                  }`
-                : ''};
-    }
+    ${({ focus, disabled, severity, theme }): string => {
+        if (severity === 'error' && !focus && !disabled) {
+            return `
+                background: ${theme.TextArea.error.background};
+                border-color: ${theme.TextArea.error.borderColor};
+                box-shadow: none;
+                `;
+        } else if (severity === 'error' && focus && !disabled) {
+            return `
+                background: ${theme.TextArea.idle.background};
+                border-color: ${theme.TextArea.error.borderColor};
+                box-shadow:  ${theme.TextArea.error.boxShadow};
+                `;
+        } else if (focus && !disabled) {
+            return `
+                background: ${theme.TextArea.idle.background};
+                border-color: ${theme.TextArea.focus.borderColor};
+                box-shadow: ${theme.TextArea.focus.boxShadow};
+                `;
+        } else if (disabled) {
+            return `
+                background: ${theme.TextArea.disabled.background};
+                border-color: ${theme.TextArea.disabled.borderColor};
+                box-shadow: none;
+                cursor: not-allowed;
+                `;
+        } else {
+            return `
+                background: ${theme.TextArea.idle.background};
+                border-color: ${theme.TextArea.idle.borderColor};
+                box-shadow: none;
+            `;
+        }
+    }}
 `;
 
 const StyledTextArea = styled.textarea<TextAreaPropsType>`
-    padding: 6px 12px;
+    padding: 5px 11px;
     box-sizing: border-box;
     width: 100%;
+    background: transparent;
     border: none;
     outline: none;
-    line-height: 1.572;
-    background: transparent;
-    transition: border-color 100ms, box-shadow 100ms;
-    font-size: ${({ theme }): string => theme.TextArea.idle.common.fontSize};
-    font-family: ${({ theme }): string => theme.TextArea.idle.common.fontFamily};
-    color: ${({ theme }): string => theme.TextArea.idle.common.color};
-    ${({ theme, disabled }): string => (disabled ? `color: ${theme.TextArea.disabled.color}` : '')}
-    ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'resize: none' : 'resize: vertical')};
+    font-family: ${({ theme }): string => theme.TextArea.common.fontFamily};
+    font-size: ${({ theme }): string => theme.TextArea.common.fontSize};
+    line-height: 1.6; // results in 24px with 15px fontSize
+    color: ${({ disabled, theme }): string => (disabled ? theme.TextArea.disabled.color : theme.TextArea.idle.color)};
+    resize: ${({ resizeable, disabled }): string => (disabled || !resizeable ? 'none' : 'vertical')};
+    transition: color 150ms;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::placeholder {
+        font-style: italic;
+        opacity: 1;
+        color: ${({ focus, disabled, theme }): string => {
+            if (focus && !disabled) {
+                return theme.TextArea.focus.placeholderColor;
+            } else if (disabled) {
+                return theme.TextArea.disabled.placeholderColor;
+            } else {
+                return theme.TextArea.idle.placeholderColor;
+            }
+        }};
+    }
+
+    ${({ disabled }) => (disabled ? 'cursor: not-allowed;' : '')}
 `;
 
 const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
     const { colors, text, forms } = themeTools.themeSettings;
 
     return {
+        common: {
+            borderRadius: themeTools.calculateRoundness(20),
+            fontSize: text.fontSize.base,
+            fontFamily: text.primaryFont,
+        },
         idle: {
-            common: {
-                borderRadius: themeTools.calculateRoundness(20),
-                borderColor: forms.borderColor,
-                fontSize: text.fontSize.base,
-                fontFamily: text.primaryFont,
-                color: forms.color,
-                background: forms.background,
-            },
+            background: forms.background,
+            borderColor: forms.borderColor,
+            color: forms.color,
+            placeholderColor: colors.grey.lighter1,
         },
         focus: {
             borderColor: forms.focusBorderColor,
             boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
+            placeholderColor: colors.grey.lighter2,
         },
-        severity: {
-            error: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
-                borderColor: colors.severity.error,
-            },
-            success: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.success).alpha(0.4)}`,
-                borderColor: colors.severity.success,
-            },
-            info: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.info).alpha(0.4)}`,
-                borderColor: colors.severity.info,
-            },
-            warning: {
-                boxShadow: `0 0 0 4px ${chroma(colors.severity.warning).alpha(0.4)}`,
-                borderColor: colors.severity.warning,
-            },
+        error: {
+            background: `${chroma(colors.severity.error).alpha(0.1)}`,
+            boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
+            borderColor: colors.severity.error,
         },
         disabled: {
             color: colors.grey.lighter2,
-            background: `repeating-linear-gradient( -45deg,${colors.silver.base},${colors.silver.base} 10px,${
-                colors.silver.base
-            } 10px,${colors.silver.base} 20px)`,
+            background: colors.silver.base,
+            borderColor: colors.silver.darker2,
+            placeholderColor: colors.grey.lighter2,
         },
     };
 };
