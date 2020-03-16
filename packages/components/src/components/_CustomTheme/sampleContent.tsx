@@ -156,7 +156,7 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
             <Box direction="column" padding={[24, 0]}>
                 <Text>
                     Donec id elit non mi porta gravida at <Link title="dürum">cursus commodo</Link>. Duis mollis, est
-                    non commodo luctus, nisi erat <Badge severity="success">Badge</Badge> porttitor ligula, eget lacinia
+                    non commodo luctus, nisi erat <Badge variant="primary">Badge</Badge> porttitor ligula, eget lacinia
                     odio sem nec elit.
                 </Text>
             </Box>

@@ -8,12 +8,14 @@ import { composeBreadcrumbsTheme } from '../../components/Breadcrumbs/style';
 import { composeButtonTheme } from '../../components/Button';
 import { composeCheckboxTheme } from '../../components/Checkbox/style';
 import { composeContrastTheme } from '../../components/Contrast/style';
+import { composeCounterTheme } from '../../components/Counter';
 import { composeHeadingTheme } from '../../components/Heading';
 import { composeIconButtonTheme } from '../../components/IconButton';
 import { composeLinkTheme } from '../../components/Link/style';
 import { composeMessageStreamTheme } from '../../components/MessageStream/style';
 import { composeModalTheme } from '../../components/Modal/style';
 import { composeNotificationTheme } from '../../components/Notification/style';
+import { composePromotionBadgeTheme } from '../../components/PromotionBadge';
 import { composeRadioButtonTheme } from '../../components/RadioButton/style';
 import { composeRangeTheme } from '../../components/Range/style';
 import { composeSliderTheme } from '../../components/Slider/style';
@@ -78,6 +80,7 @@ const generateThemeObject = (
         Checkbox: composeCheckboxTheme(themeTools),
         Contrast: composeContrastTheme(themeTools),
         FormRow: composeFormRowTheme(themeTools),
+        Counter: composeCounterTheme(themeTools),
         Heading: composeHeadingTheme(themeTools),
         IconButton: composeIconButtonTheme(themeTools),
         Illustration: composeIllustrationTheme(),
@@ -88,6 +91,7 @@ const generateThemeObject = (
         Notification: composeNotificationTheme(themeTools),
         Popover: composePopoverTheme(themeTools),
         Progress: composeProgressTheme(themeTools),
+        PromotionBadge: composePromotionBadgeTheme(themeTools),
         RadioButton: composeRadioButtonTheme(themeTools),
         Raised: composeRaisedTheme(themeTools),
         Range: composeRangeTheme(themeTools),

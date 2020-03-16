@@ -1,18 +1,16 @@
 import styled from '../../utility/styled';
-import SeverityType from '../../types/SeverityType';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
 type PropsType = {
-    severity?: SeverityType;
+    variant?: 'primary' | 'secondary' | 'warning' | 'info' | 'error';
 };
 
 type BadgeThemeType = {
-    severity: {
-        error: VariantStyleType;
-        success: VariantStyleType;
-        warning: VariantStyleType;
-        info: VariantStyleType;
-    };
+    primary: VariantStyleType;
+    secondary: VariantStyleType;
+    error: VariantStyleType;
+    warning: VariantStyleType;
+    info: VariantStyleType;
 };
 
 type VariantStyleType = {
@@ -24,21 +22,21 @@ type VariantStyleType = {
 const Badge = styled.div<PropsType>`
     display: inline-block;
     box-sizing: border-box;
-    min-width: 18px;
-    min-height: 18px;
-    padding: 3px 6px;
-    border-radius: 9px;
-    ${({ theme, severity }): string => {
-        const badgeSeverity = severity === undefined ? 'error' : severity;
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0px 12px;
+    border-radius: 12px;
+    ${({ theme, variant }): string => {
+        const badgeVariant = variant === undefined ? 'error' : variant;
 
         return `
-            background: ${theme.Badge.severity[badgeSeverity].backgroundColor};
-            font-family: ${theme.Badge.severity[badgeSeverity].fontFamily};
+            background: ${theme.Badge[badgeVariant].backgroundColor};
+            font-family: ${theme.Badge[badgeVariant].fontFamily};
+            color: ${theme.Badge[badgeVariant].color};
         `;
     }};
-    font-size: 12px;
-    line-height: 1;
-    color: ${({ theme }): string => theme.Badge.severity.error.color};
+    font-size: 15px;
+    line-height: 1.6; //leads to 24px line-height
     white-space: nowrap;
 `;
 
@@ -46,27 +44,30 @@ const composeBadgeTheme = (themeTools: ThemeTools): BadgeThemeType => {
     const { colors, text } = themeTools.themeSettings;
 
     return {
-        severity: {
-            success: {
-                backgroundColor: colors.severity.success,
-                color: themeTools.calculateContrastTextColor(colors.severity.success),
-                fontFamily: text.primaryFont,
-            },
-            warning: {
-                backgroundColor: colors.severity.warning,
-                color: themeTools.calculateContrastTextColor(colors.severity.warning),
-                fontFamily: text.primaryFont,
-            },
-            error: {
-                backgroundColor: colors.severity.error,
-                color: themeTools.calculateContrastTextColor(colors.severity.error),
-                fontFamily: text.primaryFont,
-            },
-            info: {
-                backgroundColor: colors.severity.info,
-                color: themeTools.calculateContrastTextColor(colors.severity.info),
-                fontFamily: text.primaryFont,
-            },
+        primary: {
+            backgroundColor: colors.severity.success,
+            color: themeTools.calculateContrastTextColor(colors.severity.success),
+            fontFamily: text.primaryFont,
+        },
+        secondary: {
+            backgroundColor: colors.silver.base,
+            color: themeTools.calculateContrastTextColor(colors.severity.success),
+            fontFamily: text.primaryFont,
+        },
+        warning: {
+            backgroundColor: colors.severity.warning,
+            color: themeTools.calculateContrastTextColor(colors.severity.warning),
+            fontFamily: text.primaryFont,
+        },
+        error: {
+            backgroundColor: colors.severity.error,
+            color: themeTools.calculateContrastTextColor(colors.severity.error),
+            fontFamily: text.primaryFont,
+        },
+        info: {
+            backgroundColor: colors.severity.info,
+            color: themeTools.calculateContrastTextColor(colors.severity.info),
+            fontFamily: text.primaryFont,
         },
     };
 };

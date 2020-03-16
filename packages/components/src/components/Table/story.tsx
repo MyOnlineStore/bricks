@@ -99,7 +99,7 @@ class Demo extends Component<PropsType, StateType> {
 
     private renderBadge = (badge: string) => {
         if (badge) {
-            return <StyledBadge severity="info">{badge}</StyledBadge>;
+            return <StyledBadge variant="info">{badge}</StyledBadge>;
         }
 
         return <></>;

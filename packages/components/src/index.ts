@@ -7,6 +7,7 @@ export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Carousel } from './components/Carousel';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Contrast } from './components/Contrast';
+export { default as Counter } from './components/Counter';
 export { default as CurrencyField } from './components/CurrencyField';
 export { default as CustomTheme } from './themes/CustomTheme';
 export { default as EmptyState } from './components/EmptyState';
