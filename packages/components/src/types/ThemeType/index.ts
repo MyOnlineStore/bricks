@@ -3,6 +3,7 @@ import { BreadcrumbsThemeType } from '../../components/Breadcrumbs/style';
 import { ButtonThemeType } from '../../components/Button';
 import { CheckboxThemeType } from '../../components/Checkbox/style';
 import { ContrastThemeType } from '../../components/Contrast/style';
+import { FormRowThemeType } from '../../components/FormRow/style';
 import { HeadingThemeType } from '../../components/Heading';
 import { IconButtonThemeType } from '../../components/IconButton';
 import { IllustrationThemeType } from '../../components/Illustration/style';
@@ -36,6 +37,7 @@ type ThemeType = {
     Button: ButtonThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
+    FormRow: FormRowThemeType;
     Heading: HeadingThemeType;
     IconButton: IconButtonThemeType;
     Illustration: IllustrationThemeType;

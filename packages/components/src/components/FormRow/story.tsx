@@ -9,7 +9,7 @@ import TextField from '../TextField';
 import Toggle from '../Toggle';
 import trbl from '../../utility/trbl';
 import Separated from '../Separated';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { Skeleton } from '../..';
 
 type PropsType = {
@@ -48,100 +48,47 @@ class DemoComponent extends Component<PropsType, StateType> {
     }
 
     public render(): JSX.Element {
+        const disabled = boolean('disabled', false);
+
         if (this.props.descriptions) {
             return (
                 <form>
                     <FormRow
-                        label={
-                            <label>
-                                <Box>
-                                    <Text>What is your name?</Text>
-                                </Box>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </label>
-                        }
+                        label={<label>What is your name?</label>}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. `}
                         field={
                             <Box wrap width="100%">
-                                <Box>
-                                    <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1} width="40%">
-                                        <TextField
-                                            prefix="Initials"
-                                            name="Initials"
-                                            value={this.state.initials}
-                                            onChange={(initials: string): void => this.setState({ initials })}
-                                        />
-                                    </Box>
-                                    <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1} width="60%">
-                                        <TextField
-                                            prefix="First name"
-                                            name="First name"
-                                            value={this.state.firstname}
-                                            onChange={(firstname: string): void => this.setState({ firstname })}
-                                        />
-                                    </Box>
-                                </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        prefix="Surname"
-                                        name="Surname"
-                                        value={this.state.surname}
-                                        onChange={(surname: string): void => this.setState({ surname })}
-                                    />
-                                </Box>
+                                <TextField
+                                    name="Initials"
+                                    value={this.state.initials}
+                                    onChange={(initials: string): void => this.setState({ initials })}
+                                />
                             </Box>
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Box>
-                                    <Text>Where do you live?</Text>
-                                </Box>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </label>
-                        }
+                        label={<label>Where do you live?</label>}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. `}
                         field={
                             <Box wrap width="100%">
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        name="Country"
-                                        prefix="Country"
-                                        value={this.state.country}
-                                        onChange={(country: string): void => this.setState({ country })}
-                                    />
-                                </Box>
-                                <Box margin={trbl(0, 9, 18, 0)} justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        name="City"
-                                        prefix="City"
-                                        value={this.state.city}
-                                        onChange={(city: string): void => this.setState({ city })}
-                                    />
-                                </Box>
+                                <TextField
+                                    name="Country"
+                                    value={this.state.country}
+                                    onChange={(country: string): void => this.setState({ country })}
+                                />
                             </Box>
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Box>
-                                    <Text>Can a boolean only be either true or false?</Text>
-                                </Box>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </label>
-                        }
+                        label={<label>Can a boolean only be either true or false?</label>}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
+                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
                         field={
                             <Separated before after>
                                 <RadioButton
@@ -175,16 +122,10 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <>
-                                <Text>Options</Text>
-                                <Text variant="descriptive">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                                    similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                                    corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.
-                                </Text>
-                            </>
-                        }
+                        label={'Options'}
+                        disabled={disabled}
+                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+                            similique sint quae exercitationem molestiae aspernatur cum. `}
                         field={
                             <Separated before after>
                                 <Checkbox
@@ -210,11 +151,8 @@ class DemoComponent extends Component<PropsType, StateType> {
             return (
                 <form>
                     <FormRow
-                        label={
-                            <label>
-                                <Text>What is your name?</Text>
-                            </label>
-                        }
+                        label={<label>What is your name?</label>}
+                        disabled={disabled}
                         field={
                             <Box wrap width="100%">
                                 <Box margin={trbl(0, 9, 0, 0)} width="100%" justifyContent="stretch" grow={1}>
@@ -229,11 +167,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Where do you live?</Text>
-                            </label>
-                        }
+                        label={<label>Where do you live?</label>}
+                        disabled={disabled}
                         field={
                             <Box wrap width="100%">
                                 <Box margin={trbl(0, 9, 0, 0)} width="100%" justifyContent="stretch" grow={1}>
@@ -248,11 +183,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Can a boolean only be true or false?</Text>
-                            </label>
-                        }
+                        label={<label>Can a boolean only be true or false?</label>}
+                        disabled={disabled}
                         field={
                             <Separated before after>
                                 <RadioButton
@@ -286,11 +218,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Do you like toggles?</Text>
-                            </label>
-                        }
+                        label={<label>Do you like toggles?</label>}
+                        disabled={disabled}
                         field={
                             <Toggle
                                 name="toggle"
@@ -303,11 +232,8 @@ class DemoComponent extends Component<PropsType, StateType> {
                         }
                     />
                     <FormRow
-                        label={
-                            <label>
-                                <Text>Do you like checkboxes</Text>
-                            </label>
-                        }
+                        label={<label>Do you like checkboxes</label>}
+                        disabled={disabled}
                         field={
                             <Separated before after>
                                 <Checkbox
@@ -334,7 +260,7 @@ storiesOf('FormRow', module)
     .add('No Descriptions', () => <DemoComponent descriptions={false} />)
     .add('With badge', () => (
         <FormRow
-            label={<Text>{text('label', 'Label text')}</Text>}
+            label={text('label', 'Label text')}
             badge={
                 <Text size="small" variant="success">
                     {text('badge', 'PRO')}
@@ -349,7 +275,11 @@ storiesOf('FormRow', module)
     ))
     .add('With Skeletons', () => (
         <FormRow
-            label={<Skeleton.Text lines={1} baseWidth={180} />}
+            label={
+                <Box width="100%" inline margin={[0, 12, 0, 0]}>
+                    <Skeleton.Text lines={1} baseWidth={180} />
+                </Box>
+            }
             // 38px is the height of an TextField field
             field={<Skeleton.Rect width="100%" height="38px" />}
         />
