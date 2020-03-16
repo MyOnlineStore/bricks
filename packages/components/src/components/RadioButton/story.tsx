@@ -10,7 +10,7 @@ storiesOf('RadioButton', module).add('Default', () => {
             disabled={boolean('disabled', false)}
             error={boolean('error', false)}
             name="demo"
-            label={text('label', 'foo')}
+            label={text('label', 'Label')}
             value="demo2"
             onChange={(): void => undefined}
         />

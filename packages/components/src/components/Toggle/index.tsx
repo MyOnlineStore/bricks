@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
-import Icon from '../Icon';
-import { LockedIcon } from '@myonlinestore/bricks-assets';
 import StyledToggle, { StyledToggleSkin } from './style';
 
 type StateType = {
@@ -20,17 +18,9 @@ type PropsType = {
     name: string;
     id?: string;
     onChange(change: { checked: boolean }): void;
-} & Partial<DefaultPropsType>;
-
-type DefaultPropsType = {
-    disabledIcon: boolean;
 };
 
 class Toggle extends Component<PropsType, StateType> {
-    public static defaultProps: DefaultPropsType = {
-        disabledIcon: true,
-    };
-
     public constructor(props: PropsType) {
         super(props);
 
@@ -75,9 +65,8 @@ class Toggle extends Component<PropsType, StateType> {
                         />
                     </StyledToggleSkin>
                 </Box>
-                <Box margin={trbl(9, 0, 0, 0)}>
-                    <Text variant={this.props.disabled || this.props.unavailable ? 'descriptive' : undefined}>
-                        {this.props.disabledIcon && this.props.disabled && <Icon size="medium" icon={<LockedIcon />} />}{' '}
+                <Box margin={trbl(6, 0, 0, 0)}>
+                    <Text variant={this.props.disabled || this.props.unavailable ? 'info' : undefined}>
                         {this.props.label}
                     </Text>
                 </Box>
@@ -87,4 +76,4 @@ class Toggle extends Component<PropsType, StateType> {
 }
 
 export default Toggle;
-export { PropsType, DefaultPropsType, StateType };
+export { PropsType, StateType };
