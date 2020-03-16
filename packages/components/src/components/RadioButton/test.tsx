@@ -38,7 +38,7 @@ describe('RadioButton', () => {
 
         expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
             'box-shadow',
-            `${mosTheme.RadioButton.focus.boxShadow}`,
+            `${mosTheme.RadioButton.idle.boxShadow}`,
         );
     });
 
@@ -55,8 +55,8 @@ describe('RadioButton', () => {
         );
 
         expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.RadioButton.activeDisabled.background,
+            'background-color',
+            mosTheme.RadioButton.activeDisabled.backgroundColor,
         );
     });
 
@@ -73,8 +73,8 @@ describe('RadioButton', () => {
         );
 
         expect(radioButton.find(StyledRadioButtonSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.RadioButton.idleDisabled.background,
+            'background-color',
+            mosTheme.RadioButton.idleDisabled.backgroundColor,
         );
     });
 

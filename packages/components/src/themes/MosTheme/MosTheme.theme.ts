@@ -230,28 +230,27 @@ const theme: ThemeType = {
     Checkbox: {
         idle: {
             borderColor: colors.grey300,
-            backgroundColor: colors.grey100,
+            backgroundColor: colors.white,
             borderRadius: roundness.base,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.6)}`,
         },
         checked: {
             checkmarkColor: colors.white,
-            borderColor: colors.green500,
+            borderColor: colors.green400,
             backgroundColor: colors.green300,
+            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
+            backgroundColor: colors.grey100,
+            borderColor: colors.grey200,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
-                colors.green500,
-                0.6,
-            )} 5px,${rgba(colors.green300, 0.5)} 5px,${rgba(colors.green300, 0.5)} 10px )`,
+            backgroundColor: colors.grey200,
         },
         error: {
-            borderColor: colors.red500,
+            backgroundColor: rgba(colors.red100, 0.1),
+            borderColor: colors.red600,
+            boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
     },
     Contrast: {
@@ -403,31 +402,28 @@ const theme: ThemeType = {
     },
     RadioButton: {
         idle: {
-            backgroundColor: colors.grey100,
+            backgroundColor: colors.white,
             borderColor: colors.grey300,
-            boxShadow: '0px 0px 0px 5.5px transparent',
-            checkmarkColor: colors.grey100,
+            boxShadow: `0px 0px 0px 4px ${rgba(colors.grey200, 0.6)}`,
+            checkmarkColor: colors.white,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${colors.grey200},${colors.grey200} 5px,${colors.grey100} 5px,${colors.grey100} 10px )`,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+            backgroundColor: colors.grey100,
+            borderColor: colors.grey200,
         },
         active: {
-            boxShadow: `0px 0px 0px 5.5px ${colors.green300}`,
-            borderColor: colors.green500,
-            background: colors.green300,
+            boxShadow: `0px 0px 0px 4px ${rgba(colors.green100, 0.875)}`,
+            borderColor: colors.green400,
+            backgroundColor: colors.green300,
         },
         activeDisabled: {
-            boxShadow: `0px 0px 0px 5.5px ${rgba(colors.green300, 0.5)}`,
-            background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
-                colors.green500,
-                0.6,
-            )} 5px,${rgba(colors.green300, 0.5)} 5px,${rgba(colors.green300, 0.5)} 10px )`,
+            boxShadow: `0px 0px 0px 4px ${rgba(colors.green300, 0.5)}`,
+            backgroundColor: colors.grey200,
         },
         error: {
-            borderColor: colors.red500,
+            borderColor: colors.red600,
+            backgroundColor: rgba(colors.red100, 0.1),
+            boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
     },
     Raised: {
@@ -444,27 +440,31 @@ const theme: ThemeType = {
     Range: {
         default: {
             track: {
-                background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                background: colors.white,
+                border: `1px solid ${colors.grey300}`,
             },
             active: {
                 background: colors.green300,
-                border: `solid 1px ${colors.green500}`,
-                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+                border: `1px solid ${colors.green400}`,
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             slider: {
                 background: colors.white,
-                border: `solid 1px ${colors.green500}`,
+                border: `1px solid ${colors.green500}`,
             },
         },
         disabled: {
             track: {
                 background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                border: `1px solid ${colors.grey200}`,
+            },
+            active: {
+                background: colors.grey200,
+                border: `1px solid ${colors.grey300}`,
             },
             slider: {
-                background: colors.white,
-                border: `solid 1px ${colors.grey300}`,
+                background: colors.grey100,
+                border: `1px solid ${colors.grey300}`,
             },
         },
     },
@@ -517,27 +517,31 @@ const theme: ThemeType = {
     Slider: {
         default: {
             track: {
-                background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                background: colors.white,
+                border: `1px solid ${colors.grey300}`,
             },
             active: {
                 background: colors.green300,
-                border: `solid 1px ${colors.green500}`,
-                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+                border: `1px solid ${colors.green400}`,
+                boxShadow: `0 0 0 rgba(0, 0, 0, 0) inset, 0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             slider: {
                 background: colors.white,
-                border: `solid 1px ${colors.green500}`,
+                border: `1px solid ${colors.green500}`,
             },
         },
         disabled: {
             track: {
                 background: colors.grey100,
-                border: `solid 1px ${colors.grey300}`,
+                border: `1px solid ${colors.grey200}`,
+            },
+            active: {
+                background: colors.grey200,
+                border: `1px solid ${colors.grey300}`,
             },
             slider: {
-                background: colors.white,
-                border: `solid 1px ${colors.grey300}`,
+                background: colors.grey100,
+                border: `1px solid ${colors.grey300}`,
             },
         },
     },
@@ -752,30 +756,28 @@ const theme: ThemeType = {
     },
     Toggle: {
         general: {
-            background: colors.white,
+            backgroundColor: colors.white,
         },
         idle: {
-            border: `1px solid ${colors.grey300}`,
-            background: colors.grey100,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
+            borderColor: colors.grey300,
+            backgroundColor: colors.white,
+            boxShadow: `0 0 0 4px ${rgba(colors.grey200, 0.6)}`,
         },
         checked: {
-            border: `1px solid ${colors.green500}`,
-            background: colors.green300,
+            borderColor: colors.green400,
+            backgroundColor: colors.green300,
+            boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
+            backgroundColor: colors.grey100,
+            borderColor: colors.grey200,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
-                colors.green500,
-                0.6,
-            )} 5px,${rgba(colors.green300, 0.5)} 5px,${rgba(colors.green300, 0.5)} 10px )`,
+            backgroundColor: colors.grey200,
         },
         error: {
-            border: `1px solid ${colors.red500}`,
+            borderColor: colors.red600,
+            boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
         },
     },
     Progress: {
