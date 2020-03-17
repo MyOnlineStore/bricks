@@ -69,6 +69,16 @@ Feel free to help us develop Bricks! If you have a new feature suggestion please
 - Run either `npm run dev:components` to start the dev-server running on `localhost:9001` or run `npm run build` to build a dist 
 to be used with `npm link`
 
+## Publishing
+We use Lerna to publish packages. It is configured to version packages separately and uses the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to determine the next semantic version and generate release notes in the CHANGELOG.md inside the package. With every PR, the title must be a conventional commit message (there is a check in place). In short:
+- If it's a patch, use the type `fix: ...`.
+- If it's a minor, use the type `feat: ...`.
+- If there are breaking changes you still use `feat: ...`, but with a `BREAKING CHANGE: ...` in the footer. You can use multiple `BREAKING CHANGE: ...` lines per pull request.
+- If it's not a feature or bugfix you can use one of the other types: `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`.
+- You can scope fixes or features for clearer documentation, e.g. `feat(Badge): ...`
+
+To publish a package simply run `yarn release` in the root and lerna will check for which packages to publish. For canary releases run `yarn release --canary [major|minor|patch]`.
+
 ## License
 
 [GPL-3.0](https://opensource.org/licenses/GPL-3.0/)
