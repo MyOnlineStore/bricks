@@ -6,12 +6,12 @@
   },
   "homepage": "https://github.com/MyOnlineStore/bricks#readme",
   "name": "@myonlinestore/bricks",
-  "version": "2.0.1-canary.0",
+  "version": "2.0.1-canary.1",
   "description": "bricks",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "types": "dist/index.d.ts",
   "keywords": [
