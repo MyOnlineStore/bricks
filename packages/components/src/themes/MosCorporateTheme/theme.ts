@@ -2,7 +2,7 @@ import ThemeType from '../../types/ThemeType';
 import rgba from '../../utility/rgba';
 import RecursivePartialType from '../../types/RecursivePartialType';
 import { bodyFont, fontSize } from '../MosTheme/MosTheme.theme';
-import { colors } from '../MosTheme/colors';
+import colors from '../MosTheme/colors';
 
 const roundness = {
     base: '19px',

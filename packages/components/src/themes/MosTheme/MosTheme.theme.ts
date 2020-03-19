@@ -1,6 +1,6 @@
 import ThemeType from '../../types/ThemeType';
 import rgba from '../../utility/rgba';
-import { colors } from './colors';
+import colors from './colors';
 
 const bodyFont = 'Source Sans Pro,sans-serif';
 const headingFont = 'Melbourne,sans-serif';
@@ -207,9 +207,7 @@ const theme: ThemeType = {
             backgroundColor: colors.green300,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${
-                colors.grey200
-            } 10px )`,
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
         },
         checkedDisabled: {
             background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(
@@ -448,9 +446,7 @@ const theme: ThemeType = {
             checkmarkColor: colors.grey100,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${colors.grey200},${colors.grey200} 5px,${
-                colors.grey100
-            } 5px,${colors.grey100} 10px )`,
+            background: `repeating-linear-gradient( -45deg,${colors.grey200},${colors.grey200} 5px,${colors.grey100} 5px,${colors.grey100} 10px )`,
         },
         focus: {
             boxShadow: `0 0 0 4px ${rgba(colors.green300, 0.4)}`,
@@ -808,9 +804,7 @@ const theme: ThemeType = {
             background: colors.green300,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${
-                colors.grey200
-            } 10px )`,
+            background: `repeating-linear-gradient( -45deg,#FAFBFD,#FAFBFD 5px,${colors.grey200} 5px,${colors.grey200} 10px )`,
         },
         checkedDisabled: {
             background: `repeating-linear-gradient( -45deg,${rgba(colors.green500, 0.6)},${rgba(

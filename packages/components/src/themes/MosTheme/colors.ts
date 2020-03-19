@@ -47,7 +47,7 @@ export type ColorsType = {
     blue900: string;
 };
 
-export const colors = {
+const colors = {
     red100: '#ffc5d4',
     red200: '#ff86a6',
     red300: '#fe678f',
@@ -95,3 +95,5 @@ export const colors = {
     blue800: '#053e85',
     blue900: '#051f42',
 };
+
+export default colors;

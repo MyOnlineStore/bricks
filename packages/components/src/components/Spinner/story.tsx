@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import styled from '../../utility/styled';
 import React from 'react';
 import Spinner from '.';
-import { colors } from '../../themes/MosTheme';
+import colors from '../../themes/MosTheme';
 
 storiesOf('Spinner', module).add('Default', () => {
     const size = text('wrapper size', '100px');
