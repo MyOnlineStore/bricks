@@ -44,7 +44,7 @@ class Toggle extends Component<PropsType, StateType> {
     public render(): JSX.Element {
         return (
             <Box onClick={this.handleChange}>
-                <Box margin={trbl(12, 12, 0, 0)}>
+                <Box margin={trbl(15, 12, 0, 0)}>
                     <StyledToggleSkin
                         elementFocus={this.state.focus}
                         disabled={this.props.disabled}
@@ -65,7 +65,7 @@ class Toggle extends Component<PropsType, StateType> {
                         />
                     </StyledToggleSkin>
                 </Box>
-                <Box margin={trbl(6, 0, 0, 0)}>
+                <Box margin={trbl(9, 0, 0, 0)}>
                     <Text variant={this.props.disabled || this.props.unavailable ? 'info' : undefined}>
                         {this.props.label}
                     </Text>
