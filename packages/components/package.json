@@ -12,8 +12,9 @@
   "version": "2.0.1",
   "description": "bricks",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "types": "dist/index.d.ts",
   "keywords": [
@@ -21,6 +22,7 @@
     "react",
     "components"
   ],
+  "sideEffects": false,
   "dependencies": {
     "chroma-js": "^2.0.3",
     "decimal.js": "^10.0.2",
