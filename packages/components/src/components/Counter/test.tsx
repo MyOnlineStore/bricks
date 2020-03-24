@@ -2,7 +2,7 @@ import React from 'react';
 import Counter from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import 'jest-styled-components';
-import { colors } from '../../themes/MosTheme/colors';
+import colors from '../../themes/MosTheme/colors';
 
 describe('Counter', () => {
     it('should render the variety of severities and use error when no severity is chosen', () => {
