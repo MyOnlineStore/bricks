@@ -1,6 +1,6 @@
 import ThemeType from '../../types/ThemeType';
 import rgba from '../../utility/rgba';
-import { colors } from './colors';
+import colors from './colors';
 
 const bodyFont = 'Source Sans Pro,sans-serif';
 const headingFont = 'Melbourne,sans-serif';
