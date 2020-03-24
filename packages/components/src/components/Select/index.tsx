@@ -10,7 +10,7 @@ import Icon from '../Icon';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import { SearchIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
-import colors from '../../themes/MosTheme';
+import colors from '../../themes/MosTheme/colors';
 import { OffsetType } from '../../types/OffsetType';
 
 type OptionBaseType = {
