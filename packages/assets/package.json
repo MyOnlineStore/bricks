@@ -1,6 +1,9 @@
 {
   "name": "@myonlinestore/bricks-assets",
   "version": "0.1.2-canary.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "sideEffects": false,

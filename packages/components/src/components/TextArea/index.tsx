@@ -1,11 +1,10 @@
-import React, { ChangeEvent, FC, useRef } from 'react';
+import React, { ChangeEvent, FC, useRef, useState } from 'react';
 import StyledTextArea, { StyledTextAreaWrapper } from './style';
 import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/SeverityType';
 import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
-import { QuestionCircleIcon, DangerCircleIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     rows?: number;
@@ -19,12 +18,14 @@ type PropsType = {
         message: string;
     };
     characterLimit?: number;
+    placeholder?: string;
     'data-testid'?: string;
     onChange(value: string, event: ChangeEvent<HTMLTextAreaElement>): void;
 };
 
 const TextArea: FC<PropsType> = props => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const [focus, setFocus] = useState(false);
 
     const onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
         if (!props.disabled)
@@ -43,7 +44,8 @@ const TextArea: FC<PropsType> = props => {
         <>
             <StyledTextAreaWrapper
                 disabled={props.disabled}
-                severity={props.feedback ? props.feedback.severity : undefined}
+                focus={focus}
+                severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
             >
                 <StyledTextArea
                     ref={textareaRef}
@@ -54,21 +56,21 @@ const TextArea: FC<PropsType> = props => {
                     rows={props.rows ? props.rows : 3}
                     disabled={props.disabled}
                     resizeable={props.resizeable}
+                    focus={focus}
+                    placeholder={props.placeholder}
                     onChange={onChange}
+                    onFocus={() => setFocus(true)}
+                    onBlur={() => setFocus(false)}
                 />
-                {props.characterLimit && (
+                {props.characterLimit && !props.disabled && (
                     <Box justifyContent="flex-end" padding={[0, 12, 6]} onClick={focusField} style={{ cursor: 'text' }}>
-                        <Text variant="descriptive">{`${props.value.length} / ${props.characterLimit}`}</Text>
+                        <Text variant="info">{`${props.value.length} / ${props.characterLimit}`}</Text>
                     </Box>
                 )}
             </StyledTextAreaWrapper>
-            {props.feedback && (
-                <Box margin={trbl(6, 0, 0, 12)}>
-                    <InlineNotification
-                        icon={props.feedback.severity === 'info' ? <QuestionCircleIcon /> : <DangerCircleIcon />}
-                        message={props.feedback.message}
-                        severity={props.feedback.severity}
-                    />
+            {props.feedback && props.feedback.message !== '' && (
+                <Box margin={trbl(3, 0, 0, 0)}>
+                    <InlineNotification message={props.feedback.message} severity={props.feedback.severity} />
                 </Box>
             )}
         </>

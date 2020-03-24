@@ -17,27 +17,28 @@ type StyledToggleSkinType = {
 
 type ToggleThemeType = {
     general: {
-        background: string;
+        backgroundColor: string;
     };
     idle: {
-        background: string;
-        border: string;
-    };
-    focus: {
+        backgroundColor: string;
+        borderColor: string;
         boxShadow: string;
     };
     checked: {
-        background: string;
-        border: string;
+        backgroundColor: string;
+        borderColor: string;
+        boxShadow: string;
     };
     idleDisabled: {
-        background: string;
+        backgroundColor: string;
+        borderColor: string;
     };
     checkedDisabled: {
-        background: string;
+        backgroundColor: string;
     };
     error: {
-        border: string;
+        borderColor: string;
+        boxShadow: string;
     };
 };
 
@@ -48,55 +49,100 @@ const StyledToggle = styled.input<StyledToggleType>`
 `;
 
 const StyledToggleSkin = styled.div<StyledToggleSkinType>`
-    width: 48px;
-    height: 18px;
-    border-radius: 10px;
+    width: 30px;
+    height: 12px;
+    border-radius: 18px;
     position: relative;
     transition: all 100ms;
     box-sizing: border-box;
-    cursor: pointer;
-    ${({ theme, elementFocus }): string => (elementFocus ? `box-shadow: ${theme.Toggle.focus.boxShadow};` : '')}
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
-    background: ${({ theme, checked, disabled }): string => {
-        if (!disabled && checked) {
-            return theme.Toggle.checked.background;
-        }
-        if (disabled && checked) {
-            return theme.Toggle.checkedDisabled.background;
-        }
-        if (disabled && !checked) {
-            return theme.Toggle.idleDisabled.background;
+    ${({ theme, elementFocus, disabled, error, checked }): string => {
+        if (elementFocus && !disabled) {
+            if (error) {
+                return `box-shadow: ${theme.Toggle.error.boxShadow};`;
+            }
+
+            if (checked) {
+                return `box-shadow: ${theme.Toggle.checked.boxShadow};`;
+            }
+
+            return `box-shadow: ${theme.Toggle.idle.boxShadow};`;
         }
 
-        return theme.Toggle.idle.background;
+        return '';
+    }}
+
+    background-color: ${({ theme, checked, disabled }): string => {
+        if (checked) {
+            if (checked && disabled) {
+                return theme.Toggle.checkedDisabled.backgroundColor;
+            }
+
+            return theme.Toggle.checked.backgroundColor;
+        }
+
+        if (disabled) {
+            return theme.Toggle.idleDisabled.backgroundColor;
+        }
+
+        return theme.Toggle.idle.backgroundColor;
     }};
 
-    border: ${({ theme, error, checked }): string => {
+    border: 1px solid ${({ theme, error, checked, disabled }): string => {
         if (error) {
-            return theme.Toggle.error.border;
-        }
-        if (checked) {
-            return theme.Toggle.checked.border;
+            return theme.Toggle.error.borderColor;
         }
 
-        return theme.Toggle.idle.border;
+        if (checked) {
+            if (checked && disabled) {
+                return theme.Toggle.idle.borderColor;
+            }
+
+            return theme.Toggle.checked.borderColor;
+        }
+
+        if (disabled) {
+            return theme.Toggle.idleDisabled.borderColor;
+        }
+
+        return theme.Toggle.idle.borderColor;
     }};
 
     &::after {
-        transition: background 100ms, transform 100ms, border 100ms;
+        transition: background-color 100ms, transform 100ms, border 100ms;
         content: "";
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         box-sizing: border-box;
         top: 50%;
-        margin-top: -12px;
+        margin-top: -9px;
         left: 50%;
-        margin-left: -12px;
+        margin-left: -9px;
         position: absolute;
         border-radius: 100%;
-        background-color: ${({ theme }): string => theme.Toggle.general.background};
-        transform: ${({ checked }): string => (checked ? 'translateX(13px)' : 'translateX(-13px)')};
-        border: ${({ theme, error }): string => (error ? theme.Toggle.error.border : theme.Toggle.idle.border)};
+        background-color: ${({ theme, disabled }): string =>
+            disabled ? theme.Toggle.idleDisabled.backgroundColor : theme.Toggle.general.backgroundColor};
+        transform: ${({ checked }): string => (checked ? 'translateX(9px)' : 'translateX(-9px)')};
+        border: 1px solid ${({ theme, error, checked, disabled }): string => {
+            if (error) {
+                return theme.Toggle.error.borderColor;
+            }
+
+            if (checked) {
+                if (checked && disabled) {
+                    return theme.Toggle.idle.borderColor;
+                }
+
+                return theme.Toggle.idle.borderColor;
+            }
+
+            if (disabled) {
+                return theme.Toggle.idleDisabled.borderColor;
+            }
+
+            return theme.Toggle.idle.borderColor;
+        }};
     }
     `;
 
@@ -105,33 +151,28 @@ const composeToggleTheme = (themeTools: ThemeTools): ToggleThemeType => {
 
     return {
         general: {
-            background: forms.background,
+            backgroundColor: forms.background,
         },
         idle: {
-            border: `1px solid ${forms.borderColor}`,
-            background: forms.background,
-        },
-        focus: {
-            boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
+            borderColor: forms.borderColor,
+            backgroundColor: forms.background,
+            boxShadow: `0 0 0 4px ${chroma(forms.borderColor).alpha(0.2)}`,
         },
         checked: {
-            border: `1px solid ${forms.activeBorderColor}`,
-            background: forms.activeColor,
+            borderColor: forms.activeBorderColor,
+            backgroundColor: forms.activeColor,
+            boxShadow: `0 0 0 4px ${chroma(forms.activeBorderColor).alpha(0.2)}`,
         },
         idleDisabled: {
-            background: `repeating-linear-gradient( -45deg,${colors.silver.base},${colors.silver.base} 5px,${
-                colors.silver.darker1
-            } 5px,${colors.silver.darker1} 10px )`,
+            backgroundColor: colors.silver.base,
+            borderColor: colors.silver.darker1,
         },
         checkedDisabled: {
-            background: `repeating-linear-gradient( -45deg,${chroma(colors.primary.darker2).alpha(0.6)},${chroma(
-                colors.primary.darker2,
-            ).alpha(0.6)} 5px,${chroma(colors.primary.base).alpha(0.5)} 5px,${chroma(colors.primary.base).alpha(
-                0.5,
-            )} 10px )`,
+            backgroundColor: colors.silver.darker1,
         },
         error: {
-            border: `1px solid ${colors.severity.error}`,
+            borderColor: colors.severity.error,
+            boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.2)}`,
         },
     };
 };

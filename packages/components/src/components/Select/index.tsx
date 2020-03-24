@@ -3,14 +3,15 @@ import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
 import Option from './Option';
-import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder } from './style';
+import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder, StyledSelection, StyledCaret } from './style';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import IconButton from '../IconButton';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import { SearchIcon, ChevronDownIcon, ChevronUpIcon } from '@myonlinestore/bricks-assets';
+import { SearchIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
+import { colors } from '../../themes/MosTheme';
+import { OffsetType } from '../../types/OffsetType';
 
 type OptionBaseType = {
     value: string;
@@ -205,8 +206,8 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
             >
                 <StyledInput
                     open={this.state.isOpen}
-                    hasFocus={this.state.hasFocus}
-                    disabled={!this.props.disabled ? false : this.props.disabled}
+                    focus={this.state.hasFocus}
+                    disabled={this.props.disabled}
                     ref={this.inputWrapperRef}
                     role="searchbox"
                     aria-autocomplete="list"
@@ -215,10 +216,11 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                     onClick={!this.state.isOpen ? this.open : undefined}
                 >
                     <Box alignItems="stretch">
-                        {(this.state.isOpen && (
-                            <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
+                        {(this.state.isOpen && !this.props.disabled && (
+                            // 1px less padding to compensate for the border
+                            <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
                                 <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                    <Icon icon={<SearchIcon />} size="small" color={'#d2d7e0'} />
+                                    <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
                                 </Box>
                                 <input
                                     ref={this.inputRef}
@@ -237,35 +239,51 @@ class Select<GenericOptionType extends OptionBaseType> extends Component<PropsTy
                                 />
                             </Box>
                         )) ||
-                            (this.props.renderSelected !== undefined && (
-                                <Box padding={trbl(6, 12)} alignItems="center" grow={1}>
+                            (this.props.renderSelected !== undefined && selectedOption.value !== '' && (
+                                // 1px less padding to compensate for the border
+                                <Box padding={[5 as OffsetType, 11 as OffsetType]} alignItems="center" grow={1}>
                                     {this.props.renderSelected(selectedOption as GenericOptionType)}
                                 </Box>
                             )) || (
-                                <Box alignItems="center" padding={trbl(6, 12)} grow={1}>
-                                    {(this.props.value !== '' && <Text>{selectedOption.label}</Text>) || (
-                                        <Text variant="descriptive">
-                                            <StyledPlaceholder
-                                                data-testid={
-                                                    this.props['data-testid']
-                                                        ? `${this.props['data-testid']}-placeholder`
-                                                        : undefined
-                                                }
-                                            >
-                                                {this.props.placeholder}
-                                            </StyledPlaceholder>
-                                        </Text>
+                                // 1px less padding to compensate for the border
+                                <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
+                                    {(this.props.value !== '' && (
+                                        <StyledSelection
+                                            data-testid={
+                                                this.props['data-testid']
+                                                    ? `${this.props['data-testid']}-input-selection`
+                                                    : undefined
+                                            }
+                                            disabled={this.props.disabled}
+                                        >
+                                            {selectedOption.label}
+                                        </StyledSelection>
+                                    )) || (
+                                        <StyledPlaceholder
+                                            disabled={this.props.disabled}
+                                            data-testid={
+                                                this.props['data-testid']
+                                                    ? `${this.props['data-testid']}-placeholder`
+                                                    : undefined
+                                            }
+                                        >
+                                            {this.props.placeholder}
+                                        </StyledPlaceholder>
                                     )}
                                 </Box>
                             )}
-                        <IconButton
-                            icon={this.state.isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
-                            iconSize="small"
-                            title={this.state.isOpen ? 'close' : 'open'}
-                            onClick={this.state.isOpen ? this.close : this.open}
-                            disabled={this.props.disabled}
-                            variant="primary"
-                        />
+                        <StyledCaret>
+                            <Icon
+                                icon={this.state.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
+                                size="medium"
+                                color={
+                                    this.props.disabled
+                                        ? this.props.theme.Select.select.disabled.caretColor
+                                        : this.props.theme.Select.select.idle.caretColor
+                                }
+                                title={this.state.isOpen ? 'close' : 'open'}
+                            />
+                        </StyledCaret>
                     </Box>
                 </StyledInput>
                 {createPortal(

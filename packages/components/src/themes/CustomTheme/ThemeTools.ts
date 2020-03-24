@@ -139,12 +139,11 @@ class ThemeTools {
         return {
             smaller1: `${baseFontSize * 0.8}px`,
             base: `${baseFontSize}px`,
-            larger1: `${baseFontSize * 1}px`,
-            larger2: `${baseFontSize * 1.2}px`,
-            larger3: `${baseFontSize * 1.4}px`,
-            larger4: `${baseFontSize * 1.6}px`,
-            larger5: `${baseFontSize * 2}px`,
-            larger6: `${baseFontSize * 2.4}px`,
+            larger1: `${baseFontSize * 1.2}px`,
+            larger2: `${baseFontSize * 1.4}px`,
+            larger3: `${baseFontSize * 1.6}px`,
+            larger4: `${baseFontSize * 2}px`,
+            larger5: `${baseFontSize * 2.4}px`,
             display: `${baseFontSize * 4}px`,
         };
     };
@@ -154,12 +153,11 @@ class ThemeTools {
 
         return {
             base: `${baseLineHeight}px`,
-            larger1: `${baseLineHeight * 0.85}px`,
-            larger2: `${baseLineHeight * 1}px`,
-            larger3: `${baseLineHeight * 1.28}px`,
-            larger4: `${baseLineHeight * 1.42}px`,
-            larger5: `${baseLineHeight * 1.71}px`,
-            larger6: `${baseLineHeight * 2.14}px`,
+            larger1: `${baseLineHeight * 1}px`,
+            larger2: `${baseLineHeight * 1.28}px`,
+            larger3: `${baseLineHeight * 1.42}px`,
+            larger4: `${baseLineHeight * 1.71}px`,
+            larger5: `${baseLineHeight * 2.14}px`,
             small: `${baseLineHeight * 0.8}px`,
             medium: `${baseLineHeight}px`,
             large: `${baseLineHeight * 1.2}px`,

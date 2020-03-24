@@ -1,6 +1,5 @@
 import React from 'react';
 import Toggle from '.';
-import Icon from '../Icon';
 import { mosTheme } from '../../themes/MosTheme';
 import { mountWithTheme } from '../../utility/styled/testing';
 import Styledtoggle, { StyledToggleSkin } from './style';
@@ -21,8 +20,8 @@ describe('Toggle', () => {
         );
 
         expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.Toggle.idleDisabled.background,
+            'background-color',
+            mosTheme.Toggle.idleDisabled.backgroundColor,
         );
     });
 
@@ -40,8 +39,8 @@ describe('Toggle', () => {
         );
 
         expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.Toggle.checkedDisabled.background,
+            'background-color',
+            mosTheme.Toggle.checkedDisabled.backgroundColor,
         );
     });
 
@@ -58,7 +57,10 @@ describe('Toggle', () => {
             />,
         );
 
-        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule('background', mosTheme.Toggle.idle.background);
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
+            'background-color',
+            mosTheme.Toggle.idle.backgroundColor,
+        );
     });
 
     it('should render the correct background styling when checked', () => {
@@ -75,8 +77,8 @@ describe('Toggle', () => {
         );
 
         expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
-            'background',
-            mosTheme.Toggle.checked.background,
+            'background-color',
+            mosTheme.Toggle.checked.backgroundColor,
         );
     });
 
@@ -92,7 +94,10 @@ describe('Toggle', () => {
             />,
         );
 
-        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule('border', mosTheme.Toggle.error.border);
+        expect(toggleNotChecked.find(StyledToggleSkin)).toHaveStyleRule(
+            'border',
+            `1px solid ${mosTheme.Toggle.error.borderColor}`,
+        );
     });
 
     it('should have a box-shadow on focus and remove the box-shadow on blur', () => {
@@ -102,11 +107,11 @@ describe('Toggle', () => {
 
         toggle.find(Styledtoggle).simulate('focus');
 
-        expect(toggle.find(StyledToggleSkin)).toHaveStyleRule('box-shadow', mosTheme.Toggle.focus.boxShadow);
+        expect(toggle.find(StyledToggleSkin)).toHaveStyleRule('box-shadow', mosTheme.Toggle.idle.boxShadow);
 
         toggle.find(Styledtoggle).simulate('blur');
 
-        expect(toggle.find(StyledToggleSkin)).not.toHaveStyleRule('box-shadow', mosTheme.Toggle.focus.boxShadow);
+        expect(toggle.find(StyledToggleSkin)).not.toHaveStyleRule('box-shadow', mosTheme.Toggle.idle.boxShadow);
     });
 
     it('should be able to change checked value by clicking the wrapper', () => {
@@ -133,24 +138,6 @@ describe('Toggle', () => {
         toggle.simulate('click');
 
         expect(mockHandler).not.toHaveBeenCalled();
-    });
-
-    it('should render an icon when the disabledIcon prop is set', () => {
-        const mockHandler = jest.fn();
-
-        const toggle = mountWithTheme(
-            <Toggle
-                onChange={mockHandler}
-                name="demo"
-                disabled={true}
-                disabledIcon
-                label="foo"
-                checked={true}
-                value="bar"
-            />,
-        );
-
-        expect(toggle.find(Icon).length).toBe(1);
     });
 
     it('should render a label when a label is set', () => {
