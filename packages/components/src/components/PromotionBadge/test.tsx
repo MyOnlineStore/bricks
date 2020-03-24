@@ -2,7 +2,7 @@ import React from 'react';
 import PromotionBadge from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import 'jest-styled-components';
-import { colors } from '../../themes/MosTheme/colors';
+import colors from '../../themes/MosTheme/colors';
 
 describe('PromotionPromotionBadge', () => {
     it('should render the PromotionBadge with different colors according to variants', () => {

@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { create } from '@storybook/theming';
 import themeDecorator from '../src/__fixtures__/themeDecorator';
 import { bodyFont } from '../src/themes/MosTheme/MosTheme.theme';
-import { colors } from '../src/themes/MosTheme/colors';
+import colors from '../src/themes/MosTheme/colors';
 
 const checkerSize = 24;
 
