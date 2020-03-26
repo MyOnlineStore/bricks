@@ -40,7 +40,7 @@ const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: bo
 `;
 
 const TextualButton: FC<PropsType> = props => {
-    const [isHovering, setHovering] = useState(true);
+    const [isHovering, setHovering] = useState(false);
 
     return (
         <StyledTextualButton
