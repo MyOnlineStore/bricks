@@ -31,7 +31,7 @@ const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: bo
         content: '';
         transition: background 300ms;
         position: absolute;
-        bottom: -1px;
+        bottom: 1px;
         left: 0;
         width: 100%;
         height: 1px;
@@ -40,7 +40,7 @@ const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: bo
 `;
 
 const TextualButton: FC<PropsType> = props => {
-    const [isHovering, setHovering] = useState(false);
+    const [isHovering, setHovering] = useState(true);
 
     return (
         <StyledTextualButton
