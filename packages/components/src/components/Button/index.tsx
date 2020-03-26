@@ -113,6 +113,17 @@ const StyledButton = styled(Base)<PropsType>`
 
             &:focus {
                 ${!loading && !disabled ? focus : idle}
+
+                &:hover {
+                    ${
+                        !loading && !disabled
+                            ? `
+                            background-color: ${theme.Button[variant].hover.backgroundColor};
+                            color: ${theme.Button[variant].hover.color};
+                    `
+                            : ''
+                    }
+                }
             }
 
             &:active {
