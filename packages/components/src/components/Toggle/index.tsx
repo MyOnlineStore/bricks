@@ -11,7 +11,6 @@ type StateType = {
 type PropsType = {
     checked: boolean;
     disabled?: boolean;
-    unavailable?: boolean;
     error?: boolean;
     value: string;
     label?: string;
@@ -66,9 +65,7 @@ class Toggle extends Component<PropsType, StateType> {
                     </StyledToggleSkin>
                 </Box>
                 <Box margin={trbl(9, 0, 0, 0)}>
-                    <Text variant={this.props.disabled || this.props.unavailable ? 'info' : undefined}>
-                        {this.props.label}
-                    </Text>
+                    <Text variant={this.props.disabled ? 'info' : undefined}>{this.props.label}</Text>
                 </Box>
             </Box>
         );
