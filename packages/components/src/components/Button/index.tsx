@@ -75,7 +75,7 @@ type PropsType = BasePropsType & {
 };
 
 const StyledButton = styled(Base)<PropsType>`
-    ${({ theme, variant, compact, disabled, loading }): string => {
+    ${({ theme, variant, disabled, loading }): string => {
         const idle = `
             background-color: ${theme.Button[variant].idle.backgroundColor};
             box-shadow: ${theme.Button[variant].idle.boxShadow};
@@ -103,7 +103,6 @@ const StyledButton = styled(Base)<PropsType>`
 
         return `
             ${idle}
-            padding: 6px ${compact ? ' 12px' : '24px'};
             border-radius: ${theme.Button.common.borderRadius};
             ${variant === 'plain' ? `border: ${theme.Button.plain.idle.border};` : ''}
 
@@ -158,9 +157,11 @@ const StyledButton = styled(Base)<PropsType>`
         `;
     }};
 
-    ${({ theme, variant }): string => {
+    ${({ theme, variant, compact }): string => {
         if (variant === 'plain') {
             return `
+                padding: 5px ${compact ? '11px' : '23px'};
+
                 &::before {
                     color: ${theme.Button.disabled.plain.color};
                     background: ${theme.Button.disabled.plain.backgroundColor};
@@ -175,6 +176,8 @@ const StyledButton = styled(Base)<PropsType>`
 
         if (variant === 'secondary') {
             return `
+                padding: 6px ${compact ? ' 12px' : '24px'};
+
                 &::before {
                     color: ${theme.Button.disabled.secondary.color};
                     background: ${theme.Button.disabled.secondary.backgroundColor};
@@ -188,6 +191,8 @@ const StyledButton = styled(Base)<PropsType>`
         }
 
         return `
+            padding: 6px ${compact ? ' 12px' : '24px'};
+
             &::before {
                 color: ${theme.Button.disabled.primary.color};
                 background: ${theme.Button.disabled.primary.backgroundColor};
