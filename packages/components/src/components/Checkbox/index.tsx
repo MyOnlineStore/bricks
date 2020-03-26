@@ -2,7 +2,7 @@ import React, { Component, MouseEvent } from 'react';
 import Icon from '../Icon';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 import Box from '../Box';
-import { CheckmarkSmallIcon, MinusIcon } from '@myonlinestore/bricks-assets';
+import { CheckmarkSmallIcon, PartialCheckmarkIcon } from '@myonlinestore/bricks-assets';
 import Text from '../Text';
 
 type StateType = {
@@ -59,7 +59,7 @@ class Checkbox extends Component<PropsType, StateType> {
                                 <Icon size="small" color="#fff" icon={<CheckmarkSmallIcon />} />
                             )}
                             {this.props.checked === 'indeterminate' && (
-                                <Icon size="small" color="#fff" icon={<MinusIcon />} />
+                                <Icon size="small" color="#fff" icon={<PartialCheckmarkIcon />} />
                             )}
                         </Box>
                         <StyledCheckbox
