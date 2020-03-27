@@ -90,6 +90,7 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
 `;
 
 const StyledTextArea = styled.textarea<TextAreaPropsType>`
+    margin: 0;
     padding: 5px 11px;
     box-sizing: border-box;
     width: 100%;

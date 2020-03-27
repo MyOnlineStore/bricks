@@ -13,7 +13,7 @@ describe('Separated', () => {
             </Seperated>,
         );
 
-        expect(component.find('[data-test="A"]').parent()).toHaveStyleRule('margin-top', '12px');
+        expect(component.find('[data-test="A"]').parent()).toHaveStyleRule('margin-top', '6px');
     });
 
     it('should add seperation to the last item when after is set', () => {
@@ -25,7 +25,7 @@ describe('Separated', () => {
             </Seperated>,
         );
 
-        expect(component.find('[data-test="C"]').parent()).toHaveStyleRule('margin-bottom', '12px');
+        expect(component.find('[data-test="C"]').parent()).toHaveStyleRule('margin-bottom', '6px');
     });
 
     it('should add seperation to the first/last item when after is set', () => {
@@ -35,6 +35,6 @@ describe('Separated', () => {
             </Seperated>,
         );
 
-        expect(component.find('[data-test="A"]').parent()).toHaveStyleRule('margin-bottom', '12px');
+        expect(component.find('[data-test="A"]').parent()).toHaveStyleRule('margin-bottom', '6px');
     });
 });

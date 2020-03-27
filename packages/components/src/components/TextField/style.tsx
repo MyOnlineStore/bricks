@@ -177,7 +177,6 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 3px;
 
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && focus && !disabled) {

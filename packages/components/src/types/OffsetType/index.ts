@@ -6,6 +6,7 @@ export type OffsetType =
     | 12
     | 15
     | 18
+    | 21
     | 24
     | 30
     | 36
@@ -17,6 +18,7 @@ export type OffsetType =
     | -12
     | -15
     | -18
+    | -21
     | -24
     | -30
     | -36

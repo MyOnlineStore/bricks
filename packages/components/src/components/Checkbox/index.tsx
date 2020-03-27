@@ -46,8 +46,8 @@ class Checkbox extends Component<PropsType, StateType> {
         const htmlChecked = this.props.checked === true;
 
         return (
-            <Box onClick={this.changeHandler} data-testid={this.props['data-testid']}>
-                <Box shrink={0}>
+            <Box onClick={this.changeHandler} data-testid={this.props['data-testid']} alignItems="center">
+                <Box margin={[0, 12, 0, 0]}>
                     <StyledCheckboxSkin
                         checkedState={this.props.checked}
                         elementFocus={this.state.focus}
@@ -74,13 +74,12 @@ class Checkbox extends Component<PropsType, StateType> {
                         />
                     </StyledCheckboxSkin>
                 </Box>
-                {this.props.label !== undefined && (
-                    <Box margin={[-3, 0, 0, 12]}>
-                        <Text>
-                            <label htmlFor={this.props.name}>{this.props.label}</label>
-                        </Text>
-                    </Box>
-                )}
+                <Box inline direction="row" align-items="center">
+                    <Text>
+                        {/* force a line-height if there is no label for proper vertical alignment */}
+                        <label htmlFor={this.props.name}>{this.props.label ? this.props.label : '\u00A0'}</label>
+                    </Text>
+                </Box>
             </Box>
         );
     }
