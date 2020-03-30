@@ -42,8 +42,8 @@ class Toggle extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Box onClick={this.handleChange}>
-                <Box margin={trbl(15, 12, 0, 0)}>
+            <Box onClick={this.handleChange} alignItems="center">
+                <Box margin={trbl(0, 12, 0, 0)}>
                     <StyledToggleSkin
                         elementFocus={this.state.focus}
                         disabled={this.props.disabled}
@@ -64,8 +64,11 @@ class Toggle extends Component<PropsType, StateType> {
                         />
                     </StyledToggleSkin>
                 </Box>
-                <Box margin={trbl(9, 0, 0, 0)}>
-                    <Text variant={this.props.disabled ? 'info' : undefined}>{this.props.label}</Text>
+                <Box inline direction="row" align-items="center">
+                    <Text variant={this.props.disabled ? 'info' : undefined}>
+                        {/* force a line-height if there is no label for proper vertical alignment */}
+                        {this.props.label ? this.props.label : '\u00A0'}
+                    </Text>
                 </Box>
             </Box>
         );

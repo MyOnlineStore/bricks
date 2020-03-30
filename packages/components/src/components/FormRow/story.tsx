@@ -7,10 +7,10 @@ import Text from '../Text';
 import Box from '../Box';
 import TextField from '../TextField';
 import Toggle from '../Toggle';
-import trbl from '../../utility/trbl';
 import Separated from '../Separated';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Skeleton } from '../..';
+import TextArea from '../TextArea';
 
 type PropsType = {
     descriptions: boolean;
@@ -18,15 +18,12 @@ type PropsType = {
 
 type StateType = {
     selected: string;
-    initials: string;
-    firstname: string;
-    surname: string;
-    city: string;
-    country: string;
-    toggled: boolean;
+    name: string;
+    story: string;
     cheese: boolean;
     checked: boolean;
     bacon: boolean;
+    supersize: boolean;
 };
 
 class DemoComponent extends Component<PropsType, StateType> {
@@ -35,223 +32,139 @@ class DemoComponent extends Component<PropsType, StateType> {
 
         this.state = {
             selected: '1',
-            initials: '',
-            firstname: '',
-            surname: '',
-            city: '',
-            country: '',
-            toggled: false,
+            name: '',
+            story: '',
             bacon: false,
             cheese: true,
             checked: false,
+            supersize: false,
         };
     }
 
     public render(): JSX.Element {
         const disabled = boolean('disabled', false);
+        const description = this.props.descriptions
+            ? `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
+        similique sint quae exercitationem molestiae aspernatur cum.`
+            : '';
 
-        if (this.props.descriptions) {
-            return (
-                <form>
-                    <FormRow
-                        label={<label>What is your name?</label>}
-                        disabled={disabled}
-                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. `}
-                        field={
-                            <Box wrap width="100%">
-                                <TextField
-                                    name="Initials"
-                                    value={this.state.initials}
-                                    onChange={(initials: string): void => this.setState({ initials })}
-                                />
-                            </Box>
-                        }
-                    />
-                    <FormRow
-                        label={<label>Where do you live?</label>}
-                        disabled={disabled}
-                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. `}
-                        field={
-                            <Box wrap width="100%">
-                                <TextField
-                                    name="Country"
-                                    value={this.state.country}
-                                    onChange={(country: string): void => this.setState({ country })}
-                                />
-                            </Box>
-                        }
-                    />
-                    <FormRow
-                        label={<label>Can a boolean only be either true or false?</label>}
-                        disabled={disabled}
-                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. Necessitatibus,
-                            corrupti veritatis. Placeat, tempora! Vitae rem, nobis rerum natus odit debitis.`}
-                        field={
-                            <Separated before after>
-                                <RadioButton
-                                    name="bool"
-                                    label="True"
-                                    value="1"
-                                    checked={this.state.selected === '1'}
-                                    onChange={({ value }): void => {
-                                        this.setState({ selected: value });
-                                    }}
-                                />
-                                <RadioButton
-                                    name="bool"
-                                    label="False"
-                                    value="2"
-                                    checked={this.state.selected === '2'}
-                                    onChange={({ value }): void => {
-                                        this.setState({ selected: value });
-                                    }}
-                                />
-                                <RadioButton
-                                    name="bool"
-                                    label="Sometimes"
-                                    value="3"
-                                    checked={this.state.selected === '3'}
-                                    onChange={({ value }): void => {
-                                        this.setState({ selected: value });
-                                    }}
-                                />
-                            </Separated>
-                        }
-                    />
-                    <FormRow
-                        label={'Options'}
-                        disabled={disabled}
-                        description={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti non quasi
-                            similique sint quae exercitationem molestiae aspernatur cum. `}
-                        field={
-                            <Separated before after>
-                                <Checkbox
-                                    name="cheese"
-                                    value="cheese"
-                                    label="Extra cheese"
-                                    checked={this.state.cheese}
-                                    onChange={({ checked }): void => this.setState({ cheese: checked as boolean })}
-                                />
-                                <Checkbox
-                                    name="bacon"
-                                    value="bacon"
-                                    label="Extra bacon"
-                                    checked={this.state.bacon}
-                                    onChange={({ checked }): void => this.setState({ bacon: checked as boolean })}
-                                />
-                            </Separated>
-                        }
-                    />
-                </form>
-            );
-        } else {
-            return (
-                <form>
-                    <FormRow
-                        label={<label>What is your name?</label>}
-                        disabled={disabled}
-                        field={
-                            <Box wrap width="100%">
-                                <Box margin={trbl(0, 9, 0, 0)} width="100%" justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        prefix="Name"
-                                        name="Name"
-                                        value={this.state.firstname}
-                                        onChange={(firstname: string): void => this.setState({ firstname })}
-                                    />
-                                </Box>
-                            </Box>
-                        }
-                    />
-                    <FormRow
-                        label={<label>Where do you live?</label>}
-                        disabled={disabled}
-                        field={
-                            <Box wrap width="100%">
-                                <Box margin={trbl(0, 9, 0, 0)} width="100%" justifyContent="stretch" grow={1}>
-                                    <TextField
-                                        name="Country"
-                                        prefix="Country"
-                                        value={this.state.country}
-                                        onChange={(country: string): void => this.setState({ country })}
-                                    />
-                                </Box>
-                            </Box>
-                        }
-                    />
-                    <FormRow
-                        label={<label>Can a boolean only be true or false?</label>}
-                        disabled={disabled}
-                        field={
-                            <Separated before after>
-                                <RadioButton
-                                    name="bool"
-                                    label="True"
-                                    value="1"
-                                    checked={this.state.selected === '1'}
-                                    onChange={({ value }): void => {
-                                        this.setState({ selected: value });
-                                    }}
-                                />
-                                <RadioButton
-                                    name="bool"
-                                    label="False"
-                                    value="2"
-                                    checked={this.state.selected === '2'}
-                                    onChange={({ value }): void => {
-                                        this.setState({ selected: value });
-                                    }}
-                                />
-                                <RadioButton
-                                    name="bool"
-                                    label="Sometimes"
-                                    value="3"
-                                    checked={this.state.selected === '3'}
-                                    onChange={({ value }): void => {
-                                        this.setState({ selected: value });
-                                    }}
-                                />
-                            </Separated>
-                        }
-                    />
-                    <FormRow
-                        label={<label>Do you like toggles?</label>}
-                        disabled={disabled}
-                        field={
-                            <Toggle
-                                name="toggle"
-                                value="toggle"
-                                id="toggle"
-                                label={'Toggle to indicate your preference!'}
-                                checked={this.state.toggled}
-                                onChange={({ checked }): void => this.setState({ toggled: checked })}
+        return (
+            <form>
+                <FormRow
+                    label={<label>What is your name?</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Box wrap width="100%">
+                            <TextField
+                                name="name"
+                                value={this.state.name}
+                                onChange={(name: string): void => this.setState({ name })}
+                                disabled={disabled}
+                                placeholder="E.g. John Doe"
                             />
-                        }
-                    />
-                    <FormRow
-                        label={<label>Do you like checkboxes</label>}
-                        disabled={disabled}
-                        field={
-                            <Separated before after>
-                                <Checkbox
-                                    onChange={(): void =>
-                                        this.setState({
-                                            checked: !this.state.checked,
-                                        })
-                                    }
-                                    value="bar"
-                                    checked={this.state.checked}
-                                    name="foo"
-                                />
-                            </Separated>
-                        }
-                    />
-                </form>
-            );
-        }
+                        </Box>
+                    }
+                />
+                <FormRow
+                    label={<label>What is your story?</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Box wrap width="100%">
+                            <TextArea
+                                name="story"
+                                value={this.state.story}
+                                onChange={(story: string): void => this.setState({ story })}
+                                disabled={disabled}
+                                placeholder="Like how did you get here?"
+                            />
+                        </Box>
+                    }
+                />
+                <FormRow
+                    label={<label>Can a boolean only be either true or false?</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Separated before after>
+                            <RadioButton
+                                name="bool"
+                                label="True"
+                                value="1"
+                                checked={this.state.selected === '1'}
+                                onChange={({ value }): void => {
+                                    this.setState({ selected: value });
+                                }}
+                                disabled={disabled}
+                            />
+                            <RadioButton
+                                name="bool"
+                                label="False"
+                                value="2"
+                                checked={this.state.selected === '2'}
+                                onChange={({ value }): void => {
+                                    this.setState({ selected: value });
+                                }}
+                                disabled={disabled}
+                            />
+                            <RadioButton
+                                name="bool"
+                                label="Sometimes"
+                                value="3"
+                                checked={this.state.selected === '3'}
+                                onChange={({ value }): void => {
+                                    this.setState({ selected: value });
+                                }}
+                                disabled={disabled}
+                            />
+                        </Separated>
+                    }
+                />
+                <FormRow
+                    label={<label>What else would you like?</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Separated before after>
+                            <Checkbox
+                                name="cheese"
+                                value="cheese"
+                                label="Extra cheese"
+                                checked={this.state.cheese}
+                                onChange={() => this.setState({ cheese: !this.state.cheese })}
+                                disabled={disabled}
+                            />
+                            <Checkbox
+                                name="bacon"
+                                value="bacon"
+                                label="Extra bacon"
+                                checked={this.state.bacon}
+                                onChange={() => this.setState({ bacon: !this.state.bacon })}
+                                disabled={disabled}
+                            />
+                        </Separated>
+                    }
+                />
+                <FormRow
+                    label={<label>Supersized?</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Separated before after>
+                            <Toggle
+                                name="supersize"
+                                value="supersize"
+                                label="Yes, supersize me!"
+                                checked={this.state.supersize}
+                                onChange={() => this.setState({ supersize: !this.state.supersize })}
+                                disabled={disabled}
+                            />
+                        </Separated>
+                    }
+                />
+            </form>
+        );
     }
 }
 
@@ -267,9 +180,9 @@ storiesOf('FormRow', module)
                 </Text>
             }
             field={
-                <Box direction="row" alignItems="center">
+                <Separated before after>
                     <Toggle checked={true} name="storyToggle" value={'true'} onChange={(): string => 'void'} />
-                </Box>
+                </Separated>
             }
         />
     ))
