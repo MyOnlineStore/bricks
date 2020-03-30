@@ -17,7 +17,7 @@ const FormRow: FunctionComponent<PropsType> = (props): JSX.Element => {
             {({ measureRef, contentRect }) => {
                 return (
                     <StyledFormRow ref={measureRef}>
-                        <Box basis={'180px'} direction="row" grow={1} maxWidth="241px" margin={[24, 9, 0, 0]} wrap>
+                        <Box basis={'180px'} direction="row" grow={1} maxWidth="241px" margin={[21, 9, 0, 0]} wrap>
                             <Box grow={1} wrap={false}>
                                 <Box direction={props.description ? 'column' : 'row'} grow={props.badge ? 0 : 1}>
                                     <StyledDisabledText disabled={props.disabled} strong>

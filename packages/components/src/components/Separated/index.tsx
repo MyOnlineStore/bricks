@@ -11,12 +11,14 @@ type PropsType = {
 const calculateMargin = (count: number, index: number, before?: boolean, after?: boolean): TrblType => {
     const isFirst = index === 0;
     const isLast = index === count - 1;
-    const margin = 12;
+    const isSingle = count === 1;
+    const margin = 6;
 
-    if (isFirst) return trbl(before ? margin : 0, 0, isLast && after ? margin : 0, 0);
-    if (isLast && after) return trbl(margin, 0, margin, 0);
+    if (isSingle) return trbl(before ? margin : 0, 0, after ? margin : 0, 0);
+    if (isFirst) return trbl(before ? margin : 0, 0, margin, 0);
+    if (isLast) return trbl(0, 0, after ? margin : 0, 0);
 
-    return trbl(margin, 0, 0, 0);
+    return trbl(0, 0, margin, 0);
 };
 
 const Separated: FunctionComponent<PropsType> = ({ children, before, after }): JSX.Element => {
