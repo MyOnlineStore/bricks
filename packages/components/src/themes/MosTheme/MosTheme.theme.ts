@@ -189,8 +189,8 @@ const theme: ThemeType = {
                 border: `1px solid ${colors.grey300}`,
             },
             hover: {
-                backgroundColor: colors.grey100,
-                color: colors.grey500,
+                backgroundColor: rgba(0, 0, 0, 0.03),
+                color: colors.grey600,
                 boxShadow: 'none',
             },
             focus: {
