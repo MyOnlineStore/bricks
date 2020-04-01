@@ -4,7 +4,7 @@ import { PropsType } from '.';
 const StyledButton = styled.button<PropsType & { isLoading?: boolean }>`
     align-items: center;
     appearance: none;
-    background: transparent;
+    background: none;
     border: none;
     box-shadow: none;
     cursor: ${({ isLoading }) => (isLoading ? 'progress' : 'pointer')};
