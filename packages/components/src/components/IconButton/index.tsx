@@ -43,18 +43,24 @@ const StyledIconButton = styled(BareButton)<Pick<PropsType, 'variant'>>`
             transform: scale(1.1);
             background-color: transparent;
             color: ${theme.IconButton[buttonVariant].hover.color};
+            border: none;
+            box-shadow: none;
         `;
 
         const active = `
             transform: scale(0.9);
             background-color: transparent;
             color: ${theme.IconButton[buttonVariant].hover.color};
+            border: none;
+            box-shadow: none;
         `;
 
         const focus = `
             transform: scale(1.1);
             background-color: transparent;
             color: ${theme.IconButton[buttonVariant].hover.color};
+            border: none;
+            box-shadow: none;
         `;
 
         return `
