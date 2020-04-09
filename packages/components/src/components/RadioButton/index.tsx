@@ -35,7 +35,7 @@ const RadioButton: FC<PropsType> = props => {
 
     return (
         <StyledRadioWrapper onClick={handleChange}>
-            <Box margin={[0, 12, 0, 0]}>
+            <Box margin={[3, 12, 0, 0]}>
                 <StyledRadioButtonSkin
                     elementFocus={isFocussed}
                     checked={props.checked}

@@ -46,8 +46,8 @@ class Checkbox extends Component<PropsType, StateType> {
         const htmlChecked = this.props.checked === true;
 
         return (
-            <Box onClick={this.changeHandler} data-testid={this.props['data-testid']} alignItems="center">
-                <Box margin={[0, 12, 0, 0]}>
+            <Box onClick={this.changeHandler} data-testid={this.props['data-testid']} alignItems="flex-start">
+                <Box margin={[3, 12, 0, 0]}>
                     <StyledCheckboxSkin
                         checkedState={this.props.checked}
                         elementFocus={this.state.focus}
