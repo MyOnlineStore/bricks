@@ -25,6 +25,7 @@ type PropsType = {
 };
 
 const StyledNotification = styled.div<PropsType>`
+    display: inline-block;
     font-family: ${({ theme }): string => theme.Notification.common.fontFamily};
     font-size: ${({ theme }): string => theme.Notification.common.fontSize};
     border-radius: ${({ theme }): string => theme.Notification.common.borderRadius};
