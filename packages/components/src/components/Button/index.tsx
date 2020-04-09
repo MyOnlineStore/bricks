@@ -129,30 +129,11 @@ const StyledButton = styled(Base)<PropsType>`
                 ${!loading && !disabled ? active : idle}
             }
 
-            &::before {
-                content: '';
-                position: absolute;
-                display: block;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                z-index: -2;
-                transition: opacity 0.3s;
-                opacity: ${disabled ? 1 : 0};
-                box-shadow: ${theme.Button[variant].idle.boxShadow};
-                border-radius: ${theme.Button.common.borderRadius};
-            }
-
             &:disabled {
                 ${variant === 'plain' ? `border: ${theme.Button.disabled.plain.border};` : ''}
 
                 transform: none;
                 cursor: not-allowed;
-
-                &::before {
-                    opacity: 1;
-                }
             }
         `;
     }};
@@ -161,11 +142,6 @@ const StyledButton = styled(Base)<PropsType>`
         if (variant === 'plain') {
             return `
                 padding: 5px ${compact ? '11px' : '23px'};
-
-                &::before {
-                    color: ${theme.Button.disabled.plain.color};
-                    background: ${theme.Button.disabled.plain.backgroundColor};
-                }
 
                 &:disabled {
                     color: ${theme.Button.disabled.plain.color};
@@ -178,10 +154,6 @@ const StyledButton = styled(Base)<PropsType>`
             return `
                 padding: 6px ${compact ? ' 12px' : '24px'};
 
-                &::before {
-                    color: ${theme.Button.disabled.secondary.color};
-                    background: ${theme.Button.disabled.secondary.backgroundColor};
-                }
 
                 &:disabled {
                     color: ${theme.Button.disabled.secondary.color};
@@ -192,11 +164,6 @@ const StyledButton = styled(Base)<PropsType>`
 
         return `
             padding: 6px ${compact ? ' 12px' : '24px'};
-
-            &::before {
-                color: ${theme.Button.disabled.primary.color};
-                background: ${theme.Button.disabled.primary.backgroundColor};
-            }
 
             &:disabled {
                 color: ${theme.Button.disabled.primary.color};
