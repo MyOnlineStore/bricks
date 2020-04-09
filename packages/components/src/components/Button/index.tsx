@@ -134,10 +134,6 @@ const StyledButton = styled(Base)<PropsType>`
 
                 transform: none;
                 cursor: not-allowed;
-
-                &::before {
-                    opacity: 1;
-                }
             }
         `;
     }};
@@ -146,11 +142,6 @@ const StyledButton = styled(Base)<PropsType>`
         if (variant === 'plain') {
             return `
                 padding: 5px ${compact ? '11px' : '23px'};
-
-                &::before {
-                    color: ${theme.Button.disabled.plain.color};
-                    background: ${theme.Button.disabled.plain.backgroundColor};
-                }
 
                 &:disabled {
                     color: ${theme.Button.disabled.plain.color};
@@ -163,10 +154,6 @@ const StyledButton = styled(Base)<PropsType>`
             return `
                 padding: 6px ${compact ? ' 12px' : '24px'};
 
-                &::before {
-                    color: ${theme.Button.disabled.secondary.color};
-                    background: ${theme.Button.disabled.secondary.backgroundColor};
-                }
 
                 &:disabled {
                     color: ${theme.Button.disabled.secondary.color};
@@ -177,11 +164,6 @@ const StyledButton = styled(Base)<PropsType>`
 
         return `
             padding: 6px ${compact ? ' 12px' : '24px'};
-
-            &::before {
-                color: ${theme.Button.disabled.primary.color};
-                background: ${theme.Button.disabled.primary.backgroundColor};
-            }
 
             &:disabled {
                 color: ${theme.Button.disabled.primary.color};
