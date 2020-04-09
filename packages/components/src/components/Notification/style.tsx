@@ -28,6 +28,7 @@ const StyledNotification = styled.div<PropsType>`
     display: inline-block;
     font-family: ${({ theme }): string => theme.Notification.common.fontFamily};
     font-size: ${({ theme }): string => theme.Notification.common.fontSize};
+    line-height: 1.6;
     border-radius: ${({ theme }): string => theme.Notification.common.borderRadius};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
