@@ -17,7 +17,7 @@ const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
     return (
         <StyledNotification severity={props.severity}>
             <Box padding={trbl(12, 18)} alignItems={'flex-start'}>
-                <Box margin={trbl(0, 6, 0, 0)}>
+                <Box margin={trbl(3, 6, 0, 0)}>
                     <Icon size="medium" icon={icon} />
                 </Box>
                 {props.message}
