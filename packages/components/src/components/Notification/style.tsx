@@ -5,7 +5,6 @@ import chroma from 'chroma-js';
 
 type VariantStyleType = {
     backgroundColor: string;
-    borderColor: string;
     color: string;
 };
 
@@ -13,6 +12,7 @@ type NotificationThemeType = {
     common: {
         fontFamily: string;
         fontSize: string;
+        borderRadius: string;
     };
     error: VariantStyleType;
     info: VariantStyleType;
@@ -25,14 +25,14 @@ type PropsType = {
 };
 
 const StyledNotification = styled.div<PropsType>`
-    border-width: 1px;
-    border-style: solid;
     font-family: ${({ theme }): string => theme.Notification.common.fontFamily};
     font-size: ${({ theme }): string => theme.Notification.common.fontSize};
+    border-radius: ${({ theme }): string => theme.Notification.common.borderRadius};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     ${({ theme, severity }): string => `
         background-color: ${theme.Notification[severity].backgroundColor};
-        border-color: ${theme.Notification[severity].borderColor};
         color: ${theme.Notification[severity].color};
     `};
 `;
@@ -44,13 +44,14 @@ const composeNotificationTheme = (themeTools: ThemeTools): NotificationThemeType
         common: {
             fontFamily: text.primaryFont,
             fontSize: text.fontSize.base,
+            // no common borderRadius in themeTools yet
+            borderRadius: '0px',
         },
         error: {
             color: colors.severity.error,
             backgroundColor: chroma(colors.severity.error)
                 .set('hsl.l', 0.93)
                 .hex(),
-            borderColor: colors.severity.error,
         },
         warning: {
             color: chroma(colors.severity.warning)
@@ -59,23 +60,18 @@ const composeNotificationTheme = (themeTools: ThemeTools): NotificationThemeType
             backgroundColor: chroma(colors.severity.warning)
                 .set('hsl.l', 0.93)
                 .hex(),
-            borderColor: chroma(colors.severity.warning)
-                .set('hsl.l', 0.4)
-                .hex(),
         },
         success: {
             color: colors.severity.success,
             backgroundColor: chroma(colors.severity.success)
                 .set('hsl.l', 0.93)
                 .hex(),
-            borderColor: colors.severity.success,
         },
         info: {
             color: colors.severity.info,
             backgroundColor: chroma(colors.severity.info)
                 .set('hsl.l', 0.93)
                 .hex(),
-            borderColor: colors.severity.info,
         },
     };
 };
