@@ -129,21 +129,6 @@ const StyledButton = styled(Base)<PropsType>`
                 ${!loading && !disabled ? active : idle}
             }
 
-            &::before {
-                content: '';
-                position: absolute;
-                display: block;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                z-index: -2;
-                transition: opacity 0.3s;
-                opacity: ${disabled ? 1 : 0};
-                box-shadow: ${theme.Button[variant].idle.boxShadow};
-                border-radius: ${theme.Button.common.borderRadius};
-            }
-
             &:disabled {
                 ${variant === 'plain' ? `border: ${theme.Button.disabled.plain.border};` : ''}
 
