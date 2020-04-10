@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import PreviewPane from '../../../components/PreviewPane';
-import { Text } from '@myonlinestore/bricks';
+import { PromotionBadge } from '@myonlinestore/bricks';
 
 const options = [
     {
@@ -8,8 +8,8 @@ const options = [
         label: 'Badge - Subscription New',
     },
     {
-        value: 'subscription-beta',
-        label: 'Badge - Subscription Beta',
+        value: 'subscription-grow',
+        label: 'Badge - Subscription Grow',
     },
     {
         value: 'subscription-pro',
@@ -24,19 +24,19 @@ const options = [
 const examples = [
     {
         value: 'subscription-new',
-        component: <Text variant="warning">NEW!</Text>,
+        component: <PromotionBadge variant="new">NEW!</PromotionBadge>,
     },
     {
-        value: 'subscription-beta',
-        component: <Text variant="info">BETA</Text>,
+        value: 'subscription-grow',
+        component: <PromotionBadge variant="grow">GROW</PromotionBadge>,
     },
     {
         value: 'subscription-pro',
-        component: <Text variant="success">PRO</Text>,
+        component: <PromotionBadge variant="pro">PRO</PromotionBadge>,
     },
     {
         value: 'subscription-premium',
-        component: <Text variant="info">PREMIUM</Text>,
+        component: <PromotionBadge variant="premium">PREMIUM</PromotionBadge>,
     },
 ];
 

@@ -6,7 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "0.15.0-0",
     "@myonlinestore/bricks": "file:../dist",
-    "@myonlinestore/bricks-assets": "^0.1.1",
+    "@myonlinestore/bricks-assets": "^0.1.2",
     "@types/styled-components": "^4.1.19",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-mdx": "1.1.0",
