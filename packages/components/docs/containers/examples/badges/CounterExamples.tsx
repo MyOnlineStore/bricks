@@ -1,18 +1,18 @@
 import React, { FC } from 'react';
 import PreviewPane from '../../../components/PreviewPane';
-import { Badge } from '@myonlinestore/bricks';
+import { Counter } from '@myonlinestore/bricks';
 
 const options = [
     {
         value: 'notification',
-        label: 'Badge - Notification badge',
+        label: 'Counter - Notification counter',
     },
 ];
 
 const examples = [
     {
         value: 'notification',
-        component: <Badge severity="error">1</Badge>,
+        component: <Counter severity="error">1</Counter>,
     },
 ];
 

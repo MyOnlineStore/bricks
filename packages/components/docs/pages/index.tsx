@@ -99,7 +99,7 @@ const Index = () => {
                         <Heading as="h1" hierarchy={1} style={{ color: colors.white }}>
                             Bricks
                         </Heading>
-                        <Heading as="h6" hierarchy={6} style={{ color: colors.white }}>
+                        <Heading as="h5" hierarchy={5} style={{ color: colors.white }}>
                             A design system by MyOnlineStore
                         </Heading>
                     </StyledRowTextContainer>

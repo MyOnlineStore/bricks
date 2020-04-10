@@ -36,7 +36,7 @@ const componentMap: { [key: string]: FC } = {
     ),
     h6: props => (
         <Box margin={[0, 0, 0, 0]}>
-            <Heading hierarchy={6}>{props.children}</Heading>
+            <Heading hierarchy={5}>{props.children}</Heading>
         </Box>
     ),
     hr: props => (
