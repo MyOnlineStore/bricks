@@ -405,26 +405,23 @@ const theme: ThemeType = {
         common: {
             fontFamily: bodyFont,
             fontSize: fontSize.base,
+            borderRadius: '3px',
         },
         error: {
             color: colors.red700,
             backgroundColor: colors.red100,
-            borderColor: colors.red600,
         },
         warning: {
             color: colors.yellow800,
             backgroundColor: colors.yellow100,
-            borderColor: colors.yellow700,
         },
         success: {
             color: colors.green800,
             backgroundColor: colors.green100,
-            borderColor: colors.green600,
         },
         info: {
             color: colors.blue700,
             backgroundColor: colors.blue100,
-            borderColor: colors.blue500,
         },
     },
     PromotionBadge: {
