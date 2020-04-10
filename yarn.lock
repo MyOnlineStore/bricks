@@ -1909,10 +1909,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@myonlinestore/bricks-assets@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@myonlinestore/bricks-assets/-/bricks-assets-0.1.2.tgz#6a4e514e05fd183852be443b36efc228623d011b"
-  integrity sha512-YOJW8ikg8EkqtgmQ2FY8mcX97kKJOk8q2fLpYVrRLbc1t+Etd9Amd/RxUYL1mfxsqxV1MfhAknyJvFChXDEpFw==
+"@myonlinestore/bricks-assets@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@myonlinestore/bricks-assets/-/bricks-assets-0.2.0.tgz#0a9825b951c9efc5ee8c0eb02e157e04849eb888"
+  integrity sha512-xFKUIw5NzWFPoZgMSOUPi/jidVzAgYEdBw8PKozfBrtGqc0ggEK8QrwMbtliyFkKYSJJHRorLOSCeR7A4dlzhg==
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
