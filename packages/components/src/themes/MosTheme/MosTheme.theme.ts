@@ -759,11 +759,11 @@ const theme: ThemeType = {
     TextualButton: {
         primary: {
             color: colors.green500,
-            fontWeight: 600,
+            fontWeight: 400,
         },
         secondary: {
             color: colors.grey800,
-            fontWeight: 600,
+            fontWeight: 400,
         },
     },
     Tile: {
