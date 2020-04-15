@@ -77,6 +77,7 @@ const StyledWrapper = styled.div`
             width: 16px;
             height: 16px;
             transition: none;
+            box-sizing: unset;
         }
 
         .input-range__slider:active, .input-range__slider:focus {
