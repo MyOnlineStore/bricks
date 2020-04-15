@@ -22,6 +22,12 @@ export type TextualButtonThemeType = {
 const StyledTextualButton = styled(Base)<PropsType>`
     color: ${({ theme, variant }) => theme.TextualButton[variant].color};
     font-weight: ${({ theme, variant }) => theme.TextualButton[variant].fontWeight};
+    background-color: transparent;
+
+    &:hover {
+        background-color: transparent;
+        color: ${({ theme, variant }) => theme.TextualButton[variant].color};
+    }
 `;
 
 const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: boolean }>`
