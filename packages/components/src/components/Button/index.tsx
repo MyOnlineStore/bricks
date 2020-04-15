@@ -142,6 +142,7 @@ const StyledButton = styled(Base)<PropsType>`
         if (variant === 'plain') {
             return `
                 padding: 5px ${compact ? '11px' : '23px'};
+                transform: translateX(0);
 
                 &:disabled {
                     color: ${theme.Button.disabled.plain.color};
