@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.0.0...@myonlinestore/bricks@3.0.1) (2020-04-16)
+
+
+### Bug Fixes
+
+* **Button:** Make sure plain button border is rendered in Chrome ([5197384](https://github.com/MyOnlineStore/bricks/commit/5197384baa38bc42f499454146a526c0eaf08a54))
+* **Checkbox:** replace intermediate state icon ([#536](https://github.com/MyOnlineStore/bricks/issues/536)) ([2651c0a](https://github.com/MyOnlineStore/bricks/commit/2651c0a826586d5646564371c907a21aa04f065e))
+* **Range, Slider:** prevent style overrides ([#540](https://github.com/MyOnlineStore/bricks/issues/540)) ([06cd534](https://github.com/MyOnlineStore/bricks/commit/06cd534ad5186c3c23e26003d538634113e83140))
+* **TextualButton:** Prevent hover styles being overridden, change fontweight ([#539](https://github.com/MyOnlineStore/bricks/issues/539)) ([229a072](https://github.com/MyOnlineStore/bricks/commit/229a0722e2d326f1a466c57ebc50569001af5277))
+* implement bricks 3 changes in design system site ([#538](https://github.com/MyOnlineStore/bricks/issues/538)) ([7a34539](https://github.com/MyOnlineStore/bricks/commit/7a34539eba2eb8a7bbcaa4b1c300d9c92ffffc34))
+
+
+
+
+
 # 3.0.0 (2020-04-10)
 
 
