@@ -49,12 +49,12 @@ type PropsType = {
 // prettier-ignore
 const StyledWrapper = styled(Box)`
     ${sliderStyles} padding: 0;
-    box-sizing: border-box;
 
     & {
         .input-range__track,
         .input-range__slider-container {
             ${({ focus }:PropsType): string => (!focus ? 'transition: none;' : '')}
+            box-sizing: unset;
         }
 
         .input-range__track {
@@ -76,6 +76,7 @@ const StyledWrapper = styled(Box)`
             width: 16px;
             height: 16px;
             transition: none;
+            box-sizing: unset;
         }
 
         .input-range__slider:active, .input-range__slider:focus {
