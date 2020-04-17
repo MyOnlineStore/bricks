@@ -63,6 +63,11 @@ const StyledButton = styled.button`
     &:focus {
         color: ${({ theme }): string => theme.Link.default.color};
         background-color: transparent;
+
+        &:hover {
+            color: ${({ theme }: ThemePropsType): string => theme.Link.hover.color};
+            background-color: transparent;
+        }
     }
 `;
 
