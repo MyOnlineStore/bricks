@@ -27,6 +27,11 @@ const LinkStyles = css`
         color: ${({ theme }: ThemePropsType): string => theme.Link.hover.color};
         background-color: transparent;
     }
+
+    &:focus {
+        color: ${({ theme }): string => theme.Link.hover.color};
+        background-color: transparent;
+    }
 `;
 
 const StyledLink = styled.a`
@@ -47,6 +52,11 @@ const StyledButton = styled.button`
 
     &:hover {
         color: ${({ theme }): string => theme.Link.hover.color};
+        background-color: transparent;
+    }
+
+    &:focus {
+        color: ${({ theme }): string => theme.Link.default.color};
         background-color: transparent;
     }
 `;
