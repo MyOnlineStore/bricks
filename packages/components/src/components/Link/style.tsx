@@ -29,7 +29,7 @@ const LinkStyles = css`
     }
 
     &:focus {
-        color: ${({ theme }): string => theme.Link.hover.color};
+        color: ${({ theme }): string => theme.Link.default.color};
         background-color: transparent;
     }
 `;
