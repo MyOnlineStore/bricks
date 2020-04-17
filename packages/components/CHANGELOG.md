@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.0.1...@myonlinestore/bricks@3.0.2) (2020-04-17)
+
+
+### Bug Fixes
+
+* **InlineNotification:** Align to flex-start instead of to center ([#543](https://github.com/MyOnlineStore/bricks/issues/543)) ([957bbc4](https://github.com/MyOnlineStore/bricks/commit/957bbc4cfa80bd841076cc407bdd209d40abcd92))
+* **Link, TextualButton:** Prevent unwanted focus overrides ([#544](https://github.com/MyOnlineStore/bricks/issues/544)) ([f0295f5](https://github.com/MyOnlineStore/bricks/commit/f0295f588c30b585a3ca30ccc67710591a18ff56))
+
+
+
+
+
 ## [3.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.0.0...@myonlinestore/bricks@3.0.1) (2020-04-16)
 
 
