@@ -28,6 +28,11 @@ const StyledTextualButton = styled(Base)<PropsType>`
         background-color: transparent;
         color: ${({ theme, variant }) => theme.TextualButton[variant].color};
     }
+
+    &:focus {
+        background-color: transparent;
+        color: ${({ theme, variant }) => theme.TextualButton[variant].color};
+    }
 `;
 
 const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: boolean }>`
