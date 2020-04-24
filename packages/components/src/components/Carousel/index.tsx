@@ -26,7 +26,7 @@ const Slide = styled.div<{ active: boolean; x: string }>`
 const SlideButton = styled(IconButton)<{ direction: 'prev' | 'next' }>`
     position: absolute;
     top: calc(50% - 21px);
-    ${({ direction }) => (direction === 'next' ? 'right: 12px' : 'left: 12px')}
+    ${({ direction }) => (direction === 'next' ? 'right: 12px;' : 'left: 12px;')}
     background: rgba(255,255,255, 0.6);
     border-radius: 50%;
     z-index: 3;
