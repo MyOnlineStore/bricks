@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Table from '.';
 import Text from '../Text';
 import IconButton from '../IconButton';
@@ -7,6 +7,7 @@ import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
 import { TrashIcon, GearIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
+import Toggle from '../Toggle';
 
 type RowType = {
     selected?: boolean;
@@ -206,4 +207,52 @@ storiesOf('Table', module)
                 );
             }}
         </Measure>
-    ));
+    ))
+    .add('Empty', () => {
+        const [isDraggable, setDraggable] = useState(false);
+        const [showRow, setRow] = useState(false);
+
+        return (
+            <>
+                <Toggle
+                    label="Draggable"
+                    value=""
+                    name="draggable-toggle"
+                    checked={isDraggable}
+                    onChange={({ checked }) => {
+                        setDraggable(checked);
+                    }}
+                />
+                <Toggle
+                    label="Show row"
+                    value=""
+                    name="row-toggle"
+                    checked={showRow}
+                    onChange={({ checked }) => {
+                        setRow(checked);
+                    }}
+                />
+                <br />
+                <Table<{ id: string; name: string; price: string }>
+                    onDragEnd={
+                        isDraggable
+                            ? () => {
+                                  alert('dragged');
+                              }
+                            : undefined
+                    }
+                    columns={{
+                        name: {
+                            order: 0,
+                            header: 'Name',
+                        },
+                        price: {
+                            order: 1,
+                            header: 'Price',
+                        },
+                    }}
+                    rows={showRow ? [{ id: '0', name: 'foo', price: '100' }] : []}
+                />
+            </>
+        );
+    });
