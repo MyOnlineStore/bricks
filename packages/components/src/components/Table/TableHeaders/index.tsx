@@ -171,7 +171,7 @@ class Headers extends Component<PropsType, StateType> {
         return (
             <thead>
                 <tr>
-                    {this.props.draggable && <StyledHeader headerAlign="start" />}
+                    {this.props.draggable && <StyledHeader width="18px" headerAlign="start" />}
                     {this.props.selectable && (
                         <StyledHeader headerAlign="start">
                             <Checkbox
