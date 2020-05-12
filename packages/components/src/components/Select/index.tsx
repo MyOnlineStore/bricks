@@ -36,6 +36,7 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
 };
 
 const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<GenericOptionType>): ReactElement => {
+    const initialRender = useRef(true);
     const inputRef = useRef<HTMLInputElement | null>(null);
     const inputWrapperRef = useRef<HTMLDivElement | null>(null);
     const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -137,7 +138,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     useEffect(() => {
         if (isOpen) {
             inputRef.current?.focus();
-        } else {
+        } else if (!initialRender.current) {
             wrapperRef.current?.focus();
         }
     }, [isOpen]);
@@ -156,6 +157,10 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         },
         { value: '', label: '' },
     );
+
+    useEffect(() => {
+        initialRender.current = false;
+    }, []);
 
     return (
         <StyledWrapper
