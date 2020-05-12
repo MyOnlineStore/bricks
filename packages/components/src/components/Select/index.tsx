@@ -1,4 +1,15 @@
-import React, { ChangeEvent, KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement } from 'react';
+import React, {
+    Children,
+    FC,
+    ChangeEvent,
+    KeyboardEvent,
+    useRef,
+    FormEvent,
+    useState,
+    useEffect,
+    ReactElement,
+    RefObject,
+} from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
@@ -33,6 +44,41 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     onChange(value: string): void;
     renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
     renderSelected?(option: GenericOptionType): JSX.Element;
+};
+
+const SelectModal: FC<{
+    isOpen: boolean;
+    'data-testid'?: string;
+    emptyText: string;
+    inputHeight: number;
+    anchorRef: RefObject<HTMLDivElement | null>;
+    modalRef: RefObject<HTMLDivElement>;
+}> = props => {
+    return createPortal(
+        <StyledWindow
+            id="select-window"
+            ref={props.modalRef}
+            open={props.isOpen}
+            rect={props.anchorRef.current?.getBoundingClientRect()}
+            inputHeight={props.inputHeight}
+            role="listbox"
+            data-testid={
+                props['data-testid'] ? `${props['data-testid']}-window${props.isOpen ? '-open' : '-closed'}` : undefined
+            }
+        >
+            <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
+                <div style={{ overflow: 'hidden', display: props.isOpen ? 'block' : 'none' }}>
+                    {(Children.count(props.children) === 0 && (
+                        <Box padding={trbl(12, 18)}>
+                            <Text>{props.emptyText}</Text>
+                        </Box>
+                    )) ||
+                        props.children}
+                </div>
+            </ScrollBox>
+        </StyledWindow>,
+        document.body,
+    );
 };
 
 const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<GenericOptionType>): ReactElement => {
@@ -251,61 +297,40 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                     </StyledCaret>
                 </Box>
             </StyledInput>
-            {createPortal(
-                <StyledWindow
-                    id={'select-window'}
-                    ref={windowRef}
-                    open={isOpen}
-                    rect={wrapperRef.current !== null ? wrapperRef.current.getBoundingClientRect() : undefined}
-                    inputHeight={inputHeight}
-                    role="listbox"
-                    data-testid={
-                        props['data-testid']
-                            ? `${props['data-testid']}-window${isOpen ? '-open' : '-closed'}`
-                            : undefined
-                    }
-                >
-                    <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                        <div style={{ overflow: 'hidden', display: isOpen ? 'block' : 'none' }}>
-                            {(filterOptions().length === 0 && (
-                                <Box padding={trbl(12, 18)}>
-                                    <Text>{props.emptyText}</Text>
-                                </Box>
-                            )) ||
-                                filterOptions().map((option, index) => {
-                                    const optionState = { isSelected: option.value === props.value };
-                                    const isTargeted = index === optionPointer;
+            <SelectModal
+                isOpen={isOpen}
+                emptyText={props.emptyText}
+                anchorRef={wrapperRef}
+                modalRef={windowRef}
+                inputHeight={inputHeight}
+                data-testid={props['data-testid']}
+            >
+                {filterOptions().map((option, index) => {
+                    const optionState = { isSelected: option.value === props.value };
+                    const isTargeted = index === optionPointer;
 
-                                    return (
-                                        <Option
-                                            label={option.label}
-                                            isSelected={optionState.isSelected}
-                                            isTargeted={isTargeted}
-                                            key={`${option.value}-${option.label}`}
-                                            onMouseEnter={(): void => cycleTo(index)}
-                                            onClick={(): void => {
-                                                handleChange(option.value);
-                                            }}
-                                            data-testid={
-                                                props['data-testid']
-                                                    ? `${props['data-testid']}-option-${option.value}${
-                                                          isTargeted ? '-targeted' : ''
-                                                      }`
-                                                    : undefined
-                                            }
-                                            content={
-                                                props.renderOption !== undefined
-                                                    ? props.renderOption(option, optionState)
-                                                    : undefined
-                                            }
-                                        />
-                                    );
-                                })}
-                        </div>
-                    </ScrollBox>
-                </StyledWindow>,
-                document.body,
-            )}
+                    return (
+                        <Option
+                            label={option.label}
+                            isSelected={optionState.isSelected}
+                            isTargeted={isTargeted}
+                            key={`${option.value}-${option.label}`}
+                            onMouseEnter={() => cycleTo(index)}
+                            onClick={() => {
+                                handleChange(option.value);
+                            }}
+                            data-testid={
+                                props['data-testid']
+                                    ? `${props['data-testid']}-option-${option.value}${isTargeted ? '-targeted' : ''}`
+                                    : undefined
+                            }
+                            content={
+                                props.renderOption !== undefined ? props.renderOption(option, optionState) : undefined
+                            }
+                        />
+                    );
+                })}
+            </SelectModal>
         </StyledWrapper>
     );
 };
