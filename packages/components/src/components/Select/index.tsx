@@ -51,29 +51,29 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         return props.options.filter(option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
     };
 
-    const handleChange = (value: string): void => {
+    const handleChange = (value: string) => {
         props.onChange(value);
         setOpen(false);
         setPointer(-1);
     };
 
-    const handleChangeEvent = (event: FormEvent<HTMLDivElement>): void => {
+    const handleChangeEvent = (event: FormEvent<HTMLDivElement>) => {
         // tslint:disable-next-line
         handleChange((event as any).target.value);
     };
 
-    const handleInput = (input: string): void => {
+    const handleInput = (input: string) => {
         setInput(input);
         setPointer(-1);
     };
 
-    const handleFocus = (): void => {
+    const handleFocus = () => {
         if (!props.disabled) {
             setFocus(true);
         }
     };
 
-    const handleBlur = (): void => {
+    const handleBlur = () => {
         setFocus(false);
     };
 
