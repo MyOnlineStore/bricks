@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.3.0...@myonlinestore/bricks-assets@0.4.0) (2020-05-12)
+
+
+### Features
+
+* Adds FormatShapesIcon and ImportantDevicesIcon ([#549](https://github.com/MyOnlineStore/bricks/issues/549)) ([417f5d8](https://github.com/MyOnlineStore/bricks/commit/417f5d82c9784d8a0da90e70f4054a9fc5516cd4))
+
+
+
+
+
 # [0.3.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.2.0...@myonlinestore/bricks-assets@0.3.0) (2020-04-10)
 
 
