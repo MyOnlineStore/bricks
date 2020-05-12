@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, Component, RefObject, createRef, FormEvent } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement } from 'react';
 import { createPortal } from 'react-dom';
 import Box from '../Box';
 import ScrollBox from '../ScrollBox';
@@ -22,14 +22,6 @@ type OptionStateType = {
     isSelected: boolean;
 };
 
-type StateType = {
-    input: string;
-    hasFocus: boolean;
-    isOpen: boolean;
-    optionPointer: number;
-    inputHeight: number | undefined;
-};
-
 type PropsType<GenericOptionType extends OptionBaseType> = {
     theme: ThemeType;
     placeholder?: string;
@@ -43,312 +35,275 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     renderSelected?(option: GenericOptionType): JSX.Element;
 };
 
-class Select<GenericOptionType extends OptionBaseType> extends Component<PropsType<GenericOptionType>, StateType> {
-    private readonly inputRef: RefObject<HTMLInputElement>;
-    private inputWrapperRef: RefObject<HTMLDivElement>;
-    private wrapperRef: RefObject<HTMLDivElement>;
-    private windowRef: RefObject<HTMLDivElement>;
+const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<GenericOptionType>): ReactElement => {
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    const inputWrapperRef = useRef<HTMLDivElement | null>(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
+    const windowRef = useRef<HTMLDivElement | null>(null);
+    const [hasFocus, setFocus] = useState(false);
+    const [isOpen, setOpen] = useState(false);
+    const [optionPointer, setPointer] = useState(-1);
+    const [input, setInput] = useState(props.value);
+    const inputHeight = inputWrapperRef.current?.getBoundingClientRect().height || 0;
 
-    public constructor(props: PropsType<GenericOptionType>) {
-        super(props);
-        this.inputRef = createRef();
-        this.inputWrapperRef = createRef();
-        this.wrapperRef = createRef();
-        this.windowRef = createRef();
-
-        this.state = {
-            hasFocus: false,
-            isOpen: false,
-            input: props.value,
-            optionPointer: -1,
-            inputHeight: undefined,
-        };
-    }
-
-    private cycleUp = (): void => {
-        const optionPointer =
-            this.state.optionPointer < this.filterOptions().length - 1 ? this.state.optionPointer + 1 : 0;
-
-        this.setState({ optionPointer });
+    const filterOptions = (): ReadonlyArray<GenericOptionType> => {
+        return props.options.filter(option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
     };
 
-    private cycleTo = (index: number): void => {
-        this.setState({ optionPointer: index });
+    const handleChange = (value: string): void => {
+        props.onChange(value);
+        setOpen(false);
+        setPointer(-1);
     };
 
-    private cycleDown = (): void => {
-        const optionPointer =
-            this.state.optionPointer > 0 ? this.state.optionPointer - 1 : this.filterOptions().length - 1;
-
-        this.setState({ optionPointer });
-    };
-
-    private close = (): void => {
-        this.setState({ isOpen: false });
-    };
-
-    private open = (): void => {
-        if (!this.props.disabled) {
-            this.handleInput('');
-            this.setState({ isOpen: true });
-        }
-    };
-
-    private filterOptions = (): ReadonlyArray<GenericOptionType> => {
-        return this.props.options.filter(
-            option => option.label.toLowerCase().indexOf(this.state.input.toLowerCase()) !== -1,
-        );
-    };
-
-    private handleClickOutside = (event: MouseEvent): void => {
-        if (
-            this.wrapperRef.current !== null &&
-            this.windowRef.current !== null &&
-            !this.wrapperRef.current.contains(event.target as Node) &&
-            !this.windowRef.current.contains(event.target as Node)
-        ) {
-            this.close();
-        }
-    };
-
-    private handleChange = (value: string): void => {
-        this.props.onChange(value);
-        this.setState({ isOpen: false, optionPointer: -1 });
-    };
-
-    private handleChangeEvent = (event: FormEvent<HTMLDivElement>): void => {
+    const handleChangeEvent = (event: FormEvent<HTMLDivElement>): void => {
         // tslint:disable-next-line
-        this.handleChange((event as any).target.value);
+        handleChange((event as any).target.value);
     };
 
-    private handleInput = (input: string): void => {
-        this.setState({ input, optionPointer: -1 });
+    const handleInput = (input: string): void => {
+        setInput(input);
+        setPointer(-1);
     };
 
-    private handleFocus = (): void => {
-        if (!this.props.disabled) {
-            this.setState({ hasFocus: true });
+    const handleFocus = (): void => {
+        if (!props.disabled) {
+            setFocus(true);
         }
     };
 
-    private handleBlur = (): void => {
-        this.setState({ hasFocus: false });
+    const handleBlur = (): void => {
+        setFocus(false);
     };
 
-    private handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
-        if (!this.state.isOpen && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
-            this.open();
+    const cycleUp = () => {
+        const newPointer = optionPointer < filterOptions().length - 1 ? optionPointer + 1 : 0;
+
+        setPointer(newPointer);
+    };
+
+    const cycleTo = (index: number) => {
+        setPointer(index);
+    };
+
+    const cycleDown = () => {
+        const newPointer = optionPointer > 0 ? optionPointer - 1 : filterOptions().length - 1;
+
+        setPointer(newPointer);
+    };
+
+    const close = (): void => {
+        setOpen(false);
+    };
+
+    const open = (): void => {
+        if (!props.disabled) {
+            handleInput('');
+            setOpen(true);
+        }
+    };
+
+    const handleClickOutside = (event: MouseEvent) => {
+        if (!wrapperRef.current?.contains(event.target as Node) && !windowRef.current?.contains(event.target as Node)) {
+            close();
+        }
+    };
+
+    const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>): void => {
+        if (!isOpen && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+            open();
         }
 
-        if (this.state.isOpen) {
-            if (event.key === 'Escape') this.close();
-            if (event.key === 'ArrowUp') this.cycleDown();
-            if (event.key === 'ArrowDown') this.cycleUp();
+        if (isOpen) {
+            if (event.key === 'Escape') close();
+            if (event.key === 'ArrowUp') cycleDown();
+            if (event.key === 'ArrowDown') cycleUp();
             if (event.key === 'Tab') event.preventDefault();
         }
 
-        if (this.state.isOpen && (event.key === 'Enter' || event.key === ' ') && this.state.optionPointer !== -1) {
-            this.handleChange(this.filterOptions()[this.state.optionPointer].value);
+        if (isOpen && (event.key === 'Enter' || event.key === ' ') && optionPointer !== -1) {
+            handleChange(filterOptions()[optionPointer].value);
         }
     };
 
-    public componentDidUpdate(_: PropsType<GenericOptionType>, prevState: StateType): void {
-        if (prevState.isOpen && this.props.disabled) {
-            this.setState({ isOpen: false });
+    /** If the select becomes disabled while being open, close the select */
+    useEffect(() => {
+        if (isOpen && props.disabled) {
+            setOpen(false);
         }
+    }, [isOpen, props.disabled]);
 
-        if (this.inputRef.current !== null && !prevState.isOpen && this.state.isOpen) {
-            this.inputRef.current.focus();
+    /** Focus the input field when the field gets opened */
+    useEffect(() => {
+        if (isOpen) {
+            inputRef.current?.focus();
+        } else {
+            wrapperRef.current?.focus();
         }
+    }, [isOpen]);
 
-        const inputHeight =
-            this.inputWrapperRef.current !== null ? this.inputWrapperRef.current.getBoundingClientRect().height : 0;
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
 
-        if (inputHeight !== prevState.inputHeight) {
-            this.setState({ inputHeight });
-        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
-        if (prevState.isOpen && !this.state.isOpen && this.wrapperRef.current !== null) {
-            this.wrapperRef.current.focus();
-        }
-    }
+    const selectedOption = props.options.reduce(
+        (found, option) => {
+            return option.value === props.value ? option : found;
+        },
+        { value: '', label: '' },
+    );
 
-    public componentDidMount(): void {
-        document.addEventListener('mousedown', this.handleClickOutside);
-    }
-
-    public componentWillUnmount(): void {
-        document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-
-    public render(): JSX.Element {
-        const selectedOption = this.props.options.reduce(
-            (found, option) => {
-                return option.value === this.props.value ? option : found;
-            },
-            { value: '', label: '' },
-        );
-
-        return (
-            <StyledWrapper
-                ref={this.wrapperRef}
-                disabled={this.props.disabled}
-                open={this.state.isOpen}
-                onKeyDownCapture={this.handleKeyPress}
-                onChange={this.handleChangeEvent}
-                onFocus={this.handleFocus}
-                onBlur={this.handleBlur}
-                tabIndex={this.props.disabled ? -1 : 0}
-                role="combobox"
-                aria-label={'select'}
-                aria-expanded={this.state.isOpen}
-                data-testid={this.props['data-testid']}
+    return (
+        <StyledWrapper
+            ref={wrapperRef}
+            disabled={props.disabled}
+            open={isOpen}
+            onKeyDownCapture={handleKeyPress}
+            onChange={handleChangeEvent}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            tabIndex={props.disabled ? -1 : 0}
+            role="combobox"
+            aria-label={'select'}
+            aria-expanded={isOpen}
+            data-testid={props['data-testid']}
+        >
+            <StyledInput
+                open={isOpen}
+                focus={hasFocus}
+                disabled={props.disabled}
+                ref={inputWrapperRef}
+                role="searchbox"
+                aria-autocomplete="list"
+                aria-controls={isOpen ? 'select-window' : undefined}
+                data-testid={props['data-testid'] ? `${props['data-testid']}-input` : undefined}
+                onClick={!isOpen ? open : undefined}
             >
-                <StyledInput
-                    open={this.state.isOpen}
-                    focus={this.state.hasFocus}
-                    disabled={this.props.disabled}
-                    ref={this.inputWrapperRef}
-                    role="searchbox"
-                    aria-autocomplete="list"
-                    aria-controls={this.state.isOpen ? 'select-window' : undefined}
-                    data-testid={this.props['data-testid'] ? `${this.props['data-testid']}-input` : undefined}
-                    onClick={!this.state.isOpen ? this.open : undefined}
-                >
-                    <Box alignItems="stretch">
-                        {(this.state.isOpen && !this.props.disabled && (
+                <Box alignItems="stretch">
+                    {(isOpen && !props.disabled && (
+                        // 1px less padding to compensate for the border
+                        <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
+                            <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
+                                <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
+                            </Box>
+                            <input
+                                ref={inputRef}
+                                type="text"
+                                placeholder={props.placeholder}
+                                value={input}
+                                data-testid={props['data-testid'] ? `${props['data-testid']}-input-field` : undefined}
+                                onChange={(event: ChangeEvent<HTMLInputElement>): void => {
+                                    event.stopPropagation();
+                                    handleInput(event.target.value);
+                                }}
+                            />
+                        </Box>
+                    )) ||
+                        (props.renderSelected !== undefined && selectedOption.value !== '' && (
+                            // 1px less padding to compensate for the border
+                            <Box padding={[5 as OffsetType, 11 as OffsetType]} alignItems="center" grow={1}>
+                                {props.renderSelected(selectedOption as GenericOptionType)}
+                            </Box>
+                        )) || (
                             // 1px less padding to compensate for the border
                             <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
-                                <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                    <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
-                                </Box>
-                                <input
-                                    ref={this.inputRef}
-                                    type="text"
-                                    placeholder={this.props.placeholder}
-                                    value={this.state.input}
-                                    data-testid={
-                                        this.props['data-testid']
-                                            ? `${this.props['data-testid']}-input-field`
-                                            : undefined
-                                    }
-                                    onChange={(event: ChangeEvent<HTMLInputElement>): void => {
-                                        event.stopPropagation();
-                                        this.handleInput(event.target.value);
-                                    }}
-                                />
+                                {(props.value !== '' && (
+                                    <StyledSelection
+                                        data-testid={
+                                            props['data-testid'] ? `${props['data-testid']}-input-selection` : undefined
+                                        }
+                                        disabled={props.disabled}
+                                    >
+                                        {selectedOption.label}
+                                    </StyledSelection>
+                                )) || (
+                                    <StyledPlaceholder
+                                        disabled={props.disabled}
+                                        data-testid={
+                                            props['data-testid'] ? `${props['data-testid']}-placeholder` : undefined
+                                        }
+                                    >
+                                        {props.placeholder}
+                                    </StyledPlaceholder>
+                                )}
                             </Box>
-                        )) ||
-                            (this.props.renderSelected !== undefined && selectedOption.value !== '' && (
-                                // 1px less padding to compensate for the border
-                                <Box padding={[5 as OffsetType, 11 as OffsetType]} alignItems="center" grow={1}>
-                                    {this.props.renderSelected(selectedOption as GenericOptionType)}
+                        )}
+                    <StyledCaret>
+                        <Icon
+                            icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
+                            size="medium"
+                            color={
+                                props.disabled
+                                    ? props.theme.Select.select.disabled.caretColor
+                                    : props.theme.Select.select.idle.caretColor
+                            }
+                            title={isOpen ? 'close' : 'open'}
+                        />
+                    </StyledCaret>
+                </Box>
+            </StyledInput>
+            {createPortal(
+                <StyledWindow
+                    id={'select-window'}
+                    ref={windowRef}
+                    open={isOpen}
+                    rect={wrapperRef.current !== null ? wrapperRef.current.getBoundingClientRect() : undefined}
+                    inputHeight={inputHeight}
+                    role="listbox"
+                    data-testid={
+                        props['data-testid']
+                            ? `${props['data-testid']}-window${isOpen ? '-open' : '-closed'}`
+                            : undefined
+                    }
+                >
+                    <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
+                        <div style={{ overflow: 'hidden', display: isOpen ? 'block' : 'none' }}>
+                            {(filterOptions().length === 0 && (
+                                <Box padding={trbl(12, 18)}>
+                                    <Text>{props.emptyText}</Text>
                                 </Box>
-                            )) || (
-                                // 1px less padding to compensate for the border
-                                <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
-                                    {(this.props.value !== '' && (
-                                        <StyledSelection
-                                            data-testid={
-                                                this.props['data-testid']
-                                                    ? `${this.props['data-testid']}-input-selection`
-                                                    : undefined
-                                            }
-                                            disabled={this.props.disabled}
-                                        >
-                                            {selectedOption.label}
-                                        </StyledSelection>
-                                    )) || (
-                                        <StyledPlaceholder
-                                            disabled={this.props.disabled}
-                                            data-testid={
-                                                this.props['data-testid']
-                                                    ? `${this.props['data-testid']}-placeholder`
-                                                    : undefined
-                                            }
-                                        >
-                                            {this.props.placeholder}
-                                        </StyledPlaceholder>
-                                    )}
-                                </Box>
-                            )}
-                        <StyledCaret>
-                            <Icon
-                                icon={this.state.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
-                                size="medium"
-                                color={
-                                    this.props.disabled
-                                        ? this.props.theme.Select.select.disabled.caretColor
-                                        : this.props.theme.Select.select.idle.caretColor
-                                }
-                                title={this.state.isOpen ? 'close' : 'open'}
-                            />
-                        </StyledCaret>
-                    </Box>
-                </StyledInput>
-                {createPortal(
-                    <StyledWindow
-                        id={'select-window'}
-                        ref={this.windowRef}
-                        open={this.state.isOpen}
-                        rect={
-                            this.wrapperRef.current !== null
-                                ? this.wrapperRef.current.getBoundingClientRect()
-                                : undefined
-                        }
-                        inputHeight={this.state.inputHeight}
-                        role="listbox"
-                        data-testid={
-                            this.props['data-testid']
-                                ? `${this.props['data-testid']}-window${this.state.isOpen ? '-open' : '-closed'}`
-                                : undefined
-                        }
-                    >
-                        <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                            <div style={{ overflow: 'hidden', display: this.state.isOpen ? 'block' : 'none' }}>
-                                {(this.filterOptions().length === 0 && (
-                                    <Box padding={trbl(12, 18)}>
-                                        <Text>{this.props.emptyText}</Text>
-                                    </Box>
-                                )) ||
-                                    this.filterOptions().map((option, index) => {
-                                        const optionState = { isSelected: option.value === this.props.value };
-                                        const isTargeted = index === this.state.optionPointer;
+                            )) ||
+                                filterOptions().map((option, index) => {
+                                    const optionState = { isSelected: option.value === props.value };
+                                    const isTargeted = index === optionPointer;
 
-                                        return (
-                                            <Option
-                                                label={option.label}
-                                                isSelected={optionState.isSelected}
-                                                isTargeted={isTargeted}
-                                                key={`${option.value}-${option.label}`}
-                                                onMouseEnter={(): void => this.cycleTo(index)}
-                                                onClick={(): void => {
-                                                    this.handleChange(option.value);
-                                                }}
-                                                data-testid={
-                                                    this.props['data-testid']
-                                                        ? `${this.props['data-testid']}-option-${option.value}${
-                                                              isTargeted ? '-targeted' : ''
-                                                          }`
-                                                        : undefined
-                                                }
-                                                content={
-                                                    this.props.renderOption !== undefined
-                                                        ? this.props.renderOption(option, optionState)
-                                                        : undefined
-                                                }
-                                            />
-                                        );
-                                    })}
-                            </div>
-                        </ScrollBox>
-                    </StyledWindow>,
-                    document.body,
-                )}
-            </StyledWrapper>
-        );
-    }
-}
+                                    return (
+                                        <Option
+                                            label={option.label}
+                                            isSelected={optionState.isSelected}
+                                            isTargeted={isTargeted}
+                                            key={`${option.value}-${option.label}`}
+                                            onMouseEnter={(): void => cycleTo(index)}
+                                            onClick={(): void => {
+                                                handleChange(option.value);
+                                            }}
+                                            data-testid={
+                                                props['data-testid']
+                                                    ? `${props['data-testid']}-option-${option.value}${
+                                                          isTargeted ? '-targeted' : ''
+                                                      }`
+                                                    : undefined
+                                            }
+                                            content={
+                                                props.renderOption !== undefined
+                                                    ? props.renderOption(option, optionState)
+                                                    : undefined
+                                            }
+                                        />
+                                    );
+                                })}
+                        </div>
+                    </ScrollBox>
+                </StyledWindow>,
+                document.body,
+            )}
+        </StyledWrapper>
+    );
+};
 
 export default withTheme(Select);
-export { PropsType, StateType, OptionBaseType, OptionStateType };
+export { PropsType, OptionBaseType, OptionStateType };
