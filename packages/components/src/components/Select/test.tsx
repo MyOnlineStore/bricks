@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import Box from '../Box';
 import Option from './Option';
 import MosTheme, { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
