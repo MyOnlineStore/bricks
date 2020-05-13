@@ -1,10 +1,8 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import { StyledInput, StyledWindow } from './style';
 import Box from '../Box';
 import Option from './Option';
-import Text from '../Text';
 import MosTheme, { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 import { mount } from 'enzyme';
@@ -388,19 +386,15 @@ describe('Select', () => {
         const emptyText = 'mock empty text';
 
         const component = mountWithTheme(
-            <Select onChange={(): void => undefined} value="" emptyText={emptyText} options={[]} />,
+            <Select data-testid="foo" onChange={(): void => undefined} value="" emptyText={emptyText} options={[]} />,
         );
 
-        component
-            .find(StyledInput)
-            .find(Box)
-            .at(1)
-            .simulate('click');
+        component.simulate('click');
 
         expect(
             component
-                .find(StyledWindow)
-                .find(Text)
+                .find('[data-testid="foo-window-empty"]')
+                .hostNodes()
                 .text(),
         ).toEqual(emptyText);
     });
