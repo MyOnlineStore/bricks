@@ -1,5 +1,5 @@
-import React, { KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement } from 'react';
-import Option from './Option';
+import React, { KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement, createContext } from 'react';
+import SelectOption from './SelectOption';
 import { StyledWrapper } from './style';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
@@ -28,6 +28,25 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     renderSelected?(option: GenericOptionType): JSX.Element;
 };
 
+const PROVIDER_WARNING = 'SelectContext was not yet intialized';
+
+export const SelectContext = createContext({
+    value: '',
+    filter: '',
+    isOpen: false,
+    isDisabled: false,
+    hasFocus: false,
+    setValue(value: string) {
+        console.warn(`${PROVIDER_WARNING}, could not set the value to "${value}"`);
+    },
+    setOpen(open: boolean) {
+        console.warn(`${PROVIDER_WARNING}, could not ${open ? 'open' : 'close'} the Select`);
+    },
+    setFilter(filter: string) {
+        console.warn(`${PROVIDER_WARNING}, could not apply filter: "${filter}"`);
+    },
+});
+
 const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<GenericOptionType>): ReactElement => {
     const initialRender = useRef(true);
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -37,12 +56,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     const [hasFocus, setFocus] = useState(false);
     const [isOpen, setOpen] = useState(false);
     const [optionPointer, setPointer] = useState(-1);
-    const [input, setInput] = useState(props.value);
+    const [filter, setFilter] = useState(props.value);
     const inputHeight = inputWrapperRef.current?.getBoundingClientRect().height || 0;
-
-    const filterOptions = (): ReadonlyArray<GenericOptionType> => {
-        return props.options.filter(option => option.label.toLowerCase().indexOf(input.toLowerCase()) !== -1);
-    };
 
     const handleChange = (value: string) => {
         props.onChange(value);
@@ -55,8 +70,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         handleChange((event as any).target.value);
     };
 
-    const handleInput = (input: string) => {
-        setInput(input);
+    const handleFilter = (filter: string) => {
+        setFilter(filter);
         setPointer(-1);
     };
 
@@ -71,7 +86,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     };
 
     const cycleUp = () => {
-        const newPointer = optionPointer < filterOptions().length - 1 ? optionPointer + 1 : 0;
+        // @todo: replace index based pointers
+        const newPointer = optionPointer < props.options.length - 1 ? optionPointer + 1 : 0;
 
         setPointer(newPointer);
     };
@@ -81,7 +97,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     };
 
     const cycleDown = () => {
-        const newPointer = optionPointer > 0 ? optionPointer - 1 : filterOptions().length - 1;
+        // @todo: replace index based pointers
+        const newPointer = optionPointer > 0 ? optionPointer - 1 : props.options.length - 1;
 
         setPointer(newPointer);
     };
@@ -92,7 +109,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
 
     const open = (): void => {
         if (!props.disabled) {
-            handleInput('');
+            handleFilter('');
             setOpen(true);
         }
     };
@@ -116,7 +133,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         }
 
         if (isOpen && (event.key === 'Enter' || event.key === ' ') && optionPointer !== -1) {
-            handleChange(filterOptions()[optionPointer].value);
+            // @todo: replace index based pointers
+            handleChange(props.options[optionPointer].value);
         }
     };
 
@@ -157,73 +175,74 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     }, []);
 
     return (
-        <StyledWrapper
-            ref={wrapperRef}
-            disabled={props.disabled}
-            open={isOpen}
-            onKeyDownCapture={handleKeyPress}
-            onChange={handleChangeEvent}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            tabIndex={props.disabled ? -1 : 0}
-            role="combobox"
-            aria-label={'select'}
-            aria-expanded={isOpen}
-            data-testid={props['data-testid']}
+        <SelectContext.Provider
+            value={{
+                value: props.value,
+                filter,
+                isOpen,
+                isDisabled: props.disabled || false,
+                hasFocus,
+                setOpen,
+                setFilter: handleFilter,
+                setValue: handleChange,
+            }}
         >
-            <SelectInput
-                selected={props.renderSelected?.(selectedOption)}
-                disabled={props.disabled || false}
-                onChange={value => {
-                    setInput(value);
-                }}
-                onOpen={() => {
-                    setOpen(true);
-                }}
-                hasFocus={hasFocus}
-                isOpen={isOpen}
-                input={input}
-                inputRef={inputRef}
-                inputWrapperRef={inputWrapperRef}
-                placeholder={props.placeholder || ''}
-                selectedOption={selectedOption}
-                data-testid={props['data-testid']}
-            />
-            <SelectModal
-                isOpen={isOpen}
-                emptyText={props.emptyText}
-                anchorRef={wrapperRef}
-                modalRef={windowRef}
-                inputHeight={inputHeight}
+            <StyledWrapper
+                ref={wrapperRef}
+                disabled={props.disabled}
+                open={isOpen}
+                onKeyDownCapture={handleKeyPress}
+                onChange={handleChangeEvent}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                tabIndex={props.disabled ? -1 : 0}
+                role="combobox"
+                aria-label={'select'}
+                aria-expanded={isOpen}
                 data-testid={props['data-testid']}
             >
-                {filterOptions().map((option, index) => {
-                    const optionState = { isSelected: option.value === props.value };
-                    const isTargeted = index === optionPointer;
+                <SelectInput
+                    selected={props.renderSelected?.(selectedOption)}
+                    inputRef={inputRef}
+                    inputWrapperRef={inputWrapperRef}
+                    placeholder={props.placeholder || ''}
+                    selectedOption={selectedOption}
+                    data-testid={props['data-testid']}
+                />
+                <SelectModal
+                    isOpen={isOpen}
+                    emptyText={props.emptyText}
+                    anchorRef={wrapperRef}
+                    modalRef={windowRef}
+                    inputHeight={inputHeight}
+                    data-testid={props['data-testid']}
+                >
+                    {props.options.map((option, index) => {
+                        const optionState = { isSelected: option.value === props.value };
+                        const isTargeted = index === optionPointer;
 
-                    return (
-                        <Option
-                            label={option.label}
-                            isSelected={optionState.isSelected}
-                            isTargeted={isTargeted}
-                            key={`${option.value}-${option.label}`}
-                            onMouseEnter={() => cycleTo(index)}
-                            onClick={() => {
-                                handleChange(option.value);
-                            }}
-                            data-testid={
-                                props['data-testid']
-                                    ? `${props['data-testid']}-option-${option.value}${isTargeted ? '-targeted' : ''}`
-                                    : undefined
-                            }
-                            content={
-                                props.renderOption !== undefined ? props.renderOption(option, optionState) : undefined
-                            }
-                        />
-                    );
-                })}
-            </SelectModal>
-        </StyledWrapper>
+                        return (
+                            <SelectOption
+                                label={option.label}
+                                value={option.value}
+                                isTargeted={isTargeted}
+                                key={`${option.value}-${option.label}`}
+                                onMouseEnter={() => cycleTo(index)}
+                                data-testid={
+                                    props['data-testid']
+                                        ? `${props['data-testid']}-option-${option.value}${
+                                              isTargeted ? '-targeted' : ''
+                                          }`
+                                        : undefined
+                                }
+                            >
+                                {props.renderOption?.(option, optionState)}
+                            </SelectOption>
+                        );
+                    })}
+                </SelectModal>
+            </StyledWrapper>
+        </SelectContext.Provider>
     );
 };
 

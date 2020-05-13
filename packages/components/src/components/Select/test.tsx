@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import Option from './Option';
+import SelectOption from './SelectOption';
 import MosTheme, { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 import { mount } from 'enzyme';
@@ -128,7 +128,7 @@ describe('Select', () => {
 
         expect(component.find('input').length).toBe(1);
         expect(component.find('[data-testid="select-input-field"]').hostNodes()).toHaveLength(1);
-        expect(component.find(Option).length).toBe(options.length);
+        expect(component.find(SelectOption).length).toBe(options.length);
     });
 
     it('should filter options on input', () => {
@@ -160,7 +160,7 @@ describe('Select', () => {
             },
         });
 
-        expect(component.find(Option).length).toBe(1);
+        expect(component.find(SelectOption).length).toBe(1);
     });
 
     it('should tear down event listeners on unmount', () => {

@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, ReactNode, RefObject } from 'react';
+import React, { FC, ChangeEvent, ReactNode, RefObject, useContext } from 'react';
 import Box from '../Box';
 import { StyledPlaceholder, StyledSelection, StyledCaret } from './style';
 import Icon from '../Icon';
@@ -7,7 +7,7 @@ import ThemeType from '../../types/ThemeType';
 import { SearchIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import colors from '../../themes/MosTheme/colors';
 import { OffsetType } from '../../types/OffsetType';
-import { OptionBaseType } from '.';
+import { SelectContext, OptionBaseType } from '.';
 
 type InputPropsType = {
     open: boolean;
@@ -67,10 +67,6 @@ const SelectInputContainer = styled.div<InputPropsType>`
 `;
 
 type PropsType = {
-    isOpen: boolean;
-    hasFocus: boolean;
-    disabled: boolean;
-    input: string;
     inputWrapperRef: RefObject<HTMLDivElement>;
     inputRef: RefObject<HTMLInputElement>;
     'data-testid'?: string;
@@ -78,25 +74,29 @@ type PropsType = {
     selected?: ReactNode;
     theme: ThemeType;
     selectedOption: OptionBaseType;
-    onChange(value: string): void;
-    onOpen(): void;
 };
 
 const SelectInput: FC<PropsType> = props => {
+    const { filter, setFilter, isOpen, setOpen, isDisabled, hasFocus } = useContext(SelectContext);
+
     return (
         <SelectInputContainer
-            open={props.isOpen}
-            focus={props.hasFocus}
-            disabled={props.disabled}
+            open={isOpen}
+            focus={hasFocus}
+            disabled={isDisabled}
             ref={props.inputWrapperRef}
             role="searchbox"
             aria-autocomplete="list"
-            aria-controls={props.isOpen ? 'select-window' : undefined}
+            aria-controls={isOpen ? 'select-window' : undefined}
             data-testid={props['data-testid'] ? `${props['data-testid']}-input` : undefined}
-            onClick={!props.isOpen ? props.onOpen : undefined}
+            onClick={() => {
+                if (!isOpen) {
+                    setOpen(true);
+                }
+            }}
         >
             <Box alignItems="stretch">
-                {(props.isOpen && !props.disabled && (
+                {(isOpen && !isDisabled && (
                     // 1px less padding to compensate for the border
                     <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
                         <Box alignItems="center" margin={[0, 6, 0, 0]}>
@@ -106,11 +106,11 @@ const SelectInput: FC<PropsType> = props => {
                             ref={props.inputRef}
                             type="text"
                             placeholder={props.placeholder}
-                            value={props.input}
+                            value={filter}
                             data-testid={props['data-testid'] ? `${props['data-testid']}-input-field` : undefined}
                             onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                                 event.stopPropagation();
-                                props.onChange(event.target.value);
+                                setFilter(event.target.value);
                             }}
                         />
                     </Box>
@@ -128,13 +128,13 @@ const SelectInput: FC<PropsType> = props => {
                                     data-testid={
                                         props['data-testid'] ? `${props['data-testid']}-input-selection` : undefined
                                     }
-                                    disabled={props.disabled}
+                                    disabled={isDisabled}
                                 >
                                     {props.selectedOption.label}
                                 </StyledSelection>
                             )) || (
                                 <StyledPlaceholder
-                                    disabled={props.disabled}
+                                    disabled={isDisabled}
                                     data-testid={
                                         props['data-testid'] ? `${props['data-testid']}-placeholder` : undefined
                                     }
@@ -146,14 +146,14 @@ const SelectInput: FC<PropsType> = props => {
                     )}
                 <StyledCaret>
                     <Icon
-                        icon={props.isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
+                        title={isOpen ? 'close' : 'open'}
+                        icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
                         size="medium"
                         color={
-                            props.disabled
+                            isDisabled
                                 ? props.theme.Select.select.disabled.caretColor
                                 : props.theme.Select.select.idle.caretColor
                         }
-                        title={props.isOpen ? 'close' : 'open'}
                     />
                 </StyledCaret>
             </Box>
