@@ -1,4 +1,13 @@
-import React, { KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement, createContext } from 'react';
+import React, {
+    KeyboardEvent,
+    useRef,
+    FormEvent,
+    useState,
+    useEffect,
+    ReactElement,
+    createContext,
+    ReactNode,
+} from 'react';
 import SelectOption from './SelectOption';
 import { StyledWrapper } from './style';
 import { withTheme } from 'styled-components';
@@ -16,10 +25,11 @@ type OptionStateType = {
 };
 
 type PropsType<GenericOptionType extends OptionBaseType> = {
+    children?: ReactNode;
     theme: ThemeType;
     placeholder?: string;
     value: string;
-    options: Array<GenericOptionType>;
+    options?: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
     'data-testid'?: string;
@@ -36,6 +46,13 @@ export const SelectContext = createContext({
     isOpen: false,
     isDisabled: false,
     hasFocus: false,
+    targeted: '',
+    setTarget(value: string) {
+        console.warn(`${PROVIDER_WARNING}, could not set target to value: "${value}"`);
+    },
+    addTarget(value: string) {
+        console.warn(`${PROVIDER_WARNING}, could not add target with value: "${value}"`);
+    },
     setValue(value: string) {
         console.warn(`${PROVIDER_WARNING}, could not set the value to "${value}"`);
     },
@@ -55,14 +72,16 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     const windowRef = useRef<HTMLDivElement | null>(null);
     const [hasFocus, setFocus] = useState(false);
     const [isOpen, setOpen] = useState(false);
-    const [optionPointer, setPointer] = useState(-1);
-    const [filter, setFilter] = useState(props.value);
+    const [targeted, setTarget] = useState<string>('');
+    const [filter, setFilter] = useState('');
     const inputHeight = inputWrapperRef.current?.getBoundingClientRect().height || 0;
+    const targets = useRef<Array<string>>([]);
+    console.log(targets.current);
 
     const handleChange = (value: string) => {
         props.onChange(value);
         setOpen(false);
-        setPointer(-1);
+        setTarget('');
     };
 
     const handleChangeEvent = (event: FormEvent<HTMLDivElement>) => {
@@ -72,7 +91,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
 
     const handleFilter = (filter: string) => {
         setFilter(filter);
-        setPointer(-1);
+        setTarget('');
     };
 
     const handleFocus = () => {
@@ -86,21 +105,19 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     };
 
     const cycleUp = () => {
-        // @todo: replace index based pointers
-        const newPointer = optionPointer < props.options.length - 1 ? optionPointer + 1 : 0;
+        const currentIndex = targets.current.indexOf(targeted);
 
-        setPointer(newPointer);
-    };
-
-    const cycleTo = (index: number) => {
-        setPointer(index);
+        if (currentIndex > 0) {
+            setTarget(targets.current[currentIndex - 1]);
+        }
     };
 
     const cycleDown = () => {
-        // @todo: replace index based pointers
-        const newPointer = optionPointer > 0 ? optionPointer - 1 : props.options.length - 1;
+        const currentIndex = targets.current.indexOf(targeted);
 
-        setPointer(newPointer);
+        if (currentIndex < targets.current.length - 1) {
+            setTarget(targets.current[currentIndex + 1]);
+        }
     };
 
     const close = (): void => {
@@ -127,14 +144,19 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
 
         if (isOpen) {
             if (event.key === 'Escape') close();
-            if (event.key === 'ArrowUp') cycleDown();
-            if (event.key === 'ArrowDown') cycleUp();
+            if (event.key === 'ArrowUp') cycleUp();
+            if (event.key === 'ArrowDown') cycleDown();
             if (event.key === 'Tab') event.preventDefault();
         }
 
-        if (isOpen && (event.key === 'Enter' || event.key === ' ') && optionPointer !== -1) {
-            // @todo: replace index based pointers
-            handleChange(props.options[optionPointer].value);
+        if (isOpen && (event.key === 'Enter' || event.key === ' ') && targeted !== '') {
+            handleChange(targeted);
+        }
+    };
+
+    const addTarget = (value: string) => {
+        if (targets.current.indexOf(value) === -1) {
+            targets.current.push(value);
         }
     };
 
@@ -162,13 +184,23 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         };
     }, []);
 
-    const selectedOption = props.options.reduce(
-        (found, option) => {
-            return option.value === props.value ? option : found;
-        },
-        // tslint:disable-next-line:no-object-literal-type-assertion
-        { value: '', label: '' } as GenericOptionType,
-    );
+    /**
+     * Reset the targets when the options or children change
+     */
+    useEffect(() => {
+        targets.current = [];
+    }, [filter, props.children, props.options]);
+
+    const selectedOption =
+        props.options?.reduce(
+            (found, option) => {
+                return option.value === props.value ? option : found;
+            },
+            // tslint:disable-next-line:no-object-literal-type-assertion
+            { value: '', label: '' } as GenericOptionType,
+
+            // tslint:disable-next-line:no-object-literal-type-assertion
+        ) || ({ value: '', label: '' } as GenericOptionType);
 
     useEffect(() => {
         initialRender.current = false;
@@ -182,9 +214,12 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                 isOpen,
                 isDisabled: props.disabled || false,
                 hasFocus,
+                targeted,
                 setOpen,
                 setFilter: handleFilter,
                 setValue: handleChange,
+                setTarget,
+                addTarget,
             }}
         >
             <StyledWrapper
@@ -217,21 +252,18 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                     inputHeight={inputHeight}
                     data-testid={props['data-testid']}
                 >
-                    {props.options.map((option, index) => {
+                    {props.options?.map(option => {
                         const optionState = { isSelected: option.value === props.value };
-                        const isTargeted = index === optionPointer;
 
                         return (
                             <SelectOption
                                 label={option.label}
                                 value={option.value}
-                                isTargeted={isTargeted}
                                 key={`${option.value}-${option.label}`}
-                                onMouseEnter={() => cycleTo(index)}
                                 data-testid={
                                     props['data-testid']
                                         ? `${props['data-testid']}-option-${option.value}${
-                                              isTargeted ? '-targeted' : ''
+                                              option.value === targeted ? '-targeted' : ''
                                           }`
                                         : undefined
                                 }
@@ -239,12 +271,23 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                                 {props.renderOption?.(option, optionState)}
                             </SelectOption>
                         );
-                    })}
+                    }) || props.children}
                 </SelectModal>
             </StyledWrapper>
         </SelectContext.Provider>
     );
 };
 
-export default withTheme(Select);
+const SelectWithTheme = withTheme(Select);
+
+SelectOption.displayName = 'Select.Option';
+
+/**
+ * We cast Select here because we are unable to extend the type of
+ * Select with the type argument on the definition
+ */
+(SelectWithTheme as typeof SelectWithTheme & { Option: typeof SelectOption }).Option = SelectOption;
+
+export default SelectWithTheme as typeof SelectWithTheme & { Option: typeof SelectOption };
+
 export { PropsType, OptionBaseType, OptionStateType };

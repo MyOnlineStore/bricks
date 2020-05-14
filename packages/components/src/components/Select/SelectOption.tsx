@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, Children } from 'react';
+import React, { FunctionComponent, useRef, useContext, Children } from 'react';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
@@ -19,9 +19,7 @@ const SelectOptionContainer = styled.div<ContainerPropsType>`
 type PropsType = {
     value: string;
     label: string;
-    isTargeted: boolean;
     'data-testid'?: string;
-    onMouseEnter(): void;
 };
 
 type StateType = {
@@ -29,7 +27,8 @@ type StateType = {
 };
 
 const SelectOption: FunctionComponent<PropsType> = props => {
-    const { value, filter, setValue } = useContext(SelectContext);
+    const { value, filter, setValue, addTarget, targeted, setTarget } = useContext(SelectContext);
+    const ref = useRef<HTMLDivElement | null>(null);
     const isSelected = value === props.value;
 
     /** Render or not, based on the active filter */
@@ -37,14 +36,22 @@ const SelectOption: FunctionComponent<PropsType> = props => {
         return null;
     }
 
+    /**
+     * This should be called every render cycle and does not require a useEffect
+     * because the rendering order of the options is important. Since we store the
+     * targets in a ref and not in state, this is safe.
+     */
+    addTarget(props.value);
+
     return (
         <SelectOptionContainer
-            isTargeted={props.isTargeted}
+            ref={ref}
+            isTargeted={targeted === props.value}
             onClick={() => {
                 setValue(props.value);
             }}
             onMouseEnter={() => {
-                props.onMouseEnter();
+                setTarget(props.value);
             }}
             aria-selected={isSelected}
             data-testid={props['data-testid']}

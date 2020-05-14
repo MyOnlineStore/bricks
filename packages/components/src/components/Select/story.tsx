@@ -161,4 +161,19 @@ storiesOf('Select', module)
     })
     .add('Custom rendering', () => {
         return <CustomRenderDemo />;
+    })
+    .add('With options as children', () => {
+        return (
+            <Select
+                value="a"
+                emptyText="No results"
+                placeholder="Select a value"
+                onChange={value => {
+                    alert(`Change value to ${value}`);
+                }}
+            >
+                <Select.Option value="a" label="A" />
+                <Select.Option value="b" label="B" />
+            </Select>
+        );
     });
