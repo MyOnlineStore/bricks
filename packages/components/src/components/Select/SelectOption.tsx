@@ -27,9 +27,9 @@ type StateType = {
 };
 
 const SelectOption: FunctionComponent<PropsType> = props => {
-    const { value, filter, setValue, addTarget, targeted, setTarget } = useContext(SelectContext);
+    const { selectedOption, filter, addOption, targeted, setTarget, setValue } = useContext(SelectContext);
     const ref = useRef<HTMLDivElement | null>(null);
-    const isSelected = value === props.value;
+    const isSelected = selectedOption.value === props.value;
 
     /** Render or not, based on the active filter */
     if (props.label.toLowerCase().indexOf(filter.toLowerCase()) === -1) {
@@ -41,7 +41,10 @@ const SelectOption: FunctionComponent<PropsType> = props => {
      * because the rendering order of the options is important. Since we store the
      * targets in a ref and not in state, this is safe.
      */
-    addTarget(props.value);
+    addOption({
+        value: props.value,
+        label: props.label,
+    });
 
     return (
         <SelectOptionContainer

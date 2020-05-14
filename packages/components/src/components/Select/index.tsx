@@ -41,17 +41,17 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
 const PROVIDER_WARNING = 'SelectContext was not yet intialized';
 
 export const SelectContext = createContext({
-    value: '',
     filter: '',
     isOpen: false,
     isDisabled: false,
     hasFocus: false,
     targeted: '',
+    selectedOption: { value: '', label: '' },
     setTarget(value: string) {
         console.warn(`${PROVIDER_WARNING}, could not set target to value: "${value}"`);
     },
-    addTarget(value: string) {
-        console.warn(`${PROVIDER_WARNING}, could not add target with value: "${value}"`);
+    addOption(option: { value: string; label: string }) {
+        console.warn(`${PROVIDER_WARNING}, could not add option with value: "${option.value}"`);
     },
     setValue(value: string) {
         console.warn(`${PROVIDER_WARNING}, could not set the value to "${value}"`);
@@ -75,11 +75,32 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     const [targeted, setTarget] = useState<string>('');
     const [filter, setFilter] = useState('');
     const inputHeight = inputWrapperRef.current?.getBoundingClientRect().height || 0;
-    const targets = useRef<Array<string>>([]);
-    console.log(targets.current);
+    const options = useRef<Array<OptionBaseType>>([]);
+
+    const getSelectedOption = (value: string) => {
+        const selectedOption =
+            props.options?.reduce(
+                (found, option) => {
+                    return option.value === value ? option : found;
+                },
+                // tslint:disable-next-line:no-object-literal-type-assertion
+                { value: '', label: '' } as GenericOptionType,
+
+                // tslint:disable-next-line:no-object-literal-type-assertion
+            ) ||
+            ((options.current.find(option => option.value === value) || {
+                value: '',
+                label: '',
+            }) as GenericOptionType);
+
+        return selectedOption;
+    };
+
+    const [selectedOption, selectOption] = useState(getSelectedOption(props.value));
 
     const handleChange = (value: string) => {
         props.onChange(value);
+        selectOption(getSelectedOption(value));
         setOpen(false);
         setTarget('');
     };
@@ -90,8 +111,9 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     };
 
     const handleFilter = (filter: string) => {
-        setFilter(filter);
+        options.current = [];
         setTarget('');
+        setFilter(filter);
     };
 
     const handleFocus = () => {
@@ -105,18 +127,18 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     };
 
     const cycleUp = () => {
-        const currentIndex = targets.current.indexOf(targeted);
+        const currentIndex = options.current.findIndex(option => targeted === option.value);
 
         if (currentIndex > 0) {
-            setTarget(targets.current[currentIndex - 1]);
+            setTarget(options.current[currentIndex - 1].value);
         }
     };
 
     const cycleDown = () => {
-        const currentIndex = targets.current.indexOf(targeted);
+        const currentIndex = options.current.findIndex(option => targeted === option.value);
 
-        if (currentIndex < targets.current.length - 1) {
-            setTarget(targets.current[currentIndex + 1]);
+        if (currentIndex < options.current.length - 1) {
+            setTarget(options.current[currentIndex + 1].value);
         }
     };
 
@@ -154,11 +176,22 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         }
     };
 
-    const addTarget = (value: string) => {
-        if (targets.current.indexOf(value) === -1) {
-            targets.current.push(value);
+    const addOption = (newOption: OptionBaseType) => {
+        if (options.current.findIndex(option => option.value === newOption.value) === -1) {
+            options.current.push(newOption);
         }
     };
+
+    useEffect(() => {
+        selectOption(getSelectedOption(props.value));
+    }, [props.value]);
+
+    /**
+     * Reset the targets when the options or children change
+     */
+    useEffect(() => {
+        options.current = [];
+    }, [props.children, props.options]);
 
     /** If the select becomes disabled while being open, close the select */
     useEffect(() => {
@@ -184,24 +217,6 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         };
     }, []);
 
-    /**
-     * Reset the targets when the options or children change
-     */
-    useEffect(() => {
-        targets.current = [];
-    }, [filter, props.children, props.options]);
-
-    const selectedOption =
-        props.options?.reduce(
-            (found, option) => {
-                return option.value === props.value ? option : found;
-            },
-            // tslint:disable-next-line:no-object-literal-type-assertion
-            { value: '', label: '' } as GenericOptionType,
-
-            // tslint:disable-next-line:no-object-literal-type-assertion
-        ) || ({ value: '', label: '' } as GenericOptionType);
-
     useEffect(() => {
         initialRender.current = false;
     }, []);
@@ -209,7 +224,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     return (
         <SelectContext.Provider
             value={{
-                value: props.value,
+                selectedOption,
                 filter,
                 isOpen,
                 isDisabled: props.disabled || false,
@@ -219,7 +234,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                 setFilter: handleFilter,
                 setValue: handleChange,
                 setTarget,
-                addTarget,
+                addOption,
             }}
         >
             <StyledWrapper

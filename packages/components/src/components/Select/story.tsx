@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs';
 import Box from '../Box';
@@ -163,17 +163,20 @@ storiesOf('Select', module)
         return <CustomRenderDemo />;
     })
     .add('With options as children', () => {
+        const [value, setValue] = useState('a');
+
         return (
             <Select
-                value="a"
+                value={value}
                 emptyText="No results"
                 placeholder="Select a value"
                 onChange={value => {
-                    alert(`Change value to ${value}`);
+                    setValue(value);
                 }}
             >
-                <Select.Option value="a" label="A" />
-                <Select.Option value="b" label="B" />
+                {options.map(option => (
+                    <Select.Option key={option.value} value={option.value} label={option.label} />
+                ))}
             </Select>
         );
     });
