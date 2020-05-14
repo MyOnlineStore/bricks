@@ -30,6 +30,7 @@ const SelectOption: FunctionComponent<PropsType> = props => {
     const { selectedOption, filter, addOption, targeted, setTarget, setValue } = useContext(SelectContext);
     const ref = useRef<HTMLDivElement | null>(null);
     const isSelected = selectedOption.value === props.value;
+    const isTargeted = targeted === props.value;
 
     /** Render or not, based on the active filter */
     if (props.label.toLowerCase().indexOf(filter.toLowerCase()) === -1) {
@@ -49,7 +50,7 @@ const SelectOption: FunctionComponent<PropsType> = props => {
     return (
         <SelectOptionContainer
             ref={ref}
-            isTargeted={targeted === props.value}
+            isTargeted={isTargeted}
             onClick={() => {
                 setValue(props.value);
             }}

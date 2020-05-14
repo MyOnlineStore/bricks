@@ -85,8 +85,6 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                 },
                 // tslint:disable-next-line:no-object-literal-type-assertion
                 { value: '', label: '' } as GenericOptionType,
-
-                // tslint:disable-next-line:no-object-literal-type-assertion
             ) ||
             ((options.current.find(option => option.value === value) || {
                 value: '',

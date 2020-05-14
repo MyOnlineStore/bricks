@@ -179,4 +179,31 @@ storiesOf('Select', module)
                 ))}
             </Select>
         );
+    })
+    .add('With a big list of options', () => {
+        const bigList = [];
+
+        for (let i = 0; i < 1000; i++) {
+            bigList.push({
+                value: `${i}`,
+                label: `Option ${i}`,
+            });
+        }
+
+        const [value, setValue] = useState('a');
+
+        return (
+            <Select
+                value={value}
+                emptyText="No results"
+                placeholder="Select a value"
+                onChange={value => {
+                    setValue(value);
+                }}
+            >
+                {bigList.map(option => (
+                    <Select.Option key={option.value} value={option.value} label={option.label} />
+                ))}
+            </Select>
+        );
     });
