@@ -44,7 +44,7 @@ type WrapperPropsType = {
     disabled?: boolean;
 };
 
-const INNER_OFFSET: number = 6;
+export const INNER_OFFSET: number = 6;
 
 type PlaceholderProps = {
     disabled?: boolean;
@@ -96,88 +96,6 @@ const StyledCaret = styled.div`
     right: 9px;
     transform: translateY(-50%);
     z-index: 2;
-`;
-
-type WindowPropsType = {
-    open: boolean;
-    rect?: ClientRect;
-    inputHeight?: number;
-};
-
-const StyledWindow = styled.div<WindowPropsType>`
-    box-sizing: border-box;
-    position: fixed;
-    max-height: 240px;
-    top: ${({ rect, inputHeight }) =>
-        rect !== undefined && inputHeight !== undefined ? `${rect.top + INNER_OFFSET + inputHeight}px` : ''};
-    left: ${({ rect }) => (rect !== undefined ? `${rect.left - INNER_OFFSET}px` : '')};
-    width: ${({ rect }) => (rect !== undefined ? `${rect.width + INNER_OFFSET + 6}px` : '')};
-    padding-top: ${({ open }) => (open ? '6px' : '0')};
-    background: ${({ theme }) => theme.Select.common.background};
-    border: ${({ theme, open }) => (open ? `solid 1px ${theme.Select.common.borderColor}` : 'solid 0px transparent')};
-    border-top: none;
-    border-radius: ${({ theme }) => theme.Select.common.borderRadius};
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    ${({ open }) => (!open ? 'cursor: pointer' : '')};
-    z-index: 1000;
-`;
-
-type InputPropsType = {
-    open: boolean;
-    focus: boolean;
-    disabled?: boolean;
-};
-
-const StyledInput = styled.div<InputPropsType>`
-    transition: border-color 150ms, box-shadow 150ms, background 150ms;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: ${({ theme }) => theme.Select.common.borderRadius};
-    line-height: 1.6; // results in 24px with 15px fontSize
-
-    ${({ theme, focus, open, disabled }) => {
-        if (focus && !open && !disabled) {
-            return `
-                background: ${theme.Select.common.background};
-                border: solid 1px ${theme.Select.select.focus.borderColor};
-                box-shadow: ${theme.Select.select.focus.boxShadow};
-            `;
-        } else if (disabled) {
-            return `
-                background: ${theme.Select.select.disabled.background};
-                border: solid 1px ${theme.Select.select.disabled.borderColor};
-                box-shadow: none;
-                cursor: not-allowed;
-            `;
-        } else {
-            return `
-                background: ${theme.Select.common.background};
-                border: solid 1px ${theme.Select.common.borderColor};
-                box-shadow: none;
-            `;
-        }
-    }}
-
-    input {
-        appearance: none;
-        outline: none;
-        border: none;
-        padding: 0;
-        background: transparent;
-        font-size: ${({ theme }) => theme.Select.common.fontSize};
-        font-family: ${({ theme }) => theme.Select.common.fontFamily};
-        color: ${({ theme }) => theme.Select.select.idle.color};
-        line-height: 1.6; // results in 24px with 15px fontSize
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-
-        &::placeholder {
-            font-style: italic;
-            color: ${({ theme }) => theme.Select.select.focus.placeholderColor};
-            opacity: 1;
-        }
-    }
 `;
 
 type SelectionProps = {
@@ -235,13 +153,4 @@ const composeSelectTheme = (themeTools: ThemeTools): SelectThemeType => {
     };
 };
 
-export {
-    StyledWrapper,
-    StyledInput,
-    StyledWindow,
-    SelectThemeType,
-    StyledPlaceholder,
-    StyledSelection,
-    StyledCaret,
-    composeSelectTheme,
-};
+export { StyledWrapper, SelectThemeType, StyledPlaceholder, StyledSelection, StyledCaret, composeSelectTheme };

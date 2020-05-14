@@ -1,17 +1,10 @@
-import React, { ChangeEvent, KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement } from 'react';
-import { createPortal } from 'react-dom';
-import Box from '../Box';
-import ScrollBox from '../ScrollBox';
+import React, { KeyboardEvent, useRef, FormEvent, useState, useEffect, ReactElement } from 'react';
 import Option from './Option';
-import { StyledWrapper, StyledInput, StyledWindow, StyledPlaceholder, StyledSelection, StyledCaret } from './style';
-import Text from '../Text';
-import trbl from '../../utility/trbl';
-import Icon from '../Icon';
+import { StyledWrapper } from './style';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import { SearchIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
-import colors from '../../themes/MosTheme/colors';
-import { OffsetType } from '../../types/OffsetType';
+import SelectModal from './SelectModal';
+import SelectInput from './SelectInput';
 
 type OptionBaseType = {
     value: string;
@@ -155,7 +148,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         (found, option) => {
             return option.value === props.value ? option : found;
         },
-        { value: '', label: '' },
+        // tslint:disable-next-line:no-object-literal-type-assertion
+        { value: '', label: '' } as GenericOptionType,
     );
 
     useEffect(() => {
@@ -177,135 +171,58 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
             aria-expanded={isOpen}
             data-testid={props['data-testid']}
         >
-            <StyledInput
-                open={isOpen}
-                focus={hasFocus}
-                disabled={props.disabled}
-                ref={inputWrapperRef}
-                role="searchbox"
-                aria-autocomplete="list"
-                aria-controls={isOpen ? 'select-window' : undefined}
-                data-testid={props['data-testid'] ? `${props['data-testid']}-input` : undefined}
-                onClick={!isOpen ? open : undefined}
+            <SelectInput
+                selected={props.renderSelected?.(selectedOption)}
+                disabled={props.disabled || false}
+                onChange={value => {
+                    setInput(value);
+                }}
+                onOpen={() => {
+                    setOpen(true);
+                }}
+                hasFocus={hasFocus}
+                isOpen={isOpen}
+                input={input}
+                inputRef={inputRef}
+                inputWrapperRef={inputWrapperRef}
+                placeholder={props.placeholder || ''}
+                selectedOption={selectedOption}
+                data-testid={props['data-testid']}
+            />
+            <SelectModal
+                isOpen={isOpen}
+                emptyText={props.emptyText}
+                anchorRef={wrapperRef}
+                modalRef={windowRef}
+                inputHeight={inputHeight}
+                data-testid={props['data-testid']}
             >
-                <Box alignItems="stretch">
-                    {(isOpen && !props.disabled && (
-                        // 1px less padding to compensate for the border
-                        <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
-                            <Box alignItems="center" margin={trbl(0, 6, 0, 0)}>
-                                <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
-                            </Box>
-                            <input
-                                ref={inputRef}
-                                type="text"
-                                placeholder={props.placeholder}
-                                value={input}
-                                data-testid={props['data-testid'] ? `${props['data-testid']}-input-field` : undefined}
-                                onChange={(event: ChangeEvent<HTMLInputElement>): void => {
-                                    event.stopPropagation();
-                                    handleInput(event.target.value);
-                                }}
-                            />
-                        </Box>
-                    )) ||
-                        (props.renderSelected !== undefined && selectedOption.value !== '' && (
-                            // 1px less padding to compensate for the border
-                            <Box padding={[5 as OffsetType, 11 as OffsetType]} alignItems="center" grow={1}>
-                                {props.renderSelected(selectedOption as GenericOptionType)}
-                            </Box>
-                        )) || (
-                            // 1px less padding to compensate for the border
-                            <Box alignItems="center" padding={[5 as OffsetType, 11 as OffsetType]} grow={1}>
-                                {(props.value !== '' && (
-                                    <StyledSelection
-                                        data-testid={
-                                            props['data-testid'] ? `${props['data-testid']}-input-selection` : undefined
-                                        }
-                                        disabled={props.disabled}
-                                    >
-                                        {selectedOption.label}
-                                    </StyledSelection>
-                                )) || (
-                                    <StyledPlaceholder
-                                        disabled={props.disabled}
-                                        data-testid={
-                                            props['data-testid'] ? `${props['data-testid']}-placeholder` : undefined
-                                        }
-                                    >
-                                        {props.placeholder}
-                                    </StyledPlaceholder>
-                                )}
-                            </Box>
-                        )}
-                    <StyledCaret>
-                        <Icon
-                            icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
-                            size="medium"
-                            color={
-                                props.disabled
-                                    ? props.theme.Select.select.disabled.caretColor
-                                    : props.theme.Select.select.idle.caretColor
-                            }
-                            title={isOpen ? 'close' : 'open'}
-                        />
-                    </StyledCaret>
-                </Box>
-            </StyledInput>
-            {createPortal(
-                <StyledWindow
-                    id={'select-window'}
-                    ref={windowRef}
-                    open={isOpen}
-                    rect={wrapperRef.current !== null ? wrapperRef.current.getBoundingClientRect() : undefined}
-                    inputHeight={inputHeight}
-                    role="listbox"
-                    data-testid={
-                        props['data-testid']
-                            ? `${props['data-testid']}-window${isOpen ? '-open' : '-closed'}`
-                            : undefined
-                    }
-                >
-                    <ScrollBox autoHideScrollBar={false} showInsetShadow={false}>
-                        <div style={{ overflow: 'hidden', display: isOpen ? 'block' : 'none' }}>
-                            {(filterOptions().length === 0 && (
-                                <Box padding={trbl(12, 18)}>
-                                    <Text>{props.emptyText}</Text>
-                                </Box>
-                            )) ||
-                                filterOptions().map((option, index) => {
-                                    const optionState = { isSelected: option.value === props.value };
-                                    const isTargeted = index === optionPointer;
+                {filterOptions().map((option, index) => {
+                    const optionState = { isSelected: option.value === props.value };
+                    const isTargeted = index === optionPointer;
 
-                                    return (
-                                        <Option
-                                            label={option.label}
-                                            isSelected={optionState.isSelected}
-                                            isTargeted={isTargeted}
-                                            key={`${option.value}-${option.label}`}
-                                            onMouseEnter={(): void => cycleTo(index)}
-                                            onClick={(): void => {
-                                                handleChange(option.value);
-                                            }}
-                                            data-testid={
-                                                props['data-testid']
-                                                    ? `${props['data-testid']}-option-${option.value}${
-                                                          isTargeted ? '-targeted' : ''
-                                                      }`
-                                                    : undefined
-                                            }
-                                            content={
-                                                props.renderOption !== undefined
-                                                    ? props.renderOption(option, optionState)
-                                                    : undefined
-                                            }
-                                        />
-                                    );
-                                })}
-                        </div>
-                    </ScrollBox>
-                </StyledWindow>,
-                document.body,
-            )}
+                    return (
+                        <Option
+                            label={option.label}
+                            isSelected={optionState.isSelected}
+                            isTargeted={isTargeted}
+                            key={`${option.value}-${option.label}`}
+                            onMouseEnter={() => cycleTo(index)}
+                            onClick={() => {
+                                handleChange(option.value);
+                            }}
+                            data-testid={
+                                props['data-testid']
+                                    ? `${props['data-testid']}-option-${option.value}${isTargeted ? '-targeted' : ''}`
+                                    : undefined
+                            }
+                            content={
+                                props.renderOption !== undefined ? props.renderOption(option, optionState) : undefined
+                            }
+                        />
+                    );
+                })}
+            </SelectModal>
         </StyledWrapper>
     );
 };
