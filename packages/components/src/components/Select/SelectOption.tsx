@@ -5,6 +5,8 @@ import Icon from '../Icon';
 import { CheckmarkSmallIcon } from '@myonlinestore/bricks-assets';
 import { SelectContext } from '.';
 import styled from 'styled-components';
+import { SelectOptionGroupContext } from './SelectOptionGroup';
+import { OffsetShorthandType } from '../../types/OffsetType';
 
 type ContainerPropsType = {
     isTargeted: boolean;
@@ -28,6 +30,7 @@ type StateType = {
 
 const SelectOption: FunctionComponent<PropsType> = props => {
     const { selectedOption, filter, addOption, targeted, setTarget, setValue } = useContext(SelectContext);
+    const { level } = useContext(SelectOptionGroupContext);
     const ref = useRef<HTMLDivElement | null>(null);
     const isSelected = selectedOption.value === props.value;
     const isTargeted = targeted === props.value;
@@ -62,15 +65,15 @@ const SelectOption: FunctionComponent<PropsType> = props => {
         >
             <Box padding={[6, 18]}>
                 {(Children.count(props.children) > 0 && props.children) || (
-                    <Box alignItems="center" inline>
+                    <Box alignItems="center" padding={[0, 0, 0, level * 18] as OffsetShorthandType} inline>
                         {isSelected && (
-                            <Box margin={[0, 6, 0, 0]} inline>
-                                <Text variant={isSelected ? 'descriptive' : undefined}>
+                            <Box margin={[0, 6, 0, isSelected ? -18 : 0] as OffsetShorthandType} inline>
+                                <Text strong={isSelected}>
                                     <Icon size="small" icon={<CheckmarkSmallIcon />} />
                                 </Text>
                             </Box>
                         )}
-                        <Text variant={isSelected ? 'descriptive' : undefined}>{props.label}</Text>
+                        <Text strong={isSelected}>{props.label}</Text>
                     </Box>
                 )}
             </Box>
