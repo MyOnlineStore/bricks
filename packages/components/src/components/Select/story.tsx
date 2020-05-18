@@ -190,7 +190,7 @@ storiesOf('Select', module)
             });
         }
 
-        const [value, setValue] = useState('a');
+        const [value, setValue] = useState(bigList[0].value);
 
         return (
             <Select
@@ -204,6 +204,37 @@ storiesOf('Select', module)
                 {bigList.map(option => (
                     <Select.Option key={option.value} value={option.value} label={option.label} />
                 ))}
+            </Select>
+        );
+    })
+    .add('With option groups', () => {
+        const [value, setValue] = useState('');
+
+        return (
+            <Select
+                value={value}
+                emptyText="No results"
+                placeholder="Select a value"
+                onChange={value => {
+                    setValue(value);
+                }}
+            >
+                <Select.Option label="Option A" value="a" />
+                <Select.Option label="Option B" value="b" />
+                <Select.Option label="Option C" value="c" />
+                <Select.OptionGroup>
+                    <Select.Option label="Option D" value="d" />
+                    <Select.Option label="Option E" value="e" />
+                    <Select.Option label="Option F" value="f" />
+                    <Select.OptionGroup>
+                        <Select.Option label="Option G" value="g" />
+                        <Select.Option label="Option H" value="h" />
+                        <Select.Option label="Option I" value="i" />
+                    </Select.OptionGroup>
+                </Select.OptionGroup>
+                <Select.Option label="Option J" value="j" />
+                <Select.Option label="Option K" value="k" />
+                <Select.Option label="Option L" value="l" />
             </Select>
         );
     });

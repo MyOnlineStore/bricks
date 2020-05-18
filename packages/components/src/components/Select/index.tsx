@@ -14,6 +14,7 @@ import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import SelectModal from './SelectModal';
 import SelectInput from './SelectInput';
+import SelectOptionGroup from './SelectOptionGroup';
 
 type OptionBaseType = {
     value: string;
@@ -294,13 +295,21 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
 const SelectWithTheme = withTheme(Select);
 
 SelectOption.displayName = 'Select.Option';
+SelectOptionGroup.displayName = 'Select.OptionGroup';
 
 /**
  * We cast Select here because we are unable to extend the type of
  * Select with the type argument on the definition
  */
-(SelectWithTheme as typeof SelectWithTheme & { Option: typeof SelectOption }).Option = SelectOption;
 
-export default SelectWithTheme as typeof SelectWithTheme & { Option: typeof SelectOption };
+type SelectType = typeof SelectWithTheme & {
+    Option: typeof SelectOption;
+    OptionGroup: typeof SelectOptionGroup;
+};
+
+(SelectWithTheme as SelectType).Option = SelectOption;
+(SelectWithTheme as SelectType).OptionGroup = SelectOptionGroup;
+
+export default SelectWithTheme as SelectType;
 
 export { PropsType, OptionBaseType, OptionStateType };
