@@ -223,6 +223,12 @@ const theme: ThemeType = {
             },
         },
     },
+    Card: {
+        background: colors.white,
+        borderColor: colors.grey300,
+        borderRadius: roundness.base,
+        toggleColor: colors.grey500,
+    },
     Checkbox: {
         idle: {
             borderColor: colors.grey300,
@@ -255,11 +261,6 @@ const theme: ThemeType = {
         },
         overides: {},
     },
-    FormRow: {
-        disabled: {
-            color: colors.grey400,
-        },
-    },
     Counter: {
         severity: {
             success: {
@@ -282,6 +283,11 @@ const theme: ThemeType = {
                 color: colors.white,
                 fontFamily: bodyFont,
             },
+        },
+    },
+    FormRow: {
+        disabled: {
+            color: colors.grey400,
         },
     },
     Heading: {

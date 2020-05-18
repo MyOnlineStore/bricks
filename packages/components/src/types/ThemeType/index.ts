@@ -32,11 +32,13 @@ import { TileThemeType } from '../../components/Tile';
 import { ToastThemeType } from '../../components/Toast/style';
 import { ToggleThemeType } from '../../components/Toggle/style';
 import { TooltipThemeType } from '../../components/Tooltip/style';
+import { CardThemeType } from '../../components/Card/style';
 
 type ThemeType = {
     Badge: BadgeThemeType;
     Breadcrumbs: BreadcrumbsThemeType;
     Button: ButtonThemeType;
+    Card: CardThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
     FormRow: FormRowThemeType;
