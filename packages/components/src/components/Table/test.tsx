@@ -9,7 +9,7 @@ import Checkbox from '../Checkbox';
 import Icon from '../Icon';
 import Box from '../Box';
 import Select from '../Select';
-import Option from '../Select/Option';
+import SelectOption from '../Select/SelectOption';
 import StyledCell from './Cell/style';
 import CompactHeaders from './CompactHeaders';
 
@@ -425,10 +425,10 @@ describe('Table', () => {
                 key: ' ',
             });
 
-        expect(component.find(Option).length).toBe(Object.keys(columns).length * 2);
+        expect(component.find(SelectOption).length).toBe(Object.keys(columns).length * 2);
 
         component
-            .find(Option)
+            .find(SelectOption)
             .first()
             .simulate('click');
 

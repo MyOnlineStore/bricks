@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
-import Option from './Option';
 import MosTheme, { mosTheme } from '../../themes/MosTheme';
 import 'jest-styled-components';
 import { mount } from 'enzyme';
@@ -128,7 +127,7 @@ describe('Select', () => {
 
         expect(component.find('input').length).toBe(1);
         expect(component.find('[data-testid="select-input-field"]').hostNodes()).toHaveLength(1);
-        expect(component.find(Option).length).toBe(options.length);
+        expect(component.find('[data-testid^="select-option-"]').hostNodes().length).toBe(options.length);
     });
 
     it('should filter options on input', () => {
@@ -137,6 +136,7 @@ describe('Select', () => {
                 onChange={(): void => undefined}
                 value=""
                 emptyText="empty"
+                data-testid="select"
                 options={[
                     {
                         value: 'A',
@@ -160,7 +160,7 @@ describe('Select', () => {
             },
         });
 
-        expect(component.find(Option).length).toBe(1);
+        expect(component.find('[data-testid^="select-option-"]').hostNodes().length).toBe(1);
     });
 
     it('should tear down event listeners on unmount', () => {
@@ -233,7 +233,7 @@ describe('Select', () => {
         expect(changeHandler).toHaveBeenCalledWith(options[0].value);
     });
 
-    it('should target next option when arrow down is pressed and reset after last option', () => {
+    it('should target next option when arrow down is pressed', () => {
         const options = [
             { value: 'A', label: 'A' },
             { value: 'B', label: 'B' },
@@ -257,6 +257,8 @@ describe('Select', () => {
             key: 'ArrowDown',
         });
 
+        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+
         component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
@@ -267,10 +269,10 @@ describe('Select', () => {
             key: 'ArrowDown',
         });
 
-        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.find('[data-testid="select-option-B-targeted"]').hostNodes()).toHaveLength(1);
     });
 
-    it('should target the previous option when arrow up is pressed and target last item on first option', () => {
+    it('should target the previous option when arrow up is pressed', () => {
         const options = [
             { value: 'A', label: 'A' },
             { value: 'B', label: 'B' },
@@ -294,9 +296,13 @@ describe('Select', () => {
             key: 'ArrowDown',
         });
 
+        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+
         component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
+
+        expect(component.find('[data-testid="select-option-B-targeted"]').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', {
             key: 'ArrowUp',
@@ -308,7 +314,7 @@ describe('Select', () => {
             key: 'ArrowUp',
         });
 
-        expect(component.find('[data-testid="select-option-B-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
     });
 
     it('should set the value of the target option when enter is pressed on a targeted option', () => {
@@ -362,7 +368,8 @@ describe('Select', () => {
             />,
         );
 
-        expect(renderOption).toHaveBeenCalledTimes(options.length);
+        /** Options re-render twice */
+        expect(renderOption).toHaveBeenCalledTimes(options.length * 2);
     });
 
     it('should render an alternative input rendering when an option is selected', () => {

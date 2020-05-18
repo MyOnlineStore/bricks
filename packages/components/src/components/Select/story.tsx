@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Select, { OptionStateType } from '.';
 import { object, text, boolean } from '@storybook/addon-knobs';
 import Box from '../Box';
@@ -161,4 +161,49 @@ storiesOf('Select', module)
     })
     .add('Custom rendering', () => {
         return <CustomRenderDemo />;
+    })
+    .add('With options as children', () => {
+        const [value, setValue] = useState('a');
+
+        return (
+            <Select
+                value={value}
+                emptyText="No results"
+                placeholder="Select a value"
+                onChange={value => {
+                    setValue(value);
+                }}
+            >
+                {options.map(option => (
+                    <Select.Option key={option.value} value={option.value} label={option.label} />
+                ))}
+            </Select>
+        );
+    })
+    .add('With a big list of options', () => {
+        const bigList = [];
+
+        for (let i = 0; i < 1000; i++) {
+            bigList.push({
+                value: `${i}`,
+                label: `Option ${i}`,
+            });
+        }
+
+        const [value, setValue] = useState('a');
+
+        return (
+            <Select
+                value={value}
+                emptyText="No results"
+                placeholder="Select a value"
+                onChange={value => {
+                    setValue(value);
+                }}
+            >
+                {bigList.map(option => (
+                    <Select.Option key={option.value} value={option.value} label={option.label} />
+                ))}
+            </Select>
+        );
     });
