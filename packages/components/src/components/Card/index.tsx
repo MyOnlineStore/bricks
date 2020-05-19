@@ -60,14 +60,14 @@ const Card: FC<PropsType> = props => {
                 </Box>
                 {props.open !== undefined && props.content !== undefined && (
                     <FoldOut open={props.open}>
-                        <Box padding={props.checked !== undefined ? [0, 24, 18, 64 as OffsetType] : [0, 24, 18]}>
-                            {props.content}
+                        <Box padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}>
+                            <div>{props.content}</div>
                         </Box>
                     </FoldOut>
                 )}
                 {props.open === undefined && props.content !== undefined && (
-                    <Box padding={props.checked !== undefined ? [0, 24, 18, 64 as OffsetType] : [0, 24, 18]}>
-                        {props.content}
+                    <Box padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}>
+                        <div>{props.content}</div>
                     </Box>
                 )}
             </Box>
