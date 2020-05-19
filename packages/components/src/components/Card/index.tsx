@@ -15,6 +15,7 @@ export type PropsType = {
     label: ReactNode;
     description?: ReactNode;
     content?: ReactNode;
+    'data-testid'?: string;
     onClick?(): void;
     onChange?(value: boolean): void;
 };
@@ -27,7 +28,7 @@ const Card: FC<PropsType> = props => {
     };
 
     return (
-        <StyledCardWrapper>
+        <StyledCardWrapper data-testid={props['data-testid']}>
             <Box direction="column">
                 <Box direction="row">
                     {props.checked !== undefined && props.onChange && (
@@ -38,6 +39,7 @@ const Card: FC<PropsType> = props => {
                                 disabled={props.disabled}
                                 value=""
                                 name={'Card toggle'}
+                                data-testid={props['data-testid'] ? `${props['data-testid']}-toggle` : undefined}
                             />
                         </Box>
                     )}
@@ -50,23 +52,43 @@ const Card: FC<PropsType> = props => {
                         foldable={props.open !== undefined && props.content !== undefined}
                     >
                         <div>{props.label}</div>
-                        {props.description && <Text variant="descriptive">{props.description}</Text>}
+                        {props.description && (
+                            <Text
+                                variant="descriptive"
+                                data-testid={props['data-testid'] ? `${props['data-testid']}-description` : undefined}
+                            >
+                                {props.description}
+                            </Text>
+                        )}
                     </StyledLabel>
                     {props.open !== undefined && props.content !== undefined && (
                         <StyledToggleIcon open={props.open}>
-                            <Icon icon={<ChevronDownSmallIcon />} size="small" />
+                            <Icon
+                                icon={<ChevronDownSmallIcon />}
+                                size="small"
+                                data-testid={props['data-testid'] ? `${props['data-testid']}-icon` : undefined}
+                            />
                         </StyledToggleIcon>
                     )}
                 </Box>
                 {props.open !== undefined && props.content !== undefined && (
-                    <FoldOut open={props.open}>
-                        <Box padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}>
+                    <FoldOut
+                        open={props.open}
+                        data-testid={props['data-testid'] ? `${props['data-testid']}-foldout` : undefined}
+                    >
+                        <Box
+                            padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}
+                            data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
+                        >
                             <div>{props.content}</div>
                         </Box>
                     </FoldOut>
                 )}
                 {props.open === undefined && props.content !== undefined && (
-                    <Box padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}>
+                    <Box
+                        padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}
+                        data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
+                    >
                         <div>{props.content}</div>
                     </Box>
                 )}
