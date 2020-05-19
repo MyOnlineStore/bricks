@@ -75,4 +75,4 @@ storiesOf('Card', module)
     .add('With description', () => <Demo description foldable />)
     .add('With an image as label', () => <Demo image foldable />)
     .add('With a toggle', () => <Demo toggle foldable description />)
-    .add('None foldable', () => <Demo />);
+    .add('Non-foldable', () => <Demo />);
