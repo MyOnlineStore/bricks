@@ -57,7 +57,10 @@ describe('Card', () => {
         const foldoutIcon = component.find('[data-testid="Card-foldout-icon"]').hostNodes();
         const foldoutComponent = component.find(FoldOut);
 
-        component.find('[data-testid="Card-label"]').simulate('click');
+        component
+            .find('[data-testid="Card-click-area"]')
+            .hostNodes()
+            .simulate('click');
 
         expect(foldoutIcon).toHaveLength(1);
         expect(foldoutComponent).toHaveLength(1);

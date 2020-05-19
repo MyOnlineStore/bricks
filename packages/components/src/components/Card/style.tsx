@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Box from '../Box';
 import StyledIcon from '../Icon/style';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 
@@ -10,7 +9,7 @@ type CardThemeType = {
     toggleColor: string;
 };
 
-const StyledCardWrapper = styled.div`
+const StyledCard = styled.div`
     position: relative;
     background: ${({ theme }) => theme.Card.background};
     border: 1px solid ${({ theme }) => theme.Card.borderColor};
@@ -18,8 +17,42 @@ const StyledCardWrapper = styled.div`
     flex: 1 1 auto;
 `;
 
-const StyledLabel = styled(Box)<{ foldable: boolean }>`
+type ClickAreaProps = {
+    foldable: boolean;
+    switchable: boolean;
+    'data-testid'?: string;
+};
+
+const StyledClickArea = styled.button<ClickAreaProps>`
+    display: block;
+    background: none;
+    border: none;
+    appearance: none;
+    text-align: left;
+    flex: 1 1 100%;
+    padding-top: 18px;
+    padding-right: ${({ foldable }) => (foldable ? '54px' : '24px')};
+    padding-bottom: 18px;
+    padding-left: ${({ switchable }) => (switchable ? '0' : '24px')};
     cursor: ${({ foldable }) => (foldable ? 'pointer' : 'default')};
+`;
+
+type LabelProps = {
+    'data-testid'?: string;
+};
+
+const StyledLabel = styled.div<LabelProps>`
+    pointer-events: none;
+`;
+
+type ContentProps = {
+    switchable: boolean;
+    'data-testid'?: string;
+};
+
+const StyledContent = styled.div<ContentProps>`
+    flex: 1 1 100%;
+    padding: ${({ switchable }) => (switchable ? '12px 24px 24px 64px' : '12px 24px 24px')};
 `;
 
 const StyledFoldoutIcon = styled.div<{ open: boolean }>`
@@ -48,4 +81,4 @@ const composeCardTheme = (themeTools: ThemeTools): CardThemeType => {
     };
 };
 
-export { StyledCardWrapper, StyledLabel, StyledFoldoutIcon, CardThemeType, composeCardTheme };
+export { StyledCard, StyledClickArea, StyledLabel, StyledFoldoutIcon, StyledContent, CardThemeType, composeCardTheme };

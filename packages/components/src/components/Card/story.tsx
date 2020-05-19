@@ -8,6 +8,7 @@ import Box from '../Box';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import { boolean } from '@storybook/addon-knobs';
+import Badge from '../Badge';
 
 const DemoDescription = () => (
     <>
@@ -58,7 +59,16 @@ const Demo: FC<PropsType> = props => {
 
     return (
         <Card
-            label={props.image ? <ImageLabel /> : <Text strong>Label</Text>}
+            label={
+                props.image ? (
+                    <ImageLabel />
+                ) : (
+                    <Box justifyContent="space-between">
+                        <Text strong>Label</Text>
+                        <Badge variant="info">With a badge</Badge>
+                    </Box>
+                )
+            }
             description={props.description ? <DemoDescription /> : undefined}
             content={<DemoContent />}
             open={props.foldable ? open : undefined}

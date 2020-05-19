@@ -1,26 +1,52 @@
 import React, { FC, ReactNode } from 'react';
-import { StyledCardWrapper, StyledLabel, StyledFoldoutIcon } from './style';
+import { StyledCard, StyledLabel, StyledContent, StyledFoldoutIcon, StyledClickArea } from './style';
 import FoldOut from '../FoldOut';
 import Text from '../Text';
 import Box from '../Box';
 import Toggle from '../Toggle';
 import { ChevronDownSmallIcon } from '@myonlinestore/bricks-assets';
 import Icon from '../Icon';
-import { OffsetType } from '../../types/OffsetType';
 
 export type PropsType = {
-    checked?: boolean;
-    disabled?: boolean;
-    open?: boolean;
     label: ReactNode;
     description?: ReactNode;
     content?: ReactNode;
+    open?: boolean;
+    checked?: boolean;
+    disabled?: boolean;
     'data-testid'?: string;
     onClick?(): void;
     onChange?(value: boolean): void;
 };
 
+/**
+ * Card component for structuring content and fold if necessary
+ *
+ * @param label
+ * Required ReactNode
+ * @param description
+ * Optional ReactNode to display below the label in descriptive text style
+ * @param content
+ * Optional ReactNode
+ * @param open
+ * Determines Foldout state. Must be used in combination with the content prop to make it foldable
+ * @param checked
+ * Determines the Toggle checked state.
+ * @param disabled
+ * Disables the Toggle
+ * @param onClick
+ * Callback for the label click area.
+ * @param onChange
+ * Callback for the Toggle. Must be used in combination with the checked prop to show the Toggle.
+ */
+
 const Card: FC<PropsType> = props => {
+    const onClick = (): void => {
+        if (props.onClick) {
+            props.onClick();
+        }
+    };
+
     const toggle = ({ checked }: { checked: boolean }): void => {
         if (props.onChange) {
             props.onChange(checked);
@@ -28,10 +54,10 @@ const Card: FC<PropsType> = props => {
     };
 
     return (
-        <StyledCardWrapper data-testid={props['data-testid']}>
+        <StyledCard data-testid={props['data-testid']}>
             <Box direction="column">
                 <Box direction="row">
-                    {props.checked !== undefined && props.onChange && (
+                    {props.checked !== undefined && (
                         <Box padding={[18, 0, 18, 18]}>
                             <Toggle
                                 onChange={toggle}
@@ -43,17 +69,15 @@ const Card: FC<PropsType> = props => {
                             />
                         </Box>
                     )}
-                    <StyledLabel
-                        direction="column"
-                        padding={props.checked !== undefined ? [18, 24, 18, 0] : [18, 24]}
-                        onClick={props.onClick}
-                        grow={1}
-                        basis="auto"
+                    <StyledClickArea
+                        onClick={onClick}
+                        switchable={props.checked !== undefined}
                         foldable={props.open !== undefined && props.content !== undefined}
+                        data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
                     >
-                        <div data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
+                        <StyledLabel data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
                             {props.label}
-                        </div>
+                        </StyledLabel>
                         {props.description && (
                             <Text
                                 variant="descriptive"
@@ -62,7 +86,7 @@ const Card: FC<PropsType> = props => {
                                 {props.description}
                             </Text>
                         )}
-                    </StyledLabel>
+                    </StyledClickArea>
                     {props.open !== undefined && props.content !== undefined && (
                         <StyledFoldoutIcon
                             open={props.open}
@@ -77,24 +101,24 @@ const Card: FC<PropsType> = props => {
                         open={props.open}
                         data-testid={props['data-testid'] ? `${props['data-testid']}-foldout` : undefined}
                     >
-                        <Box
-                            padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}
+                        <StyledContent
+                            switchable={props.checked !== undefined}
                             data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                         >
-                            <div>{props.content}</div>
-                        </Box>
+                            {props.content}
+                        </StyledContent>
                     </FoldOut>
                 )}
                 {props.open === undefined && props.content !== undefined && (
-                    <Box
-                        padding={props.checked !== undefined ? [12, 24, 18, 64 as OffsetType] : [12, 24, 18]}
+                    <StyledContent
+                        switchable={props.checked !== undefined}
                         data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                     >
-                        <div>{props.content}</div>
-                    </Box>
+                        {props.content}
+                    </StyledContent>
                 )}
             </Box>
-        </StyledCardWrapper>
+        </StyledCard>
     );
 };
 
