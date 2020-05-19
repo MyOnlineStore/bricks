@@ -7,6 +7,7 @@ import TextField from '../TextField';
 import Box from '../Box';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
+import { boolean } from '@storybook/addon-knobs';
 
 const DemoDescription = () => (
     <>
@@ -64,6 +65,7 @@ const Demo: FC<PropsType> = props => {
             onClick={props.foldable ? onClick : undefined}
             checked={props.toggle ? checked : undefined}
             onChange={props.toggle ? setChecked : undefined}
+            disabled={props.toggle ? boolean('disabled', false) : undefined}
         />
     );
 };

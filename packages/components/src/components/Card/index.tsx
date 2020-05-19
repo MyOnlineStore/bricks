@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { StyledCardWrapper, StyledLabel, StyledToggleIcon } from './style';
+import { StyledCardWrapper, StyledLabel, StyledFoldoutIcon } from './style';
 import FoldOut from '../FoldOut';
 import Text from '../Text';
 import Box from '../Box';
@@ -51,7 +51,9 @@ const Card: FC<PropsType> = props => {
                         basis="auto"
                         foldable={props.open !== undefined && props.content !== undefined}
                     >
-                        <div>{props.label}</div>
+                        <div data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
+                            {props.label}
+                        </div>
                         {props.description && (
                             <Text
                                 variant="descriptive"
@@ -62,13 +64,12 @@ const Card: FC<PropsType> = props => {
                         )}
                     </StyledLabel>
                     {props.open !== undefined && props.content !== undefined && (
-                        <StyledToggleIcon open={props.open}>
-                            <Icon
-                                icon={<ChevronDownSmallIcon />}
-                                size="small"
-                                data-testid={props['data-testid'] ? `${props['data-testid']}-icon` : undefined}
-                            />
-                        </StyledToggleIcon>
+                        <StyledFoldoutIcon
+                            open={props.open}
+                            data-testid={props['data-testid'] ? `${props['data-testid']}-foldout-icon` : undefined}
+                        >
+                            <Icon icon={<ChevronDownSmallIcon />} size="small" />
+                        </StyledFoldoutIcon>
                     )}
                 </Box>
                 {props.open !== undefined && props.content !== undefined && (

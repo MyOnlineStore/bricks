@@ -22,7 +22,7 @@ const StyledLabel = styled(Box)<{ foldable: boolean }>`
     cursor: ${({ foldable }) => (foldable ? 'pointer' : 'default')};
 `;
 
-const StyledToggleIcon = styled.div<{ open: boolean }>`
+const StyledFoldoutIcon = styled.div<{ open: boolean }>`
     position: absolute;
     right: 24px;
     top: 24px;
@@ -48,4 +48,4 @@ const composeCardTheme = (themeTools: ThemeTools): CardThemeType => {
     };
 };
 
-export { StyledCardWrapper, StyledLabel, StyledToggleIcon, CardThemeType, composeCardTheme };
+export { StyledCardWrapper, StyledLabel, StyledFoldoutIcon, CardThemeType, composeCardTheme };
