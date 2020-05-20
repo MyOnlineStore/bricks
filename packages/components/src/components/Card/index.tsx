@@ -57,16 +57,16 @@ const Card: FC<PropsType> = props => {
 
     return (
         <StyledCard data-testid={props['data-testid']}>
-            <Box direction="column">
+            <Box padding={[0, 0, 18]} direction="column">
                 <Box direction="row" position="relative" alignItems="flex-start">
-                    {props.open !== undefined && props.content !== undefined && (
+                    {props.open !== undefined && (props.content !== undefined || props.description !== undefined) && (
                         <StyledClickArea
                             onClick={onClick}
                             data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
                         />
                     )}
                     {props.checked !== undefined && (
-                        <Box margin={[18, 0, 18, 18]} position="relative" zIndex={2}>
+                        <Box margin={[18, 0, 0, 18]} position="relative" zIndex={2}>
                             <Toggle
                                 onChange={toggle}
                                 checked={props.checked}
@@ -79,22 +79,16 @@ const Card: FC<PropsType> = props => {
                     )}
                     <StyledLabel
                         hasToggle={props.checked !== undefined}
-                        foldable={props.open !== undefined && props.content !== undefined}
+                        foldable={
+                            props.open !== undefined && (props.content !== undefined || props.description !== undefined)
+                        }
                         onClick={onClick}
                     >
                         <div data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
                             {props.label}
                         </div>
-                        {props.description && (
-                            <Text
-                                variant="descriptive"
-                                data-testid={props['data-testid'] ? `${props['data-testid']}-description` : undefined}
-                            >
-                                {props.description}
-                            </Text>
-                        )}
                     </StyledLabel>
-                    {props.open !== undefined && props.content !== undefined && (
+                    {props.open !== undefined && (props.content !== undefined || props.description !== undefined) && (
                         <StyledFoldoutIcon
                             open={props.open}
                             data-testid={props['data-testid'] ? `${props['data-testid']}-foldout-icon` : undefined}
@@ -103,7 +97,7 @@ const Card: FC<PropsType> = props => {
                         </StyledFoldoutIcon>
                     )}
                 </Box>
-                {props.open !== undefined && props.content !== undefined && (
+                {props.open !== undefined && (props.content !== undefined || props.description !== undefined) && (
                     <FoldOut
                         open={props.open}
                         data-testid={props['data-testid'] ? `${props['data-testid']}-foldout` : undefined}
@@ -112,16 +106,38 @@ const Card: FC<PropsType> = props => {
                             hasToggle={props.checked !== undefined}
                             data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                         >
-                            {props.content}
+                            {props.description && (
+                                <Text
+                                    variant="descriptive"
+                                    data-testid={
+                                        props['data-testid'] ? `${props['data-testid']}-description` : undefined
+                                    }
+                                >
+                                    {props.description}
+                                </Text>
+                            )}
+                            <Box padding={[24, 0, 0]}>
+                                <div>{props.content}</div>
+                            </Box>
                         </StyledContent>
                     </FoldOut>
                 )}
-                {props.open === undefined && props.content !== undefined && (
+                {props.open === undefined && (props.content !== undefined || props.description !== undefined) && (
                     <StyledContent
                         hasToggle={props.checked !== undefined}
                         data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                     >
-                        {props.content}
+                        {props.description && (
+                            <Text
+                                variant="descriptive"
+                                data-testid={props['data-testid'] ? `${props['data-testid']}-description` : undefined}
+                            >
+                                {props.description}
+                            </Text>
+                        )}
+                        <Box padding={[24, 0, 0]}>
+                            <div>{props.content}</div>
+                        </Box>
                     </StyledContent>
                 )}
             </Box>

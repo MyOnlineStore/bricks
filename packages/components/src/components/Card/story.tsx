@@ -8,7 +8,7 @@ import Box from '../Box';
 import Button from '../Button';
 import ButtonGroup from '../ButtonGroup';
 import { boolean } from '@storybook/addon-knobs';
-import Badge from '../Badge';
+import FormRow from '../FormRow';
 
 const DemoDescription = () => (
     <>
@@ -32,9 +32,11 @@ const DemoContent = () => (
             Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Cras justo odio,
             dapibus ac facilisis in, egestas eget quam.
         </Text>
-        <Box margin={[24, 0, 0]} direction="column" justifyContent="flex-start" maxWidth="300px">
-            <Text strong>Name</Text>
-            <TextField name="name" value="" onChange={() => null} />
+        <Box direction="column" justifyContent="flex-start" maxWidth="300px">
+            <FormRow
+                label={<Text strong>Name</Text>}
+                field={<TextField name="name" value="" onChange={() => null} />}
+            />
             <Box margin={[18, 0, 0]}>
                 <ButtonGroup>
                     <Button variant="plain" title="Cancel" />
@@ -59,23 +61,7 @@ const Demo: FC<PropsType> = props => {
 
     return (
         <Card
-            label={
-                props.image ? (
-                    <ImageLabel />
-                ) : (
-                    <Box justifyContent="space-between">
-                        <Text strong>Label</Text>
-                        <button
-                            onClick={() => {
-                                alert('click');
-                            }}
-                        >
-                            Test
-                        </button>
-                        <Badge variant="info">With a badge</Badge>
-                    </Box>
-                )
-            }
+            label={props.image ? <ImageLabel /> : <Text strong>Label</Text>}
             description={props.description ? <DemoDescription /> : undefined}
             content={<DemoContent />}
             open={props.foldable ? open : undefined}
@@ -92,4 +78,4 @@ storiesOf('Card', module)
     .add('With description', () => <Demo description foldable />)
     .add('With an image as label', () => <Demo image foldable />)
     .add('With a toggle', () => <Demo toggle foldable description />)
-    .add('Non-foldable', () => <Demo />);
+    .add('Non-foldable', () => <Demo description />);

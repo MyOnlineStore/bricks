@@ -27,12 +27,13 @@ const StyledClickArea = styled.button<ClickAreaProps>`
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 0 0 18px;
     z-index: 1;
     display: block;
+    box-sizing: content-box;
     background: none;
     border: none;
     appearance: none;
-    padding: 0;
     cursor: pointer;
 `;
 
@@ -48,9 +49,9 @@ const StyledLabel = styled.div<LabelProps>`
     flex: 1 1 100%;
     margin-top: 18px;
     margin-right: ${({ foldable }) => (foldable ? '54px' : '24px')};
-    margin-bottom: 18px;
+    margin-bottom: 0};
     margin-left: ${({ hasToggle }) => (hasToggle ? '0' : '24px')};
-    cursor: ${({ foldable }) => (foldable ? 'pointer' : 'default')};
+    cursor: ${({ foldable }) => (foldable ? 'pointer' : 'unset')};
 `;
 
 type ContentProps = {
@@ -60,7 +61,7 @@ type ContentProps = {
 
 const StyledContent = styled.div<ContentProps>`
     flex: 1 1 100%;
-    padding: ${({ hasToggle }) => (hasToggle ? '12px 24px 24px 64px' : '12px 24px 24px')};
+    padding: ${({ hasToggle }) => (hasToggle ? '0 24px 6px 64px' : '0 24px 6px')};
 `;
 
 const StyledFoldoutIcon = styled.div<{ open: boolean }>`
