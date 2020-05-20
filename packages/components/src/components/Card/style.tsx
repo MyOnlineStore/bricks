@@ -18,41 +18,49 @@ const StyledCard = styled.div`
 `;
 
 type ClickAreaProps = {
-    foldable: boolean;
-    switchable: boolean;
     'data-testid'?: string;
 };
 
 const StyledClickArea = styled.button<ClickAreaProps>`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     display: block;
     background: none;
     border: none;
     appearance: none;
-    text-align: left;
-    flex: 1 1 100%;
-    padding-top: 18px;
-    padding-right: ${({ foldable }) => (foldable ? '54px' : '24px')};
-    padding-bottom: 18px;
-    padding-left: ${({ switchable }) => (switchable ? '0' : '24px')};
-    cursor: ${({ foldable }) => (foldable ? 'pointer' : 'default')};
+    padding: 0;
+    cursor: pointer;
 `;
 
 type LabelProps = {
+    foldable: boolean;
+    hasToggle: boolean;
     'data-testid'?: string;
 };
 
 const StyledLabel = styled.div<LabelProps>`
-    pointer-events: none;
+    position: relative;
+    z-index: 2;
+    flex: 1 1 100%;
+    margin-top: 18px;
+    margin-right: ${({ foldable }) => (foldable ? '54px' : '24px')};
+    margin-bottom: 18px;
+    margin-left: ${({ hasToggle }) => (hasToggle ? '0' : '24px')};
+    cursor: ${({ foldable }) => (foldable ? 'pointer' : 'default')};
 `;
 
 type ContentProps = {
-    switchable: boolean;
+    hasToggle: boolean;
     'data-testid'?: string;
 };
 
 const StyledContent = styled.div<ContentProps>`
     flex: 1 1 100%;
-    padding: ${({ switchable }) => (switchable ? '12px 24px 24px 64px' : '12px 24px 24px')};
+    padding: ${({ hasToggle }) => (hasToggle ? '12px 24px 24px 64px' : '12px 24px 24px')};
 `;
 
 const StyledFoldoutIcon = styled.div<{ open: boolean }>`

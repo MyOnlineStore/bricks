@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from 'react';
-import { StyledCard, StyledLabel, StyledContent, StyledFoldoutIcon, StyledClickArea } from './style';
+import React, { FC, ReactNode, MouseEvent } from 'react';
+import { StyledCard, StyledContent, StyledFoldoutIcon, StyledClickArea, StyledLabel } from './style';
 import FoldOut from '../FoldOut';
 import Text from '../Text';
 import Box from '../Box';
@@ -41,7 +41,9 @@ export type PropsType = {
  */
 
 const Card: FC<PropsType> = props => {
-    const onClick = (): void => {
+    const onClick = (event: MouseEvent): void => {
+        event.stopPropagation();
+
         if (props.onClick) {
             props.onClick();
         }
@@ -56,9 +58,15 @@ const Card: FC<PropsType> = props => {
     return (
         <StyledCard data-testid={props['data-testid']}>
             <Box direction="column">
-                <Box direction="row">
+                <Box direction="row" position="relative" alignItems="flex-start">
+                    {props.open !== undefined && props.content !== undefined && (
+                        <StyledClickArea
+                            onClick={onClick}
+                            data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
+                        />
+                    )}
                     {props.checked !== undefined && (
-                        <Box padding={[18, 0, 18, 18]}>
+                        <Box margin={[18, 0, 18, 18]} position="relative" zIndex={2}>
                             <Toggle
                                 onChange={toggle}
                                 checked={props.checked}
@@ -69,15 +77,14 @@ const Card: FC<PropsType> = props => {
                             />
                         </Box>
                     )}
-                    <StyledClickArea
-                        onClick={onClick}
-                        switchable={props.checked !== undefined}
+                    <StyledLabel
+                        hasToggle={props.checked !== undefined}
                         foldable={props.open !== undefined && props.content !== undefined}
-                        data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
+                        onClick={onClick}
                     >
-                        <StyledLabel data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
+                        <div data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
                             {props.label}
-                        </StyledLabel>
+                        </div>
                         {props.description && (
                             <Text
                                 variant="descriptive"
@@ -86,7 +93,7 @@ const Card: FC<PropsType> = props => {
                                 {props.description}
                             </Text>
                         )}
-                    </StyledClickArea>
+                    </StyledLabel>
                     {props.open !== undefined && props.content !== undefined && (
                         <StyledFoldoutIcon
                             open={props.open}
@@ -102,7 +109,7 @@ const Card: FC<PropsType> = props => {
                         data-testid={props['data-testid'] ? `${props['data-testid']}-foldout` : undefined}
                     >
                         <StyledContent
-                            switchable={props.checked !== undefined}
+                            hasToggle={props.checked !== undefined}
                             data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                         >
                             {props.content}
@@ -111,7 +118,7 @@ const Card: FC<PropsType> = props => {
                 )}
                 {props.open === undefined && props.content !== undefined && (
                     <StyledContent
-                        switchable={props.checked !== undefined}
+                        hasToggle={props.checked !== undefined}
                         data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                     >
                         {props.content}

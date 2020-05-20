@@ -65,6 +65,13 @@ const Demo: FC<PropsType> = props => {
                 ) : (
                     <Box justifyContent="space-between">
                         <Text strong>Label</Text>
+                        <button
+                            onClick={() => {
+                                alert('click');
+                            }}
+                        >
+                            Test
+                        </button>
                         <Badge variant="info">With a badge</Badge>
                     </Box>
                 )
