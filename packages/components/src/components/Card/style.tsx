@@ -60,6 +60,8 @@ type ContentProps = {
 };
 
 const StyledContent = styled.div<ContentProps>`
+    position: relative;
+    z-index: 2;
     flex: 1 1 100%;
     padding: ${({ hasToggle }) => (hasToggle ? '0 24px 6px 64px' : '0 24px 6px')};
 `;

@@ -12,10 +12,7 @@ import FormRow from '../FormRow';
 
 const DemoDescription = () => (
     <>
-        Description with a{' '}
-        <Link href="#" title="link">
-            link
-        </Link>
+        Description with a <Link title="link">link</Link>
     </>
 );
 

@@ -109,6 +109,7 @@ const Card: FC<PropsType> = props => {
                             {props.description && (
                                 <Text
                                     variant="descriptive"
+                                    onClick={onClick}
                                     data-testid={
                                         props['data-testid'] ? `${props['data-testid']}-description` : undefined
                                     }
@@ -128,12 +129,16 @@ const Card: FC<PropsType> = props => {
                         data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}
                     >
                         {props.description && (
-                            <Text
-                                variant="descriptive"
-                                data-testid={props['data-testid'] ? `${props['data-testid']}-description` : undefined}
-                            >
-                                {props.description}
-                            </Text>
+                            <Box position="relative" zIndex={2}>
+                                <Text
+                                    variant="descriptive"
+                                    data-testid={
+                                        props['data-testid'] ? `${props['data-testid']}-description` : undefined
+                                    }
+                                >
+                                    {props.description}
+                                </Text>
+                            </Box>
                         )}
                         <Box padding={[24, 0, 0]}>
                             <div>{props.content}</div>
