@@ -188,10 +188,18 @@ const CurrencyField: FC<PropsType> = props => {
                 }
 
                 setDisplayValue(formatDisplayValue(displayValue));
+
+                if (props.onBlur) {
+                    props.onBlur();
+                }
             }}
             onFocus={() => {
                 const unformatted = filterDisplayValue(displayValue);
                 setDisplayValue(unformatted);
+
+                if (props.onFocus) {
+                    props.onFocus();
+                }
             }}
             onClick={() => {
                 if (inputRef.current && inputRef.current.selectionStart) {
@@ -199,6 +207,10 @@ const CurrencyField: FC<PropsType> = props => {
                         displayValue.length === formatDisplayValue(displayValue).length
                             ? inputRef.current.selectionStart
                             : inputRef.current.selectionStart - 1;
+                }
+
+                if (props.onClick) {
+                    props.onClick();
                 }
             }}
         />

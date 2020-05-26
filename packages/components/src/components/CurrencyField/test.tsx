@@ -477,4 +477,61 @@ describe(CurrencyField.name, () => {
                 .prop('value'),
         ).toEqual('');
     });
+
+    it('should execute onBlur when defined', () => {
+        const blurMock = jest.fn();
+
+        const component = mountWithTheme(
+            <CurrencyField
+                name=""
+                value={19.12}
+                locale="en-US"
+                currency="USD"
+                onChange={jest.fn()}
+                onBlur={blurMock}
+            />,
+        );
+
+        component.find('input').simulate('blur');
+
+        expect(blurMock).toHaveBeenCalled();
+    });
+
+    it('should execute onFocus when defined', () => {
+        const focusMock = jest.fn();
+
+        const component = mountWithTheme(
+            <CurrencyField
+                name=""
+                value={19.12}
+                locale="en-US"
+                currency="USD"
+                onChange={jest.fn()}
+                onFocus={focusMock}
+            />,
+        );
+
+        component.find('input').simulate('focus');
+
+        expect(focusMock).toHaveBeenCalled();
+    });
+
+    it('should execute onClick when defined', () => {
+        const clickMock = jest.fn();
+
+        const component = mountWithTheme(
+            <CurrencyField
+                name=""
+                value={19.12}
+                locale="en-US"
+                currency="USD"
+                onChange={jest.fn()}
+                onClick={clickMock}
+            />,
+        );
+
+        component.find('input').simulate('click');
+
+        expect(clickMock).toHaveBeenCalled();
+    });
 });
