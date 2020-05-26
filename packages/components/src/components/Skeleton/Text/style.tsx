@@ -6,7 +6,7 @@ type PropsType = {
     baseWidth?: number;
 };
 
-const StyledTextSkeleton = styled.div<PropsType>`
+const StyledTextSkeleton = styled.span<PropsType>`
     ${({ theme }) => getSkeletonStyles(theme)}
     color: transparent;
     display: inline-block;
