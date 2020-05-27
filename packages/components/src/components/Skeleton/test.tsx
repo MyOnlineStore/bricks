@@ -2,6 +2,7 @@ import React from 'react';
 import { mountWithTheme } from '../../utility/styled/testing';
 import Skeleton from '.';
 import StyledTextSkeleton from './Text/style';
+import { blockElements } from '../../__fixtures__/html';
 
 describe('Skeleton', () => {
     it('should not crash when no baseWidth is set on the Text variant', () => {
@@ -24,5 +25,15 @@ describe('Skeleton', () => {
         const component = mountWithTheme(<Skeleton.Text baseWidth={3} lines={1} />);
 
         expect(component.find(StyledTextSkeleton).prop('baseWidth')).toBe(6);
+    });
+
+    it('should not render a block element when using a Text skeleton', () => {
+        const component = mountWithTheme(<Skeleton.Text baseWidth={3} lines={1} />);
+
+        expect(component.find('span').hostNodes().length).toBe(1);
+
+        blockElements.forEach(tag => {
+            expect(component.find(tag).hostNodes().length).toBe(0);
+        });
     });
 });
