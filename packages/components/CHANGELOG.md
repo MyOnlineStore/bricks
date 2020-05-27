@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.0.3...@myonlinestore/bricks@3.1.0) (2020-05-27)
+
+
+### Bug Fixes
+
+* **CurrencyField:** execute onBlur, onFocus, onClick if defined ([#557](https://github.com/MyOnlineStore/bricks/issues/557)) ([6ccf6dc](https://github.com/MyOnlineStore/bricks/commit/6ccf6dc32616256401dcc77e69248e3bcb68a61e))
+* **Skeleton:** Turned text skeleton into span to avoid invalid nesting errors ([#558](https://github.com/MyOnlineStore/bricks/issues/558)) ([e3de9e4](https://github.com/MyOnlineStore/bricks/commit/e3de9e43d15d2a6486a9c063c4fb3f07426fbf7b))
+
+
+### Features
+
+* **Select:** Added optiongroup to Select ([#553](https://github.com/MyOnlineStore/bricks/issues/553)) ([fb78bb7](https://github.com/MyOnlineStore/bricks/commit/fb78bb7ca36d46a111735a4797a8235806bc9347))
+
+
+
+
+
 ## [3.0.3](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.0.2...@myonlinestore/bricks@3.0.3) (2020-05-01)
 
 **Note:** Version bump only for package @myonlinestore/bricks
