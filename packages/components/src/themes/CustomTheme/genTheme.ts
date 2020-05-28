@@ -37,6 +37,7 @@ import { composeIllustrationTheme } from '../../components/Illustration/style';
 import { composeTextualButton } from '../../components/TextualButton';
 import { composeProgressTheme } from '../../components/Progress/style';
 import { composeFormRowTheme } from '../../components/FormRow/style';
+import { composeAccordionTheme } from '../../components/Accordion/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -74,6 +75,7 @@ const generateThemeObject = (
     );
 
     const ThemeObject: ThemeType = {
+        Accordion: composeAccordionTheme(themeTools),
         Badge: composeBadgeTheme(themeTools),
         Breadcrumbs: composeBreadcrumbsTheme(themeTools),
         Button: composeButtonTheme(themeTools),
