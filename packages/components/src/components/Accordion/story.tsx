@@ -44,22 +44,75 @@ const DemoContent = () => (
 
 type PropsType = {
     image?: boolean;
+    labelDescription?: boolean;
+    fullBlown?: boolean;
 };
 
 const Demo: FC<PropsType> = props => {
     const [open, setOpen] = useState<boolean>(false);
     const onClick = () => setOpen(!open);
 
-    return (
+    return props.fullBlown ? (
+        <Box position="relative" maxWidth="300px" padding={[24]} style={{ border: '1px solid grey' }}>
+            <div
+                onClick={onClick}
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    left: '0',
+                    top: '0',
+                    cursor: 'pointer',
+                }}
+            />
+            <Accordion
+                label={
+                    props.image ? (
+                        <ImageLabel />
+                    ) : (
+                        <>
+                            <Text variant="info" strong>
+                                Label
+                            </Text>
+                            {props.labelDescription && (
+                                <Text variant="descriptive">
+                                    MyOnlineStore
+                                    <br />
+                                    Molenstraat 56
+                                    <br />
+                                    5341GX Oss
+                                </Text>
+                            )}
+                        </>
+                    )
+                }
+                open={open}
+                onClick={onClick}
+            >
+                <DemoContent />
+            </Accordion>
+        </Box>
+    ) : (
         <Box maxWidth="300px">
             <Accordion
                 label={
                     props.image ? (
                         <ImageLabel />
                     ) : (
-                        <Text variant="info" strong>
-                            Label
-                        </Text>
+                        <>
+                            <Text variant="info" strong>
+                                Label
+                            </Text>
+                            {props.labelDescription && (
+                                <Text variant="descriptive">
+                                    MyOnlineStore
+                                    <br />
+                                    Molenstraat 56
+                                    <br />
+                                    5341GX Oss
+                                </Text>
+                            )}
+                        </>
                     )
                 }
                 open={open}
@@ -73,4 +126,6 @@ const Demo: FC<PropsType> = props => {
 
 storiesOf('Accordion', module)
     .add('Default', () => <Demo />)
-    .add('With an image as label', () => <Demo image />);
+    .add('With an image as label', () => <Demo image />)
+    .add('With extra nodes in label', () => <Demo labelDescription />)
+    .add('ToggleCard preview', () => <Demo labelDescription fullBlown />);
