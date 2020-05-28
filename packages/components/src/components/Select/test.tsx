@@ -512,4 +512,16 @@ describe('Select', () => {
 
         expect(changeMock).toHaveBeenCalledTimes(0);
     });
+
+    it('should be able to find the Select by instance', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <div>
+                <Select onChange={changeMock} value="" emptyText="" options={options} data-testid="select" />
+            </div>,
+        );
+
+        expect(component.find(Select).prop('options')).toHaveLength(options.length);
+    });
 });
