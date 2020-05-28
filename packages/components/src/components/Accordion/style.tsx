@@ -6,11 +6,7 @@ type AccordionThemeType = {
     iconColor: string;
 };
 
-type ClickAreaProps = {
-    'data-testid'?: string;
-};
-
-const StyledClickArea = styled.button<ClickAreaProps>`
+const StyledClickArea = styled.button`
     position: absolute;
     top: 0;
     left: 0;
@@ -18,29 +14,21 @@ const StyledClickArea = styled.button<ClickAreaProps>`
     height: 100%;
     z-index: 1;
     display: block;
-    box-sizing: content-box;
+    padding: 0;
     background: none;
     border: none;
     appearance: none;
     cursor: pointer;
 `;
 
-type LabelProps = {
-    'data-testid'?: string;
-};
-
-const StyledLabel = styled.div<LabelProps>`
+const StyledLabel = styled.div`
     position: relative;
     z-index: 2;
     flex: 1 1 100%;
     pointer-events: none;
 `;
 
-type ContentProps = {
-    'data-testid'?: string;
-};
-
-const StyledContent = styled.div<ContentProps>`
+const StyledContent = styled.div`
     position: relative;
     z-index: 2;
     flex: 1 1 100%;
