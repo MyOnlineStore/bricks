@@ -13,14 +13,14 @@ export type PropsType = {
 };
 
 /**
- * Accordion component for structuring content and fold if necessary
+ * Accordion component for folding secondary content
  *
  * @param label
  * Required ReactNode
  * @param open
- * Determines Foldout state. Must be used in combination with the content prop to make it foldable
+ * Determines Foldout state
  * @param onClick
- * Callback for the label click area.
+ * Callback for the click area
  */
 
 const Accordion: FC<PropsType> = props => {
