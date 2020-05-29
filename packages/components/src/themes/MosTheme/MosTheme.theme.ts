@@ -27,6 +27,9 @@ const roundness = {
 };
 
 const theme: ThemeType = {
+    Accordion: {
+        iconColor: colors.grey500,
+    },
     Badge: {
         primary: {
             backgroundColor: colors.green100,
