@@ -5,7 +5,7 @@ import Text from '../Text';
 import FoldOut from '../FoldOut';
 
 describe('Accordion', () => {
-    it('should render a label and content a foldout icon', () => {
+    it('should render a label, content and a foldout icon', () => {
         const component = mountWithTheme(
             <Accordion open={true} label={<Text strong>Label</Text>} onClick={() => {}} data-testid="Accordion">
                 Content
