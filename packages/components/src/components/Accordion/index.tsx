@@ -33,33 +33,31 @@ const Accordion: FC<PropsType> = props => {
     };
 
     return (
-        <div data-testid={props['data-testid']}>
-            <Box direction="column">
-                <Box direction="row" position="relative" alignItems="flex-start">
-                    <StyledClickArea
-                        onClick={onClick}
-                        data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
-                    />
-                    <StyledLabel data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
-                        {props.label}
-                    </StyledLabel>
-                    <StyledFoldoutIcon
-                        open={props.open}
-                        data-testid={props['data-testid'] ? `${props['data-testid']}-foldout-icon` : undefined}
-                    >
-                        <Icon icon={<ChevronDownSmallIcon />} size="small" />
-                    </StyledFoldoutIcon>
-                </Box>
-                <FoldOut
+        <Box direction="column" grow={1} data-testid={props['data-testid']}>
+            <Box direction="row" position="relative" alignItems="flex-start">
+                <StyledClickArea
+                    onClick={onClick}
+                    data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
+                />
+                <StyledLabel data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
+                    {props.label}
+                </StyledLabel>
+                <StyledFoldoutIcon
                     open={props.open}
-                    data-testid={props['data-testid'] ? `${props['data-testid']}-foldout` : undefined}
+                    data-testid={props['data-testid'] ? `${props['data-testid']}-foldout-icon` : undefined}
                 >
-                    <StyledContent data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}>
-                        {props.children}
-                    </StyledContent>
-                </FoldOut>
+                    <Icon icon={<ChevronDownSmallIcon />} size="small" />
+                </StyledFoldoutIcon>
             </Box>
-        </div>
+            <FoldOut
+                open={props.open}
+                data-testid={props['data-testid'] ? `${props['data-testid']}-foldout` : undefined}
+            >
+                <StyledContent data-testid={props['data-testid'] ? `${props['data-testid']}-content` : undefined}>
+                    {props.children}
+                </StyledContent>
+            </FoldOut>
+        </Box>
     );
 };
 
