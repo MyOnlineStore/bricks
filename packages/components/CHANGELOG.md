@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.1.0...@myonlinestore/bricks@3.2.0) (2020-06-02)
+
+
+### Features
+
+* **Accordion:** Added Accordion component ([#561](https://github.com/MyOnlineStore/bricks/issues/561)) ([2074fa8](https://github.com/MyOnlineStore/bricks/commit/2074fa8a2e8f04949a4e7617e61ff1f9a88c56ae))
+* **Card:** Added new Card component ([#560](https://github.com/MyOnlineStore/bricks/issues/560)) ([b3377ae](https://github.com/MyOnlineStore/bricks/commit/b3377aea38bd6a63cad552b8a8d7a79249bc624c))
+
+
+
+
+
 # [3.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.0.3...@myonlinestore/bricks@3.1.0) (2020-05-27)
 
 
