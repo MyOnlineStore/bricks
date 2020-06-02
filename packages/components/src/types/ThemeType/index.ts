@@ -33,12 +33,14 @@ import { ToastThemeType } from '../../components/Toast/style';
 import { ToggleThemeType } from '../../components/Toggle/style';
 import { TooltipThemeType } from '../../components/Tooltip/style';
 import { AccordionThemeType } from '../../components/Accordion/style';
+import { CardThemeType } from '../../components/Card/style';
 
 type ThemeType = {
     Accordion: AccordionThemeType;
     Badge: BadgeThemeType;
     Breadcrumbs: BreadcrumbsThemeType;
     Button: ButtonThemeType;
+    Card: CardThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
     FormRow: FormRowThemeType;

@@ -15,3 +15,4 @@ packages/components/docs/pages/generated
 packages/components/public
 reports
 yarn-error.log
+.gypi

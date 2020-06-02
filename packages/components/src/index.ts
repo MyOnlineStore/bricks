@@ -5,6 +5,7 @@ export { default as Branch } from './components/Branch';
 export { default as Breadcrumbs } from './components/Breadcrumbs';
 export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
+export { default as Card } from './components/Card';
 export { default as Carousel } from './components/Carousel';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Contrast } from './components/Contrast';

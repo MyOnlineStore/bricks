@@ -38,6 +38,7 @@ import { composeTextualButton } from '../../components/TextualButton';
 import { composeProgressTheme } from '../../components/Progress/style';
 import { composeFormRowTheme } from '../../components/FormRow/style';
 import { composeAccordionTheme } from '../../components/Accordion/style';
+import { composeCardTheme } from '../../components/Card/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -79,6 +80,7 @@ const generateThemeObject = (
         Badge: composeBadgeTheme(themeTools),
         Breadcrumbs: composeBreadcrumbsTheme(themeTools),
         Button: composeButtonTheme(themeTools),
+        Card: composeCardTheme(themeTools),
         Checkbox: composeCheckboxTheme(themeTools),
         Contrast: composeContrastTheme(themeTools),
         FormRow: composeFormRowTheme(themeTools),
