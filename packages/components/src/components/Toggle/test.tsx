@@ -149,4 +149,21 @@ describe('Toggle', () => {
 
         expect(toggle.find('p').length).toBe(1);
     });
+
+    it('should be testable with a testid', () => {
+        const component = mountWithTheme(
+            <Toggle
+                onChange={(): void => undefined}
+                name="demo"
+                error={true}
+                label="foo"
+                checked={false}
+                disabled={true}
+                value="bar"
+                data-testid="toggle"
+            />,
+        );
+
+        expect(component.find('[data-testid="toggle"]').hostNodes()).toHaveLength(1);
+    });
 });
