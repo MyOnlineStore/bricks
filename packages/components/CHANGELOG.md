@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.2.0...@myonlinestore/bricks@3.2.1) (2020-06-04)
+
+
+### Bug Fixes
+
+* **Accordion:** Added grow property to root element ([#562](https://github.com/MyOnlineStore/bricks/issues/562)) ([5ba663f](https://github.com/MyOnlineStore/bricks/commit/5ba663f8bce9c3beb07d4b7acb071c5381c1af9f))
+
+
+
+
+
 # [3.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.1.0...@myonlinestore/bricks@3.2.0) (2020-06-02)
 
 
