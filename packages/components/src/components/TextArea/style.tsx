@@ -78,6 +78,8 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
                 border-color: ${theme.TextArea.disabled.borderColor};
                 box-shadow: none;
                 cursor: not-allowed;
+                -webkit-text-fill-color: currentColor;
+                opacity: 1;
                 `;
         } else {
             return `
