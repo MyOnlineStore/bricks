@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.2.1...@myonlinestore/bricks@3.3.0) (2020-06-04)
+
+
+### Features
+
+* **Toggle:** Added data-testid prop ([#563](https://github.com/MyOnlineStore/bricks/issues/563)) ([da75c87](https://github.com/MyOnlineStore/bricks/commit/da75c879f3b59732ec00daa8c6289a4a49cd8acd))
+
+
+
+
+
 ## [3.2.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.2.0...@myonlinestore/bricks@3.2.1) (2020-06-04)
 
 
