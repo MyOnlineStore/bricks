@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.3.0...@myonlinestore/bricks@3.3.1) (2020-06-05)
+
+
+### Bug Fixes
+
+* **Accordion:** Moved button area ([#565](https://github.com/MyOnlineStore/bricks/issues/565)) ([5aafc4c](https://github.com/MyOnlineStore/bricks/commit/5aafc4ce5b65f45dffaa4e1c81359a6a9bb3d76d))
+* **TextField:** Disabled state is now also readable in safari ([#564](https://github.com/MyOnlineStore/bricks/issues/564)) ([3b1d977](https://github.com/MyOnlineStore/bricks/commit/3b1d9779233a5788b310aa62e1aa8a0553c08af6))
+
+
+
+
+
 # [3.3.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.2.1...@myonlinestore/bricks@3.3.0) (2020-06-04)
 
 
