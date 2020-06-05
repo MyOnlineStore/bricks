@@ -6,26 +6,11 @@ type AccordionThemeType = {
     iconColor: string;
 };
 
-const StyledClickArea = styled.button`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: block;
-    padding: 0;
-    background: none;
-    border: none;
-    appearance: none;
-    cursor: pointer;
-`;
-
 const StyledLabel = styled.div`
     position: relative;
-    z-index: 2;
+    z-index: 1;
     flex: 1 1 100%;
-    pointer-events: none;
+    cursor: pointer;
 `;
 
 const StyledContent = styled.div`
@@ -34,17 +19,28 @@ const StyledContent = styled.div`
     flex: 1 1 100%;
 `;
 
-const StyledFoldoutIcon = styled.div<{ open: boolean }>`
+const StyledFoldoutIcon = styled.button<{ open: boolean }>`
     position: absolute;
-    right: 0;
-    top: 6px;
+    right: -6px;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 3;
+    display: block;
+    padding: 0;
+    background: none;
+    border: none;
+    appearance: none;
+    cursor: pointer;
     transform: ${({ open }) => (open ? `rotate(180deg)` : '')};
     transform-origin: 50% 50%;
     transition: transform 200ms;
-    pointer-events: none;
 
     ${StyledIcon} {
         display: block;
+        position: absolute;
+        top: 6px;
+        right: 6px;
         color: ${({ theme }) => theme.Accordion.iconColor};
     }
 `;
@@ -57,4 +53,4 @@ const composeAccordionTheme = (themeTools: ThemeTools): AccordionThemeType => {
     };
 };
 
-export { StyledClickArea, StyledLabel, StyledFoldoutIcon, StyledContent, AccordionThemeType, composeAccordionTheme };
+export { StyledLabel, StyledFoldoutIcon, StyledContent, AccordionThemeType, composeAccordionTheme };
