@@ -31,10 +31,7 @@ describe('Accordion', () => {
         const foldoutIcon = component.find('[data-testid="Accordion-foldout-icon"]').hostNodes();
         const foldoutComponent = component.find(FoldOut);
 
-        component
-            .find('[data-testid="Accordion-click-area"]')
-            .hostNodes()
-            .simulate('click');
+        foldoutIcon.simulate('click');
 
         expect(foldoutIcon).toHaveLength(1);
         expect(foldoutComponent).toHaveLength(1);
