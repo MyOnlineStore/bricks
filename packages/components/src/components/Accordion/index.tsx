@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, MouseEvent } from 'react';
-import { StyledContent, StyledFoldoutIcon, StyledClickArea, StyledLabel } from './style';
+import { StyledContent, StyledFoldoutIcon, StyledLabel } from './style';
 import FoldOut from '../FoldOut';
 import Box from '../Box';
 import { ChevronDownSmallIcon } from '@myonlinestore/bricks-assets';
@@ -35,14 +35,14 @@ const Accordion: FC<PropsType> = props => {
     return (
         <Box direction="column" grow={1} data-testid={props['data-testid']}>
             <Box direction="row" position="relative" alignItems="flex-start">
-                <StyledClickArea
+                <StyledLabel
                     onClick={onClick}
-                    data-testid={props['data-testid'] ? `${props['data-testid']}-click-area` : undefined}
-                />
-                <StyledLabel data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}>
+                    data-testid={props['data-testid'] ? `${props['data-testid']}-label` : undefined}
+                >
                     {props.label}
                 </StyledLabel>
                 <StyledFoldoutIcon
+                    onClick={onClick}
                     open={props.open}
                     data-testid={props['data-testid'] ? `${props['data-testid']}-foldout-icon` : undefined}
                 >
