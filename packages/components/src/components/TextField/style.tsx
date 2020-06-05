@@ -82,6 +82,8 @@ const StyledInput = styled.input<InputPropsType>`
             return `
                 color: ${theme.TextField.input.disabled.color};
                 cursor: not-allowed;
+                -webkit-text-fill-color: currentColor;
+                opacity: 1;
                 `;
         } else {
             return `
