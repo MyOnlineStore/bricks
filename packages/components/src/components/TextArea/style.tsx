@@ -78,8 +78,6 @@ const StyledTextAreaWrapper = styled.div<TextAreaWrapperPropsType>`
                 border-color: ${theme.TextArea.disabled.borderColor};
                 box-shadow: none;
                 cursor: not-allowed;
-                -webkit-text-fill-color: currentColor;
-                opacity: 1;
                 `;
         } else {
             return `
@@ -122,7 +120,17 @@ const StyledTextArea = styled.textarea<TextAreaPropsType>`
         }};
     }
 
-    ${({ disabled }) => (disabled ? 'cursor: not-allowed;' : '')}
+    ${({ disabled }) => {
+        if (disabled) {
+            return `
+            cursor: not-allowed;
+            -webkit-text-fill-color: currentColor;
+            opacity: 1;
+            `;
+        } else {
+            return '';
+        }
+    }}
 `;
 
 const composeTextAreaTheme = (themeTools: ThemeTools): TextAreaThemeType => {
