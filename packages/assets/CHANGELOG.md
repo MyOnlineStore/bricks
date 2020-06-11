@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.4.0...@myonlinestore/bricks-assets@0.5.0) (2020-06-11)
+
+
+### Features
+
+* **bricks-assets:** Added cookie icon ([#566](https://github.com/MyOnlineStore/bricks/issues/566)) ([fe55322](https://github.com/MyOnlineStore/bricks/commit/fe55322152a662c43ffe75efe6ff2ebaed381b1f))
+
+
+
+
+
 # [0.4.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.3.0...@myonlinestore/bricks-assets@0.4.0) (2020-05-12)
 
 
