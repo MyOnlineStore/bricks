@@ -30,11 +30,24 @@ const StyledFoldoutIcon = styled.button<{ open: boolean }>`
     padding: 0;
     background: none;
     border: none;
+    box-shadow: none;
     appearance: none;
     cursor: pointer;
     transform: ${({ open }) => (open ? `rotate(180deg)` : '')};
     transform-origin: 50% 50%;
     transition: transform 200ms;
+
+    &:hover {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    &:focus {
+        background: none;
+        border: none;
+        box-shadow: initial;
+    }
 
     ${StyledIcon} {
         display: block;
