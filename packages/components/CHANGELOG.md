@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.3.1...@myonlinestore/bricks@3.3.2) (2020-06-25)
+
+
+### Bug Fixes
+
+* **Accordion:** Reset styles explicitly ([#568](https://github.com/MyOnlineStore/bricks/issues/568)) ([f02abc6](https://github.com/MyOnlineStore/bricks/commit/f02abc625c000b9602678daaf227836d65ea6c9c))
+
+
+
+
+
 ## [3.3.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.3.0...@myonlinestore/bricks@3.3.1) (2020-06-05)
 
 
