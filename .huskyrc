@@ -1,5 +1,0 @@
-{
-  "hooks": {
-    "pre-push": "yarn --frozen-lockfile --ignore-scripts && yarn cs && yarn lint-fix && yarn test --bail && yarn build"
-  }
-}
