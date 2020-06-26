@@ -99,5 +99,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/MyOnlineStore/bricks"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1"
   }
 }
