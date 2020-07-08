@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.5.1...@myonlinestore/bricks-assets@0.6.0) (2020-07-08)
+
+
+### Features
+
+* Add save icon ([#573](https://github.com/MyOnlineStore/bricks/issues/573)) ([7399b7b](https://github.com/MyOnlineStore/bricks/commit/7399b7b98bbf1326621b7589a0b9d16f258b9a01))
+
+
+
+
+
 ## [0.5.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.5.0...@myonlinestore/bricks-assets@0.5.1) (2020-06-11)
 
 **Note:** Version bump only for package @myonlinestore/bricks-assets
