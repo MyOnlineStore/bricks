@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.6.0...@myonlinestore/bricks-assets@0.7.0) (2020-07-10)
+
+
+### Features
+
+* Add BusIcon ([#574](https://github.com/MyOnlineStore/bricks/issues/574)) ([4baf547](https://github.com/MyOnlineStore/bricks/commit/4baf5473d95657a6eaec00dba285bfe213f45da5))
+
+
+
+
+
 # [0.6.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.5.1...@myonlinestore/bricks-assets@0.6.0) (2020-07-08)
 
 
