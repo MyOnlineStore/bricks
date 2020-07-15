@@ -75,15 +75,47 @@ class Demo extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Select
-                placeholder={text('placeholder', 'Search a value')}
-                value={this.state.value}
-                emptyText={text('emptyText', 'No results')}
-                onChange={this.handleChange}
-                disabled={boolean('disabled', false)}
-                data-testid="foo"
-                options={object('options', options)}
-            />
+            <div>
+                <Text>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.
+                    Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur
+                    blandit tempus porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis
+                    interdum.
+                </Text>
+                <Select
+                    placeholder={text('placeholder', 'Search a value')}
+                    value={this.state.value}
+                    emptyText={text('emptyText', 'No results')}
+                    onChange={this.handleChange}
+                    disabled={boolean('disabled', false)}
+                    data-testid="foo"
+                    options={object('options', options)}
+                />
+                <Text>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam.
+                    Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Praesent commodo
+                    cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit.
+                </Text>
+                <Text>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.
+                    Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur
+                    blandit tempus porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis
+                    interdum.
+                </Text>
+                <Text>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam.
+                    Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Praesent commodo
+                    cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit.
+                </Text>
+                <Text>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.
+                    Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur
+                    blandit tempus porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis
+                    interdum.
+                </Text>
+            </div>
         );
     }
 }
@@ -140,16 +172,48 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Select
-                placeholder={text('placeholder', 'Select a value')}
-                value={this.state.value}
-                emptyText={text('emptyText', 'No results')}
-                onChange={this.handleChange}
-                disabled={boolean('disabled', false)}
-                options={object('options', options)}
-                renderSelected={renderSelected}
-                renderOption={renderOption}
-            />
+            <div>
+                <Text>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.
+                    Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur
+                    blandit tempus porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis
+                    interdum.
+                </Text>
+                <Select
+                    placeholder={text('placeholder', 'Select a value')}
+                    value={this.state.value}
+                    emptyText={text('emptyText', 'No results')}
+                    onChange={this.handleChange}
+                    disabled={boolean('disabled', false)}
+                    options={object('options', options)}
+                    renderSelected={renderSelected}
+                    renderOption={renderOption}
+                />
+                <Text>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam.
+                    Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Praesent commodo
+                    cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit.
+                </Text>
+                <Text>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.
+                    Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur
+                    blandit tempus porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis
+                    interdum.
+                </Text>
+                <Text>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam.
+                    Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Praesent commodo
+                    cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit.
+                </Text>
+                <Text>
+                    Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.
+                    Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur
+                    blandit tempus porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis
+                    interdum.
+                </Text>
+            </div>
         );
     }
 }

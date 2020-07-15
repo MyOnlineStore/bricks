@@ -76,14 +76,14 @@ describe('Select', () => {
 
         component.find(Select).simulate('focus');
 
-        expect(component.find('[data-testid="select-input"]')).toHaveStyleRule(
+        expect(component.find('[data-testid="select-field"]')).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.select.focus.borderColor}`,
         );
 
         component.find(Select).simulate('blur');
 
-        expect(component.find('[data-testid="select-input"]')).toHaveStyleRule(
+        expect(component.find('[data-testid="select-field"]')).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.common.borderColor}`,
         );
@@ -388,7 +388,7 @@ describe('Select', () => {
         expect(renderSelected).toHaveBeenCalledTimes(1);
     });
 
-    it('should show an empty state', () => {
+    it.only('should show an empty state', () => {
         const emptyText = 'mock empty text';
 
         const component = mountWithTheme(
@@ -399,7 +399,7 @@ describe('Select', () => {
 
         expect(
             component
-                .find('[data-testid="foo-window-empty"]')
+                .find('[data-testid="foo-list-empty"]')
                 .hostNodes()
                 .text(),
         ).toEqual(emptyText);

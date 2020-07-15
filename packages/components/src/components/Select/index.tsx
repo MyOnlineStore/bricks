@@ -13,8 +13,10 @@ import { StyledWrapper } from './style';
 import { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import SelectModal from './SelectModal';
-import SelectInput from './SelectInput';
+import SelectSearch from './SelectSearch';
 import SelectOptionGroup from './SelectOptionGroup';
+import SelectedOption from './SelectedOption';
+import SelectList from './SelectList';
 
 type OptionBaseType = {
     value: string;
@@ -68,14 +70,12 @@ export const SelectContext = createContext({
 const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<GenericOptionType>): ReactElement => {
     const initialRender = useRef(true);
     const inputRef = useRef<HTMLInputElement | null>(null);
-    const inputWrapperRef = useRef<HTMLDivElement | null>(null);
     const wrapperRef = useRef<HTMLDivElement | null>(null);
-    const windowRef = useRef<HTMLDivElement | null>(null);
+    const modalRef = useRef<HTMLDivElement | null>(null);
     const [hasFocus, setFocus] = useState(false);
     const [isOpen, setOpen] = useState(false);
     const [targeted, setTarget] = useState('');
     const [filter, setFilter] = useState('');
-    const inputHeight = inputWrapperRef.current?.getBoundingClientRect().height || 0;
     const options = useRef<Array<OptionBaseType>>([]);
 
     const getSelectedOption = (value: string) => {
@@ -153,7 +153,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-        if (!wrapperRef.current?.contains(event.target as Node) && !windowRef.current?.contains(event.target as Node)) {
+        if (!wrapperRef.current?.contains(event.target as Node) && !modalRef.current?.contains(event.target as Node)) {
             close();
         }
     };
@@ -250,42 +250,45 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                 aria-expanded={isOpen}
                 data-testid={props['data-testid']}
             >
-                <SelectInput
+                <SelectedOption
                     selected={props.renderSelected?.(selectedOption)}
-                    inputRef={inputRef}
-                    inputWrapperRef={inputWrapperRef}
-                    placeholder={props.placeholder || ''}
                     selectedOption={selectedOption}
+                    placeholder={props.placeholder || ''}
                     data-testid={props['data-testid']}
                 />
                 <SelectModal
                     isOpen={isOpen}
-                    emptyText={props.emptyText}
                     anchorRef={wrapperRef}
-                    modalRef={windowRef}
-                    inputHeight={inputHeight}
+                    modalRef={modalRef}
                     data-testid={props['data-testid']}
                 >
-                    {props.options?.map(option => {
-                        const optionState = { isSelected: option.value === props.value };
+                    <SelectSearch
+                        inputRef={inputRef}
+                        placeholder={props.placeholder || ''}
+                        data-testid={props['data-testid']}
+                    />
+                    <SelectList isOpen={isOpen} emptyText={props.emptyText || ''}>
+                        {props.options?.map(option => {
+                            const optionState = { isSelected: option.value === props.value };
 
-                        return (
-                            <SelectOption
-                                label={option.label}
-                                value={option.value}
-                                key={`${option.value}-${option.label}`}
-                                data-testid={
-                                    props['data-testid']
-                                        ? `${props['data-testid']}-option-${option.value}${
-                                              option.value === targeted ? '-targeted' : ''
-                                          }`
-                                        : undefined
-                                }
-                            >
-                                {props.renderOption?.(option, optionState)}
-                            </SelectOption>
-                        );
-                    }) || props.children}
+                            return (
+                                <SelectOption
+                                    label={option.label}
+                                    value={option.value}
+                                    key={`${option.value}-${option.label}`}
+                                    data-testid={
+                                        props['data-testid']
+                                            ? `${props['data-testid']}-option-${option.value}${
+                                                  option.value === targeted ? '-targeted' : ''
+                                              }`
+                                            : undefined
+                                    }
+                                >
+                                    {props.renderOption?.(option, optionState)}
+                                </SelectOption>
+                            );
+                        }) || props.children}
+                    </SelectList>
                 </SelectModal>
             </StyledWrapper>
         </SelectContext.Provider>
