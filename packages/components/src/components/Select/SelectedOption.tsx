@@ -25,26 +25,28 @@ const SelectedOptionContainer = styled.div<SelectedOptionPropsType>`
     user-select: none;
 
     ${({ theme, focus, open, disabled }) => {
-        if ((focus || open) && !disabled) {
-            return `
-                background: ${theme.Select.common.background};
-                border: solid 1px ${theme.Select.select.focus.borderColor};
-                box-shadow: ${theme.Select.select.focus.boxShadow};
-            `;
-        } else if (disabled) {
+        if (disabled) {
             return `
                 background: ${theme.Select.select.disabled.background};
                 border: solid 1px ${theme.Select.select.disabled.borderColor};
                 box-shadow: none;
                 cursor: not-allowed;
             `;
-        } else {
+        }
+
+        if (focus || open) {
             return `
                 background: ${theme.Select.common.background};
-                border: solid 1px ${theme.Select.common.borderColor};
-                box-shadow: none;
+                border: solid 1px ${theme.Select.select.focus.borderColor};
+                box-shadow: ${theme.Select.select.focus.boxShadow};
             `;
         }
+
+        return `
+            background: ${theme.Select.common.background};
+            border: solid 1px ${theme.Select.common.borderColor};
+            box-shadow: none;
+        `;
     }}
 `;
 

@@ -55,20 +55,22 @@ const SelectSearchInner = styled.div<SearchPropsType>`
     border-radius: ${({ theme }) => theme.Select.common.borderRadius};
 
     ${({ theme, focus, open, disabled }) => {
-        if (focus && !open && !disabled) {
-            return `
-                border: solid 1px ${theme.Select.select.focus.borderColor};
-            `;
-        } else if (disabled) {
+        if (disabled) {
             return `
                 border: solid 1px ${theme.Select.select.disabled.borderColor};
                 cursor: not-allowed;
             `;
-        } else {
+        }
+
+        if (focus && !open) {
             return `
-                border: solid 1px ${theme.Select.common.borderColor};
+                border: solid 1px ${theme.Select.select.focus.borderColor};
             `;
         }
+
+        return `
+            border: solid 1px ${theme.Select.common.borderColor};
+        `;
     }}
 `;
 
@@ -114,7 +116,7 @@ const SelectSearch: FC<PropsType> = props => {
                     </SelectSearchInner>
                     <StyledCaret inner>
                         <Icon
-                            title={'close'}
+                            title="close"
                             icon={<CaretUpIcon />}
                             size="medium"
                             color={props.theme.Select.select.idle.caretColor}
