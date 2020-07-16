@@ -20,6 +20,7 @@ const SelectSearchContainer = styled.div`
         appearance: none;
         outline: none;
         border: none;
+        margin: 0;
         padding: 0;
         background: transparent;
         font-size: ${({ theme }) => theme.Select.common.fontSize};
@@ -33,6 +34,10 @@ const SelectSearchContainer = styled.div`
             font-style: italic;
             color: ${({ theme }) => theme.Select.select.focus.placeholderColor};
             opacity: 1;
+        }
+
+        &::ms-clear {
+            display: none;
         }
     }
 `;
@@ -52,26 +57,8 @@ const SelectSearchInner = styled.div<SearchPropsType>`
     transition: border-color 150ms;
     box-sizing: border-box;
     background: ${({ theme }) => theme.Select.common.background};
+    border: solid 1px ${({ theme }) => theme.Select.common.borderColor};
     border-radius: ${({ theme }) => theme.Select.common.borderRadius};
-
-    ${({ theme, focus, open, disabled }) => {
-        if (disabled) {
-            return `
-                border: solid 1px ${theme.Select.select.disabled.borderColor};
-                cursor: not-allowed;
-            `;
-        }
-
-        if (focus && !open) {
-            return `
-                border: solid 1px ${theme.Select.select.focus.borderColor};
-            `;
-        }
-
-        return `
-            border: solid 1px ${theme.Select.common.borderColor};
-        `;
-    }}
 `;
 
 type PropsType = {
