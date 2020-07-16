@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.3.2...@myonlinestore/bricks@3.4.0) (2020-07-16)
+
+
+### Features
+
+* **Select:** Moved searchbar into the modal and internally split up into more components ([#576](https://github.com/MyOnlineStore/bricks/issues/576)) ([5fa5376](https://github.com/MyOnlineStore/bricks/commit/5fa5376a0fbf0b021b39dc64346dffbd41d16938))
+
+
+
+
+
 ## [3.3.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.3.1...@myonlinestore/bricks@3.3.2) (2020-06-25)
 
 
