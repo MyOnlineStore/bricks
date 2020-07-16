@@ -388,7 +388,7 @@ describe('Select', () => {
         expect(renderSelected).toHaveBeenCalledTimes(1);
     });
 
-    it.only('should show an empty state', () => {
+    it('should show an empty state', () => {
         const emptyText = 'mock empty text';
 
         const component = mountWithTheme(

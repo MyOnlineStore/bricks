@@ -267,7 +267,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                         placeholder={props.placeholder || ''}
                         data-testid={props['data-testid']}
                     />
-                    <SelectList isOpen={isOpen} emptyText={props.emptyText || ''}>
+                    <SelectList isOpen={isOpen} emptyText={props.emptyText || ''} data-testid={props['data-testid']}>
                         {props.options?.map(option => {
                             const optionState = { isSelected: option.value === props.value };
 
@@ -287,7 +287,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                                     {props.renderOption?.(option, optionState)}
                                 </SelectOption>
                             );
-                        }) || props.children}
+                        })}
                     </SelectList>
                 </SelectModal>
             </StyledWrapper>
