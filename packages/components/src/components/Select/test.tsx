@@ -60,7 +60,7 @@ describe('Select', () => {
             key: ' ',
         });
 
-        expect(component.find('[data-testid="select-window-open"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-open').hostNodes()).toHaveLength(1);
     });
 
     it('should show focus when the select is open', () => {
@@ -76,14 +76,14 @@ describe('Select', () => {
 
         component.find(Select).simulate('focus');
 
-        expect(component.find('[data-testid="select-field"]')).toHaveStyleRule(
+        expect(component.findByTestId('select-field')).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.select.focus.borderColor}`,
         );
 
         component.find(Select).simulate('blur');
 
-        expect(component.find('[data-testid="select-field"]')).toHaveStyleRule(
+        expect(component.findByTestId('select-field')).toHaveStyleRule(
             'border',
             `solid 1px ${mosTheme.Select.common.borderColor}`,
         );
@@ -101,13 +101,13 @@ describe('Select', () => {
         );
 
         component.find(Select).simulate('keyDown', { key: 'ArrowDown' });
-        expect(component.find('[data-testid="select-window-open"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-open').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', { key: 'Escape' });
-        expect(component.find('[data-testid="select-window-closed"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-closed').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', { key: 'ArrowUp' });
-        expect(component.find('[data-testid="select-window-open"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-open').hostNodes()).toHaveLength(1);
     });
 
     it('should show an input and options on click', () => {
@@ -126,7 +126,7 @@ describe('Select', () => {
         });
 
         expect(component.find('input').length).toBe(1);
-        expect(component.find('[data-testid="select-input-field"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-input-field').hostNodes()).toHaveLength(1);
         expect(component.find('[data-testid^="select-option-"]').hostNodes().length).toBe(options.length);
     });
 
@@ -191,18 +191,18 @@ describe('Select', () => {
         );
 
         component
-            .find('[data-testid="select-input"]')
+            .findByTestId('select-input')
             .hostNodes()
             .simulate('click');
 
-        expect(component.find('[data-testid="select-window-open"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-open').hostNodes()).toHaveLength(1);
 
         // click inside
         callbackMap.mousedown({
             target: component.first().getDOMNode(),
         });
 
-        expect(component.find('[data-testid="select-window-open"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-open').hostNodes()).toHaveLength(1);
 
         // click outside
         callbackMap.mousedown({
@@ -211,7 +211,7 @@ describe('Select', () => {
 
         component.update();
 
-        expect(component.find('[data-testid="select-window-closed"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-closed').hostNodes()).toHaveLength(1);
     });
 
     it('should handle a change', () => {
@@ -226,7 +226,7 @@ describe('Select', () => {
         });
 
         component
-            .find('[data-testid="select-option-A"]')
+            .findByTestId('select-option-A')
             .hostNodes()
             .simulate('click');
 
@@ -257,19 +257,19 @@ describe('Select', () => {
             key: 'ArrowDown',
         });
 
-        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-A-targeted').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        expect(component.find('[data-testid="select-option-B-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-B-targeted').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        expect(component.find('[data-testid="select-option-B-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-B-targeted').hostNodes()).toHaveLength(1);
     });
 
     it('should target the previous option when arrow up is pressed', () => {
@@ -296,25 +296,25 @@ describe('Select', () => {
             key: 'ArrowDown',
         });
 
-        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-A-targeted').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', {
             key: 'ArrowDown',
         });
 
-        expect(component.find('[data-testid="select-option-B-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-B-targeted').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', {
             key: 'ArrowUp',
         });
 
-        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-A-targeted').hostNodes()).toHaveLength(1);
 
         component.find(Select).simulate('keyDown', {
             key: 'ArrowUp',
         });
 
-        expect(component.find('[data-testid="select-option-A-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-A-targeted').hostNodes()).toHaveLength(1);
     });
 
     it('should set the value of the target option when enter is pressed on a targeted option', () => {
@@ -350,7 +350,7 @@ describe('Select', () => {
             />,
         );
 
-        const selectedOption = component.find('[data-testid="select-input-selection"]').hostNodes();
+        const selectedOption = component.findByTestId('select-input-selection').hostNodes();
 
         expect(selectedOption.text()).toBe(options[1].label);
     });
@@ -399,7 +399,7 @@ describe('Select', () => {
 
         expect(
             component
-                .find('[data-testid="foo-list-empty"]')
+                .findByTestId('foo-list-empty')
                 .hostNodes()
                 .text(),
         ).toEqual(emptyText);
@@ -411,16 +411,16 @@ describe('Select', () => {
         );
 
         component
-            .find('[data-testid="select-input"]')
+            .findByTestId('select-input')
             .hostNodes()
             .simulate('click');
 
         component
-            .find('[data-testid="select-option-C"]')
+            .findByTestId('select-option-C')
             .hostNodes()
             .simulate('mouseEnter');
 
-        expect(component.find('[data-testid="select-option-C-targeted"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-option-C-targeted').hostNodes()).toHaveLength(1);
     });
 
     it('should not open the Option-Select window when the component is disabled', () => {
@@ -435,14 +435,14 @@ describe('Select', () => {
             />,
         );
 
-        expect(component.find('[data-testid="select-window-closed"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-closed').hostNodes()).toHaveLength(1);
 
         component
-            .find('[data-testid="select-input"]')
+            .findByTestId('select-input')
             .hostNodes()
             .simulate('click');
 
-        expect(component.find('[data-testid="select-window-closed"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-closed').hostNodes()).toHaveLength(1);
     });
 
     it('should close the Option-Select window when the component gets disabled', () => {
@@ -464,16 +464,16 @@ describe('Select', () => {
         const component = mount(<Root />);
 
         component
-            .find('[data-testid="select-input"]')
+            .findByTestId('select-input')
             .hostNodes()
             .simulate('click');
 
-        expect(component.find('[data-testid="select-window-open"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-open').hostNodes()).toHaveLength(1);
 
         component.setProps({ disabled: true });
         component.update();
 
-        expect(component.find('[data-testid="select-window-closed"]').hostNodes()).toHaveLength(1);
+        expect(component.findByTestId('select-window-closed').hostNodes()).toHaveLength(1);
     });
 
     it('should handle a simulated change event', () => {
@@ -497,12 +497,12 @@ describe('Select', () => {
         );
 
         component
-            .find('[data-testid="select-input"]')
+            .findByTestId('select-input')
             .hostNodes()
             .simulate('click');
 
         component
-            .find('[data-testid="select-input-field"]')
+            .findByTestId('select-input-field')
             .hostNodes()
             .simulate('change', {
                 target: {
