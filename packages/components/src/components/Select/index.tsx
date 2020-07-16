@@ -287,7 +287,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                                     {props.renderOption?.(option, optionState)}
                                 </SelectOption>
                             );
-                        })}
+                        }) || props.children}
                     </SelectList>
                 </SelectModal>
             </StyledWrapper>
