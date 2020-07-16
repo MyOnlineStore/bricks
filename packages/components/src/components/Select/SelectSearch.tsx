@@ -2,19 +2,21 @@ import React, { FC, ChangeEvent, RefObject, useContext } from 'react';
 import Box from '../Box';
 import Icon from '../Icon';
 import styled, { withTheme } from 'styled-components';
-import { SearchIcon } from '@myonlinestore/bricks-assets';
+import { SearchIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import colors from '../../themes/MosTheme/colors';
 import { SelectContext } from '.';
 import ThemeType from '../../types/ThemeType';
-import { INNER_OFFSET } from './style';
+import { INNER_OFFSET, StyledCaret } from './style';
 
 const SelectSearchContainer = styled.div`
+    position: relative;
     display: flex;
     align-items: stretch;
     background: ${({ theme }) => theme.Select.searchWrapper.background};
     line-height: 1.6; // results in 24px with 15px fontSize
 
     input {
+        flex-grow: 1;
         appearance: none;
         outline: none;
         border: none;
@@ -93,22 +95,32 @@ const SelectSearch: FC<PropsType> = props => {
             }}
         >
             {isOpen && !isDisabled && (
-                <SelectSearchInner open={isOpen} focus={hasFocus} disabled={isDisabled}>
-                    <Box alignItems="center" margin={[0, 6, 0, 0]}>
-                        <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
-                    </Box>
-                    <input
-                        ref={props.inputRef}
-                        type="text"
-                        placeholder={props.placeholder}
-                        value={filter}
-                        data-testid={props['data-testid'] ? `${props['data-testid']}-input-field` : undefined}
-                        onChange={(event: ChangeEvent<HTMLInputElement>): void => {
-                            event.stopPropagation();
-                            setFilter(event.target.value);
-                        }}
-                    />
-                </SelectSearchInner>
+                <>
+                    <SelectSearchInner open={isOpen} focus={hasFocus} disabled={isDisabled}>
+                        <Box alignItems="center" margin={[0, 6, 0, 0]}>
+                            <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
+                        </Box>
+                        <input
+                            ref={props.inputRef}
+                            type="text"
+                            placeholder={props.placeholder}
+                            value={filter}
+                            data-testid={props['data-testid'] ? `${props['data-testid']}-input-field` : undefined}
+                            onChange={(event: ChangeEvent<HTMLInputElement>): void => {
+                                event.stopPropagation();
+                                setFilter(event.target.value);
+                            }}
+                        />
+                    </SelectSearchInner>
+                    <StyledCaret inner>
+                        <Icon
+                            title={'close'}
+                            icon={<CaretUpIcon />}
+                            size="medium"
+                            color={props.theme.Select.select.idle.caretColor}
+                        />
+                    </StyledCaret>
+                </>
             )}
         </SelectSearchContainer>
     );

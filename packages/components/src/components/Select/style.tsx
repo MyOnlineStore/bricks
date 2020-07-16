@@ -68,10 +68,10 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     position: relative;
 `;
 
-const StyledCaret = styled.div`
+const StyledCaret = styled.div<{ inner?: boolean }>`
     position: absolute;
     top: 50%;
-    right: 9px;
+    right: ${({ inner }) => (inner ? 14 : 9)}px;
     transform: translateY(-50%);
     z-index: 2;
 `;
