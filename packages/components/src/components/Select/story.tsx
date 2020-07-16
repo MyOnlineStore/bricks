@@ -6,7 +6,8 @@ import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import { CheckmarkIcon } from '@myonlinestore/bricks-assets';
+import { CheckmarkIcon, ImageIcon } from '@myonlinestore/bricks-assets';
+import colors from '../../themes/MosTheme/colors';
 
 type DemoOptionType = {
     image: string;
@@ -54,11 +55,38 @@ const options: Array<DemoOptionType> = [
     },
 ];
 
-type PropsType = {};
+type PropsType = {
+    showContent?: boolean;
+};
 
 type StateType = {
     value: string;
 };
+
+const Content = () => (
+    <div style={{ margin: '24px 0' }}>
+        <Text>
+            Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Curabitur
+            blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus
+            porttitor. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum.
+        </Text>
+        <Box
+            height="33vw"
+            alignItems="center"
+            justifyContent="center"
+            margin={[24, 0]}
+            style={{ background: colors.grey100 }}
+        >
+            <Icon size="large" icon={<ImageIcon />} color={colors.grey300} />
+        </Box>
+        <Text>
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+            risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus
+            porttitor.
+        </Text>
+    </div>
+);
 
 class Demo extends Component<PropsType, StateType> {
     public constructor(props: PropsType) {
@@ -75,15 +103,19 @@ class Demo extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Select
-                placeholder={text('placeholder', 'Search a value')}
-                value={this.state.value}
-                emptyText={text('emptyText', 'No results')}
-                onChange={this.handleChange}
-                disabled={boolean('disabled', false)}
-                data-testid="foo"
-                options={object('options', options)}
-            />
+            <div>
+                {this.props.showContent && <Content />}
+                <Select
+                    placeholder={text('placeholder', 'Search a value')}
+                    value={this.state.value}
+                    emptyText={text('emptyText', 'No results')}
+                    onChange={this.handleChange}
+                    disabled={boolean('disabled', false)}
+                    data-testid="foo"
+                    options={object('options', options)}
+                />
+                {this.props.showContent && <Content />}
+            </div>
         );
     }
 }
@@ -140,16 +172,20 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
 
     public render(): JSX.Element {
         return (
-            <Select
-                placeholder={text('placeholder', 'Select a value')}
-                value={this.state.value}
-                emptyText={text('emptyText', 'No results')}
-                onChange={this.handleChange}
-                disabled={boolean('disabled', false)}
-                options={object('options', options)}
-                renderSelected={renderSelected}
-                renderOption={renderOption}
-            />
+            <div>
+                {this.props.showContent && <Content />}
+                <Select
+                    placeholder={text('placeholder', 'Select a value')}
+                    value={this.state.value}
+                    emptyText={text('emptyText', 'No results')}
+                    onChange={this.handleChange}
+                    disabled={boolean('disabled', false)}
+                    options={object('options', options)}
+                    renderSelected={renderSelected}
+                    renderOption={renderOption}
+                />
+                {this.props.showContent && <Content />}
+            </div>
         );
     }
 }
@@ -157,10 +193,10 @@ class CustomRenderDemo extends Component<PropsType, StateType> {
 
 storiesOf('Select', module)
     .add('Default', () => {
-        return <Demo />;
+        return <Demo showContent={boolean('Show content', false)} />;
     })
     .add('Custom rendering', () => {
-        return <CustomRenderDemo />;
+        return <CustomRenderDemo showContent={boolean('Show content', false)} />;
     })
     .add('With options as children', () => {
         const [value, setValue] = useState('a');
