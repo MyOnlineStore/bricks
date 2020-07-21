@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.4.0...@myonlinestore/bricks@3.4.1) (2020-07-21)
+
+
+### Bug Fixes
+
+* **Select:** No longer calls value changes twice which would show stale select value ([#579](https://github.com/MyOnlineStore/bricks/issues/579)) ([cc280ab](https://github.com/MyOnlineStore/bricks/commit/cc280ab9f43b3d31900b54041064df7c391543cb))
+
+
+
+
+
 # [3.4.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.3.2...@myonlinestore/bricks@3.4.0) (2020-07-16)
 
 
