@@ -97,11 +97,12 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
 
     const [selectedOption, selectOption] = useState(getSelectedOption(props.value));
 
+    /**
+     * Avoid adding any state changes to this handler since it can cause UI yank, rather
+     * use the useEffect below to react to a change in `props.value`.
+     */
     const handleChange = (value: string) => {
         props.onChange(value);
-        selectOption(getSelectedOption(value));
-        setOpen(false);
-        setTarget('');
     };
 
     const handleChangeEvent = (event: FormEvent<HTMLDivElement>) => {
@@ -181,8 +182,15 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
         }
     };
 
+    /**
+     * Since this Select can only be used when controlled by external state, this useEffect is the
+     * primary way to handle any actions that follow after a changed value. That way all logic is
+     * normalized for either external state changes as well as changes triggered by the Select itself.
+     */
     useEffect(() => {
         selectOption(getSelectedOption(props.value));
+        setOpen(false);
+        setTarget('');
     }, [props.value]);
 
     /**
