@@ -5,8 +5,6 @@ import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 import { Box } from '../..';
 import MosTheme from '../../themes/MosTheme';
 import { mount } from 'enzyme';
-import CurrencyField from '../CurrencyField';
-import NumberField from '../NumberField';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -140,16 +138,21 @@ describe('TextField', () => {
         ).toBe('bar');
     });
 
-    it('should render the components defined as static property', () => {
+    it('should be able to pass a testid to the feedback prop', () => {
         const changeMock = jest.fn();
-
-        const currencyField = mountWithTheme(
-            <CurrencyField name="" value={1} onChange={changeMock} locale="nl-NL" currency="EUR" />,
+        const component = mountWithTheme(
+            <TextField
+                name=""
+                value="foo"
+                onChange={changeMock}
+                feedback={{
+                    'data-testid': 'feedback',
+                    message: 'foo',
+                    severity: 'error',
+                }}
+            />,
         );
 
-        const numberField = mountWithTheme(<NumberField name="" value={1} onChange={changeMock} />);
-
-        expect(currencyField.find('input').length).toBe(1);
-        expect(numberField.find('input').length).toBe(1);
+        expect(component.findByTestId('feedback')).toHaveLength(1);
     });
 });

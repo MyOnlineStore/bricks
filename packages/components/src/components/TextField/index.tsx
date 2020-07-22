@@ -14,6 +14,7 @@ type PropsType = {
     type?: string;
     id?: string;
     feedback?: {
+        'data-testid'?: string;
         severity: SeverityType;
         message: string;
     };
@@ -141,6 +142,7 @@ class TextField extends Component<PropsType, StateType> {
                 {this.props.feedback && this.props.feedback.message !== '' && (
                     <Box margin={[3, 0, 0, 0]}>
                         <InlineNotification
+                            data-testid={this.props.feedback['data-testid']}
                             message={this.props.feedback.message}
                             severity={this.props.feedback.severity}
                         />

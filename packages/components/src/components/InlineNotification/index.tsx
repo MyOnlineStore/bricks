@@ -9,13 +9,14 @@ type PropsType = {
     icon?: ReactNode;
     message?: string;
     severity: SeverityType;
+    'data-testid'?: string;
 };
 
 const InlineNotification: FunctionComponent<PropsType> = (props): JSX.Element => {
     const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (
-        <Text variant={props.severity}>
+        <Text variant={props.severity} data-testid={props['data-testid']}>
             <Box inline alignItems="flex-start">
                 <Box inline margin={trbl(3, 6, 0, 0)}>
                     <Icon size="medium" icon={icon} />

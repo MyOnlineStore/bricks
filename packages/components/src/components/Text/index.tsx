@@ -36,6 +36,7 @@ type TextThemeType = {
 };
 
 type PropsType = {
+    'data-testid'?: string;
     size?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
     variant?: SeverityType | 'descriptive';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
