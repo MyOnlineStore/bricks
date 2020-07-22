@@ -137,6 +137,12 @@ class Toaster extends Component<PropsType, StateType> {
             const newContainer = document.createElement('div');
 
             newContainer.id = portalId;
+            newContainer.style.position = 'fixed';
+            newContainer.style.top = '0';
+            newContainer.style.right = '0';
+            newContainer.style.left = '0';
+            newContainer.style.zIndex = '100';
+
             document.body.prepend(newContainer);
 
             return createPortal(toasts, newContainer);
