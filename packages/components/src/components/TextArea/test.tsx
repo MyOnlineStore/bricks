@@ -61,4 +61,20 @@ describe('TextArea', () => {
 
         expect(changeMock).toHaveBeenCalledWith(expectedString, expect.any(Object));
     });
+
+    it('should be able to test with a testid', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(
+            <TextArea
+                value="John"
+                data-testid="foo"
+                name="firstName"
+                onChange={changeMock}
+                feedback={{ severity: 'error', message: 'foo', 'data-testid': 'feedback' }}
+            />,
+        );
+
+        expect(component.findByTestId('foo')).toHaveLength(1);
+        expect(component.findByTestId('feedback')).toHaveLength(1);
+    });
 });
