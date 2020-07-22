@@ -2,7 +2,6 @@ import React, { ChangeEvent, FC, useRef, useState } from 'react';
 import StyledTextArea, { StyledTextAreaWrapper } from './style';
 import InlineNotification from '../InlineNotification';
 import SeverityType from '../../types/SeverityType';
-import trbl from '../../utility/trbl';
 import Box from '../Box';
 import Text from '../Text';
 
@@ -14,6 +13,7 @@ type PropsType = {
     resizeable?: boolean;
     disabled?: boolean;
     feedback?: {
+        'data-testid'?: string;
         severity: SeverityType;
         message: string;
     };
@@ -69,8 +69,12 @@ const TextArea: FC<PropsType> = props => {
                 )}
             </StyledTextAreaWrapper>
             {props.feedback && props.feedback.message !== '' && (
-                <Box margin={trbl(3, 0, 0, 0)}>
-                    <InlineNotification message={props.feedback.message} severity={props.feedback.severity} />
+                <Box margin={[3, 0, 0, 0]}>
+                    <InlineNotification
+                        data-testid={props.feedback['data-testid']}
+                        message={props.feedback.message}
+                        severity={props.feedback.severity}
+                    />
                 </Box>
             )}
         </>
