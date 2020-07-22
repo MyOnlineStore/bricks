@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.4.1...@myonlinestore/bricks@3.5.0) (2020-07-22)
+
+
+### Features
+
+* **TextField:** Feedback prop now supports a data-testid ([#582](https://github.com/MyOnlineStore/bricks/issues/582)) ([9416304](https://github.com/MyOnlineStore/bricks/commit/94163047afe1a111633353cd05930107d83ddf82))
+* **Toaster:** Improved default positioning of toaster container ([#583](https://github.com/MyOnlineStore/bricks/issues/583)) ([e3133c8](https://github.com/MyOnlineStore/bricks/commit/e3133c879586767fa24e5f53e0e7bb2676d44aab))
+
+
+
+
+
 ## [3.4.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.4.0...@myonlinestore/bricks@3.4.1) (2020-07-21)
 
 
