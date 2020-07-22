@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.5.0...@myonlinestore/bricks@3.6.0) (2020-07-22)
+
+
+### Features
+
+* **TextArea:** TextArea now supports data-testid on the feedback prop ([#584](https://github.com/MyOnlineStore/bricks/issues/584)) ([79ec249](https://github.com/MyOnlineStore/bricks/commit/79ec2496aeccadbe5ba6aea3e618d79067d29447))
+
+
+
+
+
 # [3.5.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.4.1...@myonlinestore/bricks@3.5.0) (2020-07-22)
 
 
