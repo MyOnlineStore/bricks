@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.7.0...@myonlinestore/bricks-assets@0.8.0) (2020-07-30)
+
+
+### Features
+
+* Added CommentEmptyIcon ([#585](https://github.com/MyOnlineStore/bricks/issues/585)) ([0cc5e36](https://github.com/MyOnlineStore/bricks/commit/0cc5e361ab2b6f2956875b7d02531e2217b84191))
+
+
+
+
+
 # [0.7.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks-assets@0.6.0...@myonlinestore/bricks-assets@0.7.0) (2020-07-10)
 
 
