@@ -50,6 +50,7 @@ export const SelectContext = createContext({
     hasFocus: false,
     targeted: '',
     selectedOption: { value: '', label: '' },
+    options: [] as Array<OptionBaseType>,
     setTarget(value: string) {
         console.warn(`${PROVIDER_WARNING}, could not set target to value: "${value}"`);
     },
@@ -237,6 +238,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                 isDisabled: props.disabled || false,
                 hasFocus,
                 targeted,
+                options: options.current,
                 setOpen,
                 setFilter: handleFilter,
                 setValue: handleChange,
