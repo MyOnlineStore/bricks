@@ -35,5 +35,7 @@ resolves #[resolved issue number]
   - You can use multiple `BREAKING CHANGE: ...` lines in the commit message
   - Use `build`, `chore`, `ci`, `docs`, `perf`, `refactor`, `style`, or `test`  for other types
 
-  _Tip: make sure the first commit message is the one you want to merge, because that's the one Github picks for squashing_
+  More info see full [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+
+  _Tip: make sure the first commit message is the one you want to merge, because that's the one Github picks for squashing._
 </details>
