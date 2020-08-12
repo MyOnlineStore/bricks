@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.6.0...@myonlinestore/bricks@3.6.1) (2020-08-12)
+
+
+### Bug Fixes
+
+* **CurrencyField:** Call extractRef prop ([#589](https://github.com/MyOnlineStore/bricks/issues/589)) ([ed8b2a8](https://github.com/MyOnlineStore/bricks/commit/ed8b2a864e7c895f1f06d6213455f968e33e8c77))
+
+
+
+
+
 # [3.6.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.5.0...@myonlinestore/bricks@3.6.0) (2020-07-22)
 
 
