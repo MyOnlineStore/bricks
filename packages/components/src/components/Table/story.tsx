@@ -11,6 +11,7 @@ import Toggle from '../Toggle';
 
 type RowType = {
     selected?: boolean;
+    disabled?: boolean;
     id: string;
     price: number;
     name: string;
@@ -72,6 +73,8 @@ class Demo extends Component<PropsType, StateType> {
                     price: -0.7,
                     name: 'Grapes',
                     image: 'https://picsum.photos/60/60?image=674',
+                    disabled: true,
+                    selected: false,
                 },
             ],
         };

@@ -29,7 +29,7 @@ type PropsType = {
         column: string;
         direction: SortDirectionType;
     };
-    onCheck(checked: boolean): void;
+    onCheck(checked: boolean | 'indeterminate'): void;
     onSort?(column: string, direction: SortDirectionType): void;
 };
 
@@ -178,7 +178,7 @@ class Headers extends Component<PropsType, StateType> {
                                 checked={this.props.checked}
                                 name=""
                                 value=""
-                                onChange={({ checked }): void => this.props.onCheck(checked as boolean)}
+                                onChange={({ checked }): void => this.props.onCheck(checked)}
                             />
                         </StyledHeader>
                     )}

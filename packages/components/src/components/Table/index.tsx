@@ -12,6 +12,7 @@ type SortDirectionType = 'ascending' | 'descending' | 'none';
 type BaseRowType = {
     id: string;
     selected?: boolean;
+    disabled?: boolean;
     // tslint:disable-next-line
     [key: string]: string | number | boolean | undefined | ReactNode;
 };
@@ -32,7 +33,7 @@ type PropsType<GenericRowType extends BaseRowType> = {
         [GenericColumnType in keyof Partial<GenericRowType>]: ColumnType<
             GenericRowType[GenericColumnType],
             GenericRowType
-        >
+        >;
     };
     onSelection?(rows: Array<GenericRowType>): void;
     onDragEnd?(rows: Array<GenericRowType>, dropResult: DropResult): void;
@@ -79,7 +80,7 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
                         (key <= this.state.selectionStart && key >= selectionEnd)
                     ) {
                         // tslint:disable-next-line
-                        return { ...(row as any), selected: this.state.toggleAction };
+                        return { ...(row as any), selected: row.disabled ? row.selected : this.state.toggleAction };
                     }
 
                     return row;
@@ -92,17 +93,22 @@ class Table<GenericRowType extends BaseRowType> extends Component<PropsType<Gene
 
             const selection = this.props.rows.map(
                 // tslint:disable-next-line
-                row => (row.id === id ? { ...(row as any), selected: toggleAction } : row),
+                row =>
+                    row.id === id ? { ...(row as any), selected: row.disabled ? row.selected : toggleAction } : row,
             );
 
             (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(selection);
         }
     }
 
-    private handleHeaderCheck(selected: boolean): void {
+    private handleHeaderCheck(selected: boolean | 'indeterminate'): void {
+        const selectedItems = this.props.rows.filter(row => row.selected);
+        const enabledItems = this.props.rows.filter(row => !row.disabled);
+        const toggleAction = selected && selectedItems.length < enabledItems.length ? true : false;
+
         (this.props.onSelection as Required<PropsType<GenericRowType>>['onSelection'])(
             // tslint:disable-next-line
-            this.props.rows.map(row => ({ ...(row as any), selected })),
+            this.props.rows.map(row => (row.disabled ? row : { ...(row as any), selected: toggleAction })),
         );
     }
 
