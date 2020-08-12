@@ -105,6 +105,46 @@ describe('ButtonBase implementations', () => {
             expect(clickMock).toHaveBeenCalled();
             expect(clickEvent.target).toBeDefined();
         });
+
+        it('should call the passed action on focus', () => {
+            // tslint:disable-next-line:no-any
+            let focusEvent: any = {};
+
+            const focusMock = jest.fn(event => {
+                focusEvent = event;
+            });
+
+            const component = mount(
+                <MosTheme>
+                    <Implementation onFocus={focusMock} />
+                </MosTheme>,
+            );
+
+            component.simulate('focus');
+
+            expect(focusMock).toHaveBeenCalled();
+            expect(focusEvent.target).toBeDefined();
+        });
+
+        it('should call the passed action on blur', () => {
+            // tslint:disable-next-line:no-any
+            let blurEvent: any = {};
+
+            const blurMock = jest.fn(event => {
+                blurEvent = event;
+            });
+
+            const component = mount(
+                <MosTheme>
+                    <Implementation onBlur={blurMock} />
+                </MosTheme>,
+            );
+
+            component.simulate('blur');
+
+            expect(blurMock).toHaveBeenCalled();
+            expect(blurEvent.target).toBeDefined();
+        });
     });
 
     /**
