@@ -1,7 +1,7 @@
 /// <reference path="../../_declarations/global.d.ts" />
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
-import Table from '.';
+import Table, { BaseRowType } from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import Cell from './Cell';
 import Card from './Card';
@@ -369,7 +369,73 @@ describe('Table', () => {
         const mockHandler = jest.fn();
 
         const rows = [
-            { id: '61651320', selected: true, price: 19.12, name: 'foo0', image: 'imageurl' },
+            { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl' },
+            { id: '61651321', selected: false, price: 19.2, name: 'foo1', image: 'imageurl' },
+            { id: '61651322', selected: false, price: 21.12, name: 'foo2', image: 'imageurl' },
+            { id: '61651323', selected: false, price: 22.12, name: 'foo3', image: 'imageurl' },
+        ];
+
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
+                rows={rows}
+                onSelection={mockHandler}
+            />,
+        );
+
+        component
+            .find(Checkbox)
+            .first()
+            .simulate('click');
+
+        component.update();
+
+        const checkedRows = mockHandler.mock.calls[0][0].filter((row: BaseRowType) => row.selected);
+
+        expect(checkedRows.length).toBe(4);
+    });
+
+    it('should select just the enabled rows when the header checkbox is clicked', () => {
+        const mockHandler = jest.fn();
+
+        const rows = [
+            { id: '61651320', selected: false, price: 19.12, name: 'foo0', image: 'imageurl', disabled: true },
+            { id: '61651321', selected: false, price: 19.2, name: 'foo1', image: 'imageurl' },
+            { id: '61651322', selected: false, price: 21.12, name: 'foo2', image: 'imageurl' },
+            { id: '61651323', selected: false, price: 22.12, name: 'foo3', image: 'imageurl' },
+        ];
+
+        const component = mountWithTheme(
+            <Table
+                columns={{
+                    id: { header: 'Product ID' },
+                    name: { header: 'name' },
+                    price: { header: 'Price' },
+                }}
+                rows={rows}
+                onSelection={mockHandler}
+            />,
+        );
+
+        component
+            .find(Checkbox)
+            .first()
+            .simulate('click');
+
+        const checkedRows = mockHandler.mock.calls[0][0].filter((row: BaseRowType) => row.selected);
+
+        expect(checkedRows.length).toBe(3);
+    });
+
+    it('should deselect just the enabled rows when the header checkbox is clicked after a full selection', () => {
+        const mockHandler = jest.fn();
+
+        const rows = [
+            { id: '61651320', selected: true, price: 19.12, name: 'foo0', image: 'imageurl', disabled: true },
             { id: '61651321', selected: true, price: 19.2, name: 'foo1', image: 'imageurl' },
             { id: '61651322', selected: true, price: 21.12, name: 'foo2', image: 'imageurl' },
             { id: '61651323', selected: true, price: 22.12, name: 'foo3', image: 'imageurl' },
@@ -392,10 +458,9 @@ describe('Table', () => {
             .first()
             .simulate('click');
 
-        // tslint:disable-next-line
-        const checkedRows = mockHandler.mock.calls[0].filter((row: any): any => row.checked);
+        const checkedRows = mockHandler.mock.calls[0][0].filter((row: BaseRowType) => row.selected);
 
-        expect(checkedRows.length).toBe(0);
+        expect(checkedRows.length).toBe(1);
     });
 
     it('should sort rows when a column is given a sorting function and the select in the CompactHeader is clicked', () => {

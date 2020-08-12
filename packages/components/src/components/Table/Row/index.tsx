@@ -103,6 +103,7 @@ class Row extends Component<PropsType, StateType> {
                             name=""
                             value=""
                             checked={this.props.selected}
+                            disabled={this.props.row.disabled}
                             onChange={({ checked, event }): void => this.props.onSelection(event, checked as boolean)}
                         />
                     </Cell>
