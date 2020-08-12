@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.7.0...@myonlinestore/bricks@3.8.0) (2020-08-12)
+
+
+### Bug Fixes
+
+* **Select:** Empty text is shown again ([#587](https://github.com/MyOnlineStore/bricks/issues/587)) ([69c6c01](https://github.com/MyOnlineStore/bricks/commit/69c6c01b59de8b391c4bbd0d7200d4759e91bc12))
+
+
+### Features
+
+* **Table:** Added disabled prop to row ([#591](https://github.com/MyOnlineStore/bricks/issues/591)) ([8fc6f5c](https://github.com/MyOnlineStore/bricks/commit/8fc6f5c6399a66af9a286026f9b45606d1cb6b43))
+
+
+
+
+
 # [3.7.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.6.1...@myonlinestore/bricks@3.7.0) (2020-08-12)
 
 
