@@ -10,7 +10,12 @@ type PropsType = {
     id?: string;
     loading?: boolean;
     'data-testid'?: string;
-} & Partial<Pick<HTMLProps<HTMLButtonElement | HTMLAnchorElement>, 'onClick' | 'onMouseEnter' | 'onMouseLeave'>>;
+} & Partial<
+    Pick<
+        HTMLProps<HTMLButtonElement | HTMLAnchorElement>,
+        'onClick' | 'onMouseEnter' | 'onMouseLeave' | 'onFocus' | 'onBlur'
+    >
+>;
 
 const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
     const isLink = props.href !== undefined;
@@ -18,6 +23,18 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
     const clickAction = (event: MouseEvent<HTMLButtonElement>): void => {
         if (props.onClick !== undefined && props.disabled !== true && props.loading !== true) {
             props.onClick(event);
+        }
+    };
+
+    const focusAction = (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>): void => {
+        if (props.onFocus !== undefined && props.disabled !== true && props.loading !== true) {
+            props.onFocus(event);
+        }
+    };
+
+    const blurAction = (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>): void => {
+        if (props.onBlur !== undefined && props.disabled !== true && props.loading !== true) {
+            props.onBlur(event);
         }
     };
 
@@ -33,6 +50,8 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 data-testid={props['data-testid']}
                 onMouseEnter={props.onMouseEnter}
                 onMouseLeave={props.onMouseLeave}
+                onFocus={focusAction}
+                onBlur={blurAction}
             >
                 {props.children}
             </StyledAnchor>
@@ -51,6 +70,8 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             data-testid={props['data-testid']}
             onMouseEnter={props.onMouseEnter}
             onMouseLeave={props.onMouseLeave}
+            onFocus={focusAction}
+            onBlur={blurAction}
         >
             {props.children}
         </StyledButton>
