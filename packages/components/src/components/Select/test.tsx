@@ -495,4 +495,38 @@ describe('Select', () => {
 
         expect(component.find(Select).prop('options')).toHaveLength(options.length);
     });
+
+    it('should display the empty text when all options are filtered out', () => {
+        const component = mountWithTheme(
+            <Select
+                onChange={(): void => undefined}
+                value=""
+                emptyText="empty"
+                data-testid="select"
+                options={[
+                    {
+                        value: 'A',
+                        label: 'A',
+                    },
+                    {
+                        value: 'B',
+                        label: 'B',
+                    },
+                ]}
+            />,
+        );
+
+        component.find(Select).simulate('keyDown', {
+            key: ' ',
+        });
+
+        component.find('input').simulate('change', {
+            target: {
+                value: 'AAAAAAAAAAA',
+            },
+        });
+
+        expect(component.find('[data-testid^="select-option-"]').hostNodes().length).toBe(0);
+        expect(component.findByTestId('select-list-empty').length).toBe(1);
+    });
 });
