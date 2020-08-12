@@ -365,7 +365,7 @@ describe('Table', () => {
         ).toEqual(false);
     });
 
-    it('should select all rows when the header checkbox is checked', async () => {
+    it('should select all rows when the header checkbox is checked', () => {
         const mockHandler = jest.fn();
 
         const rows = [
