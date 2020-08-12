@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.6.1...@myonlinestore/bricks@3.7.0) (2020-08-12)
+
+
+### Features
+
+* **Button:** Added onFocus and onBlur props ([#590](https://github.com/MyOnlineStore/bricks/issues/590)) ([32c5289](https://github.com/MyOnlineStore/bricks/commit/32c52890ab77ed5fd75924cd019e2b1bc0fff860))
+
+
+
+
+
 ## [3.6.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.6.0...@myonlinestore/bricks@3.6.1) (2020-08-12)
 
 
