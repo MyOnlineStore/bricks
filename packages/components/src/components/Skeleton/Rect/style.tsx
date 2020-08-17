@@ -15,7 +15,8 @@ const wipe = keyframes`
     }
 `;
 
-const StyledRectSkeleton = styled.div<RectPropsType>`
+const StyledRectSkeleton = styled.span<RectPropsType>`
+    display: block;
     position: relative;
     overflow: hidden;
     color: transparent;
