@@ -28,7 +28,7 @@ const TextArea: FC<PropsType> = props => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [focus, setFocus] = useState(false);
 
-    const handleBlur = (): void => {
+    const onBlur = (): void => {
         setFocus(false);
 
         if (props.onBlur !== undefined) props.onBlur();
@@ -67,7 +67,7 @@ const TextArea: FC<PropsType> = props => {
                     placeholder={props.placeholder}
                     onChange={onChange}
                     onFocus={() => setFocus(true)}
-                    onBlur={handleBlur}
+                    onBlur={onBlur}
                 />
                 {props.characterLimit && !props.disabled && (
                     <Box justifyContent="flex-end" padding={[0, 12, 6]} onClick={focusField} style={{ cursor: 'text' }}>
