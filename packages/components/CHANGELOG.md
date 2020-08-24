@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.8.0...@myonlinestore/bricks@3.9.0) (2020-08-24)
+
+
+### Bug Fixes
+
+* **Skeleton:** Turned rect skeleton into span to avoid invalid nesting ([ae39a39](https://github.com/MyOnlineStore/bricks/commit/ae39a39d9de2173a71a8060f0c4df3b9e379769f))
+
+
+### Features
+
+* **TextArea:** Added onBlur prop ([#593](https://github.com/MyOnlineStore/bricks/issues/593)) ([647341c](https://github.com/MyOnlineStore/bricks/commit/647341cf4ca926d55194bf05562156172a810e29))
+
+
+
+
+
 # [3.8.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.7.0...@myonlinestore/bricks@3.8.0) (2020-08-12)
 
 
