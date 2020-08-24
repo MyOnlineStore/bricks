@@ -19,7 +19,7 @@ type VariantStyleType = {
     fontFamily: string;
 };
 
-const StyledPromotionBadge = styled.div<PropsType>`
+const StyledPromotionBadge = styled.span<PropsType>`
     ${({ theme, variant }): string => {
         return `
             font-family: ${theme.PromotionBadge[variant].fontFamily};
