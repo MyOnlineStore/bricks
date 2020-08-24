@@ -31,7 +31,9 @@ const TextArea: FC<PropsType> = props => {
     const onBlur = (): void => {
         setFocus(false);
 
-        if (props.onBlur !== undefined) props.onBlur();
+        if (props.onBlur) {
+            props.onBlur();
+        }
     };
 
     const onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
