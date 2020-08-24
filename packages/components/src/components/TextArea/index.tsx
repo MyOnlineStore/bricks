@@ -21,11 +21,20 @@ type PropsType = {
     placeholder?: string;
     'data-testid'?: string;
     onChange(value: string, event: ChangeEvent<HTMLTextAreaElement>): void;
+    onBlur?(): void;
 };
 
 const TextArea: FC<PropsType> = props => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [focus, setFocus] = useState(false);
+
+    const onBlur = (): void => {
+        setFocus(false);
+
+        if (props.onBlur) {
+            props.onBlur();
+        }
+    };
 
     const onChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
         if (!props.disabled)
@@ -60,7 +69,7 @@ const TextArea: FC<PropsType> = props => {
                     placeholder={props.placeholder}
                     onChange={onChange}
                     onFocus={() => setFocus(true)}
-                    onBlur={() => setFocus(false)}
+                    onBlur={onBlur}
                 />
                 {props.characterLimit && !props.disabled && (
                     <Box justifyContent="flex-end" padding={[0, 12, 6]} onClick={focusField} style={{ cursor: 'text' }}>

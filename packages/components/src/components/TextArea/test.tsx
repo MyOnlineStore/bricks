@@ -14,6 +14,28 @@ describe('TextArea', () => {
         expect(changeMock).not.toHaveBeenCalled();
     });
 
+    it('should not break when no onBlur is provided', () => {
+        const component = mountWithTheme(<TextArea value="John" name="firstName" onChange={(): void => undefined} />);
+
+        const fn = (): void => {
+            component.find(StyledTextArea).simulate('blur');
+        };
+
+        expect(fn).not.toThrow();
+    });
+
+    it('should trigger the onBlur callback when onBlur is provided', () => {
+        const blurMock = jest.fn();
+
+        const component = mountWithTheme(
+            <TextArea value="John" name="firstName" onChange={(): void => undefined} onBlur={blurMock} />,
+        );
+
+        component.find(StyledTextArea).simulate('blur');
+
+        expect(blurMock).toHaveBeenCalled();
+    });
+
     it('should handle a change', () => {
         const changeMock = jest.fn();
 
