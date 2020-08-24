@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.9.0...@myonlinestore/bricks@3.9.1) (2020-08-24)
+
+**Note:** Version bump only for package @myonlinestore/bricks
+
+
+
+
+
 # [3.9.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.8.0...@myonlinestore/bricks@3.9.0) (2020-08-24)
 
 
