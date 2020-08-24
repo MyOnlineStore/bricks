@@ -9,11 +9,16 @@ Some nice features:
 - Fully typed
 - Testable via `data-testid` attributes
 
+## Changelogs
+- [components](https://github.com/MyOnlineStore/bricks/blob/master/packages/components/CHANGELOG.md)
+- [assets](https://github.com/MyOnlineStore/bricks/blob/master/packages/assets/CHANGELOG.md)
+
 ## Try it out!
 
 [**Storybook**](https://myonlinestore.github.io/bricks)
 
 [**Playground**](https://codesandbox.io/s/myonlinestorebricks-playground-pymwz)
+
 
 ## Installation
 
