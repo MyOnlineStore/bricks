@@ -1,9 +1,12 @@
 import { text, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Badge, { PropsType } from '.';
 
-storiesOf('Badge', module).add('Default', () => {
+export default {
+    title: 'Badge',
+};
+
+export const Default = () => {
     return (
         <Badge
             variant={
@@ -17,4 +20,4 @@ storiesOf('Badge', module).add('Default', () => {
             {text('text', 'Badger')}
         </Badge>
     );
-});
+};

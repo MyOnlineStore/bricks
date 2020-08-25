@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react';
 import React, { FC, useState } from 'react';
 import Accordion from '.';
 import Text from '../Text';
@@ -42,12 +41,16 @@ const DemoContent = () => (
     </>
 );
 
-type PropsType = {
-    image?: boolean;
-    labelDescription?: boolean;
+export default {
+    title: 'Accordion',
 };
 
-const Demo: FC<PropsType> = props => {
+interface PropsType {
+    image?: boolean;
+    labelDescription?: boolean;
+}
+
+export const Default = (props: PropsType) => {
     const [open, setOpen] = useState<boolean>(false);
     const onClick = () => setOpen(!open);
 
@@ -83,7 +86,7 @@ const Demo: FC<PropsType> = props => {
     );
 };
 
-storiesOf('Accordion', module)
-    .add('Default', () => <Demo />)
-    .add('With an image as label', () => <Demo image />)
-    .add('With extra nodes in label', () => <Demo labelDescription />);
+Default.args = {
+    image: false,
+    labelDescription: false,
+};
