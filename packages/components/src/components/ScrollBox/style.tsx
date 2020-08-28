@@ -29,18 +29,19 @@ const StyledWrapper = styled.div`
     ${simplebarStyles}
 `;
 
+/* position: relative; */
+/* overflow: hidden; */
 const StyledScrollBox = styled.div`
-    position: relative;
-    flex-grow: 1;
-    overflow: hidden;
 
-    .vertical {
+flex-grow: 1;
+
+    .simplebar-vertical {
         min-width: 3px;
         width: 4%
         max-width: 6px;
     }
 
-    .vertical .simplebar-scrollbar {
+    .simplebar-vertical .simplebar-scrollbar {
         width: 100%;
     }
 

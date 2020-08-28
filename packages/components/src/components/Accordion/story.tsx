@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, ComponentProps } from 'react';
 import Accordion from '.';
 import Text from '../Text';
 import Link from '../Link';
@@ -43,50 +43,48 @@ const DemoContent = () => (
 
 export default {
     title: 'Accordion',
+    component: Accordion,
+    argTypes: {
+        label: {
+            control: {
+                type: 'text',
+            },
+        },
+    },
 };
 
-interface PropsType {
-    image?: boolean;
-    labelDescription?: boolean;
-}
-
-export const Default = (props: PropsType) => {
-    const [open, setOpen] = useState<boolean>(false);
-    const onClick = () => setOpen(!open);
-
+export const WithImage = (props: ComponentProps<typeof Accordion>) => {
     return (
         <Box maxWidth="300px">
-            <Accordion
-                label={
-                    props.image ? (
-                        <ImageLabel />
-                    ) : (
-                        <>
-                            <Text variant="info" strong>
-                                Label
-                            </Text>
-                            {props.labelDescription && (
-                                <Text variant="descriptive">
-                                    MyOnlineStore
-                                    <br />
-                                    Molenstraat 56
-                                    <br />
-                                    5341GX Oss
-                                </Text>
-                            )}
-                        </>
-                    )
-                }
-                open={open}
-                onClick={onClick}
-            >
+            <Accordion {...props} label={<ImageLabel />}>
                 <DemoContent />
             </Accordion>
         </Box>
     );
 };
 
-Default.args = {
-    image: false,
-    labelDescription: false,
+export const WithLabel = (props: ComponentProps<typeof Accordion>) => {
+    return (
+        <Box maxWidth="300px">
+            <Accordion
+                {...props}
+                label={
+                    <>
+                        <Text variant="info" strong>
+                            Label
+                        </Text>
+                        <Text variant="descriptive">
+                            MyOnlineStore
+                            <br />
+                            Molenstraat 56
+                            <br />
+                            5341GX Oss
+                        </Text>
+                    </>
+                }
+            >
+                <DemoContent />
+            </Accordion>
+        </Box>
+    );
 };

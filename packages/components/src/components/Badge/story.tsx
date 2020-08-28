@@ -1,23 +1,14 @@
-import { text, select } from '@storybook/addon-knobs';
-import React from 'react';
-import Badge, { PropsType } from '.';
+import React, { ComponentProps } from 'react';
+import Badge from '.';
 
 export default {
     title: 'Badge',
+    component: Badge,
+    args: {
+        children: 'Badger',
+    },
 };
 
-export const Default = () => {
-    return (
-        <Badge
-            variant={
-                select(
-                    'severity',
-                    ['primary', 'secondary', 'warning', 'error', 'info'],
-                    'primary',
-                ) as PropsType['variant']
-            }
-        >
-            {text('text', 'Badger')}
-        </Badge>
-    );
+export const Default = (props: ComponentProps<typeof Badge>) => {
+    return <Badge {...props}>{props.children}</Badge>;
 };

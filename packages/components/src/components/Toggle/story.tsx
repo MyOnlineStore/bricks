@@ -1,36 +1,16 @@
-import { boolean, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { ComponentProps } from 'react';
 import Toggle from '.';
 
-type StateType = {
-    checked: boolean;
+export default {
+    title: 'Toggle',
+    component: Toggle,
+    argTypes: {
+        onChange: {
+            action: 'onChange triggered',
+        },
+    },
 };
 
-class Demo extends Component<{}, StateType> {
-    public constructor(props: {}) {
-        super(props);
-
-        this.state = {
-            checked: false,
-        };
-    }
-
-    public render(): JSX.Element {
-        return (
-            <Toggle
-                onChange={({ checked }): void => {
-                    this.setState({ checked });
-                }}
-                name="Toggle"
-                value="foot"
-                checked={boolean('checked', this.state.checked)}
-                disabled={boolean('disabled', false)}
-                error={boolean('error', false)}
-                label={text('label', 'Turn me on!')}
-            />
-        );
-    }
-}
-
-storiesOf('Toggle', module).add('Default', () => <Demo />);
+export const Demo = (props: ComponentProps<typeof Toggle>) => {
+    return <Toggle {...props} />;
+};

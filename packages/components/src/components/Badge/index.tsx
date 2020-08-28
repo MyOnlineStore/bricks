@@ -1,5 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import React, { FC } from 'react';
 
 type PropsType = {
     variant?: 'primary' | 'secondary' | 'warning' | 'info' | 'error';
@@ -19,7 +20,7 @@ type VariantStyleType = {
     fontFamily: string;
 };
 
-const Badge = styled.div<PropsType>`
+const StyledBadge = styled.div<PropsType>`
     display: inline-block;
     box-sizing: border-box;
     min-width: 24px;
@@ -70,6 +71,10 @@ const composeBadgeTheme = (themeTools: ThemeTools): BadgeThemeType => {
             fontFamily: text.primaryFont,
         },
     };
+};
+
+const Badge: FC<PropsType> = props => {
+    return <StyledBadge {...props}>{props.children}</StyledBadge>;
 };
 
 export default Badge;
