@@ -1,4 +1,4 @@
-import React, { FC, useState, ComponentProps } from 'react';
+import React, { ComponentProps } from 'react';
 import Accordion from '.';
 import Text from '../Text';
 import Link from '../Link';
