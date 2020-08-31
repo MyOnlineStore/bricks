@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.9.1...@myonlinestore/bricks@3.10.0) (2020-08-31)
+
+
+### Features
+
+* **PromotionBadge:** Made text uppercase ([#596](https://github.com/MyOnlineStore/bricks/issues/596)) ([58e85d4](https://github.com/MyOnlineStore/bricks/commit/58e85d4d28096c915f6767a3cfc110cfbfd234ab))
+
+
+
+
+
 ## [3.9.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.9.0...@myonlinestore/bricks@3.9.1) (2020-08-24)
 
 **Note:** Version bump only for package @myonlinestore/bricks
