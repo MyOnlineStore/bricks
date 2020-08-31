@@ -9,6 +9,8 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     allowDecimals?: boolean;
     minimumFractionDigits?: number;
     maximumFractionDigits?: number;
+    maximumValue?: number;
+    characterLimit?: number;
     locale?: string;
     onChange(value: number): void;
 };
@@ -67,6 +69,22 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             return seperator ? seperator.value : '.';
         }
 
+        private hasValidLength = (value: string): boolean => {
+            if (this.props.characterLimit === undefined) {
+                return true;
+            }
+
+            return value.length <= this.props.characterLimit;
+        };
+
+        private isLowerThanMaximum = (value: number): boolean => {
+            if (this.props.maximumValue === undefined) {
+                return true;
+            }
+
+            return value <= this.props.maximumValue;
+        };
+
         private parse(value: string): number {
             if (this.props.allowDecimals) {
                 const stripped = value.replace(new RegExp(`[^\-0-9${this.state.decimalSeperator}]`, 'g'), '');
@@ -84,12 +102,14 @@ const withNumberFormatting = (Wrapped: ComponentType<TextFieldPropsType>): Compo
             if (isNaN(parsedValue)) {
                 this.setState({ value: '' });
                 this.props.onChange(this.state.savedValue);
-            } else if (parsedValue < 0 && this.props.disableNegative) {
-                this.setState({ savedValue: 0, value: '0' });
-                this.props.onChange(0);
-            } else {
-                this.setState({ savedValue: parsedValue, value });
-                this.props.onChange(parsedValue);
+            } else if (this.hasValidLength(value) && this.isLowerThanMaximum(parsedValue)) {
+                if (parsedValue < 0 && this.props.disableNegative) {
+                    this.setState({ savedValue: 0, value: '0' });
+                    this.props.onChange(0);
+                } else {
+                    this.setState({ savedValue: parsedValue, value });
+                    this.props.onChange(parsedValue);
+                }
             }
         };
 

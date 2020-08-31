@@ -308,6 +308,56 @@ describe(CurrencyField.name, () => {
         expect(component.find('input').prop('value')).toEqual('19.12');
     });
 
+    it('should not allow values larger than the maximum value', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <CurrencyField
+                disableNegative={true}
+                name=""
+                value={19.12}
+                maximumValue={20}
+                locale="en-GB"
+                currency="EUR"
+                onChange={changeMock}
+            />,
+        );
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '21',
+            },
+        });
+
+        expect(component.find('input').prop('value')).toEqual('19.12');
+        expect(changeMock).not.toHaveBeenCalled();
+    });
+
+    it('should not allow values longer than the character limit', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <CurrencyField
+                disableNegative={true}
+                name=""
+                value={19.12}
+                characterLimit={5}
+                locale="en-GB"
+                currency="EUR"
+                onChange={changeMock}
+            />,
+        );
+
+        component.find('input').simulate('change', {
+            target: {
+                value: '191.13',
+            },
+        });
+
+        expect(component.find('input').prop('value')).toEqual('19.12');
+        expect(changeMock).not.toHaveBeenCalled();
+    });
+
     it('should allow negative input when disableNegative prop is false', () => {
         const changeMock = jest.fn();
 

@@ -12,6 +12,8 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     disableNegative?: boolean;
     minor?: boolean;
     formatter?: Intl.NumberFormat;
+    characterLimit?: number;
+    maximumValue?: number;
     onChange(value: number): void;
 };
 
@@ -117,6 +119,22 @@ const CurrencyField: FC<PropsType> = props => {
         }
     };
 
+    const hasValidLength = (value: string): boolean => {
+        if (props.characterLimit === undefined) {
+            return true;
+        }
+
+        return value.length <= props.characterLimit;
+    };
+
+    const isLowerThanMaximum = (value: number): boolean => {
+        if (props.maximumValue === undefined) {
+            return true;
+        }
+
+        return value <= props.maximumValue;
+    };
+
     /**
      * Actual string that is entered by user
      */
@@ -167,20 +185,25 @@ const CurrencyField: FC<PropsType> = props => {
             suffix={currencyAlignment === 'right' ? currencySymbol : undefined}
             onChange={value => {
                 const numeric = displayValueToNumericValue(value);
-                const newValue = props.minor ? toMinor(numeric) : numeric;
+                const validLength = hasValidLength(value);
+                const lowerThanMaximum = isLowerThanMaximum(numeric);
 
-                setDisplayValue(filterDisplayValue(value));
+                if (validLength && lowerThanMaximum) {
+                    const newValue = props.minor ? toMinor(numeric) : numeric;
 
-                if (value === '') {
-                    previousValue.current = 0;
-                    props.onChange(0);
-                } else {
-                    previousValue.current = newValue;
-                    props.onChange(
-                        parseFloat(
-                            parseFloat(`${newValue}`).toFixed(formatter.resolvedOptions().maximumFractionDigits),
-                        ),
-                    );
+                    setDisplayValue(filterDisplayValue(value));
+
+                    if (value === '') {
+                        previousValue.current = 0;
+                        props.onChange(0);
+                    } else {
+                        previousValue.current = newValue;
+                        props.onChange(
+                            parseFloat(
+                                parseFloat(`${newValue}`).toFixed(formatter.resolvedOptions().maximumFractionDigits),
+                            ),
+                        );
+                    }
                 }
             }}
             onBlur={() => {
