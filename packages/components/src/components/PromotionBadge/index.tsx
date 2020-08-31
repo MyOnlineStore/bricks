@@ -28,6 +28,7 @@ const StyledPromotionBadge = styled.span<PropsType>`
     }};
     font-size: 12px;
     line-height: 1.5;
+    text-transform: uppercase;
 `;
 
 const PromotionBadge: FC<PropsType> = props => {
