@@ -78,6 +78,34 @@ describe('RadioButton', () => {
         );
     });
 
+    it('should not fire onChange when disabled', () => {
+        const changeMock = jest.fn();
+
+        const component = mountWithTheme(
+            <RadioButton
+                checked={false}
+                disabled
+                name="foo"
+                value="foo"
+                label="foo"
+                onChange={changeMock}
+                data-testid="foo"
+            />,
+        );
+
+        component
+            .find('[data-testid="foo"]')
+            .hostNodes()
+            .simulate('change');
+
+        component
+            .find('[data-testid="foo"]')
+            .hostNodes()
+            .simulate('click');
+
+        expect(changeMock).toHaveBeenCalledTimes(0);
+    });
+
     it('should show an error state', () => {
         const radioButton = mountWithTheme(
             <RadioButton
