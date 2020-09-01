@@ -1,5 +1,4 @@
-import { storiesOf } from '@storybook/react';
-import React, { FC, useState } from 'react';
+import React, { ComponentProps } from 'react';
 import Accordion from '.';
 import Text from '../Text';
 import Link from '../Link';
@@ -42,48 +41,50 @@ const DemoContent = () => (
     </>
 );
 
-type PropsType = {
-    image?: boolean;
-    labelDescription?: boolean;
+export default {
+    title: 'Accordion',
+    component: Accordion,
+    argTypes: {
+        label: {
+            control: {
+                type: 'text',
+            },
+        },
+    },
 };
 
-const Demo: FC<PropsType> = props => {
-    const [open, setOpen] = useState<boolean>(false);
-    const onClick = () => setOpen(!open);
-
+export const WithImage = (props: ComponentProps<typeof Accordion>) => {
     return (
         <Box maxWidth="300px">
-            <Accordion
-                label={
-                    props.image ? (
-                        <ImageLabel />
-                    ) : (
-                        <>
-                            <Text variant="info" strong>
-                                Label
-                            </Text>
-                            {props.labelDescription && (
-                                <Text variant="descriptive">
-                                    MyOnlineStore
-                                    <br />
-                                    Molenstraat 56
-                                    <br />
-                                    5341GX Oss
-                                </Text>
-                            )}
-                        </>
-                    )
-                }
-                open={open}
-                onClick={onClick}
-            >
+            <Accordion {...props} label={<ImageLabel />}>
                 <DemoContent />
             </Accordion>
         </Box>
     );
 };
 
-storiesOf('Accordion', module)
-    .add('Default', () => <Demo />)
-    .add('With an image as label', () => <Demo image />)
-    .add('With extra nodes in label', () => <Demo labelDescription />);
+export const WithLabel = (props: ComponentProps<typeof Accordion>) => {
+    return (
+        <Box maxWidth="300px">
+            <Accordion
+                {...props}
+                label={
+                    <>
+                        <Text variant="info" strong>
+                            Label
+                        </Text>
+                        <Text variant="descriptive">
+                            MyOnlineStore
+                            <br />
+                            Molenstraat 56
+                            <br />
+                            5341GX Oss
+                        </Text>
+                    </>
+                }
+            >
+                <DemoContent />
+            </Accordion>
+        </Box>
+    );
+};

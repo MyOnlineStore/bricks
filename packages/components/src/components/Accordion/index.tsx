@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, MouseEvent } from 'react';
+import React, { ReactNode, MouseEvent } from 'react';
 import { StyledContent, StyledFoldoutIcon, StyledLabel } from './style';
 import FoldOut from '../FoldOut';
 import Box from '../Box';
@@ -8,6 +8,7 @@ import Icon from '../Icon';
 export type PropsType = {
     label: ReactNode;
     open: boolean;
+    children?: ReactNode;
     'data-testid'?: string;
     onClick?(): void;
 };
@@ -23,7 +24,7 @@ export type PropsType = {
  * Callback for the click area
  */
 
-const Accordion: FC<PropsType> = props => {
+const Accordion = (props: PropsType) => {
     const onClick = (event: MouseEvent): void => {
         event.stopPropagation();
 
