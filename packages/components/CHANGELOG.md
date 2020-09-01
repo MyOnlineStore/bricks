@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.11.0...@myonlinestore/bricks@3.12.0) (2020-09-01)
+
+
+### Features
+
+* **CurrencyField, NumberField:** Add maximumValue and characterLimit ([#597](https://github.com/MyOnlineStore/bricks/issues/597)) ([e3143e4](https://github.com/MyOnlineStore/bricks/commit/e3143e47283c1f3cce0eb463c2af6dd11b414bf0))
+
+
+
+
+
 # [3.11.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.10.0...@myonlinestore/bricks@3.11.0) (2020-09-01)
 
 
