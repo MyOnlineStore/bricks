@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.12.0...@myonlinestore/bricks@3.13.0) (2020-09-01)
+
+
+### Features
+
+* Added sb url for composition ([#599](https://github.com/MyOnlineStore/bricks/issues/599)) ([8bd391f](https://github.com/MyOnlineStore/bricks/commit/8bd391f15f318e97be4c0ff18262d77f274cf3b8))
+
+
+
+
+
 # [3.12.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.11.0...@myonlinestore/bricks@3.12.0) (2020-09-01)
 
 
