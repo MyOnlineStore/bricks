@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.10.0...@myonlinestore/bricks@3.11.0) (2020-09-01)
+
+
+### Features
+
+* **RadioButton:** Added check to prevent onChange when disabled ([#598](https://github.com/MyOnlineStore/bricks/issues/598)) ([9ff116e](https://github.com/MyOnlineStore/bricks/commit/9ff116ec762ab83126b461161d327c090e6d5483))
+
+
+
+
+
 # [3.10.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.9.1...@myonlinestore/bricks@3.10.0) (2020-08-31)
 
 
