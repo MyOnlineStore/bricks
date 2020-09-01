@@ -7,4 +7,17 @@ export const parameters = {
     controls: {
         expanded: true,
     },
+    backgrounds: {
+        default: 'light',
+        values: [
+            {
+                name: 'light',
+                value: '#fff',
+            },
+            {
+                name: 'dark',
+                value: '#000',
+            },
+        ],
+    },
 };
