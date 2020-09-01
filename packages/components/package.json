@@ -22,6 +22,9 @@
     "react",
     "components"
   ],
+  "storybook": {
+    "url": "https://myonlinestore-bricks.now.sh"
+  },
   "sideEffects": false,
   "dependencies": {
     "chroma-js": "^2.0.3",
