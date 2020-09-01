@@ -34,6 +34,32 @@ describe(NumberField.name, () => {
         expect(changeMock).toHaveBeenCalledWith(0);
     });
 
+    it('should not allow values larger than the maximum value', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(
+            <NumberField name="" value={19} maximumValue={30} disableNegative onChange={changeMock} />,
+        );
+
+        component.find('input').simulate('change', { target: { value: '32' } });
+        component.find('input').simulate('blur');
+
+        expect(component.find('input').prop('value')).toEqual('19');
+        expect(changeMock).not.toHaveBeenCalled();
+    });
+
+    it('should not allow values longer than the character limit', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(
+            <NumberField name="" value={19} characterLimit={3} disableNegative onChange={changeMock} />,
+        );
+
+        component.find('input').simulate('change', { target: { value: '3232' } });
+        component.find('input').simulate('blur');
+
+        expect(component.find('input').prop('value')).toEqual('19');
+        expect(changeMock).not.toHaveBeenCalled();
+    });
+
     it('should be able to handle localized float values', () => {
         const changeMock = jest.fn();
 

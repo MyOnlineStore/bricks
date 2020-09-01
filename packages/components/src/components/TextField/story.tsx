@@ -43,6 +43,18 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         allowDecimals: boolean('allowDecimals', false),
         minimumFractionDigits: number('minimumFractionDigits', 0),
         maximumFractionDigits: number('maximumFractionDigits', 2),
+        characterLimit: number('characterLimit', 10),
+        maximumValue: number('maximumValue', 1000000),
+        locale,
+    };
+
+    const currencyProps = {
+        value: numberValue,
+        onChange: setNumberValue,
+        disableNegative: boolean('disable negative numbers', false),
+        allowDecimals: boolean('allowDecimals', false),
+        characterLimit: number('characterLimit', 10),
+        maximumValue: number('maximumValue', 1000000),
         locale,
     };
 
@@ -55,7 +67,7 @@ const Demo: FC<PropsType> = (props): JSX.Element => {
         return (
             <CurrencyField
                 {...sharedProps}
-                {...numberProps}
+                {...currencyProps}
                 currency={select('currency', ['USD', 'EUR', 'JPY', 'GBP', 'AUD'], 'EUR')}
                 minor={boolean('minor', false)}
                 feedback={{
