@@ -27,10 +27,12 @@ const RadioButton: FC<PropsType> = props => {
     };
 
     const handleChange = (): void => {
-        props.onChange({
-            checked: !props.checked,
-            value: props.value,
-        });
+        if (!props.disabled) {
+            props.onChange({
+                checked: !props.checked,
+                value: props.value,
+            });
+        }
     };
 
     return (
@@ -47,6 +49,7 @@ const RadioButton: FC<PropsType> = props => {
                         onBlur={toggleFocus}
                         onChange={handleChange}
                         checked={props.checked}
+                        disabled={props.disabled ? props.disabled : false}
                         type="radio"
                         name={props.name}
                         value={props.value}
