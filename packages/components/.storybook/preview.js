@@ -4,9 +4,6 @@ import { addDecorator } from '@storybook/react';
 addDecorator(themeDecorator);
 
 export const parameters = {
-    controls: {
-        expanded: true,
-    },
     backgrounds: {
         default: 'light',
         values: [
