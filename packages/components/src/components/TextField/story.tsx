@@ -1,5 +1,6 @@
 import React, { ComponentProps, useState, useEffect } from 'react';
 import TextField from '.';
+import { SearchIcon } from '@myonlinestore/bricks-assets';
 
 export default {
     title: 'TextField',
@@ -12,7 +13,7 @@ export default {
 };
 
 export const Default = (args: ComponentProps<typeof TextField>) => {
-    const [value, setValue] = useState(args.value || '');
+    const [value, setValue] = useState(args.value);
 
     useEffect(() => {
         setValue(args.value);
@@ -21,7 +22,7 @@ export const Default = (args: ComponentProps<typeof TextField>) => {
     return (
         <TextField
             {...args}
-            value={value}
+            value={value || ''}
             onChange={(value, event) => {
                 args.onChange(value, event);
                 setValue(value);
@@ -31,6 +32,31 @@ export const Default = (args: ComponentProps<typeof TextField>) => {
                 setValue('');
             }}
             feedback={value === '' ? { message: 'This field cannot be empty', severity: 'error' } : undefined}
+        />
+    );
+};
+
+export const AsSearchbar = (args: ComponentProps<typeof TextField>) => {
+    const [value, setValue] = useState(args.value);
+
+    useEffect(() => {
+        setValue(args.value);
+    }, [args.value]);
+
+    return (
+        <TextField
+            {...args}
+            placeholder={args.placeholder || 'What are you looking for?'}
+            value={value || ''}
+            onChange={(value, event) => {
+                args.onChange(value, event);
+                setValue(value);
+            }}
+            onClear={() => {
+                args.onClear?.();
+                setValue('');
+            }}
+            icon={<SearchIcon />}
         />
     );
 };

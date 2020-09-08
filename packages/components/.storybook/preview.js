@@ -18,3 +18,15 @@ export const parameters = {
         ],
     },
 };
+
+export const globalTypes = {
+    theme: {
+        name: 'Theme',
+        description: 'Global theme for components',
+        defaultValue: 'MyOnlineStore',
+        toolbar: {
+            icon: 'paintbrush',
+            items: ['MyOnlineStore', 'MyOnlineStore (Corporate)', 'Game Store', 'Concept Store'],
+        },
+    },
+};

@@ -9,6 +9,9 @@ type TextFieldThemeType = {
         fontSize: string;
         fontFamily: string;
     };
+    icon: {
+        color: string;
+    };
     affix: {
         color: string;
         background: string;
@@ -75,21 +78,19 @@ const StyledInput = styled.input<InputPropsType>`
 
     ${({ focus, disabled, severity, theme }): string => {
         if (severity === 'error' && !focus && !disabled) {
-            return `
-                color: ${theme.TextField.input.idle.color};
-                `;
-        } else if (disabled) {
+            return `color: ${theme.TextField.input.idle.color};`;
+        }
+
+        if (disabled) {
             return `
                 color: ${theme.TextField.input.disabled.color};
                 cursor: not-allowed;
                 -webkit-text-fill-color: currentColor;
                 opacity: 1;
-                `;
-        } else {
-            return `
-                color: ${theme.TextField.input.idle.color};
             `;
         }
+
+        return `color: ${theme.TextField.input.idle.color};`;
     }}
 
     &::placeholder {
@@ -142,23 +143,27 @@ const StyledAffixWrapper = styled.div<AffixPropsType>`
             return `
                 border-color: ${theme.TextField.input.error.borderColor};
                 color: ${theme.TextField.affix.color};
-                `;
-        } else if (focus && !disabled) {
+            `;
+        }
+
+        if (focus && !disabled) {
             return `
                 border-color: ${theme.TextField.input.focus.borderColor};
                 color: ${theme.TextField.affix.color};
-                `;
-        } else if (disabled) {
+            `;
+        }
+
+        if (disabled) {
             return `
                 border-color: ${theme.TextField.input.disabled.borderColor};
                 color: ${theme.TextField.input.disabled.color};
-                `;
-        } else {
-            return `
-                border-color: ${theme.TextField.input.idle.borderColor};
-                color: ${theme.TextField.affix.color};
             `;
         }
+
+        return `
+            border-color: ${theme.TextField.input.idle.borderColor};
+            color: ${theme.TextField.affix.color};
+        `;
     }}
 }
 `;
@@ -186,33 +191,39 @@ const StyledWrapper = styled.div<WrapperPropsType>`
                 background: ${theme.TextField.input.error.background};
                 border: solid 1px ${theme.TextField.input.error.borderColor};
                 box-shadow: ${theme.TextField.input.error.boxShadow};
-                `;
-        } else if (severity === 'error' && !focus && !disabled) {
+            `;
+        }
+
+        if (severity === 'error' && !focus && !disabled) {
             return `
                 background: ${theme.TextField.input.error.background};
                 border: solid 1px ${theme.TextField.input.error.borderColor};
                 box-shadow: none;
-                `;
-        } else if (focus && !disabled) {
+            `;
+        }
+
+        if (focus && !disabled) {
             return `
                 background: ${theme.TextField.input.idle.background};
                 border: solid 1px ${theme.TextField.input.focus.borderColor};
                 box-shadow: ${theme.TextField.input.focus.boxShadow};
-                `;
-        } else if (disabled) {
+            `;
+        }
+
+        if (disabled) {
             return `
                 background: ${theme.TextField.input.disabled.background};
                 border: solid 1px ${theme.TextField.input.disabled.borderColor};
                 box-shadow: none;
                 cursor: not-allowed;
-                `;
-        } else {
-            return `
-                background: ${theme.TextField.input.idle.background};
-                border: solid 1px ${theme.TextField.input.idle.borderColor};
-                box-shadow: none;
             `;
         }
+
+        return `
+            background: ${theme.TextField.input.idle.background};
+            border: solid 1px ${theme.TextField.input.idle.borderColor};
+            box-shadow: none;
+        `;
     }}
 `;
 
@@ -228,6 +239,9 @@ const composeTextFieldTheme = (themeTools: ThemeTools): TextFieldThemeType => {
         affix: {
             color: forms.colorContrast,
             background: forms.backgroundContrast,
+        },
+        icon: {
+            color: colors.grey.base,
         },
         input: {
             idle: {

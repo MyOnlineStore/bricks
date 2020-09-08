@@ -3,8 +3,9 @@ import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
 import { CloseSmallIcon } from '@myonlinestore/bricks-assets';
-import IconButton from '../IconButton';
 import SeverityType from '../../types/SeverityType';
+import IconButton from '../IconButton';
+import styled from '../../utility/styled';
 
 export type InputSeverityType = 'error';
 
@@ -21,6 +22,7 @@ export type PropsType = {
     prefix?: string | ReactNode;
     suffix?: string | ReactNode;
     disabled?: boolean;
+    icon?: ReactNode;
     placeholder?: string;
     'data-testid'?: string;
     extractRef?(ref: HTMLInputElement): void;
@@ -30,6 +32,13 @@ export type PropsType = {
     onFocus?(): void;
     onClick?(): void;
 };
+
+const IconContainer = styled(Box)`
+    svg {
+        width: 12px;
+        fill: ${({ theme }) => theme.TextField.icon.color};
+    }
+`;
 
 const TextField: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -74,6 +83,11 @@ const TextField: FC<PropsType> = props => {
                 disabled={props.disabled}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
             >
+                {props.icon && (
+                    <IconContainer justifyContent="center" alignItems="center" padding={[6, 0, 6, 12]}>
+                        {props.icon}
+                    </IconContainer>
+                )}
                 {props.prefix && (
                     <StyledAffixWrapper
                         onClick={typeof props.prefix === 'string' ? forceFocus : undefined}
@@ -111,6 +125,7 @@ const TextField: FC<PropsType> = props => {
                     {props.onClear && !props.disabled && props.value !== '' && (
                         <Box position="absolute" height="100%" right="0" top="0" alignItems="center">
                             <IconButton
+                                variant="subdued"
                                 data-testid={`${props['data-testid']}-clear-button`}
                                 icon={<CloseSmallIcon />}
                                 iconSize="small"

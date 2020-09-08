@@ -5,6 +5,7 @@ import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
 import { Box } from '../..';
 import MosTheme from '../../themes/MosTheme';
 import { mount } from 'enzyme';
+import { SearchIcon } from '@myonlinestore/bricks-assets';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -154,5 +155,14 @@ describe('TextField', () => {
         );
 
         expect(component.findByTestId('feedback')).toHaveLength(1);
+    });
+
+    it('should render the passed in icon', () => {
+        const changeMock = jest.fn();
+        const component = mountWithTheme(
+            <TextField name="" value="foo" onChange={changeMock} icon={<SearchIcon data-testid="foo" />} />,
+        );
+
+        expect(component.findByTestId('foo')).toHaveLength(1);
     });
 });
