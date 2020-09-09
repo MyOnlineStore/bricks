@@ -338,6 +338,14 @@ const theme: ThemeType = {
                 color: colors.grey800,
             },
         },
+        subdued: {
+            idle: {
+                color: colors.grey400,
+            },
+            hover: {
+                color: colors.grey600,
+            },
+        },
         destructive: {
             idle: {
                 color: colors.grey600,
@@ -738,6 +746,9 @@ const theme: ThemeType = {
         affix: {
             color: colors.grey600,
             background: colors.grey100,
+        },
+        icon: {
+            color: colors.grey600,
         },
         input: {
             idle: {

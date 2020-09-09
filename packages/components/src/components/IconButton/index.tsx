@@ -20,13 +20,14 @@ type ComponentStateTypes = {
 type IconButtonThemeType = {
     primary: ComponentStateTypes;
     destructive: ComponentStateTypes;
+    subdued: ComponentStateTypes;
 };
 
 type PropsType = BareButtonPropsType & {
     theme?: ThemeType;
     icon: ReactNode;
     iconSize?: 'small' | 'medium';
-    variant?: 'primary' | 'destructive';
+    variant?: keyof IconButtonThemeType;
 };
 
 const StyledIconButton = styled(BareButton)<Pick<PropsType, 'variant'>>`
@@ -113,6 +114,14 @@ const composeIconButtonTheme = (themeTools: ThemeTools): IconButtonThemeType => 
 
     return {
         primary: {
+            idle: {
+                color: colors.primary.base,
+            },
+            hover: {
+                color: colors.primary.darker1,
+            },
+        },
+        subdued: {
             idle: {
                 color: colors.grey.lighter1,
             },

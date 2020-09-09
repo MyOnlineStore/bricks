@@ -4,9 +4,6 @@ import { addDecorator } from '@storybook/react';
 addDecorator(themeDecorator);
 
 export const parameters = {
-    controls: {
-        expanded: true,
-    },
     backgrounds: {
         default: 'light',
         values: [
@@ -19,5 +16,17 @@ export const parameters = {
                 value: '#000',
             },
         ],
+    },
+};
+
+export const globalTypes = {
+    theme: {
+        name: 'Theme',
+        description: 'Global theme for components',
+        defaultValue: 'MyOnlineStore',
+        toolbar: {
+            icon: 'paintbrush',
+            items: ['MyOnlineStore', 'MyOnlineStore (Corporate)', 'Game Store', 'Concept Store'],
+        },
     },
 };
