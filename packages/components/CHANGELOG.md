@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.13.0...@myonlinestore/bricks@3.14.0) (2020-09-14)
+
+
+### Features
+
+* Added icon to Textfield ([#600](https://github.com/MyOnlineStore/bricks/issues/600)) ([50fdc82](https://github.com/MyOnlineStore/bricks/commit/50fdc8261cd95bb523645da4cf08459a60169be8))
+
+
+
+
+
 # [3.13.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.12.0...@myonlinestore/bricks@3.13.0) (2020-09-01)
 
 
