@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.14.0...@myonlinestore/bricks@3.14.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* **Card:** Added testid prop ([#601](https://github.com/MyOnlineStore/bricks/issues/601)) ([f9adbe8](https://github.com/MyOnlineStore/bricks/commit/f9adbe8b7b36e4df72b77387375a2f2ec0a32067))
+* **FormRow:** Change label to div ([#602](https://github.com/MyOnlineStore/bricks/issues/602)) ([239404e](https://github.com/MyOnlineStore/bricks/commit/239404e2d688a9f39406f7b1cdbbb76c5e7c2bfd))
+
+
+
+
+
 # [3.14.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.13.0...@myonlinestore/bricks@3.14.0) (2020-09-14)
 
 
