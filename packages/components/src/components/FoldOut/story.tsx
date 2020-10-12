@@ -1,13 +1,15 @@
 import { storiesOf } from '@storybook/react';
-import React, { Component } from 'react';
+import React, { useState, FC } from 'react';
 import FoldOut from '.';
 import trbl from '../../utility/trbl';
 import Button from '../Button';
 import Box from '../Box';
 import Text from '../Text';
+import IconButton from '../IconButton';
+import { ChevronDownSmallIcon, ChevronUpSmallIcon } from '@myonlinestore/bricks-assets';
 
-type StateType = {
-    isOpen: boolean;
+type PropsType = {
+    isOpen?: boolean;
 };
 
 const demoContent = `
@@ -36,37 +38,52 @@ const demoContent = `
     To sit on my throne as the prince of Bel-air
 `;
 
-class DemoComponent extends Component<{}, StateType> {
-    public constructor(props: {}) {
-        super(props);
+const Demo: FC<PropsType> = () => {
+    const [isOpen, toggleOpen] = useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
-    }
+    return (
+        <div>
+            <FoldOut open={isOpen}>
+                <Box padding={trbl(0, 0, 12)}>
+                    <Text>{demoContent}</Text>
+                </Box>
+            </FoldOut>
+            <Button
+                onClick={() => {
+                    toggleOpen(!isOpen);
+                }}
+                title="open FoldOut"
+                variant="secondary"
+            >
+                Toggle
+            </Button>
+        </div>
+    );
+};
 
-    public render(): JSX.Element {
-        return (
-            <div>
-                <FoldOut open={this.state.isOpen}>
-                    <Box padding={trbl(0, 0, 12)}>
-                        <Text>{demoContent}</Text>
-                    </Box>
-                </FoldOut>
-                <Button
-                    onClick={(): void =>
-                        this.setState({
-                            isOpen: !this.state.isOpen,
-                        })
-                    }
-                    title="open FoldOut"
-                    variant="secondary"
-                >
-                    Toggle
-                </Button>
-            </div>
-        );
-    }
-}
+const ExcerptDemo: FC<PropsType> = () => {
+    const [isOpen, toggleOpen] = useState(false);
 
-storiesOf('FoldOut', module).add('With a toggle', () => <DemoComponent />);
+    return (
+        <Box direction="column" alignContent="center" padding={[24]} style={{ backgroundColor: '#d3d5d9' }}>
+            <FoldOut open={isOpen} excerptHeight={70} backgroundColor="#d3d5d9">
+                <Box padding={trbl(0, 0, 12)}>
+                    <Text>{demoContent}</Text>
+                </Box>
+            </FoldOut>
+            <IconButton
+                onClick={() => {
+                    toggleOpen(!isOpen);
+                }}
+                title="open FoldOut"
+                variant="primary"
+                iconSize="small"
+                icon={isOpen ? <ChevronUpSmallIcon /> : <ChevronDownSmallIcon />}
+            />
+        </Box>
+    );
+};
+
+storiesOf('FoldOut', module)
+    .add('With a button toggle', () => <Demo />)
+    .add('With excerpt preview', () => <ExcerptDemo />);

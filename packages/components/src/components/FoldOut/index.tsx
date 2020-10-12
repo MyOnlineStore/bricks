@@ -5,10 +5,14 @@ import Measure from 'react-measure';
 type ContentProps = {
     contentHeight?: number;
     isOpen: PropsType['open'];
+    excerptHeight?: PropsType['excerptHeight'];
+    backgroundColor?: PropsType['backgroundColor'];
 };
 
 type PropsType = {
     open: boolean;
+    excerptHeight?: number;
+    backgroundColor?: string;
 };
 
 const FoldOut: FC<PropsType> = props => (
@@ -16,7 +20,9 @@ const FoldOut: FC<PropsType> = props => (
         {({ measureRef, contentRect }) => (
             <StyledFoldOut
                 isOpen={props.open}
-                contentHeight={contentRect.client ? contentRect.client.height : undefined}
+                contentHeight={contentRect.client?.height}
+                excerptHeight={props.excerptHeight}
+                backgroundColor={props.backgroundColor}
             >
                 <div ref={measureRef}>{props.children}</div>
             </StyledFoldOut>
