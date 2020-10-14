@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.14.1...@myonlinestore/bricks@3.15.0) (2020-10-14)
+
+
+### Features
+
+* **FoldOut:** Added excerpt mode to FoldOut component ([#603](https://github.com/MyOnlineStore/bricks/issues/603)) ([08c19b8](https://github.com/MyOnlineStore/bricks/commit/08c19b876c977613f4fa0b660fc17269b4be4ff7))
+
+
+
+
+
 ## [3.14.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.14.0...@myonlinestore/bricks@3.14.1) (2020-10-07)
 
 
