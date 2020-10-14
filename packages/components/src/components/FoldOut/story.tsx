@@ -66,7 +66,7 @@ const ExcerptDemo: FC<PropsType> = () => {
 
     return (
         <Box direction="column" alignContent="center" padding={[24]} style={{ backgroundColor: '#d3d5d9' }}>
-            <FoldOut open={isOpen} excerptHeight={70} backgroundColor="#d3d5d9">
+            <FoldOut open={isOpen} previewContent={70} backgroundColor="#d3d5d9">
                 <Box padding={trbl(0, 0, 12)}>
                     <Text>{demoContent}</Text>
                 </Box>

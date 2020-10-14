@@ -9,8 +9,8 @@ const animateOverflow = keyframes`
 const StyledFoldOut = styled.div`
     transition: height 300ms cubic-bezier(0.5, 0, 0.1, 1);
     height: ${(props: ContentProps): string => {
-        if (props.excerptHeight && !props.isOpen) {
-            return `${props.excerptHeight}px`;
+        if (props.previewHeight && !props.isOpen) {
+            return `${props.previewHeight}px`;
         }
 
         if (!props.isOpen) {
@@ -32,7 +32,7 @@ const StyledFoldOut = styled.div`
             `;
         }
 
-        if (props.excerptHeight && !props.isOpen) {
+        if (props.previewHeight && !props.isOpen) {
             return css`
                 overflow: hidden;
                 position: relative;
@@ -44,10 +44,7 @@ const StyledFoldOut = styled.div`
                     right: 0;
                     top: 0;
                     bottom: 0;
-                    background: linear-gradient(
-                        transparent 50%,
-                        ${props.backgroundColor ? props.backgroundColor : '#FFFFFF'} 100%
-                    );
+                    background: linear-gradient(transparent 50%, ${props.backgroundColor || '#FFFFFF'} 100%);
                 }
             `;
         }
