@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import chroma from 'chroma-js';
 import { ContentProps } from '.';
 
 const animateOverflow = keyframes`
@@ -44,7 +45,22 @@ const StyledFoldOut = styled.div`
                     right: 0;
                     top: 0;
                     bottom: 0;
-                    background: linear-gradient(transparent 50%, ${props.backgroundColor || '#FFFFFF'} 100%);
+                    background: linear-gradient(
+                        rgba(
+                                ${chroma(props.backgroundColor || '#FFFFFF')
+                                    .rgb()
+                                    .join(',')},
+                                0
+                            )
+                            50%,
+                        rgba(
+                                ${chroma(props.backgroundColor || '#FFFFFF')
+                                    .rgb()
+                                    .join(',')},
+                                1
+                            )
+                            100%
+                    );
                 }
             `;
         }
