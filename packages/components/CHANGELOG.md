@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.15.0...@myonlinestore/bricks@3.15.1) (2020-10-28)
+
+
+### Bug Fixes
+
+* **FoldOut:** Converted linear-gradient to use RGBA values ([#604](https://github.com/MyOnlineStore/bricks/issues/604)) ([9424314](https://github.com/MyOnlineStore/bricks/commit/9424314c1012591bc3547d80d0c5c538951f6a25))
+
+
+
+
+
 # [3.15.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.14.1...@myonlinestore/bricks@3.15.0) (2020-10-14)
 
 
