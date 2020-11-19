@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.15.1...@myonlinestore/bricks@4.0.0) (2020-11-19)
+
+
+* feat(Link)!: Add severity colors to Link (#607) ([d3b416a](https://github.com/MyOnlineStore/bricks/commit/d3b416ac44894fdbb2f0e475f68806f616e2ab9d)), closes [#607](https://github.com/MyOnlineStore/bricks/issues/607)
+
+
+### Features
+
+* **Notification:** Allow react nodes as message via children ([#606](https://github.com/MyOnlineStore/bricks/issues/606)) ([73fb52c](https://github.com/MyOnlineStore/bricks/commit/73fb52c8850210e987d1b3f777683ad254751aa8))
+
+
+### BREAKING CHANGES
+
+* Adjusted Link theme object
+
+
+
+
+
 ## [3.15.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.15.0...@myonlinestore/bricks@3.15.1) (2020-10-28)
 
 
