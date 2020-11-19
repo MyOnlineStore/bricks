@@ -2,7 +2,7 @@ import React from 'react';
 import Notification from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 
-describe('Native Select', () => {
+describe('Notification', () => {
     it('should be testable with a test-id', () => {
         const component = mountWithTheme(<Notification severity="info" data-testid="foo" />);
 
