@@ -1,9 +1,13 @@
 import React, { Children, FunctionComponent, MouseEvent } from 'react';
+import SeverityType from '../../types/SeverityType';
 import StyledLink, { StyledButton } from './style';
+
+type LinkSeverityType = SeverityType | 'default';
 
 type PropsType = {
     href?: string;
     className?: string;
+    severity?: LinkSeverityType;
     title: string;
     target?: '_blank' | '_self';
     'data-testid'?: string;
@@ -26,6 +30,7 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
                 title={props.title}
                 target={props.target}
                 href={props.href}
+                severity={props.severity ? props.severity : 'default'}
                 data-testid={props['data-testid']}
             >
                 {Children.count(props.children) > 0 ? props.children : props.title}
@@ -39,6 +44,7 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
             type="button"
             onClick={clickAction}
             title={props.title}
+            severity={props.severity ? props.severity : 'default'}
             data-testid={props['data-testid']}
         >
             {Children.count(props.children) > 0 ? props.children : props.title}
@@ -47,4 +53,4 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
 };
 
 export default Link;
-export { PropsType };
+export { PropsType, LinkSeverityType };
