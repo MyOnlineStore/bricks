@@ -359,13 +359,48 @@ const theme: ThemeType = {
         size: '186px',
     },
     Link: {
-        default: {
-            color: colors.grey800,
+        common: {
             textDecoration: 'underline',
-            fontSize: fontSize.base,
         },
-        hover: {
-            color: colors.green400,
+        default: {
+            idle: {
+                color: 'inherit',
+            },
+            hover: {
+                color: colors.green400,
+            },
+        },
+        success: {
+            idle: {
+                color: 'inherit',
+            },
+            hover: {
+                color: colors.green900,
+            },
+        },
+        info: {
+            idle: {
+                color: 'inherit',
+            },
+            hover: {
+                color: colors.blue900,
+            },
+        },
+        warning: {
+            idle: {
+                color: 'inherit',
+            },
+            hover: {
+                color: colors.yellow900,
+            },
+        },
+        error: {
+            idle: {
+                color: 'inherit',
+            },
+            hover: {
+                color: colors.red900,
+            },
         },
     },
     MessageStream: {
