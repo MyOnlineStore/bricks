@@ -383,7 +383,7 @@ const theme: ThemeType = {
                 color: 'inherit',
             },
             hover: {
-                color: colors.blue900,
+                color: colors.blue800,
             },
         },
         warning: {
@@ -399,7 +399,7 @@ const theme: ThemeType = {
                 color: 'inherit',
             },
             hover: {
-                color: colors.red900,
+                color: colors.red800,
             },
         },
     },
