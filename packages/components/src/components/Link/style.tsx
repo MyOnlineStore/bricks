@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
-import SeverityType from '../../types/SeverityType';
+import { LinkSeverityType } from '.';
 
 type LinkThemeType = {
     common: {
@@ -50,9 +50,7 @@ type LinkThemeType = {
     };
 };
 
-type LinkSeverityType = SeverityType | 'default';
 type ThemePropsType = { theme: ThemeType; severity: LinkSeverityType };
-
 type LinkProps = {
     severity: LinkSeverityType;
 };

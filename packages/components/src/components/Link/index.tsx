@@ -2,10 +2,12 @@ import React, { Children, FunctionComponent, MouseEvent } from 'react';
 import SeverityType from '../../types/SeverityType';
 import StyledLink, { StyledButton } from './style';
 
+type LinkSeverityType = SeverityType | 'default';
+
 type PropsType = {
     href?: string;
     className?: string;
-    severity?: SeverityType;
+    severity?: LinkSeverityType;
     title: string;
     target?: '_blank' | '_self';
     'data-testid'?: string;
@@ -51,4 +53,4 @@ const Link: FunctionComponent<PropsType> = (props): JSX.Element => {
 };
 
 export default Link;
-export { PropsType };
+export { PropsType, LinkSeverityType };
