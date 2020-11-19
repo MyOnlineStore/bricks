@@ -14,6 +14,7 @@ storiesOf('Notification', module)
     ))
     .add('With react node children', () => (
         <Notification severity="info">
-            A message with React nodes like a <Link title="Link" target="_blank" href="https://google.com" />
+            A message with React nodes like a&nbsp;
+            <Link severity="info" title="link" target="_blank" href="https://google.com" />
         </Notification>
     ));
