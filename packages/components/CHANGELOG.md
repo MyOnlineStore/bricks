@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@4.0.0...@myonlinestore/bricks@4.0.1) (2020-11-23)
+
+
+### Bug Fixes
+
+* **Link:** Fixed Link button hover styles ([#608](https://github.com/MyOnlineStore/bricks/issues/608)) ([d74056c](https://github.com/MyOnlineStore/bricks/commit/d74056cecefefb296cc5be991790da81a2c0677b))
+
+
+
+
+
 # [4.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@3.15.1...@myonlinestore/bricks@4.0.0) (2020-11-19)
 
 
