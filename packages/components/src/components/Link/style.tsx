@@ -104,8 +104,8 @@ const StyledLink = styled.a<LinkProps>`
 `;
 
 const StyledButton = styled.button`
-    color: ${({ theme }): string => theme.Link.default.idle.color};
-    text-decoration: ${({ theme }): string => theme.Link.common.textDecoration};
+    color: ${({ theme, severity }: ThemePropsType): string => theme.Link[severity].idle.color};
+    text-decoration: ${({ theme }: ThemePropsType): string => theme.Link.common.textDecoration};
     cursor: pointer;
     transition: color 100ms;
     display: inline;
@@ -116,16 +116,16 @@ const StyledButton = styled.button`
     padding: 0;
 
     &:hover {
-        color: ${({ theme }): string => theme.Link.default.hover.color};
+        color: ${({ theme, severity }: ThemePropsType): string => theme.Link[severity].hover.color};
         background-color: transparent;
     }
 
     &:focus {
-        color: ${({ theme }): string => theme.Link.default.idle.color};
+        color: ${({ theme, severity }): string => theme.Link[severity].idle.color};
         background-color: transparent;
 
         &:hover {
-            color: ${({ theme }: ThemePropsType): string => theme.Link.default.hover.color};
+            color: ${({ theme, severity }: ThemePropsType): string => theme.Link[severity].hover.color};
             background-color: transparent;
         }
     }
