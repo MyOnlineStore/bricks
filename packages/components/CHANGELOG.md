@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@4.0.1...@myonlinestore/bricks@4.0.2) (2020-12-21)
+
+
+### Bug Fixes
+
+* **CheckBox:** Remove margin for label when there is no label ([#609](https://github.com/MyOnlineStore/bricks/issues/609)) ([a1e4974](https://github.com/MyOnlineStore/bricks/commit/a1e49748ebdca876f94755a4b3dad0c7339291bb))
+
+
+
+
+
 ## [4.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@4.0.0...@myonlinestore/bricks@4.0.1) (2020-11-23)
 
 
