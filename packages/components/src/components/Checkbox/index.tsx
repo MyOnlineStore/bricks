@@ -47,7 +47,7 @@ class Checkbox extends Component<PropsType, StateType> {
 
         return (
             <Box onClick={this.changeHandler} data-testid={this.props['data-testid']} alignItems="flex-start">
-                <Box margin={[3, 12, 0, 0]}>
+                <Box margin={[3, this.props.label ? 12 : 0, 0, 0]}>
                     <StyledCheckboxSkin
                         checkedState={this.props.checked}
                         elementFocus={this.state.focus}
