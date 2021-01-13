@@ -251,6 +251,9 @@ const theme: ThemeType = {
         checkedDisabled: {
             backgroundColor: colors.grey200,
         },
+        checkedError: {
+            backgroundColor: colors.red400,
+        },
         error: {
             backgroundColor: rgba(colors.red100, 0.1),
             borderColor: colors.red600,
