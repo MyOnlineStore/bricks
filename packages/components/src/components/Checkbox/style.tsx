@@ -30,6 +30,9 @@ type CheckboxThemeType = {
     checkedDisabled: {
         backgroundColor: string;
     };
+    checkedError: {
+        backgroundColor: string;
+    };
     error: {
         borderColor: string;
         backgroundColor: string;
@@ -74,6 +77,10 @@ const StyledCheckboxSkin = styled.div<StyledCheckboxSkinType>`
 
     ${({ theme, disabled, checkedState, error }): string => {
         if (checkedState === 'indeterminate' || checkedState) {
+            if (error && checkedState) {
+                return `background-color: ${theme.Checkbox.checkedError.backgroundColor};`;
+            }
+
             if (disabled && checkedState) {
                 return `background-color: ${theme.Checkbox.checkedDisabled.backgroundColor};`;
             }
@@ -142,6 +149,9 @@ const composeCheckboxTheme = (themeTools: ThemeTools): CheckboxThemeType => {
         },
         checkedDisabled: {
             backgroundColor: colors.silver.darker2,
+        },
+        checkedError: {
+            backgroundColor: colors.severity.error,
         },
         error: {
             borderColor: colors.severity.error,

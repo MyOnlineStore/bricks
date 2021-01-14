@@ -78,7 +78,7 @@ describe('Checkbox', () => {
         expect(mockChangeHandler).not.toHaveBeenCalled();
     });
 
-    it('should show an error state', () => {
+    it('should show an error state when not checked', () => {
         const checkbox = mountWithTheme(
             <Checkbox onChange={(): void => undefined} name="demo" error={true} checked={false} value="bar" />,
         );
@@ -86,6 +86,17 @@ describe('Checkbox', () => {
         expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
             'border',
             `1px solid ${mosTheme.Checkbox.error.borderColor}`,
+        );
+    });
+
+    it('should show an error state when checked', () => {
+        const checkbox = mountWithTheme(
+            <Checkbox onChange={(): void => undefined} name="demo" error={true} checked={true} value="bar" />,
+        );
+
+        expect(checkbox.find(StyledCheckboxSkin)).toHaveStyleRule(
+            'background-color',
+            `${mosTheme.Checkbox.checkedError.backgroundColor}`,
         );
     });
 
