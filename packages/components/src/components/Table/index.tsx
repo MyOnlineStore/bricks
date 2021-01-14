@@ -13,6 +13,7 @@ type BaseRowType = {
     id: string;
     selected?: boolean;
     disabled?: boolean;
+    error?: boolean;
     // tslint:disable-next-line
     [key: string]: string | number | boolean | undefined | ReactNode;
 };

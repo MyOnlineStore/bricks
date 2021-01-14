@@ -651,7 +651,7 @@ const theme: ThemeType = {
     },
     Table: {
         default: {
-            backgroundColor: colors.grey200,
+            backgroundColor: colors.white,
         },
         card: {
             boxShadow: '0 2px 10px 0 rgba(33, 37, 43, .15)',
@@ -672,6 +672,9 @@ const theme: ThemeType = {
             default: {
                 backgroundColor: colors.white,
                 borderColor: `${rgba(colors.green300, 0)}`,
+            },
+            error: {
+                backgroundColor: `${rgba(colors.red100, 0.25)}`,
             },
             hover: {
                 backgroundColor: colors.grey100,

@@ -71,6 +71,7 @@ class Row extends Component<PropsType, StateType> {
                                             selected={this.props.selected}
                                             dragging={snapshot.isDragging}
                                             focus={this.state.hasFocus}
+                                            error={this.props.row.error}
                                             onMouseEnter={this.handleMouseEnter}
                                             onMouseLeave={this.handleMouseLeave}
                                             ref={provided.innerRef}
@@ -104,6 +105,7 @@ class Row extends Component<PropsType, StateType> {
                             value=""
                             checked={this.props.selected}
                             disabled={this.props.row.disabled}
+                            error={this.props.row.error}
                             onChange={({ checked, event }): void => this.props.onSelection(event, checked as boolean)}
                         />
                     </Cell>
