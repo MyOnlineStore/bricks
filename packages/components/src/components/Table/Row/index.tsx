@@ -96,7 +96,11 @@ class Row extends Component<PropsType, StateType> {
                         </Draggable>
                     );
                 }}
-                ifFalse={(children): JSX.Element => <StyledRow selected={this.props.selected}>{children}</StyledRow>}
+                ifFalse={(children): JSX.Element => (
+                    <StyledRow selected={this.props.selected} error={this.props.row.error}>
+                        {children}
+                    </StyledRow>
+                )}
             >
                 {this.props.selectable && (
                     <Cell align="start" width={'18px'}>
