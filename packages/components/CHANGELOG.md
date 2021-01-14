@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@5.0.0...@myonlinestore/bricks@5.0.1) (2021-01-14)
+
+
+### Bug Fixes
+
+* **Table:** Also show error state in undraggable rows ([#612](https://github.com/MyOnlineStore/bricks/issues/612)) ([eaf912f](https://github.com/MyOnlineStore/bricks/commit/eaf912faa422505fbadeea0e7edeff9a7036263e))
+
+
+
+
+
 # [5.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@4.0.2...@myonlinestore/bricks@5.0.0) (2021-01-14)
 
 
