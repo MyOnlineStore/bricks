@@ -17,10 +17,12 @@ type TableThemeType = {
             backgroundColor: string;
             borderColor: string;
         };
+        error: {
+            backgroundColor: string;
+        };
         hover: {
             backgroundColor: string;
         };
-
         focus: {
             borderColor: string;
         };
@@ -78,6 +80,9 @@ const composeTableTheme = (themeTools: ThemeTools): TableThemeType => {
             default: {
                 backgroundColor: colors.background,
                 borderColor: `${chroma(colors.primary.base).alpha(0)}`,
+            },
+            error: {
+                backgroundColor: `${chroma(colors.severity.error).alpha(0.1)}`,
             },
             hover: {
                 backgroundColor: colors.contrastBackground,

@@ -6,10 +6,12 @@ type PropsType = {
     dragging?: boolean;
     selected?: boolean;
     focus?: boolean;
+    error?: boolean;
 };
 
 const StyledRow = styled.tr<PropsType>`
-    background-color: ${({ theme }): string => theme.Table.row.default.backgroundColor};
+    background-color: ${({ theme, error, dragging }): string =>
+        error && !dragging ? theme.Table.row.error.backgroundColor : theme.Table.row.default.backgroundColor};
     transition: background-color 300ms;
     text-align: left;
     border-spacing: 0 1px;
@@ -29,6 +31,7 @@ const StyledRow = styled.tr<PropsType>`
             // this is a hack to force (IE11 mostly) td's to wrap text in combination with flex-box
             return dragging !== true ? 'max-width: 100%' : '';
         }}
+    }
 `;
 
 export default StyledRow;
