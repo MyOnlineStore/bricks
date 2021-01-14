@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@4.0.2...@myonlinestore/bricks@5.0.0) (2021-01-14)
+
+
+* feat!: Add error state to table row (#611) ([64ca73b](https://github.com/MyOnlineStore/bricks/commit/64ca73b3b697b22d92df92b608d75972e54d3ad7)), closes [#611](https://github.com/MyOnlineStore/bricks/issues/611)
+
+
+### BREAKING CHANGES
+
+* Adds error state to the Table Row, this changes the ThemeType.
+* Adds checkedError state to the Checkbox, this changes the ThemeType.
+
+
+
+
+
 ## [4.0.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@4.0.1...@myonlinestore/bricks@4.0.2) (2020-12-21)
 
 
