@@ -5,6 +5,7 @@ import Modal from '.';
 import Button from '../Button';
 import Text from '../Text';
 import { AddressIllustration } from '@myonlinestore/bricks-assets';
+import Box from '../Box';
 
 const demoContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut mi ligula. Phasellus tellus nulla,
 cursus sit amet dolor eu, sodales facilisis tortor. Maecenas sed arcu quis est pharetra molestie sed
@@ -87,5 +88,31 @@ storiesOf('Modal', module)
             >
                 <Text>{text('contents', demoContent)}</Text>
             </Modal>
+        );
+    })
+    .add('With useLockBodyScroll', () => {
+        return (
+            <Box justifyContent="center">
+                <Box maxWidth="400px">
+                    <Text>
+                        {demoContent}
+                        {demoContent}
+                        {demoContent}
+                    </Text>
+                </Box>
+                <Modal
+                    show={boolean('show', true)}
+                    lockBodyScroll={boolean('Lock Body Scroll', true)}
+                    size={select('size', ['small', 'medium', 'large'], 'large')}
+                    title={text('title', 'Would you like me to be your role modal?')}
+                    onClose={(): boolean => confirm('You are now closing this modal, do you wish to continue?')}
+                    buttons={[
+                        <Button key="activate" variant="primary" title="Activate" />,
+                        <Button key="close" variant="plain" title="Close" />,
+                    ]}
+                >
+                    <Text>{text('contents', demoContent)}</Text>
+                </Modal>
+            </Box>
         );
     });
