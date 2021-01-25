@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@5.0.1...@myonlinestore/bricks@5.1.0) (2021-01-25)
+
+
+### Features
+
+* Added hook to lock body scroll ([#613](https://github.com/MyOnlineStore/bricks/issues/613)) ([d1c0ab2](https://github.com/MyOnlineStore/bricks/commit/d1c0ab29ce926a22436e2227c4d1ac1ee4e2a051))
+
+
+
+
+
 ## [5.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@5.0.0...@myonlinestore/bricks@5.0.1) (2021-01-14)
 
 
