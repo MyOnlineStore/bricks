@@ -11,12 +11,10 @@ import { CloseIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 import styled from 'styled-components';
 import { OffsetType } from '../../types/OffsetType';
-import useLockBodyScroll from '../../utility/useLockBodyScroll';
 
 type PropsType = {
     'data-testid'?: string;
     show: boolean;
-    lockBodyScroll?: boolean;
     title: string;
     size?: 'small' | 'medium' | 'large';
     buttons?: Array<ReactNode>;
@@ -57,10 +55,6 @@ const MediaWrapper = styled.figure<{ fullWidth?: boolean; bleed?: boolean; overl
 const Modal: FC<PropsType> = props => {
     const styledModalRef = useRef<HTMLDivElement | null>(null);
     const styledModalWrapperRef = useRef<HTMLDivElement | null>(null);
-
-    if (props.lockBodyScroll) {
-        useLockBodyScroll(props.show);
-    }
 
     const handleClickOutside = (event: Event) => {
         if (
