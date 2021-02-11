@@ -2,6 +2,26 @@ import colors from '../../themes/MosTheme/colors';
 import styled from '../../utility/styled';
 import Text from '../Text';
 import StyledIcon from '../Icon/style';
+import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import chroma from 'chroma-js';
+
+type StateThemeType = {
+    backgroundColor: string;
+    borderColor: string;
+    boxShadow: string;
+    color: string;
+};
+
+type PaginationThemeType = {
+    common: {
+        borderRadius: string;
+    };
+    hover: StateThemeType;
+    focus: StateThemeType;
+    active: StateThemeType;
+    idle: StateThemeType;
+    current: StateThemeType;
+};
 
 const StyledPageButton = styled.button<{ current?: boolean }>`
     border-radius: 3px;
@@ -10,27 +30,27 @@ const StyledPageButton = styled.button<{ current?: boolean }>`
     min-width: 36px;
     padding: 0 9px;
     line-height: 1;
-    margin: 3px;
+    margin: 1.5px;
     cursor: pointer;
 
-    ${Text}${StyledIcon} {
+    ${Text}, ${StyledIcon} {
         color: inherit;
     }
 
     ${({ current, theme }) => {
         if (current) {
             return `
-                background: ${theme.Button.primary.idle.backgroundColor};
-                color: ${theme.Button.primary.idle.color};
-                border: 1px solid ${colors.green600};
+                background: ${theme.Pagination.current.backgroundColor};
+                color: ${theme.Pagination.current.color};
+                border: 1px solid ${theme.Pagination.current.borderColor};
                 cursor: default;
 
                 &:hover,
                 &:focus,
                 &:active {
-                    background: ${theme.Button.primary.idle.backgroundColor};
-                    color: ${theme.Button.primary.idle.color};
-                    border: 1px solid ${colors.green600};
+                    background: ${theme.Pagination.current.backgroundColor};
+                    color: ${theme.Pagination.current.color};
+                    border: 1px solid ${theme.Pagination.current.borderColor};
                     cursor: default;
                     outline: 0;
                 }
@@ -38,30 +58,30 @@ const StyledPageButton = styled.button<{ current?: boolean }>`
         }
 
         return `
-            background: ${colors.white};
-            border: 1px solid ${colors.grey300};
-            color: ${colors.grey500};
+            background: ${theme.Pagination.idle.backgroundColor};
+            border: 1px solid ${theme.Pagination.idle.borderColor};
+            color: ${theme.Pagination.idle.color};
 
             &:hover {
-                background: ${theme.Button.plain.hover.backgroundColor};
-                box-shadow: ${theme.Button.plain.hover.boxShadow};
-                color: ${theme.Button.plain.hover.color};
-                border: ${theme.Button.plain.idle.border};
+                background: ${theme.Pagination.hover.backgroundColor};
+                box-shadow: ${theme.Pagination.hover.boxShadow};
+                color: ${theme.Pagination.hover.color};
+                border: 1px solid ${theme.Pagination.idle.borderColor};
             }
 
             &:focus {
-                background: ${theme.Button.plain.focus.backgroundColor};
-                box-shadow: ${theme.Button.plain.focus.boxShadow};
-                color: ${theme.Button.plain.focus.color};
-                border: ${theme.Button.plain.idle.border};
+                background: ${theme.Pagination.focus.backgroundColor};
+                box-shadow: ${theme.Pagination.focus.boxShadow};
+                color: ${theme.Pagination.focus.color};
+                border: 1px solid ${theme.Pagination.idle.borderColor};
                 outline: 0;
             }
 
             &:active {
-                background: ${theme.Button.plain.active.backgroundColor};
-                box-shadow: ${theme.Button.plain.active.boxShadow};
-                color: ${theme.Button.plain.active.color};
-                border: ${theme.Button.plain.idle.border};
+                background: ${theme.Pagination.active.backgroundColor};
+                box-shadow: ${theme.Pagination.active.boxShadow};
+                color: ${theme.Pagination.active.color};
+                border: 1px solid ${theme.Pagination.idle.borderColor};
             }
         `;
     }}
@@ -71,12 +91,59 @@ const StyledEllipsis = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 24px;
     height: 36px;
-    margin: 3px 6px;
+    margin: 1.5px;
 
     ${Text} {
         color: ${colors.grey500};
     }
 `;
 
-export { StyledPageButton, StyledEllipsis };
+const composePaginationTheme = (themeTools: ThemeTools): PaginationThemeType => {
+    const { colors, forms } = themeTools.themeSettings;
+
+    return {
+        common: {
+            borderRadius: '0px',
+        },
+        idle: {
+            backgroundColor: forms.background,
+            borderColor: colors.silver.darker2,
+            boxShadow: 'none',
+            color: themeTools.calculateContrastTextColor(forms.background),
+        },
+        hover: {
+            backgroundColor: chroma(forms.background)
+                .darken(0.1)
+                .hex(),
+            borderColor: colors.silver.darker2,
+            boxShadow: 'none',
+            color: themeTools.calculateContrastTextColor(forms.background),
+        },
+        focus: {
+            backgroundColor: chroma(forms.background)
+                .darken(0.1)
+                .hex(),
+            borderColor: colors.silver.darker2,
+            boxShadow: `${chroma(colors.grey.base).alpha(0.08)}`,
+            color: themeTools.calculateContrastTextColor(forms.background),
+        },
+        active: {
+            backgroundColor: chroma(forms.background)
+                .darken(0.2)
+                .hex(),
+            borderColor: colors.silver.darker2,
+            boxShadow: `${chroma(colors.grey.base).alpha(0.08)}`,
+            color: themeTools.calculateContrastTextColor(forms.background),
+        },
+        current: {
+            backgroundColor: colors.primary.base,
+            borderColor: colors.primary.darker1,
+            boxShadow: themeTools.themeSettings.buttonShadow,
+            color: themeTools.calculateContrastTextColor(colors.primary.base),
+        },
+    };
+};
+
+export { StyledPageButton, StyledEllipsis, composePaginationTheme, PaginationThemeType };

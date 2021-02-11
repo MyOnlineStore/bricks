@@ -478,6 +478,41 @@ const theme: ThemeType = {
             backgroundColor: colors.blue100,
         },
     },
+    Pagination: {
+        common: {
+            borderRadius: '3px',
+        },
+        idle: {
+            backgroundColor: 'transparent',
+            borderColor: colors.grey300,
+            boxShadow: 'none',
+            color: colors.grey500,
+        },
+        hover: {
+            backgroundColor: rgba(0, 0, 0, 0.03),
+            borderColor: colors.grey300,
+            boxShadow: 'none',
+            color: colors.grey600,
+        },
+        focus: {
+            backgroundColor: 'transparent',
+            borderColor: colors.grey300,
+            boxShadow: `0 0 0 3px ${rgba(colors.grey200, 0.875)}`,
+            color: colors.grey500,
+        },
+        active: {
+            backgroundColor: colors.grey100,
+            boxShadow: 'none',
+            borderColor: colors.grey300,
+            color: colors.grey500,
+        },
+        current: {
+            backgroundColor: colors.green400,
+            borderColor: colors.green600,
+            boxShadow: 'none',
+            color: colors.green900,
+        },
+    },
     PromotionBadge: {
         pro: {
             color: colors.green500,

@@ -9,13 +9,25 @@ type PropsType = {
     totalPages: number;
     currentPage: number;
     onNavigate(pageNumer: number): void;
+    'data-testid'?: string;
 };
+
+export enum TestIds {
+    firstPage = 'first-page',
+    centerPage = 'center-page',
+    lastPage = 'last-page',
+    prevPage = 'prev-page',
+    nextPage = 'nex-page',
+    leftDots = 'left-dots',
+    rightDots = 'right-dots',
+}
 
 const Pagination: FC<PropsType> = props => {
     /**
      * Number of pages around the current page in the center
      */
-    const pagePadding = 1;
+    const pagePadding: number = 1;
+    const testId = props['data-testid'] ? props['data-testid'] : 'pagination';
 
     const navigate = (page: number) => {
         if (props.onNavigate && props.currentPage !== page) {
@@ -28,8 +40,9 @@ const Pagination: FC<PropsType> = props => {
             key="page-first"
             aria-label={`Page 1`}
             aria-current={props.currentPage === 1 ? 'page' : undefined}
-            onClick={() => navigate(1)}
             current={props.currentPage === 1}
+            data-testid={`${testId}-${TestIds.firstPage}`}
+            onClick={() => navigate(1)}
         >
             <Text as="span">1</Text>
         </StyledPageButton>,
@@ -40,6 +53,7 @@ const Pagination: FC<PropsType> = props => {
             <StyledPageButton
                 key="page-prev"
                 aria-label="Previous page"
+                data-testid={`${testId}-${TestIds.prevPage}`}
                 onClick={() => navigate(props.currentPage - 1)}
             >
                 <Icon icon={<ChevronLeftIcon />} size="medium" />
@@ -70,6 +84,7 @@ const Pagination: FC<PropsType> = props => {
                 current={props.currentPage === page}
                 aria-label={`Page ${page}`}
                 aria-current={props.currentPage === page ? 'page' : undefined}
+                data-testid={`${testId}-${TestIds.centerPage}`}
                 onClick={() => navigate(page)}
             >
                 <Text as="span">{page}</Text>
@@ -86,6 +101,7 @@ const Pagination: FC<PropsType> = props => {
                 current={props.currentPage === props.totalPages}
                 aria-label={`Page ${props.totalPages}`}
                 aria-current={props.currentPage === props.totalPages ? 'page' : undefined}
+                data-testid={`${testId}-${TestIds.lastPage}`}
                 onClick={() => navigate(props.totalPages)}
             >
                 <Text as="span">{props.totalPages}</Text>
@@ -95,7 +111,12 @@ const Pagination: FC<PropsType> = props => {
 
     if (props.currentPage !== props.totalPages) {
         rightButtons.push(
-            <StyledPageButton key="page-next" aria-label="Next page" onClick={() => navigate(props.currentPage + 1)}>
+            <StyledPageButton
+                key="page-next"
+                aria-label="Next page"
+                data-testid={`${testId}-${TestIds.nextPage}`}
+                onClick={() => navigate(props.currentPage + 1)}
+            >
                 <Icon icon={<ChevronRightIcon />} size="medium" />
             </StyledPageButton>,
         );
@@ -106,7 +127,7 @@ const Pagination: FC<PropsType> = props => {
             <Box margin={[-3]} wrap>
                 {leftButtons}
                 {props.currentPage > pagePadding + 2 && props.totalPages > pagePadding * 2 && props.totalPages > 4 && (
-                    <StyledEllipsis aria-hidden>
+                    <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.leftDots}`}>
                         <Text>...</Text>
                     </StyledEllipsis>
                 )}
@@ -114,7 +135,7 @@ const Pagination: FC<PropsType> = props => {
                 {props.currentPage < props.totalPages - pagePadding - 1 &&
                     props.totalPages > pagePadding * 2 &&
                     props.totalPages > 4 && (
-                        <StyledEllipsis aria-hidden>
+                        <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.rightDots}`}>
                             <Text>...</Text>
                         </StyledEllipsis>
                     )}

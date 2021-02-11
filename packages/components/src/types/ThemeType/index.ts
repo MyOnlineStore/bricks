@@ -34,6 +34,7 @@ import { ToggleThemeType } from '../../components/Toggle/style';
 import { TooltipThemeType } from '../../components/Tooltip/style';
 import { AccordionThemeType } from '../../components/Accordion/style';
 import { CardThemeType } from '../../components/Card/style';
+import { PaginationThemeType } from '../../components/Pagination/style';
 
 type ThemeType = {
     Accordion: AccordionThemeType;
@@ -53,6 +54,7 @@ type ThemeType = {
     Modal: ModalThemeType;
     NativeSelect: NativeSelectThemeType;
     Notification: NotificationThemeType;
+    Pagination: PaginationThemeType;
     Popover: PopoverThemeType;
     Progress: ProgressThemeType;
     PromotionBadge: PromotionBadgeThemeType;
