@@ -1,6 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@myonlinestore/bricks-assets';
 import React, { FC } from 'react';
-import Box from '../Box';
 import Icon from '../Icon';
 import Text from '../Text';
 import { StyledPageButton, StyledEllipsis, StyledNav } from './style';
