@@ -100,6 +100,7 @@ const StyledEllipsis = styled.div`
     min-width: 24px;
     height: 36px;
     margin: 1.5px;
+    user-select: none;
 
     ${Text} {
         color: ${colors.grey500};
