@@ -31,6 +31,7 @@ export { default as colors } from './themes/MosTheme/colors';
 export { default as NativeSelect } from './components/NativeSelect';
 export { default as Notification } from './components/Notification';
 export { default as NumberField } from './components/NumberField';
+export { default as Pagination } from './components/Pagination';
 export { default as Popover } from './components/Popover';
 export { default as PriceTag } from './components/PriceTag';
 export { default as Progress } from './components/Progress';
