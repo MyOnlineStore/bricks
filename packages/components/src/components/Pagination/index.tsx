@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import Box from '../Box';
 import Icon from '../Icon';
 import Text from '../Text';
-import { StyledPageButton, StyledEllipsis } from './style';
+import { StyledPageButton, StyledEllipsis, StyledNav } from './style';
 
 type PropsType = {
     totalPages: number;
@@ -123,25 +123,23 @@ const Pagination: FC<PropsType> = props => {
     }
 
     return (
-        <nav aria-label="Pagination">
-            <Box margin={[-3]} wrap>
-                {leftButtons}
-                {props.currentPage > pagePadding + 2 && props.totalPages > pagePadding * 2 && props.totalPages > 4 && (
-                    <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.leftDots}`}>
+        <StyledNav aria-label="Pagination">
+            {leftButtons}
+            {props.currentPage > pagePadding + 2 && props.totalPages > pagePadding * 2 && props.totalPages > 4 && (
+                <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.leftDots}`}>
+                    <Text>...</Text>
+                </StyledEllipsis>
+            )}
+            {centerButtons}
+            {props.currentPage < props.totalPages - pagePadding - 1 &&
+                props.totalPages > pagePadding * 2 &&
+                props.totalPages > 4 && (
+                    <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.rightDots}`}>
                         <Text>...</Text>
                     </StyledEllipsis>
                 )}
-                {centerButtons}
-                {props.currentPage < props.totalPages - pagePadding - 1 &&
-                    props.totalPages > pagePadding * 2 &&
-                    props.totalPages > 4 && (
-                        <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.rightDots}`}>
-                            <Text>...</Text>
-                        </StyledEllipsis>
-                    )}
-                {rightButtons}
-            </Box>
-        </nav>
+            {rightButtons}
+        </StyledNav>
     );
 };
 

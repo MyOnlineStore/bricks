@@ -23,6 +23,12 @@ type PaginationThemeType = {
     current: StateThemeType;
 };
 
+const StyledNav = styled.nav`
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1.5px;
+`;
+
 const StyledPageButton = styled.button<{ current?: boolean }>`
     border-radius: 3px;
     box-sizing: border-box;
@@ -91,7 +97,7 @@ const StyledEllipsis = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
+    min-width: 24px;
     height: 36px;
     margin: 1.5px;
 
@@ -146,4 +152,4 @@ const composePaginationTheme = (themeTools: ThemeTools): PaginationThemeType => 
     };
 };
 
-export { StyledPageButton, StyledEllipsis, composePaginationTheme, PaginationThemeType };
+export { StyledPageButton, StyledEllipsis, StyledNav, composePaginationTheme, PaginationThemeType };
