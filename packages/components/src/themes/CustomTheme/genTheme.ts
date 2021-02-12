@@ -39,6 +39,7 @@ import { composeProgressTheme } from '../../components/Progress/style';
 import { composeFormRowTheme } from '../../components/FormRow/style';
 import { composeAccordionTheme } from '../../components/Accordion/style';
 import { composeCardTheme } from '../../components/Card/style';
+import { composePaginationTheme } from '../../components/Pagination/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -93,6 +94,7 @@ const generateThemeObject = (
         Modal: composeModalTheme(themeTools),
         NativeSelect: composeNativeSelectTheme(themeTools),
         Notification: composeNotificationTheme(themeTools),
+        Pagination: composePaginationTheme(themeTools),
         Popover: composePopoverTheme(themeTools),
         Progress: composeProgressTheme(themeTools),
         PromotionBadge: composePromotionBadgeTheme(themeTools),
