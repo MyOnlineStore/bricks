@@ -149,7 +149,7 @@ describe('Pagination', () => {
         expect(rightDotsFourPages).toHaveLength(0);
     });
 
-    it('should show dots on the left when totalPages is higher then 4 and currentPage is above 2', () => {
+    it('should show dots on the left when totalPages is higher then 4 and currentPage is above 3', () => {
         const componentFirstPage = mountWithTheme(
             <Pagination totalPages={5} currentPage={5} onNavigate={() => {}} data-testid={testid} />,
         );

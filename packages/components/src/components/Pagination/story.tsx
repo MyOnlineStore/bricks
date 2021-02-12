@@ -10,7 +10,6 @@ storiesOf('Pagination', module).add('Default', () => {
 
     const navigate = (newPage: number) => {
         setCurrentPage(newPage);
-        console.debug(`Navigate to ${newPage}`);
     };
 
     return (

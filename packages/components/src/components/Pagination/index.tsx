@@ -22,10 +22,6 @@ export enum TestIds {
 }
 
 const Pagination: FC<PropsType> = props => {
-    /**
-     * Number of pages around the current page in the center
-     */
-    const pagePadding: number = 1;
     const testId = props['data-testid'] ? props['data-testid'] : 'pagination';
 
     const navigate = (page: number) => {
@@ -63,17 +59,17 @@ const Pagination: FC<PropsType> = props => {
     const centerButtons = [];
 
     const start =
-        props.currentPage - pagePadding > 1
-            ? props.currentPage === props.totalPages && pagePadding === 1 && props.totalPages > 3
-                ? props.currentPage - pagePadding - 1
-                : props.currentPage - pagePadding
+        props.currentPage - 1 > 1
+            ? props.currentPage === props.totalPages && props.totalPages > 3
+                ? props.currentPage - 2
+                : props.currentPage - 1
             : 2;
 
     const end =
-        props.currentPage + pagePadding < props.totalPages
-            ? props.currentPage === 1 && pagePadding === 1 && props.totalPages > 3
-                ? props.currentPage + pagePadding + 1
-                : props.currentPage + pagePadding
+        props.currentPage + 1 < props.totalPages
+            ? props.currentPage === 1 && props.totalPages > 3
+                ? props.currentPage + 2
+                : props.currentPage + 1
             : props.totalPages - 1;
 
     for (let page = start; page <= end; page++) {
@@ -124,19 +120,17 @@ const Pagination: FC<PropsType> = props => {
     return (
         <StyledNav aria-label="Pagination">
             {leftButtons}
-            {props.currentPage > pagePadding + 2 && props.totalPages > pagePadding * 2 && props.totalPages > 4 && (
+            {props.currentPage > 3 && props.totalPages > 4 && (
                 <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.leftDots}`}>
                     <Text>...</Text>
                 </StyledEllipsis>
             )}
             {centerButtons}
-            {props.currentPage < props.totalPages - pagePadding - 1 &&
-                props.totalPages > pagePadding * 2 &&
-                props.totalPages > 4 && (
-                    <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.rightDots}`}>
-                        <Text>...</Text>
-                    </StyledEllipsis>
-                )}
+            {props.currentPage < props.totalPages - 2 && props.totalPages > 4 && (
+                <StyledEllipsis aria-hidden data-testid={`${testId}-${TestIds.rightDots}`}>
+                    <Text>...</Text>
+                </StyledEllipsis>
+            )}
             {rightButtons}
         </StyledNav>
     );
