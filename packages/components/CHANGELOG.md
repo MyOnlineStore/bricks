@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@5.1.0...@myonlinestore/bricks@6.0.0) (2021-02-12)
+
+
+* feat!: Added Pagination component (#614) ([554e7e6](https://github.com/MyOnlineStore/bricks/commit/554e7e6a01ede6bfe80b6e654944cff4c857853a)), closes [#614](https://github.com/MyOnlineStore/bricks/issues/614)
+
+
+### BREAKING CHANGES
+
+* Pagination added to theme object
+
+
+
+
+
 # [5.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@5.0.1...@myonlinestore/bricks@5.1.0) (2021-01-25)
 
 
