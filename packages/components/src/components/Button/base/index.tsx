@@ -23,6 +23,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
     const clickAction = (event: MouseEvent<HTMLButtonElement>): void => {
         if (props.onClick !== undefined && props.disabled !== true && props.loading !== true) {
             props.onClick(event);
+            event.stopPropagation();
         }
     };
 
