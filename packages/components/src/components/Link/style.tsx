@@ -114,6 +114,7 @@ const StyledButton = styled.button`
     font-size: inherit;
     background-color: transparent;
     padding: 0;
+    box-shadow: none;
 
     &:hover {
         color: ${({ theme, severity }: ThemePropsType): string => theme.Link[severity].hover.color};

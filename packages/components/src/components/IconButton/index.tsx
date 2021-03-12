@@ -37,6 +37,7 @@ const StyledIconButton = styled(BareButton)<Pick<PropsType, 'variant'>>`
         const idle = `
             transform: none;
             background-color: transparent;
+            box-shadow: none;
             color: ${theme.IconButton[buttonVariant].idle.color};
         `;
 
