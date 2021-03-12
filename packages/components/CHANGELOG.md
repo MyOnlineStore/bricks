@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.0.0...@myonlinestore/bricks@6.0.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* Prevent box-shadow on Link buttons and IconButtons ([#617](https://github.com/MyOnlineStore/bricks/issues/617)) ([41ff073](https://github.com/MyOnlineStore/bricks/commit/41ff073bf6c2fefcb4be4e9a3ff7888441160e3b))
+
+
+
+
+
 # [6.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@5.1.0...@myonlinestore/bricks@6.0.0) (2021-02-12)
 
 
