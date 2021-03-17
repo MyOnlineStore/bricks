@@ -124,6 +124,10 @@ const Modal: FC<PropsType> = props => {
                             scrollBoxTopPadding = 36;
                         }
 
+                        if (!isSplit && props.media) {
+                            scrollBoxTopPadding = 24;
+                        }
+
                         let scrollBoxPadding: PaddingType = [scrollBoxTopPadding, 36, 36, 36];
 
                         if (isSmall) {
@@ -188,7 +192,7 @@ const Modal: FC<PropsType> = props => {
                                             {props.media}
                                         </MediaWrapper>
                                     )}
-                                    {!isSplit && (
+                                    {!isSplit && !props.media && (
                                         <Box direction="column" padding={headingPadding}>
                                             {heading}
                                         </Box>
@@ -200,7 +204,7 @@ const Modal: FC<PropsType> = props => {
                                                     {props.media}
                                                 </MediaWrapper>
                                             )}
-                                            {isSplit && (
+                                            {(isSplit || (!isSplit && props.media)) && (
                                                 <Box margin={[0, 0, 12, 0]} direction="column">
                                                     {heading}
                                                 </Box>
