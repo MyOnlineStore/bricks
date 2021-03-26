@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.3](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.0.2...@myonlinestore/bricks@6.0.3) (2021-03-26)
+
+
+### Bug Fixes
+
+* Adjust bricks-assets peerDependency version ([#619](https://github.com/MyOnlineStore/bricks/issues/619)) ([0e54d3e](https://github.com/MyOnlineStore/bricks/commit/0e54d3e4050efda5892731698d0ca84574772f41))
+
+
+
+
+
 ## [6.0.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.0.1...@myonlinestore/bricks@6.0.2) (2021-03-18)
 
 **Note:** Version bump only for package @myonlinestore/bricks
