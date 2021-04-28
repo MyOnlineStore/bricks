@@ -105,7 +105,10 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
                 background: ${theme.FileInput.input.disabled.background};
                 border: solid 1px ${theme.FileInput.input.disabled.borderColor};
                 box-shadow: none;
-                cursor: not-allowed;
+
+                input {
+                    cursor: not-allowed;
+                }
             `;
         }
 

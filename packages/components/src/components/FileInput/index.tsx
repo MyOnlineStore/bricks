@@ -12,6 +12,7 @@ export type InputSeverityType = 'error';
 
 export type PropsType = {
     name: string;
+    disabled?: boolean;
     feedback?: {
         'data-testid'?: string;
         severity: SeverityType;
@@ -38,7 +39,7 @@ const FileInput: FC<PropsType> = props => {
         <>
             <StyledWrapper
                 focus={draggingOver}
-                disabled={false}
+                disabled={props.disabled}
                 hasPreview={typeof preview === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
                 height="230px"
@@ -55,6 +56,7 @@ const FileInput: FC<PropsType> = props => {
                     </Box>
                 )}
                 <StyledFileInput
+                    disabled={props.disabled}
                     ref={ref => {
                         inputRef.current = ref;
                     }}
