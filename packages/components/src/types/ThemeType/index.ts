@@ -35,6 +35,7 @@ import { TooltipThemeType } from '../../components/Tooltip/style';
 import { AccordionThemeType } from '../../components/Accordion/style';
 import { CardThemeType } from '../../components/Card/style';
 import { PaginationThemeType } from '../../components/Pagination/style';
+import { FileInputThemeType } from '../../components/FileInput/style';
 
 type ThemeType = {
     Accordion: AccordionThemeType;
@@ -44,6 +45,7 @@ type ThemeType = {
     Card: CardThemeType;
     Checkbox: CheckboxThemeType;
     Contrast: ContrastThemeType;
+    FileInput: FileInputThemeType;
     FormRow: FormRowThemeType;
     Counter: CounterThemeType;
     Heading: HeadingThemeType;
