@@ -17,6 +17,12 @@ export type FileInputThemeType = {
             borderColor: string;
             background: string;
         };
+        hover: {
+            borderColor: string;
+            boxShadow: string;
+            background: string;
+            color: string;
+        };
         focus: {
             borderColor: string;
             boxShadow: string;
@@ -56,6 +62,7 @@ export const StyledFileInput = styled.input`
     right: 0;
     top: 0;
     bottom: 0;
+    cursor: pointer;
 `;
 
 export const StyledWrapper = styled(Box)<WrapperPropsType>`
@@ -106,6 +113,20 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
             background: ${theme.FileInput.input.idle.background};
             border: dashed 1px ${theme.FileInput.input.idle.borderColor};
             box-shadow: none;
+
+            u {
+                transition: color 300ms;
+            }
+
+            &:hover {
+                background-color: ${theme.FileInput.input.hover.background};
+                box-shadow: ${theme.FileInput.input.hover.boxShadow};
+                border: solid 1px ${theme.FileInput.input.hover.borderColor};
+
+                u {
+                    color: ${theme.FileInput.input.hover.color}
+                }
+            }
         `;
     }}
 `;
@@ -125,6 +146,12 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
                 color: forms.color,
                 borderColor: forms.borderColor,
                 background: forms.background,
+            },
+            hover: {
+                borderColor: forms.borderColor,
+                color: forms.activeColor,
+                background: `${chroma(colors.primary.lighter1).alpha(0.1)}`,
+                boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
             },
             focus: {
                 borderColor: forms.focusBorderColor,
