@@ -7,7 +7,7 @@ import { CloudUploadIcon } from '@myonlinestore/bricks-assets';
 
 export type PropsType = {
     dragging: boolean;
-    translations: FileInputPropsType['translations'];
+    placeholders: FileInputPropsType['placeholders'];
 };
 
 const UploadPlaceholder: FC<PropsType> = props => {
@@ -16,11 +16,7 @@ const UploadPlaceholder: FC<PropsType> = props => {
             <Box direction="column" justifyContent="center" alignItems="center">
                 <Icon icon={<CloudUploadIcon />} size="large" />
                 <Text textAlign="center">
-                    <span
-                        dangerouslySetInnerHTML={{
-                            __html: props.dragging ? props.translations.dropHere : props.translations.placeholder,
-                        }}
-                    />
+                    {props.dragging ? props.placeholders.dropHere : props.placeholders.dropOrBrowse}
                 </Text>
             </Box>
         </Box>

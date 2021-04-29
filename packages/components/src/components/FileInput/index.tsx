@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect, useState } from 'react';
+import React, { FC, useRef, useEffect, useState, ReactNode } from 'react';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
@@ -14,9 +14,9 @@ export type PropsType = {
         severity: SeverityType;
         message: string;
     };
-    translations: {
-        placeholder: string;
-        dropHere: string;
+    placeholders: {
+        dropOrBrowse: ReactNode;
+        dropHere: ReactNode;
     };
 };
 
@@ -47,7 +47,7 @@ const FileInput: FC<PropsType> = props => {
                 {typeof preview === 'string' ? (
                     <StyledPreviewImage src={preview} alt={previewFilename || 'Preview'} />
                 ) : (
-                    <UploadPlaceholder dragging={draggingOver} translations={props.translations} />
+                    <UploadPlaceholder dragging={draggingOver} placeholders={props.placeholders} />
                 )}
                 <StyledFileInput
                     ref={ref => {
