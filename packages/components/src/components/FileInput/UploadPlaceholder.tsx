@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 import Box from '../Box';
 import Icon from '../Icon';
 import Text from '../Text';
+import { PropsType as FileInputPropsType } from './';
 import { CloudUploadIcon } from '@myonlinestore/bricks-assets';
-
-export type InputSeverityType = 'error';
 
 export type PropsType = {
     dragging: boolean;
+    translations: FileInputPropsType['translations'];
 };
 
 const UploadPlaceholder: FC<PropsType> = props => {
@@ -16,15 +16,11 @@ const UploadPlaceholder: FC<PropsType> = props => {
             <Box direction="column" justifyContent="center" alignItems="center">
                 <Icon icon={<CloudUploadIcon />} size="large" />
                 <Text textAlign="center">
-                    {props.dragging ? (
-                        <>Drop your file here</>
-                    ) : (
-                        <>
-                            Drag and drop here
-                            <br />
-                            or <u>browse</u>
-                        </>
-                    )}
+                    <span
+                        dangerouslySetInnerHTML={{
+                            __html: props.dragging ? props.translations.dropHere : props.translations.placeholder,
+                        }}
+                    />
                 </Text>
             </Box>
         </Box>

@@ -14,12 +14,17 @@ export type PropsType = {
         severity: SeverityType;
         message: string;
     };
+    translations: {
+        placeholder: string;
+        dropHere: string;
+    };
 };
 
-const TextField: FC<PropsType> = props => {
+const FileInput: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [draggingOver, setDraggingOver] = useState(false);
     const [preview, setPreview] = useState<string | ArrayBuffer | null | undefined>(null);
+    const [previewFilename, setPreviewFilename] = useState();
 
     useEffect(() => {
         if (focus && inputRef.current) {
@@ -39,10 +44,10 @@ const TextField: FC<PropsType> = props => {
                 justifyContent="center"
                 alignItems="center"
             >
-                {preview && typeof preview === 'string' ? (
-                    <StyledPreviewImage src={preview} alt="preview" />
+                {typeof preview === 'string' ? (
+                    <StyledPreviewImage src={preview} alt={previewFilename || 'Preview'} />
                 ) : (
-                    <UploadPlaceholder dragging={draggingOver} />
+                    <UploadPlaceholder dragging={draggingOver} translations={props.translations} />
                 )}
                 <StyledFileInput
                     ref={ref => {
@@ -62,16 +67,17 @@ const TextField: FC<PropsType> = props => {
                         if (inputRef.current?.files && inputRef.current?.files[0]) {
                             const reader = new FileReader();
 
-                            reader.onload = e => {
-                                setPreview(e?.target?.result);
+                            reader.onload = event => {
+                                setPreview(event?.target?.result);
                             };
 
+                            setPreviewFilename(inputRef.current.files[0].name);
                             reader.readAsDataURL(inputRef.current.files[0]);
                         }
                     }}
                 />
             </StyledWrapper>
-            {props.feedback && props.feedback.message !== '' && (
+            {props.feedback && (
                 <Box margin={[3, 0, 0, 0]}>
                     <InlineNotification
                         data-testid={props.feedback['data-testid']}
@@ -84,4 +90,4 @@ const TextField: FC<PropsType> = props => {
     );
 };
 
-export default TextField;
+export default FileInput;
