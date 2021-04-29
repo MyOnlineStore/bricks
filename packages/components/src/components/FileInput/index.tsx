@@ -13,6 +13,7 @@ export type InputSeverityType = 'error';
 export type PropsType = {
     name: string;
     disabled?: boolean;
+    accept: Array<string>;
     feedback?: {
         'data-testid'?: string;
         severity: SeverityType;
@@ -56,6 +57,7 @@ const FileInput: FC<PropsType> = props => {
                     </Box>
                 )}
                 <StyledFileInput
+                    accept="image/*"
                     disabled={props.disabled}
                     ref={ref => {
                         inputRef.current = ref;
@@ -71,15 +73,22 @@ const FileInput: FC<PropsType> = props => {
                         setDraggingOver(false);
                     }}
                     onChange={() => {
-                        if (inputRef.current?.files && inputRef.current?.files[0]) {
+                        const files = inputRef.current?.files;
+
+                        if (files && files[0]) {
+                            const firstFile = files[0];
                             const reader = new FileReader();
 
                             reader.onload = event => {
+                                if (props.accept && !props.accept.includes(firstFile.type)) {
+                                    return false;
+                                }
+
                                 setPreview(event?.target?.result);
+                                setPreviewFilename(firstFile.name);
                             };
 
-                            setPreviewFilename(inputRef.current.files[0].name);
-                            reader.readAsDataURL(inputRef.current.files[0]);
+                            reader.readAsDataURL(firstFile);
                         }
                     }}
                 />
