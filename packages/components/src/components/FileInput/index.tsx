@@ -13,6 +13,7 @@ export type InputSeverityType = 'error';
 export type PropsType = {
     name: string;
     disabled?: boolean;
+    checkImage?: boolean;
     feedback?: {
         'data-testid'?: string;
         severity: SeverityType;
@@ -21,6 +22,8 @@ export type PropsType = {
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
 };
+
+const allowedImageTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'];
 
 const FileInput: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -56,6 +59,7 @@ const FileInput: FC<PropsType> = props => {
                     </Box>
                 )}
                 <StyledFileInput
+                    accept="image/*"
                     disabled={props.disabled}
                     ref={ref => {
                         inputRef.current = ref;
@@ -75,6 +79,10 @@ const FileInput: FC<PropsType> = props => {
                             const reader = new FileReader();
 
                             reader.onload = event => {
+                                if (props.checkImage && !allowedImageTypes.includes(inputRef.current?.files[0].type)) {
+                                    return false;
+                                }
+
                                 setPreview(event?.target?.result);
                             };
 
