@@ -26,7 +26,7 @@ export const Disabled = (props: ComponentProps<typeof FileInput>) => {
 };
 
 export const OnlyImages = (props: ComponentProps<typeof FileInput>) => {
-    return <FileInput {...props} checkImage />;
+    return <FileInput {...props} accept={['image/png', 'image/jpeg', 'image/jpg', 'image/gif']} />;
 };
 
 export const Error = (props: ComponentProps<typeof FileInput>) => {

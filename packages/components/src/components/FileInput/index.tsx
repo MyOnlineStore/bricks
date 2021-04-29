@@ -13,7 +13,7 @@ export type InputSeverityType = 'error';
 export type PropsType = {
     name: string;
     disabled?: boolean;
-    checkImage?: boolean;
+    accept?: Array<string>;
     feedback?: {
         'data-testid'?: string;
         severity: SeverityType;
@@ -22,8 +22,6 @@ export type PropsType = {
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
 };
-
-const allowedImageTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'];
 
 const FileInput: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -82,7 +80,7 @@ const FileInput: FC<PropsType> = props => {
                             const reader = new FileReader();
 
                             reader.onload = event => {
-                                if (props.checkImage && !allowedImageTypes.includes(firstFile.type)) {
+                                if (props.accept && !props.accept.includes(firstFile.type)) {
                                     return false;
                                 }
 
