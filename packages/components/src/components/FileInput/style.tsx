@@ -65,6 +65,10 @@ export const StyledFileInput = styled.input`
     cursor: pointer;
 `;
 
+export const StyledToolbar = styled(Box)`
+    background: red;
+`;
+
 export const StyledWrapper = styled(Box)<WrapperPropsType>`
     transition: border-color 150ms, box-shadow 150ms, background 150ms;
     font-size: ${({ theme }) => theme.FileInput.common.fontSize};

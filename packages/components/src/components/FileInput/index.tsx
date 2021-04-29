@@ -3,9 +3,15 @@ import SeverityType from '../../types/SeverityType';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
+import IconButton from '../IconButton';
 import InlineNotification from '../InlineNotification';
-import { CactusSmallInactiveIllustration, CactusSmallActiveIllustration } from '@myonlinestore/bricks-assets';
-import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
+import {
+    CactusSmallInactiveIllustration,
+    CactusSmallActiveIllustration,
+    GearIcon,
+    TrashIcon,
+} from '@myonlinestore/bricks-assets';
+import { StyledWrapper, StyledFileInput, StyledPreviewImage, StyledToolbar } from './style';
 import { ThemeContext } from 'styled-components';
 
 export type InputSeverityType = 'error';
@@ -73,14 +79,32 @@ const FileInput: FC<PropsType> = props => {
                 hasPreview={typeof preview === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
                 justifyContent="center"
-                alignItems="center"
+                alignItems="stretch"
             >
                 {image ? (
-                    <StyledPreviewImage
-                        src={image.source}
-                        alt={image.alt}
-                        style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
-                    />
+                    <>
+                        <StyledPreviewImage
+                            src={image.source}
+                            alt={image.alt}
+                            style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
+                        />
+                        <StyledToolbar direction="column">
+                            <IconButton
+                                icon={<GearIcon />}
+                                title="Edit"
+                                onClick={() => {
+                                    /* no. */
+                                }}
+                            />
+                            <IconButton
+                                icon={<TrashIcon />}
+                                title="Remove"
+                                onClick={() => {
+                                    /* no. */
+                                }}
+                            />
+                        </StyledToolbar>
+                    </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
                         <Icon
