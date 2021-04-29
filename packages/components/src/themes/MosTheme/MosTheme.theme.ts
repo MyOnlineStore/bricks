@@ -40,6 +40,12 @@ const theme: ThemeType = {
                 borderColor: colors.grey300,
                 color: colors.grey600,
             },
+            hover: {
+                borderColor: colors.grey300,
+                background: rgba(0, 0, 0, 0.03),
+                boxShadow: 'none',
+                color: colors.green600,
+            },
             focus: {
                 borderColor: colors.green600,
                 background: `${rgba(colors.green100, 0.1)}`,
