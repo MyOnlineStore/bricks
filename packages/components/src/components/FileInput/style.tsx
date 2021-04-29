@@ -9,6 +9,7 @@ export type FileInputThemeType = {
         borderRadius: string;
         fontSize: string;
         fontFamily: string;
+        iconColor: string;
     };
     input: {
         idle: {
@@ -117,6 +118,7 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
             borderRadius: forms.borderRadius,
             fontSize: text.fontSize.base,
             fontFamily: text.primaryFont,
+            iconColor: forms.color,
         },
         input: {
             idle: {

@@ -32,6 +32,7 @@ const theme: ThemeType = {
             borderRadius: roundness.base,
             fontSize: fontSize.base,
             fontFamily: bodyFont,
+            iconColor: colors.green500,
         },
         input: {
             idle: {

@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect, useState, ReactNode } from 'react';
+import React, { FC, useRef, useEffect, useState, ReactNode, useContext } from 'react';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import Icon from '../Icon';
@@ -6,6 +6,7 @@ import Text from '../Text';
 import { CloudUploadIcon } from '@myonlinestore/bricks-assets';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import SeverityType from '../../types/SeverityType';
+import { ThemeContext } from 'styled-components';
 
 export type InputSeverityType = 'error';
 
@@ -25,6 +26,7 @@ const FileInput: FC<PropsType> = props => {
     const [draggingOver, setDraggingOver] = useState(false);
     const [preview, setPreview] = useState<string | ArrayBuffer | null | undefined>(null);
     const [previewFilename, setPreviewFilename] = useState();
+    const themeContext = useContext(ThemeContext);
 
     useEffect(() => {
         if (focus && inputRef.current) {
@@ -48,7 +50,7 @@ const FileInput: FC<PropsType> = props => {
                     <StyledPreviewImage src={preview} alt={previewFilename || 'Preview'} />
                 ) : (
                     <Box direction="column" justifyContent="center" alignItems="center">
-                        <Icon icon={<CloudUploadIcon />} size="large" />
+                        <Icon icon={<CloudUploadIcon />} size="large" color={themeContext.FileInput.common.iconColor} />
                         <Text textAlign="center">{draggingOver ? props.dropPlaceholder : props.placeholder}</Text>
                     </Box>
                 )}
