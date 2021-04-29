@@ -27,6 +27,36 @@ const roundness = {
 };
 
 const theme: ThemeType = {
+    FileInput: {
+        common: {
+            borderRadius: roundness.base,
+            fontSize: fontSize.base,
+            fontFamily: bodyFont,
+            iconColor: colors.green500,
+        },
+        input: {
+            idle: {
+                background: colors.white,
+                borderColor: colors.grey300,
+                color: colors.grey600,
+            },
+            focus: {
+                borderColor: colors.green600,
+                background: `${rgba(colors.green100, 0.1)}`,
+                boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
+            },
+            error: {
+                background: `${rgba(colors.red100, 0.1)}`,
+                borderColor: colors.red600,
+                boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
+            },
+            disabled: {
+                color: colors.grey300,
+                background: colors.grey100,
+                borderColor: colors.grey200,
+            },
+        },
+    },
     Accordion: {
         iconColor: colors.grey500,
     },
