@@ -6,16 +6,14 @@ storiesOf('FileInput', module).add('Default', () => {
     return (
         <Component
             name="HelloWorld"
-            placeholders={{
-                dropOrBrowse: (
-                    <>
-                        Drag and drop here
-                        <br />
-                        or <u>browse</u>
-                    </>
-                ),
-                dropHere: <>Drop your file here</>,
-            }}
+            placeholder={
+                <>
+                    Drag and drop here
+                    <br />
+                    or <u>browse</u>
+                </>
+            }
+            dropPlaceholder={<>Drop your file here</>}
         />
     );
 });

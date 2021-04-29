@@ -1,9 +1,11 @@
 import React, { FC, useRef, useEffect, useState, ReactNode } from 'react';
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
+import Icon from '../Icon';
+import Text from '../Text';
+import { CloudUploadIcon } from '@myonlinestore/bricks-assets';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import SeverityType from '../../types/SeverityType';
-import UploadPlaceholder from './UploadPlaceholder';
 
 export type InputSeverityType = 'error';
 
@@ -14,10 +16,8 @@ export type PropsType = {
         severity: SeverityType;
         message: string;
     };
-    placeholders: {
-        dropOrBrowse: ReactNode;
-        dropHere: ReactNode;
-    };
+    placeholder: ReactNode;
+    dropPlaceholder: ReactNode;
 };
 
 const FileInput: FC<PropsType> = props => {
@@ -47,7 +47,10 @@ const FileInput: FC<PropsType> = props => {
                 {typeof preview === 'string' ? (
                     <StyledPreviewImage src={preview} alt={previewFilename || 'Preview'} />
                 ) : (
-                    <UploadPlaceholder dragging={draggingOver} placeholders={props.placeholders} />
+                    <Box direction="column" justifyContent="center" alignItems="center">
+                        <Icon icon={<CloudUploadIcon />} size="large" />
+                        <Text textAlign="center">{draggingOver ? props.dropPlaceholder : props.placeholder}</Text>
+                    </Box>
                 )}
                 <StyledFileInput
                     ref={ref => {
