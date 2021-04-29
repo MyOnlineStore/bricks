@@ -13,7 +13,7 @@ export type InputSeverityType = 'error';
 export type PropsType = {
     name: string;
     disabled?: boolean;
-    accept?: Array<string>;
+    accept: Array<string>;
     feedback?: {
         'data-testid'?: string;
         severity: SeverityType;

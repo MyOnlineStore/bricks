@@ -6,6 +6,7 @@ export default {
     component: FileInput,
     args: {
         name: 'HelloWorld',
+        accept: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
         placeholder: (
             <>
                 Drag and drop here
@@ -23,10 +24,6 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
 
 export const Disabled = (props: ComponentProps<typeof FileInput>) => {
     return <FileInput {...props} disabled />;
-};
-
-export const OnlyImages = (props: ComponentProps<typeof FileInput>) => {
-    return <FileInput {...props} accept={['image/png', 'image/jpeg', 'image/jpg', 'image/gif']} />;
 };
 
 export const Error = (props: ComponentProps<typeof FileInput>) => {
