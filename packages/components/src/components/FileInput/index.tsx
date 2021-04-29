@@ -75,19 +75,22 @@ const FileInput: FC<PropsType> = props => {
                         setDraggingOver(false);
                     }}
                     onChange={() => {
-                        if (inputRef.current?.files && inputRef.current?.files[0]) {
+                        const files = inputRef.current?.files;
+
+                        if (files && files[0]) {
+                            const firstFile = files[0];
                             const reader = new FileReader();
 
                             reader.onload = event => {
-                                if (props.checkImage && !allowedImageTypes.includes(inputRef.current?.files[0].type)) {
+                                if (props.checkImage && !allowedImageTypes.includes(firstFile.type)) {
                                     return false;
                                 }
 
                                 setPreview(event?.target?.result);
+                                setPreviewFilename(firstFile.name);
                             };
 
-                            setPreviewFilename(inputRef.current.files[0].name);
-                            reader.readAsDataURL(inputRef.current.files[0]);
+                            reader.readAsDataURL(firstFile);
                         }
                     }}
                 />
