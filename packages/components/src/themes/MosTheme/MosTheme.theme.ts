@@ -52,7 +52,7 @@ const theme: ThemeType = {
                 boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             error: {
-                background: `${rgba(colors.red100, 0.1)}`,
+                background: colors.white,
                 borderColor: colors.red600,
                 boxShadow: `0 0 0 4px ${rgba(colors.red100, 0.875)}`,
             },

@@ -50,7 +50,7 @@ export type WrapperPropsType = {
 
 export const StyledPreviewImage = styled.img`
     display: block;
-    height: 100%;
+    margin: 12px;
 `;
 
 export const StyledFileInput = styled.input`
@@ -73,7 +73,6 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
-    padding: ${({ hasPreview }) => (hasPreview ? '12px' : '0')};
 
     ${({ focus, disabled, severity, theme }) => {
         if (severity === 'error' && focus && !disabled) {
@@ -118,17 +117,13 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
             box-shadow: none;
 
             u {
-                transition: color 300ms;
+                color: ${theme.FileInput.input.hover.color}
             }
 
             &:hover {
                 background-color: ${theme.FileInput.input.hover.background};
                 box-shadow: ${theme.FileInput.input.hover.boxShadow};
                 border: solid 1px ${theme.FileInput.input.hover.borderColor};
-
-                u {
-                    color: ${theme.FileInput.input.hover.color}
-                }
             }
         `;
     }}
@@ -163,7 +158,7 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
             },
             error: {
                 borderColor: forms.focusBorderColor,
-                background: `${chroma(colors.severity.error).alpha(0.1)}`,
+                background: forms.background,
                 boxShadow: `0 0 0 4px ${chroma(colors.severity.error).alpha(0.4)}`,
             },
             disabled: {
