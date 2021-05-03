@@ -1,5 +1,5 @@
-import React, { ComponentProps } from 'react';
-import FileInput from './index';
+import React, { ComponentProps, useState } from 'react';
+import FileInput, { FeedbackType } from './index';
 
 export default {
     title: 'FileInput',
@@ -19,7 +19,47 @@ export default {
 };
 
 export const Default = (props: ComponentProps<typeof FileInput>) => {
-    return <FileInput {...props} />;
+    const [error, setError] = useState<null | FeedbackType>(null);
+
+    return (
+        <FileInput
+            {...props}
+            onError={(error: string) => {
+                if (error === 'Filetype not accepted.') {
+                    setError({
+                        message: 'Sorry, that’s not a valid image file. Please choose a JPG, .PNG, or .GIF file.',
+                        severity: 'error',
+                    });
+                }
+            }}
+            onResetError={() => setError(null)}
+            feedback={error !== null ? error : undefined}
+        />
+    );
+};
+
+export const WithValue = (props: ComponentProps<typeof FileInput>) => {
+    const [error, setError] = useState<null | FeedbackType>(null);
+
+    return (
+        <FileInput
+            {...props}
+            value={{
+                url: 'https://thisisthedailyrad.files.wordpress.com/2013/02/large_193482-1915212.jpg',
+                alt: 'Roaling Coal Volvo 242',
+            }}
+            onError={(error: string) => {
+                if (error === 'Filetype not accepted.') {
+                    setError({
+                        message: 'Sorry, that’s not a valid image file. Please choose a JPG, .PNG, or .GIF file.',
+                        severity: 'error',
+                    });
+                }
+            }}
+            onResetError={() => setError(null)}
+            feedback={error !== null ? error : undefined}
+        />
+    );
 };
 
 export const Disabled = (props: ComponentProps<typeof FileInput>) => {
