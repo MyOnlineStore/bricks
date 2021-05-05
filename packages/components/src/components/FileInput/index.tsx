@@ -112,7 +112,8 @@ const FileInput: FC<PropsType> = props => {
                                 setPreviewFilename('');
 
                                 if (props.accept && !props.accept.includes(firstFile.type)) {
-                                    throw props.onError('Filetype not accepted.');
+                                    props.onError('Filetype not accepted.');
+                                    return;
                                 }
 
                                 props.onResetError();
