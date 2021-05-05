@@ -10,6 +10,7 @@ export type FileInputThemeType = {
         fontSize: string;
         fontFamily: string;
         iconColor: string;
+        toolbarBackground: string;
     };
     input: {
         idle: {
@@ -51,6 +52,7 @@ export type WrapperPropsType = {
 export const StyledPreviewImage = styled.img`
     display: block;
     margin: 12px;
+    max-width: calc(100% - 24px);
 `;
 
 export const StyledFileInput = styled.input`
@@ -66,7 +68,10 @@ export const StyledFileInput = styled.input`
 `;
 
 export const StyledToolbar = styled(Box)`
-    background: red;
+    background: ${({ theme }) => theme.FileInput.common.toolbarBackground};
+    padding: 3px;
+    position: relative;
+    z-index: 2; // since the input is positioned absolute and after the toolbar in de dom, the toolbar needs a higher z-index.
 `;
 
 export const StyledWrapper = styled(Box)<WrapperPropsType>`
@@ -142,6 +147,7 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
             fontSize: text.fontSize.base,
             fontFamily: text.primaryFont,
             iconColor: forms.color,
+            toolbarBackground: forms.backgroundContrast,
         },
         input: {
             idle: {

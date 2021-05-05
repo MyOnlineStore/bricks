@@ -16,6 +16,9 @@ export default {
             </>
         ),
         dropPlaceholder: <>Drop your file here</>,
+        onDelete: () => {
+            alert('You pressed delete 😱');
+        },
     },
 };
 

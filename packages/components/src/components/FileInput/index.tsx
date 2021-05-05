@@ -34,6 +34,7 @@ export type PropsType = {
     feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
+    onDelete(): void;
     onError(error: 'Filetype not accepted' | 'File too large'): void;
     onResetError(): void;
 };
@@ -83,24 +84,26 @@ const FileInput: FC<PropsType> = props => {
             >
                 {image ? (
                     <>
-                        <StyledPreviewImage
-                            src={image.source}
-                            alt={image.alt}
-                            style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
-                        />
+                        <Box grow={1} shrink={1} justifyContent="center" alignItems="center">
+                            <StyledPreviewImage
+                                src={image.source}
+                                alt={image.alt}
+                                style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
+                            />
+                        </Box>
                         <StyledToolbar direction="column">
                             <IconButton
                                 icon={<GearIcon />}
                                 title="Edit"
                                 onClick={() => {
-                                    /* no. */
+                                    inputRef?.current?.click();
                                 }}
                             />
                             <IconButton
                                 icon={<TrashIcon />}
                                 title="Remove"
                                 onClick={() => {
-                                    /* no. */
+                                    props.onDelete();
                                 }}
                             />
                         </StyledToolbar>
