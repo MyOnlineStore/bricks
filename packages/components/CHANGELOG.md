@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.0.3...@myonlinestore/bricks@6.1.0) (2021-05-05)
+
+
+### Features
+
+* Added new FileInput component ([#622](https://github.com/MyOnlineStore/bricks/issues/622)) ([9baf462](https://github.com/MyOnlineStore/bricks/commit/9baf4622864035c7ba8d7ce2a98b986ed07465e4))
+
+
+
+
+
 ## [6.0.3](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.0.2...@myonlinestore/bricks@6.0.3) (2021-03-26)
 
 
