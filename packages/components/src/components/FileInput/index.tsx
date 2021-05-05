@@ -113,6 +113,7 @@ const FileInput: FC<PropsType> = props => {
 
                                 if (props.accept && !props.accept.includes(firstFile.type)) {
                                     props.onError('Filetype not accepted.');
+
                                     return;
                                 }
 
