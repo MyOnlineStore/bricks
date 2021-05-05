@@ -10,17 +10,25 @@ import { ThemeContext } from 'styled-components';
 
 export type InputSeverityType = 'error';
 
+export type FeedbackType = {
+    'data-testid'?: string;
+    severity: SeverityType;
+    message: string;
+};
+
 export type PropsType = {
     name: string;
+    value?: {
+        url: string;
+        alt: string;
+    };
     disabled?: boolean;
     accept: Array<string>;
-    feedback?: {
-        'data-testid'?: string;
-        severity: SeverityType;
-        message: string;
-    };
+    feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
+    onError(error: string | null): void;
+    onResetError(): void;
 };
 
 const FileInput: FC<PropsType> = props => {
@@ -36,6 +44,26 @@ const FileInput: FC<PropsType> = props => {
         }
     }, [focus]);
 
+    const whatImageToDisplay = (): { source: string; alt: string } | null => {
+        if (typeof preview === 'string') {
+            return {
+                source: preview,
+                alt: previewFilename,
+            };
+        }
+
+        if (props.value?.url) {
+            return {
+                source: props.value.url,
+                alt: props.value.alt,
+            };
+        }
+
+        return null;
+    };
+
+    const image = whatImageToDisplay();
+
     return (
         <>
             <StyledWrapper
@@ -48,8 +76,8 @@ const FileInput: FC<PropsType> = props => {
                 justifyContent="center"
                 alignItems="center"
             >
-                {typeof preview === 'string' ? (
-                    <StyledPreviewImage src={preview} alt={previewFilename || 'Preview'} />
+                {image ? (
+                    <StyledPreviewImage src={image.source} alt={image.alt} />
                 ) : (
                     <Box direction="column" justifyContent="center" alignItems="center">
                         <Icon icon={<CloudUploadIcon />} size="large" color={themeContext.FileInput.common.iconColor} />
@@ -80,9 +108,16 @@ const FileInput: FC<PropsType> = props => {
                             const reader = new FileReader();
 
                             reader.onload = event => {
+                                setPreview(null);
+                                setPreviewFilename('');
+
                                 if (props.accept && !props.accept.includes(firstFile.type)) {
-                                    return false;
+                                    props.onError('Filetype not accepted.');
+
+                                    return;
                                 }
+
+                                props.onResetError();
 
                                 setPreview(event?.target?.result);
                                 setPreviewFilename(firstFile.name);
