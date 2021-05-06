@@ -3,6 +3,7 @@ import SeverityType from '../../types/SeverityType';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
+import Toolbar from '../Toolbar';
 import IconButton from '../IconButton';
 import InlineNotification from '../InlineNotification';
 import {
@@ -11,7 +12,7 @@ import {
     GearIcon,
     TrashIcon,
 } from '@myonlinestore/bricks-assets';
-import { StyledWrapper, StyledFileInput, StyledPreviewImage, StyledToolbar } from './style';
+import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
 
 export type InputSeverityType = 'error';
@@ -91,7 +92,7 @@ const FileInput: FC<PropsType> = props => {
                                 style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
                             />
                         </Box>
-                        <StyledToolbar direction="column">
+                        <Toolbar direction="vertical">
                             <IconButton
                                 icon={<GearIcon />}
                                 title="Edit"
@@ -106,7 +107,7 @@ const FileInput: FC<PropsType> = props => {
                                     props.onDelete();
                                 }}
                             />
-                        </StyledToolbar>
+                        </Toolbar>
                     </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>

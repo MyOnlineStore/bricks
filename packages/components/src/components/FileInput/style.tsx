@@ -67,13 +67,6 @@ export const StyledFileInput = styled.input`
     cursor: pointer;
 `;
 
-export const StyledToolbar = styled(Box)`
-    background: ${({ theme }) => theme.FileInput.common.toolbarBackground};
-    padding: 3px;
-    position: relative;
-    z-index: 2; // since the input is positioned absolute and after the toolbar in de dom, the toolbar needs a higher z-index.
-`;
-
 export const StyledWrapper = styled(Box)<WrapperPropsType>`
     transition: border-color 150ms, box-shadow 150ms, background 150ms;
     font-size: ${({ theme }) => theme.FileInput.common.fontSize};
