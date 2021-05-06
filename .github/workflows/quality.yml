@@ -31,10 +31,10 @@ jobs:
       run: yarn --frozen-lockfile 
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - name: Running tests
-      run: yarn test 
     - name: Building packages
       run: yarn build 
+    - name: Running tests
+      run: yarn test 
   noop:
     name: No-op 
     runs-on: ubuntu-latest
