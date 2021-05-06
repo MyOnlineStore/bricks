@@ -28,7 +28,7 @@ export type PropsType = {
     feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
-    onError(error: string | null): void;
+    onError(error: 'Filetype not accepted' | 'File too large'): void;
     onResetError(): void;
 };
 
@@ -123,7 +123,7 @@ const FileInput: FC<PropsType> = props => {
                                 setPreviewFilename('');
 
                                 if (props.accept && !props.accept.includes(firstFile.type)) {
-                                    props.onError('Filetype not accepted.');
+                                    props.onError('Filetype not accepted');
 
                                     return;
                                 }
