@@ -3,6 +3,7 @@ import Contrast from '../Contrast';
 import Box from '../Box';
 
 type PropsType = {
+    /** Direction of the toolbar, defaults to horizontal */
     direction?: 'vertical' | 'horizontal';
 };
 
