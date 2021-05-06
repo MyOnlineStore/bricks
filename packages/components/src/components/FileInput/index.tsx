@@ -92,22 +92,24 @@ const FileInput: FC<PropsType> = props => {
                                 style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
                             />
                         </Box>
-                        <Toolbar direction="vertical">
-                            <IconButton
-                                icon={<GearIcon />}
-                                title="Edit"
-                                onClick={() => {
-                                    inputRef?.current?.click();
-                                }}
-                            />
-                            <IconButton
-                                icon={<TrashIcon />}
-                                title="Remove"
-                                onClick={() => {
-                                    props.onDelete();
-                                }}
-                            />
-                        </Toolbar>
+                        <Box style={{ zIndex: 2 }}>
+                            <Toolbar direction="vertical">
+                                <IconButton
+                                    icon={<GearIcon />}
+                                    title="Edit"
+                                    onClick={() => {
+                                        inputRef?.current?.click();
+                                    }}
+                                />
+                                <IconButton
+                                    icon={<TrashIcon />}
+                                    title="Remove"
+                                    onClick={() => {
+                                        props.onDelete();
+                                    }}
+                                />
+                            </Toolbar>
+                        </Box>
                     </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
