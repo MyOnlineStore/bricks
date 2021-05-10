@@ -7,11 +7,13 @@ import Icon from '../Icon';
 export type PropsType = BasePropsType & {
     variant: 'primary' | 'secondary';
     icon?: ReactNode;
+    alignIcon?: 'left' | 'right';
 };
 
 type VariantType = {
     color: string;
     fontWeight: number;
+    hoverColor: string;
 };
 
 export type TextualButtonThemeType = {
@@ -26,12 +28,12 @@ const StyledTextualButton = styled(Base)<PropsType>`
 
     &:hover {
         background-color: transparent;
-        color: ${({ theme, variant }) => theme.TextualButton[variant].color};
+        color: ${({ theme, variant }) => theme.TextualButton[variant].hoverColor};
     }
 
     &:focus {
         background-color: transparent;
-        color: ${({ theme, variant }) => theme.TextualButton[variant].color};
+        color: ${({ theme, variant }) => theme.TextualButton[variant].hoverColor};
     }
 `;
 
@@ -40,18 +42,23 @@ const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: bo
 
     &::before {
         content: '';
-        transition: background 300ms;
         position: absolute;
         bottom: 1px;
         left: 0;
         width: 100%;
         height: 1px;
-        background: ${({ theme, variant, hover }) => (hover ? theme.TextualButton[variant].color : 'transparent')};
+        background: ${({ theme, variant, hover }) => (hover ? theme.TextualButton[variant].hoverColor : 'transparent')};
     }
+`;
+
+const Spacer = styled.span`
+    width: 6px;
+    display: inline-block;
 `;
 
 const TextualButton: FC<PropsType> = props => {
     const [isHovering, setHovering] = useState(false);
+    const alignIcon = props.alignIcon || 'right';
 
     return (
         <StyledTextualButton
@@ -64,10 +71,16 @@ const TextualButton: FC<PropsType> = props => {
             }}
         >
             <StyledTextContainer variant={props.variant} hover={isHovering}>
-                {Children.count(props.children) > 0 ? props.children : props.title}
-                {props.icon && (
+                {props.icon && alignIcon === 'left' && (
                     <>
-                        &nbsp;
+                        <Icon size="small" icon={props.icon} />
+                        <Spacer />
+                    </>
+                )}
+                <span>{Children.count(props.children) > 0 ? props.children : props.title}</span>
+                {props.icon && alignIcon === 'right' && (
+                    <>
+                        <Spacer />
                         <Icon size="small" icon={props.icon} />
                     </>
                 )}
@@ -81,10 +94,12 @@ export const composeTextualButton = (tools: ThemeTools): TextualButtonThemeType 
         primary: {
             color: tools.themeSettings.colors.primary.darker2,
             fontWeight: 600,
+            hoverColor: tools.themeSettings.colors.primary.darker2,
         },
         secondary: {
             color: tools.calculateContrastTextColor(tools.themeSettings.colors.background),
             fontWeight: 600,
+            hoverColor: tools.calculateContrastTextColor(tools.themeSettings.colors.background),
         },
     };
 };
