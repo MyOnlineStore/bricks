@@ -51,6 +51,7 @@ export type WrapperPropsType = {
 export const StyledPreviewImage = styled.img`
     display: block;
     margin: 12px;
+    max-width: calc(100% - 24px);
 `;
 
 export const StyledFileInput = styled.input`

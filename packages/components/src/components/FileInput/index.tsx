@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect, useState, ReactNode, useContext } from 'react';
+import React, { FC, useState, ReactNode, useContext, MutableRefObject } from 'react';
 import SeverityType from '../../types/SeverityType';
 import Box from '../Box';
 import Text from '../Text';
@@ -18,6 +18,7 @@ export type FeedbackType = {
 
 export type PropsType = {
     name: string;
+    fileInputRef: MutableRefObject<HTMLInputElement | null>;
     value?: {
         url: string;
         alt: string;
@@ -28,22 +29,16 @@ export type PropsType = {
     feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
+    toolbar?: ReactNode;
     onError(error: 'Filetype not accepted' | 'File too large'): void;
     onResetError(): void;
 };
 
 const FileInput: FC<PropsType> = props => {
-    const inputRef = useRef<HTMLInputElement | null>(null);
     const [draggingOver, setDraggingOver] = useState(false);
     const [preview, setPreview] = useState<string | ArrayBuffer | null | undefined>(null);
     const [previewFilename, setPreviewFilename] = useState();
     const themeContext = useContext(ThemeContext);
-
-    useEffect(() => {
-        if (focus && inputRef.current) {
-            inputRef.current.focus();
-        }
-    }, [focus]);
 
     const whatImageToDisplay = (): { source: string; alt: string } | null => {
         if (typeof preview === 'string') {
@@ -73,14 +68,19 @@ const FileInput: FC<PropsType> = props => {
                 hasPreview={typeof preview === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
                 justifyContent="center"
-                alignItems="center"
+                alignItems="stretch"
             >
                 {image ? (
-                    <StyledPreviewImage
-                        src={image.source}
-                        alt={image.alt}
-                        style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
-                    />
+                    <>
+                        <Box grow={1} shrink={1} justifyContent="center" alignItems="center">
+                            <StyledPreviewImage
+                                src={image.source}
+                                alt={image.alt}
+                                style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
+                            />
+                        </Box>
+                        {props.toolbar && <Box style={{ zIndex: 2 }}>{props.toolbar}</Box>}
+                    </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
                         <Icon
@@ -99,7 +99,7 @@ const FileInput: FC<PropsType> = props => {
                     accept="image/*"
                     disabled={props.disabled}
                     ref={ref => {
-                        inputRef.current = ref;
+                        props.fileInputRef.current = ref;
                     }}
                     type="file"
                     onDragEnter={() => {
@@ -112,7 +112,7 @@ const FileInput: FC<PropsType> = props => {
                         setDraggingOver(false);
                     }}
                     onChange={() => {
-                        const files = inputRef.current?.files;
+                        const files = props.fileInputRef.current?.files;
 
                         if (files && files[0]) {
                             const firstFile = files[0];

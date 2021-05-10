@@ -1,5 +1,8 @@
-import React, { ComponentProps, useState } from 'react';
+import React, { ComponentProps, useState, useRef } from 'react';
 import FileInput, { FeedbackType } from './index';
+import Toolbar from '../Toolbar';
+import IconButton from '../IconButton';
+import { GearIcon, TrashIcon } from '@myonlinestore/bricks-assets';
 
 export default {
     title: 'FileInput',
@@ -20,11 +23,31 @@ export default {
 };
 
 export const Default = (props: ComponentProps<typeof FileInput>) => {
+    const inputRef = useRef<HTMLInputElement | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
     return (
         <FileInput
             {...props}
+            fileInputRef={inputRef}
+            toolbar={
+                <Toolbar direction="vertical">
+                    <IconButton
+                        icon={<GearIcon />}
+                        title="Edit"
+                        onClick={() => {
+                            inputRef?.current?.click();
+                        }}
+                    />
+                    <IconButton
+                        icon={<TrashIcon />}
+                        title="Remove"
+                        onClick={() => {
+                            alert('You pressed delete! 😱');
+                        }}
+                    />
+                </Toolbar>
+            }
             onError={(error: string) => {
                 if (error === 'Filetype not accepted.') {
                     setError({
@@ -40,11 +63,31 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
 };
 
 export const WithValue = (props: ComponentProps<typeof FileInput>) => {
+    const inputRef = useRef<HTMLInputElement | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
     return (
         <FileInput
             {...props}
+            fileInputRef={inputRef}
+            toolbar={
+                <Toolbar direction="vertical">
+                    <IconButton
+                        icon={<GearIcon />}
+                        title="Edit"
+                        onClick={() => {
+                            inputRef?.current?.click();
+                        }}
+                    />
+                    <IconButton
+                        icon={<TrashIcon />}
+                        title="Remove"
+                        onClick={() => {
+                            alert('You pressed delete! 😱');
+                        }}
+                    />
+                </Toolbar>
+            }
             value={{
                 url: 'https://thisisthedailyrad.files.wordpress.com/2013/02/large_193482-1915212.jpg',
                 alt: 'Roaling Coal Volvo 242',
@@ -65,16 +108,4 @@ export const WithValue = (props: ComponentProps<typeof FileInput>) => {
 
 export const Disabled = (props: ComponentProps<typeof FileInput>) => {
     return <FileInput {...props} disabled />;
-};
-
-export const Error = (props: ComponentProps<typeof FileInput>) => {
-    return (
-        <FileInput
-            {...props}
-            feedback={{
-                message: 'Het bestand Photo.JPG is te groot. Je afbeelding mag maximaal 1 GB zijn',
-                severity: 'error',
-            }}
-        />
-    );
 };
