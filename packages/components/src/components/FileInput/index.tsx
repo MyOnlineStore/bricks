@@ -84,6 +84,7 @@ const FileInput: FC<PropsType> = props => {
                     </Box>
                 )}
                 <StyledFileInput
+                    accept={props.accept.join(',')}
                     disabled={props.disabled}
                     ref={ref => {
                         props.fileInputRef.current = ref;

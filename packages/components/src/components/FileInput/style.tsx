@@ -54,7 +54,7 @@ export const StyledPreviewImage = styled.img`
 `;
 
 export const StyledFileInput = styled.input`
-    opacity: 0;
+    opacity: 20;
     display: block;
     width: 100%;
     position: absolute;
