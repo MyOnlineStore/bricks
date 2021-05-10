@@ -48,6 +48,9 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
                     />
                 </Toolbar>
             }
+            onChange={() => {
+                // onChange
+            }}
             onError={(error: string) => {
                 if (error === 'Filetype not accepted.') {
                     setError({
@@ -56,7 +59,6 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
                     });
                 }
             }}
-            onResetError={() => setError(null)}
             feedback={error !== null ? error : { message: 'Files supported: PDF, JPEG, PNG', severity: 'info' }}
         />
     );
@@ -88,9 +90,9 @@ export const WithValue = (props: ComponentProps<typeof FileInput>) => {
                     />
                 </Toolbar>
             }
-            value={{
-                url: 'https://thisisthedailyrad.files.wordpress.com/2013/02/large_193482-1915212.jpg',
-                alt: 'Roaling Coal Volvo 242',
+            preview={{
+                source: 'https://thisisthedailyrad.files.wordpress.com/2013/02/large_193482-1915212.jpg',
+                alt: "Rollin' Coal Volvo 242",
             }}
             onError={(error: string) => {
                 if (error === 'Filetype not accepted.') {
@@ -100,7 +102,6 @@ export const WithValue = (props: ComponentProps<typeof FileInput>) => {
                     });
                 }
             }}
-            onResetError={() => setError(null)}
             feedback={error !== null ? error : undefined}
         />
     );
