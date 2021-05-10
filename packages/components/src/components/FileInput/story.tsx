@@ -10,7 +10,7 @@ export default {
     args: {
         name: 'HelloWorld',
         maxHeight: '300px',
-        accept: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', '*.pdf', 'video/*', 'application/msword'],
+        accept: ['image/jpeg'],
         placeholder: (
             <>
                 Drag and drop here
@@ -48,18 +48,17 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
                     />
                 </Toolbar>
             }
-            onChange={() => {
-                // onChange
-            }}
-            onError={(error: string) => {
-                if (error === 'Filetype not accepted.') {
+            onChange={file => {
+                alert(`File '${file.name}' selected with MIME type ${file.type}`);
+
+                if (file.type !== 'image/jpeg') {
                     setError({
                         message: 'Sorry, that’s not a valid image file. Please choose a JPG, .PNG, or .GIF file.',
                         severity: 'error',
                     });
                 }
             }}
-            feedback={error !== null ? error : { message: 'Files supported: PDF, JPEG, PNG', severity: 'info' }}
+            feedback={error !== null ? error : { message: 'Files supported: JPEG', severity: 'info' }}
         />
     );
 };
@@ -94,15 +93,17 @@ export const WithValue = (props: ComponentProps<typeof FileInput>) => {
                 source: 'https://thisisthedailyrad.files.wordpress.com/2013/02/large_193482-1915212.jpg',
                 alt: "Rollin' Coal Volvo 242",
             }}
-            onError={(error: string) => {
-                if (error === 'Filetype not accepted.') {
+            onChange={file => {
+                alert(`File '${file.name}' selected with MIME type ${file.type}`);
+
+                if (file.type !== 'image/jpeg') {
                     setError({
                         message: 'Sorry, that’s not a valid image file. Please choose a JPG, .PNG, or .GIF file.',
                         severity: 'error',
                     });
                 }
             }}
-            feedback={error !== null ? error : undefined}
+            feedback={error !== null ? error : { message: 'Files supported: JPEG', severity: 'info' }}
         />
     );
 };

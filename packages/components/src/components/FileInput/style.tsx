@@ -54,7 +54,7 @@ export const StyledPreviewImage = styled.img`
 `;
 
 export const StyledFileInput = styled.input`
-    opacity: 20;
+    opacity: 0;
     display: block;
     width: 100%;
     position: absolute;
@@ -63,6 +63,13 @@ export const StyledFileInput = styled.input`
     top: 0;
     bottom: 0;
     cursor: pointer;
+`;
+
+export const StyledToolbar = styled(Box)`
+    background: ${({ theme }) => theme.FileInput.common.toolbarBackground};
+    padding: 3px;
+    position: relative;
+    z-index: 2; // since the input is positioned absolute and after the toolbar in de dom, the toolbar needs a higher z-index.
 `;
 
 export const StyledWrapper = styled(Box)<WrapperPropsType>`

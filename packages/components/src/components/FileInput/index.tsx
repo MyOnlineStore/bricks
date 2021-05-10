@@ -35,8 +35,7 @@ export type PropsType = {
     dropPlaceholder: ReactNode;
     toolbar?: ReactNode;
     onDelete(): void;
-    onChange(value: valueType): void;
-    onError(error: 'Filetype not accepted' | 'File too large'): void;
+    onChange(value: File): void;
 };
 
 const FileInput: FC<PropsType> = props => {
@@ -107,18 +106,14 @@ const FileInput: FC<PropsType> = props => {
                             const reader = new FileReader();
 
                             reader.onload = event => {
-                                if (props.accept && !props.accept.includes(firstFile.type)) {
-                                    props.onError('Filetype not accepted');
-
-                                    return;
-                                }
-
                                 setHasImage(true);
 
                                 if (imageRef.current) {
                                     imageRef.current.src = event?.target?.result as string;
                                     imageRef.current.alt = firstFile.name;
                                 }
+
+                                props.onChange(firstFile);
                             };
 
                             reader.readAsDataURL(firstFile);
