@@ -29,7 +29,7 @@ export type PropsType = {
     feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
-    toolbar: ReactNode;
+    toolbar?: ReactNode;
     onError(error: 'Filetype not accepted' | 'File too large'): void;
     onResetError(): void;
 };
@@ -79,7 +79,7 @@ const FileInput: FC<PropsType> = props => {
                                 style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
                             />
                         </Box>
-                        <Box style={{ zIndex: 2 }}>{props.toolbar}</Box>
+                        {props.toolbar && <Box style={{ zIndex: 2 }}>{props.toolbar}</Box>}
                     </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
