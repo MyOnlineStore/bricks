@@ -1,11 +1,11 @@
 import React, { FC, useRef, useEffect, useState, ReactNode, useContext } from 'react';
-import InlineNotification from '../InlineNotification';
-import Box from '../Box';
-import Icon from '../Icon';
-import Text from '../Text';
-import { CloudUploadIcon } from '@myonlinestore/bricks-assets';
-import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import SeverityType from '../../types/SeverityType';
+import Box from '../Box';
+import Text from '../Text';
+import Icon from '../Icon';
+import InlineNotification from '../InlineNotification';
+import { CactusSmallInactiveIllustration, CactusSmallActiveIllustration } from '@myonlinestore/bricks-assets';
+import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
 
 export type InputSeverityType = 'error';
@@ -22,12 +22,13 @@ export type PropsType = {
         url: string;
         alt: string;
     };
+    maxHeight?: string;
     disabled?: boolean;
     accept: Array<string>;
     feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
-    onError(error: string | null): void;
+    onError(error: 'Filetype not accepted' | 'File too large'): void;
     onResetError(): void;
 };
 
@@ -71,17 +72,27 @@ const FileInput: FC<PropsType> = props => {
                 disabled={props.disabled}
                 hasPreview={typeof preview === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
-                height="230px"
-                maxWidth="526px"
                 justifyContent="center"
                 alignItems="center"
             >
                 {image ? (
-                    <StyledPreviewImage src={image.source} alt={image.alt} />
+                    <StyledPreviewImage
+                        src={image.source}
+                        alt={image.alt}
+                        style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
+                    />
                 ) : (
-                    <Box direction="column" justifyContent="center" alignItems="center">
-                        <Icon icon={<CloudUploadIcon />} size="large" color={themeContext.FileInput.common.iconColor} />
-                        <Text textAlign="center">{draggingOver ? props.dropPlaceholder : props.placeholder}</Text>
+                    <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
+                        <Icon
+                            icon={
+                                draggingOver ? <CactusSmallActiveIllustration /> : <CactusSmallInactiveIllustration />
+                            }
+                            size="large"
+                            color={themeContext.FileInput.common.iconColor}
+                        />
+                        <Text style={{ marginLeft: '16px' }}>
+                            {draggingOver ? props.dropPlaceholder : props.placeholder}
+                        </Text>
                     </Box>
                 )}
                 <StyledFileInput
@@ -112,7 +123,7 @@ const FileInput: FC<PropsType> = props => {
                                 setPreviewFilename('');
 
                                 if (props.accept && !props.accept.includes(firstFile.type)) {
-                                    props.onError('Filetype not accepted.');
+                                    props.onError('Filetype not accepted');
 
                                     return;
                                 }

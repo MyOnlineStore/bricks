@@ -74,6 +74,12 @@ Feel free to help us develop Bricks! If you have a new feature suggestion please
 - Run either `npm run dev:components` to start the dev-server running on `localhost:9001` or run `npm run build` to build a dist 
 to be used with `npm link`
 
+## Adding assets and using them in Components
+- Add an icon or illustration to the corresponding folder in the `src` folder.
+- Run `yarn build`
+- Check the `packages/assets/package.json` file to find the new version number
+- Update the bricks-assets version number in the `packages/components/package.json` file
+
 ## Publishing
 We use Lerna to publish packages. It is configured to version packages separately and uses the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to determine the next semantic version and generate release notes in the CHANGELOG.md inside the package. With every PR, the title must be a conventional commit message (there is a check in place). In short:
 - If it's a patch, use the type `fix: ...`.

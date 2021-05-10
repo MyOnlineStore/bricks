@@ -6,7 +6,8 @@ export default {
     component: FileInput,
     args: {
         name: 'HelloWorld',
-        accept: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
+        maxHeight: '300px',
+        accept: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', '*.pdf', 'video/*', 'application/msword'],
         placeholder: (
             <>
                 Drag and drop here
@@ -33,7 +34,7 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
                 }
             }}
             onResetError={() => setError(null)}
-            feedback={error !== null ? error : undefined}
+            feedback={error !== null ? error : { message: 'Files supported: PDF, JPEG, PNG', severity: 'info' }}
         />
     );
 };
