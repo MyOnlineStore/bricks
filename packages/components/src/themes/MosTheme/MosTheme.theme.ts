@@ -891,10 +891,12 @@ const theme: ThemeType = {
         primary: {
             color: colors.green500,
             fontWeight: 400,
+            hoverColor: colors.green500,
         },
         secondary: {
-            color: colors.grey800,
+            color: colors.grey500,
             fontWeight: 400,
+            hoverColor: colors.green500,
         },
     },
     Tile: {
