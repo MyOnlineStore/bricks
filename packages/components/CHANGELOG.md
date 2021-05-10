@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.1.0...@myonlinestore/bricks@6.2.0) (2021-05-10)
+
+
+### Features
+
+* Added hover color to TextualButton ([#634](https://github.com/MyOnlineStore/bricks/issues/634)) ([e73f82e](https://github.com/MyOnlineStore/bricks/commit/e73f82ea7bbf604f819bde228805399cbb870c13))
+* Added Toolbar component ([#630](https://github.com/MyOnlineStore/bricks/issues/630)) ([61533d0](https://github.com/MyOnlineStore/bricks/commit/61533d08835bca9acb6862d894fdc294f499d318))
+
+
+
+
+
 # [6.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.0.3...@myonlinestore/bricks@6.1.0) (2021-05-05)
 
 
