@@ -10,7 +10,6 @@ export type FileInputThemeType = {
         fontSize: string;
         fontFamily: string;
         iconColor: string;
-        toolbarBackground: string;
     };
     input: {
         idle: {
@@ -140,7 +139,6 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
             fontSize: text.fontSize.base,
             fontFamily: text.primaryFont,
             iconColor: forms.color,
-            toolbarBackground: forms.backgroundContrast,
         },
         input: {
             idle: {

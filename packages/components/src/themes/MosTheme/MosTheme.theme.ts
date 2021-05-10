@@ -33,7 +33,6 @@ const theme: ThemeType = {
             fontSize: fontSize.base,
             fontFamily: bodyFont,
             iconColor: colors.green500,
-            toolbarBackground: colors.grey100,
         },
         input: {
             idle: {
