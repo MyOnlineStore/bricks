@@ -1,17 +1,10 @@
-import React, { FC, useRef, useEffect, useState, ReactNode, useContext } from 'react';
+import React, { FC, useState, ReactNode, useContext, MutableRefObject } from 'react';
 import SeverityType from '../../types/SeverityType';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import Toolbar from '../Toolbar';
-import IconButton from '../IconButton';
 import InlineNotification from '../InlineNotification';
-import {
-    CactusSmallInactiveIllustration,
-    CactusSmallActiveIllustration,
-    GearIcon,
-    TrashIcon,
-} from '@myonlinestore/bricks-assets';
+import { CactusSmallInactiveIllustration, CactusSmallActiveIllustration } from '@myonlinestore/bricks-assets';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
 
@@ -25,6 +18,7 @@ export type FeedbackType = {
 
 export type PropsType = {
     name: string;
+    fileInputRef: MutableRefObject<HTMLInputElement | null>;
     value?: {
         url: string;
         alt: string;
@@ -35,23 +29,16 @@ export type PropsType = {
     feedback?: FeedbackType;
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
-    onDelete(): void;
+    toolbar: ReactNode;
     onError(error: 'Filetype not accepted' | 'File too large'): void;
     onResetError(): void;
 };
 
 const FileInput: FC<PropsType> = props => {
-    const inputRef = useRef<HTMLInputElement | null>(null);
     const [draggingOver, setDraggingOver] = useState(false);
     const [preview, setPreview] = useState<string | ArrayBuffer | null | undefined>(null);
     const [previewFilename, setPreviewFilename] = useState();
     const themeContext = useContext(ThemeContext);
-
-    useEffect(() => {
-        if (focus && inputRef.current) {
-            inputRef.current.focus();
-        }
-    }, [focus]);
 
     const whatImageToDisplay = (): { source: string; alt: string } | null => {
         if (typeof preview === 'string') {
@@ -92,24 +79,7 @@ const FileInput: FC<PropsType> = props => {
                                 style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
                             />
                         </Box>
-                        <Box style={{ zIndex: 2 }}>
-                            <Toolbar direction="vertical">
-                                <IconButton
-                                    icon={<GearIcon />}
-                                    title="Edit"
-                                    onClick={() => {
-                                        inputRef?.current?.click();
-                                    }}
-                                />
-                                <IconButton
-                                    icon={<TrashIcon />}
-                                    title="Remove"
-                                    onClick={() => {
-                                        props.onDelete();
-                                    }}
-                                />
-                            </Toolbar>
-                        </Box>
+                        <Box style={{ zIndex: 2 }}>{props.toolbar}</Box>
                     </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
@@ -129,7 +99,7 @@ const FileInput: FC<PropsType> = props => {
                     accept="image/*"
                     disabled={props.disabled}
                     ref={ref => {
-                        inputRef.current = ref;
+                        props.fileInputRef.current = ref;
                     }}
                     type="file"
                     onDragEnter={() => {
@@ -142,7 +112,7 @@ const FileInput: FC<PropsType> = props => {
                         setDraggingOver(false);
                     }}
                     onChange={() => {
-                        const files = inputRef.current?.files;
+                        const files = props.fileInputRef.current?.files;
 
                         if (files && files[0]) {
                             const firstFile = files[0];
