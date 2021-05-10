@@ -69,6 +69,7 @@ export const WithValue = (props: ComponentProps<typeof FileInput>) => {
     return (
         <FileInput
             {...props}
+            fileInputRef={inputRef}
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
