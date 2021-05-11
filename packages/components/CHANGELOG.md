@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.2.0...@myonlinestore/bricks@6.2.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* **FormRow:** Adjusted FormRow margins ([#635](https://github.com/MyOnlineStore/bricks/issues/635)) ([55e4a38](https://github.com/MyOnlineStore/bricks/commit/55e4a38bd0bdd5568f1e92ce33896045d87c9383))
+
+
+
+
+
 # [6.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.1.0...@myonlinestore/bricks@6.2.0) (2021-05-10)
 
 
