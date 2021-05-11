@@ -1,7 +1,7 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import NativeSelect from '.';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 
 const options = [
     {
@@ -30,12 +30,39 @@ const options = [
     },
 ];
 
+const optionsTwo = [
+    {
+        value: 'One',
+        label: 'Option 1',
+    },
+    {
+        value: 'Two',
+        label: 'Option 2',
+    },
+    {
+        value: 'Three',
+        label: 'Option 3',
+    },
+];
+
 type PropsType = {};
 
 const Demo: FC<PropsType> = (): JSX.Element => {
+    const optionsSet = select('options', ['options', 'optionsTwo'], 'options');
     const [value, setValue] = useState('E');
 
-    return <NativeSelect options={options} value={value} disabled={boolean('disabled', false)} onChange={setValue} />;
+    useEffect(() => {
+        console.debug('value', value);
+    }, [value]);
+
+    return (
+        <NativeSelect
+            options={optionsSet === 'options' ? options : optionsTwo}
+            value={value}
+            disabled={boolean('disabled', false)}
+            onChange={setValue}
+        />
+    );
 };
 
 storiesOf('NativeSelect', module).add('Default', () => {

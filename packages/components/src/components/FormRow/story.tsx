@@ -87,7 +87,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                     disabled={disabled}
                     description={description}
                     field={
-                        <Separated before after>
+                        <Separated before>
                             <RadioButton
                                 name="bool"
                                 label="True"
@@ -126,7 +126,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                     disabled={disabled}
                     description={description}
                     field={
-                        <Separated before after>
+                        <Separated before>
                             <Checkbox
                                 name="cheese"
                                 value="cheese"
@@ -151,7 +151,7 @@ class DemoComponent extends Component<PropsType, StateType> {
                     disabled={disabled}
                     description={description}
                     field={
-                        <Separated before after>
+                        <Separated before>
                             <Toggle
                                 name="supersize"
                                 value="supersize"
@@ -180,7 +180,7 @@ storiesOf('FormRow', module)
                 </Text>
             }
             field={
-                <Separated before after>
+                <Separated before>
                     <Toggle checked={true} name="storyToggle" value={'true'} onChange={(): string => 'void'} />
                 </Separated>
             }
