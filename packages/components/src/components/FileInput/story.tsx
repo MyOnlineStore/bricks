@@ -49,8 +49,6 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
                 </Toolbar>
             }
             onChange={file => {
-                alert(`File '${file.name}' selected with MIME type ${file.type}`);
-
                 if (file.type !== 'image/jpeg') {
                     setError({
                         message: 'Sorry, that’s not a valid image file. Please choose a JPG, .PNG, or .GIF file.',
@@ -63,7 +61,7 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
     );
 };
 
-export const WithValue = (props: ComponentProps<typeof FileInput>) => {
+export const WithPreview = (props: ComponentProps<typeof FileInput>) => {
     const FileInputInstance = useRef<FileInputInstanceType | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
@@ -94,8 +92,6 @@ export const WithValue = (props: ComponentProps<typeof FileInput>) => {
                 alt: "Rollin' Coal Volvo 242",
             }}
             onChange={file => {
-                alert(`File '${file.name}' selected with MIME type ${file.type}`);
-
                 if (file.type !== 'image/jpeg') {
                     setError({
                         message: 'Sorry, that’s not a valid image file. Please choose a JPG, .PNG, or .GIF file.',
