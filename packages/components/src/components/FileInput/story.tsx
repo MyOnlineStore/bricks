@@ -43,7 +43,7 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
                         icon={<TrashIcon />}
                         title="Remove"
                         onClick={() => {
-                            FileInputInstance.current?.reset();
+                            FileInputInstance.current?.clear();
                         }}
                     />
                 </Toolbar>
@@ -82,7 +82,7 @@ export const WithPreview = (props: ComponentProps<typeof FileInput>) => {
                         icon={<TrashIcon />}
                         title="Remove"
                         onClick={() => {
-                            FileInputInstance.current?.reset();
+                            FileInputInstance.current?.clear();
                         }}
                     />
                 </Toolbar>

@@ -21,7 +21,7 @@ export type ValueType = {
 
 export type FileInputInstanceType = {
     pickFile(): void;
-    reset(): void;
+    clear(): void;
 };
 
 export type PropsType = {
@@ -39,7 +39,6 @@ export type PropsType = {
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
     toolbar?: ReactNode;
-    onDelete(): void;
     onChange(value: File): void;
 };
 
@@ -54,7 +53,10 @@ const FileInput: FC<PropsType> = props => {
         pickFile() {
             fileInputRef.current?.click();
         },
-        reset() {
+        clear() {
+            if (fileInputRef.current?.value) {
+                fileInputRef.current.value = '';
+            }
             setHasImage(false);
         },
     };
