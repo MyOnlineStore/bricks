@@ -1,5 +1,5 @@
 import React, { ComponentProps, useState, useRef } from 'react';
-import FileInput, { FeedbackType } from './index';
+import FileInput, { FeedbackType, FileInputInstanceType } from './index';
 import Toolbar from '../Toolbar';
 import IconButton from '../IconButton';
 import { GearIcon, TrashIcon } from '@myonlinestore/bricks-assets';
@@ -23,27 +23,27 @@ export default {
 };
 
 export const Default = (props: ComponentProps<typeof FileInput>) => {
-    const inputRef = useRef<HTMLInputElement | null>(null);
+    const FileInputInstance = useRef<FileInputInstanceType | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
     return (
         <FileInput
             {...props}
-            fileInputRef={inputRef}
+            instance={FileInputInstance}
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
                         icon={<GearIcon />}
                         title="Edit"
                         onClick={() => {
-                            inputRef?.current?.click();
+                            FileInputInstance.current?.pickFile();
                         }}
                     />
                     <IconButton
                         icon={<TrashIcon />}
                         title="Remove"
                         onClick={() => {
-                            alert('You pressed delete! 😱');
+                            FileInputInstance.current?.reset();
                         }}
                     />
                 </Toolbar>
@@ -64,27 +64,27 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
 };
 
 export const WithValue = (props: ComponentProps<typeof FileInput>) => {
-    const inputRef = useRef<HTMLInputElement | null>(null);
+    const FileInputInstance = useRef<FileInputInstanceType | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
     return (
         <FileInput
             {...props}
-            fileInputRef={inputRef}
+            instance={FileInputInstance}
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
                         icon={<GearIcon />}
                         title="Edit"
                         onClick={() => {
-                            inputRef?.current?.click();
+                            FileInputInstance.current?.pickFile();
                         }}
                     />
                     <IconButton
                         icon={<TrashIcon />}
                         title="Remove"
                         onClick={() => {
-                            alert('You pressed delete! 😱');
+                            FileInputInstance.current?.reset();
                         }}
                     />
                 </Toolbar>

@@ -16,6 +16,7 @@ export { default as EmptyState } from './components/EmptyState';
 export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as FoldOut } from './components/FoldOut';
 export { default as FileInput } from './components/FileInput';
+export { default as FileInputInstanceType } from './components/FileInput';
 export { default as FormRow } from './components/FormRow';
 export { default as generateTheme } from './themes/CustomTheme/genTheme';
 export { default as Heading } from './components/Heading';

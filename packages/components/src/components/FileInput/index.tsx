@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState, useContext, MutableRefObject, ReactNode } from 'react';
+import React, { FC, useRef, useState, useContext, MutableRefObject, ReactNode, useEffect } from 'react';
 import SeverityType from '../../types/SeverityType';
 import Box from '../Box';
 import Text from '../Text';
@@ -14,19 +14,24 @@ export type FeedbackType = {
     message: string;
 };
 
-export type valueType = {
+export type ValueType = {
     source: string;
     alt: string;
 };
 
+export type FileInputInstanceType = {
+    pickFile(): void;
+    reset(): void;
+};
+
 export type PropsType = {
     name: string;
-    fileInputRef: MutableRefObject<HTMLInputElement | null>;
+    instance: MutableRefObject<FileInputInstanceType | null>;
     value?: {
         url: string;
         alt: string;
     };
-    preview?: valueType;
+    preview?: ValueType;
     maxHeight?: string;
     disabled?: boolean;
     accept: Array<string>;
@@ -40,9 +45,27 @@ export type PropsType = {
 
 const FileInput: FC<PropsType> = props => {
     const imageRef = useRef<HTMLImageElement | null>(null);
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [draggingOver, setDraggingOver] = useState(false);
     const [hasImage, setHasImage] = useState<boolean>(!!props.preview);
     const themeContext = useContext(ThemeContext);
+
+    const publicMethods: FileInputInstanceType = {
+        pickFile() {
+            fileInputRef.current?.click();
+        },
+        reset() {
+            setHasImage(false);
+        },
+    };
+
+    useEffect(() => {
+        props.instance.current = publicMethods;
+    }, []);
+
+    useEffect(() => {
+        setHasImage(!!props.preview);
+    }, [!!props.preview]);
 
     return (
         <>
@@ -86,7 +109,7 @@ const FileInput: FC<PropsType> = props => {
                     accept={props.accept.join(',')}
                     disabled={props.disabled}
                     ref={ref => {
-                        props.fileInputRef.current = ref;
+                        fileInputRef.current = ref;
                     }}
                     type="file"
                     onDragEnter={() => {
@@ -99,7 +122,7 @@ const FileInput: FC<PropsType> = props => {
                         setDraggingOver(false);
                     }}
                     onChange={() => {
-                        const files = props.fileInputRef.current?.files;
+                        const files = fileInputRef.current?.files;
 
                         if (files && files[0]) {
                             const firstFile = files[0];
