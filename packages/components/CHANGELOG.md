@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.2.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.2.1...@myonlinestore/bricks@6.2.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* Aligned icon correctly ([#636](https://github.com/MyOnlineStore/bricks/issues/636)) ([67b661f](https://github.com/MyOnlineStore/bricks/commit/67b661fc8c32eda58b58a9459affc5a522a962fd))
+
+
+
+
+
 ## [6.2.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.2.0...@myonlinestore/bricks@6.2.1) (2021-05-11)
 
 
