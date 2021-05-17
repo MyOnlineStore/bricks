@@ -23,27 +23,27 @@ export default {
 };
 
 export const Default = (props: ComponentProps<typeof FileInput>) => {
-    const FileInputInstance = useRef<FileInputInstanceType | null>(null);
+    const fileInputInstance = useRef<FileInputInstanceType | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
     return (
         <FileInput
             {...props}
-            instance={FileInputInstance}
+            instance={fileInputInstance}
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
                         icon={<GearIcon />}
                         title="Edit"
                         onClick={() => {
-                            FileInputInstance.current?.pickFile();
+                            fileInputInstance.current?.pickFile();
                         }}
                     />
                     <IconButton
                         icon={<TrashIcon />}
                         title="Remove"
                         onClick={() => {
-                            FileInputInstance.current?.clear();
+                            fileInputInstance.current?.clear();
                         }}
                     />
                 </Toolbar>
@@ -62,27 +62,27 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
 };
 
 export const WithPreview = (props: ComponentProps<typeof FileInput>) => {
-    const FileInputInstance = useRef<FileInputInstanceType | null>(null);
+    const fileInputInstance = useRef<FileInputInstanceType | null>(null);
     const [error, setError] = useState<null | FeedbackType>(null);
 
     return (
         <FileInput
             {...props}
-            instance={FileInputInstance}
+            instance={fileInputInstance}
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
                         icon={<GearIcon />}
                         title="Edit"
                         onClick={() => {
-                            FileInputInstance.current?.pickFile();
+                            fileInputInstance.current?.pickFile();
                         }}
                     />
                     <IconButton
                         icon={<TrashIcon />}
                         title="Remove"
                         onClick={() => {
-                            FileInputInstance.current?.clear();
+                            fileInputInstance.current?.clear();
                         }}
                     />
                 </Toolbar>
