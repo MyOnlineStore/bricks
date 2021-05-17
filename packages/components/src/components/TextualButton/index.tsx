@@ -39,6 +39,9 @@ const StyledTextualButton = styled(Base)<PropsType>`
 
 const StyledTextContainer = styled.span<Pick<PropsType, 'variant'> & { hover: boolean }>`
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::before {
         content: '';
