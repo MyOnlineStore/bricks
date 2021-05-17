@@ -22,6 +22,11 @@ export type FileInputThemeType = {
             background: string;
             color: string;
         };
+        draggingOver: {
+            borderColor: string;
+            boxShadow: string;
+            background: string;
+        };
         focus: {
             borderColor: string;
             boxShadow: string;
@@ -42,6 +47,8 @@ export type FileInputThemeType = {
 
 export type WrapperPropsType = {
     focus: boolean;
+    hover: boolean;
+    draggingOver: boolean;
     disabled?: boolean;
     hasPreview?: boolean;
     severity?: 'error';
@@ -74,7 +81,7 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
     box-sizing: border-box;
     position: relative;
 
-    ${({ focus, disabled, severity, theme }) => {
+    ${({ focus, hover, draggingOver, disabled, severity, theme }) => {
         if (severity === 'error' && focus && !disabled) {
             return `
                 background: ${theme.FileInput.input.error.background};
@@ -91,11 +98,27 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
             `;
         }
 
+        if (hover && !disabled) {
+            return `
+                background: ${theme.FileInput.input.hover.background};
+                border: solid 1px ${theme.FileInput.input.hover.borderColor};
+                box-shadow: ${theme.FileInput.input.hover.boxShadow};
+            `;
+        }
+
         if (focus && !disabled) {
             return `
                 background: ${theme.FileInput.input.focus.background};
                 border: solid 1px ${theme.FileInput.input.focus.borderColor};
                 box-shadow: ${theme.FileInput.input.focus.boxShadow};
+            `;
+        }
+
+        if (draggingOver && !disabled) {
+            return `
+                background: ${theme.FileInput.input.draggingOver.background};
+                border: solid 1px ${theme.FileInput.input.draggingOver.borderColor};
+                box-shadow: ${theme.FileInput.input.draggingOver.boxShadow};
             `;
         }
 
@@ -149,6 +172,11 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
                 borderColor: forms.borderColor,
                 color: forms.activeColor,
                 background: `${chroma(colors.primary.lighter1).alpha(0.1)}`,
+                boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
+            },
+            draggingOver: {
+                borderColor: forms.focusBorderColor,
+                background: forms.background,
                 boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
             },
             focus: {

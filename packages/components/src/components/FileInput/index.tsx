@@ -47,6 +47,7 @@ const FileInput: FC<PropsType> = props => {
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [draggingOver, setDraggingOver] = useState(false);
     const [hasImage, setHasImage] = useState<boolean>(!!props.preview);
+    const [hasFocus, setFocus] = useState<boolean>(false);
     const themeContext = useContext(ThemeContext);
 
     const publicMethods: FileInputInstanceType = {
@@ -72,7 +73,8 @@ const FileInput: FC<PropsType> = props => {
     return (
         <>
             <StyledWrapper
-                focus={draggingOver}
+                focus={hasFocus}
+                draggingOver={draggingOver}
                 disabled={props.disabled}
                 hasPreview={typeof props.preview?.source === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
@@ -97,7 +99,11 @@ const FileInput: FC<PropsType> = props => {
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
                         <Icon
                             icon={
-                                draggingOver ? <CactusSmallActiveIllustration /> : <CactusSmallInactiveIllustration />
+                                draggingOver || hasFocus ? (
+                                    <CactusSmallActiveIllustration />
+                                ) : (
+                                    <CactusSmallInactiveIllustration />
+                                )
                             }
                             size="large"
                             color={themeContext.FileInput.common.iconColor}
@@ -109,6 +115,12 @@ const FileInput: FC<PropsType> = props => {
                 )}
                 <StyledFileInput
                     accept={props.accept.join(',')}
+                    onFocus={() => {
+                        setFocus(true);
+                    }}
+                    onBlur={() => {
+                        setFocus(false);
+                    }}
                     disabled={props.disabled}
                     ref={ref => {
                         fileInputRef.current = ref;
