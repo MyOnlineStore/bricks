@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.2.2...@myonlinestore/bricks@7.0.0) (2021-05-18)
+
+
+### Bug Fixes
+
+* **Toolbar:** Added Toolbar as export ([#638](https://github.com/MyOnlineStore/bricks/issues/638)) ([25650fd](https://github.com/MyOnlineStore/bricks/commit/25650fde3260d28eb5fd333d13774006e25ba8b3))
+
+
+* feat!: Add 'default' Notification variant (#637) ([210ec74](https://github.com/MyOnlineStore/bricks/commit/210ec74fe662630038f473d75c7089430e7ce38d)), closes [#637](https://github.com/MyOnlineStore/bricks/issues/637)
+
+
+### BREAKING CHANGES
+
+* Adds 'default' to Notification themetype
+
+
+
+
+
 ## [6.2.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.2.1...@myonlinestore/bricks@6.2.2) (2021-05-17)
 
 

@@ -9,7 +9,7 @@
   },
   "homepage": "https://github.com/MyOnlineStore/bricks#readme",
   "name": "@myonlinestore/bricks",
-  "version": "6.2.2",
+  "version": "7.0.0",
   "description": "bricks",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
