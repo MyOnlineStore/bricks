@@ -14,6 +14,7 @@ type NotificationThemeType = {
         fontSize: string;
         borderRadius: string;
     };
+    default: VariantStyleType;
     error: VariantStyleType;
     info: VariantStyleType;
     success: VariantStyleType;
@@ -21,7 +22,7 @@ type NotificationThemeType = {
 };
 
 type PropsType = {
-    severity: SeverityType;
+    severity: SeverityType | 'default';
 };
 
 const StyledNotification = styled.div<PropsType>`
@@ -48,6 +49,12 @@ const composeNotificationTheme = (themeTools: ThemeTools): NotificationThemeType
             fontSize: text.fontSize.base,
             // no common borderRadius in themeTools yet
             borderRadius: '0px',
+        },
+        default: {
+            color: colors.silver.lighter1,
+            backgroundColor: chroma(colors.grey.darker1)
+                .set('hsl.l', 0.93)
+                .hex(),
         },
         error: {
             color: colors.severity.error,

@@ -5,6 +5,7 @@ import { MehIcon } from '@myonlinestore/bricks-assets';
 import Link from '../Link';
 
 storiesOf('Notification', module)
+    .add('Default', () => <Notification severity="default" message="A message with default styling" />)
     .add('Success', () => <Notification severity="success" message="Wow, Great job!" />)
     .add('Error', () => <Notification severity="error" message="Oops, something wen't wrong. Please try again." />)
     .add('Warning', () => <Notification severity="warning" message="Careful, this might go wrong." />)

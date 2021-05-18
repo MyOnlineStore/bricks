@@ -4,16 +4,24 @@ import Icon from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
 import { SeverityIcons } from '../../types/SeverityType';
+import { InfoCircleIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
-    severity: keyof typeof SeverityIcons;
+    severity: keyof typeof SeverityIcons | 'default';
     message?: string;
     icon?: ReactNode;
     'data-testid'?: string;
 };
 
 const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
-    const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
+    const icon =
+        props.icon !== undefined ? (
+            props.icon
+        ) : props.severity === 'default' ? (
+            <InfoCircleIcon />
+        ) : (
+            SeverityIcons[props.severity]
+        );
 
     return (
         <StyledNotification severity={props.severity} data-testid={props['data-testid']}>

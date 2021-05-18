@@ -497,6 +497,10 @@ const theme: ThemeType = {
             fontSize: fontSize.base,
             borderRadius: '3px',
         },
+        default: {
+            color: colors.grey700,
+            backgroundColor: colors.grey200,
+        },
         error: {
             color: colors.red700,
             backgroundColor: colors.red100,
