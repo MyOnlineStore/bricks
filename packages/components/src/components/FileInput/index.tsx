@@ -101,7 +101,15 @@ const FileInput: FC<PropsType> = props => {
                     </>
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
-                        <Icon icon={<RocketLargeIcon />} size="large" color={themeContext.FileInput.common.iconColor} />
+                        <Icon
+                            icon={<RocketLargeIcon />}
+                            size="large"
+                            color={
+                                props.disabled
+                                    ? themeContext.FileInput.input.disabled.iconColor
+                                    : themeContext.FileInput.common.iconColor
+                            }
+                        />
                         <Text style={{ marginLeft: '16px' }}>{drop ? props.dropPlaceholder : props.placeholder}</Text>
                     </Box>
                 )}

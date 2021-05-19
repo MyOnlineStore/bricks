@@ -2,6 +2,7 @@ import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 import Box from '../Box';
+import Text from '../Text';
 
 export type FileInputThemeType = {
     common: {
@@ -39,6 +40,7 @@ export type FileInputThemeType = {
         };
         disabled: {
             color: string;
+            iconColor: string;
             background: string;
             borderColor: string;
         };
@@ -138,6 +140,10 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
                 border: solid 1px ${theme.FileInput.input.disabled.borderColor};
                 box-shadow: none;
 
+                ${Text} {
+                    color: ${theme.FileInput.input.disabled.color};
+                }
+
                 input {
                     cursor: not-allowed;
                 }
@@ -148,6 +154,10 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
             background: ${theme.FileInput.input.idle.background};
             border: dashed 1px ${theme.FileInput.input.idle.borderColor};
             box-shadow: none;
+
+            ${Text} {
+                color: ${theme.FileInput.input.idle.color};
+            }
 
             u {
                 color: ${theme.FileInput.input.hover.color};
@@ -196,6 +206,7 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
             },
             disabled: {
                 color: colors.grey.lighter2,
+                iconColor: colors.grey.lighter2,
                 background: colors.silver.base,
                 borderColor: colors.severity.error,
             },

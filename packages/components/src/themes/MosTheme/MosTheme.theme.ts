@@ -63,6 +63,7 @@ const theme: ThemeType = {
             },
             disabled: {
                 color: colors.grey300,
+                iconColor: colors.grey200,
                 background: colors.grey100,
                 borderColor: colors.grey200,
             },
