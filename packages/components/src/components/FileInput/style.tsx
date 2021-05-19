@@ -2,6 +2,7 @@ import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 import Box from '../Box';
+import Text from '../Text';
 
 export type FileInputThemeType = {
     common: {
@@ -22,6 +23,11 @@ export type FileInputThemeType = {
             background: string;
             color: string;
         };
+        drop: {
+            borderColor: string;
+            boxShadow: string;
+            background: string;
+        };
         focus: {
             borderColor: string;
             boxShadow: string;
@@ -34,6 +40,7 @@ export type FileInputThemeType = {
         };
         disabled: {
             color: string;
+            iconColor: string;
             background: string;
             borderColor: string;
         };
@@ -42,6 +49,8 @@ export type FileInputThemeType = {
 
 export type WrapperPropsType = {
     focus: boolean;
+    hover: boolean;
+    drop: boolean;
     disabled?: boolean;
     hasPreview?: boolean;
     severity?: 'error';
@@ -74,7 +83,7 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
     box-sizing: border-box;
     position: relative;
 
-    ${({ focus, disabled, severity, theme }) => {
+    ${({ focus, hover, drop, disabled, severity, theme }) => {
         if (severity === 'error' && focus && !disabled) {
             return `
                 background: ${theme.FileInput.input.error.background};
@@ -91,11 +100,37 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
             `;
         }
 
+        if (hover && !disabled) {
+            return `
+                background-color: ${theme.FileInput.input.hover.background};
+                box-shadow: ${theme.FileInput.input.hover.boxShadow};
+                border: solid 1px ${theme.FileInput.input.hover.borderColor};
+
+                u {
+                    color: ${theme.FileInput.input.hover.color};
+                    text-decoration: underline;
+                }
+            `;
+        }
+
         if (focus && !disabled) {
             return `
                 background: ${theme.FileInput.input.focus.background};
                 border: solid 1px ${theme.FileInput.input.focus.borderColor};
                 box-shadow: ${theme.FileInput.input.focus.boxShadow};
+
+                u {
+                    color: ${theme.FileInput.input.hover.color};
+                    text-decoration: underline;
+                }
+            `;
+        }
+
+        if (drop && !disabled) {
+            return `
+                background: ${theme.FileInput.input.drop.background};
+                border: solid 1px ${theme.FileInput.input.drop.borderColor};
+                box-shadow: ${theme.FileInput.input.drop.boxShadow};
             `;
         }
 
@@ -104,6 +139,10 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
                 background: ${theme.FileInput.input.disabled.background};
                 border: solid 1px ${theme.FileInput.input.disabled.borderColor};
                 box-shadow: none;
+
+                ${Text} {
+                    color: ${theme.FileInput.input.disabled.color};
+                }
 
                 input {
                     cursor: not-allowed;
@@ -116,14 +155,13 @@ export const StyledWrapper = styled(Box)<WrapperPropsType>`
             border: dashed 1px ${theme.FileInput.input.idle.borderColor};
             box-shadow: none;
 
-            u {
-                color: ${theme.FileInput.input.hover.color}
+            ${Text} {
+                color: ${theme.FileInput.input.idle.color};
             }
 
-            &:hover {
-                background-color: ${theme.FileInput.input.hover.background};
-                box-shadow: ${theme.FileInput.input.hover.boxShadow};
-                border: solid 1px ${theme.FileInput.input.hover.borderColor};
+            u {
+                color: ${theme.FileInput.input.hover.color};
+                text-decoration: none;
             }
         `;
     }}
@@ -151,6 +189,11 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
                 background: `${chroma(colors.primary.lighter1).alpha(0.1)}`,
                 boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
             },
+            drop: {
+                borderColor: forms.focusBorderColor,
+                background: forms.background,
+                boxShadow: `0 0 0 4px ${chroma(forms.focusBorderColor).alpha(0.4)}`,
+            },
             focus: {
                 borderColor: forms.focusBorderColor,
                 background: `${chroma(colors.primary.lighter1).alpha(0.1)}`,
@@ -163,6 +206,7 @@ export const composeFileInputTheme = (themeTools: ThemeTools): FileInputThemeTyp
             },
             disabled: {
                 color: colors.grey.lighter2,
+                iconColor: colors.grey.lighter2,
                 background: colors.silver.base,
                 borderColor: colors.severity.error,
             },

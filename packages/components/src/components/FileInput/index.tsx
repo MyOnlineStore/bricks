@@ -4,7 +4,7 @@ import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
 import InlineNotification from '../InlineNotification';
-import { CactusSmallInactiveIllustration, CactusSmallActiveIllustration } from '@myonlinestore/bricks-assets';
+import { RocketLargeIcon } from '@myonlinestore/bricks-assets';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
 
@@ -45,8 +45,10 @@ export type PropsType = {
 const FileInput: FC<PropsType> = props => {
     const imageRef = useRef<HTMLImageElement | null>(null);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
-    const [draggingOver, setDraggingOver] = useState(false);
+    const [drop, setDrop] = useState(false);
+    const [hover, setHover] = useState(false);
     const [hasImage, setHasImage] = useState<boolean>(!!props.preview);
+    const [hasFocus, setFocus] = useState<boolean>(false);
     const themeContext = useContext(ThemeContext);
 
     const publicMethods: FileInputInstanceType = {
@@ -72,12 +74,16 @@ const FileInput: FC<PropsType> = props => {
     return (
         <>
             <StyledWrapper
-                focus={draggingOver}
+                focus={hasFocus}
+                drop={drop}
+                hover={hover}
                 disabled={props.disabled}
                 hasPreview={typeof props.preview?.source === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
                 justifyContent="center"
                 alignItems="stretch"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
             >
                 {hasImage ? (
                     <>
@@ -96,32 +102,38 @@ const FileInput: FC<PropsType> = props => {
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
                         <Icon
-                            icon={
-                                draggingOver ? <CactusSmallActiveIllustration /> : <CactusSmallInactiveIllustration />
-                            }
+                            icon={<RocketLargeIcon />}
                             size="large"
-                            color={themeContext.FileInput.common.iconColor}
+                            color={
+                                props.disabled
+                                    ? themeContext.FileInput.input.disabled.iconColor
+                                    : themeContext.FileInput.common.iconColor
+                            }
                         />
-                        <Text style={{ marginLeft: '16px' }}>
-                            {draggingOver ? props.dropPlaceholder : props.placeholder}
-                        </Text>
+                        <Text style={{ marginLeft: '16px' }}>{drop ? props.dropPlaceholder : props.placeholder}</Text>
                     </Box>
                 )}
                 <StyledFileInput
                     accept={props.accept.join(',')}
+                    onFocus={() => {
+                        setFocus(true);
+                    }}
+                    onBlur={() => {
+                        setFocus(false);
+                    }}
                     disabled={props.disabled}
                     ref={ref => {
                         fileInputRef.current = ref;
                     }}
                     type="file"
                     onDragEnter={() => {
-                        setDraggingOver(true);
+                        setDrop(true);
                     }}
                     onDragLeave={() => {
-                        setDraggingOver(false);
+                        setDrop(false);
                     }}
                     onDrop={() => {
-                        setDraggingOver(false);
+                        setDrop(false);
                     }}
                     onChange={() => {
                         const files = fileInputRef.current?.files;

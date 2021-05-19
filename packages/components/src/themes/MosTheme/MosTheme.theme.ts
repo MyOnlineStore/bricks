@@ -32,7 +32,7 @@ const theme: ThemeType = {
             borderRadius: roundness.base,
             fontSize: fontSize.base,
             fontFamily: bodyFont,
-            iconColor: colors.green500,
+            iconColor: colors.grey300,
         },
         input: {
             idle: {
@@ -46,9 +46,14 @@ const theme: ThemeType = {
                 boxShadow: 'none',
                 color: colors.green600,
             },
-            focus: {
+            drop: {
                 borderColor: colors.green600,
                 background: `${rgba(colors.green100, 0.1)}`,
+                boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
+            },
+            focus: {
+                borderColor: colors.green600,
+                background: colors.white,
                 boxShadow: `0 0 0 4px ${rgba(colors.green100, 0.875)}`,
             },
             error: {
@@ -58,6 +63,7 @@ const theme: ThemeType = {
             },
             disabled: {
                 color: colors.grey300,
+                iconColor: colors.grey200,
                 background: colors.grey100,
                 borderColor: colors.grey200,
             },
