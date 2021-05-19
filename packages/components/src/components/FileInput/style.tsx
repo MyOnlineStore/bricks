@@ -1,7 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
-import { InputSeverityType } from '.';
 import Box from '../Box';
 
 export type FileInputThemeType = {
@@ -45,7 +44,7 @@ export type WrapperPropsType = {
     focus: boolean;
     disabled?: boolean;
     hasPreview?: boolean;
-    severity?: InputSeverityType;
+    severity?: 'error';
 };
 
 export const StyledPreviewImage = styled.img`

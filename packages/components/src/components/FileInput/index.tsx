@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactNode, useContext, MutableRefObject } from 'react';
+import React, { FC, useRef, useState, useContext, MutableRefObject, ReactNode, useEffect } from 'react';
 import SeverityType from '../../types/SeverityType';
 import Box from '../Box';
 import Text from '../Text';
@@ -8,21 +8,30 @@ import { CactusSmallInactiveIllustration, CactusSmallActiveIllustration } from '
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
 
-export type InputSeverityType = 'error';
-
 export type FeedbackType = {
     'data-testid'?: string;
     severity: SeverityType;
     message: string;
 };
 
+export type ValueType = {
+    source: string;
+    alt: string;
+};
+
+export type FileInputInstanceType = {
+    pickFile(): void;
+    clear(): void;
+};
+
 export type PropsType = {
     name: string;
-    fileInputRef: MutableRefObject<HTMLInputElement | null>;
+    instance: MutableRefObject<FileInputInstanceType | null>;
     value?: {
         url: string;
         alt: string;
     };
+    preview?: ValueType;
     maxHeight?: string;
     disabled?: boolean;
     accept: Array<string>;
@@ -30,53 +39,56 @@ export type PropsType = {
     placeholder: ReactNode;
     dropPlaceholder: ReactNode;
     toolbar?: ReactNode;
-    onError(error: 'Filetype not accepted' | 'File too large'): void;
-    onResetError(): void;
+    onChange(value: File): void;
 };
 
 const FileInput: FC<PropsType> = props => {
+    const imageRef = useRef<HTMLImageElement | null>(null);
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [draggingOver, setDraggingOver] = useState(false);
-    const [preview, setPreview] = useState<string | ArrayBuffer | null | undefined>(null);
-    const [previewFilename, setPreviewFilename] = useState();
+    const [hasImage, setHasImage] = useState<boolean>(!!props.preview);
     const themeContext = useContext(ThemeContext);
 
-    const whatImageToDisplay = (): { source: string; alt: string } | null => {
-        if (typeof preview === 'string') {
-            return {
-                source: preview,
-                alt: previewFilename,
-            };
-        }
-
-        if (props.value?.url) {
-            return {
-                source: props.value.url,
-                alt: props.value.alt,
-            };
-        }
-
-        return null;
+    const publicMethods: FileInputInstanceType = {
+        pickFile() {
+            fileInputRef.current?.click();
+        },
+        clear() {
+            if (fileInputRef.current?.value) {
+                fileInputRef.current.value = '';
+            }
+            setHasImage(false);
+        },
     };
 
-    const image = whatImageToDisplay();
+    useEffect(() => {
+        props.instance.current = publicMethods;
+    }, []);
+
+    useEffect(() => {
+        setHasImage(!!props.preview);
+    }, [!!props.preview]);
 
     return (
         <>
             <StyledWrapper
                 focus={draggingOver}
                 disabled={props.disabled}
-                hasPreview={typeof preview === 'string'}
+                hasPreview={typeof props.preview?.source === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
                 justifyContent="center"
                 alignItems="stretch"
             >
-                {image ? (
+                {hasImage ? (
                     <>
                         <Box grow={1} shrink={1} justifyContent="center" alignItems="center">
                             <StyledPreviewImage
-                                src={image.source}
-                                alt={image.alt}
+                                src={props.preview?.source}
+                                alt={props.preview?.alt}
                                 style={{ maxHeight: `calc(${props.maxHeight} - 24px` }}
+                                ref={ref => {
+                                    imageRef.current = ref;
+                                }}
                             />
                         </Box>
                         {props.toolbar && <Box style={{ zIndex: 2 }}>{props.toolbar}</Box>}
@@ -96,10 +108,10 @@ const FileInput: FC<PropsType> = props => {
                     </Box>
                 )}
                 <StyledFileInput
-                    accept="image/*"
+                    accept={props.accept.join(',')}
                     disabled={props.disabled}
                     ref={ref => {
-                        props.fileInputRef.current = ref;
+                        fileInputRef.current = ref;
                     }}
                     type="file"
                     onDragEnter={() => {
@@ -112,26 +124,21 @@ const FileInput: FC<PropsType> = props => {
                         setDraggingOver(false);
                     }}
                     onChange={() => {
-                        const files = props.fileInputRef.current?.files;
+                        const files = fileInputRef.current?.files;
 
                         if (files && files[0]) {
                             const firstFile = files[0];
                             const reader = new FileReader();
 
                             reader.onload = event => {
-                                setPreview(null);
-                                setPreviewFilename('');
+                                setHasImage(true);
 
-                                if (props.accept && !props.accept.includes(firstFile.type)) {
-                                    props.onError('Filetype not accepted');
-
-                                    return;
+                                if (imageRef.current) {
+                                    imageRef.current.src = event?.target?.result as string;
+                                    imageRef.current.alt = firstFile.name;
                                 }
 
-                                props.onResetError();
-
-                                setPreview(event?.target?.result);
-                                setPreviewFilename(firstFile.name);
+                                props.onChange(firstFile);
                             };
 
                             reader.readAsDataURL(firstFile);
