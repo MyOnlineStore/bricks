@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 import Box from '../Box';
 import Text from '../Text';
 import StyledRadioButton, { StyledRadioButtonSkin, StyledRadioWrapper } from './style';
@@ -14,7 +14,7 @@ type PropsType = {
     value: string;
     name: string;
     id?: string;
-    label: string;
+    label: ReactNode;
     'data-testid'?: string;
     onChange(change: { checked: boolean; value: string }): void;
 };

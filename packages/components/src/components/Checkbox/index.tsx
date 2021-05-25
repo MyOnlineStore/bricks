@@ -1,4 +1,4 @@
-import React, { Component, MouseEvent } from 'react';
+import React, { ReactNode, Component, MouseEvent } from 'react';
 import Icon from '../Icon';
 import { StyledCheckbox, StyledCheckboxSkin } from './style';
 import Box from '../Box';
@@ -15,7 +15,7 @@ type PropsType = {
     error?: boolean;
     value: string;
     name: string;
-    label?: string;
+    label?: ReactNode;
     id?: string;
     'data-testid'?: string;
     onChange(change: { checked: boolean | 'indeterminate'; event: MouseEvent<HTMLDivElement> }): void;
@@ -46,7 +46,13 @@ class Checkbox extends Component<PropsType, StateType> {
         const htmlChecked = this.props.checked === true;
 
         return (
-            <Box onClick={this.changeHandler} data-testid={this.props['data-testid']} alignItems="flex-start">
+            <Box
+                style={{ cursor: 'pointer' }}
+                onClick={this.changeHandler}
+                data-testid={this.props['data-testid']}
+                alignItems="flex-start"
+                grow={1}
+            >
                 <Box margin={[3, this.props.label ? 12 : 0, 0, 0]}>
                     <StyledCheckboxSkin
                         checkedState={this.props.checked}
