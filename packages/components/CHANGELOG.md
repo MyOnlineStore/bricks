@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@7.0.0...@myonlinestore/bricks@7.1.0) (2021-05-26)
+
+
+### Features
+
+* Checkbox and RadioButton now support a reactnode as label ([#640](https://github.com/MyOnlineStore/bricks/issues/640)) ([ae4c0ea](https://github.com/MyOnlineStore/bricks/commit/ae4c0ea99c44405c2688de8020780cc530eee7d6))
+
+
+
+
+
 # [7.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@6.2.2...@myonlinestore/bricks@7.0.0) (2021-05-18)
 
 
