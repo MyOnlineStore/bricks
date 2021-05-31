@@ -1,14 +1,17 @@
 /// <reference path="../../_declarations/global.d.ts" />
 import TextField, { PropsType as TextFieldPropsType } from '../TextField';
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
 
 type OmittedKeys = 'prefix';
 
-type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>>;
+type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
+    initialValue: string;
+};
 
 const ColorField: FC<PropsType> = props => {
+    const [showResetButton, setShowResetButton] = useState(props.value !== props.initialValue);
     const inputRef = useRef<HTMLInputElement>();
 
     // Since the ColorField uses a prefix for the # character, it needs to strip the # from the value when
