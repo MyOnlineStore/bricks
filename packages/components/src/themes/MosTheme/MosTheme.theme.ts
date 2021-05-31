@@ -774,6 +774,11 @@ const theme: ThemeType = {
             },
         },
     },
+    Tag: {
+        backgroundColor: colors.grey200,
+        color: colors.grey700,
+        fontFamily: bodyFont,
+    },
     Text: {
         default: {
             color: colors.grey600,
