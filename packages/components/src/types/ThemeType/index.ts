@@ -36,7 +36,7 @@ import { AccordionThemeType } from '../../components/Accordion/style';
 import { CardThemeType } from '../../components/Card/style';
 import { PaginationThemeType } from '../../components/Pagination/style';
 import { FileInputThemeType } from '../../components/FileInput/style';
-import { ColorDropThemeType } from '../../components/ColorDrop/style';
+import { ColorDropThemeType } from '../../components/ColorDrop';
 
 type ThemeType = {
     Accordion: AccordionThemeType;

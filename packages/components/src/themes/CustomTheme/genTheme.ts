@@ -41,7 +41,7 @@ import { composeAccordionTheme } from '../../components/Accordion/style';
 import { composeCardTheme } from '../../components/Card/style';
 import { composePaginationTheme } from '../../components/Pagination/style';
 import { composeFileInputTheme } from '../../components/FileInput/style';
-import { composeColorDropTheme } from '../../components/ColorDrop/style';
+import { composeColorDropTheme } from '../../components/ColorDrop';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
