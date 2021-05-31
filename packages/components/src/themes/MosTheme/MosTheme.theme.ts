@@ -27,6 +27,12 @@ const roundness = {
 };
 
 const theme: ThemeType = {
+    ColorDrop: {
+        shadowBorder: '0 0 0 1px rgba(0, 0, 0, 0.1) inset',
+        borderRadius: '100%',
+        size: '24px',
+        transparentStripeColor: '#d9164a',
+    },
     FileInput: {
         common: {
             borderRadius: roundness.base,

@@ -41,6 +41,7 @@ import { composeAccordionTheme } from '../../components/Accordion/style';
 import { composeCardTheme } from '../../components/Card/style';
 import { composePaginationTheme } from '../../components/Pagination/style';
 import { composeFileInputTheme } from '../../components/FileInput/style';
+import { composeColorDropTheme } from '../../components/ColorDrop/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -84,6 +85,7 @@ const generateThemeObject = (
         Button: composeButtonTheme(themeTools),
         Card: composeCardTheme(themeTools),
         Checkbox: composeCheckboxTheme(themeTools),
+        ColorDrop: composeColorDropTheme(),
         Contrast: composeContrastTheme(themeTools),
         FileInput: composeFileInputTheme(themeTools),
         FormRow: composeFormRowTheme(themeTools),
