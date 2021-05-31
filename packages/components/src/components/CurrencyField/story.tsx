@@ -2,7 +2,7 @@ import React, { ComponentProps } from 'react';
 import CurrencyField from '.';
 
 export default {
-    title: 'ColorField',
+    title: 'CurrencyField',
     component: CurrencyField,
     argTypes: {
         value: {
