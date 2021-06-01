@@ -15,6 +15,7 @@ const StyledButton = styled.button<PropsType & { isLoading?: boolean }>`
     justify-content: center;
     line-height: 24px;
     outline: none;
+    margin: 0;
     padding: 0;
     position: relative;
     text-decoration: none;
