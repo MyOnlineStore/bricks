@@ -273,4 +273,26 @@ storiesOf('Select', module)
                 <Select.Option label="Option L" value="l" />
             </Select>
         );
+    })
+    .add('With search', () => {
+        const [value, setValue] = useState('');
+
+        return (
+            <Select
+                value={value}
+                emptyText="No results"
+                placeholder="Select a value"
+                search={<Select.Search placeholder="Search a value" />}
+                onChange={value => {
+                    setValue(value);
+                }}
+            >
+                <Select.Option label="Option A" value="a" />
+                <Select.Option label="Option B" value="b" />
+                <Select.Option label="Option C" value="c" />
+                <Select.Option label="Option D" value="d" />
+                <Select.Option label="Option E" value="e" />
+                <Select.Option label="Option F" value="f" />
+            </Select>
+        );
     });

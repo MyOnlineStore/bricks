@@ -35,6 +35,7 @@ type PropsType<GenericOptionType extends OptionBaseType> = {
     options?: Array<GenericOptionType>;
     emptyText: string;
     disabled?: boolean;
+    search?: ReactNode;
     'data-testid'?: string;
     onChange(value: string): void;
     renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
@@ -68,9 +69,18 @@ export const SelectContext = createContext({
     },
 });
 
+/**
+ * This Select component renders a non-native select component that has the option to:
+ * - custom render it's options
+ * - add hierarchy to it's options
+ * - optionally add a search bar to filter options
+ *
+ * If you need none of these features, please refer to the <NativeSelect /> since it has
+ * better performance on large sets and provides a better UI on mobile devices.
+ */
+
 const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<GenericOptionType>): ReactElement => {
     const initialRender = useRef(true);
-    const inputRef = useRef<HTMLInputElement | null>(null);
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const modalRef = useRef<HTMLDivElement | null>(null);
     const [hasFocus, setFocus] = useState(false);
@@ -210,9 +220,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
 
     /** Focus the input field when the field gets opened */
     useEffect(() => {
-        if (isOpen) {
-            inputRef.current?.focus();
-        } else if (!initialRender.current) {
+        if (!isOpen && !initialRender.current) {
             wrapperRef.current?.focus();
         }
     }, [isOpen]);
@@ -272,11 +280,7 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                     modalRef={modalRef}
                     data-testid={props['data-testid']}
                 >
-                    <SelectSearch
-                        inputRef={inputRef}
-                        placeholder={props.placeholder || ''}
-                        data-testid={props['data-testid']}
-                    />
+                    {props.search}
                     <SelectList isOpen={isOpen} emptyText={props.emptyText || ''} data-testid={props['data-testid']}>
                         {props.options?.map(option => {
                             const optionState = { isSelected: option.value === props.value };
@@ -316,10 +320,12 @@ SelectOptionGroup.displayName = 'Select.OptionGroup';
  */
 
 type SelectType = typeof SelectWithTheme & {
+    Search: typeof SelectSearch;
     Option: typeof SelectOption;
     OptionGroup: typeof SelectOptionGroup;
 };
 
+(SelectWithTheme as SelectType).Search = SelectSearch;
 (SelectWithTheme as SelectType).Option = SelectOption;
 (SelectWithTheme as SelectType).OptionGroup = SelectOptionGroup;
 
