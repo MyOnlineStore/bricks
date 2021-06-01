@@ -37,9 +37,9 @@ const StyledTag = styled.div`
 `;
 
 const StyledTagWrap = styled.div<{ hasButton: boolean }>`
-    padding: ${({ hasButton }) => (hasButton ? '6px 6px 6px 12px' : '6px 12px')};
+    padding: ${({ hasButton }) => (hasButton ? '6px 0px 6px 12px' : '6px 12px')};
     box-sizing: border-box;
-    width: ${({ hasButton }) => (hasButton ? 'calc(100% - 30px)' : '100%')};
+    width: ${({ hasButton }) => (hasButton ? 'calc(100% - 36px)' : '100%')};
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -62,7 +62,7 @@ const Tag: FC<PropsType> = props => {
         <StyledTag data-testid={testId}>
             <StyledTagWrap hasButton={props.onClick !== undefined}>{props.label}</StyledTagWrap>
             {props.onClick && (
-                <Box padding={[3, 3, 3, 0]}>
+                <Box padding={[3]}>
                     <IconButton
                         title="Remove"
                         iconSize="small"
