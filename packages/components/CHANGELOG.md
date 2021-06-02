@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@7.1.0...@myonlinestore/bricks@7.2.0) (2021-06-02)
+
+
+### Features
+
+* **Tag:** Added Tag component ([#644](https://github.com/MyOnlineStore/bricks/issues/644)) ([8b7fa10](https://github.com/MyOnlineStore/bricks/commit/8b7fa10d7fab0c7b84752f8129b4f5a265814258))
+* Added ColorDrop component ([#641](https://github.com/MyOnlineStore/bricks/issues/641)) ([06f8022](https://github.com/MyOnlineStore/bricks/commit/06f8022202dad3abe07e89430c5b864bc2c5bb59))
+
+
+
+
+
 # [7.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@7.0.0...@myonlinestore/bricks@7.1.0) (2021-05-26)
 
 
