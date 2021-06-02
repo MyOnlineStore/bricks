@@ -24,6 +24,7 @@ const StyledWrapper = styled.div`
     flex-grow: 1;
     display: flex;
     max-height: inherit;
+    height: 100%;
     overflow: hidden;
 
     ${simplebarStyles}
