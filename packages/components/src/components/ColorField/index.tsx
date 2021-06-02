@@ -1,6 +1,6 @@
 /// <reference path="../../_declarations/global.d.ts" />
 import TextField, { PropsType as TextFieldPropsType } from '../TextField';
-import React, { FC, useState, useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
 
