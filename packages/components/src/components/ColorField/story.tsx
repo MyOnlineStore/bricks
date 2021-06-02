@@ -4,6 +4,9 @@ import ColorField from '.';
 export default {
     title: 'ColorField',
     component: ColorField,
+    args: {
+        resetButtonTitle: 'Undo',
+    },
 };
 
 export const Default = (args: ComponentProps<typeof ColorField>) => {
@@ -13,6 +16,7 @@ export const Default = (args: ComponentProps<typeof ColorField>) => {
         <ColorField
             {...args}
             value={value}
+            initialValue="#6bde78"
             onChange={(val: string) => {
                 setValue(val);
             }}

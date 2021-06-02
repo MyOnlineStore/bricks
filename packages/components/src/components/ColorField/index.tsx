@@ -3,11 +3,15 @@ import TextField, { PropsType as TextFieldPropsType } from '../TextField';
 import React, { FC, useRef, useState } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
+import { UndoIcon } from '@myonlinestore/bricks-assets';
+import IconButton from '../IconButton';
 
 type OmittedKeys = 'prefix';
 
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
     initialValue: string;
+    resetButtonTitle: string;
+    onChange(value: string): void;
 };
 
 const ColorField: FC<PropsType> = props => {
@@ -36,10 +40,23 @@ const ColorField: FC<PropsType> = props => {
                     }}
                     value={stripHashtag(props.value)}
                     prefix="#"
-                    onChange={(value, event) => {
-                        props.onChange(`#${value}`, event);
+                    onChange={value => {
+                        setShowResetButton(value !== props.initialValue);
+                        props.onChange(`#${value}`);
                     }}
                 />
+            </Box>
+            <Box width="38px">
+                {showResetButton && (
+                    <IconButton
+                        icon={<UndoIcon />}
+                        title={props.resetButtonTitle}
+                        onClick={() => {
+                            setShowResetButton(false);
+                            props.onChange(props.initialValue);
+                        }}
+                    />
+                )}
             </Box>
         </Box>
     );
