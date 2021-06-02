@@ -42,6 +42,7 @@ import { composeCardTheme } from '../../components/Card/style';
 import { composePaginationTheme } from '../../components/Pagination/style';
 import { composeFileInputTheme } from '../../components/FileInput/style';
 import { composeColorDropTheme } from '../../components/ColorDrop';
+import { composeTagTheme } from '../../components/Tag';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -110,6 +111,7 @@ const generateThemeObject = (
         Skeleton: composeSkeletonTheme(themeTools),
         Slider: composeSliderTheme(themeTools),
         Table: composeTableTheme(themeTools),
+        Tag: composeTagTheme(themeTools),
         Text: composeTextTheme(themeTools),
         TextArea: composeTextAreaTheme(themeTools),
         TextField: composeTextFieldTheme(themeTools),

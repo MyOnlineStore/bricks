@@ -37,6 +37,7 @@ import { CardThemeType } from '../../components/Card/style';
 import { PaginationThemeType } from '../../components/Pagination/style';
 import { FileInputThemeType } from '../../components/FileInput/style';
 import { ColorDropThemeType } from '../../components/ColorDrop';
+import { TagThemeType } from '../../components/Tag';
 
 type ThemeType = {
     Accordion: AccordionThemeType;
@@ -70,6 +71,7 @@ type ThemeType = {
     Skeleton: SkeletonThemeType;
     Slider: SliderThemeType;
     Table: TableThemeType;
+    Tag: TagThemeType;
     Text: TextThemeType;
     TextArea: TextAreaThemeType;
     TextField: TextFieldThemeType;
