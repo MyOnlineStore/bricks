@@ -33,8 +33,8 @@ const ColorField: FC<PropsType> = props => {
                     }}
                     value={stripHashtag(props.value)}
                     prefix="#"
-                    onChange={value => {
-                        props.onChange(`#${value}`);
+                    onChange={(value, event) => {
+                        props.onChange(`#${value}`, event);
                     }}
                 />
             </Box>
