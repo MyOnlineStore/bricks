@@ -6,10 +6,7 @@ import Box from '../Box';
 
 type OmittedKeys = 'prefix';
 
-type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
-    value: string;
-    onChange(value: string): void;
-};
+type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>>;
 
 const ColorField: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement>();
