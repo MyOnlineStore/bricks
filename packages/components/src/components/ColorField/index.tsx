@@ -24,7 +24,7 @@ const ColorField: FC<PropsType> = props => {
     };
 
     return (
-        <Box alignItems="flex-start">
+        <Box alignItems="flex-start" style={props.disabled ? { cursor: 'not-allowed' } : {}}>
             <Box padding={[6, 12, 0, 0]}>
                 <ColorDrop color={props.value} />
             </Box>
