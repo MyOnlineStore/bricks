@@ -9,6 +9,7 @@ import IconButton from '../IconButton';
 type OmittedKeys = 'prefix';
 
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
+    allowTransparent?: boolean;
     initialValue: string;
     resetButtonTitle: string;
     onChange(value: string): void;
