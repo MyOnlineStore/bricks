@@ -113,6 +113,7 @@ describe('Select', () => {
     it('should show an input and options on click', () => {
         const component = mountWithTheme(
             <Select
+                search={<Select.Search placeholder="foo" data-testid="select-search" />}
                 onChange={(): void => undefined}
                 value=""
                 emptyText="empty"
@@ -125,14 +126,15 @@ describe('Select', () => {
             key: ' ',
         });
 
-        expect(component.find('input').length).toBe(1);
-        expect(component.findByTestId('select-input-field')).toHaveLength(1);
+        expect(component.findByTestId('select-search').length).toBe(1);
+        expect(component.findByTestId('select-search-input')).toHaveLength(1);
         expect(component.find('[data-testid^="select-option-"]').hostNodes().length).toBe(options.length);
     });
 
     it('should filter options on input', () => {
         const component = mountWithTheme(
             <Select
+                search={<Select.Search placeholder="foo" data-testid="select-search" />}
                 onChange={(): void => undefined}
                 value=""
                 emptyText="empty"
@@ -182,6 +184,7 @@ describe('Select', () => {
 
         const component = mountWithTheme(
             <Select
+                search={<Select.Search placeholder="foo" data-testid="select-search" />}
                 onChange={(): void => undefined}
                 value=""
                 emptyText="empty"
@@ -190,7 +193,7 @@ describe('Select', () => {
             />,
         );
 
-        component.findByTestId('select-input').simulate('click');
+        component.findByTestId('select-search').simulate('click');
 
         expect(component.findByTestId('select-window-open')).toHaveLength(1);
 
@@ -396,10 +399,17 @@ describe('Select', () => {
 
     it('should target an Option when mouse enters', () => {
         const component = mountWithTheme(
-            <Select onChange={(): void => undefined} value="" emptyText="" options={options} data-testid="select" />,
+            <Select
+                search={<Select.Search placeholder="foo" data-testid="select-search" />}
+                onChange={(): void => undefined}
+                value=""
+                emptyText=""
+                options={options}
+                data-testid="select"
+            />,
         );
 
-        component.findByTestId('select-input').simulate('click');
+        component.findByTestId('select-search').simulate('click');
 
         component.findByTestId('select-option-C').simulate('mouseEnter');
 
@@ -409,6 +419,7 @@ describe('Select', () => {
     it('should not open the Option-Select window when the component is disabled', () => {
         const component = mountWithTheme(
             <Select
+                search={<Select.Search placeholder="foo" data-testid="select-search" />}
                 onChange={(): void => undefined}
                 value=""
                 emptyText=""
@@ -420,7 +431,7 @@ describe('Select', () => {
 
         expect(component.findByTestId('select-window-closed')).toHaveLength(1);
 
-        component.findByTestId('select-input').simulate('click');
+        component.findByTestId('select-search').simulate('click');
 
         expect(component.findByTestId('select-window-closed')).toHaveLength(1);
     });
@@ -430,6 +441,7 @@ describe('Select', () => {
             return (
                 <MosTheme>
                     <Select
+                        search={<Select.Search placeholder="foo" data-testid="select-search" />}
                         onChange={(): void => undefined}
                         value=""
                         emptyText=""
@@ -443,7 +455,7 @@ describe('Select', () => {
 
         const component = mount(<Root />);
 
-        component.findByTestId('select-input').simulate('click');
+        component.findByTestId('select-search').simulate('click');
 
         expect(component.findByTestId('select-window-open')).toHaveLength(1);
 
@@ -470,12 +482,19 @@ describe('Select', () => {
         const changeMock = jest.fn();
 
         const component = mountWithTheme(
-            <Select onChange={changeMock} value="" emptyText="" options={options} data-testid="select" />,
+            <Select
+                search={<Select.Search data-testid="select-search" placeholder="foo" />}
+                onChange={changeMock}
+                value=""
+                emptyText=""
+                options={options}
+                data-testid="select"
+            />,
         );
 
-        component.findByTestId('select-input').simulate('click');
+        component.findByTestId('select-search').simulate('click');
 
-        component.findByTestId('select-input-field').simulate('change', {
+        component.findByTestId('select-search-input').simulate('change', {
             target: {
                 value: 'Foo',
             },
@@ -499,6 +518,7 @@ describe('Select', () => {
     it('should display the empty text when all options are filtered out', () => {
         const component = mountWithTheme(
             <Select
+                search={<Select.Search placeholder="foo" data-testid="select-search" />}
                 onChange={(): void => undefined}
                 value=""
                 emptyText="empty"
@@ -520,7 +540,7 @@ describe('Select', () => {
             key: ' ',
         });
 
-        component.find('input').simulate('change', {
+        component.findByTestId('select-search-input').simulate('change', {
             target: {
                 value: 'AAAAAAAAAAA',
             },

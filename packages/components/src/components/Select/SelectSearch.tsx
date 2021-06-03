@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, RefObject, useContext } from 'react';
+import React, { FC, ChangeEvent, useContext, useRef, useEffect } from 'react';
 import Box from '../Box';
 import Icon from '../Icon';
 import styled, { withTheme } from 'styled-components';
@@ -62,7 +62,6 @@ const SelectSearchInner = styled.div<SearchPropsType>`
 `;
 
 type PropsType = {
-    inputRef: RefObject<HTMLInputElement>;
     placeholder: string;
     theme: ThemeType;
     'data-testid'?: string;
@@ -70,13 +69,21 @@ type PropsType = {
 
 const SelectSearch: FC<PropsType> = props => {
     const { filter, setFilter, isOpen, setOpen, isDisabled, hasFocus } = useContext(SelectContext);
+    const ref = useRef<HTMLInputElement>();
+
+    /** Focus the input field when the field gets opened */
+    useEffect(() => {
+        if (isOpen) {
+            ref.current?.focus();
+        }
+    }, [isOpen]);
 
     return (
         <SelectSearchContainer
             role="searchbox"
             aria-autocomplete="list"
             aria-controls={isOpen ? 'select-window' : undefined}
-            data-testid={props['data-testid'] ? `${props['data-testid']}-input` : undefined}
+            data-testid={props['data-testid']}
             onClick={() => {
                 if (!isOpen) {
                     setOpen(true);
@@ -90,11 +97,15 @@ const SelectSearch: FC<PropsType> = props => {
                             <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
                         </Box>
                         <input
-                            ref={props.inputRef}
+                            ref={inputRef => {
+                                if (inputRef) {
+                                    ref.current = inputRef;
+                                }
+                            }}
                             type="text"
                             placeholder={props.placeholder}
                             value={filter}
-                            data-testid={props['data-testid'] ? `${props['data-testid']}-input-field` : undefined}
+                            data-testid={props['data-testid'] ? `${props['data-testid']}-input` : undefined}
                             onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                                 event.stopPropagation();
                                 setFilter(event.target.value);

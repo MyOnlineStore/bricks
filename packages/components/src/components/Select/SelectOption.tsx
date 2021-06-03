@@ -12,7 +12,7 @@ type ContainerPropsType = {
     isTargeted: boolean;
 };
 
-const SelectOptionContainer = styled.div<ContainerPropsType>`
+export const SelectOptionContainer = styled.div<ContainerPropsType>`
     cursor: pointer;
     background: ${({ theme, isTargeted }): string =>
         isTargeted ? theme.Select.option.hover.background : 'transparent'};
