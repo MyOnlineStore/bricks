@@ -23,10 +23,6 @@ const ColorField: FC<PropsType> = props => {
         return hexcode.replace('#', '');
     };
 
-    const validHexcode = (hexcode: string) => {
-        return false;
-    };
-
     return (
         <Box alignItems="flex-start">
             <Box padding={[6, 12, 0, 0]}>
@@ -43,14 +39,6 @@ const ColorField: FC<PropsType> = props => {
                     }}
                     value={stripHashtag(props.value)}
                     prefix="#"
-                    feedback={
-                        !validHexcode(props.value)
-                            ? {
-                                  severity: 'error',
-                                  message: "Da's nie goed jong",
-                              }
-                            : undefined
-                    }
                     onChange={value => {
                         if (value.length < 7) {
                             const negatedValues = `[^0-9a-f]`;
