@@ -23,12 +23,16 @@ const ColorField: FC<PropsType> = props => {
         return hexcode.replace('#', '');
     };
 
+    const validHexcode = (hexcode: string) => {
+        return false;
+    };
+
     return (
-        <Box alignItems="center">
-            <Box margin={[0, 12, 0, 0]}>
+        <Box alignItems="flex-start">
+            <Box padding={[6, 12, 0, 0]}>
                 <ColorDrop color={props.value} />
             </Box>
-            <Box grow={1}>
+            <Box grow={1} direction="column">
                 <TextField
                     {...props}
                     extractRef={ref => {
@@ -39,8 +43,21 @@ const ColorField: FC<PropsType> = props => {
                     }}
                     value={stripHashtag(props.value)}
                     prefix="#"
+                    feedback={
+                        !validHexcode(props.value)
+                            ? {
+                                  severity: 'error',
+                                  message: "Da's nie goed jong",
+                              }
+                            : undefined
+                    }
                     onChange={value => {
-                        props.onChange(`#${value}`);
+                        if (value.length < 7) {
+                            const negatedValues = `[^0-9a-f]`;
+                            const stripped = value.replace(new RegExp(negatedValues, 'gi'), '');
+
+                            props.onChange(`#${stripped}`);
+                        }
                     }}
                 />
             </Box>
