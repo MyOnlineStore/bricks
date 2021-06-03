@@ -178,7 +178,9 @@ const CurrencyField: FC<PropsType> = props => {
             {...props}
             extractRef={ref => {
                 inputRef.current = ref;
-                if (ref && props.extractRef !== undefined) props.extractRef(ref);
+                if (ref && props.extractRef !== undefined) {
+                    props.extractRef(ref);
+                }
             }}
             value={displayValue}
             prefix={currencyAlignment === 'left' ? currencySymbol : undefined}
