@@ -6,6 +6,7 @@ export default {
     component: ColorField,
     args: {
         resetButtonTitle: 'Undo',
+        transparentPlaceholder: 'transparent',
     },
 };
 
@@ -20,6 +21,7 @@ export const Default = (args: ComponentProps<typeof ColorField>) => {
     return (
         <ColorField
             {...args}
+            emptyIsTransparent
             value={value}
             initialValue="#6bde78"
             feedback={
@@ -31,7 +33,7 @@ export const Default = (args: ComponentProps<typeof ColorField>) => {
                     : undefined
             }
             onBlur={() => {
-                setHasHexError(!validHexcode(value));
+                setHasHexError(!validHexcode(value) && value !== 'transparent');
             }}
             onChange={(val: string) => {
                 if (validHexcode(val)) {

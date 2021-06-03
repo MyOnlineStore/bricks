@@ -9,8 +9,11 @@ import IconButton from '../IconButton';
 type OmittedKeys = 'prefix';
 
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
+    emptyIsTransparent?: boolean;
+    transparentPlaceholder: string;
     initialValue: string;
     resetButtonTitle: string;
+    /* returns either a full hexcode with hashtag ór `transparent` */
     onChange(value: string): void;
 };
 
@@ -18,15 +21,26 @@ const ColorField: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement>();
 
     // Since the ColorField uses a prefix for the # character, it needs to strip the # from the value when
-    // passing it to the TextField, and add it in the onChange call.
+    // passing it to the TextField, and add it in the onChange call. It should also convert 'transparent' to an
+    // empty string, since this equals transparancy.
     const stripHashtag = (hexcode: string) => {
+        if (hexcode === 'transparent') {
+            return '';
+        }
+
         return hexcode.replace('#', '');
+    };
+
+    const isTransparent = (hexcode: string) => {
+        return hexcode === '#' || hexcode === '' || hexcode === 'transparent';
     };
 
     return (
         <Box alignItems="flex-start" style={props.disabled ? { cursor: 'not-allowed' } : {}}>
             <Box padding={[6, 12, 0, 0]}>
-                <ColorDrop color={props.value} />
+                <ColorDrop
+                    color={props.emptyIsTransparent && isTransparent(props.value) ? 'transparent' : props.value}
+                />
             </Box>
             <Box grow={1} direction="column">
                 <TextField
@@ -37,6 +51,11 @@ const ColorField: FC<PropsType> = props => {
                             props.extractRef(ref);
                         }
                     }}
+                    placeholder={
+                        props.emptyIsTransparent && isTransparent(props.value)
+                            ? props.transparentPlaceholder
+                            : undefined
+                    }
                     value={stripHashtag(props.value)}
                     prefix="#"
                     onChange={value => {
@@ -44,7 +63,11 @@ const ColorField: FC<PropsType> = props => {
                             const negatedValues = `[^0-9a-f]`;
                             const stripped = value.replace(new RegExp(negatedValues, 'gi'), '');
 
-                            props.onChange(`#${stripped}`);
+                            props.onChange(
+                                props.emptyIsTransparent && (stripped === '#' || stripped === '')
+                                    ? 'transparent'
+                                    : `#${stripped}`,
+                            );
                         }
                     }}
                 />
