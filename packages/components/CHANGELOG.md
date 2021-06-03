@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@7.2.0...@myonlinestore/bricks@8.0.0) (2021-06-03)
+
+
+* feat!: Select.Search now has to be passed in through search prop (#645) ([c66cde4](https://github.com/MyOnlineStore/bricks/commit/c66cde44c888895ebed5e8886b862107cd57815b)), closes [#645](https://github.com/MyOnlineStore/bricks/issues/645)
+
+
+### Features
+
+* Added new ColorField component ([#643](https://github.com/MyOnlineStore/bricks/issues/643)) ([eca88b0](https://github.com/MyOnlineStore/bricks/commit/eca88b03f2177253d3ff8603cfec07f8401fb374))
+
+
+### BREAKING CHANGES
+
+* Select no longer includes a search bar by default, this can be added with the search prop using Select.Search
+
+
+
+
+
 # [7.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@7.1.0...@myonlinestore/bricks@7.2.0) (2021-06-02)
 
 
