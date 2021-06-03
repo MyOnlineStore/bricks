@@ -63,7 +63,11 @@ const ColorField: FC<PropsType> = props => {
                             const negatedValues = `[^0-9a-f]`;
                             const stripped = value.replace(new RegExp(negatedValues, 'gi'), '');
 
-                            props.onChange(stripped === '#' || stripped === '' ? 'transparent' : `#${stripped}`);
+                            props.onChange(
+                                props.emptyIsTransparent && (stripped === '#' || stripped === '')
+                                    ? 'transparent'
+                                    : `#${stripped}`,
+                            );
                         }
                     }}
                 />
