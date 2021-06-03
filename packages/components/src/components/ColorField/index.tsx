@@ -1,6 +1,6 @@
 /// <reference path="../../_declarations/global.d.ts" />
 import TextField, { PropsType as TextFieldPropsType } from '../TextField';
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useRef } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
 import { UndoIcon } from '@myonlinestore/bricks-assets';
@@ -15,7 +15,6 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
 };
 
 const ColorField: FC<PropsType> = props => {
-    const [showResetButton, setShowResetButton] = useState(props.value !== props.initialValue);
     const inputRef = useRef<HTMLInputElement>();
 
     // Since the ColorField uses a prefix for the # character, it needs to strip the # from the value when
@@ -41,18 +40,16 @@ const ColorField: FC<PropsType> = props => {
                     value={stripHashtag(props.value)}
                     prefix="#"
                     onChange={value => {
-                        setShowResetButton(value !== props.initialValue);
                         props.onChange(`#${value}`);
                     }}
                 />
             </Box>
             <Box width="38px">
-                {showResetButton && (
+                {props.value !== props.initialValue && (
                     <IconButton
                         icon={<UndoIcon />}
                         title={props.resetButtonTitle}
                         onClick={() => {
-                            setShowResetButton(false);
                             props.onChange(props.initialValue);
                         }}
                     />
