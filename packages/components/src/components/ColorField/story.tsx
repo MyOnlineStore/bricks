@@ -23,3 +23,7 @@ export const Default = (args: ComponentProps<typeof ColorField>) => {
         />
     );
 };
+
+export const Disabled = (args: ComponentProps<typeof ColorField>) => {
+    return <ColorField {...args} value="#6bde78" initialValue="#6bde78" disabled />;
+};
