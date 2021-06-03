@@ -28,7 +28,7 @@ const ColorField: FC<PropsType> = props => {
             <Box padding={[6, 12, 0, 0]}>
                 <ColorDrop color={props.value} />
             </Box>
-            <Box grow={1}>
+            <Box grow={1} direction="column">
                 <TextField
                     {...props}
                     extractRef={ref => {
@@ -40,7 +40,12 @@ const ColorField: FC<PropsType> = props => {
                     value={stripHashtag(props.value)}
                     prefix="#"
                     onChange={value => {
-                        props.onChange(`#${value}`);
+                        if (value.length < 7) {
+                            const negatedValues = `[^0-9a-f]`;
+                            const stripped = value.replace(new RegExp(negatedValues, 'gi'), '');
+
+                            props.onChange(`#${stripped}`);
+                        }
                     }}
                 />
             </Box>
