@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.0.0...@myonlinestore/bricks@8.0.1) (2021-06-04)
+
+
+### Bug Fixes
+
+* **Card:** Export Card as styled component ([#651](https://github.com/MyOnlineStore/bricks/issues/651)) ([e43815f](https://github.com/MyOnlineStore/bricks/commit/e43815f1b2631422be601a6b5b334c7eee5621ac))
+
+
+
+
+
 # [8.0.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@7.2.0...@myonlinestore/bricks@8.0.0) (2021-06-03)
 
 
