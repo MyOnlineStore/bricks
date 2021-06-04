@@ -33,7 +33,7 @@ import { ToastThemeType } from '../../components/Toast/style';
 import { ToggleThemeType } from '../../components/Toggle/style';
 import { TooltipThemeType } from '../../components/Tooltip/style';
 import { AccordionThemeType } from '../../components/Accordion/style';
-import { CardThemeType } from '../../components/Card/style';
+import { CardThemeType } from '../../components/Card';
 import { PaginationThemeType } from '../../components/Pagination/style';
 import { FileInputThemeType } from '../../components/FileInput/style';
 import { ColorDropThemeType } from '../../components/ColorDrop';
