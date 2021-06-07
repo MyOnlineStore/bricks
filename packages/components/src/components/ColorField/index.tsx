@@ -17,6 +17,13 @@ type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, Omit
     onChange(value: string): void;
 };
 
+export enum TestIds {
+    colorInputContainer = 'color-input-container',
+    colorInputField = 'color-input-field',
+    colorDrop = 'color-drop',
+    resetButton = 'reset-button',
+}
+
 const ColorField: FC<PropsType> = props => {
     const inputRef = useRef<HTMLInputElement>();
 
@@ -36,15 +43,21 @@ const ColorField: FC<PropsType> = props => {
     };
 
     return (
-        <Box alignItems="flex-start" style={props.disabled ? { cursor: 'not-allowed' } : {}}>
+        <Box
+            alignItems="flex-start"
+            style={props.disabled ? { cursor: 'not-allowed' } : {}}
+            data-testid={TestIds.colorInputContainer}
+        >
             <Box padding={[6, 12, 0, 0]}>
                 <ColorDrop
                     color={props.emptyIsTransparent && isTransparent(props.value) ? 'transparent' : props.value}
+                    data-testid={TestIds.colorDrop}
                 />
             </Box>
             <Box grow={1} direction="column">
                 <TextField
                     {...props}
+                    data-testid={TestIds.colorInputField}
                     extractRef={ref => {
                         inputRef.current = ref;
                         if (ref && props.extractRef !== undefined) {
@@ -75,6 +88,7 @@ const ColorField: FC<PropsType> = props => {
             <Box width="38px">
                 {props.value !== props.initialValue && (
                     <IconButton
+                        data-testid={TestIds.resetButton}
                         icon={<UndoIcon />}
                         title={props.resetButtonTitle}
                         onClick={() => {
