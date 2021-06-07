@@ -4,6 +4,7 @@ import { mountWithTheme } from '../../utility/styled/testing';
 
 const defaultProps = {
     name: 'colorFieldTest',
+    'data-testid': 'colorMeElmo',
     resetButtonTitle: 'undo',
     transparentPlaceholder: 'transparent',
 };
@@ -15,7 +16,7 @@ describe('ColorField', () => {
             <ColorField initialValue="#F00" value="#0F0" onChange={onChangeMock} {...defaultProps} />,
         );
 
-        expect(component.findByTestId(TestIds.resetButton)).toHaveLength(1);
+        expect(component.findByTestId(`${defaultProps['data-testid']}-${TestIds.reset}`)).toHaveLength(1);
     });
 
     it('should NOT display the Reset Button when the initial value and value are the same', () => {
@@ -24,7 +25,7 @@ describe('ColorField', () => {
             <ColorField initialValue="#00F" value="#00F" onChange={onChangeMock} {...defaultProps} />,
         );
 
-        expect(component.findByTestId(TestIds.resetButton)).toHaveLength(0);
+        expect(component.findByTestId(`${defaultProps['data-testid']}-${TestIds.reset}`)).toHaveLength(0);
     });
 
     it('should have a placeholder when emptyIsTransparent is enabled and value is empty', () => {
@@ -33,7 +34,7 @@ describe('ColorField', () => {
             <ColorField emptyIsTransparent initialValue="#00F" value="" onChange={onChangeMock} {...defaultProps} />,
         );
 
-        expect(component.findByTestId(TestIds.colorInputField).prop('placeholder')).toEqual(
+        expect(component.findByTestId(defaultProps['data-testid']).prop('placeholder')).toEqual(
             defaultProps.transparentPlaceholder,
         );
     });
@@ -50,7 +51,7 @@ describe('ColorField', () => {
             />,
         );
 
-        component.findByTestId(TestIds.colorInputField).simulate('change', { target: { value: '' } });
+        component.findByTestId(defaultProps['data-testid']).simulate('change', { target: { value: '' } });
 
         expect(onChangeMock).toHaveBeenCalledWith('transparent');
     });
