@@ -6,7 +6,7 @@ import Box from '../Box';
 import { UndoIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 
-type OmittedKeys = 'prefix';
+type OmittedKeys = 'prefix' | 'onChange';
 
 type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
     emptyIsTransparent?: boolean;
