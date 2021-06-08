@@ -1,82 +1,66 @@
 import React, { FunctionComponent } from 'react';
-import trbl, { TrblType } from '../../utility/trbl';
-import { StyledBox } from './style';
 import { OffsetShorthandType } from '../../types/OffsetType';
+import { FlexProps, BoxProps, flex, box } from '../../utility/box';
+import styled from '../../utility/styled';
+import { TrblType } from '../../utility/trbl';
 
-type PropsType = JSX.IntrinsicElements['div'] & {
-    as?: keyof JSX.IntrinsicElements;
-    justifyContent?:
-        | 'flex-start'
-        | 'flex-end'
-        | 'center'
-        | 'stretch'
-        | 'space-between'
-        | 'space-around'
-        | 'space-evenly';
-    alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
-    alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
-    direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-    inline?: boolean;
-    height?: string;
-    width?: string;
-    margin?: TrblType | OffsetShorthandType;
-    padding?: TrblType | OffsetShorthandType;
-    maxHeight?: string;
-    minHeight?: string;
-    maxWidth?: string;
-    minWidth?: string;
-    wrap?: boolean;
-    grow?: number;
-    shrink?: number;
-    basis?: string;
-    order?: number;
-    alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
-    position?: 'static' | 'relative' | 'fixed' | 'absolute';
-    top?: string;
-    right?: string;
-    bottom?: string;
-    left?: string;
-    zIndex?: number;
-};
+const StyledBox = styled.div<FlexProps & BoxProps>`
+    ${flex}
+    ${box}
+`;
 
-const Box: FunctionComponent<PropsType> = props => {
-    const {
-        order,
-        direction,
-        wrap,
-        height,
-        width,
-        maxHeight,
-        minHeight,
-        maxWidth,
-        minWidth,
-        ref,
-        margin,
-        padding,
-        ...filteredProps
-    } = props;
-
-    const shorthandMargin = Array.isArray(margin) ? trbl(...margin) : margin;
-    const shorthandPadding = Array.isArray(padding) ? trbl(...padding) : padding;
-
-    const newProps = {
-        ...filteredProps,
-        flexWrap: wrap,
-        elementHeight: height,
-        elementWidth: width,
-        elementMaxHeight: maxHeight,
-        elementMinHeight: minHeight,
-        elementMaxWidth: maxWidth,
-        elementMinWidth: minWidth,
-        flexDirection: direction,
-        flexOrder: order,
-        margin: shorthandMargin,
-        padding: shorthandPadding,
+/**  These props exist for backward compatibility */
+type PropsType = BoxProps &
+    FlexProps &
+    JSX.IntrinsicElements['div'] & {
+        as?: keyof JSX.IntrinsicElements;
+        height?: string;
+        width?: string;
+        margin?: TrblType | OffsetShorthandType;
+        padding?: TrblType | OffsetShorthandType;
+        maxHeight?: string;
+        minHeight?: string;
+        maxWidth?: string;
+        minWidth?: string;
+        zIndex?: number;
+        position?: 'static' | 'relative' | 'fixed' | 'absolute';
+        top?: string;
+        right?: string;
+        bottom?: string;
+        left?: string;
+        order?: number;
+        direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+        justifyContent?:
+            | 'flex-start'
+            | 'flex-end'
+            | 'center'
+            | 'stretch'
+            | 'space-between'
+            | 'space-around'
+            | 'space-evenly';
+        alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+        alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
+        inline?: boolean;
+        wrap?: boolean;
+        grow?: number;
+        shrink?: number;
+        basis?: string;
+        alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
     };
 
+const Box: FunctionComponent<PropsType> = props => {
+    const { ref, ...filteredProps } = props;
+    const mappedProps = Object.keys(filteredProps).reduce((acc, key) => {
+        return {
+            ...acc,
+            [`$${key.replace('$', '')}`]: filteredProps[key as keyof typeof filteredProps],
+        };
+        // tslint:disable-next-line: no-any
+    }, {} as any);
+    console.log(mappedProps);
     return (
         // tslint:disable-next-line: no-any
-        <StyledBox as={(props.inline ? 'span' : 'div') as any} {...newProps}>
+        <StyledBox ref={ref} as={(props.inline ? 'span' : 'div') as any} {...mappedProps}>
             {props.children}
         </StyledBox>
     );

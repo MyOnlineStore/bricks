@@ -49,7 +49,7 @@
     "@types/storybook__addon-knobs": "^5.0.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-inline-import": "^3.0.0",
-    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-styled-components": "^1.12.0",
     "bundlesize": "^0.15.3",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
