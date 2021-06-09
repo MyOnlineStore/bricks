@@ -1,6 +1,7 @@
 import styled from '../../utility/styled';
 import Text, { PropsType as TextPropsType } from '../Text';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import { box, flex } from '../../utility/box';
 
 type FormRowThemeType = {
     disabled: {
@@ -17,7 +18,9 @@ const StyledDisabledText = styled(Text)<StyledDisabledTextType>`
     ${({ theme, disabled }): string => (disabled ? `color: ${theme.FormRow.disabled.color}` : '')}
 `;
 
-const StyledFormRow = styled.div`
+const StyledFormRow = styled.div<typeof flex.props & typeof box.props>`
+    ${flex}
+    ${box}
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
