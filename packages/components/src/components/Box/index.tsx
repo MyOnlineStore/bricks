@@ -49,18 +49,67 @@ type PropsType = BoxProps &
     };
 
 const Box: FunctionComponent<PropsType> = props => {
-    const { ref, ...filteredProps } = props;
-    const mappedProps = Object.keys(filteredProps).reduce((acc, key) => {
-        return {
-            ...acc,
-            [`$${key.replace('$', '')}`]: filteredProps[key as keyof typeof filteredProps],
-        };
-        // tslint:disable-next-line: no-any
-    }, {} as any);
+    const {
+        height,
+        width,
+        margin,
+        padding,
+        maxHeight,
+        minHeight,
+        maxWidth,
+        minWidth,
+        zIndex,
+        position,
+        top,
+        right,
+        bottom,
+        left,
+        order,
+        direction,
+        justifyContent,
+        alignItems,
+        alignContent,
+        inline,
+        wrap,
+        grow,
+        shrink,
+        basis,
+        alignSelf,
+        ref,
+        ...filteredProps
+    } = props;
 
+    /** tslint:disable: no-any */
     return (
-        // tslint:disable-next-line: no-any
-        <StyledBox ref={ref} as={(props.inline ? 'span' : 'div') as any} {...mappedProps}>
+        <StyledBox
+            ref={ref}
+            as={(props.inline ? 'span' : 'div') as any}
+            $height={height}
+            $width={width}
+            $margin={margin}
+            $padding={padding}
+            $maxHeight={maxHeight}
+            $minHeight={minHeight}
+            $maxWidth={maxWidth}
+            $minWidth={minWidth}
+            $zIndex={zIndex}
+            $position={position}
+            $top={top}
+            $right={right}
+            $bottom={bottom}
+            $left={left}
+            $order={order}
+            $direction={direction}
+            $justifyContent={justifyContent}
+            $alignItems={alignItems}
+            $alignContent={alignContent}
+            $wrap={wrap}
+            $grow={grow}
+            $shrink={shrink}
+            $basis={basis}
+            $alignSelf={alignSelf}
+            {...filteredProps}
+        >
             {props.children}
         </StyledBox>
     );
