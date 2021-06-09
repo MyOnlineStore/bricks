@@ -19,7 +19,29 @@ export type BoxProps = {
     $left?: string;
 };
 
-export const box = css<BoxProps>`
+/**
+ * Helper that lets you filter out BoxProps from a set of props so
+ * they can be spread on a component
+ */
+export const boxProps = <P extends BoxProps>(props: P): BoxProps => {
+    return {
+        $height: props.$height,
+        $width: props.$width,
+        $margin: props.$margin,
+        $padding: props.$padding,
+        $maxHeight: props.$maxHeight,
+        $maxWidth: props.$maxWidth,
+        $minWidth: props.$minWidth,
+        $zIndex: props.$zIndex,
+        $position: props.$position,
+        $top: props.$top,
+        $right: props.$right,
+        $bottom: props.$bottom,
+        $left: props.$left,
+    };
+};
+
+const boxMixin = css<BoxProps>`
     box-sizing: border-box;
     height: ${({ $height }): string => ($height !== undefined ? $height : '')};
     width: ${({ $width }): string => ($width !== undefined ? $width : '')};
@@ -72,15 +94,35 @@ export type FlexProps = {
         | 'space-evenly';
     $alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
     $alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
+    $alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
     $inline?: boolean;
     $wrap?: boolean;
     $grow?: number;
     $shrink?: number;
     $basis?: string;
-    $alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 };
 
-export const flex = css<FlexProps>`
+/**
+ * Helper that lets you filter out FlexProps from a set of props so
+ * they can be spread on a component
+ */
+
+export const flexProps = <P extends FlexProps>(props: P): FlexProps => {
+    return {
+        $order: props.$order,
+        $direction: props.$direction,
+        $justifyContent: props.$justifyContent,
+        $alignItems: props.$alignItems,
+        $alignContent: props.$alignContent,
+        $alignSelf: props.$alignSelf,
+        $inline: props.$inline,
+        $wrap: props.$wrap,
+        $shrink: props.$shrink,
+        $basis: props.$basis,
+    };
+};
+
+const flexMixin = css<FlexProps>`
     box-sizing: border-box;
     display: ${({ $inline }): string => ($inline ? 'inline-flex' : 'flex')};
     flex-wrap: ${({ $wrap }): string => ($wrap !== undefined && $wrap ? 'wrap' : '')};
@@ -94,3 +136,8 @@ export const flex = css<FlexProps>`
     order: ${({ $order }): number => ($order ? $order : 0)};
     align-self: ${({ $alignSelf }): string => ($alignSelf ? $alignSelf : '')};
 `;
+
+// These exports are a small hack to export the box and flex props along with
+// the exported mixins
+export const flex = flexMixin as typeof flexMixin & { props: FlexProps };
+export const box = boxMixin as typeof boxMixin & { props: BoxProps };

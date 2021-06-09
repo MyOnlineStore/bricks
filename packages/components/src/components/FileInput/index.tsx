@@ -7,6 +7,7 @@ import InlineNotification from '../InlineNotification';
 import { RocketLargeIcon } from '@myonlinestore/bricks-assets';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
+import { boxProps, flexProps, flex, box } from '../../utility/box';
 
 export type FeedbackType = {
     'data-testid'?: string;
@@ -24,23 +25,24 @@ export type FileInputInstanceType = {
     clear(): void;
 };
 
-export type PropsType = {
-    name: string;
-    instance: MutableRefObject<FileInputInstanceType | null>;
-    value?: {
-        url: string;
-        alt: string;
+export type PropsType = typeof flex.props &
+    typeof box.props & {
+        name: string;
+        instance: MutableRefObject<FileInputInstanceType | null>;
+        value?: {
+            url: string;
+            alt: string;
+        };
+        preview?: ValueType;
+        maxHeight?: string;
+        disabled?: boolean;
+        accept: Array<string>;
+        feedback?: FeedbackType;
+        placeholder: ReactNode;
+        dropPlaceholder: ReactNode;
+        toolbar?: ReactNode;
+        onChange(value: File): void;
     };
-    preview?: ValueType;
-    maxHeight?: string;
-    disabled?: boolean;
-    accept: Array<string>;
-    feedback?: FeedbackType;
-    placeholder: ReactNode;
-    dropPlaceholder: ReactNode;
-    toolbar?: ReactNode;
-    onChange(value: File): void;
-};
 
 const FileInput: FC<PropsType> = props => {
     const imageRef = useRef<HTMLImageElement | null>(null);
@@ -80,10 +82,12 @@ const FileInput: FC<PropsType> = props => {
                 disabled={props.disabled}
                 hasPreview={typeof props.preview?.source === 'string'}
                 severity={props.feedback?.severity === 'error' ? props.feedback.severity : undefined}
-                justifyContent="center"
-                alignItems="stretch"
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
+                $alignItems="stretch"
+                $justifyContent="center"
+                {...flexProps(props)}
+                {...boxProps(props)}
             >
                 {hasImage ? (
                     <>

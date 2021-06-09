@@ -57,7 +57,7 @@ const Box: FunctionComponent<PropsType> = props => {
         };
         // tslint:disable-next-line: no-any
     }, {} as any);
-    console.log(mappedProps);
+
     return (
         // tslint:disable-next-line: no-any
         <StyledBox ref={ref} as={(props.inline ? 'span' : 'div') as any} {...mappedProps}>

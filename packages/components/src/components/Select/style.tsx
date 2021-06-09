@@ -1,6 +1,7 @@
 import styled from '../../../src/utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
+import { box, flex } from '../../utility/box';
 
 type SelectThemeType = {
     common: {
@@ -39,10 +40,11 @@ type SelectThemeType = {
     };
 };
 
-type WrapperPropsType = {
-    open: boolean;
-    disabled?: boolean;
-};
+type WrapperPropsType = typeof flex.props &
+    typeof box.props & {
+        open: boolean;
+        disabled?: boolean;
+    };
 
 export const INNER_OFFSET: number = 6;
 
@@ -62,10 +64,11 @@ const StyledPlaceholder = styled.span<PlaceholderProps>`
 
 const StyledWrapper = styled.div<WrapperPropsType>`
     transition: all 150ms;
-    width: 100%;
     outline: none;
     display: inline-block;
     position: relative;
+    ${flex}
+    ${box}
 `;
 
 const StyledCaret = styled.div<{ inner?: boolean }>`
