@@ -83,7 +83,8 @@ const Box: FunctionComponent<PropsType> = props => {
     return (
         <StyledBox
             ref={ref}
-            as={(props.inline ? 'span' : 'div') as any}
+            as={(inline ? 'span' : 'div') as any}
+            $inline={inline}
             $height={height}
             $width={width}
             $margin={margin}
