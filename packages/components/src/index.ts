@@ -10,6 +10,7 @@ export { default as Carousel } from './components/Carousel';
 export { default as Checkbox } from './components/Checkbox';
 export { default as ColorDrop } from './components/ColorDrop';
 export { default as ColorField } from './components/ColorField';
+export { default as ColorPicker } from './components/ColorPicker';
 export { default as Contrast } from './components/Contrast';
 export { default as Counter } from './components/Counter';
 export { default as CurrencyField } from './components/CurrencyField';
