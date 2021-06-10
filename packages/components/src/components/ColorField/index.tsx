@@ -67,7 +67,6 @@ const ColorField: FC<PropsType> = props => {
                         onClick={() => {
                             setShow(!show);
                         }}
-                        style={{ cursor: 'pointer' }}
                     />
                 </Box>
                 <Box grow={1} direction="column">

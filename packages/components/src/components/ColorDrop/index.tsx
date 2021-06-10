@@ -7,7 +7,7 @@ export type ColorDropThemeType = {
     transparentStripeColor: string;
 };
 
-const ColorDrop = styled.div<{ color: string }>`
+const ColorDrop = styled.div<{ color: string; onClick(): void }>`
     display: flex;
     width: ${({ theme }) => theme.ColorDrop.size};
     height: ${({ theme }) => theme.ColorDrop.size};
@@ -17,6 +17,11 @@ const ColorDrop = styled.div<{ color: string }>`
             : color};
     box-shadow: ${({ theme }) => theme.ColorDrop.shadowBorder};
     border-radius: ${({ theme }) => theme.ColorDrop.borderRadius};
+    ${({ onClick }) =>
+        onClick &&
+        `
+        cursor: pointer;
+    `}
 `;
 
 export const composeColorDropTheme = (): ColorDropThemeType => {

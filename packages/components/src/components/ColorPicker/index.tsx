@@ -44,7 +44,7 @@ const HiddenSaturationPointer = styled.div`
 `;
 
 const ColorPicker: FC<PropsType> = props => {
-    const { children, ...propsWithoutChildren } = { ...props };
+    const { children, ...propsWithoutChildren } = props;
 
     return (
         <Popover
@@ -59,7 +59,7 @@ const ColorPicker: FC<PropsType> = props => {
             }}
             renderContent={() => (
                 <Box direction="column" padding={[12]} width="230px">
-                    <Box height="130px" width="100%" style={{ position: 'relative' }}>
+                    <Box height="130px" width="100%" position="relative">
                         <Saturation
                             {...propsWithoutChildren}
                             pointer={props.color === 'transparent' ? HiddenSaturationPointer : CustomSaturationPointer}
@@ -81,7 +81,7 @@ const ColorPicker: FC<PropsType> = props => {
                                 />
                             </Box>
                         )}
-                        <Box height="12px" width="100%" style={{ position: 'relative' }}>
+                        <Box height="12px" width="100%" position="relative">
                             <Hue
                                 {...propsWithoutChildren}
                                 direction="horizontal"
