@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.0.1...@myonlinestore/bricks@8.1.0) (2021-06-14)
+
+
+### Bug Fixes
+
+* Removed overload in the ColorField onChange ([#653](https://github.com/MyOnlineStore/bricks/issues/653)) ([94a085d](https://github.com/MyOnlineStore/bricks/commit/94a085dfa52fcb876407e8034992e29e874bac2a))
+
+
+### Features
+
+* Added box and flex "mixins" ([#654](https://github.com/MyOnlineStore/bricks/issues/654)) ([5d7a3a6](https://github.com/MyOnlineStore/bricks/commit/5d7a3a674e1f0234215235ae91a9bccac3cdb672))
+
+
+
+
+
 ## [8.0.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.0.0...@myonlinestore/bricks@8.0.1) (2021-06-04)
 
 
