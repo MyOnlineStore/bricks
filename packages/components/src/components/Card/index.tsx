@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import { box, BoxProps, flex, FlexProps } from '../../utility/box';
 
 type CardThemeType = {
     background: string;
@@ -7,7 +8,9 @@ type CardThemeType = {
     borderRadius: string;
 };
 
-const Card = styled.div`
+const Card = styled.div<BoxProps & FlexProps>`
+    ${box}
+    ${flex}
     position: relative;
     background: ${({ theme }) => theme.Card.background};
     border: 1px solid ${({ theme }) => theme.Card.borderColor};

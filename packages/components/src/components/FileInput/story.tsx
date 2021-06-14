@@ -107,5 +107,5 @@ export const WithPreview = (props: ComponentProps<typeof FileInput>) => {
 export const Disabled = (props: ComponentProps<typeof FileInput>) => {
     const fileInputInstance = useRef<FileInputInstanceType | null>(null);
 
-    return <FileInput instance={fileInputInstance} {...props} disabled />;
+    return <FileInput {...props} instance={fileInputInstance} disabled />;
 };

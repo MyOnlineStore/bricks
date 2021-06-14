@@ -64,3 +64,4 @@ export { default as Tooltip } from './components/Tooltip';
 export { default as TransitionAnimation } from './components/TransitionAnimation';
 export { default as trbl } from './utility/trbl';
 export { default as useLockBodyScroll } from './utility/useLockBodyScroll';
+export { box, flex, boxProps, flexProps } from './utility/box';

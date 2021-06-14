@@ -17,6 +17,7 @@ import SelectSearch from './SelectSearch';
 import SelectOptionGroup from './SelectOptionGroup';
 import SelectedOption from './SelectedOption';
 import SelectList from './SelectList';
+import { flexProps, boxProps, flex, box } from '../../utility/box';
 
 type OptionBaseType = {
     value: string;
@@ -27,20 +28,21 @@ type OptionStateType = {
     isSelected: boolean;
 };
 
-type PropsType<GenericOptionType extends OptionBaseType> = {
-    children?: ReactNode;
-    theme: ThemeType;
-    placeholder?: string;
-    value: string;
-    options?: Array<GenericOptionType>;
-    emptyText: string;
-    disabled?: boolean;
-    search?: ReactNode;
-    'data-testid'?: string;
-    onChange(value: string): void;
-    renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
-    renderSelected?(option: GenericOptionType): JSX.Element;
-};
+type PropsType<GenericOptionType extends OptionBaseType> = typeof flex.props &
+    typeof box.props & {
+        children?: ReactNode;
+        theme: ThemeType;
+        placeholder?: string;
+        value: string;
+        options?: Array<GenericOptionType>;
+        emptyText: string;
+        disabled?: boolean;
+        search?: ReactNode;
+        'data-testid'?: string;
+        onChange(value: string): void;
+        renderOption?(option: GenericOptionType, state: OptionStateType): JSX.Element;
+        renderSelected?(option: GenericOptionType): JSX.Element;
+    };
 
 const PROVIDER_WARNING = 'SelectContext was not yet intialized';
 
@@ -267,6 +269,8 @@ const Select = <GenericOptionType extends OptionBaseType>(props: PropsType<Gener
                 aria-label={'select'}
                 aria-expanded={isOpen}
                 data-testid={props['data-testid']}
+                {...flexProps(props)}
+                {...boxProps(props)}
             >
                 <SelectedOption
                     selected={props.renderSelected?.(selectedOption)}

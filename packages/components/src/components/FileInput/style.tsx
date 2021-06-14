@@ -1,8 +1,8 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
-import Box from '../Box';
 import Text from '../Text';
+import { box, flex } from '../../utility/box';
 
 export type FileInputThemeType = {
     common: {
@@ -47,15 +47,6 @@ export type FileInputThemeType = {
     };
 };
 
-export type WrapperPropsType = {
-    focus: boolean;
-    hover: boolean;
-    drop: boolean;
-    disabled?: boolean;
-    hasPreview?: boolean;
-    severity?: 'error';
-};
-
 export const StyledPreviewImage = styled.img`
     display: block;
     margin: 12px;
@@ -74,7 +65,18 @@ export const StyledFileInput = styled.input`
     cursor: pointer;
 `;
 
-export const StyledWrapper = styled(Box)<WrapperPropsType>`
+export type WrapperPropsType = {
+    focus: boolean;
+    hover: boolean;
+    drop: boolean;
+    disabled?: boolean;
+    hasPreview?: boolean;
+    severity?: 'error';
+};
+
+export const StyledWrapper = styled.div<WrapperPropsType & typeof box.props & typeof flex.props>`
+    ${box}
+    ${flex}
     transition: border-color 150ms, box-shadow 150ms, background 150ms;
     font-size: ${({ theme }) => theme.FileInput.common.fontSize};
     font-family: ${({ theme }) => theme.FileInput.common.fontFamily};

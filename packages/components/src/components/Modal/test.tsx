@@ -214,15 +214,10 @@ describe('Modal', () => {
             />,
         );
 
-        const modal = component.find('[data-testid="foo"]');
-        const ids = ['modal-title', 'modal-media-container', 'modal-close-button', 'modal-buttons-container'];
-
-        expect(modal.hostNodes().length).toEqual(1);
-        // + 1 for 'foo' root test-id
-        expect(modal.find('[data-testid]').hostNodes().length).toEqual(ids.length + 1);
-
-        ids.forEach(id => {
-            expect(modal.find(`[data-testid="${id}"]`).hostNodes().length).toEqual(1);
-        });
+        expect(component.findByTestId('foo').length).toBe(1);
+        expect(component.findByTestId('modal-title').length).toBe(1);
+        expect(component.findByTestId('modal-media-container').length).toBe(1);
+        expect(component.findByTestId('modal-close-button').length).toBe(1);
+        expect(component.findByTestId('modal-buttons-container').length).toBe(1);
     });
 });

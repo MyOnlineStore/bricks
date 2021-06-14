@@ -2,14 +2,16 @@ import React, { ReactNode, FunctionComponent } from 'react';
 import Box from '../Box';
 import Measure from 'react-measure';
 import { StyledFormRow, StyledDisabledText } from './style';
+import { flex, box } from '../../utility/box';
 
-type PropsType = {
-    label: ReactNode;
-    field: ReactNode;
-    description?: ReactNode;
-    badge?: ReactNode;
-    disabled?: boolean;
-};
+export type PropsType = typeof flex.props &
+    typeof box.props & {
+        label: ReactNode;
+        field: ReactNode;
+        description?: ReactNode;
+        badge?: ReactNode;
+        disabled?: boolean;
+    };
 
 const FormRow: FunctionComponent<PropsType> = (props): JSX.Element => {
     return (
@@ -50,4 +52,3 @@ const FormRow: FunctionComponent<PropsType> = (props): JSX.Element => {
 };
 
 export default FormRow;
-export { PropsType };
