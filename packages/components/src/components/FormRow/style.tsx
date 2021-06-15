@@ -19,6 +19,8 @@ const StyledDisabledText = styled(Text)<StyledDisabledTextType>`
 `;
 
 const StyledFormRow = styled.div<typeof flex.props & typeof box.props>`
+    width: 100%;
+    flex-grow: 1;
     ${flex}
     ${box}
 `;

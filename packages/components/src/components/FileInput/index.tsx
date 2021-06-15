@@ -74,10 +74,8 @@ const FileInput: FC<PropsType> = props => {
     }, [!!props.preview]);
 
     return (
-        <>
+        <Box {...flexProps(props)} {...boxProps(props)} $direction="column" $grow={1} $width="100%">
             <StyledWrapper
-                {...flexProps(props)}
-                {...boxProps(props)}
                 focus={hasFocus}
                 drop={drop}
                 hover={hover}
@@ -88,6 +86,7 @@ const FileInput: FC<PropsType> = props => {
                 onMouseLeave={() => setHover(false)}
                 $alignItems="stretch"
                 $justifyContent="center"
+                $width="100%"
             >
                 {hasImage ? (
                     <>
@@ -171,7 +170,7 @@ const FileInput: FC<PropsType> = props => {
                     />
                 </Box>
             )}
-        </>
+        </Box>
     );
 };
 
