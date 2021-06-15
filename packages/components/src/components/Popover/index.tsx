@@ -173,7 +173,11 @@ const Popover: FC<PropsType> = props => {
                                     style={{ ...arrowProps.style, ...props.arrowStyle }}
                                     placement={placement}
                                 />
-                                <PopoverArrow shadow style={arrowProps.style} placement={placement} />
+                                <PopoverArrow
+                                    shadow
+                                    style={{ ...arrowProps.style, ...props.arrowStyle }}
+                                    placement={placement}
+                                />
                             </PopoverWindow>
                         )}
                     </Popper>

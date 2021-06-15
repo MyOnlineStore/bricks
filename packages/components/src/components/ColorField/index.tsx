@@ -1,10 +1,11 @@
 /// <reference path="../../_declarations/global.d.ts" />
 import TextField, { PropsType as TextFieldPropsType } from '../TextField';
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
 import { UndoIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
+import ColorPicker from '../ColorPicker';
 
 type OmittedKeys = 'prefix' | 'onChange';
 
@@ -24,6 +25,7 @@ export enum TestIds {
 }
 
 const ColorField: FC<PropsType> = props => {
+    const [show, setShow] = useState(false);
     const inputRef = useRef<HTMLInputElement>();
 
     // Since the ColorField uses a prefix for the # character, it needs to strip the # from the value when
@@ -42,60 +44,78 @@ const ColorField: FC<PropsType> = props => {
     };
 
     return (
-        <Box
-            alignItems="flex-start"
-            style={props.disabled ? { cursor: 'not-allowed' } : {}}
-            data-testid={`${props['data-testid']}-${TestIds.container}`}
+        <ColorPicker
+            transparentSwatch={props.emptyIsTransparent}
+            show={show}
+            color={props.value}
+            onClickOutside={() => {
+                setShow(false);
+            }}
+            onChange={color => {
+                props.onChange(color.hex);
+            }}
         >
-            <Box padding={[6, 12, 0, 0]}>
-                <ColorDrop
-                    color={props.emptyIsTransparent && isTransparent(props.value) ? 'transparent' : props.value}
-                    data-testid={`${props['data-testid']}-${TestIds.colorDrop}`}
-                />
-            </Box>
-            <Box grow={1} direction="column">
-                <TextField
-                    {...props}
-                    extractRef={ref => {
-                        inputRef.current = ref;
-                        if (ref && props.extractRef !== undefined) {
-                            props.extractRef(ref);
-                        }
-                    }}
-                    placeholder={
-                        props.emptyIsTransparent && isTransparent(props.value)
-                            ? props.transparentPlaceholder
-                            : undefined
-                    }
-                    value={stripHashtag(props.value)}
-                    prefix="#"
-                    onChange={value => {
-                        if (value.length < 7) {
-                            const negatedValues = `[^0-9a-f]`;
-                            const stripped = value.replace(new RegExp(negatedValues, 'gi'), '');
-
-                            props.onChange(
-                                props.emptyIsTransparent && (stripped === '#' || stripped === '')
-                                    ? 'transparent'
-                                    : `#${stripped}`,
-                            );
-                        }
-                    }}
-                />
-            </Box>
-            <Box width="38px">
-                {props.value !== props.initialValue && (
-                    <IconButton
-                        data-testid={`${props['data-testid']}-${TestIds.reset}`}
-                        icon={<UndoIcon />}
-                        title={props.resetButtonTitle}
+            <Box
+                alignItems="flex-start"
+                style={props.disabled ? { cursor: 'not-allowed' } : {}}
+                data-testid={`${props['data-testid']}-${TestIds.container}`}
+            >
+                <Box padding={[6, 12, 0, 0]}>
+                    <ColorDrop
+                        color={props.emptyIsTransparent && isTransparent(props.value) ? 'transparent' : props.value}
+                        data-testid={`${props['data-testid']}-${TestIds.colorDrop}`}
                         onClick={() => {
-                            props.onChange(props.initialValue);
+                            setShow(!show);
                         }}
                     />
-                )}
+                </Box>
+                <Box grow={1} direction="column">
+                    <TextField
+                        {...props}
+                        extractRef={ref => {
+                            inputRef.current = ref;
+                            if (ref && props.extractRef !== undefined) {
+                                props.extractRef(ref);
+                            }
+                        }}
+                        placeholder={
+                            props.emptyIsTransparent && isTransparent(props.value)
+                                ? props.transparentPlaceholder
+                                : undefined
+                        }
+                        value={stripHashtag(props.value)}
+                        prefix="#"
+                        onChange={value => {
+                            if (value.length < 7) {
+                                const negatedValues = `[^0-9a-f]`;
+                                const stripped = value.replace(new RegExp(negatedValues, 'gi'), '');
+
+                                props.onChange(
+                                    props.emptyIsTransparent && (stripped === '#' || stripped === '')
+                                        ? 'transparent'
+                                        : `#${stripped}`,
+                                );
+                            }
+                        }}
+                        onFocus={() => {
+                            setShow(true);
+                        }}
+                    />
+                </Box>
+                <Box width="38px">
+                    {props.value !== props.initialValue && (
+                        <IconButton
+                            data-testid={`${props['data-testid']}-${TestIds.reset}`}
+                            icon={<UndoIcon />}
+                            title={props.resetButtonTitle}
+                            onClick={() => {
+                                props.onChange(props.initialValue);
+                            }}
+                        />
+                    )}
+                </Box>
             </Box>
-        </Box>
+        </ColorPicker>
     );
 };
 
