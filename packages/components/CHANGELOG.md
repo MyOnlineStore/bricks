@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.1.0...@myonlinestore/bricks@8.2.0) (2021-06-15)
+
+
+### Bug Fixes
+
+* Added several default to flex components and fixed grow prop ([#656](https://github.com/MyOnlineStore/bricks/issues/656)) ([7ff0366](https://github.com/MyOnlineStore/bricks/commit/7ff0366ef60e9fb599cb7cbc1c6ddcf75a1657d7))
+
+
+### Features
+
+* Added ColorPicker component (to ColorField) ([#655](https://github.com/MyOnlineStore/bricks/issues/655)) ([3740885](https://github.com/MyOnlineStore/bricks/commit/3740885b9fb0de112dabb650abdee17429acc551))
+
+
+
+
+
 # [8.1.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.0.1...@myonlinestore/bricks@8.1.0) (2021-06-14)
 
 
