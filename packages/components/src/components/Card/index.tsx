@@ -9,13 +9,15 @@ type CardThemeType = {
 };
 
 const Card = styled.div<BoxProps & FlexProps>`
-    ${box}
-    ${flex}
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
     position: relative;
     background: ${({ theme }) => theme.Card.background};
     border: 1px solid ${({ theme }) => theme.Card.borderColor};
     border-radius: ${({ theme }) => theme.Card.borderRadius};
-    flex: 1 1 auto;
+    ${box}
+    ${flex}
 `;
 
 const composeCardTheme = (themeTools: ThemeTools): CardThemeType => {

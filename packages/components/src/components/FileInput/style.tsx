@@ -75,8 +75,7 @@ export type WrapperPropsType = {
 };
 
 export const StyledWrapper = styled.div<WrapperPropsType & typeof box.props & typeof flex.props>`
-    ${box}
-    ${flex}
+    flex-grow: 1;
     transition: border-color 150ms, box-shadow 150ms, background 150ms;
     font-size: ${({ theme }) => theme.FileInput.common.fontSize};
     font-family: ${({ theme }) => theme.FileInput.common.fontFamily};
@@ -84,6 +83,8 @@ export const StyledWrapper = styled.div<WrapperPropsType & typeof box.props & ty
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
+    ${box}
+    ${flex}
 
     ${({ focus, hover, drop, disabled, severity, theme }) => {
         if (severity === 'error' && focus && !disabled) {
