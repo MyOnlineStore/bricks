@@ -2,6 +2,7 @@ import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 import StyledIcon from '../Icon/style';
+import { flex, box } from '../../utility/box';
 
 type NativeSelectThemeType = {
     common: {
@@ -38,6 +39,8 @@ const StyledSelect = styled.div<SelectPropsType>`
     box-sizing: border-box;
     width: 100%;
     border-radius: ${({ theme }): string => theme.NativeSelect.common.borderRadius};
+    ${flex}
+    ${box}
 
     ${({ theme, focus, disabled }) => {
         if (focus && !disabled) {

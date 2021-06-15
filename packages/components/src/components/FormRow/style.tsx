@@ -21,9 +21,6 @@ const StyledDisabledText = styled(Text)<StyledDisabledTextType>`
 const StyledFormRow = styled.div<typeof flex.props & typeof box.props>`
     ${flex}
     ${box}
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
 `;
 
 const composeFormRowTheme = (themeTools: ThemeTools): FormRowThemeType => {

@@ -117,6 +117,7 @@ export const flexProps = <P extends FlexProps>(props: P): FlexProps => {
         $alignSelf: props.$alignSelf,
         $inline: props.$inline,
         $wrap: props.$wrap,
+        $grow: props.$grow,
         $shrink: props.$shrink,
         $basis: props.$basis,
     };
@@ -124,17 +125,17 @@ export const flexProps = <P extends FlexProps>(props: P): FlexProps => {
 
 const flexMixin = css<FlexProps>`
     box-sizing: border-box;
-    display: ${({ $inline }): string => ($inline ? 'inline-flex' : 'flex')};
-    flex-wrap: ${({ $wrap }): string => ($wrap !== undefined && $wrap ? 'wrap' : '')};
-    flex-direction: ${({ $direction }): string => ($direction !== undefined ? $direction : '')};
-    justify-content: ${({ $justifyContent }): string => ($justifyContent !== undefined ? $justifyContent : '')};
-    align-items: ${({ $alignItems }): string => ($alignItems !== undefined ? $alignItems : '')};
-    align-content: ${({ $alignContent }): string => ($alignContent !== undefined ? $alignContent : '')};
-    flex-grow: ${({ $grow }): number => ($grow ? $grow : 0)};
-    flex-shrink: ${({ $shrink }): number => ($shrink !== undefined ? $shrink : 1)};
-    flex-basis: ${({ $basis }): string => ($basis ? $basis : 'auto')};
-    order: ${({ $order }): number => ($order ? $order : 0)};
-    align-self: ${({ $alignSelf }): string => ($alignSelf ? $alignSelf : '')};
+    display: ${({ $inline }) => ($inline ? 'inline-flex' : 'flex')};
+    flex-wrap: ${({ $wrap }) => ($wrap !== undefined && $wrap ? 'wrap' : '')};
+    flex-direction: ${({ $direction }) => ($direction !== undefined ? $direction : '')};
+    justify-content: ${({ $justifyContent }) => ($justifyContent !== undefined ? $justifyContent : '')};
+    align-items: ${({ $alignItems }) => ($alignItems !== undefined ? $alignItems : '')};
+    align-content: ${({ $alignContent }) => ($alignContent !== undefined ? $alignContent : '')};
+    flex-grow: ${({ $grow }) => ($grow !== undefined ? $grow : '')};
+    flex-shrink: ${({ $shrink }) => ($shrink !== undefined ? $shrink : '')};
+    flex-basis: ${({ $basis }) => ($basis ? $basis : 'auto')};
+    order: ${({ $order }) => ($order ? $order : '')};
+    align-self: ${({ $alignSelf }) => ($alignSelf ? $alignSelf : '')};
 `;
 
 // These exports are a small hack to export the box and flex props along with

@@ -67,6 +67,8 @@ const StyledWrapper = styled.div<WrapperPropsType>`
     outline: none;
     display: inline-block;
     position: relative;
+    flex-grow: 1;
+    width: 100%;
     ${flex}
     ${box}
 `;

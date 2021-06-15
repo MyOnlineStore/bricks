@@ -9,8 +9,11 @@ import TextField from '../TextField';
 import Toggle from '../Toggle';
 import Separated from '../Separated';
 import { text, boolean } from '@storybook/addon-knobs';
-import { Skeleton } from '../..';
+import Skeleton from '../Skeleton';
+import NativeSelect from '../NativeSelect';
+import Select from '../Select';
 import TextArea from '../TextArea';
+import FileInput from '../FileInput';
 
 type PropsType = {
     descriptions: boolean;
@@ -24,6 +27,8 @@ type StateType = {
     checked: boolean;
     bacon: boolean;
     supersize: boolean;
+    patty: string;
+    sauce: string;
 };
 
 class DemoComponent extends Component<PropsType, StateType> {
@@ -38,6 +43,8 @@ class DemoComponent extends Component<PropsType, StateType> {
             cheese: true,
             checked: false,
             supersize: false,
+            patty: 'chicken',
+            sauce: 'mayo',
         };
     }
 
@@ -147,6 +154,44 @@ class DemoComponent extends Component<PropsType, StateType> {
                     }
                 />
                 <FormRow
+                    label={<label>Choose your patty</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Separated before>
+                            <Select
+                                value={this.state.patty}
+                                $minWidth="300px"
+                                emptyText="empty"
+                                onChange={patty => this.setState({ patty })}
+                            >
+                                <Select.Option label="Chicken" value="chicken" />
+                                <Select.Option label="Veggy" value="veggy" />
+                                <Select.Option label="Beef" value="beef" />
+                            </Select>
+                        </Separated>
+                    }
+                />
+                <FormRow
+                    label={<label>Choose your patty</label>}
+                    disabled={disabled}
+                    description={description}
+                    field={
+                        <Separated before>
+                            <NativeSelect
+                                value={this.state.patty}
+                                onChange={sauce => this.setState({ sauce })}
+                                $minWidth="300px"
+                                options={[
+                                    { label: 'Mayo', value: 'mayo' },
+                                    { label: 'Ketchup', value: 'ketchup' },
+                                    { label: 'Mustard', value: 'mustard' },
+                                ]}
+                            ></NativeSelect>
+                        </Separated>
+                    }
+                />
+                <FormRow
                     label={<label>Supersized?</label>}
                     disabled={disabled}
                     description={description}
@@ -161,6 +206,21 @@ class DemoComponent extends Component<PropsType, StateType> {
                                 disabled={disabled}
                             />
                         </Separated>
+                    }
+                />
+                <FormRow
+                    label={<label>Upload your logo</label>}
+                    field={
+                        <FileInput
+                            accept={[]}
+                            name=""
+                            placeholder="Drag and drop your image"
+                            dropPlaceholder="Drop your image here"
+                            instance={{ current: null } as any}
+                            onChange={() => {
+                                return;
+                            }}
+                        />
                     }
                 />
             </form>
