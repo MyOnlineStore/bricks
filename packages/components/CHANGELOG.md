@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.1...@myonlinestore/bricks@8.2.2) (2021-06-16)
+
+
+### Bug Fixes
+
+* Fixed basis bug formrow ([#659](https://github.com/MyOnlineStore/bricks/issues/659)) ([7bd1766](https://github.com/MyOnlineStore/bricks/commit/7bd1766d8a8111030ad6a9b7b1d966cec61b579f))
+
+
+
+
+
 ## [8.2.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.0...@myonlinestore/bricks@8.2.1) (2021-06-16)
 
 
