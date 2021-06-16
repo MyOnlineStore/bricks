@@ -220,6 +220,10 @@ class DemoComponent extends Component<PropsType, StateType> {
                             onChange={() => {
                                 return;
                             }}
+                            feedback={{
+                                severity: 'info',
+                                message: 'Some message',
+                            }}
                         />
                     }
                 />
