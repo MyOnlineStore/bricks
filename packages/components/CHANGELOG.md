@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.1](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.0...@myonlinestore/bricks@8.2.1) (2021-06-16)
+
+
+### Bug Fixes
+
+* Fixed docs lockfile ([#657](https://github.com/MyOnlineStore/bricks/issues/657)) ([4132192](https://github.com/MyOnlineStore/bricks/commit/41321920da7ff1e557bc634ef974dbadff13d87f))
+* Formrow flex fixes ([#658](https://github.com/MyOnlineStore/bricks/issues/658)) ([258d335](https://github.com/MyOnlineStore/bricks/commit/258d335dc97ba637f772c2c5eb5b96cf110e5d46))
+
+
+
+
+
 # [8.2.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.1.0...@myonlinestore/bricks@8.2.0) (2021-06-15)
 
 
