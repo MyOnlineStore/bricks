@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.3](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.2...@myonlinestore/bricks@8.2.3) (2021-06-16)
+
+
+### Bug Fixes
+
+* Added width to formrow ([#660](https://github.com/MyOnlineStore/bricks/issues/660)) ([9d2c57d](https://github.com/MyOnlineStore/bricks/commit/9d2c57dfafd13a52e358cf3ef8652d231406ed52))
+
+
+
+
+
 ## [8.2.2](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.1...@myonlinestore/bricks@8.2.2) (2021-06-16)
 
 
