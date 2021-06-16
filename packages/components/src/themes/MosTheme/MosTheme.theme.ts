@@ -583,6 +583,38 @@ const theme: ThemeType = {
             fontFamily: bodyFont,
         },
     },
+    ImageRadio: {
+        idle: {
+            backgroundColor: colors.white,
+            border: `none`,
+            fill: colors.grey700,
+            boxShadow: `0px 0px 0px 1px ${colors.grey400}`,
+            checkmarkColor: colors.white,
+        },
+        idleDisabled: {
+            backgroundColor: colors.grey100,
+            fill: colors.grey300,
+            border: `none`,
+            boxShadow: `0px 0px 0px 1px ${colors.grey300}`,
+        },
+        active: {
+            boxShadow: `0px 0px 0px 2px ${colors.green400}`,
+            fill: colors.green600,
+            border: `none`,
+            backgroundColor: colors.white,
+        },
+        activeDisabled: {
+            fill: colors.grey700,
+            boxShadow: `0px 0px 0px 1px ${colors.green300, 0.5}`,
+            backgroundColor: colors.grey200,
+        },
+        error: {
+            fill: colors.grey700,
+            border: `none`,
+            backgroundColor: rgba(colors.red100, 0.1),
+            boxShadow: `0 0 0 2px ${colors.red100}`,
+        },
+    },
     RadioButton: {
         idle: {
             backgroundColor: colors.white,

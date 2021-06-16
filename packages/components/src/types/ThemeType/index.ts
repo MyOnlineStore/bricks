@@ -38,6 +38,7 @@ import { PaginationThemeType } from '../../components/Pagination/style';
 import { FileInputThemeType } from '../../components/FileInput/style';
 import { ColorDropThemeType } from '../../components/ColorDrop';
 import { TagThemeType } from '../../components/Tag';
+import { ImageRadioThemeType } from '../../components/ImageRadio/style';
 
 type ThemeType = {
     Accordion: AccordionThemeType;
@@ -53,6 +54,7 @@ type ThemeType = {
     Counter: CounterThemeType;
     Heading: HeadingThemeType;
     IconButton: IconButtonThemeType;
+    ImageRadio: ImageRadioThemeType;
     Illustration: IllustrationThemeType;
     Link: LinkThemeType;
     MessageStream: MessageStreamThemeType;
