@@ -9,6 +9,7 @@ export type ImageRadioPropsType = {
 export type ImageRadioSkinPropsType = {
     checked: boolean;
     elementFocus: boolean;
+    elementHover: boolean;
     disabled?: boolean;
     error?: boolean;
 };
@@ -133,7 +134,7 @@ export const StyledImageRadioSkin = styled.div<ImageRadioSkinPropsType>`
 
     position: relative;
 
-    ${({ theme, elementFocus, disabled, checked, error }): string => {
+    ${({ theme, elementFocus, elementHover, disabled, checked, error }): string => {
         if (elementFocus && !disabled) {
             if (error) {
                 return `box-shadow: ${theme.ImageRadio.error.focusBoxShadow}`;
@@ -143,6 +144,10 @@ export const StyledImageRadioSkin = styled.div<ImageRadioSkinPropsType>`
                 return `box-shadow: ${theme.ImageRadio.active.focusBoxShadow}`;
             }
 
+            return `box-shadow: ${theme.ImageRadio.idle.focusBoxShadow}`;
+        }
+
+        if (elementHover && !checked && !error) {
             return `box-shadow: ${theme.ImageRadio.idle.focusBoxShadow}`;
         }
 

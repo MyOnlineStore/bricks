@@ -20,6 +20,7 @@ export type PropsType = typeof flex.props &
 
 const ImageRadio: FC<PropsType> = props => {
     const [isFocussed, setFocus] = useState(false);
+    const [isHovering, setHover] = useState(false);
 
     const toggleFocus = (): void => {
         setFocus(!isFocussed);
@@ -40,10 +41,10 @@ const ImageRadio: FC<PropsType> = props => {
             {...boxProps(props)}
             onClick={handleChange}
             onMouseOver={() => {
-                setFocus(true);
+                setHover(true);
             }}
             onMouseLeave={() => {
-                setFocus(false);
+                setHover(false);
             }}
             $alignItems="center"
             $grow={0}
@@ -51,6 +52,7 @@ const ImageRadio: FC<PropsType> = props => {
         >
             <StyledImageRadioSkin
                 elementFocus={isFocussed}
+                elementHover={isHovering}
                 checked={props.checked}
                 disabled={props.disabled}
                 error={props.error}
