@@ -37,6 +37,7 @@ const ImageRadio: FC<PropsType> = props => {
 
     return (
         <Box
+            $grow={0}
             {...flexProps(props)}
             {...boxProps(props)}
             onClick={handleChange}
@@ -47,7 +48,6 @@ const ImageRadio: FC<PropsType> = props => {
                 setHover(false);
             }}
             $alignItems="center"
-            $grow={0}
             $direction="column"
         >
             <StyledImageRadioSkin
