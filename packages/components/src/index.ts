@@ -24,6 +24,7 @@ export { default as generateTheme } from './themes/CustomTheme/genTheme';
 export { default as Heading } from './components/Heading';
 export { default as Icon } from './components/Icon';
 export { default as IconButton } from './components/IconButton';
+export { default as ImageRadio } from './components/ImageRadio';
 export { default as Illustration } from './components/Illustration';
 export { default as InlineNotification } from './components/InlineNotification';
 export { default as Link } from './components/Link';

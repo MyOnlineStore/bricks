@@ -43,6 +43,7 @@ import { composePaginationTheme } from '../../components/Pagination/style';
 import { composeFileInputTheme } from '../../components/FileInput/style';
 import { composeColorDropTheme } from '../../components/ColorDrop';
 import { composeTagTheme } from '../../components/Tag';
+import { composeImageRadioTheme } from '../../components/ImageRadio/style';
 
 const generateThemeObject = (
     providedOptions: ThemeTypes.ProvidedThemeOptionsType,
@@ -93,6 +94,7 @@ const generateThemeObject = (
         Counter: composeCounterTheme(themeTools),
         Heading: composeHeadingTheme(themeTools),
         IconButton: composeIconButtonTheme(themeTools),
+        ImageRadio: composeImageRadioTheme(themeTools),
         Illustration: composeIllustrationTheme(),
         Link: composeLinkTheme(themeTools),
         MessageStream: composeMessageStreamTheme(themeTools),
