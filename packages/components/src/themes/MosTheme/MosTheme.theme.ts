@@ -355,7 +355,7 @@ const theme: ThemeType = {
             fontFamily: headingFont,
             fontSize: fontSize.larger5,
             fontWeight: fontWeight.regular,
-            lineHeight: '39px',
+            lineHeight: '42px',
             color: colors.grey800,
         },
         3: {
@@ -369,14 +369,14 @@ const theme: ThemeType = {
             fontFamily: headingFont,
             fontSize: fontSize.larger3,
             fontWeight: fontWeight.regular,
-            lineHeight: '33px',
+            lineHeight: '30px',
             color: colors.grey800,
         },
         5: {
             fontFamily: headingFont,
             fontSize: fontSize.larger2,
             fontWeight: fontWeight.regular,
-            lineHeight: '27px',
+            lineHeight: '24px',
             color: colors.grey800,
         },
     },
@@ -807,7 +807,7 @@ const theme: ThemeType = {
                 fontSize: fontSize.larger1,
                 fontWeight: fontWeight.regular,
                 lineHeight: {
-                    default: '27px',
+                    default: '30px',
                     compact: '21px',
                 },
             },
@@ -816,7 +816,7 @@ const theme: ThemeType = {
                 fontSize: fontSize.larger2,
                 fontWeight: fontWeight.regular,
                 lineHeight: {
-                    default: '33px',
+                    default: '36px',
                     compact: '27px',
                 },
             },
