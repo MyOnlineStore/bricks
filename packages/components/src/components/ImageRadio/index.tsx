@@ -1,24 +1,22 @@
 import React, { FC, ReactNode } from 'react';
 import Box from '../Box';
 import Text from '../Text';
-import { StyledImageRadioSkin, StyledImageRadioWrapper, StyledLabel } from './style';
+import { StyledImageRadioSkin, StyledLabel } from './style';
+import { boxProps, flexProps, flex, box } from '../../utility/box';
 
-type StateType = {
-    focus: boolean;
-};
-
-type PropsType = {
-    checked: boolean;
-    image: ReactNode | HTMLImageElement;
-    disabled?: boolean;
-    error?: boolean;
-    value: string;
-    name: string;
-    id?: string;
-    label: ReactNode;
-    'data-testid'?: string;
-    onChange(change: { checked: boolean; value: string }): void;
-};
+export type PropsType = typeof flex.props &
+    typeof box.props & {
+        checked: boolean;
+        image: ReactNode | HTMLImageElement;
+        disabled?: boolean;
+        error?: boolean;
+        value: string;
+        name: string;
+        id?: string;
+        label: ReactNode;
+        'data-testid'?: string;
+        onChange(change: { checked: boolean; value: string }): void;
+    };
 
 const ImageRadio: FC<PropsType> = props => {
     const handleChange = (): void => {
@@ -31,7 +29,14 @@ const ImageRadio: FC<PropsType> = props => {
     };
 
     return (
-        <StyledImageRadioWrapper onClick={handleChange}>
+        <Box
+            {...flexProps(props)}
+            {...boxProps(props)}
+            onClick={handleChange}
+            $alignItems="center"
+            $grow={0}
+            $direction="column"
+        >
             <Box margin={[3, 12, 12, 0]}>
                 <StyledImageRadioSkin checked={props.checked} disabled={props.disabled} error={props.error}>
                     {props.image}
@@ -44,9 +49,8 @@ const ImageRadio: FC<PropsType> = props => {
                     </StyledLabel>
                 </Box>
             </Text>
-        </StyledImageRadioWrapper>
+        </Box>
     );
 };
 
 export default ImageRadio;
-export { PropsType, StateType };

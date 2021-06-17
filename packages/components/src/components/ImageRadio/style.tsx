@@ -45,13 +45,6 @@ type ImageRadioThemeType = {
     };
 };
 
-const StyledImageRadioWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    flex-direction: column;
-`;
-
 const StyledImageRadio = styled.input<ImageRadioPropsType>`
     position: relative;
     opacity: 0;
@@ -177,11 +170,4 @@ const composeImageRadioTheme = (themeTools: ThemeTools): ImageRadioThemeType => 
 };
 
 export default StyledImageRadio;
-export {
-    StyledLabel,
-    StyledImageRadio,
-    StyledImageRadioSkin,
-    StyledImageRadioWrapper,
-    ImageRadioThemeType,
-    composeImageRadioTheme,
-};
+export { StyledLabel, StyledImageRadio, StyledImageRadioSkin, ImageRadioThemeType, composeImageRadioTheme };
