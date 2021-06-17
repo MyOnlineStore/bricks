@@ -2,19 +2,21 @@ import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 
-type ImageRadioPropsType = {
+export type ImageRadioPropsType = {
     checked: boolean;
 };
 
-type ImageRadioSkinPropsType = {
+export type ImageRadioSkinPropsType = {
     checked: boolean;
+    elementFocus: boolean;
     disabled?: boolean;
     error?: boolean;
 };
 
-type ImageRadioThemeType = {
+export type ImageRadioThemeType = {
     idle: {
         boxShadow: string;
+        focusBoxShadow: string;
         border: string;
         fill: string;
         backgroundColor: string;
@@ -28,6 +30,7 @@ type ImageRadioThemeType = {
     };
     active: {
         boxShadow: string;
+        focusBoxShadow: string;
         fill: string;
         border: string;
         backgroundColor: string;
@@ -41,26 +44,29 @@ type ImageRadioThemeType = {
         fill: string;
         border: string;
         boxShadow: string;
+        focusBoxShadow: string;
         backgroundColor: string;
     };
 };
 
-const StyledImageRadio = styled.input<ImageRadioPropsType>`
+export const StyledImageRadio = styled.input<ImageRadioPropsType>`
     position: relative;
     opacity: 0;
     height: 0;
     width: 0;
 `;
 
-const StyledLabel = styled.label<{ checked: boolean }>`
+export const StyledLabel = styled.label<{ checked: boolean }>`
     color: ${({ theme, checked }): string => (checked ? theme.ImageRadio.active.fill : theme.ImageRadio.idle.fill)};
 `;
 
-const StyledImageRadioSkin = styled.div<ImageRadioSkinPropsType>`
+export const StyledImageRadioSkin = styled.div<ImageRadioSkinPropsType>`
     img {
         display: block;
     }
 
+    margin-bottom: 12px;
+    border-radius: 3px;
     padding: 16px;
     transition: box-shadow 100ms, border 100ms;
     cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'pointer')};
@@ -126,9 +132,25 @@ const StyledImageRadioSkin = styled.div<ImageRadioSkinPropsType>`
     }};
 
     position: relative;
+
+    ${({ theme, elementFocus, disabled, checked, error }): string => {
+        if (elementFocus && !disabled) {
+            if (error) {
+                return `box-shadow: ${theme.ImageRadio.error.focusBoxShadow}`;
+            }
+
+            if (checked) {
+                return `box-shadow: ${theme.ImageRadio.active.focusBoxShadow}`;
+            }
+
+            return `box-shadow: ${theme.ImageRadio.idle.focusBoxShadow}`;
+        }
+
+        return '';
+    }};
 `;
 
-const composeImageRadioTheme = (themeTools: ThemeTools): ImageRadioThemeType => {
+export const composeImageRadioTheme = (themeTools: ThemeTools): ImageRadioThemeType => {
     const { colors, forms } = themeTools.themeSettings;
 
     return {
@@ -137,6 +159,7 @@ const composeImageRadioTheme = (themeTools: ThemeTools): ImageRadioThemeType => 
             border: `none`,
             fill: forms.borderColor,
             boxShadow: `0px 0px 0px 1px ${chroma(forms.borderColor).alpha(0.1)}`,
+            focusBoxShadow: `0px 0px 0px 1px ${chroma(forms.borderColor).alpha(0.1)}`,
             checkmarkColor: themeTools.calculateContrastColor(
                 colors.primary.base,
                 colors.grey.darker1,
@@ -151,6 +174,7 @@ const composeImageRadioTheme = (themeTools: ThemeTools): ImageRadioThemeType => 
         },
         active: {
             boxShadow: `0px 0px 0px 2px ${forms.activeColor}`,
+            focusBoxShadow: `0px 0px 0px 2px ${forms.activeColor}`,
             fill: forms.activeColor,
             border: `none`,
             backgroundColor: forms.activeColor,
@@ -165,9 +189,9 @@ const composeImageRadioTheme = (themeTools: ThemeTools): ImageRadioThemeType => 
             fill: colors.severity.error,
             backgroundColor: `${chroma(colors.severity.error).alpha(0.2)}`,
             boxShadow: `0 0 0 1px ${chroma(colors.severity.error).alpha(0.2)}`,
+            focusBoxShadow: `0 0 0 1px ${chroma(colors.severity.error).alpha(0.2)}`,
         },
     };
 };
 
 export default StyledImageRadio;
-export { StyledLabel, StyledImageRadio, StyledImageRadioSkin, ImageRadioThemeType, composeImageRadioTheme };

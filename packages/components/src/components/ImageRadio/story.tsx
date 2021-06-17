@@ -13,7 +13,7 @@ export const Default = (props: ComponentProps<typeof ImageRadio>) => {
     return (
         <Box justifyContent="flex-start">
             <ImageRadio
-                $margin={[0, 12, 0, 0]}
+                $margin={[0, 24, 0, 0]}
                 {...props}
                 image={
                     <svg width="181" height="63" viewBox="0 0 181 63" fill="none" xmlns="http://www.w3.org/2000/svg">

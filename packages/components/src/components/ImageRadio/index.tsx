@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 import Box from '../Box';
 import Text from '../Text';
 import { StyledImageRadioSkin, StyledLabel } from './style';
@@ -19,6 +19,12 @@ export type PropsType = typeof flex.props &
     };
 
 const ImageRadio: FC<PropsType> = props => {
+    const [isFocussed, setFocus] = useState(false);
+
+    const toggleFocus = (): void => {
+        setFocus(!isFocussed);
+    };
+
     const handleChange = (): void => {
         if (!props.disabled) {
             props.onChange({
@@ -33,15 +39,39 @@ const ImageRadio: FC<PropsType> = props => {
             {...flexProps(props)}
             {...boxProps(props)}
             onClick={handleChange}
+            onMouseOver={() => {
+                setFocus(true);
+            }}
+            onMouseLeave={() => {
+                setFocus(false);
+            }}
             $alignItems="center"
             $grow={0}
             $direction="column"
         >
-            <Box margin={[3, 12, 12, 0]}>
-                <StyledImageRadioSkin checked={props.checked} disabled={props.disabled} error={props.error}>
-                    {props.image}
-                </StyledImageRadioSkin>
-            </Box>
+            <StyledImageRadioSkin
+                elementFocus={isFocussed}
+                checked={props.checked}
+                disabled={props.disabled}
+                error={props.error}
+            >
+                {props.image}
+
+                <input
+                    type="radio"
+                    onFocus={toggleFocus}
+                    onBlur={toggleFocus}
+                    onChange={handleChange}
+                    checked={props.checked}
+                    disabled={props.disabled ? props.disabled : false}
+                    name={props.name}
+                    value={props.value}
+                    id={props.id}
+                    aria-labelledby={props.name}
+                    data-testid={props['data-testid']}
+                    style={{ position: 'absolute', width: '0', opacity: '0' }}
+                />
+            </StyledImageRadioSkin>
             <Text variant={props.disabled ? 'info' : undefined}>
                 <Box inline direction="row" align-items="center">
                     <StyledLabel checked={props.checked} id={props.name} htmlFor={props.name}>
