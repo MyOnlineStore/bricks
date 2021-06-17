@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.4](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.3...@myonlinestore/bricks@8.2.4) (2021-06-17)
+
+
+### Bug Fixes
+
+* Adjust line-heights to match 6px spacial system ([#662](https://github.com/MyOnlineStore/bricks/issues/662)) ([fafd916](https://github.com/MyOnlineStore/bricks/commit/fafd91659568f0b55cece2da8ef697d694210d5e))
+
+
+
+
+
 ## [8.2.3](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.2...@myonlinestore/bricks@8.2.3) (2021-06-16)
 
 
