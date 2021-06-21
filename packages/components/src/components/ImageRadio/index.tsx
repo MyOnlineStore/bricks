@@ -18,6 +18,12 @@ export type PropsType = typeof flex.props &
         onChange(change: { checked: boolean; value: string }): void;
     };
 
+export enum TestIds {
+    container = 'container',
+    radio = 'radio',
+    label = 'label',
+}
+
 const ImageRadio: FC<PropsType> = props => {
     const [isFocussed, setFocus] = useState(false);
     const [isHovering, setHover] = useState(false);
@@ -47,6 +53,7 @@ const ImageRadio: FC<PropsType> = props => {
             onMouseLeave={() => {
                 setHover(false);
             }}
+            data-testid={`${props['data-testid']}-${TestIds.container}`}
             $alignItems="center"
             $direction="column"
         >
@@ -70,11 +77,14 @@ const ImageRadio: FC<PropsType> = props => {
                     value={props.value}
                     id={props.id}
                     aria-labelledby={props.name}
-                    data-testid={props['data-testid']}
+                    data-testid={`${props['data-testid']}-${TestIds.radio}`}
                     style={{ position: 'absolute', width: '0', opacity: '0' }}
                 />
             </StyledImageRadioSkin>
-            <Text variant={props.disabled ? 'info' : undefined}>
+            <Text
+                variant={props.disabled ? 'info' : undefined}
+                data-testid={`${props['data-testid']}-${TestIds.label}`}
+            >
                 <Box inline direction="row" align-items="center">
                     <StyledLabel checked={props.checked} id={props.name} htmlFor={props.name}>
                         {props.label}
