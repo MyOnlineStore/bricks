@@ -1,4 +1,4 @@
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Text, { PropsType } from '.';
@@ -40,7 +40,6 @@ storiesOf('Text', module).add('Default', () => (
         strong={boolean('strong', false)}
         strikethrough={boolean('strikethrough', true)}
     >
-        Vanaf €299,-
-        {/* {demoContent} */}
+        {text('Text', demoContent)}
     </Text>
 ));
