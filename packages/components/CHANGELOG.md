@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.3.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.4...@myonlinestore/bricks@8.3.0) (2021-06-21)
+
+
+### Features
+
+* Created new ImageRadio component ([#661](https://github.com/MyOnlineStore/bricks/issues/661)) ([1573c1c](https://github.com/MyOnlineStore/bricks/commit/1573c1c3a13a4b80c02a7aca34eb9201b7443e92))
+
+
+
+
+
 ## [8.2.4](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.2.3...@myonlinestore/bricks@8.2.4) (2021-06-17)
 
 
