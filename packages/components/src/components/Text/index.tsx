@@ -42,6 +42,7 @@ type PropsType = {
     textAlign?: 'left' | 'right' | 'center' | 'justify';
     compact?: boolean;
     strong?: boolean;
+    strikethrough?: boolean;
 };
 
 const Text = styled.p<PropsType>`
@@ -75,6 +76,28 @@ const Text = styled.p<PropsType>`
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    ${({ theme, strikethrough, variant }) =>
+        strikethrough &&
+        `
+        display: inline-block;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 6px;
+            bottom: 6px;
+            display: block;
+            background: linear-gradient(-6deg, transparent calc(50% - 2px), ${
+                variant ? theme.Text.variant[variant] : theme.Text.default.color
+            } calc(50% - 1px), ${
+            variant ? theme.Text.variant[variant] : theme.Text.default.color
+        } calc(50% + 1px), transparent calc(50% + 2px)) no-repeat 0px 0px / 100% 100%;
+        }
+    `}
 `;
 
 const composeTextTheme = (themeTools: ThemeTools): TextThemeType => {

@@ -38,7 +38,9 @@ storiesOf('Text', module).add('Default', () => (
         textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign']}
         compact={boolean('compact', false)}
         strong={boolean('strong', false)}
+        strikethrough={boolean('strikethrough', true)}
     >
-        {demoContent}
+        Vanaf €299,-
+        {/* {demoContent} */}
     </Text>
 ));
