@@ -19,7 +19,6 @@ export type PropsType = typeof flex.props &
     };
 
 export enum TestIds {
-    container = 'container',
     radio = 'radio',
     label = 'label',
 }
@@ -53,7 +52,7 @@ const ImageRadio: FC<PropsType> = props => {
             onMouseLeave={() => {
                 setHover(false);
             }}
-            data-testid={`${props['data-testid']}-${TestIds.container}`}
+            data-testid={props['data-testid']}
             $alignItems="center"
             $direction="column"
         >
