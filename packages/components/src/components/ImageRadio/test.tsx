@@ -33,7 +33,7 @@ describe('ImageRadio', () => {
             <ImageRadio checked image={Image} {...defaultProps} onChange={onChangeMock} {...defaultProps} />,
         );
 
-        component.findByTestId(`${defaultProps['data-testid']}-${TestIds.label}`).simulate('click');
+        component.findByTestId(`${defaultProps['data-testid']}`).simulate('click');
 
         expect(onChangeMock).toHaveBeenCalled();
     });
