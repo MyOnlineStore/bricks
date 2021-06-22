@@ -1,4 +1,4 @@
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Text, { PropsType } from '.';
@@ -38,7 +38,8 @@ storiesOf('Text', module).add('Default', () => (
         textAlign={select('text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign']}
         compact={boolean('compact', false)}
         strong={boolean('strong', false)}
+        strikethrough={boolean('strikethrough', false)}
     >
-        {demoContent}
+        {text('Text', demoContent)}
     </Text>
 ));
