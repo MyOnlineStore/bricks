@@ -19,7 +19,6 @@ type PropsType = typeof box.props & {
     >;
 
 const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
-    console.log('bb', props);
     const isLink = props.href !== undefined;
 
     const clickAction = (event: MouseEvent<HTMLButtonElement>): void => {
