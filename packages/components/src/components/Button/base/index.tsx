@@ -60,7 +60,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             </StyledAnchor>
         );
     }
-    console.log(props);
+    
     return (
         <StyledButton
             title={props.title}
