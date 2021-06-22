@@ -1,7 +1,8 @@
 import React, { FunctionComponent, MouseEvent, HTMLProps } from 'react';
+import { box, boxProps } from '../../../utility/box';
 import StyledButton, { StyledAnchor } from './style';
 
-type PropsType = {
+type PropsType = typeof box.props & {
     className?: string;
     title: string;
     target?: HTMLAnchorElement['target'];
@@ -11,13 +12,14 @@ type PropsType = {
     loading?: boolean;
     'data-testid'?: string;
 } & Partial<
-    Pick<
-        HTMLProps<HTMLButtonElement | HTMLAnchorElement>,
-        'onClick' | 'onMouseEnter' | 'onMouseLeave' | 'onFocus' | 'onBlur'
-    >
->;
+        Pick<
+            HTMLProps<HTMLButtonElement | HTMLAnchorElement>,
+            'onClick' | 'onMouseEnter' | 'onMouseLeave' | 'onFocus' | 'onBlur'
+        >
+    >;
 
 const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
+    console.log('bb', props);
     const isLink = props.href !== undefined;
 
     const clickAction = (event: MouseEvent<HTMLButtonElement>): void => {
@@ -53,12 +55,13 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
                 onMouseLeave={props.onMouseLeave}
                 onFocus={focusAction}
                 onBlur={blurAction}
+                {...boxProps(props)}
             >
                 {props.children}
             </StyledAnchor>
         );
     }
-
+    console.log(props);
     return (
         <StyledButton
             title={props.title}
@@ -73,6 +76,7 @@ const ButtonBase: FunctionComponent<PropsType> = (props): JSX.Element => {
             onMouseLeave={props.onMouseLeave}
             onFocus={focusAction}
             onBlur={blurAction}
+            {...boxProps(props)}
         >
             {props.children}
         </StyledButton>

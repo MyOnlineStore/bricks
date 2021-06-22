@@ -7,6 +7,7 @@ import Spinner from '../Spinner';
 import Box from '../Box';
 import { withTheme } from 'styled-components';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import { box } from '../../utility/box';
 
 type CommonType = {
     color: string;
@@ -23,14 +24,16 @@ type IconButtonThemeType = {
     subdued: ComponentStateTypes;
 };
 
-type PropsType = BareButtonPropsType & {
-    theme?: ThemeType;
-    icon: ReactNode;
-    iconSize?: 'small' | 'medium';
-    variant?: keyof IconButtonThemeType;
-};
+type PropsType = typeof box.props &
+    BareButtonPropsType & {
+        theme?: ThemeType;
+        icon: ReactNode;
+        iconSize?: 'small' | 'medium';
+        variant?: keyof IconButtonThemeType;
+    };
 
 const StyledIconButton = styled(BareButton)<Pick<PropsType, 'variant'>>`
+    ${box}
     ${({ theme, variant, loading, disabled }): string => {
         const buttonVariant = variant ? variant : 'primary';
 
