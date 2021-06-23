@@ -1,5 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import { box } from '../../utility/box';
 
 type HierarchyType = 1 | 2 | 3 | 4 | 5;
 
@@ -19,7 +20,7 @@ type HeadingThemeType = {
     5: HeadingHierarchyThemeType;
 };
 
-type PropsType = {
+type PropsType = typeof box.props & {
     hierarchy?: HierarchyType;
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
@@ -43,6 +44,7 @@ const Heading = styled.div.attrs(() => ({ role: 'heading' }))<PropsType>`
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    ${box}
 `;
 
 const composeHeadingTheme = (themeTools: ThemeTools): HeadingThemeType => {

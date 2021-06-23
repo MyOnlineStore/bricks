@@ -3,12 +3,14 @@ import Base, { PropsType as BasePropsType } from '../Button/base';
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import Icon from '../Icon';
+import { box } from '../../utility/box';
 
-export type PropsType = BasePropsType & {
-    variant: 'primary' | 'secondary';
-    icon?: ReactNode;
-    alignIcon?: 'left' | 'right';
-};
+export type PropsType = typeof box.props &
+    BasePropsType & {
+        variant: 'primary' | 'secondary';
+        icon?: ReactNode;
+        alignIcon?: 'left' | 'right';
+    };
 
 type VariantType = {
     color: string;
@@ -22,6 +24,7 @@ export type TextualButtonThemeType = {
 };
 
 const StyledTextualButton = styled(Base)<PropsType>`
+    ${box}
     color: ${({ theme, variant }) => theme.TextualButton[variant].color};
     font-weight: ${({ theme, variant }) => theme.TextualButton[variant].fontWeight};
     background-color: transparent;

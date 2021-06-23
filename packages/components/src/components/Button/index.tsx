@@ -6,6 +6,7 @@ import Box from '../Box';
 import Spinner from '../Spinner';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
+import { box } from '../../utility/box';
 
 type CommonType = {
     backgroundColor: string;
@@ -65,16 +66,18 @@ type ButtonThemeType = {
     };
 };
 
-type PropsType = BasePropsType & {
-    loading?: boolean;
-    variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'info' | 'plain';
-    compact?: boolean;
-    disabled?: boolean;
-    icon?: ReactNode;
-    children?: ReactNode;
-};
+type PropsType = typeof box.props &
+    BasePropsType & {
+        loading?: boolean;
+        variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'info' | 'plain';
+        compact?: boolean;
+        disabled?: boolean;
+        icon?: ReactNode;
+        children?: ReactNode;
+    };
 
 const StyledButton = styled(Base)<PropsType>`
+    ${box}
     ${({ theme, variant, disabled, loading }): string => {
         const idle = `
             background-color: ${theme.Button[variant].idle.backgroundColor};

@@ -1,6 +1,7 @@
 import styled from '../../utility/styled';
 import SeverityType from '../../types/SeverityType';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
+import { box } from '../../utility/box';
 
 type TextSizeStyleType = {
     fontFamily: string;
@@ -35,7 +36,7 @@ type TextThemeType = {
     };
 };
 
-type PropsType = {
+type PropsType = typeof box.props & {
     'data-testid'?: string;
     size?: 'small' | 'regular' | 'large' | 'extraLarge' | 'display';
     variant?: SeverityType | 'descriptive';
@@ -74,6 +75,7 @@ const Text = styled.p<PropsType>`
     }};
     text-align: ${({ textAlign }): string => (textAlign ? textAlign : '')};
     margin: 0;
+    ${box}
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
