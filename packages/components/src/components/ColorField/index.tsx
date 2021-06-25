@@ -3,7 +3,6 @@ import TextField, { PropsType as TextFieldPropsType } from '../TextField';
 import React, { FC, useRef, useState } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
-import { UndoIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 import ColorPicker from '../ColorPicker';
 
@@ -106,7 +105,7 @@ const ColorField: FC<PropsType> = props => {
                     {props.value !== props.initialValue && (
                         <IconButton
                             data-testid={`${props['data-testid']}-${TestIds.reset}`}
-                            icon={<UndoIcon />}
+                            icon="undo"
                             title={props.resetButtonTitle}
                             onClick={() => {
                                 props.onChange(props.initialValue);
