@@ -20,4 +20,26 @@ describe('Icon', () => {
         expect(icon.find(StyledIcon)).toHaveStyleRule('height', '12px');
         expect(icon.find(StyledIcon)).toHaveStyleRule('width', '12px');
     });
+
+    it('should fetch the icon', () => {
+        (fetch as jest.Mock).mockResolvedValueOnce({ body: 'icon result' });
+
+        const icon = mountWithTheme(<Icon size="small" icon="checkmark" />);
+
+        expect(fetch).toHaveBeenCalledWith(expect.stringContaining('checkmark'));
+        expect(icon.text()).toContain('icon result');
+    });
+
+    it('should not throw when fetching fails', () => {
+        (fetch as jest.Mock).mockRejectedValueOnce('icon not found');
+
+        expect(() => mountWithTheme(<Icon size="small" icon="checkmark" />)).not.toThrow();
+    });
+
+    it('should render an empty span when fetching fails', () => {
+        (fetch as jest.Mock).mockRejectedValueOnce('icon not found');
+        const icon = mountWithTheme(<Icon size="small" icon="checkmark" />);
+
+        expect(icon.find('span')).toHaveLength(1);
+    });
 });
