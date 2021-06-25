@@ -27,7 +27,6 @@ export { default as IconButton } from './components/IconButton';
 export { default as ImageRadio } from './components/ImageRadio';
 export { default as Illustration } from './components/Illustration';
 export { default as InlineNotification } from './components/InlineNotification';
-export { default as LazyIcon } from './components/LazyIcon';
 export { default as Link } from './components/Link';
 export { default as MessageStream } from './components/MessageStream';
 export { default as Modal } from './components/Modal';

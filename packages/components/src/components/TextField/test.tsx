@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import TextField from '.';
 import { mountWithTheme } from '../../utility/styled/testing';
 import { StyledInput, StyledWrapper, StyledAffixWrapper } from './style';
-import { Box } from '../..';
+import Box from '../Box';
+import Icon from '../Icon';
 import MosTheme from '../../themes/MosTheme';
 import { mount } from 'enzyme';
-import Icon from '../Icon';
 
 describe('TextField', () => {
     it('should not change value when disabled', () => {
@@ -159,7 +159,9 @@ describe('TextField', () => {
 
     it('should render the passed in icon', () => {
         const changeMock = jest.fn();
-        const component = mountWithTheme(<TextField name="" value="foo" onChange={changeMock} icon="search" />);
+        const component = mountWithTheme(
+            <TextField name="" value="foo" onChange={changeMock} icon={<Icon icon="search" size="small" />} />,
+        );
 
         expect(component.find(Icon)).toHaveLength(1);
     });
