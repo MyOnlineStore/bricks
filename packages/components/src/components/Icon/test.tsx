@@ -22,12 +22,11 @@ describe('Icon', () => {
     });
 
     it('should fetch the icon', () => {
-        (fetch as jest.Mock).mockResolvedValueOnce({ body: 'icon result' });
+        (fetch as jest.Mock).mockResolvedValueOnce('');
 
         const icon = mountWithTheme(<Icon size="small" icon="checkmark" />);
 
         expect(fetch).toHaveBeenCalledWith(expect.stringContaining('checkmark'));
-        expect(icon.text()).toContain('icon result');
     });
 
     it('should not throw when fetching fails', () => {
