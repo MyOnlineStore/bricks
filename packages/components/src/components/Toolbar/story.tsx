@@ -1,7 +1,6 @@
 import React, { ComponentProps } from 'react';
 import Toolbar from '.';
 import IconButton from '../IconButton';
-import { GearIcon, PencilIcon, TrashIcon } from '@myonlinestore/bricks-assets';
 import Box from '../Box';
 
 export default {
@@ -14,21 +13,21 @@ export const Default = (props: ComponentProps<typeof Toolbar>) => {
         <Box>
             <Toolbar {...props}>
                 <IconButton
-                    icon={<GearIcon />}
+                    icon="gear"
                     title="A"
                     onClick={() => {
                         return;
                     }}
                 />
                 <IconButton
-                    icon={<PencilIcon />}
+                    icon="pencil"
                     title="B"
                     onClick={() => {
                         return;
                     }}
                 />
                 <IconButton
-                    icon={<TrashIcon />}
+                    icon="trash"
                     title="C"
                     variant="destructive"
                     onClick={() => {

@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import React from 'react';
 import InlineNotification from '.';
 import Link from '../Link';
-import { BellIcon, InfoCircleIcon } from '@myonlinestore/bricks-assets';
 
 storiesOf('InlineNotification', module)
     .add('Default', () => (
@@ -14,14 +13,14 @@ storiesOf('InlineNotification', module)
     ))
     .add('With overwritten Icon', () => (
         <InlineNotification
-            icon={<BellIcon />}
+            icon="bell"
             message="Something is wrong!"
             severity={select('severity', ['error', 'warning', 'success', 'info'], 'error')}
         />
     ))
     .add('With children', () => (
         <InlineNotification
-            icon={<InfoCircleIcon />}
+            icon="info-circle"
             severity={select('severity', ['error', 'warning', 'success', 'info'], 'info')}
         >
             Are you having trouble? Check out&nbsp;

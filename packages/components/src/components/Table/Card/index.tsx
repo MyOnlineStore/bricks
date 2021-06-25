@@ -10,7 +10,6 @@ import { Draggable, DraggableProvided } from 'react-beautiful-dnd';
 import StyledTable from '../style';
 import StyledRow from '../Row/style';
 import StyledCell from '../Cell/style';
-import { BarsIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     // tslint:disable-next-line
@@ -120,7 +119,7 @@ class Card extends Component<PropsType, StateType> {
                     {this.props.draggable && provided && (
                         <Box padding={[6]} {...provided.dragHandleProps}>
                             <Text variant={!this.state.hasHover ? 'descriptive' : undefined}>
-                                <Icon size="medium" icon={<BarsIcon />} />
+                                <Icon size="medium" icon="bars" />
                             </Text>
                         </Box>
                     )}

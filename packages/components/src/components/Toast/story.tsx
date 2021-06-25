@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import React, { Component } from 'react';
 import Toast, { PropsType } from '.';
 import Toaster from '../Toaster';
-import { CashIcon, InfoCircleIcon } from '@myonlinestore/bricks-assets';
 
 class Demo extends Component<{}, { isOpen: boolean }> {
     public constructor(props: PropsType) {
@@ -43,7 +42,7 @@ storiesOf('Toast', module)
     ))
     .add('With action button', () => (
         <Toast
-            icon={<CashIcon />}
+            icon="cash"
             onClick={(): boolean => confirm('I love pressing F5, its so refreshing')}
             show={boolean('show', true)}
             severity={select('severity', ['success', 'warning', 'error', 'info'], 'error') as PropsType['severity']}
@@ -69,7 +68,7 @@ storiesOf('Toast', module)
     })
     .add('Persistent with secondary button', () => (
         <Toast
-            icon={<InfoCircleIcon />}
+            icon="info-circle"
             onClick={(): boolean => confirm('Primary action')}
             show={boolean('show', true)}
             severity={select('severity', ['success', 'warning', 'error', 'info'], 'info') as PropsType['severity']}

@@ -1,14 +1,15 @@
-import React, { FC, Children, useState, ReactNode } from 'react';
+import React, { FC, Children, useState } from 'react';
 import Base, { PropsType as BasePropsType } from '../Button/base';
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import Icon from '../Icon';
 import { box } from '../../utility/box';
+import { IconType } from '../Icon/IconType';
 
 export type PropsType = typeof box.props &
     BasePropsType & {
         variant: 'primary' | 'secondary';
-        icon?: ReactNode;
+        icon?: IconType;
         alignIcon?: 'left' | 'right';
     };
 

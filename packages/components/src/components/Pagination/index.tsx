@@ -1,4 +1,3 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@myonlinestore/bricks-assets';
 import React, { FC } from 'react';
 import Icon from '../Icon';
 import Text from '../Text';
@@ -51,7 +50,7 @@ const Pagination: FC<PropsType> = props => {
                 data-testid={`${testId}-${TestIds.prevPage}`}
                 onClick={() => navigate(props.currentPage - 1)}
             >
-                <Icon icon={<ChevronLeftIcon />} size="medium" />
+                <Icon icon="chevron-left" size="medium" />
             </StyledPageButton>,
         );
     }
@@ -112,7 +111,7 @@ const Pagination: FC<PropsType> = props => {
                 data-testid={`${testId}-${TestIds.nextPage}`}
                 onClick={() => navigate(props.currentPage + 1)}
             >
-                <Icon icon={<ChevronRightIcon />} size="medium" />
+                <Icon icon="chevron-right" size="medium" />
             </StyledPageButton>,
         );
     }

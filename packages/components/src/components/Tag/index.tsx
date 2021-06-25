@@ -1,7 +1,6 @@
 import styled from '../../utility/styled';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import React, { FC } from 'react';
-import { CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 import Box from '../Box';
 
@@ -66,7 +65,7 @@ const Tag: FC<PropsType> = props => {
                     <IconButton
                         title="Remove"
                         iconSize="small"
-                        icon={<CloseSmallIcon />}
+                        icon="close-small"
                         onClick={props.onClick}
                         data-testid={`${testId}-remove-button`}
                     />

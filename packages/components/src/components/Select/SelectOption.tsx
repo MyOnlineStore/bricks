@@ -2,7 +2,6 @@ import React, { FunctionComponent, useRef, useContext, Children } from 'react';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import { CheckmarkSmallIcon } from '@myonlinestore/bricks-assets';
 import { SelectContext } from '.';
 import styled from 'styled-components';
 import { SelectOptionGroupContext } from './SelectOptionGroup';
@@ -69,7 +68,7 @@ const SelectOption: FunctionComponent<PropsType> = props => {
                         {isSelected && (
                             <Box margin={[0, 6, 0, isSelected ? -18 : 0] as OffsetShorthandType} inline>
                                 <Text strong={isSelected}>
-                                    <Icon size="small" icon={<CheckmarkSmallIcon />} />
+                                    <Icon size="small" icon="checkmark-small" />
                                 </Text>
                             </Box>
                         )}

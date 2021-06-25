@@ -1,6 +1,5 @@
 import React from 'react';
 import TextualButton, { PropsType } from '.';
-import { ChevronRightIcon, ArrowLeftIcon } from '@myonlinestore/bricks-assets';
 import { select } from '@storybook/addon-knobs';
 
 export default {
@@ -11,7 +10,7 @@ export default {
 export const Default = () => {
     return (
         <TextualButton
-            icon={<ChevronRightIcon />}
+            icon="chevron-right"
             variant={select('variant', ['primary', 'secondary'], 'primary') as PropsType['variant']}
             title="Click me"
         >
@@ -23,7 +22,7 @@ export const Default = () => {
 export const AsAnAnchor = () => {
     return (
         <TextualButton
-            icon={<ChevronRightIcon />}
+            icon="chevron-right"
             href=""
             variant={select('variant', ['primary', 'secondary'], 'primary') as PropsType['variant']}
             title="Click me"
@@ -36,7 +35,7 @@ export const AsAnAnchor = () => {
 export const WithIconLeft = () => {
     return (
         <TextualButton
-            icon={<ArrowLeftIcon />}
+            icon="arrow-left"
             alignIcon="left"
             href=""
             variant={select('variant', ['primary', 'secondary'], 'primary') as PropsType['variant']}

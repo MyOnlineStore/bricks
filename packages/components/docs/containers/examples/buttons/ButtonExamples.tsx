@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import PreviewPane from '../../../components/PreviewPane';
 import { Button } from '@myonlinestore/bricks';
-import { CartIcon, CloseIcon } from '@myonlinestore/bricks-assets';
 
 const options = [
     {
@@ -52,11 +51,11 @@ const examples = [
     { value: 'destructive', component: <Button title="Destructive" variant="destructive" /> },
     { value: 'warning', component: <Button title="Warning" variant="warning" /> },
     { value: 'plain', component: <Button title="Cancel" variant="plain" /> },
-    { value: 'icon-primary', component: <Button title="Primary" variant="primary" icon={<CartIcon />} /> },
-    { value: 'icon-secondary', component: <Button title="Secondary" variant="secondary" icon={<CartIcon />} /> },
-    { value: 'icon-destructive', component: <Button title="Destructive" variant="destructive" icon={<CartIcon />} /> },
-    { value: 'icon-warning', component: <Button title="Warning" variant="warning" icon={<CartIcon />} /> },
-    { value: 'icon-plain', component: <Button title="Cancel" variant="plain" icon={<CloseIcon />} /> },
+    { value: 'icon-primary', component: <Button title="Primary" variant="primary" icon="cart" /> },
+    { value: 'icon-secondary', component: <Button title="Secondary" variant="secondary" icon="cart" /> },
+    { value: 'icon-destructive', component: <Button title="Destructive" variant="destructive" icon="cart" /> },
+    { value: 'icon-warning', component: <Button title="Warning" variant="warning" icon="cart" /> },
+    { value: 'icon-plain', component: <Button title="Cancel" variant="plain" icon="close" /> },
 ];
 
 const ButtonExamples: FC = () => {

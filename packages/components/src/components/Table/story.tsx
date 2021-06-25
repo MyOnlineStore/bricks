@@ -5,7 +5,6 @@ import Text from '../Text';
 import IconButton from '../IconButton';
 import { boolean } from '@storybook/addon-knobs';
 import StyledBadge from '../Badge';
-import { TrashIcon, GearIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
 import Toggle from '../Toggle';
 
@@ -120,14 +119,14 @@ class Demo extends Component<PropsType, StateType> {
             <>
                 {row.id !== '61651322' && (
                     <IconButton
-                        icon={<GearIcon />}
+                        icon="gear"
                         title={`Edit ${value}`}
                         variant="primary"
                         onClick={() => alert(`Edit id: ${row.id}`)}
                     />
                 )}
                 <IconButton
-                    icon={<TrashIcon />}
+                    icon="trash"
                     title={`Delete ${value}`}
                     variant="destructive"
                     onClick={() => alert(`Edit id: ${row.id}`)}

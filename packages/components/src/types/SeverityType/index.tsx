@@ -1,13 +1,12 @@
-import React from 'react';
-import { InfoCircleIcon, DangerCircleIcon, CheckmarkCircleIcon } from '@myonlinestore/bricks-assets';
+import { IconType } from '../../components/Icon/IconType';
 
 type SeverityType = 'error' | 'warning' | 'success' | 'info';
 
-const SeverityIcons = {
-    error: <DangerCircleIcon />,
-    warning: <DangerCircleIcon />,
-    info: <InfoCircleIcon />,
-    success: <CheckmarkCircleIcon />,
+const SeverityIcons: { [key: string]: IconType } = {
+    error: 'danger-circle',
+    warning: 'danger-circle',
+    info: 'info-circle',
+    success: 'checkmark-circle',
 };
 
 export default SeverityType;

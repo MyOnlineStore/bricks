@@ -1,6 +1,5 @@
 import React, { ComponentProps, useState, useEffect } from 'react';
 import TextField from '.';
-import { SearchIcon } from '@myonlinestore/bricks-assets';
 
 export default {
     title: 'TextField',
@@ -56,7 +55,7 @@ export const AsSearchbar = (args: ComponentProps<typeof TextField>) => {
                 args.onClear?.();
                 setValue('');
             }}
-            icon={<SearchIcon />}
+            icon="search"
         />
     );
 };

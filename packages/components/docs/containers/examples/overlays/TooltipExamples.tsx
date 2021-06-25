@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import PreviewPane from '../../../components/PreviewPane';
 import { IconButton, Tooltip } from '@myonlinestore/bricks';
-import { InfoCircleIcon } from '@myonlinestore/bricks-assets';
 
 const options = [
     {
@@ -15,7 +14,7 @@ const examples = [
         value: 'tooltip-default',
         component: (
             <Tooltip text="A concise tooltip" triggerOn="hover">
-                <IconButton title="Tooltip" icon={<InfoCircleIcon />} />
+                <IconButton title="Tooltip" icon="info-circle" />
             </Tooltip>
         ),
     },

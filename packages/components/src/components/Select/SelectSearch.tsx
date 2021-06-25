@@ -2,7 +2,6 @@ import React, { FC, ChangeEvent, useContext, useRef, useEffect } from 'react';
 import Box from '../Box';
 import Icon from '../Icon';
 import styled, { withTheme } from 'styled-components';
-import { SearchIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import colors from '../../themes/MosTheme/colors';
 import { SelectContext } from '.';
 import ThemeType from '../../types/ThemeType';
@@ -94,7 +93,7 @@ const SelectSearch: FC<PropsType> = props => {
                 <>
                     <SelectSearchInner open={isOpen} focus={hasFocus} disabled={isDisabled}>
                         <Box alignItems="center" margin={[0, 6, 0, 0]}>
-                            <Icon icon={<SearchIcon />} size="small" color={colors.grey400} />
+                            <Icon icon="search" size="small" color={colors.grey400} />
                         </Box>
                         <input
                             ref={inputRef => {
@@ -115,7 +114,7 @@ const SelectSearch: FC<PropsType> = props => {
                     <StyledCaret inner>
                         <Icon
                             title="close"
-                            icon={<CaretUpIcon />}
+                            icon="caret-up"
                             size="medium"
                             color={props.theme.Select.select.idle.caretColor}
                         />

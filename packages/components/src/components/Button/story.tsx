@@ -2,7 +2,6 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Button from '../Button';
-import { CartIcon } from '@myonlinestore/bricks-assets';
 
 storiesOf('Buttons/Button', module)
     .add('Default', () => {
@@ -30,7 +29,7 @@ storiesOf('Buttons/Button', module)
                 )}
                 loading={boolean('loading', false)}
                 title={text('title', 'Add to cart')}
-                icon={<CartIcon />}
+                icon="cart"
                 disabled={boolean('disabled', false)}
             />
         );

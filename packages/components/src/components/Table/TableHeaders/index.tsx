@@ -5,12 +5,12 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import { ColumnType, SortDirectionType } from '..';
 import Icon from '../../Icon';
-import { CaretVerticalIcon, CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
+import { IconType } from '../../Icon/IconType';
 
-const sortingIcons = {
-    none: <CaretVerticalIcon />,
-    ascending: <CaretDownIcon />,
-    descending: <CaretUpIcon />,
+const sortingIcons: { [key: string]: IconType } = {
+    none: 'caret-vertical',
+    ascending: 'caret-down',
+    descending: 'caret-up',
 };
 
 enum SortingSteps {

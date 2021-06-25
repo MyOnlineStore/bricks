@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import PreviewPane from '../../../components/PreviewPane';
 import { IconButton } from '@myonlinestore/bricks';
-import { BellIcon } from '@myonlinestore/bricks-assets';
 
 const options = [
     {
@@ -15,8 +14,8 @@ const options = [
 ];
 
 const examples = [
-    { value: 'primary', component: <IconButton title="Primary" variant="primary" icon={<BellIcon />} /> },
-    { value: 'destructive', component: <IconButton title="Destructive" variant="destructive" icon={<BellIcon />} /> },
+    { value: 'primary', component: <IconButton title="Primary" variant="primary" icon="bell" /> },
+    { value: 'destructive', component: <IconButton title="Destructive" variant="destructive" icon="bell" /> },
 ];
 
 const IconButtonExamples: FC = () => {

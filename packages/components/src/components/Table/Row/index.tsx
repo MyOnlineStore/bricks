@@ -9,7 +9,6 @@ import Box from '../../Box';
 import Checkbox from '../../Checkbox';
 import Branch from '../../Branch';
 import { ColumnType, BaseRowType } from '..';
-import { BarsIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     // tslint:disable
@@ -85,7 +84,7 @@ class Row extends Component<PropsType, StateType> {
                                                 onFocus={this.handleFocus}
                                             >
                                                 <Text variant={!this.state.hasHover ? 'descriptive' : undefined}>
-                                                    <Icon size="medium" icon={<BarsIcon />} />
+                                                    <Icon size="medium" icon="bars" />
                                                 </Text>
                                             </Cell>
                                             {children}
