@@ -24,10 +24,21 @@ type PropsType = typeof box.props & {
     hierarchy?: HierarchyType;
     as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'div' | 'span' | 'p';
     textAlign?: 'left' | 'right' | 'center' | 'justify';
+    color?: string;
 };
 
 const Heading = styled.div.attrs(() => ({ role: 'heading' }))<PropsType>`
-    color: ${({ hierarchy, theme }): string => (!hierarchy ? theme.Heading[1].color : theme.Heading[hierarchy].color)};
+    color: ${({ hierarchy, theme, color }): string => {
+        if (color) {
+            return color;
+        }
+
+        if (hierarchy) {
+            return theme.Heading[hierarchy].color;
+        }
+
+        return theme.Heading[1].color;
+    }};
     font-family: ${({ hierarchy, theme }): string =>
         !hierarchy ? theme.Heading[1].fontFamily : theme.Heading[hierarchy].fontFamily};
     font-size: ${({ hierarchy, theme }): string =>

@@ -1,4 +1,4 @@
-import { select } from '@storybook/addon-knobs';
+import { color, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Heading, { PropsType } from '.';
@@ -9,7 +9,12 @@ storiesOf('Heading', module).add('Default', () => {
     const textAlign = select('Text-align', ['left', 'right', 'center', 'justify'], 'left') as PropsType['textAlign'];
 
     return (
-        <Heading hierarchy={hierarchy} as={as} textAlign={textAlign}>
+        <Heading
+            hierarchy={hierarchy}
+            as={as}
+            textAlign={textAlign}
+            color={color('color', (undefined as unknown) as string)}
+        >
             Happy Selling!
         </Heading>
     );

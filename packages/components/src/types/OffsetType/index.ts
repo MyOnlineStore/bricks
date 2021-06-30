@@ -12,6 +12,7 @@ export type OffsetType =
     | 36
     | 48
     | 60
+    | 72
     | -3
     | -6
     | -9
@@ -24,6 +25,7 @@ export type OffsetType =
     | -36
     | -48
     | -60
+    | -72
     | 'auto';
 
 export type OffsetShorthandType =

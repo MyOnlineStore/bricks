@@ -44,10 +44,21 @@ type PropsType = typeof box.props & {
     compact?: boolean;
     strong?: boolean;
     strikethrough?: boolean;
+    color?: string;
 };
 
 const Text = styled.p<PropsType>`
-    color: ${({ variant, theme }): string => (variant ? theme.Text.variant[variant] : theme.Text.default.color)};
+    color: ${({ variant, theme, color }): string => {
+        if (color) {
+            return color;
+        }
+
+        if (variant) {
+            return theme.Text.variant[variant];
+        }
+
+        return theme.Text.default.color;
+    }};
     font-family: ${({ size, theme }): string =>
         !size ? theme.Text.size.regular.fontFamily : theme.Text.size[size].fontFamily};
     font-size: ${({ size, theme }): string =>
