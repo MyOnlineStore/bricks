@@ -1,4 +1,4 @@
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { boolean, color, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Text, { PropsType } from '.';
@@ -39,6 +39,7 @@ storiesOf('Text', module).add('Default', () => (
         compact={boolean('compact', false)}
         strong={boolean('strong', false)}
         strikethrough={boolean('strikethrough', false)}
+        color={color('color', (undefined as unknown) as string)}
     >
         {text('Text', demoContent)}
     </Text>
