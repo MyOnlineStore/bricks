@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.5.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.4.0...@myonlinestore/bricks@8.5.0) (2021-07-06)
+
+
+### Features
+
+* Added color prop to Text and Heading ([#666](https://github.com/MyOnlineStore/bricks/issues/666)) ([c1932d8](https://github.com/MyOnlineStore/bricks/commit/c1932d81ac8f4d97d56d3d17a9dca688b1fb671a))
+
+
+
+
+
 # [8.4.0](https://github.com/MyOnlineStore/bricks/compare/@myonlinestore/bricks@8.3.1...@myonlinestore/bricks@8.4.0) (2021-06-23)
 
 
