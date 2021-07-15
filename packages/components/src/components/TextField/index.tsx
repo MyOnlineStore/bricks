@@ -99,7 +99,7 @@ const TextField: FC<PropsType> = props => {
                         <StyledAffix>{props.prefix}</StyledAffix>
                     </StyledAffixWrapper>
                 )}
-                <Box position="relative" width="100%">
+                <Box position={props.onClear && props.value !== '' ? 'relative' : undefined} width="100%">
                     <StyledInput
                         data-testid={props['data-testid']}
                         type={props.type ? props.type : 'text'}

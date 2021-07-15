@@ -1,22 +1,25 @@
 /// <reference path="../../_declarations/global.d.ts" />
 import TextField, { PropsType as TextFieldPropsType } from '../TextField';
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useRef, useState, useEffect } from 'react';
 import ColorDrop from '../ColorDrop';
 import Box from '../Box';
 import { UndoIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 import ColorPicker from '../ColorPicker';
+import { flex, box, flexProps, boxProps } from '../../utility/box';
 
 type OmittedKeys = 'prefix' | 'onChange';
 
-type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> & {
-    emptyIsTransparent?: boolean;
-    transparentPlaceholder: string;
-    initialValue: string;
-    resetButtonTitle: string;
-    /* returns either a full hexcode with hashtag ór `transparent` */
-    onChange(value: string): void;
-};
+type PropsType = Pick<TextFieldPropsType, Exclude<keyof TextFieldPropsType, OmittedKeys>> &
+    typeof flex.props &
+    typeof box.props & {
+        emptyIsTransparent?: boolean;
+        transparentPlaceholder: string;
+        initialValue: string;
+        resetButtonTitle: string;
+        /* returns either a full hexcode with hashtag ór `transparent` */
+        onChange(value: string): void;
+    };
 
 export enum TestIds {
     container = 'container',
@@ -43,6 +46,24 @@ const ColorField: FC<PropsType> = props => {
         return hexcode === '#' || hexcode === '' || hexcode === 'transparent';
     };
 
+    /**
+     * This effect adds a function to the window that will be called by other color pickers when a new one is opened.
+     * Since the popover cant be closed onBlur of the textField (it blurs when using the colorpicker) it has to be
+     * closed by other ColorFields on opening.
+     */
+    useEffect(() => {
+        if (show) {
+            if ((window as any).closeActiveColorPicker) {
+                (window as any).closeActiveColorPicker();
+            }
+
+            (window as any).closeActiveColorPicker = () => {
+                setShow(false);
+                (window as any).closeActiveColorPicker = null;
+            };
+        }
+    }, [show]);
+
     return (
         <ColorPicker
             transparentSwatch={props.emptyIsTransparent}
@@ -59,6 +80,8 @@ const ColorField: FC<PropsType> = props => {
                 alignItems="flex-start"
                 style={props.disabled ? { cursor: 'not-allowed' } : {}}
                 data-testid={`${props['data-testid']}-${TestIds.container}`}
+                {...flexProps(props)}
+                {...boxProps(props)}
             >
                 <Box padding={[6, 12, 0, 0]}>
                     <ColorDrop
