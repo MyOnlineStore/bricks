@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
-	<g>
-		<path d="M4.3,10.2h2.9L5.8,6.4L4.3,10.2 M5.1,4.7h1.2l3.4,8.5H8.3l-0.7-1.8H3.8l-0.7,1.8H1.8L5.1,4.7z"/>
-		<path d="M10.8,10.2h2.9l-1.4-3.9L10.8,10.2 M11.6,4.7h1.2l3.4,8.5h-1.4l-0.7-1.8h-3.8l-0.7,1.8H8.3L11.6,4.7z"/>
-	</g>
-</svg>
+<svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" style="enable-background:new 0 0 18 18" xml:space="preserve"><g><path d="M4.3,10.2h2.9L5.8,6.4L4.3,10.2 M5.1,4.7h1.2l3.4,8.5H8.3l-0.7-1.8H3.8l-0.7,1.8H1.8L5.1,4.7z"/><path d="M10.8,10.2h2.9l-1.4-3.9L10.8,10.2 M11.6,4.7h1.2l3.4,8.5h-1.4l-0.7-1.8h-3.8l-0.7,1.8H8.3L11.6,4.7z"/></g></svg>

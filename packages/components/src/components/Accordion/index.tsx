@@ -2,7 +2,6 @@ import React, { ReactNode, MouseEvent } from 'react';
 import { StyledContent, StyledFoldoutIcon, StyledLabel } from './style';
 import FoldOut from '../FoldOut';
 import Box from '../Box';
-import { ChevronDownSmallIcon } from '@myonlinestore/bricks-assets';
 import Icon from '../Icon';
 
 export type PropsType = {
@@ -47,7 +46,7 @@ const Accordion = (props: PropsType) => {
                     open={props.open}
                     data-testid={props['data-testid'] ? `${props['data-testid']}-foldout-icon` : undefined}
                 >
-                    <Icon icon={<ChevronDownSmallIcon />} size="small" />
+                    <Icon icon="chevron-down-small" size="small" />
                 </StyledFoldoutIcon>
             </Box>
             <FoldOut

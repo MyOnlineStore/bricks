@@ -6,7 +6,6 @@ import Box from '../Box';
 import Text from '../Text';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
-import { CheckmarkIcon, ImageIcon } from '@myonlinestore/bricks-assets';
 import colors from '../../themes/MosTheme/colors';
 
 type DemoOptionType = {
@@ -77,7 +76,7 @@ const Content = () => (
             margin={[24, 0]}
             style={{ background: colors.grey100 }}
         >
-            <Icon size="large" icon={<ImageIcon />} color={colors.grey300} />
+            <Icon size="large" icon="image" color={colors.grey300} />
         </Box>
         <Text>
             Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
@@ -144,7 +143,7 @@ const renderOption = (option: DemoOptionType, optionState: OptionStateType): JSX
                 <Text variant={optionState.isSelected ? 'descriptive' : undefined}>
                     {optionState.isSelected && (
                         <Text as="span" variant="descriptive">
-                            <Icon size="small" icon={<CheckmarkIcon />} />
+                            <Icon size="small" icon="checkmark" />
                             &nbsp;&nbsp;
                         </Text>
                     )}

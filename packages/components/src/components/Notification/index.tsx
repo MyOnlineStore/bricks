@@ -1,27 +1,25 @@
-import React, { Children, FunctionComponent, ReactNode } from 'react';
+import React, { Children, FunctionComponent } from 'react';
 import trbl from '../../utility/trbl';
 import Icon from '../Icon';
 import Box from '../Box';
 import StyledNotification from './style';
-import { SeverityIcons } from '../../types/SeverityType';
-import { InfoCircleIcon } from '@myonlinestore/bricks-assets';
+import SeverityType, { SeverityIcons } from '../../types/SeverityType';
+import { IconType } from '../Icon/IconType';
 
 type PropsType = {
-    severity: keyof typeof SeverityIcons | 'default';
+    severity: SeverityType | 'default';
     message?: string;
-    icon?: ReactNode;
+    icon?: IconType;
     'data-testid'?: string;
 };
 
 const Notification: FunctionComponent<PropsType> = (props): JSX.Element => {
     const icon =
-        props.icon !== undefined ? (
-            props.icon
-        ) : props.severity === 'default' ? (
-            <InfoCircleIcon />
-        ) : (
-            SeverityIcons[props.severity]
-        );
+        props.icon !== undefined
+            ? props.icon
+            : props.severity === 'default'
+            ? 'info-circle'
+            : SeverityIcons[props.severity];
 
     return (
         <StyledNotification severity={props.severity} data-testid={props['data-testid']}>

@@ -7,18 +7,11 @@ const transformName = (file, suffix) => {
 };
 
 async function main() {
-    const icons = fs.readdirSync(path.resolve(__dirname, '..', 'src', 'icons'));
     const illustrations = fs.readdirSync(path.resolve(__dirname, '..', 'src', 'illustrations'));
 
     let index = `/// <reference path="../env.d.ts" />\n`;
     let types = `/// <reference types="react" />\nimport { ComponentType, SVGProps } from 'react';\n`;
     const componentType = 'ComponentType<SVGProps<SVGSVGElement>>';
-
-    icons.forEach(file => {
-        const name = transformName(file, 'Icon');
-        index += `\nexport { default as ${name} } from './icons/${file}';`;
-        types += `\nexport const ${name}: ${componentType}`;
-    });
 
     illustrations.forEach(file => {
         const name = transformName(file, 'Illustration');

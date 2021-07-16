@@ -1,8 +1,10 @@
 const intl = require('intl');
-
+const fetchMock = require('jest-fetch-mock');
 const orginalError = console.error;
 const orginalWarn = console.warn;
 const orginalLog = console.log;
+
+fetchMock.enableMocks();
 
 global.addEventListener = jest.fn();
 global.removeEventListener = jest.fn();

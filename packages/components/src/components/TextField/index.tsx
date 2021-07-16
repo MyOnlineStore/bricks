@@ -2,7 +2,6 @@ import React, { ChangeEvent, FC, ReactNode, useRef, useState, useEffect } from '
 import InlineNotification from '../InlineNotification';
 import Box from '../Box';
 import { StyledInput, StyledWrapper, StyledAffix, StyledAffixWrapper } from './style';
-import { CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import SeverityType from '../../types/SeverityType';
 import IconButton from '../IconButton';
 import styled from '../../utility/styled';
@@ -127,7 +126,7 @@ const TextField: FC<PropsType> = props => {
                             <IconButton
                                 variant="subdued"
                                 data-testid={`${props['data-testid']}-clear-button`}
-                                icon={<CloseSmallIcon />}
+                                icon="close-small"
                                 iconSize="small"
                                 title="Clear field"
                                 onClick={() => {

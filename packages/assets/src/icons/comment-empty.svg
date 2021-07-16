@@ -1,6 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
-<path class="st0" d="M0,0.9h0.7h16.6H18v0.7v12.5v0.7h-0.7h-5.9l-1.9,1.9L9,17.1l-0.5-0.4l-1.9-1.9H0.7H0v-0.7V1.6V0.9z M1.4,2.3
-	v11.1h5.5h0.3l0.3,0.2L9,15.1l1.6-1.6l0.3-0.2h0.3h5.5V2.3H1.4z"/>
-</svg>
+<svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" style="enable-background:new 0 0 18 18" xml:space="preserve"><path d="M0,0.9h0.7h16.6H18v0.7v12.5v0.7h-0.7h-5.9l-1.9,1.9L9,17.1l-0.5-0.4l-1.9-1.9H0.7H0v-0.7V1.6V0.9z M1.4,2.3
+	v11.1h5.5h0.3l0.3,0.2L9,15.1l1.6-1.6l0.3-0.2h0.3h5.5V2.3H1.4z"/></svg>

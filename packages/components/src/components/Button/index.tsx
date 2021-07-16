@@ -7,6 +7,7 @@ import Spinner from '../Spinner';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import chroma from 'chroma-js';
 import { box } from '../../utility/box';
+import { IconType } from '../Icon/IconType';
 
 type CommonType = {
     backgroundColor: string;
@@ -72,7 +73,7 @@ type PropsType = typeof box.props &
         variant: 'primary' | 'destructive' | 'warning' | 'secondary' | 'info' | 'plain';
         compact?: boolean;
         disabled?: boolean;
-        icon?: ReactNode;
+        icon?: IconType;
         children?: ReactNode;
     };
 

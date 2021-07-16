@@ -4,7 +4,6 @@ import Link from '../Link';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import { ChevronRightIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     breadcrumbs: Array<BreadcrumbType>;
@@ -35,7 +34,7 @@ const Breadcrumbs: FunctionComponent<PropsType> = (props): JSX.Element => (
                         {index < props.breadcrumbs.length - 1 && (
                             <Box margin={[0, 9]}>
                                 <Text variant="descriptive">
-                                    <Icon icon={<ChevronRightIcon />} size="small" />
+                                    <Icon icon="chevron-right" size="small" />
                                 </Text>
                             </Box>
                         )}

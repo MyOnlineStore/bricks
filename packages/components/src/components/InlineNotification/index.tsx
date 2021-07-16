@@ -1,12 +1,13 @@
-import React, { FunctionComponent, Children, ReactNode } from 'react';
+import React, { FunctionComponent, Children } from 'react';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import Icon from '../Icon';
 import Text from '../Text';
 import Box from '../Box';
 import trbl from '../../utility/trbl';
+import { IconType } from '../Icon/IconType';
 
 type PropsType = {
-    icon?: ReactNode;
+    icon?: IconType;
     message?: string;
     severity: SeverityType;
     'data-testid'?: string;

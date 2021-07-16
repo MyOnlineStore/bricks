@@ -1,7 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
-<path d="M4.7,9.9V8.1H18v1.9H4.7 M4.7,15.6v-1.9H18v1.9H4.7 M4.7,4.3V2.4H18v1.9H4.7 M0.9,5.2V2.4H0V1.4h1.9v3.8H0.9 M0,13.7v-0.9
+<svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" style="enable-background:new 0 0 18 18" xml:space="preserve"><path d="M4.7,9.9V8.1H18v1.9H4.7 M4.7,15.6v-1.9H18v1.9H4.7 M4.7,4.3V2.4H18v1.9H4.7 M0.9,5.2V2.4H0V1.4h1.9v3.8H0.9 M0,13.7v-0.9
 	h2.8v3.8H0v-0.9h1.9v-0.5H0.9v-0.9h0.9v-0.5H0 M2.1,7.1c0.4,0,0.7,0.3,0.7,0.7c0,0.2-0.1,0.4-0.2,0.5L1.1,9.9h1.8v0.9H0V10l1.9-2H0
-	V7.1H2.1z"/>
-</svg>
+	V7.1H2.1z"/></svg>

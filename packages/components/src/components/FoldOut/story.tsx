@@ -6,7 +6,6 @@ import Button from '../Button';
 import Box from '../Box';
 import Text from '../Text';
 import IconButton from '../IconButton';
-import { ChevronDownSmallIcon, ChevronUpSmallIcon } from '@myonlinestore/bricks-assets';
 
 type PropsType = {
     isOpen?: boolean;
@@ -78,7 +77,7 @@ const ExcerptDemo: FC<PropsType> = () => {
                 title="open FoldOut"
                 variant="primary"
                 iconSize="small"
-                icon={isOpen ? <ChevronUpSmallIcon /> : <ChevronDownSmallIcon />}
+                icon={isOpen ? 'chevron-up-small' : 'chevron-down-small'}
             />
         </Box>
     );

@@ -16,7 +16,6 @@ import Notification from '../Notification';
 import Badge from '../Badge';
 import * as ThemeSettingsType from '../../themes/CustomTheme/CustomThemeTypes';
 import TextualButton from '../TextualButton';
-import { ChevronRightIcon } from '@myonlinestore/bricks-assets';
 import { Demo } from '../Progress/story';
 
 type PropsType = {
@@ -312,8 +311,8 @@ const SampleContent: FunctionComponent<PropsType> = (props): JSX.Element => {
                 <Button title="Destructive" variant="destructive" />
                 <Button title="Plain" variant="plain" />
                 <Button title="Disabled" variant="primary" disabled />
-                <TextualButton icon={<ChevronRightIcon />} title="Primary" variant="primary" />
-                <TextualButton icon={<ChevronRightIcon />} title="Secondary" variant="secondary" />
+                <TextualButton icon="chevron-right" title="Primary" variant="primary" />
+                <TextualButton icon="chevron-right" title="Secondary" variant="secondary" />
             </Box>
             <Demo />
             <Contrast>

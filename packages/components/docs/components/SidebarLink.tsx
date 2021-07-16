@@ -1,11 +1,12 @@
-import React, { FC, useEffect, useState, ReactNode } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Heading, Text, Box, Icon } from '@myonlinestore/bricks';
 import StyledLink from './StyledLink';
 import styled from 'styled-components';
+import { IconType } from '../../src/components/Icon/IconType';
 
 type PropsType = {
     depth?: number;
-    icon?: ReactNode;
+    icon?: IconType;
     href: string;
     title: string;
 };

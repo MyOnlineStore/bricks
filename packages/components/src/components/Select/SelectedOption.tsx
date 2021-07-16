@@ -4,7 +4,6 @@ import { StyledPlaceholder, StyledSelection, StyledCaret } from './style';
 import Icon from '../Icon';
 import styled, { withTheme } from 'styled-components';
 import ThemeType from '../../types/ThemeType';
-import { CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import { OffsetType } from '../../types/OffsetType';
 import { SelectContext, OptionBaseType } from '.';
 
@@ -104,7 +103,7 @@ const SelectedOption: FC<PropsType> = props => {
             <StyledCaret>
                 <Icon
                     title={isOpen ? 'close' : 'open'}
-                    icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />}
+                    icon={isOpen ? 'caret-up' : 'caret-down'}
                     size="medium"
                     color={
                         isDisabled

@@ -5,7 +5,6 @@ import Tooltip from '.';
 import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
-import { InfoCircleIcon, CopyIcon } from '@myonlinestore/bricks-assets';
 import IconButton from '../IconButton';
 
 storiesOf('Tooltip', module)
@@ -16,7 +15,7 @@ storiesOf('Tooltip', module)
                     Hover over the icon
                     <Box inline margin={[0, 6, 0, 0]} />
                     <Tooltip text={text('text', 'I provide brief information')}>
-                        <Icon size="medium" icon={<InfoCircleIcon />} />
+                        <Icon size="medium" icon="info-circle" />
                     </Tooltip>
                 </Box>
             </Text>
@@ -28,7 +27,7 @@ storiesOf('Tooltip', module)
                 <Box justifyContent="center" alignItems="center">
                     Copy
                     <Tooltip triggerOn="click" text={text('text', 'Copied!')}>
-                        <IconButton icon={<CopyIcon />} title="Copy" />
+                        <IconButton icon="copy" title="Copy" />
                     </Tooltip>
                 </Box>
             </Text>
@@ -46,7 +45,7 @@ storiesOf('Tooltip', module)
                         }}
                         text="Copied!"
                     >
-                        <IconButton icon={<CopyIcon />} title="Copy" />
+                        <IconButton icon="copy" title="Copy" />
                     </Tooltip>
                 </Box>
             </Text>

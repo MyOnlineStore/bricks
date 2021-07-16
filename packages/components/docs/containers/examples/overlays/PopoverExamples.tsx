@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import PreviewPane from '../../../components/PreviewPane';
 import { IconButton, Popover, Text, Heading, Box } from '@myonlinestore/bricks';
-import { InfoCircleIcon } from '@myonlinestore/bricks-assets';
 
 const options = [
     {
@@ -29,7 +28,7 @@ const examples = [
                 triggerOn="click"
                 placement="top"
             >
-                <IconButton title="popover" icon={<InfoCircleIcon />} />
+                <IconButton title="popover" icon="info-circle" />
             </Popover>
         ),
     },

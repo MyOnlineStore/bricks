@@ -12,7 +12,7 @@ type TestCaseType = ['ButtonBase' | 'Button' | 'IconButton' | 'TextualButton', F
 
 const buttonBase: TestCaseType = ['ButtonBase', props => <ButtonBase title="foo" {...props} />];
 const button: TestCaseType = ['Button', props => <Button variant="primary" title="foo" {...props} />];
-const iconButton: TestCaseType = ['IconButton', props => <IconButton icon="" title="foo" {...props} />];
+const iconButton: TestCaseType = ['IconButton', props => <IconButton icon="archive" title="foo" {...props} />];
 const textualButton: TestCaseType = [
     'TextualButton',
     props => <TextualButton variant="primary" title="foo" {...props} />,

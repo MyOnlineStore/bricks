@@ -4,7 +4,6 @@ import Box from '../Box';
 import Text from '../Text';
 import Icon from '../Icon';
 import InlineNotification from '../InlineNotification';
-import { RocketLargeIcon } from '@myonlinestore/bricks-assets';
 import { StyledWrapper, StyledFileInput, StyledPreviewImage } from './style';
 import { ThemeContext } from 'styled-components';
 import { boxProps, flexProps, flex, box } from '../../utility/box';
@@ -105,7 +104,7 @@ const FileInput: FC<PropsType> = props => {
                 ) : (
                     <Box direction="row" justifyContent="center" alignItems="center" padding={[24]}>
                         <Icon
-                            icon={<RocketLargeIcon />}
+                            icon="rocket-large"
                             size="large"
                             color={
                                 props.disabled

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, ReactNode } from 'react';
+import React, { FC, useEffect } from 'react';
 import StyledToast, { StyledToastWrapper } from './style';
 import Button from '../Button';
 import Box from '../Box';
@@ -7,13 +7,13 @@ import Text from '../Text';
 import SeverityType, { SeverityIcons } from '../../types/SeverityType';
 import TransitionAnimation from '../TransitionAnimation';
 import IconButton from '../IconButton';
-import { CloseSmallIcon } from '@myonlinestore/bricks-assets';
 import Measure from 'react-measure';
+import { IconType } from '../Icon/IconType';
 
 type PropsType = {
     'data-testid'?: string;
     title: string;
-    icon?: ReactNode;
+    icon?: IconType;
     show: boolean;
     message?: string;
     buttonTitle?: string;
@@ -61,7 +61,7 @@ const Toast: FC<PropsType> = props => {
         }
     }, []);
 
-    const icon = props.icon !== undefined ? props.icon : ((SeverityIcons[props.severity] as unknown) as string);
+    const icon = props.icon !== undefined ? props.icon : SeverityIcons[props.severity];
 
     return (
         <TransitionAnimation show={props.show} animation="zoom" onExited={handleExit}>
@@ -136,7 +136,7 @@ const Toast: FC<PropsType> = props => {
                                         {!props.persistent && (
                                             <IconButton
                                                 variant="primary"
-                                                icon={<CloseSmallIcon />}
+                                                icon="close-small"
                                                 iconSize="small"
                                                 title="close"
                                                 onClick={closeAction}

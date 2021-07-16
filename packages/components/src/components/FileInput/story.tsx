@@ -2,7 +2,6 @@ import React, { ComponentProps, useState, useRef } from 'react';
 import FileInput, { FeedbackType, FileInputInstanceType } from './index';
 import Toolbar from '../Toolbar';
 import IconButton from '../IconButton';
-import { GearIcon, TrashIcon } from '@myonlinestore/bricks-assets';
 
 export default {
     title: 'FileInput',
@@ -33,14 +32,14 @@ export const Default = (props: ComponentProps<typeof FileInput>) => {
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
-                        icon={<GearIcon />}
+                        icon="gear"
                         title="Edit"
                         onClick={() => {
                             fileInputInstance.current?.pickFile();
                         }}
                     />
                     <IconButton
-                        icon={<TrashIcon />}
+                        icon="trash"
                         title="Remove"
                         onClick={() => {
                             fileInputInstance.current?.clear();
@@ -72,14 +71,14 @@ export const WithPreview = (props: ComponentProps<typeof FileInput>) => {
             toolbar={
                 <Toolbar direction="vertical">
                     <IconButton
-                        icon={<GearIcon />}
+                        icon="gear"
                         title="Edit"
                         onClick={() => {
                             fileInputInstance.current?.pickFile();
                         }}
                     />
                     <IconButton
-                        icon={<TrashIcon />}
+                        icon="trash"
                         title="Remove"
                         onClick={() => {
                             fileInputInstance.current?.clear();

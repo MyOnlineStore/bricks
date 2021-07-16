@@ -1,6 +1,5 @@
 import React, { FC, useState, ChangeEvent } from 'react';
 import { StyledSelect } from './style';
-import { CaretDownIcon, CaretUpIcon } from '@myonlinestore/bricks-assets';
 import Icon from '../Icon';
 import { boxProps, flexProps, flex, box } from '../../utility/box';
 
@@ -51,7 +50,7 @@ const NativeSelect: FC<PropsType> = (props): JSX.Element => {
                     </option>
                 ))}
             </select>
-            <Icon size="medium" icon={isOpen ? <CaretUpIcon /> : <CaretDownIcon />} />
+            <Icon size="medium" icon={isOpen ? 'caret-up' : 'caret-down'} />
         </StyledSelect>
     );
 };

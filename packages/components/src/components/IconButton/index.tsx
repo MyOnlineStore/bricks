@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import styled from '../../utility/styled';
 import BareButton, { PropsType as BareButtonPropsType } from '../Button/base';
 import ThemeType from '../../types/ThemeType';
@@ -8,6 +8,7 @@ import Box from '../Box';
 import { withTheme } from 'styled-components';
 import ThemeTools from '../../themes/CustomTheme/ThemeTools';
 import { box } from '../../utility/box';
+import { IconType } from '../Icon/IconType';
 
 type CommonType = {
     color: string;
@@ -27,7 +28,7 @@ type IconButtonThemeType = {
 type PropsType = typeof box.props &
     BareButtonPropsType & {
         theme?: ThemeType;
-        icon: ReactNode;
+        icon: IconType;
         iconSize?: 'small' | 'medium';
         variant?: keyof IconButtonThemeType;
     };
